@@ -18,12 +18,18 @@ public final class UnsetUserAssessmentBaselineState extends com.pulumi.resources
     /**
      * The OCID of the user assessment.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="userAssessmentId")
     private @Nullable Output<String> userAssessmentId;
 
     /**
      * @return The OCID of the user assessment.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> userAssessmentId() {
@@ -57,6 +63,9 @@ public final class UnsetUserAssessmentBaselineState extends com.pulumi.resources
         /**
          * @param userAssessmentId The OCID of the user assessment.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -67,6 +76,9 @@ public final class UnsetUserAssessmentBaselineState extends com.pulumi.resources
 
         /**
          * @param userAssessmentId The OCID of the user assessment.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -700,12 +700,18 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
     /**
      * The total number of Autonomous Container Databases that can be created.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="totalContainerDatabases", type=Integer.class, parameters={})
     private Output<Integer> totalContainerDatabases;
 
     /**
      * @return The total number of Autonomous Container Databases that can be created.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Integer> totalContainerDatabases() {

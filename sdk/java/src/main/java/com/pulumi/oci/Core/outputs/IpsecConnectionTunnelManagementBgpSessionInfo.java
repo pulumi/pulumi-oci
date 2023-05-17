@@ -20,10 +20,22 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfo {
     /**
      * @return If the tunnel&#39;s `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this ASN is required and used for the tunnel&#39;s BGP session. This is the ASN of the network on the CPE end of the BGP session. Can be a 2-byte or 4-byte ASN. Uses &#34;asplain&#34; format.
      * 
+     * If the tunnel&#39;s `routing` attribute is set to `STATIC`, the `customerBgpAsn` must be null.
+     * 
+     * Example: `12345` (2-byte) or `1587232876` (4-byte)
+     * 
      */
     private @Nullable String customerBgpAsn;
     /**
      * @return The IP address for the CPE end of the inside tunnel interface.
+     * 
+     * If the tunnel&#39;s `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this IP address is required and used for the tunnel&#39;s BGP session.
+     * 
+     * If `routing` is instead set to `STATIC`, this IP address is optional. You can set this IP address to troubleshoot or monitor the tunnel.
+     * 
+     * The value must be a /30 or /31.
+     * 
+     * Example: `10.0.0.5/31`
      * 
      */
     private @Nullable String customerInterfaceIp;
@@ -34,6 +46,14 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfo {
     private @Nullable String oracleBgpAsn;
     /**
      * @return The IP address for the Oracle end of the inside tunnel interface.
+     * 
+     * If the tunnel&#39;s `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this IP address is required and used for the tunnel&#39;s BGP session.
+     * 
+     * If `routing` is instead set to `STATIC`, this IP address is optional. You can set this IP address to troubleshoot or monitor the tunnel.
+     * 
+     * The value must be a /30 or /31.
+     * 
+     * Example: `10.0.0.4/31`
      * 
      */
     private @Nullable String oracleInterfaceIp;
@@ -52,12 +72,24 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfo {
     /**
      * @return If the tunnel&#39;s `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this ASN is required and used for the tunnel&#39;s BGP session. This is the ASN of the network on the CPE end of the BGP session. Can be a 2-byte or 4-byte ASN. Uses &#34;asplain&#34; format.
      * 
+     * If the tunnel&#39;s `routing` attribute is set to `STATIC`, the `customerBgpAsn` must be null.
+     * 
+     * Example: `12345` (2-byte) or `1587232876` (4-byte)
+     * 
      */
     public Optional<String> customerBgpAsn() {
         return Optional.ofNullable(this.customerBgpAsn);
     }
     /**
      * @return The IP address for the CPE end of the inside tunnel interface.
+     * 
+     * If the tunnel&#39;s `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this IP address is required and used for the tunnel&#39;s BGP session.
+     * 
+     * If `routing` is instead set to `STATIC`, this IP address is optional. You can set this IP address to troubleshoot or monitor the tunnel.
+     * 
+     * The value must be a /30 or /31.
+     * 
+     * Example: `10.0.0.5/31`
      * 
      */
     public Optional<String> customerInterfaceIp() {
@@ -72,6 +104,14 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfo {
     }
     /**
      * @return The IP address for the Oracle end of the inside tunnel interface.
+     * 
+     * If the tunnel&#39;s `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this IP address is required and used for the tunnel&#39;s BGP session.
+     * 
+     * If `routing` is instead set to `STATIC`, this IP address is optional. You can set this IP address to troubleshoot or monitor the tunnel.
+     * 
+     * The value must be a /30 or /31.
+     * 
+     * Example: `10.0.0.4/31`
      * 
      */
     public Optional<String> oracleInterfaceIp() {

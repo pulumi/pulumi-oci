@@ -52,6 +52,9 @@ type Agent struct {
 	// The time of the last Agent details update. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// (Updatable) ODMS Agent version
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Version pulumi.StringOutput `pulumi:"version"`
 }
 
@@ -112,6 +115,9 @@ type agentState struct {
 	// The time of the last Agent details update. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// (Updatable) ODMS Agent version
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Version *string `pulumi:"version"`
 }
 
@@ -141,6 +147,9 @@ type AgentState struct {
 	// The time of the last Agent details update. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
 	// (Updatable) ODMS Agent version
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Version pulumi.StringPtrInput
 }
 
@@ -164,6 +173,9 @@ type agentArgs struct {
 	// (Updatable) The OCID of the Stream
 	StreamId *string `pulumi:"streamId"`
 	// (Updatable) ODMS Agent version
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Version *string `pulumi:"version"`
 }
 
@@ -184,6 +196,9 @@ type AgentArgs struct {
 	// (Updatable) The OCID of the Stream
 	StreamId pulumi.StringPtrInput
 	// (Updatable) ODMS Agent version
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Version pulumi.StringPtrInput
 }
 
@@ -335,6 +350,9 @@ func (o AgentOutput) TimeUpdated() pulumi.StringOutput {
 }
 
 // (Updatable) ODMS Agent version
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AgentOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *Agent) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }

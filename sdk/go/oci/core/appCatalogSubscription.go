@@ -82,6 +82,9 @@ type AppCatalogSubscription struct {
 	// Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeRetrieved pulumi.StringOutput `pulumi:"timeRetrieved"`
 }
 
@@ -155,6 +158,9 @@ type appCatalogSubscriptionState struct {
 	// Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 	// Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeRetrieved *string `pulumi:"timeRetrieved"`
 }
 
@@ -182,6 +188,9 @@ type AppCatalogSubscriptionState struct {
 	// Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
 	TimeCreated pulumi.StringPtrInput
 	// Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeRetrieved pulumi.StringPtrInput
 }
 
@@ -203,6 +212,9 @@ type appCatalogSubscriptionArgs struct {
 	// A generated signature for this listing resource version retrieved the agreements API.
 	Signature string `pulumi:"signature"`
 	// Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeRetrieved string `pulumi:"timeRetrieved"`
 }
 
@@ -221,6 +233,9 @@ type AppCatalogSubscriptionArgs struct {
 	// A generated signature for this listing resource version retrieved the agreements API.
 	Signature pulumi.StringInput
 	// Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeRetrieved pulumi.StringInput
 }
 
@@ -367,6 +382,9 @@ func (o AppCatalogSubscriptionOutput) TimeCreated() pulumi.StringOutput {
 }
 
 // Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AppCatalogSubscriptionOutput) TimeRetrieved() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppCatalogSubscription) pulumi.StringOutput { return v.TimeRetrieved }).(pulumi.StringOutput)
 }

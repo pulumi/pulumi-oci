@@ -200,12 +200,18 @@ public class OperationsInsightsWarehouseUser extends com.pulumi.resources.Custom
     /**
      * OPSI Warehouse OCID
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="operationsInsightsWarehouseId", type=String.class, parameters={})
     private Output<String> operationsInsightsWarehouseId;
 
     /**
      * @return OPSI Warehouse OCID
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> operationsInsightsWarehouseId() {

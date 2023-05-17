@@ -118,6 +118,12 @@ export class ResourceAction extends pulumi.CustomResource {
     public /*out*/ readonly timeStatusBegin!: pulumi.Output<string>;
     /**
      * (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+     *
+     * For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly timeStatusEnd!: pulumi.Output<string>;
     /**
@@ -258,6 +264,12 @@ export interface ResourceActionState {
     timeStatusBegin?: pulumi.Input<string>;
     /**
      * (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+     *
+     * For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     timeStatusEnd?: pulumi.Input<string>;
     /**
@@ -280,6 +292,12 @@ export interface ResourceActionArgs {
     status: pulumi.Input<string>;
     /**
      * (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+     *
+     * For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     timeStatusEnd?: pulumi.Input<string>;
 }

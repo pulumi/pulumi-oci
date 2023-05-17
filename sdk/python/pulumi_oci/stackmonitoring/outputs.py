@@ -459,7 +459,11 @@ class MonitoredResourceAdditionalCredential(dict):
         :param str name: (Updatable) Property Name.
         :param Sequence['MonitoredResourceAdditionalCredentialPropertyArgs'] properties: (Updatable) List of monitored resource properties.
         :param str source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
-        :param str type: Monitored Resource Type.
+        :param str type: Monitored Resource Type. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if credential_type is not None:
             pulumi.set(__self__, "credential_type", credential_type)
@@ -531,7 +535,11 @@ class MonitoredResourceAdditionalCredential(dict):
     @pulumi.getter
     def type(self) -> Optional[str]:
         """
-        Monitored Resource Type.
+        Monitored Resource Type. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -686,7 +694,11 @@ class MonitoredResourceCredentials(dict):
         :param str name: (Updatable) Property Name.
         :param Sequence['MonitoredResourceCredentialsPropertyArgs'] properties: (Updatable) List of monitored resource properties.
         :param str source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
-        :param str type: Monitored Resource Type.
+        :param str type: Monitored Resource Type. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if credential_type is not None:
             pulumi.set(__self__, "credential_type", credential_type)
@@ -758,7 +770,11 @@ class MonitoredResourceCredentials(dict):
     @pulumi.getter
     def type(self) -> Optional[str]:
         """
-        Monitored Resource Type.
+        Monitored Resource Type. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -1536,7 +1552,11 @@ class MonitoredResourcesSearchItem(dict):
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: Monitored resource creation time. An RFC3339 formatted datetime string.
         :param str time_updated: Monitored resource update time. An RFC3339 formatted datetime string.
-        :param str type: A filter to return resources that match resource type.
+        :param str type: A filter to return resources that match resource type. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
@@ -1675,7 +1695,11 @@ class MonitoredResourcesSearchItem(dict):
     @pulumi.getter
     def type(self) -> Optional[str]:
         """
-        A filter to return resources that match resource type.
+        A filter to return resources that match resource type. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 

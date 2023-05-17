@@ -140,12 +140,18 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="disassociateTrigger", type=Integer.class, parameters={})
     private Output</* @Nullable */ Integer> disassociateTrigger;
 
     /**
      * @return (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Optional<Integer>> disassociateTrigger() {

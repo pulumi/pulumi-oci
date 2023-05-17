@@ -27,12 +27,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) A String value whose contents indicate a set of characters that can appear, in any sequence, in a password value
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="allowedChars")
     private @Nullable Output<String> allowedChars;
 
     /**
      * @return (Updatable) A String value whose contents indicate a set of characters that can appear, in any sequence, in a password value
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> allowedChars() {
@@ -87,12 +105,32 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="compartmentOcid")
     private @Nullable Output<String> compartmentOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> compartmentOcid() {
@@ -102,12 +140,32 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [key]
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="configuredPasswordPolicyRules")
     private @Nullable Output<List<DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs>> configuredPasswordPolicyRules;
 
     /**
      * @return (Updatable) List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [key]
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs>>> configuredPasswordPolicyRules() {
@@ -117,12 +175,32 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="deleteInProgress")
     private @Nullable Output<Boolean> deleteInProgress;
 
     /**
      * @return (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> deleteInProgress() {
@@ -132,12 +210,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) A String that describes the password policy
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return (Updatable) A String that describes the password policy
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> description() {
@@ -147,12 +243,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) A delimiter used to separate characters in the dictionary file
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="dictionaryDelimiter")
     private @Nullable Output<String> dictionaryDelimiter;
 
     /**
      * @return (Updatable) A delimiter used to separate characters in the dictionary file
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> dictionaryDelimiter() {
@@ -162,12 +276,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="dictionaryLocation")
     private @Nullable Output<String> dictionaryLocation;
 
     /**
      * @return (Updatable) A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> dictionaryLocation() {
@@ -177,12 +309,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) Indicates whether the password can match a dictionary word
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="dictionaryWordDisallowed")
     private @Nullable Output<Boolean> dictionaryWordDisallowed;
 
     /**
      * @return (Updatable) Indicates whether the password can match a dictionary word
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> dictionaryWordDisallowed() {
@@ -192,12 +342,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="disallowedChars")
     private @Nullable Output<String> disallowedChars;
 
     /**
      * @return (Updatable) A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> disallowedChars() {
@@ -207,12 +375,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="disallowedSubstrings")
     private @Nullable Output<List<String>> disallowedSubstrings;
 
     /**
      * @return (Updatable) A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<String>>> disallowedSubstrings() {
@@ -222,12 +408,32 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="domainOcid")
     private @Nullable Output<String> domainOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> domainOcid() {
@@ -237,12 +443,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="externalId")
     private @Nullable Output<String> externalId;
 
     /**
      * @return (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> externalId() {
@@ -252,12 +476,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) Indicates a sequence of characters that match the user&#39;s first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="firstNameDisallowed")
     private @Nullable Output<Boolean> firstNameDisallowed;
 
     /**
      * @return (Updatable) Indicates a sequence of characters that match the user&#39;s first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> firstNameDisallowed() {
@@ -267,12 +509,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: writeOnly
+     * * required: false
+     * * returned: never
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="forcePasswordReset")
     private @Nullable Output<Boolean> forcePasswordReset;
 
     /**
      * @return (Updatable) Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: writeOnly
+     * * required: false
+     * * returned: never
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> forcePasswordReset() {
@@ -282,12 +542,38 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) A list of groups that the password policy belongs to.
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="groups")
     private @Nullable Output<List<DomainsPasswordPolicyGroupArgs>> groups;
 
     /**
      * @return (Updatable) A list of groups that the password policy belongs to.
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsPasswordPolicyGroupArgs>>> groups() {
@@ -297,12 +583,28 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) The User or App who created the Resource
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: complex
+     * 
      */
     @Import(name="idcsCreatedBies")
     private @Nullable Output<List<DomainsPasswordPolicyIdcsCreatedByArgs>> idcsCreatedBies;
 
     /**
      * @return (Updatable) The User or App who created the Resource
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: complex
      * 
      */
     public Optional<Output<List<DomainsPasswordPolicyIdcsCreatedByArgs>>> idcsCreatedBies() {
@@ -327,12 +629,28 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) The User or App who modified the Resource
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * 
      */
     @Import(name="idcsLastModifiedBies")
     private @Nullable Output<List<DomainsPasswordPolicyIdcsLastModifiedByArgs>> idcsLastModifiedBies;
 
     /**
      * @return (Updatable) The User or App who modified the Resource
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
      * 
      */
     public Optional<Output<List<DomainsPasswordPolicyIdcsLastModifiedByArgs>>> idcsLastModifiedBies() {
@@ -342,12 +660,32 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) The release number when the resource was upgraded.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="idcsLastUpgradedInRelease")
     private @Nullable Output<String> idcsLastUpgradedInRelease;
 
     /**
      * @return (Updatable) The release number when the resource was upgraded.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> idcsLastUpgradedInRelease() {
@@ -357,12 +695,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="idcsPreventedOperations")
     private @Nullable Output<List<String>> idcsPreventedOperations;
 
     /**
      * @return (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<String>>> idcsPreventedOperations() {
@@ -372,12 +728,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) Indicates a sequence of characters that match the user&#39;s last name of given name cannot be the password. Password validation against policy will be ignored if length of last name is less than or equal to 3 characters.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="lastNameDisallowed")
     private @Nullable Output<Boolean> lastNameDisallowed;
 
     /**
      * @return (Updatable) Indicates a sequence of characters that match the user&#39;s last name of given name cannot be the password. Password validation against policy will be ignored if length of last name is less than or equal to 3 characters.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> lastNameDisallowed() {
@@ -387,12 +761,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="lockoutDuration")
     private @Nullable Output<Integer> lockoutDuration;
 
     /**
      * @return (Updatable) The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> lockoutDuration() {
@@ -402,12 +794,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) An integer that represents the maximum number of failed logins before an account is locked
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="maxIncorrectAttempts")
     private @Nullable Output<Integer> maxIncorrectAttempts;
 
     /**
      * @return (Updatable) An integer that represents the maximum number of failed logins before an account is locked
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> maxIncorrectAttempts() {
@@ -417,12 +827,32 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="maxLength")
     private @Nullable Output<Integer> maxLength;
 
     /**
      * @return (Updatable) The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> maxLength() {
@@ -432,12 +862,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="maxRepeatedChars")
     private @Nullable Output<Integer> maxRepeatedChars;
 
     /**
      * @return (Updatable) The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> maxRepeatedChars() {
@@ -447,12 +895,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="maxSpecialChars")
     private @Nullable Output<Integer> maxSpecialChars;
 
     /**
      * @return (Updatable) The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> maxSpecialChars() {
@@ -462,12 +928,32 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+     * * type: complex
+     * 
      */
     @Import(name="metas")
     private @Nullable Output<List<DomainsPasswordPolicyMetaArgs>> metas;
 
     /**
      * @return (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+     * * type: complex
      * 
      */
     public Optional<Output<List<DomainsPasswordPolicyMetaArgs>>> metas() {
@@ -477,12 +963,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) The minimum number of a combination of alphabetic and numeric characters in a password.  A value of 0 or no value indicates no minimum alphanumeric character restriction.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="minAlphaNumerals")
     private @Nullable Output<Integer> minAlphaNumerals;
 
     /**
      * @return (Updatable) The minimum number of a combination of alphabetic and numeric characters in a password.  A value of 0 or no value indicates no minimum alphanumeric character restriction.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> minAlphaNumerals() {
@@ -492,12 +996,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="minAlphas")
     private @Nullable Output<Integer> minAlphas;
 
     /**
      * @return (Updatable) The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> minAlphas() {
@@ -507,12 +1029,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="minLength")
     private @Nullable Output<Integer> minLength;
 
     /**
      * @return (Updatable) The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> minLength() {
@@ -522,12 +1062,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="minLowerCase")
     private @Nullable Output<Integer> minLowerCase;
 
     /**
      * @return (Updatable) The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> minLowerCase() {
@@ -537,12 +1095,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="minNumerals")
     private @Nullable Output<Integer> minNumerals;
 
     /**
      * @return (Updatable) The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> minNumerals() {
@@ -552,12 +1128,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) Minimum time after which the user can resubmit the reset password request
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="minPasswordAge")
     private @Nullable Output<Integer> minPasswordAge;
 
     /**
      * @return (Updatable) Minimum time after which the user can resubmit the reset password request
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> minPasswordAge() {
@@ -567,12 +1161,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="minSpecialChars")
     private @Nullable Output<Integer> minSpecialChars;
 
     /**
      * @return (Updatable) The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> minSpecialChars() {
@@ -582,12 +1194,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="minUniqueChars")
     private @Nullable Output<Integer> minUniqueChars;
 
     /**
      * @return (Updatable) The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> minUniqueChars() {
@@ -597,12 +1227,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="minUpperCase")
     private @Nullable Output<Integer> minUpperCase;
 
     /**
      * @return (Updatable) The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> minUpperCase() {
@@ -612,12 +1260,32 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: true
+     * * returned: always
+     * * type: string
+     * * uniqueness: server
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: true
+     * * returned: always
+     * * type: string
+     * * uniqueness: server
      * 
      */
     public Optional<Output<String>> name() {
@@ -627,12 +1295,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) The number of passwords that will be kept in history that may not be used as a password
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="numPasswordsInHistory")
     private @Nullable Output<Integer> numPasswordsInHistory;
 
     /**
      * @return (Updatable) The number of passwords that will be kept in history that may not be used as a password
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> numPasswordsInHistory() {
@@ -642,12 +1328,32 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: global
+     * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
      * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: global
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -657,12 +1363,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) An integer indicating the number of days before which the user should be warned about password expiry.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="passwordExpireWarning")
     private @Nullable Output<Integer> passwordExpireWarning;
 
     /**
      * @return (Updatable) An integer indicating the number of days before which the user should be warned about password expiry.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> passwordExpireWarning() {
@@ -672,12 +1396,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) The number of days after which the password expires automatically
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="passwordExpiresAfter")
     private @Nullable Output<Integer> passwordExpiresAfter;
 
     /**
      * @return (Updatable) The number of days after which the password expires automatically
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> passwordExpiresAfter() {
@@ -687,12 +1429,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) Indicates whether the password policy is configured as Simple, Standard, or Custom.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="passwordStrength")
     private @Nullable Output<String> passwordStrength;
 
     /**
      * @return (Updatable) Indicates whether the password policy is configured as Simple, Standard, or Custom.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> passwordStrength() {
@@ -702,12 +1462,36 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) Password policy priority
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * idcsMinValue: 1
+     * * uniqueness: server
+     * 
      */
     @Import(name="priority")
     private @Nullable Output<Integer> priority;
 
     /**
      * @return (Updatable) Password policy priority
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * idcsMinValue: 1
+     * * uniqueness: server
      * 
      */
     public Optional<Output<Integer>> priority() {
@@ -717,12 +1501,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="requiredChars")
     private @Nullable Output<String> requiredChars;
 
     /**
      * @return (Updatable) A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> requiredChars() {
@@ -747,12 +1549,32 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="schemas")
     private @Nullable Output<List<String>> schemas;
 
     /**
      * @return (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<String>>> schemas() {
@@ -762,12 +1584,30 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) Indicates that the password must begin with an alphabetic character
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="startsWithAlphabet")
     private @Nullable Output<Boolean> startsWithAlphabet;
 
     /**
      * @return (Updatable) Indicates that the password must begin with an alphabetic character
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> startsWithAlphabet() {
@@ -777,12 +1617,32 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) A list of tags on this resource.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<DomainsPasswordPolicyTagArgs>> tags;
 
     /**
      * @return (Updatable) A list of tags on this resource.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsPasswordPolicyTagArgs>>> tags() {
@@ -792,12 +1652,32 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="tenancyOcid")
     private @Nullable Output<String> tenancyOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> tenancyOcid() {
@@ -807,12 +1687,36 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
     /**
      * (Updatable) Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="userNameDisallowed")
     private @Nullable Output<Boolean> userNameDisallowed;
 
     /**
      * @return (Updatable) Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Boolean>> userNameDisallowed() {
@@ -898,6 +1802,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param allowedChars (Updatable) A String value whose contents indicate a set of characters that can appear, in any sequence, in a password value
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -908,6 +1821,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param allowedChars (Updatable) A String value whose contents indicate a set of characters that can appear, in any sequence, in a password value
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -992,6 +1914,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param compartmentOcid (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1003,6 +1935,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param compartmentOcid (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1012,6 +1954,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param configuredPasswordPolicyRules (Updatable) List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [key]
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1024,6 +1976,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param configuredPasswordPolicyRules (Updatable) List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [key]
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1034,6 +1996,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param configuredPasswordPolicyRules (Updatable) List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [key]
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1043,6 +2015,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param deleteInProgress (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1055,6 +2037,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param deleteInProgress (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1064,6 +2056,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param description (Updatable) A String that describes the password policy
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1076,6 +2077,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param description (Updatable) A String that describes the password policy
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1085,6 +2095,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param dictionaryDelimiter (Updatable) A delimiter used to separate characters in the dictionary file
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1097,6 +2116,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param dictionaryDelimiter (Updatable) A delimiter used to separate characters in the dictionary file
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1106,6 +2134,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param dictionaryLocation (Updatable) A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1118,6 +2155,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param dictionaryLocation (Updatable) A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1127,6 +2173,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param dictionaryWordDisallowed (Updatable) Indicates whether the password can match a dictionary word
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1139,6 +2194,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param dictionaryWordDisallowed (Updatable) Indicates whether the password can match a dictionary word
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1148,6 +2212,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param disallowedChars (Updatable) A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1160,6 +2233,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param disallowedChars (Updatable) A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1169,6 +2251,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param disallowedSubstrings (Updatable) A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1181,6 +2272,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param disallowedSubstrings (Updatable) A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1191,6 +2291,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param disallowedSubstrings (Updatable) A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1200,6 +2309,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param domainOcid (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1212,6 +2331,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param domainOcid (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1221,6 +2350,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param externalId (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1233,6 +2371,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param externalId (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1242,6 +2389,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param firstNameDisallowed (Updatable) Indicates a sequence of characters that match the user&#39;s first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1254,6 +2410,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param firstNameDisallowed (Updatable) Indicates a sequence of characters that match the user&#39;s first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1263,6 +2428,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param forcePasswordReset (Updatable) Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: writeOnly
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1275,6 +2449,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param forcePasswordReset (Updatable) Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: writeOnly
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1284,6 +2467,19 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param groups (Updatable) A list of groups that the password policy belongs to.
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1296,6 +2492,19 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param groups (Updatable) A list of groups that the password policy belongs to.
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1306,6 +2515,19 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param groups (Updatable) A list of groups that the password policy belongs to.
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1315,6 +2537,14 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param idcsCreatedBies (Updatable) The User or App who created the Resource
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: complex
          * 
          * @return builder
          * 
@@ -1327,6 +2557,14 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param idcsCreatedBies (Updatable) The User or App who created the Resource
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: complex
+         * 
          * @return builder
          * 
          */
@@ -1336,6 +2574,14 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param idcsCreatedBies (Updatable) The User or App who created the Resource
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: complex
          * 
          * @return builder
          * 
@@ -1368,6 +2614,14 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param idcsLastModifiedBies (Updatable) The User or App who modified the Resource
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * 
          * @return builder
          * 
          */
@@ -1379,6 +2633,14 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param idcsLastModifiedBies (Updatable) The User or App who modified the Resource
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * 
          * @return builder
          * 
          */
@@ -1389,6 +2651,14 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param idcsLastModifiedBies (Updatable) The User or App who modified the Resource
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * 
          * @return builder
          * 
          */
@@ -1398,6 +2668,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param idcsLastUpgradedInRelease (Updatable) The release number when the resource was upgraded.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1410,6 +2690,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param idcsLastUpgradedInRelease (Updatable) The release number when the resource was upgraded.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1419,6 +2709,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param idcsPreventedOperations (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1431,6 +2730,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param idcsPreventedOperations (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1441,6 +2749,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param idcsPreventedOperations (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1450,6 +2767,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param lastNameDisallowed (Updatable) Indicates a sequence of characters that match the user&#39;s last name of given name cannot be the password. Password validation against policy will be ignored if length of last name is less than or equal to 3 characters.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1462,6 +2788,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param lastNameDisallowed (Updatable) Indicates a sequence of characters that match the user&#39;s last name of given name cannot be the password. Password validation against policy will be ignored if length of last name is less than or equal to 3 characters.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1471,6 +2806,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param lockoutDuration (Updatable) The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1483,6 +2827,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param lockoutDuration (Updatable) The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1492,6 +2845,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param maxIncorrectAttempts (Updatable) An integer that represents the maximum number of failed logins before an account is locked
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1504,6 +2866,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param maxIncorrectAttempts (Updatable) An integer that represents the maximum number of failed logins before an account is locked
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1513,6 +2884,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param maxLength (Updatable) The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1525,6 +2906,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param maxLength (Updatable) The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1534,6 +2925,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param maxRepeatedChars (Updatable) The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1546,6 +2946,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param maxRepeatedChars (Updatable) The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1555,6 +2964,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param maxSpecialChars (Updatable) The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1567,6 +2985,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param maxSpecialChars (Updatable) The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1576,6 +3003,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param metas (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+         * * type: complex
          * 
          * @return builder
          * 
@@ -1588,6 +3025,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param metas (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+         * * type: complex
+         * 
          * @return builder
          * 
          */
@@ -1598,6 +3045,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param metas (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+         * * type: complex
+         * 
          * @return builder
          * 
          */
@@ -1607,6 +3064,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param minAlphaNumerals (Updatable) The minimum number of a combination of alphabetic and numeric characters in a password.  A value of 0 or no value indicates no minimum alphanumeric character restriction.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1619,6 +3085,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param minAlphaNumerals (Updatable) The minimum number of a combination of alphabetic and numeric characters in a password.  A value of 0 or no value indicates no minimum alphanumeric character restriction.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1628,6 +3103,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param minAlphas (Updatable) The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1640,6 +3124,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param minAlphas (Updatable) The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1649,6 +3142,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param minLength (Updatable) The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1661,6 +3163,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param minLength (Updatable) The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1670,6 +3181,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param minLowerCase (Updatable) The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1682,6 +3202,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param minLowerCase (Updatable) The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1691,6 +3220,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param minNumerals (Updatable) The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1703,6 +3241,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param minNumerals (Updatable) The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1712,6 +3259,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param minPasswordAge (Updatable) Minimum time after which the user can resubmit the reset password request
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1724,6 +3280,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param minPasswordAge (Updatable) Minimum time after which the user can resubmit the reset password request
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1733,6 +3298,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param minSpecialChars (Updatable) The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1745,6 +3319,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param minSpecialChars (Updatable) The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1754,6 +3337,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param minUniqueChars (Updatable) The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1766,6 +3358,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param minUniqueChars (Updatable) The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1775,6 +3376,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param minUpperCase (Updatable) The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1787,6 +3397,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param minUpperCase (Updatable) The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1796,6 +3415,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param name (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: true
+         * * returned: always
+         * * type: string
+         * * uniqueness: server
          * 
          * @return builder
          * 
@@ -1808,6 +3437,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param name (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: true
+         * * returned: always
+         * * type: string
+         * * uniqueness: server
+         * 
          * @return builder
          * 
          */
@@ -1817,6 +3456,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param numPasswordsInHistory (Updatable) The number of passwords that will be kept in history that may not be used as a password
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1829,6 +3477,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param numPasswordsInHistory (Updatable) The number of passwords that will be kept in history that may not be used as a password
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1838,6 +3495,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
          * 
          * @return builder
          * 
@@ -1850,6 +3517,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
+         * 
          * @return builder
          * 
          */
@@ -1859,6 +3536,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param passwordExpireWarning (Updatable) An integer indicating the number of days before which the user should be warned about password expiry.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1871,6 +3557,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param passwordExpireWarning (Updatable) An integer indicating the number of days before which the user should be warned about password expiry.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1880,6 +3575,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param passwordExpiresAfter (Updatable) The number of days after which the password expires automatically
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1892,6 +3596,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param passwordExpiresAfter (Updatable) The number of days after which the password expires automatically
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1901,6 +3614,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param passwordStrength (Updatable) Indicates whether the password policy is configured as Simple, Standard, or Custom.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1913,6 +3635,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param passwordStrength (Updatable) Indicates whether the password policy is configured as Simple, Standard, or Custom.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1922,6 +3653,18 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param priority (Updatable) Password policy priority
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * idcsMinValue: 1
+         * * uniqueness: server
          * 
          * @return builder
          * 
@@ -1934,6 +3677,18 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param priority (Updatable) Password policy priority
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * idcsMinValue: 1
+         * * uniqueness: server
+         * 
          * @return builder
          * 
          */
@@ -1943,6 +3698,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param requiredChars (Updatable) A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1954,6 +3718,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param requiredChars (Updatable) A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1986,6 +3759,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1997,6 +3780,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -2007,6 +3800,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -2016,6 +3819,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param startsWithAlphabet (Updatable) Indicates that the password must begin with an alphabetic character
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -2028,6 +3840,15 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param startsWithAlphabet (Updatable) Indicates that the password must begin with an alphabetic character
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -2037,6 +3858,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param tags (Updatable) A list of tags on this resource.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -2049,6 +3880,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param tags (Updatable) A list of tags on this resource.
          * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -2059,6 +3900,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param tags (Updatable) A list of tags on this resource.
          * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -2068,6 +3919,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param tenancyOcid (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -2080,6 +3941,16 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
         /**
          * @param tenancyOcid (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -2089,6 +3960,18 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param userNameDisallowed (Updatable) Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -2100,6 +3983,18 @@ public final class DomainsPasswordPolicyState extends com.pulumi.resources.Resou
 
         /**
          * @param userNameDisallowed (Updatable) Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

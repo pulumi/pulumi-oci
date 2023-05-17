@@ -75,6 +75,10 @@ namespace Pulumi.Oci.MeteringComputation
 
         /// <summary>
         /// The associated saved report OCID.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("savedReportId")]
         public Output<string> SavedReportId { get; private set; } = null!;
@@ -139,6 +143,10 @@ namespace Pulumi.Oci.MeteringComputation
 
         /// <summary>
         /// The associated saved report OCID.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("savedReportId", required: true)]
         public Input<string> SavedReportId { get; set; } = null!;
@@ -165,6 +173,10 @@ namespace Pulumi.Oci.MeteringComputation
 
         /// <summary>
         /// The associated saved report OCID.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("savedReportId")]
         public Input<string>? SavedReportId { get; set; }

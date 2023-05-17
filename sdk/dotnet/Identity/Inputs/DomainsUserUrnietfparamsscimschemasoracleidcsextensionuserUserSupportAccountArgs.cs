@@ -14,30 +14,90 @@ namespace Pulumi.Oci.Identity.Inputs
     {
         /// <summary>
         /// (Updatable) Ocid of the User's Support Account.
+        /// 
+        /// **Added In:** 2103141444
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }
 
         /// <summary>
         /// (Updatable) User Token URI
+        /// 
+        /// **Added In:** 18.4.2
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: reference
+        /// * uniqueness: none
         /// </summary>
         [Input("ref")]
         public Input<string>? Ref { get; set; }
 
         /// <summary>
         /// (Updatable) User Support User Id
+        /// 
+        /// **Added In:** 2103141444
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("userId")]
         public Input<string>? UserId { get; set; }
 
         /// <summary>
         /// (Updatable) User Support Account Provider
+        /// 
+        /// **Added In:** 2103141444
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("userProvider")]
         public Input<string>? UserProvider { get; set; }
 
         /// <summary>
         /// (Updatable) The value of a X509 certificate.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: binary
+        /// * uniqueness: none
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

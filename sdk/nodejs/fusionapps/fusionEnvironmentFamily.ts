@@ -105,6 +105,10 @@ export class FusionEnvironmentFamily extends pulumi.CustomResource {
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
      * (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly subscriptionIds!: pulumi.Output<string[]>;
     /**
@@ -209,6 +213,10 @@ export interface FusionEnvironmentFamilyState {
     state?: pulumi.Input<string>;
     /**
      * (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     subscriptionIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -248,6 +256,10 @@ export interface FusionEnvironmentFamilyArgs {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     subscriptionIds: pulumi.Input<pulumi.Input<string>[]>;
     timeUpdated?: pulumi.Input<string>;

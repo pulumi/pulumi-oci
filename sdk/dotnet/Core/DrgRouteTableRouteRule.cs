@@ -54,6 +54,9 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+        /// 
+        /// Potential values:
+        /// * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
         /// </summary>
         [Output("destination")]
         public Output<string> Destination { get; private set; } = null!;
@@ -84,6 +87,9 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("nextHopDrgAttachmentId")]
         public Output<string> NextHopDrgAttachmentId { get; private set; } = null!;
@@ -148,6 +154,9 @@ namespace Pulumi.Oci.Core
     {
         /// <summary>
         /// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+        /// 
+        /// Potential values:
+        /// * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
         /// </summary>
         [Input("destination", required: true)]
         public Input<string> Destination { get; set; } = null!;
@@ -166,6 +175,9 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("nextHopDrgAttachmentId", required: true)]
         public Input<string> NextHopDrgAttachmentId { get; set; } = null!;
@@ -192,6 +204,9 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+        /// 
+        /// Potential values:
+        /// * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
         /// </summary>
         [Input("destination")]
         public Input<string>? Destination { get; set; }
@@ -222,6 +237,9 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("nextHopDrgAttachmentId")]
         public Input<string>? NextHopDrgAttachmentId { get; set; }

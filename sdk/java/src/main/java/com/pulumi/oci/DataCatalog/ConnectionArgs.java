@@ -126,12 +126,18 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The key of the object type. Type key&#39;s can be found via the &#39;/types&#39; endpoint.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="typeKey", required=true)
     private Output<String> typeKey;
 
     /**
      * @return The key of the object type. Type key&#39;s can be found via the &#39;/types&#39; endpoint.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> typeKey() {
@@ -319,6 +325,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param typeKey The key of the object type. Type key&#39;s can be found via the &#39;/types&#39; endpoint.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -329,6 +338,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param typeKey The key of the object type. Type key&#39;s can be found via the &#39;/types&#39; endpoint.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

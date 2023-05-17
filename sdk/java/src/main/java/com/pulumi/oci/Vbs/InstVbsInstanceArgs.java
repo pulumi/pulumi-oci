@@ -126,12 +126,18 @@ public final class InstVbsInstanceArgs extends com.pulumi.resources.ResourceArgs
     /**
      * (Updatable) Compartment where VBS may create additional resources for the service instance
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="resourceCompartmentId")
     private @Nullable Output<String> resourceCompartmentId;
 
     /**
      * @return (Updatable) Compartment where VBS may create additional resources for the service instance
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> resourceCompartmentId() {
@@ -319,6 +325,9 @@ public final class InstVbsInstanceArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param resourceCompartmentId (Updatable) Compartment where VBS may create additional resources for the service instance
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -329,6 +338,9 @@ public final class InstVbsInstanceArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param resourceCompartmentId (Updatable) Compartment where VBS may create additional resources for the service instance
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

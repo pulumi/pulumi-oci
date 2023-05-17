@@ -90,6 +90,10 @@ export class RepositoryRef extends pulumi.CustomResource {
     public readonly refType!: pulumi.Output<string>;
     /**
      * Unique repository identifier.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly repositoryId!: pulumi.Output<string>;
 
@@ -173,6 +177,10 @@ export interface RepositoryRefState {
     refType?: pulumi.Input<string>;
     /**
      * Unique repository identifier.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     repositoryId?: pulumi.Input<string>;
 }
@@ -199,6 +207,10 @@ export interface RepositoryRefArgs {
     refType: pulumi.Input<string>;
     /**
      * Unique repository identifier.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     repositoryId: pulumi.Input<string>;
 }

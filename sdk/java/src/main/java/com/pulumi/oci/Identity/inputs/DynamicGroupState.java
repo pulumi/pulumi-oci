@@ -110,12 +110,18 @@ public final class DynamicGroupState extends com.pulumi.resources.ResourceArgs {
     /**
      * The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> name() {
@@ -313,6 +319,9 @@ public final class DynamicGroupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param name The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -323,6 +332,9 @@ public final class DynamicGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

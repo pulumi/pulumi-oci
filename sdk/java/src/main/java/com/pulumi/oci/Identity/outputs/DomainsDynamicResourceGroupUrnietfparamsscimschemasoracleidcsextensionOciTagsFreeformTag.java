@@ -12,10 +12,32 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tag key
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * required: true
+     * * mutability: readWrite
+     * * returned: default
+     * * idcsSearchable: true
+     * * uniqueness: none
+     * 
      */
     private String key;
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tag value
+     * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * required: true
+     * * mutability: readWrite
+     * * returned: default
+     * * type: string
+     * * idcsSearchable: true
+     * * uniqueness: none
      * 
      */
     private String value;
@@ -24,12 +46,34 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tag key
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * required: true
+     * * mutability: readWrite
+     * * returned: default
+     * * idcsSearchable: true
+     * * uniqueness: none
+     * 
      */
     public String key() {
         return this.key;
     }
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tag value
+     * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * required: true
+     * * mutability: readWrite
+     * * returned: default
+     * * type: string
+     * * idcsSearchable: true
+     * * uniqueness: none
      * 
      */
     public String value() {

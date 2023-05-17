@@ -101,6 +101,10 @@ export class ConsoleHistory extends pulumi.CustomResource {
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * The OCID of the instance to get the console history from.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly instanceId!: pulumi.Output<string>;
     /**
@@ -178,6 +182,10 @@ export interface ConsoleHistoryState {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The OCID of the instance to get the console history from.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     instanceId?: pulumi.Input<string>;
     /**
@@ -208,6 +216,10 @@ export interface ConsoleHistoryArgs {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The OCID of the instance to get the console history from.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     instanceId: pulumi.Input<string>;
 }

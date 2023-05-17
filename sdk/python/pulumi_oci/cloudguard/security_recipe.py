@@ -25,9 +25,15 @@ class SecurityRecipeArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment in which to create the recipe
         :param pulumi.Input[str] display_name: (Updatable) The recipe's name
         :param pulumi.Input[Sequence[pulumi.Input[str]]] security_policies: (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) The recipe's description
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+               
+               Avoid entering confidential information.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -68,6 +74,10 @@ class SecurityRecipeArgs:
     def security_policies(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
         (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "security_policies")
 
@@ -104,6 +114,8 @@ class SecurityRecipeArgs:
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -134,9 +146,15 @@ class _SecurityRecipeState:
         :param pulumi.Input[str] description: (Updatable) The recipe's description
         :param pulumi.Input[str] display_name: (Updatable) The recipe's name
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+               
+               Avoid entering confidential information.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, this can be used to provide actionable information for a recipe in the `Failed` state.
         :param pulumi.Input[str] owner: The owner of the recipe
         :param pulumi.Input[Sequence[pulumi.Input[str]]] security_policies: (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the recipe
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the recipe was created. An RFC3339 formatted datetime string.
@@ -220,6 +238,8 @@ class _SecurityRecipeState:
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -256,6 +276,10 @@ class _SecurityRecipeState:
     def security_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "security_policies")
 
@@ -363,7 +387,13 @@ class SecurityRecipe(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) The recipe's description
         :param pulumi.Input[str] display_name: (Updatable) The recipe's name
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+               
+               Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] security_policies: (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -485,9 +515,15 @@ class SecurityRecipe(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) The recipe's description
         :param pulumi.Input[str] display_name: (Updatable) The recipe's name
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+               
+               Avoid entering confidential information.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, this can be used to provide actionable information for a recipe in the `Failed` state.
         :param pulumi.Input[str] owner: The owner of the recipe
         :param pulumi.Input[Sequence[pulumi.Input[str]]] security_policies: (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the recipe
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the recipe was created. An RFC3339 formatted datetime string.
@@ -548,6 +584,8 @@ class SecurityRecipe(pulumi.CustomResource):
     def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -572,6 +610,10 @@ class SecurityRecipe(pulumi.CustomResource):
     def security_policies(self) -> pulumi.Output[Sequence[str]]:
         """
         (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "security_policies")
 

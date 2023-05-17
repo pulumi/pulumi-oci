@@ -123,6 +123,10 @@ namespace Pulumi.Oci.CloudMigrations
 
         /// <summary>
         /// Name of snapshot bucket
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("snapShotBucketName")]
         public Output<string> SnapShotBucketName { get; private set; } = null!;
@@ -261,6 +265,10 @@ namespace Pulumi.Oci.CloudMigrations
 
         /// <summary>
         /// Name of snapshot bucket
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("snapShotBucketName", required: true)]
         public Input<string> SnapShotBucketName { get; set; } = null!;
@@ -361,6 +369,10 @@ namespace Pulumi.Oci.CloudMigrations
 
         /// <summary>
         /// Name of snapshot bucket
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("snapShotBucketName")]
         public Input<string>? SnapShotBucketName { get; set; }

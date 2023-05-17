@@ -19,12 +19,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
     /**
      * (Updatable) Last update timestamp for the risk score
      * 
+     * **Added In:** 18.1.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     @Import(name="lastUpdateTimestamp", required=true)
     private Output<String> lastUpdateTimestamp;
 
     /**
      * @return (Updatable) Last update timestamp for the risk score
+     * 
+     * **Added In:** 18.1.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     public Output<String> lastUpdateTimestamp() {
@@ -34,12 +58,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
     /**
      * (Updatable) User Token URI
      * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
+     * 
      */
     @Import(name="ref")
     private @Nullable Output<String> ref;
 
     /**
      * @return (Updatable) User Token URI
+     * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ref() {
@@ -49,12 +95,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
     /**
      * (Updatable) Risk Level
      * 
+     * **Added In:** 18.1.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="riskLevel", required=true)
     private Output<String> riskLevel;
 
     /**
      * @return (Updatable) Risk Level
+     * 
+     * **Added In:** 18.1.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> riskLevel() {
@@ -64,12 +132,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
     /**
      * (Updatable) Risk Score value
      * 
+     * **Added In:** 18.1.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="score", required=true)
     private Output<Integer> score;
 
     /**
      * @return (Updatable) Risk Score value
+     * 
+     * **Added In:** 18.1.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Output<Integer> score() {
@@ -79,12 +171,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
     /**
      * (Updatable) Risk Provider Profile Source
      * 
+     * **Added In:** 18.1.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="source")
     private @Nullable Output<String> source;
 
     /**
      * @return (Updatable) Risk Provider Profile Source
+     * 
+     * **Added In:** 18.1.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> source() {
@@ -94,12 +210,32 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
     /**
      * (Updatable) A supplemental status indicating the reason why a user is disabled
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return (Updatable) A supplemental status indicating the reason why a user is disabled
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> status() {
@@ -109,12 +245,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
     /**
      * (Updatable) The value of a X509 certificate.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
      * @return (Updatable) The value of a X509 certificate.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -154,6 +314,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
         /**
          * @param lastUpdateTimestamp (Updatable) Last update timestamp for the risk score
          * 
+         * **Added In:** 18.1.6
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: always
+         * * type: dateTime
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -165,6 +337,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
         /**
          * @param lastUpdateTimestamp (Updatable) Last update timestamp for the risk score
          * 
+         * **Added In:** 18.1.6
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: always
+         * * type: dateTime
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -174,6 +358,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
 
         /**
          * @param ref (Updatable) User Token URI
+         * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -186,6 +381,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
         /**
          * @param ref (Updatable) User Token URI
          * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -195,6 +401,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
 
         /**
          * @param riskLevel (Updatable) Risk Level
+         * 
+         * **Added In:** 18.1.6
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -207,6 +424,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
         /**
          * @param riskLevel (Updatable) Risk Level
          * 
+         * **Added In:** 18.1.6
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -216,6 +444,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
 
         /**
          * @param score (Updatable) Risk Score value
+         * 
+         * **Added In:** 18.1.6
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: always
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -228,6 +468,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
         /**
          * @param score (Updatable) Risk Score value
          * 
+         * **Added In:** 18.1.6
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: always
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -237,6 +489,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
 
         /**
          * @param source (Updatable) Risk Provider Profile Source
+         * 
+         * **Added In:** 18.1.6
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -249,6 +513,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
         /**
          * @param source (Updatable) Risk Provider Profile Source
          * 
+         * **Added In:** 18.1.6
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -258,6 +534,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
 
         /**
          * @param status (Updatable) A supplemental status indicating the reason why a user is disabled
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -270,6 +556,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
         /**
          * @param status (Updatable) A supplemental status indicating the reason why a user is disabled
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -279,6 +575,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
 
         /**
          * @param value (Updatable) The value of a X509 certificate.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -290,6 +598,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
 
         /**
          * @param value (Updatable) The value of a X509 certificate.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

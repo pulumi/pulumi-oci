@@ -15,10 +15,26 @@ namespace Pulumi.Oci.Identity.Outputs
     {
         /// <summary>
         /// Audience
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * type: string
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
         /// </summary>
         public readonly string Audience;
         /// <summary>
         /// Scope
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsScimCompliant: false
+        /// * type: string
+        /// * mutability: readWrite
+        /// * multiValued: false
+        /// * required: true
+        /// * returned: default
         /// </summary>
         public readonly string Scope;
 

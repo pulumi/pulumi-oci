@@ -103,6 +103,9 @@ type VbInstance struct {
 	// The Oracle Cloud ID (OCID) of the Visual Builder management VCN
 	ManagementVcnId pulumi.StringOutput `pulumi:"managementVcnId"`
 	// (Updatable) The number of Nodes
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	NodeCount pulumi.IntOutput `pulumi:"nodeCount"`
 	// The NAT gateway IP address for the VB service VCN
 	ServiceNatGatewayIp pulumi.StringOutput `pulumi:"serviceNatGatewayIp"`
@@ -194,6 +197,9 @@ type vbInstanceState struct {
 	// The Oracle Cloud ID (OCID) of the Visual Builder management VCN
 	ManagementVcnId *string `pulumi:"managementVcnId"`
 	// (Updatable) The number of Nodes
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	NodeCount *int `pulumi:"nodeCount"`
 	// The NAT gateway IP address for the VB service VCN
 	ServiceNatGatewayIp *string `pulumi:"serviceNatGatewayIp"`
@@ -241,6 +247,9 @@ type VbInstanceState struct {
 	// The Oracle Cloud ID (OCID) of the Visual Builder management VCN
 	ManagementVcnId pulumi.StringPtrInput
 	// (Updatable) The number of Nodes
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	NodeCount pulumi.IntPtrInput
 	// The NAT gateway IP address for the VB service VCN
 	ServiceNatGatewayIp pulumi.StringPtrInput
@@ -282,6 +291,9 @@ type vbInstanceArgs struct {
 	// (Updatable) Visual Builder is enabled or not.
 	IsVisualBuilderEnabled *bool `pulumi:"isVisualBuilderEnabled"`
 	// (Updatable) The number of Nodes
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	NodeCount int `pulumi:"nodeCount"`
 }
 
@@ -306,6 +318,9 @@ type VbInstanceArgs struct {
 	// (Updatable) Visual Builder is enabled or not.
 	IsVisualBuilderEnabled pulumi.BoolPtrInput
 	// (Updatable) The number of Nodes
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	NodeCount pulumi.IntInput
 }
 
@@ -467,6 +482,9 @@ func (o VbInstanceOutput) ManagementVcnId() pulumi.StringOutput {
 }
 
 // (Updatable) The number of Nodes
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o VbInstanceOutput) NodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *VbInstance) pulumi.IntOutput { return v.NodeCount }).(pulumi.IntOutput)
 }

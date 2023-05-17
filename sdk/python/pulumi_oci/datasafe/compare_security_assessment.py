@@ -20,6 +20,10 @@ class CompareSecurityAssessmentArgs:
         The set of arguments for constructing a CompareSecurityAssessment resource.
         :param pulumi.Input[str] comparison_security_assessment_id: The OCID of the security assessment. In this case a security assessment can be another security assessment, a latest assessment or a baseline.
         :param pulumi.Input[str] security_assessment_id: The OCID of the security assessment.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "comparison_security_assessment_id", comparison_security_assessment_id)
         pulumi.set(__self__, "security_assessment_id", security_assessment_id)
@@ -41,6 +45,10 @@ class CompareSecurityAssessmentArgs:
     def security_assessment_id(self) -> pulumi.Input[str]:
         """
         The OCID of the security assessment.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "security_assessment_id")
 
@@ -58,6 +66,10 @@ class _CompareSecurityAssessmentState:
         Input properties used for looking up and filtering CompareSecurityAssessment resources.
         :param pulumi.Input[str] comparison_security_assessment_id: The OCID of the security assessment. In this case a security assessment can be another security assessment, a latest assessment or a baseline.
         :param pulumi.Input[str] security_assessment_id: The OCID of the security assessment.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if comparison_security_assessment_id is not None:
             pulumi.set(__self__, "comparison_security_assessment_id", comparison_security_assessment_id)
@@ -81,6 +93,10 @@ class _CompareSecurityAssessmentState:
     def security_assessment_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the security assessment.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "security_assessment_id")
 
@@ -126,6 +142,10 @@ class CompareSecurityAssessment(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] comparison_security_assessment_id: The OCID of the security assessment. In this case a security assessment can be another security assessment, a latest assessment or a baseline.
         :param pulumi.Input[str] security_assessment_id: The OCID of the security assessment.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -211,6 +231,10 @@ class CompareSecurityAssessment(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] comparison_security_assessment_id: The OCID of the security assessment. In this case a security assessment can be another security assessment, a latest assessment or a baseline.
         :param pulumi.Input[str] security_assessment_id: The OCID of the security assessment.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -233,6 +257,10 @@ class CompareSecurityAssessment(pulumi.CustomResource):
     def security_assessment_id(self) -> pulumi.Output[str]:
         """
         The OCID of the security assessment.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "security_assessment_id")
 

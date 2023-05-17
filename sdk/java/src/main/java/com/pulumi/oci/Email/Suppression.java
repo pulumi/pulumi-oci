@@ -80,12 +80,18 @@ public class Suppression extends com.pulumi.resources.CustomResource {
     /**
      * The recipient email address of the suppression.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="emailAddress", type=String.class, parameters={})
     private Output<String> emailAddress;
 
     /**
      * @return The recipient email address of the suppression.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> emailAddress() {

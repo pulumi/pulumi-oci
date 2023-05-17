@@ -126,6 +126,9 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
     public /*out*/ readonly additionalComputeSystemModel!: pulumi.Output<string>;
     /**
      * The requested number of additional storage servers for the Exadata infrastructure.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly additionalStorageCount!: pulumi.Output<number>;
     /**
@@ -455,6 +458,9 @@ export interface ExadataInfrastructureState {
     additionalComputeSystemModel?: pulumi.Input<string>;
     /**
      * The requested number of additional storage servers for the Exadata infrastructure.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     additionalStorageCount?: pulumi.Input<number>;
     /**
@@ -626,6 +632,9 @@ export interface ExadataInfrastructureArgs {
     activationFile?: pulumi.Input<string>;
     /**
      * The requested number of additional storage servers for the Exadata infrastructure.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     additionalStorageCount?: pulumi.Input<number>;
     /**

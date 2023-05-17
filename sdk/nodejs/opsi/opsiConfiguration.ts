@@ -130,7 +130,11 @@ export class OpsiConfiguration extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
-     * (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     * (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -255,7 +259,11 @@ export interface OpsiConfigurationState {
      */
     state?: pulumi.Input<string>;
     /**
-     * (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     * (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -317,7 +325,11 @@ export interface OpsiConfigurationArgs {
      */
     opsiConfigType: pulumi.Input<string>;
     /**
-     * (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     * (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
 }

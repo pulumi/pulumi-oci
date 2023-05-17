@@ -18,12 +18,34 @@ public final class DomainsUserNameArgs extends com.pulumi.resources.ResourceArgs
     /**
      * (Updatable) Last name
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Last Name
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="familyName", required=true)
     private Output<String> familyName;
 
     /**
      * @return (Updatable) Last name
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Last Name
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> familyName() {
@@ -33,12 +55,32 @@ public final class DomainsUserNameArgs extends com.pulumi.resources.ResourceArgs
     /**
      * (Updatable) Full name
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="formatted")
     private @Nullable Output<String> formatted;
 
     /**
      * @return (Updatable) Full name
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> formatted() {
@@ -48,12 +90,34 @@ public final class DomainsUserNameArgs extends com.pulumi.resources.ResourceArgs
     /**
      * (Updatable) First name
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: First Name
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="givenName")
     private @Nullable Output<String> givenName;
 
     /**
      * @return (Updatable) First name
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: First Name
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> givenName() {
@@ -63,12 +127,32 @@ public final class DomainsUserNameArgs extends com.pulumi.resources.ResourceArgs
     /**
      * (Updatable) Prefix
      * 
+     * **SCIM++ Properties:**
+     * * idcsCsvAttributeName: Honorific Prefix
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="honorificPrefix")
     private @Nullable Output<String> honorificPrefix;
 
     /**
      * @return (Updatable) Prefix
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCsvAttributeName: Honorific Prefix
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> honorificPrefix() {
@@ -78,12 +162,32 @@ public final class DomainsUserNameArgs extends com.pulumi.resources.ResourceArgs
     /**
      * (Updatable) Suffix
      * 
+     * **SCIM++ Properties:**
+     * * idcsCsvAttributeName: Honorific Suffix
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="honorificSuffix")
     private @Nullable Output<String> honorificSuffix;
 
     /**
      * @return (Updatable) Suffix
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCsvAttributeName: Honorific Suffix
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> honorificSuffix() {
@@ -93,12 +197,34 @@ public final class DomainsUserNameArgs extends com.pulumi.resources.ResourceArgs
     /**
      * (Updatable) Middle name
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Middle Name
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="middleName")
     private @Nullable Output<String> middleName;
 
     /**
      * @return (Updatable) Middle name
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Middle Name
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> middleName() {
@@ -137,6 +263,17 @@ public final class DomainsUserNameArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param familyName (Updatable) Last name
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Last Name
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -148,6 +285,17 @@ public final class DomainsUserNameArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param familyName (Updatable) Last name
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Last Name
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -157,6 +305,16 @@ public final class DomainsUserNameArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param formatted (Updatable) Full name
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -169,6 +327,16 @@ public final class DomainsUserNameArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param formatted (Updatable) Full name
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -178,6 +346,17 @@ public final class DomainsUserNameArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param givenName (Updatable) First name
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: First Name
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -190,6 +369,17 @@ public final class DomainsUserNameArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param givenName (Updatable) First name
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: First Name
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -199,6 +389,16 @@ public final class DomainsUserNameArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param honorificPrefix (Updatable) Prefix
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCsvAttributeName: Honorific Prefix
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -211,6 +411,16 @@ public final class DomainsUserNameArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param honorificPrefix (Updatable) Prefix
          * 
+         * **SCIM++ Properties:**
+         * * idcsCsvAttributeName: Honorific Prefix
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -220,6 +430,16 @@ public final class DomainsUserNameArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param honorificSuffix (Updatable) Suffix
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCsvAttributeName: Honorific Suffix
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -232,6 +452,16 @@ public final class DomainsUserNameArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param honorificSuffix (Updatable) Suffix
          * 
+         * **SCIM++ Properties:**
+         * * idcsCsvAttributeName: Honorific Suffix
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -241,6 +471,17 @@ public final class DomainsUserNameArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param middleName (Updatable) Middle name
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Middle Name
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -252,6 +493,17 @@ public final class DomainsUserNameArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param middleName (Updatable) Middle name
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Middle Name
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 

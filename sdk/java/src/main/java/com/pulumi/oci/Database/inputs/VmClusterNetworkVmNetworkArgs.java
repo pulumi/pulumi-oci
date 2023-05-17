@@ -95,12 +95,18 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
     /**
      * (Updatable) The network VLAN ID.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="vlanId")
     private @Nullable Output<String> vlanId;
 
     /**
      * @return (Updatable) The network VLAN ID.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> vlanId() {
@@ -254,6 +260,9 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
         /**
          * @param vlanId (Updatable) The network VLAN ID.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -264,6 +273,9 @@ public final class VmClusterNetworkVmNetworkArgs extends com.pulumi.resources.Re
 
         /**
          * @param vlanId (Updatable) The network VLAN ID.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

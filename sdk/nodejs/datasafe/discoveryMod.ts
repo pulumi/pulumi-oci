@@ -120,7 +120,11 @@ export class DiscoveryMod extends pulumi.CustomResource {
      */
     public readonly sensitiveDataModelId!: pulumi.Output<string>;
     /**
-     * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
+     * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly sensitiveTypeIdsForDiscoveries!: pulumi.Output<string[]>;
     /**
@@ -290,7 +294,11 @@ export interface DiscoveryModState {
      */
     sensitiveDataModelId?: pulumi.Input<string>;
     /**
-     * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
+     * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     sensitiveTypeIdsForDiscoveries?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -388,7 +396,11 @@ export interface DiscoveryModArgs {
      */
     sensitiveDataModelId: pulumi.Input<string>;
     /**
-     * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
+     * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     sensitiveTypeIdsForDiscoveries?: pulumi.Input<pulumi.Input<string>[]>;
 }

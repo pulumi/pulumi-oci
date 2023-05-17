@@ -69,6 +69,8 @@ type GetAlertAnalyticArgs struct {
 	// Default time zone is UTC if no time zone provided. The date-time considerations of the resource will be in accordance with the specified time zone.
 	QueryTimeZone *string `pulumi:"queryTimeZone"`
 	// The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
+	//
+	// **Example:** query=(timeCreated ge '2021-06-04T01-00-26') and (targetNames eq 'target_1') Supported fields: severity status alertType targetIds targetNames operationTime lifecycleState displayName timeCreated timeUpdated
 	ScimQuery *string `pulumi:"scimQuery"`
 	// Specifies a subset of summarized fields to be returned in the response.
 	SummaryFields []string `pulumi:"summaryFields"`
@@ -124,6 +126,8 @@ type GetAlertAnalyticOutputArgs struct {
 	// Default time zone is UTC if no time zone provided. The date-time considerations of the resource will be in accordance with the specified time zone.
 	QueryTimeZone pulumi.StringPtrInput `pulumi:"queryTimeZone"`
 	// The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
+	//
+	// **Example:** query=(timeCreated ge '2021-06-04T01-00-26') and (targetNames eq 'target_1') Supported fields: severity status alertType targetIds targetNames operationTime lifecycleState displayName timeCreated timeUpdated
 	ScimQuery pulumi.StringPtrInput `pulumi:"scimQuery"`
 	// Specifies a subset of summarized fields to be returned in the response.
 	SummaryFields pulumi.StringArrayInput `pulumi:"summaryFields"`

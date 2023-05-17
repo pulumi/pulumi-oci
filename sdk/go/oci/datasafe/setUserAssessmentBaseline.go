@@ -57,6 +57,9 @@ type SetUserAssessmentBaseline struct {
 	// The list of user assessment OCIDs that need to be updated while setting the baseline.
 	AssessmentIds pulumi.StringArrayOutput `pulumi:"assessmentIds"`
 	// The OCID of the user assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserAssessmentId pulumi.StringOutput `pulumi:"userAssessmentId"`
 }
 
@@ -95,6 +98,9 @@ type setUserAssessmentBaselineState struct {
 	// The list of user assessment OCIDs that need to be updated while setting the baseline.
 	AssessmentIds []string `pulumi:"assessmentIds"`
 	// The OCID of the user assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserAssessmentId *string `pulumi:"userAssessmentId"`
 }
 
@@ -102,6 +108,9 @@ type SetUserAssessmentBaselineState struct {
 	// The list of user assessment OCIDs that need to be updated while setting the baseline.
 	AssessmentIds pulumi.StringArrayInput
 	// The OCID of the user assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserAssessmentId pulumi.StringPtrInput
 }
 
@@ -113,6 +122,9 @@ type setUserAssessmentBaselineArgs struct {
 	// The list of user assessment OCIDs that need to be updated while setting the baseline.
 	AssessmentIds []string `pulumi:"assessmentIds"`
 	// The OCID of the user assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserAssessmentId string `pulumi:"userAssessmentId"`
 }
 
@@ -121,6 +133,9 @@ type SetUserAssessmentBaselineArgs struct {
 	// The list of user assessment OCIDs that need to be updated while setting the baseline.
 	AssessmentIds pulumi.StringArrayInput
 	// The OCID of the user assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserAssessmentId pulumi.StringInput
 }
 
@@ -217,6 +232,9 @@ func (o SetUserAssessmentBaselineOutput) AssessmentIds() pulumi.StringArrayOutpu
 }
 
 // The OCID of the user assessment.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o SetUserAssessmentBaselineOutput) UserAssessmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SetUserAssessmentBaseline) pulumi.StringOutput { return v.UserAssessmentId }).(pulumi.StringOutput)
 }

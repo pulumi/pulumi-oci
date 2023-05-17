@@ -18,12 +18,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * (Updatable) Authentication method.
      * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="authenticationMethod")
     private @Nullable Output<String> authenticationMethod;
 
     /**
      * @return (Updatable) Authentication method.
+     * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> authenticationMethod() {
@@ -33,12 +55,30 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * (Updatable) A human readable name, primarily used for display purposes.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="display")
     private @Nullable Output<String> display;
 
     /**
      * @return (Updatable) A human readable name, primarily used for display purposes.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> display() {
@@ -48,12 +88,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * (Updatable) Device authentication factor status.
      * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="factorStatus")
     private @Nullable Output<String> factorStatus;
 
     /**
      * @return (Updatable) Device authentication factor status.
+     * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> factorStatus() {
@@ -63,12 +125,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * (Updatable) Authentication Factor Type
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="factorType")
     private @Nullable Output<String> factorType;
 
     /**
      * @return (Updatable) Authentication Factor Type
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> factorType() {
@@ -78,12 +164,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * (Updatable) Last Sync time for device.
      * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     @Import(name="lastSyncTime")
     private @Nullable Output<String> lastSyncTime;
 
     /**
      * @return (Updatable) Last Sync time for device.
+     * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> lastSyncTime() {
@@ -93,12 +201,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * (Updatable) User Token URI
      * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
+     * 
      */
     @Import(name="ref")
     private @Nullable Output<String> ref;
 
     /**
      * @return (Updatable) User Token URI
+     * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ref() {
@@ -108,12 +238,32 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * (Updatable) A supplemental status indicating the reason why a user is disabled
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return (Updatable) A supplemental status indicating the reason why a user is disabled
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> status() {
@@ -123,12 +273,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * (Updatable) Third party factor vendor name.
      * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="thirdPartyVendorName")
     private @Nullable Output<String> thirdPartyVendorName;
 
     /**
      * @return (Updatable) Third party factor vendor name.
+     * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> thirdPartyVendorName() {
@@ -138,12 +310,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * (Updatable) The value of a X509 certificate.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
      * @return (Updatable) The value of a X509 certificate.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -185,6 +381,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         /**
          * @param authenticationMethod (Updatable) Authentication method.
          * 
+         * **Added In:** 2009232244
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -196,6 +403,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         /**
          * @param authenticationMethod (Updatable) Authentication method.
          * 
+         * **Added In:** 2009232244
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -205,6 +423,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
 
         /**
          * @param display (Updatable) A human readable name, primarily used for display purposes.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -217,6 +444,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         /**
          * @param display (Updatable) A human readable name, primarily used for display purposes.
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -226,6 +462,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
 
         /**
          * @param factorStatus (Updatable) Device authentication factor status.
+         * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -238,6 +485,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         /**
          * @param factorStatus (Updatable) Device authentication factor status.
          * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -247,6 +505,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
 
         /**
          * @param factorType (Updatable) Authentication Factor Type
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -259,6 +529,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         /**
          * @param factorType (Updatable) Authentication Factor Type
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -268,6 +550,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
 
         /**
          * @param lastSyncTime (Updatable) Last Sync time for device.
+         * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -280,6 +573,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         /**
          * @param lastSyncTime (Updatable) Last Sync time for device.
          * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -289,6 +593,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
 
         /**
          * @param ref (Updatable) User Token URI
+         * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -301,6 +616,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         /**
          * @param ref (Updatable) User Token URI
          * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -310,6 +636,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
 
         /**
          * @param status (Updatable) A supplemental status indicating the reason why a user is disabled
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -322,6 +658,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         /**
          * @param status (Updatable) A supplemental status indicating the reason why a user is disabled
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -331,6 +677,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
 
         /**
          * @param thirdPartyVendorName (Updatable) Third party factor vendor name.
+         * 
+         * **Added In:** 2009232244
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -343,6 +700,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         /**
          * @param thirdPartyVendorName (Updatable) Third party factor vendor name.
          * 
+         * **Added In:** 2009232244
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -352,6 +720,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
 
         /**
          * @param value (Updatable) The value of a X509 certificate.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -363,6 +743,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
 
         /**
          * @param value (Updatable) The value of a X509 certificate.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

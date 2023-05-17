@@ -52,6 +52,9 @@ type PurgeCache struct {
 	// A resource to purge, specified by either a hostless absolute path starting with a single slash (Example: `/path/to/resource`) or by a relative path in which the first component will be interpreted as a domain protected by the WAAS policy (Example: `example.com/path/to/resource`).
 	Resources pulumi.StringArrayOutput `pulumi:"resources"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WaasPolicyId pulumi.StringOutput `pulumi:"waasPolicyId"`
 }
 
@@ -90,6 +93,9 @@ type purgeCacheState struct {
 	// A resource to purge, specified by either a hostless absolute path starting with a single slash (Example: `/path/to/resource`) or by a relative path in which the first component will be interpreted as a domain protected by the WAAS policy (Example: `example.com/path/to/resource`).
 	Resources []string `pulumi:"resources"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WaasPolicyId *string `pulumi:"waasPolicyId"`
 }
 
@@ -97,6 +103,9 @@ type PurgeCacheState struct {
 	// A resource to purge, specified by either a hostless absolute path starting with a single slash (Example: `/path/to/resource`) or by a relative path in which the first component will be interpreted as a domain protected by the WAAS policy (Example: `example.com/path/to/resource`).
 	Resources pulumi.StringArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WaasPolicyId pulumi.StringPtrInput
 }
 
@@ -108,6 +117,9 @@ type purgeCacheArgs struct {
 	// A resource to purge, specified by either a hostless absolute path starting with a single slash (Example: `/path/to/resource`) or by a relative path in which the first component will be interpreted as a domain protected by the WAAS policy (Example: `example.com/path/to/resource`).
 	Resources []string `pulumi:"resources"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WaasPolicyId string `pulumi:"waasPolicyId"`
 }
 
@@ -116,6 +128,9 @@ type PurgeCacheArgs struct {
 	// A resource to purge, specified by either a hostless absolute path starting with a single slash (Example: `/path/to/resource`) or by a relative path in which the first component will be interpreted as a domain protected by the WAAS policy (Example: `example.com/path/to/resource`).
 	Resources pulumi.StringArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WaasPolicyId pulumi.StringInput
 }
 
@@ -212,6 +227,9 @@ func (o PurgeCacheOutput) Resources() pulumi.StringArrayOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PurgeCacheOutput) WaasPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PurgeCache) pulumi.StringOutput { return v.WaasPolicyId }).(pulumi.StringOutput)
 }

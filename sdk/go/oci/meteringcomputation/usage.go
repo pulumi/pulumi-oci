@@ -90,6 +90,9 @@ type Usage struct {
 	// The usage end time.
 	TimeUsageEnded pulumi.StringOutput `pulumi:"timeUsageEnded"`
 	// The usage start time.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeUsageStarted pulumi.StringOutput `pulumi:"timeUsageStarted"`
 }
 
@@ -157,6 +160,9 @@ type usageState struct {
 	// The usage end time.
 	TimeUsageEnded *string `pulumi:"timeUsageEnded"`
 	// The usage start time.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeUsageStarted *string `pulumi:"timeUsageStarted"`
 }
 
@@ -184,6 +190,9 @@ type UsageState struct {
 	// The usage end time.
 	TimeUsageEnded pulumi.StringPtrInput
 	// The usage start time.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeUsageStarted pulumi.StringPtrInput
 }
 
@@ -213,6 +222,9 @@ type usageArgs struct {
 	// The usage end time.
 	TimeUsageEnded string `pulumi:"timeUsageEnded"`
 	// The usage start time.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeUsageStarted string `pulumi:"timeUsageStarted"`
 }
 
@@ -239,6 +251,9 @@ type UsageArgs struct {
 	// The usage end time.
 	TimeUsageEnded pulumi.StringInput
 	// The usage start time.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeUsageStarted pulumi.StringInput
 }
 
@@ -385,6 +400,9 @@ func (o UsageOutput) TimeUsageEnded() pulumi.StringOutput {
 }
 
 // The usage start time.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o UsageOutput) TimeUsageStarted() pulumi.StringOutput {
 	return o.ApplyT(func(v *Usage) pulumi.StringOutput { return v.TimeUsageStarted }).(pulumi.StringOutput)
 }

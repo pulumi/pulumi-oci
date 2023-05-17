@@ -82,10 +82,17 @@ type AppAccelerationPolicy struct {
 	// (Updatable) An object that specifies an HTTP response caching policy.
 	ResponseCachingPolicy AppAccelerationPolicyResponseCachingPolicyOutput `pulumi:"responseCachingPolicy"`
 	// (Updatable) An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
+	//
+	// This compression policy can be used to enable support for HTTP response compression algorithms like gzip and configure the conditions of when a compression algorithm will be used.
+	//
+	// HTTP responses will only be compressed if the client indicates support for one of the enabled compression algorithms via the "Accept-Encoding" request header.
 	ResponseCompressionPolicy AppAccelerationPolicyResponseCompressionPolicyOutput `pulumi:"responseCompressionPolicy"`
 	// The current state of the WebAppAccelerationPolicy.
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the WebAppAccelerationPolicy was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -138,10 +145,17 @@ type appAccelerationPolicyState struct {
 	// (Updatable) An object that specifies an HTTP response caching policy.
 	ResponseCachingPolicy *AppAccelerationPolicyResponseCachingPolicy `pulumi:"responseCachingPolicy"`
 	// (Updatable) An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
+	//
+	// This compression policy can be used to enable support for HTTP response compression algorithms like gzip and configure the conditions of when a compression algorithm will be used.
+	//
+	// HTTP responses will only be compressed if the client indicates support for one of the enabled compression algorithms via the "Accept-Encoding" request header.
 	ResponseCompressionPolicy *AppAccelerationPolicyResponseCompressionPolicy `pulumi:"responseCompressionPolicy"`
 	// The current state of the WebAppAccelerationPolicy.
 	State *string `pulumi:"state"`
 	// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the WebAppAccelerationPolicy was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -163,10 +177,17 @@ type AppAccelerationPolicyState struct {
 	// (Updatable) An object that specifies an HTTP response caching policy.
 	ResponseCachingPolicy AppAccelerationPolicyResponseCachingPolicyPtrInput
 	// (Updatable) An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
+	//
+	// This compression policy can be used to enable support for HTTP response compression algorithms like gzip and configure the conditions of when a compression algorithm will be used.
+	//
+	// HTTP responses will only be compressed if the client indicates support for one of the enabled compression algorithms via the "Accept-Encoding" request header.
 	ResponseCompressionPolicy AppAccelerationPolicyResponseCompressionPolicyPtrInput
 	// The current state of the WebAppAccelerationPolicy.
 	State pulumi.StringPtrInput
 	// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags pulumi.MapInput
 	// The time the WebAppAccelerationPolicy was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
@@ -190,8 +211,15 @@ type appAccelerationPolicyArgs struct {
 	// (Updatable) An object that specifies an HTTP response caching policy.
 	ResponseCachingPolicy *AppAccelerationPolicyResponseCachingPolicy `pulumi:"responseCachingPolicy"`
 	// (Updatable) An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
+	//
+	// This compression policy can be used to enable support for HTTP response compression algorithms like gzip and configure the conditions of when a compression algorithm will be used.
+	//
+	// HTTP responses will only be compressed if the client indicates support for one of the enabled compression algorithms via the "Accept-Encoding" request header.
 	ResponseCompressionPolicy *AppAccelerationPolicyResponseCompressionPolicy `pulumi:"responseCompressionPolicy"`
 	// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 }
 
@@ -208,8 +236,15 @@ type AppAccelerationPolicyArgs struct {
 	// (Updatable) An object that specifies an HTTP response caching policy.
 	ResponseCachingPolicy AppAccelerationPolicyResponseCachingPolicyPtrInput
 	// (Updatable) An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
+	//
+	// This compression policy can be used to enable support for HTTP response compression algorithms like gzip and configure the conditions of when a compression algorithm will be used.
+	//
+	// HTTP responses will only be compressed if the client indicates support for one of the enabled compression algorithms via the "Accept-Encoding" request header.
 	ResponseCompressionPolicy AppAccelerationPolicyResponseCompressionPolicyPtrInput
 	// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags pulumi.MapInput
 }
 
@@ -333,6 +368,10 @@ func (o AppAccelerationPolicyOutput) ResponseCachingPolicy() AppAccelerationPoli
 }
 
 // (Updatable) An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
+//
+// This compression policy can be used to enable support for HTTP response compression algorithms like gzip and configure the conditions of when a compression algorithm will be used.
+//
+// HTTP responses will only be compressed if the client indicates support for one of the enabled compression algorithms via the "Accept-Encoding" request header.
 func (o AppAccelerationPolicyOutput) ResponseCompressionPolicy() AppAccelerationPolicyResponseCompressionPolicyOutput {
 	return o.ApplyT(func(v *AppAccelerationPolicy) AppAccelerationPolicyResponseCompressionPolicyOutput {
 		return v.ResponseCompressionPolicy
@@ -345,6 +384,9 @@ func (o AppAccelerationPolicyOutput) State() pulumi.StringOutput {
 }
 
 // (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AppAccelerationPolicyOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *AppAccelerationPolicy) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }

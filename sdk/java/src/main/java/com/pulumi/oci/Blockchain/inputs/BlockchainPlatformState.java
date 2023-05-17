@@ -237,12 +237,18 @@ public final class BlockchainPlatformState extends com.pulumi.resources.Resource
     /**
      * (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="loadBalancerShape")
     private @Nullable Output<String> loadBalancerShape;
 
     /**
      * @return (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> loadBalancerShape() {
@@ -796,6 +802,9 @@ public final class BlockchainPlatformState extends com.pulumi.resources.Resource
         /**
          * @param loadBalancerShape (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -806,6 +815,9 @@ public final class BlockchainPlatformState extends com.pulumi.resources.Resource
 
         /**
          * @param loadBalancerShape (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

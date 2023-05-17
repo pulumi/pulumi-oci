@@ -147,6 +147,10 @@ export class ExadataInsight extends pulumi.CustomResource {
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
      * (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly status!: pulumi.Output<string>;
     /**
@@ -323,6 +327,10 @@ export interface ExadataInsightState {
     state?: pulumi.Input<string>;
     /**
      * (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     status?: pulumi.Input<string>;
     /**
@@ -379,6 +387,10 @@ export interface ExadataInsightArgs {
     memberVmClusterDetails?: pulumi.Input<pulumi.Input<inputs.Opsi.ExadataInsightMemberVmClusterDetail>[]>;
     /**
      * (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     status?: pulumi.Input<string>;
 }

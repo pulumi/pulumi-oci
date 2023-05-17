@@ -142,12 +142,32 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="compartmentOcid", type=String.class, parameters={})
     private Output<String> compartmentOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> compartmentOcid() {
@@ -156,12 +176,32 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Export(name="deleteInProgress", type=Boolean.class, parameters={})
     private Output<Boolean> deleteInProgress;
 
     /**
      * @return (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Output<Boolean> deleteInProgress() {
@@ -170,12 +210,36 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
     /**
      * (Updatable) text that explains the purpose of this Dynamic Resource Group
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Description
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Description]]
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="description", type=String.class, parameters={})
     private Output<String> description;
 
     /**
      * @return (Updatable) text that explains the purpose of this Dynamic Resource Group
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Description
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Description]]
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> description() {
@@ -184,12 +248,34 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
     /**
      * (Updatable) User-friendly, mutable identifier
      * 
+     * **SCIM++ Properties:**
+     * * idcsCsvAttributeName: Display Name
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Name, deprecatedColumnHeaderName:Display Name]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: string
+     * * uniqueness: global
+     * 
      */
     @Export(name="displayName", type=String.class, parameters={})
     private Output<String> displayName;
 
     /**
      * @return (Updatable) User-friendly, mutable identifier
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCsvAttributeName: Display Name
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Name, deprecatedColumnHeaderName:Display Name]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: string
+     * * uniqueness: global
      * 
      */
     public Output<String> displayName() {
@@ -198,12 +284,32 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="domainOcid", type=String.class, parameters={})
     private Output<String> domainOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> domainOcid() {
@@ -212,12 +318,34 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
     /**
      * (Updatable) A list of appRoles that are currently granted to this Dynamic Resource Group.  The Identity service will assert these AppRoles for any resource that satisfies the matching-rule of this DynamicResourceGroup.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Export(name="dynamicGroupAppRoles", type=List.class, parameters={DomainsDynamicResourceGroupDynamicGroupAppRole.class})
     private Output<List<DomainsDynamicResourceGroupDynamicGroupAppRole>> dynamicGroupAppRoles;
 
     /**
      * @return (Updatable) A list of appRoles that are currently granted to this Dynamic Resource Group.  The Identity service will assert these AppRoles for any resource that satisfies the matching-rule of this DynamicResourceGroup.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Output<List<DomainsDynamicResourceGroupDynamicGroupAppRole>> dynamicGroupAppRoles() {
@@ -226,12 +354,32 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
     /**
      * (Updatable) Grants assigned to group
      * 
+     * **SCIM++ Properties:**
+     * * idcsAddedSinceVersion: 3
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Export(name="grants", type=List.class, parameters={DomainsDynamicResourceGroupGrant.class})
     private Output<List<DomainsDynamicResourceGroupGrant>> grants;
 
     /**
      * @return (Updatable) Grants assigned to group
+     * 
+     * **SCIM++ Properties:**
+     * * idcsAddedSinceVersion: 3
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Output<List<DomainsDynamicResourceGroupGrant>> grants() {
@@ -240,12 +388,28 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
     /**
      * (Updatable) The User or App who created the Resource
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: complex
+     * 
      */
     @Export(name="idcsCreatedBies", type=List.class, parameters={DomainsDynamicResourceGroupIdcsCreatedBy.class})
     private Output<List<DomainsDynamicResourceGroupIdcsCreatedBy>> idcsCreatedBies;
 
     /**
      * @return (Updatable) The User or App who created the Resource
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: complex
      * 
      */
     public Output<List<DomainsDynamicResourceGroupIdcsCreatedBy>> idcsCreatedBies() {
@@ -268,12 +432,28 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
     /**
      * (Updatable) The User or App who modified the Resource
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * 
      */
     @Export(name="idcsLastModifiedBies", type=List.class, parameters={DomainsDynamicResourceGroupIdcsLastModifiedBy.class})
     private Output<List<DomainsDynamicResourceGroupIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
      * @return (Updatable) The User or App who modified the Resource
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
      * 
      */
     public Output<List<DomainsDynamicResourceGroupIdcsLastModifiedBy>> idcsLastModifiedBies() {
@@ -282,12 +462,32 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
     /**
      * (Updatable) The release number when the resource was upgraded.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="idcsLastUpgradedInRelease", type=String.class, parameters={})
     private Output<String> idcsLastUpgradedInRelease;
 
     /**
      * @return (Updatable) The release number when the resource was upgraded.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> idcsLastUpgradedInRelease() {
@@ -296,12 +496,30 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="idcsPreventedOperations", type=List.class, parameters={String.class})
     private Output<List<String>> idcsPreventedOperations;
 
     /**
      * @return (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<List<String>> idcsPreventedOperations() {
@@ -310,12 +528,30 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
     /**
      * (Updatable) Store as a string the matching-rule for this Dynamic Resource Group. This may match any number of Apps in this Domain, as well as matching any number of Oracle Cloud Infrastructure resources that are not in any Domain but that are in the Oracle Cloud Infrastructure Compartment that contains this Domain.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="matchingRule", type=String.class, parameters={})
     private Output<String> matchingRule;
 
     /**
      * @return (Updatable) Store as a string the matching-rule for this Dynamic Resource Group. This may match any number of Apps in this Domain, as well as matching any number of Oracle Cloud Infrastructure resources that are not in any Domain but that are in the Oracle Cloud Infrastructure Compartment that contains this Domain.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> matchingRule() {
@@ -324,12 +560,32 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+     * * type: complex
+     * 
      */
     @Export(name="metas", type=List.class, parameters={DomainsDynamicResourceGroupMeta.class})
     private Output<List<DomainsDynamicResourceGroupMeta>> metas;
 
     /**
      * @return (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+     * * type: complex
      * 
      */
     public Output<List<DomainsDynamicResourceGroupMeta>> metas() {
@@ -338,12 +594,32 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: global
+     * 
      */
     @Export(name="ocid", type=String.class, parameters={})
     private Output<String> ocid;
 
     /**
      * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: global
      * 
      */
     public Output<String> ocid() {
@@ -366,12 +642,32 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="schemas", type=List.class, parameters={String.class})
     private Output<List<String>> schemas;
 
     /**
      * @return (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<List<String>> schemas() {
@@ -380,12 +676,32 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
     /**
      * (Updatable) A list of tags on this resource.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Export(name="tags", type=List.class, parameters={DomainsDynamicResourceGroupTag.class})
     private Output<List<DomainsDynamicResourceGroupTag>> tags;
 
     /**
      * @return (Updatable) A list of tags on this resource.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Output<List<DomainsDynamicResourceGroupTag>> tags() {
@@ -394,12 +710,32 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="tenancyOcid", type=String.class, parameters={})
     private Output<String> tenancyOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> tenancyOcid() {

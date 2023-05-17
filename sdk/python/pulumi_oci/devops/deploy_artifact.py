@@ -30,6 +30,10 @@ class DeployArtifactArgs:
         :param pulumi.Input['DeployArtifactDeployArtifactSourceArgs'] deploy_artifact_source: (Updatable) Specifies source of an artifact.
         :param pulumi.Input[str] deploy_artifact_type: (Updatable) Type of the deployment artifact.
         :param pulumi.Input[str] project_id: The OCID of a project.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Optional description about the deployment artifact.
         :param pulumi.Input[str] display_name: (Updatable) Deployment artifact display name. Avoid entering confidential information.
@@ -89,6 +93,10 @@ class DeployArtifactArgs:
     def project_id(self) -> pulumi.Input[str]:
         """
         The OCID of a project.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "project_id")
 
@@ -174,6 +182,10 @@ class _DeployArtifactState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A detailed message describing the current state. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] project_id: The OCID of a project.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: Current state of the deployment artifact.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: Time the deployment artifact was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -321,6 +333,10 @@ class _DeployArtifactState:
     def project_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of a project.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "project_id")
 
@@ -450,6 +466,10 @@ class DeployArtifact(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) Deployment artifact display name. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] project_id: The OCID of a project.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -601,6 +621,10 @@ class DeployArtifact(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A detailed message describing the current state. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] project_id: The OCID of a project.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: Current state of the deployment artifact.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: Time the deployment artifact was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -703,6 +727,10 @@ class DeployArtifact(pulumi.CustomResource):
     def project_id(self) -> pulumi.Output[str]:
         """
         The OCID of a project.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "project_id")
 

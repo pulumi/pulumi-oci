@@ -133,6 +133,10 @@ export class MediaAsset extends pulumi.CustomResource {
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
      * (Updatable) The type of the media asset.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly type!: pulumi.Output<string>;
 
@@ -297,6 +301,10 @@ export interface MediaAssetState {
     timeUpdated?: pulumi.Input<string>;
     /**
      * (Updatable) The type of the media asset.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     type?: pulumi.Input<string>;
 }
@@ -375,6 +383,10 @@ export interface MediaAssetArgs {
     sourceMediaWorkflowVersion?: pulumi.Input<string>;
     /**
      * (Updatable) The type of the media asset.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     type: pulumi.Input<string>;
 }

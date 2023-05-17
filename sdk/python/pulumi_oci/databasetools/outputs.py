@@ -133,6 +133,10 @@ class DatabaseToolsConnectionKeyStoreKeyStoreContent(dict):
                  secret_id: Optional[str] = None):
         """
         :param str value_type: (Updatable) The value type of the user password.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         """
         pulumi.set(__self__, "value_type", value_type)
@@ -144,6 +148,10 @@ class DatabaseToolsConnectionKeyStoreKeyStoreContent(dict):
     def value_type(self) -> str:
         """
         (Updatable) The value type of the user password.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "value_type")
 
@@ -182,6 +190,10 @@ class DatabaseToolsConnectionKeyStoreKeyStorePassword(dict):
                  secret_id: Optional[str] = None):
         """
         :param str value_type: (Updatable) The value type of the user password.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         """
         pulumi.set(__self__, "value_type", value_type)
@@ -193,6 +205,10 @@ class DatabaseToolsConnectionKeyStoreKeyStorePassword(dict):
     def value_type(self) -> str:
         """
         (Updatable) The value type of the user password.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "value_type")
 
@@ -278,6 +294,10 @@ class DatabaseToolsConnectionUserPassword(dict):
         """
         :param str secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         :param str value_type: (Updatable) The value type of the user password.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "secret_id", secret_id)
         pulumi.set(__self__, "value_type", value_type)
@@ -295,6 +315,10 @@ class DatabaseToolsConnectionUserPassword(dict):
     def value_type(self) -> str:
         """
         (Updatable) The value type of the user password.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "value_type")
 

@@ -18,12 +18,34 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
     /**
      * (Updatable) Hostname to access the Duo security account
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="apiHostname", required=true)
     private Output<String> apiHostname;
 
     /**
      * @return (Updatable) Hostname to access the Duo security account
+     * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> apiHostname() {
@@ -33,12 +55,34 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
     /**
      * (Updatable) Attestation key to attest the request and response between Duo Security
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: never
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="attestationKey")
     private @Nullable Output<String> attestationKey;
 
     /**
      * @return (Updatable) Attestation key to attest the request and response between Duo Security
+     * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: never
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> attestationKey() {
@@ -48,12 +92,34 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
     /**
      * (Updatable) Integration key from Duo Security authenticator
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="integrationKey", required=true)
     private Output<String> integrationKey;
 
     /**
      * @return (Updatable) Integration key from Duo Security authenticator
+     * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> integrationKey() {
@@ -63,12 +129,34 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
     /**
      * (Updatable) Secret key from Duo Security authenticator
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="secretKey", required=true)
     private Output<String> secretKey;
 
     /**
      * @return (Updatable) Secret key from Duo Security authenticator
+     * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> secretKey() {
@@ -78,12 +166,34 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
     /**
      * (Updatable) User attribute mapping value
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="userMappingAttribute", required=true)
     private Output<String> userMappingAttribute;
 
     /**
      * @return (Updatable) User attribute mapping value
+     * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> userMappingAttribute() {
@@ -121,6 +231,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
         /**
          * @param apiHostname (Updatable) Hostname to access the Duo security account
          * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -132,6 +253,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
         /**
          * @param apiHostname (Updatable) Hostname to access the Duo security account
          * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -141,6 +273,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
 
         /**
          * @param attestationKey (Updatable) Attestation key to attest the request and response between Duo Security
+         * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: never
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -153,6 +296,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
         /**
          * @param attestationKey (Updatable) Attestation key to attest the request and response between Duo Security
          * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: never
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -162,6 +316,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
 
         /**
          * @param integrationKey (Updatable) Integration key from Duo Security authenticator
+         * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -174,6 +339,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
         /**
          * @param integrationKey (Updatable) Integration key from Duo Security authenticator
          * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -183,6 +359,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
 
         /**
          * @param secretKey (Updatable) Secret key from Duo Security authenticator
+         * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -195,6 +382,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
         /**
          * @param secretKey (Updatable) Secret key from Duo Security authenticator
          * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -204,6 +402,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
 
         /**
          * @param userMappingAttribute (Updatable) User attribute mapping value
+         * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -215,6 +424,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
 
         /**
          * @param userMappingAttribute (Updatable) User attribute mapping value
+         * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 

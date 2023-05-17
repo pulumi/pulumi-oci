@@ -171,12 +171,18 @@ public final class DatabaseSoftwareImageArgs extends com.pulumi.resources.Resour
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="sourceDbHomeId")
     private @Nullable Output<String> sourceDbHomeId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> sourceDbHomeId() {
@@ -440,6 +446,9 @@ public final class DatabaseSoftwareImageArgs extends com.pulumi.resources.Resour
         /**
          * @param sourceDbHomeId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -450,6 +459,9 @@ public final class DatabaseSoftwareImageArgs extends com.pulumi.resources.Resour
 
         /**
          * @param sourceDbHomeId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

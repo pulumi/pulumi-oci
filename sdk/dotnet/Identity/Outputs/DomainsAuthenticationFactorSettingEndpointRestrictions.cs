@@ -15,22 +15,75 @@ namespace Pulumi.Oci.Identity.Outputs
     {
         /// <summary>
         /// (Updatable) Maximum number of days until an endpoint can be trusted
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsMaxValue: 180
+        /// * idcsMinValue: 1
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: integer
+        /// * uniqueness: none
         /// </summary>
         public readonly int MaxEndpointTrustDurationInDays;
         /// <summary>
         /// (Updatable) Maximum number of enrolled devices per user
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsMaxValue: 20
+        /// * idcsMinValue: 1
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: integer
+        /// * uniqueness: none
         /// </summary>
         public readonly int MaxEnrolledDevices;
         /// <summary>
         /// (Updatable) An integer that represents the maximum number of failed MFA logins before an account is locked
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsMaxValue: 20
+        /// * idcsMinValue: 5
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: integer
+        /// * uniqueness: none
         /// </summary>
         public readonly int MaxIncorrectAttempts;
         /// <summary>
         /// (Updatable) Max number of trusted endpoints per user
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsMaxValue: 20
+        /// * idcsMinValue: 1
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: integer
+        /// * uniqueness: none
         /// </summary>
         public readonly int MaxTrustedEndpoints;
         /// <summary>
         /// (Updatable) Specify if trusted endpoints are enabled
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         public readonly bool TrustedEndpointsEnabled;
 

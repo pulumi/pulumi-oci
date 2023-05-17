@@ -182,12 +182,18 @@ public final class RecoveryServiceSubnetState extends com.pulumi.resources.Resou
     /**
      * The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="vcnId")
     private @Nullable Output<String> vcnId;
 
     /**
      * @return The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> vcnId() {
@@ -453,6 +459,9 @@ public final class RecoveryServiceSubnetState extends com.pulumi.resources.Resou
         /**
          * @param vcnId The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -463,6 +472,9 @@ public final class RecoveryServiceSubnetState extends com.pulumi.resources.Resou
 
         /**
          * @param vcnId The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

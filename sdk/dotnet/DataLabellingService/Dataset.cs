@@ -142,6 +142,10 @@ namespace Pulumi.Oci.DataLabellingService
 
         /// <summary>
         /// (Updatable) The labeling instructions for human labelers in rich text format
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("labelingInstructions")]
         public Output<string> LabelingInstructions { get; private set; } = null!;
@@ -290,6 +294,10 @@ namespace Pulumi.Oci.DataLabellingService
 
         /// <summary>
         /// (Updatable) The labeling instructions for human labelers in rich text format
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("labelingInstructions")]
         public Input<string>? LabelingInstructions { get; set; }
@@ -376,6 +384,10 @@ namespace Pulumi.Oci.DataLabellingService
 
         /// <summary>
         /// (Updatable) The labeling instructions for human labelers in rich text format
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("labelingInstructions")]
         public Input<string>? LabelingInstructions { get; set; }

@@ -77,12 +77,18 @@ public class GeneratedScopedAccessToken extends com.pulumi.resources.CustomResou
     /**
      * Scope definition for the scoped access token
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="scope", type=String.class, parameters={})
     private Output<String> scope;
 
     /**
      * @return Scope definition for the scoped access token
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> scope() {

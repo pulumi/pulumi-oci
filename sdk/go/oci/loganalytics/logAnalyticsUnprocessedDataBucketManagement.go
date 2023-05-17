@@ -55,6 +55,9 @@ type LogAnalyticsUnprocessedDataBucketManagement struct {
 	// Flag that specifies if this configuration is enabled or not.
 	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
 	// The Logging Analytics namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// The time when this record is created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -102,6 +105,9 @@ type logAnalyticsUnprocessedDataBucketManagementState struct {
 	// Flag that specifies if this configuration is enabled or not.
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// The Logging Analytics namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace *string `pulumi:"namespace"`
 	// The time when this record is created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -115,6 +121,9 @@ type LogAnalyticsUnprocessedDataBucketManagementState struct {
 	// Flag that specifies if this configuration is enabled or not.
 	IsEnabled pulumi.BoolPtrInput
 	// The Logging Analytics namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace pulumi.StringPtrInput
 	// The time when this record is created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
@@ -132,6 +141,9 @@ type logAnalyticsUnprocessedDataBucketManagementArgs struct {
 	// Flag that specifies if this configuration is enabled or not.
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// The Logging Analytics namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace string `pulumi:"namespace"`
 }
 
@@ -142,6 +154,9 @@ type LogAnalyticsUnprocessedDataBucketManagementArgs struct {
 	// Flag that specifies if this configuration is enabled or not.
 	IsEnabled pulumi.BoolPtrInput
 	// The Logging Analytics namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace pulumi.StringInput
 }
 
@@ -243,6 +258,9 @@ func (o LogAnalyticsUnprocessedDataBucketManagementOutput) IsEnabled() pulumi.Bo
 }
 
 // The Logging Analytics namespace used for the request.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o LogAnalyticsUnprocessedDataBucketManagementOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsUnprocessedDataBucketManagement) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
 }

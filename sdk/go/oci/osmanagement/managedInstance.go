@@ -56,6 +56,9 @@ type ManagedInstance struct {
 	// OCID for the managed instance
 	ManagedInstanceId pulumi.StringOutput `pulumi:"managedInstanceId"`
 	// (Updatable) OCID of the ONS topic used to send notification to users
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	NotificationTopicId pulumi.StringOutput `pulumi:"notificationTopicId"`
 	// The Operating System type of the managed instance.
 	OsFamily pulumi.StringOutput `pulumi:"osFamily"`
@@ -142,6 +145,9 @@ type managedInstanceState struct {
 	// OCID for the managed instance
 	ManagedInstanceId *string `pulumi:"managedInstanceId"`
 	// (Updatable) OCID of the ONS topic used to send notification to users
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	NotificationTopicId *string `pulumi:"notificationTopicId"`
 	// The Operating System type of the managed instance.
 	OsFamily *string `pulumi:"osFamily"`
@@ -197,6 +203,9 @@ type ManagedInstanceState struct {
 	// OCID for the managed instance
 	ManagedInstanceId pulumi.StringPtrInput
 	// (Updatable) OCID of the ONS topic used to send notification to users
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	NotificationTopicId pulumi.StringPtrInput
 	// The Operating System type of the managed instance.
 	OsFamily pulumi.StringPtrInput
@@ -232,6 +241,9 @@ type managedInstanceArgs struct {
 	// OCID for the managed instance
 	ManagedInstanceId string `pulumi:"managedInstanceId"`
 	// (Updatable) OCID of the ONS topic used to send notification to users
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	NotificationTopicId *string `pulumi:"notificationTopicId"`
 }
 
@@ -242,6 +254,9 @@ type ManagedInstanceArgs struct {
 	// OCID for the managed instance
 	ManagedInstanceId pulumi.StringInput
 	// (Updatable) OCID of the ONS topic used to send notification to users
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	NotificationTopicId pulumi.StringPtrInput
 }
 
@@ -405,6 +420,9 @@ func (o ManagedInstanceOutput) ManagedInstanceId() pulumi.StringOutput {
 }
 
 // (Updatable) OCID of the ONS topic used to send notification to users
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ManagedInstanceOutput) NotificationTopicId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedInstance) pulumi.StringOutput { return v.NotificationTopicId }).(pulumi.StringOutput)
 }

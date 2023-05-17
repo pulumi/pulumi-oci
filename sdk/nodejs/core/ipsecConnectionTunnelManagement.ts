@@ -80,6 +80,8 @@ export class IpsecConnectionTunnelManagement extends pulumi.CustomResource {
 
     /**
      * Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+     *
+     * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
      */
     public readonly bgpSessionInfos!: pulumi.Output<outputs.Core.IpsecConnectionTunnelManagementBgpSessionInfo[]>;
     /**
@@ -226,6 +228,8 @@ export class IpsecConnectionTunnelManagement extends pulumi.CustomResource {
 export interface IpsecConnectionTunnelManagementState {
     /**
      * Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+     *
+     * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
      */
     bgpSessionInfos?: pulumi.Input<pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementBgpSessionInfo>[]>;
     /**
@@ -299,6 +303,8 @@ export interface IpsecConnectionTunnelManagementState {
 export interface IpsecConnectionTunnelManagementArgs {
     /**
      * Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+     *
+     * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
      */
     bgpSessionInfos?: pulumi.Input<pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementBgpSessionInfo>[]>;
     /**

@@ -34,44 +34,210 @@ type DomainsSmtpCredential struct {
 	// The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization pulumi.StringPtrOutput `pulumi:"authorization"`
 	// (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	CompartmentOcid pulumi.StringOutput `pulumi:"compartmentOcid"`
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	DeleteInProgress pulumi.BoolOutput `pulumi:"deleteInProgress"`
 	// Description
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * type: string
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
 	// User credential expires on
+	//
+	// **Added In:** 2109090424
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: dateTime
+	// * uniqueness: none
 	ExpiresOn pulumi.StringOutput `pulumi:"expiresOn"`
 	// (Updatable) The User or App who created the Resource
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: true
+	// * returned: default
+	// * type: complex
 	IdcsCreatedBies DomainsSmtpCredentialIdcsCreatedByArrayOutput `pulumi:"idcsCreatedBies"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringOutput `pulumi:"idcsEndpoint"`
 	// (Updatable) The User or App who modified the Resource
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: complex
 	IdcsLastModifiedBies DomainsSmtpCredentialIdcsLastModifiedByArrayOutput `pulumi:"idcsLastModifiedBies"`
 	// (Updatable) The release number when the resource was upgraded.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: string
+	// * uniqueness: none
 	IdcsLastUpgradedInRelease pulumi.StringOutput `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: string
+	// * uniqueness: none
 	IdcsPreventedOperations pulumi.StringArrayOutput `pulumi:"idcsPreventedOperations"`
 	// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+	// * type: complex
 	Metas DomainsSmtpCredentialMetaArrayOutput `pulumi:"metas"`
 	// User's ocid
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: always
+	// * type: string
+	// * uniqueness: none
 	Ocid pulumi.StringOutput `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Schemas pulumi.StringArrayOutput `pulumi:"schemas"`
 	// User credential status
+	//
+	// **Added In:** 2109090424
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: never
+	// * type: string
+	// * uniqueness: none
 	Status pulumi.StringOutput `pulumi:"status"`
 	// A list of tags on this resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [key, value]
+	// * idcsSearchable: true
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
 	Tags DomainsSmtpCredentialTagArrayOutput `pulumi:"tags"`
 	// (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
 	// Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
 	// User linked to smtp credential
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	User DomainsSmtpCredentialUserOutput `pulumi:"user"`
 	// (Updatable) User name
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * type: string
+	// * mutability: readOnly
+	// * required: true
+	// * returned: default
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserName pulumi.StringOutput `pulumi:"userName"`
 }
 
@@ -117,44 +283,210 @@ type domainsSmtpCredentialState struct {
 	// The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization *string `pulumi:"authorization"`
 	// (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	CompartmentOcid *string `pulumi:"compartmentOcid"`
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	DeleteInProgress *bool `pulumi:"deleteInProgress"`
 	// Description
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * type: string
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
 	Description *string `pulumi:"description"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DomainOcid *string `pulumi:"domainOcid"`
 	// User credential expires on
+	//
+	// **Added In:** 2109090424
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: dateTime
+	// * uniqueness: none
 	ExpiresOn *string `pulumi:"expiresOn"`
 	// (Updatable) The User or App who created the Resource
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: true
+	// * returned: default
+	// * type: complex
 	IdcsCreatedBies []DomainsSmtpCredentialIdcsCreatedBy `pulumi:"idcsCreatedBies"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint *string `pulumi:"idcsEndpoint"`
 	// (Updatable) The User or App who modified the Resource
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: complex
 	IdcsLastModifiedBies []DomainsSmtpCredentialIdcsLastModifiedBy `pulumi:"idcsLastModifiedBies"`
 	// (Updatable) The release number when the resource was upgraded.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: string
+	// * uniqueness: none
 	IdcsLastUpgradedInRelease *string `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: string
+	// * uniqueness: none
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
 	// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+	// * type: complex
 	Metas []DomainsSmtpCredentialMeta `pulumi:"metas"`
 	// User's ocid
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: always
+	// * type: string
+	// * uniqueness: none
 	Ocid *string `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Schemas []string `pulumi:"schemas"`
 	// User credential status
+	//
+	// **Added In:** 2109090424
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: never
+	// * type: string
+	// * uniqueness: none
 	Status *string `pulumi:"status"`
 	// A list of tags on this resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [key, value]
+	// * idcsSearchable: true
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
 	Tags []DomainsSmtpCredentialTag `pulumi:"tags"`
 	// (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	TenancyOcid *string `pulumi:"tenancyOcid"`
 	// Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser *DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
 	// User linked to smtp credential
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	User *DomainsSmtpCredentialUser `pulumi:"user"`
 	// (Updatable) User name
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * type: string
+	// * mutability: readOnly
+	// * required: true
+	// * returned: default
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserName *string `pulumi:"userName"`
 }
 
@@ -166,44 +498,210 @@ type DomainsSmtpCredentialState struct {
 	// The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization pulumi.StringPtrInput
 	// (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	CompartmentOcid pulumi.StringPtrInput
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	DeleteInProgress pulumi.BoolPtrInput
 	// Description
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * type: string
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
 	Description pulumi.StringPtrInput
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DomainOcid pulumi.StringPtrInput
 	// User credential expires on
+	//
+	// **Added In:** 2109090424
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: dateTime
+	// * uniqueness: none
 	ExpiresOn pulumi.StringPtrInput
 	// (Updatable) The User or App who created the Resource
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: true
+	// * returned: default
+	// * type: complex
 	IdcsCreatedBies DomainsSmtpCredentialIdcsCreatedByArrayInput
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringPtrInput
 	// (Updatable) The User or App who modified the Resource
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: complex
 	IdcsLastModifiedBies DomainsSmtpCredentialIdcsLastModifiedByArrayInput
 	// (Updatable) The release number when the resource was upgraded.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: string
+	// * uniqueness: none
 	IdcsLastUpgradedInRelease pulumi.StringPtrInput
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: string
+	// * uniqueness: none
 	IdcsPreventedOperations pulumi.StringArrayInput
 	// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+	// * type: complex
 	Metas DomainsSmtpCredentialMetaArrayInput
 	// User's ocid
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: always
+	// * type: string
+	// * uniqueness: none
 	Ocid pulumi.StringPtrInput
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrInput
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Schemas pulumi.StringArrayInput
 	// User credential status
+	//
+	// **Added In:** 2109090424
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: never
+	// * type: string
+	// * uniqueness: none
 	Status pulumi.StringPtrInput
 	// A list of tags on this resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [key, value]
+	// * idcsSearchable: true
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
 	Tags DomainsSmtpCredentialTagArrayInput
 	// (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	TenancyOcid pulumi.StringPtrInput
 	// Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrInput
 	// User linked to smtp credential
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	User DomainsSmtpCredentialUserPtrInput
 	// (Updatable) User name
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * type: string
+	// * mutability: readOnly
+	// * required: true
+	// * returned: default
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserName pulumi.StringPtrInput
 }
 
@@ -219,24 +717,95 @@ type domainsSmtpCredentialArgs struct {
 	// The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization *string `pulumi:"authorization"`
 	// Description
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * type: string
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
 	Description *string `pulumi:"description"`
 	// User credential expires on
+	//
+	// **Added In:** 2109090424
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: dateTime
+	// * uniqueness: none
 	ExpiresOn *string `pulumi:"expiresOn"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint string `pulumi:"idcsEndpoint"`
 	// User's ocid
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: always
+	// * type: string
+	// * uniqueness: none
 	Ocid *string `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Schemas []string `pulumi:"schemas"`
 	// User credential status
+	//
+	// **Added In:** 2109090424
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: never
+	// * type: string
+	// * uniqueness: none
 	Status *string `pulumi:"status"`
 	// A list of tags on this resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [key, value]
+	// * idcsSearchable: true
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
 	Tags []DomainsSmtpCredentialTag `pulumi:"tags"`
 	// Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser *DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
 	// User linked to smtp credential
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	User *DomainsSmtpCredentialUser `pulumi:"user"`
 }
 
@@ -249,24 +818,95 @@ type DomainsSmtpCredentialArgs struct {
 	// The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization pulumi.StringPtrInput
 	// Description
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * type: string
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
 	Description pulumi.StringPtrInput
 	// User credential expires on
+	//
+	// **Added In:** 2109090424
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: dateTime
+	// * uniqueness: none
 	ExpiresOn pulumi.StringPtrInput
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringInput
 	// User's ocid
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: always
+	// * type: string
+	// * uniqueness: none
 	Ocid pulumi.StringPtrInput
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrInput
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Schemas pulumi.StringArrayInput
 	// User credential status
+	//
+	// **Added In:** 2109090424
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: never
+	// * type: string
+	// * uniqueness: none
 	Status pulumi.StringPtrInput
 	// A list of tags on this resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [key, value]
+	// * idcsSearchable: true
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
 	Tags DomainsSmtpCredentialTagArrayInput
 	// Controls whether a user can update themselves or not via User related APIs
 	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrInput
 	// User linked to smtp credential
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	User DomainsSmtpCredentialUserPtrInput
 }
 
@@ -373,31 +1013,88 @@ func (o DomainsSmtpCredentialOutput) Authorization() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsSmtpCredentialOutput) CompartmentOcid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsSmtpCredential) pulumi.StringOutput { return v.CompartmentOcid }).(pulumi.StringOutput)
 }
 
 // (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * type: boolean
+// * uniqueness: none
 func (o DomainsSmtpCredentialOutput) DeleteInProgress() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsSmtpCredential) pulumi.BoolOutput { return v.DeleteInProgress }).(pulumi.BoolOutput)
 }
 
 // Description
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * type: string
+// * mutability: readWrite
+// * required: false
+// * returned: default
 func (o DomainsSmtpCredentialOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsSmtpCredential) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsSmtpCredentialOutput) DomainOcid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsSmtpCredential) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
 }
 
 // User credential expires on
+//
+// **Added In:** 2109090424
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: immutable
+// * required: false
+// * returned: default
+// * type: dateTime
+// * uniqueness: none
 func (o DomainsSmtpCredentialOutput) ExpiresOn() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsSmtpCredential) pulumi.StringOutput { return v.ExpiresOn }).(pulumi.StringOutput)
 }
 
 // (Updatable) The User or App who created the Resource
+//
+// **SCIM++ Properties:**
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readOnly
+// * required: true
+// * returned: default
+// * type: complex
 func (o DomainsSmtpCredentialOutput) IdcsCreatedBies() DomainsSmtpCredentialIdcsCreatedByArrayOutput {
 	return o.ApplyT(func(v *DomainsSmtpCredential) DomainsSmtpCredentialIdcsCreatedByArrayOutput { return v.IdcsCreatedBies }).(DomainsSmtpCredentialIdcsCreatedByArrayOutput)
 }
@@ -408,6 +1105,14 @@ func (o DomainsSmtpCredentialOutput) IdcsEndpoint() pulumi.StringOutput {
 }
 
 // (Updatable) The User or App who modified the Resource
+//
+// **SCIM++ Properties:**
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * type: complex
 func (o DomainsSmtpCredentialOutput) IdcsLastModifiedBies() DomainsSmtpCredentialIdcsLastModifiedByArrayOutput {
 	return o.ApplyT(func(v *DomainsSmtpCredential) DomainsSmtpCredentialIdcsLastModifiedByArrayOutput {
 		return v.IdcsLastModifiedBies
@@ -415,21 +1120,60 @@ func (o DomainsSmtpCredentialOutput) IdcsLastModifiedBies() DomainsSmtpCredentia
 }
 
 // (Updatable) The release number when the resource was upgraded.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: request
+// * type: string
+// * uniqueness: none
 func (o DomainsSmtpCredentialOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsSmtpCredential) pulumi.StringOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
 }
 
 // (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+//
+// **SCIM++ Properties:**
+// * idcsSearchable: false
+// * multiValued: true
+// * mutability: readOnly
+// * required: false
+// * returned: request
+// * type: string
+// * uniqueness: none
 func (o DomainsSmtpCredentialOutput) IdcsPreventedOperations() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DomainsSmtpCredential) pulumi.StringArrayOutput { return v.IdcsPreventedOperations }).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+// * type: complex
 func (o DomainsSmtpCredentialOutput) Metas() DomainsSmtpCredentialMetaArrayOutput {
 	return o.ApplyT(func(v *DomainsSmtpCredential) DomainsSmtpCredentialMetaArrayOutput { return v.Metas }).(DomainsSmtpCredentialMetaArrayOutput)
 }
 
 // User's ocid
+//
+// **SCIM++ Properties:**
+// * caseExact: true
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: immutable
+// * required: false
+// * returned: always
+// * type: string
+// * uniqueness: none
 func (o DomainsSmtpCredentialOutput) Ocid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsSmtpCredential) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
 }
@@ -440,21 +1184,63 @@ func (o DomainsSmtpCredentialOutput) ResourceTypeSchemaVersion() pulumi.StringPt
 }
 
 // REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: true
+// * mutability: readWrite
+// * required: true
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsSmtpCredentialOutput) Schemas() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DomainsSmtpCredential) pulumi.StringArrayOutput { return v.Schemas }).(pulumi.StringArrayOutput)
 }
 
 // User credential status
+//
+// **Added In:** 2109090424
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: never
+// * type: string
+// * uniqueness: none
 func (o DomainsSmtpCredentialOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsSmtpCredential) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
 // A list of tags on this resource.
+//
+// **SCIM++ Properties:**
+// * idcsCompositeKey: [key, value]
+// * idcsSearchable: true
+// * multiValued: true
+// * mutability: readWrite
+// * required: false
+// * returned: request
+// * type: complex
+// * uniqueness: none
 func (o DomainsSmtpCredentialOutput) Tags() DomainsSmtpCredentialTagArrayOutput {
 	return o.ApplyT(func(v *DomainsSmtpCredential) DomainsSmtpCredentialTagArrayOutput { return v.Tags }).(DomainsSmtpCredentialTagArrayOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsSmtpCredentialOutput) TenancyOcid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsSmtpCredential) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
 }
@@ -467,11 +1253,31 @@ func (o DomainsSmtpCredentialOutput) Urnietfparamsscimschemasoracleidcsextension
 }
 
 // User linked to smtp credential
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: immutable
+// * required: false
+// * returned: default
+// * type: complex
+// * uniqueness: none
 func (o DomainsSmtpCredentialOutput) User() DomainsSmtpCredentialUserOutput {
 	return o.ApplyT(func(v *DomainsSmtpCredential) DomainsSmtpCredentialUserOutput { return v.User }).(DomainsSmtpCredentialUserOutput)
 }
 
 // (Updatable) User name
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * type: string
+// * mutability: readOnly
+// * required: true
+// * returned: default
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DomainsSmtpCredentialOutput) UserName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsSmtpCredential) pulumi.StringOutput { return v.UserName }).(pulumi.StringOutput)
 }

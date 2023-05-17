@@ -88,6 +88,10 @@ type GetManagedInstanceStreamProfileArgs struct {
 	// The name of the profile of the containing module stream
 	ProfileName *string `pulumi:"profileName"`
 	// The status of the profile.
+	//
+	// A profile with the "INSTALLED" status indicates that the profile has been installed.
+	//
+	// A profile with the "AVAILABLE" status indicates that the profile is not installed, but can be.
 	ProfileStatus *string `pulumi:"profileStatus"`
 	// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
 	StreamName *string `pulumi:"streamName"`
@@ -136,6 +140,10 @@ type GetManagedInstanceStreamProfileOutputArgs struct {
 	// The name of the profile of the containing module stream
 	ProfileName pulumi.StringPtrInput `pulumi:"profileName"`
 	// The status of the profile.
+	//
+	// A profile with the "INSTALLED" status indicates that the profile has been installed.
+	//
+	// A profile with the "AVAILABLE" status indicates that the profile is not installed, but can be.
 	ProfileStatus pulumi.StringPtrInput `pulumi:"profileStatus"`
 	// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
 	StreamName pulumi.StringPtrInput `pulumi:"streamName"`

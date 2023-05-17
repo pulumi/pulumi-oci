@@ -20,6 +20,10 @@ namespace Pulumi.Oci.DevOps.Inputs
 
         /// <summary>
         /// (Updatable) Wait criteria type.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("waitType", required: true)]
         public Input<string> WaitType { get; set; } = null!;

@@ -85,12 +85,18 @@ public class DomainReplicationToRegion extends com.pulumi.resources.CustomResour
     /**
      * A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="replicaRegion", type=String.class, parameters={})
     private Output<String> replicaRegion;
 
     /**
      * @return A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> replicaRegion() {

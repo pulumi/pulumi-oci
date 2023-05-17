@@ -71,12 +71,17 @@ type SecurityRecipe struct {
 	// (Updatable) The recipe's name
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a recipe in the `Failed` state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The owner of the recipe
 	Owner pulumi.StringOutput `pulumi:"owner"`
 	// (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityPolicies pulumi.StringArrayOutput `pulumi:"securityPolicies"`
 	// The current state of the recipe
 	State pulumi.StringOutput `pulumi:"state"`
@@ -135,12 +140,17 @@ type securityRecipeState struct {
 	// (Updatable) The recipe's name
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a recipe in the `Failed` state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The owner of the recipe
 	Owner *string `pulumi:"owner"`
 	// (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityPolicies []string `pulumi:"securityPolicies"`
 	// The current state of the recipe
 	State *string `pulumi:"state"`
@@ -162,12 +172,17 @@ type SecurityRecipeState struct {
 	// (Updatable) The recipe's name
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags pulumi.MapInput
 	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a recipe in the `Failed` state.
 	LifecycleDetails pulumi.StringPtrInput
 	// The owner of the recipe
 	Owner pulumi.StringPtrInput
 	// (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityPolicies pulumi.StringArrayInput
 	// The current state of the recipe
 	State pulumi.StringPtrInput
@@ -193,8 +208,13 @@ type securityRecipeArgs struct {
 	// (Updatable) The recipe's name
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityPolicies []string `pulumi:"securityPolicies"`
 }
 
@@ -209,8 +229,13 @@ type SecurityRecipeArgs struct {
 	// (Updatable) The recipe's name
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags pulumi.MapInput
 	// (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityPolicies pulumi.StringArrayInput
 }
 
@@ -322,6 +347,8 @@ func (o SecurityRecipeOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+//
+// Avoid entering confidential information.
 func (o SecurityRecipeOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *SecurityRecipe) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
@@ -337,6 +364,9 @@ func (o SecurityRecipeOutput) Owner() pulumi.StringOutput {
 }
 
 // (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o SecurityRecipeOutput) SecurityPolicies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *SecurityRecipe) pulumi.StringArrayOutput { return v.SecurityPolicies }).(pulumi.StringArrayOutput)
 }

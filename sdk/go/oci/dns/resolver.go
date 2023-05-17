@@ -39,12 +39,16 @@ type Resolver struct {
 	// The OCID of the default view.
 	DefaultViewId pulumi.StringOutput `pulumi:"defaultViewId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	//
+	// **Example:** `{"Operations": {"CostCenter": "42"}}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The display name of the resolver.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Read-only array of endpoints for the resolver.
 	Endpoints ResolverEndpointTypeArrayOutput `pulumi:"endpoints"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	//
+	// **Example:** `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected pulumi.BoolOutput `pulumi:"isProtected"`
@@ -53,6 +57,9 @@ type Resolver struct {
 	// (Updatable) Rules for the resolver. Rules are evaluated in order.
 	Rules ResolverRuleArrayOutput `pulumi:"rules"`
 	// If specified, must be `PRIVATE` when creating private name resolvers.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
 	Self pulumi.StringOutput `pulumi:"self"`
@@ -105,12 +112,16 @@ type resolverState struct {
 	// The OCID of the default view.
 	DefaultViewId *string `pulumi:"defaultViewId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	//
+	// **Example:** `{"Operations": {"CostCenter": "42"}}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) The display name of the resolver.
 	DisplayName *string `pulumi:"displayName"`
 	// Read-only array of endpoints for the resolver.
 	Endpoints []ResolverEndpointType `pulumi:"endpoints"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	//
+	// **Example:** `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected *bool `pulumi:"isProtected"`
@@ -119,6 +130,9 @@ type resolverState struct {
 	// (Updatable) Rules for the resolver. Rules are evaluated in order.
 	Rules []ResolverRule `pulumi:"rules"`
 	// If specified, must be `PRIVATE` when creating private name resolvers.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Scope *string `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
 	Self *string `pulumi:"self"`
@@ -140,12 +154,16 @@ type ResolverState struct {
 	// The OCID of the default view.
 	DefaultViewId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	//
+	// **Example:** `{"Operations": {"CostCenter": "42"}}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) The display name of the resolver.
 	DisplayName pulumi.StringPtrInput
 	// Read-only array of endpoints for the resolver.
 	Endpoints ResolverEndpointTypeArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	//
+	// **Example:** `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected pulumi.BoolPtrInput
@@ -154,6 +172,9 @@ type ResolverState struct {
 	// (Updatable) Rules for the resolver. Rules are evaluated in order.
 	Rules ResolverRuleArrayInput
 	// If specified, must be `PRIVATE` when creating private name resolvers.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Scope pulumi.StringPtrInput
 	// The canonical absolute URL of the resource.
 	Self pulumi.StringPtrInput
@@ -175,16 +196,23 @@ type resolverArgs struct {
 	// (Updatable) The OCID of the owning compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	//
+	// **Example:** `{"Operations": {"CostCenter": "42"}}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) The display name of the resolver.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	//
+	// **Example:** `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the target resolver.
 	ResolverId string `pulumi:"resolverId"`
 	// (Updatable) Rules for the resolver. Rules are evaluated in order.
 	Rules []ResolverRule `pulumi:"rules"`
 	// If specified, must be `PRIVATE` when creating private name resolvers.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Scope *string `pulumi:"scope"`
 }
 
@@ -195,16 +223,23 @@ type ResolverArgs struct {
 	// (Updatable) The OCID of the owning compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	//
+	// **Example:** `{"Operations": {"CostCenter": "42"}}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) The display name of the resolver.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	//
+	// **Example:** `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The OCID of the target resolver.
 	ResolverId pulumi.StringInput
 	// (Updatable) Rules for the resolver. Rules are evaluated in order.
 	Rules ResolverRuleArrayInput
 	// If specified, must be `PRIVATE` when creating private name resolvers.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Scope pulumi.StringPtrInput
 }
 
@@ -316,6 +351,8 @@ func (o ResolverOutput) DefaultViewId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+//
+// **Example:** `{"Operations": {"CostCenter": "42"}}`
 func (o ResolverOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Resolver) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
@@ -331,6 +368,8 @@ func (o ResolverOutput) Endpoints() ResolverEndpointTypeArrayOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+//
+// **Example:** `{"Department": "Finance"}`
 func (o ResolverOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Resolver) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
@@ -351,6 +390,9 @@ func (o ResolverOutput) Rules() ResolverRuleArrayOutput {
 }
 
 // If specified, must be `PRIVATE` when creating private name resolvers.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ResolverOutput) Scope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Resolver) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
 }

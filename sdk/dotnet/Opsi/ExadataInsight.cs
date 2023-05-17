@@ -178,6 +178,10 @@ namespace Pulumi.Oci.Opsi
 
         /// <summary>
         /// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -319,6 +323,10 @@ namespace Pulumi.Oci.Opsi
 
         /// <summary>
         /// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -470,6 +478,10 @@ namespace Pulumi.Oci.Opsi
 
         /// <summary>
         /// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }

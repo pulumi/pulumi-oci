@@ -69,6 +69,9 @@ type UserCapabilitiesManagement struct {
 	// (Updatable) Indicates if the user can use SigV4 symmetric keys.
 	CanUseCustomerSecretKeys pulumi.BoolOutput `pulumi:"canUseCustomerSecretKeys"`
 	// (Updatable) Indicates if the user can use SMTP passwords.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CanUseSmtpCredentials pulumi.BoolOutput `pulumi:"canUseSmtpCredentials"`
 	// The OCID of the user.
 	UserId pulumi.StringOutput `pulumi:"userId"`
@@ -115,6 +118,9 @@ type userCapabilitiesManagementState struct {
 	// (Updatable) Indicates if the user can use SigV4 symmetric keys.
 	CanUseCustomerSecretKeys *bool `pulumi:"canUseCustomerSecretKeys"`
 	// (Updatable) Indicates if the user can use SMTP passwords.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CanUseSmtpCredentials *bool `pulumi:"canUseSmtpCredentials"`
 	// The OCID of the user.
 	UserId *string `pulumi:"userId"`
@@ -130,6 +136,9 @@ type UserCapabilitiesManagementState struct {
 	// (Updatable) Indicates if the user can use SigV4 symmetric keys.
 	CanUseCustomerSecretKeys pulumi.BoolPtrInput
 	// (Updatable) Indicates if the user can use SMTP passwords.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CanUseSmtpCredentials pulumi.BoolPtrInput
 	// The OCID of the user.
 	UserId pulumi.StringPtrInput
@@ -149,6 +158,9 @@ type userCapabilitiesManagementArgs struct {
 	// (Updatable) Indicates if the user can use SigV4 symmetric keys.
 	CanUseCustomerSecretKeys *bool `pulumi:"canUseCustomerSecretKeys"`
 	// (Updatable) Indicates if the user can use SMTP passwords.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CanUseSmtpCredentials *bool `pulumi:"canUseSmtpCredentials"`
 	// The OCID of the user.
 	UserId string `pulumi:"userId"`
@@ -165,6 +177,9 @@ type UserCapabilitiesManagementArgs struct {
 	// (Updatable) Indicates if the user can use SigV4 symmetric keys.
 	CanUseCustomerSecretKeys pulumi.BoolPtrInput
 	// (Updatable) Indicates if the user can use SMTP passwords.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CanUseSmtpCredentials pulumi.BoolPtrInput
 	// The OCID of the user.
 	UserId pulumi.StringInput
@@ -278,6 +293,9 @@ func (o UserCapabilitiesManagementOutput) CanUseCustomerSecretKeys() pulumi.Bool
 }
 
 // (Updatable) Indicates if the user can use SMTP passwords.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o UserCapabilitiesManagementOutput) CanUseSmtpCredentials() pulumi.BoolOutput {
 	return o.ApplyT(func(v *UserCapabilitiesManagement) pulumi.BoolOutput { return v.CanUseSmtpCredentials }).(pulumi.BoolOutput)
 }

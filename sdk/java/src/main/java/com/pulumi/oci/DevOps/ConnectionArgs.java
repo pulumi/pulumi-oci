@@ -171,12 +171,18 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="username")
     private @Nullable Output<String> username;
 
     /**
      * @return (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> username() {
@@ -430,6 +436,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param username (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -440,6 +449,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param username (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

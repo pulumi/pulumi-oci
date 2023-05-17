@@ -40,12 +40,32 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="compartmentOcid")
     private @Nullable Output<String> compartmentOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> compartmentOcid() {
@@ -55,12 +75,32 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="deleteInProgress")
     private @Nullable Output<Boolean> deleteInProgress;
 
     /**
      * @return (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> deleteInProgress() {
@@ -70,12 +110,26 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
     /**
      * Description
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
      * 
      */
     public Optional<Output<String>> description() {
@@ -85,12 +139,32 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="domainOcid")
     private @Nullable Output<String> domainOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> domainOcid() {
@@ -100,12 +174,36 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
     /**
      * User credential expires on
      * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     @Import(name="expiresOn")
     private @Nullable Output<String> expiresOn;
 
     /**
      * @return User credential expires on
+     * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> expiresOn() {
@@ -115,12 +213,28 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
     /**
      * (Updatable) The User or App who created the Resource
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: complex
+     * 
      */
     @Import(name="idcsCreatedBies")
     private @Nullable Output<List<DomainsMySmtpCredentialIdcsCreatedByArgs>> idcsCreatedBies;
 
     /**
      * @return (Updatable) The User or App who created the Resource
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: complex
      * 
      */
     public Optional<Output<List<DomainsMySmtpCredentialIdcsCreatedByArgs>>> idcsCreatedBies() {
@@ -145,12 +259,28 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
     /**
      * (Updatable) The User or App who modified the Resource
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * 
      */
     @Import(name="idcsLastModifiedBies")
     private @Nullable Output<List<DomainsMySmtpCredentialIdcsLastModifiedByArgs>> idcsLastModifiedBies;
 
     /**
      * @return (Updatable) The User or App who modified the Resource
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
      * 
      */
     public Optional<Output<List<DomainsMySmtpCredentialIdcsLastModifiedByArgs>>> idcsLastModifiedBies() {
@@ -160,12 +290,32 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
     /**
      * (Updatable) The release number when the resource was upgraded.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="idcsLastUpgradedInRelease")
     private @Nullable Output<String> idcsLastUpgradedInRelease;
 
     /**
      * @return (Updatable) The release number when the resource was upgraded.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> idcsLastUpgradedInRelease() {
@@ -175,12 +325,30 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="idcsPreventedOperations")
     private @Nullable Output<List<String>> idcsPreventedOperations;
 
     /**
      * @return (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<String>>> idcsPreventedOperations() {
@@ -190,12 +358,32 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+     * * type: complex
+     * 
      */
     @Import(name="metas")
     private @Nullable Output<List<DomainsMySmtpCredentialMetaArgs>> metas;
 
     /**
      * @return (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+     * * type: complex
      * 
      */
     public Optional<Output<List<DomainsMySmtpCredentialMetaArgs>>> metas() {
@@ -205,12 +393,32 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
     /**
      * User&#39;s ocid
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
      * @return User&#39;s ocid
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -235,12 +443,32 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="schemas")
     private @Nullable Output<List<String>> schemas;
 
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<String>>> schemas() {
@@ -250,12 +478,36 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
     /**
      * User credential status
      * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: never
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return User credential status
+     * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: never
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> status() {
@@ -265,12 +517,32 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
     /**
      * A list of tags on this resource.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<DomainsMySmtpCredentialTagArgs>> tags;
 
     /**
      * @return A list of tags on this resource.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsMySmtpCredentialTagArgs>>> tags() {
@@ -280,12 +552,32 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="tenancyOcid")
     private @Nullable Output<String> tenancyOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> tenancyOcid() {
@@ -295,12 +587,32 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
     /**
      * User linked to smtp credential
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="user")
     private @Nullable Output<DomainsMySmtpCredentialUserArgs> user;
 
     /**
      * @return User linked to smtp credential
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<DomainsMySmtpCredentialUserArgs>> user() {
@@ -310,12 +622,32 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
     /**
      * (Updatable) User name
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="userName")
     private @Nullable Output<String> userName;
 
     /**
      * @return (Updatable) User name
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> userName() {
@@ -389,6 +721,16 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
         /**
          * @param compartmentOcid (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -400,6 +742,16 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
         /**
          * @param compartmentOcid (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -409,6 +761,16 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
 
         /**
          * @param deleteInProgress (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -421,6 +783,16 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
         /**
          * @param deleteInProgress (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -430,6 +802,13 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
 
         /**
          * @param description Description
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
          * 
          * @return builder
          * 
@@ -442,6 +821,13 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
         /**
          * @param description Description
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * 
          * @return builder
          * 
          */
@@ -451,6 +837,16 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
 
         /**
          * @param domainOcid (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -463,6 +859,16 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
         /**
          * @param domainOcid (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -472,6 +878,18 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
 
         /**
          * @param expiresOn User credential expires on
+         * 
+         * **Added In:** 2109090424
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -484,6 +902,18 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
         /**
          * @param expiresOn User credential expires on
          * 
+         * **Added In:** 2109090424
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -493,6 +923,14 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
 
         /**
          * @param idcsCreatedBies (Updatable) The User or App who created the Resource
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: complex
          * 
          * @return builder
          * 
@@ -505,6 +943,14 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
         /**
          * @param idcsCreatedBies (Updatable) The User or App who created the Resource
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: complex
+         * 
          * @return builder
          * 
          */
@@ -514,6 +960,14 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
 
         /**
          * @param idcsCreatedBies (Updatable) The User or App who created the Resource
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: complex
          * 
          * @return builder
          * 
@@ -546,6 +1000,14 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
         /**
          * @param idcsLastModifiedBies (Updatable) The User or App who modified the Resource
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * 
          * @return builder
          * 
          */
@@ -557,6 +1019,14 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
         /**
          * @param idcsLastModifiedBies (Updatable) The User or App who modified the Resource
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * 
          * @return builder
          * 
          */
@@ -567,6 +1037,14 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
         /**
          * @param idcsLastModifiedBies (Updatable) The User or App who modified the Resource
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * 
          * @return builder
          * 
          */
@@ -576,6 +1054,16 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
 
         /**
          * @param idcsLastUpgradedInRelease (Updatable) The release number when the resource was upgraded.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -588,6 +1076,16 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
         /**
          * @param idcsLastUpgradedInRelease (Updatable) The release number when the resource was upgraded.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -597,6 +1095,15 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
 
         /**
          * @param idcsPreventedOperations (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -609,6 +1116,15 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
         /**
          * @param idcsPreventedOperations (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -619,6 +1135,15 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
         /**
          * @param idcsPreventedOperations (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -628,6 +1153,16 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
 
         /**
          * @param metas (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+         * * type: complex
          * 
          * @return builder
          * 
@@ -640,6 +1175,16 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
         /**
          * @param metas (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+         * * type: complex
+         * 
          * @return builder
          * 
          */
@@ -649,6 +1194,16 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
 
         /**
          * @param metas (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+         * * type: complex
          * 
          * @return builder
          * 
@@ -660,6 +1215,16 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
         /**
          * @param ocid User&#39;s ocid
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -670,6 +1235,16 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
 
         /**
          * @param ocid User&#39;s ocid
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -702,6 +1277,16 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
         /**
          * @param schemas REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -713,6 +1298,16 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
         /**
          * @param schemas REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -723,6 +1318,16 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
         /**
          * @param schemas REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -732,6 +1337,18 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
 
         /**
          * @param status User credential status
+         * 
+         * **Added In:** 2109090424
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: never
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -744,6 +1361,18 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
         /**
          * @param status User credential status
          * 
+         * **Added In:** 2109090424
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: never
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -753,6 +1382,16 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
 
         /**
          * @param tags A list of tags on this resource.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -765,6 +1404,16 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
         /**
          * @param tags A list of tags on this resource.
          * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -775,6 +1424,16 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
         /**
          * @param tags A list of tags on this resource.
          * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -784,6 +1443,16 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
 
         /**
          * @param tenancyOcid (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -796,6 +1465,16 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
         /**
          * @param tenancyOcid (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -805,6 +1484,16 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
 
         /**
          * @param user User linked to smtp credential
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -817,6 +1506,16 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
         /**
          * @param user User linked to smtp credential
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -826,6 +1525,16 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
 
         /**
          * @param userName (Updatable) User name
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -837,6 +1546,16 @@ public final class DomainsMySmtpCredentialState extends com.pulumi.resources.Res
 
         /**
          * @param userName (Updatable) User name
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -40,6 +40,10 @@ class AssetSourceArgs:
         :param pulumi.Input[str] inventory_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
         :param pulumi.Input[str] type: (Updatable) Asset source type.
         :param pulumi.Input[str] vcenter_endpoint: (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[bool] are_historical_metrics_collected: (Updatable) Flag indicating whether historical metrics are collected for assets, originating from this asset source.
         :param pulumi.Input[bool] are_realtime_metrics_collected: (Updatable) Flag indicating whether real-time metrics are collected for assets, originating from this asset source.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -150,6 +154,10 @@ class AssetSourceArgs:
     def vcenter_endpoint(self) -> pulumi.Input[str]:
         """
         (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vcenter_endpoint")
 
@@ -297,6 +305,10 @@ class _AssetSourceState:
         :param pulumi.Input[str] time_updated: The point in time that the asset source was last updated in the RFC3339 format.
         :param pulumi.Input[str] type: (Updatable) Asset source type.
         :param pulumi.Input[str] vcenter_endpoint: (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if are_historical_metrics_collected is not None:
             pulumi.set(__self__, "are_historical_metrics_collected", are_historical_metrics_collected)
@@ -558,6 +570,10 @@ class _AssetSourceState:
     def vcenter_endpoint(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vcenter_endpoint")
 
@@ -651,6 +667,10 @@ class AssetSource(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[str] type: (Updatable) Asset source type.
         :param pulumi.Input[str] vcenter_endpoint: (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -832,6 +852,10 @@ class AssetSource(pulumi.CustomResource):
         :param pulumi.Input[str] time_updated: The point in time that the asset source was last updated in the RFC3339 format.
         :param pulumi.Input[str] type: (Updatable) Asset source type.
         :param pulumi.Input[str] vcenter_endpoint: (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1007,6 +1031,10 @@ class AssetSource(pulumi.CustomResource):
     def vcenter_endpoint(self) -> pulumi.Output[str]:
         """
         (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vcenter_endpoint")
 

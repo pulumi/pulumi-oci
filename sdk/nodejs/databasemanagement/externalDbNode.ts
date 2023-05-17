@@ -71,6 +71,10 @@ export class ExternalDbNode extends pulumi.CustomResource {
     public readonly externalConnectorId!: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly externalDbNodeId!: pulumi.Output<string>;
     /**
@@ -184,6 +188,10 @@ export interface ExternalDbNodeState {
     externalConnectorId?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     externalDbNodeId?: pulumi.Input<string>;
     /**
@@ -226,6 +234,10 @@ export interface ExternalDbNodeArgs {
     externalConnectorId?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     externalDbNodeId: pulumi.Input<string>;
 }

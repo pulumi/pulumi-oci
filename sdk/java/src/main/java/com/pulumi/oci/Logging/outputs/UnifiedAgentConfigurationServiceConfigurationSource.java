@@ -36,6 +36,9 @@ public final class UnifiedAgentConfigurationServiceConfigurationSource {
     /**
      * @return (Updatable) Unified schema logging source type.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private String sourceType;
 
@@ -70,6 +73,9 @@ public final class UnifiedAgentConfigurationServiceConfigurationSource {
     }
     /**
      * @return (Updatable) Unified schema logging source type.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String sourceType() {

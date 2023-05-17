@@ -1518,6 +1518,8 @@ type ModelCustomMetadataList struct {
 	// * testartifactresults
 	Key *string `pulumi:"key"`
 	// (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
+	//
+	// Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
 	Value *string `pulumi:"value"`
 }
 
@@ -1546,6 +1548,8 @@ type ModelCustomMetadataListArgs struct {
 	// * testartifactresults
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
+	//
+	// Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -1622,6 +1626,8 @@ func (o ModelCustomMetadataListOutput) Key() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
+//
+// Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
 func (o ModelCustomMetadataListOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelCustomMetadataList) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -1660,6 +1666,8 @@ type ModelDefinedMetadataList struct {
 	// * testartifactresults
 	Key *string `pulumi:"key"`
 	// (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
+	//
+	// Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
 	Value *string `pulumi:"value"`
 }
 
@@ -1688,6 +1696,8 @@ type ModelDefinedMetadataListArgs struct {
 	// * testartifactresults
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
+	//
+	// Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -1764,6 +1774,8 @@ func (o ModelDefinedMetadataListOutput) Key() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
+//
+// Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
 func (o ModelDefinedMetadataListOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelDefinedMetadataList) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -6413,6 +6425,9 @@ type PipelineStepDetail struct {
 	// (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
 	StepName string `pulumi:"stepName"`
 	// (Updatable) The type of step.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StepType string `pulumi:"stepType"`
 }
 
@@ -6443,6 +6458,9 @@ type PipelineStepDetailArgs struct {
 	// (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
 	StepName pulumi.StringInput `pulumi:"stepName"`
 	// (Updatable) The type of step.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StepType pulumi.StringInput `pulumi:"stepType"`
 }
 
@@ -6537,6 +6555,9 @@ func (o PipelineStepDetailOutput) StepName() pulumi.StringOutput {
 }
 
 // (Updatable) The type of step.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PipelineStepDetailOutput) StepType() pulumi.StringOutput {
 	return o.ApplyT(func(v PipelineStepDetail) string { return v.StepType }).(pulumi.StringOutput)
 }

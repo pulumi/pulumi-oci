@@ -60,7 +60,13 @@ export interface GetRecommendationsArgs {
      */
     categoryName?: string;
     /**
-     * A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+     * A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A. 
+     *
+     * If this list contains a tenancy id that isn't part of the organization of parent P, the request will  fail. That is, let's say there is an organization with parent P with children A and B, and also one  other tenant T that isn't part of the organization. If T is included in the list of  childTenancyIds, the request will fail.
+     *
+     * It is important to note that if you are setting the includeOrganization parameter value as true and  also populating the childTenancyIds parameter with a list of child tenancies, the request will fail. The childTenancyIds and includeOrganization should be used exclusively.
+     *
+     * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
      */
     childTenancyIds?: string[];
     /**
@@ -69,11 +75,17 @@ export interface GetRecommendationsArgs {
     compartmentId: string;
     /**
      * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+     *
+     * Can only be set to true when performing ListCompartments on the tenancy (root compartment).
      */
     compartmentIdInSubtree: boolean;
     filters?: inputs.Optimizer.GetRecommendationsFilter[];
     /**
      * When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+     *
+     * Please note that this parameter shouldn't be used along with childTenancyIds parameter. If you would like  to get results specifically for parent P and only child A, use the childTenancyIds parameter and populate the list with tenancy id of P and A.
+     *
+     * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
      */
     includeOrganization?: boolean;
     /**
@@ -169,7 +181,13 @@ export interface GetRecommendationsOutputArgs {
      */
     categoryName?: pulumi.Input<string>;
     /**
-     * A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+     * A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A. 
+     *
+     * If this list contains a tenancy id that isn't part of the organization of parent P, the request will  fail. That is, let's say there is an organization with parent P with children A and B, and also one  other tenant T that isn't part of the organization. If T is included in the list of  childTenancyIds, the request will fail.
+     *
+     * It is important to note that if you are setting the includeOrganization parameter value as true and  also populating the childTenancyIds parameter with a list of child tenancies, the request will fail. The childTenancyIds and includeOrganization should be used exclusively.
+     *
+     * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
      */
     childTenancyIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -178,11 +196,17 @@ export interface GetRecommendationsOutputArgs {
     compartmentId: pulumi.Input<string>;
     /**
      * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+     *
+     * Can only be set to true when performing ListCompartments on the tenancy (root compartment).
      */
     compartmentIdInSubtree: pulumi.Input<boolean>;
     filters?: pulumi.Input<pulumi.Input<inputs.Optimizer.GetRecommendationsFilterArgs>[]>;
     /**
      * When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+     *
+     * Please note that this parameter shouldn't be used along with childTenancyIds parameter. If you would like  to get results specifically for parent P and only child A, use the childTenancyIds parameter and populate the list with tenancy id of P and A.
+     *
+     * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
      */
     includeOrganization?: pulumi.Input<boolean>;
     /**

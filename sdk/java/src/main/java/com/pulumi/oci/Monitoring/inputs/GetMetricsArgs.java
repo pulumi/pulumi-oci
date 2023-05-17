@@ -75,12 +75,16 @@ public final class GetMetricsArgs extends com.pulumi.resources.InvokeArgs {
     /**
      * Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the &#34;namespace&#34; field. Supported fields: namespace, name, resourceGroup.
      * 
+     * Example - group by namespace: `[ &#34;namespace&#34; ]`
+     * 
      */
     @Import(name="groupBies")
     private @Nullable Output<List<String>> groupBies;
 
     /**
      * @return Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the &#34;namespace&#34; field. Supported fields: namespace, name, resourceGroup.
+     * 
+     * Example - group by namespace: `[ &#34;namespace&#34; ]`
      * 
      */
     public Optional<Output<List<String>>> groupBies() {
@@ -242,6 +246,8 @@ public final class GetMetricsArgs extends com.pulumi.resources.InvokeArgs {
         /**
          * @param groupBies Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the &#34;namespace&#34; field. Supported fields: namespace, name, resourceGroup.
          * 
+         * Example - group by namespace: `[ &#34;namespace&#34; ]`
+         * 
          * @return builder
          * 
          */
@@ -253,6 +259,8 @@ public final class GetMetricsArgs extends com.pulumi.resources.InvokeArgs {
         /**
          * @param groupBies Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the &#34;namespace&#34; field. Supported fields: namespace, name, resourceGroup.
          * 
+         * Example - group by namespace: `[ &#34;namespace&#34; ]`
+         * 
          * @return builder
          * 
          */
@@ -262,6 +270,8 @@ public final class GetMetricsArgs extends com.pulumi.resources.InvokeArgs {
 
         /**
          * @param groupBies Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the &#34;namespace&#34; field. Supported fields: namespace, name, resourceGroup.
+         * 
+         * Example - group by namespace: `[ &#34;namespace&#34; ]`
          * 
          * @return builder
          * 

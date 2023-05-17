@@ -101,6 +101,9 @@ type BackupDestination struct {
 	// Type of the backup destination.
 	Type pulumi.StringOutput `pulumi:"type"`
 	// (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VpcUsers pulumi.StringArrayOutput `pulumi:"vpcUsers"`
 }
 
@@ -175,6 +178,9 @@ type backupDestinationState struct {
 	// Type of the backup destination.
 	Type *string `pulumi:"type"`
 	// (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VpcUsers []string `pulumi:"vpcUsers"`
 }
 
@@ -212,6 +218,9 @@ type BackupDestinationState struct {
 	// Type of the backup destination.
 	Type pulumi.StringPtrInput
 	// (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VpcUsers pulumi.StringArrayInput
 }
 
@@ -239,6 +248,9 @@ type backupDestinationArgs struct {
 	// Type of the backup destination.
 	Type string `pulumi:"type"`
 	// (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VpcUsers []string `pulumi:"vpcUsers"`
 }
 
@@ -263,6 +275,9 @@ type BackupDestinationArgs struct {
 	// Type of the backup destination.
 	Type pulumi.StringInput
 	// (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VpcUsers pulumi.StringArrayInput
 }
 
@@ -433,6 +448,9 @@ func (o BackupDestinationOutput) Type() pulumi.StringOutput {
 }
 
 // (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BackupDestinationOutput) VpcUsers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *BackupDestination) pulumi.StringArrayOutput { return v.VpcUsers }).(pulumi.StringArrayOutput)
 }

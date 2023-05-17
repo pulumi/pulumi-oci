@@ -48,10 +48,14 @@ export interface GetAuditProfileCollectedAuditVolumesArgs {
     filters?: inputs.DataSafe.GetAuditProfileCollectedAuditVolumesFilter[];
     /**
      * Specifying `monthInConsiderationGreaterThan` parameter will retrieve all items for which the event month is greater than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * **Example:** 2016-12-19T00:00:00.000Z
      */
     monthInConsiderationGreaterThan?: string;
     /**
      * Specifying `monthInConsiderationLessThan` parameter will retrieve all items for which the event month is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * **Example:** 2016-12-19T00:00:00.000Z
      */
     monthInConsiderationLessThan?: string;
     /**
@@ -115,10 +119,14 @@ export interface GetAuditProfileCollectedAuditVolumesOutputArgs {
     filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetAuditProfileCollectedAuditVolumesFilterArgs>[]>;
     /**
      * Specifying `monthInConsiderationGreaterThan` parameter will retrieve all items for which the event month is greater than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * **Example:** 2016-12-19T00:00:00.000Z
      */
     monthInConsiderationGreaterThan?: pulumi.Input<string>;
     /**
      * Specifying `monthInConsiderationLessThan` parameter will retrieve all items for which the event month is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * **Example:** 2016-12-19T00:00:00.000Z
      */
     monthInConsiderationLessThan?: pulumi.Input<string>;
     /**

@@ -82,6 +82,9 @@ export class HeatWaveCluster extends pulumi.CustomResource {
     public readonly shapeName!: pulumi.Output<string>;
     /**
      * (Updatable) The target state for the HeatWave cluster. Could be set to `ACTIVE` or `INACTIVE`.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly state!: pulumi.Output<string>;
     /**
@@ -165,6 +168,9 @@ export interface HeatWaveClusterState {
     shapeName?: pulumi.Input<string>;
     /**
      * (Updatable) The target state for the HeatWave cluster. Could be set to `ACTIVE` or `INACTIVE`.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     state?: pulumi.Input<string>;
     /**
@@ -195,6 +201,9 @@ export interface HeatWaveClusterArgs {
     shapeName: pulumi.Input<string>;
     /**
      * (Updatable) The target state for the HeatWave cluster. Could be set to `ACTIVE` or `INACTIVE`.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     state?: pulumi.Input<string>;
 }

@@ -40,6 +40,8 @@ export interface GetSslCipherSuiteArgs {
     loadBalancerId: string;
     /**
      * The name of the SSL cipher suite to retrieve.
+     *
+     * example: `exampleCipherSuite`
      */
     name: string;
 }
@@ -91,6 +93,8 @@ export interface GetSslCipherSuiteOutputArgs {
     loadBalancerId: pulumi.Input<string>;
     /**
      * The name of the SSL cipher suite to retrieve.
+     *
+     * example: `exampleCipherSuite`
      */
     name: pulumi.Input<string>;
 }

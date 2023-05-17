@@ -81,6 +81,9 @@ type KeyVersion struct {
 	// The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: "2018-04-03T21:10:29.600Z"
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeOfDeletion pulumi.StringOutput `pulumi:"timeOfDeletion"`
 	// The OCID of the vault that contains this key version.
 	VaultId pulumi.StringOutput `pulumi:"vaultId"`
@@ -142,6 +145,9 @@ type keyVersionState struct {
 	// The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: "2018-04-03T21:10:29.600Z"
 	TimeCreated *string `pulumi:"timeCreated"`
 	// (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 	// The OCID of the vault that contains this key version.
 	VaultId *string `pulumi:"vaultId"`
@@ -169,6 +175,9 @@ type KeyVersionState struct {
 	// The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: "2018-04-03T21:10:29.600Z"
 	TimeCreated pulumi.StringPtrInput
 	// (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeOfDeletion pulumi.StringPtrInput
 	// The OCID of the vault that contains this key version.
 	VaultId pulumi.StringPtrInput
@@ -184,6 +193,9 @@ type keyVersionArgs struct {
 	// The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
 	ManagementEndpoint string `pulumi:"managementEndpoint"`
 	// (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 }
 
@@ -194,6 +206,9 @@ type KeyVersionArgs struct {
 	// The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
 	ManagementEndpoint pulumi.StringInput
 	// (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeOfDeletion pulumi.StringPtrInput
 }
 
@@ -338,6 +353,9 @@ func (o KeyVersionOutput) TimeCreated() pulumi.StringOutput {
 }
 
 // (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o KeyVersionOutput) TimeOfDeletion() pulumi.StringOutput {
 	return o.ApplyT(func(v *KeyVersion) pulumi.StringOutput { return v.TimeOfDeletion }).(pulumi.StringOutput)
 }

@@ -96,12 +96,18 @@ public final class AiPrivateEndpointArgs extends com.pulumi.resources.ResourceAr
     /**
      * The OCID of subnet to which the reverse connection is to be created.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="subnetId", required=true)
     private Output<String> subnetId;
 
     /**
      * @return The OCID of subnet to which the reverse connection is to be created.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> subnetId() {
@@ -255,6 +261,9 @@ public final class AiPrivateEndpointArgs extends com.pulumi.resources.ResourceAr
         /**
          * @param subnetId The OCID of subnet to which the reverse connection is to be created.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -265,6 +274,9 @@ public final class AiPrivateEndpointArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param subnetId The OCID of subnet to which the reverse connection is to be created.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

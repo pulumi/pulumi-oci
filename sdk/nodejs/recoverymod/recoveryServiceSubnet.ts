@@ -113,6 +113,10 @@ export class RecoveryServiceSubnet extends pulumi.CustomResource {
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
      * The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly vcnId!: pulumi.Output<string>;
 
@@ -223,6 +227,10 @@ export interface RecoveryServiceSubnetState {
     timeUpdated?: pulumi.Input<string>;
     /**
      * The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vcnId?: pulumi.Input<string>;
 }
@@ -253,6 +261,10 @@ export interface RecoveryServiceSubnetArgs {
     subnetId: pulumi.Input<string>;
     /**
      * The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vcnId: pulumi.Input<string>;
 }

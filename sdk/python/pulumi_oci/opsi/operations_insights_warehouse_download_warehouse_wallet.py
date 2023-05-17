@@ -20,6 +20,10 @@ class OperationsInsightsWarehouseDownloadWarehouseWalletArgs:
         The set of arguments for constructing a OperationsInsightsWarehouseDownloadWarehouseWallet resource.
         :param pulumi.Input[str] operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
         :param pulumi.Input[str] operations_insights_warehouse_wallet_password: User provided ADW wallet password for the Operations Insights Warehouse.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "operations_insights_warehouse_id", operations_insights_warehouse_id)
         pulumi.set(__self__, "operations_insights_warehouse_wallet_password", operations_insights_warehouse_wallet_password)
@@ -41,6 +45,10 @@ class OperationsInsightsWarehouseDownloadWarehouseWalletArgs:
     def operations_insights_warehouse_wallet_password(self) -> pulumi.Input[str]:
         """
         User provided ADW wallet password for the Operations Insights Warehouse.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "operations_insights_warehouse_wallet_password")
 
@@ -58,6 +66,10 @@ class _OperationsInsightsWarehouseDownloadWarehouseWalletState:
         Input properties used for looking up and filtering OperationsInsightsWarehouseDownloadWarehouseWallet resources.
         :param pulumi.Input[str] operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
         :param pulumi.Input[str] operations_insights_warehouse_wallet_password: User provided ADW wallet password for the Operations Insights Warehouse.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if operations_insights_warehouse_id is not None:
             pulumi.set(__self__, "operations_insights_warehouse_id", operations_insights_warehouse_id)
@@ -81,6 +93,10 @@ class _OperationsInsightsWarehouseDownloadWarehouseWalletState:
     def operations_insights_warehouse_wallet_password(self) -> Optional[pulumi.Input[str]]:
         """
         User provided ADW wallet password for the Operations Insights Warehouse.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "operations_insights_warehouse_wallet_password")
 
@@ -125,6 +141,10 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
         :param pulumi.Input[str] operations_insights_warehouse_wallet_password: User provided ADW wallet password for the Operations Insights Warehouse.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -211,6 +231,10 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
         :param pulumi.Input[str] operations_insights_warehouse_wallet_password: User provided ADW wallet password for the Operations Insights Warehouse.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -233,6 +257,10 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
     def operations_insights_warehouse_wallet_password(self) -> pulumi.Output[str]:
         """
         User provided ADW wallet password for the Operations Insights Warehouse.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "operations_insights_warehouse_wallet_password")
 

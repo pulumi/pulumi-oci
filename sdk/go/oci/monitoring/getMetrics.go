@@ -68,6 +68,8 @@ type GetMetricsArgs struct {
 	DimensionFilters map[string]interface{} `pulumi:"dimensionFilters"`
 	Filters          []GetMetricsFilter     `pulumi:"filters"`
 	// Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup.
+	//
+	// Example - group by namespace: `[ "namespace" ]`
 	GroupBies []string `pulumi:"groupBies"`
 	// The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
 	Name *string `pulumi:"name"`
@@ -120,6 +122,8 @@ type GetMetricsOutputArgs struct {
 	DimensionFilters pulumi.MapInput            `pulumi:"dimensionFilters"`
 	Filters          GetMetricsFilterArrayInput `pulumi:"filters"`
 	// Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup.
+	//
+	// Example - group by namespace: `[ "namespace" ]`
 	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
 	// The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
 	Name pulumi.StringPtrInput `pulumi:"name"`

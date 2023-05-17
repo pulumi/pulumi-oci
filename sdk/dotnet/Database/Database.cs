@@ -14,6 +14,8 @@ namespace Pulumi.Oci.Database
     /// 
     /// Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies only to Exadata systems.
     /// 
+    /// **Important:** When `auto_backup_enabled` is not present in the configuration or set to true, the `auto_backup_window` and `auto_full_backup_window` will be ignored
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -38,6 +40,8 @@ namespace Pulumi.Oci.Database
     ///             {
     ///                 AutoBackupEnabled = @var.Database_database_db_backup_config_auto_backup_enabled,
     ///                 AutoBackupWindow = @var.Database_database_db_backup_config_auto_backup_window,
+    ///                 AutoFullBackupDay = @var.Database_database_db_backup_config_auto_full_backup_day,
+    ///                 AutoFullBackupWindow = @var.Database_database_db_backup_config_auto_full_backup_window,
     ///                 BackupDeletionPolicy = @var.Database_database_db_backup_config_backup_deletion_policy,
     ///                 BackupDestinationDetails = new[]
     ///                 {
@@ -49,6 +53,7 @@ namespace Pulumi.Oci.Database
     ///                     },
     ///                 },
     ///                 RecoveryWindowInDays = @var.Database_database_db_backup_config_recovery_window_in_days,
+    ///                 RunImmediateFullBackup = @var.Database_database_db_backup_config_run_immediate_full_backup,
     ///             },
     ///             DbUniqueName = @var.Database_database_db_unique_name,
     ///             DbWorkload = @var.Database_database_db_workload,
@@ -85,6 +90,8 @@ namespace Pulumi.Oci.Database
     {
         /// <summary>
         /// The character set for the database.  The default is AL32UTF8. Allowed values are:
+        /// 
+        /// AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
         /// </summary>
         [Output("characterSet")]
         public Output<string> CharacterSet { get; private set; } = null!;
@@ -103,6 +110,8 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) Details for creating a database.
+        /// 
+        /// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         /// </summary>
         [Output("database")]
         public Output<Outputs.DatabaseDatabase> DatabaseName { get; private set; } = null!;
@@ -157,6 +166,8 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+        /// 
+        /// The database workload type.
         /// </summary>
         [Output("dbWorkload")]
         public Output<string> DbWorkload { get; private set; } = null!;
@@ -246,7 +257,11 @@ namespace Pulumi.Oci.Database
         public Output<string> SidPrefix { get; private set; } = null!;
 
         /// <summary>
-        /// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
+        /// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("source")]
         public Output<string> Source { get; private set; } = null!;
@@ -329,6 +344,8 @@ namespace Pulumi.Oci.Database
     {
         /// <summary>
         /// (Updatable) Details for creating a database.
+        /// 
+        /// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         /// </summary>
         [Input("database", required: true)]
         public Input<Inputs.DatabaseDatabaseArgs> DatabaseName { get; set; } = null!;
@@ -370,7 +387,11 @@ namespace Pulumi.Oci.Database
         public Input<string>? KmsKeyVersionId { get; set; }
 
         /// <summary>
-        /// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
+        /// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("source", required: true)]
         public Input<string> Source { get; set; } = null!;
@@ -391,6 +412,8 @@ namespace Pulumi.Oci.Database
     {
         /// <summary>
         /// The character set for the database.  The default is AL32UTF8. Allowed values are:
+        /// 
+        /// AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
         /// </summary>
         [Input("characterSet")]
         public Input<string>? CharacterSet { get; set; }
@@ -415,6 +438,8 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) Details for creating a database.
+        /// 
+        /// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         /// </summary>
         [Input("database")]
         public Input<Inputs.DatabaseDatabaseGetArgs>? DatabaseName { get; set; }
@@ -481,6 +506,8 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+        /// 
+        /// The database workload type.
         /// </summary>
         [Input("dbWorkload")]
         public Input<string>? DbWorkload { get; set; }
@@ -582,7 +609,11 @@ namespace Pulumi.Oci.Database
         public Input<string>? SidPrefix { get; set; }
 
         /// <summary>
-        /// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
+        /// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("source")]
         public Input<string>? Source { get; set; }

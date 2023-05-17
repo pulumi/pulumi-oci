@@ -19,12 +19,34 @@ public final class DomainsUserEmailArgs extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) Pending e-mail address verification
      * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="pendingVerificationData")
     private @Nullable Output<String> pendingVerificationData;
 
     /**
      * @return (Updatable) Pending e-mail address verification
+     * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> pendingVerificationData() {
@@ -34,12 +56,30 @@ public final class DomainsUserEmailArgs extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="primary")
     private @Nullable Output<Boolean> primary;
 
     /**
      * @return (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> primary() {
@@ -49,12 +89,36 @@ public final class DomainsUserEmailArgs extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) A Boolean value that indicates whether the email address is the secondary email address. The secondary attribute value &#39;true&#39; MUST appear no more than once.
      * 
+     * **Added In:** 18.2.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="secondary")
     private @Nullable Output<Boolean> secondary;
 
     /**
      * @return (Updatable) A Boolean value that indicates whether the email address is the secondary email address. The secondary attribute value &#39;true&#39; MUST appear no more than once.
+     * 
+     * **Added In:** 18.2.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> secondary() {
@@ -64,12 +128,30 @@ public final class DomainsUserEmailArgs extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) A label indicating the attribute&#39;s function.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
      * @return (Updatable) A label indicating the attribute&#39;s function.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> type() {
@@ -79,12 +161,36 @@ public final class DomainsUserEmailArgs extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) The value of a X509 certificate.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
      * @return (Updatable) The value of a X509 certificate.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -94,12 +200,32 @@ public final class DomainsUserEmailArgs extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) A Boolean value that indicates if the phone number is verified.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="verified")
     private @Nullable Output<Boolean> verified;
 
     /**
      * @return (Updatable) A Boolean value that indicates if the phone number is verified.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> verified() {
@@ -138,6 +264,17 @@ public final class DomainsUserEmailArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param pendingVerificationData (Updatable) Pending e-mail address verification
          * 
+         * **Added In:** 19.1.4
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -149,6 +286,17 @@ public final class DomainsUserEmailArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param pendingVerificationData (Updatable) Pending e-mail address verification
          * 
+         * **Added In:** 19.1.4
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -158,6 +306,15 @@ public final class DomainsUserEmailArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param primary (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -170,6 +327,15 @@ public final class DomainsUserEmailArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param primary (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -179,6 +345,18 @@ public final class DomainsUserEmailArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param secondary (Updatable) A Boolean value that indicates whether the email address is the secondary email address. The secondary attribute value &#39;true&#39; MUST appear no more than once.
+         * 
+         * **Added In:** 18.2.6
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -191,6 +369,18 @@ public final class DomainsUserEmailArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param secondary (Updatable) A Boolean value that indicates whether the email address is the secondary email address. The secondary attribute value &#39;true&#39; MUST appear no more than once.
          * 
+         * **Added In:** 18.2.6
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -200,6 +390,15 @@ public final class DomainsUserEmailArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param type (Updatable) A label indicating the attribute&#39;s function.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -212,6 +411,15 @@ public final class DomainsUserEmailArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param type (Updatable) A label indicating the attribute&#39;s function.
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -221,6 +429,18 @@ public final class DomainsUserEmailArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param value (Updatable) The value of a X509 certificate.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -233,6 +453,18 @@ public final class DomainsUserEmailArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param value (Updatable) The value of a X509 certificate.
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -242,6 +474,16 @@ public final class DomainsUserEmailArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param verified (Updatable) A Boolean value that indicates if the phone number is verified.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -253,6 +495,16 @@ public final class DomainsUserEmailArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param verified (Updatable) A Boolean value that indicates if the phone number is verified.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 

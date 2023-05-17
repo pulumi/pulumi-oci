@@ -40,6 +40,10 @@ class SoftwareSourceArgs:
         :param pulumi.Input[str] maintainer_name: (Updatable) Name of the person maintaining this software source
         :param pulumi.Input[str] maintainer_phone: (Updatable) Phone number of the person maintaining this software source
         :param pulumi.Input[str] parent_id: OCID for the parent software source, if there is one
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "arch_type", arch_type)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -186,6 +190,10 @@ class SoftwareSourceArgs:
     def parent_id(self) -> Optional[pulumi.Input[str]]:
         """
         OCID for the parent software source, if there is one
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "parent_id")
 
@@ -236,6 +244,10 @@ class _SoftwareSourceState:
         :param pulumi.Input[str] maintainer_phone: (Updatable) Phone number of the person maintaining this software source
         :param pulumi.Input[int] packages: Number of packages
         :param pulumi.Input[str] parent_id: OCID for the parent software source, if there is one
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] parent_name: Display name the parent software source, if there is one
         :param pulumi.Input[str] repo_type: Type of the Software Source
         :param pulumi.Input[str] state: The current state of the Software Source.
@@ -470,6 +482,10 @@ class _SoftwareSourceState:
     def parent_id(self) -> Optional[pulumi.Input[str]]:
         """
         OCID for the parent software source, if there is one
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "parent_id")
 
@@ -607,6 +623,10 @@ class SoftwareSource(pulumi.CustomResource):
         :param pulumi.Input[str] maintainer_name: (Updatable) Name of the person maintaining this software source
         :param pulumi.Input[str] maintainer_phone: (Updatable) Phone number of the person maintaining this software source
         :param pulumi.Input[str] parent_id: OCID for the parent software source, if there is one
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -769,6 +789,10 @@ class SoftwareSource(pulumi.CustomResource):
         :param pulumi.Input[str] maintainer_phone: (Updatable) Phone number of the person maintaining this software source
         :param pulumi.Input[int] packages: Number of packages
         :param pulumi.Input[str] parent_id: OCID for the parent software source, if there is one
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] parent_name: Display name the parent software source, if there is one
         :param pulumi.Input[str] repo_type: Type of the Software Source
         :param pulumi.Input[str] state: The current state of the Software Source.
@@ -927,6 +951,10 @@ class SoftwareSource(pulumi.CustomResource):
     def parent_id(self) -> pulumi.Output[str]:
         """
         OCID for the parent software source, if there is one
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "parent_id")
 

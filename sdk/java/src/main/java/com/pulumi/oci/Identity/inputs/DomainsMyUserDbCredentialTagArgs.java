@@ -16,12 +16,32 @@ public final class DomainsMyUserDbCredentialTagArgs extends com.pulumi.resources
     /**
      * Key or name of the tag.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="key", required=true)
     private Output<String> key;
 
     /**
      * @return Key or name of the tag.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> key() {
@@ -31,12 +51,38 @@ public final class DomainsMyUserDbCredentialTagArgs extends com.pulumi.resources
     /**
      * User&#39;s id
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: true
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
      * @return User&#39;s id
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: true
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -71,6 +117,16 @@ public final class DomainsMyUserDbCredentialTagArgs extends com.pulumi.resources
         /**
          * @param key Key or name of the tag.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -82,6 +138,16 @@ public final class DomainsMyUserDbCredentialTagArgs extends com.pulumi.resources
         /**
          * @param key Key or name of the tag.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -91,6 +157,19 @@ public final class DomainsMyUserDbCredentialTagArgs extends com.pulumi.resources
 
         /**
          * @param value User&#39;s id
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: true
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -102,6 +181,19 @@ public final class DomainsMyUserDbCredentialTagArgs extends com.pulumi.resources
 
         /**
          * @param value User&#39;s id
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: true
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

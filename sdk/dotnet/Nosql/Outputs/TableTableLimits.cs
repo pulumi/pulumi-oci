@@ -27,6 +27,10 @@ namespace Pulumi.Oci.Nosql.Outputs
         public readonly int MaxStorageInGbs;
         /// <summary>
         /// (Updatable) Maximum sustained write throughput limit for the table.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly int MaxWriteUnits;
 

@@ -119,6 +119,10 @@ export class PrivateEndpoint extends pulumi.CustomResource {
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly vcnId!: pulumi.Output<string>;
 
@@ -235,6 +239,10 @@ export interface PrivateEndpointState {
     timeCreated?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vcnId?: pulumi.Input<string>;
 }
@@ -281,6 +289,10 @@ export interface PrivateEndpointArgs {
     subnetId: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vcnId: pulumi.Input<string>;
 }

@@ -78,6 +78,9 @@ type PingProbe struct {
 	// The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
 	TimeoutInSeconds pulumi.IntOutput `pulumi:"timeoutInSeconds"`
 	// A list of names of vantage points from which to execute the probe.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VantagePointNames pulumi.StringArrayOutput `pulumi:"vantagePointNames"`
 }
 
@@ -136,6 +139,9 @@ type pingProbeState struct {
 	// The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
 	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// A list of names of vantage points from which to execute the probe.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VantagePointNames []string `pulumi:"vantagePointNames"`
 }
 
@@ -157,6 +163,9 @@ type PingProbeState struct {
 	// The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
 	TimeoutInSeconds pulumi.IntPtrInput
 	// A list of names of vantage points from which to execute the probe.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VantagePointNames pulumi.StringArrayInput
 }
 
@@ -176,6 +185,9 @@ type pingProbeArgs struct {
 	// The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
 	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// A list of names of vantage points from which to execute the probe.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VantagePointNames []string `pulumi:"vantagePointNames"`
 }
 
@@ -192,6 +204,9 @@ type PingProbeArgs struct {
 	// The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
 	TimeoutInSeconds pulumi.IntPtrInput
 	// A list of names of vantage points from which to execute the probe.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VantagePointNames pulumi.StringArrayInput
 }
 
@@ -323,6 +338,9 @@ func (o PingProbeOutput) TimeoutInSeconds() pulumi.IntOutput {
 }
 
 // A list of names of vantage points from which to execute the probe.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PingProbeOutput) VantagePointNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *PingProbe) pulumi.StringArrayOutput { return v.VantagePointNames }).(pulumi.StringArrayOutput)
 }

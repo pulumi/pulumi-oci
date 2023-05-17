@@ -81,6 +81,10 @@ export class CustomTable extends pulumi.CustomResource {
     public readonly savedCustomTable!: pulumi.Output<outputs.MeteringComputation.CustomTableSavedCustomTable>;
     /**
      * The associated saved report OCID.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly savedReportId!: pulumi.Output<string>;
 
@@ -134,6 +138,10 @@ export interface CustomTableState {
     savedCustomTable?: pulumi.Input<inputs.MeteringComputation.CustomTableSavedCustomTable>;
     /**
      * The associated saved report OCID.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     savedReportId?: pulumi.Input<string>;
 }
@@ -152,6 +160,10 @@ export interface CustomTableArgs {
     savedCustomTable: pulumi.Input<inputs.MeteringComputation.CustomTableSavedCustomTable>;
     /**
      * The associated saved report OCID.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     savedReportId: pulumi.Input<string>;
 }

@@ -33,6 +33,9 @@ class ModelArgs:
         """
         The set of arguments for constructing a Model resource.
         :param pulumi.Input[str] artifact_content_length: The content length of the model_artifact.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
         :param pulumi.Input[str] model_artifact: The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
@@ -77,6 +80,9 @@ class ModelArgs:
     def artifact_content_length(self) -> pulumi.Input[str]:
         """
         The content length of the model_artifact.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "artifact_content_length")
 
@@ -267,6 +273,9 @@ class _ModelState:
         Input properties used for looking up and filtering Model resources.
         :param pulumi.Input[str] artifact_content_disposition: This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
         :param pulumi.Input[str] artifact_content_length: The content length of the model_artifact.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
         :param pulumi.Input[str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
         :param pulumi.Input[Sequence[pulumi.Input['ModelCustomMetadataListArgs']]] custom_metadata_lists: (Updatable) An array of custom metadata details for the model.
@@ -338,6 +347,9 @@ class _ModelState:
     def artifact_content_length(self) -> Optional[pulumi.Input[str]]:
         """
         The content length of the model_artifact.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "artifact_content_length")
 
@@ -611,6 +623,9 @@ class Model(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] artifact_content_disposition: This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
         :param pulumi.Input[str] artifact_content_length: The content length of the model_artifact.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelCustomMetadataListArgs']]]] custom_metadata_lists: (Updatable) An array of custom metadata details for the model.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelDefinedMetadataListArgs']]]] defined_metadata_lists: (Updatable) An array of defined metadata details for the model.
@@ -779,6 +794,9 @@ class Model(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] artifact_content_disposition: This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
         :param pulumi.Input[str] artifact_content_length: The content length of the model_artifact.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
         :param pulumi.Input[str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelCustomMetadataListArgs']]]] custom_metadata_lists: (Updatable) An array of custom metadata details for the model.
@@ -832,6 +850,9 @@ class Model(pulumi.CustomResource):
     def artifact_content_length(self) -> pulumi.Output[str]:
         """
         The content length of the model_artifact.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "artifact_content_length")
 

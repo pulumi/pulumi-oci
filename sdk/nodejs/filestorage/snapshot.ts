@@ -85,6 +85,14 @@ export class Snapshot extends pulumi.CustomResource {
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
      * Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
+     *
+     * Avoid entering confidential information.
+     *
+     * Example: `Sunday`
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly name!: pulumi.Output<string>;
     /**
@@ -183,6 +191,14 @@ export interface SnapshotState {
     lifecycleDetails?: pulumi.Input<string>;
     /**
      * Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
+     *
+     * Avoid entering confidential information.
+     *
+     * Example: `Sunday`
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     name?: pulumi.Input<string>;
     /**
@@ -228,6 +244,14 @@ export interface SnapshotArgs {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
+     *
+     * Avoid entering confidential information.
+     *
+     * Example: `Sunday`
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     name?: pulumi.Input<string>;
 }

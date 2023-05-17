@@ -15,22 +15,67 @@ namespace Pulumi.Oci.Identity.Outputs
     {
         /// <summary>
         /// (Updatable) General information about the POSIX account such as their real name and phone number
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? Gecos;
         /// <summary>
         /// (Updatable) Primary Group identifier of the POSIX user
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: integer
+        /// * uniqueness: none
         /// </summary>
         public readonly int? GidNumber;
         /// <summary>
         /// (Updatable) The absolute path to the home directory of the POSIX account
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? HomeDirectory;
         /// <summary>
         /// (Updatable) The path to the login shell of the POSIX account
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? LoginShell;
         /// <summary>
         /// (Updatable) Integer uniquely identifying a user in a POSIX administrative domain
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: integer
+        /// * uniqueness: server
         /// </summary>
         public readonly int? UidNumber;
 

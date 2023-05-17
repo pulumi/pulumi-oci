@@ -262,12 +262,20 @@ public class Image extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) A user-friendly name for the image. It does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
+     * You cannot use a platform image name as a custom image name.
+     * 
+     * Example: `My Oracle Linux image`
+     * 
      */
     @Export(name="displayName", type=String.class, parameters={})
     private Output<String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name for the image. It does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * 
+     * You cannot use a platform image name as a custom image name.
+     * 
+     * Example: `My Oracle Linux image`
      * 
      */
     public Output<String> displayName() {

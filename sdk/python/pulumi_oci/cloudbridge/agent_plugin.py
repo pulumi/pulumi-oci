@@ -21,6 +21,10 @@ class AgentPluginArgs:
         The set of arguments for constructing a AgentPlugin resource.
         :param pulumi.Input[str] agent_id: Unique Agent identifier path parameter.
         :param pulumi.Input[str] plugin_name: Unique plugin identifier path parameter.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] desired_state: (Updatable) State to which the customer wants the plugin to move to.
         """
         pulumi.set(__self__, "agent_id", agent_id)
@@ -45,6 +49,10 @@ class AgentPluginArgs:
     def plugin_name(self) -> pulumi.Input[str]:
         """
         Unique plugin identifier path parameter.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "plugin_name")
 
@@ -89,6 +97,10 @@ class _AgentPluginState:
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] name: Plugin identifier, which can be renamed.
         :param pulumi.Input[str] plugin_name: Unique plugin identifier path parameter.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] plugin_version: Plugin version.
         :param pulumi.Input[str] state: The current state of the plugin.
         :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -197,6 +209,10 @@ class _AgentPluginState:
     def plugin_name(self) -> Optional[pulumi.Input[str]]:
         """
         Unique plugin identifier path parameter.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "plugin_name")
 
@@ -304,6 +320,10 @@ class AgentPlugin(pulumi.CustomResource):
         :param pulumi.Input[str] agent_id: Unique Agent identifier path parameter.
         :param pulumi.Input[str] desired_state: (Updatable) State to which the customer wants the plugin to move to.
         :param pulumi.Input[str] plugin_name: Unique plugin identifier path parameter.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -415,6 +435,10 @@ class AgentPlugin(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] name: Plugin identifier, which can be renamed.
         :param pulumi.Input[str] plugin_name: Unique plugin identifier path parameter.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] plugin_version: Plugin version.
         :param pulumi.Input[str] state: The current state of the plugin.
         :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -492,6 +516,10 @@ class AgentPlugin(pulumi.CustomResource):
     def plugin_name(self) -> pulumi.Output[str]:
         """
         Unique plugin identifier path parameter.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "plugin_name")
 

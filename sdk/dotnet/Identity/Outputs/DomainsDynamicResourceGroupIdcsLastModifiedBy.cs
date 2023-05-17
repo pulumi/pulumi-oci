@@ -15,22 +15,73 @@ namespace Pulumi.Oci.Identity.Outputs
     {
         /// <summary>
         /// (Updatable) The displayName of the User or App who modified this Resource
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? Display;
         /// <summary>
         /// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: global
         /// </summary>
         public readonly string? Ocid;
         /// <summary>
         /// (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: reference
+        /// * uniqueness: none
         /// </summary>
         public readonly string? Ref;
         /// <summary>
         /// (Updatable) The type of resource, User or App, that modified this Resource
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? Type;
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Tag value
+        /// 
+        /// **Added In:** 2011192329
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * required: true
+        /// * mutability: readWrite
+        /// * returned: default
+        /// * type: string
+        /// * idcsSearchable: true
+        /// * uniqueness: none
         /// </summary>
         public readonly string Value;
 

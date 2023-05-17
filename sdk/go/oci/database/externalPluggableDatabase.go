@@ -94,6 +94,9 @@ type ExternalPluggableDatabase struct {
 	// The configuration of Operations Insights for the external database
 	OperationsInsightsConfigs ExternalPluggableDatabaseOperationsInsightsConfigArrayOutput `pulumi:"operationsInsightsConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceId pulumi.StringOutput `pulumi:"sourceId"`
 	// The configuration of Stack Monitoring for the external database.
 	StackMonitoringConfigs ExternalPluggableDatabaseStackMonitoringConfigArrayOutput `pulumi:"stackMonitoringConfigs"`
@@ -176,6 +179,9 @@ type externalPluggableDatabaseState struct {
 	// The configuration of Operations Insights for the external database
 	OperationsInsightsConfigs []ExternalPluggableDatabaseOperationsInsightsConfig `pulumi:"operationsInsightsConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceId *string `pulumi:"sourceId"`
 	// The configuration of Stack Monitoring for the external database.
 	StackMonitoringConfigs []ExternalPluggableDatabaseStackMonitoringConfig `pulumi:"stackMonitoringConfigs"`
@@ -221,6 +227,9 @@ type ExternalPluggableDatabaseState struct {
 	// The configuration of Operations Insights for the external database
 	OperationsInsightsConfigs ExternalPluggableDatabaseOperationsInsightsConfigArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceId pulumi.StringPtrInput
 	// The configuration of Stack Monitoring for the external database.
 	StackMonitoringConfigs ExternalPluggableDatabaseStackMonitoringConfigArrayInput
@@ -248,6 +257,9 @@ type externalPluggableDatabaseArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceId *string `pulumi:"sourceId"`
 }
 
@@ -264,6 +276,9 @@ type ExternalPluggableDatabaseArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceId pulumi.StringPtrInput
 }
 
@@ -439,6 +454,9 @@ func (o ExternalPluggableDatabaseOutput) OperationsInsightsConfigs() ExternalPlu
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ExternalPluggableDatabaseOutput) SourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalPluggableDatabase) pulumi.StringOutput { return v.SourceId }).(pulumi.StringOutput)
 }

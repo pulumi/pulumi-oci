@@ -87,6 +87,9 @@ export class Model extends pulumi.CustomResource {
     public readonly artifactContentDisposition!: pulumi.Output<string>;
     /**
      * The content length of the model_artifact.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly artifactContentLength!: pulumi.Output<string>;
     public /*out*/ readonly artifactContentMd5!: pulumi.Output<string>;
@@ -230,6 +233,9 @@ export interface ModelState {
     artifactContentDisposition?: pulumi.Input<string>;
     /**
      * The content length of the model_artifact.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     artifactContentLength?: pulumi.Input<string>;
     artifactContentMd5?: pulumi.Input<string>;
@@ -303,6 +309,9 @@ export interface ModelArgs {
     artifactContentDisposition?: pulumi.Input<string>;
     /**
      * The content length of the model_artifact.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     artifactContentLength: pulumi.Input<string>;
     /**

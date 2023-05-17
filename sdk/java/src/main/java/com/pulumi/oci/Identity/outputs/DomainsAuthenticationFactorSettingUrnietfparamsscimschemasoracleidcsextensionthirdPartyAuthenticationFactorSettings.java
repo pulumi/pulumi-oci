@@ -14,12 +14,34 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
     /**
      * @return (Updatable) Settings related to Duo Security
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     private @Nullable DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettings duoSecuritySettings;
 
     private DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings() {}
     /**
      * @return (Updatable) Settings related to Duo Security
+     * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettings> duoSecuritySettings() {

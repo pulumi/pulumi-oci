@@ -18,12 +18,18 @@ public final class OperationsInsightsWarehouseRotateWarehouseWalletState extends
     /**
      * Unique Operations Insights Warehouse identifier
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="operationsInsightsWarehouseId")
     private @Nullable Output<String> operationsInsightsWarehouseId;
 
     /**
      * @return Unique Operations Insights Warehouse identifier
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> operationsInsightsWarehouseId() {
@@ -57,6 +63,9 @@ public final class OperationsInsightsWarehouseRotateWarehouseWalletState extends
         /**
          * @param operationsInsightsWarehouseId Unique Operations Insights Warehouse identifier
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -67,6 +76,9 @@ public final class OperationsInsightsWarehouseRotateWarehouseWalletState extends
 
         /**
          * @param operationsInsightsWarehouseId Unique Operations Insights Warehouse identifier
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

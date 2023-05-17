@@ -95,12 +95,18 @@ public final class LogSavedSearchArgs extends com.pulumi.resources.ResourceArgs 
     /**
      * (Updatable) The search query that is saved.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="query", required=true)
     private Output<String> query;
 
     /**
      * @return (Updatable) The search query that is saved.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> query() {
@@ -244,6 +250,9 @@ public final class LogSavedSearchArgs extends com.pulumi.resources.ResourceArgs 
         /**
          * @param query (Updatable) The search query that is saved.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -254,6 +263,9 @@ public final class LogSavedSearchArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param query (Updatable) The search query that is saved.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

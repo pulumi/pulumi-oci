@@ -14,6 +14,8 @@ namespace Pulumi.Oci.Core.Inputs
     {
         /// <summary>
         /// Whether the plugin should be enabled or disabled. Accepted values are `ENABLED` and `DISABLED`
+        /// 
+        /// To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         /// </summary>
         [Input("desiredState", required: true)]
         public Input<string> DesiredState { get; set; } = null!;

@@ -14,18 +14,48 @@ namespace Pulumi.Oci.Identity.Inputs
     {
         /// <summary>
         /// (Updatable) The displayName of the User or App who modified this Resource
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("display")]
         public Input<string>? Display { get; set; }
 
         /// <summary>
         /// (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: reference
+        /// * uniqueness: none
         /// </summary>
         [Input("ref")]
         public Input<string>? Ref { get; set; }
 
         /// <summary>
         /// (Updatable) Value of the tag.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

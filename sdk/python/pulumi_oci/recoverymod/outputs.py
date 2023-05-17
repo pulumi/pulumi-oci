@@ -172,6 +172,10 @@ class ProtectedDatabaseRecoveryServiceSubnet(dict):
                  state: Optional[str] = None):
         """
         :param str recovery_service_subnet_id: (Updatable) The recovery service subnet OCID.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str state: The current state of the Protected Database.
         """
         pulumi.set(__self__, "recovery_service_subnet_id", recovery_service_subnet_id)
@@ -183,6 +187,10 @@ class ProtectedDatabaseRecoveryServiceSubnet(dict):
     def recovery_service_subnet_id(self) -> str:
         """
         (Updatable) The recovery service subnet OCID.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "recovery_service_subnet_id")
 

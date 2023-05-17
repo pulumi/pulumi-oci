@@ -19,12 +19,30 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
     /**
      * (Updatable) Security question and answers provided by end-user for Account recovery and/or MFA. While setting up security questions, end-user can also provide hint along with answer.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="secQuestions")
     private @Nullable Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs>> secQuestions;
 
     /**
      * @return (Updatable) Security question and answers provided by end-user for Account recovery and/or MFA. While setting up security questions, end-user can also provide hint along with answer.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs>>> secQuestions() {
@@ -58,6 +76,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
         /**
          * @param secQuestions (Updatable) Security question and answers provided by end-user for Account recovery and/or MFA. While setting up security questions, end-user can also provide hint along with answer.
          * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -69,6 +96,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
         /**
          * @param secQuestions (Updatable) Security question and answers provided by end-user for Account recovery and/or MFA. While setting up security questions, end-user can also provide hint along with answer.
          * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -78,6 +114,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
 
         /**
          * @param secQuestions (Updatable) Security question and answers provided by end-user for Account recovery and/or MFA. While setting up security questions, end-user can also provide hint along with answer.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 

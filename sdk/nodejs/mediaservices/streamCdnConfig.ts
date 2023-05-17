@@ -106,6 +106,10 @@ export class StreamCdnConfig extends pulumi.CustomResource {
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * (Updatable) Whether publishing to CDN is enabled.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly isEnabled!: pulumi.Output<boolean>;
     /**
@@ -213,6 +217,10 @@ export interface StreamCdnConfigState {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) Whether publishing to CDN is enabled.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     isEnabled?: pulumi.Input<boolean>;
     /**
@@ -263,6 +271,10 @@ export interface StreamCdnConfigArgs {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) Whether publishing to CDN is enabled.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     isEnabled?: pulumi.Input<boolean>;
 }

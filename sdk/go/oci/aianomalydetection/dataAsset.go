@@ -106,6 +106,9 @@ type DataAsset struct {
 	// OCID of Private Endpoint.
 	PrivateEndpointId pulumi.StringOutput `pulumi:"privateEndpointId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the data asset.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// The lifecycle state of the Data Asset.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -170,6 +173,9 @@ type dataAssetState struct {
 	// OCID of Private Endpoint.
 	PrivateEndpointId *string `pulumi:"privateEndpointId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the data asset.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId *string `pulumi:"projectId"`
 	// The lifecycle state of the Data Asset.
 	State *string `pulumi:"state"`
@@ -197,6 +203,9 @@ type DataAssetState struct {
 	// OCID of Private Endpoint.
 	PrivateEndpointId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the data asset.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringPtrInput
 	// The lifecycle state of the Data Asset.
 	State pulumi.StringPtrInput
@@ -228,6 +237,9 @@ type dataAssetArgs struct {
 	// OCID of Private Endpoint.
 	PrivateEndpointId *string `pulumi:"privateEndpointId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the data asset.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId string `pulumi:"projectId"`
 }
 
@@ -248,6 +260,9 @@ type DataAssetArgs struct {
 	// OCID of Private Endpoint.
 	PrivateEndpointId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the data asset.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringInput
 }
 
@@ -374,6 +389,9 @@ func (o DataAssetOutput) PrivateEndpointId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the data asset.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DataAssetOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataAsset) pulumi.StringOutput { return v.ProjectId }).(pulumi.StringOutput)
 }

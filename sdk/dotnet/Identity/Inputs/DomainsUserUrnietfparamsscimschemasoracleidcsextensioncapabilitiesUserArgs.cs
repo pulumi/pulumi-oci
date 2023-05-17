@@ -14,42 +14,126 @@ namespace Pulumi.Oci.Identity.Inputs
     {
         /// <summary>
         /// (Updatable) Indicates weather a user can use api keys
+        /// 
+        /// **Added In:** 2012271618
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("canUseApiKeys")]
         public Input<bool>? CanUseApiKeys { get; set; }
 
         /// <summary>
         /// (Updatable) Indicates weather a user can use auth tokens
+        /// 
+        /// **Added In:** 2012271618
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("canUseAuthTokens")]
         public Input<bool>? CanUseAuthTokens { get; set; }
 
         /// <summary>
         /// (Updatable) Indicates weather a user can use console password
+        /// 
+        /// **Added In:** 2012271618
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("canUseConsolePassword")]
         public Input<bool>? CanUseConsolePassword { get; set; }
 
         /// <summary>
         /// (Updatable) Indicates weather a user can use customer secret keys
+        /// 
+        /// **Added In:** 2012271618
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("canUseCustomerSecretKeys")]
         public Input<bool>? CanUseCustomerSecretKeys { get; set; }
 
         /// <summary>
         /// (Updatable) Indicates weather a user can use db credentials
+        /// 
+        /// **Added In:** 2012271618
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("canUseDbCredentials")]
         public Input<bool>? CanUseDbCredentials { get; set; }
 
         /// <summary>
         /// (Updatable) Indicates weather a user can use oauth2 client credentials
+        /// 
+        /// **Added In:** 2012271618
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("canUseOauth2clientCredentials")]
         public Input<bool>? CanUseOauth2clientCredentials { get; set; }
 
         /// <summary>
         /// (Updatable) Indicates weather a user can use smtp credentials
+        /// 
+        /// **Added In:** 2012271618
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("canUseSmtpCredentials")]
         public Input<bool>? CanUseSmtpCredentials { get; set; }

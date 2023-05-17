@@ -55,6 +55,9 @@ type UnsetUserAssessmentBaseline struct {
 	pulumi.CustomResourceState
 
 	// The OCID of the user assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserAssessmentId pulumi.StringOutput `pulumi:"userAssessmentId"`
 }
 
@@ -91,11 +94,17 @@ func GetUnsetUserAssessmentBaseline(ctx *pulumi.Context,
 // Input properties used for looking up and filtering UnsetUserAssessmentBaseline resources.
 type unsetUserAssessmentBaselineState struct {
 	// The OCID of the user assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserAssessmentId *string `pulumi:"userAssessmentId"`
 }
 
 type UnsetUserAssessmentBaselineState struct {
 	// The OCID of the user assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserAssessmentId pulumi.StringPtrInput
 }
 
@@ -105,12 +114,18 @@ func (UnsetUserAssessmentBaselineState) ElementType() reflect.Type {
 
 type unsetUserAssessmentBaselineArgs struct {
 	// The OCID of the user assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserAssessmentId string `pulumi:"userAssessmentId"`
 }
 
 // The set of arguments for constructing a UnsetUserAssessmentBaseline resource.
 type UnsetUserAssessmentBaselineArgs struct {
 	// The OCID of the user assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserAssessmentId pulumi.StringInput
 }
 
@@ -202,6 +217,9 @@ func (o UnsetUserAssessmentBaselineOutput) ToUnsetUserAssessmentBaselineOutputWi
 }
 
 // The OCID of the user assessment.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o UnsetUserAssessmentBaselineOutput) UserAssessmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *UnsetUserAssessmentBaseline) pulumi.StringOutput { return v.UserAssessmentId }).(pulumi.StringOutput)
 }

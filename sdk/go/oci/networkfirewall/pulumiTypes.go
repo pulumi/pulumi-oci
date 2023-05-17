@@ -1209,6 +1209,9 @@ func (o NetworkFirewallPolicyUrlListArrayOutput) Index(i pulumi.IntInput) Networ
 
 type NetworkFirewallPolicyUrlListUrlListValue struct {
 	// (Updatable) URL lists to allow or deny traffic to a group of URLs. You can include a maximum of 25 URLs in each list.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Pattern *string `pulumi:"pattern"`
 	// (Updatable) Type of the url lists based on the policy
 	Type string `pulumi:"type"`
@@ -1227,6 +1230,9 @@ type NetworkFirewallPolicyUrlListUrlListValueInput interface {
 
 type NetworkFirewallPolicyUrlListUrlListValueArgs struct {
 	// (Updatable) URL lists to allow or deny traffic to a group of URLs. You can include a maximum of 25 URLs in each list.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Pattern pulumi.StringPtrInput `pulumi:"pattern"`
 	// (Updatable) Type of the url lists based on the policy
 	Type pulumi.StringInput `pulumi:"type"`
@@ -1284,6 +1290,9 @@ func (o NetworkFirewallPolicyUrlListUrlListValueOutput) ToNetworkFirewallPolicyU
 }
 
 // (Updatable) URL lists to allow or deny traffic to a group of URLs. You can include a maximum of 25 URLs in each list.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o NetworkFirewallPolicyUrlListUrlListValueOutput) Pattern() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkFirewallPolicyUrlListUrlListValue) *string { return v.Pattern }).(pulumi.StringPtrOutput)
 }

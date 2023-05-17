@@ -29,6 +29,10 @@ class BdsInstanceMetastoreConfigArgs:
         :param pulumi.Input[str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster admin user.
         :param pulumi.Input[str] metastore_id: The OCID of the Data Catalog metastore.
         :param pulumi.Input[int] activate_trigger: (Updatable) An optional integer, when flipped triggers activation of metastore config.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] display_name: (Updatable) The display name of the metastore configuration
         """
         pulumi.set(__self__, "bds_api_key_id", bds_api_key_id)
@@ -106,6 +110,10 @@ class BdsInstanceMetastoreConfigArgs:
     def activate_trigger(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) An optional integer, when flipped triggers activation of metastore config.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "activate_trigger")
 
@@ -143,6 +151,10 @@ class _BdsInstanceMetastoreConfigState:
         """
         Input properties used for looking up and filtering BdsInstanceMetastoreConfig resources.
         :param pulumi.Input[int] activate_trigger: (Updatable) An optional integer, when flipped triggers activation of metastore config.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] bds_api_key_id: (Updatable) The ID of BDS Api Key used for Data Catalog metastore integration.
         :param pulumi.Input[str] bds_api_key_passphrase: (Updatable) Base-64 encoded passphrase of the BDS Api Key.
         :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
@@ -182,6 +194,10 @@ class _BdsInstanceMetastoreConfigState:
     def activate_trigger(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) An optional integer, when flipped triggers activation of metastore config.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "activate_trigger")
 
@@ -354,6 +370,10 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] activate_trigger: (Updatable) An optional integer, when flipped triggers activation of metastore config.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] bds_api_key_id: (Updatable) The ID of BDS Api Key used for Data Catalog metastore integration.
         :param pulumi.Input[str] bds_api_key_passphrase: (Updatable) Base-64 encoded passphrase of the BDS Api Key.
         :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
@@ -478,6 +498,10 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] activate_trigger: (Updatable) An optional integer, when flipped triggers activation of metastore config.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] bds_api_key_id: (Updatable) The ID of BDS Api Key used for Data Catalog metastore integration.
         :param pulumi.Input[str] bds_api_key_passphrase: (Updatable) Base-64 encoded passphrase of the BDS Api Key.
         :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
@@ -511,6 +535,10 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
     def activate_trigger(self) -> pulumi.Output[Optional[int]]:
         """
         (Updatable) An optional integer, when flipped triggers activation of metastore config.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "activate_trigger")
 

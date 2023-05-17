@@ -24,6 +24,9 @@ class KeyVersionArgs:
         :param pulumi.Input[str] key_id: The OCID of the key.
         :param pulumi.Input[str] management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
         :param pulumi.Input[str] time_of_deletion: (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "key_id", key_id)
         pulumi.set(__self__, "management_endpoint", management_endpoint)
@@ -59,6 +62,9 @@ class KeyVersionArgs:
     def time_of_deletion(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_of_deletion")
 
@@ -95,6 +101,9 @@ class _KeyVersionState:
         :param pulumi.Input[str] state: The key version's current lifecycle state.  Example: `ENABLED`
         :param pulumi.Input[str] time_created: The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: "2018-04-03T21:10:29.600Z"
         :param pulumi.Input[str] time_of_deletion: (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] vault_id: The OCID of the vault that contains this key version.
         """
         if compartment_id is not None:
@@ -255,6 +264,9 @@ class _KeyVersionState:
     def time_of_deletion(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_of_deletion")
 
@@ -319,6 +331,9 @@ class KeyVersion(pulumi.CustomResource):
         :param pulumi.Input[str] key_id: The OCID of the key.
         :param pulumi.Input[str] management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
         :param pulumi.Input[str] time_of_deletion: (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -440,6 +455,9 @@ class KeyVersion(pulumi.CustomResource):
         :param pulumi.Input[str] state: The key version's current lifecycle state.  Example: `ENABLED`
         :param pulumi.Input[str] time_created: The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: "2018-04-03T21:10:29.600Z"
         :param pulumi.Input[str] time_of_deletion: (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] vault_id: The OCID of the vault that contains this key version.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -548,6 +566,9 @@ class KeyVersion(pulumi.CustomResource):
     def time_of_deletion(self) -> pulumi.Output[str]:
         """
         (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_of_deletion")
 

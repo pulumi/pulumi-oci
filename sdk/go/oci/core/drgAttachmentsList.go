@@ -56,6 +56,9 @@ type DrgAttachmentsList struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
 	DrgId pulumi.StringOutput `pulumi:"drgId"`
 	// Whether the DRG attachment lives in a different tenancy than the DRG.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsCrossTenancy pulumi.BoolPtrOutput `pulumi:"isCrossTenancy"`
 }
 
@@ -98,6 +101,9 @@ type drgAttachmentsListState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
 	DrgId *string `pulumi:"drgId"`
 	// Whether the DRG attachment lives in a different tenancy than the DRG.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsCrossTenancy *bool `pulumi:"isCrossTenancy"`
 }
 
@@ -109,6 +115,9 @@ type DrgAttachmentsListState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
 	DrgId pulumi.StringPtrInput
 	// Whether the DRG attachment lives in a different tenancy than the DRG.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsCrossTenancy pulumi.BoolPtrInput
 }
 
@@ -122,6 +131,9 @@ type drgAttachmentsListArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
 	DrgId string `pulumi:"drgId"`
 	// Whether the DRG attachment lives in a different tenancy than the DRG.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsCrossTenancy *bool `pulumi:"isCrossTenancy"`
 }
 
@@ -132,6 +144,9 @@ type DrgAttachmentsListArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
 	DrgId pulumi.StringInput
 	// Whether the DRG attachment lives in a different tenancy than the DRG.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsCrossTenancy pulumi.BoolPtrInput
 }
 
@@ -238,6 +253,9 @@ func (o DrgAttachmentsListOutput) DrgId() pulumi.StringOutput {
 }
 
 // Whether the DRG attachment lives in a different tenancy than the DRG.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DrgAttachmentsListOutput) IsCrossTenancy() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DrgAttachmentsList) pulumi.BoolPtrOutput { return v.IsCrossTenancy }).(pulumi.BoolPtrOutput)
 }

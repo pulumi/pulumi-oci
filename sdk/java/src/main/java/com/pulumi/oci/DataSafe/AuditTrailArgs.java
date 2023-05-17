@@ -112,12 +112,18 @@ public final class AuditTrailArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="resumeTrigger")
     private @Nullable Output<Integer> resumeTrigger;
 
     /**
      * @return (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> resumeTrigger() {
@@ -299,6 +305,9 @@ public final class AuditTrailArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param resumeTrigger (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -309,6 +318,9 @@ public final class AuditTrailArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param resumeTrigger (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

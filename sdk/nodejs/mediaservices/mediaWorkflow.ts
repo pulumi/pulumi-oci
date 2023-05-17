@@ -126,6 +126,10 @@ export class MediaWorkflow extends pulumi.CustomResource {
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
      * (Updatable) The version of the MediaWorkflowTaskDeclaration.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public /*out*/ readonly version!: pulumi.Output<string>;
 
@@ -236,6 +240,10 @@ export interface MediaWorkflowState {
     timeUpdated?: pulumi.Input<string>;
     /**
      * (Updatable) The version of the MediaWorkflowTaskDeclaration.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     version?: pulumi.Input<string>;
 }

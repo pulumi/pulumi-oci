@@ -50,12 +50,18 @@ public final class ExadataIormConfigArgs extends com.pulumi.resources.ResourceAr
     /**
      * (Updatable) Value for the IORM objective Default is &#34;Auto&#34;
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="objective")
     private @Nullable Output<String> objective;
 
     /**
      * @return (Updatable) Value for the IORM objective Default is &#34;Auto&#34;
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> objective() {
@@ -143,6 +149,9 @@ public final class ExadataIormConfigArgs extends com.pulumi.resources.ResourceAr
         /**
          * @param objective (Updatable) Value for the IORM objective Default is &#34;Auto&#34;
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -153,6 +162,9 @@ public final class ExadataIormConfigArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param objective (Updatable) Value for the IORM objective Default is &#34;Auto&#34;
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

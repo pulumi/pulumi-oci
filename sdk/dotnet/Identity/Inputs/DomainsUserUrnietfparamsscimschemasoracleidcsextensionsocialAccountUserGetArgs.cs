@@ -17,6 +17,17 @@ namespace Pulumi.Oci.Identity.Inputs
 
         /// <summary>
         /// (Updatable) Description:
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * idcsPii: true
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountGetArgs> SocialAccounts
         {

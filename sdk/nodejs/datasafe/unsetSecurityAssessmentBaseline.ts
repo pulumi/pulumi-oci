@@ -57,6 +57,10 @@ export class UnsetSecurityAssessmentBaseline extends pulumi.CustomResource {
 
     /**
      * The OCID of the security assessment.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly securityAssessmentId!: pulumi.Output<string>;
 
@@ -92,6 +96,10 @@ export class UnsetSecurityAssessmentBaseline extends pulumi.CustomResource {
 export interface UnsetSecurityAssessmentBaselineState {
     /**
      * The OCID of the security assessment.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     securityAssessmentId?: pulumi.Input<string>;
 }
@@ -102,6 +110,10 @@ export interface UnsetSecurityAssessmentBaselineState {
 export interface UnsetSecurityAssessmentBaselineArgs {
     /**
      * The OCID of the security assessment.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     securityAssessmentId: pulumi.Input<string>;
 }

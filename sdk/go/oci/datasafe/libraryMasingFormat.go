@@ -44,6 +44,9 @@ type LibraryMasingFormat struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SensitiveTypeIds pulumi.StringArrayOutput `pulumi:"sensitiveTypeIds"`
 	// Specifies whether the library masking format is user-defined or predefined.
 	Source pulumi.StringOutput `pulumi:"source"`
@@ -103,6 +106,9 @@ type libraryMasingFormatState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SensitiveTypeIds []string `pulumi:"sensitiveTypeIds"`
 	// Specifies whether the library masking format is user-defined or predefined.
 	Source *string `pulumi:"source"`
@@ -128,6 +134,9 @@ type LibraryMasingFormatState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SensitiveTypeIds pulumi.StringArrayInput
 	// Specifies whether the library masking format is user-defined or predefined.
 	Source pulumi.StringPtrInput
@@ -157,6 +166,9 @@ type libraryMasingFormatArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SensitiveTypeIds []string `pulumi:"sensitiveTypeIds"`
 }
 
@@ -175,6 +187,9 @@ type LibraryMasingFormatArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SensitiveTypeIds pulumi.StringArrayInput
 }
 
@@ -296,6 +311,9 @@ func (o LibraryMasingFormatOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o LibraryMasingFormatOutput) SensitiveTypeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *LibraryMasingFormat) pulumi.StringArrayOutput { return v.SensitiveTypeIds }).(pulumi.StringArrayOutput)
 }

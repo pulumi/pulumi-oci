@@ -85,6 +85,9 @@ type OperationsInsightsWarehouse struct {
 	// Possible lifecycle states
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) Storage allocated to OPSI Warehouse ADW.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StorageAllocatedInGbs pulumi.Float64Output `pulumi:"storageAllocatedInGbs"`
 	// Storage by OPSI Warehouse ADW in GB.
 	StorageUsedInGbs pulumi.Float64Output `pulumi:"storageUsedInGbs"`
@@ -157,6 +160,9 @@ type operationsInsightsWarehouseState struct {
 	// Possible lifecycle states
 	State *string `pulumi:"state"`
 	// (Updatable) Storage allocated to OPSI Warehouse ADW.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StorageAllocatedInGbs *float64 `pulumi:"storageAllocatedInGbs"`
 	// Storage by OPSI Warehouse ADW in GB.
 	StorageUsedInGbs *float64 `pulumi:"storageUsedInGbs"`
@@ -192,6 +198,9 @@ type OperationsInsightsWarehouseState struct {
 	// Possible lifecycle states
 	State pulumi.StringPtrInput
 	// (Updatable) Storage allocated to OPSI Warehouse ADW.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StorageAllocatedInGbs pulumi.Float64PtrInput
 	// Storage by OPSI Warehouse ADW in GB.
 	StorageUsedInGbs pulumi.Float64PtrInput
@@ -221,6 +230,9 @@ type operationsInsightsWarehouseArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Storage allocated to OPSI Warehouse ADW.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StorageAllocatedInGbs *float64 `pulumi:"storageAllocatedInGbs"`
 }
 
@@ -237,6 +249,9 @@ type OperationsInsightsWarehouseArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) Storage allocated to OPSI Warehouse ADW.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StorageAllocatedInGbs pulumi.Float64PtrInput
 }
 
@@ -378,6 +393,9 @@ func (o OperationsInsightsWarehouseOutput) State() pulumi.StringOutput {
 }
 
 // (Updatable) Storage allocated to OPSI Warehouse ADW.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o OperationsInsightsWarehouseOutput) StorageAllocatedInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.Float64Output { return v.StorageAllocatedInGbs }).(pulumi.Float64Output)
 }

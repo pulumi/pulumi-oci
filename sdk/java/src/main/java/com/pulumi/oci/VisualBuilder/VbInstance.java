@@ -285,12 +285,18 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The number of Nodes
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="nodeCount", type=Integer.class, parameters={})
     private Output<Integer> nodeCount;
 
     /**
      * @return (Updatable) The number of Nodes
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Integer> nodeCount() {

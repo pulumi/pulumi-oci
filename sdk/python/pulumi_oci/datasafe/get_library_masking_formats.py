@@ -202,7 +202,11 @@ def get_library_masking_formats(access_level: Optional[str] = None,
     :param str library_masking_format_source: A filter to return the library masking format resources based on the value of their source attribute.
     :param str state: A filter to return only the resources that match the specified lifecycle states.
     :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+           
+           **Example:** 2016-12-19T16:39:57.600Z
     :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+           
+           **Example:** 2016-12-19T16:39:57.600Z
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -276,6 +280,10 @@ def get_library_masking_formats_output(access_level: Optional[pulumi.Input[Optio
     :param str library_masking_format_source: A filter to return the library masking format resources based on the value of their source attribute.
     :param str state: A filter to return only the resources that match the specified lifecycle states.
     :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+           
+           **Example:** 2016-12-19T16:39:57.600Z
     :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+           
+           **Example:** 2016-12-19T16:39:57.600Z
     """
     ...

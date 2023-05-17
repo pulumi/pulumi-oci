@@ -144,6 +144,10 @@ export class MediaWorkflowJob extends pulumi.CustomResource {
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
      * Discriminate identification of a workflow by name versus a workflow by ID.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly workflowIdentifierType!: pulumi.Output<string>;
 
@@ -290,6 +294,10 @@ export interface MediaWorkflowJobState {
     timeUpdated?: pulumi.Input<string>;
     /**
      * Discriminate identification of a workflow by name versus a workflow by ID.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     workflowIdentifierType?: pulumi.Input<string>;
 }
@@ -332,6 +340,10 @@ export interface MediaWorkflowJobArgs {
     parameters?: pulumi.Input<string>;
     /**
      * Discriminate identification of a workflow by name versus a workflow by ID.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     workflowIdentifierType: pulumi.Input<string>;
 }

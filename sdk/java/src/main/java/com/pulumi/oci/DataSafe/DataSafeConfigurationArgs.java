@@ -34,12 +34,18 @@ public final class DataSafeConfigurationArgs extends com.pulumi.resources.Resour
     /**
      * (Updatable) Indicates if Data Safe is enabled.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="isEnabled", required=true)
     private Output<Boolean> isEnabled;
 
     /**
      * @return (Updatable) Indicates if Data Safe is enabled.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Boolean> isEnabled() {
@@ -95,6 +101,9 @@ public final class DataSafeConfigurationArgs extends com.pulumi.resources.Resour
         /**
          * @param isEnabled (Updatable) Indicates if Data Safe is enabled.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -105,6 +114,9 @@ public final class DataSafeConfigurationArgs extends com.pulumi.resources.Resour
 
         /**
          * @param isEnabled (Updatable) Indicates if Data Safe is enabled.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

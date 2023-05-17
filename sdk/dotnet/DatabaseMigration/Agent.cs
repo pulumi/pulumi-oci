@@ -98,7 +98,11 @@ namespace Pulumi.Oci.DatabaseMigration
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) ODMS Agent version
+        /// (Updatable) ODMS Agent version 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("version")]
         public Output<string> Version { get; private set; } = null!;
@@ -204,7 +208,11 @@ namespace Pulumi.Oci.DatabaseMigration
         public Input<string>? StreamId { get; set; }
 
         /// <summary>
-        /// (Updatable) ODMS Agent version
+        /// (Updatable) ODMS Agent version 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("version")]
         public Input<string>? Version { get; set; }
@@ -308,7 +316,11 @@ namespace Pulumi.Oci.DatabaseMigration
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// (Updatable) ODMS Agent version
+        /// (Updatable) ODMS Agent version 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("version")]
         public Input<string>? Version { get; set; }

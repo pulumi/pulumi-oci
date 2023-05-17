@@ -15,6 +15,15 @@ namespace Pulumi.Oci.Identity.Outputs
     {
         /// <summary>
         /// (Updatable) Integer uniquely identifying a group in a POSIX administrative domain
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: integer
+        /// * uniqueness: server
         /// </summary>
         public readonly int? GidNumber;
 

@@ -20,6 +20,10 @@ namespace Pulumi.Oci.DatabaseTools.Inputs
 
         /// <summary>
         /// (Updatable) The value type of the user password.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("valueType", required: true)]
         public Input<string> ValueType { get; set; } = null!;

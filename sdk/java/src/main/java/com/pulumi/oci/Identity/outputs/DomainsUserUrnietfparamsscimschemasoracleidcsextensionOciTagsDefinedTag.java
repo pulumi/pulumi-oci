@@ -12,15 +12,50 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
     /**
      * @return (Updatable) The value of of the User&#39;s api key.
      * 
+     * **Added In:** 2106240046
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private String key;
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tag namespace
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * required: true
+     * * mutability: readWrite
+     * * returned: default
+     * * idcsSearchable: true
+     * * uniqueness: none
+     * 
      */
     private String namespace;
     /**
      * @return (Updatable) The value of a X509 certificate.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
@@ -29,6 +64,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
     /**
      * @return (Updatable) The value of of the User&#39;s api key.
      * 
+     * **Added In:** 2106240046
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public String key() {
         return this.key;
@@ -36,12 +83,35 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tag namespace
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * required: true
+     * * mutability: readWrite
+     * * returned: default
+     * * idcsSearchable: true
+     * * uniqueness: none
+     * 
      */
     public String namespace() {
         return this.namespace;
     }
     /**
      * @return (Updatable) The value of a X509 certificate.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

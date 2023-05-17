@@ -102,12 +102,18 @@ public final class FusionEnvironmentRefreshActivityState extends com.pulumi.reso
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="sourceFusionEnvironmentId")
     private @Nullable Output<String> sourceFusionEnvironmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> sourceFusionEnvironmentId() {
@@ -367,6 +373,9 @@ public final class FusionEnvironmentRefreshActivityState extends com.pulumi.reso
         /**
          * @param sourceFusionEnvironmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -377,6 +386,9 @@ public final class FusionEnvironmentRefreshActivityState extends com.pulumi.reso
 
         /**
          * @param sourceFusionEnvironmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

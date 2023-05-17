@@ -78,6 +78,9 @@ type AwrHub struct {
 	// Object Storage Bucket Name
 	ObjectStorageBucketName pulumi.StringOutput `pulumi:"objectStorageBucketName"`
 	// OPSI Warehouse OCID
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseId pulumi.StringOutput `pulumi:"operationsInsightsWarehouseId"`
 	// Possible lifecycle states
 	State pulumi.StringOutput `pulumi:"state"`
@@ -145,6 +148,9 @@ type awrHubState struct {
 	// Object Storage Bucket Name
 	ObjectStorageBucketName *string `pulumi:"objectStorageBucketName"`
 	// OPSI Warehouse OCID
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseId *string `pulumi:"operationsInsightsWarehouseId"`
 	// Possible lifecycle states
 	State *string `pulumi:"state"`
@@ -172,6 +178,9 @@ type AwrHubState struct {
 	// Object Storage Bucket Name
 	ObjectStorageBucketName pulumi.StringPtrInput
 	// OPSI Warehouse OCID
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseId pulumi.StringPtrInput
 	// Possible lifecycle states
 	State pulumi.StringPtrInput
@@ -199,6 +208,9 @@ type awrHubArgs struct {
 	// Object Storage Bucket Name
 	ObjectStorageBucketName string `pulumi:"objectStorageBucketName"`
 	// OPSI Warehouse OCID
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseId string `pulumi:"operationsInsightsWarehouseId"`
 }
 
@@ -215,6 +227,9 @@ type AwrHubArgs struct {
 	// Object Storage Bucket Name
 	ObjectStorageBucketName pulumi.StringInput
 	// OPSI Warehouse OCID
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseId pulumi.StringInput
 }
 
@@ -341,6 +356,9 @@ func (o AwrHubOutput) ObjectStorageBucketName() pulumi.StringOutput {
 }
 
 // OPSI Warehouse OCID
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AwrHubOutput) OperationsInsightsWarehouseId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AwrHub) pulumi.StringOutput { return v.OperationsInsightsWarehouseId }).(pulumi.StringOutput)
 }

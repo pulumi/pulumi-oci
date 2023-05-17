@@ -110,6 +110,8 @@ def get_virtual_circuit_public_prefixes(filters: Optional[Sequence[pulumi.InputT
 
 
     :param str verification_state: A filter to only return resources that match the given verification state.
+           
+           The state value is case-insensitive.
     :param str virtual_circuit_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
     """
     __args__ = dict()
@@ -150,6 +152,8 @@ def get_virtual_circuit_public_prefixes_output(filters: Optional[pulumi.Input[Op
 
 
     :param str verification_state: A filter to only return resources that match the given verification state.
+           
+           The state value is case-insensitive.
     :param str virtual_circuit_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
     """
     ...

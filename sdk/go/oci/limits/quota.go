@@ -85,6 +85,9 @@ type Quota struct {
 	// The quota's current state.
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) An array of quota statements written in the declarative quota statement language.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Statements pulumi.StringArrayOutput `pulumi:"statements"`
 	// Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -145,6 +148,9 @@ type quotaState struct {
 	// The quota's current state.
 	State *string `pulumi:"state"`
 	// (Updatable) An array of quota statements written in the declarative quota statement language.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Statements []string `pulumi:"statements"`
 	// Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -168,6 +174,9 @@ type QuotaState struct {
 	// The quota's current state.
 	State pulumi.StringPtrInput
 	// (Updatable) An array of quota statements written in the declarative quota statement language.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Statements pulumi.StringArrayInput
 	// Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
@@ -191,6 +200,9 @@ type quotaArgs struct {
 	// The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
 	Name *string `pulumi:"name"`
 	// (Updatable) An array of quota statements written in the declarative quota statement language.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Statements []string `pulumi:"statements"`
 }
 
@@ -209,6 +221,9 @@ type QuotaArgs struct {
 	// The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
 	Name pulumi.StringPtrInput
 	// (Updatable) An array of quota statements written in the declarative quota statement language.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Statements pulumi.StringArrayInput
 }
 
@@ -340,6 +355,9 @@ func (o QuotaOutput) State() pulumi.StringOutput {
 }
 
 // (Updatable) An array of quota statements written in the declarative quota statement language.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o QuotaOutput) Statements() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Quota) pulumi.StringArrayOutput { return v.Statements }).(pulumi.StringArrayOutput)
 }

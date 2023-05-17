@@ -131,7 +131,11 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> SensitiveDataModelId { get; private set; } = null!;
 
         /// <summary>
-        /// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
+        /// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("sensitiveTypeIdsForDiscoveries")]
         public Output<ImmutableArray<string>> SensitiveTypeIdsForDiscoveries { get; private set; } = null!;
@@ -336,7 +340,11 @@ namespace Pulumi.Oci.DataSafe
         private InputList<string>? _sensitiveTypeIdsForDiscoveries;
 
         /// <summary>
-        /// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
+        /// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputList<string> SensitiveTypeIdsForDiscoveries
         {
@@ -440,7 +448,11 @@ namespace Pulumi.Oci.DataSafe
         private InputList<string>? _sensitiveTypeIdsForDiscoveries;
 
         /// <summary>
-        /// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
+        /// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputList<string> SensitiveTypeIdsForDiscoveries
         {

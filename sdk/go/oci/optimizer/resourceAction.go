@@ -65,6 +65,11 @@ type ResourceAction struct {
 	// The date and time that the resource action entered its current status. The format is defined by RFC3339.
 	TimeStatusBegin pulumi.StringOutput `pulumi:"timeStatusBegin"`
 	// (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+	//
+	// For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeStatusEnd pulumi.StringOutput `pulumi:"timeStatusEnd"`
 	// The date and time the resource action details were last updated, in the format defined by RFC3339.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
@@ -138,6 +143,11 @@ type resourceActionState struct {
 	// The date and time that the resource action entered its current status. The format is defined by RFC3339.
 	TimeStatusBegin *string `pulumi:"timeStatusBegin"`
 	// (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+	//
+	// For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeStatusEnd *string `pulumi:"timeStatusEnd"`
 	// The date and time the resource action details were last updated, in the format defined by RFC3339.
 	TimeUpdated *string `pulumi:"timeUpdated"`
@@ -177,6 +187,11 @@ type ResourceActionState struct {
 	// The date and time that the resource action entered its current status. The format is defined by RFC3339.
 	TimeStatusBegin pulumi.StringPtrInput
 	// (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+	//
+	// For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeStatusEnd pulumi.StringPtrInput
 	// The date and time the resource action details were last updated, in the format defined by RFC3339.
 	TimeUpdated pulumi.StringPtrInput
@@ -192,6 +207,11 @@ type resourceActionArgs struct {
 	// (Updatable) The status of the resource action.
 	Status string `pulumi:"status"`
 	// (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+	//
+	// For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeStatusEnd *string `pulumi:"timeStatusEnd"`
 }
 
@@ -202,6 +222,11 @@ type ResourceActionArgs struct {
 	// (Updatable) The status of the resource action.
 	Status pulumi.StringInput
 	// (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+	//
+	// For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeStatusEnd pulumi.StringPtrInput
 }
 
@@ -373,6 +398,11 @@ func (o ResourceActionOutput) TimeStatusBegin() pulumi.StringOutput {
 }
 
 // (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+//
+// For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ResourceActionOutput) TimeStatusEnd() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResourceAction) pulumi.StringOutput { return v.TimeStatusEnd }).(pulumi.StringOutput)
 }

@@ -114,6 +114,9 @@ type Domain struct {
 	// Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
 	IsPrimaryEmailRequired pulumi.BoolOutput `pulumi:"isPrimaryEmailRequired"`
 	// The License type of Domain
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LicenseType pulumi.StringOutput `pulumi:"licenseType"`
 	// Any additional details about the current state of the Domain.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
@@ -202,6 +205,9 @@ type domainState struct {
 	// Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
 	IsPrimaryEmailRequired *bool `pulumi:"isPrimaryEmailRequired"`
 	// The License type of Domain
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LicenseType *string `pulumi:"licenseType"`
 	// Any additional details about the current state of the Domain.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -247,6 +253,9 @@ type DomainState struct {
 	// Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
 	IsPrimaryEmailRequired pulumi.BoolPtrInput
 	// The License type of Domain
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LicenseType pulumi.StringPtrInput
 	// Any additional details about the current state of the Domain.
 	LifecycleDetails pulumi.StringPtrInput
@@ -294,6 +303,9 @@ type domainArgs struct {
 	// Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
 	IsPrimaryEmailRequired *bool `pulumi:"isPrimaryEmailRequired"`
 	// The License type of Domain
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LicenseType string `pulumi:"licenseType"`
 	// The current state.
 	State *string `pulumi:"state"`
@@ -328,6 +340,9 @@ type DomainArgs struct {
 	// Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
 	IsPrimaryEmailRequired pulumi.BoolPtrInput
 	// The License type of Domain
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LicenseType pulumi.StringInput
 	// The current state.
 	State pulumi.StringPtrInput
@@ -491,6 +506,9 @@ func (o DomainOutput) IsPrimaryEmailRequired() pulumi.BoolOutput {
 }
 
 // The License type of Domain
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DomainOutput) LicenseType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Domain) pulumi.StringOutput { return v.LicenseType }).(pulumi.StringOutput)
 }

@@ -105,6 +105,14 @@ type DataGuardAssociation struct {
 	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions DataGuardAssociationDataCollectionOptionsOutput `pulumi:"dataCollectionOptions"`
 	// (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
+	//
+	// The password must contain no fewer than nine characters and include:
+	// * At least two uppercase characters.
+	// * At least two lowercase characters.
+	// * At least two numeric characters.
+	// * At least two special characters. Valid special characters include "_", "#", and "-" only.
+	//
+	// **The password MUST be the same as the primary admin password.**
 	DatabaseAdminPassword pulumi.StringOutput `pulumi:"databaseAdminPassword"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DatabaseDefinedTags pulumi.MapOutput `pulumi:"databaseDefinedTags"`
@@ -122,6 +130,14 @@ type DataGuardAssociation struct {
 	// The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+	//
+	// If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
+	//
+	// If the node count is greater than 1, you can specify which Fault Domains these nodes will be distributed into. The system assigns your nodes automatically to the Fault Domains you specify so that no Fault Domain contains more than one node.
+	//
+	// To get a list of Fault Domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+	//
+	// Example: `FAULT-DOMAIN-1`
 	FaultDomains pulumi.StringArrayOutput `pulumi:"faultDomains"`
 	// The hostname for the DB node.
 	Hostname pulumi.StringOutput `pulumi:"hostname"`
@@ -155,10 +171,14 @@ type DataGuardAssociation struct {
 	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
 	PrivateIp pulumi.StringPtrOutput `pulumi:"privateIp"`
 	// (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+	//
+	// **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
 	ProtectionMode pulumi.StringOutput `pulumi:"protectionMode"`
 	// The role of the reporting database in this Data Guard association.
 	Role pulumi.StringOutput `pulumi:"role"`
 	// The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system. Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
+	//
+	// To get a list of all shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
 	Shape pulumi.StringOutput `pulumi:"shape"`
 	// The current state of the Data Guard association.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -166,6 +186,8 @@ type DataGuardAssociation struct {
 	StorageVolumePerformanceMode pulumi.StringOutput `pulumi:"storageVolumePerformanceMode"`
 	// The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
 	// * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
+	//
+	// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// The date and time the Data Guard association was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -175,6 +197,13 @@ type DataGuardAssociation struct {
 	// * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
 	// * MAXIMUM_PERFORMANCE - ASYNC
 	// * MAXIMUM_PROTECTION - SYNC
+	//
+	// For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+	//
+	// **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TransportType pulumi.StringOutput `pulumi:"transportType"`
 }
 
@@ -248,6 +277,14 @@ type dataGuardAssociationState struct {
 	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions *DataGuardAssociationDataCollectionOptions `pulumi:"dataCollectionOptions"`
 	// (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
+	//
+	// The password must contain no fewer than nine characters and include:
+	// * At least two uppercase characters.
+	// * At least two lowercase characters.
+	// * At least two numeric characters.
+	// * At least two special characters. Valid special characters include "_", "#", and "-" only.
+	//
+	// **The password MUST be the same as the primary admin password.**
 	DatabaseAdminPassword *string `pulumi:"databaseAdminPassword"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DatabaseDefinedTags map[string]interface{} `pulumi:"databaseDefinedTags"`
@@ -265,6 +302,14 @@ type dataGuardAssociationState struct {
 	// The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+	//
+	// If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
+	//
+	// If the node count is greater than 1, you can specify which Fault Domains these nodes will be distributed into. The system assigns your nodes automatically to the Fault Domains you specify so that no Fault Domain contains more than one node.
+	//
+	// To get a list of Fault Domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+	//
+	// Example: `FAULT-DOMAIN-1`
 	FaultDomains []string `pulumi:"faultDomains"`
 	// The hostname for the DB node.
 	Hostname *string `pulumi:"hostname"`
@@ -298,10 +343,14 @@ type dataGuardAssociationState struct {
 	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
 	PrivateIp *string `pulumi:"privateIp"`
 	// (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+	//
+	// **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
 	ProtectionMode *string `pulumi:"protectionMode"`
 	// The role of the reporting database in this Data Guard association.
 	Role *string `pulumi:"role"`
 	// The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system. Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
+	//
+	// To get a list of all shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
 	Shape *string `pulumi:"shape"`
 	// The current state of the Data Guard association.
 	State *string `pulumi:"state"`
@@ -309,6 +358,8 @@ type dataGuardAssociationState struct {
 	StorageVolumePerformanceMode *string `pulumi:"storageVolumePerformanceMode"`
 	// The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
 	// * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
+	//
+	// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
 	SubnetId *string `pulumi:"subnetId"`
 	// The date and time the Data Guard association was created.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -318,6 +369,13 @@ type dataGuardAssociationState struct {
 	// * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
 	// * MAXIMUM_PERFORMANCE - ASYNC
 	// * MAXIMUM_PROTECTION - SYNC
+	//
+	// For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+	//
+	// **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TransportType *string `pulumi:"transportType"`
 }
 
@@ -338,6 +396,14 @@ type DataGuardAssociationState struct {
 	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions DataGuardAssociationDataCollectionOptionsPtrInput
 	// (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
+	//
+	// The password must contain no fewer than nine characters and include:
+	// * At least two uppercase characters.
+	// * At least two lowercase characters.
+	// * At least two numeric characters.
+	// * At least two special characters. Valid special characters include "_", "#", and "-" only.
+	//
+	// **The password MUST be the same as the primary admin password.**
 	DatabaseAdminPassword pulumi.StringPtrInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DatabaseDefinedTags pulumi.MapInput
@@ -355,6 +421,14 @@ type DataGuardAssociationState struct {
 	// The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
 	// A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+	//
+	// If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
+	//
+	// If the node count is greater than 1, you can specify which Fault Domains these nodes will be distributed into. The system assigns your nodes automatically to the Fault Domains you specify so that no Fault Domain contains more than one node.
+	//
+	// To get a list of Fault Domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+	//
+	// Example: `FAULT-DOMAIN-1`
 	FaultDomains pulumi.StringArrayInput
 	// The hostname for the DB node.
 	Hostname pulumi.StringPtrInput
@@ -388,10 +462,14 @@ type DataGuardAssociationState struct {
 	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
 	PrivateIp pulumi.StringPtrInput
 	// (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+	//
+	// **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
 	ProtectionMode pulumi.StringPtrInput
 	// The role of the reporting database in this Data Guard association.
 	Role pulumi.StringPtrInput
 	// The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system. Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
+	//
+	// To get a list of all shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
 	Shape pulumi.StringPtrInput
 	// The current state of the Data Guard association.
 	State pulumi.StringPtrInput
@@ -399,6 +477,8 @@ type DataGuardAssociationState struct {
 	StorageVolumePerformanceMode pulumi.StringPtrInput
 	// The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
 	// * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
+	//
+	// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
 	SubnetId pulumi.StringPtrInput
 	// The date and time the Data Guard association was created.
 	TimeCreated pulumi.StringPtrInput
@@ -408,6 +488,13 @@ type DataGuardAssociationState struct {
 	// * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
 	// * MAXIMUM_PERFORMANCE - ASYNC
 	// * MAXIMUM_PROTECTION - SYNC
+	//
+	// For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+	//
+	// **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TransportType pulumi.StringPtrInput
 }
 
@@ -428,6 +515,14 @@ type dataGuardAssociationArgs struct {
 	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions *DataGuardAssociationDataCollectionOptions `pulumi:"dataCollectionOptions"`
 	// (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
+	//
+	// The password must contain no fewer than nine characters and include:
+	// * At least two uppercase characters.
+	// * At least two lowercase characters.
+	// * At least two numeric characters.
+	// * At least two special characters. Valid special characters include "_", "#", and "-" only.
+	//
+	// **The password MUST be the same as the primary admin password.**
 	DatabaseAdminPassword string `pulumi:"databaseAdminPassword"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DatabaseDefinedTags map[string]interface{} `pulumi:"databaseDefinedTags"`
@@ -445,6 +540,14 @@ type dataGuardAssociationArgs struct {
 	// The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+	//
+	// If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
+	//
+	// If the node count is greater than 1, you can specify which Fault Domains these nodes will be distributed into. The system assigns your nodes automatically to the Fault Domains you specify so that no Fault Domain contains more than one node.
+	//
+	// To get a list of Fault Domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+	//
+	// Example: `FAULT-DOMAIN-1`
 	FaultDomains []string `pulumi:"faultDomains"`
 	// The hostname for the DB node.
 	Hostname *string `pulumi:"hostname"`
@@ -470,13 +573,19 @@ type dataGuardAssociationArgs struct {
 	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
 	PrivateIp *string `pulumi:"privateIp"`
 	// (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+	//
+	// **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
 	ProtectionMode string `pulumi:"protectionMode"`
 	// The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system. Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
+	//
+	// To get a list of all shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
 	Shape *string `pulumi:"shape"`
 	// The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
 	StorageVolumePerformanceMode *string `pulumi:"storageVolumePerformanceMode"`
 	// The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
 	// * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
+	//
+	// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
 	SubnetId *string `pulumi:"subnetId"`
 	// The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone *string `pulumi:"timeZone"`
@@ -484,6 +593,13 @@ type dataGuardAssociationArgs struct {
 	// * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
 	// * MAXIMUM_PERFORMANCE - ASYNC
 	// * MAXIMUM_PROTECTION - SYNC
+	//
+	// For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+	//
+	// **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TransportType string `pulumi:"transportType"`
 }
 
@@ -501,6 +617,14 @@ type DataGuardAssociationArgs struct {
 	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions DataGuardAssociationDataCollectionOptionsPtrInput
 	// (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
+	//
+	// The password must contain no fewer than nine characters and include:
+	// * At least two uppercase characters.
+	// * At least two lowercase characters.
+	// * At least two numeric characters.
+	// * At least two special characters. Valid special characters include "_", "#", and "-" only.
+	//
+	// **The password MUST be the same as the primary admin password.**
 	DatabaseAdminPassword pulumi.StringInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DatabaseDefinedTags pulumi.MapInput
@@ -518,6 +642,14 @@ type DataGuardAssociationArgs struct {
 	// The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
 	// A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+	//
+	// If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
+	//
+	// If the node count is greater than 1, you can specify which Fault Domains these nodes will be distributed into. The system assigns your nodes automatically to the Fault Domains you specify so that no Fault Domain contains more than one node.
+	//
+	// To get a list of Fault Domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+	//
+	// Example: `FAULT-DOMAIN-1`
 	FaultDomains pulumi.StringArrayInput
 	// The hostname for the DB node.
 	Hostname pulumi.StringPtrInput
@@ -543,13 +675,19 @@ type DataGuardAssociationArgs struct {
 	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
 	PrivateIp pulumi.StringPtrInput
 	// (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+	//
+	// **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
 	ProtectionMode pulumi.StringInput
 	// The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system. Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
+	//
+	// To get a list of all shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
 	Shape pulumi.StringPtrInput
 	// The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
 	StorageVolumePerformanceMode pulumi.StringPtrInput
 	// The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
 	// * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
+	//
+	// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
 	SubnetId pulumi.StringPtrInput
 	// The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone pulumi.StringPtrInput
@@ -557,6 +695,13 @@ type DataGuardAssociationArgs struct {
 	// * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
 	// * MAXIMUM_PERFORMANCE - ASYNC
 	// * MAXIMUM_PROTECTION - SYNC
+	//
+	// For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+	//
+	// **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TransportType pulumi.StringInput
 }
 
@@ -689,6 +834,14 @@ func (o DataGuardAssociationOutput) DataCollectionOptions() DataGuardAssociation
 }
 
 // (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
+//
+// The password must contain no fewer than nine characters and include:
+// * At least two uppercase characters.
+// * At least two lowercase characters.
+// * At least two numeric characters.
+// * At least two special characters. Valid special characters include "_", "#", and "-" only.
+//
+// **The password MUST be the same as the primary admin password.**
 func (o DataGuardAssociationOutput) DatabaseAdminPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.DatabaseAdminPassword }).(pulumi.StringOutput)
 }
@@ -733,6 +886,14 @@ func (o DataGuardAssociationOutput) DisplayName() pulumi.StringOutput {
 }
 
 // A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+//
+// If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
+//
+// If the node count is greater than 1, you can specify which Fault Domains these nodes will be distributed into. The system assigns your nodes automatically to the Fault Domains you specify so that no Fault Domain contains more than one node.
+//
+// To get a list of Fault Domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+//
+// Example: `FAULT-DOMAIN-1`
 func (o DataGuardAssociationOutput) FaultDomains() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringArrayOutput { return v.FaultDomains }).(pulumi.StringArrayOutput)
 }
@@ -814,6 +975,8 @@ func (o DataGuardAssociationOutput) PrivateIp() pulumi.StringPtrOutput {
 }
 
 // (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+//
+// **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
 func (o DataGuardAssociationOutput) ProtectionMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.ProtectionMode }).(pulumi.StringOutput)
 }
@@ -824,6 +987,8 @@ func (o DataGuardAssociationOutput) Role() pulumi.StringOutput {
 }
 
 // The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system. Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
+//
+// To get a list of all shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
 func (o DataGuardAssociationOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
 }
@@ -840,6 +1005,8 @@ func (o DataGuardAssociationOutput) StorageVolumePerformanceMode() pulumi.String
 
 // The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
 // * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
+//
+// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
 func (o DataGuardAssociationOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -858,6 +1025,13 @@ func (o DataGuardAssociationOutput) TimeZone() pulumi.StringPtrOutput {
 // * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
 // * MAXIMUM_PERFORMANCE - ASYNC
 // * MAXIMUM_PROTECTION - SYNC
+//
+// For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+//
+// **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DataGuardAssociationOutput) TransportType() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.TransportType }).(pulumi.StringOutput)
 }

@@ -27,6 +27,19 @@ namespace Pulumi.Oci.Identity
     {
         /// <summary>
         /// (Updatable) Assertion attribute name.
+        /// 
+        /// **Deprecated Since: 20.1.3**
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// * idcsValuePersistedInOtherAttribute: true
         /// </summary>
         [Output("assertionAttribute")]
         public Output<string> AssertionAttribute { get; private set; } = null!;
@@ -45,6 +58,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) HTTP binding to use for authentication requests.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("authnRequestBinding")]
         public Output<string> AuthnRequestBinding { get; private set; } = null!;
@@ -57,60 +80,158 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("compartmentOcid")]
         public Output<string> CompartmentOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Correlation policy
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Output("correlationPolicy")]
         public Output<Outputs.DomainsIdentityProviderCorrelationPolicy> CorrelationPolicy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Output("deleteInProgress")]
         public Output<bool> DeleteInProgress { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Description
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("domainOcid")]
         public Output<string> DomainOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set to true to indicate Partner enabled.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Output("enabled")]
         public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Encryption certificate
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("encryptionCertificate")]
         public Output<string> EncryptionCertificate { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("externalId")]
         public Output<string> ExternalId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Identity Provider Icon URL.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("iconUrl")]
         public Output<string> IconUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The User or App who created the Resource
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: true
+        /// * returned: default
+        /// * type: complex
         /// </summary>
         [Output("idcsCreatedBies")]
         public Output<ImmutableArray<Outputs.DomainsIdentityProviderIdcsCreatedBy>> IdcsCreatedBies { get; private set; } = null!;
@@ -123,180 +244,507 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) The User or App who modified the Resource
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
         /// </summary>
         [Output("idcsLastModifiedBies")]
         public Output<ImmutableArray<Outputs.DomainsIdentityProviderIdcsLastModifiedBy>> IdcsLastModifiedBies { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The release number when the resource was upgraded.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("idcsLastUpgradedInRelease")]
         public Output<string> IdcsLastUpgradedInRelease { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("idcsPreventedOperations")]
         public Output<ImmutableArray<string>> IdcsPreventedOperations { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Identity Provider SSO URL
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("idpSsoUrl")]
         public Output<string> IdpSsoUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set to true to include the signing certificate in the signature.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Output("includeSigningCertInSignature")]
         public Output<bool> IncludeSigningCertInSignature { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Output("jitUserProvAssignedGroups")]
         public Output<ImmutableArray<Outputs.DomainsIdentityProviderJitUserProvAssignedGroup>> JitUserProvAssignedGroups { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set to true to indicate JIT User Creation is enabled
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Output("jitUserProvAttributeUpdateEnabled")]
         public Output<bool> JitUserProvAttributeUpdateEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Assertion To User Mapping
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Output("jitUserProvAttributes")]
         public Output<Outputs.DomainsIdentityProviderJitUserProvAttributes> JitUserProvAttributes { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set to true to indicate JIT User Creation is enabled
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Output("jitUserProvCreateUserEnabled")]
         public Output<bool> JitUserProvCreateUserEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set to true to indicate JIT User Provisioning is enabled
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Output("jitUserProvEnabled")]
         public Output<bool> JitUserProvEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Output("jitUserProvGroupAssertionAttributeEnabled")]
         public Output<bool> JitUserProvGroupAssertionAttributeEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The default value is 'Overwrite', which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify 'Merge' if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("jitUserProvGroupAssignmentMethod")]
         public Output<string> JitUserProvGroupAssignmentMethod { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Property to indicate the mode of group mapping
+        /// 
+        /// **Added In:** 2205120021
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("jitUserProvGroupMappingMode")]
         public Output<string> JitUserProvGroupMappingMode { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
+        /// 
+        /// **Added In:** 2205120021
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [idpGroup]
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Output("jitUserProvGroupMappings")]
         public Output<ImmutableArray<Outputs.DomainsIdentityProviderJitUserProvGroupMapping>> JitUserProvGroupMappings { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Name of the assertion attribute containing the users groups
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("jitUserProvGroupSamlAttributeName")]
         public Output<string> JitUserProvGroupSamlAttributeName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Output("jitUserProvGroupStaticListEnabled")]
         public Output<bool> JitUserProvGroupStaticListEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set to true to indicate ignoring absence of group while provisioning
+        /// 
+        /// **Added In:** 2111112015
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsAddedSinceVersion: 30
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Output("jitUserProvIgnoreErrorOnAbsentGroups")]
         public Output<bool> JitUserProvIgnoreErrorOnAbsentGroups { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) HTTP binding to use for logout.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("logoutBinding")]
         public Output<string> LogoutBinding { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set to true to enable logout.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Output("logoutEnabled")]
         public Output<bool> LogoutEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Logout request URL
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("logoutRequestUrl")]
         public Output<string> LogoutRequestUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Logout response URL
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("logoutResponseUrl")]
         public Output<string> LogoutResponseUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Metadata
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("metadata")]
         public Output<string> Metadata { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+        /// * type: complex
         /// </summary>
         [Output("metas")]
         public Output<ImmutableArray<Outputs.DomainsIdentityProviderMeta>> Metas { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Default authentication request name ID format.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("nameIdFormat")]
         public Output<string> NameIdFormat { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: global
         /// </summary>
         [Output("ocid")]
         public Output<string> Ocid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Unique name of the trusted Identity Provider.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: server
         /// </summary>
         [Output("partnerName")]
         public Output<string> PartnerName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Provider ID
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: server
         /// </summary>
         [Output("partnerProviderId")]
         public Output<string> PartnerProviderId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) SAML SP authentication type.
+        /// 
+        /// **Added In:** 2102181953
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("requestedAuthenticationContexts")]
         public Output<ImmutableArray<string>> RequestedAuthenticationContexts { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This SP requires requests SAML IdP to enforce re-authentication.
+        /// 
+        /// **Added In:** 2102181953
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Output("requireForceAuthn")]
         public Output<bool> RequireForceAuthn { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) SAML SP must accept encrypted assertion only.
+        /// 
+        /// **Added In:** 2102181953
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Output("requiresEncryptedAssertion")]
         public Output<bool> RequiresEncryptedAssertion { get; private set; } = null!;
@@ -309,66 +757,184 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) SAML SP HoK Enabled.
+        /// 
+        /// **Added In:** 2102181953
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Output("samlHoKrequired")]
         public Output<bool> SamlHoKrequired { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("schemas")]
         public Output<ImmutableArray<string>> Schemas { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
+        /// 
+        /// **Added In:** 18.2.6
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: never
+        /// * type: string
+        /// * uniqueness: server
         /// </summary>
         [Output("serviceInstanceIdentifier")]
         public Output<string> ServiceInstanceIdentifier { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set to true to indicate whether to show IdP in login page or not.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Output("shownOnLoginPage")]
         public Output<bool> ShownOnLoginPage { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Signature hash algorithm.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("signatureHashAlgorithm")]
         public Output<string> SignatureHashAlgorithm { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Signing certificate
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("signingCertificate")]
         public Output<string> SigningCertificate { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Succinct ID
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: server
         /// </summary>
         [Output("succinctId")]
         public Output<string> SuccinctId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of tags on this resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [key, value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Output("tags")]
         public Output<ImmutableArray<Outputs.DomainsIdentityProviderTag>> Tags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("tenancyOcid")]
         public Output<string> TenancyOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this IdP.
+        /// 
+        /// **Added In:** 19.2.1
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("tenantProviderId")]
         public Output<string> TenantProviderId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Identity Provider Type
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -387,12 +953,42 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) User mapping method.
+        /// 
+        /// **Deprecated Since: 20.1.3**
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// * idcsValuePersistedInOtherAttribute: true
         /// </summary>
         [Output("userMappingMethod")]
         public Output<string> UserMappingMethod { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.&lt;br&gt;You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the &lt;b&gt;Example of a Request Body&lt;/b&gt; section of the Examples tab for the &lt;a href='./op-admin-v1-identityproviders-post.html'&gt;POST&lt;/a&gt; and &lt;a href='./op-admin-v1-identityproviders-id-put.html'&gt;PUT&lt;/a&gt; methods of the /IdentityProviders endpoint.
+        /// 
+        /// **Deprecated Since: 20.1.3**
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// * idcsValuePersistedInOtherAttribute: true
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("userMappingStoreAttribute")]
         public Output<string> UserMappingStoreAttribute { get; private set; } = null!;
@@ -445,6 +1041,19 @@ namespace Pulumi.Oci.Identity
     {
         /// <summary>
         /// (Updatable) Assertion attribute name.
+        /// 
+        /// **Deprecated Since: 20.1.3**
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// * idcsValuePersistedInOtherAttribute: true
         /// </summary>
         [Input("assertionAttribute")]
         public Input<string>? AssertionAttribute { get; set; }
@@ -469,6 +1078,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) HTTP binding to use for authentication requests.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("authnRequestBinding")]
         public Input<string>? AuthnRequestBinding { get; set; }
@@ -481,36 +1100,96 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Correlation policy
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Input("correlationPolicy")]
         public Input<Inputs.DomainsIdentityProviderCorrelationPolicyArgs>? CorrelationPolicy { get; set; }
 
         /// <summary>
         /// (Updatable) Description
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
         /// (Updatable) Set to true to indicate Partner enabled.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Encryption certificate
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("encryptionCertificate")]
         public Input<string>? EncryptionCertificate { get; set; }
 
         /// <summary>
         /// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("externalId")]
         public Input<string>? ExternalId { get; set; }
 
         /// <summary>
         /// (Updatable) Identity Provider Icon URL.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("iconUrl")]
         public Input<string>? IconUrl { get; set; }
@@ -523,12 +1202,32 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Identity Provider SSO URL
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("idpSsoUrl")]
         public Input<string>? IdpSsoUrl { get; set; }
 
         /// <summary>
         /// (Updatable) Set to true to include the signing certificate in the signature.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("includeSigningCertInSignature")]
         public Input<bool>? IncludeSigningCertInSignature { get; set; }
@@ -538,6 +1237,18 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsIdentityProviderJitUserProvAssignedGroupArgs> JitUserProvAssignedGroups
         {
@@ -547,42 +1258,126 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Set to true to indicate JIT User Creation is enabled
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("jitUserProvAttributeUpdateEnabled")]
         public Input<bool>? JitUserProvAttributeUpdateEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) Assertion To User Mapping
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Input("jitUserProvAttributes")]
         public Input<Inputs.DomainsIdentityProviderJitUserProvAttributesArgs>? JitUserProvAttributes { get; set; }
 
         /// <summary>
         /// (Updatable) Set to true to indicate JIT User Creation is enabled
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("jitUserProvCreateUserEnabled")]
         public Input<bool>? JitUserProvCreateUserEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) Set to true to indicate JIT User Provisioning is enabled
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("jitUserProvEnabled")]
         public Input<bool>? JitUserProvEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("jitUserProvGroupAssertionAttributeEnabled")]
         public Input<bool>? JitUserProvGroupAssertionAttributeEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) The default value is 'Overwrite', which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify 'Merge' if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("jitUserProvGroupAssignmentMethod")]
         public Input<string>? JitUserProvGroupAssignmentMethod { get; set; }
 
         /// <summary>
         /// (Updatable) Property to indicate the mode of group mapping
+        /// 
+        /// **Added In:** 2205120021
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("jitUserProvGroupMappingMode")]
         public Input<string>? JitUserProvGroupMappingMode { get; set; }
@@ -592,6 +1387,17 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
+        /// 
+        /// **Added In:** 2205120021
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [idpGroup]
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsIdentityProviderJitUserProvGroupMappingArgs> JitUserProvGroupMappings
         {
@@ -601,72 +1407,199 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Name of the assertion attribute containing the users groups
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("jitUserProvGroupSamlAttributeName")]
         public Input<string>? JitUserProvGroupSamlAttributeName { get; set; }
 
         /// <summary>
         /// (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("jitUserProvGroupStaticListEnabled")]
         public Input<bool>? JitUserProvGroupStaticListEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) Set to true to indicate ignoring absence of group while provisioning
+        /// 
+        /// **Added In:** 2111112015
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsAddedSinceVersion: 30
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("jitUserProvIgnoreErrorOnAbsentGroups")]
         public Input<bool>? JitUserProvIgnoreErrorOnAbsentGroups { get; set; }
 
         /// <summary>
         /// (Updatable) HTTP binding to use for logout.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("logoutBinding")]
         public Input<string>? LogoutBinding { get; set; }
 
         /// <summary>
         /// (Updatable) Set to true to enable logout.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("logoutEnabled")]
         public Input<bool>? LogoutEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) Logout request URL
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("logoutRequestUrl")]
         public Input<string>? LogoutRequestUrl { get; set; }
 
         /// <summary>
         /// (Updatable) Logout response URL
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("logoutResponseUrl")]
         public Input<string>? LogoutResponseUrl { get; set; }
 
         /// <summary>
         /// (Updatable) Metadata
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("metadata")]
         public Input<string>? Metadata { get; set; }
 
         /// <summary>
         /// (Updatable) Default authentication request name ID format.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("nameIdFormat")]
         public Input<string>? NameIdFormat { get; set; }
 
         /// <summary>
         /// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: global
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }
 
         /// <summary>
         /// (Updatable) Unique name of the trusted Identity Provider.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: server
         /// </summary>
         [Input("partnerName", required: true)]
         public Input<string> PartnerName { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Provider ID
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: server
         /// </summary>
         [Input("partnerProviderId")]
         public Input<string>? PartnerProviderId { get; set; }
@@ -676,6 +1609,18 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) SAML SP authentication type.
+        /// 
+        /// **Added In:** 2102181953
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public InputList<string> RequestedAuthenticationContexts
         {
@@ -685,12 +1630,36 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) This SP requires requests SAML IdP to enforce re-authentication.
+        /// 
+        /// **Added In:** 2102181953
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("requireForceAuthn")]
         public Input<bool>? RequireForceAuthn { get; set; }
 
         /// <summary>
         /// (Updatable) SAML SP must accept encrypted assertion only.
+        /// 
+        /// **Added In:** 2102181953
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("requiresEncryptedAssertion")]
         public Input<bool>? RequiresEncryptedAssertion { get; set; }
@@ -703,6 +1672,18 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) SAML SP HoK Enabled.
+        /// 
+        /// **Added In:** 2102181953
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("samlHoKrequired")]
         public Input<bool>? SamlHoKrequired { get; set; }
@@ -712,6 +1693,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public InputList<string> Schemas
         {
@@ -721,30 +1712,82 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
+        /// 
+        /// **Added In:** 18.2.6
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: never
+        /// * type: string
+        /// * uniqueness: server
         /// </summary>
         [Input("serviceInstanceIdentifier")]
         public Input<string>? ServiceInstanceIdentifier { get; set; }
 
         /// <summary>
         /// (Updatable) Set to true to indicate whether to show IdP in login page or not.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("shownOnLoginPage")]
         public Input<bool>? ShownOnLoginPage { get; set; }
 
         /// <summary>
         /// (Updatable) Signature hash algorithm.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("signatureHashAlgorithm")]
         public Input<string>? SignatureHashAlgorithm { get; set; }
 
         /// <summary>
         /// (Updatable) Signing certificate
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("signingCertificate")]
         public Input<string>? SigningCertificate { get; set; }
 
         /// <summary>
         /// (Updatable) Succinct ID
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: server
         /// </summary>
         [Input("succinctId")]
         public Input<string>? SuccinctId { get; set; }
@@ -754,6 +1797,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) A list of tags on this resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [key, value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsIdentityProviderTagArgs> Tags
         {
@@ -763,6 +1816,18 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Identity Provider Type
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
@@ -781,12 +1846,42 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) User mapping method.
+        /// 
+        /// **Deprecated Since: 20.1.3**
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// * idcsValuePersistedInOtherAttribute: true
         /// </summary>
         [Input("userMappingMethod")]
         public Input<string>? UserMappingMethod { get; set; }
 
         /// <summary>
         /// (Updatable) This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.&lt;br&gt;You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the &lt;b&gt;Example of a Request Body&lt;/b&gt; section of the Examples tab for the &lt;a href='./op-admin-v1-identityproviders-post.html'&gt;POST&lt;/a&gt; and &lt;a href='./op-admin-v1-identityproviders-id-put.html'&gt;PUT&lt;/a&gt; methods of the /IdentityProviders endpoint.
+        /// 
+        /// **Deprecated Since: 20.1.3**
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// * idcsValuePersistedInOtherAttribute: true
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("userMappingStoreAttribute")]
         public Input<string>? UserMappingStoreAttribute { get; set; }
@@ -801,6 +1896,19 @@ namespace Pulumi.Oci.Identity
     {
         /// <summary>
         /// (Updatable) Assertion attribute name.
+        /// 
+        /// **Deprecated Since: 20.1.3**
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// * idcsValuePersistedInOtherAttribute: true
         /// </summary>
         [Input("assertionAttribute")]
         public Input<string>? AssertionAttribute { get; set; }
@@ -825,6 +1933,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) HTTP binding to use for authentication requests.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("authnRequestBinding")]
         public Input<string>? AuthnRequestBinding { get; set; }
@@ -837,54 +1955,144 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("compartmentOcid")]
         public Input<string>? CompartmentOcid { get; set; }
 
         /// <summary>
         /// (Updatable) Correlation policy
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Input("correlationPolicy")]
         public Input<Inputs.DomainsIdentityProviderCorrelationPolicyGetArgs>? CorrelationPolicy { get; set; }
 
         /// <summary>
         /// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("deleteInProgress")]
         public Input<bool>? DeleteInProgress { get; set; }
 
         /// <summary>
         /// (Updatable) Description
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("domainOcid")]
         public Input<string>? DomainOcid { get; set; }
 
         /// <summary>
         /// (Updatable) Set to true to indicate Partner enabled.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
         /// (Updatable) Encryption certificate
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("encryptionCertificate")]
         public Input<string>? EncryptionCertificate { get; set; }
 
         /// <summary>
         /// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("externalId")]
         public Input<string>? ExternalId { get; set; }
 
         /// <summary>
         /// (Updatable) Identity Provider Icon URL.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("iconUrl")]
         public Input<string>? IconUrl { get; set; }
@@ -894,6 +2102,14 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) The User or App who created the Resource
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: true
+        /// * returned: default
+        /// * type: complex
         /// </summary>
         public InputList<Inputs.DomainsIdentityProviderIdcsCreatedByGetArgs> IdcsCreatedBies
         {
@@ -912,6 +2128,14 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) The User or App who modified the Resource
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
         /// </summary>
         public InputList<Inputs.DomainsIdentityProviderIdcsLastModifiedByGetArgs> IdcsLastModifiedBies
         {
@@ -921,6 +2145,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) The release number when the resource was upgraded.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("idcsLastUpgradedInRelease")]
         public Input<string>? IdcsLastUpgradedInRelease { get; set; }
@@ -930,6 +2164,15 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public InputList<string> IdcsPreventedOperations
         {
@@ -939,12 +2182,32 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Identity Provider SSO URL
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("idpSsoUrl")]
         public Input<string>? IdpSsoUrl { get; set; }
 
         /// <summary>
         /// (Updatable) Set to true to include the signing certificate in the signature.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("includeSigningCertInSignature")]
         public Input<bool>? IncludeSigningCertInSignature { get; set; }
@@ -954,6 +2217,18 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsIdentityProviderJitUserProvAssignedGroupGetArgs> JitUserProvAssignedGroups
         {
@@ -963,42 +2238,126 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Set to true to indicate JIT User Creation is enabled
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("jitUserProvAttributeUpdateEnabled")]
         public Input<bool>? JitUserProvAttributeUpdateEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) Assertion To User Mapping
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Input("jitUserProvAttributes")]
         public Input<Inputs.DomainsIdentityProviderJitUserProvAttributesGetArgs>? JitUserProvAttributes { get; set; }
 
         /// <summary>
         /// (Updatable) Set to true to indicate JIT User Creation is enabled
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("jitUserProvCreateUserEnabled")]
         public Input<bool>? JitUserProvCreateUserEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) Set to true to indicate JIT User Provisioning is enabled
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("jitUserProvEnabled")]
         public Input<bool>? JitUserProvEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("jitUserProvGroupAssertionAttributeEnabled")]
         public Input<bool>? JitUserProvGroupAssertionAttributeEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) The default value is 'Overwrite', which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify 'Merge' if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("jitUserProvGroupAssignmentMethod")]
         public Input<string>? JitUserProvGroupAssignmentMethod { get; set; }
 
         /// <summary>
         /// (Updatable) Property to indicate the mode of group mapping
+        /// 
+        /// **Added In:** 2205120021
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("jitUserProvGroupMappingMode")]
         public Input<string>? JitUserProvGroupMappingMode { get; set; }
@@ -1008,6 +2367,17 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
+        /// 
+        /// **Added In:** 2205120021
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [idpGroup]
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsIdentityProviderJitUserProvGroupMappingGetArgs> JitUserProvGroupMappings
         {
@@ -1017,48 +2387,135 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Name of the assertion attribute containing the users groups
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("jitUserProvGroupSamlAttributeName")]
         public Input<string>? JitUserProvGroupSamlAttributeName { get; set; }
 
         /// <summary>
         /// (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("jitUserProvGroupStaticListEnabled")]
         public Input<bool>? JitUserProvGroupStaticListEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) Set to true to indicate ignoring absence of group while provisioning
+        /// 
+        /// **Added In:** 2111112015
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsAddedSinceVersion: 30
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("jitUserProvIgnoreErrorOnAbsentGroups")]
         public Input<bool>? JitUserProvIgnoreErrorOnAbsentGroups { get; set; }
 
         /// <summary>
         /// (Updatable) HTTP binding to use for logout.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("logoutBinding")]
         public Input<string>? LogoutBinding { get; set; }
 
         /// <summary>
         /// (Updatable) Set to true to enable logout.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("logoutEnabled")]
         public Input<bool>? LogoutEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) Logout request URL
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("logoutRequestUrl")]
         public Input<string>? LogoutRequestUrl { get; set; }
 
         /// <summary>
         /// (Updatable) Logout response URL
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("logoutResponseUrl")]
         public Input<string>? LogoutResponseUrl { get; set; }
 
         /// <summary>
         /// (Updatable) Metadata
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("metadata")]
         public Input<string>? Metadata { get; set; }
@@ -1068,6 +2525,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+        /// * type: complex
         /// </summary>
         public InputList<Inputs.DomainsIdentityProviderMetaGetArgs> Metas
         {
@@ -1077,24 +2544,64 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Default authentication request name ID format.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("nameIdFormat")]
         public Input<string>? NameIdFormat { get; set; }
 
         /// <summary>
         /// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: global
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }
 
         /// <summary>
         /// (Updatable) Unique name of the trusted Identity Provider.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: server
         /// </summary>
         [Input("partnerName")]
         public Input<string>? PartnerName { get; set; }
 
         /// <summary>
         /// (Updatable) Provider ID
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: server
         /// </summary>
         [Input("partnerProviderId")]
         public Input<string>? PartnerProviderId { get; set; }
@@ -1104,6 +2611,18 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) SAML SP authentication type.
+        /// 
+        /// **Added In:** 2102181953
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public InputList<string> RequestedAuthenticationContexts
         {
@@ -1113,12 +2632,36 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) This SP requires requests SAML IdP to enforce re-authentication.
+        /// 
+        /// **Added In:** 2102181953
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("requireForceAuthn")]
         public Input<bool>? RequireForceAuthn { get; set; }
 
         /// <summary>
         /// (Updatable) SAML SP must accept encrypted assertion only.
+        /// 
+        /// **Added In:** 2102181953
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("requiresEncryptedAssertion")]
         public Input<bool>? RequiresEncryptedAssertion { get; set; }
@@ -1131,6 +2674,18 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) SAML SP HoK Enabled.
+        /// 
+        /// **Added In:** 2102181953
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("samlHoKrequired")]
         public Input<bool>? SamlHoKrequired { get; set; }
@@ -1140,6 +2695,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public InputList<string> Schemas
         {
@@ -1149,30 +2714,82 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
+        /// 
+        /// **Added In:** 18.2.6
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: never
+        /// * type: string
+        /// * uniqueness: server
         /// </summary>
         [Input("serviceInstanceIdentifier")]
         public Input<string>? ServiceInstanceIdentifier { get; set; }
 
         /// <summary>
         /// (Updatable) Set to true to indicate whether to show IdP in login page or not.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("shownOnLoginPage")]
         public Input<bool>? ShownOnLoginPage { get; set; }
 
         /// <summary>
         /// (Updatable) Signature hash algorithm.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("signatureHashAlgorithm")]
         public Input<string>? SignatureHashAlgorithm { get; set; }
 
         /// <summary>
         /// (Updatable) Signing certificate
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("signingCertificate")]
         public Input<string>? SigningCertificate { get; set; }
 
         /// <summary>
         /// (Updatable) Succinct ID
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: server
         /// </summary>
         [Input("succinctId")]
         public Input<string>? SuccinctId { get; set; }
@@ -1182,6 +2799,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) A list of tags on this resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [key, value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsIdentityProviderTagGetArgs> Tags
         {
@@ -1191,18 +2818,52 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("tenancyOcid")]
         public Input<string>? TenancyOcid { get; set; }
 
         /// <summary>
         /// (Updatable) The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this IdP.
+        /// 
+        /// **Added In:** 19.2.1
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("tenantProviderId")]
         public Input<string>? TenantProviderId { get; set; }
 
         /// <summary>
         /// (Updatable) Identity Provider Type
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
@@ -1221,12 +2882,42 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) User mapping method.
+        /// 
+        /// **Deprecated Since: 20.1.3**
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// * idcsValuePersistedInOtherAttribute: true
         /// </summary>
         [Input("userMappingMethod")]
         public Input<string>? UserMappingMethod { get; set; }
 
         /// <summary>
         /// (Updatable) This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.&lt;br&gt;You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the &lt;b&gt;Example of a Request Body&lt;/b&gt; section of the Examples tab for the &lt;a href='./op-admin-v1-identityproviders-post.html'&gt;POST&lt;/a&gt; and &lt;a href='./op-admin-v1-identityproviders-id-put.html'&gt;PUT&lt;/a&gt; methods of the /IdentityProviders endpoint.
+        /// 
+        /// **Deprecated Since: 20.1.3**
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// * idcsValuePersistedInOtherAttribute: true
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("userMappingStoreAttribute")]
         public Input<string>? UserMappingStoreAttribute { get; set; }

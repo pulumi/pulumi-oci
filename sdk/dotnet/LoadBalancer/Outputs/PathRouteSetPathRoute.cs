@@ -22,6 +22,8 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// *  Path strings are case-insensitive.
         /// *  Asterisk (*) wildcards are not supported.
         /// *  Regular expressions are not supported.
+        /// 
+        /// Example: `/example/video/123`
         /// </summary>
         public readonly string Path;
         /// <summary>

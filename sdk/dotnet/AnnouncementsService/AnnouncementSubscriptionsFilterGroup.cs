@@ -67,6 +67,10 @@ namespace Pulumi.Oci.AnnouncementsService
 
         /// <summary>
         /// The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -137,6 +141,10 @@ namespace Pulumi.Oci.AnnouncementsService
 
         /// <summary>
         /// The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -169,6 +177,10 @@ namespace Pulumi.Oci.AnnouncementsService
 
         /// <summary>
         /// The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

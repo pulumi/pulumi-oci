@@ -63,12 +63,18 @@ public final class FusionEnvironmentAdminUserItemArgs extends com.pulumi.resourc
     /**
      * The username for the administrator.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="username")
     private @Nullable Output<String> username;
 
     /**
      * @return The username for the administrator.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> username() {
@@ -168,6 +174,9 @@ public final class FusionEnvironmentAdminUserItemArgs extends com.pulumi.resourc
         /**
          * @param username The username for the administrator.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -178,6 +187,9 @@ public final class FusionEnvironmentAdminUserItemArgs extends com.pulumi.resourc
 
         /**
          * @param username The username for the administrator.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

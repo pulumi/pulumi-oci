@@ -158,12 +158,16 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The data to create the instance pools in the cluster network.
      * 
+     * Each cluster network can have one instance pool.
+     * 
      */
     @Export(name="instancePools", type=List.class, parameters={ClusterNetworkInstancePool.class})
     private Output<List<ClusterNetworkInstancePool>> instancePools;
 
     /**
      * @return (Updatable) The data to create the instance pools in the cluster network.
+     * 
+     * Each cluster network can have one instance pool.
      * 
      */
     public Output<List<ClusterNetworkInstancePool>> instancePools() {

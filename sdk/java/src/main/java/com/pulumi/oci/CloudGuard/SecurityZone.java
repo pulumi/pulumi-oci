@@ -126,12 +126,16 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
+     * Avoid entering confidential information.
+     * 
      */
     @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
     private Output<Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Output<Map<String,Object>> freeformTags() {
@@ -168,12 +172,18 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="securityZoneRecipeId", type=String.class, parameters={})
     private Output<String> securityZoneRecipeId;
 
     /**
      * @return (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> securityZoneRecipeId() {

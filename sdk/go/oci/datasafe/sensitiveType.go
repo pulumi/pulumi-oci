@@ -96,6 +96,9 @@ type SensitiveType struct {
 	// (Updatable) The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
 	SearchType pulumi.StringOutput `pulumi:"searchType"`
 	// (Updatable) The short name of the sensitive type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShortName pulumi.StringOutput `pulumi:"shortName"`
 	// Specifies whether the sensitive type is user-defined or predefined.
 	Source pulumi.StringOutput `pulumi:"source"`
@@ -169,6 +172,9 @@ type sensitiveTypeState struct {
 	// (Updatable) The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
 	SearchType *string `pulumi:"searchType"`
 	// (Updatable) The short name of the sensitive type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShortName *string `pulumi:"shortName"`
 	// Specifies whether the sensitive type is user-defined or predefined.
 	Source *string `pulumi:"source"`
@@ -208,6 +214,9 @@ type SensitiveTypeState struct {
 	// (Updatable) The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
 	SearchType pulumi.StringPtrInput
 	// (Updatable) The short name of the sensitive type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShortName pulumi.StringPtrInput
 	// Specifies whether the sensitive type is user-defined or predefined.
 	Source pulumi.StringPtrInput
@@ -251,6 +260,9 @@ type sensitiveTypeArgs struct {
 	// (Updatable) The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
 	SearchType *string `pulumi:"searchType"`
 	// (Updatable) The short name of the sensitive type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShortName *string `pulumi:"shortName"`
 }
 
@@ -281,6 +293,9 @@ type SensitiveTypeArgs struct {
 	// (Updatable) The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
 	SearchType pulumi.StringPtrInput
 	// (Updatable) The short name of the sensitive type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShortName pulumi.StringPtrInput
 }
 
@@ -432,6 +447,9 @@ func (o SensitiveTypeOutput) SearchType() pulumi.StringOutput {
 }
 
 // (Updatable) The short name of the sensitive type.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o SensitiveTypeOutput) ShortName() pulumi.StringOutput {
 	return o.ApplyT(func(v *SensitiveType) pulumi.StringOutput { return v.ShortName }).(pulumi.StringOutput)
 }

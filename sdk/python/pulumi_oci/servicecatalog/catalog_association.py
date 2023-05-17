@@ -21,6 +21,10 @@ class CatalogAssociationArgs:
         The set of arguments for constructing a CatalogAssociation resource.
         :param pulumi.Input[str] entity_id: Identifier of the entity being associated with service catalog.
         :param pulumi.Input[str] service_catalog_id: Identifier of the service catalog.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] entity_type: The type of the entity that is associated with the service catalog.
         """
         pulumi.set(__self__, "entity_id", entity_id)
@@ -45,6 +49,10 @@ class CatalogAssociationArgs:
     def service_catalog_id(self) -> pulumi.Input[str]:
         """
         Identifier of the service catalog.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "service_catalog_id")
 
@@ -77,6 +85,10 @@ class _CatalogAssociationState:
         :param pulumi.Input[str] entity_id: Identifier of the entity being associated with service catalog.
         :param pulumi.Input[str] entity_type: The type of the entity that is associated with the service catalog.
         :param pulumi.Input[str] service_catalog_id: Identifier of the service catalog.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: Timestamp of when the resource was associated with service catalog.
         """
         if entity_id is not None:
@@ -117,6 +129,10 @@ class _CatalogAssociationState:
     def service_catalog_id(self) -> Optional[pulumi.Input[str]]:
         """
         Identifier of the service catalog.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "service_catalog_id")
 
@@ -176,6 +192,10 @@ class CatalogAssociation(pulumi.CustomResource):
         :param pulumi.Input[str] entity_id: Identifier of the entity being associated with service catalog.
         :param pulumi.Input[str] entity_type: The type of the entity that is associated with the service catalog.
         :param pulumi.Input[str] service_catalog_id: Identifier of the service catalog.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -267,6 +287,10 @@ class CatalogAssociation(pulumi.CustomResource):
         :param pulumi.Input[str] entity_id: Identifier of the entity being associated with service catalog.
         :param pulumi.Input[str] entity_type: The type of the entity that is associated with the service catalog.
         :param pulumi.Input[str] service_catalog_id: Identifier of the service catalog.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: Timestamp of when the resource was associated with service catalog.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -300,6 +324,10 @@ class CatalogAssociation(pulumi.CustomResource):
     def service_catalog_id(self) -> pulumi.Output[str]:
         """
         Identifier of the service catalog.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "service_catalog_id")
 

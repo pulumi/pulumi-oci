@@ -371,12 +371,18 @@ public class Vtap extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="vxlanNetworkIdentifier", type=String.class, parameters={})
     private Output<String> vxlanNetworkIdentifier;
 
     /**
      * @return (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> vxlanNetworkIdentifier() {

@@ -59,6 +59,9 @@ type DrgRouteTableRouteRule struct {
 	// Additional properties for the route, computed by the service.
 	Attributes pulumi.MapOutput `pulumi:"attributes"`
 	// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+	//
+	// Potential values:
+	// * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
 	Destination pulumi.StringOutput `pulumi:"destination"`
 	// Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
 	DestinationType pulumi.StringOutput `pulumi:"destinationType"`
@@ -69,6 +72,9 @@ type DrgRouteTableRouteRule struct {
 	// Indicates that the route was not imported due to a conflict between route rules.
 	IsConflict pulumi.BoolOutput `pulumi:"isConflict"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	NextHopDrgAttachmentId pulumi.StringOutput `pulumi:"nextHopDrgAttachmentId"`
 	// The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment, and is propagated to peered DRGs via RPC attachments, the route's provenance in the peered DRGs remains `IPSEC_TUNNEL`, because that is the earliest origin.
 	RouteProvenance pulumi.StringOutput `pulumi:"routeProvenance"`
@@ -120,6 +126,9 @@ type drgRouteTableRouteRuleState struct {
 	// Additional properties for the route, computed by the service.
 	Attributes map[string]interface{} `pulumi:"attributes"`
 	// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+	//
+	// Potential values:
+	// * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
 	Destination *string `pulumi:"destination"`
 	// Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
 	DestinationType *string `pulumi:"destinationType"`
@@ -130,6 +139,9 @@ type drgRouteTableRouteRuleState struct {
 	// Indicates that the route was not imported due to a conflict between route rules.
 	IsConflict *bool `pulumi:"isConflict"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	NextHopDrgAttachmentId *string `pulumi:"nextHopDrgAttachmentId"`
 	// The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment, and is propagated to peered DRGs via RPC attachments, the route's provenance in the peered DRGs remains `IPSEC_TUNNEL`, because that is the earliest origin.
 	RouteProvenance *string `pulumi:"routeProvenance"`
@@ -141,6 +153,9 @@ type DrgRouteTableRouteRuleState struct {
 	// Additional properties for the route, computed by the service.
 	Attributes pulumi.MapInput
 	// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+	//
+	// Potential values:
+	// * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
 	Destination pulumi.StringPtrInput
 	// Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
 	DestinationType pulumi.StringPtrInput
@@ -151,6 +166,9 @@ type DrgRouteTableRouteRuleState struct {
 	// Indicates that the route was not imported due to a conflict between route rules.
 	IsConflict pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	NextHopDrgAttachmentId pulumi.StringPtrInput
 	// The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment, and is propagated to peered DRGs via RPC attachments, the route's provenance in the peered DRGs remains `IPSEC_TUNNEL`, because that is the earliest origin.
 	RouteProvenance pulumi.StringPtrInput
@@ -164,24 +182,36 @@ func (DrgRouteTableRouteRuleState) ElementType() reflect.Type {
 
 type drgRouteTableRouteRuleArgs struct {
 	// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+	//
+	// Potential values:
+	// * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
 	Destination string `pulumi:"destination"`
 	// Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
 	DestinationType string `pulumi:"destinationType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
 	DrgRouteTableId string `pulumi:"drgRouteTableId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	NextHopDrgAttachmentId string `pulumi:"nextHopDrgAttachmentId"`
 }
 
 // The set of arguments for constructing a DrgRouteTableRouteRule resource.
 type DrgRouteTableRouteRuleArgs struct {
 	// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+	//
+	// Potential values:
+	// * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
 	Destination pulumi.StringInput
 	// Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
 	DestinationType pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
 	DrgRouteTableId pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	NextHopDrgAttachmentId pulumi.StringInput
 }
 
@@ -278,6 +308,9 @@ func (o DrgRouteTableRouteRuleOutput) Attributes() pulumi.MapOutput {
 }
 
 // (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+//
+// Potential values:
+// * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
 func (o DrgRouteTableRouteRuleOutput) Destination() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrgRouteTableRouteRule) pulumi.StringOutput { return v.Destination }).(pulumi.StringOutput)
 }
@@ -303,6 +336,9 @@ func (o DrgRouteTableRouteRuleOutput) IsConflict() pulumi.BoolOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DrgRouteTableRouteRuleOutput) NextHopDrgAttachmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrgRouteTableRouteRule) pulumi.StringOutput { return v.NextHopDrgAttachmentId }).(pulumi.StringOutput)
 }

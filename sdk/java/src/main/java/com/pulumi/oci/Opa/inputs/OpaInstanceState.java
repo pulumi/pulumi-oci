@@ -248,12 +248,18 @@ public final class OpaInstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * Shape of the instance.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="shapeName")
     private @Nullable Output<String> shapeName;
 
     /**
      * @return Shape of the instance.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> shapeName() {
@@ -691,6 +697,9 @@ public final class OpaInstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param shapeName Shape of the instance.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -701,6 +710,9 @@ public final class OpaInstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param shapeName Shape of the instance.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

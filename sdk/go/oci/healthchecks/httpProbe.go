@@ -67,6 +67,8 @@ type HttpProbe struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// A dictionary of HTTP request headers.
+	//
+	// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
 	Headers pulumi.MapOutput `pulumi:"headers"`
 	// The region where updates must be made and where results must be fetched from.
 	HomeRegion pulumi.StringOutput `pulumi:"homeRegion"`
@@ -87,6 +89,9 @@ type HttpProbe struct {
 	// The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
 	TimeoutInSeconds pulumi.IntOutput `pulumi:"timeoutInSeconds"`
 	// A list of names of vantage points from which to execute the probe.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VantagePointNames pulumi.StringArrayOutput `pulumi:"vantagePointNames"`
 }
 
@@ -131,6 +136,8 @@ type httpProbeState struct {
 	// The OCID of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A dictionary of HTTP request headers.
+	//
+	// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
 	Headers map[string]interface{} `pulumi:"headers"`
 	// The region where updates must be made and where results must be fetched from.
 	HomeRegion *string `pulumi:"homeRegion"`
@@ -151,6 +158,9 @@ type httpProbeState struct {
 	// The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
 	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// A list of names of vantage points from which to execute the probe.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VantagePointNames []string `pulumi:"vantagePointNames"`
 }
 
@@ -158,6 +168,8 @@ type HttpProbeState struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// A dictionary of HTTP request headers.
+	//
+	// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
 	Headers pulumi.MapInput
 	// The region where updates must be made and where results must be fetched from.
 	HomeRegion pulumi.StringPtrInput
@@ -178,6 +190,9 @@ type HttpProbeState struct {
 	// The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
 	TimeoutInSeconds pulumi.IntPtrInput
 	// A list of names of vantage points from which to execute the probe.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VantagePointNames pulumi.StringArrayInput
 }
 
@@ -189,6 +204,8 @@ type httpProbeArgs struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// A dictionary of HTTP request headers.
+	//
+	// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
 	Headers map[string]interface{} `pulumi:"headers"`
 	// The supported HTTP methods available for probes.
 	Method *string `pulumi:"method"`
@@ -203,6 +220,9 @@ type httpProbeArgs struct {
 	// The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
 	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// A list of names of vantage points from which to execute the probe.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VantagePointNames []string `pulumi:"vantagePointNames"`
 }
 
@@ -211,6 +231,8 @@ type HttpProbeArgs struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringInput
 	// A dictionary of HTTP request headers.
+	//
+	// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
 	Headers pulumi.MapInput
 	// The supported HTTP methods available for probes.
 	Method pulumi.StringPtrInput
@@ -225,6 +247,9 @@ type HttpProbeArgs struct {
 	// The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
 	TimeoutInSeconds pulumi.IntPtrInput
 	// A list of names of vantage points from which to execute the probe.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VantagePointNames pulumi.StringArrayInput
 }
 
@@ -321,6 +346,8 @@ func (o HttpProbeOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // A dictionary of HTTP request headers.
+//
+// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
 func (o HttpProbeOutput) Headers() pulumi.MapOutput {
 	return o.ApplyT(func(v *HttpProbe) pulumi.MapOutput { return v.Headers }).(pulumi.MapOutput)
 }
@@ -371,6 +398,9 @@ func (o HttpProbeOutput) TimeoutInSeconds() pulumi.IntOutput {
 }
 
 // A list of names of vantage points from which to execute the probe.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o HttpProbeOutput) VantagePointNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *HttpProbe) pulumi.StringArrayOutput { return v.VantagePointNames }).(pulumi.StringArrayOutput)
 }

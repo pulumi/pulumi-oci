@@ -192,7 +192,11 @@ namespace Pulumi.Oci.OperatorAccessControl
         public Output<string> TimeAssignmentFrom { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        /// (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z' 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("timeAssignmentTo")]
         public Output<string> TimeAssignmentTo { get; private set; } = null!;
@@ -370,7 +374,11 @@ namespace Pulumi.Oci.OperatorAccessControl
         public Input<string>? TimeAssignmentFrom { get; set; }
 
         /// <summary>
-        /// (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        /// (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z' 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("timeAssignmentTo")]
         public Input<string>? TimeAssignmentTo { get; set; }
@@ -528,7 +536,11 @@ namespace Pulumi.Oci.OperatorAccessControl
         public Input<string>? TimeAssignmentFrom { get; set; }
 
         /// <summary>
-        /// (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        /// (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z' 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("timeAssignmentTo")]
         public Input<string>? TimeAssignmentTo { get; set; }

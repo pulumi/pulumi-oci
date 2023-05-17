@@ -14,6 +14,9 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationValidatio
     /**
      * @return (Updatable) Type of the Response Cache Store Policy.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private String type;
     /**
@@ -25,6 +28,9 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationValidatio
     private DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetails() {}
     /**
      * @return (Updatable) Type of the Response Cache Store Policy.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String type() {

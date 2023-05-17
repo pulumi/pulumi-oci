@@ -306,6 +306,9 @@ type VulnerabilityAuditSource struct {
 	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the Vulnerability Audit.
 	OciResourceId *string `pulumi:"ociResourceId"`
 	// Source type of the Vulnerability Audit.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type string `pulumi:"type"`
 }
 
@@ -326,6 +329,9 @@ type VulnerabilityAuditSourceArgs struct {
 	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the Vulnerability Audit.
 	OciResourceId pulumi.StringPtrInput `pulumi:"ociResourceId"`
 	// Source type of the Vulnerability Audit.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -417,6 +423,9 @@ func (o VulnerabilityAuditSourceOutput) OciResourceId() pulumi.StringPtrOutput {
 }
 
 // Source type of the Vulnerability Audit.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o VulnerabilityAuditSourceOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v VulnerabilityAuditSource) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -466,6 +475,9 @@ func (o VulnerabilityAuditSourcePtrOutput) OciResourceId() pulumi.StringPtrOutpu
 }
 
 // Source type of the Vulnerability Audit.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o VulnerabilityAuditSourcePtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *VulnerabilityAuditSource) *string {
 		if v == nil {

@@ -152,6 +152,10 @@ export class Schedule extends pulumi.CustomResource {
     public /*out*/ readonly timeNextRun!: pulumi.Output<string>;
     /**
      * The date and time of the first time job execution.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly timeScheduled!: pulumi.Output<string>;
 
@@ -280,6 +284,10 @@ export interface ScheduleState {
     timeNextRun?: pulumi.Input<string>;
     /**
      * The date and time of the first time job execution.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     timeScheduled?: pulumi.Input<string>;
 }
@@ -330,6 +338,10 @@ export interface ScheduleArgs {
     scheduleRecurrences: pulumi.Input<string>;
     /**
      * The date and time of the first time job execution.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     timeScheduled: pulumi.Input<string>;
 }

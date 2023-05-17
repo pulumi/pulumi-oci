@@ -24,7 +24,11 @@ class LogAnalyticsLogGroupArgs:
         The set of arguments for constructing a LogAnalyticsLogGroup resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Description for this resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -67,7 +71,11 @@ class LogAnalyticsLogGroupArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
         """
-        The Logging Analytics namespace used for the request.
+        The Logging Analytics namespace used for the request. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "namespace")
 
@@ -130,7 +138,11 @@ class _LogAnalyticsLogGroupState:
         :param pulumi.Input[str] description: (Updatable) Description for this resource.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The date and time the resource was created, in the format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
         """
@@ -215,7 +227,11 @@ class _LogAnalyticsLogGroupState:
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
         """
-        The Logging Analytics namespace used for the request.
+        The Logging Analytics namespace used for the request. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "namespace")
 
@@ -299,7 +315,11 @@ class LogAnalyticsLogGroup(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) Description for this resource.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -413,7 +433,11 @@ class LogAnalyticsLogGroup(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) Description for this resource.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The date and time the resource was created, in the format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
         """
@@ -475,7 +499,11 @@ class LogAnalyticsLogGroup(pulumi.CustomResource):
     @pulumi.getter
     def namespace(self) -> pulumi.Output[str]:
         """
-        The Logging Analytics namespace used for the request.
+        The Logging Analytics namespace used for the request. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "namespace")
 

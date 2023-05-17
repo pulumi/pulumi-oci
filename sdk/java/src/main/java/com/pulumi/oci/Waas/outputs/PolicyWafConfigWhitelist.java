@@ -24,6 +24,9 @@ public final class PolicyWafConfigWhitelist {
     /**
      * @return (Updatable) The unique name of the whitelist.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private String name;
 
@@ -44,6 +47,9 @@ public final class PolicyWafConfigWhitelist {
     }
     /**
      * @return (Updatable) The unique name of the whitelist.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String name() {

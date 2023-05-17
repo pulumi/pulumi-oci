@@ -90,6 +90,10 @@ export class CaBundle extends pulumi.CustomResource {
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
      * A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly name!: pulumi.Output<string>;
     /**
@@ -176,6 +180,10 @@ export interface CaBundleState {
     lifecycleDetails?: pulumi.Input<string>;
     /**
      * A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     name?: pulumi.Input<string>;
     /**
@@ -214,6 +222,10 @@ export interface CaBundleArgs {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     name?: pulumi.Input<string>;
 }

@@ -20,12 +20,38 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
     /**
      * (Updatable) Applicable Password Policy
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="applicablePasswordPolicy")
     private @Nullable Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArgs> applicablePasswordPolicy;
 
     /**
      * @return (Updatable) Applicable Password Policy
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArgs>> applicablePasswordPolicy() {
@@ -35,12 +61,30 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
     /**
      * (Updatable) Indicates that the current password MAY NOT be changed and all other password expiry settings SHALL be ignored
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="cantChange")
     private @Nullable Output<Boolean> cantChange;
 
     /**
      * @return (Updatable) Indicates that the current password MAY NOT be changed and all other password expiry settings SHALL be ignored
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> cantChange() {
@@ -50,12 +94,30 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
     /**
      * (Updatable) Indicates that the password expiry policy will not be applied for the current Resource
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="cantExpire")
     private @Nullable Output<Boolean> cantExpire;
 
     /**
      * @return (Updatable) Indicates that the password expiry policy will not be applied for the current Resource
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> cantExpire() {
@@ -65,12 +127,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
     /**
      * (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="expired")
     private @Nullable Output<Boolean> expired;
 
     /**
      * @return (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> expired() {
@@ -80,12 +166,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
     /**
      * (Updatable) A DateTime that specifies the date and time when last failed password validation was set
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     @Import(name="lastFailedValidationDate")
     private @Nullable Output<String> lastFailedValidationDate;
 
     /**
      * @return (Updatable) A DateTime that specifies the date and time when last failed password validation was set
+     * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> lastFailedValidationDate() {
@@ -95,12 +203,30 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
     /**
      * (Updatable) A DateTime that specifies the date and time when the current password was set
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     @Import(name="lastSuccessfulSetDate")
     private @Nullable Output<String> lastSuccessfulSetDate;
 
     /**
      * @return (Updatable) A DateTime that specifies the date and time when the current password was set
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> lastSuccessfulSetDate() {
@@ -110,12 +236,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
     /**
      * (Updatable) A DateTime that specifies the date and time when last successful password validation was set
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     @Import(name="lastSuccessfulValidationDate")
     private @Nullable Output<String> lastSuccessfulValidationDate;
 
     /**
      * @return (Updatable) A DateTime that specifies the date and time when last successful password validation was set
+     * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> lastSuccessfulValidationDate() {
@@ -125,12 +273,30 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
     /**
      * (Updatable) Indicates that the subject password value MUST change on next login. If not changed, typically the account is locked. The value may be set indirectly when the subject&#39;s current password expires or directly set by an administrator.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="mustChange")
     private @Nullable Output<Boolean> mustChange;
 
     /**
      * @return (Updatable) Indicates that the subject password value MUST change on next login. If not changed, typically the account is locked. The value may be set indirectly when the subject&#39;s current password expires or directly set by an administrator.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> mustChange() {
@@ -171,6 +337,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
         /**
          * @param applicablePasswordPolicy (Updatable) Applicable Password Policy
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -182,6 +361,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
         /**
          * @param applicablePasswordPolicy (Updatable) Applicable Password Policy
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -191,6 +383,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
 
         /**
          * @param cantChange (Updatable) Indicates that the current password MAY NOT be changed and all other password expiry settings SHALL be ignored
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -203,6 +404,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
         /**
          * @param cantChange (Updatable) Indicates that the current password MAY NOT be changed and all other password expiry settings SHALL be ignored
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -212,6 +422,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
 
         /**
          * @param cantExpire (Updatable) Indicates that the password expiry policy will not be applied for the current Resource
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -224,6 +443,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
         /**
          * @param cantExpire (Updatable) Indicates that the password expiry policy will not be applied for the current Resource
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -233,6 +461,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
 
         /**
          * @param expired (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -245,6 +485,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
         /**
          * @param expired (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -254,6 +506,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
 
         /**
          * @param lastFailedValidationDate (Updatable) A DateTime that specifies the date and time when last failed password validation was set
+         * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: dateTime
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -266,6 +529,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
         /**
          * @param lastFailedValidationDate (Updatable) A DateTime that specifies the date and time when last failed password validation was set
          * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: dateTime
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -275,6 +549,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
 
         /**
          * @param lastSuccessfulSetDate (Updatable) A DateTime that specifies the date and time when the current password was set
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: dateTime
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -287,6 +570,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
         /**
          * @param lastSuccessfulSetDate (Updatable) A DateTime that specifies the date and time when the current password was set
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: dateTime
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -296,6 +588,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
 
         /**
          * @param lastSuccessfulValidationDate (Updatable) A DateTime that specifies the date and time when last successful password validation was set
+         * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: dateTime
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -308,6 +611,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
         /**
          * @param lastSuccessfulValidationDate (Updatable) A DateTime that specifies the date and time when last successful password validation was set
          * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: dateTime
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -317,6 +631,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
 
         /**
          * @param mustChange (Updatable) Indicates that the subject password value MUST change on next login. If not changed, typically the account is locked. The value may be set indirectly when the subject&#39;s current password expires or directly set by an administrator.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -328,6 +651,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
 
         /**
          * @param mustChange (Updatable) Indicates that the subject password value MUST change on next login. If not changed, typically the account is locked. The value may be set indirectly when the subject&#39;s current password expires or directly set by an administrator.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 

@@ -14,54 +14,153 @@ namespace Pulumi.Oci.Identity.Inputs
     {
         /// <summary>
         /// (Updatable) Authentication method.
+        /// 
+        /// **Added In:** 2009232244
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("authenticationMethod")]
         public Input<string>? AuthenticationMethod { get; set; }
 
         /// <summary>
         /// (Updatable) A human readable name, primarily used for display purposes.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("display")]
         public Input<string>? Display { get; set; }
 
         /// <summary>
         /// (Updatable) Device authentication factor status.
+        /// 
+        /// **Added In:** 18.4.2
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("factorStatus")]
         public Input<string>? FactorStatus { get; set; }
 
         /// <summary>
         /// (Updatable) Authentication Factor Type
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("factorType")]
         public Input<string>? FactorType { get; set; }
 
         /// <summary>
         /// (Updatable) Last Sync time for device.
+        /// 
+        /// **Added In:** 18.4.2
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: dateTime
+        /// * uniqueness: none
         /// </summary>
         [Input("lastSyncTime")]
         public Input<string>? LastSyncTime { get; set; }
 
         /// <summary>
         /// (Updatable) User Token URI
+        /// 
+        /// **Added In:** 18.4.2
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: reference
+        /// * uniqueness: none
         /// </summary>
         [Input("ref")]
         public Input<string>? Ref { get; set; }
 
         /// <summary>
         /// (Updatable) A supplemental status indicating the reason why a user is disabled
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
         /// (Updatable) Third party factor vendor name.
+        /// 
+        /// **Added In:** 2009232244
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("thirdPartyVendorName")]
         public Input<string>? ThirdPartyVendorName { get; set; }
 
         /// <summary>
         /// (Updatable) The value of a X509 certificate.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: binary
+        /// * uniqueness: none
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

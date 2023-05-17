@@ -108,12 +108,18 @@ public final class AppCatalogSubscriptionArgs extends com.pulumi.resources.Resou
     /**
      * Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="timeRetrieved", required=true)
     private Output<String> timeRetrieved;
 
     /**
      * @return Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> timeRetrieved() {
@@ -279,6 +285,9 @@ public final class AppCatalogSubscriptionArgs extends com.pulumi.resources.Resou
         /**
          * @param timeRetrieved Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -289,6 +298,9 @@ public final class AppCatalogSubscriptionArgs extends com.pulumi.resources.Resou
 
         /**
          * @param timeRetrieved Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

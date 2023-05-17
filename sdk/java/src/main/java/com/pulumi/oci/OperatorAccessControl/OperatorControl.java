@@ -232,12 +232,18 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) This is the message that will be displayed to the operator users while accessing the system.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="systemMessage", type=String.class, parameters={})
     private Output<String> systemMessage;
 
     /**
      * @return (Updatable) This is the message that will be displayed to the operator users while accessing the system.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> systemMessage() {

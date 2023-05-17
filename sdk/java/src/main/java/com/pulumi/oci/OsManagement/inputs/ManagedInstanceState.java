@@ -235,12 +235,18 @@ public final class ManagedInstanceState extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) OCID of the ONS topic used to send notification to users
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="notificationTopicId")
     private @Nullable Output<String> notificationTopicId;
 
     /**
      * @return (Updatable) OCID of the ONS topic used to send notification to users
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> notificationTopicId() {
@@ -788,6 +794,9 @@ public final class ManagedInstanceState extends com.pulumi.resources.ResourceArg
         /**
          * @param notificationTopicId (Updatable) OCID of the ONS topic used to send notification to users
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -798,6 +807,9 @@ public final class ManagedInstanceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param notificationTopicId (Updatable) OCID of the ONS topic used to send notification to users
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

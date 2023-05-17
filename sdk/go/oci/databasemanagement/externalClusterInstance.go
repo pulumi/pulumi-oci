@@ -42,6 +42,9 @@ type ExternalClusterInstance struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
 	ExternalClusterInstanceId pulumi.StringOutput `pulumi:"externalClusterInstanceId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalConnectorId pulumi.StringOutput `pulumi:"externalConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
 	ExternalDbNodeId pulumi.StringOutput `pulumi:"externalDbNodeId"`
@@ -108,6 +111,9 @@ type externalClusterInstanceState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
 	ExternalClusterInstanceId *string `pulumi:"externalClusterInstanceId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalConnectorId *string `pulumi:"externalConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
 	ExternalDbNodeId *string `pulumi:"externalDbNodeId"`
@@ -143,6 +149,9 @@ type ExternalClusterInstanceState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
 	ExternalClusterInstanceId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalConnectorId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
 	ExternalDbNodeId pulumi.StringPtrInput
@@ -170,6 +179,9 @@ type externalClusterInstanceArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
 	ExternalClusterInstanceId string `pulumi:"externalClusterInstanceId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalConnectorId *string `pulumi:"externalConnectorId"`
 }
 
@@ -178,6 +190,9 @@ type ExternalClusterInstanceArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
 	ExternalClusterInstanceId pulumi.StringInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalConnectorId pulumi.StringPtrInput
 }
 
@@ -304,6 +319,9 @@ func (o ExternalClusterInstanceOutput) ExternalClusterInstanceId() pulumi.String
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ExternalClusterInstanceOutput) ExternalConnectorId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalClusterInstance) pulumi.StringOutput { return v.ExternalConnectorId }).(pulumi.StringOutput)
 }

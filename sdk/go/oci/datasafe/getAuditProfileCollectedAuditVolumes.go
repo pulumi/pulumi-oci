@@ -57,8 +57,12 @@ type GetAuditProfileCollectedAuditVolumesArgs struct {
 	AuditProfileId string                                       `pulumi:"auditProfileId"`
 	Filters        []GetAuditProfileCollectedAuditVolumesFilter `pulumi:"filters"`
 	// Specifying `monthInConsiderationGreaterThan` parameter will retrieve all items for which the event month is greater than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	//
+	// **Example:** 2016-12-19T00:00:00.000Z
 	MonthInConsiderationGreaterThan *string `pulumi:"monthInConsiderationGreaterThan"`
 	// Specifying `monthInConsiderationLessThan` parameter will retrieve all items for which the event month is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	//
+	// **Example:** 2016-12-19T00:00:00.000Z
 	MonthInConsiderationLessThan *string `pulumi:"monthInConsiderationLessThan"`
 	// The OCID of the work request.
 	WorkRequestId string `pulumi:"workRequestId"`
@@ -97,8 +101,12 @@ type GetAuditProfileCollectedAuditVolumesOutputArgs struct {
 	AuditProfileId pulumi.StringInput                                   `pulumi:"auditProfileId"`
 	Filters        GetAuditProfileCollectedAuditVolumesFilterArrayInput `pulumi:"filters"`
 	// Specifying `monthInConsiderationGreaterThan` parameter will retrieve all items for which the event month is greater than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	//
+	// **Example:** 2016-12-19T00:00:00.000Z
 	MonthInConsiderationGreaterThan pulumi.StringPtrInput `pulumi:"monthInConsiderationGreaterThan"`
 	// Specifying `monthInConsiderationLessThan` parameter will retrieve all items for which the event month is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	//
+	// **Example:** 2016-12-19T00:00:00.000Z
 	MonthInConsiderationLessThan pulumi.StringPtrInput `pulumi:"monthInConsiderationLessThan"`
 	// The OCID of the work request.
 	WorkRequestId pulumi.StringInput `pulumi:"workRequestId"`

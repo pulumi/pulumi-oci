@@ -20,12 +20,16 @@ public final class GetCompartmentsPlainArgs extends com.pulumi.resources.InvokeA
     /**
      * Valid values are `ANY` and `ACCESSIBLE`. Default is `ANY`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). For the compartments on which the user indirectly has INSPECT permissions, a restricted set of fields is returned.
      * 
+     * When set to `ANY` permissions are not checked.
+     * 
      */
     @Import(name="accessLevel")
     private @Nullable String accessLevel;
 
     /**
      * @return Valid values are `ANY` and `ACCESSIBLE`. Default is `ANY`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). For the compartments on which the user indirectly has INSPECT permissions, a restricted set of fields is returned.
+     * 
+     * When set to `ANY` permissions are not checked.
      * 
      */
     public Optional<String> accessLevel() {
@@ -130,6 +134,8 @@ public final class GetCompartmentsPlainArgs extends com.pulumi.resources.InvokeA
 
         /**
          * @param accessLevel Valid values are `ANY` and `ACCESSIBLE`. Default is `ANY`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). For the compartments on which the user indirectly has INSPECT permissions, a restricted set of fields is returned.
+         * 
+         * When set to `ANY` permissions are not checked.
          * 
          * @return builder
          * 

@@ -71,12 +71,24 @@ public final class GetStacksPlainArgs extends com.pulumi.resources.InvokeArgs {
     /**
      * A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
      * 
+     * Allowable values:
+     * * CREATING
+     * * ACTIVE
+     * * DELETING
+     * * DELETED
+     * 
      */
     @Import(name="state")
     private @Nullable String state;
 
     /**
      * @return A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
+     * 
+     * Allowable values:
+     * * CREATING
+     * * ACTIVE
+     * * DELETING
+     * * DELETED
      * 
      */
     public Optional<String> state() {
@@ -155,6 +167,12 @@ public final class GetStacksPlainArgs extends com.pulumi.resources.InvokeArgs {
 
         /**
          * @param state A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
+         * 
+         * Allowable values:
+         * * CREATING
+         * * ACTIVE
+         * * DELETING
+         * * DELETED
          * 
          * @return builder
          * 

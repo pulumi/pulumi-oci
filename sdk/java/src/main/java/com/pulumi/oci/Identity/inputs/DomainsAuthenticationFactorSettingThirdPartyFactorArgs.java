@@ -16,12 +16,34 @@ public final class DomainsAuthenticationFactorSettingThirdPartyFactorArgs extend
     /**
      * (Updatable) To enable Duo Security factor
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="duoSecurity", required=true)
     private Output<Boolean> duoSecurity;
 
     /**
      * @return (Updatable) To enable Duo Security factor
+     * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Output<Boolean> duoSecurity() {
@@ -55,6 +77,17 @@ public final class DomainsAuthenticationFactorSettingThirdPartyFactorArgs extend
         /**
          * @param duoSecurity (Updatable) To enable Duo Security factor
          * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -65,6 +98,17 @@ public final class DomainsAuthenticationFactorSettingThirdPartyFactorArgs extend
 
         /**
          * @param duoSecurity (Updatable) To enable Duo Security factor
+         * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 

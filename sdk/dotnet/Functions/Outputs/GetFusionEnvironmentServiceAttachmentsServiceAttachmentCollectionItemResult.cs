@@ -14,10 +14,6 @@ namespace Pulumi.Oci.Functions.Outputs
     public sealed class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemResult
     {
         /// <summary>
-        /// Action
-        /// </summary>
-        public readonly string Action;
-        /// <summary>
         /// Compartment Identifier
         /// </summary>
         public readonly string CompartmentId;
@@ -33,6 +29,10 @@ namespace Pulumi.Oci.Functions.Outputs
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
+        /// <summary>
+        /// unique FusionEnvironment identifier
+        /// </summary>
+        public readonly string FusionEnvironmentId;
         /// <summary>
         /// Unique identifier that is immutable on creation
         /// </summary>
@@ -68,8 +68,6 @@ namespace Pulumi.Oci.Functions.Outputs
 
         [OutputConstructor]
         private GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemResult(
-            string action,
-
             string compartmentId,
 
             ImmutableDictionary<string, object> definedTags,
@@ -77,6 +75,8 @@ namespace Pulumi.Oci.Functions.Outputs
             string displayName,
 
             ImmutableDictionary<string, object> freeformTags,
+
+            string fusionEnvironmentId,
 
             string id,
 
@@ -94,11 +94,11 @@ namespace Pulumi.Oci.Functions.Outputs
 
             string timeUpdated)
         {
-            Action = action;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             DisplayName = displayName;
             FreeformTags = freeformTags;
+            FusionEnvironmentId = fusionEnvironmentId;
             Id = id;
             IsSkuBased = isSkuBased;
             ServiceInstanceId = serviceInstanceId;

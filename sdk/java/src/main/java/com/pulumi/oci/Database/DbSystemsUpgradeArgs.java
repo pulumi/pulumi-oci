@@ -80,12 +80,18 @@ public final class DbSystemsUpgradeArgs extends com.pulumi.resources.ResourceArg
     /**
      * The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="snapshotRetentionPeriodInDays")
     private @Nullable Output<Integer> snapshotRetentionPeriodInDays;
 
     /**
      * @return The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> snapshotRetentionPeriodInDays() {
@@ -207,6 +213,9 @@ public final class DbSystemsUpgradeArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param snapshotRetentionPeriodInDays The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -217,6 +226,9 @@ public final class DbSystemsUpgradeArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param snapshotRetentionPeriodInDays The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -117,7 +117,11 @@ namespace Pulumi.Oci.Opsi
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Storage allocated to OPSI Warehouse ADW.
+        /// (Updatable) Storage allocated to OPSI Warehouse ADW. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("storageAllocatedInGbs")]
         public Output<double> StorageAllocatedInGbs { get; private set; } = null!;
@@ -241,7 +245,11 @@ namespace Pulumi.Oci.Opsi
         }
 
         /// <summary>
-        /// (Updatable) Storage allocated to OPSI Warehouse ADW.
+        /// (Updatable) Storage allocated to OPSI Warehouse ADW. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("storageAllocatedInGbs")]
         public Input<double>? StorageAllocatedInGbs { get; set; }
@@ -327,7 +335,11 @@ namespace Pulumi.Oci.Opsi
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// (Updatable) Storage allocated to OPSI Warehouse ADW.
+        /// (Updatable) Storage allocated to OPSI Warehouse ADW. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("storageAllocatedInGbs")]
         public Input<double>? StorageAllocatedInGbs { get; set; }

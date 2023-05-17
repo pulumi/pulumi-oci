@@ -125,12 +125,18 @@ public final class EncryptedDataState extends com.pulumi.resources.ResourceArgs 
     /**
      * The plaintext data to encrypt.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="plaintext")
     private @Nullable Output<String> plaintext;
 
     /**
      * @return The plaintext data to encrypt.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> plaintext() {
@@ -318,6 +324,9 @@ public final class EncryptedDataState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param plaintext The plaintext data to encrypt.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -328,6 +337,9 @@ public final class EncryptedDataState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param plaintext The plaintext data to encrypt.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

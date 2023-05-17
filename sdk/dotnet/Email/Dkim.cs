@@ -106,6 +106,14 @@ namespace Pulumi.Oci.Email
 
         /// <summary>
         /// The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you may be subscribed to. Selectors limited to ASCII characters may use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
+        /// 
+        /// Avoid entering confidential information.
+        /// 
+        /// Example: `mydomain-phx-20210228`
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -224,6 +232,14 @@ namespace Pulumi.Oci.Email
 
         /// <summary>
         /// The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you may be subscribed to. Selectors limited to ASCII characters may use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
+        /// 
+        /// Avoid entering confidential information.
+        /// 
+        /// Example: `mydomain-phx-20210228`
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -298,6 +314,14 @@ namespace Pulumi.Oci.Email
 
         /// <summary>
         /// The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you may be subscribed to. Selectors limited to ASCII characters may use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
+        /// 
+        /// Avoid entering confidential information.
+        /// 
+        /// Example: `mydomain-phx-20210228`
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

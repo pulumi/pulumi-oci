@@ -60,6 +60,9 @@ type CatalogAssociation struct {
 	// The type of the entity that is associated with the service catalog.
 	EntityType pulumi.StringOutput `pulumi:"entityType"`
 	// Identifier of the service catalog.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ServiceCatalogId pulumi.StringOutput `pulumi:"serviceCatalogId"`
 	// Timestamp of when the resource was associated with service catalog.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -105,6 +108,9 @@ type catalogAssociationState struct {
 	// The type of the entity that is associated with the service catalog.
 	EntityType *string `pulumi:"entityType"`
 	// Identifier of the service catalog.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ServiceCatalogId *string `pulumi:"serviceCatalogId"`
 	// Timestamp of when the resource was associated with service catalog.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -116,6 +122,9 @@ type CatalogAssociationState struct {
 	// The type of the entity that is associated with the service catalog.
 	EntityType pulumi.StringPtrInput
 	// Identifier of the service catalog.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ServiceCatalogId pulumi.StringPtrInput
 	// Timestamp of when the resource was associated with service catalog.
 	TimeCreated pulumi.StringPtrInput
@@ -131,6 +140,9 @@ type catalogAssociationArgs struct {
 	// The type of the entity that is associated with the service catalog.
 	EntityType *string `pulumi:"entityType"`
 	// Identifier of the service catalog.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ServiceCatalogId string `pulumi:"serviceCatalogId"`
 }
 
@@ -141,6 +153,9 @@ type CatalogAssociationArgs struct {
 	// The type of the entity that is associated with the service catalog.
 	EntityType pulumi.StringPtrInput
 	// Identifier of the service catalog.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ServiceCatalogId pulumi.StringInput
 }
 
@@ -242,6 +257,9 @@ func (o CatalogAssociationOutput) EntityType() pulumi.StringOutput {
 }
 
 // Identifier of the service catalog.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CatalogAssociationOutput) ServiceCatalogId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CatalogAssociation) pulumi.StringOutput { return v.ServiceCatalogId }).(pulumi.StringOutput)
 }

@@ -23,6 +23,10 @@ class CloudGuardConfigurationArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The ID of the compartment in which to list resources.
         :param pulumi.Input[str] reporting_region: (Updatable) The reporting region value
         :param pulumi.Input[str] status: (Updatable) Status of Cloud Guard Tenant
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[bool] self_manage_resources: (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -60,6 +64,10 @@ class CloudGuardConfigurationArgs:
     def status(self) -> pulumi.Input[str]:
         """
         (Updatable) Status of Cloud Guard Tenant
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "status")
 
@@ -93,6 +101,10 @@ class _CloudGuardConfigurationState:
         :param pulumi.Input[str] reporting_region: (Updatable) The reporting region value
         :param pulumi.Input[bool] self_manage_resources: (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
         :param pulumi.Input[str] status: (Updatable) Status of Cloud Guard Tenant
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -144,6 +156,10 @@ class _CloudGuardConfigurationState:
     def status(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Status of Cloud Guard Tenant
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "status")
 
@@ -190,6 +206,10 @@ class CloudGuardConfiguration(pulumi.CustomResource):
         :param pulumi.Input[str] reporting_region: (Updatable) The reporting region value
         :param pulumi.Input[bool] self_manage_resources: (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
         :param pulumi.Input[str] status: (Updatable) Status of Cloud Guard Tenant
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -282,6 +302,10 @@ class CloudGuardConfiguration(pulumi.CustomResource):
         :param pulumi.Input[str] reporting_region: (Updatable) The reporting region value
         :param pulumi.Input[bool] self_manage_resources: (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
         :param pulumi.Input[str] status: (Updatable) Status of Cloud Guard Tenant
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -322,6 +346,10 @@ class CloudGuardConfiguration(pulumi.CustomResource):
     def status(self) -> pulumi.Output[str]:
         """
         (Updatable) Status of Cloud Guard Tenant
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "status")
 

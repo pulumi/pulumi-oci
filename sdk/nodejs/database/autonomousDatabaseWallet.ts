@@ -62,10 +62,16 @@ export class AutonomousDatabaseWallet extends pulumi.CustomResource {
     public /*out*/ readonly content!: pulumi.Output<string>;
     /**
      * The type of wallet to generate.
+     *
+     * **Shared Exadata infrastructure usage:**
      */
     public readonly generateType!: pulumi.Output<string | undefined>;
     /**
      * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly password!: pulumi.Output<string>;
 
@@ -123,10 +129,16 @@ export interface AutonomousDatabaseWalletState {
     content?: pulumi.Input<string>;
     /**
      * The type of wallet to generate.
+     *
+     * **Shared Exadata infrastructure usage:**
      */
     generateType?: pulumi.Input<string>;
     /**
      * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     password?: pulumi.Input<string>;
 }
@@ -142,10 +154,16 @@ export interface AutonomousDatabaseWalletArgs {
     base64EncodeContent?: pulumi.Input<boolean>;
     /**
      * The type of wallet to generate.
+     *
+     * **Shared Exadata infrastructure usage:**
      */
     generateType?: pulumi.Input<string>;
     /**
      * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     password: pulumi.Input<string>;
 }

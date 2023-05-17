@@ -66,6 +66,10 @@ export class Catalog extends pulumi.CustomResource {
 
     /**
      * (Updatable) The list of private reverse connection endpoints attached to the catalog
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly attachedCatalogPrivateEndpoints!: pulumi.Output<string[]>;
     /**
@@ -167,6 +171,10 @@ export class Catalog extends pulumi.CustomResource {
 export interface CatalogState {
     /**
      * (Updatable) The list of private reverse connection endpoints attached to the catalog
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     attachedCatalogPrivateEndpoints?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -221,6 +229,10 @@ export interface CatalogState {
 export interface CatalogArgs {
     /**
      * (Updatable) The list of private reverse connection endpoints attached to the catalog
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     attachedCatalogPrivateEndpoints?: pulumi.Input<pulumi.Input<string>[]>;
     /**

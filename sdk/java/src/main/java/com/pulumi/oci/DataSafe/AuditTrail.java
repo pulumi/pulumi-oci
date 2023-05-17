@@ -177,12 +177,18 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="resumeTrigger", type=Integer.class, parameters={})
     private Output</* @Nullable */ Integer> resumeTrigger;
 
     /**
      * @return (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Optional<Integer>> resumeTrigger() {

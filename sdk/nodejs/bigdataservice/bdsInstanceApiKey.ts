@@ -98,6 +98,10 @@ export class BdsInstanceApiKey extends pulumi.CustomResource {
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
      * The OCID of the user for whom this new generated API key pair will be created.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly userId!: pulumi.Output<string>;
 
@@ -198,6 +202,10 @@ export interface BdsInstanceApiKeyState {
     timeCreated?: pulumi.Input<string>;
     /**
      * The OCID of the user for whom this new generated API key pair will be created.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     userId?: pulumi.Input<string>;
 }
@@ -224,6 +232,10 @@ export interface BdsInstanceApiKeyArgs {
     passphrase: pulumi.Input<string>;
     /**
      * The OCID of the user for whom this new generated API key pair will be created.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     userId: pulumi.Input<string>;
 }

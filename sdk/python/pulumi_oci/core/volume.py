@@ -48,6 +48,8 @@ class VolumeArgs:
         :param pulumi.Input[str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
         :param pulumi.Input[str] volume_backup_id: The OCID of the volume backup from which the data should be restored on the newly created volume. This field is deprecated. Use the sourceDetails field instead to specify the backup for the volume.
         :param pulumi.Input[str] vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+               
+               Allowed values:
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -265,6 +267,8 @@ class VolumeArgs:
     def vpus_per_gb(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+
+        Allowed values:
         """
         return pulumi.get(self, "vpus_per_gb")
 
@@ -320,6 +324,8 @@ class _VolumeState:
         :param pulumi.Input[str] volume_backup_id: The OCID of the volume backup from which the data should be restored on the newly created volume. This field is deprecated. Use the sourceDetails field instead to specify the backup for the volume.
         :param pulumi.Input[str] volume_group_id: The OCID of the source volume group.
         :param pulumi.Input[str] vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+               
+               Allowed values:
         """
         if auto_tuned_vpus_per_gb is not None:
             pulumi.set(__self__, "auto_tuned_vpus_per_gb", auto_tuned_vpus_per_gb)
@@ -623,6 +629,8 @@ class _VolumeState:
     def vpus_per_gb(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+
+        Allowed values:
         """
         return pulumi.get(self, "vpus_per_gb")
 
@@ -732,6 +740,8 @@ class Volume(pulumi.CustomResource):
         :param pulumi.Input[str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
         :param pulumi.Input[str] volume_backup_id: The OCID of the volume backup from which the data should be restored on the newly created volume. This field is deprecated. Use the sourceDetails field instead to specify the backup for the volume.
         :param pulumi.Input[str] vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+               
+               Allowed values:
         """
         ...
     @overload
@@ -933,6 +943,8 @@ class Volume(pulumi.CustomResource):
         :param pulumi.Input[str] volume_backup_id: The OCID of the volume backup from which the data should be restored on the newly created volume. This field is deprecated. Use the sourceDetails field instead to specify the backup for the volume.
         :param pulumi.Input[str] volume_group_id: The OCID of the source volume group.
         :param pulumi.Input[str] vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+               
+               Allowed values:
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1129,6 +1141,8 @@ class Volume(pulumi.CustomResource):
     def vpus_per_gb(self) -> pulumi.Output[str]:
         """
         (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+
+        Allowed values:
         """
         return pulumi.get(self, "vpus_per_gb")
 

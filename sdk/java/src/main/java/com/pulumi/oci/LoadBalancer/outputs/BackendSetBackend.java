@@ -31,6 +31,10 @@ public final class BackendSetBackend {
     /**
      * @return A friendly name for the backend set. It must be unique and it cannot be changed.
      * 
+     * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+     * 
+     * Example: `example_backend_set`
+     * 
      */
     private @Nullable String name;
     /**
@@ -73,6 +77,10 @@ public final class BackendSetBackend {
     }
     /**
      * @return A friendly name for the backend set. It must be unique and it cannot be changed.
+     * 
+     * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+     * 
+     * Example: `example_backend_set`
      * 
      */
     public Optional<String> name() {

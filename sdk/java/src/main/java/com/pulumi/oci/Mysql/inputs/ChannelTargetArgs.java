@@ -80,12 +80,18 @@ public final class ChannelTargetArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The specific target identifier.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="targetType", required=true)
     private Output<String> targetType;
 
     /**
      * @return (Updatable) The specific target identifier.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> targetType() {
@@ -217,6 +223,9 @@ public final class ChannelTargetArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param targetType (Updatable) The specific target identifier.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -227,6 +236,9 @@ public final class ChannelTargetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param targetType (Updatable) The specific target identifier.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

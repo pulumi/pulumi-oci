@@ -165,12 +165,20 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
     /**
      * The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
      * 
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+     * 
+     * For a standalone DB System, this defines the availability domain in which the DB System is placed.
+     * 
      */
     @Export(name="availabilityDomain", type=String.class, parameters={})
     private Output<String> availabilityDomain;
 
     /**
      * @return The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+     * 
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+     * 
+     * For a standalone DB System, this defines the availability domain in which the DB System is placed.
      * 
      */
     public Output<String> availabilityDomain() {
@@ -347,12 +355,20 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
     /**
      * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
      * 
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+     * 
+     * For a standalone DB System, this defines the fault domain in which the DB System is placed.
+     * 
      */
     @Export(name="faultDomain", type=String.class, parameters={})
     private Output<String> faultDomain;
 
     /**
      * @return The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+     * 
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+     * 
+     * For a standalone DB System, this defines the fault domain in which the DB System is placed.
      * 
      */
     public Output<String> faultDomain() {
@@ -389,12 +405,20 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
     /**
      * The hostname for the primary endpoint of the DB System. Used for DNS.
      * 
+     * The value is the hostname portion of the primary private IP&#39;s fully qualified domain name (FQDN) (for example, &#34;dbsystem-1&#34; in FQDN &#34;dbsystem-1.subnet123.vcn1.oraclevcn.com&#34;).
+     * 
+     * Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
+     * 
      */
     @Export(name="hostnameLabel", type=String.class, parameters={})
     private Output<String> hostnameLabel;
 
     /**
      * @return The hostname for the primary endpoint of the DB System. Used for DNS.
+     * 
+     * The value is the hostname portion of the primary private IP&#39;s fully qualified domain name (FQDN) (for example, &#34;dbsystem-1&#34; in FQDN &#34;dbsystem-1.subnet123.vcn1.oraclevcn.com&#34;).
+     * 
+     * Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
      * 
      */
     public Output<String> hostnameLabel() {
@@ -445,12 +469,16 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Specifies if the DB System is highly available.
      * 
+     * When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
+     * 
      */
     @Export(name="isHighlyAvailable", type=Boolean.class, parameters={})
     private Output<Boolean> isHighlyAvailable;
 
     /**
      * @return (Updatable) Specifies if the DB System is highly available.
+     * 
+     * When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
      * 
      */
     public Output<Boolean> isHighlyAvailable() {
@@ -559,12 +587,18 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
     /**
      * It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="shutdownType", type=String.class, parameters={})
     private Output</* @Nullable */ String> shutdownType;
 
     /**
      * @return It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Optional<String>> shutdownType() {

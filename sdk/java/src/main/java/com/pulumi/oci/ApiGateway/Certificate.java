@@ -169,12 +169,18 @@ public class Certificate extends com.pulumi.resources.CustomResource {
     /**
      * The private key associated with the certificate in pem format.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="privateKey", type=String.class, parameters={})
     private Output<String> privateKey;
 
     /**
      * @return The private key associated with the certificate in pem format.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> privateKey() {

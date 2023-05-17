@@ -26,8 +26,16 @@ class CertificateArgs:
         """
         The set of arguments for constructing a Certificate resource.
         :param pulumi.Input[str] certificate_data: The data of the SSL certificate.
+               
+               **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status. If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you are unsure if your certificate requires an intermediate certificate chain, see your certificate provider's documentation.
+               
+               The example below shows an intermediate certificate appended to a leaf certificate.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the SSL certificate.
         :param pulumi.Input[str] private_key_data: The private key of the SSL certificate.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the SSL certificate. The name can be changed and does not need to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -50,6 +58,10 @@ class CertificateArgs:
     def certificate_data(self) -> pulumi.Input[str]:
         """
         The data of the SSL certificate.
+
+        **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status. If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you are unsure if your certificate requires an intermediate certificate chain, see your certificate provider's documentation.
+
+        The example below shows an intermediate certificate appended to a leaf certificate.
         """
         return pulumi.get(self, "certificate_data")
 
@@ -74,6 +86,10 @@ class CertificateArgs:
     def private_key_data(self) -> pulumi.Input[str]:
         """
         The private key of the SSL certificate.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "private_key_data")
 
@@ -155,6 +171,10 @@ class _CertificateState:
         """
         Input properties used for looking up and filtering Certificate resources.
         :param pulumi.Input[str] certificate_data: The data of the SSL certificate.
+               
+               **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status. If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you are unsure if your certificate requires an intermediate certificate chain, see your certificate provider's documentation.
+               
+               The example below shows an intermediate certificate appended to a leaf certificate.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the SSL certificate.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the SSL certificate. The name can be changed and does not need to be unique.
@@ -163,6 +183,10 @@ class _CertificateState:
         :param pulumi.Input[bool] is_trust_verification_disabled: Set to `true` if the SSL certificate is self-signed.
         :param pulumi.Input[Sequence[pulumi.Input['CertificateIssuerNameArgs']]] issuer_names: The issuer of the certificate.
         :param pulumi.Input[str] private_key_data: The private key of the SSL certificate.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['CertificatePublicKeyInfoArgs']]] public_key_infos: Information about the public key and the algorithm used by the public key.
         :param pulumi.Input[str] serial_number: A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
         :param pulumi.Input[str] signature_algorithm: The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
@@ -217,6 +241,10 @@ class _CertificateState:
     def certificate_data(self) -> Optional[pulumi.Input[str]]:
         """
         The data of the SSL certificate.
+
+        **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status. If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you are unsure if your certificate requires an intermediate certificate chain, see your certificate provider's documentation.
+
+        The example below shows an intermediate certificate appended to a leaf certificate.
         """
         return pulumi.get(self, "certificate_data")
 
@@ -322,6 +350,10 @@ class _CertificateState:
     def private_key_data(self) -> Optional[pulumi.Input[str]]:
         """
         The private key of the SSL certificate.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "private_key_data")
 
@@ -485,12 +517,20 @@ class Certificate(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] certificate_data: The data of the SSL certificate.
+               
+               **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status. If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you are unsure if your certificate requires an intermediate certificate chain, see your certificate provider's documentation.
+               
+               The example below shows an intermediate certificate appended to a leaf certificate.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the SSL certificate.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the SSL certificate. The name can be changed and does not need to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_trust_verification_disabled: Set to `true` if the SSL certificate is self-signed.
         :param pulumi.Input[str] private_key_data: The private key of the SSL certificate.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -624,6 +664,10 @@ class Certificate(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] certificate_data: The data of the SSL certificate.
+               
+               **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status. If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you are unsure if your certificate requires an intermediate certificate chain, see your certificate provider's documentation.
+               
+               The example below shows an intermediate certificate appended to a leaf certificate.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the SSL certificate.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the SSL certificate. The name can be changed and does not need to be unique.
@@ -632,6 +676,10 @@ class Certificate(pulumi.CustomResource):
         :param pulumi.Input[bool] is_trust_verification_disabled: Set to `true` if the SSL certificate is self-signed.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CertificateIssuerNameArgs']]]] issuer_names: The issuer of the certificate.
         :param pulumi.Input[str] private_key_data: The private key of the SSL certificate.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CertificatePublicKeyInfoArgs']]]] public_key_infos: Information about the public key and the algorithm used by the public key.
         :param pulumi.Input[str] serial_number: A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
         :param pulumi.Input[str] signature_algorithm: The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
@@ -672,6 +720,10 @@ class Certificate(pulumi.CustomResource):
     def certificate_data(self) -> pulumi.Output[str]:
         """
         The data of the SSL certificate.
+
+        **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status. If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you are unsure if your certificate requires an intermediate certificate chain, see your certificate provider's documentation.
+
+        The example below shows an intermediate certificate appended to a leaf certificate.
         """
         return pulumi.get(self, "certificate_data")
 
@@ -741,6 +793,10 @@ class Certificate(pulumi.CustomResource):
     def private_key_data(self) -> pulumi.Output[str]:
         """
         The private key of the SSL certificate.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "private_key_data")
 

@@ -15,18 +15,61 @@ namespace Pulumi.Oci.Identity.Outputs
     {
         /// <summary>
         /// (Updatable) App identifier
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsAddedSinceVersion: 3
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? AppId;
         /// <summary>
         /// (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\nA customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':\n - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.\n - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\n - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsAddedSinceVersion: 3
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? GrantMechanism;
         /// <summary>
         /// (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: reference
+        /// * uniqueness: none
         /// </summary>
         public readonly string? Ref;
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Tag value
+        /// 
+        /// **Added In:** 2011192329
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * required: true
+        /// * mutability: readWrite
+        /// * returned: default
+        /// * type: string
+        /// * idcsSearchable: true
+        /// * uniqueness: none
         /// </summary>
         public readonly string? Value;
 

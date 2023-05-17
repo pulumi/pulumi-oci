@@ -16,12 +16,16 @@ public final class ChannelTargetFilterArgs extends com.pulumi.resources.Resource
     /**
      * (Updatable) The type of the filter rule.
      * 
+     * For details on each type, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html)
+     * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
      * @return (Updatable) The type of the filter rule.
+     * 
+     * For details on each type, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html)
      * 
      */
     public Output<String> type() {
@@ -71,6 +75,8 @@ public final class ChannelTargetFilterArgs extends com.pulumi.resources.Resource
         /**
          * @param type (Updatable) The type of the filter rule.
          * 
+         * For details on each type, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html)
+         * 
          * @return builder
          * 
          */
@@ -81,6 +87,8 @@ public final class ChannelTargetFilterArgs extends com.pulumi.resources.Resource
 
         /**
          * @param type (Updatable) The type of the filter rule.
+         * 
+         * For details on each type, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html)
          * 
          * @return builder
          * 

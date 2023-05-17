@@ -101,6 +101,9 @@ type Budget struct {
 	// The type of target on which the budget is applied.
 	TargetType pulumi.StringOutput `pulumi:"targetType"`
 	// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Targets pulumi.StringArrayOutput `pulumi:"targets"`
 	// The time that the budget was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -183,6 +186,9 @@ type budgetState struct {
 	// The type of target on which the budget is applied.
 	TargetType *string `pulumi:"targetType"`
 	// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Targets []string `pulumi:"targets"`
 	// The time that the budget was created.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -228,6 +234,9 @@ type BudgetState struct {
 	// The type of target on which the budget is applied.
 	TargetType pulumi.StringPtrInput
 	// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Targets pulumi.StringArrayInput
 	// The time that the budget was created.
 	TimeCreated pulumi.StringPtrInput
@@ -269,6 +278,9 @@ type budgetArgs struct {
 	// The type of target on which the budget is applied.
 	TargetType *string `pulumi:"targetType"`
 	// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Targets []string `pulumi:"targets"`
 }
 
@@ -299,6 +311,9 @@ type BudgetArgs struct {
 	// The type of target on which the budget is applied.
 	TargetType pulumi.StringPtrInput
 	// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Targets pulumi.StringArrayInput
 }
 
@@ -467,6 +482,9 @@ func (o BudgetOutput) TargetType() pulumi.StringOutput {
 }
 
 // The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BudgetOutput) Targets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Budget) pulumi.StringArrayOutput { return v.Targets }).(pulumi.StringArrayOutput)
 }

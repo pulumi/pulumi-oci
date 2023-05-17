@@ -93,6 +93,9 @@ type LicenseRecord struct {
 	// The current license record state.
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SupportEndDate pulumi.StringOutput `pulumi:"supportEndDate"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
@@ -170,6 +173,9 @@ type licenseRecordState struct {
 	// The current license record state.
 	State *string `pulumi:"state"`
 	// (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SupportEndDate *string `pulumi:"supportEndDate"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
@@ -207,6 +213,9 @@ type LicenseRecordState struct {
 	// The current license record state.
 	State pulumi.StringPtrInput
 	// (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SupportEndDate pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
@@ -240,6 +249,9 @@ type licenseRecordArgs struct {
 	// Unique product license identifier.
 	ProductLicenseId string `pulumi:"productLicenseId"`
 	// (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SupportEndDate *string `pulumi:"supportEndDate"`
 }
 
@@ -264,6 +276,9 @@ type LicenseRecordArgs struct {
 	// Unique product license identifier.
 	ProductLicenseId pulumi.StringInput
 	// (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SupportEndDate pulumi.StringPtrInput
 }
 
@@ -420,6 +435,9 @@ func (o LicenseRecordOutput) State() pulumi.StringOutput {
 }
 
 // (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o LicenseRecordOutput) SupportEndDate() pulumi.StringOutput {
 	return o.ApplyT(func(v *LicenseRecord) pulumi.StringOutput { return v.SupportEndDate }).(pulumi.StringOutput)
 }

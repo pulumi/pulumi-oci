@@ -85,6 +85,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
         /// <summary>
         /// A user-friendly name for the backend set that must be unique and cannot be changed.
+        /// 
+        /// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+        /// 
+        /// Example: `example_backend_set`
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -96,7 +100,11 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Output<string> NetworkLoadBalancerId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
+        /// (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("policy")]
         public Output<string> Policy { get; private set; } = null!;
@@ -167,6 +175,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
         /// <summary>
         /// A user-friendly name for the backend set that must be unique and cannot be changed.
+        /// 
+        /// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+        /// 
+        /// Example: `example_backend_set`
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -178,7 +190,11 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Input<string> NetworkLoadBalancerId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
+        /// (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("policy", required: true)]
         public Input<string> Policy { get; set; } = null!;
@@ -223,6 +239,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
         /// <summary>
         /// A user-friendly name for the backend set that must be unique and cannot be changed.
+        /// 
+        /// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+        /// 
+        /// Example: `example_backend_set`
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -234,7 +254,11 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Input<string>? NetworkLoadBalancerId { get; set; }
 
         /// <summary>
-        /// (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
+        /// (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("policy")]
         public Input<string>? Policy { get; set; }

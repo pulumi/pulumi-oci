@@ -18,12 +18,24 @@ public final class MysqlConfigurationInitVariablesArgs extends com.pulumi.resour
     /**
      * Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
      * 
+     * lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
+     * 
+     * Valid values are:
+     * * CASE_SENSITIVE - (default) Table and schema name comparisons are case-sensitive and stored as specified. (lower_case_table_names=0)
+     * * CASE_INSENSITIVE_LOWERCASE - Table and schema name comparisons are not case-sensitive and stored in lowercase. (lower_case_table_names=1)
+     * 
      */
     @Import(name="lowerCaseTableNames")
     private @Nullable Output<String> lowerCaseTableNames;
 
     /**
      * @return Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+     * 
+     * lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
+     * 
+     * Valid values are:
+     * * CASE_SENSITIVE - (default) Table and schema name comparisons are case-sensitive and stored as specified. (lower_case_table_names=0)
+     * * CASE_INSENSITIVE_LOWERCASE - Table and schema name comparisons are not case-sensitive and stored in lowercase. (lower_case_table_names=1)
      * 
      */
     public Optional<Output<String>> lowerCaseTableNames() {
@@ -57,6 +69,12 @@ public final class MysqlConfigurationInitVariablesArgs extends com.pulumi.resour
         /**
          * @param lowerCaseTableNames Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
          * 
+         * lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
+         * 
+         * Valid values are:
+         * * CASE_SENSITIVE - (default) Table and schema name comparisons are case-sensitive and stored as specified. (lower_case_table_names=0)
+         * * CASE_INSENSITIVE_LOWERCASE - Table and schema name comparisons are not case-sensitive and stored in lowercase. (lower_case_table_names=1)
+         * 
          * @return builder
          * 
          */
@@ -67,6 +85,12 @@ public final class MysqlConfigurationInitVariablesArgs extends com.pulumi.resour
 
         /**
          * @param lowerCaseTableNames Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+         * 
+         * lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
+         * 
+         * Valid values are:
+         * * CASE_SENSITIVE - (default) Table and schema name comparisons are case-sensitive and stored as specified. (lower_case_table_names=0)
+         * * CASE_INSENSITIVE_LOWERCASE - Table and schema name comparisons are not case-sensitive and stored in lowercase. (lower_case_table_names=1)
          * 
          * @return builder
          * 

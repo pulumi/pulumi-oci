@@ -57,6 +57,9 @@ type LogAnalyticsResourceCategoriesManagement struct {
 	// The resource unique identifier for which catagories are managed.
 	ResourceId pulumi.StringOutput `pulumi:"resourceId"`
 	// The resource type of the resource for which categories are managed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResourceType pulumi.StringOutput `pulumi:"resourceType"`
 }
 
@@ -108,6 +111,9 @@ type logAnalyticsResourceCategoriesManagementState struct {
 	// The resource unique identifier for which catagories are managed.
 	ResourceId *string `pulumi:"resourceId"`
 	// The resource type of the resource for which categories are managed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResourceType *string `pulumi:"resourceType"`
 }
 
@@ -119,6 +125,9 @@ type LogAnalyticsResourceCategoriesManagementState struct {
 	// The resource unique identifier for which catagories are managed.
 	ResourceId pulumi.StringPtrInput
 	// The resource type of the resource for which categories are managed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResourceType pulumi.StringPtrInput
 }
 
@@ -134,6 +143,9 @@ type logAnalyticsResourceCategoriesManagementArgs struct {
 	// The resource unique identifier for which catagories are managed.
 	ResourceId string `pulumi:"resourceId"`
 	// The resource type of the resource for which categories are managed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResourceType string `pulumi:"resourceType"`
 }
 
@@ -146,6 +158,9 @@ type LogAnalyticsResourceCategoriesManagementArgs struct {
 	// The resource unique identifier for which catagories are managed.
 	ResourceId pulumi.StringInput
 	// The resource type of the resource for which categories are managed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResourceType pulumi.StringInput
 }
 
@@ -254,6 +269,9 @@ func (o LogAnalyticsResourceCategoriesManagementOutput) ResourceId() pulumi.Stri
 }
 
 // The resource type of the resource for which categories are managed.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o LogAnalyticsResourceCategoriesManagementOutput) ResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsResourceCategoriesManagement) pulumi.StringOutput { return v.ResourceType }).(pulumi.StringOutput)
 }

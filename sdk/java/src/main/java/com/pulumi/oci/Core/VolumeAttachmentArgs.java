@@ -192,12 +192,18 @@ public final class VolumeAttachmentArgs extends com.pulumi.resources.ResourceArg
     /**
      * The OCID of the volume.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="volumeId", required=true)
     private Output<String> volumeId;
 
     /**
      * @return The OCID of the volume.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> volumeId() {
@@ -481,6 +487,9 @@ public final class VolumeAttachmentArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param volumeId The OCID of the volume.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -491,6 +500,9 @@ public final class VolumeAttachmentArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param volumeId The OCID of the volume.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

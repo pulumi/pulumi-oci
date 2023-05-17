@@ -89,6 +89,10 @@ export class ExternalListener extends pulumi.CustomResource {
     public /*out*/ readonly externalDbSystemId!: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly externalListenerId!: pulumi.Output<string>;
     /**
@@ -268,6 +272,10 @@ export interface ExternalListenerState {
     externalDbSystemId?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     externalListenerId?: pulumi.Input<string>;
     /**
@@ -338,6 +346,10 @@ export interface ExternalListenerArgs {
     externalConnectorId?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     externalListenerId: pulumi.Input<string>;
 }

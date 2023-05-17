@@ -28,6 +28,10 @@ class AutonomousDatabaseBackupArgs:
         :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
         :param pulumi.Input[bool] is_long_term_backup: Indicates whether the backup is long-term
         :param pulumi.Input[int] retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
         if backup_destination_details is not None:
@@ -92,6 +96,10 @@ class AutonomousDatabaseBackupArgs:
     def retention_period_in_days(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) Retention period, in days, for long-term backups
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "retention_period_in_days")
 
@@ -142,6 +150,10 @@ class _AutonomousDatabaseBackupState:
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[int] retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[float] size_in_tbs: The backup size in terrabytes (TB).
         :param pulumi.Input[str] state: The current state of the backup.
         :param pulumi.Input[str] time_available_till: Timestamp until when the backup will be available
@@ -368,6 +380,10 @@ class _AutonomousDatabaseBackupState:
     def retention_period_in_days(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) Retention period, in days, for long-term backups
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "retention_period_in_days")
 
@@ -504,6 +520,10 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
         :param pulumi.Input[bool] is_long_term_backup: Indicates whether the backup is long-term
         :param pulumi.Input[int] retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -644,6 +664,10 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[int] retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[float] size_in_tbs: The backup size in terrabytes (TB).
         :param pulumi.Input[str] state: The current state of the backup.
         :param pulumi.Input[str] time_available_till: Timestamp until when the backup will be available
@@ -797,6 +821,10 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
     def retention_period_in_days(self) -> pulumi.Output[int]:
         """
         (Updatable) Retention period, in days, for long-term backups
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "retention_period_in_days")
 

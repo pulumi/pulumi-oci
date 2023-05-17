@@ -187,12 +187,18 @@ public final class DeployEnvironmentState extends com.pulumi.resources.ResourceA
     /**
      * The OCID of a project.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="projectId")
     private @Nullable Output<String> projectId;
 
     /**
      * @return The OCID of a project.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> projectId() {
@@ -532,6 +538,9 @@ public final class DeployEnvironmentState extends com.pulumi.resources.ResourceA
         /**
          * @param projectId The OCID of a project.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -542,6 +551,9 @@ public final class DeployEnvironmentState extends com.pulumi.resources.ResourceA
 
         /**
          * @param projectId The OCID of a project.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

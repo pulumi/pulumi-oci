@@ -123,6 +123,9 @@ type ModelDeployment struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -189,6 +192,9 @@ type modelDeploymentState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
 	ProjectId *string `pulumi:"projectId"`
 	// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
 	// The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -218,6 +224,9 @@ type ModelDeploymentState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
 	ProjectId pulumi.StringPtrInput
 	// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput
 	// The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
 	TimeCreated pulumi.StringPtrInput
@@ -245,6 +254,9 @@ type modelDeploymentArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
 	ProjectId string `pulumi:"projectId"`
 	// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
 }
 
@@ -267,6 +279,9 @@ type ModelDeploymentArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
 	ProjectId pulumi.StringInput
 	// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput
 }
 
@@ -415,6 +430,9 @@ func (o ModelDeploymentOutput) ProjectId() pulumi.StringOutput {
 }
 
 // (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ModelDeploymentOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *ModelDeployment) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

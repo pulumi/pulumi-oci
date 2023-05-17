@@ -56,6 +56,10 @@ export class ExternalNonContainerDatabasesStackMonitoring extends pulumi.CustomR
 
     /**
      * (Updatable) Enabling Stack Monitoring on External Non Container Databases . Requires boolean value "true" or "false".
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly enableStackMonitoring!: pulumi.Output<boolean>;
     /**
@@ -109,6 +113,10 @@ export class ExternalNonContainerDatabasesStackMonitoring extends pulumi.CustomR
 export interface ExternalNonContainerDatabasesStackMonitoringState {
     /**
      * (Updatable) Enabling Stack Monitoring on External Non Container Databases . Requires boolean value "true" or "false".
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     enableStackMonitoring?: pulumi.Input<boolean>;
     /**
@@ -127,6 +135,10 @@ export interface ExternalNonContainerDatabasesStackMonitoringState {
 export interface ExternalNonContainerDatabasesStackMonitoringArgs {
     /**
      * (Updatable) Enabling Stack Monitoring on External Non Container Databases . Requires boolean value "true" or "false".
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     enableStackMonitoring: pulumi.Input<boolean>;
     /**

@@ -126,12 +126,18 @@ public final class DrgRouteTableState extends com.pulumi.resources.ResourceArgs 
     /**
      * (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="removeImportTrigger")
     private @Nullable Output<Boolean> removeImportTrigger;
 
     /**
      * @return (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Boolean>> removeImportTrigger() {
@@ -351,6 +357,9 @@ public final class DrgRouteTableState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param removeImportTrigger (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -361,6 +370,9 @@ public final class DrgRouteTableState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param removeImportTrigger (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

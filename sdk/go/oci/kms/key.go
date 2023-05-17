@@ -107,6 +107,9 @@ type Key struct {
 	// The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// (Updatable) An optional property for the deletion time of the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeOfDeletion pulumi.StringOutput `pulumi:"timeOfDeletion"`
 	// The OCID of the vault that contains this key.
 	VaultId pulumi.StringOutput `pulumi:"vaultId"`
@@ -188,6 +191,9 @@ type keyState struct {
 	// The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 	// (Updatable) An optional property for the deletion time of the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 	// The OCID of the vault that contains this key.
 	VaultId *string `pulumi:"vaultId"`
@@ -229,6 +235,9 @@ type KeyState struct {
 	// The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 	// (Updatable) An optional property for the deletion time of the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeOfDeletion pulumi.StringPtrInput
 	// The OCID of the vault that contains this key.
 	VaultId pulumi.StringPtrInput
@@ -262,6 +271,9 @@ type keyArgs struct {
 	// (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
 	RestoreTrigger *bool `pulumi:"restoreTrigger"`
 	// (Updatable) An optional property for the deletion time of the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 }
 
@@ -290,6 +302,9 @@ type KeyArgs struct {
 	// (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
 	RestoreTrigger pulumi.BoolPtrInput
 	// (Updatable) An optional property for the deletion time of the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeOfDeletion pulumi.StringPtrInput
 }
 
@@ -466,6 +481,9 @@ func (o KeyOutput) TimeCreated() pulumi.StringOutput {
 }
 
 // (Updatable) An optional property for the deletion time of the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o KeyOutput) TimeOfDeletion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Key) pulumi.StringOutput { return v.TimeOfDeletion }).(pulumi.StringOutput)
 }

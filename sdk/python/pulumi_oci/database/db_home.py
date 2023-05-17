@@ -32,6 +32,8 @@ class DbHomeArgs:
         """
         The set of arguments for constructing a DbHome resource.
         :param pulumi.Input['DbHomeDatabaseArgs'] database: (Updatable) Details for creating a database.
+               
+               **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param pulumi.Input[str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param pulumi.Input[str] db_version: A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
@@ -44,6 +46,10 @@ class DbHomeArgs:
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param pulumi.Input[str] source: The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
         :param pulumi.Input[str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if database is not None:
             pulumi.set(__self__, "database", database)
@@ -77,6 +83,8 @@ class DbHomeArgs:
     def database(self) -> Optional[pulumi.Input['DbHomeDatabaseArgs']]:
         """
         (Updatable) Details for creating a database.
+
+        **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         """
         return pulumi.get(self, "database")
 
@@ -221,6 +229,10 @@ class DbHomeArgs:
     def vm_cluster_id(self) -> Optional[pulumi.Input[str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vm_cluster_id")
 
@@ -255,6 +267,8 @@ class _DbHomeState:
         Input properties used for looking up and filtering DbHome resources.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input['DbHomeDatabaseArgs'] database: (Updatable) Details for creating a database.
+               
+               **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param pulumi.Input[str] db_home_location: The location of the Oracle Database Home.
         :param pulumi.Input[str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
@@ -272,6 +286,10 @@ class _DbHomeState:
         :param pulumi.Input[str] state: The current state of the Database Home.
         :param pulumi.Input[str] time_created: The date and time the Database Home was created.
         :param pulumi.Input[str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -329,6 +347,8 @@ class _DbHomeState:
     def database(self) -> Optional[pulumi.Input['DbHomeDatabaseArgs']]:
         """
         (Updatable) Details for creating a database.
+
+        **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         """
         return pulumi.get(self, "database")
 
@@ -533,6 +553,10 @@ class _DbHomeState:
     def vm_cluster_id(self) -> Optional[pulumi.Input[str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vm_cluster_id")
 
@@ -580,6 +604,8 @@ class DbHome(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['DbHomeDatabaseArgs']] database: (Updatable) Details for creating a database.
+               
+               **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param pulumi.Input[str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param pulumi.Input[str] db_version: A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
@@ -592,6 +618,10 @@ class DbHome(pulumi.CustomResource):
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param pulumi.Input[str] source: The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
         :param pulumi.Input[str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -710,6 +740,8 @@ class DbHome(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[pulumi.InputType['DbHomeDatabaseArgs']] database: (Updatable) Details for creating a database.
+               
+               **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param pulumi.Input[str] db_home_location: The location of the Oracle Database Home.
         :param pulumi.Input[str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
@@ -727,6 +759,10 @@ class DbHome(pulumi.CustomResource):
         :param pulumi.Input[str] state: The current state of the Database Home.
         :param pulumi.Input[str] time_created: The date and time the Database Home was created.
         :param pulumi.Input[str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -766,6 +802,8 @@ class DbHome(pulumi.CustomResource):
     def database(self) -> pulumi.Output['outputs.DbHomeDatabase']:
         """
         (Updatable) Details for creating a database.
+
+        **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         """
         return pulumi.get(self, "database")
 
@@ -902,6 +940,10 @@ class DbHome(pulumi.CustomResource):
     def vm_cluster_id(self) -> pulumi.Output[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vm_cluster_id")
 

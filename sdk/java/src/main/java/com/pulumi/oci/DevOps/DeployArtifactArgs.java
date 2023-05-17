@@ -126,12 +126,18 @@ public final class DeployArtifactArgs extends com.pulumi.resources.ResourceArgs 
     /**
      * The OCID of a project.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="projectId", required=true)
     private Output<String> projectId;
 
     /**
      * @return The OCID of a project.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> projectId() {
@@ -319,6 +325,9 @@ public final class DeployArtifactArgs extends com.pulumi.resources.ResourceArgs 
         /**
          * @param projectId The OCID of a project.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -329,6 +338,9 @@ public final class DeployArtifactArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param projectId The OCID of a project.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

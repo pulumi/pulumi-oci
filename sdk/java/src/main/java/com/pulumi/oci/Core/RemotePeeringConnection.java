@@ -169,12 +169,18 @@ public class RemotePeeringConnection extends com.pulumi.resources.CustomResource
     /**
      * The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="peerRegionName", type=String.class, parameters={})
     private Output<String> peerRegionName;
 
     /**
      * @return The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> peerRegionName() {

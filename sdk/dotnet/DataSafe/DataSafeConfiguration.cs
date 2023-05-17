@@ -72,6 +72,10 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// (Updatable) Indicates if Data Safe is enabled.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("isEnabled")]
         public Output<bool> IsEnabled { get; private set; } = null!;
@@ -148,6 +152,10 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// (Updatable) Indicates if Data Safe is enabled.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("isEnabled", required: true)]
         public Input<bool> IsEnabled { get; set; } = null!;
@@ -210,6 +218,10 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// (Updatable) Indicates if Data Safe is enabled.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }

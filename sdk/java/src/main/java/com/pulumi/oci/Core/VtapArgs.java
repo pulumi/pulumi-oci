@@ -277,12 +277,18 @@ public final class VtapArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="vxlanNetworkIdentifier")
     private @Nullable Output<String> vxlanNetworkIdentifier;
 
     /**
      * @return (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> vxlanNetworkIdentifier() {
@@ -690,6 +696,9 @@ public final class VtapArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param vxlanNetworkIdentifier (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -700,6 +709,9 @@ public final class VtapArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vxlanNetworkIdentifier (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

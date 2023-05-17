@@ -246,12 +246,18 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The short name of the sensitive type.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="shortName", type=String.class, parameters={})
     private Output<String> shortName;
 
     /**
      * @return (Updatable) The short name of the sensitive type.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> shortName() {

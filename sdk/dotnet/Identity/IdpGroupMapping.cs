@@ -68,6 +68,10 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) The name of the IdP group you want to map.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("idpGroupName")]
         public Output<string> IdpGroupName { get; private set; } = null!;
@@ -150,6 +154,10 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) The name of the IdP group you want to map.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("idpGroupName", required: true)]
         public Input<string> IdpGroupName { get; set; } = null!;
@@ -182,6 +190,10 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) The name of the IdP group you want to map.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("idpGroupName")]
         public Input<string>? IdpGroupName { get; set; }

@@ -132,6 +132,8 @@ def get_recommendation_strategies(compartment_id: Optional[str] = None,
 
     :param str compartment_id: The OCID of the compartment.
     :param bool compartment_id_in_subtree: When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+           
+           Can only be set to true when performing ListCompartments on the tenancy (root compartment).
     :param str name: Optional. A filter that returns results that match the name specified.
     :param str recommendation_name: Optional. A filter that returns results that match the recommendation name specified.
     """
@@ -181,6 +183,8 @@ def get_recommendation_strategies_output(compartment_id: Optional[pulumi.Input[s
 
     :param str compartment_id: The OCID of the compartment.
     :param bool compartment_id_in_subtree: When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+           
+           Can only be set to true when performing ListCompartments on the tenancy (root compartment).
     :param str name: Optional. A filter that returns results that match the name specified.
     :param str recommendation_name: Optional. A filter that returns results that match the recommendation name specified.
     """

@@ -21,6 +21,9 @@ class ExternalPluggableDatabaseManagementArgs:
         The set of arguments for constructing a ExternalPluggableDatabaseManagement resource.
         :param pulumi.Input[str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[str] external_pluggable_database_id: The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "enable_management", enable_management)
         pulumi.set(__self__, "external_database_connector_id", external_database_connector_id)
@@ -52,6 +55,9 @@ class ExternalPluggableDatabaseManagementArgs:
     def external_pluggable_database_id(self) -> pulumi.Input[str]:
         """
         The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "external_pluggable_database_id")
 
@@ -70,6 +76,9 @@ class _ExternalPluggableDatabaseManagementState:
         Input properties used for looking up and filtering ExternalPluggableDatabaseManagement resources.
         :param pulumi.Input[str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[str] external_pluggable_database_id: The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if enable_management is not None:
             pulumi.set(__self__, "enable_management", enable_management)
@@ -104,6 +113,9 @@ class _ExternalPluggableDatabaseManagementState:
     def external_pluggable_database_id(self) -> Optional[pulumi.Input[str]]:
         """
         The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "external_pluggable_database_id")
 
@@ -147,6 +159,9 @@ class ExternalPluggableDatabaseManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[str] external_pluggable_database_id: The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -234,6 +249,9 @@ class ExternalPluggableDatabaseManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[str] external_pluggable_database_id: The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -262,6 +280,9 @@ class ExternalPluggableDatabaseManagement(pulumi.CustomResource):
     def external_pluggable_database_id(self) -> pulumi.Output[str]:
         """
         The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "external_pluggable_database_id")
 

@@ -110,12 +110,18 @@ public final class AccessPolicyRuleSourceArgs extends com.pulumi.resources.Resou
     /**
      * (Updatable) The OCID of the virtual service resource.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="virtualServiceId")
     private @Nullable Output<String> virtualServiceId;
 
     /**
      * @return (Updatable) The OCID of the virtual service resource.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> virtualServiceId() {
@@ -311,6 +317,9 @@ public final class AccessPolicyRuleSourceArgs extends com.pulumi.resources.Resou
         /**
          * @param virtualServiceId (Updatable) The OCID of the virtual service resource.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -321,6 +330,9 @@ public final class AccessPolicyRuleSourceArgs extends com.pulumi.resources.Resou
 
         /**
          * @param virtualServiceId (Updatable) The OCID of the virtual service resource.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

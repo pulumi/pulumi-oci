@@ -77,6 +77,9 @@ type MonitoredResourcesSearchAssociation struct {
 	// Source Monitored Resource Name.
 	SourceResourceName pulumi.StringPtrOutput `pulumi:"sourceResourceName"`
 	// Source Monitored Resource Type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceResourceType pulumi.StringPtrOutput `pulumi:"sourceResourceType"`
 }
 
@@ -129,6 +132,9 @@ type monitoredResourcesSearchAssociationState struct {
 	// Source Monitored Resource Name.
 	SourceResourceName *string `pulumi:"sourceResourceName"`
 	// Source Monitored Resource Type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceResourceType *string `pulumi:"sourceResourceType"`
 }
 
@@ -150,6 +156,9 @@ type MonitoredResourcesSearchAssociationState struct {
 	// Source Monitored Resource Name.
 	SourceResourceName pulumi.StringPtrInput
 	// Source Monitored Resource Type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceResourceType pulumi.StringPtrInput
 }
 
@@ -173,6 +182,9 @@ type monitoredResourcesSearchAssociationArgs struct {
 	// Source Monitored Resource Name.
 	SourceResourceName *string `pulumi:"sourceResourceName"`
 	// Source Monitored Resource Type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceResourceType *string `pulumi:"sourceResourceType"`
 }
 
@@ -193,6 +205,9 @@ type MonitoredResourcesSearchAssociationArgs struct {
 	// Source Monitored Resource Name.
 	SourceResourceName pulumi.StringPtrInput
 	// Source Monitored Resource Type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceResourceType pulumi.StringPtrInput
 }
 
@@ -326,6 +341,9 @@ func (o MonitoredResourcesSearchAssociationOutput) SourceResourceName() pulumi.S
 }
 
 // Source Monitored Resource Type.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MonitoredResourcesSearchAssociationOutput) SourceResourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourcesSearchAssociation) pulumi.StringPtrOutput { return v.SourceResourceType }).(pulumi.StringPtrOutput)
 }

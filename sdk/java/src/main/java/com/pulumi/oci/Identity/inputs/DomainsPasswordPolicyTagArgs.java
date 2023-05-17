@@ -16,12 +16,32 @@ public final class DomainsPasswordPolicyTagArgs extends com.pulumi.resources.Res
     /**
      * (Updatable) Key or name of the tag.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="key", required=true)
     private Output<String> key;
 
     /**
      * @return (Updatable) Key or name of the tag.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> key() {
@@ -31,12 +51,32 @@ public final class DomainsPasswordPolicyTagArgs extends com.pulumi.resources.Res
     /**
      * (Updatable) Value of the tag.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
      * @return (Updatable) Value of the tag.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> value() {
@@ -71,6 +111,16 @@ public final class DomainsPasswordPolicyTagArgs extends com.pulumi.resources.Res
         /**
          * @param key (Updatable) Key or name of the tag.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -82,6 +132,16 @@ public final class DomainsPasswordPolicyTagArgs extends com.pulumi.resources.Res
         /**
          * @param key (Updatable) Key or name of the tag.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -91,6 +151,16 @@ public final class DomainsPasswordPolicyTagArgs extends com.pulumi.resources.Res
 
         /**
          * @param value (Updatable) Value of the tag.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -102,6 +172,16 @@ public final class DomainsPasswordPolicyTagArgs extends com.pulumi.resources.Res
 
         /**
          * @param value (Updatable) Value of the tag.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 

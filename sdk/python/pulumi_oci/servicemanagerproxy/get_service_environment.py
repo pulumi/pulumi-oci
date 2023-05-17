@@ -146,7 +146,9 @@ def get_service_environment(compartment_id: Optional[str] = None,
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
-    :param str service_environment_id: The unique identifier associated with the service environment.
+    :param str service_environment_id: The unique identifier associated with the service environment. 
+           
+           **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -186,6 +188,8 @@ def get_service_environment_output(compartment_id: Optional[pulumi.Input[str]] =
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
-    :param str service_environment_id: The unique identifier associated with the service environment.
+    :param str service_environment_id: The unique identifier associated with the service environment. 
+           
+           **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
     ...

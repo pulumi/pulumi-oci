@@ -61,6 +61,10 @@ export class AuditProfile extends pulumi.CustomResource {
     public /*out*/ readonly auditTrails!: pulumi.Output<outputs.DataSafe.AuditProfileAuditTrail[]>;
     /**
      * (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly changeRetentionTrigger!: pulumi.Output<number | undefined>;
     /**
@@ -204,6 +208,10 @@ export interface AuditProfileState {
     auditTrails?: pulumi.Input<pulumi.Input<inputs.DataSafe.AuditProfileAuditTrail>[]>;
     /**
      * (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     changeRetentionTrigger?: pulumi.Input<number>;
     /**
@@ -278,6 +286,10 @@ export interface AuditProfileArgs {
     auditProfileId: pulumi.Input<string>;
     /**
      * (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     changeRetentionTrigger?: pulumi.Input<number>;
     /**

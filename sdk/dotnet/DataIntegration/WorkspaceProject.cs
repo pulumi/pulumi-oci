@@ -133,6 +133,10 @@ namespace Pulumi.Oci.DataIntegration
 
         /// <summary>
         /// The workspace ID.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("workspaceId")]
         public Output<string> WorkspaceId { get; private set; } = null!;
@@ -230,6 +234,10 @@ namespace Pulumi.Oci.DataIntegration
 
         /// <summary>
         /// The workspace ID.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("workspaceId", required: true)]
         public Input<string> WorkspaceId { get; set; } = null!;
@@ -337,6 +345,10 @@ namespace Pulumi.Oci.DataIntegration
 
         /// <summary>
         /// The workspace ID.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("workspaceId")]
         public Input<string>? WorkspaceId { get; set; }

@@ -150,6 +150,10 @@ namespace Pulumi.Oci.Bastion
 
         /// <summary>
         /// The unique identifier (OCID) of the subnet that the bastion connects to.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("targetSubnetId")]
         public Output<string> TargetSubnetId { get; private set; } = null!;
@@ -304,6 +308,10 @@ namespace Pulumi.Oci.Bastion
 
         /// <summary>
         /// The unique identifier (OCID) of the subnet that the bastion connects to.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("targetSubnetId", required: true)]
         public Input<string> TargetSubnetId { get; set; } = null!;
@@ -438,6 +446,10 @@ namespace Pulumi.Oci.Bastion
 
         /// <summary>
         /// The unique identifier (OCID) of the subnet that the bastion connects to.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("targetSubnetId")]
         public Input<string>? TargetSubnetId { get; set; }

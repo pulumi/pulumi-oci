@@ -53,6 +53,9 @@ type MonitorPluginManagement struct {
 	MonitoredInstanceDescription pulumi.StringOutput `pulumi:"monitoredInstanceDescription"`
 	MonitoredInstanceDisplayName pulumi.StringOutput `pulumi:"monitoredInstanceDisplayName"`
 	// OCID of monitored instance.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	MonitoredInstanceId                pulumi.StringOutput `pulumi:"monitoredInstanceId"`
 	MonitoredInstanceManagementAgentId pulumi.StringOutput `pulumi:"monitoredInstanceManagementAgentId"`
 	State                              pulumi.StringOutput `pulumi:"state"`
@@ -94,6 +97,9 @@ type monitorPluginManagementState struct {
 	MonitoredInstanceDescription *string `pulumi:"monitoredInstanceDescription"`
 	MonitoredInstanceDisplayName *string `pulumi:"monitoredInstanceDisplayName"`
 	// OCID of monitored instance.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	MonitoredInstanceId                *string `pulumi:"monitoredInstanceId"`
 	MonitoredInstanceManagementAgentId *string `pulumi:"monitoredInstanceManagementAgentId"`
 	State                              *string `pulumi:"state"`
@@ -104,6 +110,9 @@ type MonitorPluginManagementState struct {
 	MonitoredInstanceDescription pulumi.StringPtrInput
 	MonitoredInstanceDisplayName pulumi.StringPtrInput
 	// OCID of monitored instance.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	MonitoredInstanceId                pulumi.StringPtrInput
 	MonitoredInstanceManagementAgentId pulumi.StringPtrInput
 	State                              pulumi.StringPtrInput
@@ -115,12 +124,18 @@ func (MonitorPluginManagementState) ElementType() reflect.Type {
 
 type monitorPluginManagementArgs struct {
 	// OCID of monitored instance.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	MonitoredInstanceId string `pulumi:"monitoredInstanceId"`
 }
 
 // The set of arguments for constructing a MonitorPluginManagement resource.
 type MonitorPluginManagementArgs struct {
 	// OCID of monitored instance.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	MonitoredInstanceId pulumi.StringInput
 }
 
@@ -224,6 +239,9 @@ func (o MonitorPluginManagementOutput) MonitoredInstanceDisplayName() pulumi.Str
 }
 
 // OCID of monitored instance.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MonitorPluginManagementOutput) MonitoredInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MonitorPluginManagement) pulumi.StringOutput { return v.MonitoredInstanceId }).(pulumi.StringOutput)
 }

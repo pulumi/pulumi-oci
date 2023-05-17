@@ -101,6 +101,16 @@ type AutoScalingConfiguration struct {
 	// (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
 	Policy AutoScalingConfigurationPolicyOutput `pulumi:"policy"`
 	// (Updatable) Policy definition for the autoscale configuration.
+	//
+	// An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
+	//
+	// You can create following type of autoscaling policies:
+	// * **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
+	// * **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
+	// * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
+	// * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
+	//
+	// An autoscaling configuration can have one of above supported policies.
 	PolicyDetails AutoScalingConfigurationPolicyDetailsOutput `pulumi:"policyDetails"`
 	// The state of the autoscale configuration.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -171,6 +181,16 @@ type autoScalingConfigurationState struct {
 	// (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
 	Policy *AutoScalingConfigurationPolicy `pulumi:"policy"`
 	// (Updatable) Policy definition for the autoscale configuration.
+	//
+	// An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
+	//
+	// You can create following type of autoscaling policies:
+	// * **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
+	// * **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
+	// * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
+	// * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
+	//
+	// An autoscaling configuration can have one of above supported policies.
 	PolicyDetails *AutoScalingConfigurationPolicyDetails `pulumi:"policyDetails"`
 	// The state of the autoscale configuration.
 	State *string `pulumi:"state"`
@@ -194,6 +214,16 @@ type AutoScalingConfigurationState struct {
 	// (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
 	Policy AutoScalingConfigurationPolicyPtrInput
 	// (Updatable) Policy definition for the autoscale configuration.
+	//
+	// An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
+	//
+	// You can create following type of autoscaling policies:
+	// * **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
+	// * **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
+	// * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
+	// * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
+	//
+	// An autoscaling configuration can have one of above supported policies.
 	PolicyDetails AutoScalingConfigurationPolicyDetailsPtrInput
 	// The state of the autoscale configuration.
 	State pulumi.StringPtrInput
@@ -221,6 +251,16 @@ type autoScalingConfigurationArgs struct {
 	// (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
 	Policy *AutoScalingConfigurationPolicy `pulumi:"policy"`
 	// (Updatable) Policy definition for the autoscale configuration.
+	//
+	// An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
+	//
+	// You can create following type of autoscaling policies:
+	// * **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
+	// * **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
+	// * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
+	// * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
+	//
+	// An autoscaling configuration can have one of above supported policies.
 	PolicyDetails *AutoScalingConfigurationPolicyDetails `pulumi:"policyDetails"`
 }
 
@@ -239,6 +279,16 @@ type AutoScalingConfigurationArgs struct {
 	// (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
 	Policy AutoScalingConfigurationPolicyPtrInput
 	// (Updatable) Policy definition for the autoscale configuration.
+	//
+	// An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
+	//
+	// You can create following type of autoscaling policies:
+	// * **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
+	// * **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
+	// * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
+	// * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
+	//
+	// An autoscaling configuration can have one of above supported policies.
 	PolicyDetails AutoScalingConfigurationPolicyDetailsPtrInput
 }
 
@@ -360,6 +410,16 @@ func (o AutoScalingConfigurationOutput) Policy() AutoScalingConfigurationPolicyO
 }
 
 // (Updatable) Policy definition for the autoscale configuration.
+//
+// An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
+//
+// You can create following type of autoscaling policies:
+// * **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
+// * **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
+// * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
+// * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
+//
+// An autoscaling configuration can have one of above supported policies.
 func (o AutoScalingConfigurationOutput) PolicyDetails() AutoScalingConfigurationPolicyDetailsOutput {
 	return o.ApplyT(func(v *AutoScalingConfiguration) AutoScalingConfigurationPolicyDetailsOutput { return v.PolicyDetails }).(AutoScalingConfigurationPolicyDetailsOutput)
 }

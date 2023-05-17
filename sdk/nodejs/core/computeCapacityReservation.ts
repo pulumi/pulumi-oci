@@ -106,10 +106,16 @@ export class ComputeCapacityReservation extends pulumi.CustomResource {
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * (Updatable) The capacity configurations for the capacity reservation.
+     *
+     * To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
      */
     public readonly instanceReservationConfigs!: pulumi.Output<outputs.Core.ComputeCapacityReservationInstanceReservationConfig[]>;
     /**
-     * (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     * (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default). 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly isDefaultReservation!: pulumi.Output<boolean>;
     /**
@@ -213,10 +219,16 @@ export interface ComputeCapacityReservationState {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) The capacity configurations for the capacity reservation.
+     *
+     * To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
      */
     instanceReservationConfigs?: pulumi.Input<pulumi.Input<inputs.Core.ComputeCapacityReservationInstanceReservationConfig>[]>;
     /**
-     * (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     * (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default). 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     isDefaultReservation?: pulumi.Input<boolean>;
     /**
@@ -267,10 +279,16 @@ export interface ComputeCapacityReservationArgs {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) The capacity configurations for the capacity reservation.
+     *
+     * To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
      */
     instanceReservationConfigs: pulumi.Input<pulumi.Input<inputs.Core.ComputeCapacityReservationInstanceReservationConfig>[]>;
     /**
-     * (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     * (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default). 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     isDefaultReservation?: pulumi.Input<boolean>;
 }

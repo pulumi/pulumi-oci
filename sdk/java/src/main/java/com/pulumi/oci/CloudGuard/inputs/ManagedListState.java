@@ -52,12 +52,16 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Managed list description.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return (Updatable) Managed list description.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -67,12 +71,16 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Managed list display name.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
      * @return (Updatable) Managed list display name.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -97,12 +105,16 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
+     * Avoid entering confidential information.
+     * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
@@ -172,12 +184,18 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
     /**
      * OCID of the Source ManagedList
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="sourceManagedListId")
     private @Nullable Output<String> sourceManagedListId;
 
     /**
      * @return OCID of the Source ManagedList
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> sourceManagedListId() {
@@ -327,6 +345,8 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param description (Updatable) Managed list description.
          * 
+         * Avoid entering confidential information.
+         * 
          * @return builder
          * 
          */
@@ -338,6 +358,8 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param description (Updatable) Managed list description.
          * 
+         * Avoid entering confidential information.
+         * 
          * @return builder
          * 
          */
@@ -347,6 +369,8 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param displayName (Updatable) Managed list display name.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -358,6 +382,8 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param displayName (Updatable) Managed list display name.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -390,6 +416,8 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
+         * Avoid entering confidential information.
+         * 
          * @return builder
          * 
          */
@@ -400,6 +428,8 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -505,6 +535,9 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param sourceManagedListId OCID of the Source ManagedList
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -515,6 +548,9 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sourceManagedListId OCID of the Source ManagedList
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

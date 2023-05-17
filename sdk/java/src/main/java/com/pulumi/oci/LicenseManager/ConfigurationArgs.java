@@ -32,12 +32,18 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) List of email IDs associated with the configuration.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="emailIds", required=true)
     private Output<List<String>> emailIds;
 
     /**
      * @return (Updatable) List of email IDs associated with the configuration.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<List<String>> emailIds() {
@@ -93,6 +99,9 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param emailIds (Updatable) List of email IDs associated with the configuration.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -104,6 +113,9 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param emailIds (Updatable) List of email IDs associated with the configuration.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -113,6 +125,9 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param emailIds (Updatable) List of email IDs associated with the configuration.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

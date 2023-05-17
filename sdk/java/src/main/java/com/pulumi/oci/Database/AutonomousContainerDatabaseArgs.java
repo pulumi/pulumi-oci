@@ -406,12 +406,18 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     /**
      * (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="standbyMaintenanceBufferInDays")
     private @Nullable Output<Integer> standbyMaintenanceBufferInDays;
 
     /**
      * @return (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> standbyMaintenanceBufferInDays() {
@@ -1035,6 +1041,9 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         /**
          * @param standbyMaintenanceBufferInDays (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -1045,6 +1054,9 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
 
         /**
          * @param standbyMaintenanceBufferInDays (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

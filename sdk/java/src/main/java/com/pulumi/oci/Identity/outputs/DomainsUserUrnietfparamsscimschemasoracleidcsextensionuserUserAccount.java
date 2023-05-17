@@ -15,25 +15,81 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * @return (Updatable) Status of the account
      * 
+     * **Added In:** 17.4.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     private @Nullable Boolean active;
     /**
      * @return (Updatable) The ID of the App in this Grant.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable String appId;
     /**
      * @return (Updatable) Name of the account assigned to the User.
      * 
+     * **Added In:** 17.4.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String name;
     /**
      * @return (Updatable) User Token URI
      * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
+     * 
      */
     private @Nullable String ref;
     /**
      * @return (Updatable) The value of a X509 certificate.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private @Nullable String value;
@@ -42,12 +98,33 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * @return (Updatable) Status of the account
      * 
+     * **Added In:** 17.4.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     public Optional<Boolean> active() {
         return Optional.ofNullable(this.active);
     }
     /**
      * @return (Updatable) The ID of the App in this Grant.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> appId() {
@@ -56,6 +133,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * @return (Updatable) Name of the account assigned to the User.
      * 
+     * **Added In:** 17.4.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
@@ -63,12 +152,35 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * @return (Updatable) User Token URI
      * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
+     * 
      */
     public Optional<String> ref() {
         return Optional.ofNullable(this.ref);
     }
     /**
      * @return (Updatable) The value of a X509 certificate.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> value() {

@@ -20,6 +20,8 @@ namespace Pulumi.Oci.CloudGuard.Inputs
 
         /// <summary>
         /// The target description.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -32,6 +34,8 @@ namespace Pulumi.Oci.CloudGuard.Inputs
 
         /// <summary>
         /// (Updatable) DetectorTemplate identifier.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -56,6 +60,10 @@ namespace Pulumi.Oci.CloudGuard.Inputs
 
         /// <summary>
         /// (Updatable) Identifier for ResponderRule.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("responderRuleId", required: true)]
         public Input<string> ResponderRuleId { get; set; } = null!;

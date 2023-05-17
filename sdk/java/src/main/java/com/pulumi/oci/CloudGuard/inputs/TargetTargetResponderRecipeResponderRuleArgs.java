@@ -35,12 +35,16 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
     /**
      * The target description.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return The target description.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -65,12 +69,16 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
     /**
      * (Updatable) DetectorTemplate identifier.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
      * @return (Updatable) DetectorTemplate identifier.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -110,12 +118,18 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
     /**
      * (Updatable) Identifier for ResponderRule.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="responderRuleId", required=true)
     private Output<String> responderRuleId;
 
     /**
      * @return (Updatable) Identifier for ResponderRule.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> responderRuleId() {
@@ -256,6 +270,8 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
         /**
          * @param description The target description.
          * 
+         * Avoid entering confidential information.
+         * 
          * @return builder
          * 
          */
@@ -266,6 +282,8 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
 
         /**
          * @param description The target description.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -298,6 +316,8 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
         /**
          * @param displayName (Updatable) DetectorTemplate identifier.
          * 
+         * Avoid entering confidential information.
+         * 
          * @return builder
          * 
          */
@@ -308,6 +328,8 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
 
         /**
          * @param displayName (Updatable) DetectorTemplate identifier.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -371,6 +393,9 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
         /**
          * @param responderRuleId (Updatable) Identifier for ResponderRule.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -381,6 +406,9 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
 
         /**
          * @param responderRuleId (Updatable) Identifier for ResponderRule.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

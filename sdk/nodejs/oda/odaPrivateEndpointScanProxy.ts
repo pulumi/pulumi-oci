@@ -81,7 +81,11 @@ export class OdaPrivateEndpointScanProxy extends pulumi.CustomResource {
      */
     public readonly scanListenerInfos!: pulumi.Output<outputs.Oda.OdaPrivateEndpointScanProxyScanListenerInfo[]>;
     /**
-     * Type indicating whether Scan listener is specified by its FQDN or list of IPs
+     * Type indicating whether Scan listener is specified by its FQDN or list of IPs 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly scanListenerType!: pulumi.Output<string>;
     /**
@@ -155,7 +159,11 @@ export interface OdaPrivateEndpointScanProxyState {
      */
     scanListenerInfos?: pulumi.Input<pulumi.Input<inputs.Oda.OdaPrivateEndpointScanProxyScanListenerInfo>[]>;
     /**
-     * Type indicating whether Scan listener is specified by its FQDN or list of IPs
+     * Type indicating whether Scan listener is specified by its FQDN or list of IPs 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     scanListenerType?: pulumi.Input<string>;
     /**
@@ -185,7 +193,11 @@ export interface OdaPrivateEndpointScanProxyArgs {
      */
     scanListenerInfos: pulumi.Input<pulumi.Input<inputs.Oda.OdaPrivateEndpointScanProxyScanListenerInfo>[]>;
     /**
-     * Type indicating whether Scan listener is specified by its FQDN or list of IPs
+     * Type indicating whether Scan listener is specified by its FQDN or list of IPs 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     scanListenerType: pulumi.Input<string>;
 }

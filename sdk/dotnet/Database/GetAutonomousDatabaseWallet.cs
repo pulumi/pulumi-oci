@@ -12,6 +12,13 @@ namespace Pulumi.Oci.Database
     public static class GetAutonomousDatabaseWallet
     {
         /// <summary>
+        /// **Deprecated. Use oci.Database.AutonomousDatabaseWallet instead.**
+        /// 
+        /// This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Creates and downloads a wallet for the specified Autonomous Database.
+        /// 
+        /// 
         /// {{% examples %}}
         /// ## Example Usage
         /// {{% example %}}
@@ -41,6 +48,13 @@ namespace Pulumi.Oci.Database
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDatabaseWalletResult>("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", args ?? new GetAutonomousDatabaseWalletArgs(), options.WithDefaults());
 
         /// <summary>
+        /// **Deprecated. Use oci.Database.AutonomousDatabaseWallet instead.**
+        /// 
+        /// This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Creates and downloads a wallet for the specified Autonomous Database.
+        /// 
+        /// 
         /// {{% examples %}}
         /// ## Example Usage
         /// {{% example %}}
@@ -84,6 +98,8 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The type of wallet to generate.
+        /// 
+        /// **Shared Exadata infrastructure usage:**
         /// </summary>
         [Input("generateType")]
         public string? GenerateType { get; set; }
@@ -119,6 +135,8 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The type of wallet to generate.
+        /// 
+        /// **Shared Exadata infrastructure usage:**
         /// </summary>
         [Input("generateType")]
         public Input<string>? GenerateType { get; set; }

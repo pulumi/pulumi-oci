@@ -25,8 +25,16 @@ class AlarmSuppressionArgs:
                  description: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] time_suppress_from: (Updatable) The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-        :param pulumi.Input[str] time_suppress_until: (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
+        :param pulumi.Input[str] time_suppress_until: (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] description: (Updatable) Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+               
+               Oracle recommends including tracking information for the event or associated work, such as a ticket number.
+               
+               Example: `Planned outage due to change IT-1234.`
         """
         pulumi.set(__self__, "time_suppress_from", time_suppress_from)
         pulumi.set(__self__, "time_suppress_until", time_suppress_until)
@@ -49,7 +57,11 @@ class AlarmSuppressionArgs:
     @pulumi.getter(name="timeSuppressUntil")
     def time_suppress_until(self) -> pulumi.Input[str]:
         """
-        (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
+        (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_suppress_until")
 
@@ -62,6 +74,10 @@ class AlarmSuppressionArgs:
     def description(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+
+        Oracle recommends including tracking information for the event or associated work, such as a ticket number.
+
+        Example: `Planned outage due to change IT-1234.`
         """
         return pulumi.get(self, "description")
 

@@ -21,12 +21,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
     /**
      * (Updatable) DB global roles to which the user is granted access.
      * 
+     * **Added In:** 18.2.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * idcsSensitive: none
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="dbGlobalRoles")
     private @Nullable Output<List<String>> dbGlobalRoles;
 
     /**
      * @return (Updatable) DB global roles to which the user is granted access.
+     * 
+     * **Added In:** 18.2.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * idcsSensitive: none
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<String>>> dbGlobalRoles() {
@@ -36,12 +60,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
     /**
      * (Updatable) DB domain level schema to which the user is granted access.
      * 
+     * **Added In:** 18.2.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * idcsSensitive: none
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="domainLevelSchema")
     private @Nullable Output<String> domainLevelSchema;
 
     /**
      * @return (Updatable) DB domain level schema to which the user is granted access.
+     * 
+     * **Added In:** 18.2.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * idcsSensitive: none
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> domainLevelSchema() {
@@ -51,12 +99,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
     /**
      * (Updatable) DB instance level schema to which the user is granted access.
      * 
+     * **Added In:** 18.2.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * idcsSensitive: none
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="instanceLevelSchema")
     private @Nullable Output<String> instanceLevelSchema;
 
     /**
      * @return (Updatable) DB instance level schema to which the user is granted access.
+     * 
+     * **Added In:** 18.2.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * idcsSensitive: none
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> instanceLevelSchema() {
@@ -66,12 +138,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
     /**
      * (Updatable) If true, indicates this is a database user.
      * 
+     * **Added In:** 18.2.2
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="isDbUser")
     private @Nullable Output<Boolean> isDbUser;
 
     /**
      * @return (Updatable) If true, indicates this is a database user.
+     * 
+     * **Added In:** 18.2.2
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> isDbUser() {
@@ -81,12 +177,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
     /**
      * (Updatable) Password Verifiers for DB User.
      * 
+     * **Added In:** 18.2.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [type]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="passwordVerifiers")
     private @Nullable Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArgs>> passwordVerifiers;
 
     /**
      * @return (Updatable) Password Verifiers for DB User.
+     * 
+     * **Added In:** 18.2.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [type]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArgs>>> passwordVerifiers() {
@@ -124,6 +244,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
         /**
          * @param dbGlobalRoles (Updatable) DB global roles to which the user is granted access.
          * 
+         * **Added In:** 18.2.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * idcsSensitive: none
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -135,6 +267,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
         /**
          * @param dbGlobalRoles (Updatable) DB global roles to which the user is granted access.
          * 
+         * **Added In:** 18.2.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * idcsSensitive: none
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -145,6 +289,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
         /**
          * @param dbGlobalRoles (Updatable) DB global roles to which the user is granted access.
          * 
+         * **Added In:** 18.2.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * idcsSensitive: none
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -154,6 +310,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
 
         /**
          * @param domainLevelSchema (Updatable) DB domain level schema to which the user is granted access.
+         * 
+         * **Added In:** 18.2.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * idcsSensitive: none
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -166,6 +334,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
         /**
          * @param domainLevelSchema (Updatable) DB domain level schema to which the user is granted access.
          * 
+         * **Added In:** 18.2.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * idcsSensitive: none
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -175,6 +355,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
 
         /**
          * @param instanceLevelSchema (Updatable) DB instance level schema to which the user is granted access.
+         * 
+         * **Added In:** 18.2.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * idcsSensitive: none
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -187,6 +379,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
         /**
          * @param instanceLevelSchema (Updatable) DB instance level schema to which the user is granted access.
          * 
+         * **Added In:** 18.2.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * idcsSensitive: none
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -196,6 +400,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
 
         /**
          * @param isDbUser (Updatable) If true, indicates this is a database user.
+         * 
+         * **Added In:** 18.2.2
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -208,6 +424,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
         /**
          * @param isDbUser (Updatable) If true, indicates this is a database user.
          * 
+         * **Added In:** 18.2.2
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -217,6 +445,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
 
         /**
          * @param passwordVerifiers (Updatable) Password Verifiers for DB User.
+         * 
+         * **Added In:** 18.2.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [type]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -229,6 +469,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
         /**
          * @param passwordVerifiers (Updatable) Password Verifiers for DB User.
          * 
+         * **Added In:** 18.2.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [type]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -238,6 +490,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
 
         /**
          * @param passwordVerifiers (Updatable) Password Verifiers for DB User.
+         * 
+         * **Added In:** 18.2.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [type]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 

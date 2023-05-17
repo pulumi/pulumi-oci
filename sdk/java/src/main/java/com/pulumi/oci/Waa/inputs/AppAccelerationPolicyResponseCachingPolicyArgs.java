@@ -18,12 +18,32 @@ public final class AppAccelerationPolicyResponseCachingPolicyArgs extends com.pu
     /**
      * (Updatable) When false, responses will not be cached by the backend based on response headers.
      * 
+     * When true, responses that contain one of the supported cache control headers will be cached according to the values specified in the cache control headers.
+     * 
+     * The &#34;X-Accel-Expires&#34; header field sets caching time of a response in seconds. The zero value disables caching for a response. If the value starts with the @ prefix, it sets an absolute time in seconds since Epoch, up to which the response may be cached.
+     * 
+     * If the header does not include the &#34;X-Accel-Expires&#34; field, parameters of caching may be set in the header fields &#34;Expires&#34; or &#34;Cache-Control&#34;.
+     * 
+     * If the header includes the &#34;Set-Cookie&#34; field, such a response will not be cached.
+     * 
+     * If the header includes the &#34;Vary&#34; field with the special value &#34;*&#34;, such a response will not be cached. If the header includes the &#34;Vary&#34; field with another value, such a response will be cached taking into account the corresponding request header fields.
+     * 
      */
     @Import(name="isResponseHeaderBasedCachingEnabled")
     private @Nullable Output<Boolean> isResponseHeaderBasedCachingEnabled;
 
     /**
      * @return (Updatable) When false, responses will not be cached by the backend based on response headers.
+     * 
+     * When true, responses that contain one of the supported cache control headers will be cached according to the values specified in the cache control headers.
+     * 
+     * The &#34;X-Accel-Expires&#34; header field sets caching time of a response in seconds. The zero value disables caching for a response. If the value starts with the @ prefix, it sets an absolute time in seconds since Epoch, up to which the response may be cached.
+     * 
+     * If the header does not include the &#34;X-Accel-Expires&#34; field, parameters of caching may be set in the header fields &#34;Expires&#34; or &#34;Cache-Control&#34;.
+     * 
+     * If the header includes the &#34;Set-Cookie&#34; field, such a response will not be cached.
+     * 
+     * If the header includes the &#34;Vary&#34; field with the special value &#34;*&#34;, such a response will not be cached. If the header includes the &#34;Vary&#34; field with another value, such a response will be cached taking into account the corresponding request header fields.
      * 
      */
     public Optional<Output<Boolean>> isResponseHeaderBasedCachingEnabled() {
@@ -57,6 +77,16 @@ public final class AppAccelerationPolicyResponseCachingPolicyArgs extends com.pu
         /**
          * @param isResponseHeaderBasedCachingEnabled (Updatable) When false, responses will not be cached by the backend based on response headers.
          * 
+         * When true, responses that contain one of the supported cache control headers will be cached according to the values specified in the cache control headers.
+         * 
+         * The &#34;X-Accel-Expires&#34; header field sets caching time of a response in seconds. The zero value disables caching for a response. If the value starts with the @ prefix, it sets an absolute time in seconds since Epoch, up to which the response may be cached.
+         * 
+         * If the header does not include the &#34;X-Accel-Expires&#34; field, parameters of caching may be set in the header fields &#34;Expires&#34; or &#34;Cache-Control&#34;.
+         * 
+         * If the header includes the &#34;Set-Cookie&#34; field, such a response will not be cached.
+         * 
+         * If the header includes the &#34;Vary&#34; field with the special value &#34;*&#34;, such a response will not be cached. If the header includes the &#34;Vary&#34; field with another value, such a response will be cached taking into account the corresponding request header fields.
+         * 
          * @return builder
          * 
          */
@@ -67,6 +97,16 @@ public final class AppAccelerationPolicyResponseCachingPolicyArgs extends com.pu
 
         /**
          * @param isResponseHeaderBasedCachingEnabled (Updatable) When false, responses will not be cached by the backend based on response headers.
+         * 
+         * When true, responses that contain one of the supported cache control headers will be cached according to the values specified in the cache control headers.
+         * 
+         * The &#34;X-Accel-Expires&#34; header field sets caching time of a response in seconds. The zero value disables caching for a response. If the value starts with the @ prefix, it sets an absolute time in seconds since Epoch, up to which the response may be cached.
+         * 
+         * If the header does not include the &#34;X-Accel-Expires&#34; field, parameters of caching may be set in the header fields &#34;Expires&#34; or &#34;Cache-Control&#34;.
+         * 
+         * If the header includes the &#34;Set-Cookie&#34; field, such a response will not be cached.
+         * 
+         * If the header includes the &#34;Vary&#34; field with the special value &#34;*&#34;, such a response will not be cached. If the header includes the &#34;Vary&#34; field with another value, such a response will be cached taking into account the corresponding request header fields.
          * 
          * @return builder
          * 

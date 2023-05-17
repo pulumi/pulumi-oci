@@ -208,12 +208,18 @@ public class ManagementAgentInstallKey extends com.pulumi.resources.CustomResour
     /**
      * date after which key would expire after creation
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="timeExpires", type=String.class, parameters={})
     private Output<String> timeExpires;
 
     /**
      * @return date after which key would expire after creation
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> timeExpires() {

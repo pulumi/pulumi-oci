@@ -95,6 +95,9 @@ type DiscoveryMod struct {
 	// The OCID of the sensitive data model.
 	SensitiveDataModelId pulumi.StringOutput `pulumi:"sensitiveDataModelId"`
 	// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SensitiveTypeIdsForDiscoveries pulumi.StringArrayOutput `pulumi:"sensitiveTypeIdsForDiscoveries"`
 	// The current state of the discovery job.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -178,6 +181,9 @@ type discoveryModState struct {
 	// The OCID of the sensitive data model.
 	SensitiveDataModelId *string `pulumi:"sensitiveDataModelId"`
 	// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SensitiveTypeIdsForDiscoveries []string `pulumi:"sensitiveTypeIdsForDiscoveries"`
 	// The current state of the discovery job.
 	State *string `pulumi:"state"`
@@ -227,6 +233,9 @@ type DiscoveryModState struct {
 	// The OCID of the sensitive data model.
 	SensitiveDataModelId pulumi.StringPtrInput
 	// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SensitiveTypeIdsForDiscoveries pulumi.StringArrayInput
 	// The current state of the discovery job.
 	State pulumi.StringPtrInput
@@ -280,6 +289,9 @@ type discoveryModArgs struct {
 	// The OCID of the sensitive data model.
 	SensitiveDataModelId string `pulumi:"sensitiveDataModelId"`
 	// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SensitiveTypeIdsForDiscoveries []string `pulumi:"sensitiveTypeIdsForDiscoveries"`
 }
 
@@ -308,6 +320,9 @@ type DiscoveryModArgs struct {
 	// The OCID of the sensitive data model.
 	SensitiveDataModelId pulumi.StringInput
 	// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SensitiveTypeIdsForDiscoveries pulumi.StringArrayInput
 }
 
@@ -454,6 +469,9 @@ func (o DiscoveryModOutput) SensitiveDataModelId() pulumi.StringOutput {
 }
 
 // The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DiscoveryModOutput) SensitiveTypeIdsForDiscoveries() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringArrayOutput { return v.SensitiveTypeIdsForDiscoveries }).(pulumi.StringArrayOutput)
 }

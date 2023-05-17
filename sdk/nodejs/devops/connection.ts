@@ -141,6 +141,10 @@ export class Connection extends pulumi.CustomResource {
     public readonly tlsVerifyConfig!: pulumi.Output<outputs.DevOps.ConnectionTlsVerifyConfig>;
     /**
      * (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly username!: pulumi.Output<string>;
 
@@ -277,6 +281,10 @@ export interface ConnectionState {
     tlsVerifyConfig?: pulumi.Input<inputs.DevOps.ConnectionTlsVerifyConfig>;
     /**
      * (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     username?: pulumi.Input<string>;
 }
@@ -327,6 +335,10 @@ export interface ConnectionArgs {
     tlsVerifyConfig?: pulumi.Input<inputs.DevOps.ConnectionTlsVerifyConfig>;
     /**
      * (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     username?: pulumi.Input<string>;
 }

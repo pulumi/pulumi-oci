@@ -14,12 +14,16 @@ public final class AppAccelerationPolicyResponseCompressionPolicyGzipCompression
     /**
      * @return (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the &#34;Accept-Encoding: gzip&#34; request header.
      * 
+     * When false, support for gzip compression is disabled and HTTP responses will not be compressed with gzip even if the client indicates support for gzip.
+     * 
      */
     private @Nullable Boolean isEnabled;
 
     private AppAccelerationPolicyResponseCompressionPolicyGzipCompression() {}
     /**
      * @return (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the &#34;Accept-Encoding: gzip&#34; request header.
+     * 
+     * When false, support for gzip compression is disabled and HTTP responses will not be compressed with gzip even if the client indicates support for gzip.
      * 
      */
     public Optional<Boolean> isEnabled() {

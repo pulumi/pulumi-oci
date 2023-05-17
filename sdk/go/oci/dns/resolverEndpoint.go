@@ -94,6 +94,9 @@ type ResolverEndpoint struct {
 	// The current state of the resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -167,6 +170,9 @@ type resolverEndpointState struct {
 	// The current state of the resource.
 	State *string `pulumi:"state"`
 	// The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId *string `pulumi:"subnetId"`
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -200,6 +206,9 @@ type ResolverEndpointState struct {
 	// The current state of the resource.
 	State pulumi.StringPtrInput
 	// The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringPtrInput
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
 	TimeCreated pulumi.StringPtrInput
@@ -231,6 +240,9 @@ type resolverEndpointArgs struct {
 	// Value must be `PRIVATE` when creating private name resolver endpoints.
 	Scope *string `pulumi:"scope"`
 	// The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -255,6 +267,9 @@ type ResolverEndpointArgs struct {
 	// Value must be `PRIVATE` when creating private name resolver endpoints.
 	Scope pulumi.StringPtrInput
 	// The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringInput
 }
 
@@ -406,6 +421,9 @@ func (o ResolverEndpointOutput) State() pulumi.StringOutput {
 }
 
 // The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ResolverEndpointOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResolverEndpoint) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
 }

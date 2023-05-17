@@ -120,7 +120,11 @@ namespace Pulumi.Oci.StackMonitoring
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+        /// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("shouldPropagateTagsToDiscoveredResources")]
         public Output<bool> ShouldPropagateTagsToDiscoveredResources { get; private set; } = null!;
@@ -262,7 +266,11 @@ namespace Pulumi.Oci.StackMonitoring
         }
 
         /// <summary>
-        /// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+        /// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("shouldPropagateTagsToDiscoveredResources")]
         public Input<bool>? ShouldPropagateTagsToDiscoveredResources { get; set; }
@@ -324,7 +332,11 @@ namespace Pulumi.Oci.StackMonitoring
         }
 
         /// <summary>
-        /// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+        /// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("shouldPropagateTagsToDiscoveredResources")]
         public Input<bool>? ShouldPropagateTagsToDiscoveredResources { get; set; }

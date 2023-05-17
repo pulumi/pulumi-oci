@@ -74,7 +74,11 @@ namespace Pulumi.Oci.Database
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Value for the IORM objective Default is "Auto"
+        /// (Updatable) Value for the IORM objective Default is "Auto" 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("objective")]
         public Output<string> Objective { get; private set; } = null!;
@@ -150,7 +154,11 @@ namespace Pulumi.Oci.Database
         public Input<string> DbSystemId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Value for the IORM objective Default is "Auto"
+        /// (Updatable) Value for the IORM objective Default is "Auto" 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("objective")]
         public Input<string>? Objective { get; set; }
@@ -188,7 +196,11 @@ namespace Pulumi.Oci.Database
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) Value for the IORM objective Default is "Auto"
+        /// (Updatable) Value for the IORM objective Default is "Auto" 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("objective")]
         public Input<string>? Objective { get; set; }

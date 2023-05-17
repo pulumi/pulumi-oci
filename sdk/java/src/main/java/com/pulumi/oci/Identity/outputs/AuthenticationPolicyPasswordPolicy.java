@@ -40,6 +40,9 @@ public final class AuthenticationPolicyPasswordPolicy {
     /**
      * @return (Updatable) Minimum password length required.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private @Nullable Integer minimumPasswordLength;
 
@@ -81,6 +84,9 @@ public final class AuthenticationPolicyPasswordPolicy {
     }
     /**
      * @return (Updatable) Minimum password length required.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Integer> minimumPasswordLength() {

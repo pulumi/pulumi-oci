@@ -115,12 +115,16 @@ public final class NodePoolNodeConfigDetailsArgs extends com.pulumi.resources.Re
     /**
      * (Updatable) The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
      * 
+     * To use the node pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+     * 
      */
     @Import(name="placementConfigs", required=true)
     private Output<List<NodePoolNodeConfigDetailsPlacementConfigArgs>> placementConfigs;
 
     /**
      * @return (Updatable) The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
+     * 
+     * To use the node pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
      * 
      */
     public Output<List<NodePoolNodeConfigDetailsPlacementConfigArgs>> placementConfigs() {
@@ -312,6 +316,8 @@ public final class NodePoolNodeConfigDetailsArgs extends com.pulumi.resources.Re
         /**
          * @param placementConfigs (Updatable) The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
          * 
+         * To use the node pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+         * 
          * @return builder
          * 
          */
@@ -323,6 +329,8 @@ public final class NodePoolNodeConfigDetailsArgs extends com.pulumi.resources.Re
         /**
          * @param placementConfigs (Updatable) The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
          * 
+         * To use the node pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+         * 
          * @return builder
          * 
          */
@@ -332,6 +340,8 @@ public final class NodePoolNodeConfigDetailsArgs extends com.pulumi.resources.Re
 
         /**
          * @param placementConfigs (Updatable) The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
+         * 
+         * To use the node pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
          * 
          * @return builder
          * 

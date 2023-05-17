@@ -14,12 +14,30 @@ namespace Pulumi.Oci.Identity.Inputs
     {
         /// <summary>
         /// (Updatable) If true, indicates that Multi-Factor Authentication should use the mobile number in the identity store
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("mobileNumberEnabled")]
         public Input<bool>? MobileNumberEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) If true, indicates that the user can update the mobile number in the user's Multi-Factor Authentication profile
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("mobileNumberUpdateEnabled")]
         public Input<bool>? MobileNumberUpdateEnabled { get; set; }

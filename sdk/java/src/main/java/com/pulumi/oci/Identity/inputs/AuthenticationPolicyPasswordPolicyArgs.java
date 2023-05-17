@@ -94,12 +94,18 @@ public final class AuthenticationPolicyPasswordPolicyArgs extends com.pulumi.res
     /**
      * (Updatable) Minimum password length required.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="minimumPasswordLength")
     private @Nullable Output<Integer> minimumPasswordLength;
 
     /**
      * @return (Updatable) Minimum password length required.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> minimumPasswordLength() {
@@ -243,6 +249,9 @@ public final class AuthenticationPolicyPasswordPolicyArgs extends com.pulumi.res
         /**
          * @param minimumPasswordLength (Updatable) Minimum password length required.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -253,6 +262,9 @@ public final class AuthenticationPolicyPasswordPolicyArgs extends com.pulumi.res
 
         /**
          * @param minimumPasswordLength (Updatable) Minimum password length required.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

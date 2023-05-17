@@ -91,6 +91,9 @@ type AuditArchiveRetrieval struct {
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The OCID of the target associated with the archive retrieval.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetId pulumi.StringOutput `pulumi:"targetId"`
 	// The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
 	TimeCompleted pulumi.StringOutput `pulumi:"timeCompleted"`
@@ -166,6 +169,9 @@ type auditArchiveRetrievalState struct {
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The OCID of the target associated with the archive retrieval.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetId *string `pulumi:"targetId"`
 	// The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
 	TimeCompleted *string `pulumi:"timeCompleted"`
@@ -201,6 +207,9 @@ type AuditArchiveRetrievalState struct {
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
 	// The OCID of the target associated with the archive retrieval.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetId pulumi.StringPtrInput
 	// The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
 	TimeCompleted pulumi.StringPtrInput
@@ -230,6 +239,9 @@ type auditArchiveRetrievalArgs struct {
 	// Start month of the archive retrieval, in the format defined by RFC3339.
 	StartDate string `pulumi:"startDate"`
 	// The OCID of the target associated with the archive retrieval.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetId string `pulumi:"targetId"`
 }
 
@@ -250,6 +262,9 @@ type AuditArchiveRetrievalArgs struct {
 	// Start month of the archive retrieval, in the format defined by RFC3339.
 	StartDate pulumi.StringInput
 	// The OCID of the target associated with the archive retrieval.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetId pulumi.StringInput
 }
 
@@ -401,6 +416,9 @@ func (o AuditArchiveRetrievalOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The OCID of the target associated with the archive retrieval.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AuditArchiveRetrievalOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AuditArchiveRetrieval) pulumi.StringOutput { return v.TargetId }).(pulumi.StringOutput)
 }

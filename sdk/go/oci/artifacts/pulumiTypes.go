@@ -14,6 +14,9 @@ type ContainerRepositoryReadme struct {
 	// (Updatable) Readme content. Avoid entering confidential information.
 	Content string `pulumi:"content"`
 	// (Updatable) Readme format. Supported formats are text/plain and text/markdown.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Format string `pulumi:"format"`
 }
 
@@ -32,6 +35,9 @@ type ContainerRepositoryReadmeArgs struct {
 	// (Updatable) Readme content. Avoid entering confidential information.
 	Content pulumi.StringInput `pulumi:"content"`
 	// (Updatable) Readme format. Supported formats are text/plain and text/markdown.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Format pulumi.StringInput `pulumi:"format"`
 }
 
@@ -118,6 +124,9 @@ func (o ContainerRepositoryReadmeOutput) Content() pulumi.StringOutput {
 }
 
 // (Updatable) Readme format. Supported formats are text/plain and text/markdown.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ContainerRepositoryReadmeOutput) Format() pulumi.StringOutput {
 	return o.ApplyT(func(v ContainerRepositoryReadme) string { return v.Format }).(pulumi.StringOutput)
 }
@@ -157,6 +166,9 @@ func (o ContainerRepositoryReadmePtrOutput) Content() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Readme format. Supported formats are text/plain and text/markdown.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ContainerRepositoryReadmePtrOutput) Format() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ContainerRepositoryReadme) *string {
 		if v == nil {

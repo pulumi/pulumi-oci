@@ -137,6 +137,10 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// (Updatable) The short name of the sensitive type.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("shortName")]
         public Output<string> ShortName { get; private set; } = null!;
@@ -303,6 +307,10 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// (Updatable) The short name of the sensitive type.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("shortName")]
         public Input<string>? ShortName { get; set; }
@@ -401,6 +409,10 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// (Updatable) The short name of the sensitive type.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("shortName")]
         public Input<string>? ShortName { get; set; }

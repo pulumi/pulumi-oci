@@ -237,12 +237,18 @@ public final class VbInstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The number of Nodes
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="nodeCount")
     private @Nullable Output<Integer> nodeCount;
 
     /**
      * @return (Updatable) The number of Nodes
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> nodeCount() {
@@ -726,6 +732,9 @@ public final class VbInstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param nodeCount (Updatable) The number of Nodes
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -736,6 +745,9 @@ public final class VbInstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeCount (Updatable) The number of Nodes
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

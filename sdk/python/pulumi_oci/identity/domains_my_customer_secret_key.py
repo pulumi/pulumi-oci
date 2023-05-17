@@ -31,15 +31,93 @@ class DomainsMyCustomerSecretKeyArgs:
         The set of arguments for constructing a DomainsMyCustomerSecretKey resource.
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         :param pulumi.Input[str] description: Description
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * type: string
+               * mutability: readWrite
+               * required: false
+               * returned: default
         :param pulumi.Input[str] display_name: Display Name
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * type: string
+               * mutability: readWrite
+               * required: false
+               * returned: default
         :param pulumi.Input[str] expires_on: User credential expires on
+               
+               **Added In:** 2109090424
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
         :param pulumi.Input[str] ocid: User's ocid
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: always
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[str] status: User credential status
+               
+               **Added In:** 2109090424
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: never
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input['DomainsMyCustomerSecretKeyTagArgs']]] tags: A list of tags on this resource.
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [key, value]
+               * idcsSearchable: true
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: request
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input['DomainsMyCustomerSecretKeyUserArgs'] user: User linked to customer secret key
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         """
         pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
         pulumi.set(__self__, "schemas", schemas)
@@ -79,6 +157,16 @@ class DomainsMyCustomerSecretKeyArgs:
     def schemas(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
         REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "schemas")
 
@@ -103,6 +191,13 @@ class DomainsMyCustomerSecretKeyArgs:
     def description(self) -> Optional[pulumi.Input[str]]:
         """
         Description
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * type: string
+        * mutability: readWrite
+        * required: false
+        * returned: default
         """
         return pulumi.get(self, "description")
 
@@ -115,6 +210,13 @@ class DomainsMyCustomerSecretKeyArgs:
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
         Display Name
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * type: string
+        * mutability: readWrite
+        * required: false
+        * returned: default
         """
         return pulumi.get(self, "display_name")
 
@@ -127,6 +229,18 @@ class DomainsMyCustomerSecretKeyArgs:
     def expires_on(self) -> Optional[pulumi.Input[str]]:
         """
         User credential expires on
+
+        **Added In:** 2109090424
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
         """
         return pulumi.get(self, "expires_on")
 
@@ -139,6 +253,16 @@ class DomainsMyCustomerSecretKeyArgs:
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
         User's ocid
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: always
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "ocid")
 
@@ -163,6 +287,18 @@ class DomainsMyCustomerSecretKeyArgs:
     def status(self) -> Optional[pulumi.Input[str]]:
         """
         User credential status
+
+        **Added In:** 2109090424
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: never
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "status")
 
@@ -175,6 +311,16 @@ class DomainsMyCustomerSecretKeyArgs:
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyCustomerSecretKeyTagArgs']]]]:
         """
         A list of tags on this resource.
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [key, value]
+        * idcsSearchable: true
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: request
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "tags")
 
@@ -187,6 +333,16 @@ class DomainsMyCustomerSecretKeyArgs:
     def user(self) -> Optional[pulumi.Input['DomainsMyCustomerSecretKeyUserArgs']]:
         """
         User linked to customer secret key
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "user")
 
@@ -222,26 +378,196 @@ class _DomainsMyCustomerSecretKeyState:
         """
         Input properties used for looking up and filtering DomainsMyCustomerSecretKey resources.
         :param pulumi.Input[str] access_key: (Updatable) Access key
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * type: string
+               * mutability: readOnly
+               * required: false
+               * returned: default
         :param pulumi.Input[str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         :param pulumi.Input[str] compartment_ocid: (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] delete_in_progress: (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] description: Description
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * type: string
+               * mutability: readWrite
+               * required: false
+               * returned: default
         :param pulumi.Input[str] display_name: Display Name
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * type: string
+               * mutability: readWrite
+               * required: false
+               * returned: default
         :param pulumi.Input[str] domain_ocid: (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] expires_on: User credential expires on
+               
+               **Added In:** 2109090424
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input['DomainsMyCustomerSecretKeyIdcsCreatedByArgs']]] idcs_created_bies: (Updatable) The User or App who created the Resource
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: complex
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[Sequence[pulumi.Input['DomainsMyCustomerSecretKeyIdcsLastModifiedByArgs']]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: complex
         :param pulumi.Input[str] idcs_last_upgraded_in_release: (Updatable) The release number when the resource was upgraded.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[str]]] idcs_prevented_operations: (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input['DomainsMyCustomerSecretKeyMetaArgs']]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+               * type: complex
         :param pulumi.Input[str] ocid: User's ocid
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: always
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] status: User credential status
+               
+               **Added In:** 2109090424
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: never
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input['DomainsMyCustomerSecretKeyTagArgs']]] tags: A list of tags on this resource.
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [key, value]
+               * idcsSearchable: true
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: request
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[str] tenancy_ocid: (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input['DomainsMyCustomerSecretKeyUserArgs'] user: User linked to customer secret key
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         """
         if access_key is not None:
             pulumi.set(__self__, "access_key", access_key)
@@ -291,6 +617,13 @@ class _DomainsMyCustomerSecretKeyState:
     def access_key(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Access key
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * type: string
+        * mutability: readOnly
+        * required: false
+        * returned: default
         """
         return pulumi.get(self, "access_key")
 
@@ -315,6 +648,16 @@ class _DomainsMyCustomerSecretKeyState:
     def compartment_ocid(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "compartment_ocid")
 
@@ -327,6 +670,16 @@ class _DomainsMyCustomerSecretKeyState:
     def delete_in_progress(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "delete_in_progress")
 
@@ -339,6 +692,13 @@ class _DomainsMyCustomerSecretKeyState:
     def description(self) -> Optional[pulumi.Input[str]]:
         """
         Description
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * type: string
+        * mutability: readWrite
+        * required: false
+        * returned: default
         """
         return pulumi.get(self, "description")
 
@@ -351,6 +711,13 @@ class _DomainsMyCustomerSecretKeyState:
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
         Display Name
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * type: string
+        * mutability: readWrite
+        * required: false
+        * returned: default
         """
         return pulumi.get(self, "display_name")
 
@@ -363,6 +730,16 @@ class _DomainsMyCustomerSecretKeyState:
     def domain_ocid(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "domain_ocid")
 
@@ -375,6 +752,18 @@ class _DomainsMyCustomerSecretKeyState:
     def expires_on(self) -> Optional[pulumi.Input[str]]:
         """
         User credential expires on
+
+        **Added In:** 2109090424
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
         """
         return pulumi.get(self, "expires_on")
 
@@ -387,6 +776,14 @@ class _DomainsMyCustomerSecretKeyState:
     def idcs_created_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyCustomerSecretKeyIdcsCreatedByArgs']]]]:
         """
         (Updatable) The User or App who created the Resource
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: complex
         """
         return pulumi.get(self, "idcs_created_bies")
 
@@ -411,6 +808,14 @@ class _DomainsMyCustomerSecretKeyState:
     def idcs_last_modified_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyCustomerSecretKeyIdcsLastModifiedByArgs']]]]:
         """
         (Updatable) The User or App who modified the Resource
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: complex
         """
         return pulumi.get(self, "idcs_last_modified_bies")
 
@@ -423,6 +828,16 @@ class _DomainsMyCustomerSecretKeyState:
     def idcs_last_upgraded_in_release(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The release number when the resource was upgraded.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
@@ -435,6 +850,15 @@ class _DomainsMyCustomerSecretKeyState:
     def idcs_prevented_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "idcs_prevented_operations")
 
@@ -447,6 +871,16 @@ class _DomainsMyCustomerSecretKeyState:
     def metas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyCustomerSecretKeyMetaArgs']]]]:
         """
         (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+        * type: complex
         """
         return pulumi.get(self, "metas")
 
@@ -459,6 +893,16 @@ class _DomainsMyCustomerSecretKeyState:
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
         User's ocid
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: always
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "ocid")
 
@@ -483,6 +927,16 @@ class _DomainsMyCustomerSecretKeyState:
     def schemas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "schemas")
 
@@ -495,6 +949,18 @@ class _DomainsMyCustomerSecretKeyState:
     def status(self) -> Optional[pulumi.Input[str]]:
         """
         User credential status
+
+        **Added In:** 2109090424
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: never
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "status")
 
@@ -507,6 +973,16 @@ class _DomainsMyCustomerSecretKeyState:
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyCustomerSecretKeyTagArgs']]]]:
         """
         A list of tags on this resource.
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [key, value]
+        * idcsSearchable: true
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: request
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "tags")
 
@@ -519,6 +995,16 @@ class _DomainsMyCustomerSecretKeyState:
     def tenancy_ocid(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "tenancy_ocid")
 
@@ -531,6 +1017,16 @@ class _DomainsMyCustomerSecretKeyState:
     def user(self) -> Optional[pulumi.Input['DomainsMyCustomerSecretKeyUserArgs']]:
         """
         User linked to customer secret key
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "user")
 
@@ -573,15 +1069,93 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         :param pulumi.Input[str] description: Description
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * type: string
+               * mutability: readWrite
+               * required: false
+               * returned: default
         :param pulumi.Input[str] display_name: Display Name
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * type: string
+               * mutability: readWrite
+               * required: false
+               * returned: default
         :param pulumi.Input[str] expires_on: User credential expires on
+               
+               **Added In:** 2109090424
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[str] ocid: User's ocid
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: always
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] status: User credential status
+               
+               **Added In:** 2109090424
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: never
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyCustomerSecretKeyTagArgs']]]] tags: A list of tags on this resource.
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [key, value]
+               * idcsSearchable: true
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: request
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsMyCustomerSecretKeyUserArgs']] user: User linked to customer secret key
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         """
         ...
     @overload
@@ -701,26 +1275,196 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] access_key: (Updatable) Access key
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * type: string
+               * mutability: readOnly
+               * required: false
+               * returned: default
         :param pulumi.Input[str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         :param pulumi.Input[str] compartment_ocid: (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] delete_in_progress: (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] description: Description
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * type: string
+               * mutability: readWrite
+               * required: false
+               * returned: default
         :param pulumi.Input[str] display_name: Display Name
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * type: string
+               * mutability: readWrite
+               * required: false
+               * returned: default
         :param pulumi.Input[str] domain_ocid: (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] expires_on: User credential expires on
+               
+               **Added In:** 2109090424
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyCustomerSecretKeyIdcsCreatedByArgs']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: complex
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyCustomerSecretKeyIdcsLastModifiedByArgs']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: complex
         :param pulumi.Input[str] idcs_last_upgraded_in_release: (Updatable) The release number when the resource was upgraded.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[str]]] idcs_prevented_operations: (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyCustomerSecretKeyMetaArgs']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+               * type: complex
         :param pulumi.Input[str] ocid: User's ocid
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: always
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] status: User credential status
+               
+               **Added In:** 2109090424
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: never
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyCustomerSecretKeyTagArgs']]]] tags: A list of tags on this resource.
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [key, value]
+               * idcsSearchable: true
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: request
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[str] tenancy_ocid: (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsMyCustomerSecretKeyUserArgs']] user: User linked to customer secret key
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -754,6 +1498,13 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
     def access_key(self) -> pulumi.Output[str]:
         """
         (Updatable) Access key
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * type: string
+        * mutability: readOnly
+        * required: false
+        * returned: default
         """
         return pulumi.get(self, "access_key")
 
@@ -770,6 +1521,16 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
     def compartment_ocid(self) -> pulumi.Output[str]:
         """
         (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "compartment_ocid")
 
@@ -778,6 +1539,16 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
     def delete_in_progress(self) -> pulumi.Output[bool]:
         """
         (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "delete_in_progress")
 
@@ -786,6 +1557,13 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
     def description(self) -> pulumi.Output[str]:
         """
         Description
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * type: string
+        * mutability: readWrite
+        * required: false
+        * returned: default
         """
         return pulumi.get(self, "description")
 
@@ -794,6 +1572,13 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
     def display_name(self) -> pulumi.Output[str]:
         """
         Display Name
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * type: string
+        * mutability: readWrite
+        * required: false
+        * returned: default
         """
         return pulumi.get(self, "display_name")
 
@@ -802,6 +1587,16 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
     def domain_ocid(self) -> pulumi.Output[str]:
         """
         (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "domain_ocid")
 
@@ -810,6 +1605,18 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
     def expires_on(self) -> pulumi.Output[str]:
         """
         User credential expires on
+
+        **Added In:** 2109090424
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
         """
         return pulumi.get(self, "expires_on")
 
@@ -818,6 +1625,14 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
     def idcs_created_bies(self) -> pulumi.Output[Sequence['outputs.DomainsMyCustomerSecretKeyIdcsCreatedBy']]:
         """
         (Updatable) The User or App who created the Resource
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: complex
         """
         return pulumi.get(self, "idcs_created_bies")
 
@@ -834,6 +1649,14 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
     def idcs_last_modified_bies(self) -> pulumi.Output[Sequence['outputs.DomainsMyCustomerSecretKeyIdcsLastModifiedBy']]:
         """
         (Updatable) The User or App who modified the Resource
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: complex
         """
         return pulumi.get(self, "idcs_last_modified_bies")
 
@@ -842,6 +1665,16 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
     def idcs_last_upgraded_in_release(self) -> pulumi.Output[str]:
         """
         (Updatable) The release number when the resource was upgraded.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
@@ -850,6 +1683,15 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
     def idcs_prevented_operations(self) -> pulumi.Output[Sequence[str]]:
         """
         (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "idcs_prevented_operations")
 
@@ -858,6 +1700,16 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
     def metas(self) -> pulumi.Output[Sequence['outputs.DomainsMyCustomerSecretKeyMeta']]:
         """
         (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+        * type: complex
         """
         return pulumi.get(self, "metas")
 
@@ -866,6 +1718,16 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
     def ocid(self) -> pulumi.Output[str]:
         """
         User's ocid
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: always
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "ocid")
 
@@ -882,6 +1744,16 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
     def schemas(self) -> pulumi.Output[Sequence[str]]:
         """
         REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "schemas")
 
@@ -890,6 +1762,18 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
     def status(self) -> pulumi.Output[str]:
         """
         User credential status
+
+        **Added In:** 2109090424
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: never
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "status")
 
@@ -898,6 +1782,16 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
     def tags(self) -> pulumi.Output[Sequence['outputs.DomainsMyCustomerSecretKeyTag']]:
         """
         A list of tags on this resource.
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [key, value]
+        * idcsSearchable: true
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: request
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "tags")
 
@@ -906,6 +1800,16 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
     def tenancy_ocid(self) -> pulumi.Output[str]:
         """
         (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "tenancy_ocid")
 
@@ -914,6 +1818,16 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
     def user(self) -> pulumi.Output['outputs.DomainsMyCustomerSecretKeyUser']:
         """
         User linked to customer secret key
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "user")
 

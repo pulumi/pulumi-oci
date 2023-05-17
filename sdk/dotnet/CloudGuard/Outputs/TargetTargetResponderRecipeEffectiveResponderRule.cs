@@ -19,6 +19,8 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         public readonly string? CompartmentId;
         /// <summary>
         /// The target description.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         public readonly string? Description;
         /// <summary>
@@ -27,6 +29,8 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         public readonly ImmutableArray<Outputs.TargetTargetResponderRecipeEffectiveResponderRuleDetail> Details;
         /// <summary>
         /// (Updatable) DetectorTemplate identifier.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
@@ -39,6 +43,10 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         public readonly ImmutableArray<string> Policies;
         /// <summary>
         /// (Updatable) Identifier for ResponderRule.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string? ResponderRuleId;
         /// <summary>

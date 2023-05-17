@@ -87,6 +87,8 @@ export class Subscription extends pulumi.CustomResource {
     public readonly deliveryPolicy!: pulumi.Output<string>;
     /**
      * A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol. HTTP-based protocols use URL endpoints that begin with "http:" or "https:". A URL cannot exceed 512 characters. Avoid entering confidential information.
+     *
+     * For protocol-specific endpoint formats and steps to get or create endpoints, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
      */
     public readonly endpoint!: pulumi.Output<string>;
     /**
@@ -99,6 +101,8 @@ export class Subscription extends pulumi.CustomResource {
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * The protocol used for the subscription.
+     *
+     * Allowed values:
      */
     public readonly protocol!: pulumi.Output<string>;
     /**
@@ -106,7 +110,11 @@ export class Subscription extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly topicId!: pulumi.Output<string>;
 
@@ -185,6 +193,8 @@ export interface SubscriptionState {
     deliveryPolicy?: pulumi.Input<string>;
     /**
      * A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol. HTTP-based protocols use URL endpoints that begin with "http:" or "https:". A URL cannot exceed 512 characters. Avoid entering confidential information.
+     *
+     * For protocol-specific endpoint formats and steps to get or create endpoints, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
      */
     endpoint?: pulumi.Input<string>;
     /**
@@ -197,6 +207,8 @@ export interface SubscriptionState {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The protocol used for the subscription.
+     *
+     * Allowed values:
      */
     protocol?: pulumi.Input<string>;
     /**
@@ -204,7 +216,11 @@ export interface SubscriptionState {
      */
     state?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     topicId?: pulumi.Input<string>;
 }
@@ -227,6 +243,8 @@ export interface SubscriptionArgs {
     deliveryPolicy?: pulumi.Input<string>;
     /**
      * A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol. HTTP-based protocols use URL endpoints that begin with "http:" or "https:". A URL cannot exceed 512 characters. Avoid entering confidential information.
+     *
+     * For protocol-specific endpoint formats and steps to get or create endpoints, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
      */
     endpoint: pulumi.Input<string>;
     /**
@@ -235,10 +253,16 @@ export interface SubscriptionArgs {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The protocol used for the subscription.
+     *
+     * Allowed values:
      */
     protocol: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     topicId: pulumi.Input<string>;
 }

@@ -81,6 +81,10 @@ export class ExternalDbSystem extends pulumi.CustomResource {
     public /*out*/ readonly discoveryAgentId!: pulumi.Output<string>;
     /**
      * (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -179,6 +183,10 @@ export interface ExternalDbSystemState {
     discoveryAgentId?: pulumi.Input<string>;
     /**
      * (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -225,6 +233,10 @@ export interface ExternalDbSystemArgs {
     dbSystemDiscoveryId: pulumi.Input<string>;
     /**
      * (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     displayName?: pulumi.Input<string>;
 }

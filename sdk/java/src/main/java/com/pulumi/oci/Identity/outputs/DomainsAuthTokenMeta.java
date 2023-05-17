@@ -14,25 +14,75 @@ public final class DomainsAuthTokenMeta {
     /**
      * @return The DateTime the Resource was added to the Service Provider
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     private @Nullable String created;
     /**
      * @return The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     private @Nullable String lastModified;
     /**
      * @return The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String location;
     /**
      * @return Name of the resource type of the resource--for example, Users or Groups
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String resourceType;
     /**
      * @return The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable String version;
@@ -41,12 +91,32 @@ public final class DomainsAuthTokenMeta {
     /**
      * @return The DateTime the Resource was added to the Service Provider
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     public Optional<String> created() {
         return Optional.ofNullable(this.created);
     }
     /**
      * @return The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     public Optional<String> lastModified() {
@@ -55,6 +125,16 @@ public final class DomainsAuthTokenMeta {
     /**
      * @return The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> location() {
         return Optional.ofNullable(this.location);
@@ -62,12 +142,32 @@ public final class DomainsAuthTokenMeta {
     /**
      * @return Name of the resource type of the resource--for example, Users or Groups
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> resourceType() {
         return Optional.ofNullable(this.resourceType);
     }
     /**
      * @return The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> version() {

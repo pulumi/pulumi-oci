@@ -57,6 +57,9 @@ type OperationsInsightsWarehouseDownloadWarehouseWallet struct {
 	// Unique Operations Insights Warehouse identifier
 	OperationsInsightsWarehouseId pulumi.StringOutput `pulumi:"operationsInsightsWarehouseId"`
 	// User provided ADW wallet password for the Operations Insights Warehouse.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseWalletPassword pulumi.StringOutput `pulumi:"operationsInsightsWarehouseWalletPassword"`
 }
 
@@ -105,6 +108,9 @@ type operationsInsightsWarehouseDownloadWarehouseWalletState struct {
 	// Unique Operations Insights Warehouse identifier
 	OperationsInsightsWarehouseId *string `pulumi:"operationsInsightsWarehouseId"`
 	// User provided ADW wallet password for the Operations Insights Warehouse.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseWalletPassword *string `pulumi:"operationsInsightsWarehouseWalletPassword"`
 }
 
@@ -112,6 +118,9 @@ type OperationsInsightsWarehouseDownloadWarehouseWalletState struct {
 	// Unique Operations Insights Warehouse identifier
 	OperationsInsightsWarehouseId pulumi.StringPtrInput
 	// User provided ADW wallet password for the Operations Insights Warehouse.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseWalletPassword pulumi.StringPtrInput
 }
 
@@ -123,6 +132,9 @@ type operationsInsightsWarehouseDownloadWarehouseWalletArgs struct {
 	// Unique Operations Insights Warehouse identifier
 	OperationsInsightsWarehouseId string `pulumi:"operationsInsightsWarehouseId"`
 	// User provided ADW wallet password for the Operations Insights Warehouse.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseWalletPassword string `pulumi:"operationsInsightsWarehouseWalletPassword"`
 }
 
@@ -131,6 +143,9 @@ type OperationsInsightsWarehouseDownloadWarehouseWalletArgs struct {
 	// Unique Operations Insights Warehouse identifier
 	OperationsInsightsWarehouseId pulumi.StringInput
 	// User provided ADW wallet password for the Operations Insights Warehouse.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseWalletPassword pulumi.StringInput
 }
 
@@ -229,6 +244,9 @@ func (o OperationsInsightsWarehouseDownloadWarehouseWalletOutput) OperationsInsi
 }
 
 // User provided ADW wallet password for the Operations Insights Warehouse.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o OperationsInsightsWarehouseDownloadWarehouseWalletOutput) OperationsInsightsWarehouseWalletPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v *OperationsInsightsWarehouseDownloadWarehouseWallet) pulumi.StringOutput {
 		return v.OperationsInsightsWarehouseWalletPassword

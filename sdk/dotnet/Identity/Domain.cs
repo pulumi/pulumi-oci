@@ -163,6 +163,10 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// The License type of Domain
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("licenseType")]
         public Output<string> LicenseType { get; private set; } = null!;
@@ -341,6 +345,10 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// The License type of Domain
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("licenseType", required: true)]
         public Input<string> LicenseType { get; set; } = null!;
@@ -457,6 +465,10 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// The License type of Domain
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("licenseType")]
         public Input<string>? LicenseType { get; set; }

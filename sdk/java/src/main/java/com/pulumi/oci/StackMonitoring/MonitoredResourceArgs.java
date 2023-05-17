@@ -267,12 +267,18 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
     /**
      * Monitored Resource Type.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
      * @return Monitored Resource Type.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> type() {
@@ -688,6 +694,9 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
         /**
          * @param type Monitored Resource Type.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -698,6 +707,9 @@ public final class MonitoredResourceArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param type Monitored Resource Type.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

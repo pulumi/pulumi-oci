@@ -69,6 +69,8 @@ export class DetectorRecipe extends pulumi.CustomResource {
     public readonly detectorRules!: pulumi.Output<outputs.CloudGuard.DetectorRecipeDetectorRule[]>;
     /**
      * (Updatable) Detector recipe display name.
+     *
+     * Avoid entering confidential information.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -77,6 +79,8 @@ export class DetectorRecipe extends pulumi.CustomResource {
     public /*out*/ readonly effectiveDetectorRules!: pulumi.Output<outputs.CloudGuard.DetectorRecipeEffectiveDetectorRule[]>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     *
+     * Avoid entering confidential information.
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -85,6 +89,10 @@ export class DetectorRecipe extends pulumi.CustomResource {
     public /*out*/ readonly owner!: pulumi.Output<string>;
     /**
      * The id of the source detector recipe.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly sourceDetectorRecipeId!: pulumi.Output<string>;
     /**
@@ -191,6 +199,8 @@ export interface DetectorRecipeState {
     detectorRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeDetectorRule>[]>;
     /**
      * (Updatable) Detector recipe display name.
+     *
+     * Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -199,6 +209,8 @@ export interface DetectorRecipeState {
     effectiveDetectorRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeEffectiveDetectorRule>[]>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     *
+     * Avoid entering confidential information.
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -207,6 +219,10 @@ export interface DetectorRecipeState {
     owner?: pulumi.Input<string>;
     /**
      * The id of the source detector recipe.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     sourceDetectorRecipeId?: pulumi.Input<string>;
     /**
@@ -257,14 +273,22 @@ export interface DetectorRecipeArgs {
     detectorRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeDetectorRule>[]>;
     /**
      * (Updatable) Detector recipe display name.
+     *
+     * Avoid entering confidential information.
      */
     displayName: pulumi.Input<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     *
+     * Avoid entering confidential information.
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The id of the source detector recipe.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     sourceDetectorRecipeId?: pulumi.Input<string>;
 }

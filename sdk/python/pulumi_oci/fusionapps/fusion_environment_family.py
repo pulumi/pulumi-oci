@@ -28,6 +28,10 @@ class FusionEnvironmentFamilyArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the environment family is located.
         :param pulumi.Input[str] display_name: (Updatable) A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subscription_ids: (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input['FusionEnvironmentFamilyFamilyMaintenancePolicyArgs'] family_maintenance_policy: (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -73,6 +77,10 @@ class FusionEnvironmentFamilyArgs:
     def subscription_ids(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
         (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subscription_ids")
 
@@ -152,6 +160,10 @@ class _FusionEnvironmentFamilyState:
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] state: The current state of the FusionEnvironmentFamily.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subscription_ids: (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] system_name: Environment Specific Guid/ System Name
         :param pulumi.Input[str] time_created: The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
         """
@@ -281,6 +293,10 @@ class _FusionEnvironmentFamilyState:
     def subscription_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subscription_ids")
 
@@ -379,6 +395,10 @@ class FusionEnvironmentFamily(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['FusionEnvironmentFamilyFamilyMaintenancePolicyArgs']] family_maintenance_policy: (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subscription_ids: (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -509,6 +529,10 @@ class FusionEnvironmentFamily(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] state: The current state of the FusionEnvironmentFamily.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subscription_ids: (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] system_name: Environment Specific Guid/ System Name
         :param pulumi.Input[str] time_created: The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
         """
@@ -599,6 +623,10 @@ class FusionEnvironmentFamily(pulumi.CustomResource):
     def subscription_ids(self) -> pulumi.Output[Sequence[str]]:
         """
         (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subscription_ids")
 

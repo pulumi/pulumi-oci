@@ -14,6 +14,17 @@ namespace Pulumi.Oci.Identity.Inputs
     {
         /// <summary>
         /// (Updatable) Risk Level
+        /// 
+        /// **Added In:** 18.1.6
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("riskLevel")]
         public Input<string>? RiskLevel { get; set; }
@@ -23,6 +34,18 @@ namespace Pulumi.Oci.Identity.Inputs
 
         /// <summary>
         /// (Updatable) The risk score pertaining to the user.
+        /// 
+        /// **Added In:** 18.1.6
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCompositeKey: [value]
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs> RiskScores
         {

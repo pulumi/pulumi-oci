@@ -135,7 +135,11 @@ def get_audit_profile_available_audit_volume(audit_profile_id: Optional[str] = N
 
     :param str audit_profile_id: The OCID of the audit.
     :param str month_in_consideration_greater_than: Specifying `monthInConsiderationGreaterThan` parameter will retrieve all items for which the event month is greater than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+           
+           **Example:** 2016-12-19T00:00:00.000Z
     :param str month_in_consideration_less_than: Specifying `monthInConsiderationLessThan` parameter will retrieve all items for which the event month is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+           
+           **Example:** 2016-12-19T00:00:00.000Z
     :param str trail_location: The audit trail location.
     :param str work_request_id: The OCID of the work request.
     """
@@ -186,7 +190,11 @@ def get_audit_profile_available_audit_volume_output(audit_profile_id: Optional[p
 
     :param str audit_profile_id: The OCID of the audit.
     :param str month_in_consideration_greater_than: Specifying `monthInConsiderationGreaterThan` parameter will retrieve all items for which the event month is greater than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+           
+           **Example:** 2016-12-19T00:00:00.000Z
     :param str month_in_consideration_less_than: Specifying `monthInConsiderationLessThan` parameter will retrieve all items for which the event month is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+           
+           **Example:** 2016-12-19T00:00:00.000Z
     :param str trail_location: The audit trail location.
     :param str work_request_id: The OCID of the work request.
     """

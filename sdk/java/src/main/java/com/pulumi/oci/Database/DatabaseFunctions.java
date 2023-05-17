@@ -3295,6 +3295,12 @@ public final class DatabaseFunctions {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabaseRegionalWalletManagement:getAutonomousDatabaseRegionalWalletManagement", TypeShape.of(GetAutonomousDatabaseRegionalWalletManagementResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * **Deprecated. Use oci.Database.AutonomousDatabaseWallet instead.**
+     * 
+     * This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Creates and downloads a wallet for the specified Autonomous Database.
+     * 
      * ## Example Usage
      * ```java
      * package generated_program;
@@ -3333,6 +3339,12 @@ public final class DatabaseFunctions {
         return getAutonomousDatabaseWallet(args, InvokeOptions.Empty);
     }
     /**
+     * **Deprecated. Use oci.Database.AutonomousDatabaseWallet instead.**
+     * 
+     * This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Creates and downloads a wallet for the specified Autonomous Database.
+     * 
      * ## Example Usage
      * ```java
      * package generated_program;
@@ -3371,6 +3383,12 @@ public final class DatabaseFunctions {
         return getAutonomousDatabaseWalletPlain(args, InvokeOptions.Empty);
     }
     /**
+     * **Deprecated. Use oci.Database.AutonomousDatabaseWallet instead.**
+     * 
+     * This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Creates and downloads a wallet for the specified Autonomous Database.
+     * 
      * ## Example Usage
      * ```java
      * package generated_program;
@@ -3409,6 +3427,12 @@ public final class DatabaseFunctions {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", TypeShape.of(GetAutonomousDatabaseWalletResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * **Deprecated. Use oci.Database.AutonomousDatabaseWallet instead.**
+     * 
+     * This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Creates and downloads a wallet for the specified Autonomous Database.
+     * 
      * ## Example Usage
      * ```java
      * package generated_program;

@@ -72,6 +72,9 @@ type LogSavedSearch struct {
 	// (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) The search query that is saved.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Query pulumi.StringOutput `pulumi:"query"`
 	// The state of the LogSavedSearch
 	State pulumi.StringOutput `pulumi:"state"`
@@ -127,6 +130,9 @@ type logSavedSearchState struct {
 	// (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
 	Name *string `pulumi:"name"`
 	// (Updatable) The search query that is saved.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Query *string `pulumi:"query"`
 	// The state of the LogSavedSearch
 	State *string `pulumi:"state"`
@@ -148,6 +154,9 @@ type LogSavedSearchState struct {
 	// (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
 	Name pulumi.StringPtrInput
 	// (Updatable) The search query that is saved.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Query pulumi.StringPtrInput
 	// The state of the LogSavedSearch
 	State pulumi.StringPtrInput
@@ -173,6 +182,9 @@ type logSavedSearchArgs struct {
 	// (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
 	Name *string `pulumi:"name"`
 	// (Updatable) The search query that is saved.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Query string `pulumi:"query"`
 }
 
@@ -189,6 +201,9 @@ type LogSavedSearchArgs struct {
 	// (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
 	Name pulumi.StringPtrInput
 	// (Updatable) The search query that is saved.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Query pulumi.StringInput
 }
 
@@ -305,6 +320,9 @@ func (o LogSavedSearchOutput) Name() pulumi.StringOutput {
 }
 
 // (Updatable) The search query that is saved.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o LogSavedSearchOutput) Query() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogSavedSearch) pulumi.StringOutput { return v.Query }).(pulumi.StringOutput)
 }

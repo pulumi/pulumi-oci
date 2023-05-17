@@ -72,6 +72,9 @@ type Peer struct {
 	// peer identifier
 	PeerKey pulumi.StringOutput `pulumi:"peerKey"`
 	// Peer role
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Role pulumi.StringOutput `pulumi:"role"`
 	// The current state of the peer.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -131,6 +134,9 @@ type peerState struct {
 	// peer identifier
 	PeerKey *string `pulumi:"peerKey"`
 	// Peer role
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Role *string `pulumi:"role"`
 	// The current state of the peer.
 	State *string `pulumi:"state"`
@@ -150,6 +156,9 @@ type PeerState struct {
 	// peer identifier
 	PeerKey pulumi.StringPtrInput
 	// Peer role
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Role pulumi.StringPtrInput
 	// The current state of the peer.
 	State pulumi.StringPtrInput
@@ -169,6 +178,9 @@ type peerArgs struct {
 	// (Updatable) OCPU allocation parameter
 	OcpuAllocationParam PeerOcpuAllocationParam `pulumi:"ocpuAllocationParam"`
 	// Peer role
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Role string `pulumi:"role"`
 }
 
@@ -183,6 +195,9 @@ type PeerArgs struct {
 	// (Updatable) OCPU allocation parameter
 	OcpuAllocationParam PeerOcpuAllocationParamInput
 	// Peer role
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Role pulumi.StringInput
 }
 
@@ -304,6 +319,9 @@ func (o PeerOutput) PeerKey() pulumi.StringOutput {
 }
 
 // Peer role
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PeerOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v *Peer) pulumi.StringOutput { return v.Role }).(pulumi.StringOutput)
 }

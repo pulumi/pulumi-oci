@@ -19,12 +19,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     /**
      * (Updatable) The date and time that the current resource was locked
      * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     @Import(name="lockDate")
     private @Nullable Output<String> lockDate;
 
     /**
      * @return (Updatable) The date and time that the current resource was locked
+     * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> lockDate() {
@@ -34,12 +56,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     /**
      * (Updatable) Indicates that the rev is locked
      * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="on")
     private @Nullable Output<Boolean> on;
 
     /**
      * @return (Updatable) Indicates that the rev is locked
+     * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> on() {
@@ -74,6 +120,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         /**
          * @param lockDate (Updatable) The date and time that the current resource was locked
          * 
+         * **Added In:** 19.1.4
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -85,6 +142,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         /**
          * @param lockDate (Updatable) The date and time that the current resource was locked
          * 
+         * **Added In:** 19.1.4
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -94,6 +162,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
 
         /**
          * @param on (Updatable) Indicates that the rev is locked
+         * 
+         * **Added In:** 19.1.4
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -105,6 +185,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
 
         /**
          * @param on (Updatable) Indicates that the rev is locked
+         * 
+         * **Added In:** 19.1.4
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 

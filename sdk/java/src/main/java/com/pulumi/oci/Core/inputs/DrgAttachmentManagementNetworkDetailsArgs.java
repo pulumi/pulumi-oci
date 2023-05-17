@@ -48,12 +48,20 @@ public final class DrgAttachmentManagementNetworkDetailsArgs extends com.pulumi.
     /**
      * The OCID of the route table the DRG attachment is using.
      * 
+     * For information about why you would associate a route table with a DRG attachment, see:
+     * * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+     * * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
+     * 
      */
     @Import(name="routeTableId")
     private @Nullable Output<String> routeTableId;
 
     /**
      * @return The OCID of the route table the DRG attachment is using.
+     * 
+     * For information about why you would associate a route table with a DRG attachment, see:
+     * * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+     * * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
      * 
      */
     public Optional<Output<String>> routeTableId() {
@@ -147,6 +155,10 @@ public final class DrgAttachmentManagementNetworkDetailsArgs extends com.pulumi.
         /**
          * @param routeTableId The OCID of the route table the DRG attachment is using.
          * 
+         * For information about why you would associate a route table with a DRG attachment, see:
+         * * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+         * * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
+         * 
          * @return builder
          * 
          */
@@ -157,6 +169,10 @@ public final class DrgAttachmentManagementNetworkDetailsArgs extends com.pulumi.
 
         /**
          * @param routeTableId The OCID of the route table the DRG attachment is using.
+         * 
+         * For information about why you would associate a route table with a DRG attachment, see:
+         * * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+         * * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
          * 
          * @return builder
          * 

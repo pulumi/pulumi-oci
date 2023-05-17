@@ -83,12 +83,20 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) A user-friendly name for the alarm. It does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
+     * This name is sent as the title for notifications related to this alarm.
+     * 
+     * Example: `High CPU Utilization`
+     * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name for the alarm. It does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * 
+     * This name is sent as the title for notifications related to this alarm.
+     * 
+     * Example: `High CPU Utilization`
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -203,12 +211,28 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from &#34;OK&#34; to &#34;FIRING&#34;. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to &#34;FIRING&#34;.
      * 
+     * The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
+     * 
+     * Under the default value of PT1M, the first evaluation that breaches the alarm updates the state to &#34;FIRING&#34;.
+     * 
+     * The alarm updates its status to &#34;OK&#34; when the breaching condition has been clear for the most recent minute.
+     * 
+     * Example: `PT5M`
+     * 
      */
     @Import(name="pendingDuration")
     private @Nullable Output<String> pendingDuration;
 
     /**
      * @return (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from &#34;OK&#34; to &#34;FIRING&#34;. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to &#34;FIRING&#34;.
+     * 
+     * The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
+     * 
+     * Under the default value of PT1M, the first evaluation that breaches the alarm updates the state to &#34;FIRING&#34;.
+     * 
+     * The alarm updates its status to &#34;OK&#34; when the breaching condition has been clear for the most recent minute.
+     * 
+     * Example: `PT5M`
      * 
      */
     public Optional<Output<String>> pendingDuration() {
@@ -218,12 +242,44 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      * 
+     * Example of threshold alarm:
+     * 
+     * ***
+     * 
+     * CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.groupBy(availabilityDomain).percentile(0.9) &gt; 85
+     * 
+     * ***
+     * 
+     * Example of absence alarm:
+     * 
+     * ***
+     * 
+     * CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.absent()
+     * 
+     * ***
+     * 
      */
     @Import(name="query")
     private @Nullable Output<String> query;
 
     /**
      * @return (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+     * 
+     * Example of threshold alarm:
+     * 
+     * ***
+     * 
+     * CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.groupBy(availabilityDomain).percentile(0.9) &gt; 85
+     * 
+     * ***
+     * 
+     * Example of absence alarm:
+     * 
+     * ***
+     * 
+     * CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.absent()
+     * 
+     * ***
      * 
      */
     public Optional<Output<String>> query() {
@@ -233,12 +289,20 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The frequency at which notifications are re-submitted, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
      * 
+     * Default value: null (notifications are not re-submitted).
+     * 
+     * Example: `PT2H`
+     * 
      */
     @Import(name="repeatNotificationDuration")
     private @Nullable Output<String> repeatNotificationDuration;
 
     /**
      * @return (Updatable) The frequency at which notifications are re-submitted, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
+     * 
+     * Default value: null (notifications are not re-submitted).
+     * 
+     * Example: `PT2H`
      * 
      */
     public Optional<Output<String>> repeatNotificationDuration() {
@@ -492,6 +556,10 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param displayName (Updatable) A user-friendly name for the alarm. It does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
          * 
+         * This name is sent as the title for notifications related to this alarm.
+         * 
+         * Example: `High CPU Utilization`
+         * 
          * @return builder
          * 
          */
@@ -502,6 +570,10 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param displayName (Updatable) A user-friendly name for the alarm. It does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * 
+         * This name is sent as the title for notifications related to this alarm.
+         * 
+         * Example: `High CPU Utilization`
          * 
          * @return builder
          * 
@@ -660,6 +732,14 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param pendingDuration (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from &#34;OK&#34; to &#34;FIRING&#34;. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to &#34;FIRING&#34;.
          * 
+         * The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
+         * 
+         * Under the default value of PT1M, the first evaluation that breaches the alarm updates the state to &#34;FIRING&#34;.
+         * 
+         * The alarm updates its status to &#34;OK&#34; when the breaching condition has been clear for the most recent minute.
+         * 
+         * Example: `PT5M`
+         * 
          * @return builder
          * 
          */
@@ -671,6 +751,14 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param pendingDuration (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from &#34;OK&#34; to &#34;FIRING&#34;. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to &#34;FIRING&#34;.
          * 
+         * The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
+         * 
+         * Under the default value of PT1M, the first evaluation that breaches the alarm updates the state to &#34;FIRING&#34;.
+         * 
+         * The alarm updates its status to &#34;OK&#34; when the breaching condition has been clear for the most recent minute.
+         * 
+         * Example: `PT5M`
+         * 
          * @return builder
          * 
          */
@@ -680,6 +768,22 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param query (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+         * 
+         * Example of threshold alarm:
+         * 
+         * ***
+         * 
+         * CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.groupBy(availabilityDomain).percentile(0.9) &gt; 85
+         * 
+         * ***
+         * 
+         * Example of absence alarm:
+         * 
+         * ***
+         * 
+         * CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.absent()
+         * 
+         * ***
          * 
          * @return builder
          * 
@@ -692,6 +796,22 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param query (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
          * 
+         * Example of threshold alarm:
+         * 
+         * ***
+         * 
+         * CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.groupBy(availabilityDomain).percentile(0.9) &gt; 85
+         * 
+         * ***
+         * 
+         * Example of absence alarm:
+         * 
+         * ***
+         * 
+         * CpuUtilization[1m]{availabilityDomain=&#34;cumS:PHX-AD-1&#34;}.absent()
+         * 
+         * ***
+         * 
          * @return builder
          * 
          */
@@ -701,6 +821,10 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param repeatNotificationDuration (Updatable) The frequency at which notifications are re-submitted, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
+         * 
+         * Default value: null (notifications are not re-submitted).
+         * 
+         * Example: `PT2H`
          * 
          * @return builder
          * 
@@ -712,6 +836,10 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param repeatNotificationDuration (Updatable) The frequency at which notifications are re-submitted, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
+         * 
+         * Default value: null (notifications are not re-submitted).
+         * 
+         * Example: `PT2H`
          * 
          * @return builder
          * 

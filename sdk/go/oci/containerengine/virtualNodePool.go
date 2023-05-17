@@ -105,6 +105,9 @@ type VirtualNodePool struct {
 	// (Updatable) Display name of the virtual node pool. This is a non-unique value.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
 	InitialVirtualNodeLabels VirtualNodePoolInitialVirtualNodeLabelArrayOutput `pulumi:"initialVirtualNodeLabels"`
@@ -190,6 +193,9 @@ type virtualNodePoolState struct {
 	// (Updatable) Display name of the virtual node pool. This is a non-unique value.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
 	InitialVirtualNodeLabels []VirtualNodePoolInitialVirtualNodeLabel `pulumi:"initialVirtualNodeLabels"`
@@ -229,6 +235,9 @@ type VirtualNodePoolState struct {
 	// (Updatable) Display name of the virtual node pool. This is a non-unique value.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapInput
 	// (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
 	InitialVirtualNodeLabels VirtualNodePoolInitialVirtualNodeLabelArrayInput
@@ -272,6 +281,9 @@ type virtualNodePoolArgs struct {
 	// (Updatable) Display name of the virtual node pool. This is a non-unique value.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
 	InitialVirtualNodeLabels []VirtualNodePoolInitialVirtualNodeLabel `pulumi:"initialVirtualNodeLabels"`
@@ -300,6 +312,9 @@ type VirtualNodePoolArgs struct {
 	// (Updatable) Display name of the virtual node pool. This is a non-unique value.
 	DisplayName pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapInput
 	// (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
 	InitialVirtualNodeLabels VirtualNodePoolInitialVirtualNodeLabelArrayInput
@@ -425,6 +440,9 @@ func (o VirtualNodePoolOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o VirtualNodePoolOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *VirtualNodePool) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }

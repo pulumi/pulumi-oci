@@ -32,6 +32,10 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
 
         /// <summary>
         /// A friendly name for the backend set. It must be unique and it cannot be changed.
+        /// 
+        /// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+        /// 
+        /// Example: `example_backend_set`
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

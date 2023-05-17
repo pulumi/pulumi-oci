@@ -22,6 +22,10 @@ class ExternalAsmArgs:
         The set of arguments for constructing a ExternalAsm resource.
         :param pulumi.Input[str] external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
         :param pulumi.Input[str] external_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "external_asm_id", external_asm_id)
         if external_connector_id is not None:
@@ -44,6 +48,10 @@ class ExternalAsmArgs:
     def external_connector_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "external_connector_id")
 
@@ -79,6 +87,10 @@ class _ExternalAsmState:
         :param pulumi.Input[str] display_name: The user-friendly name for the database. The name does not have to be unique.
         :param pulumi.Input[str] external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
         :param pulumi.Input[str] external_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM is a part of.
         :param pulumi.Input[str] grid_home: The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
         :param pulumi.Input[bool] is_cluster: Indicates whether the ASM is a cluster ASM or not.
@@ -188,6 +200,10 @@ class _ExternalAsmState:
     def external_connector_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "external_connector_id")
 
@@ -341,6 +357,10 @@ class ExternalAsm(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
         :param pulumi.Input[str] external_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -444,6 +464,10 @@ class ExternalAsm(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: The user-friendly name for the database. The name does not have to be unique.
         :param pulumi.Input[str] external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
         :param pulumi.Input[str] external_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM is a part of.
         :param pulumi.Input[str] grid_home: The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
         :param pulumi.Input[bool] is_cluster: Indicates whether the ASM is a cluster ASM or not.
@@ -522,6 +546,10 @@ class ExternalAsm(pulumi.CustomResource):
     def external_connector_id(self) -> pulumi.Output[str]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "external_connector_id")
 

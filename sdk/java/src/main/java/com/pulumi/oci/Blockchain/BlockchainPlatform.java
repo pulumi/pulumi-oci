@@ -278,12 +278,18 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="loadBalancerShape", type=String.class, parameters={})
     private Output<String> loadBalancerShape;
 
     /**
      * @return (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> loadBalancerShape() {

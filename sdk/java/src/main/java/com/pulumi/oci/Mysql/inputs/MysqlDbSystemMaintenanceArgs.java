@@ -16,12 +16,28 @@ public final class MysqlDbSystemMaintenanceArgs extends com.pulumi.resources.Res
     /**
      * (Updatable) The start of the 2 hour maintenance window.
      * 
+     * This string is of the format: &#34;{day-of-week} {time-of-day}&#34;.
+     * 
+     * &#34;{day-of-week}&#34; is a case-insensitive string like &#34;mon&#34;, &#34;tue&#34;, &amp;c.
+     * 
+     * &#34;{time-of-day}&#34; is the &#34;Time&#34; portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+     * 
+     * If you set the read replica maintenance window to &#34;&#34; or if not specified, the read replica is set same as the DB system maintenance window.
+     * 
      */
     @Import(name="windowStartTime", required=true)
     private Output<String> windowStartTime;
 
     /**
      * @return (Updatable) The start of the 2 hour maintenance window.
+     * 
+     * This string is of the format: &#34;{day-of-week} {time-of-day}&#34;.
+     * 
+     * &#34;{day-of-week}&#34; is a case-insensitive string like &#34;mon&#34;, &#34;tue&#34;, &amp;c.
+     * 
+     * &#34;{time-of-day}&#34; is the &#34;Time&#34; portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+     * 
+     * If you set the read replica maintenance window to &#34;&#34; or if not specified, the read replica is set same as the DB system maintenance window.
      * 
      */
     public Output<String> windowStartTime() {
@@ -55,6 +71,14 @@ public final class MysqlDbSystemMaintenanceArgs extends com.pulumi.resources.Res
         /**
          * @param windowStartTime (Updatable) The start of the 2 hour maintenance window.
          * 
+         * This string is of the format: &#34;{day-of-week} {time-of-day}&#34;.
+         * 
+         * &#34;{day-of-week}&#34; is a case-insensitive string like &#34;mon&#34;, &#34;tue&#34;, &amp;c.
+         * 
+         * &#34;{time-of-day}&#34; is the &#34;Time&#34; portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+         * 
+         * If you set the read replica maintenance window to &#34;&#34; or if not specified, the read replica is set same as the DB system maintenance window.
+         * 
          * @return builder
          * 
          */
@@ -65,6 +89,14 @@ public final class MysqlDbSystemMaintenanceArgs extends com.pulumi.resources.Res
 
         /**
          * @param windowStartTime (Updatable) The start of the 2 hour maintenance window.
+         * 
+         * This string is of the format: &#34;{day-of-week} {time-of-day}&#34;.
+         * 
+         * &#34;{day-of-week}&#34; is a case-insensitive string like &#34;mon&#34;, &#34;tue&#34;, &amp;c.
+         * 
+         * &#34;{time-of-day}&#34; is the &#34;Time&#34; portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+         * 
+         * If you set the read replica maintenance window to &#34;&#34; or if not specified, the read replica is set same as the DB system maintenance window.
          * 
          * @return builder
          * 

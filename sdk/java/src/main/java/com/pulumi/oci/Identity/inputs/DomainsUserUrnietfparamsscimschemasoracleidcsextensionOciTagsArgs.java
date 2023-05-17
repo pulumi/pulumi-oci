@@ -21,12 +21,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
     /**
      * (Updatable) Oracle Cloud Infrastructure Defined Tags
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [namespace, key, value]
+     * * type: complex
+     * * idcsSearchable: true
+     * * required: false
+     * * mutability: readWrite
+     * * multiValued: true
+     * * returned: default
+     * 
      */
     @Import(name="definedTags")
     private @Nullable Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs>> definedTags;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Defined Tags
+     * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [namespace, key, value]
+     * * type: complex
+     * * idcsSearchable: true
+     * * required: false
+     * * mutability: readWrite
+     * * multiValued: true
+     * * returned: default
      * 
      */
     public Optional<Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs>>> definedTags() {
@@ -36,12 +58,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
     /**
      * (Updatable) Oracle Cloud Infrastructure Freeform Tags
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * type: complex
+     * * required: false
+     * * mutability: readWrite
+     * * returned: default
+     * * multiValued: true
+     * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs>> freeformTags;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Freeform Tags
+     * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * type: complex
+     * * required: false
+     * * mutability: readWrite
+     * * returned: default
+     * * multiValued: true
      * 
      */
     public Optional<Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs>>> freeformTags() {
@@ -51,12 +95,26 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
     /**
      * (Updatable) Oracle Cloud Infrastructure Tag slug
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * type: binary
+     * * mutability: readOnly
+     * * returned: request
+     * 
      */
     @Import(name="tagSlug")
     private @Nullable Output<String> tagSlug;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tag slug
+     * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * type: binary
+     * * mutability: readOnly
+     * * returned: request
      * 
      */
     public Optional<Output<String>> tagSlug() {
@@ -92,6 +150,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
         /**
          * @param definedTags (Updatable) Oracle Cloud Infrastructure Defined Tags
          * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [namespace, key, value]
+         * * type: complex
+         * * idcsSearchable: true
+         * * required: false
+         * * mutability: readWrite
+         * * multiValued: true
+         * * returned: default
+         * 
          * @return builder
          * 
          */
@@ -103,6 +172,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
         /**
          * @param definedTags (Updatable) Oracle Cloud Infrastructure Defined Tags
          * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [namespace, key, value]
+         * * type: complex
+         * * idcsSearchable: true
+         * * required: false
+         * * mutability: readWrite
+         * * multiValued: true
+         * * returned: default
+         * 
          * @return builder
          * 
          */
@@ -113,6 +193,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
         /**
          * @param definedTags (Updatable) Oracle Cloud Infrastructure Defined Tags
          * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [namespace, key, value]
+         * * type: complex
+         * * idcsSearchable: true
+         * * required: false
+         * * mutability: readWrite
+         * * multiValued: true
+         * * returned: default
+         * 
          * @return builder
          * 
          */
@@ -122,6 +213,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
 
         /**
          * @param freeformTags (Updatable) Oracle Cloud Infrastructure Freeform Tags
+         * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * type: complex
+         * * required: false
+         * * mutability: readWrite
+         * * returned: default
+         * * multiValued: true
          * 
          * @return builder
          * 
@@ -134,6 +236,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
         /**
          * @param freeformTags (Updatable) Oracle Cloud Infrastructure Freeform Tags
          * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * type: complex
+         * * required: false
+         * * mutability: readWrite
+         * * returned: default
+         * * multiValued: true
+         * 
          * @return builder
          * 
          */
@@ -143,6 +256,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
 
         /**
          * @param freeformTags (Updatable) Oracle Cloud Infrastructure Freeform Tags
+         * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * type: complex
+         * * required: false
+         * * mutability: readWrite
+         * * returned: default
+         * * multiValued: true
          * 
          * @return builder
          * 
@@ -154,6 +278,13 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
         /**
          * @param tagSlug (Updatable) Oracle Cloud Infrastructure Tag slug
          * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * type: binary
+         * * mutability: readOnly
+         * * returned: request
+         * 
          * @return builder
          * 
          */
@@ -164,6 +295,13 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
 
         /**
          * @param tagSlug (Updatable) Oracle Cloud Infrastructure Tag slug
+         * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * type: binary
+         * * mutability: readOnly
+         * * returned: request
          * 
          * @return builder
          * 

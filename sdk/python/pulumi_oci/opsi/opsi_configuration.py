@@ -41,7 +41,11 @@ class OpsiConfigurationArgs:
         :param pulumi.Input[str] display_name: (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] opsi_config_fields: Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "opsi_config_type", opsi_config_type)
         if compartment_id is not None:
@@ -203,7 +207,11 @@ class OpsiConfigurationArgs:
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "system_tags")
 
@@ -246,7 +254,11 @@ class _OpsiConfigurationState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] opsi_config_fields: Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
         :param pulumi.Input[str] opsi_config_type: (Updatable) OPSI configuration type.
         :param pulumi.Input[str] state: OPSI configuration resource lifecycle state.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
         """
@@ -443,7 +455,11 @@ class _OpsiConfigurationState:
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "system_tags")
 
@@ -549,7 +565,11 @@ class OpsiConfiguration(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] opsi_config_fields: Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
         :param pulumi.Input[str] opsi_config_type: (Updatable) OPSI configuration type.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -699,7 +719,11 @@ class OpsiConfiguration(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] opsi_config_fields: Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
         :param pulumi.Input[str] opsi_config_type: (Updatable) OPSI configuration type.
         :param pulumi.Input[str] state: OPSI configuration resource lifecycle state.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
         """
@@ -833,7 +857,11 @@ class OpsiConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
-        (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "system_tags")
 

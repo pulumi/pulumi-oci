@@ -60,6 +60,10 @@ type Certificate struct {
 	pulumi.CustomResourceState
 
 	// The data of the SSL certificate.
+	//
+	// **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status. If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you are unsure if your certificate requires an intermediate certificate chain, see your certificate provider's documentation.
+	//
+	// The example below shows an intermediate certificate appended to a leaf certificate.
 	CertificateData pulumi.StringOutput `pulumi:"certificateData"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the SSL certificate.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
@@ -77,6 +81,9 @@ type Certificate struct {
 	// The issuer of the certificate.
 	IssuerNames CertificateIssuerNameArrayOutput `pulumi:"issuerNames"`
 	// The private key of the SSL certificate.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PrivateKeyData pulumi.StringOutput `pulumi:"privateKeyData"`
 	// Information about the public key and the algorithm used by the public key.
 	PublicKeyInfos CertificatePublicKeyInfoArrayOutput `pulumi:"publicKeyInfos"`
@@ -144,6 +151,10 @@ func GetCertificate(ctx *pulumi.Context,
 // Input properties used for looking up and filtering Certificate resources.
 type certificateState struct {
 	// The data of the SSL certificate.
+	//
+	// **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status. If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you are unsure if your certificate requires an intermediate certificate chain, see your certificate provider's documentation.
+	//
+	// The example below shows an intermediate certificate appended to a leaf certificate.
 	CertificateData *string `pulumi:"certificateData"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the SSL certificate.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -161,6 +172,9 @@ type certificateState struct {
 	// The issuer of the certificate.
 	IssuerNames []CertificateIssuerName `pulumi:"issuerNames"`
 	// The private key of the SSL certificate.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PrivateKeyData *string `pulumi:"privateKeyData"`
 	// Information about the public key and the algorithm used by the public key.
 	PublicKeyInfos []CertificatePublicKeyInfo `pulumi:"publicKeyInfos"`
@@ -184,6 +198,10 @@ type certificateState struct {
 
 type CertificateState struct {
 	// The data of the SSL certificate.
+	//
+	// **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status. If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you are unsure if your certificate requires an intermediate certificate chain, see your certificate provider's documentation.
+	//
+	// The example below shows an intermediate certificate appended to a leaf certificate.
 	CertificateData pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the SSL certificate.
 	CompartmentId pulumi.StringPtrInput
@@ -201,6 +219,9 @@ type CertificateState struct {
 	// The issuer of the certificate.
 	IssuerNames CertificateIssuerNameArrayInput
 	// The private key of the SSL certificate.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PrivateKeyData pulumi.StringPtrInput
 	// Information about the public key and the algorithm used by the public key.
 	PublicKeyInfos CertificatePublicKeyInfoArrayInput
@@ -228,6 +249,10 @@ func (CertificateState) ElementType() reflect.Type {
 
 type certificateArgs struct {
 	// The data of the SSL certificate.
+	//
+	// **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status. If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you are unsure if your certificate requires an intermediate certificate chain, see your certificate provider's documentation.
+	//
+	// The example below shows an intermediate certificate appended to a leaf certificate.
 	CertificateData string `pulumi:"certificateData"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the SSL certificate.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -240,12 +265,19 @@ type certificateArgs struct {
 	// Set to `true` if the SSL certificate is self-signed.
 	IsTrustVerificationDisabled *bool `pulumi:"isTrustVerificationDisabled"`
 	// The private key of the SSL certificate.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PrivateKeyData string `pulumi:"privateKeyData"`
 }
 
 // The set of arguments for constructing a Certificate resource.
 type CertificateArgs struct {
 	// The data of the SSL certificate.
+	//
+	// **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status. If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you are unsure if your certificate requires an intermediate certificate chain, see your certificate provider's documentation.
+	//
+	// The example below shows an intermediate certificate appended to a leaf certificate.
 	CertificateData pulumi.StringInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the SSL certificate.
 	CompartmentId pulumi.StringInput
@@ -258,6 +290,9 @@ type CertificateArgs struct {
 	// Set to `true` if the SSL certificate is self-signed.
 	IsTrustVerificationDisabled pulumi.BoolPtrInput
 	// The private key of the SSL certificate.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PrivateKeyData pulumi.StringInput
 }
 
@@ -349,6 +384,10 @@ func (o CertificateOutput) ToCertificateOutputWithContext(ctx context.Context) C
 }
 
 // The data of the SSL certificate.
+//
+// **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status. If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you are unsure if your certificate requires an intermediate certificate chain, see your certificate provider's documentation.
+//
+// The example below shows an intermediate certificate appended to a leaf certificate.
 func (o CertificateOutput) CertificateData() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.CertificateData }).(pulumi.StringOutput)
 }
@@ -393,6 +432,9 @@ func (o CertificateOutput) IssuerNames() CertificateIssuerNameArrayOutput {
 }
 
 // The private key of the SSL certificate.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CertificateOutput) PrivateKeyData() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.PrivateKeyData }).(pulumi.StringOutput)
 }

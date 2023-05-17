@@ -93,6 +93,9 @@ type AnnouncementSubscription struct {
 	// (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
 	PreferredLanguage pulumi.StringOutput `pulumi:"preferredLanguage"`
 	// (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PreferredTimeZone pulumi.StringOutput `pulumi:"preferredTimeZone"`
 	// The current lifecycle state of the announcement subscription.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -161,6 +164,9 @@ type announcementSubscriptionState struct {
 	// (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
 	PreferredLanguage *string `pulumi:"preferredLanguage"`
 	// (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PreferredTimeZone *string `pulumi:"preferredTimeZone"`
 	// The current lifecycle state of the announcement subscription.
 	State *string `pulumi:"state"`
@@ -192,6 +198,9 @@ type AnnouncementSubscriptionState struct {
 	// (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
 	PreferredLanguage pulumi.StringPtrInput
 	// (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PreferredTimeZone pulumi.StringPtrInput
 	// The current lifecycle state of the announcement subscription.
 	State pulumi.StringPtrInput
@@ -225,6 +234,9 @@ type announcementSubscriptionArgs struct {
 	// (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
 	PreferredLanguage *string `pulumi:"preferredLanguage"`
 	// (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PreferredTimeZone *string `pulumi:"preferredTimeZone"`
 }
 
@@ -247,6 +259,9 @@ type AnnouncementSubscriptionArgs struct {
 	// (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
 	PreferredLanguage pulumi.StringPtrInput
 	// (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PreferredTimeZone pulumi.StringPtrInput
 }
 
@@ -383,6 +398,9 @@ func (o AnnouncementSubscriptionOutput) PreferredLanguage() pulumi.StringOutput 
 }
 
 // (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AnnouncementSubscriptionOutput) PreferredTimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v *AnnouncementSubscription) pulumi.StringOutput { return v.PreferredTimeZone }).(pulumi.StringOutput)
 }

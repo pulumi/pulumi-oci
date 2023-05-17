@@ -28,6 +28,10 @@ class PathAnalysiArgs:
         """
         The set of arguments for constructing a PathAnalysi resource.
         :param pulumi.Input[str] type: The type of the `PathAnalysis` query.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] cache_control: The Cache-Control HTTP header holds directives (instructions) for caching in both requests and responses.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
         :param pulumi.Input['PathAnalysiDestinationEndpointArgs'] destination_endpoint: Information describing a source or destination in a `PathAnalyzerTest` resource.
@@ -60,6 +64,10 @@ class PathAnalysiArgs:
     def type(self) -> pulumi.Input[str]:
         """
         The type of the `PathAnalysis` query.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -187,6 +195,10 @@ class _PathAnalysiState:
         :param pulumi.Input['PathAnalysiQueryOptionsArgs'] query_options: Defines the query options required for a `PathAnalyzerTest` resource.
         :param pulumi.Input['PathAnalysiSourceEndpointArgs'] source_endpoint: Information describing a source or destination in a `PathAnalyzerTest` resource.
         :param pulumi.Input[str] type: The type of the `PathAnalysis` query.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if cache_control is not None:
             pulumi.set(__self__, "cache_control", cache_control)
@@ -308,6 +320,10 @@ class _PathAnalysiState:
     def type(self) -> Optional[pulumi.Input[str]]:
         """
         The type of the `PathAnalysis` query.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -408,6 +424,10 @@ class PathAnalysi(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['PathAnalysiQueryOptionsArgs']] query_options: Defines the query options required for a `PathAnalyzerTest` resource.
         :param pulumi.Input[pulumi.InputType['PathAnalysiSourceEndpointArgs']] source_endpoint: Information describing a source or destination in a `PathAnalyzerTest` resource.
         :param pulumi.Input[str] type: The type of the `PathAnalysis` query.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -560,6 +580,10 @@ class PathAnalysi(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['PathAnalysiQueryOptionsArgs']] query_options: Defines the query options required for a `PathAnalyzerTest` resource.
         :param pulumi.Input[pulumi.InputType['PathAnalysiSourceEndpointArgs']] source_endpoint: Information describing a source or destination in a `PathAnalyzerTest` resource.
         :param pulumi.Input[str] type: The type of the `PathAnalysis` query.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -645,6 +669,10 @@ class PathAnalysi(pulumi.CustomResource):
     def type(self) -> pulumi.Output[str]:
         """
         The type of the `PathAnalysis` query.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 

@@ -68,6 +68,8 @@ export class Resolver extends pulumi.CustomResource {
     public /*out*/ readonly defaultViewId!: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * **Example:** `{"Operations": {"CostCenter": "42"}}`
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -80,6 +82,8 @@ export class Resolver extends pulumi.CustomResource {
     public /*out*/ readonly endpoints!: pulumi.Output<outputs.Dns.ResolverEndpoint[]>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * **Example:** `{"Department": "Finance"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -95,7 +99,11 @@ export class Resolver extends pulumi.CustomResource {
      */
     public readonly rules!: pulumi.Output<outputs.Dns.ResolverRule[] | undefined>;
     /**
-     * If specified, must be `PRIVATE` when creating private name resolvers.
+     * If specified, must be `PRIVATE` when creating private name resolvers. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly scope!: pulumi.Output<string | undefined>;
     /**
@@ -193,6 +201,8 @@ export interface ResolverState {
     defaultViewId?: pulumi.Input<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * **Example:** `{"Operations": {"CostCenter": "42"}}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -205,6 +215,8 @@ export interface ResolverState {
     endpoints?: pulumi.Input<pulumi.Input<inputs.Dns.ResolverEndpoint>[]>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * **Example:** `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -220,7 +232,11 @@ export interface ResolverState {
      */
     rules?: pulumi.Input<pulumi.Input<inputs.Dns.ResolverRule>[]>;
     /**
-     * If specified, must be `PRIVATE` when creating private name resolvers.
+     * If specified, must be `PRIVATE` when creating private name resolvers. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     scope?: pulumi.Input<string>;
     /**
@@ -255,6 +271,8 @@ export interface ResolverArgs {
     compartmentId?: pulumi.Input<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * **Example:** `{"Operations": {"CostCenter": "42"}}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -263,6 +281,8 @@ export interface ResolverArgs {
     displayName?: pulumi.Input<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * **Example:** `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -274,7 +294,11 @@ export interface ResolverArgs {
      */
     rules?: pulumi.Input<pulumi.Input<inputs.Dns.ResolverRule>[]>;
     /**
-     * If specified, must be `PRIVATE` when creating private name resolvers.
+     * If specified, must be `PRIVATE` when creating private name resolvers. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     scope?: pulumi.Input<string>;
 }

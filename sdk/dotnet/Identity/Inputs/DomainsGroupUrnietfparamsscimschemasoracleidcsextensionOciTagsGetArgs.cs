@@ -17,6 +17,17 @@ namespace Pulumi.Oci.Identity.Inputs
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Defined Tags
+        /// 
+        /// **Added In:** 2011192329
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [namespace, key, value]
+        /// * type: complex
+        /// * idcsSearchable: true
+        /// * required: false
+        /// * mutability: readWrite
+        /// * multiValued: true
+        /// * returned: default
         /// </summary>
         public InputList<Inputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagGetArgs> DefinedTags
         {
@@ -29,6 +40,17 @@ namespace Pulumi.Oci.Identity.Inputs
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Freeform Tags
+        /// 
+        /// **Added In:** 2011192329
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [key, value]
+        /// * idcsSearchable: true
+        /// * type: complex
+        /// * required: false
+        /// * mutability: readWrite
+        /// * returned: default
+        /// * multiValued: true
         /// </summary>
         public InputList<Inputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagGetArgs> FreeformTags
         {
@@ -38,6 +60,13 @@ namespace Pulumi.Oci.Identity.Inputs
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Tag slug
+        /// 
+        /// **Added In:** 2011192329
+        /// 
+        /// **SCIM++ Properties:**
+        /// * type: binary
+        /// * mutability: readOnly
+        /// * returned: request
         /// </summary>
         [Input("tagSlug")]
         public Input<string>? TagSlug { get; set; }

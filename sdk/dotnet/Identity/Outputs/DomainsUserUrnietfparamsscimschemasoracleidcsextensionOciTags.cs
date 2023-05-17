@@ -15,14 +15,43 @@ namespace Pulumi.Oci.Identity.Outputs
     {
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Defined Tags
+        /// 
+        /// **Added In:** 2011192329
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [namespace, key, value]
+        /// * type: complex
+        /// * idcsSearchable: true
+        /// * required: false
+        /// * mutability: readWrite
+        /// * multiValued: true
+        /// * returned: default
         /// </summary>
         public readonly ImmutableArray<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTag> DefinedTags;
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Freeform Tags
+        /// 
+        /// **Added In:** 2011192329
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [key, value]
+        /// * idcsSearchable: true
+        /// * type: complex
+        /// * required: false
+        /// * mutability: readWrite
+        /// * returned: default
+        /// * multiValued: true
         /// </summary>
         public readonly ImmutableArray<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTag> FreeformTags;
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Tag slug
+        /// 
+        /// **Added In:** 2011192329
+        /// 
+        /// **SCIM++ Properties:**
+        /// * type: binary
+        /// * mutability: readOnly
+        /// * returned: request
         /// </summary>
         public readonly string? TagSlug;
 

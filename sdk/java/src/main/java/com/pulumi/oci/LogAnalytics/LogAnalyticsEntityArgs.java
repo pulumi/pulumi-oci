@@ -185,12 +185,18 @@ public final class LogAnalyticsEntityArgs extends com.pulumi.resources.ResourceA
     /**
      * (Updatable) The timezone region of the log analytics entity.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="timezoneRegion")
     private @Nullable Output<String> timezoneRegion;
 
     /**
      * @return (Updatable) The timezone region of the log analytics entity.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> timezoneRegion() {
@@ -466,6 +472,9 @@ public final class LogAnalyticsEntityArgs extends com.pulumi.resources.ResourceA
         /**
          * @param timezoneRegion (Updatable) The timezone region of the log analytics entity.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -476,6 +485,9 @@ public final class LogAnalyticsEntityArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param timezoneRegion (Updatable) The timezone region of the log analytics entity.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

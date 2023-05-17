@@ -77,6 +77,9 @@ namespace Pulumi.Oci.Mysql
 
         /// <summary>
         /// (Updatable) The target state for the HeatWave cluster. Could be set to `ACTIVE` or `INACTIVE`.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -159,6 +162,9 @@ namespace Pulumi.Oci.Mysql
 
         /// <summary>
         /// (Updatable) The target state for the HeatWave cluster. Could be set to `ACTIVE` or `INACTIVE`.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -209,6 +215,9 @@ namespace Pulumi.Oci.Mysql
 
         /// <summary>
         /// (Updatable) The target state for the HeatWave cluster. Could be set to `ACTIVE` or `INACTIVE`.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

@@ -66,12 +66,36 @@ public final class DomainsDynamicResourceGroupArgs extends com.pulumi.resources.
     /**
      * (Updatable) text that explains the purpose of this Dynamic Resource Group
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Description
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Description]]
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return (Updatable) text that explains the purpose of this Dynamic Resource Group
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Description
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Description]]
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> description() {
@@ -81,12 +105,34 @@ public final class DomainsDynamicResourceGroupArgs extends com.pulumi.resources.
     /**
      * (Updatable) User-friendly, mutable identifier
      * 
+     * **SCIM++ Properties:**
+     * * idcsCsvAttributeName: Display Name
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Name, deprecatedColumnHeaderName:Display Name]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: string
+     * * uniqueness: global
+     * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
      * @return (Updatable) User-friendly, mutable identifier
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCsvAttributeName: Display Name
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Name, deprecatedColumnHeaderName:Display Name]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: string
+     * * uniqueness: global
      * 
      */
     public Output<String> displayName() {
@@ -111,12 +157,30 @@ public final class DomainsDynamicResourceGroupArgs extends com.pulumi.resources.
     /**
      * (Updatable) Store as a string the matching-rule for this Dynamic Resource Group. This may match any number of Apps in this Domain, as well as matching any number of Oracle Cloud Infrastructure resources that are not in any Domain but that are in the Oracle Cloud Infrastructure Compartment that contains this Domain.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="matchingRule", required=true)
     private Output<String> matchingRule;
 
     /**
      * @return (Updatable) Store as a string the matching-rule for this Dynamic Resource Group. This may match any number of Apps in this Domain, as well as matching any number of Oracle Cloud Infrastructure resources that are not in any Domain but that are in the Oracle Cloud Infrastructure Compartment that contains this Domain.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> matchingRule() {
@@ -126,12 +190,32 @@ public final class DomainsDynamicResourceGroupArgs extends com.pulumi.resources.
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: global
+     * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
      * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: global
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -156,12 +240,32 @@ public final class DomainsDynamicResourceGroupArgs extends com.pulumi.resources.
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="schemas", required=true)
     private Output<List<String>> schemas;
 
     /**
      * @return (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<List<String>> schemas() {
@@ -171,12 +275,32 @@ public final class DomainsDynamicResourceGroupArgs extends com.pulumi.resources.
     /**
      * (Updatable) A list of tags on this resource.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<DomainsDynamicResourceGroupTagArgs>> tags;
 
     /**
      * @return (Updatable) A list of tags on this resource.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsDynamicResourceGroupTagArgs>>> tags() {
@@ -309,6 +433,18 @@ public final class DomainsDynamicResourceGroupArgs extends com.pulumi.resources.
         /**
          * @param description (Updatable) text that explains the purpose of this Dynamic Resource Group
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Description
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Description]]
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -320,6 +456,18 @@ public final class DomainsDynamicResourceGroupArgs extends com.pulumi.resources.
         /**
          * @param description (Updatable) text that explains the purpose of this Dynamic Resource Group
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Description
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Description]]
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -329,6 +477,17 @@ public final class DomainsDynamicResourceGroupArgs extends com.pulumi.resources.
 
         /**
          * @param displayName (Updatable) User-friendly, mutable identifier
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCsvAttributeName: Display Name
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Name, deprecatedColumnHeaderName:Display Name]]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: always
+         * * type: string
+         * * uniqueness: global
          * 
          * @return builder
          * 
@@ -340,6 +499,17 @@ public final class DomainsDynamicResourceGroupArgs extends com.pulumi.resources.
 
         /**
          * @param displayName (Updatable) User-friendly, mutable identifier
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCsvAttributeName: Display Name
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Name, deprecatedColumnHeaderName:Display Name]]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: always
+         * * type: string
+         * * uniqueness: global
          * 
          * @return builder
          * 
@@ -372,6 +542,15 @@ public final class DomainsDynamicResourceGroupArgs extends com.pulumi.resources.
         /**
          * @param matchingRule (Updatable) Store as a string the matching-rule for this Dynamic Resource Group. This may match any number of Apps in this Domain, as well as matching any number of Oracle Cloud Infrastructure resources that are not in any Domain but that are in the Oracle Cloud Infrastructure Compartment that contains this Domain.
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -383,6 +562,15 @@ public final class DomainsDynamicResourceGroupArgs extends com.pulumi.resources.
         /**
          * @param matchingRule (Updatable) Store as a string the matching-rule for this Dynamic Resource Group. This may match any number of Apps in this Domain, as well as matching any number of Oracle Cloud Infrastructure resources that are not in any Domain but that are in the Oracle Cloud Infrastructure Compartment that contains this Domain.
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -392,6 +580,16 @@ public final class DomainsDynamicResourceGroupArgs extends com.pulumi.resources.
 
         /**
          * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
          * 
          * @return builder
          * 
@@ -403,6 +601,16 @@ public final class DomainsDynamicResourceGroupArgs extends com.pulumi.resources.
 
         /**
          * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
          * 
          * @return builder
          * 
@@ -435,6 +643,16 @@ public final class DomainsDynamicResourceGroupArgs extends com.pulumi.resources.
         /**
          * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -446,6 +664,16 @@ public final class DomainsDynamicResourceGroupArgs extends com.pulumi.resources.
         /**
          * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -456,6 +684,16 @@ public final class DomainsDynamicResourceGroupArgs extends com.pulumi.resources.
         /**
          * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -465,6 +703,16 @@ public final class DomainsDynamicResourceGroupArgs extends com.pulumi.resources.
 
         /**
          * @param tags (Updatable) A list of tags on this resource.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -477,6 +725,16 @@ public final class DomainsDynamicResourceGroupArgs extends com.pulumi.resources.
         /**
          * @param tags (Updatable) A list of tags on this resource.
          * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -486,6 +744,16 @@ public final class DomainsDynamicResourceGroupArgs extends com.pulumi.resources.
 
         /**
          * @param tags (Updatable) A list of tags on this resource.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 

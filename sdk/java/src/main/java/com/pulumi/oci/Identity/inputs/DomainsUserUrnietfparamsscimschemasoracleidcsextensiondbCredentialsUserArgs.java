@@ -19,12 +19,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCrede
     /**
      * (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
      * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="dbLoginAttempts")
     private @Nullable Output<Integer> dbLoginAttempts;
 
     /**
      * @return (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
+     * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> dbLoginAttempts() {
@@ -34,12 +56,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCrede
     /**
      * (Updatable) The Database User Name
      * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * type: string
+     * * returned: request
+     * * caseExact: false
+     * * uniqueness: none
+     * * idcsSearchable: true
+     * 
      */
     @Import(name="dbUserName")
     private @Nullable Output<String> dbUserName;
 
     /**
      * @return (Updatable) The Database User Name
+     * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * type: string
+     * * returned: request
+     * * caseExact: false
+     * * uniqueness: none
+     * * idcsSearchable: true
      * 
      */
     public Optional<Output<String>> dbUserName() {
@@ -74,6 +120,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCrede
         /**
          * @param dbLoginAttempts (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
          * 
+         * **Added In:** 2102181953
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -85,6 +142,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCrede
         /**
          * @param dbLoginAttempts (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
          * 
+         * **Added In:** 2102181953
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -94,6 +162,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCrede
 
         /**
          * @param dbUserName (Updatable) The Database User Name
+         * 
+         * **Added In:** 2102181953
+         * 
+         * **SCIM++ Properties:**
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * type: string
+         * * returned: request
+         * * caseExact: false
+         * * uniqueness: none
+         * * idcsSearchable: true
          * 
          * @return builder
          * 
@@ -105,6 +185,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCrede
 
         /**
          * @param dbUserName (Updatable) The Database User Name
+         * 
+         * **Added In:** 2102181953
+         * 
+         * **SCIM++ Properties:**
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * type: string
+         * * returned: request
+         * * caseExact: false
+         * * uniqueness: none
+         * * idcsSearchable: true
          * 
          * @return builder
          * 

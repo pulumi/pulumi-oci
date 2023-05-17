@@ -111,7 +111,11 @@ export class VirtualService extends pulumi.CustomResource {
      */
     public readonly mtls!: pulumi.Output<outputs.ServiceMesh.VirtualServiceMtls>;
     /**
-     * A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
+     * A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly name!: pulumi.Output<string>;
     /**
@@ -227,7 +231,11 @@ export interface VirtualServiceState {
      */
     mtls?: pulumi.Input<inputs.ServiceMesh.VirtualServiceMtls>;
     /**
-     * A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
+     * A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     name?: pulumi.Input<string>;
     /**
@@ -285,7 +293,11 @@ export interface VirtualServiceArgs {
      */
     mtls?: pulumi.Input<inputs.ServiceMesh.VirtualServiceMtls>;
     /**
-     * A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
+     * A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     name?: pulumi.Input<string>;
 }

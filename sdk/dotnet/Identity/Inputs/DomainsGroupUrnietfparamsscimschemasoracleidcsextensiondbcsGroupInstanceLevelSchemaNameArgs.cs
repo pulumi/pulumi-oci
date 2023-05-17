@@ -14,12 +14,36 @@ namespace Pulumi.Oci.Identity.Inputs
     {
         /// <summary>
         /// (Updatable) App Id of DBCS App instance
+        /// 
+        /// **Added In:** 18.2.4
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("dbInstanceId", required: true)]
         public Input<string> DbInstanceId { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) The DBCS schema-name granted to this Group for the DB instance that 'dbInstanceId' specifies.
+        /// 
+        /// **Added In:** 18.2.4
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("schemaName", required: true)]
         public Input<string> SchemaName { get; set; } = null!;

@@ -67,6 +67,9 @@ type Catalog struct {
 	// (Updatable) The display name of the service catalog.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The lifecycle state of the service catalog.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -118,6 +121,9 @@ type catalogState struct {
 	// (Updatable) The display name of the service catalog.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The lifecycle state of the service catalog.
 	State *string `pulumi:"state"`
@@ -135,6 +141,9 @@ type CatalogState struct {
 	// (Updatable) The display name of the service catalog.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapInput
 	// The lifecycle state of the service catalog.
 	State pulumi.StringPtrInput
@@ -156,6 +165,9 @@ type catalogArgs struct {
 	// (Updatable) The display name of the service catalog.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 }
 
@@ -168,6 +180,9 @@ type CatalogArgs struct {
 	// (Updatable) The display name of the service catalog.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapInput
 }
 
@@ -274,6 +289,9 @@ func (o CatalogOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CatalogOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Catalog) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }

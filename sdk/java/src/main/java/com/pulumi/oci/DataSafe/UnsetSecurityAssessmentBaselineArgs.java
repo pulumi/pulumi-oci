@@ -16,12 +16,18 @@ public final class UnsetSecurityAssessmentBaselineArgs extends com.pulumi.resour
     /**
      * The OCID of the security assessment.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="securityAssessmentId", required=true)
     private Output<String> securityAssessmentId;
 
     /**
      * @return The OCID of the security assessment.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> securityAssessmentId() {
@@ -55,6 +61,9 @@ public final class UnsetSecurityAssessmentBaselineArgs extends com.pulumi.resour
         /**
          * @param securityAssessmentId The OCID of the security assessment.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -65,6 +74,9 @@ public final class UnsetSecurityAssessmentBaselineArgs extends com.pulumi.resour
 
         /**
          * @param securityAssessmentId The OCID of the security assessment.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

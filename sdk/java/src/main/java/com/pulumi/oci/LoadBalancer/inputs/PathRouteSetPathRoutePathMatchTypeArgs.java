@@ -20,6 +20,11 @@ public final class PathRouteSetPathRoutePathMatchTypeArgs extends com.pulumi.res
      * *  **PREFIX_MATCH** - Looks for a `path` string that matches the beginning portion of the incoming URI path.
      * *  **SUFFIX_MATCH** - Looks for a `path` string that matches the ending portion of the incoming URI path.
      * 
+     * For a full description of how the system handles `matchType` in a path route set containing multiple rules, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="matchType", required=true)
     private Output<String> matchType;
@@ -30,6 +35,11 @@ public final class PathRouteSetPathRoutePathMatchTypeArgs extends com.pulumi.res
      * *  **FORCE_LONGEST_PREFIX_MATCH** - Looks for the `path` string with the best, longest match of the beginning portion of the incoming URI path.
      * *  **PREFIX_MATCH** - Looks for a `path` string that matches the beginning portion of the incoming URI path.
      * *  **SUFFIX_MATCH** - Looks for a `path` string that matches the ending portion of the incoming URI path.
+     * 
+     * For a full description of how the system handles `matchType` in a path route set containing multiple rules, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> matchType() {
@@ -67,6 +77,11 @@ public final class PathRouteSetPathRoutePathMatchTypeArgs extends com.pulumi.res
          * *  **PREFIX_MATCH** - Looks for a `path` string that matches the beginning portion of the incoming URI path.
          * *  **SUFFIX_MATCH** - Looks for a `path` string that matches the ending portion of the incoming URI path.
          * 
+         * For a full description of how the system handles `matchType` in a path route set containing multiple rules, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -81,6 +96,11 @@ public final class PathRouteSetPathRoutePathMatchTypeArgs extends com.pulumi.res
          * *  **FORCE_LONGEST_PREFIX_MATCH** - Looks for the `path` string with the best, longest match of the beginning portion of the incoming URI path.
          * *  **PREFIX_MATCH** - Looks for a `path` string that matches the beginning portion of the incoming URI path.
          * *  **SUFFIX_MATCH** - Looks for a `path` string that matches the ending portion of the incoming URI path.
+         * 
+         * For a full description of how the system handles `matchType` in a path route set containing multiple rules, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

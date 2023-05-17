@@ -14,12 +14,30 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
     /**
      * @return (Updatable) A list of kerberos realm users for an Oracle Cloud Infrastructure IAM User
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     private @Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser> realmUsers;
 
     private DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser() {}
     /**
      * @return (Updatable) A list of kerberos realm users for an Oracle Cloud Infrastructure IAM User
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser> realmUsers() {

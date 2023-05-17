@@ -1030,6 +1030,9 @@ type MonitoredResourceAdditionalCredential struct {
 	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 	Source *string `pulumi:"source"`
 	// Monitored Resource Type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type *string `pulumi:"type"`
 }
 
@@ -1061,6 +1064,9 @@ type MonitoredResourceAdditionalCredentialArgs struct {
 	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 	Source pulumi.StringPtrInput `pulumi:"source"`
 	// Monitored Resource Type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -1151,6 +1157,9 @@ func (o MonitoredResourceAdditionalCredentialOutput) Source() pulumi.StringPtrOu
 }
 
 // Monitored Resource Type.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MonitoredResourceAdditionalCredentialOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceAdditionalCredential) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -1648,6 +1657,9 @@ type MonitoredResourceCredentials struct {
 	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 	Source *string `pulumi:"source"`
 	// Monitored Resource Type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type *string `pulumi:"type"`
 }
 
@@ -1679,6 +1691,9 @@ type MonitoredResourceCredentialsArgs struct {
 	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 	Source pulumi.StringPtrInput `pulumi:"source"`
 	// Monitored Resource Type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -1793,6 +1808,9 @@ func (o MonitoredResourceCredentialsOutput) Source() pulumi.StringPtrOutput {
 }
 
 // Monitored Resource Type.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MonitoredResourceCredentialsOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceCredentials) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -1885,6 +1903,9 @@ func (o MonitoredResourceCredentialsPtrOutput) Source() pulumi.StringPtrOutput {
 }
 
 // Monitored Resource Type.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MonitoredResourceCredentialsPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourceCredentials) *string {
 		if v == nil {
@@ -3193,6 +3214,9 @@ type MonitoredResourcesSearchItem struct {
 	// Monitored resource update time. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// A filter to return resources that match resource type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type *string `pulumi:"type"`
 }
 
@@ -3235,6 +3259,9 @@ type MonitoredResourcesSearchItemArgs struct {
 	// Monitored resource update time. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// A filter to return resources that match resource type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -3355,6 +3382,9 @@ func (o MonitoredResourcesSearchItemOutput) TimeUpdated() pulumi.StringPtrOutput
 }
 
 // A filter to return resources that match resource type.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MonitoredResourcesSearchItemOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchItem) *string { return v.Type }).(pulumi.StringPtrOutput)
 }

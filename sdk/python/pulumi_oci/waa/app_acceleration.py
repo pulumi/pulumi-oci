@@ -28,6 +28,10 @@ class AppAccelerationArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[str] load_balancer_id: LoadBalancer [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the WebAppAccelerationPolicy is attached to.
         :param pulumi.Input[str] web_app_acceleration_policy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppAccelerationPolicy, which is attached to the resource.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) WebAppAcceleration display name, can be renamed.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -87,6 +91,10 @@ class AppAccelerationArgs:
     def web_app_acceleration_policy_id(self) -> pulumi.Input[str]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppAccelerationPolicy, which is attached to the resource.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "web_app_acceleration_policy_id")
 
@@ -172,6 +180,10 @@ class _AppAccelerationState:
         :param pulumi.Input[str] time_created: The time the WebAppAcceleration was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the WebAppAcceleration was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] web_app_acceleration_policy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppAccelerationPolicy, which is attached to the resource.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if backend_type is not None:
             pulumi.set(__self__, "backend_type", backend_type)
@@ -335,6 +347,10 @@ class _AppAccelerationState:
     def web_app_acceleration_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppAccelerationPolicy, which is attached to the resource.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "web_app_acceleration_policy_id")
 
@@ -401,6 +417,10 @@ class AppAcceleration(pulumi.CustomResource):
         :param pulumi.Input[str] load_balancer_id: LoadBalancer [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the WebAppAccelerationPolicy is attached to.
         :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] web_app_acceleration_policy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppAccelerationPolicy, which is attached to the resource.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -535,6 +555,10 @@ class AppAcceleration(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The time the WebAppAcceleration was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the WebAppAcceleration was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] web_app_acceleration_policy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppAccelerationPolicy, which is attached to the resource.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -647,6 +671,10 @@ class AppAcceleration(pulumi.CustomResource):
     def web_app_acceleration_policy_id(self) -> pulumi.Output[str]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppAccelerationPolicy, which is attached to the resource.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "web_app_acceleration_policy_id")
 

@@ -112,10 +112,14 @@ export interface GetUserAssessmentsArgs {
     targetId?: string;
     /**
      * A filter to return only user assessments that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using timeCreatedGreaterThanOrEqualTo parameter retrieves all assessments created after that date.
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
      */
     timeCreatedGreaterThanOrEqualTo?: string;
     /**
      * Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
      */
     timeCreatedLessThan?: string;
     /**
@@ -266,10 +270,14 @@ export interface GetUserAssessmentsOutputArgs {
     targetId?: pulumi.Input<string>;
     /**
      * A filter to return only user assessments that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using timeCreatedGreaterThanOrEqualTo parameter retrieves all assessments created after that date.
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
      */
     timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string>;
     /**
      * Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
      */
     timeCreatedLessThan?: pulumi.Input<string>;
     /**

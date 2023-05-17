@@ -15,40 +15,118 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * @return (Updatable) If true, then the role provides administrative access privileges. READ-ONLY.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     private @Nullable Boolean adminRole;
     /**
      * @return (Updatable) The ID of the App in this Grant.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable String appId;
     /**
      * @return (Updatable) The name (Client ID) of the App that defines this AppRole.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String appName;
     /**
      * @return (Updatable) A human readable name, primarily used for display purposes.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable String display;
     /**
      * @return (Updatable) The name (if any) under which this AppRole should appear in this User&#39;s group-memberships for reasons of backward compatibility. Oracle Cloud Infrastructure IAM distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String legacyGroupName;
     /**
      * @return (Updatable) User Token URI
+     * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
      * 
      */
     private @Nullable String ref;
     /**
      * @return (Updatable) A label indicating the attribute&#39;s function.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String type;
     /**
      * @return (Updatable) The value of a X509 certificate.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
@@ -57,12 +135,31 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * @return (Updatable) If true, then the role provides administrative access privileges. READ-ONLY.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     public Optional<Boolean> adminRole() {
         return Optional.ofNullable(this.adminRole);
     }
     /**
      * @return (Updatable) The ID of the App in this Grant.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> appId() {
@@ -71,12 +168,30 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * @return (Updatable) The name (Client ID) of the App that defines this AppRole.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> appName() {
         return Optional.ofNullable(this.appName);
     }
     /**
      * @return (Updatable) A human readable name, primarily used for display purposes.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> display() {
@@ -85,12 +200,32 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * @return (Updatable) The name (if any) under which this AppRole should appear in this User&#39;s group-memberships for reasons of backward compatibility. Oracle Cloud Infrastructure IAM distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> legacyGroupName() {
         return Optional.ofNullable(this.legacyGroupName);
     }
     /**
      * @return (Updatable) User Token URI
+     * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
      * 
      */
     public Optional<String> ref() {
@@ -99,12 +234,33 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * @return (Updatable) A label indicating the attribute&#39;s function.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
     /**
      * @return (Updatable) The value of a X509 certificate.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

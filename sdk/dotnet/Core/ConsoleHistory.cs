@@ -100,6 +100,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The OCID of the instance to get the console history from.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("instanceId")]
         public Output<string> InstanceId { get; private set; } = null!;
@@ -194,6 +198,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The OCID of the instance to get the console history from.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("instanceId", required: true)]
         public Input<string> InstanceId { get; set; } = null!;
@@ -250,6 +258,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The OCID of the instance to get the console history from.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }

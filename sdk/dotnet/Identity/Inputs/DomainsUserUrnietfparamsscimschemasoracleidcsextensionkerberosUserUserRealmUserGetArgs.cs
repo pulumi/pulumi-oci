@@ -14,24 +14,67 @@ namespace Pulumi.Oci.Identity.Inputs
     {
         /// <summary>
         /// (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsPii: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("principalName")]
         public Input<string>? PrincipalName { get; set; }
 
         /// <summary>
         /// (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("realmName")]
         public Input<string>? RealmName { get; set; }
 
         /// <summary>
         /// (Updatable) User Token URI
+        /// 
+        /// **Added In:** 18.4.2
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: reference
+        /// * uniqueness: none
         /// </summary>
         [Input("ref")]
         public Input<string>? Ref { get; set; }
 
         /// <summary>
         /// (Updatable) The value of a X509 certificate.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: binary
+        /// * uniqueness: none
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

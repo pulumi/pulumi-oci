@@ -257,12 +257,18 @@ public class PluggableDatabase extends com.pulumi.resources.CustomResource {
     /**
      * The existing TDE wallet password of the CDB.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="tdeWalletPassword", type=String.class, parameters={})
     private Output<String> tdeWalletPassword;
 
     /**
      * @return The existing TDE wallet password of the CDB.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> tdeWalletPassword() {

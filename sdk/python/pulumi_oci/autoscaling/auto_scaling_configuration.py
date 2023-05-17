@@ -27,9 +27,13 @@ class AutoScalingConfigurationArgs:
         """
         The set of arguments for constructing a AutoScalingConfiguration resource.
         :param pulumi.Input['AutoScalingConfigurationAutoScalingResourcesArgs'] auto_scaling_resources: A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
+               
+               Each instance pool can have one autoscaling configuration.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration.
         :param pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyArgs']]] policies: Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
         :param pulumi.Input[int] cool_down_in_seconds: (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
+               
+               For schedule-based autoscaling policies, this value is not used.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -54,6 +58,8 @@ class AutoScalingConfigurationArgs:
     def auto_scaling_resources(self) -> pulumi.Input['AutoScalingConfigurationAutoScalingResourcesArgs']:
         """
         A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
+
+        Each instance pool can have one autoscaling configuration.
         """
         return pulumi.get(self, "auto_scaling_resources")
 
@@ -90,6 +96,8 @@ class AutoScalingConfigurationArgs:
     def cool_down_in_seconds(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
+
+        For schedule-based autoscaling policies, this value is not used.
         """
         return pulumi.get(self, "cool_down_in_seconds")
 
@@ -163,8 +171,12 @@ class _AutoScalingConfigurationState:
         """
         Input properties used for looking up and filtering AutoScalingConfiguration resources.
         :param pulumi.Input['AutoScalingConfigurationAutoScalingResourcesArgs'] auto_scaling_resources: A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
+               
+               Each instance pool can have one autoscaling configuration.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration.
         :param pulumi.Input[int] cool_down_in_seconds: (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
+               
+               For schedule-based autoscaling policies, this value is not used.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -202,6 +214,8 @@ class _AutoScalingConfigurationState:
     def auto_scaling_resources(self) -> Optional[pulumi.Input['AutoScalingConfigurationAutoScalingResourcesArgs']]:
         """
         A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
+
+        Each instance pool can have one autoscaling configuration.
         """
         return pulumi.get(self, "auto_scaling_resources")
 
@@ -226,6 +240,8 @@ class _AutoScalingConfigurationState:
     def cool_down_in_seconds(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
+
+        For schedule-based autoscaling policies, this value is not used.
         """
         return pulumi.get(self, "cool_down_in_seconds")
 
@@ -416,8 +432,12 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationAutoScalingResourcesArgs']] auto_scaling_resources: A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
+               
+               Each instance pool can have one autoscaling configuration.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration.
         :param pulumi.Input[int] cool_down_in_seconds: (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
+               
+               For schedule-based autoscaling policies, this value is not used.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -577,8 +597,12 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationAutoScalingResourcesArgs']] auto_scaling_resources: A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
+               
+               Each instance pool can have one autoscaling configuration.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration.
         :param pulumi.Input[int] cool_down_in_seconds: (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
+               
+               For schedule-based autoscaling policies, this value is not used.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -610,6 +634,8 @@ class AutoScalingConfiguration(pulumi.CustomResource):
     def auto_scaling_resources(self) -> pulumi.Output['outputs.AutoScalingConfigurationAutoScalingResources']:
         """
         A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
+
+        Each instance pool can have one autoscaling configuration.
         """
         return pulumi.get(self, "auto_scaling_resources")
 
@@ -626,6 +652,8 @@ class AutoScalingConfiguration(pulumi.CustomResource):
     def cool_down_in_seconds(self) -> pulumi.Output[int]:
         """
         (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
+
+        For schedule-based autoscaling policies, this value is not used.
         """
         return pulumi.get(self, "cool_down_in_seconds")
 

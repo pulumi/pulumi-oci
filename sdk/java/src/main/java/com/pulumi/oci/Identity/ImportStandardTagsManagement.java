@@ -78,12 +78,18 @@ public class ImportStandardTagsManagement extends com.pulumi.resources.CustomRes
     /**
      * The name of standard tag namespace that will be imported in bulk
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="standardTagNamespaceName", type=String.class, parameters={})
     private Output<String> standardTagNamespaceName;
 
     /**
      * @return The name of standard tag namespace that will be imported in bulk
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> standardTagNamespaceName() {

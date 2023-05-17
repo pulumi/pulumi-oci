@@ -22,12 +22,16 @@ public final class IpsecConnectionTunnelManagementArgs extends com.pulumi.resour
     /**
      * Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
      * 
+     * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
+     * 
      */
     @Import(name="bgpSessionInfos")
     private @Nullable Output<List<IpsecConnectionTunnelManagementBgpSessionInfoArgs>> bgpSessionInfos;
 
     /**
      * @return Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+     * 
+     * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
      * 
      */
     public Optional<Output<List<IpsecConnectionTunnelManagementBgpSessionInfoArgs>>> bgpSessionInfos() {
@@ -181,6 +185,8 @@ public final class IpsecConnectionTunnelManagementArgs extends com.pulumi.resour
         /**
          * @param bgpSessionInfos Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
          * 
+         * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
+         * 
          * @return builder
          * 
          */
@@ -192,6 +198,8 @@ public final class IpsecConnectionTunnelManagementArgs extends com.pulumi.resour
         /**
          * @param bgpSessionInfos Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
          * 
+         * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
+         * 
          * @return builder
          * 
          */
@@ -201,6 +209,8 @@ public final class IpsecConnectionTunnelManagementArgs extends com.pulumi.resour
 
         /**
          * @param bgpSessionInfos Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+         * 
+         * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
          * 
          * @return builder
          * 

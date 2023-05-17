@@ -71,12 +71,36 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Group display name
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Display Name
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Name, deprecatedColumnHeaderName:Display Name]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: string
+     * * uniqueness: global
+     * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
      * @return (Updatable) Group display name
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Display Name
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Name, deprecatedColumnHeaderName:Display Name]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: string
+     * * uniqueness: global
      * 
      */
     public Output<String> displayName() {
@@ -86,12 +110,32 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="externalId")
     private @Nullable Output<String> externalId;
 
     /**
      * @return (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> externalId() {
@@ -116,12 +160,38 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:User Members, mapsTo:members[User].value, multiValueDelimiter:;]]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * idcsPaginateResponse: true
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="members")
     private @Nullable Output<List<DomainsGroupMemberArgs>> members;
 
     /**
      * @return (Updatable) Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:User Members, mapsTo:members[User].value, multiValueDelimiter:;]]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * idcsPaginateResponse: true
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsGroupMemberArgs>>> members() {
@@ -131,12 +201,36 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) A human readable name for Group as defined by the Service Consumer
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Non-Unique Display Name
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: always
+     * * type: string
+     * 
      */
     @Import(name="nonUniqueDisplayName")
     private @Nullable Output<String> nonUniqueDisplayName;
 
     /**
      * @return (Updatable) A human readable name for Group as defined by the Service Consumer
+     * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Non-Unique Display Name
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: always
+     * * type: string
      * 
      */
     public Optional<Output<String>> nonUniqueDisplayName() {
@@ -146,12 +240,32 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: global
+     * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
      * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: global
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -176,12 +290,32 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="schemas", required=true)
     private Output<List<String>> schemas;
 
     /**
      * @return (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<List<String>> schemas() {
@@ -191,12 +325,32 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) A list of tags on this resource.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<DomainsGroupTagArgs>> tags;
 
     /**
      * @return (Updatable) A list of tags on this resource.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsGroupTagArgs>>> tags() {
@@ -394,6 +548,18 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param displayName (Updatable) Group display name
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Display Name
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Name, deprecatedColumnHeaderName:Display Name]]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: always
+         * * type: string
+         * * uniqueness: global
+         * 
          * @return builder
          * 
          */
@@ -405,6 +571,18 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param displayName (Updatable) Group display name
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Display Name
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Name, deprecatedColumnHeaderName:Display Name]]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: always
+         * * type: string
+         * * uniqueness: global
+         * 
          * @return builder
          * 
          */
@@ -414,6 +592,16 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param externalId (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -425,6 +613,16 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param externalId (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -457,6 +655,19 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param members (Updatable) Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value]
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:User Members, mapsTo:members[User].value, multiValueDelimiter:;]]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * idcsPaginateResponse: true
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -468,6 +679,19 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param members (Updatable) Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value]
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:User Members, mapsTo:members[User].value, multiValueDelimiter:;]]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * idcsPaginateResponse: true
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -478,6 +702,19 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param members (Updatable) Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value]
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:User Members, mapsTo:members[User].value, multiValueDelimiter:;]]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * idcsPaginateResponse: true
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -487,6 +724,18 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nonUniqueDisplayName (Updatable) A human readable name for Group as defined by the Service Consumer
+         * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Non-Unique Display Name
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: always
+         * * type: string
          * 
          * @return builder
          * 
@@ -499,6 +748,18 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param nonUniqueDisplayName (Updatable) A human readable name for Group as defined by the Service Consumer
          * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Non-Unique Display Name
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: always
+         * * type: string
+         * 
          * @return builder
          * 
          */
@@ -508,6 +769,16 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
          * 
          * @return builder
          * 
@@ -519,6 +790,16 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
          * 
          * @return builder
          * 
@@ -551,6 +832,16 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -562,6 +853,16 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -572,6 +873,16 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -581,6 +892,16 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tags (Updatable) A list of tags on this resource.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -593,6 +914,16 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags (Updatable) A list of tags on this resource.
          * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -602,6 +933,16 @@ public final class DomainsGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tags (Updatable) A list of tags on this resource.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 

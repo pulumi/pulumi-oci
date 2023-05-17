@@ -60,6 +60,9 @@ type Subscription struct {
 	// (Updatable) Subscription details object which extends the SubscriptionSummary
 	Subscription SubscriptionSubscriptionOutput `pulumi:"subscription"`
 	// Subscription id(OCID).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubscriptionId pulumi.StringOutput `pulumi:"subscriptionId"`
 	// (Updatable) Subscription plan number.
 	SubscriptionPlanNumber pulumi.StringOutput `pulumi:"subscriptionPlanNumber"`
@@ -152,6 +155,9 @@ type subscriptionState struct {
 	// (Updatable) Subscription details object which extends the SubscriptionSummary
 	Subscription *SubscriptionSubscription `pulumi:"subscription"`
 	// Subscription id(OCID).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubscriptionId *string `pulumi:"subscriptionId"`
 	// (Updatable) Subscription plan number.
 	SubscriptionPlanNumber *string `pulumi:"subscriptionPlanNumber"`
@@ -201,6 +207,9 @@ type SubscriptionState struct {
 	// (Updatable) Subscription details object which extends the SubscriptionSummary
 	Subscription SubscriptionSubscriptionPtrInput
 	// Subscription id(OCID).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubscriptionId pulumi.StringPtrInput
 	// (Updatable) Subscription plan number.
 	SubscriptionPlanNumber pulumi.StringPtrInput
@@ -230,6 +239,9 @@ type subscriptionArgs struct {
 	// (Updatable) Subscription details object which extends the SubscriptionSummary
 	Subscription SubscriptionSubscription `pulumi:"subscription"`
 	// Subscription id(OCID).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubscriptionId string `pulumi:"subscriptionId"`
 }
 
@@ -244,6 +256,9 @@ type SubscriptionArgs struct {
 	// (Updatable) Subscription details object which extends the SubscriptionSummary
 	Subscription SubscriptionSubscriptionInput
 	// Subscription id(OCID).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubscriptionId pulumi.StringInput
 }
 
@@ -415,6 +430,9 @@ func (o SubscriptionOutput) Subscription() SubscriptionSubscriptionOutput {
 }
 
 // Subscription id(OCID).
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o SubscriptionOutput) SubscriptionId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.SubscriptionId }).(pulumi.StringOutput)
 }

@@ -134,12 +134,18 @@ public class DataSafeConfiguration extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Indicates if Data Safe is enabled.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="isEnabled", type=Boolean.class, parameters={})
     private Output<Boolean> isEnabled;
 
     /**
      * @return (Updatable) Indicates if Data Safe is enabled.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Boolean> isEnabled() {

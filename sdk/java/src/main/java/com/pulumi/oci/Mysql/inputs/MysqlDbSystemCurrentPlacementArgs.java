@@ -18,12 +18,20 @@ public final class MysqlDbSystemCurrentPlacementArgs extends com.pulumi.resource
     /**
      * The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
      * 
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+     * 
+     * For a standalone DB System, this defines the availability domain in which the DB System is placed.
+     * 
      */
     @Import(name="availabilityDomain")
     private @Nullable Output<String> availabilityDomain;
 
     /**
      * @return The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+     * 
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+     * 
+     * For a standalone DB System, this defines the availability domain in which the DB System is placed.
      * 
      */
     public Optional<Output<String>> availabilityDomain() {
@@ -33,12 +41,20 @@ public final class MysqlDbSystemCurrentPlacementArgs extends com.pulumi.resource
     /**
      * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
      * 
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+     * 
+     * For a standalone DB System, this defines the fault domain in which the DB System is placed.
+     * 
      */
     @Import(name="faultDomain")
     private @Nullable Output<String> faultDomain;
 
     /**
      * @return The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+     * 
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+     * 
+     * For a standalone DB System, this defines the fault domain in which the DB System is placed.
      * 
      */
     public Optional<Output<String>> faultDomain() {
@@ -73,6 +89,10 @@ public final class MysqlDbSystemCurrentPlacementArgs extends com.pulumi.resource
         /**
          * @param availabilityDomain The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
          * 
+         * In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+         * 
+         * For a standalone DB System, this defines the availability domain in which the DB System is placed.
+         * 
          * @return builder
          * 
          */
@@ -84,6 +104,10 @@ public final class MysqlDbSystemCurrentPlacementArgs extends com.pulumi.resource
         /**
          * @param availabilityDomain The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
          * 
+         * In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+         * 
+         * For a standalone DB System, this defines the availability domain in which the DB System is placed.
+         * 
          * @return builder
          * 
          */
@@ -93,6 +117,10 @@ public final class MysqlDbSystemCurrentPlacementArgs extends com.pulumi.resource
 
         /**
          * @param faultDomain The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+         * 
+         * In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+         * 
+         * For a standalone DB System, this defines the fault domain in which the DB System is placed.
          * 
          * @return builder
          * 
@@ -104,6 +132,10 @@ public final class MysqlDbSystemCurrentPlacementArgs extends com.pulumi.resource
 
         /**
          * @param faultDomain The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+         * 
+         * In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+         * 
+         * For a standalone DB System, this defines the fault domain in which the DB System is placed.
          * 
          * @return builder
          * 

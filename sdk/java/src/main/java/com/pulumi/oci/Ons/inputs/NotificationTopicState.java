@@ -110,12 +110,18 @@ public final class NotificationTopicState extends com.pulumi.resources.ResourceA
     /**
      * The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> name() {
@@ -345,6 +351,9 @@ public final class NotificationTopicState extends com.pulumi.resources.ResourceA
         /**
          * @param name The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -355,6 +364,9 @@ public final class NotificationTopicState extends com.pulumi.resources.ResourceA
 
         /**
          * @param name The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

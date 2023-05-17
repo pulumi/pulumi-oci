@@ -30,6 +30,12 @@ class CloudGuardDataSourceArgs:
         :param pulumi.Input['CloudGuardDataSourceDataSourceDetailsArgs'] data_source_details: (Updatable) Details specific to the data source type.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+               
+               Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "data_source_feed_provider", data_source_feed_provider)
@@ -106,6 +112,12 @@ class CloudGuardDataSourceArgs:
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+
+        Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -139,6 +151,12 @@ class _CloudGuardDataSourceState:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Data Source display name.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+               
+               Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['CloudGuardDataSourceRegionStatusDetailArgs']]] region_status_details: Information about the region and status of query replication
         :param pulumi.Input[str] state: The current state of the resource.
         :param pulumi.Input[str] status: Status of data Source
@@ -250,6 +268,12 @@ class _CloudGuardDataSourceState:
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+
+        Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -399,6 +423,12 @@ class CloudGuardDataSource(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Data Source display name.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+               
+               Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -541,6 +571,12 @@ class CloudGuardDataSource(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Data Source display name.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+               
+               Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudGuardDataSourceRegionStatusDetailArgs']]]] region_status_details: Information about the region and status of query replication
         :param pulumi.Input[str] state: The current state of the resource.
         :param pulumi.Input[str] status: Status of data Source
@@ -620,6 +656,12 @@ class CloudGuardDataSource(pulumi.CustomResource):
     def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+
+        Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "freeform_tags")
 

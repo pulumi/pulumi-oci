@@ -102,6 +102,14 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
         /// <summary>
         /// Whether the network load balancer has a virtual cloud network-local (private) IP address.
+        /// 
+        /// If "true", then the service assigns a private IP address to the network load balancer.
+        /// 
+        /// If "false", then the service assigns a public IP address to the network load balancer.
+        /// 
+        /// A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+        /// 
+        /// Example: `true`
         /// </summary>
         [Output("isPrivate")]
         public Output<bool> IsPrivate { get; private set; } = null!;
@@ -114,6 +122,14 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
         /// <summary>
         /// (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
+        /// 
+        /// During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
+        /// 
+        /// The benefits of associating the network load balancer with network security groups include:
+        /// *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+        /// *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+        /// 
+        /// Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         /// </summary>
         [Output("networkSecurityGroupIds")]
         public Output<ImmutableArray<string>> NetworkSecurityGroupIds { get; private set; } = null!;
@@ -138,6 +154,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
         /// <summary>
         /// The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
@@ -250,6 +270,14 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
         /// <summary>
         /// Whether the network load balancer has a virtual cloud network-local (private) IP address.
+        /// 
+        /// If "true", then the service assigns a private IP address to the network load balancer.
+        /// 
+        /// If "false", then the service assigns a public IP address to the network load balancer.
+        /// 
+        /// A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+        /// 
+        /// Example: `true`
         /// </summary>
         [Input("isPrivate")]
         public Input<bool>? IsPrivate { get; set; }
@@ -259,6 +287,14 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
         /// <summary>
         /// (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
+        /// 
+        /// During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
+        /// 
+        /// The benefits of associating the network load balancer with network security groups include:
+        /// *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+        /// *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+        /// 
+        /// Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         /// </summary>
         public InputList<string> NetworkSecurityGroupIds
         {
@@ -286,6 +322,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
         /// <summary>
         /// The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;
@@ -354,6 +394,14 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
         /// <summary>
         /// Whether the network load balancer has a virtual cloud network-local (private) IP address.
+        /// 
+        /// If "true", then the service assigns a private IP address to the network load balancer.
+        /// 
+        /// If "false", then the service assigns a public IP address to the network load balancer.
+        /// 
+        /// A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+        /// 
+        /// Example: `true`
         /// </summary>
         [Input("isPrivate")]
         public Input<bool>? IsPrivate { get; set; }
@@ -369,6 +417,14 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
         /// <summary>
         /// (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
+        /// 
+        /// During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
+        /// 
+        /// The benefits of associating the network load balancer with network security groups include:
+        /// *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+        /// *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+        /// 
+        /// Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         /// </summary>
         public InputList<string> NetworkSecurityGroupIds
         {
@@ -402,6 +458,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
         /// <summary>
         /// The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }

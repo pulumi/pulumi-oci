@@ -34,12 +34,18 @@ public final class ConfigurationState extends com.pulumi.resources.ResourceArgs 
     /**
      * (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="retentionPeriodDays")
     private @Nullable Output<Integer> retentionPeriodDays;
 
     /**
      * @return (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> retentionPeriodDays() {
@@ -95,6 +101,9 @@ public final class ConfigurationState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param retentionPeriodDays (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -105,6 +114,9 @@ public final class ConfigurationState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param retentionPeriodDays (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

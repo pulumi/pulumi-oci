@@ -110,6 +110,10 @@ type MysqlDbSystem struct {
 	// DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
 	AnalyticsClusters MysqlDbSystemAnalyticsClusterArrayOutput `pulumi:"analyticsClusters"`
 	// The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+	//
+	// In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+	//
+	// For a standalone DB System, this defines the availability domain in which the DB System is placed.
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
 	// (Updatable) Backup policy as optionally used for DB System Creation.
 	BackupPolicy MysqlDbSystemBackupPolicyOutput `pulumi:"backupPolicy"`
@@ -136,12 +140,20 @@ type MysqlDbSystem struct {
 	// The network endpoints available for this DB System.
 	Endpoints MysqlDbSystemEndpointArrayOutput `pulumi:"endpoints"`
 	// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+	//
+	// In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+	//
+	// For a standalone DB System, this defines the fault domain in which the DB System is placed.
 	FaultDomain pulumi.StringOutput `pulumi:"faultDomain"`
 	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A summary of a HeatWave cluster.
 	HeatWaveClusters MysqlDbSystemHeatWaveClusterArrayOutput `pulumi:"heatWaveClusters"`
 	// The hostname for the primary endpoint of the DB System. Used for DNS.
+	//
+	// The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+	//
+	// Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
 	HostnameLabel pulumi.StringOutput `pulumi:"hostnameLabel"`
 	// The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
 	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
@@ -150,6 +162,8 @@ type MysqlDbSystem struct {
 	// If the DB System has a HeatWave Cluster attached.
 	IsHeatWaveClusterAttached pulumi.BoolOutput `pulumi:"isHeatWaveClusterAttached"`
 	// (Updatable) Specifies if the DB System is highly available.
+	//
+	// When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
 	IsHighlyAvailable pulumi.BoolOutput `pulumi:"isHighlyAvailable"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
@@ -167,6 +181,9 @@ type MysqlDbSystem struct {
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringOutput `pulumi:"shapeName"`
 	// It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShutdownType pulumi.StringPtrOutput `pulumi:"shutdownType"`
 	// Parameters detailing how to provision the initial data of the system.
 	Source MysqlDbSystemSourceOutput `pulumi:"source"`
@@ -235,6 +252,10 @@ type mysqlDbSystemState struct {
 	// DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
 	AnalyticsClusters []MysqlDbSystemAnalyticsCluster `pulumi:"analyticsClusters"`
 	// The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+	//
+	// In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+	//
+	// For a standalone DB System, this defines the availability domain in which the DB System is placed.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// (Updatable) Backup policy as optionally used for DB System Creation.
 	BackupPolicy *MysqlDbSystemBackupPolicy `pulumi:"backupPolicy"`
@@ -261,12 +282,20 @@ type mysqlDbSystemState struct {
 	// The network endpoints available for this DB System.
 	Endpoints []MysqlDbSystemEndpoint `pulumi:"endpoints"`
 	// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+	//
+	// In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+	//
+	// For a standalone DB System, this defines the fault domain in which the DB System is placed.
 	FaultDomain *string `pulumi:"faultDomain"`
 	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A summary of a HeatWave cluster.
 	HeatWaveClusters []MysqlDbSystemHeatWaveCluster `pulumi:"heatWaveClusters"`
 	// The hostname for the primary endpoint of the DB System. Used for DNS.
+	//
+	// The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+	//
+	// Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
 	HostnameLabel *string `pulumi:"hostnameLabel"`
 	// The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
 	IpAddress *string `pulumi:"ipAddress"`
@@ -275,6 +304,8 @@ type mysqlDbSystemState struct {
 	// If the DB System has a HeatWave Cluster attached.
 	IsHeatWaveClusterAttached *bool `pulumi:"isHeatWaveClusterAttached"`
 	// (Updatable) Specifies if the DB System is highly available.
+	//
+	// When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
 	IsHighlyAvailable *bool `pulumi:"isHighlyAvailable"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -292,6 +323,9 @@ type mysqlDbSystemState struct {
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName *string `pulumi:"shapeName"`
 	// It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShutdownType *string `pulumi:"shutdownType"`
 	// Parameters detailing how to provision the initial data of the system.
 	Source *MysqlDbSystemSource `pulumi:"source"`
@@ -313,6 +347,10 @@ type MysqlDbSystemState struct {
 	// DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
 	AnalyticsClusters MysqlDbSystemAnalyticsClusterArrayInput
 	// The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+	//
+	// In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+	//
+	// For a standalone DB System, this defines the availability domain in which the DB System is placed.
 	AvailabilityDomain pulumi.StringPtrInput
 	// (Updatable) Backup policy as optionally used for DB System Creation.
 	BackupPolicy MysqlDbSystemBackupPolicyPtrInput
@@ -339,12 +377,20 @@ type MysqlDbSystemState struct {
 	// The network endpoints available for this DB System.
 	Endpoints MysqlDbSystemEndpointArrayInput
 	// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+	//
+	// In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+	//
+	// For a standalone DB System, this defines the fault domain in which the DB System is placed.
 	FaultDomain pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// A summary of a HeatWave cluster.
 	HeatWaveClusters MysqlDbSystemHeatWaveClusterArrayInput
 	// The hostname for the primary endpoint of the DB System. Used for DNS.
+	//
+	// The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+	//
+	// Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
 	HostnameLabel pulumi.StringPtrInput
 	// The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
 	IpAddress pulumi.StringPtrInput
@@ -353,6 +399,8 @@ type MysqlDbSystemState struct {
 	// If the DB System has a HeatWave Cluster attached.
 	IsHeatWaveClusterAttached pulumi.BoolPtrInput
 	// (Updatable) Specifies if the DB System is highly available.
+	//
+	// When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
 	IsHighlyAvailable pulumi.BoolPtrInput
 	// Additional information about the current lifecycleState.
 	LifecycleDetails pulumi.StringPtrInput
@@ -370,6 +418,9 @@ type MysqlDbSystemState struct {
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringPtrInput
 	// It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShutdownType pulumi.StringPtrInput
 	// Parameters detailing how to provision the initial data of the system.
 	Source MysqlDbSystemSourcePtrInput
@@ -393,6 +444,10 @@ type mysqlDbSystemArgs struct {
 	// The username for the administrative user.
 	AdminUsername *string `pulumi:"adminUsername"`
 	// The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+	//
+	// In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+	//
+	// For a standalone DB System, this defines the availability domain in which the DB System is placed.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// (Updatable) Backup policy as optionally used for DB System Creation.
 	BackupPolicy *MysqlDbSystemBackupPolicy `pulumi:"backupPolicy"`
@@ -413,14 +468,24 @@ type mysqlDbSystemArgs struct {
 	// (Updatable) The user-friendly name for the DB System. It does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+	//
+	// In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+	//
+	// For a standalone DB System, this defines the fault domain in which the DB System is placed.
 	FaultDomain *string `pulumi:"faultDomain"`
 	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The hostname for the primary endpoint of the DB System. Used for DNS.
+	//
+	// The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+	//
+	// Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
 	HostnameLabel *string `pulumi:"hostnameLabel"`
 	// The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
 	IpAddress *string `pulumi:"ipAddress"`
 	// (Updatable) Specifies if the DB System is highly available.
+	//
+	// When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
 	IsHighlyAvailable *bool `pulumi:"isHighlyAvailable"`
 	// (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backupPolicy` cannot be updated in the same request.
 	Maintenance *MysqlDbSystemMaintenance `pulumi:"maintenance"`
@@ -434,6 +499,9 @@ type mysqlDbSystemArgs struct {
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName string `pulumi:"shapeName"`
 	// It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShutdownType *string `pulumi:"shutdownType"`
 	// Parameters detailing how to provision the initial data of the system.
 	Source *MysqlDbSystemSource `pulumi:"source"`
@@ -450,6 +518,10 @@ type MysqlDbSystemArgs struct {
 	// The username for the administrative user.
 	AdminUsername pulumi.StringPtrInput
 	// The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+	//
+	// In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+	//
+	// For a standalone DB System, this defines the availability domain in which the DB System is placed.
 	AvailabilityDomain pulumi.StringInput
 	// (Updatable) Backup policy as optionally used for DB System Creation.
 	BackupPolicy MysqlDbSystemBackupPolicyPtrInput
@@ -470,14 +542,24 @@ type MysqlDbSystemArgs struct {
 	// (Updatable) The user-friendly name for the DB System. It does not have to be unique.
 	DisplayName pulumi.StringPtrInput
 	// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+	//
+	// In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+	//
+	// For a standalone DB System, this defines the fault domain in which the DB System is placed.
 	FaultDomain pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// The hostname for the primary endpoint of the DB System. Used for DNS.
+	//
+	// The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+	//
+	// Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
 	HostnameLabel pulumi.StringPtrInput
 	// The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
 	IpAddress pulumi.StringPtrInput
 	// (Updatable) Specifies if the DB System is highly available.
+	//
+	// When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
 	IsHighlyAvailable pulumi.BoolPtrInput
 	// (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backupPolicy` cannot be updated in the same request.
 	Maintenance MysqlDbSystemMaintenancePtrInput
@@ -491,6 +573,9 @@ type MysqlDbSystemArgs struct {
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringInput
 	// It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShutdownType pulumi.StringPtrInput
 	// Parameters detailing how to provision the initial data of the system.
 	Source MysqlDbSystemSourcePtrInput
@@ -603,6 +688,10 @@ func (o MysqlDbSystemOutput) AnalyticsClusters() MysqlDbSystemAnalyticsClusterAr
 }
 
 // The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+//
+// In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+//
+// For a standalone DB System, this defines the availability domain in which the DB System is placed.
 func (o MysqlDbSystemOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
@@ -668,6 +757,10 @@ func (o MysqlDbSystemOutput) Endpoints() MysqlDbSystemEndpointArrayOutput {
 }
 
 // The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+//
+// In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+//
+// For a standalone DB System, this defines the fault domain in which the DB System is placed.
 func (o MysqlDbSystemOutput) FaultDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.FaultDomain }).(pulumi.StringOutput)
 }
@@ -683,6 +776,10 @@ func (o MysqlDbSystemOutput) HeatWaveClusters() MysqlDbSystemHeatWaveClusterArra
 }
 
 // The hostname for the primary endpoint of the DB System. Used for DNS.
+//
+// The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+//
+// Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
 func (o MysqlDbSystemOutput) HostnameLabel() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.HostnameLabel }).(pulumi.StringOutput)
 }
@@ -703,6 +800,8 @@ func (o MysqlDbSystemOutput) IsHeatWaveClusterAttached() pulumi.BoolOutput {
 }
 
 // (Updatable) Specifies if the DB System is highly available.
+//
+// When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
 func (o MysqlDbSystemOutput) IsHighlyAvailable() pulumi.BoolOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) pulumi.BoolOutput { return v.IsHighlyAvailable }).(pulumi.BoolOutput)
 }
@@ -746,6 +845,9 @@ func (o MysqlDbSystemOutput) ShapeName() pulumi.StringOutput {
 }
 
 // It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MysqlDbSystemOutput) ShutdownType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringPtrOutput { return v.ShutdownType }).(pulumi.StringPtrOutput)
 }

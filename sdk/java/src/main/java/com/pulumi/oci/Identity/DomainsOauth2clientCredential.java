@@ -145,12 +145,32 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="compartmentOcid", type=String.class, parameters={})
     private Output<String> compartmentOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> compartmentOcid() {
@@ -159,12 +179,32 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Export(name="deleteInProgress", type=Boolean.class, parameters={})
     private Output<Boolean> deleteInProgress;
 
     /**
      * @return (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Output<Boolean> deleteInProgress() {
@@ -173,12 +213,30 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
     /**
      * Description
      * 
+     * **Added In:** 2101262133
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * 
      */
     @Export(name="description", type=String.class, parameters={})
     private Output<String> description;
 
     /**
      * @return Description
+     * 
+     * **Added In:** 2101262133
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
      * 
      */
     public Output<String> description() {
@@ -187,12 +245,32 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="domainOcid", type=String.class, parameters={})
     private Output<String> domainOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> domainOcid() {
@@ -201,12 +279,36 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
     /**
      * User credential expires on
      * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     @Export(name="expiresOn", type=String.class, parameters={})
     private Output<String> expiresOn;
 
     /**
      * @return User credential expires on
+     * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     public Output<String> expiresOn() {
@@ -215,12 +317,28 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
     /**
      * (Updatable) The User or App who created the Resource
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: complex
+     * 
      */
     @Export(name="idcsCreatedBies", type=List.class, parameters={DomainsOauth2clientCredentialIdcsCreatedBy.class})
     private Output<List<DomainsOauth2clientCredentialIdcsCreatedBy>> idcsCreatedBies;
 
     /**
      * @return (Updatable) The User or App who created the Resource
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: complex
      * 
      */
     public Output<List<DomainsOauth2clientCredentialIdcsCreatedBy>> idcsCreatedBies() {
@@ -243,12 +361,28 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
     /**
      * (Updatable) The User or App who modified the Resource
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * 
      */
     @Export(name="idcsLastModifiedBies", type=List.class, parameters={DomainsOauth2clientCredentialIdcsLastModifiedBy.class})
     private Output<List<DomainsOauth2clientCredentialIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
      * @return (Updatable) The User or App who modified the Resource
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
      * 
      */
     public Output<List<DomainsOauth2clientCredentialIdcsLastModifiedBy>> idcsLastModifiedBies() {
@@ -257,12 +391,32 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
     /**
      * (Updatable) The release number when the resource was upgraded.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="idcsLastUpgradedInRelease", type=String.class, parameters={})
     private Output<String> idcsLastUpgradedInRelease;
 
     /**
      * @return (Updatable) The release number when the resource was upgraded.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> idcsLastUpgradedInRelease() {
@@ -271,12 +425,30 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="idcsPreventedOperations", type=List.class, parameters={String.class})
     private Output<List<String>> idcsPreventedOperations;
 
     /**
      * @return (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<List<String>> idcsPreventedOperations() {
@@ -285,12 +457,36 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
     /**
      * Specifies if secret need to be reset
      * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: writeOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Export(name="isResetSecret", type=Boolean.class, parameters={})
     private Output<Boolean> isResetSecret;
 
     /**
      * @return Specifies if secret need to be reset
+     * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: writeOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Output<Boolean> isResetSecret() {
@@ -299,12 +495,32 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+     * * type: complex
+     * 
      */
     @Export(name="metas", type=List.class, parameters={DomainsOauth2clientCredentialMeta.class})
     private Output<List<DomainsOauth2clientCredentialMeta>> metas;
 
     /**
      * @return (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+     * * type: complex
      * 
      */
     public Output<List<DomainsOauth2clientCredentialMeta>> metas() {
@@ -313,12 +529,32 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
     /**
      * (Updatable) User name
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
     /**
      * @return (Updatable) User name
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> name() {
@@ -327,12 +563,32 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
     /**
      * User&#39;s ocid
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="ocid", type=String.class, parameters={})
     private Output<String> ocid;
 
     /**
      * @return User&#39;s ocid
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> ocid() {
@@ -355,12 +611,32 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="schemas", type=List.class, parameters={String.class})
     private Output<List<String>> schemas;
 
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<List<String>> schemas() {
@@ -369,12 +645,30 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
     /**
      * Scopes
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [audience, scope]
+     * * type: complex
+     * * mutability: readWrite
+     * * multiValued: true
+     * * required: true
+     * * returned: default
+     * 
      */
     @Export(name="scopes", type=List.class, parameters={DomainsOauth2clientCredentialScope.class})
     private Output<List<DomainsOauth2clientCredentialScope>> scopes;
 
     /**
      * @return Scopes
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [audience, scope]
+     * * type: complex
+     * * mutability: readWrite
+     * * multiValued: true
+     * * required: true
+     * * returned: default
      * 
      */
     public Output<List<DomainsOauth2clientCredentialScope>> scopes() {
@@ -383,12 +677,36 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
     /**
      * User credential status
      * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: never
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="status", type=String.class, parameters={})
     private Output<String> status;
 
     /**
      * @return User credential status
+     * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: never
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> status() {
@@ -397,12 +715,32 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
     /**
      * A list of tags on this resource.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Export(name="tags", type=List.class, parameters={DomainsOauth2clientCredentialTag.class})
     private Output<List<DomainsOauth2clientCredentialTag>> tags;
 
     /**
      * @return A list of tags on this resource.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Output<List<DomainsOauth2clientCredentialTag>> tags() {
@@ -411,12 +749,32 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="tenancyOcid", type=String.class, parameters={})
     private Output<String> tenancyOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> tenancyOcid() {
@@ -439,12 +797,32 @@ public class DomainsOauth2clientCredential extends com.pulumi.resources.CustomRe
     /**
      * User linked to oauth2 client credential
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Export(name="user", type=DomainsOauth2clientCredentialUser.class, parameters={})
     private Output<DomainsOauth2clientCredentialUser> user;
 
     /**
      * @return User linked to oauth2 client credential
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Output<DomainsOauth2clientCredentialUser> user() {

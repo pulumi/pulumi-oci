@@ -93,6 +93,8 @@ export class HttpMonitor extends pulumi.CustomResource {
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * (Updatable) A dictionary of HTTP request headers.
+     *
+     * *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
      */
     public readonly headers!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -141,6 +143,10 @@ export class HttpMonitor extends pulumi.CustomResource {
     public readonly timeoutInSeconds!: pulumi.Output<number>;
     /**
      * (Updatable) A list of names of vantage points from which to execute the probe.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly vantagePointNames!: pulumi.Output<string[]>;
 
@@ -236,6 +242,8 @@ export interface HttpMonitorState {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) A dictionary of HTTP request headers.
+     *
+     * *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
      */
     headers?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -284,6 +292,10 @@ export interface HttpMonitorState {
     timeoutInSeconds?: pulumi.Input<number>;
     /**
      * (Updatable) A list of names of vantage points from which to execute the probe.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vantagePointNames?: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -310,6 +322,8 @@ export interface HttpMonitorArgs {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) A dictionary of HTTP request headers.
+     *
+     * *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
      */
     headers?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -346,6 +360,10 @@ export interface HttpMonitorArgs {
     timeoutInSeconds?: pulumi.Input<number>;
     /**
      * (Updatable) A list of names of vantage points from which to execute the probe.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vantagePointNames?: pulumi.Input<pulumi.Input<string>[]>;
 }

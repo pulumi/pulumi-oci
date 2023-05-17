@@ -61,6 +61,9 @@ class CloudAutonomousVmClusterArgs:
         :param pulumi.Input[int] scan_listener_port_tls: The SCAN Listener TLS port. Default is 2484.
         :param pulumi.Input[str] time_updated: The last date and time that the cloud Autonomous VM cluster was updated.
         :param pulumi.Input[int] total_container_databases: The total number of Autonomous Container Databases that can be created.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "cloud_exadata_infrastructure_id", cloud_exadata_infrastructure_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -347,6 +350,9 @@ class CloudAutonomousVmClusterArgs:
     def total_container_databases(self) -> Optional[pulumi.Input[int]]:
         """
         The total number of Autonomous Container Databases that can be created.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "total_container_databases")
 
@@ -449,6 +455,9 @@ class _CloudAutonomousVmClusterState:
         :param pulumi.Input[str] time_created: The date and time that the cloud Autonomous VM cluster was created.
         :param pulumi.Input[str] time_updated: The last date and time that the cloud Autonomous VM cluster was updated.
         :param pulumi.Input[int] total_container_databases: The total number of Autonomous Container Databases that can be created.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if autonomous_data_storage_size_in_tbs is not None:
             pulumi.set(__self__, "autonomous_data_storage_size_in_tbs", autonomous_data_storage_size_in_tbs)
@@ -1049,6 +1058,9 @@ class _CloudAutonomousVmClusterState:
     def total_container_databases(self) -> Optional[pulumi.Input[int]]:
         """
         The total number of Autonomous Container Databases that can be created.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "total_container_databases")
 
@@ -1167,6 +1179,9 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
         :param pulumi.Input[str] time_updated: The last date and time that the cloud Autonomous VM cluster was updated.
         :param pulumi.Input[int] total_container_databases: The total number of Autonomous Container Databases that can be created.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -1435,6 +1450,9 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The date and time that the cloud Autonomous VM cluster was created.
         :param pulumi.Input[str] time_updated: The last date and time that the cloud Autonomous VM cluster was updated.
         :param pulumi.Input[int] total_container_databases: The total number of Autonomous Container Databases that can be created.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1829,6 +1847,9 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
     def total_container_databases(self) -> pulumi.Output[int]:
         """
         The total number of Autonomous Container Databases that can be created.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "total_container_databases")
 

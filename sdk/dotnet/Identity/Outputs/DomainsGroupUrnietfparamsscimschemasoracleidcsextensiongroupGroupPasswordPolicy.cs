@@ -15,18 +15,63 @@ namespace Pulumi.Oci.Identity.Outputs
     {
         /// <summary>
         /// (Updatable) PasswordPolicy Name
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? Name;
         /// <summary>
         /// (Updatable) PasswordPolicy priority
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: integer
+        /// * uniqueness: none
         /// </summary>
         public readonly int? Priority;
         /// <summary>
         /// (Updatable) App URI
+        /// 
+        /// **Added In:** 18.4.2
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: reference
+        /// * uniqueness: none
         /// </summary>
         public readonly string? Ref;
         /// <summary>
         /// (Updatable) The ID of the App.
+        /// 
+        /// **Added In:** 18.4.2
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string Value;
 

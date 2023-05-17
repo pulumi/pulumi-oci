@@ -75,6 +75,9 @@ export class InvokeFunction extends pulumi.CustomResource {
     public readonly functionId!: pulumi.Output<string>;
     /**
      * An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invokeFunctionBody` or `invokeFunctionBodyBase64Encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly inputBodySourcePath!: pulumi.Output<string | undefined>;
     public /*out*/ readonly invokeEndpoint!: pulumi.Output<string>;
@@ -149,6 +152,9 @@ export interface InvokeFunctionState {
     functionId?: pulumi.Input<string>;
     /**
      * An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invokeFunctionBody` or `invokeFunctionBodyBase64Encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     inputBodySourcePath?: pulumi.Input<string>;
     invokeEndpoint?: pulumi.Input<string>;
@@ -178,6 +184,9 @@ export interface InvokeFunctionArgs {
     functionId: pulumi.Input<string>;
     /**
      * An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invokeFunctionBody` or `invokeFunctionBodyBase64Encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     inputBodySourcePath?: pulumi.Input<string>;
     /**

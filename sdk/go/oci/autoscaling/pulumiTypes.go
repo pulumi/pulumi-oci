@@ -338,10 +338,16 @@ func (o AutoScalingConfigurationPolicyArrayOutput) Index(i pulumi.IntInput) Auto
 
 type AutoScalingConfigurationPolicyCapacity struct {
 	// For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+	//
+	// For a schedule-based autoscaling policy, this value is the target pool size to scale to when executing the schedule that's defined in the autoscaling policy.
 	Initial *int `pulumi:"initial"`
 	// For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
+	//
+	// For a schedule-based autoscaling policy, this value is not used.
 	Max *int `pulumi:"max"`
 	// For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
+	//
+	// For a schedule-based autoscaling policy, this value is not used.
 	Min *int `pulumi:"min"`
 }
 
@@ -358,10 +364,16 @@ type AutoScalingConfigurationPolicyCapacityInput interface {
 
 type AutoScalingConfigurationPolicyCapacityArgs struct {
 	// For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+	//
+	// For a schedule-based autoscaling policy, this value is the target pool size to scale to when executing the schedule that's defined in the autoscaling policy.
 	Initial pulumi.IntPtrInput `pulumi:"initial"`
 	// For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
+	//
+	// For a schedule-based autoscaling policy, this value is not used.
 	Max pulumi.IntPtrInput `pulumi:"max"`
 	// For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
+	//
+	// For a schedule-based autoscaling policy, this value is not used.
 	Min pulumi.IntPtrInput `pulumi:"min"`
 }
 
@@ -443,16 +455,22 @@ func (o AutoScalingConfigurationPolicyCapacityOutput) ToAutoScalingConfiguration
 }
 
 // For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+//
+// For a schedule-based autoscaling policy, this value is the target pool size to scale to when executing the schedule that's defined in the autoscaling policy.
 func (o AutoScalingConfigurationPolicyCapacityOutput) Initial() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyCapacity) *int { return v.Initial }).(pulumi.IntPtrOutput)
 }
 
 // For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
+//
+// For a schedule-based autoscaling policy, this value is not used.
 func (o AutoScalingConfigurationPolicyCapacityOutput) Max() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyCapacity) *int { return v.Max }).(pulumi.IntPtrOutput)
 }
 
 // For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
+//
+// For a schedule-based autoscaling policy, this value is not used.
 func (o AutoScalingConfigurationPolicyCapacityOutput) Min() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyCapacity) *int { return v.Min }).(pulumi.IntPtrOutput)
 }
@@ -482,6 +500,8 @@ func (o AutoScalingConfigurationPolicyCapacityPtrOutput) Elem() AutoScalingConfi
 }
 
 // For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+//
+// For a schedule-based autoscaling policy, this value is the target pool size to scale to when executing the schedule that's defined in the autoscaling policy.
 func (o AutoScalingConfigurationPolicyCapacityPtrOutput) Initial() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AutoScalingConfigurationPolicyCapacity) *int {
 		if v == nil {
@@ -492,6 +512,8 @@ func (o AutoScalingConfigurationPolicyCapacityPtrOutput) Initial() pulumi.IntPtr
 }
 
 // For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
+//
+// For a schedule-based autoscaling policy, this value is not used.
 func (o AutoScalingConfigurationPolicyCapacityPtrOutput) Max() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AutoScalingConfigurationPolicyCapacity) *int {
 		if v == nil {
@@ -502,6 +524,8 @@ func (o AutoScalingConfigurationPolicyCapacityPtrOutput) Max() pulumi.IntPtrOutp
 }
 
 // For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
+//
+// For a schedule-based autoscaling policy, this value is not used.
 func (o AutoScalingConfigurationPolicyCapacityPtrOutput) Min() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AutoScalingConfigurationPolicyCapacity) *int {
 		if v == nil {
@@ -513,6 +537,14 @@ func (o AutoScalingConfigurationPolicyCapacityPtrOutput) Min() pulumi.IntPtrOutp
 
 type AutoScalingConfigurationPolicyExecutionSchedule struct {
 	// A cron expression that represents the time at which to execute the autoscaling policy.
+	//
+	// Cron expressions have this format: `<second> <minute> <hour> <day of month> <month> <day of week> <year>`
+	//
+	// You can use special characters that are supported with the Quartz cron implementation.
+	//
+	// You must specify `0` as the value for seconds.
+	//
+	// Example: `0 15 10 ? * *`
 	Expression string `pulumi:"expression"`
 	// The time zone for the execution schedule.
 	Timezone string `pulumi:"timezone"`
@@ -533,6 +565,14 @@ type AutoScalingConfigurationPolicyExecutionScheduleInput interface {
 
 type AutoScalingConfigurationPolicyExecutionScheduleArgs struct {
 	// A cron expression that represents the time at which to execute the autoscaling policy.
+	//
+	// Cron expressions have this format: `<second> <minute> <hour> <day of month> <month> <day of week> <year>`
+	//
+	// You can use special characters that are supported with the Quartz cron implementation.
+	//
+	// You must specify `0` as the value for seconds.
+	//
+	// Example: `0 15 10 ? * *`
 	Expression pulumi.StringInput `pulumi:"expression"`
 	// The time zone for the execution schedule.
 	Timezone pulumi.StringInput `pulumi:"timezone"`
@@ -618,6 +658,14 @@ func (o AutoScalingConfigurationPolicyExecutionScheduleOutput) ToAutoScalingConf
 }
 
 // A cron expression that represents the time at which to execute the autoscaling policy.
+//
+// Cron expressions have this format: `<second> <minute> <hour> <day of month> <month> <day of week> <year>`
+//
+// You can use special characters that are supported with the Quartz cron implementation.
+//
+// You must specify `0` as the value for seconds.
+//
+// Example: `0 15 10 ? * *`
 func (o AutoScalingConfigurationPolicyExecutionScheduleOutput) Expression() pulumi.StringOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyExecutionSchedule) string { return v.Expression }).(pulumi.StringOutput)
 }
@@ -657,6 +705,14 @@ func (o AutoScalingConfigurationPolicyExecutionSchedulePtrOutput) Elem() AutoSca
 }
 
 // A cron expression that represents the time at which to execute the autoscaling policy.
+//
+// Cron expressions have this format: `<second> <minute> <hour> <day of month> <month> <day of week> <year>`
+//
+// You can use special characters that are supported with the Quartz cron implementation.
+//
+// You must specify `0` as the value for seconds.
+//
+// Example: `0 15 10 ? * *`
 func (o AutoScalingConfigurationPolicyExecutionSchedulePtrOutput) Expression() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutoScalingConfigurationPolicyExecutionSchedule) *string {
 		if v == nil {
@@ -968,8 +1024,10 @@ func (o AutoScalingConfigurationPolicyRuleArrayOutput) Index(i pulumi.IntInput) 
 
 type AutoScalingConfigurationPolicyRuleAction struct {
 	// The type of action to take.
-	Type  *string `pulumi:"type"`
-	Value *int    `pulumi:"value"`
+	Type *string `pulumi:"type"`
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Value *int `pulumi:"value"`
 }
 
 // AutoScalingConfigurationPolicyRuleActionInput is an input type that accepts AutoScalingConfigurationPolicyRuleActionArgs and AutoScalingConfigurationPolicyRuleActionOutput values.
@@ -985,8 +1043,10 @@ type AutoScalingConfigurationPolicyRuleActionInput interface {
 
 type AutoScalingConfigurationPolicyRuleActionArgs struct {
 	// The type of action to take.
-	Type  pulumi.StringPtrInput `pulumi:"type"`
-	Value pulumi.IntPtrInput    `pulumi:"value"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Value pulumi.IntPtrInput `pulumi:"value"`
 }
 
 func (AutoScalingConfigurationPolicyRuleActionArgs) ElementType() reflect.Type {
@@ -1071,6 +1131,8 @@ func (o AutoScalingConfigurationPolicyRuleActionOutput) Type() pulumi.StringPtrO
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyRuleAction) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AutoScalingConfigurationPolicyRuleActionOutput) Value() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyRuleAction) *int { return v.Value }).(pulumi.IntPtrOutput)
 }
@@ -1109,6 +1171,8 @@ func (o AutoScalingConfigurationPolicyRuleActionPtrOutput) Type() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AutoScalingConfigurationPolicyRuleActionPtrOutput) Value() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AutoScalingConfigurationPolicyRuleAction) *int {
 		if v == nil {
@@ -1271,7 +1335,9 @@ func (o AutoScalingConfigurationPolicyRuleMetricPtrOutput) Threshold() AutoScali
 type AutoScalingConfigurationPolicyRuleMetricThreshold struct {
 	// The comparison operator to use. Options are greater than (`GT`), greater than or equal to (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
 	Operator *string `pulumi:"operator"`
-	Value    *int    `pulumi:"value"`
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Value *int `pulumi:"value"`
 }
 
 // AutoScalingConfigurationPolicyRuleMetricThresholdInput is an input type that accepts AutoScalingConfigurationPolicyRuleMetricThresholdArgs and AutoScalingConfigurationPolicyRuleMetricThresholdOutput values.
@@ -1288,7 +1354,9 @@ type AutoScalingConfigurationPolicyRuleMetricThresholdInput interface {
 type AutoScalingConfigurationPolicyRuleMetricThresholdArgs struct {
 	// The comparison operator to use. Options are greater than (`GT`), greater than or equal to (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
 	Operator pulumi.StringPtrInput `pulumi:"operator"`
-	Value    pulumi.IntPtrInput    `pulumi:"value"`
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Value pulumi.IntPtrInput `pulumi:"value"`
 }
 
 func (AutoScalingConfigurationPolicyRuleMetricThresholdArgs) ElementType() reflect.Type {
@@ -1373,6 +1441,8 @@ func (o AutoScalingConfigurationPolicyRuleMetricThresholdOutput) Operator() pulu
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyRuleMetricThreshold) *string { return v.Operator }).(pulumi.StringPtrOutput)
 }
 
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AutoScalingConfigurationPolicyRuleMetricThresholdOutput) Value() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyRuleMetricThreshold) *int { return v.Value }).(pulumi.IntPtrOutput)
 }
@@ -1411,6 +1481,8 @@ func (o AutoScalingConfigurationPolicyRuleMetricThresholdPtrOutput) Operator() p
 	}).(pulumi.StringPtrOutput)
 }
 
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AutoScalingConfigurationPolicyRuleMetricThresholdPtrOutput) Value() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AutoScalingConfigurationPolicyRuleMetricThreshold) *int {
 		if v == nil {

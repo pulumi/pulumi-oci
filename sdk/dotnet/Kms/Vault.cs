@@ -144,6 +144,9 @@ namespace Pulumi.Oci.Kms
 
         /// <summary>
         /// (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("timeOfDeletion")]
         public Output<string> TimeOfDeletion { get; private set; } = null!;
@@ -253,6 +256,9 @@ namespace Pulumi.Oci.Kms
 
         /// <summary>
         /// (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("timeOfDeletion")]
         public Input<string>? TimeOfDeletion { get; set; }
@@ -372,6 +378,9 @@ namespace Pulumi.Oci.Kms
 
         /// <summary>
         /// (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("timeOfDeletion")]
         public Input<string>? TimeOfDeletion { get; set; }

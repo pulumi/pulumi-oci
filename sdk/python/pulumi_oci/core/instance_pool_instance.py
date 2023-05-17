@@ -24,6 +24,10 @@ class InstancePoolInstanceArgs:
         The set of arguments for constructing a InstancePoolInstance resource.
         :param pulumi.Input[str] instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
         :param pulumi.Input[str] instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "instance_id", instance_id)
         pulumi.set(__self__, "instance_pool_id", instance_pool_id)
@@ -49,6 +53,10 @@ class InstancePoolInstanceArgs:
     def instance_pool_id(self) -> pulumi.Input[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "instance_pool_id")
 
@@ -101,6 +109,10 @@ class _InstancePoolInstanceState:
         :param pulumi.Input[str] instance_configuration_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration used to create the instance.
         :param pulumi.Input[str] instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
         :param pulumi.Input[str] instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['InstancePoolInstanceLoadBalancerBackendArgs']]] load_balancer_backends: The load balancer backends that are configured for the instance pool instance.
         :param pulumi.Input[str] region: The region that contains the availability domain the instance is running in.
         :param pulumi.Input[str] shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
@@ -231,6 +243,10 @@ class _InstancePoolInstanceState:
     def instance_pool_id(self) -> Optional[pulumi.Input[str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "instance_pool_id")
 
@@ -341,6 +357,10 @@ class InstancePoolInstance(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
         :param pulumi.Input[str] instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -460,6 +480,10 @@ class InstancePoolInstance(pulumi.CustomResource):
         :param pulumi.Input[str] instance_configuration_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration used to create the instance.
         :param pulumi.Input[str] instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
         :param pulumi.Input[str] instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolInstanceLoadBalancerBackendArgs']]]] load_balancer_backends: The load balancer backends that are configured for the instance pool instance.
         :param pulumi.Input[str] region: The region that contains the availability domain the instance is running in.
         :param pulumi.Input[str] shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
@@ -549,6 +573,10 @@ class InstancePoolInstance(pulumi.CustomResource):
     def instance_pool_id(self) -> pulumi.Output[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "instance_pool_id")
 

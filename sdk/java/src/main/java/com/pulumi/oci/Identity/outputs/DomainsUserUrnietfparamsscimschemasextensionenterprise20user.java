@@ -15,30 +15,105 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20user 
     /**
      * @return (Updatable) Identifies the name of a cost center.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Cost Center
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Cost Center]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String costCenter;
     /**
      * @return (Updatable) Identifies the name of a department.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Department
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Department]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable String department;
     /**
      * @return (Updatable) Identifies the name of a division.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Division
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Division]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String division;
     /**
      * @return (Updatable) Numeric or alphanumeric identifier assigned to  a person, typically based on order of hire or association with an organization.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Employee Number
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Employee Number]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable String employeeNumber;
     /**
      * @return (Updatable) The User&#39;s manager. A complex type that optionally allows Service Providers to represent organizational hierarchy by referencing the &#39;id&#39; attribute of another User.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Manager, deprecatedColumnHeaderName:Manager Name, mapsTo:manager.value]]
+     * * idcsPii: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     private @Nullable DomainsUserUrnietfparamsscimschemasextensionenterprise20userManager manager;
     /**
      * @return (Updatable) Identifies the name of an organization.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Organization
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Organization Name, deprecatedColumnHeaderName:Organization]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable String organization;
@@ -47,12 +122,38 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20user 
     /**
      * @return (Updatable) Identifies the name of a cost center.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Cost Center
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Cost Center]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> costCenter() {
         return Optional.ofNullable(this.costCenter);
     }
     /**
      * @return (Updatable) Identifies the name of a department.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Department
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Department]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> department() {
@@ -61,12 +162,38 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20user 
     /**
      * @return (Updatable) Identifies the name of a division.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Division
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Division]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> division() {
         return Optional.ofNullable(this.division);
     }
     /**
      * @return (Updatable) Numeric or alphanumeric identifier assigned to  a person, typically based on order of hire or association with an organization.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Employee Number
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Employee Number]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> employeeNumber() {
@@ -75,12 +202,35 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20user 
     /**
      * @return (Updatable) The User&#39;s manager. A complex type that optionally allows Service Providers to represent organizational hierarchy by referencing the &#39;id&#39; attribute of another User.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Manager, deprecatedColumnHeaderName:Manager Name, mapsTo:manager.value]]
+     * * idcsPii: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     public Optional<DomainsUserUrnietfparamsscimschemasextensionenterprise20userManager> manager() {
         return Optional.ofNullable(this.manager);
     }
     /**
      * @return (Updatable) Identifies the name of an organization.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Organization
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Organization Name, deprecatedColumnHeaderName:Organization]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> organization() {

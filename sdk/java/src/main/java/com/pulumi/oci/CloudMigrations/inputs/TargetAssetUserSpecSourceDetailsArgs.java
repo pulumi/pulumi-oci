@@ -48,12 +48,16 @@ public final class TargetAssetUserSpecSourceDetailsArgs extends com.pulumi.resou
     /**
      * (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      * 
+     * Allowed values:
+     * 
      */
     @Import(name="bootVolumeVpusPerGb")
     private @Nullable Output<String> bootVolumeVpusPerGb;
 
     /**
      * @return (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+     * 
+     * Allowed values:
      * 
      */
     public Optional<Output<String>> bootVolumeVpusPerGb() {
@@ -93,12 +97,18 @@ public final class TargetAssetUserSpecSourceDetailsArgs extends com.pulumi.resou
     /**
      * (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="sourceType", required=true)
     private Output<String> sourceType;
 
     /**
      * @return (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> sourceType() {
@@ -179,6 +189,8 @@ public final class TargetAssetUserSpecSourceDetailsArgs extends com.pulumi.resou
         /**
          * @param bootVolumeVpusPerGb (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
          * 
+         * Allowed values:
+         * 
          * @return builder
          * 
          */
@@ -189,6 +201,8 @@ public final class TargetAssetUserSpecSourceDetailsArgs extends com.pulumi.resou
 
         /**
          * @param bootVolumeVpusPerGb (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         * 
+         * Allowed values:
          * 
          * @return builder
          * 
@@ -242,6 +256,9 @@ public final class TargetAssetUserSpecSourceDetailsArgs extends com.pulumi.resou
         /**
          * @param sourceType (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -252,6 +269,9 @@ public final class TargetAssetUserSpecSourceDetailsArgs extends com.pulumi.resou
 
         /**
          * @param sourceType (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

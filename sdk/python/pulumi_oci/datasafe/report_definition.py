@@ -226,6 +226,10 @@ class _ReportDefinitionState:
         :param pulumi.Input[str] scheduled_report_name: The name of the report to be scheduled.
         :param pulumi.Input[int] scheduled_report_row_limit: Specifies the limit on the number of rows in the report.
         :param pulumi.Input[str] scim_filter: (Updatable) Additional scim filters used to get the specific summary.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the report.
         :param pulumi.Input[Sequence[pulumi.Input['ReportDefinitionSummaryArgs']]] summaries: (Updatable) An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -530,6 +534,10 @@ class _ReportDefinitionState:
     def scim_filter(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Additional scim filters used to get the specific summary.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "scim_filter")
 
@@ -889,6 +897,10 @@ class ReportDefinition(pulumi.CustomResource):
         :param pulumi.Input[str] scheduled_report_name: The name of the report to be scheduled.
         :param pulumi.Input[int] scheduled_report_row_limit: Specifies the limit on the number of rows in the report.
         :param pulumi.Input[str] scim_filter: (Updatable) Additional scim filters used to get the specific summary.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the report.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionSummaryArgs']]]] summaries: (Updatable) An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -1092,6 +1104,10 @@ class ReportDefinition(pulumi.CustomResource):
     def scim_filter(self) -> pulumi.Output[str]:
         """
         (Updatable) Additional scim filters used to get the specific summary.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "scim_filter")
 

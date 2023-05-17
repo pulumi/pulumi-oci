@@ -43,6 +43,10 @@ class DrgAttachmentManagementArgs:
         :param pulumi.Input[str] network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
         :param pulumi.Input[bool] remove_export_drg_route_distribution_trigger: (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
         :param pulumi.Input[str] route_table_id: The OCID of the route table the DRG attachment is using.
+               
+               For information about why you would associate a route table with a DRG attachment, see:
+               * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+               * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
         :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
         """
         pulumi.set(__self__, "attachment_type", attachment_type)
@@ -206,6 +210,10 @@ class DrgAttachmentManagementArgs:
     def route_table_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the route table the DRG attachment is using.
+
+        For information about why you would associate a route table with a DRG attachment, see:
+        * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+        * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
         """
         return pulumi.get(self, "route_table_id")
 
@@ -260,6 +268,10 @@ class _DrgAttachmentManagementState:
         :param pulumi.Input[str] network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
         :param pulumi.Input[bool] remove_export_drg_route_distribution_trigger: (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
         :param pulumi.Input[str] route_table_id: The OCID of the route table the DRG attachment is using.
+               
+               For information about why you would associate a route table with a DRG attachment, see:
+               * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+               * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
         :param pulumi.Input[str] state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
         :param pulumi.Input[str] time_created: The date and time the DRG attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
@@ -446,6 +458,10 @@ class _DrgAttachmentManagementState:
     def route_table_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the route table the DRG attachment is using.
+
+        For information about why you would associate a route table with a DRG attachment, see:
+        * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+        * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
         """
         return pulumi.get(self, "route_table_id")
 
@@ -553,6 +569,10 @@ class DrgAttachmentManagement(pulumi.CustomResource):
         :param pulumi.Input[str] network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
         :param pulumi.Input[bool] remove_export_drg_route_distribution_trigger: (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
         :param pulumi.Input[str] route_table_id: The OCID of the route table the DRG attachment is using.
+               
+               For information about why you would associate a route table with a DRG attachment, see:
+               * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+               * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
         :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
         """
         ...
@@ -696,6 +716,10 @@ class DrgAttachmentManagement(pulumi.CustomResource):
         :param pulumi.Input[str] network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
         :param pulumi.Input[bool] remove_export_drg_route_distribution_trigger: (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
         :param pulumi.Input[str] route_table_id: The OCID of the route table the DRG attachment is using.
+               
+               For information about why you would associate a route table with a DRG attachment, see:
+               * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+               * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
         :param pulumi.Input[str] state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
         :param pulumi.Input[str] time_created: The date and time the DRG attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
@@ -823,6 +847,10 @@ class DrgAttachmentManagement(pulumi.CustomResource):
     def route_table_id(self) -> pulumi.Output[str]:
         """
         The OCID of the route table the DRG attachment is using.
+
+        For information about why you would associate a route table with a DRG attachment, see:
+        * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+        * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
         """
         return pulumi.get(self, "route_table_id")
 

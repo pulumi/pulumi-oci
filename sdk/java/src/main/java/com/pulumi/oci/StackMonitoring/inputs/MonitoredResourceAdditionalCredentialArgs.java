@@ -116,12 +116,18 @@ public final class MonitoredResourceAdditionalCredentialArgs extends com.pulumi.
     /**
      * Monitored Resource Type.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
      * @return Monitored Resource Type.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> type() {
@@ -303,6 +309,9 @@ public final class MonitoredResourceAdditionalCredentialArgs extends com.pulumi.
         /**
          * @param type Monitored Resource Type.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -313,6 +322,9 @@ public final class MonitoredResourceAdditionalCredentialArgs extends com.pulumi.
 
         /**
          * @param type Monitored Resource Type.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

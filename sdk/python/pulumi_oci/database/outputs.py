@@ -766,6 +766,8 @@ class AutonomousContainerDatabaseMaintenanceWindow(dict):
         :param int lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['AutonomousContainerDatabaseMaintenanceWindowMonthArgs'] months: (Updatable) Months during the year when maintenance should be performed.
         :param str patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+               
+               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param str preference: (Updatable) The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
@@ -852,6 +854,8 @@ class AutonomousContainerDatabaseMaintenanceWindow(dict):
     def patching_mode(self) -> Optional[str]:
         """
         (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+
+        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         """
         return pulumi.get(self, "patching_mode")
 
@@ -945,6 +949,8 @@ class AutonomousContainerDatabaseMaintenanceWindowDetails(dict):
         :param int lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs'] months: (Updatable) Months during the year when maintenance should be performed.
         :param str patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+               
+               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param str preference: (Updatable) The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
@@ -1031,6 +1037,8 @@ class AutonomousContainerDatabaseMaintenanceWindowDetails(dict):
     def patching_mode(self) -> Optional[str]:
         """
         (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+
+        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         """
         return pulumi.get(self, "patching_mode")
 
@@ -2258,6 +2266,8 @@ class AutonomousExadataInfrastructureMaintenanceWindow(dict):
         :param int lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['AutonomousExadataInfrastructureMaintenanceWindowMonthArgs'] months: (Updatable) Months during the year when maintenance should be performed.
         :param str patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+               
+               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param str preference: (Updatable) The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
@@ -2344,6 +2354,8 @@ class AutonomousExadataInfrastructureMaintenanceWindow(dict):
     def patching_mode(self) -> Optional[str]:
         """
         (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+
+        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         """
         return pulumi.get(self, "patching_mode")
 
@@ -2437,6 +2449,8 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetails(dict):
         :param int lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs'] months: (Updatable) Months during the year when maintenance should be performed.
         :param str patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+               
+               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param str preference: (Updatable) The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
@@ -2523,6 +2537,8 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetails(dict):
     def patching_mode(self) -> Optional[str]:
         """
         (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+
+        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         """
         return pulumi.get(self, "patching_mode")
 
@@ -2649,6 +2665,8 @@ class AutonomousVmClusterMaintenanceWindow(dict):
         :param int lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['AutonomousVmClusterMaintenanceWindowMonthArgs'] months: (Updatable) Months during the year when maintenance should be performed.
         :param str patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+               
+               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param str preference: (Updatable) The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
@@ -2726,6 +2744,8 @@ class AutonomousVmClusterMaintenanceWindow(dict):
     def patching_mode(self) -> Optional[str]:
         """
         (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+
+        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         """
         return pulumi.get(self, "patching_mode")
 
@@ -2816,6 +2836,8 @@ class AutonomousVmClusterMaintenanceWindowDetail(dict):
         :param int lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['AutonomousVmClusterMaintenanceWindowDetailMonthArgs'] months: (Updatable) Months during the year when maintenance should be performed.
         :param str patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+               
+               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param str preference: (Updatable) The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
@@ -2893,6 +2915,8 @@ class AutonomousVmClusterMaintenanceWindowDetail(dict):
     def patching_mode(self) -> Optional[str]:
         """
         (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+
+        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         """
         return pulumi.get(self, "patching_mode")
 
@@ -3147,6 +3171,8 @@ class CloudAutonomousVmClusterMaintenanceWindow(dict):
         :param int lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['CloudAutonomousVmClusterMaintenanceWindowMonthArgs'] months: (Updatable) Months during the year when maintenance should be performed.
         :param str patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+               
+               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param str preference: (Updatable) The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
@@ -3233,6 +3259,8 @@ class CloudAutonomousVmClusterMaintenanceWindow(dict):
     def patching_mode(self) -> Optional[str]:
         """
         (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+
+        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         """
         return pulumi.get(self, "patching_mode")
 
@@ -3326,6 +3354,8 @@ class CloudAutonomousVmClusterMaintenanceWindowDetails(dict):
         :param int lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgs'] months: (Updatable) Months during the year when maintenance should be performed.
         :param str patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+               
+               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param str preference: (Updatable) The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
@@ -3412,6 +3442,8 @@ class CloudAutonomousVmClusterMaintenanceWindowDetails(dict):
     def patching_mode(self) -> Optional[str]:
         """
         (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+
+        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         """
         return pulumi.get(self, "patching_mode")
 
@@ -3608,6 +3640,8 @@ class CloudExadataInfrastructureMaintenanceWindow(dict):
         :param int lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['CloudExadataInfrastructureMaintenanceWindowMonthArgs'] months: (Updatable) Months during the year when maintenance should be performed.
         :param str patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+               
+               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param str preference: (Updatable) The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
@@ -3694,6 +3728,8 @@ class CloudExadataInfrastructureMaintenanceWindow(dict):
     def patching_mode(self) -> Optional[str]:
         """
         (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+
+        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         """
         return pulumi.get(self, "patching_mode")
 
@@ -4216,10 +4252,14 @@ class DatabaseDatabase(dict):
         :param str backup_id: The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str backup_tde_password: The password to open the TDE wallet.
         :param str character_set: The character set for the database.  The default is AL32UTF8. Allowed values are:
+               
+               AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
         :param str database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param 'DatabaseDatabaseDbBackupConfigArgs' db_backup_config: (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
         :param str db_unique_name: The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
         :param str db_workload: **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+               
+               The database workload type.
         :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -4302,6 +4342,8 @@ class DatabaseDatabase(dict):
     def character_set(self) -> Optional[str]:
         """
         The character set for the database.  The default is AL32UTF8. Allowed values are:
+
+        AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
         """
         return pulumi.get(self, "character_set")
 
@@ -4334,6 +4376,8 @@ class DatabaseDatabase(dict):
     def db_workload(self) -> Optional[str]:
         """
         **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+
+        The database workload type.
         """
         return pulumi.get(self, "db_workload")
 
@@ -4419,12 +4463,18 @@ class DatabaseDatabaseDbBackupConfig(dict):
             suggest = "auto_backup_enabled"
         elif key == "autoBackupWindow":
             suggest = "auto_backup_window"
+        elif key == "autoFullBackupDay":
+            suggest = "auto_full_backup_day"
+        elif key == "autoFullBackupWindow":
+            suggest = "auto_full_backup_window"
         elif key == "backupDeletionPolicy":
             suggest = "backup_deletion_policy"
         elif key == "backupDestinationDetails":
             suggest = "backup_destination_details"
         elif key == "recoveryWindowInDays":
             suggest = "recovery_window_in_days"
+        elif key == "runImmediateFullBackup":
+            suggest = "run_immediate_full_backup"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DatabaseDatabaseDbBackupConfig. Access the value via the '{suggest}' property getter instead.")
@@ -4440,26 +4490,38 @@ class DatabaseDatabaseDbBackupConfig(dict):
     def __init__(__self__, *,
                  auto_backup_enabled: Optional[bool] = None,
                  auto_backup_window: Optional[str] = None,
+                 auto_full_backup_day: Optional[str] = None,
+                 auto_full_backup_window: Optional[str] = None,
                  backup_deletion_policy: Optional[str] = None,
                  backup_destination_details: Optional[Sequence['outputs.DatabaseDatabaseDbBackupConfigBackupDestinationDetail']] = None,
-                 recovery_window_in_days: Optional[int] = None):
+                 recovery_window_in_days: Optional[int] = None,
+                 run_immediate_full_backup: Optional[bool] = None):
         """
         :param bool auto_backup_enabled: (Updatable) If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
         :param str auto_backup_window: (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        :param str auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        :param str auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         :param str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
         :param Sequence['DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
         :param int recovery_window_in_days: (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+        :param bool run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
         """
         if auto_backup_enabled is not None:
             pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         if auto_backup_window is not None:
             pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        if auto_full_backup_day is not None:
+            pulumi.set(__self__, "auto_full_backup_day", auto_full_backup_day)
+        if auto_full_backup_window is not None:
+            pulumi.set(__self__, "auto_full_backup_window", auto_full_backup_window)
         if backup_deletion_policy is not None:
             pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
         if backup_destination_details is not None:
             pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         if recovery_window_in_days is not None:
             pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+        if run_immediate_full_backup is not None:
+            pulumi.set(__self__, "run_immediate_full_backup", run_immediate_full_backup)
 
     @property
     @pulumi.getter(name="autoBackupEnabled")
@@ -4476,6 +4538,22 @@ class DatabaseDatabaseDbBackupConfig(dict):
         (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         """
         return pulumi.get(self, "auto_backup_window")
+
+    @property
+    @pulumi.getter(name="autoFullBackupDay")
+    def auto_full_backup_day(self) -> Optional[str]:
+        """
+        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        """
+        return pulumi.get(self, "auto_full_backup_day")
+
+    @property
+    @pulumi.getter(name="autoFullBackupWindow")
+    def auto_full_backup_window(self) -> Optional[str]:
+        """
+        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        """
+        return pulumi.get(self, "auto_full_backup_window")
 
     @property
     @pulumi.getter(name="backupDeletionPolicy")
@@ -4500,6 +4578,14 @@ class DatabaseDatabaseDbBackupConfig(dict):
         (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         """
         return pulumi.get(self, "recovery_window_in_days")
+
+    @property
+    @pulumi.getter(name="runImmediateFullBackup")
+    def run_immediate_full_backup(self) -> Optional[bool]:
+        """
+        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+        """
+        return pulumi.get(self, "run_immediate_full_backup")
 
 
 @pulumi.output_type
@@ -4631,12 +4717,18 @@ class DatabaseDbBackupConfig(dict):
             suggest = "auto_backup_enabled"
         elif key == "autoBackupWindow":
             suggest = "auto_backup_window"
+        elif key == "autoFullBackupDay":
+            suggest = "auto_full_backup_day"
+        elif key == "autoFullBackupWindow":
+            suggest = "auto_full_backup_window"
         elif key == "backupDeletionPolicy":
             suggest = "backup_deletion_policy"
         elif key == "backupDestinationDetails":
             suggest = "backup_destination_details"
         elif key == "recoveryWindowInDays":
             suggest = "recovery_window_in_days"
+        elif key == "runImmediateFullBackup":
+            suggest = "run_immediate_full_backup"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DatabaseDbBackupConfig. Access the value via the '{suggest}' property getter instead.")
@@ -4652,26 +4744,38 @@ class DatabaseDbBackupConfig(dict):
     def __init__(__self__, *,
                  auto_backup_enabled: Optional[bool] = None,
                  auto_backup_window: Optional[str] = None,
+                 auto_full_backup_day: Optional[str] = None,
+                 auto_full_backup_window: Optional[str] = None,
                  backup_deletion_policy: Optional[str] = None,
                  backup_destination_details: Optional[Sequence['outputs.DatabaseDbBackupConfigBackupDestinationDetail']] = None,
-                 recovery_window_in_days: Optional[int] = None):
+                 recovery_window_in_days: Optional[int] = None,
+                 run_immediate_full_backup: Optional[bool] = None):
         """
         :param bool auto_backup_enabled: (Updatable) If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
         :param str auto_backup_window: (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        :param str auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        :param str auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         :param str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
         :param Sequence['DatabaseDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
         :param int recovery_window_in_days: (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+        :param bool run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
         """
         if auto_backup_enabled is not None:
             pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         if auto_backup_window is not None:
             pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        if auto_full_backup_day is not None:
+            pulumi.set(__self__, "auto_full_backup_day", auto_full_backup_day)
+        if auto_full_backup_window is not None:
+            pulumi.set(__self__, "auto_full_backup_window", auto_full_backup_window)
         if backup_deletion_policy is not None:
             pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
         if backup_destination_details is not None:
             pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         if recovery_window_in_days is not None:
             pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+        if run_immediate_full_backup is not None:
+            pulumi.set(__self__, "run_immediate_full_backup", run_immediate_full_backup)
 
     @property
     @pulumi.getter(name="autoBackupEnabled")
@@ -4688,6 +4792,22 @@ class DatabaseDbBackupConfig(dict):
         (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         """
         return pulumi.get(self, "auto_backup_window")
+
+    @property
+    @pulumi.getter(name="autoFullBackupDay")
+    def auto_full_backup_day(self) -> Optional[str]:
+        """
+        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        """
+        return pulumi.get(self, "auto_full_backup_day")
+
+    @property
+    @pulumi.getter(name="autoFullBackupWindow")
+    def auto_full_backup_window(self) -> Optional[str]:
+        """
+        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        """
+        return pulumi.get(self, "auto_full_backup_window")
 
     @property
     @pulumi.getter(name="backupDeletionPolicy")
@@ -4712,6 +4832,14 @@ class DatabaseDbBackupConfig(dict):
         (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         """
         return pulumi.get(self, "recovery_window_in_days")
+
+    @property
+    @pulumi.getter(name="runImmediateFullBackup")
+    def run_immediate_full_backup(self) -> Optional[bool]:
+        """
+        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+        """
+        return pulumi.get(self, "run_immediate_full_backup")
 
 
 @pulumi.output_type
@@ -4881,6 +5009,10 @@ class DatabaseUpgradeDatabaseUpgradeSourceDetails(dict):
         :param str source: The source of the Oracle Database software to be used for the upgrade.
                * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
                * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if database_software_image_id is not None:
             pulumi.set(__self__, "database_software_image_id", database_software_image_id)
@@ -4922,6 +5054,10 @@ class DatabaseUpgradeDatabaseUpgradeSourceDetails(dict):
         The source of the Oracle Database software to be used for the upgrade.
         * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
         * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source")
 
@@ -4935,12 +5071,18 @@ class DatabaseUpgradeDbBackupConfig(dict):
             suggest = "auto_backup_enabled"
         elif key == "autoBackupWindow":
             suggest = "auto_backup_window"
+        elif key == "autoFullBackupDay":
+            suggest = "auto_full_backup_day"
+        elif key == "autoFullBackupWindow":
+            suggest = "auto_full_backup_window"
         elif key == "backupDeletionPolicy":
             suggest = "backup_deletion_policy"
         elif key == "backupDestinationDetails":
             suggest = "backup_destination_details"
         elif key == "recoveryWindowInDays":
             suggest = "recovery_window_in_days"
+        elif key == "runImmediateFullBackup":
+            suggest = "run_immediate_full_backup"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DatabaseUpgradeDbBackupConfig. Access the value via the '{suggest}' property getter instead.")
@@ -4956,26 +5098,38 @@ class DatabaseUpgradeDbBackupConfig(dict):
     def __init__(__self__, *,
                  auto_backup_enabled: Optional[bool] = None,
                  auto_backup_window: Optional[str] = None,
+                 auto_full_backup_day: Optional[str] = None,
+                 auto_full_backup_window: Optional[str] = None,
                  backup_deletion_policy: Optional[str] = None,
                  backup_destination_details: Optional[Sequence['outputs.DatabaseUpgradeDbBackupConfigBackupDestinationDetail']] = None,
-                 recovery_window_in_days: Optional[int] = None):
+                 recovery_window_in_days: Optional[int] = None,
+                 run_immediate_full_backup: Optional[bool] = None):
         """
         :param bool auto_backup_enabled: If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
         :param str auto_backup_window: Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        :param str auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        :param str auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         :param str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
         :param Sequence['DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
         :param int recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+        :param bool run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
         """
         if auto_backup_enabled is not None:
             pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         if auto_backup_window is not None:
             pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        if auto_full_backup_day is not None:
+            pulumi.set(__self__, "auto_full_backup_day", auto_full_backup_day)
+        if auto_full_backup_window is not None:
+            pulumi.set(__self__, "auto_full_backup_window", auto_full_backup_window)
         if backup_deletion_policy is not None:
             pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
         if backup_destination_details is not None:
             pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         if recovery_window_in_days is not None:
             pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+        if run_immediate_full_backup is not None:
+            pulumi.set(__self__, "run_immediate_full_backup", run_immediate_full_backup)
 
     @property
     @pulumi.getter(name="autoBackupEnabled")
@@ -4992,6 +5146,22 @@ class DatabaseUpgradeDbBackupConfig(dict):
         Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         """
         return pulumi.get(self, "auto_backup_window")
+
+    @property
+    @pulumi.getter(name="autoFullBackupDay")
+    def auto_full_backup_day(self) -> Optional[str]:
+        """
+        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        """
+        return pulumi.get(self, "auto_full_backup_day")
+
+    @property
+    @pulumi.getter(name="autoFullBackupWindow")
+    def auto_full_backup_window(self) -> Optional[str]:
+        """
+        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        """
+        return pulumi.get(self, "auto_full_backup_window")
 
     @property
     @pulumi.getter(name="backupDeletionPolicy")
@@ -5016,6 +5186,14 @@ class DatabaseUpgradeDbBackupConfig(dict):
         Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         """
         return pulumi.get(self, "recovery_window_in_days")
+
+    @property
+    @pulumi.getter(name="runImmediateFullBackup")
+    def run_immediate_full_backup(self) -> Optional[bool]:
+        """
+        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+        """
+        return pulumi.get(self, "run_immediate_full_backup")
 
 
 @pulumi.output_type
@@ -5217,11 +5395,15 @@ class DbHomeDatabase(dict):
         :param str backup_id: The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str backup_tde_password: The password to open the TDE wallet.
         :param str character_set: The character set for the database.  The default is AL32UTF8. Allowed values are:
+               
+               AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
         :param str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param 'DbHomeDatabaseDbBackupConfigArgs' db_backup_config: (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
         :param str db_name: The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
         :param str db_workload: **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+               
+               The database workload type.
         :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
@@ -5319,6 +5501,8 @@ class DbHomeDatabase(dict):
     def character_set(self) -> Optional[str]:
         """
         The character set for the database.  The default is AL32UTF8. Allowed values are:
+
+        AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
         """
         return pulumi.get(self, "character_set")
 
@@ -5369,6 +5553,8 @@ class DbHomeDatabase(dict):
     def db_workload(self) -> Optional[str]:
         """
         **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+
+        The database workload type.
         """
         return pulumi.get(self, "db_workload")
 
@@ -5552,12 +5738,18 @@ class DbHomeDatabaseDbBackupConfig(dict):
             suggest = "auto_backup_enabled"
         elif key == "autoBackupWindow":
             suggest = "auto_backup_window"
+        elif key == "autoFullBackupDay":
+            suggest = "auto_full_backup_day"
+        elif key == "autoFullBackupWindow":
+            suggest = "auto_full_backup_window"
         elif key == "backupDeletionPolicy":
             suggest = "backup_deletion_policy"
         elif key == "backupDestinationDetails":
             suggest = "backup_destination_details"
         elif key == "recoveryWindowInDays":
             suggest = "recovery_window_in_days"
+        elif key == "runImmediateFullBackup":
+            suggest = "run_immediate_full_backup"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DbHomeDatabaseDbBackupConfig. Access the value via the '{suggest}' property getter instead.")
@@ -5573,26 +5765,38 @@ class DbHomeDatabaseDbBackupConfig(dict):
     def __init__(__self__, *,
                  auto_backup_enabled: Optional[bool] = None,
                  auto_backup_window: Optional[str] = None,
+                 auto_full_backup_day: Optional[str] = None,
+                 auto_full_backup_window: Optional[str] = None,
                  backup_deletion_policy: Optional[str] = None,
                  backup_destination_details: Optional[Sequence['outputs.DbHomeDatabaseDbBackupConfigBackupDestinationDetail']] = None,
-                 recovery_window_in_days: Optional[int] = None):
+                 recovery_window_in_days: Optional[int] = None,
+                 run_immediate_full_backup: Optional[bool] = None):
         """
         :param bool auto_backup_enabled: (Updatable) If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
         :param str auto_backup_window: (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        :param str auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        :param str auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         :param str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
         :param Sequence['DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
         :param int recovery_window_in_days: (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+        :param bool run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
         """
         if auto_backup_enabled is not None:
             pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         if auto_backup_window is not None:
             pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        if auto_full_backup_day is not None:
+            pulumi.set(__self__, "auto_full_backup_day", auto_full_backup_day)
+        if auto_full_backup_window is not None:
+            pulumi.set(__self__, "auto_full_backup_window", auto_full_backup_window)
         if backup_deletion_policy is not None:
             pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
         if backup_destination_details is not None:
             pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         if recovery_window_in_days is not None:
             pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+        if run_immediate_full_backup is not None:
+            pulumi.set(__self__, "run_immediate_full_backup", run_immediate_full_backup)
 
     @property
     @pulumi.getter(name="autoBackupEnabled")
@@ -5609,6 +5813,22 @@ class DbHomeDatabaseDbBackupConfig(dict):
         (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         """
         return pulumi.get(self, "auto_backup_window")
+
+    @property
+    @pulumi.getter(name="autoFullBackupDay")
+    def auto_full_backup_day(self) -> Optional[str]:
+        """
+        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        """
+        return pulumi.get(self, "auto_full_backup_day")
+
+    @property
+    @pulumi.getter(name="autoFullBackupWindow")
+    def auto_full_backup_window(self) -> Optional[str]:
+        """
+        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        """
+        return pulumi.get(self, "auto_full_backup_window")
 
     @property
     @pulumi.getter(name="backupDeletionPolicy")
@@ -5633,6 +5853,14 @@ class DbHomeDatabaseDbBackupConfig(dict):
         (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         """
         return pulumi.get(self, "recovery_window_in_days")
+
+    @property
+    @pulumi.getter(name="runImmediateFullBackup")
+    def run_immediate_full_backup(self) -> Optional[bool]:
+        """
+        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+        """
+        return pulumi.get(self, "run_immediate_full_backup")
 
 
 @pulumi.output_type
@@ -5812,6 +6040,8 @@ class DbSystemDbHome(dict):
                  time_created: Optional[str] = None):
         """
         :param 'DbSystemDbHomeDatabaseArgs' database: (Updatable) Details for creating a database by restoring from a source database system.
+               
+               **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         :param str database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to restore a database.
         :param str db_version: A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
         :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -5854,6 +6084,8 @@ class DbSystemDbHome(dict):
     def database(self) -> 'outputs.DbSystemDbHomeDatabase':
         """
         (Updatable) Details for creating a database by restoring from a source database system.
+
+        **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         """
         return pulumi.get(self, "database")
 
@@ -6042,12 +6274,16 @@ class DbSystemDbHomeDatabase(dict):
         :param str backup_id: The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str backup_tde_password: The password to open the TDE wallet.
         :param str character_set: The character set for the database.  The default is AL32UTF8. Allowed values are:
+               
+               AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
         :param str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to restore a database.
         :param 'DbSystemDbHomeDatabaseDbBackupConfigArgs' db_backup_config: (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
         :param str db_domain: The database domain. In a distributed database system, DB_DOMAIN specifies the logical location of the database within the network structure.
         :param str db_name: The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
         :param str db_workload: **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+               
+               The database workload type.
         :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
@@ -6141,6 +6377,8 @@ class DbSystemDbHomeDatabase(dict):
     def character_set(self) -> Optional[str]:
         """
         The character set for the database.  The default is AL32UTF8. Allowed values are:
+
+        AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
         """
         return pulumi.get(self, "character_set")
 
@@ -6199,6 +6437,8 @@ class DbSystemDbHomeDatabase(dict):
     def db_workload(self) -> Optional[str]:
         """
         **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+
+        The database workload type.
         """
         return pulumi.get(self, "db_workload")
 
@@ -6366,12 +6606,18 @@ class DbSystemDbHomeDatabaseDbBackupConfig(dict):
             suggest = "auto_backup_enabled"
         elif key == "autoBackupWindow":
             suggest = "auto_backup_window"
+        elif key == "autoFullBackupDay":
+            suggest = "auto_full_backup_day"
+        elif key == "autoFullBackupWindow":
+            suggest = "auto_full_backup_window"
         elif key == "backupDeletionPolicy":
             suggest = "backup_deletion_policy"
         elif key == "backupDestinationDetails":
             suggest = "backup_destination_details"
         elif key == "recoveryWindowInDays":
             suggest = "recovery_window_in_days"
+        elif key == "runImmediateFullBackup":
+            suggest = "run_immediate_full_backup"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DbSystemDbHomeDatabaseDbBackupConfig. Access the value via the '{suggest}' property getter instead.")
@@ -6387,26 +6633,38 @@ class DbSystemDbHomeDatabaseDbBackupConfig(dict):
     def __init__(__self__, *,
                  auto_backup_enabled: Optional[bool] = None,
                  auto_backup_window: Optional[str] = None,
+                 auto_full_backup_day: Optional[str] = None,
+                 auto_full_backup_window: Optional[str] = None,
                  backup_deletion_policy: Optional[str] = None,
                  backup_destination_details: Optional[Sequence['outputs.DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail']] = None,
-                 recovery_window_in_days: Optional[int] = None):
+                 recovery_window_in_days: Optional[int] = None,
+                 run_immediate_full_backup: Optional[bool] = None):
         """
         :param bool auto_backup_enabled: (Updatable) If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
         :param str auto_backup_window: (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        :param str auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        :param str auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         :param str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
         :param Sequence['DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: (Updatable) Backup destination details.
         :param int recovery_window_in_days: (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+        :param bool run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
         """
         if auto_backup_enabled is not None:
             pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         if auto_backup_window is not None:
             pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        if auto_full_backup_day is not None:
+            pulumi.set(__self__, "auto_full_backup_day", auto_full_backup_day)
+        if auto_full_backup_window is not None:
+            pulumi.set(__self__, "auto_full_backup_window", auto_full_backup_window)
         if backup_deletion_policy is not None:
             pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
         if backup_destination_details is not None:
             pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         if recovery_window_in_days is not None:
             pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+        if run_immediate_full_backup is not None:
+            pulumi.set(__self__, "run_immediate_full_backup", run_immediate_full_backup)
 
     @property
     @pulumi.getter(name="autoBackupEnabled")
@@ -6423,6 +6681,22 @@ class DbSystemDbHomeDatabaseDbBackupConfig(dict):
         (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         """
         return pulumi.get(self, "auto_backup_window")
+
+    @property
+    @pulumi.getter(name="autoFullBackupDay")
+    def auto_full_backup_day(self) -> Optional[str]:
+        """
+        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        """
+        return pulumi.get(self, "auto_full_backup_day")
+
+    @property
+    @pulumi.getter(name="autoFullBackupWindow")
+    def auto_full_backup_window(self) -> Optional[str]:
+        """
+        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        """
+        return pulumi.get(self, "auto_full_backup_window")
 
     @property
     @pulumi.getter(name="backupDeletionPolicy")
@@ -6447,6 +6721,14 @@ class DbSystemDbHomeDatabaseDbBackupConfig(dict):
         (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         """
         return pulumi.get(self, "recovery_window_in_days")
+
+    @property
+    @pulumi.getter(name="runImmediateFullBackup")
+    def run_immediate_full_backup(self) -> Optional[bool]:
+        """
+        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+        """
+        return pulumi.get(self, "run_immediate_full_backup")
 
 
 @pulumi.output_type
@@ -6745,6 +7027,8 @@ class DbSystemMaintenanceWindow(dict):
         :param int lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['DbSystemMaintenanceWindowMonthArgs'] months: (Updatable) Months during the year when maintenance should be performed.
         :param str patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+               
+               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param str preference: (Updatable) The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
@@ -6831,6 +7115,8 @@ class DbSystemMaintenanceWindow(dict):
     def patching_mode(self) -> Optional[str]:
         """
         (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+
+        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         """
         return pulumi.get(self, "patching_mode")
 
@@ -6924,6 +7210,8 @@ class DbSystemMaintenanceWindowDetails(dict):
         :param int lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['DbSystemMaintenanceWindowDetailsMonthArgs'] months: (Updatable) Months during the year when maintenance should be performed.
         :param str patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+               
+               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param str preference: (Updatable) The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
@@ -7010,6 +7298,8 @@ class DbSystemMaintenanceWindowDetails(dict):
     def patching_mode(self) -> Optional[str]:
         """
         (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+
+        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         """
         return pulumi.get(self, "patching_mode")
 
@@ -7826,6 +8116,8 @@ class ExadataInfrastructureMaintenanceWindow(dict):
         :param int lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['ExadataInfrastructureMaintenanceWindowMonthArgs'] months: (Updatable) Months during the year when maintenance should be performed.
         :param str patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+               
+               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param str preference: (Updatable) The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
@@ -7912,6 +8204,8 @@ class ExadataInfrastructureMaintenanceWindow(dict):
     def patching_mode(self) -> Optional[str]:
         """
         (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+
+        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         """
         return pulumi.get(self, "patching_mode")
 
@@ -8386,6 +8680,8 @@ class ExternalDatabaseConnectorConnectionCredentials(dict):
                  username: Optional[str] = None):
         """
         :param str credential_name: (Updatable) The name of the credential information that used to connect to the database. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+               
+               For example: inventorydb.abc112233445566778899
         :param str credential_type: (Updatable) The type of credential used to connect to the database.
         :param str password: (Updatable) The password that will be used to connect to the database.
         :param str role: (Updatable) The role of the user that will be connecting to the database.
@@ -8410,6 +8706,8 @@ class ExternalDatabaseConnectorConnectionCredentials(dict):
     def credential_name(self) -> Optional[str]:
         """
         (Updatable) The name of the credential information that used to connect to the database. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+
+        For example: inventorydb.abc112233445566778899
         """
         return pulumi.get(self, "credential_name")
 
@@ -8918,6 +9216,10 @@ class KeyStoreTypeDetails(dict):
         :param str secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param str type: (Updatable) The type of key store.
         :param str vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "admin_username", admin_username)
         pulumi.set(__self__, "connection_ips", connection_ips)
@@ -8962,6 +9264,10 @@ class KeyStoreTypeDetails(dict):
     def vault_id(self) -> str:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vault_id")
 
@@ -9140,6 +9446,10 @@ class PluggableDatabaseManagementsManagementConnectionString(dict):
                  pdb_ip_default: Optional[str] = None):
         """
         :param bool enable_pluggabledatabasemanagement: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param Mapping[str, Any] all_connection_strings: All connection strings to use to connect to the pluggable database.
         :param str pdb_default: A host name-based PDB connection string.
         :param str pdb_ip_default: An IP-based PDB connection string.
@@ -9157,6 +9467,10 @@ class PluggableDatabaseManagementsManagementConnectionString(dict):
     def enable_pluggabledatabasemanagement(self) -> bool:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "enable_pluggabledatabasemanagement")
 
@@ -9259,6 +9573,10 @@ class PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig(di
                  management_status: Optional[str] = None):
         """
         :param bool enable_pluggabledatabasemanagement: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str management_status: The status of the Pluggable Database Management service.
         """
         pulumi.set(__self__, "enable_pluggabledatabasemanagement", enable_pluggabledatabasemanagement)
@@ -9270,6 +9588,10 @@ class PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig(di
     def enable_pluggabledatabasemanagement(self) -> bool:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "enable_pluggabledatabasemanagement")
 
@@ -9801,6 +10123,10 @@ class VmClusterNetworkVmNetwork(dict):
         :param str gateway: (Updatable) The network gateway.
         :param str netmask: (Updatable) The network netmask.
         :param str vlan_id: (Updatable) The network VLAN ID.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "network_type", network_type)
         pulumi.set(__self__, "nodes", nodes)
@@ -9858,6 +10184,10 @@ class VmClusterNetworkVmNetwork(dict):
     def vlan_id(self) -> Optional[str]:
         """
         (Updatable) The network VLAN ID.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vlan_id")
 
@@ -23751,21 +24081,30 @@ class GetDatabaseDatabaseDbBackupConfigResult(dict):
     def __init__(__self__, *,
                  auto_backup_enabled: bool,
                  auto_backup_window: str,
+                 auto_full_backup_day: str,
+                 auto_full_backup_window: str,
                  backup_deletion_policy: str,
                  backup_destination_details: Sequence['outputs.GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailResult'],
-                 recovery_window_in_days: int):
+                 recovery_window_in_days: int,
+                 run_immediate_full_backup: bool):
         """
         :param bool auto_backup_enabled: If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
         :param str auto_backup_window: Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        :param str auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        :param str auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         :param str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
         :param Sequence['GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
         :param int recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+        :param bool run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
         """
         pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        pulumi.set(__self__, "auto_full_backup_day", auto_full_backup_day)
+        pulumi.set(__self__, "auto_full_backup_window", auto_full_backup_window)
         pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
         pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+        pulumi.set(__self__, "run_immediate_full_backup", run_immediate_full_backup)
 
     @property
     @pulumi.getter(name="autoBackupEnabled")
@@ -23782,6 +24121,22 @@ class GetDatabaseDatabaseDbBackupConfigResult(dict):
         Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         """
         return pulumi.get(self, "auto_backup_window")
+
+    @property
+    @pulumi.getter(name="autoFullBackupDay")
+    def auto_full_backup_day(self) -> str:
+        """
+        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        """
+        return pulumi.get(self, "auto_full_backup_day")
+
+    @property
+    @pulumi.getter(name="autoFullBackupWindow")
+    def auto_full_backup_window(self) -> str:
+        """
+        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        """
+        return pulumi.get(self, "auto_full_backup_window")
 
     @property
     @pulumi.getter(name="backupDeletionPolicy")
@@ -23806,6 +24161,14 @@ class GetDatabaseDatabaseDbBackupConfigResult(dict):
         Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         """
         return pulumi.get(self, "recovery_window_in_days")
+
+    @property
+    @pulumi.getter(name="runImmediateFullBackup")
+    def run_immediate_full_backup(self) -> bool:
+        """
+        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+        """
+        return pulumi.get(self, "run_immediate_full_backup")
 
 
 @pulumi.output_type
@@ -23889,21 +24252,30 @@ class GetDatabaseDbBackupConfigResult(dict):
     def __init__(__self__, *,
                  auto_backup_enabled: bool,
                  auto_backup_window: str,
+                 auto_full_backup_day: str,
+                 auto_full_backup_window: str,
                  backup_deletion_policy: str,
                  backup_destination_details: Sequence['outputs.GetDatabaseDbBackupConfigBackupDestinationDetailResult'],
-                 recovery_window_in_days: int):
+                 recovery_window_in_days: int,
+                 run_immediate_full_backup: bool):
         """
         :param bool auto_backup_enabled: If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
         :param str auto_backup_window: Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        :param str auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        :param str auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         :param str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
         :param Sequence['GetDatabaseDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
         :param int recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+        :param bool run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
         """
         pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        pulumi.set(__self__, "auto_full_backup_day", auto_full_backup_day)
+        pulumi.set(__self__, "auto_full_backup_window", auto_full_backup_window)
         pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
         pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+        pulumi.set(__self__, "run_immediate_full_backup", run_immediate_full_backup)
 
     @property
     @pulumi.getter(name="autoBackupEnabled")
@@ -23920,6 +24292,22 @@ class GetDatabaseDbBackupConfigResult(dict):
         Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         """
         return pulumi.get(self, "auto_backup_window")
+
+    @property
+    @pulumi.getter(name="autoFullBackupDay")
+    def auto_full_backup_day(self) -> str:
+        """
+        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        """
+        return pulumi.get(self, "auto_full_backup_day")
+
+    @property
+    @pulumi.getter(name="autoFullBackupWindow")
+    def auto_full_backup_window(self) -> str:
+        """
+        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        """
+        return pulumi.get(self, "auto_full_backup_window")
 
     @property
     @pulumi.getter(name="backupDeletionPolicy")
@@ -23944,6 +24332,14 @@ class GetDatabaseDbBackupConfigResult(dict):
         Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         """
         return pulumi.get(self, "recovery_window_in_days")
+
+    @property
+    @pulumi.getter(name="runImmediateFullBackup")
+    def run_immediate_full_backup(self) -> bool:
+        """
+        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+        """
+        return pulumi.get(self, "run_immediate_full_backup")
 
 
 @pulumi.output_type
@@ -26132,21 +26528,30 @@ class GetDatabasesDatabaseDatabaseDbBackupConfigResult(dict):
     def __init__(__self__, *,
                  auto_backup_enabled: bool,
                  auto_backup_window: str,
+                 auto_full_backup_day: str,
+                 auto_full_backup_window: str,
                  backup_deletion_policy: str,
                  backup_destination_details: Sequence['outputs.GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailResult'],
-                 recovery_window_in_days: int):
+                 recovery_window_in_days: int,
+                 run_immediate_full_backup: bool):
         """
         :param bool auto_backup_enabled: If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
         :param str auto_backup_window: Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        :param str auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        :param str auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         :param str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
         :param Sequence['GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
         :param int recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+        :param bool run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
         """
         pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        pulumi.set(__self__, "auto_full_backup_day", auto_full_backup_day)
+        pulumi.set(__self__, "auto_full_backup_window", auto_full_backup_window)
         pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
         pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+        pulumi.set(__self__, "run_immediate_full_backup", run_immediate_full_backup)
 
     @property
     @pulumi.getter(name="autoBackupEnabled")
@@ -26163,6 +26568,22 @@ class GetDatabasesDatabaseDatabaseDbBackupConfigResult(dict):
         Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         """
         return pulumi.get(self, "auto_backup_window")
+
+    @property
+    @pulumi.getter(name="autoFullBackupDay")
+    def auto_full_backup_day(self) -> str:
+        """
+        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        """
+        return pulumi.get(self, "auto_full_backup_day")
+
+    @property
+    @pulumi.getter(name="autoFullBackupWindow")
+    def auto_full_backup_window(self) -> str:
+        """
+        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        """
+        return pulumi.get(self, "auto_full_backup_window")
 
     @property
     @pulumi.getter(name="backupDeletionPolicy")
@@ -26187,6 +26608,14 @@ class GetDatabasesDatabaseDatabaseDbBackupConfigResult(dict):
         Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         """
         return pulumi.get(self, "recovery_window_in_days")
+
+    @property
+    @pulumi.getter(name="runImmediateFullBackup")
+    def run_immediate_full_backup(self) -> bool:
+        """
+        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+        """
+        return pulumi.get(self, "run_immediate_full_backup")
 
 
 @pulumi.output_type
@@ -26270,21 +26699,30 @@ class GetDatabasesDatabaseDbBackupConfigResult(dict):
     def __init__(__self__, *,
                  auto_backup_enabled: bool,
                  auto_backup_window: str,
+                 auto_full_backup_day: str,
+                 auto_full_backup_window: str,
                  backup_deletion_policy: str,
                  backup_destination_details: Sequence['outputs.GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailResult'],
-                 recovery_window_in_days: int):
+                 recovery_window_in_days: int,
+                 run_immediate_full_backup: bool):
         """
         :param bool auto_backup_enabled: If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
         :param str auto_backup_window: Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        :param str auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        :param str auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         :param str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
         :param Sequence['GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
         :param int recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+        :param bool run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
         """
         pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        pulumi.set(__self__, "auto_full_backup_day", auto_full_backup_day)
+        pulumi.set(__self__, "auto_full_backup_window", auto_full_backup_window)
         pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
         pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+        pulumi.set(__self__, "run_immediate_full_backup", run_immediate_full_backup)
 
     @property
     @pulumi.getter(name="autoBackupEnabled")
@@ -26301,6 +26739,22 @@ class GetDatabasesDatabaseDbBackupConfigResult(dict):
         Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         """
         return pulumi.get(self, "auto_backup_window")
+
+    @property
+    @pulumi.getter(name="autoFullBackupDay")
+    def auto_full_backup_day(self) -> str:
+        """
+        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        """
+        return pulumi.get(self, "auto_full_backup_day")
+
+    @property
+    @pulumi.getter(name="autoFullBackupWindow")
+    def auto_full_backup_window(self) -> str:
+        """
+        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        """
+        return pulumi.get(self, "auto_full_backup_window")
 
     @property
     @pulumi.getter(name="backupDeletionPolicy")
@@ -26325,6 +26779,14 @@ class GetDatabasesDatabaseDbBackupConfigResult(dict):
         Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         """
         return pulumi.get(self, "recovery_window_in_days")
+
+    @property
+    @pulumi.getter(name="runImmediateFullBackup")
+    def run_immediate_full_backup(self) -> bool:
+        """
+        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+        """
+        return pulumi.get(self, "run_immediate_full_backup")
 
 
 @pulumi.output_type
@@ -26657,14 +27119,20 @@ class GetDbHomeDatabaseDbBackupConfigResult(dict):
     def __init__(__self__, *,
                  auto_backup_enabled: bool,
                  auto_backup_window: str,
+                 auto_full_backup_day: str,
+                 auto_full_backup_window: str,
                  backup_deletion_policy: str,
                  backup_destination_details: Sequence['outputs.GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult'],
-                 recovery_window_in_days: int):
+                 recovery_window_in_days: int,
+                 run_immediate_full_backup: bool):
         pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        pulumi.set(__self__, "auto_full_backup_day", auto_full_backup_day)
+        pulumi.set(__self__, "auto_full_backup_window", auto_full_backup_window)
         pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
         pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+        pulumi.set(__self__, "run_immediate_full_backup", run_immediate_full_backup)
 
     @property
     @pulumi.getter(name="autoBackupEnabled")
@@ -26675,6 +27143,16 @@ class GetDbHomeDatabaseDbBackupConfigResult(dict):
     @pulumi.getter(name="autoBackupWindow")
     def auto_backup_window(self) -> str:
         return pulumi.get(self, "auto_backup_window")
+
+    @property
+    @pulumi.getter(name="autoFullBackupDay")
+    def auto_full_backup_day(self) -> str:
+        return pulumi.get(self, "auto_full_backup_day")
+
+    @property
+    @pulumi.getter(name="autoFullBackupWindow")
+    def auto_full_backup_window(self) -> str:
+        return pulumi.get(self, "auto_full_backup_window")
 
     @property
     @pulumi.getter(name="backupDeletionPolicy")
@@ -26690,6 +27168,11 @@ class GetDbHomeDatabaseDbBackupConfigResult(dict):
     @pulumi.getter(name="recoveryWindowInDays")
     def recovery_window_in_days(self) -> int:
         return pulumi.get(self, "recovery_window_in_days")
+
+    @property
+    @pulumi.getter(name="runImmediateFullBackup")
+    def run_immediate_full_backup(self) -> bool:
+        return pulumi.get(self, "run_immediate_full_backup")
 
 
 @pulumi.output_type
@@ -27442,14 +27925,20 @@ class GetDbHomesDbHomeDatabaseDbBackupConfigResult(dict):
     def __init__(__self__, *,
                  auto_backup_enabled: bool,
                  auto_backup_window: str,
+                 auto_full_backup_day: str,
+                 auto_full_backup_window: str,
                  backup_deletion_policy: str,
                  backup_destination_details: Sequence['outputs.GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult'],
-                 recovery_window_in_days: int):
+                 recovery_window_in_days: int,
+                 run_immediate_full_backup: bool):
         pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        pulumi.set(__self__, "auto_full_backup_day", auto_full_backup_day)
+        pulumi.set(__self__, "auto_full_backup_window", auto_full_backup_window)
         pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
         pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+        pulumi.set(__self__, "run_immediate_full_backup", run_immediate_full_backup)
 
     @property
     @pulumi.getter(name="autoBackupEnabled")
@@ -27460,6 +27949,16 @@ class GetDbHomesDbHomeDatabaseDbBackupConfigResult(dict):
     @pulumi.getter(name="autoBackupWindow")
     def auto_backup_window(self) -> str:
         return pulumi.get(self, "auto_backup_window")
+
+    @property
+    @pulumi.getter(name="autoFullBackupDay")
+    def auto_full_backup_day(self) -> str:
+        return pulumi.get(self, "auto_full_backup_day")
+
+    @property
+    @pulumi.getter(name="autoFullBackupWindow")
+    def auto_full_backup_window(self) -> str:
+        return pulumi.get(self, "auto_full_backup_window")
 
     @property
     @pulumi.getter(name="backupDeletionPolicy")
@@ -27475,6 +27974,11 @@ class GetDbHomesDbHomeDatabaseDbBackupConfigResult(dict):
     @pulumi.getter(name="recoveryWindowInDays")
     def recovery_window_in_days(self) -> int:
         return pulumi.get(self, "recovery_window_in_days")
+
+    @property
+    @pulumi.getter(name="runImmediateFullBackup")
+    def run_immediate_full_backup(self) -> bool:
+        return pulumi.get(self, "run_immediate_full_backup")
 
 
 @pulumi.output_type
@@ -30187,14 +30691,20 @@ class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigResult(dict):
     def __init__(__self__, *,
                  auto_backup_enabled: bool,
                  auto_backup_window: str,
+                 auto_full_backup_day: str,
+                 auto_full_backup_window: str,
                  backup_deletion_policy: str,
                  backup_destination_details: Sequence['outputs.GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult'],
-                 recovery_window_in_days: int):
+                 recovery_window_in_days: int,
+                 run_immediate_full_backup: bool):
         pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
         pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        pulumi.set(__self__, "auto_full_backup_day", auto_full_backup_day)
+        pulumi.set(__self__, "auto_full_backup_window", auto_full_backup_window)
         pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
         pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+        pulumi.set(__self__, "run_immediate_full_backup", run_immediate_full_backup)
 
     @property
     @pulumi.getter(name="autoBackupEnabled")
@@ -30205,6 +30715,16 @@ class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigResult(dict):
     @pulumi.getter(name="autoBackupWindow")
     def auto_backup_window(self) -> str:
         return pulumi.get(self, "auto_backup_window")
+
+    @property
+    @pulumi.getter(name="autoFullBackupDay")
+    def auto_full_backup_day(self) -> str:
+        return pulumi.get(self, "auto_full_backup_day")
+
+    @property
+    @pulumi.getter(name="autoFullBackupWindow")
+    def auto_full_backup_window(self) -> str:
+        return pulumi.get(self, "auto_full_backup_window")
 
     @property
     @pulumi.getter(name="backupDeletionPolicy")
@@ -30220,6 +30740,11 @@ class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigResult(dict):
     @pulumi.getter(name="recoveryWindowInDays")
     def recovery_window_in_days(self) -> int:
         return pulumi.get(self, "recovery_window_in_days")
+
+    @property
+    @pulumi.getter(name="runImmediateFullBackup")
+    def run_immediate_full_backup(self) -> bool:
+        return pulumi.get(self, "run_immediate_full_backup")
 
 
 @pulumi.output_type

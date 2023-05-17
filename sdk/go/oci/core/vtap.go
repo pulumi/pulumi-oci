@@ -123,6 +123,9 @@ type Vtap struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN containing the `Vtap` resource.
 	VcnId pulumi.StringOutput `pulumi:"vcnId"`
 	// (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VxlanNetworkIdentifier pulumi.StringOutput `pulumi:"vxlanNetworkIdentifier"`
 }
 
@@ -208,6 +211,9 @@ type vtapState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN containing the `Vtap` resource.
 	VcnId *string `pulumi:"vcnId"`
 	// (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VxlanNetworkIdentifier *string `pulumi:"vxlanNetworkIdentifier"`
 }
 
@@ -253,6 +259,9 @@ type VtapState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN containing the `Vtap` resource.
 	VcnId pulumi.StringPtrInput
 	// (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VxlanNetworkIdentifier pulumi.StringPtrInput
 }
 
@@ -296,6 +305,9 @@ type vtapArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN containing the `Vtap` resource.
 	VcnId string `pulumi:"vcnId"`
 	// (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VxlanNetworkIdentifier *string `pulumi:"vxlanNetworkIdentifier"`
 }
 
@@ -336,6 +348,9 @@ type VtapArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN containing the `Vtap` resource.
 	VcnId pulumi.StringInput
 	// (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VxlanNetworkIdentifier pulumi.StringPtrInput
 }
 
@@ -527,6 +542,9 @@ func (o VtapOutput) VcnId() pulumi.StringOutput {
 }
 
 // (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o VtapOutput) VxlanNetworkIdentifier() pulumi.StringOutput {
 	return o.ApplyT(func(v *Vtap) pulumi.StringOutput { return v.VxlanNetworkIdentifier }).(pulumi.StringOutput)
 }

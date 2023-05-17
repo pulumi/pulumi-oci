@@ -176,6 +176,10 @@ export class ReportDefinition extends pulumi.CustomResource {
     public /*out*/ readonly scheduledReportRowLimit!: pulumi.Output<number>;
     /**
      * (Updatable) Additional scim filters used to get the specific summary.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public /*out*/ readonly scimFilter!: pulumi.Output<string>;
     /**
@@ -379,6 +383,10 @@ export interface ReportDefinitionState {
     scheduledReportRowLimit?: pulumi.Input<number>;
     /**
      * (Updatable) Additional scim filters used to get the specific summary.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     scimFilter?: pulumi.Input<string>;
     /**

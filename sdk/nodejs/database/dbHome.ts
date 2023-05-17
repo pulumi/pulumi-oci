@@ -57,6 +57,8 @@ export class DbHome extends pulumi.CustomResource {
     public /*out*/ readonly compartmentId!: pulumi.Output<string>;
     /**
      * (Updatable) Details for creating a database.
+     *
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
     public readonly database!: pulumi.Output<outputs.Database.DbHomeDatabase>;
     /**
@@ -125,6 +127,10 @@ export class DbHome extends pulumi.CustomResource {
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly vmClusterId!: pulumi.Output<string>;
 
@@ -197,6 +203,8 @@ export interface DbHomeState {
     compartmentId?: pulumi.Input<string>;
     /**
      * (Updatable) Details for creating a database.
+     *
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
     database?: pulumi.Input<inputs.Database.DbHomeDatabase>;
     /**
@@ -265,6 +273,10 @@ export interface DbHomeState {
     timeCreated?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vmClusterId?: pulumi.Input<string>;
 }
@@ -275,6 +287,8 @@ export interface DbHomeState {
 export interface DbHomeArgs {
     /**
      * (Updatable) Details for creating a database.
+     *
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
     database?: pulumi.Input<inputs.Database.DbHomeDatabase>;
     /**
@@ -323,6 +337,10 @@ export interface DbHomeArgs {
     source?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vmClusterId?: pulumi.Input<string>;
 }

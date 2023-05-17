@@ -199,6 +199,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
+        /// 
+        /// The maximum length of the combined hostname and domain is 63 characters.
+        /// 
+        /// **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
         /// </summary>
         [Output("hostname")]
         public Output<string> Hostname { get; private set; } = null!;
@@ -349,7 +353,11 @@ namespace Pulumi.Oci.Database
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        /// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("timeZone")]
         public Output<string> TimeZone { get; private set; } = null!;
@@ -544,6 +552,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
+        /// 
+        /// The maximum length of the combined hostname and domain is 63 characters.
+        /// 
+        /// **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
         /// </summary>
         [Input("hostname", required: true)]
         public Input<string> Hostname { get; set; } = null!;
@@ -628,7 +640,11 @@ namespace Pulumi.Oci.Database
         public Input<string> SubnetId { get; set; } = null!;
 
         /// <summary>
-        /// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        /// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("timeZone")]
         public Input<string>? TimeZone { get; set; }
@@ -785,6 +801,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
+        /// 
+        /// The maximum length of the combined hostname and domain is 63 characters.
+        /// 
+        /// **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
         /// </summary>
         [Input("hostname")]
         public Input<string>? Hostname { get; set; }
@@ -959,7 +979,11 @@ namespace Pulumi.Oci.Database
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        /// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("timeZone")]
         public Input<string>? TimeZone { get; set; }

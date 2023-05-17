@@ -296,12 +296,18 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="vpcUsers", type=List.class, parameters={String.class})
     private Output</* @Nullable */ List<String>> vpcUsers;
 
     /**
      * @return (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Optional<List<String>>> vpcUsers() {

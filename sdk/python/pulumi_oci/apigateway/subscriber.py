@@ -26,7 +26,11 @@ class SubscriberArgs:
         The set of arguments for constructing a Subscriber resource.
         :param pulumi.Input[Sequence[pulumi.Input['SubscriberClientArgs']]] clients: (Updatable) The clients belonging to this subscriber.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] usage_plans: (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] usage_plans: (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -69,7 +73,11 @@ class SubscriberArgs:
     @pulumi.getter(name="usagePlans")
     def usage_plans(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
-        (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
+        (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "usage_plans")
 
@@ -138,7 +146,11 @@ class _SubscriberState:
         :param pulumi.Input[str] state: The current state of the subscriber.
         :param pulumi.Input[str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] usage_plans: (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] usage_plans: (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if clients is not None:
             pulumi.set(__self__, "clients", clients)
@@ -273,7 +285,11 @@ class _SubscriberState:
     @pulumi.getter(name="usagePlans")
     def usage_plans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
+        (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "usage_plans")
 
@@ -336,7 +352,11 @@ class Subscriber(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] usage_plans: (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] usage_plans: (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -461,7 +481,11 @@ class Subscriber(pulumi.CustomResource):
         :param pulumi.Input[str] state: The current state of the subscriber.
         :param pulumi.Input[str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] usage_plans: (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] usage_plans: (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -555,7 +579,11 @@ class Subscriber(pulumi.CustomResource):
     @pulumi.getter(name="usagePlans")
     def usage_plans(self) -> pulumi.Output[Sequence[str]]:
         """
-        (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
+        (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "usage_plans")
 

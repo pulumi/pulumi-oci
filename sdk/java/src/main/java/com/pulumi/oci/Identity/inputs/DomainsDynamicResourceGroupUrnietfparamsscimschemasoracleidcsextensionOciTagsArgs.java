@@ -21,12 +21,34 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
     /**
      * (Updatable) Oracle Cloud Infrastructure Defined Tags
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [namespace, key, value]
+     * * type: complex
+     * * idcsSearchable: true
+     * * required: false
+     * * mutability: readWrite
+     * * multiValued: true
+     * * returned: default
+     * 
      */
     @Import(name="definedTags")
     private @Nullable Output<List<DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs>> definedTags;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Defined Tags
+     * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [namespace, key, value]
+     * * type: complex
+     * * idcsSearchable: true
+     * * required: false
+     * * mutability: readWrite
+     * * multiValued: true
+     * * returned: default
      * 
      */
     public Optional<Output<List<DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs>>> definedTags() {
@@ -36,12 +58,34 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
     /**
      * (Updatable) Oracle Cloud Infrastructure Freeform Tags
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * type: complex
+     * * required: false
+     * * mutability: readWrite
+     * * returned: default
+     * * multiValued: true
+     * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<List<DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs>> freeformTags;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Freeform Tags
+     * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * type: complex
+     * * required: false
+     * * mutability: readWrite
+     * * returned: default
+     * * multiValued: true
      * 
      */
     public Optional<Output<List<DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs>>> freeformTags() {
@@ -51,12 +95,32 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
     /**
      * (Updatable) Oracle Cloud Infrastructure Tag slug
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * type: binary
+     * * mutability: readOnly
+     * * returned: request
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="tagSlug")
     private @Nullable Output<String> tagSlug;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tag slug
+     * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * type: binary
+     * * mutability: readOnly
+     * * returned: request
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> tagSlug() {
@@ -92,6 +156,17 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
         /**
          * @param definedTags (Updatable) Oracle Cloud Infrastructure Defined Tags
          * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [namespace, key, value]
+         * * type: complex
+         * * idcsSearchable: true
+         * * required: false
+         * * mutability: readWrite
+         * * multiValued: true
+         * * returned: default
+         * 
          * @return builder
          * 
          */
@@ -103,6 +178,17 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
         /**
          * @param definedTags (Updatable) Oracle Cloud Infrastructure Defined Tags
          * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [namespace, key, value]
+         * * type: complex
+         * * idcsSearchable: true
+         * * required: false
+         * * mutability: readWrite
+         * * multiValued: true
+         * * returned: default
+         * 
          * @return builder
          * 
          */
@@ -113,6 +199,17 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
         /**
          * @param definedTags (Updatable) Oracle Cloud Infrastructure Defined Tags
          * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [namespace, key, value]
+         * * type: complex
+         * * idcsSearchable: true
+         * * required: false
+         * * mutability: readWrite
+         * * multiValued: true
+         * * returned: default
+         * 
          * @return builder
          * 
          */
@@ -122,6 +219,17 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
 
         /**
          * @param freeformTags (Updatable) Oracle Cloud Infrastructure Freeform Tags
+         * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * type: complex
+         * * required: false
+         * * mutability: readWrite
+         * * returned: default
+         * * multiValued: true
          * 
          * @return builder
          * 
@@ -134,6 +242,17 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
         /**
          * @param freeformTags (Updatable) Oracle Cloud Infrastructure Freeform Tags
          * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * type: complex
+         * * required: false
+         * * mutability: readWrite
+         * * returned: default
+         * * multiValued: true
+         * 
          * @return builder
          * 
          */
@@ -143,6 +262,17 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
 
         /**
          * @param freeformTags (Updatable) Oracle Cloud Infrastructure Freeform Tags
+         * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * type: complex
+         * * required: false
+         * * mutability: readWrite
+         * * returned: default
+         * * multiValued: true
          * 
          * @return builder
          * 
@@ -154,6 +284,16 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
         /**
          * @param tagSlug (Updatable) Oracle Cloud Infrastructure Tag slug
          * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * type: binary
+         * * mutability: readOnly
+         * * returned: request
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -164,6 +304,16 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
 
         /**
          * @param tagSlug (Updatable) Oracle Cloud Infrastructure Tag slug
+         * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * type: binary
+         * * mutability: readOnly
+         * * returned: request
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

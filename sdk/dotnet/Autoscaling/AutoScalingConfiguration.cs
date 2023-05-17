@@ -108,6 +108,8 @@ namespace Pulumi.Oci.Autoscaling
     {
         /// <summary>
         /// A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
+        /// 
+        /// Each instance pool can have one autoscaling configuration.
         /// </summary>
         [Output("autoScalingResources")]
         public Output<Outputs.AutoScalingConfigurationAutoScalingResources> AutoScalingResources { get; private set; } = null!;
@@ -120,6 +122,8 @@ namespace Pulumi.Oci.Autoscaling
 
         /// <summary>
         /// (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
+        /// 
+        /// For schedule-based autoscaling policies, this value is not used.
         /// </summary>
         [Output("coolDownInSeconds")]
         public Output<int> CoolDownInSeconds { get; private set; } = null!;
@@ -220,6 +224,8 @@ namespace Pulumi.Oci.Autoscaling
     {
         /// <summary>
         /// A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
+        /// 
+        /// Each instance pool can have one autoscaling configuration.
         /// </summary>
         [Input("autoScalingResources", required: true)]
         public Input<Inputs.AutoScalingConfigurationAutoScalingResourcesArgs> AutoScalingResources { get; set; } = null!;
@@ -232,6 +238,8 @@ namespace Pulumi.Oci.Autoscaling
 
         /// <summary>
         /// (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
+        /// 
+        /// For schedule-based autoscaling policies, this value is not used.
         /// </summary>
         [Input("coolDownInSeconds")]
         public Input<int>? CoolDownInSeconds { get; set; }
@@ -294,6 +302,8 @@ namespace Pulumi.Oci.Autoscaling
     {
         /// <summary>
         /// A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
+        /// 
+        /// Each instance pool can have one autoscaling configuration.
         /// </summary>
         [Input("autoScalingResources")]
         public Input<Inputs.AutoScalingConfigurationAutoScalingResourcesGetArgs>? AutoScalingResources { get; set; }
@@ -306,6 +316,8 @@ namespace Pulumi.Oci.Autoscaling
 
         /// <summary>
         /// (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
+        /// 
+        /// For schedule-based autoscaling policies, this value is not used.
         /// </summary>
         [Input("coolDownInSeconds")]
         public Input<int>? CoolDownInSeconds { get; set; }

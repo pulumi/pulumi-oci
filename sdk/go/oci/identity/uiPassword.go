@@ -66,6 +66,9 @@ type UiPassword struct {
 	// Date and time the password was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringOutput `pulumi:"userId"`
 }
 
@@ -110,6 +113,9 @@ type uiPasswordState struct {
 	// Date and time the password was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId *string `pulumi:"userId"`
 }
 
@@ -123,6 +129,9 @@ type UiPasswordState struct {
 	// Date and time the password was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringPtrInput
 }
 
@@ -132,12 +141,18 @@ func (UiPasswordState) ElementType() reflect.Type {
 
 type uiPasswordArgs struct {
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId string `pulumi:"userId"`
 }
 
 // The set of arguments for constructing a UiPassword resource.
 type UiPasswordArgs struct {
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringInput
 }
 
@@ -249,6 +264,9 @@ func (o UiPasswordOutput) TimeCreated() pulumi.StringOutput {
 }
 
 // The OCID of the user.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o UiPasswordOutput) UserId() pulumi.StringOutput {
 	return o.ApplyT(func(v *UiPassword) pulumi.StringOutput { return v.UserId }).(pulumi.StringOutput)
 }

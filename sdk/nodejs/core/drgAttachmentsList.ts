@@ -70,6 +70,10 @@ export class DrgAttachmentsList extends pulumi.CustomResource {
     public readonly drgId!: pulumi.Output<string>;
     /**
      * Whether the DRG attachment lives in a different tenancy than the DRG.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly isCrossTenancy!: pulumi.Output<boolean | undefined>;
 
@@ -123,6 +127,10 @@ export interface DrgAttachmentsListState {
     drgId?: pulumi.Input<string>;
     /**
      * Whether the DRG attachment lives in a different tenancy than the DRG.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     isCrossTenancy?: pulumi.Input<boolean>;
 }
@@ -141,6 +149,10 @@ export interface DrgAttachmentsListArgs {
     drgId: pulumi.Input<string>;
     /**
      * Whether the DRG attachment lives in a different tenancy than the DRG.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     isCrossTenancy?: pulumi.Input<boolean>;
 }

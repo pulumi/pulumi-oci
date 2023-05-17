@@ -100,6 +100,9 @@ type SoftwareSource struct {
 	// Number of packages
 	Packages pulumi.IntOutput `pulumi:"packages"`
 	// OCID for the parent software source, if there is one
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ParentId pulumi.StringOutput `pulumi:"parentId"`
 	// Display name the parent software source, if there is one
 	ParentName pulumi.StringOutput `pulumi:"parentName"`
@@ -182,6 +185,9 @@ type softwareSourceState struct {
 	// Number of packages
 	Packages *int `pulumi:"packages"`
 	// OCID for the parent software source, if there is one
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ParentId *string `pulumi:"parentId"`
 	// Display name the parent software source, if there is one
 	ParentName *string `pulumi:"parentName"`
@@ -227,6 +233,9 @@ type SoftwareSourceState struct {
 	// Number of packages
 	Packages pulumi.IntPtrInput
 	// OCID for the parent software source, if there is one
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ParentId pulumi.StringPtrInput
 	// Display name the parent software source, if there is one
 	ParentName pulumi.StringPtrInput
@@ -266,6 +275,9 @@ type softwareSourceArgs struct {
 	// (Updatable) Phone number of the person maintaining this software source
 	MaintainerPhone *string `pulumi:"maintainerPhone"`
 	// OCID for the parent software source, if there is one
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ParentId *string `pulumi:"parentId"`
 }
 
@@ -292,6 +304,9 @@ type SoftwareSourceArgs struct {
 	// (Updatable) Phone number of the person maintaining this software source
 	MaintainerPhone pulumi.StringPtrInput
 	// OCID for the parent software source, if there is one
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ParentId pulumi.StringPtrInput
 }
 
@@ -460,6 +475,9 @@ func (o SoftwareSourceOutput) Packages() pulumi.IntOutput {
 }
 
 // OCID for the parent software source, if there is one
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o SoftwareSourceOutput) ParentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.ParentId }).(pulumi.StringOutput)
 }

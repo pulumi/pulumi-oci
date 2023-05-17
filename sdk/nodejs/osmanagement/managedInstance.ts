@@ -105,6 +105,10 @@ export class ManagedInstance extends pulumi.CustomResource {
     public readonly managedInstanceId!: pulumi.Output<string>;
     /**
      * (Updatable) OCID of the ONS topic used to send notification to users
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly notificationTopicId!: pulumi.Output<string>;
     /**
@@ -290,6 +294,10 @@ export interface ManagedInstanceState {
     managedInstanceId?: pulumi.Input<string>;
     /**
      * (Updatable) OCID of the ONS topic used to send notification to users
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     notificationTopicId?: pulumi.Input<string>;
     /**
@@ -352,6 +360,10 @@ export interface ManagedInstanceArgs {
     managedInstanceId: pulumi.Input<string>;
     /**
      * (Updatable) OCID of the ONS topic used to send notification to users
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     notificationTopicId?: pulumi.Input<string>;
 }

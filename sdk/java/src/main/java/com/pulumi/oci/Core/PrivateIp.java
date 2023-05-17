@@ -143,12 +143,20 @@ public class PrivateIp extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The hostname for the private IP. Used for DNS. The value is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
      * 
+     * For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * 
+     * Example: `bminstance1`
+     * 
      */
     @Export(name="hostnameLabel", type=String.class, parameters={})
     private Output<String> hostnameLabel;
 
     /**
      * @return (Updatable) The hostname for the private IP. Used for DNS. The value is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
+     * 
+     * For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * 
+     * Example: `bminstance1`
      * 
      */
     public Output<String> hostnameLabel() {
@@ -227,12 +235,16 @@ public class PrivateIp extends com.pulumi.resources.CustomResource {
     /**
      * Use this attribute only with the Oracle Cloud VMware Solution.
      * 
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+     * 
      */
     @Export(name="vlanId", type=String.class, parameters={})
     private Output<String> vlanId;
 
     /**
      * @return Use this attribute only with the Oracle Cloud VMware Solution.
+     * 
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN from which the private IP is to be drawn. The IP address, *if supplied*, must be valid for the given VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      * 
      */
     public Output<String> vlanId() {
@@ -241,12 +253,18 @@ public class PrivateIp extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the private IP to. The VNIC and private IP must be in the same subnet.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="vnicId", type=String.class, parameters={})
     private Output<String> vnicId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the private IP to. The VNIC and private IP must be in the same subnet.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> vnicId() {

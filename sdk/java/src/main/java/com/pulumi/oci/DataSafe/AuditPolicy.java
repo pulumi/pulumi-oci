@@ -194,12 +194,18 @@ public class AuditPolicy extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="retrieveFromTargetTrigger", type=Integer.class, parameters={})
     private Output</* @Nullable */ Integer> retrieveFromTargetTrigger;
 
     /**
      * @return (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Optional<Integer>> retrieveFromTargetTrigger() {

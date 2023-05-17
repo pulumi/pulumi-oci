@@ -101,12 +101,32 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="compartmentOcid", type=String.class, parameters={})
     private Output<String> compartmentOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> compartmentOcid() {
@@ -115,12 +135,32 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Export(name="deleteInProgress", type=Boolean.class, parameters={})
     private Output<Boolean> deleteInProgress;
 
     /**
      * @return (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Output<Boolean> deleteInProgress() {
@@ -129,12 +169,32 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="domainOcid", type=String.class, parameters={})
     private Output<String> domainOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> domainOcid() {
@@ -143,12 +203,28 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) The User or App who created the Resource
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: complex
+     * 
      */
     @Export(name="idcsCreatedBies", type=List.class, parameters={DomainsMySupportAccountIdcsCreatedBy.class})
     private Output<List<DomainsMySupportAccountIdcsCreatedBy>> idcsCreatedBies;
 
     /**
      * @return (Updatable) The User or App who created the Resource
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: complex
      * 
      */
     public Output<List<DomainsMySupportAccountIdcsCreatedBy>> idcsCreatedBies() {
@@ -171,12 +247,28 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) The User or App who modified the Resource
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * 
      */
     @Export(name="idcsLastModifiedBies", type=List.class, parameters={DomainsMySupportAccountIdcsLastModifiedBy.class})
     private Output<List<DomainsMySupportAccountIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
      * @return (Updatable) The User or App who modified the Resource
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
      * 
      */
     public Output<List<DomainsMySupportAccountIdcsLastModifiedBy>> idcsLastModifiedBies() {
@@ -185,12 +277,32 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) The release number when the resource was upgraded.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="idcsLastUpgradedInRelease", type=String.class, parameters={})
     private Output<String> idcsLastUpgradedInRelease;
 
     /**
      * @return (Updatable) The release number when the resource was upgraded.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> idcsLastUpgradedInRelease() {
@@ -199,12 +311,30 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="idcsPreventedOperations", type=List.class, parameters={String.class})
     private Output<List<String>> idcsPreventedOperations;
 
     /**
      * @return (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<List<String>> idcsPreventedOperations() {
@@ -213,12 +343,32 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+     * * type: complex
+     * 
      */
     @Export(name="metas", type=List.class, parameters={DomainsMySupportAccountMeta.class})
     private Output<List<DomainsMySupportAccountMeta>> metas;
 
     /**
      * @return (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+     * * type: complex
      * 
      */
     public Output<List<DomainsMySupportAccountMeta>> metas() {
@@ -227,12 +377,36 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) User Support Account Provider
      * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * idcsSearchable: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="mySupportAccountProvider", type=String.class, parameters={})
     private Output<String> mySupportAccountProvider;
 
     /**
      * @return (Updatable) User Support Account Provider
+     * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * idcsSearchable: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> mySupportAccountProvider() {
@@ -241,12 +415,32 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
     /**
      * User&#39;s ocid
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="ocid", type=String.class, parameters={})
     private Output<String> ocid;
 
     /**
      * @return User&#39;s ocid
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> ocid() {
@@ -269,12 +463,32 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="schemas", type=List.class, parameters={String.class})
     private Output<List<String>> schemas;
 
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<List<String>> schemas() {
@@ -283,12 +497,32 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
     /**
      * A list of tags on this resource.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Export(name="tags", type=List.class, parameters={DomainsMySupportAccountTag.class})
     private Output<List<DomainsMySupportAccountTag>> tags;
 
     /**
      * @return A list of tags on this resource.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Output<List<DomainsMySupportAccountTag>> tags() {
@@ -297,12 +531,32 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="tenancyOcid", type=String.class, parameters={})
     private Output<String> tenancyOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> tenancyOcid() {
@@ -311,12 +565,32 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
     /**
      * User Support Account Token
      * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * required: true
+     * * returned: never
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="token", type=String.class, parameters={})
     private Output<String> token;
 
     /**
      * @return User Support Account Token
+     * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * required: true
+     * * returned: never
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> token() {
@@ -325,12 +599,32 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
     /**
      * User linked to Support Account
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Export(name="user", type=DomainsMySupportAccountUser.class, parameters={})
     private Output<DomainsMySupportAccountUser> user;
 
     /**
      * @return User linked to Support Account
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Output<DomainsMySupportAccountUser> user() {
@@ -339,12 +633,42 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) User Support User Id
      * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * idcsSearchable: true
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="userId", type=String.class, parameters={})
     private Output<String> userId;
 
     /**
      * @return (Updatable) User Support User Id
+     * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * idcsSearchable: true
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> userId() {

@@ -262,12 +262,18 @@ public final class OperatorControlAssignmentArgs extends com.pulumi.resources.Re
     /**
      * (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="timeAssignmentTo")
     private @Nullable Output<String> timeAssignmentTo;
 
     /**
      * @return (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: &#39;2020-05-22T21:10:29.600Z&#39;
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> timeAssignmentTo() {
@@ -653,6 +659,9 @@ public final class OperatorControlAssignmentArgs extends com.pulumi.resources.Re
         /**
          * @param timeAssignmentTo (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: &#39;2020-05-22T21:10:29.600Z&#39;
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -663,6 +672,9 @@ public final class OperatorControlAssignmentArgs extends com.pulumi.resources.Re
 
         /**
          * @param timeAssignmentTo (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: &#39;2020-05-22T21:10:29.600Z&#39;
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

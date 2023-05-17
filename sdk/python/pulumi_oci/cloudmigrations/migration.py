@@ -28,6 +28,10 @@ class MigrationArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_completed: (Updatable) Indicates whether migration is marked as complete.
         :param pulumi.Input[str] replication_schedule_id: (Updatable) Replication schedule identifier
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -105,6 +109,10 @@ class MigrationArgs:
     def replication_schedule_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Replication schedule identifier
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "replication_schedule_id")
 
@@ -136,6 +144,10 @@ class _MigrationState:
         :param pulumi.Input[bool] is_completed: (Updatable) Indicates whether migration is marked as complete.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] replication_schedule_id: (Updatable) Replication schedule identifier
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of migration.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time when the migration project was created. An RFC3339 formatted datetime string
@@ -241,6 +253,10 @@ class _MigrationState:
     def replication_schedule_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Replication schedule identifier
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "replication_schedule_id")
 
@@ -349,6 +365,10 @@ class Migration(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_completed: (Updatable) Indicates whether migration is marked as complete.
         :param pulumi.Input[str] replication_schedule_id: (Updatable) Replication schedule identifier
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -468,6 +488,10 @@ class Migration(pulumi.CustomResource):
         :param pulumi.Input[bool] is_completed: (Updatable) Indicates whether migration is marked as complete.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] replication_schedule_id: (Updatable) Replication schedule identifier
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of migration.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time when the migration project was created. An RFC3339 formatted datetime string
@@ -543,6 +567,10 @@ class Migration(pulumi.CustomResource):
     def replication_schedule_id(self) -> pulumi.Output[str]:
         """
         (Updatable) Replication schedule identifier
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "replication_schedule_id")
 

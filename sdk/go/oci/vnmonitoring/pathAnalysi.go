@@ -113,6 +113,9 @@ type PathAnalysi struct {
 	// Information describing a source or destination in a `PathAnalyzerTest` resource.
 	SourceEndpoint PathAnalysiSourceEndpointOutput `pulumi:"sourceEndpoint"`
 	// The type of the `PathAnalysis` query.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringOutput `pulumi:"type"`
 }
 
@@ -165,6 +168,9 @@ type pathAnalysiState struct {
 	// Information describing a source or destination in a `PathAnalyzerTest` resource.
 	SourceEndpoint *PathAnalysiSourceEndpoint `pulumi:"sourceEndpoint"`
 	// The type of the `PathAnalysis` query.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type *string `pulumi:"type"`
 }
 
@@ -186,6 +192,9 @@ type PathAnalysiState struct {
 	// Information describing a source or destination in a `PathAnalyzerTest` resource.
 	SourceEndpoint PathAnalysiSourceEndpointPtrInput
 	// The type of the `PathAnalysis` query.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringPtrInput
 }
 
@@ -211,6 +220,9 @@ type pathAnalysiArgs struct {
 	// Information describing a source or destination in a `PathAnalyzerTest` resource.
 	SourceEndpoint *PathAnalysiSourceEndpoint `pulumi:"sourceEndpoint"`
 	// The type of the `PathAnalysis` query.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type string `pulumi:"type"`
 }
 
@@ -233,6 +245,9 @@ type PathAnalysiArgs struct {
 	// Information describing a source or destination in a `PathAnalyzerTest` resource.
 	SourceEndpoint PathAnalysiSourceEndpointPtrInput
 	// The type of the `PathAnalysis` query.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringInput
 }
 
@@ -364,6 +379,9 @@ func (o PathAnalysiOutput) SourceEndpoint() PathAnalysiSourceEndpointOutput {
 }
 
 // The type of the `PathAnalysis` query.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PathAnalysiOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *PathAnalysi) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

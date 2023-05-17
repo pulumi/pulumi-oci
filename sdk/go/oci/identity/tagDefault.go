@@ -68,6 +68,8 @@ type TagDefault struct {
 	// (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
 	// * If the `isRequired` flag is set to "true", the value is set during resource creation.
 	// * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
+	//
+	// Example: `false`
 	IsRequired pulumi.BoolOutput `pulumi:"isRequired"`
 	// The tag default's current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -80,6 +82,9 @@ type TagDefault struct {
 	// Date and time the `TagDefault` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Value pulumi.StringOutput `pulumi:"value"`
 }
 
@@ -126,6 +131,8 @@ type tagDefaultState struct {
 	// (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
 	// * If the `isRequired` flag is set to "true", the value is set during resource creation.
 	// * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
+	//
+	// Example: `false`
 	IsRequired *bool `pulumi:"isRequired"`
 	// The tag default's current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
 	State *string `pulumi:"state"`
@@ -138,6 +145,9 @@ type tagDefaultState struct {
 	// Date and time the `TagDefault` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 	// (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Value *string `pulumi:"value"`
 }
 
@@ -147,6 +157,8 @@ type TagDefaultState struct {
 	// (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
 	// * If the `isRequired` flag is set to "true", the value is set during resource creation.
 	// * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
+	//
+	// Example: `false`
 	IsRequired pulumi.BoolPtrInput
 	// The tag default's current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
 	State pulumi.StringPtrInput
@@ -159,6 +171,9 @@ type TagDefaultState struct {
 	// Date and time the `TagDefault` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 	// (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Value pulumi.StringPtrInput
 }
 
@@ -172,10 +187,15 @@ type tagDefaultArgs struct {
 	// (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
 	// * If the `isRequired` flag is set to "true", the value is set during resource creation.
 	// * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
+	//
+	// Example: `false`
 	IsRequired *bool `pulumi:"isRequired"`
 	// The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
 	TagDefinitionId string `pulumi:"tagDefinitionId"`
 	// (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Value string `pulumi:"value"`
 }
 
@@ -186,10 +206,15 @@ type TagDefaultArgs struct {
 	// (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
 	// * If the `isRequired` flag is set to "true", the value is set during resource creation.
 	// * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
+	//
+	// Example: `false`
 	IsRequired pulumi.BoolPtrInput
 	// The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
 	TagDefinitionId pulumi.StringInput
 	// (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Value pulumi.StringInput
 }
 
@@ -288,6 +313,8 @@ func (o TagDefaultOutput) CompartmentId() pulumi.StringOutput {
 // (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
 // * If the `isRequired` flag is set to "true", the value is set during resource creation.
 // * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
+//
+// Example: `false`
 func (o TagDefaultOutput) IsRequired() pulumi.BoolOutput {
 	return o.ApplyT(func(v *TagDefault) pulumi.BoolOutput { return v.IsRequired }).(pulumi.BoolOutput)
 }
@@ -318,6 +345,9 @@ func (o TagDefaultOutput) TimeCreated() pulumi.StringOutput {
 }
 
 // (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o TagDefaultOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v *TagDefault) pulumi.StringOutput { return v.Value }).(pulumi.StringOutput)
 }

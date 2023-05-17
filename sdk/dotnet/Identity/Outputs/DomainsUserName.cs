@@ -15,26 +15,89 @@ namespace Pulumi.Oci.Identity.Outputs
     {
         /// <summary>
         /// (Updatable) Last name
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Last Name
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string FamilyName;
         /// <summary>
         /// (Updatable) Full name
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? Formatted;
         /// <summary>
         /// (Updatable) First name
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: First Name
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? GivenName;
         /// <summary>
         /// (Updatable) Prefix
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCsvAttributeName: Honorific Prefix
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? HonorificPrefix;
         /// <summary>
         /// (Updatable) Suffix
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCsvAttributeName: Honorific Suffix
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? HonorificSuffix;
         /// <summary>
         /// (Updatable) Middle name
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Middle Name
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? MiddleName;
 

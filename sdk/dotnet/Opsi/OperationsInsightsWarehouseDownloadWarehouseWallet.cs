@@ -52,6 +52,10 @@ namespace Pulumi.Oci.Opsi
 
         /// <summary>
         /// User provided ADW wallet password for the Operations Insights Warehouse.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("operationsInsightsWarehouseWalletPassword")]
         public Output<string> OperationsInsightsWarehouseWalletPassword { get; private set; } = null!;
@@ -117,6 +121,10 @@ namespace Pulumi.Oci.Opsi
 
         /// <summary>
         /// User provided ADW wallet password for the Operations Insights Warehouse.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public Input<string>? OperationsInsightsWarehouseWalletPassword
         {
@@ -147,6 +155,10 @@ namespace Pulumi.Oci.Opsi
 
         /// <summary>
         /// User provided ADW wallet password for the Operations Insights Warehouse.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public Input<string>? OperationsInsightsWarehouseWalletPassword
         {

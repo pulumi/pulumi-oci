@@ -15,6 +15,8 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     {
         /// <summary>
         /// (Updatable) DetectorTemplate identifier.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>

@@ -21,6 +21,8 @@ public final class ResponderRecipeEffectiveResponderRule {
     /**
      * @return (Updatable) Responder recipe description.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     private @Nullable String description;
     /**
@@ -30,6 +32,8 @@ public final class ResponderRecipeEffectiveResponderRule {
     private @Nullable List<ResponderRecipeEffectiveResponderRuleDetail> details;
     /**
      * @return (Updatable) Responder recipe display name.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
@@ -85,6 +89,8 @@ public final class ResponderRecipeEffectiveResponderRule {
     /**
      * @return (Updatable) Responder recipe description.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
@@ -98,6 +104,8 @@ public final class ResponderRecipeEffectiveResponderRule {
     }
     /**
      * @return (Updatable) Responder recipe display name.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {

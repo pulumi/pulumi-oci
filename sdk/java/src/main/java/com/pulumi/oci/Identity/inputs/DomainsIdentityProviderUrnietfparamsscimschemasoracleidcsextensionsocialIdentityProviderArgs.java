@@ -21,12 +21,36 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     /**
      * (Updatable) Social IDP Access token URL
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="accessTokenUrl")
     private @Nullable Output<String> accessTokenUrl;
 
     /**
      * @return (Updatable) Social IDP Access token URL
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> accessTokenUrl() {
@@ -36,12 +60,36 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     /**
      * (Updatable) Whether account linking is enabled
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="accountLinkingEnabled", required=true)
     private Output<Boolean> accountLinkingEnabled;
 
     /**
      * @return (Updatable) Whether account linking is enabled
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Output<Boolean> accountLinkingEnabled() {
@@ -51,12 +99,36 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     /**
      * (Updatable) Admin scope to request
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="adminScopes")
     private @Nullable Output<List<String>> adminScopes;
 
     /**
      * @return (Updatable) Admin scope to request
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<String>>> adminScopes() {
@@ -66,12 +138,36 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     /**
      * (Updatable) Social IDP Authorization URL
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="authzUrl")
     private @Nullable Output<String> authzUrl;
 
     /**
      * @return (Updatable) Social IDP Authorization URL
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> authzUrl() {
@@ -81,12 +177,36 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     /**
      * (Updatable) Whether the client credential is contained in payload
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="clientCredentialInPayload")
     private @Nullable Output<Boolean> clientCredentialInPayload;
 
     /**
      * @return (Updatable) Whether the client credential is contained in payload
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> clientCredentialInPayload() {
@@ -96,12 +216,34 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     /**
      * (Updatable) Social IDP allowed clock skew time
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="clockSkewInSeconds")
     private @Nullable Output<Integer> clockSkewInSeconds;
 
     /**
      * @return (Updatable) Social IDP allowed clock skew time
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> clockSkewInSeconds() {
@@ -111,12 +253,36 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     /**
      * (Updatable) Social IDP Client Application Client ID
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="consumerKey", required=true)
     private Output<String> consumerKey;
 
     /**
      * @return (Updatable) Social IDP Client Application Client ID
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> consumerKey() {
@@ -126,12 +292,38 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     /**
      * (Updatable) Social IDP Client Application Client Secret
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * idcsSensitive: encrypt
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="consumerSecret", required=true)
     private Output<String> consumerSecret;
 
     /**
      * @return (Updatable) Social IDP Client Application Client Secret
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * idcsSensitive: encrypt
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> consumerSecret() {
@@ -141,12 +333,36 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     /**
      * (Updatable) Discovery URL
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="discoveryUrl")
     private @Nullable Output<String> discoveryUrl;
 
     /**
      * @return (Updatable) Discovery URL
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> discoveryUrl() {
@@ -156,12 +372,36 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     /**
      * (Updatable) Id attribute used for account linking
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="idAttribute")
     private @Nullable Output<String> idAttribute;
 
     /**
      * @return (Updatable) Id attribute used for account linking
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> idAttribute() {
@@ -171,12 +411,36 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     /**
      * (Updatable) Social IDP User profile URL
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="profileUrl")
     private @Nullable Output<String> profileUrl;
 
     /**
      * @return (Updatable) Social IDP User profile URL
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> profileUrl() {
@@ -186,12 +450,36 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     /**
      * (Updatable) redirect URL for social idp
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="redirectUrl")
     private @Nullable Output<String> redirectUrl;
 
     /**
      * @return (Updatable) redirect URL for social idp
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> redirectUrl() {
@@ -201,12 +489,36 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     /**
      * (Updatable) Whether registration is enabled
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="registrationEnabled", required=true)
     private Output<Boolean> registrationEnabled;
 
     /**
      * @return (Updatable) Whether registration is enabled
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Output<Boolean> registrationEnabled() {
@@ -216,12 +528,36 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     /**
      * (Updatable) Scope to request
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="scopes")
     private @Nullable Output<List<String>> scopes;
 
     /**
      * @return (Updatable) Scope to request
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<String>>> scopes() {
@@ -231,12 +567,36 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     /**
      * (Updatable) Service Provider Name
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="serviceProviderName", required=true)
     private Output<String> serviceProviderName;
 
     /**
      * @return (Updatable) Service Provider Name
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> serviceProviderName() {
@@ -246,12 +606,36 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     /**
      * (Updatable) Status
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return (Updatable) Status
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> status() {
@@ -300,6 +684,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         /**
          * @param accessTokenUrl (Updatable) Social IDP Access token URL
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -311,6 +707,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         /**
          * @param accessTokenUrl (Updatable) Social IDP Access token URL
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -320,6 +728,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
 
         /**
          * @param accountLinkingEnabled (Updatable) Whether account linking is enabled
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -332,6 +752,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         /**
          * @param accountLinkingEnabled (Updatable) Whether account linking is enabled
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -341,6 +773,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
 
         /**
          * @param adminScopes (Updatable) Admin scope to request
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -353,6 +797,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         /**
          * @param adminScopes (Updatable) Admin scope to request
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -363,6 +819,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         /**
          * @param adminScopes (Updatable) Admin scope to request
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -372,6 +840,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
 
         /**
          * @param authzUrl (Updatable) Social IDP Authorization URL
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -384,6 +864,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         /**
          * @param authzUrl (Updatable) Social IDP Authorization URL
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -393,6 +885,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
 
         /**
          * @param clientCredentialInPayload (Updatable) Whether the client credential is contained in payload
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -405,6 +909,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         /**
          * @param clientCredentialInPayload (Updatable) Whether the client credential is contained in payload
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -414,6 +930,17 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
 
         /**
          * @param clockSkewInSeconds (Updatable) Social IDP allowed clock skew time
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -426,6 +953,17 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         /**
          * @param clockSkewInSeconds (Updatable) Social IDP allowed clock skew time
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -435,6 +973,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
 
         /**
          * @param consumerKey (Updatable) Social IDP Client Application Client ID
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -447,6 +997,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         /**
          * @param consumerKey (Updatable) Social IDP Client Application Client ID
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -456,6 +1018,19 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
 
         /**
          * @param consumerSecret (Updatable) Social IDP Client Application Client Secret
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * idcsSensitive: encrypt
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -468,6 +1043,19 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         /**
          * @param consumerSecret (Updatable) Social IDP Client Application Client Secret
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * idcsSensitive: encrypt
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -477,6 +1065,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
 
         /**
          * @param discoveryUrl (Updatable) Discovery URL
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -489,6 +1089,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         /**
          * @param discoveryUrl (Updatable) Discovery URL
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -498,6 +1110,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
 
         /**
          * @param idAttribute (Updatable) Id attribute used for account linking
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -510,6 +1134,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         /**
          * @param idAttribute (Updatable) Id attribute used for account linking
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -519,6 +1155,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
 
         /**
          * @param profileUrl (Updatable) Social IDP User profile URL
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -531,6 +1179,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         /**
          * @param profileUrl (Updatable) Social IDP User profile URL
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -540,6 +1200,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
 
         /**
          * @param redirectUrl (Updatable) redirect URL for social idp
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -552,6 +1224,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         /**
          * @param redirectUrl (Updatable) redirect URL for social idp
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -561,6 +1245,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
 
         /**
          * @param registrationEnabled (Updatable) Whether registration is enabled
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -573,6 +1269,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         /**
          * @param registrationEnabled (Updatable) Whether registration is enabled
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -582,6 +1290,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
 
         /**
          * @param scopes (Updatable) Scope to request
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -594,6 +1314,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         /**
          * @param scopes (Updatable) Scope to request
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -604,6 +1336,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         /**
          * @param scopes (Updatable) Scope to request
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -613,6 +1357,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
 
         /**
          * @param serviceProviderName (Updatable) Service Provider Name
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -625,6 +1381,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         /**
          * @param serviceProviderName (Updatable) Service Provider Name
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -634,6 +1402,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
 
         /**
          * @param status (Updatable) Status
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -645,6 +1425,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
 
         /**
          * @param status (Updatable) Status
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 

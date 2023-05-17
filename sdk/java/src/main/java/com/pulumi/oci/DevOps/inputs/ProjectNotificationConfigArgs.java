@@ -16,12 +16,18 @@ public final class ProjectNotificationConfigArgs extends com.pulumi.resources.Re
     /**
      * (Updatable) The topic ID for notifications.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="topicId", required=true)
     private Output<String> topicId;
 
     /**
      * @return (Updatable) The topic ID for notifications.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> topicId() {
@@ -55,6 +61,9 @@ public final class ProjectNotificationConfigArgs extends com.pulumi.resources.Re
         /**
          * @param topicId (Updatable) The topic ID for notifications.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -65,6 +74,9 @@ public final class ProjectNotificationConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param topicId (Updatable) The topic ID for notifications.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

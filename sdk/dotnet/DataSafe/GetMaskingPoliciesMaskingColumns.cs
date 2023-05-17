@@ -217,12 +217,16 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
         /// </summary>
         [Input("timeCreatedGreaterThanOrEqualTo")]
         public string? TimeCreatedGreaterThanOrEqualTo { get; set; }
 
         /// <summary>
         /// Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
         /// </summary>
         [Input("timeCreatedLessThan")]
         public string? TimeCreatedLessThan { get; set; }
@@ -359,12 +363,16 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
         /// </summary>
         [Input("timeCreatedGreaterThanOrEqualTo")]
         public Input<string>? TimeCreatedGreaterThanOrEqualTo { get; set; }
 
         /// <summary>
         /// Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
         /// </summary>
         [Input("timeCreatedLessThan")]
         public Input<string>? TimeCreatedLessThan { get; set; }

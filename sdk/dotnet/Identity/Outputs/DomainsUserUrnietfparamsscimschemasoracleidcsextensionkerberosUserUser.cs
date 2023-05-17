@@ -15,6 +15,15 @@ namespace Pulumi.Oci.Identity.Outputs
     {
         /// <summary>
         /// (Updatable) A list of kerberos realm users for an Oracle Cloud Infrastructure IAM User
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public readonly ImmutableArray<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser> RealmUsers;
 

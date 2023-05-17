@@ -83,6 +83,9 @@ type Model struct {
 	// This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
 	ArtifactContentDisposition pulumi.StringOutput `pulumi:"artifactContentDisposition"`
 	// The content length of the model_artifact.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ArtifactContentLength pulumi.StringOutput `pulumi:"artifactContentLength"`
 	ArtifactContentMd5    pulumi.StringOutput `pulumi:"artifactContentMd5"`
 	ArtifactLastModified  pulumi.StringOutput `pulumi:"artifactLastModified"`
@@ -161,6 +164,9 @@ type modelState struct {
 	// This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
 	ArtifactContentDisposition *string `pulumi:"artifactContentDisposition"`
 	// The content length of the model_artifact.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ArtifactContentLength *string `pulumi:"artifactContentLength"`
 	ArtifactContentMd5    *string `pulumi:"artifactContentMd5"`
 	ArtifactLastModified  *string `pulumi:"artifactLastModified"`
@@ -199,6 +205,9 @@ type ModelState struct {
 	// This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
 	ArtifactContentDisposition pulumi.StringPtrInput
 	// The content length of the model_artifact.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ArtifactContentLength pulumi.StringPtrInput
 	ArtifactContentMd5    pulumi.StringPtrInput
 	ArtifactLastModified  pulumi.StringPtrInput
@@ -241,6 +250,9 @@ type modelArgs struct {
 	// This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
 	ArtifactContentDisposition *string `pulumi:"artifactContentDisposition"`
 	// The content length of the model_artifact.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ArtifactContentLength string `pulumi:"artifactContentLength"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -273,6 +285,9 @@ type ModelArgs struct {
 	// This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
 	ArtifactContentDisposition pulumi.StringPtrInput
 	// The content length of the model_artifact.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ArtifactContentLength pulumi.StringInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
 	CompartmentId pulumi.StringInput
@@ -393,6 +408,9 @@ func (o ModelOutput) ArtifactContentDisposition() pulumi.StringOutput {
 }
 
 // The content length of the model_artifact.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ModelOutput) ArtifactContentLength() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.ArtifactContentLength }).(pulumi.StringOutput)
 }

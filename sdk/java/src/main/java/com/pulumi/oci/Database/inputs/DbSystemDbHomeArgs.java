@@ -29,12 +29,16 @@ public final class DbSystemDbHomeArgs extends com.pulumi.resources.ResourceArgs 
     /**
      * (Updatable) Details for creating a database by restoring from a source database system.
      * 
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+     * 
      */
     @Import(name="database", required=true)
     private Output<DbSystemDbHomeDatabaseArgs> database;
 
     /**
      * @return (Updatable) Details for creating a database by restoring from a source database system.
+     * 
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      * 
      */
     public Output<DbSystemDbHomeDatabaseArgs> database() {
@@ -246,6 +250,8 @@ public final class DbSystemDbHomeArgs extends com.pulumi.resources.ResourceArgs 
         /**
          * @param database (Updatable) Details for creating a database by restoring from a source database system.
          * 
+         * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+         * 
          * @return builder
          * 
          */
@@ -256,6 +262,8 @@ public final class DbSystemDbHomeArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param database (Updatable) Details for creating a database by restoring from a source database system.
+         * 
+         * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
          * 
          * @return builder
          * 

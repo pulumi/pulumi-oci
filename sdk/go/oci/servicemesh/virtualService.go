@@ -88,6 +88,9 @@ type VirtualService struct {
 	// (Updatable) The mTLS authentication mode to use when receiving requests from other virtual services or ingress gateways within the mesh.
 	Mtls VirtualServiceMtlsOutput `pulumi:"mtls"`
 	// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The current state of the Resource.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -153,6 +156,9 @@ type virtualServiceState struct {
 	// (Updatable) The mTLS authentication mode to use when receiving requests from other virtual services or ingress gateways within the mesh.
 	Mtls *VirtualServiceMtls `pulumi:"mtls"`
 	// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 	// The current state of the Resource.
 	State *string `pulumi:"state"`
@@ -184,6 +190,9 @@ type VirtualServiceState struct {
 	// (Updatable) The mTLS authentication mode to use when receiving requests from other virtual services or ingress gateways within the mesh.
 	Mtls VirtualServiceMtlsPtrInput
 	// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput
 	// The current state of the Resource.
 	State pulumi.StringPtrInput
@@ -217,6 +226,9 @@ type virtualServiceArgs struct {
 	// (Updatable) The mTLS authentication mode to use when receiving requests from other virtual services or ingress gateways within the mesh.
 	Mtls *VirtualServiceMtls `pulumi:"mtls"`
 	// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 }
 
@@ -239,6 +251,9 @@ type VirtualServiceArgs struct {
 	// (Updatable) The mTLS authentication mode to use when receiving requests from other virtual services or ingress gateways within the mesh.
 	Mtls VirtualServiceMtlsPtrInput
 	// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput
 }
 
@@ -375,6 +390,9 @@ func (o VirtualServiceOutput) Mtls() VirtualServiceMtlsOutput {
 }
 
 // A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o VirtualServiceOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *VirtualService) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

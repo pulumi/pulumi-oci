@@ -65,6 +65,9 @@ type UserGroupMembership struct {
 	// Date and time the membership was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringOutput `pulumi:"userId"`
 }
 
@@ -114,6 +117,9 @@ type userGroupMembershipState struct {
 	// Date and time the membership was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId *string `pulumi:"userId"`
 }
 
@@ -129,6 +135,9 @@ type UserGroupMembershipState struct {
 	// Date and time the membership was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringPtrInput
 }
 
@@ -142,6 +151,9 @@ type userGroupMembershipArgs struct {
 	// The OCID of the group.
 	GroupId string `pulumi:"groupId"`
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId string `pulumi:"userId"`
 }
 
@@ -152,6 +164,9 @@ type UserGroupMembershipArgs struct {
 	// The OCID of the group.
 	GroupId pulumi.StringInput
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringInput
 }
 
@@ -268,6 +283,9 @@ func (o UserGroupMembershipOutput) TimeCreated() pulumi.StringOutput {
 }
 
 // The OCID of the user.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o UserGroupMembershipOutput) UserId() pulumi.StringOutput {
 	return o.ApplyT(func(v *UserGroupMembership) pulumi.StringOutput { return v.UserId }).(pulumi.StringOutput)
 }

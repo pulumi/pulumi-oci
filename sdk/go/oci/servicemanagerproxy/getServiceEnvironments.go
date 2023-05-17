@@ -60,6 +60,8 @@ type GetServiceEnvironmentsArgs struct {
 	DisplayName *string                        `pulumi:"displayName"`
 	Filters     []GetServiceEnvironmentsFilter `pulumi:"filters"`
 	// The unique identifier associated with the service environment.
+	//
+	// **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ServiceEnvironmentId *string `pulumi:"serviceEnvironmentId"`
 	// The environment's service definition type.  For example, "RGBUOROMS" is the service definition type for "Oracle Retail Order Management Cloud Service".
 	ServiceEnvironmentType *string `pulumi:"serviceEnvironmentType"`
@@ -101,6 +103,8 @@ type GetServiceEnvironmentsOutputArgs struct {
 	DisplayName pulumi.StringPtrInput                  `pulumi:"displayName"`
 	Filters     GetServiceEnvironmentsFilterArrayInput `pulumi:"filters"`
 	// The unique identifier associated with the service environment.
+	//
+	// **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ServiceEnvironmentId pulumi.StringPtrInput `pulumi:"serviceEnvironmentId"`
 	// The environment's service definition type.  For example, "RGBUOROMS" is the service definition type for "Oracle Retail Order Management Cloud Service".
 	ServiceEnvironmentType pulumi.StringPtrInput `pulumi:"serviceEnvironmentType"`

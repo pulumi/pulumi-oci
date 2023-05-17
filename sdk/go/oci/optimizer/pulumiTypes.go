@@ -533,8 +533,15 @@ type ProfileTargetTagsItem struct {
 	// (Updatable) The name of the tag namespace.
 	TagNamespaceName string `pulumi:"tagNamespaceName"`
 	// (Updatable) Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
+	//
+	// When the value for this field is `ANY`, the `tagValues` field should be empty, which enforces overrides to the recommendation for resources with any tag values attached to them.
+	//
+	// When the value for this field value is `VALUE`, the `tagValues` field must include a specific value or list of values. Overrides to the recommendation criteria only occur for resources that match the values in the `tagValues` fields.
 	TagValueType string `pulumi:"tagValueType"`
 	// (Updatable) The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TagValues []string `pulumi:"tagValues"`
 }
 
@@ -555,8 +562,15 @@ type ProfileTargetTagsItemArgs struct {
 	// (Updatable) The name of the tag namespace.
 	TagNamespaceName pulumi.StringInput `pulumi:"tagNamespaceName"`
 	// (Updatable) Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
+	//
+	// When the value for this field is `ANY`, the `tagValues` field should be empty, which enforces overrides to the recommendation for resources with any tag values attached to them.
+	//
+	// When the value for this field value is `VALUE`, the `tagValues` field must include a specific value or list of values. Overrides to the recommendation criteria only occur for resources that match the values in the `tagValues` fields.
 	TagValueType pulumi.StringInput `pulumi:"tagValueType"`
 	// (Updatable) The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TagValues pulumi.StringArrayInput `pulumi:"tagValues"`
 }
 
@@ -622,11 +636,18 @@ func (o ProfileTargetTagsItemOutput) TagNamespaceName() pulumi.StringOutput {
 }
 
 // (Updatable) Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
+//
+// When the value for this field is `ANY`, the `tagValues` field should be empty, which enforces overrides to the recommendation for resources with any tag values attached to them.
+//
+// When the value for this field value is `VALUE`, the `tagValues` field must include a specific value or list of values. Overrides to the recommendation criteria only occur for resources that match the values in the `tagValues` fields.
 func (o ProfileTargetTagsItemOutput) TagValueType() pulumi.StringOutput {
 	return o.ApplyT(func(v ProfileTargetTagsItem) string { return v.TagValueType }).(pulumi.StringOutput)
 }
 
 // (Updatable) The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ProfileTargetTagsItemOutput) TagValues() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ProfileTargetTagsItem) []string { return v.TagValues }).(pulumi.StringArrayOutput)
 }

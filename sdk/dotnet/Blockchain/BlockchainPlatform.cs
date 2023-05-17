@@ -146,6 +146,10 @@ namespace Pulumi.Oci.Blockchain
 
         /// <summary>
         /// (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("loadBalancerShape")]
         public Output<string> LoadBalancerShape { get; private set; } = null!;
@@ -356,6 +360,10 @@ namespace Pulumi.Oci.Blockchain
 
         /// <summary>
         /// (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("loadBalancerShape")]
         public Input<string>? LoadBalancerShape { get; set; }
@@ -518,6 +526,10 @@ namespace Pulumi.Oci.Blockchain
 
         /// <summary>
         /// (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("loadBalancerShape")]
         public Input<string>? LoadBalancerShape { get; set; }

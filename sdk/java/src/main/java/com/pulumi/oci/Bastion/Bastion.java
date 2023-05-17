@@ -285,12 +285,18 @@ public class Bastion extends com.pulumi.resources.CustomResource {
     /**
      * The unique identifier (OCID) of the subnet that the bastion connects to.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="targetSubnetId", type=String.class, parameters={})
     private Output<String> targetSubnetId;
 
     /**
      * @return The unique identifier (OCID) of the subnet that the bastion connects to.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> targetSubnetId() {

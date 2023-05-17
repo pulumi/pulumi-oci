@@ -98,12 +98,18 @@ public class CloudDatabaseManagement extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) Use this flag to enable/disable database management
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="enableManagement", type=Boolean.class, parameters={})
     private Output<Boolean> enableManagement;
 
     /**
      * @return (Updatable) Use this flag to enable/disable database management
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Boolean> enableManagement() {

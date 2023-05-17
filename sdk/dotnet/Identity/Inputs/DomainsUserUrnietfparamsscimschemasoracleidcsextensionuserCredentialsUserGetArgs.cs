@@ -17,6 +17,18 @@ namespace Pulumi.Oci.Identity.Inputs
 
         /// <summary>
         /// (Updatable) A list of api keys corresponding to user.
+        /// 
+        /// **Added In:** 2012271618
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyGetArgs> ApiKeys
         {
@@ -29,6 +41,18 @@ namespace Pulumi.Oci.Identity.Inputs
 
         /// <summary>
         /// (Updatable) A list of auth tokens corresponding to user.
+        /// 
+        /// **Added In:** 2012271618
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenGetArgs> AuthTokens
         {
@@ -41,6 +65,18 @@ namespace Pulumi.Oci.Identity.Inputs
 
         /// <summary>
         /// (Updatable) A list of customer secret keys corresponding to user.
+        /// 
+        /// **Added In:** 2102181953
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyGetArgs> CustomerSecretKeys
         {
@@ -53,6 +89,18 @@ namespace Pulumi.Oci.Identity.Inputs
 
         /// <summary>
         /// (Updatable) A list of db credentials corresponding to user.
+        /// 
+        /// **Added In:** 2102181953
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialGetArgs> DbCredentials
         {
@@ -65,6 +113,18 @@ namespace Pulumi.Oci.Identity.Inputs
 
         /// <summary>
         /// (Updatable) A list of oauth2 client credentials corresponding to user.
+        /// 
+        /// **Added In:** 2012271618
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialGetArgs> OAuth2clientCredentials
         {
@@ -77,6 +137,18 @@ namespace Pulumi.Oci.Identity.Inputs
 
         /// <summary>
         /// (Updatable) A list of smtp credentials corresponding to user.
+        /// 
+        /// **Added In:** 2012271618
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialGetArgs> SmtpCredentials
         {

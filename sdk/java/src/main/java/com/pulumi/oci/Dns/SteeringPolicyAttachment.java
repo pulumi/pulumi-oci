@@ -183,12 +183,18 @@ public class SteeringPolicyAttachment extends com.pulumi.resources.CustomResourc
     /**
      * The OCID of the attached zone.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="zoneId", type=String.class, parameters={})
     private Output<String> zoneId;
 
     /**
      * @return The OCID of the attached zone.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> zoneId() {

@@ -71,10 +71,20 @@ export class Vlan extends pulumi.CustomResource {
 
     /**
      * Controls whether the VLAN is regional or specific to an availability domain. A regional VLAN has the flexibility to implement failover across availability domains. Previously, all VLANs were AD-specific.
+     *
+     * To create a regional VLAN, omit this attribute. Resources created subsequently in this VLAN (such as a Compute instance) can be created in any availability domain in the region.
+     *
+     * To create an AD-specific VLAN, use this attribute to specify the availability domain. Resources created in this VLAN must be in that availability domain.
+     *
+     * Example: `Uocm:PHX-AD-1`
      */
     public readonly availabilityDomain!: pulumi.Output<string>;
     /**
      * (Updatable) The range of IPv4 addresses that will be used for layer 3 communication with hosts outside the VLAN. The CIDR must maintain the following rules -
+     *
+     * a. The CIDR block is valid and correctly formatted. b. The new range is within one of the parent VCN ranges.
+     *
+     * Example: `192.0.2.0/24`
      */
     public readonly cidrBlock!: pulumi.Output<string>;
     /**
@@ -114,7 +124,11 @@ export class Vlan extends pulumi.CustomResource {
      */
     public readonly vcnId!: pulumi.Output<string>;
     /**
-     * The IEEE 802.1Q VLAN tag for this VLAN. The value must be unique across all VLANs in the VCN. If you don't provide a value, Oracle assigns one. You cannot change the value later. VLAN tag 0 is reserved for use by Oracle.
+     * The IEEE 802.1Q VLAN tag for this VLAN. The value must be unique across all VLANs in the VCN. If you don't provide a value, Oracle assigns one. You cannot change the value later. VLAN tag 0 is reserved for use by Oracle. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly vlanTag!: pulumi.Output<number>;
 
@@ -178,10 +192,20 @@ export class Vlan extends pulumi.CustomResource {
 export interface VlanState {
     /**
      * Controls whether the VLAN is regional or specific to an availability domain. A regional VLAN has the flexibility to implement failover across availability domains. Previously, all VLANs were AD-specific.
+     *
+     * To create a regional VLAN, omit this attribute. Resources created subsequently in this VLAN (such as a Compute instance) can be created in any availability domain in the region.
+     *
+     * To create an AD-specific VLAN, use this attribute to specify the availability domain. Resources created in this VLAN must be in that availability domain.
+     *
+     * Example: `Uocm:PHX-AD-1`
      */
     availabilityDomain?: pulumi.Input<string>;
     /**
      * (Updatable) The range of IPv4 addresses that will be used for layer 3 communication with hosts outside the VLAN. The CIDR must maintain the following rules -
+     *
+     * a. The CIDR block is valid and correctly formatted. b. The new range is within one of the parent VCN ranges.
+     *
+     * Example: `192.0.2.0/24`
      */
     cidrBlock?: pulumi.Input<string>;
     /**
@@ -221,7 +245,11 @@ export interface VlanState {
      */
     vcnId?: pulumi.Input<string>;
     /**
-     * The IEEE 802.1Q VLAN tag for this VLAN. The value must be unique across all VLANs in the VCN. If you don't provide a value, Oracle assigns one. You cannot change the value later. VLAN tag 0 is reserved for use by Oracle.
+     * The IEEE 802.1Q VLAN tag for this VLAN. The value must be unique across all VLANs in the VCN. If you don't provide a value, Oracle assigns one. You cannot change the value later. VLAN tag 0 is reserved for use by Oracle. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vlanTag?: pulumi.Input<number>;
 }
@@ -232,10 +260,20 @@ export interface VlanState {
 export interface VlanArgs {
     /**
      * Controls whether the VLAN is regional or specific to an availability domain. A regional VLAN has the flexibility to implement failover across availability domains. Previously, all VLANs were AD-specific.
+     *
+     * To create a regional VLAN, omit this attribute. Resources created subsequently in this VLAN (such as a Compute instance) can be created in any availability domain in the region.
+     *
+     * To create an AD-specific VLAN, use this attribute to specify the availability domain. Resources created in this VLAN must be in that availability domain.
+     *
+     * Example: `Uocm:PHX-AD-1`
      */
     availabilityDomain?: pulumi.Input<string>;
     /**
      * (Updatable) The range of IPv4 addresses that will be used for layer 3 communication with hosts outside the VLAN. The CIDR must maintain the following rules -
+     *
+     * a. The CIDR block is valid and correctly formatted. b. The new range is within one of the parent VCN ranges.
+     *
+     * Example: `192.0.2.0/24`
      */
     cidrBlock: pulumi.Input<string>;
     /**
@@ -267,7 +305,11 @@ export interface VlanArgs {
      */
     vcnId: pulumi.Input<string>;
     /**
-     * The IEEE 802.1Q VLAN tag for this VLAN. The value must be unique across all VLANs in the VCN. If you don't provide a value, Oracle assigns one. You cannot change the value later. VLAN tag 0 is reserved for use by Oracle.
+     * The IEEE 802.1Q VLAN tag for this VLAN. The value must be unique across all VLANs in the VCN. If you don't provide a value, Oracle assigns one. You cannot change the value later. VLAN tag 0 is reserved for use by Oracle. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vlanTag?: pulumi.Input<number>;
 }

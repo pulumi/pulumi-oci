@@ -346,12 +346,18 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
     /**
      * The product license vendor name, for example: Microsoft, RHEL, and so on.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="vendorName", type=String.class, parameters={})
     private Output<String> vendorName;
 
     /**
      * @return The product license vendor name, for example: Microsoft, RHEL, and so on.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> vendorName() {

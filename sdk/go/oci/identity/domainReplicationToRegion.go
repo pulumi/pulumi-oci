@@ -63,6 +63,9 @@ type DomainReplicationToRegion struct {
 	// The OCID of the domain
 	DomainId pulumi.StringOutput `pulumi:"domainId"`
 	// A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ReplicaRegion pulumi.StringOutput `pulumi:"replicaRegion"`
 }
 
@@ -101,6 +104,9 @@ type domainReplicationToRegionState struct {
 	// The OCID of the domain
 	DomainId *string `pulumi:"domainId"`
 	// A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ReplicaRegion *string `pulumi:"replicaRegion"`
 }
 
@@ -108,6 +114,9 @@ type DomainReplicationToRegionState struct {
 	// The OCID of the domain
 	DomainId pulumi.StringPtrInput
 	// A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ReplicaRegion pulumi.StringPtrInput
 }
 
@@ -119,6 +128,9 @@ type domainReplicationToRegionArgs struct {
 	// The OCID of the domain
 	DomainId string `pulumi:"domainId"`
 	// A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ReplicaRegion *string `pulumi:"replicaRegion"`
 }
 
@@ -127,6 +139,9 @@ type DomainReplicationToRegionArgs struct {
 	// The OCID of the domain
 	DomainId pulumi.StringInput
 	// A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ReplicaRegion pulumi.StringPtrInput
 }
 
@@ -223,6 +238,9 @@ func (o DomainReplicationToRegionOutput) DomainId() pulumi.StringOutput {
 }
 
 // A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DomainReplicationToRegionOutput) ReplicaRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainReplicationToRegion) pulumi.StringOutput { return v.ReplicaRegion }).(pulumi.StringOutput)
 }

@@ -79,12 +79,18 @@ public final class PeerArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Peer role
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="role", required=true)
     private Output<String> role;
 
     /**
      * @return Peer role
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> role() {
@@ -206,6 +212,9 @@ public final class PeerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param role Peer role
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -216,6 +225,9 @@ public final class PeerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param role Peer role
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

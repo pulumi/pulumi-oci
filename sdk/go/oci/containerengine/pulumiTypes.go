@@ -2046,6 +2046,10 @@ type ContainerInstanceContainer struct {
 	// A list of additional capabilities for the container.
 	AdditionalCapabilities []string `pulumi:"additionalCapabilities"`
 	// A list of string arguments for a container's entrypoint process.
+	//
+	// Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+	//
+	// All arguments together must be 64KB or smaller.
 	Arguments []string `pulumi:"arguments"`
 	// Availability Domain where the ContainerInstance should be created.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
@@ -2061,6 +2065,8 @@ type ContainerInstanceContainer struct {
 	// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// A map of additional environment variables to set in the environment of the container's entrypoint process. These variables are in addition to any variables already defined in the container's image.
+	//
+	// All environment variables together, name and values, must be 64KB or smaller.
 	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
 	ExitCode             *int                   `pulumi:"exitCode"`
 	// Fault Domain where the ContainerInstance should run.
@@ -2078,6 +2084,9 @@ type ContainerInstanceContainer struct {
 	// The size and amount of resources available to the Container.
 	ResourceConfig *ContainerInstanceContainerResourceConfig `pulumi:"resourceConfig"`
 	// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
@@ -2107,6 +2116,10 @@ type ContainerInstanceContainerArgs struct {
 	// A list of additional capabilities for the container.
 	AdditionalCapabilities pulumi.StringArrayInput `pulumi:"additionalCapabilities"`
 	// A list of string arguments for a container's entrypoint process.
+	//
+	// Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+	//
+	// All arguments together must be 64KB or smaller.
 	Arguments pulumi.StringArrayInput `pulumi:"arguments"`
 	// Availability Domain where the ContainerInstance should be created.
 	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
@@ -2122,6 +2135,8 @@ type ContainerInstanceContainerArgs struct {
 	// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A map of additional environment variables to set in the environment of the container's entrypoint process. These variables are in addition to any variables already defined in the container's image.
+	//
+	// All environment variables together, name and values, must be 64KB or smaller.
 	EnvironmentVariables pulumi.MapInput    `pulumi:"environmentVariables"`
 	ExitCode             pulumi.IntPtrInput `pulumi:"exitCode"`
 	// Fault Domain where the ContainerInstance should run.
@@ -2139,6 +2154,9 @@ type ContainerInstanceContainerArgs struct {
 	// The size and amount of resources available to the Container.
 	ResourceConfig ContainerInstanceContainerResourceConfigPtrInput `pulumi:"resourceConfig"`
 	// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
@@ -2210,6 +2228,10 @@ func (o ContainerInstanceContainerOutput) AdditionalCapabilities() pulumi.String
 }
 
 // A list of string arguments for a container's entrypoint process.
+//
+// Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+//
+// All arguments together must be 64KB or smaller.
 func (o ContainerInstanceContainerOutput) Arguments() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) []string { return v.Arguments }).(pulumi.StringArrayOutput)
 }
@@ -2249,6 +2271,8 @@ func (o ContainerInstanceContainerOutput) DisplayName() pulumi.StringPtrOutput {
 }
 
 // A map of additional environment variables to set in the environment of the container's entrypoint process. These variables are in addition to any variables already defined in the container's image.
+//
+// All environment variables together, name and values, must be 64KB or smaller.
 func (o ContainerInstanceContainerOutput) EnvironmentVariables() pulumi.MapOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) map[string]interface{} { return v.EnvironmentVariables }).(pulumi.MapOutput)
 }
@@ -2293,6 +2317,9 @@ func (o ContainerInstanceContainerOutput) ResourceConfig() ContainerInstanceCont
 }
 
 // (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ContainerInstanceContainerOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.State }).(pulumi.StringPtrOutput)
 }
@@ -4204,6 +4231,8 @@ type NodePoolNodeConfigDetails struct {
 	// (Updatable) The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
+	//
+	// To use the node pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
 	PlacementConfigs []NodePoolNodeConfigDetailsPlacementConfig `pulumi:"placementConfigs"`
 	// (Updatable) The number of nodes that should be in the node pool.
 	Size int `pulumi:"size"`
@@ -4234,6 +4263,8 @@ type NodePoolNodeConfigDetailsArgs struct {
 	// (Updatable) The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// (Updatable) The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
+	//
+	// To use the node pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
 	PlacementConfigs NodePoolNodeConfigDetailsPlacementConfigArrayInput `pulumi:"placementConfigs"`
 	// (Updatable) The number of nodes that should be in the node pool.
 	Size pulumi.IntInput `pulumi:"size"`
@@ -4349,6 +4380,8 @@ func (o NodePoolNodeConfigDetailsOutput) NsgIds() pulumi.StringArrayOutput {
 }
 
 // (Updatable) The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
+//
+// To use the node pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
 func (o NodePoolNodeConfigDetailsOutput) PlacementConfigs() NodePoolNodeConfigDetailsPlacementConfigArrayOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigDetails) []NodePoolNodeConfigDetailsPlacementConfig {
 		return v.PlacementConfigs
@@ -4445,6 +4478,8 @@ func (o NodePoolNodeConfigDetailsPtrOutput) NsgIds() pulumi.StringArrayOutput {
 }
 
 // (Updatable) The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
+//
+// To use the node pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
 func (o NodePoolNodeConfigDetailsPtrOutput) PlacementConfigs() NodePoolNodeConfigDetailsPlacementConfigArrayOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigDetails) []NodePoolNodeConfigDetailsPlacementConfig {
 		if v == nil {
@@ -6499,6 +6534,9 @@ type VirtualNodePoolVirtualNodeTags struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 }
 
@@ -6517,6 +6555,9 @@ type VirtualNodePoolVirtualNodeTagsArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 }
 
@@ -6603,6 +6644,9 @@ func (o VirtualNodePoolVirtualNodeTagsOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o VirtualNodePoolVirtualNodeTagsOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v VirtualNodePoolVirtualNodeTags) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
@@ -6642,6 +6686,9 @@ func (o VirtualNodePoolVirtualNodeTagsPtrOutput) DefinedTags() pulumi.MapOutput 
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o VirtualNodePoolVirtualNodeTagsPtrOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *VirtualNodePoolVirtualNodeTags) map[string]interface{} {
 		if v == nil {

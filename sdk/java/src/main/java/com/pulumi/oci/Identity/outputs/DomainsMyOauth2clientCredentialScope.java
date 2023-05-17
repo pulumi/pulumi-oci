@@ -12,10 +12,26 @@ public final class DomainsMyOauth2clientCredentialScope {
     /**
      * @return Audience
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * 
      */
     private String audience;
     /**
      * @return Scope
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsScimCompliant: false
+     * * type: string
+     * * mutability: readWrite
+     * * multiValued: false
+     * * required: true
+     * * returned: default
      * 
      */
     private String scope;
@@ -24,12 +40,28 @@ public final class DomainsMyOauth2clientCredentialScope {
     /**
      * @return Audience
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * 
      */
     public String audience() {
         return this.audience;
     }
     /**
      * @return Scope
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsScimCompliant: false
+     * * type: string
+     * * mutability: readWrite
+     * * multiValued: false
+     * * required: true
+     * * returned: default
      * 
      */
     public String scope() {

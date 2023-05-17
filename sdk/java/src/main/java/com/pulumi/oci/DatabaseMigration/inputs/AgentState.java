@@ -200,12 +200,18 @@ public final class AgentState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) ODMS Agent version
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="version")
     private @Nullable Output<String> version;
 
     /**
      * @return (Updatable) ODMS Agent version
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> version() {
@@ -503,6 +509,9 @@ public final class AgentState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param version (Updatable) ODMS Agent version
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -513,6 +522,9 @@ public final class AgentState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param version (Updatable) ODMS Agent version
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

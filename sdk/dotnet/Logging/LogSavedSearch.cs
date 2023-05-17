@@ -84,7 +84,11 @@ namespace Pulumi.Oci.Logging
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The search query that is saved.
+        /// (Updatable) The search query that is saved. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("query")]
         public Output<string> Query { get; private set; } = null!;
@@ -196,7 +200,11 @@ namespace Pulumi.Oci.Logging
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// (Updatable) The search query that is saved.
+        /// (Updatable) The search query that is saved. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("query", required: true)]
         public Input<string> Query { get; set; } = null!;
@@ -252,7 +260,11 @@ namespace Pulumi.Oci.Logging
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// (Updatable) The search query that is saved.
+        /// (Updatable) The search query that is saved. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("query")]
         public Input<string>? Query { get; set; }

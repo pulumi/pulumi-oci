@@ -35,6 +35,10 @@ class MediaAssetMediaAssetTagArgs:
         """
         :param pulumi.Input[str] value: (Updatable) Tag of the MediaAsset.
         :param pulumi.Input[str] type: (Updatable) The type of the media asset.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "value", value)
         if type is not None:
@@ -57,6 +61,10 @@ class MediaAssetMediaAssetTagArgs:
     def type(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The type of the media asset.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -244,6 +252,10 @@ class MediaWorkflowTaskArgs:
         :param pulumi.Input[str] parameters: (Updatable) Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
         :param pulumi.Input[str] type: (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
         :param pulumi.Input[str] version: (Updatable) The version of the MediaWorkflowTaskDeclaration.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] enable_parameter_reference: (Updatable) Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
         :param pulumi.Input[Mapping[str, Any]] enable_when_referenced_parameter_equals: (Updatable) Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] prerequisites: (Updatable) Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
@@ -300,6 +312,10 @@ class MediaWorkflowTaskArgs:
     def version(self) -> pulumi.Input[str]:
         """
         (Updatable) The version of the MediaWorkflowTaskDeclaration.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "version")
 

@@ -36,12 +36,16 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
     /**
      * The target description.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return The target description.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -51,12 +55,16 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
     /**
      * (Updatable) DetectorTemplate identifier.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
      * @return (Updatable) DetectorTemplate identifier.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -225,6 +233,8 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
         /**
          * @param description The target description.
          * 
+         * Avoid entering confidential information.
+         * 
          * @return builder
          * 
          */
@@ -236,6 +246,8 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
         /**
          * @param description The target description.
          * 
+         * Avoid entering confidential information.
+         * 
          * @return builder
          * 
          */
@@ -245,6 +257,8 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
 
         /**
          * @param displayName (Updatable) DetectorTemplate identifier.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -256,6 +270,8 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
 
         /**
          * @param displayName (Updatable) DetectorTemplate identifier.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 

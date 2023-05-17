@@ -18,12 +18,32 @@ public final class DomainsPasswordPolicyGroupArgs extends com.pulumi.resources.R
     /**
      * (Updatable) The displayName of the User or App who modified this Resource
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="display")
     private @Nullable Output<String> display;
 
     /**
      * @return (Updatable) The displayName of the User or App who modified this Resource
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> display() {
@@ -33,12 +53,32 @@ public final class DomainsPasswordPolicyGroupArgs extends com.pulumi.resources.R
     /**
      * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
+     * 
      */
     @Import(name="ref")
     private @Nullable Output<String> ref;
 
     /**
      * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ref() {
@@ -48,12 +88,32 @@ public final class DomainsPasswordPolicyGroupArgs extends com.pulumi.resources.R
     /**
      * (Updatable) Value of the tag.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
      * @return (Updatable) Value of the tag.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> value() {
@@ -89,6 +149,16 @@ public final class DomainsPasswordPolicyGroupArgs extends com.pulumi.resources.R
         /**
          * @param display (Updatable) The displayName of the User or App who modified this Resource
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -100,6 +170,16 @@ public final class DomainsPasswordPolicyGroupArgs extends com.pulumi.resources.R
         /**
          * @param display (Updatable) The displayName of the User or App who modified this Resource
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -109,6 +189,16 @@ public final class DomainsPasswordPolicyGroupArgs extends com.pulumi.resources.R
 
         /**
          * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -121,6 +211,16 @@ public final class DomainsPasswordPolicyGroupArgs extends com.pulumi.resources.R
         /**
          * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -130,6 +230,16 @@ public final class DomainsPasswordPolicyGroupArgs extends com.pulumi.resources.R
 
         /**
          * @param value (Updatable) Value of the tag.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -141,6 +251,16 @@ public final class DomainsPasswordPolicyGroupArgs extends com.pulumi.resources.R
 
         /**
          * @param value (Updatable) Value of the tag.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 

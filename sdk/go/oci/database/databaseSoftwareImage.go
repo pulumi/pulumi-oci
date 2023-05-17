@@ -94,6 +94,9 @@ type DatabaseSoftwareImage struct {
 	// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
 	PatchSet pulumi.StringOutput `pulumi:"patchSet"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceDbHomeId pulumi.StringOutput `pulumi:"sourceDbHomeId"`
 	// The current state of the database software image.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -165,6 +168,9 @@ type databaseSoftwareImageState struct {
 	// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
 	PatchSet *string `pulumi:"patchSet"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceDbHomeId *string `pulumi:"sourceDbHomeId"`
 	// The current state of the database software image.
 	State *string `pulumi:"state"`
@@ -202,6 +208,9 @@ type DatabaseSoftwareImageState struct {
 	// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
 	PatchSet pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceDbHomeId pulumi.StringPtrInput
 	// The current state of the database software image.
 	State pulumi.StringPtrInput
@@ -235,6 +244,9 @@ type databaseSoftwareImageArgs struct {
 	// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
 	PatchSet *string `pulumi:"patchSet"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceDbHomeId *string `pulumi:"sourceDbHomeId"`
 }
 
@@ -261,6 +273,9 @@ type DatabaseSoftwareImageArgs struct {
 	// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
 	PatchSet pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceDbHomeId pulumi.StringPtrInput
 }
 
@@ -422,6 +437,9 @@ func (o DatabaseSoftwareImageOutput) PatchSet() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DatabaseSoftwareImageOutput) SourceDbHomeId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringOutput { return v.SourceDbHomeId }).(pulumi.StringOutput)
 }

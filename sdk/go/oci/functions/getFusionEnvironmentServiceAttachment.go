@@ -59,8 +59,6 @@ type GetFusionEnvironmentServiceAttachmentArgs struct {
 
 // A collection of values returned by getFusionEnvironmentServiceAttachment.
 type GetFusionEnvironmentServiceAttachmentResult struct {
-	// Action
-	Action string `pulumi:"action"`
 	// Compartment Identifier
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -70,7 +68,7 @@ type GetFusionEnvironmentServiceAttachmentResult struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags        map[string]interface{} `pulumi:"freeformTags"`
 	FusionEnvironmentId string                 `pulumi:"fusionEnvironmentId"`
-	// The provider-assigned unique ID for this managed resource.
+	// Unique identifier that is immutable on creation
 	Id string `pulumi:"id"`
 	// Whether this service is provisioned due to the customer being subscribed to a specific SKU
 	IsSkuBased          bool   `pulumi:"isSkuBased"`
@@ -129,11 +127,6 @@ func (o GetFusionEnvironmentServiceAttachmentResultOutput) ToGetFusionEnvironmen
 	return o
 }
 
-// Action
-func (o GetFusionEnvironmentServiceAttachmentResultOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) string { return v.Action }).(pulumi.StringOutput)
-}
-
 // Compartment Identifier
 func (o GetFusionEnvironmentServiceAttachmentResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -158,7 +151,7 @@ func (o GetFusionEnvironmentServiceAttachmentResultOutput) FusionEnvironmentId()
 	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) string { return v.FusionEnvironmentId }).(pulumi.StringOutput)
 }
 
-// The provider-assigned unique ID for this managed resource.
+// Unique identifier that is immutable on creation
 func (o GetFusionEnvironmentServiceAttachmentResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) string { return v.Id }).(pulumi.StringOutput)
 }

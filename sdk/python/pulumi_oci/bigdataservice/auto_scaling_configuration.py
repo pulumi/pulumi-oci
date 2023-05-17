@@ -32,6 +32,16 @@ class AutoScalingConfigurationArgs:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
         :param pulumi.Input['AutoScalingConfigurationPolicyArgs'] policy: (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
         :param pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs'] policy_details: (Updatable) Policy definition for the autoscale configuration.
+               
+               An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
+               
+               You can create following type of autoscaling policies:
+               * **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
+               * **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
+               * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
+               * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
+               
+               An autoscaling configuration can have one of above supported policies.
         """
         pulumi.set(__self__, "bds_instance_id", bds_instance_id)
         pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
@@ -121,6 +131,16 @@ class AutoScalingConfigurationArgs:
     def policy_details(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs']]:
         """
         (Updatable) Policy definition for the autoscale configuration.
+
+        An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
+
+        You can create following type of autoscaling policies:
+        * **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
+        * **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
+        * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
+        * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
+
+        An autoscaling configuration can have one of above supported policies.
         """
         return pulumi.get(self, "policy_details")
 
@@ -151,6 +171,16 @@ class _AutoScalingConfigurationState:
         :param pulumi.Input[str] node_type: A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
         :param pulumi.Input['AutoScalingConfigurationPolicyArgs'] policy: (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
         :param pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs'] policy_details: (Updatable) Policy definition for the autoscale configuration.
+               
+               An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
+               
+               You can create following type of autoscaling policies:
+               * **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
+               * **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
+               * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
+               * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
+               
+               An autoscaling configuration can have one of above supported policies.
         :param pulumi.Input[str] state: The state of the autoscale configuration.
         :param pulumi.Input[str] time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
@@ -253,6 +283,16 @@ class _AutoScalingConfigurationState:
     def policy_details(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs']]:
         """
         (Updatable) Policy definition for the autoscale configuration.
+
+        An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
+
+        You can create following type of autoscaling policies:
+        * **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
+        * **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
+        * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
+        * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
+
+        An autoscaling configuration can have one of above supported policies.
         """
         return pulumi.get(self, "policy_details")
 
@@ -377,6 +417,16 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         :param pulumi.Input[str] node_type: A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
         :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']] policy: (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
         :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyDetailsArgs']] policy_details: (Updatable) Policy definition for the autoscale configuration.
+               
+               An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
+               
+               You can create following type of autoscaling policies:
+               * **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
+               * **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
+               * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
+               * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
+               
+               An autoscaling configuration can have one of above supported policies.
         """
         ...
     @overload
@@ -527,6 +577,16 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         :param pulumi.Input[str] node_type: A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
         :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']] policy: (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
         :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyDetailsArgs']] policy_details: (Updatable) Policy definition for the autoscale configuration.
+               
+               An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
+               
+               You can create following type of autoscaling policies:
+               * **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
+               * **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
+               * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
+               * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
+               
+               An autoscaling configuration can have one of above supported policies.
         :param pulumi.Input[str] state: The state of the autoscale configuration.
         :param pulumi.Input[str] time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
@@ -600,6 +660,16 @@ class AutoScalingConfiguration(pulumi.CustomResource):
     def policy_details(self) -> pulumi.Output['outputs.AutoScalingConfigurationPolicyDetails']:
         """
         (Updatable) Policy definition for the autoscale configuration.
+
+        An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
+
+        You can create following type of autoscaling policies:
+        * **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
+        * **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
+        * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
+        * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
+
+        An autoscaling configuration can have one of above supported policies.
         """
         return pulumi.get(self, "policy_details")
 

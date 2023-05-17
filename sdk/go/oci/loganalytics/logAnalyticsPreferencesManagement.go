@@ -56,6 +56,9 @@ type LogAnalyticsPreferencesManagement struct {
 	// An array of tenant preference details.
 	Items LogAnalyticsPreferencesManagementItemArrayOutput `pulumi:"items"`
 	// The Logging Analytics namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 }
 
@@ -94,6 +97,9 @@ type logAnalyticsPreferencesManagementState struct {
 	// An array of tenant preference details.
 	Items []LogAnalyticsPreferencesManagementItem `pulumi:"items"`
 	// The Logging Analytics namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace *string `pulumi:"namespace"`
 }
 
@@ -101,6 +107,9 @@ type LogAnalyticsPreferencesManagementState struct {
 	// An array of tenant preference details.
 	Items LogAnalyticsPreferencesManagementItemArrayInput
 	// The Logging Analytics namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace pulumi.StringPtrInput
 }
 
@@ -112,6 +121,9 @@ type logAnalyticsPreferencesManagementArgs struct {
 	// An array of tenant preference details.
 	Items []LogAnalyticsPreferencesManagementItem `pulumi:"items"`
 	// The Logging Analytics namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace string `pulumi:"namespace"`
 }
 
@@ -120,6 +132,9 @@ type LogAnalyticsPreferencesManagementArgs struct {
 	// An array of tenant preference details.
 	Items LogAnalyticsPreferencesManagementItemArrayInput
 	// The Logging Analytics namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace pulumi.StringInput
 }
 
@@ -218,6 +233,9 @@ func (o LogAnalyticsPreferencesManagementOutput) Items() LogAnalyticsPreferences
 }
 
 // The Logging Analytics namespace used for the request.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o LogAnalyticsPreferencesManagementOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsPreferencesManagement) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
 }

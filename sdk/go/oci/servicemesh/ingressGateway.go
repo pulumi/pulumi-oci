@@ -114,6 +114,9 @@ type IngressGateway struct {
 	// (Updatable) Mutual TLS settings used when sending requests to virtual services within the mesh.
 	Mtls IngressGatewayMtlsOutput `pulumi:"mtls"`
 	// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The current state of the Resource.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -182,6 +185,9 @@ type ingressGatewayState struct {
 	// (Updatable) Mutual TLS settings used when sending requests to virtual services within the mesh.
 	Mtls *IngressGatewayMtls `pulumi:"mtls"`
 	// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 	// The current state of the Resource.
 	State *string `pulumi:"state"`
@@ -213,6 +219,9 @@ type IngressGatewayState struct {
 	// (Updatable) Mutual TLS settings used when sending requests to virtual services within the mesh.
 	Mtls IngressGatewayMtlsPtrInput
 	// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput
 	// The current state of the Resource.
 	State pulumi.StringPtrInput
@@ -246,6 +255,9 @@ type ingressGatewayArgs struct {
 	// (Updatable) Mutual TLS settings used when sending requests to virtual services within the mesh.
 	Mtls *IngressGatewayMtls `pulumi:"mtls"`
 	// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 }
 
@@ -268,6 +280,9 @@ type IngressGatewayArgs struct {
 	// (Updatable) Mutual TLS settings used when sending requests to virtual services within the mesh.
 	Mtls IngressGatewayMtlsPtrInput
 	// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput
 }
 
@@ -404,6 +419,9 @@ func (o IngressGatewayOutput) Mtls() IngressGatewayMtlsOutput {
 }
 
 // A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o IngressGatewayOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *IngressGateway) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

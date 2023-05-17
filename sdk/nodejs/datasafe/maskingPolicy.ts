@@ -96,6 +96,10 @@ export class MaskingPolicy extends pulumi.CustomResource {
 
     /**
      * (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly addMaskingColumnsFromSdmTrigger!: pulumi.Output<number | undefined>;
     /**
@@ -230,6 +234,10 @@ export class MaskingPolicy extends pulumi.CustomResource {
 export interface MaskingPolicyState {
     /**
      * (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     addMaskingColumnsFromSdmTrigger?: pulumi.Input<number>;
     /**
@@ -304,6 +312,10 @@ export interface MaskingPolicyState {
 export interface MaskingPolicyArgs {
     /**
      * (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     addMaskingColumnsFromSdmTrigger?: pulumi.Input<number>;
     /**

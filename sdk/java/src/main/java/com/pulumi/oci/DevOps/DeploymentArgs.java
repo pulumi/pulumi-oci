@@ -174,12 +174,20 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. Additionally, while `trigger_new_devops_deployment`
+     * is set true each apply will force the destruction and recreation of the resource with the new property values.
+     * 
      */
     @Import(name="triggerNewDevopsDeployment")
     private @Nullable Output<Boolean> triggerNewDevopsDeployment;
 
     /**
      * @return A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. Additionally, while `trigger_new_devops_deployment`
+     * is set true each apply will force the destruction and recreation of the resource with the new property values.
      * 
      */
     public Optional<Output<Boolean>> triggerNewDevopsDeployment() {
@@ -433,6 +441,10 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param triggerNewDevopsDeployment A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. Additionally, while `trigger_new_devops_deployment`
+         * is set true each apply will force the destruction and recreation of the resource with the new property values.
+         * 
          * @return builder
          * 
          */
@@ -443,6 +455,10 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param triggerNewDevopsDeployment A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. Additionally, while `trigger_new_devops_deployment`
+         * is set true each apply will force the destruction and recreation of the resource with the new property values.
          * 
          * @return builder
          * 

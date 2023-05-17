@@ -24,12 +24,18 @@ public final class MaskingPolicyArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="addMaskingColumnsFromSdmTrigger")
     private @Nullable Output<Integer> addMaskingColumnsFromSdmTrigger;
 
     /**
      * @return (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> addMaskingColumnsFromSdmTrigger() {
@@ -271,6 +277,9 @@ public final class MaskingPolicyArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param addMaskingColumnsFromSdmTrigger (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -281,6 +290,9 @@ public final class MaskingPolicyArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param addMaskingColumnsFromSdmTrigger (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

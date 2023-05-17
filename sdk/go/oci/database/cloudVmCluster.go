@@ -132,6 +132,10 @@ type CloudVmCluster struct {
 	// A valid Oracle Grid Infrastructure (GI) software version.
 	GiVersion pulumi.StringOutput `pulumi:"giVersion"`
 	// The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
+	//
+	// The maximum length of the combined hostname and domain is 63 characters.
+	//
+	// **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
 	Hostname pulumi.StringOutput `pulumi:"hostname"`
 	// The IORM settings of the Exadata DB system.
 	IormConfigCaches CloudVmClusterIormConfigCachArrayOutput `pulumi:"iormConfigCaches"`
@@ -183,6 +187,9 @@ type CloudVmCluster struct {
 	// The date and time that the cloud VM cluster was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeZone pulumi.StringOutput `pulumi:"timeZone"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
 	VipIds pulumi.StringArrayOutput `pulumi:"vipIds"`
@@ -291,6 +298,10 @@ type cloudVmClusterState struct {
 	// A valid Oracle Grid Infrastructure (GI) software version.
 	GiVersion *string `pulumi:"giVersion"`
 	// The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
+	//
+	// The maximum length of the combined hostname and domain is 63 characters.
+	//
+	// **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
 	Hostname *string `pulumi:"hostname"`
 	// The IORM settings of the Exadata DB system.
 	IormConfigCaches []CloudVmClusterIormConfigCach `pulumi:"iormConfigCaches"`
@@ -342,6 +353,9 @@ type cloudVmClusterState struct {
 	// The date and time that the cloud VM cluster was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeZone *string `pulumi:"timeZone"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
 	VipIds []string `pulumi:"vipIds"`
@@ -395,6 +409,10 @@ type CloudVmClusterState struct {
 	// A valid Oracle Grid Infrastructure (GI) software version.
 	GiVersion pulumi.StringPtrInput
 	// The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
+	//
+	// The maximum length of the combined hostname and domain is 63 characters.
+	//
+	// **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
 	Hostname pulumi.StringPtrInput
 	// The IORM settings of the Exadata DB system.
 	IormConfigCaches CloudVmClusterIormConfigCachArrayInput
@@ -446,6 +464,9 @@ type CloudVmClusterState struct {
 	// The date and time that the cloud VM cluster was created.
 	TimeCreated pulumi.StringPtrInput
 	// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeZone pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
 	VipIds pulumi.StringArrayInput
@@ -499,6 +520,10 @@ type cloudVmClusterArgs struct {
 	// A valid Oracle Grid Infrastructure (GI) software version.
 	GiVersion string `pulumi:"giVersion"`
 	// The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
+	//
+	// The maximum length of the combined hostname and domain is 63 characters.
+	//
+	// **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
 	Hostname string `pulumi:"hostname"`
 	// If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
 	IsLocalBackupEnabled *bool `pulumi:"isLocalBackupEnabled"`
@@ -524,6 +549,9 @@ type cloudVmClusterArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
 	SubnetId string `pulumi:"subnetId"`
 	// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeZone *string `pulumi:"timeZone"`
 }
 
@@ -570,6 +598,10 @@ type CloudVmClusterArgs struct {
 	// A valid Oracle Grid Infrastructure (GI) software version.
 	GiVersion pulumi.StringInput
 	// The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
+	//
+	// The maximum length of the combined hostname and domain is 63 characters.
+	//
+	// **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
 	Hostname pulumi.StringInput
 	// If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
 	IsLocalBackupEnabled pulumi.BoolPtrInput
@@ -595,6 +627,9 @@ type CloudVmClusterArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
 	SubnetId pulumi.StringInput
 	// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeZone pulumi.StringPtrInput
 }
 
@@ -787,6 +822,10 @@ func (o CloudVmClusterOutput) GiVersion() pulumi.StringOutput {
 }
 
 // The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
+//
+// The maximum length of the combined hostname and domain is 63 characters.
+//
+// **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
 func (o CloudVmClusterOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudVmCluster) pulumi.StringOutput { return v.Hostname }).(pulumi.StringOutput)
 }
@@ -913,6 +952,9 @@ func (o CloudVmClusterOutput) TimeCreated() pulumi.StringOutput {
 }
 
 // The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CloudVmClusterOutput) TimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudVmCluster) pulumi.StringOutput { return v.TimeZone }).(pulumi.StringOutput)
 }

@@ -75,6 +75,9 @@ type Migration struct {
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Replication schedule identifier
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ReplicationScheduleId pulumi.StringOutput `pulumi:"replicationScheduleId"`
 	// The current state of migration.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -134,6 +137,9 @@ type migrationState struct {
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) Replication schedule identifier
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ReplicationScheduleId *string `pulumi:"replicationScheduleId"`
 	// The current state of migration.
 	State *string `pulumi:"state"`
@@ -159,6 +165,9 @@ type MigrationState struct {
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) Replication schedule identifier
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ReplicationScheduleId pulumi.StringPtrInput
 	// The current state of migration.
 	State pulumi.StringPtrInput
@@ -186,6 +195,9 @@ type migrationArgs struct {
 	// (Updatable) Indicates whether migration is marked as complete.
 	IsCompleted *bool `pulumi:"isCompleted"`
 	// (Updatable) Replication schedule identifier
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ReplicationScheduleId *string `pulumi:"replicationScheduleId"`
 }
 
@@ -202,6 +214,9 @@ type MigrationArgs struct {
 	// (Updatable) Indicates whether migration is marked as complete.
 	IsCompleted pulumi.BoolPtrInput
 	// (Updatable) Replication schedule identifier
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ReplicationScheduleId pulumi.StringPtrInput
 }
 
@@ -323,6 +338,9 @@ func (o MigrationOutput) LifecycleDetails() pulumi.StringOutput {
 }
 
 // (Updatable) Replication schedule identifier
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MigrationOutput) ReplicationScheduleId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.ReplicationScheduleId }).(pulumi.StringOutput)
 }

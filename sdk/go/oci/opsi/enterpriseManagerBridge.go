@@ -75,6 +75,9 @@ type EnterpriseManagerBridge struct {
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Object Storage Bucket Name
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ObjectStorageBucketName pulumi.StringOutput `pulumi:"objectStorageBucketName"`
 	// A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
 	ObjectStorageBucketStatusDetails pulumi.StringOutput `pulumi:"objectStorageBucketStatusDetails"`
@@ -141,6 +144,9 @@ type enterpriseManagerBridgeState struct {
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Object Storage Bucket Name
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ObjectStorageBucketName *string `pulumi:"objectStorageBucketName"`
 	// A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
 	ObjectStorageBucketStatusDetails *string `pulumi:"objectStorageBucketStatusDetails"`
@@ -170,6 +176,9 @@ type EnterpriseManagerBridgeState struct {
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// Object Storage Bucket Name
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ObjectStorageBucketName pulumi.StringPtrInput
 	// A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
 	ObjectStorageBucketStatusDetails pulumi.StringPtrInput
@@ -201,6 +210,9 @@ type enterpriseManagerBridgeArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Object Storage Bucket Name
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ObjectStorageBucketName string `pulumi:"objectStorageBucketName"`
 }
 
@@ -217,6 +229,9 @@ type EnterpriseManagerBridgeArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// Object Storage Bucket Name
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ObjectStorageBucketName pulumi.StringInput
 }
 
@@ -338,6 +353,9 @@ func (o EnterpriseManagerBridgeOutput) LifecycleDetails() pulumi.StringOutput {
 }
 
 // Object Storage Bucket Name
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o EnterpriseManagerBridgeOutput) ObjectStorageBucketName() pulumi.StringOutput {
 	return o.ApplyT(func(v *EnterpriseManagerBridge) pulumi.StringOutput { return v.ObjectStorageBucketName }).(pulumi.StringOutput)
 }

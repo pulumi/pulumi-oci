@@ -96,6 +96,9 @@ type Tag struct {
 	// (Updatable) Indicates whether the tag is enabled for cost tracking.
 	IsCostTracking pulumi.BoolOutput `pulumi:"isCostTracking"`
 	// (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsRetired pulumi.BoolOutput `pulumi:"isRetired"`
 	// The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
 	Name pulumi.StringOutput `pulumi:"name"`
@@ -106,6 +109,10 @@ type Tag struct {
 	// Date and time the tag was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// (Updatable) Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
+	//
+	// If you define a validator after a value has been set for a defined tag, then any updates that attempt to change the value must pass the additional validation defined by the current rule. Previously set values (even those that would fail the current validation) are not updated. You can still update other attributes to resources that contain a non-valid defined tag.
+	//
+	// To clear the validator call UpdateTag with [DefaultTagDefinitionValidator](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator).
 	Validator TagValidatorPtrOutput `pulumi:"validator"`
 }
 
@@ -153,6 +160,9 @@ type tagState struct {
 	// (Updatable) Indicates whether the tag is enabled for cost tracking.
 	IsCostTracking *bool `pulumi:"isCostTracking"`
 	// (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsRetired *bool `pulumi:"isRetired"`
 	// The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
 	Name *string `pulumi:"name"`
@@ -163,6 +173,10 @@ type tagState struct {
 	// Date and time the tag was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 	// (Updatable) Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
+	//
+	// If you define a validator after a value has been set for a defined tag, then any updates that attempt to change the value must pass the additional validation defined by the current rule. Previously set values (even those that would fail the current validation) are not updated. You can still update other attributes to resources that contain a non-valid defined tag.
+	//
+	// To clear the validator call UpdateTag with [DefaultTagDefinitionValidator](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator).
 	Validator *TagValidator `pulumi:"validator"`
 }
 
@@ -176,6 +190,9 @@ type TagState struct {
 	// (Updatable) Indicates whether the tag is enabled for cost tracking.
 	IsCostTracking pulumi.BoolPtrInput
 	// (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsRetired pulumi.BoolPtrInput
 	// The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
 	Name pulumi.StringPtrInput
@@ -186,6 +203,10 @@ type TagState struct {
 	// Date and time the tag was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 	// (Updatable) Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
+	//
+	// If you define a validator after a value has been set for a defined tag, then any updates that attempt to change the value must pass the additional validation defined by the current rule. Previously set values (even those that would fail the current validation) are not updated. You can still update other attributes to resources that contain a non-valid defined tag.
+	//
+	// To clear the validator call UpdateTag with [DefaultTagDefinitionValidator](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator).
 	Validator TagValidatorPtrInput
 }
 
@@ -203,12 +224,19 @@ type tagArgs struct {
 	// (Updatable) Indicates whether the tag is enabled for cost tracking.
 	IsCostTracking *bool `pulumi:"isCostTracking"`
 	// (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsRetired *bool `pulumi:"isRetired"`
 	// The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
 	Name *string `pulumi:"name"`
 	// The OCID of the tag namespace.
 	TagNamespaceId string `pulumi:"tagNamespaceId"`
 	// (Updatable) Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
+	//
+	// If you define a validator after a value has been set for a defined tag, then any updates that attempt to change the value must pass the additional validation defined by the current rule. Previously set values (even those that would fail the current validation) are not updated. You can still update other attributes to resources that contain a non-valid defined tag.
+	//
+	// To clear the validator call UpdateTag with [DefaultTagDefinitionValidator](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator).
 	Validator *TagValidator `pulumi:"validator"`
 }
 
@@ -223,12 +251,19 @@ type TagArgs struct {
 	// (Updatable) Indicates whether the tag is enabled for cost tracking.
 	IsCostTracking pulumi.BoolPtrInput
 	// (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsRetired pulumi.BoolPtrInput
 	// The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
 	Name pulumi.StringPtrInput
 	// The OCID of the tag namespace.
 	TagNamespaceId pulumi.StringInput
 	// (Updatable) Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
+	//
+	// If you define a validator after a value has been set for a defined tag, then any updates that attempt to change the value must pass the additional validation defined by the current rule. Previously set values (even those that would fail the current validation) are not updated. You can still update other attributes to resources that contain a non-valid defined tag.
+	//
+	// To clear the validator call UpdateTag with [DefaultTagDefinitionValidator](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator).
 	Validator TagValidatorPtrInput
 }
 
@@ -340,6 +375,9 @@ func (o TagOutput) IsCostTracking() pulumi.BoolOutput {
 }
 
 // (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o TagOutput) IsRetired() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Tag) pulumi.BoolOutput { return v.IsRetired }).(pulumi.BoolOutput)
 }
@@ -365,6 +403,10 @@ func (o TagOutput) TimeCreated() pulumi.StringOutput {
 }
 
 // (Updatable) Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
+//
+// If you define a validator after a value has been set for a defined tag, then any updates that attempt to change the value must pass the additional validation defined by the current rule. Previously set values (even those that would fail the current validation) are not updated. You can still update other attributes to resources that contain a non-valid defined tag.
+//
+// To clear the validator call UpdateTag with [DefaultTagDefinitionValidator](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator).
 func (o TagOutput) Validator() TagValidatorPtrOutput {
 	return o.ApplyT(func(v *Tag) TagValidatorPtrOutput { return v.Validator }).(TagValidatorPtrOutput)
 }

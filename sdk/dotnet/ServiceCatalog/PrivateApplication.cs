@@ -117,6 +117,10 @@ namespace Pulumi.Oci.ServiceCatalog
 
         /// <summary>
         /// (Updatable) A short description of the private application.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("shortDescription")]
         public Output<string> ShortDescription { get; private set; } = null!;
@@ -241,6 +245,10 @@ namespace Pulumi.Oci.ServiceCatalog
 
         /// <summary>
         /// (Updatable) A short description of the private application.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("shortDescription", required: true)]
         public Input<string> ShortDescription { get; set; } = null!;
@@ -327,6 +335,10 @@ namespace Pulumi.Oci.ServiceCatalog
 
         /// <summary>
         /// (Updatable) A short description of the private application.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("shortDescription")]
         public Input<string>? ShortDescription { get; set; }

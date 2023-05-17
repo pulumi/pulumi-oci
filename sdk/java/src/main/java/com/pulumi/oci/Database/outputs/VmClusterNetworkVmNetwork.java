@@ -41,6 +41,9 @@ public final class VmClusterNetworkVmNetwork {
     /**
      * @return (Updatable) The network VLAN ID.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private @Nullable String vlanId;
 
@@ -82,6 +85,9 @@ public final class VmClusterNetworkVmNetwork {
     }
     /**
      * @return (Updatable) The network VLAN ID.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> vlanId() {

@@ -18,12 +18,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
     /**
      * (Updatable) Answer provided by an user for a security question.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCsvAttributeName: Answer
+     * * idcsSearchable: false
+     * * idcsSensitive: hash
+     * * multiValued: false
+     * * mutability: writeOnly
+     * * required: true
+     * * returned: never
+     * * type: string
+     * * uniqueness: none
+     * * idcsPii: true
+     * 
      */
     @Import(name="answer", required=true)
     private Output<String> answer;
 
     /**
      * @return (Updatable) Answer provided by an user for a security question.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCsvAttributeName: Answer
+     * * idcsSearchable: false
+     * * idcsSensitive: hash
+     * * multiValued: false
+     * * mutability: writeOnly
+     * * required: true
+     * * returned: never
+     * * type: string
+     * * uniqueness: none
+     * * idcsPii: true
      * 
      */
     public Output<String> answer() {
@@ -33,12 +57,30 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
     /**
      * (Updatable) Hint for an answer given by user while setting up Security Question.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="hintText")
     private @Nullable Output<String> hintText;
 
     /**
      * @return (Updatable) Hint for an answer given by user while setting up Security Question.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> hintText() {
@@ -48,12 +90,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
     /**
      * (Updatable) User Token URI
      * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
+     * 
      */
     @Import(name="ref")
     private @Nullable Output<String> ref;
 
     /**
      * @return (Updatable) User Token URI
+     * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ref() {
@@ -63,12 +127,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
     /**
      * (Updatable) The value of a X509 certificate.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
      * @return (Updatable) The value of a X509 certificate.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -105,6 +193,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
         /**
          * @param answer (Updatable) Answer provided by an user for a security question.
          * 
+         * **SCIM++ Properties:**
+         * * idcsCsvAttributeName: Answer
+         * * idcsSearchable: false
+         * * idcsSensitive: hash
+         * * multiValued: false
+         * * mutability: writeOnly
+         * * required: true
+         * * returned: never
+         * * type: string
+         * * uniqueness: none
+         * * idcsPii: true
+         * 
          * @return builder
          * 
          */
@@ -116,6 +216,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
         /**
          * @param answer (Updatable) Answer provided by an user for a security question.
          * 
+         * **SCIM++ Properties:**
+         * * idcsCsvAttributeName: Answer
+         * * idcsSearchable: false
+         * * idcsSensitive: hash
+         * * multiValued: false
+         * * mutability: writeOnly
+         * * required: true
+         * * returned: never
+         * * type: string
+         * * uniqueness: none
+         * * idcsPii: true
+         * 
          * @return builder
          * 
          */
@@ -125,6 +237,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
 
         /**
          * @param hintText (Updatable) Hint for an answer given by user while setting up Security Question.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -137,6 +258,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
         /**
          * @param hintText (Updatable) Hint for an answer given by user while setting up Security Question.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -146,6 +276,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
 
         /**
          * @param ref (Updatable) User Token URI
+         * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -158,6 +299,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
         /**
          * @param ref (Updatable) User Token URI
          * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -167,6 +319,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
 
         /**
          * @param value (Updatable) The value of a X509 certificate.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -178,6 +342,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
 
         /**
          * @param value (Updatable) The value of a X509 certificate.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

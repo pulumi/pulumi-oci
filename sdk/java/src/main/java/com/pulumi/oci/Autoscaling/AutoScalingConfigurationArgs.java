@@ -25,12 +25,16 @@ public final class AutoScalingConfigurationArgs extends com.pulumi.resources.Res
     /**
      * A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
      * 
+     * Each instance pool can have one autoscaling configuration.
+     * 
      */
     @Import(name="autoScalingResources", required=true)
     private Output<AutoScalingConfigurationAutoScalingResourcesArgs> autoScalingResources;
 
     /**
      * @return A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
+     * 
+     * Each instance pool can have one autoscaling configuration.
      * 
      */
     public Output<AutoScalingConfigurationAutoScalingResourcesArgs> autoScalingResources() {
@@ -55,12 +59,16 @@ public final class AutoScalingConfigurationArgs extends com.pulumi.resources.Res
     /**
      * (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
      * 
+     * For schedule-based autoscaling policies, this value is not used.
+     * 
      */
     @Import(name="coolDownInSeconds")
     private @Nullable Output<Integer> coolDownInSeconds;
 
     /**
      * @return (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
+     * 
+     * For schedule-based autoscaling policies, this value is not used.
      * 
      */
     public Optional<Output<Integer>> coolDownInSeconds() {
@@ -176,6 +184,8 @@ public final class AutoScalingConfigurationArgs extends com.pulumi.resources.Res
         /**
          * @param autoScalingResources A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
          * 
+         * Each instance pool can have one autoscaling configuration.
+         * 
          * @return builder
          * 
          */
@@ -186,6 +196,8 @@ public final class AutoScalingConfigurationArgs extends com.pulumi.resources.Res
 
         /**
          * @param autoScalingResources A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
+         * 
+         * Each instance pool can have one autoscaling configuration.
          * 
          * @return builder
          * 
@@ -218,6 +230,8 @@ public final class AutoScalingConfigurationArgs extends com.pulumi.resources.Res
         /**
          * @param coolDownInSeconds (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
          * 
+         * For schedule-based autoscaling policies, this value is not used.
+         * 
          * @return builder
          * 
          */
@@ -228,6 +242,8 @@ public final class AutoScalingConfigurationArgs extends com.pulumi.resources.Res
 
         /**
          * @param coolDownInSeconds (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
+         * 
+         * For schedule-based autoscaling policies, this value is not used.
          * 
          * @return builder
          * 

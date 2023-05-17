@@ -88,8 +88,12 @@ type GetMaskingPoliciesMaskingColumnsArgs struct {
 	// A filter to return only items related to a specific sensitive type OCID.
 	SensitiveTypeId *string `pulumi:"sensitiveTypeId"`
 	// A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+	//
+	// **Example:** 2016-12-19T16:39:57.600Z
 	TimeCreatedGreaterThanOrEqualTo *string `pulumi:"timeCreatedGreaterThanOrEqualTo"`
 	// Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+	//
+	// **Example:** 2016-12-19T16:39:57.600Z
 	TimeCreatedLessThan *string `pulumi:"timeCreatedLessThan"`
 	// Search for resources that were updated after a specific date. Specifying this parameter corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
 	TimeUpdatedGreaterThanOrEqualTo *string `pulumi:"timeUpdatedGreaterThanOrEqualTo"`
@@ -169,8 +173,12 @@ type GetMaskingPoliciesMaskingColumnsOutputArgs struct {
 	// A filter to return only items related to a specific sensitive type OCID.
 	SensitiveTypeId pulumi.StringPtrInput `pulumi:"sensitiveTypeId"`
 	// A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+	//
+	// **Example:** 2016-12-19T16:39:57.600Z
 	TimeCreatedGreaterThanOrEqualTo pulumi.StringPtrInput `pulumi:"timeCreatedGreaterThanOrEqualTo"`
 	// Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+	//
+	// **Example:** 2016-12-19T16:39:57.600Z
 	TimeCreatedLessThan pulumi.StringPtrInput `pulumi:"timeCreatedLessThan"`
 	// Search for resources that were updated after a specific date. Specifying this parameter corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
 	TimeUpdatedGreaterThanOrEqualTo pulumi.StringPtrInput `pulumi:"timeUpdatedGreaterThanOrEqualTo"`

@@ -27,12 +27,16 @@ public final class GetVirtualCircuitPublicPrefixesArgs extends com.pulumi.resour
     /**
      * A filter to only return resources that match the given verification state.
      * 
+     * The state value is case-insensitive.
+     * 
      */
     @Import(name="verificationState")
     private @Nullable Output<String> verificationState;
 
     /**
      * @return A filter to only return resources that match the given verification state.
+     * 
+     * The state value is case-insensitive.
      * 
      */
     public Optional<Output<String>> verificationState() {
@@ -96,6 +100,8 @@ public final class GetVirtualCircuitPublicPrefixesArgs extends com.pulumi.resour
         /**
          * @param verificationState A filter to only return resources that match the given verification state.
          * 
+         * The state value is case-insensitive.
+         * 
          * @return builder
          * 
          */
@@ -106,6 +112,8 @@ public final class GetVirtualCircuitPublicPrefixesArgs extends com.pulumi.resour
 
         /**
          * @param verificationState A filter to only return resources that match the given verification state.
+         * 
+         * The state value is case-insensitive.
          * 
          * @return builder
          * 

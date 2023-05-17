@@ -80,12 +80,18 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
     /**
      * (Updatable) Unified schema logging source type.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="sourceType", required=true)
     private Output<String> sourceType;
 
     /**
      * @return (Updatable) Unified schema logging source type.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> sourceType() {
@@ -227,6 +233,9 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
         /**
          * @param sourceType (Updatable) Unified schema logging source type.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -237,6 +246,9 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceArgs exten
 
         /**
          * @param sourceType (Updatable) Unified schema logging source type.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

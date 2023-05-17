@@ -49,6 +49,10 @@ namespace Pulumi.Oci.Waas
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("waasPolicyId")]
         public Output<string> WaasPolicyId { get; private set; } = null!;
@@ -113,6 +117,10 @@ namespace Pulumi.Oci.Waas
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("waasPolicyId", required: true)]
         public Input<string> WaasPolicyId { get; set; } = null!;
@@ -139,6 +147,10 @@ namespace Pulumi.Oci.Waas
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("waasPolicyId")]
         public Input<string>? WaasPolicyId { get; set; }

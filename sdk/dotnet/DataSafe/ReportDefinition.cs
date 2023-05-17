@@ -219,6 +219,10 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// (Updatable) Additional scim filters used to get the specific summary.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("scimFilter")]
         public Output<string> ScimFilter { get; private set; } = null!;
@@ -561,6 +565,10 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// (Updatable) Additional scim filters used to get the specific summary.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("scimFilter")]
         public Input<string>? ScimFilter { get; set; }

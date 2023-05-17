@@ -179,12 +179,18 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
     /**
      * The requested number of additional storage servers for the Exadata infrastructure.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="additionalStorageCount", type=Integer.class, parameters={})
     private Output<Integer> additionalStorageCount;
 
     /**
      * @return The requested number of additional storage servers for the Exadata infrastructure.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Integer> additionalStorageCount() {

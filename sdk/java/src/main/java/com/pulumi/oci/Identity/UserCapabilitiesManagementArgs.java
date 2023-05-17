@@ -79,12 +79,18 @@ public final class UserCapabilitiesManagementArgs extends com.pulumi.resources.R
     /**
      * (Updatable) Indicates if the user can use SMTP passwords.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="canUseSmtpCredentials")
     private @Nullable Output<Boolean> canUseSmtpCredentials;
 
     /**
      * @return (Updatable) Indicates if the user can use SMTP passwords.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Boolean>> canUseSmtpCredentials() {
@@ -222,6 +228,9 @@ public final class UserCapabilitiesManagementArgs extends com.pulumi.resources.R
         /**
          * @param canUseSmtpCredentials (Updatable) Indicates if the user can use SMTP passwords.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -232,6 +241,9 @@ public final class UserCapabilitiesManagementArgs extends com.pulumi.resources.R
 
         /**
          * @param canUseSmtpCredentials (Updatable) Indicates if the user can use SMTP passwords.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

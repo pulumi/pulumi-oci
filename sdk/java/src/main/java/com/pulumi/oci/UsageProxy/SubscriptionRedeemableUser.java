@@ -114,12 +114,18 @@ public class SubscriptionRedeemableUser extends com.pulumi.resources.CustomResou
     /**
      * The user ID of the person to send a copy of an email.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="userId", type=String.class, parameters={})
     private Output<String> userId;
 
     /**
      * @return The user ID of the person to send a copy of an email.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> userId() {

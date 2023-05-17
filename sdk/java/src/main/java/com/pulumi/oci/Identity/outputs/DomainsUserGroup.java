@@ -14,45 +14,141 @@ public final class DomainsUserGroup {
     /**
      * @return (Updatable) Date when the member is Added to the group
      * 
+     * **Added In:** 2105200541
+     * 
+     * **SCIM++ Properties:**
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     private @Nullable String dateAdded;
     /**
      * @return (Updatable) A human readable name, primarily used for display purposes.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable String display;
     /**
      * @return (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String externalId;
     /**
      * @return (Updatable) Membership Ocid
+     * 
+     * **Added In:** 2103141444
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable String membershipOcid;
     /**
      * @return (Updatable) A human readable name for Group as defined by the Service Consumer. READ-ONLY.
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String nonUniqueDisplay;
     /**
      * @return (Updatable) Ocid of the User&#39;s Support Account.
+     * 
+     * **Added In:** 2103141444
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable String ocid;
     /**
      * @return (Updatable) User Token URI
      * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
+     * 
      */
     private @Nullable String ref;
     /**
      * @return (Updatable) A label indicating the attribute&#39;s function.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String type;
     /**
      * @return (Updatable) The value of a X509 certificate.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
@@ -61,12 +157,31 @@ public final class DomainsUserGroup {
     /**
      * @return (Updatable) Date when the member is Added to the group
      * 
+     * **Added In:** 2105200541
+     * 
+     * **SCIM++ Properties:**
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     public Optional<String> dateAdded() {
         return Optional.ofNullable(this.dateAdded);
     }
     /**
      * @return (Updatable) A human readable name, primarily used for display purposes.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> display() {
@@ -75,12 +190,34 @@ public final class DomainsUserGroup {
     /**
      * @return (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> externalId() {
         return Optional.ofNullable(this.externalId);
     }
     /**
      * @return (Updatable) Membership Ocid
+     * 
+     * **Added In:** 2103141444
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> membershipOcid() {
@@ -89,12 +226,35 @@ public final class DomainsUserGroup {
     /**
      * @return (Updatable) A human readable name for Group as defined by the Service Consumer. READ-ONLY.
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> nonUniqueDisplay() {
         return Optional.ofNullable(this.nonUniqueDisplay);
     }
     /**
      * @return (Updatable) Ocid of the User&#39;s Support Account.
+     * 
+     * **Added In:** 2103141444
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> ocid() {
@@ -103,6 +263,17 @@ public final class DomainsUserGroup {
     /**
      * @return (Updatable) User Token URI
      * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
+     * 
      */
     public Optional<String> ref() {
         return Optional.ofNullable(this.ref);
@@ -110,12 +281,33 @@ public final class DomainsUserGroup {
     /**
      * @return (Updatable) A label indicating the attribute&#39;s function.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
     /**
      * @return (Updatable) The value of a X509 certificate.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

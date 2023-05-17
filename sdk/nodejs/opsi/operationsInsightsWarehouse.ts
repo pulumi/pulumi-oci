@@ -108,7 +108,11 @@ export class OperationsInsightsWarehouse extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
-     * (Updatable) Storage allocated to OPSI Warehouse ADW.
+     * (Updatable) Storage allocated to OPSI Warehouse ADW. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly storageAllocatedInGbs!: pulumi.Output<number>;
     /**
@@ -239,7 +243,11 @@ export interface OperationsInsightsWarehouseState {
      */
     state?: pulumi.Input<string>;
     /**
-     * (Updatable) Storage allocated to OPSI Warehouse ADW.
+     * (Updatable) Storage allocated to OPSI Warehouse ADW. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     storageAllocatedInGbs?: pulumi.Input<number>;
     /**
@@ -289,7 +297,11 @@ export interface OperationsInsightsWarehouseArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Storage allocated to OPSI Warehouse ADW.
+     * (Updatable) Storage allocated to OPSI Warehouse ADW. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     storageAllocatedInGbs?: pulumi.Input<number>;
 }

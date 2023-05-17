@@ -84,6 +84,12 @@ type GetManagedInstanceModuleStreamsArgs struct {
 	// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
 	StreamName *string `pulumi:"streamName"`
 	// The status of the stream
+	//
+	// A stream with the "ENABLED" status can be used as a source for installing profiles.  Streams with this status are also "ACTIVE".
+	//
+	// A stream with the "DISABLED" status cannot be the source for installing profiles.  To install profiles and packages from this stream, it must be enabled.
+	//
+	// A stream with the "ACTIVE" status can be used as a source for installing profiles.  The packages that comprise the stream are also used when a matching package is installed directly.  In general, a stream can have this status if it is the default stream for the module and no stream has been explicitly enabled.
 	StreamStatus *string `pulumi:"streamStatus"`
 }
 
@@ -128,6 +134,12 @@ type GetManagedInstanceModuleStreamsOutputArgs struct {
 	// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
 	StreamName pulumi.StringPtrInput `pulumi:"streamName"`
 	// The status of the stream
+	//
+	// A stream with the "ENABLED" status can be used as a source for installing profiles.  Streams with this status are also "ACTIVE".
+	//
+	// A stream with the "DISABLED" status cannot be the source for installing profiles.  To install profiles and packages from this stream, it must be enabled.
+	//
+	// A stream with the "ACTIVE" status can be used as a source for installing profiles.  The packages that comprise the stream are also used when a matching package is installed directly.  In general, a stream can have this status if it is the default stream for the module and no stream has been explicitly enabled.
 	StreamStatus pulumi.StringPtrInput `pulumi:"streamStatus"`
 }
 

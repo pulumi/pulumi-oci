@@ -40,6 +40,10 @@ class DatasetArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param pulumi.Input['DatasetInitialRecordGenerationConfigurationArgs'] initial_record_generation_configuration: The initial generate records configuration. It generates records from the dataset's source.
         :param pulumi.Input[str] labeling_instructions: (Updatable) The labeling instructions for human labelers in rich text format
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "annotation_format", annotation_format)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -184,6 +188,10 @@ class DatasetArgs:
     def labeling_instructions(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The labeling instructions for human labelers in rich text format
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "labeling_instructions")
 
@@ -223,6 +231,10 @@ class _DatasetState:
         :param pulumi.Input['DatasetInitialRecordGenerationConfigurationArgs'] initial_record_generation_configuration: The initial generate records configuration. It generates records from the dataset's source.
         :param pulumi.Input['DatasetLabelSetArgs'] label_set: An ordered collection of labels that are unique by name.
         :param pulumi.Input[str] labeling_instructions: (Updatable) The labeling instructions for human labelers in rich text format
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
         :param pulumi.Input[str] state: The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
         :param pulumi.Input[str] time_created: The date and time the resource was created, in the timestamp format defined by RFC3339.
@@ -384,6 +396,10 @@ class _DatasetState:
     def labeling_instructions(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The labeling instructions for human labelers in rich text format
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "labeling_instructions")
 
@@ -522,6 +538,10 @@ class Dataset(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['DatasetInitialRecordGenerationConfigurationArgs']] initial_record_generation_configuration: The initial generate records configuration. It generates records from the dataset's source.
         :param pulumi.Input[pulumi.InputType['DatasetLabelSetArgs']] label_set: An ordered collection of labels that are unique by name.
         :param pulumi.Input[str] labeling_instructions: (Updatable) The labeling instructions for human labelers in rich text format
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -684,6 +704,10 @@ class Dataset(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['DatasetInitialRecordGenerationConfigurationArgs']] initial_record_generation_configuration: The initial generate records configuration. It generates records from the dataset's source.
         :param pulumi.Input[pulumi.InputType['DatasetLabelSetArgs']] label_set: An ordered collection of labels that are unique by name.
         :param pulumi.Input[str] labeling_instructions: (Updatable) The labeling instructions for human labelers in rich text format
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
         :param pulumi.Input[str] state: The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
         :param pulumi.Input[str] time_created: The date and time the resource was created, in the timestamp format defined by RFC3339.
@@ -795,6 +819,10 @@ class Dataset(pulumi.CustomResource):
     def labeling_instructions(self) -> pulumi.Output[str]:
         """
         (Updatable) The labeling instructions for human labelers in rich text format
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "labeling_instructions")
 

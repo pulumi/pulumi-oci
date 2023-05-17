@@ -102,6 +102,10 @@ namespace Pulumi.Oci.Waa
 
         /// <summary>
         /// (Updatable) An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
+        /// 
+        /// This compression policy can be used to enable support for HTTP response compression algorithms like gzip and configure the conditions of when a compression algorithm will be used.
+        /// 
+        /// HTTP responses will only be compressed if the client indicates support for one of the enabled compression algorithms via the "Accept-Encoding" request header.
         /// </summary>
         [Output("responseCompressionPolicy")]
         public Output<Outputs.AppAccelerationPolicyResponseCompressionPolicy> ResponseCompressionPolicy { get; private set; } = null!;
@@ -113,7 +117,11 @@ namespace Pulumi.Oci.Waa
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("systemTags")]
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
@@ -220,6 +228,10 @@ namespace Pulumi.Oci.Waa
 
         /// <summary>
         /// (Updatable) An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
+        /// 
+        /// This compression policy can be used to enable support for HTTP response compression algorithms like gzip and configure the conditions of when a compression algorithm will be used.
+        /// 
+        /// HTTP responses will only be compressed if the client indicates support for one of the enabled compression algorithms via the "Accept-Encoding" request header.
         /// </summary>
         [Input("responseCompressionPolicy")]
         public Input<Inputs.AppAccelerationPolicyResponseCompressionPolicyArgs>? ResponseCompressionPolicy { get; set; }
@@ -228,7 +240,11 @@ namespace Pulumi.Oci.Waa
         private InputMap<object>? _systemTags;
 
         /// <summary>
-        /// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputMap<object> SystemTags
         {
@@ -294,6 +310,10 @@ namespace Pulumi.Oci.Waa
 
         /// <summary>
         /// (Updatable) An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
+        /// 
+        /// This compression policy can be used to enable support for HTTP response compression algorithms like gzip and configure the conditions of when a compression algorithm will be used.
+        /// 
+        /// HTTP responses will only be compressed if the client indicates support for one of the enabled compression algorithms via the "Accept-Encoding" request header.
         /// </summary>
         [Input("responseCompressionPolicy")]
         public Input<Inputs.AppAccelerationPolicyResponseCompressionPolicyGetArgs>? ResponseCompressionPolicy { get; set; }
@@ -308,7 +328,11 @@ namespace Pulumi.Oci.Waa
         private InputMap<object>? _systemTags;
 
         /// <summary>
-        /// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputMap<object> SystemTags
         {

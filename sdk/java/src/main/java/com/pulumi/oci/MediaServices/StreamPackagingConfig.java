@@ -188,12 +188,18 @@ public class StreamPackagingConfig extends com.pulumi.resources.CustomResource {
     /**
      * The output format for the package.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="streamPackagingFormat", type=String.class, parameters={})
     private Output<String> streamPackagingFormat;
 
     /**
      * @return The output format for the package.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> streamPackagingFormat() {

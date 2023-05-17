@@ -29,7 +29,11 @@ class GeneratedKeyArgs:
         :param pulumi.Input[str] key_id: The OCID of the master encryption key to encrypt the generated data encryption key with.
         :param pulumi.Input['GeneratedKeyKeyShapeArgs'] key_shape: The cryptographic properties of a key.
         :param pulumi.Input[Mapping[str, Any]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
-        :param pulumi.Input[Mapping[str, Any]] logging_context: Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
+        :param pulumi.Input[Mapping[str, Any]] logging_context: Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "crypto_endpoint", crypto_endpoint)
         pulumi.set(__self__, "include_plaintext_key", include_plaintext_key)
@@ -104,7 +108,11 @@ class GeneratedKeyArgs:
     @pulumi.getter(name="loggingContext")
     def logging_context(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
+        Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "logging_context")
 
@@ -133,7 +141,11 @@ class _GeneratedKeyState:
         :param pulumi.Input[bool] include_plaintext_key: If true, the generated key is also returned unencrypted.
         :param pulumi.Input[str] key_id: The OCID of the master encryption key to encrypt the generated data encryption key with.
         :param pulumi.Input['GeneratedKeyKeyShapeArgs'] key_shape: The cryptographic properties of a key.
-        :param pulumi.Input[Mapping[str, Any]] logging_context: Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
+        :param pulumi.Input[Mapping[str, Any]] logging_context: Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] plaintext: The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
         :param pulumi.Input[str] plaintext_checksum: The checksum of the plaintext data encryption key, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
         """
@@ -232,7 +244,11 @@ class _GeneratedKeyState:
     @pulumi.getter(name="loggingContext")
     def logging_context(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
+        Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "logging_context")
 
@@ -312,7 +328,11 @@ class GeneratedKey(pulumi.CustomResource):
         :param pulumi.Input[bool] include_plaintext_key: If true, the generated key is also returned unencrypted.
         :param pulumi.Input[str] key_id: The OCID of the master encryption key to encrypt the generated data encryption key with.
         :param pulumi.Input[pulumi.InputType['GeneratedKeyKeyShapeArgs']] key_shape: The cryptographic properties of a key.
-        :param pulumi.Input[Mapping[str, Any]] logging_context: Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
+        :param pulumi.Input[Mapping[str, Any]] logging_context: Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -427,7 +447,11 @@ class GeneratedKey(pulumi.CustomResource):
         :param pulumi.Input[bool] include_plaintext_key: If true, the generated key is also returned unencrypted.
         :param pulumi.Input[str] key_id: The OCID of the master encryption key to encrypt the generated data encryption key with.
         :param pulumi.Input[pulumi.InputType['GeneratedKeyKeyShapeArgs']] key_shape: The cryptographic properties of a key.
-        :param pulumi.Input[Mapping[str, Any]] logging_context: Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
+        :param pulumi.Input[Mapping[str, Any]] logging_context: Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] plaintext: The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
         :param pulumi.Input[str] plaintext_checksum: The checksum of the plaintext data encryption key, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
         """
@@ -498,7 +522,11 @@ class GeneratedKey(pulumi.CustomResource):
     @pulumi.getter(name="loggingContext")
     def logging_context(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         """
-        Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
+        Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "logging_context")
 

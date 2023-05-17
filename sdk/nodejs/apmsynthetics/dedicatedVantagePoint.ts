@@ -107,6 +107,10 @@ export class DedicatedVantagePoint extends pulumi.CustomResource {
     public readonly region!: pulumi.Output<string>;
     /**
      * (Updatable) Status of the dedicated vantage point.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly status!: pulumi.Output<string>;
     /**
@@ -211,6 +215,10 @@ export interface DedicatedVantagePointState {
     region?: pulumi.Input<string>;
     /**
      * (Updatable) Status of the dedicated vantage point.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     status?: pulumi.Input<string>;
     /**
@@ -253,6 +261,10 @@ export interface DedicatedVantagePointArgs {
     region: pulumi.Input<string>;
     /**
      * (Updatable) Status of the dedicated vantage point.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     status?: pulumi.Input<string>;
 }

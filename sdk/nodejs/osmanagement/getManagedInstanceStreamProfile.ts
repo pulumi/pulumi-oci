@@ -87,6 +87,10 @@ export interface GetManagedInstanceStreamProfileArgs {
     profileName?: string;
     /**
      * The status of the profile.
+     *
+     * A profile with the "INSTALLED" status indicates that the profile has been installed.
+     *
+     * A profile with the "AVAILABLE" status indicates that the profile is not installed, but can be.
      */
     profileStatus?: string;
     /**
@@ -195,6 +199,10 @@ export interface GetManagedInstanceStreamProfileOutputArgs {
     profileName?: pulumi.Input<string>;
     /**
      * The status of the profile.
+     *
+     * A profile with the "INSTALLED" status indicates that the profile has been installed.
+     *
+     * A profile with the "AVAILABLE" status indicates that the profile is not installed, but can be.
      */
     profileStatus?: pulumi.Input<string>;
     /**

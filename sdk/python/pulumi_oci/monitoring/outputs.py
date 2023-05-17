@@ -54,8 +54,16 @@ class AlarmSuppression(dict):
                  description: Optional[str] = None):
         """
         :param str time_suppress_from: (Updatable) The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-        :param str time_suppress_until: (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
+        :param str time_suppress_until: (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str description: (Updatable) Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+               
+               Oracle recommends including tracking information for the event or associated work, such as a ticket number.
+               
+               Example: `Planned outage due to change IT-1234.`
         """
         pulumi.set(__self__, "time_suppress_from", time_suppress_from)
         pulumi.set(__self__, "time_suppress_until", time_suppress_until)
@@ -74,7 +82,11 @@ class AlarmSuppression(dict):
     @pulumi.getter(name="timeSuppressUntil")
     def time_suppress_until(self) -> str:
         """
-        (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
+        (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_suppress_until")
 
@@ -83,6 +95,10 @@ class AlarmSuppression(dict):
     def description(self) -> Optional[str]:
         """
         (Updatable) Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+
+        Oracle recommends including tracking information for the event or associated work, such as a ticket number.
+
+        Example: `Planned outage due to change IT-1234.`
         """
         return pulumi.get(self, "description")
 
@@ -692,6 +708,12 @@ class GetMetricDataMetricDataResult(dict):
         :param str name: The name of the metric.  Example: `CpuUtilization`
         :param str namespace: The source service or application to use when searching for metric data points to aggregate.  Example: `oci_computeagent`
         :param str query: The Monitoring Query Language (MQL) expression to use when searching for metric data points to aggregate. The query must specify a metric, statistic, and interval. Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+               
+               Construct your query to avoid exceeding limits on returned data. See [MetricData Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/20180401/MetricData).
+               
+               For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+               
+               Example: `CpuUtilization[1m].sum()`
         :param str resolution: The time between calculated aggregation windows. Use with the query interval to vary the frequency at which aggregated data points are returned. For example, use a query interval of 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute frequency. The resolution must be equal or less than the interval in the query. The default resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.  Example: `5m`
         :param str resource_group: Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
         :param str start_time: The beginning of the time range to use when searching for metric data points. Format is defined by RFC3339. The response includes metric data points for the startTime. Default value: the timestamp 3 hours before the call was sent.  Example: `2019-02-01T01:02:29.600Z`
@@ -778,6 +800,12 @@ class GetMetricDataMetricDataResult(dict):
     def query(self) -> str:
         """
         The Monitoring Query Language (MQL) expression to use when searching for metric data points to aggregate. The query must specify a metric, statistic, and interval. Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+
+        Construct your query to avoid exceeding limits on returned data. See [MetricData Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/20180401/MetricData).
+
+        For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+
+        Example: `CpuUtilization[1m].sum()`
         """
         return pulumi.get(self, "query")
 
@@ -885,6 +913,8 @@ class GetMetricsMetricResult(dict):
         :param Mapping[str, Any] dimension_filters: Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
         :param Mapping[str, Any] dimensions: Qualifiers provided in a metric definition. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
         :param Sequence[str] group_bies: Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup.
+               
+               Example - group by namespace: `[ "namespace" ]`
         :param str name: The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
         :param str namespace: The source service or application to use when searching for metric definitions.  Example: `oci_computeagent`
         :param str resource_group: Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
@@ -935,6 +965,8 @@ class GetMetricsMetricResult(dict):
     def group_bies(self) -> Sequence[str]:
         """
         Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup.
+
+        Example - group by namespace: `[ "namespace" ]`
         """
         return pulumi.get(self, "group_bies")
 

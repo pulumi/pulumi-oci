@@ -365,6 +365,9 @@ type QueryQueryDefinition struct {
 	// (Updatable) The request of the generated Cost Analysis report.
 	ReportQuery QueryQueryDefinitionReportQuery `pulumi:"reportQuery"`
 	// (Updatable) The saved query version.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Version float64 `pulumi:"version"`
 }
 
@@ -387,6 +390,9 @@ type QueryQueryDefinitionArgs struct {
 	// (Updatable) The request of the generated Cost Analysis report.
 	ReportQuery QueryQueryDefinitionReportQueryInput `pulumi:"reportQuery"`
 	// (Updatable) The saved query version.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Version pulumi.Float64Input `pulumi:"version"`
 }
 
@@ -483,6 +489,9 @@ func (o QueryQueryDefinitionOutput) ReportQuery() QueryQueryDefinitionReportQuer
 }
 
 // (Updatable) The saved query version.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o QueryQueryDefinitionOutput) Version() pulumi.Float64Output {
 	return o.ApplyT(func(v QueryQueryDefinition) float64 { return v.Version }).(pulumi.Float64Output)
 }
@@ -542,6 +551,9 @@ func (o QueryQueryDefinitionPtrOutput) ReportQuery() QueryQueryDefinitionReportQ
 }
 
 // (Updatable) The saved query version.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o QueryQueryDefinitionPtrOutput) Version() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *QueryQueryDefinition) *float64 {
 		if v == nil {
@@ -2456,6 +2468,9 @@ type UsageItem struct {
 	// The usage end time.
 	TimeUsageEnded *string `pulumi:"timeUsageEnded"`
 	// The usage start time.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeUsageStarted *string `pulumi:"timeUsageStarted"`
 	// The usage unit.
 	Unit *string `pulumi:"unit"`
@@ -2528,6 +2543,9 @@ type UsageItemArgs struct {
 	// The usage end time.
 	TimeUsageEnded pulumi.StringPtrInput `pulumi:"timeUsageEnded"`
 	// The usage start time.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeUsageStarted pulumi.StringPtrInput `pulumi:"timeUsageStarted"`
 	// The usage unit.
 	Unit pulumi.StringPtrInput `pulumi:"unit"`
@@ -2714,6 +2732,9 @@ func (o UsageItemOutput) TimeUsageEnded() pulumi.StringPtrOutput {
 }
 
 // The usage start time.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o UsageItemOutput) TimeUsageStarted() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UsageItem) *string { return v.TimeUsageStarted }).(pulumi.StringPtrOutput)
 }

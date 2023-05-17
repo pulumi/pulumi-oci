@@ -14,42 +14,121 @@ namespace Pulumi.Oci.Identity.Inputs
     {
         /// <summary>
         /// (Updatable) Attribute used to define the type of attestation required.
+        /// 
+        /// **Added In:** 2009232244
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("attestation", required: true)]
         public Input<string> Attestation { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Attribute used to define authenticator selection attachment.
+        /// 
+        /// **Added In:** 2009232244
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("authenticatorSelectionAttachment", required: true)]
         public Input<string> AuthenticatorSelectionAttachment { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Flag used to indicate authenticator selection is required or not
+        /// 
+        /// **Added In:** 2009232244
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("authenticatorSelectionRequireResidentKey", required: true)]
         public Input<bool> AuthenticatorSelectionRequireResidentKey { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Attribute used to define authenticator selection resident key requirement.
+        /// 
+        /// **Added In:** 2009232244
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("authenticatorSelectionResidentKey", required: true)]
         public Input<string> AuthenticatorSelectionResidentKey { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Attribute used to define authenticator selection verification.
+        /// 
+        /// **Added In:** 2009232244
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("authenticatorSelectionUserVerification", required: true)]
         public Input<string> AuthenticatorSelectionUserVerification { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Number of domain levels IDCS should use for origin comparision
+        /// 
+        /// **Added In:** 2109020413
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * idcsMaxValue: 2
+        /// * idcsMinValue: 0
+        /// * required: false
+        /// * returned: default
+        /// * type: integer
+        /// * uniqueness: none
         /// </summary>
         [Input("domainValidationLevel")]
         public Input<int>? DomainValidationLevel { get; set; }
 
         /// <summary>
         /// (Updatable) Flag used to indicate whether we need to restrict creation of multiple credentials in same authenticator
+        /// 
+        /// **Added In:** 2009232244
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("excludeCredentials", required: true)]
         public Input<bool> ExcludeCredentials { get; set; } = null!;
@@ -59,6 +138,17 @@ namespace Pulumi.Oci.Identity.Inputs
 
         /// <summary>
         /// (Updatable) List of server supported public key algorithms
+        /// 
+        /// **Added In:** 2009232244
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public InputList<string> PublicKeyTypes
         {
@@ -68,6 +158,19 @@ namespace Pulumi.Oci.Identity.Inputs
 
         /// <summary>
         /// (Updatable) Timeout for the fido authentication to complete
+        /// 
+        /// **Added In:** 2009232244
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * idcsMaxValue: 600000
+        /// * idcsMinValue: 10000
+        /// * required: true
+        /// * returned: default
+        /// * type: integer
+        /// * uniqueness: none
         /// </summary>
         [Input("timeout", required: true)]
         public Input<int> Timeout { get; set; } = null!;

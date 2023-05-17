@@ -14,6 +14,17 @@ namespace Pulumi.Oci.Identity.Inputs
     {
         /// <summary>
         /// (Updatable) Settings related to Duo Security
+        /// 
+        /// **Added In:** 19.2.1
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Input("duoSecuritySettings")]
         public Input<Inputs.DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettingsArgs>? DuoSecuritySettings { get; set; }

@@ -33,6 +33,10 @@ class SecretArgs:
         :param pulumi.Input['SecretSecretContentArgs'] secret_content: (Updatable) The content of the secret and metadata to help identify it.
         :param pulumi.Input[str] secret_name: A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
         :param pulumi.Input[str] vault_id: The OCID of the vault where you want to create the secret.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A brief description of the secret. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -108,6 +112,10 @@ class SecretArgs:
     def vault_id(self) -> pulumi.Input[str]:
         """
         The OCID of the vault where you want to create the secret.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vault_id")
 
@@ -213,6 +221,10 @@ class _SecretState:
         :param pulumi.Input[str] time_of_current_version_expiry: An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param pulumi.Input[str] time_of_deletion: An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param pulumi.Input[str] vault_id: The OCID of the vault where you want to create the secret.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -432,6 +444,10 @@ class _SecretState:
     def vault_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the vault where you want to create the secret.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vault_id")
 
@@ -481,6 +497,10 @@ class Secret(pulumi.CustomResource):
         :param pulumi.Input[str] secret_name: A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SecretSecretRuleArgs']]]] secret_rules: (Updatable) A list of rules to control how the secret is used and managed.
         :param pulumi.Input[str] vault_id: The OCID of the vault where you want to create the secret.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -610,6 +630,10 @@ class Secret(pulumi.CustomResource):
         :param pulumi.Input[str] time_of_current_version_expiry: An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param pulumi.Input[str] time_of_deletion: An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param pulumi.Input[str] vault_id: The OCID of the vault where you want to create the secret.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -758,6 +782,10 @@ class Secret(pulumi.CustomResource):
     def vault_id(self) -> pulumi.Output[str]:
         """
         The OCID of the vault where you want to create the secret.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vault_id")
 

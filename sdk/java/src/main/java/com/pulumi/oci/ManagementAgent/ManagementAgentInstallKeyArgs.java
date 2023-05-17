@@ -80,12 +80,18 @@ public final class ManagementAgentInstallKeyArgs extends com.pulumi.resources.Re
     /**
      * date after which key would expire after creation
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="timeExpires")
     private @Nullable Output<String> timeExpires;
 
     /**
      * @return date after which key would expire after creation
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> timeExpires() {
@@ -207,6 +213,9 @@ public final class ManagementAgentInstallKeyArgs extends com.pulumi.resources.Re
         /**
          * @param timeExpires date after which key would expire after creation
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -217,6 +226,9 @@ public final class ManagementAgentInstallKeyArgs extends com.pulumi.resources.Re
 
         /**
          * @param timeExpires date after which key would expire after creation
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

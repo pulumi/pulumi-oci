@@ -72,6 +72,9 @@ type RepositoryRef struct {
 	// (Updatable) The type of reference (BRANCH or TAG).
 	RefType pulumi.StringOutput `pulumi:"refType"`
 	// Unique repository identifier.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RepositoryId pulumi.StringOutput `pulumi:"repositoryId"`
 }
 
@@ -128,6 +131,9 @@ type repositoryRefState struct {
 	// (Updatable) The type of reference (BRANCH or TAG).
 	RefType *string `pulumi:"refType"`
 	// Unique repository identifier.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RepositoryId *string `pulumi:"repositoryId"`
 }
 
@@ -147,6 +153,9 @@ type RepositoryRefState struct {
 	// (Updatable) The type of reference (BRANCH or TAG).
 	RefType pulumi.StringPtrInput
 	// Unique repository identifier.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RepositoryId pulumi.StringPtrInput
 }
 
@@ -164,6 +173,9 @@ type repositoryRefArgs struct {
 	// (Updatable) The type of reference (BRANCH or TAG).
 	RefType string `pulumi:"refType"`
 	// Unique repository identifier.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RepositoryId string `pulumi:"repositoryId"`
 }
 
@@ -178,6 +190,9 @@ type RepositoryRefArgs struct {
 	// (Updatable) The type of reference (BRANCH or TAG).
 	RefType pulumi.StringInput
 	// Unique repository identifier.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RepositoryId pulumi.StringInput
 }
 
@@ -304,6 +319,9 @@ func (o RepositoryRefOutput) RefType() pulumi.StringOutput {
 }
 
 // Unique repository identifier.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o RepositoryRefOutput) RepositoryId() pulumi.StringOutput {
 	return o.ApplyT(func(v *RepositoryRef) pulumi.StringOutput { return v.RepositoryId }).(pulumi.StringOutput)
 }

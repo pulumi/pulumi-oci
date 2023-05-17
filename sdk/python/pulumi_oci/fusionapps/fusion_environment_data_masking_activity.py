@@ -20,6 +20,10 @@ class FusionEnvironmentDataMaskingActivityArgs:
         The set of arguments for constructing a FusionEnvironmentDataMaskingActivity resource.
         :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[bool] is_resume_data_masking: This allows the Data Safe service to resume the previously failed data masking activity.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "fusion_environment_id", fusion_environment_id)
         if is_resume_data_masking is not None:
@@ -42,6 +46,10 @@ class FusionEnvironmentDataMaskingActivityArgs:
     def is_resume_data_masking(self) -> Optional[pulumi.Input[bool]]:
         """
         This allows the Data Safe service to resume the previously failed data masking activity.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_resume_data_masking")
 
@@ -62,6 +70,10 @@ class _FusionEnvironmentDataMaskingActivityState:
         Input properties used for looking up and filtering FusionEnvironmentDataMaskingActivity resources.
         :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[bool] is_resume_data_masking: This allows the Data Safe service to resume the previously failed data masking activity.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the DataMaskingActivity.
         :param pulumi.Input[str] time_masking_finish: The time the data masking activity ended. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_masking_start: The time the data masking activity started. An RFC3339 formatted datetime string.
@@ -94,6 +106,10 @@ class _FusionEnvironmentDataMaskingActivityState:
     def is_resume_data_masking(self) -> Optional[pulumi.Input[bool]]:
         """
         This allows the Data Safe service to resume the previously failed data masking activity.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_resume_data_masking")
 
@@ -174,6 +190,10 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[bool] is_resume_data_masking: This allows the Data Safe service to resume the previously failed data masking activity.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -262,6 +282,10 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[bool] is_resume_data_masking: This allows the Data Safe service to resume the previously failed data masking activity.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the DataMaskingActivity.
         :param pulumi.Input[str] time_masking_finish: The time the data masking activity ended. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_masking_start: The time the data masking activity started. An RFC3339 formatted datetime string.
@@ -290,6 +314,10 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
     def is_resume_data_masking(self) -> pulumi.Output[bool]:
         """
         This allows the Data Safe service to resume the previously failed data masking activity.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_resume_data_masking")
 

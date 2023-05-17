@@ -72,6 +72,9 @@ type OdaPrivateEndpointScanProxy struct {
 	// The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
 	ScanListenerInfos OdaPrivateEndpointScanProxyScanListenerInfoArrayOutput `pulumi:"scanListenerInfos"`
 	// Type indicating whether Scan listener is specified by its FQDN or list of IPs
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ScanListenerType pulumi.StringOutput `pulumi:"scanListenerType"`
 	// The current state of the ODA Private Endpoint Scan Proxy.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -127,6 +130,9 @@ type odaPrivateEndpointScanProxyState struct {
 	// The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
 	ScanListenerInfos []OdaPrivateEndpointScanProxyScanListenerInfo `pulumi:"scanListenerInfos"`
 	// Type indicating whether Scan listener is specified by its FQDN or list of IPs
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ScanListenerType *string `pulumi:"scanListenerType"`
 	// The current state of the ODA Private Endpoint Scan Proxy.
 	State *string `pulumi:"state"`
@@ -142,6 +148,9 @@ type OdaPrivateEndpointScanProxyState struct {
 	// The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
 	ScanListenerInfos OdaPrivateEndpointScanProxyScanListenerInfoArrayInput
 	// Type indicating whether Scan listener is specified by its FQDN or list of IPs
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ScanListenerType pulumi.StringPtrInput
 	// The current state of the ODA Private Endpoint Scan Proxy.
 	State pulumi.StringPtrInput
@@ -161,6 +170,9 @@ type odaPrivateEndpointScanProxyArgs struct {
 	// The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
 	ScanListenerInfos []OdaPrivateEndpointScanProxyScanListenerInfo `pulumi:"scanListenerInfos"`
 	// Type indicating whether Scan listener is specified by its FQDN or list of IPs
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ScanListenerType string `pulumi:"scanListenerType"`
 }
 
@@ -173,6 +185,9 @@ type OdaPrivateEndpointScanProxyArgs struct {
 	// The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
 	ScanListenerInfos OdaPrivateEndpointScanProxyScanListenerInfoArrayInput
 	// Type indicating whether Scan listener is specified by its FQDN or list of IPs
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ScanListenerType pulumi.StringInput
 }
 
@@ -281,6 +296,9 @@ func (o OdaPrivateEndpointScanProxyOutput) ScanListenerInfos() OdaPrivateEndpoin
 }
 
 // Type indicating whether Scan listener is specified by its FQDN or list of IPs
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o OdaPrivateEndpointScanProxyOutput) ScanListenerType() pulumi.StringOutput {
 	return o.ApplyT(func(v *OdaPrivateEndpointScanProxy) pulumi.StringOutput { return v.ScanListenerType }).(pulumi.StringOutput)
 }

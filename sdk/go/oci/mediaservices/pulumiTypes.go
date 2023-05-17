@@ -12,6 +12,9 @@ import (
 
 type MediaAssetMediaAssetTag struct {
 	// (Updatable) The type of the media asset.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type *string `pulumi:"type"`
 	// (Updatable) Tag of the MediaAsset.
 	Value string `pulumi:"value"`
@@ -30,6 +33,9 @@ type MediaAssetMediaAssetTagInput interface {
 
 type MediaAssetMediaAssetTagArgs struct {
 	// (Updatable) The type of the media asset.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringPtrInput `pulumi:"type"`
 	// (Updatable) Tag of the MediaAsset.
 	Value pulumi.StringInput `pulumi:"value"`
@@ -87,6 +93,9 @@ func (o MediaAssetMediaAssetTagOutput) ToMediaAssetMediaAssetTagOutputWithContex
 }
 
 // (Updatable) The type of the media asset.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MediaAssetMediaAssetTagOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MediaAssetMediaAssetTag) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -475,6 +484,9 @@ type MediaWorkflowTask struct {
 	// (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
 	Type string `pulumi:"type"`
 	// (Updatable) The version of the MediaWorkflowTaskDeclaration.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Version string `pulumi:"version"`
 }
 
@@ -503,6 +515,9 @@ type MediaWorkflowTaskArgs struct {
 	// (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
 	Type pulumi.StringInput `pulumi:"type"`
 	// (Updatable) The version of the MediaWorkflowTaskDeclaration.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Version pulumi.StringInput `pulumi:"version"`
 }
 
@@ -588,6 +603,9 @@ func (o MediaWorkflowTaskOutput) Type() pulumi.StringOutput {
 }
 
 // (Updatable) The version of the MediaWorkflowTaskDeclaration.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MediaWorkflowTaskOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v MediaWorkflowTask) string { return v.Version }).(pulumi.StringOutput)
 }

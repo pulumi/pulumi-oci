@@ -14,15 +14,45 @@ public final class DomainsPasswordPolicyGroup {
     /**
      * @return (Updatable) The displayName of the User or App who modified this Resource
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String display;
     /**
      * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
+     * 
      */
     private @Nullable String ref;
     /**
      * @return (Updatable) Value of the tag.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private String value;
@@ -31,6 +61,16 @@ public final class DomainsPasswordPolicyGroup {
     /**
      * @return (Updatable) The displayName of the User or App who modified this Resource
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> display() {
         return Optional.ofNullable(this.display);
@@ -38,12 +78,32 @@ public final class DomainsPasswordPolicyGroup {
     /**
      * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
+     * 
      */
     public Optional<String> ref() {
         return Optional.ofNullable(this.ref);
     }
     /**
      * @return (Updatable) Value of the tag.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public String value() {

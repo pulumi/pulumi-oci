@@ -55,12 +55,18 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The type of wallet to generate.
+        /// 
+        /// **Shared Exadata infrastructure usage:**
         /// </summary>
         [Output("generateType")]
         public Output<string?> GenerateType { get; private set; } = null!;
 
         /// <summary>
         /// The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("password")]
         public Output<string> Password { get; private set; } = null!;
@@ -126,6 +132,8 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The type of wallet to generate.
+        /// 
+        /// **Shared Exadata infrastructure usage:**
         /// </summary>
         [Input("generateType")]
         public Input<string>? GenerateType { get; set; }
@@ -135,6 +143,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public Input<string>? Password
         {
@@ -171,6 +183,8 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The type of wallet to generate.
+        /// 
+        /// **Shared Exadata infrastructure usage:**
         /// </summary>
         [Input("generateType")]
         public Input<string>? GenerateType { get; set; }
@@ -180,6 +194,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public Input<string>? Password
         {

@@ -59,6 +59,10 @@ namespace Pulumi.Oci.ServiceCatalog
 
         /// <summary>
         /// Identifier of the service catalog.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("serviceCatalogId")]
         public Output<string> ServiceCatalogId { get; private set; } = null!;
@@ -129,6 +133,10 @@ namespace Pulumi.Oci.ServiceCatalog
 
         /// <summary>
         /// Identifier of the service catalog.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("serviceCatalogId", required: true)]
         public Input<string> ServiceCatalogId { get; set; } = null!;
@@ -155,6 +163,10 @@ namespace Pulumi.Oci.ServiceCatalog
 
         /// <summary>
         /// Identifier of the service catalog.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("serviceCatalogId")]
         public Input<string>? ServiceCatalogId { get; set; }

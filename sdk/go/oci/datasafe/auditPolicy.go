@@ -50,6 +50,9 @@ type AuditPolicy struct {
 	// (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
 	ProvisionTrigger pulumi.IntPtrOutput `pulumi:"provisionTrigger"`
 	// (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetrieveFromTargetTrigger pulumi.IntPtrOutput `pulumi:"retrieveFromTargetTrigger"`
 	// The current state of the audit policy.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -122,6 +125,9 @@ type auditPolicyState struct {
 	// (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
 	ProvisionTrigger *int `pulumi:"provisionTrigger"`
 	// (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetrieveFromTargetTrigger *int `pulumi:"retrieveFromTargetTrigger"`
 	// The current state of the audit policy.
 	State *string `pulumi:"state"`
@@ -163,6 +169,9 @@ type AuditPolicyState struct {
 	// (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
 	ProvisionTrigger pulumi.IntPtrInput
 	// (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetrieveFromTargetTrigger pulumi.IntPtrInput
 	// The current state of the audit policy.
 	State pulumi.StringPtrInput
@@ -200,6 +209,9 @@ type auditPolicyArgs struct {
 	// (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
 	ProvisionTrigger *int `pulumi:"provisionTrigger"`
 	// (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetrieveFromTargetTrigger *int `pulumi:"retrieveFromTargetTrigger"`
 }
 
@@ -220,6 +232,9 @@ type AuditPolicyArgs struct {
 	// (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
 	ProvisionTrigger pulumi.IntPtrInput
 	// (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetrieveFromTargetTrigger pulumi.IntPtrInput
 }
 
@@ -366,6 +381,9 @@ func (o AuditPolicyOutput) ProvisionTrigger() pulumi.IntPtrOutput {
 }
 
 // (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AuditPolicyOutput) RetrieveFromTargetTrigger() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AuditPolicy) pulumi.IntPtrOutput { return v.RetrieveFromTargetTrigger }).(pulumi.IntPtrOutput)
 }

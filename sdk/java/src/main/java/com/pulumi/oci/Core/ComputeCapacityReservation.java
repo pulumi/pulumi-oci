@@ -162,12 +162,16 @@ public class ComputeCapacityReservation extends com.pulumi.resources.CustomResou
     /**
      * (Updatable) The capacity configurations for the capacity reservation.
      * 
+     * To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
+     * 
      */
     @Export(name="instanceReservationConfigs", type=List.class, parameters={ComputeCapacityReservationInstanceReservationConfig.class})
     private Output<List<ComputeCapacityReservationInstanceReservationConfig>> instanceReservationConfigs;
 
     /**
      * @return (Updatable) The capacity configurations for the capacity reservation.
+     * 
+     * To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
      * 
      */
     public Output<List<ComputeCapacityReservationInstanceReservationConfig>> instanceReservationConfigs() {
@@ -176,12 +180,18 @@ public class ComputeCapacityReservation extends com.pulumi.resources.CustomResou
     /**
      * (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="isDefaultReservation", type=Boolean.class, parameters={})
     private Output<Boolean> isDefaultReservation;
 
     /**
      * @return (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Boolean> isDefaultReservation() {

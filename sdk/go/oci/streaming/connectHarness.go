@@ -68,6 +68,9 @@ type ConnectHarness struct {
 	// Any additional details about the current state of the connect harness.
 	LifecycleStateDetails pulumi.StringOutput `pulumi:"lifecycleStateDetails"`
 	// The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The current state of the connect harness.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -116,6 +119,9 @@ type connectHarnessState struct {
 	// Any additional details about the current state of the connect harness.
 	LifecycleStateDetails *string `pulumi:"lifecycleStateDetails"`
 	// The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 	// The current state of the connect harness.
 	State *string `pulumi:"state"`
@@ -133,6 +139,9 @@ type ConnectHarnessState struct {
 	// Any additional details about the current state of the connect harness.
 	LifecycleStateDetails pulumi.StringPtrInput
 	// The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput
 	// The current state of the connect harness.
 	State pulumi.StringPtrInput
@@ -152,6 +161,9 @@ type connectHarnessArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 }
 
@@ -164,6 +176,9 @@ type ConnectHarnessArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput
 }
 
@@ -275,6 +290,9 @@ func (o ConnectHarnessOutput) LifecycleStateDetails() pulumi.StringOutput {
 }
 
 // The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ConnectHarnessOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *ConnectHarness) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

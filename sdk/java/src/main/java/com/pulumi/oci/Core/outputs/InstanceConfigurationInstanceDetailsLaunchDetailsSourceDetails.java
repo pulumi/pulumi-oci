@@ -24,6 +24,8 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetail
     /**
      * @return The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      * 
+     * Allowed values:
+     * 
      */
     private @Nullable String bootVolumeVpusPerGb;
     /**
@@ -54,6 +56,8 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetail
     }
     /**
      * @return The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+     * 
+     * Allowed values:
      * 
      */
     public Optional<String> bootVolumeVpusPerGb() {

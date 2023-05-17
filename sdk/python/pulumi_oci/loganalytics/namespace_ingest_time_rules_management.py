@@ -20,6 +20,10 @@ class NamespaceIngestTimeRulesManagementArgs:
         """
         The set of arguments for constructing a NamespaceIngestTimeRulesManagement resource.
         :param pulumi.Input[bool] enable_ingest_time_rule: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] ingest_time_rule_id: Unique ocid of the ingest time rule.
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         """
@@ -32,6 +36,10 @@ class NamespaceIngestTimeRulesManagementArgs:
     def enable_ingest_time_rule(self) -> pulumi.Input[bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "enable_ingest_time_rule")
 
@@ -73,6 +81,10 @@ class _NamespaceIngestTimeRulesManagementState:
         """
         Input properties used for looking up and filtering NamespaceIngestTimeRulesManagement resources.
         :param pulumi.Input[bool] enable_ingest_time_rule: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] ingest_time_rule_id: Unique ocid of the ingest time rule.
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         """
@@ -88,6 +100,10 @@ class _NamespaceIngestTimeRulesManagementState:
     def enable_ingest_time_rule(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "enable_ingest_time_rule")
 
@@ -149,6 +165,10 @@ class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enable_ingest_time_rule: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] ingest_time_rule_id: Unique ocid of the ingest time rule.
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         """
@@ -232,6 +252,10 @@ class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enable_ingest_time_rule: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] ingest_time_rule_id: Unique ocid of the ingest time rule.
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         """
@@ -249,6 +273,10 @@ class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
     def enable_ingest_time_rule(self) -> pulumi.Output[bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "enable_ingest_time_rule")
 

@@ -28,7 +28,11 @@ class AppCatalogSubscriptionArgs:
         :param pulumi.Input[str] listing_resource_version: Listing resource version.
         :param pulumi.Input[str] oracle_terms_of_use_link: Oracle TOU link
         :param pulumi.Input[str] signature: A generated signature for this listing resource version retrieved the agreements API.
-        :param pulumi.Input[str] time_retrieved: Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
+        :param pulumi.Input[str] time_retrieved: Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] eula_link: EULA link
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -104,7 +108,11 @@ class AppCatalogSubscriptionArgs:
     @pulumi.getter(name="timeRetrieved")
     def time_retrieved(self) -> pulumi.Input[str]:
         """
-        Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
+        Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_retrieved")
 
@@ -153,7 +161,11 @@ class _AppCatalogSubscriptionState:
         :param pulumi.Input[str] signature: A generated signature for this listing resource version retrieved the agreements API.
         :param pulumi.Input[str] summary: The short summary to the listing.
         :param pulumi.Input[str] time_created: Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
-        :param pulumi.Input[str] time_retrieved: Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
+        :param pulumi.Input[str] time_retrieved: Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -316,7 +328,11 @@ class _AppCatalogSubscriptionState:
     @pulumi.getter(name="timeRetrieved")
     def time_retrieved(self) -> Optional[pulumi.Input[str]]:
         """
-        Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
+        Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_retrieved")
 
@@ -375,7 +391,11 @@ class AppCatalogSubscription(pulumi.CustomResource):
         :param pulumi.Input[str] listing_resource_version: Listing resource version.
         :param pulumi.Input[str] oracle_terms_of_use_link: Oracle TOU link
         :param pulumi.Input[str] signature: A generated signature for this listing resource version retrieved the agreements API.
-        :param pulumi.Input[str] time_retrieved: Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
+        :param pulumi.Input[str] time_retrieved: Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -507,7 +527,11 @@ class AppCatalogSubscription(pulumi.CustomResource):
         :param pulumi.Input[str] signature: A generated signature for this listing resource version retrieved the agreements API.
         :param pulumi.Input[str] summary: The short summary to the listing.
         :param pulumi.Input[str] time_created: Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
-        :param pulumi.Input[str] time_retrieved: Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
+        :param pulumi.Input[str] time_retrieved: Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -619,7 +643,11 @@ class AppCatalogSubscription(pulumi.CustomResource):
     @pulumi.getter(name="timeRetrieved")
     def time_retrieved(self) -> pulumi.Output[str]:
         """
-        Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
+        Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_retrieved")
 

@@ -35,6 +35,9 @@ class VaultArgs:
         :param pulumi.Input['VaultRestoreFromFileArgs'] restore_from_file: (Updatable) Details where vault was backed up.
         :param pulumi.Input['VaultRestoreFromObjectStoreArgs'] restore_from_object_store: (Updatable) Details where vault was backed up
         :param pulumi.Input[str] time_of_deletion: (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -150,6 +153,9 @@ class VaultArgs:
     def time_of_deletion(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_of_deletion")
 
@@ -193,6 +199,9 @@ class _VaultState:
         :param pulumi.Input[str] state: The vault's current lifecycle state.  Example: `DELETED`
         :param pulumi.Input[str] time_created: The date and time this vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
         :param pulumi.Input[str] time_of_deletion: (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] vault_type: The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
         """
         if compartment_id is not None:
@@ -398,6 +407,9 @@ class _VaultState:
     def time_of_deletion(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_of_deletion")
 
@@ -481,6 +493,9 @@ class Vault(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['VaultRestoreFromFileArgs']] restore_from_file: (Updatable) Details where vault was backed up.
         :param pulumi.Input[pulumi.InputType['VaultRestoreFromObjectStoreArgs']] restore_from_object_store: (Updatable) Details where vault was backed up
         :param pulumi.Input[str] time_of_deletion: (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] vault_type: The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
         """
         ...
@@ -630,6 +645,9 @@ class Vault(pulumi.CustomResource):
         :param pulumi.Input[str] state: The vault's current lifecycle state.  Example: `DELETED`
         :param pulumi.Input[str] time_created: The date and time this vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
         :param pulumi.Input[str] time_of_deletion: (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] vault_type: The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -768,6 +786,9 @@ class Vault(pulumi.CustomResource):
     def time_of_deletion(self) -> pulumi.Output[str]:
         """
         (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_of_deletion")
 

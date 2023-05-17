@@ -111,6 +111,10 @@ namespace Pulumi.Oci.OperatorAccessControl
 
         /// <summary>
         /// (Updatable) This is the message that will be displayed to the operator users while accessing the system.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("systemMessage")]
         public Output<string> SystemMessage { get; private set; } = null!;
@@ -283,6 +287,10 @@ namespace Pulumi.Oci.OperatorAccessControl
 
         /// <summary>
         /// (Updatable) This is the message that will be displayed to the operator users while accessing the system.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("systemMessage")]
         public Input<string>? SystemMessage { get; set; }
@@ -423,6 +431,10 @@ namespace Pulumi.Oci.OperatorAccessControl
 
         /// <summary>
         /// (Updatable) This is the message that will be displayed to the operator users while accessing the system.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("systemMessage")]
         public Input<string>? SystemMessage { get; set; }

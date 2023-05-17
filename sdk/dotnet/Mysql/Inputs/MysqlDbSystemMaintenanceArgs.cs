@@ -14,6 +14,14 @@ namespace Pulumi.Oci.Mysql.Inputs
     {
         /// <summary>
         /// (Updatable) The start of the 2 hour maintenance window.
+        /// 
+        /// This string is of the format: "{day-of-week} {time-of-day}".
+        /// 
+        /// "{day-of-week}" is a case-insensitive string like "mon", "tue", &amp;c.
+        /// 
+        /// "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+        /// 
+        /// If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
         /// </summary>
         [Input("windowStartTime", required: true)]
         public Input<string> WindowStartTime { get; set; } = null!;

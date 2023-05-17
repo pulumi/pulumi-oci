@@ -16,15 +16,45 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfReg
     /**
      * @return (Updatable) A boolean value that indicates whether the consent is granted.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     private @Nullable Boolean consentGranted;
     /**
      * @return (Updatable) Self registration profile used when user is self registered.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: true
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     private DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile selfRegistrationProfile;
     /**
      * @return (Updatable) User token returned if userFlowControlledByExternalClient is true
+     * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     private @Nullable String userToken;
@@ -33,6 +63,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfReg
     /**
      * @return (Updatable) A boolean value that indicates whether the consent is granted.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     public Optional<Boolean> consentGranted() {
         return Optional.ofNullable(this.consentGranted);
@@ -40,12 +80,32 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfReg
     /**
      * @return (Updatable) Self registration profile used when user is self registered.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: true
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     public DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile selfRegistrationProfile() {
         return this.selfRegistrationProfile;
     }
     /**
      * @return (Updatable) User token returned if userFlowControlledByExternalClient is true
+     * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<String> userToken() {

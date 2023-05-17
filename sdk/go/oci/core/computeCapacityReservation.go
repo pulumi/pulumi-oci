@@ -92,8 +92,13 @@ type ComputeCapacityReservation struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) The capacity configurations for the capacity reservation.
+	//
+	// To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
 	InstanceReservationConfigs ComputeCapacityReservationInstanceReservationConfigArrayOutput `pulumi:"instanceReservationConfigs"`
 	// (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsDefaultReservation pulumi.BoolOutput `pulumi:"isDefaultReservation"`
 	// The number of instances for which capacity will be held with this compute capacity reservation. This number is the sum of the values of the `reservedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
 	ReservedInstanceCount pulumi.StringOutput `pulumi:"reservedInstanceCount"`
@@ -156,8 +161,13 @@ type computeCapacityReservationState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) The capacity configurations for the capacity reservation.
+	//
+	// To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
 	InstanceReservationConfigs []ComputeCapacityReservationInstanceReservationConfig `pulumi:"instanceReservationConfigs"`
 	// (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsDefaultReservation *bool `pulumi:"isDefaultReservation"`
 	// The number of instances for which capacity will be held with this compute capacity reservation. This number is the sum of the values of the `reservedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
 	ReservedInstanceCount *string `pulumi:"reservedInstanceCount"`
@@ -183,8 +193,13 @@ type ComputeCapacityReservationState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) The capacity configurations for the capacity reservation.
+	//
+	// To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
 	InstanceReservationConfigs ComputeCapacityReservationInstanceReservationConfigArrayInput
 	// (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsDefaultReservation pulumi.BoolPtrInput
 	// The number of instances for which capacity will be held with this compute capacity reservation. This number is the sum of the values of the `reservedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
 	ReservedInstanceCount pulumi.StringPtrInput
@@ -214,8 +229,13 @@ type computeCapacityReservationArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) The capacity configurations for the capacity reservation.
+	//
+	// To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
 	InstanceReservationConfigs []ComputeCapacityReservationInstanceReservationConfig `pulumi:"instanceReservationConfigs"`
 	// (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsDefaultReservation *bool `pulumi:"isDefaultReservation"`
 }
 
@@ -232,8 +252,13 @@ type ComputeCapacityReservationArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) The capacity configurations for the capacity reservation.
+	//
+	// To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
 	InstanceReservationConfigs ComputeCapacityReservationInstanceReservationConfigArrayInput
 	// (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsDefaultReservation pulumi.BoolPtrInput
 }
 
@@ -350,6 +375,8 @@ func (o ComputeCapacityReservationOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) The capacity configurations for the capacity reservation.
+//
+// To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
 func (o ComputeCapacityReservationOutput) InstanceReservationConfigs() ComputeCapacityReservationInstanceReservationConfigArrayOutput {
 	return o.ApplyT(func(v *ComputeCapacityReservation) ComputeCapacityReservationInstanceReservationConfigArrayOutput {
 		return v.InstanceReservationConfigs
@@ -357,6 +384,9 @@ func (o ComputeCapacityReservationOutput) InstanceReservationConfigs() ComputeCa
 }
 
 // (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ComputeCapacityReservationOutput) IsDefaultReservation() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ComputeCapacityReservation) pulumi.BoolOutput { return v.IsDefaultReservation }).(pulumi.BoolOutput)
 }

@@ -111,6 +111,10 @@ namespace Pulumi.Oci.OsManagement
 
         /// <summary>
         /// (Updatable) OCID of the ONS topic used to send notification to users
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("notificationTopicId")]
         public Output<string> NotificationTopicId { get; private set; } = null!;
@@ -241,6 +245,10 @@ namespace Pulumi.Oci.OsManagement
 
         /// <summary>
         /// (Updatable) OCID of the ONS topic used to send notification to users
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("notificationTopicId")]
         public Input<string>? NotificationTopicId { get; set; }
@@ -357,6 +365,10 @@ namespace Pulumi.Oci.OsManagement
 
         /// <summary>
         /// (Updatable) OCID of the ONS topic used to send notification to users
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("notificationTopicId")]
         public Input<string>? NotificationTopicId { get; set; }

@@ -153,6 +153,10 @@ namespace Pulumi.Oci.OsManagement
 
         /// <summary>
         /// OCID for the parent software source, if there is one
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("parentId")]
         public Output<string> ParentId { get; private set; } = null!;
@@ -307,6 +311,10 @@ namespace Pulumi.Oci.OsManagement
 
         /// <summary>
         /// OCID for the parent software source, if there is one
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("parentId")]
         public Input<string>? ParentId { get; set; }
@@ -429,6 +437,10 @@ namespace Pulumi.Oci.OsManagement
 
         /// <summary>
         /// OCID for the parent software source, if there is one
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("parentId")]
         public Input<string>? ParentId { get; set; }

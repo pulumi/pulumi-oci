@@ -153,12 +153,18 @@ public class FusionEnvironmentAdminUser extends com.pulumi.resources.CustomResou
     /**
      * The username for the administrator.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="username", type=String.class, parameters={})
     private Output<String> username;
 
     /**
      * @return The username for the administrator.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> username() {

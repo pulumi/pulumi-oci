@@ -16,12 +16,16 @@ public final class InstanceAgentConfigPluginsConfigArgs extends com.pulumi.resou
     /**
      * (Updatable) Whether the plugin should be enabled or disabled.
      * 
+     * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
+     * 
      */
     @Import(name="desiredState", required=true)
     private Output<String> desiredState;
 
     /**
      * @return (Updatable) Whether the plugin should be enabled or disabled.
+     * 
+     * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
      * 
      */
     public Output<String> desiredState() {
@@ -71,6 +75,8 @@ public final class InstanceAgentConfigPluginsConfigArgs extends com.pulumi.resou
         /**
          * @param desiredState (Updatable) Whether the plugin should be enabled or disabled.
          * 
+         * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
+         * 
          * @return builder
          * 
          */
@@ -81,6 +87,8 @@ public final class InstanceAgentConfigPluginsConfigArgs extends com.pulumi.resou
 
         /**
          * @param desiredState (Updatable) Whether the plugin should be enabled or disabled.
+         * 
+         * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
          * 
          * @return builder
          * 

@@ -64,12 +64,18 @@ public final class LogAnalyticsResourceCategoriesManagementState extends com.pul
     /**
      * The resource type of the resource for which categories are managed.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="resourceType")
     private @Nullable Output<String> resourceType;
 
     /**
      * @return The resource type of the resource for which categories are managed.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> resourceType() {
@@ -179,6 +185,9 @@ public final class LogAnalyticsResourceCategoriesManagementState extends com.pul
         /**
          * @param resourceType The resource type of the resource for which categories are managed.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -189,6 +198,9 @@ public final class LogAnalyticsResourceCategoriesManagementState extends com.pul
 
         /**
          * @param resourceType The resource type of the resource for which categories are managed.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

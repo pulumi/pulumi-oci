@@ -5,6 +5,12 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * **Deprecated. Use oci.Database.AutonomousDatabaseWallet instead.**
+ *
+ * This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Creates and downloads a wallet for the specified Autonomous Database.
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -43,6 +49,8 @@ export interface GetAutonomousDatabaseWalletArgs {
     base64EncodeContent?: boolean;
     /**
      * The type of wallet to generate.
+     *
+     * **Shared Exadata infrastructure usage:**
      */
     generateType?: string;
     /**
@@ -72,6 +80,12 @@ export interface GetAutonomousDatabaseWalletResult {
     readonly password: string;
 }
 /**
+ * **Deprecated. Use oci.Database.AutonomousDatabaseWallet instead.**
+ *
+ * This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Creates and downloads a wallet for the specified Autonomous Database.
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -103,6 +117,8 @@ export interface GetAutonomousDatabaseWalletOutputArgs {
     base64EncodeContent?: pulumi.Input<boolean>;
     /**
      * The type of wallet to generate.
+     *
+     * **Shared Exadata infrastructure usage:**
      */
     generateType?: pulumi.Input<string>;
     /**

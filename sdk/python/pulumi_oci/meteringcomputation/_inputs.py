@@ -200,6 +200,10 @@ class QueryQueryDefinitionArgs:
         :param pulumi.Input[str] display_name: (Updatable) The query display name. Avoid entering confidential information.
         :param pulumi.Input['QueryQueryDefinitionReportQueryArgs'] report_query: (Updatable) The request of the generated Cost Analysis report.
         :param pulumi.Input[float] version: (Updatable) The saved query version.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "cost_analysis_ui", cost_analysis_ui)
         pulumi.set(__self__, "display_name", display_name)
@@ -247,6 +251,10 @@ class QueryQueryDefinitionArgs:
     def version(self) -> pulumi.Input[float]:
         """
         (Updatable) The saved query version.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "version")
 
@@ -1089,6 +1097,10 @@ class UsageItemArgs:
         :param pulumi.Input[str] tenant_name: The tenancy name.
         :param pulumi.Input[str] time_usage_ended: The usage end time.
         :param pulumi.Input[str] time_usage_started: The usage start time.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] unit: The usage unit.
         :param pulumi.Input[float] unit_price: The price per unit.
         :param pulumi.Input[float] weight: The resource size being metered.
@@ -1457,6 +1469,10 @@ class UsageItemArgs:
     def time_usage_started(self) -> Optional[pulumi.Input[str]]:
         """
         The usage start time.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_usage_started")
 

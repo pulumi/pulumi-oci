@@ -19,12 +19,16 @@ public final class TargetAssetRecommendedSpecShapeConfigArgs extends com.pulumi.
     /**
      * (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
      * 
+     * The following values are supported:
+     * 
      */
     @Import(name="baselineOcpuUtilization")
     private @Nullable Output<String> baselineOcpuUtilization;
 
     /**
      * @return (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+     * 
+     * The following values are supported:
      * 
      */
     public Optional<Output<String>> baselineOcpuUtilization() {
@@ -90,6 +94,8 @@ public final class TargetAssetRecommendedSpecShapeConfigArgs extends com.pulumi.
         /**
          * @param baselineOcpuUtilization (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
          * 
+         * The following values are supported:
+         * 
          * @return builder
          * 
          */
@@ -100,6 +106,8 @@ public final class TargetAssetRecommendedSpecShapeConfigArgs extends com.pulumi.
 
         /**
          * @param baselineOcpuUtilization (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+         * 
+         * The following values are supported:
          * 
          * @return builder
          * 

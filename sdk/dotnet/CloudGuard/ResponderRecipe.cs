@@ -39,12 +39,16 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// (Updatable) Responder recipe description.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Responder recipe display name.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -57,6 +61,8 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
@@ -81,6 +87,10 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// The id of the source responder recipe.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("sourceResponderRecipeId")]
         public Output<string> SourceResponderRecipeId { get; private set; } = null!;
@@ -175,12 +185,16 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// (Updatable) Responder recipe description.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
         /// (Updatable) Responder recipe display name.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -190,6 +204,8 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -211,6 +227,10 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// The id of the source responder recipe.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("sourceResponderRecipeId", required: true)]
         public Input<string> SourceResponderRecipeId { get; set; } = null!;
@@ -243,12 +263,16 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// (Updatable) Responder recipe description.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
         /// (Updatable) Responder recipe display name.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -270,6 +294,8 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -303,6 +329,10 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// The id of the source responder recipe.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("sourceResponderRecipeId")]
         public Input<string>? SourceResponderRecipeId { get; set; }

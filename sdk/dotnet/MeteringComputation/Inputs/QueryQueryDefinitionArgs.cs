@@ -32,6 +32,10 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
 
         /// <summary>
         /// (Updatable) The saved query version.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("version", required: true)]
         public Input<double> Version { get; set; } = null!;

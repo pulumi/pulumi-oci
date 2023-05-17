@@ -84,6 +84,8 @@ namespace Pulumi.Oci.Ons
 
         /// <summary>
         /// A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol. HTTP-based protocols use URL endpoints that begin with "http:" or "https:". A URL cannot exceed 512 characters. Avoid entering confidential information.
+        /// 
+        /// For protocol-specific endpoint formats and steps to get or create endpoints, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
         /// </summary>
         [Output("endpoint")]
         public Output<string> Endpoint { get; private set; } = null!;
@@ -102,6 +104,8 @@ namespace Pulumi.Oci.Ons
 
         /// <summary>
         /// The protocol used for the subscription.
+        /// 
+        /// Allowed values:
         /// </summary>
         [Output("protocol")]
         public Output<string> Protocol { get; private set; } = null!;
@@ -113,7 +117,11 @@ namespace Pulumi.Oci.Ons
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("topicId")]
         public Output<string> TopicId { get; private set; } = null!;
@@ -190,6 +198,8 @@ namespace Pulumi.Oci.Ons
 
         /// <summary>
         /// A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol. HTTP-based protocols use URL endpoints that begin with "http:" or "https:". A URL cannot exceed 512 characters. Avoid entering confidential information.
+        /// 
+        /// For protocol-specific endpoint formats and steps to get or create endpoints, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
         /// </summary>
         [Input("endpoint", required: true)]
         public Input<string> Endpoint { get; set; } = null!;
@@ -208,12 +218,18 @@ namespace Pulumi.Oci.Ons
 
         /// <summary>
         /// The protocol used for the subscription.
+        /// 
+        /// Allowed values:
         /// </summary>
         [Input("protocol", required: true)]
         public Input<string> Protocol { get; set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("topicId", required: true)]
         public Input<string> TopicId { get; set; } = null!;
@@ -258,6 +274,8 @@ namespace Pulumi.Oci.Ons
 
         /// <summary>
         /// A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol. HTTP-based protocols use URL endpoints that begin with "http:" or "https:". A URL cannot exceed 512 characters. Avoid entering confidential information.
+        /// 
+        /// For protocol-specific endpoint formats and steps to get or create endpoints, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
         /// </summary>
         [Input("endpoint")]
         public Input<string>? Endpoint { get; set; }
@@ -282,6 +300,8 @@ namespace Pulumi.Oci.Ons
 
         /// <summary>
         /// The protocol used for the subscription.
+        /// 
+        /// Allowed values:
         /// </summary>
         [Input("protocol")]
         public Input<string>? Protocol { get; set; }
@@ -293,7 +313,11 @@ namespace Pulumi.Oci.Ons
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("topicId")]
         public Input<string>? TopicId { get; set; }

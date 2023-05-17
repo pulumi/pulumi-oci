@@ -81,6 +81,13 @@ type Dkim struct {
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you may be subscribed to. Selectors limited to ASCII characters may use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
+	//
+	// Avoid entering confidential information.
+	//
+	// Example: `mydomain-phx-20210228`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The current state of the DKIM.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -143,6 +150,13 @@ type dkimState struct {
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you may be subscribed to. Selectors limited to ASCII characters may use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
+	//
+	// Avoid entering confidential information.
+	//
+	// Example: `mydomain-phx-20210228`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 	// The current state of the DKIM.
 	State *string `pulumi:"state"`
@@ -174,6 +188,13 @@ type DkimState struct {
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
 	LifecycleDetails pulumi.StringPtrInput
 	// The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you may be subscribed to. Selectors limited to ASCII characters may use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
+	//
+	// Avoid entering confidential information.
+	//
+	// Example: `mydomain-phx-20210228`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput
 	// The current state of the DKIM.
 	State pulumi.StringPtrInput
@@ -201,6 +222,13 @@ type dkimArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you may be subscribed to. Selectors limited to ASCII characters may use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
+	//
+	// Avoid entering confidential information.
+	//
+	// Example: `mydomain-phx-20210228`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 }
 
@@ -215,6 +243,13 @@ type DkimArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you may be subscribed to. Selectors limited to ASCII characters may use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
+	//
+	// Avoid entering confidential information.
+	//
+	// Example: `mydomain-phx-20210228`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput
 }
 
@@ -346,6 +381,13 @@ func (o DkimOutput) LifecycleDetails() pulumi.StringOutput {
 }
 
 // The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you may be subscribed to. Selectors limited to ASCII characters may use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
+//
+// Avoid entering confidential information.
+//
+// Example: `mydomain-phx-20210228`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DkimOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Dkim) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

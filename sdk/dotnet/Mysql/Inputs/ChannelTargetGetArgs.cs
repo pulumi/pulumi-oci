@@ -44,6 +44,10 @@ namespace Pulumi.Oci.Mysql.Inputs
 
         /// <summary>
         /// (Updatable) The specific target identifier.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("targetType", required: true)]
         public Input<string> TargetType { get; set; } = null!;

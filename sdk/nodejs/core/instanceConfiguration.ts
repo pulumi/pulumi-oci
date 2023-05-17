@@ -245,6 +245,14 @@ export class InstanceConfiguration extends pulumi.CustomResource {
     public readonly instanceId!: pulumi.Output<string>;
     /**
      * The source of the instance configuration. An instance configuration defines the settings to use when creating Compute instances, including details such as the base image, shape, and metadata. You can also specify the associated resources for the instance, such as block volume attachments and network configuration.
+     *
+     * When you create an instance configuration using an existing instance as a template, the instance configuration does not include any information from the source instance's boot volume, such as installed applications, binaries, and files on the instance. It also does not include the contents of any block volumes that are attached to the instance.
+     *
+     * To create an instance configuration that includes the custom setup from an instance's boot volume, you must first create a custom image from the instance (see [CreateImage](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Image/CreateImage)). Then, use the custom image to launch a new instance (see [LaunchInstance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)). Finally, create the instance configuration based on the instance that you created from the custom image.
+     *
+     * To include block volume contents with an instance configuration, first create a backup of the attached block volumes (see [CreateVolumeBackup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VolumeBackup/CreateVolumeBackup)). Then, create the instance configuration by specifying the list of settings, using [InstanceConfigurationVolumeSourceFromVolumeBackupDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationVolumeSourceFromVolumeBackupDetails) to include the block volume backups in the list of settings.
+     *
+     * The following values are supported:
      */
     public readonly source!: pulumi.Output<string>;
     /**
@@ -325,6 +333,14 @@ export interface InstanceConfigurationState {
     instanceId?: pulumi.Input<string>;
     /**
      * The source of the instance configuration. An instance configuration defines the settings to use when creating Compute instances, including details such as the base image, shape, and metadata. You can also specify the associated resources for the instance, such as block volume attachments and network configuration.
+     *
+     * When you create an instance configuration using an existing instance as a template, the instance configuration does not include any information from the source instance's boot volume, such as installed applications, binaries, and files on the instance. It also does not include the contents of any block volumes that are attached to the instance.
+     *
+     * To create an instance configuration that includes the custom setup from an instance's boot volume, you must first create a custom image from the instance (see [CreateImage](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Image/CreateImage)). Then, use the custom image to launch a new instance (see [LaunchInstance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)). Finally, create the instance configuration based on the instance that you created from the custom image.
+     *
+     * To include block volume contents with an instance configuration, first create a backup of the attached block volumes (see [CreateVolumeBackup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VolumeBackup/CreateVolumeBackup)). Then, create the instance configuration by specifying the list of settings, using [InstanceConfigurationVolumeSourceFromVolumeBackupDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationVolumeSourceFromVolumeBackupDetails) to include the block volume backups in the list of settings.
+     *
+     * The following values are supported:
      */
     source?: pulumi.Input<string>;
     /**
@@ -360,6 +376,14 @@ export interface InstanceConfigurationArgs {
     instanceId?: pulumi.Input<string>;
     /**
      * The source of the instance configuration. An instance configuration defines the settings to use when creating Compute instances, including details such as the base image, shape, and metadata. You can also specify the associated resources for the instance, such as block volume attachments and network configuration.
+     *
+     * When you create an instance configuration using an existing instance as a template, the instance configuration does not include any information from the source instance's boot volume, such as installed applications, binaries, and files on the instance. It also does not include the contents of any block volumes that are attached to the instance.
+     *
+     * To create an instance configuration that includes the custom setup from an instance's boot volume, you must first create a custom image from the instance (see [CreateImage](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Image/CreateImage)). Then, use the custom image to launch a new instance (see [LaunchInstance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)). Finally, create the instance configuration based on the instance that you created from the custom image.
+     *
+     * To include block volume contents with an instance configuration, first create a backup of the attached block volumes (see [CreateVolumeBackup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VolumeBackup/CreateVolumeBackup)). Then, create the instance configuration by specifying the list of settings, using [InstanceConfigurationVolumeSourceFromVolumeBackupDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationVolumeSourceFromVolumeBackupDetails) to include the block volume backups in the list of settings.
+     *
+     * The following values are supported:
      */
     source?: pulumi.Input<string>;
 }

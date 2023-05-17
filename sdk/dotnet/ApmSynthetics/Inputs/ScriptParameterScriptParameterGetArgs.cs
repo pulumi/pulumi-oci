@@ -26,6 +26,10 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
 
         /// <summary>
         /// (Updatable) Value of the parameter.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("paramValue")]
         public Input<string>? ParamValue { get; set; }

@@ -227,12 +227,18 @@ public final class WorkspaceFolderState extends com.pulumi.resources.ResourceArg
     /**
      * The workspace ID.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="workspaceId")
     private @Nullable Output<String> workspaceId;
 
     /**
      * @return The workspace ID.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> workspaceId() {
@@ -582,6 +588,9 @@ public final class WorkspaceFolderState extends com.pulumi.resources.ResourceArg
         /**
          * @param workspaceId The workspace ID.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -592,6 +601,9 @@ public final class WorkspaceFolderState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param workspaceId The workspace ID.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -62,6 +62,9 @@ type DbCredential struct {
 	// Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
 	TimeExpires pulumi.StringOutput `pulumi:"timeExpires"`
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringOutput `pulumi:"userId"`
 }
 
@@ -123,6 +126,9 @@ type dbCredentialState struct {
 	// Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
 	TimeExpires *string `pulumi:"timeExpires"`
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId *string `pulumi:"userId"`
 }
 
@@ -140,6 +146,9 @@ type DbCredentialState struct {
 	// Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
 	TimeExpires pulumi.StringPtrInput
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringPtrInput
 }
 
@@ -153,6 +162,9 @@ type dbCredentialArgs struct {
 	// The password for the DB credentials during creation.
 	Password string `pulumi:"password"`
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId string `pulumi:"userId"`
 }
 
@@ -163,6 +175,9 @@ type DbCredentialArgs struct {
 	// The password for the DB credentials during creation.
 	Password pulumi.StringInput
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringInput
 }
 
@@ -284,6 +299,9 @@ func (o DbCredentialOutput) TimeExpires() pulumi.StringOutput {
 }
 
 // The OCID of the user.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DbCredentialOutput) UserId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbCredential) pulumi.StringOutput { return v.UserId }).(pulumi.StringOutput)
 }

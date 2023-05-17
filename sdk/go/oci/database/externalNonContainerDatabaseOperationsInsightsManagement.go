@@ -51,6 +51,9 @@ type ExternalNonContainerDatabaseOperationsInsightsManagement struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value "true" or "false".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableOperationsInsights pulumi.BoolOutput `pulumi:"enableOperationsInsights"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId pulumi.StringOutput `pulumi:"externalDatabaseConnectorId"`
@@ -97,6 +100,9 @@ func GetExternalNonContainerDatabaseOperationsInsightsManagement(ctx *pulumi.Con
 // Input properties used for looking up and filtering ExternalNonContainerDatabaseOperationsInsightsManagement resources.
 type externalNonContainerDatabaseOperationsInsightsManagementState struct {
 	// (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value "true" or "false".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableOperationsInsights *bool `pulumi:"enableOperationsInsights"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId *string `pulumi:"externalDatabaseConnectorId"`
@@ -106,6 +112,9 @@ type externalNonContainerDatabaseOperationsInsightsManagementState struct {
 
 type ExternalNonContainerDatabaseOperationsInsightsManagementState struct {
 	// (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value "true" or "false".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableOperationsInsights pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId pulumi.StringPtrInput
@@ -119,6 +128,9 @@ func (ExternalNonContainerDatabaseOperationsInsightsManagementState) ElementType
 
 type externalNonContainerDatabaseOperationsInsightsManagementArgs struct {
 	// (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value "true" or "false".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableOperationsInsights bool `pulumi:"enableOperationsInsights"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId string `pulumi:"externalDatabaseConnectorId"`
@@ -129,6 +141,9 @@ type externalNonContainerDatabaseOperationsInsightsManagementArgs struct {
 // The set of arguments for constructing a ExternalNonContainerDatabaseOperationsInsightsManagement resource.
 type ExternalNonContainerDatabaseOperationsInsightsManagementArgs struct {
 	// (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value "true" or "false".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableOperationsInsights pulumi.BoolInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId pulumi.StringInput
@@ -224,6 +239,9 @@ func (o ExternalNonContainerDatabaseOperationsInsightsManagementOutput) ToExtern
 }
 
 // (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value "true" or "false".
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ExternalNonContainerDatabaseOperationsInsightsManagementOutput) EnableOperationsInsights() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ExternalNonContainerDatabaseOperationsInsightsManagement) pulumi.BoolOutput {
 		return v.EnableOperationsInsights

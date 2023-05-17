@@ -97,12 +97,20 @@ public final class AppAccelerationPolicyArgs extends com.pulumi.resources.Resour
     /**
      * (Updatable) An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
      * 
+     * This compression policy can be used to enable support for HTTP response compression algorithms like gzip and configure the conditions of when a compression algorithm will be used.
+     * 
+     * HTTP responses will only be compressed if the client indicates support for one of the enabled compression algorithms via the &#34;Accept-Encoding&#34; request header.
+     * 
      */
     @Import(name="responseCompressionPolicy")
     private @Nullable Output<AppAccelerationPolicyResponseCompressionPolicyArgs> responseCompressionPolicy;
 
     /**
      * @return (Updatable) An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
+     * 
+     * This compression policy can be used to enable support for HTTP response compression algorithms like gzip and configure the conditions of when a compression algorithm will be used.
+     * 
+     * HTTP responses will only be compressed if the client indicates support for one of the enabled compression algorithms via the &#34;Accept-Encoding&#34; request header.
      * 
      */
     public Optional<Output<AppAccelerationPolicyResponseCompressionPolicyArgs>> responseCompressionPolicy() {
@@ -112,12 +120,18 @@ public final class AppAccelerationPolicyArgs extends com.pulumi.resources.Resour
     /**
      * (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="systemTags")
     private @Nullable Output<Map<String,Object>> systemTags;
 
     /**
      * @return (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Map<String,Object>>> systemTags() {
@@ -262,6 +276,10 @@ public final class AppAccelerationPolicyArgs extends com.pulumi.resources.Resour
         /**
          * @param responseCompressionPolicy (Updatable) An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
          * 
+         * This compression policy can be used to enable support for HTTP response compression algorithms like gzip and configure the conditions of when a compression algorithm will be used.
+         * 
+         * HTTP responses will only be compressed if the client indicates support for one of the enabled compression algorithms via the &#34;Accept-Encoding&#34; request header.
+         * 
          * @return builder
          * 
          */
@@ -273,6 +291,10 @@ public final class AppAccelerationPolicyArgs extends com.pulumi.resources.Resour
         /**
          * @param responseCompressionPolicy (Updatable) An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
          * 
+         * This compression policy can be used to enable support for HTTP response compression algorithms like gzip and configure the conditions of when a compression algorithm will be used.
+         * 
+         * HTTP responses will only be compressed if the client indicates support for one of the enabled compression algorithms via the &#34;Accept-Encoding&#34; request header.
+         * 
          * @return builder
          * 
          */
@@ -282,6 +304,9 @@ public final class AppAccelerationPolicyArgs extends com.pulumi.resources.Resour
 
         /**
          * @param systemTags (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -293,6 +318,9 @@ public final class AppAccelerationPolicyArgs extends com.pulumi.resources.Resour
 
         /**
          * @param systemTags (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

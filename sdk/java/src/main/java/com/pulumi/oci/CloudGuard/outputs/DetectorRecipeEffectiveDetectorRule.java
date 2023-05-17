@@ -48,6 +48,8 @@ public final class DetectorRecipeEffectiveDetectorRule {
     /**
      * @return (Updatable) Detector recipe display name.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     private @Nullable String displayName;
     /**
@@ -141,6 +143,8 @@ public final class DetectorRecipeEffectiveDetectorRule {
     }
     /**
      * @return (Updatable) Detector recipe display name.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {

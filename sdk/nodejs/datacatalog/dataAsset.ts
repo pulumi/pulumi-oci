@@ -106,6 +106,10 @@ export class DataAsset extends pulumi.CustomResource {
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
      * The key of the data asset type. This can be obtained via the '/types' endpoint.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly typeKey!: pulumi.Output<string>;
     /**
@@ -225,6 +229,10 @@ export interface DataAssetState {
     timeUpdated?: pulumi.Input<string>;
     /**
      * The key of the data asset type. This can be obtained via the '/types' endpoint.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     typeKey?: pulumi.Input<string>;
     /**
@@ -259,6 +267,10 @@ export interface DataAssetArgs {
     properties?: pulumi.Input<{[key: string]: any}>;
     /**
      * The key of the data asset type. This can be obtained via the '/types' endpoint.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     typeKey: pulumi.Input<string>;
 }

@@ -311,7 +311,11 @@ def get_sensitive_data_models_sensitive_columns(column_group: Optional[str] = No
     :param Sequence[str] sensitive_type_ids: A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.
     :param Sequence[str] statuses: A filter to return only the sensitive columns that match the specified status.
     :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+           
+           **Example:** 2016-12-19T16:39:57.600Z
     :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+           
+           **Example:** 2016-12-19T16:39:57.600Z
     :param str time_updated_greater_than_or_equal_to: Search for resources that were updated after a specific date. Specifying this parameter corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
     :param str time_updated_less_than: Search for resources that were updated before a specific date. Specifying this parameter corresponding `timeUpdatedLessThan` parameter will retrieve all resources updated before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
     """
@@ -425,7 +429,11 @@ def get_sensitive_data_models_sensitive_columns_output(column_group: Optional[pu
     :param Sequence[str] sensitive_type_ids: A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.
     :param Sequence[str] statuses: A filter to return only the sensitive columns that match the specified status.
     :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+           
+           **Example:** 2016-12-19T16:39:57.600Z
     :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+           
+           **Example:** 2016-12-19T16:39:57.600Z
     :param str time_updated_greater_than_or_equal_to: Search for resources that were updated after a specific date. Specifying this parameter corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
     :param str time_updated_less_than: Search for resources that were updated before a specific date. Specifying this parameter corresponding `timeUpdatedLessThan` parameter will retrieve all resources updated before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
     """

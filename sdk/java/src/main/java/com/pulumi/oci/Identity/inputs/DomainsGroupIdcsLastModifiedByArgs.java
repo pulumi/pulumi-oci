@@ -18,12 +18,34 @@ public final class DomainsGroupIdcsLastModifiedByArgs extends com.pulumi.resourc
     /**
      * (Updatable) App Display Name
      * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="display")
     private @Nullable Output<String> display;
 
     /**
      * @return (Updatable) App Display Name
+     * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> display() {
@@ -33,12 +55,32 @@ public final class DomainsGroupIdcsLastModifiedByArgs extends com.pulumi.resourc
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: global
+     * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
      * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: global
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -48,12 +90,34 @@ public final class DomainsGroupIdcsLastModifiedByArgs extends com.pulumi.resourc
     /**
      * (Updatable) App URI
      * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
+     * 
      */
     @Import(name="ref")
     private @Nullable Output<String> ref;
 
     /**
      * @return (Updatable) App URI
+     * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ref() {
@@ -63,12 +127,36 @@ public final class DomainsGroupIdcsLastModifiedByArgs extends com.pulumi.resourc
     /**
      * (Updatable) The type of the entity that created this Group.
      * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsDefaultValue: App
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
      * @return (Updatable) The type of the entity that created this Group.
+     * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsDefaultValue: App
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> type() {
@@ -78,12 +166,36 @@ public final class DomainsGroupIdcsLastModifiedByArgs extends com.pulumi.resourc
     /**
      * (Updatable) The ID of the App.
      * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
      * @return (Updatable) The ID of the App.
+     * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> value() {
@@ -121,6 +233,17 @@ public final class DomainsGroupIdcsLastModifiedByArgs extends com.pulumi.resourc
         /**
          * @param display (Updatable) App Display Name
          * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -132,6 +255,17 @@ public final class DomainsGroupIdcsLastModifiedByArgs extends com.pulumi.resourc
         /**
          * @param display (Updatable) App Display Name
          * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -141,6 +275,16 @@ public final class DomainsGroupIdcsLastModifiedByArgs extends com.pulumi.resourc
 
         /**
          * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
          * 
          * @return builder
          * 
@@ -153,6 +297,16 @@ public final class DomainsGroupIdcsLastModifiedByArgs extends com.pulumi.resourc
         /**
          * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
+         * 
          * @return builder
          * 
          */
@@ -162,6 +316,17 @@ public final class DomainsGroupIdcsLastModifiedByArgs extends com.pulumi.resourc
 
         /**
          * @param ref (Updatable) App URI
+         * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -174,6 +339,17 @@ public final class DomainsGroupIdcsLastModifiedByArgs extends com.pulumi.resourc
         /**
          * @param ref (Updatable) App URI
          * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -183,6 +359,18 @@ public final class DomainsGroupIdcsLastModifiedByArgs extends com.pulumi.resourc
 
         /**
          * @param type (Updatable) The type of the entity that created this Group.
+         * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsDefaultValue: App
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -195,6 +383,18 @@ public final class DomainsGroupIdcsLastModifiedByArgs extends com.pulumi.resourc
         /**
          * @param type (Updatable) The type of the entity that created this Group.
          * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsDefaultValue: App
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -204,6 +404,18 @@ public final class DomainsGroupIdcsLastModifiedByArgs extends com.pulumi.resourc
 
         /**
          * @param value (Updatable) The ID of the App.
+         * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -215,6 +427,18 @@ public final class DomainsGroupIdcsLastModifiedByArgs extends com.pulumi.resourc
 
         /**
          * @param value (Updatable) The ID of the App.
+         * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 

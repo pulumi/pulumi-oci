@@ -185,6 +185,9 @@ type Cluster struct {
 	// The OCID for the compartment where the cluster's VCN is located.
 	VcnCompartmentId pulumi.StringOutput `pulumi:"vcnCompartmentId"`
 	// The OCID of the cluster's VCN.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId pulumi.StringOutput `pulumi:"vcnId"`
 }
 
@@ -358,6 +361,9 @@ type clusterState struct {
 	// The OCID for the compartment where the cluster's VCN is located.
 	VcnCompartmentId *string `pulumi:"vcnCompartmentId"`
 	// The OCID of the cluster's VCN.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId *string `pulumi:"vcnId"`
 }
 
@@ -439,6 +445,9 @@ type ClusterState struct {
 	// The OCID for the compartment where the cluster's VCN is located.
 	VcnCompartmentId pulumi.StringPtrInput
 	// The OCID of the cluster's VCN.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId pulumi.StringPtrInput
 }
 
@@ -500,6 +509,9 @@ type clusterArgs struct {
 	// The OCID for the compartment where the cluster's VCN is located.
 	VcnCompartmentId string `pulumi:"vcnCompartmentId"`
 	// The OCID of the cluster's VCN.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId string `pulumi:"vcnId"`
 }
 
@@ -558,6 +570,9 @@ type ClusterArgs struct {
 	// The OCID for the compartment where the cluster's VCN is located.
 	VcnCompartmentId pulumi.StringInput
 	// The OCID of the cluster's VCN.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId pulumi.StringInput
 }
 
@@ -839,6 +854,9 @@ func (o ClusterOutput) VcnCompartmentId() pulumi.StringOutput {
 }
 
 // The OCID of the cluster's VCN.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ClusterOutput) VcnId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.VcnId }).(pulumi.StringOutput)
 }

@@ -67,12 +67,24 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
     /**
      * The db password of the user
      * 
+     * **SCIM++ Properties:**
+     * * type: string
+     * * mutability: immutable
+     * * returned: default
+     * * required: true
+     * 
      */
     @Import(name="dbPassword", required=true)
     private Output<String> dbPassword;
 
     /**
      * @return The db password of the user
+     * 
+     * **SCIM++ Properties:**
+     * * type: string
+     * * mutability: immutable
+     * * returned: default
+     * * required: true
      * 
      */
     public Output<String> dbPassword() {
@@ -82,12 +94,30 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
     /**
      * Description
      * 
+     * **Added In:** 2109020413
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description
+     * 
+     * **Added In:** 2109020413
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
      * 
      */
     public Optional<Output<String>> description() {
@@ -97,12 +127,36 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
     /**
      * User credential expires on
      * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     @Import(name="expiresOn")
     private @Nullable Output<String> expiresOn;
 
     /**
      * @return User credential expires on
+     * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> expiresOn() {
@@ -127,12 +181,32 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
     /**
      * User&#39;s ocid
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
      * @return User&#39;s ocid
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -157,12 +231,32 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="schemas", required=true)
     private Output<List<String>> schemas;
 
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<List<String>> schemas() {
@@ -172,12 +266,36 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
     /**
      * User credential status
      * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: never
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return User credential status
+     * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: never
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> status() {
@@ -187,12 +305,32 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
     /**
      * A list of tags on this resource.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<DomainsUserDbCredentialTagArgs>> tags;
 
     /**
      * @return A list of tags on this resource.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsUserDbCredentialTagArgs>>> tags() {
@@ -217,12 +355,34 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
     /**
      * User linked to db credential
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="user")
     private @Nullable Output<DomainsUserDbCredentialUserArgs> user;
 
     /**
      * @return User linked to db credential
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<DomainsUserDbCredentialUserArgs>> user() {
@@ -342,6 +502,12 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
         /**
          * @param dbPassword The db password of the user
          * 
+         * **SCIM++ Properties:**
+         * * type: string
+         * * mutability: immutable
+         * * returned: default
+         * * required: true
+         * 
          * @return builder
          * 
          */
@@ -353,6 +519,12 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
         /**
          * @param dbPassword The db password of the user
          * 
+         * **SCIM++ Properties:**
+         * * type: string
+         * * mutability: immutable
+         * * returned: default
+         * * required: true
+         * 
          * @return builder
          * 
          */
@@ -362,6 +534,15 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
 
         /**
          * @param description Description
+         * 
+         * **Added In:** 2109020413
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
          * 
          * @return builder
          * 
@@ -374,6 +555,15 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
         /**
          * @param description Description
          * 
+         * **Added In:** 2109020413
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * 
          * @return builder
          * 
          */
@@ -383,6 +573,18 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
 
         /**
          * @param expiresOn User credential expires on
+         * 
+         * **Added In:** 2109090424
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -394,6 +596,18 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
 
         /**
          * @param expiresOn User credential expires on
+         * 
+         * **Added In:** 2109090424
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -426,6 +640,16 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
         /**
          * @param ocid User&#39;s ocid
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -436,6 +660,16 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
 
         /**
          * @param ocid User&#39;s ocid
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -468,6 +702,16 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
         /**
          * @param schemas REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -479,6 +723,16 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
         /**
          * @param schemas REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -489,6 +743,16 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
         /**
          * @param schemas REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -498,6 +762,18 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
 
         /**
          * @param status User credential status
+         * 
+         * **Added In:** 2109090424
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: never
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -510,6 +786,18 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
         /**
          * @param status User credential status
          * 
+         * **Added In:** 2109090424
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: never
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -519,6 +807,16 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
 
         /**
          * @param tags A list of tags on this resource.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -531,6 +829,16 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
         /**
          * @param tags A list of tags on this resource.
          * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -540,6 +848,16 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
 
         /**
          * @param tags A list of tags on this resource.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -572,6 +890,17 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
         /**
          * @param user User linked to db credential
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -582,6 +911,17 @@ public final class DomainsUserDbCredentialArgs extends com.pulumi.resources.Reso
 
         /**
          * @param user User linked to db credential
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 

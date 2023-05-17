@@ -30,6 +30,10 @@ class StreamArgs:
         :param pulumi.Input[str] name: The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
         :param pulumi.Input[int] retention_in_hours: The retention period of the stream, in hours. Accepted values are between 24 and 168 (7 days). If not specified, the stream will have a retention period of 24 hours.
         :param pulumi.Input[str] stream_pool_id: (Updatable) The OCID of the stream pool that contains the stream.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "partitions", partitions)
         if compartment_id is not None:
@@ -122,6 +126,10 @@ class StreamArgs:
     def stream_pool_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The OCID of the stream pool that contains the stream.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "stream_pool_id")
 
@@ -156,6 +164,10 @@ class _StreamState:
         :param pulumi.Input[int] retention_in_hours: The retention period of the stream, in hours. Accepted values are between 24 and 168 (7 days). If not specified, the stream will have a retention period of 24 hours.
         :param pulumi.Input[str] state: The current state of the stream.
         :param pulumi.Input[str] stream_pool_id: (Updatable) The OCID of the stream pool that contains the stream.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The date and time the stream was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         """
         if compartment_id is not None:
@@ -294,6 +306,10 @@ class _StreamState:
     def stream_pool_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The OCID of the stream pool that contains the stream.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "stream_pool_id")
 
@@ -370,6 +386,10 @@ class Stream(pulumi.CustomResource):
         :param pulumi.Input[int] partitions: The number of partitions in the stream.
         :param pulumi.Input[int] retention_in_hours: The retention period of the stream, in hours. Accepted values are between 24 and 168 (7 days). If not specified, the stream will have a retention period of 24 hours.
         :param pulumi.Input[str] stream_pool_id: (Updatable) The OCID of the stream pool that contains the stream.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -493,6 +513,10 @@ class Stream(pulumi.CustomResource):
         :param pulumi.Input[int] retention_in_hours: The retention period of the stream, in hours. Accepted values are between 24 and 168 (7 days). If not specified, the stream will have a retention period of 24 hours.
         :param pulumi.Input[str] state: The current state of the stream.
         :param pulumi.Input[str] stream_pool_id: (Updatable) The OCID of the stream pool that contains the stream.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The date and time the stream was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -589,6 +613,10 @@ class Stream(pulumi.CustomResource):
     def stream_pool_id(self) -> pulumi.Output[str]:
         """
         (Updatable) The OCID of the stream pool that contains the stream.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "stream_pool_id")
 

@@ -13,11 +13,6 @@ import java.util.Objects;
 @CustomType
 public final class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem {
     /**
-     * @return Action
-     * 
-     */
-    private String action;
-    /**
      * @return Compartment Identifier
      * 
      */
@@ -37,6 +32,11 @@ public final class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollec
      * 
      */
     private Map<String,Object> freeformTags;
+    /**
+     * @return unique FusionEnvironment identifier
+     * 
+     */
+    private String fusionEnvironmentId;
     /**
      * @return Unique identifier that is immutable on creation
      * 
@@ -80,13 +80,6 @@ public final class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollec
 
     private GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem() {}
     /**
-     * @return Action
-     * 
-     */
-    public String action() {
-        return this.action;
-    }
-    /**
      * @return Compartment Identifier
      * 
      */
@@ -113,6 +106,13 @@ public final class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollec
      */
     public Map<String,Object> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * @return unique FusionEnvironment identifier
+     * 
+     */
+    public String fusionEnvironmentId() {
+        return this.fusionEnvironmentId;
     }
     /**
      * @return Unique identifier that is immutable on creation
@@ -180,11 +180,11 @@ public final class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollec
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
         private String compartmentId;
         private Map<String,Object> definedTags;
         private String displayName;
         private Map<String,Object> freeformTags;
+        private String fusionEnvironmentId;
         private String id;
         private Boolean isSkuBased;
         private String serviceInstanceId;
@@ -196,11 +196,11 @@ public final class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollec
         public Builder() {}
         public Builder(GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.action = defaults.action;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.fusionEnvironmentId = defaults.fusionEnvironmentId;
     	      this.id = defaults.id;
     	      this.isSkuBased = defaults.isSkuBased;
     	      this.serviceInstanceId = defaults.serviceInstanceId;
@@ -211,11 +211,6 @@ public final class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollec
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
-        @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
-            return this;
-        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
@@ -234,6 +229,11 @@ public final class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollec
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder fusionEnvironmentId(String fusionEnvironmentId) {
+            this.fusionEnvironmentId = Objects.requireNonNull(fusionEnvironmentId);
             return this;
         }
         @CustomType.Setter
@@ -278,11 +278,11 @@ public final class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollec
         }
         public GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem build() {
             final var o = new GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem();
-            o.action = action;
             o.compartmentId = compartmentId;
             o.definedTags = definedTags;
             o.displayName = displayName;
             o.freeformTags = freeformTags;
+            o.fusionEnvironmentId = fusionEnvironmentId;
             o.id = id;
             o.isSkuBased = isSkuBased;
             o.serviceInstanceId = serviceInstanceId;

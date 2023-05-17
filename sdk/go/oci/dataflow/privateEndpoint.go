@@ -50,6 +50,9 @@ type PrivateEndpoint struct {
 	// The current state of this private endpoint.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The OCID of a subnet.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -122,6 +125,9 @@ type privateEndpointState struct {
 	// The current state of this private endpoint.
 	State *string `pulumi:"state"`
 	// The OCID of a subnet.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId *string `pulumi:"subnetId"`
 	// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -157,6 +163,9 @@ type PrivateEndpointState struct {
 	// The current state of this private endpoint.
 	State pulumi.StringPtrInput
 	// The OCID of a subnet.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringPtrInput
 	// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
@@ -188,6 +197,9 @@ type privateEndpointArgs struct {
 	// (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
 	ScanDetails []PrivateEndpointScanDetail `pulumi:"scanDetails"`
 	// The OCID of a subnet.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -212,6 +224,9 @@ type PrivateEndpointArgs struct {
 	// (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
 	ScanDetails PrivateEndpointScanDetailArrayInput
 	// The OCID of a subnet.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringInput
 }
 
@@ -368,6 +383,9 @@ func (o PrivateEndpointOutput) State() pulumi.StringOutput {
 }
 
 // The OCID of a subnet.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PrivateEndpointOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
 }

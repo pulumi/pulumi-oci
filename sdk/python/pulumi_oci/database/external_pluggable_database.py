@@ -30,6 +30,10 @@ class ExternalPluggableDatabaseArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -106,6 +110,10 @@ class ExternalPluggableDatabaseArgs:
     def source_id(self) -> Optional[pulumi.Input[str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source_id")
 
@@ -157,6 +165,10 @@ class _ExternalPluggableDatabaseState:
         :param pulumi.Input[str] ncharacter_set: The national character of the external database.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalPluggableDatabaseOperationsInsightsConfigArgs']]] operations_insights_configs: The configuration of Operations Insights for the external database
         :param pulumi.Input[str] source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['ExternalPluggableDatabaseStackMonitoringConfigArgs']]] stack_monitoring_configs: The configuration of Stack Monitoring for the external database.
         :param pulumi.Input[str] state: The current state of the Oracle Cloud Infrastructure external database resource.
         :param pulumi.Input[str] time_created: The date and time the database was created.
@@ -402,6 +414,10 @@ class _ExternalPluggableDatabaseState:
     def source_id(self) -> Optional[pulumi.Input[str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source_id")
 
@@ -509,6 +525,10 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] external_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalContainerDatabaseDetails) that contains the specified [external pluggable database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails) resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -659,6 +679,10 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] ncharacter_set: The national character of the external database.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalPluggableDatabaseOperationsInsightsConfigArgs']]]] operations_insights_configs: The configuration of Operations Insights for the external database
         :param pulumi.Input[str] source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalPluggableDatabaseStackMonitoringConfigArgs']]]] stack_monitoring_configs: The configuration of Stack Monitoring for the external database.
         :param pulumi.Input[str] state: The current state of the Oracle Cloud Infrastructure external database resource.
         :param pulumi.Input[str] time_created: The date and time the database was created.
@@ -824,6 +848,10 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
     def source_id(self) -> pulumi.Output[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source_id")
 

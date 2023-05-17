@@ -40,6 +40,9 @@ public final class MysqlBackupDbSystemSnapshotBackupPolicy {
     /**
      * @return (Updatable) Number of days to retain this backup.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private @Nullable Integer retentionInDays;
     /**
@@ -79,6 +82,9 @@ public final class MysqlBackupDbSystemSnapshotBackupPolicy {
     }
     /**
      * @return (Updatable) Number of days to retain this backup.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Integer> retentionInDays() {

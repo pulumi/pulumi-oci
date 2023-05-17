@@ -71,10 +71,14 @@ export class TsigKey extends pulumi.CustomResource {
     public readonly compartmentId!: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * **Example:** `{"Operations": {"CostCenter": "42"}}`
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * **Example:** `{"Department": "Finance"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -83,6 +87,10 @@ export class TsigKey extends pulumi.CustomResource {
     public readonly name!: pulumi.Output<string>;
     /**
      * A base64 string encoding the binary shared secret.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly secret!: pulumi.Output<string>;
     /**
@@ -168,10 +176,14 @@ export interface TsigKeyState {
     compartmentId?: pulumi.Input<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * **Example:** `{"Operations": {"CostCenter": "42"}}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * **Example:** `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -180,6 +192,10 @@ export interface TsigKeyState {
     name?: pulumi.Input<string>;
     /**
      * A base64 string encoding the binary shared secret.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     secret?: pulumi.Input<string>;
     /**
@@ -214,10 +230,14 @@ export interface TsigKeyArgs {
     compartmentId: pulumi.Input<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * **Example:** `{"Operations": {"CostCenter": "42"}}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * **Example:** `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -226,6 +246,10 @@ export interface TsigKeyArgs {
     name?: pulumi.Input<string>;
     /**
      * A base64 string encoding the binary shared secret.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     secret: pulumi.Input<string>;
 }

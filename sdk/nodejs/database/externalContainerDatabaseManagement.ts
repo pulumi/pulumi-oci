@@ -54,6 +54,9 @@ export class ExternalContainerDatabaseManagement extends pulumi.CustomResource {
     public readonly externalDatabaseConnectorId!: pulumi.Output<string>;
     /**
      * The Oracle license model that applies to the external database. Required only for enabling database management.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly licenseModel!: pulumi.Output<string>;
 
@@ -110,6 +113,9 @@ export interface ExternalContainerDatabaseManagementState {
     externalDatabaseConnectorId?: pulumi.Input<string>;
     /**
      * The Oracle license model that applies to the external database. Required only for enabling database management.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     licenseModel?: pulumi.Input<string>;
 }
@@ -129,6 +135,9 @@ export interface ExternalContainerDatabaseManagementArgs {
     externalDatabaseConnectorId: pulumi.Input<string>;
     /**
      * The Oracle license model that applies to the external database. Required only for enabling database management.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     licenseModel?: pulumi.Input<string>;
 }

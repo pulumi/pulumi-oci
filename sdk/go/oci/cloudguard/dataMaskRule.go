@@ -80,8 +80,12 @@ type DataMaskRule struct {
 	// The data mask rule description. Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Data mask rule name.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) IAM Group id associated with the data mask rule
 	IamGroupId pulumi.StringOutput `pulumi:"iamGroupId"`
@@ -154,8 +158,12 @@ type dataMaskRuleState struct {
 	// The data mask rule description. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Data mask rule name.
+	//
+	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) IAM Group id associated with the data mask rule
 	IamGroupId *string `pulumi:"iamGroupId"`
@@ -185,8 +193,12 @@ type DataMaskRuleState struct {
 	// The data mask rule description. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) Data mask rule name.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags pulumi.MapInput
 	// (Updatable) IAM Group id associated with the data mask rule
 	IamGroupId pulumi.StringPtrInput
@@ -220,8 +232,12 @@ type dataMaskRuleArgs struct {
 	// The data mask rule description. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Data mask rule name.
+	//
+	// Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) IAM Group id associated with the data mask rule
 	IamGroupId string `pulumi:"iamGroupId"`
@@ -244,8 +260,12 @@ type DataMaskRuleArgs struct {
 	// The data mask rule description. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) Data mask rule name.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags pulumi.MapInput
 	// (Updatable) IAM Group id associated with the data mask rule
 	IamGroupId pulumi.StringInput
@@ -368,11 +388,15 @@ func (o DataMaskRuleOutput) Description() pulumi.StringOutput {
 }
 
 // (Updatable) Data mask rule name.
+//
+// Avoid entering confidential information.
 func (o DataMaskRuleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataMaskRule) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+//
+// Avoid entering confidential information.
 func (o DataMaskRuleOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DataMaskRule) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }

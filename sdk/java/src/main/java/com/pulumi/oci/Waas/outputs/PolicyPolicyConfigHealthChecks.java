@@ -33,6 +33,8 @@ public final class PolicyPolicyConfigHealthChecks {
     /**
      * @return (Updatable) HTTP header fields to include in health check requests, expressed as `&#34;name&#34;: &#34;value&#34;` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy&#39;s protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value &#34;waf health checks&#34;.
      * 
+     * **Note:** The only currently-supported header fields are Host and User-Agent.
+     * 
      */
     private @Nullable Map<String,Object> headers;
     /**
@@ -100,6 +102,8 @@ public final class PolicyPolicyConfigHealthChecks {
     }
     /**
      * @return (Updatable) HTTP header fields to include in health check requests, expressed as `&#34;name&#34;: &#34;value&#34;` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy&#39;s protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value &#34;waf health checks&#34;.
+     * 
+     * **Note:** The only currently-supported header fields are Host and User-Agent.
      * 
      */
     public Map<String,Object> headers() {

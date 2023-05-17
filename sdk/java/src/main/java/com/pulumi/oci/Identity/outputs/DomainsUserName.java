@@ -14,30 +14,93 @@ public final class DomainsUserName {
     /**
      * @return (Updatable) Last name
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Last Name
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private String familyName;
     /**
      * @return (Updatable) Full name
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable String formatted;
     /**
      * @return (Updatable) First name
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: First Name
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String givenName;
     /**
      * @return (Updatable) Prefix
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCsvAttributeName: Honorific Prefix
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable String honorificPrefix;
     /**
      * @return (Updatable) Suffix
      * 
+     * **SCIM++ Properties:**
+     * * idcsCsvAttributeName: Honorific Suffix
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String honorificSuffix;
     /**
      * @return (Updatable) Middle name
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Middle Name
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable String middleName;
@@ -46,12 +109,33 @@ public final class DomainsUserName {
     /**
      * @return (Updatable) Last name
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Last Name
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public String familyName() {
         return this.familyName;
     }
     /**
      * @return (Updatable) Full name
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> formatted() {
@@ -60,12 +144,33 @@ public final class DomainsUserName {
     /**
      * @return (Updatable) First name
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: First Name
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> givenName() {
         return Optional.ofNullable(this.givenName);
     }
     /**
      * @return (Updatable) Prefix
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCsvAttributeName: Honorific Prefix
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> honorificPrefix() {
@@ -74,12 +179,33 @@ public final class DomainsUserName {
     /**
      * @return (Updatable) Suffix
      * 
+     * **SCIM++ Properties:**
+     * * idcsCsvAttributeName: Honorific Suffix
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> honorificSuffix() {
         return Optional.ofNullable(this.honorificSuffix);
     }
     /**
      * @return (Updatable) Middle name
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Middle Name
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> middleName() {

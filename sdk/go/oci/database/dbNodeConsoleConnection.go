@@ -65,6 +65,9 @@ type DbNodeConsoleConnection struct {
 	// The SSH public key fingerprint for the console connection.
 	Fingerprint pulumi.StringOutput `pulumi:"fingerprint"`
 	// The SSH public key used to authenticate the console connection.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PublicKey pulumi.StringOutput `pulumi:"publicKey"`
 	// The current state of the console connection.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -114,6 +117,9 @@ type dbNodeConsoleConnectionState struct {
 	// The SSH public key fingerprint for the console connection.
 	Fingerprint *string `pulumi:"fingerprint"`
 	// The SSH public key used to authenticate the console connection.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PublicKey *string `pulumi:"publicKey"`
 	// The current state of the console connection.
 	State *string `pulumi:"state"`
@@ -129,6 +135,9 @@ type DbNodeConsoleConnectionState struct {
 	// The SSH public key fingerprint for the console connection.
 	Fingerprint pulumi.StringPtrInput
 	// The SSH public key used to authenticate the console connection.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PublicKey pulumi.StringPtrInput
 	// The current state of the console connection.
 	State pulumi.StringPtrInput
@@ -142,6 +151,9 @@ type dbNodeConsoleConnectionArgs struct {
 	// The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbNodeId string `pulumi:"dbNodeId"`
 	// The SSH public key used to authenticate the console connection.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PublicKey string `pulumi:"publicKey"`
 }
 
@@ -150,6 +162,9 @@ type DbNodeConsoleConnectionArgs struct {
 	// The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbNodeId pulumi.StringInput
 	// The SSH public key used to authenticate the console connection.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PublicKey pulumi.StringInput
 }
 
@@ -261,6 +276,9 @@ func (o DbNodeConsoleConnectionOutput) Fingerprint() pulumi.StringOutput {
 }
 
 // The SSH public key used to authenticate the console connection.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DbNodeConsoleConnectionOutput) PublicKey() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbNodeConsoleConnection) pulumi.StringOutput { return v.PublicKey }).(pulumi.StringOutput)
 }

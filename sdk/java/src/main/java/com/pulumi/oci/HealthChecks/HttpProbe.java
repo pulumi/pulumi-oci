@@ -91,12 +91,16 @@ public class HttpProbe extends com.pulumi.resources.CustomResource {
     /**
      * A dictionary of HTTP request headers.
      * 
+     * *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
+     * 
      */
     @Export(name="headers", type=Map.class, parameters={String.class, Object.class})
     private Output<Map<String,Object>> headers;
 
     /**
      * @return A dictionary of HTTP request headers.
+     * 
+     * *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
      * 
      */
     public Output<Map<String,Object>> headers() {
@@ -231,12 +235,18 @@ public class HttpProbe extends com.pulumi.resources.CustomResource {
     /**
      * A list of names of vantage points from which to execute the probe.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="vantagePointNames", type=List.class, parameters={String.class})
     private Output<List<String>> vantagePointNames;
 
     /**
      * @return A list of names of vantage points from which to execute the probe.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<List<String>> vantagePointNames() {

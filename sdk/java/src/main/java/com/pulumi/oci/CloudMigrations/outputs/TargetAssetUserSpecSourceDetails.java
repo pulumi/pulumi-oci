@@ -24,6 +24,8 @@ public final class TargetAssetUserSpecSourceDetails {
     /**
      * @return (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      * 
+     * Allowed values:
+     * 
      */
     private @Nullable String bootVolumeVpusPerGb;
     /**
@@ -38,6 +40,9 @@ public final class TargetAssetUserSpecSourceDetails {
     private @Nullable String kmsKeyId;
     /**
      * @return (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String sourceType;
@@ -60,6 +65,8 @@ public final class TargetAssetUserSpecSourceDetails {
     /**
      * @return (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      * 
+     * Allowed values:
+     * 
      */
     public Optional<String> bootVolumeVpusPerGb() {
         return Optional.ofNullable(this.bootVolumeVpusPerGb);
@@ -80,6 +87,9 @@ public final class TargetAssetUserSpecSourceDetails {
     }
     /**
      * @return (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String sourceType() {

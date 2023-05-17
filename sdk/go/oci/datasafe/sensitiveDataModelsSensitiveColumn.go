@@ -104,6 +104,9 @@ type SensitiveDataModelsSensitiveColumn struct {
 	// The current state of the sensitive column.
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringOutput `pulumi:"status"`
 	// The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was created in the sensitive data model.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -191,6 +194,9 @@ type sensitiveDataModelsSensitiveColumnState struct {
 	// The current state of the sensitive column.
 	State *string `pulumi:"state"`
 	// (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status *string `pulumi:"status"`
 	// The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was created in the sensitive data model.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -238,6 +244,9 @@ type SensitiveDataModelsSensitiveColumnState struct {
 	// The current state of the sensitive column.
 	State pulumi.StringPtrInput
 	// (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringPtrInput
 	// The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was created in the sensitive data model.
 	TimeCreated pulumi.StringPtrInput
@@ -275,6 +284,9 @@ type sensitiveDataModelsSensitiveColumnArgs struct {
 	// (Updatable) The OCID of the sensitive type to be associated with the sensitive column.
 	SensitiveTypeId *string `pulumi:"sensitiveTypeId"`
 	// (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status *string `pulumi:"status"`
 }
 
@@ -305,6 +317,9 @@ type SensitiveDataModelsSensitiveColumnArgs struct {
 	// (Updatable) The OCID of the sensitive type to be associated with the sensitive column.
 	SensitiveTypeId pulumi.StringPtrInput
 	// (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringPtrInput
 }
 
@@ -495,6 +510,9 @@ func (o SensitiveDataModelsSensitiveColumnOutput) State() pulumi.StringOutput {
 }
 
 // (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o SensitiveDataModelsSensitiveColumnOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }

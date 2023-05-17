@@ -58,6 +58,9 @@ type ImportStandardTagsManagement struct {
 	// The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The name of standard tag namespace that will be imported in bulk
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StandardTagNamespaceName pulumi.StringOutput `pulumi:"standardTagNamespaceName"`
 	WorkRequestId            pulumi.StringOutput `pulumi:"workRequestId"`
 }
@@ -100,6 +103,9 @@ type importStandardTagsManagementState struct {
 	// The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The name of standard tag namespace that will be imported in bulk
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StandardTagNamespaceName *string `pulumi:"standardTagNamespaceName"`
 	WorkRequestId            *string `pulumi:"workRequestId"`
 }
@@ -108,6 +114,9 @@ type ImportStandardTagsManagementState struct {
 	// The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
 	CompartmentId pulumi.StringPtrInput
 	// The name of standard tag namespace that will be imported in bulk
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StandardTagNamespaceName pulumi.StringPtrInput
 	WorkRequestId            pulumi.StringPtrInput
 }
@@ -120,6 +129,9 @@ type importStandardTagsManagementArgs struct {
 	// The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The name of standard tag namespace that will be imported in bulk
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StandardTagNamespaceName string `pulumi:"standardTagNamespaceName"`
 }
 
@@ -128,6 +140,9 @@ type ImportStandardTagsManagementArgs struct {
 	// The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
 	CompartmentId pulumi.StringInput
 	// The name of standard tag namespace that will be imported in bulk
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StandardTagNamespaceName pulumi.StringInput
 }
 
@@ -224,6 +239,9 @@ func (o ImportStandardTagsManagementOutput) CompartmentId() pulumi.StringOutput 
 }
 
 // The name of standard tag namespace that will be imported in bulk
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ImportStandardTagsManagementOutput) StandardTagNamespaceName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ImportStandardTagsManagement) pulumi.StringOutput { return v.StandardTagNamespaceName }).(pulumi.StringOutput)
 }

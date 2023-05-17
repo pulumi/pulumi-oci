@@ -54,6 +54,9 @@ type OperationsInsightsWarehouseRotateWarehouseWallet struct {
 	pulumi.CustomResourceState
 
 	// Unique Operations Insights Warehouse identifier
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseId pulumi.StringOutput `pulumi:"operationsInsightsWarehouseId"`
 }
 
@@ -90,11 +93,17 @@ func GetOperationsInsightsWarehouseRotateWarehouseWallet(ctx *pulumi.Context,
 // Input properties used for looking up and filtering OperationsInsightsWarehouseRotateWarehouseWallet resources.
 type operationsInsightsWarehouseRotateWarehouseWalletState struct {
 	// Unique Operations Insights Warehouse identifier
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseId *string `pulumi:"operationsInsightsWarehouseId"`
 }
 
 type OperationsInsightsWarehouseRotateWarehouseWalletState struct {
 	// Unique Operations Insights Warehouse identifier
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseId pulumi.StringPtrInput
 }
 
@@ -104,12 +113,18 @@ func (OperationsInsightsWarehouseRotateWarehouseWalletState) ElementType() refle
 
 type operationsInsightsWarehouseRotateWarehouseWalletArgs struct {
 	// Unique Operations Insights Warehouse identifier
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseId string `pulumi:"operationsInsightsWarehouseId"`
 }
 
 // The set of arguments for constructing a OperationsInsightsWarehouseRotateWarehouseWallet resource.
 type OperationsInsightsWarehouseRotateWarehouseWalletArgs struct {
 	// Unique Operations Insights Warehouse identifier
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseId pulumi.StringInput
 }
 
@@ -201,6 +216,9 @@ func (o OperationsInsightsWarehouseRotateWarehouseWalletOutput) ToOperationsInsi
 }
 
 // Unique Operations Insights Warehouse identifier
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o OperationsInsightsWarehouseRotateWarehouseWalletOutput) OperationsInsightsWarehouseId() pulumi.StringOutput {
 	return o.ApplyT(func(v *OperationsInsightsWarehouseRotateWarehouseWallet) pulumi.StringOutput {
 		return v.OperationsInsightsWarehouseId

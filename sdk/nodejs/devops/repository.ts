@@ -132,7 +132,11 @@ export class Repository extends pulumi.CustomResource {
      */
     public /*out*/ readonly projectName!: pulumi.Output<string>;
     /**
-     * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+     * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly repositoryType!: pulumi.Output<string>;
     /**
@@ -296,7 +300,11 @@ export interface RepositoryState {
      */
     projectName?: pulumi.Input<string>;
     /**
-     * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+     * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     repositoryType?: pulumi.Input<string>;
     /**
@@ -362,7 +370,11 @@ export interface RepositoryArgs {
      */
     projectId: pulumi.Input<string>;
     /**
-     * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+     * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     repositoryType: pulumi.Input<string>;
 }

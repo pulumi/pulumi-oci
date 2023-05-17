@@ -80,6 +80,9 @@ type AcceptedAgreement struct {
 	// The package version associated with the agreement.
 	PackageVersion pulumi.StringOutput `pulumi:"packageVersion"`
 	// A signature generated for the listing package agreements that you can retrieve with [GetAgreement](https://docs.cloud.oracle.com/iaas/api/#/en/marketplace/20181001/Agreement/GetAgreement).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Signature pulumi.StringOutput `pulumi:"signature"`
 	// The time the agreement was accepted.
 	TimeAccepted pulumi.StringOutput `pulumi:"timeAccepted"`
@@ -144,6 +147,9 @@ type acceptedAgreementState struct {
 	// The package version associated with the agreement.
 	PackageVersion *string `pulumi:"packageVersion"`
 	// A signature generated for the listing package agreements that you can retrieve with [GetAgreement](https://docs.cloud.oracle.com/iaas/api/#/en/marketplace/20181001/Agreement/GetAgreement).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Signature *string `pulumi:"signature"`
 	// The time the agreement was accepted.
 	TimeAccepted *string `pulumi:"timeAccepted"`
@@ -165,6 +171,9 @@ type AcceptedAgreementState struct {
 	// The package version associated with the agreement.
 	PackageVersion pulumi.StringPtrInput
 	// A signature generated for the listing package agreements that you can retrieve with [GetAgreement](https://docs.cloud.oracle.com/iaas/api/#/en/marketplace/20181001/Agreement/GetAgreement).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Signature pulumi.StringPtrInput
 	// The time the agreement was accepted.
 	TimeAccepted pulumi.StringPtrInput
@@ -190,6 +199,9 @@ type acceptedAgreementArgs struct {
 	// The package version associated with the agreement.
 	PackageVersion string `pulumi:"packageVersion"`
 	// A signature generated for the listing package agreements that you can retrieve with [GetAgreement](https://docs.cloud.oracle.com/iaas/api/#/en/marketplace/20181001/Agreement/GetAgreement).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Signature string `pulumi:"signature"`
 }
 
@@ -210,6 +222,9 @@ type AcceptedAgreementArgs struct {
 	// The package version associated with the agreement.
 	PackageVersion pulumi.StringInput
 	// A signature generated for the listing package agreements that you can retrieve with [GetAgreement](https://docs.cloud.oracle.com/iaas/api/#/en/marketplace/20181001/Agreement/GetAgreement).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Signature pulumi.StringInput
 }
 
@@ -336,6 +351,9 @@ func (o AcceptedAgreementOutput) PackageVersion() pulumi.StringOutput {
 }
 
 // A signature generated for the listing package agreements that you can retrieve with [GetAgreement](https://docs.cloud.oracle.com/iaas/api/#/en/marketplace/20181001/Agreement/GetAgreement).
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AcceptedAgreementOutput) Signature() pulumi.StringOutput {
 	return o.ApplyT(func(v *AcceptedAgreement) pulumi.StringOutput { return v.Signature }).(pulumi.StringOutput)
 }

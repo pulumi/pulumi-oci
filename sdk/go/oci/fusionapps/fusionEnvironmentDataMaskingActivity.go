@@ -57,6 +57,9 @@ type FusionEnvironmentDataMaskingActivity struct {
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId pulumi.StringOutput `pulumi:"fusionEnvironmentId"`
 	// This allows the Data Safe service to resume the previously failed data masking activity.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsResumeDataMasking pulumi.BoolOutput `pulumi:"isResumeDataMasking"`
 	// The current state of the DataMaskingActivity.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -101,6 +104,9 @@ type fusionEnvironmentDataMaskingActivityState struct {
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId *string `pulumi:"fusionEnvironmentId"`
 	// This allows the Data Safe service to resume the previously failed data masking activity.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsResumeDataMasking *bool `pulumi:"isResumeDataMasking"`
 	// The current state of the DataMaskingActivity.
 	State *string `pulumi:"state"`
@@ -114,6 +120,9 @@ type FusionEnvironmentDataMaskingActivityState struct {
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId pulumi.StringPtrInput
 	// This allows the Data Safe service to resume the previously failed data masking activity.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsResumeDataMasking pulumi.BoolPtrInput
 	// The current state of the DataMaskingActivity.
 	State pulumi.StringPtrInput
@@ -131,6 +140,9 @@ type fusionEnvironmentDataMaskingActivityArgs struct {
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`
 	// This allows the Data Safe service to resume the previously failed data masking activity.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsResumeDataMasking *bool `pulumi:"isResumeDataMasking"`
 }
 
@@ -139,6 +151,9 @@ type FusionEnvironmentDataMaskingActivityArgs struct {
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId pulumi.StringInput
 	// This allows the Data Safe service to resume the previously failed data masking activity.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsResumeDataMasking pulumi.BoolPtrInput
 }
 
@@ -235,6 +250,9 @@ func (o FusionEnvironmentDataMaskingActivityOutput) FusionEnvironmentId() pulumi
 }
 
 // This allows the Data Safe service to resume the previously failed data masking activity.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o FusionEnvironmentDataMaskingActivityOutput) IsResumeDataMasking() pulumi.BoolOutput {
 	return o.ApplyT(func(v *FusionEnvironmentDataMaskingActivity) pulumi.BoolOutput { return v.IsResumeDataMasking }).(pulumi.BoolOutput)
 }

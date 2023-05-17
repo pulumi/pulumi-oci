@@ -43,12 +43,18 @@ public final class CloudDatabaseManagementState extends com.pulumi.resources.Res
     /**
      * (Updatable) Use this flag to enable/disable database management
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="enableManagement")
     private @Nullable Output<Boolean> enableManagement;
 
     /**
      * @return (Updatable) Use this flag to enable/disable database management
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Boolean>> enableManagement() {
@@ -228,6 +234,9 @@ public final class CloudDatabaseManagementState extends com.pulumi.resources.Res
         /**
          * @param enableManagement (Updatable) Use this flag to enable/disable database management
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -238,6 +247,9 @@ public final class CloudDatabaseManagementState extends com.pulumi.resources.Res
 
         /**
          * @param enableManagement (Updatable) Use this flag to enable/disable database management
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

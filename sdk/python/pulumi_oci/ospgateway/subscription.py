@@ -28,6 +28,10 @@ class SubscriptionArgs:
         :param pulumi.Input[str] osp_home_region: (Updatable) The home region's public name of the logged in user.
         :param pulumi.Input['SubscriptionSubscriptionArgs'] subscription: (Updatable) Subscription details object which extends the SubscriptionSummary
         :param pulumi.Input[str] subscription_id: Subscription id(OCID).
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "email", email)
@@ -88,6 +92,10 @@ class SubscriptionArgs:
     def subscription_id(self) -> pulumi.Input[str]:
         """
         Subscription id(OCID).
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subscription_id")
 
@@ -141,6 +149,10 @@ class _SubscriptionState:
         :param pulumi.Input[str] ship_to_cust_acct_site_id: (Updatable) Ship to customer account site address id.
         :param pulumi.Input['SubscriptionSubscriptionArgs'] subscription: (Updatable) Subscription details object which extends the SubscriptionSummary
         :param pulumi.Input[str] subscription_id: Subscription id(OCID).
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] subscription_plan_number: (Updatable) Subscription plan number.
         :param pulumi.Input[Sequence[pulumi.Input['SubscriptionTaxInfoArgs']]] tax_infos: (Updatable) Tax details.
         :param pulumi.Input[str] time_plan_upgrade: (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
@@ -392,6 +404,10 @@ class _SubscriptionState:
     def subscription_id(self) -> Optional[pulumi.Input[str]]:
         """
         Subscription id(OCID).
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subscription_id")
 
@@ -503,6 +519,10 @@ class Subscription(pulumi.CustomResource):
         :param pulumi.Input[str] osp_home_region: (Updatable) The home region's public name of the logged in user.
         :param pulumi.Input[pulumi.InputType['SubscriptionSubscriptionArgs']] subscription: (Updatable) Subscription details object which extends the SubscriptionSummary
         :param pulumi.Input[str] subscription_id: Subscription id(OCID).
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -642,6 +662,10 @@ class Subscription(pulumi.CustomResource):
         :param pulumi.Input[str] ship_to_cust_acct_site_id: (Updatable) Ship to customer account site address id.
         :param pulumi.Input[pulumi.InputType['SubscriptionSubscriptionArgs']] subscription: (Updatable) Subscription details object which extends the SubscriptionSummary
         :param pulumi.Input[str] subscription_id: Subscription id(OCID).
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] subscription_plan_number: (Updatable) Subscription plan number.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriptionTaxInfoArgs']]]] tax_infos: (Updatable) Tax details.
         :param pulumi.Input[str] time_plan_upgrade: (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
@@ -811,6 +835,10 @@ class Subscription(pulumi.CustomResource):
     def subscription_id(self) -> pulumi.Output[str]:
         """
         Subscription id(OCID).
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subscription_id")
 

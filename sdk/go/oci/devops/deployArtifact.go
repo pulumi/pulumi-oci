@@ -98,6 +98,9 @@ type DeployArtifact struct {
 	// A detailed message describing the current state. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The OCID of a project.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// Current state of the deployment artifact.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -169,6 +172,9 @@ type deployArtifactState struct {
 	// A detailed message describing the current state. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The OCID of a project.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId *string `pulumi:"projectId"`
 	// Current state of the deployment artifact.
 	State *string `pulumi:"state"`
@@ -200,6 +206,9 @@ type DeployArtifactState struct {
 	// A detailed message describing the current state. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// The OCID of a project.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringPtrInput
 	// Current state of the deployment artifact.
 	State pulumi.StringPtrInput
@@ -231,6 +240,9 @@ type deployArtifactArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of a project.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId string `pulumi:"projectId"`
 }
 
@@ -251,6 +263,9 @@ type DeployArtifactArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// The OCID of a project.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringInput
 }
 
@@ -387,6 +402,9 @@ func (o DeployArtifactOutput) LifecycleDetails() pulumi.StringOutput {
 }
 
 // The OCID of a project.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DeployArtifactOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeployArtifact) pulumi.StringOutput { return v.ProjectId }).(pulumi.StringOutput)
 }

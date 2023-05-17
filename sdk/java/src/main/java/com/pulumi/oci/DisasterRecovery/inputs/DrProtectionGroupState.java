@@ -70,12 +70,18 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
     /**
      * (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="disassociateTrigger")
     private @Nullable Output<Integer> disassociateTrigger;
 
     /**
      * @return (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> disassociateTrigger() {
@@ -367,6 +373,9 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         /**
          * @param disassociateTrigger (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -377,6 +386,9 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
 
         /**
          * @param disassociateTrigger (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

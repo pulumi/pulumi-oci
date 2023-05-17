@@ -404,7 +404,11 @@ class MonitoredResourceAdditionalCredentialArgs:
         :param pulumi.Input[str] name: (Updatable) Property Name.
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialPropertyArgs']]] properties: (Updatable) List of monitored resource properties.
         :param pulumi.Input[str] source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
-        :param pulumi.Input[str] type: Monitored Resource Type.
+        :param pulumi.Input[str] type: Monitored Resource Type. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if credential_type is not None:
             pulumi.set(__self__, "credential_type", credential_type)
@@ -500,7 +504,11 @@ class MonitoredResourceAdditionalCredentialArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        Monitored Resource Type.
+        Monitored Resource Type. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -672,7 +680,11 @@ class MonitoredResourceCredentialsArgs:
         :param pulumi.Input[str] name: (Updatable) Property Name.
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceCredentialsPropertyArgs']]] properties: (Updatable) List of monitored resource properties.
         :param pulumi.Input[str] source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
-        :param pulumi.Input[str] type: Monitored Resource Type.
+        :param pulumi.Input[str] type: Monitored Resource Type. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if credential_type is not None:
             pulumi.set(__self__, "credential_type", credential_type)
@@ -768,7 +780,11 @@ class MonitoredResourceCredentialsArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        Monitored Resource Type.
+        Monitored Resource Type. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -1524,7 +1540,11 @@ class MonitoredResourcesSearchItemArgs:
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: Monitored resource creation time. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: Monitored resource update time. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] type: A filter to return resources that match resource type.
+        :param pulumi.Input[str] type: A filter to return resources that match resource type. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
@@ -1715,7 +1735,11 @@ class MonitoredResourcesSearchItemArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        A filter to return resources that match resource type.
+        A filter to return resources that match resource type. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 

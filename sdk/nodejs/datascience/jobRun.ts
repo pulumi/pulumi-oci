@@ -130,6 +130,10 @@ export class JobRun extends pulumi.CustomResource {
     public /*out*/ readonly logDetails!: pulumi.Output<outputs.DataScience.JobRunLogDetail[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly projectId!: pulumi.Output<string>;
     /**
@@ -267,6 +271,10 @@ export interface JobRunState {
     logDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.JobRunLogDetail>[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     projectId?: pulumi.Input<string>;
     /**
@@ -325,6 +333,10 @@ export interface JobRunArgs {
     jobLogConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobLogConfigurationOverrideDetails>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     projectId: pulumi.Input<string>;
 }

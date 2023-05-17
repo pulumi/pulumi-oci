@@ -50,6 +50,10 @@ class InstanceArgs:
         :param pulumi.Input[str] name: OceInstance Name
         :param pulumi.Input[str] upgrade_schedule: Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
         :param pulumi.Input[str] waf_primary_domain: (Updatable) Web Application Firewall(WAF) primary domain
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "admin_email", admin_email)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -277,6 +281,10 @@ class InstanceArgs:
     def waf_primary_domain(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Web Application Firewall(WAF) primary domain
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "waf_primary_domain")
 
@@ -342,6 +350,10 @@ class _InstanceState:
         :param pulumi.Input[str] time_updated: The time the OceInstance was updated. An RFC3339 formatted datetime string
         :param pulumi.Input[str] upgrade_schedule: Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
         :param pulumi.Input[str] waf_primary_domain: (Updatable) Web Application Firewall(WAF) primary domain
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if add_on_features is not None:
             pulumi.set(__self__, "add_on_features", add_on_features)
@@ -701,6 +713,10 @@ class _InstanceState:
     def waf_primary_domain(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Web Application Firewall(WAF) primary domain
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "waf_primary_domain")
 
@@ -793,6 +809,10 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[str] tenancy_name: Tenancy Name
         :param pulumi.Input[str] upgrade_schedule: Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
         :param pulumi.Input[str] waf_primary_domain: (Updatable) Web Application Firewall(WAF) primary domain
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -992,6 +1012,10 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[str] time_updated: The time the OceInstance was updated. An RFC3339 formatted datetime string
         :param pulumi.Input[str] upgrade_schedule: Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
         :param pulumi.Input[str] waf_primary_domain: (Updatable) Web Application Firewall(WAF) primary domain
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1230,6 +1254,10 @@ class Instance(pulumi.CustomResource):
     def waf_primary_domain(self) -> pulumi.Output[str]:
         """
         (Updatable) Web Application Firewall(WAF) primary domain
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "waf_primary_domain")
 

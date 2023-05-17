@@ -32,6 +32,10 @@ namespace Pulumi.Oci.FusionApps.Inputs
 
         /// <summary>
         /// The username for the administrator.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("username")]
         public Input<string>? Username { get; set; }

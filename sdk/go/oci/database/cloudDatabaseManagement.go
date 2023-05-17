@@ -66,6 +66,9 @@ type CloudDatabaseManagement struct {
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseId pulumi.StringOutput `pulumi:"databaseId"`
 	// (Updatable) Use this flag to enable/disable database management
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableManagement pulumi.BoolOutput `pulumi:"enableManagement"`
 	// (Updatable) Specifies database management type
 	// enum:
@@ -135,6 +138,9 @@ type cloudDatabaseManagementState struct {
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseId *string `pulumi:"databaseId"`
 	// (Updatable) Use this flag to enable/disable database management
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableManagement *bool `pulumi:"enableManagement"`
 	// (Updatable) Specifies database management type
 	// enum:
@@ -158,6 +164,9 @@ type CloudDatabaseManagementState struct {
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseId pulumi.StringPtrInput
 	// (Updatable) Use this flag to enable/disable database management
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableManagement pulumi.BoolPtrInput
 	// (Updatable) Specifies database management type
 	// enum:
@@ -185,6 +194,9 @@ type cloudDatabaseManagementArgs struct {
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseId string `pulumi:"databaseId"`
 	// (Updatable) Use this flag to enable/disable database management
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableManagement bool `pulumi:"enableManagement"`
 	// (Updatable) Specifies database management type
 	// enum:
@@ -209,6 +221,9 @@ type CloudDatabaseManagementArgs struct {
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseId pulumi.StringInput
 	// (Updatable) Use this flag to enable/disable database management
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableManagement pulumi.BoolInput
 	// (Updatable) Specifies database management type
 	// enum:
@@ -326,6 +341,9 @@ func (o CloudDatabaseManagementOutput) DatabaseId() pulumi.StringOutput {
 }
 
 // (Updatable) Use this flag to enable/disable database management
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CloudDatabaseManagementOutput) EnableManagement() pulumi.BoolOutput {
 	return o.ApplyT(func(v *CloudDatabaseManagement) pulumi.BoolOutput { return v.EnableManagement }).(pulumi.BoolOutput)
 }

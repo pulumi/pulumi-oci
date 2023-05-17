@@ -56,12 +56,16 @@ public final class GetServiceEnvironmentsPlainArgs extends com.pulumi.resources.
     /**
      * The unique identifier associated with the service environment.
      * 
+     * **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
      */
     @Import(name="serviceEnvironmentId")
     private @Nullable String serviceEnvironmentId;
 
     /**
      * @return The unique identifier associated with the service environment.
+     * 
+     * **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<String> serviceEnvironmentId() {
@@ -144,6 +148,8 @@ public final class GetServiceEnvironmentsPlainArgs extends com.pulumi.resources.
 
         /**
          * @param serviceEnvironmentId The unique identifier associated with the service environment.
+         * 
+         * **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 

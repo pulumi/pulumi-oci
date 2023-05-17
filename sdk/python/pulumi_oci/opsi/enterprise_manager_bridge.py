@@ -25,6 +25,10 @@ class EnterpriseManagerBridgeArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier of the Enterprise Manager bridge
         :param pulumi.Input[str] display_name: (Updatable) User-friedly name of Enterprise Manager Bridge that does not have to be unique.
         :param pulumi.Input[str] object_storage_bucket_name: Object Storage Bucket Name
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Description of Enterprise Manager Bridge
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -68,6 +72,10 @@ class EnterpriseManagerBridgeArgs:
     def object_storage_bucket_name(self) -> pulumi.Input[str]:
         """
         Object Storage Bucket Name
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "object_storage_bucket_name")
 
@@ -137,6 +145,10 @@ class _EnterpriseManagerBridgeState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] object_storage_bucket_name: Object Storage Bucket Name
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] object_storage_bucket_status_details: A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
         :param pulumi.Input[str] object_storage_namespace_name: Object Storage Namespace Name
         :param pulumi.Input[str] state: The current state of the Enterprise Manager bridge.
@@ -248,6 +260,10 @@ class _EnterpriseManagerBridgeState:
     def object_storage_bucket_name(self) -> Optional[pulumi.Input[str]]:
         """
         Object Storage Bucket Name
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "object_storage_bucket_name")
 
@@ -380,6 +396,10 @@ class EnterpriseManagerBridge(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) User-friedly name of Enterprise Manager Bridge that does not have to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] object_storage_bucket_name: Object Storage Bucket Name
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -505,6 +525,10 @@ class EnterpriseManagerBridge(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] object_storage_bucket_name: Object Storage Bucket Name
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] object_storage_bucket_status_details: A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
         :param pulumi.Input[str] object_storage_namespace_name: Object Storage Namespace Name
         :param pulumi.Input[str] state: The current state of the Enterprise Manager bridge.
@@ -584,6 +608,10 @@ class EnterpriseManagerBridge(pulumi.CustomResource):
     def object_storage_bucket_name(self) -> pulumi.Output[str]:
         """
         Object Storage Bucket Name
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "object_storage_bucket_name")
 

@@ -96,6 +96,10 @@ export class Certificate extends pulumi.CustomResource {
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
      * The private key associated with the certificate in pem format.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly privateKey!: pulumi.Output<string>;
     /**
@@ -211,6 +215,10 @@ export interface CertificateState {
     lifecycleDetails?: pulumi.Input<string>;
     /**
      * The private key associated with the certificate in pem format.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     privateKey?: pulumi.Input<string>;
     /**
@@ -265,6 +273,10 @@ export interface CertificateArgs {
     intermediateCertificates?: pulumi.Input<string>;
     /**
      * The private key associated with the certificate in pem format.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     privateKey: pulumi.Input<string>;
 }

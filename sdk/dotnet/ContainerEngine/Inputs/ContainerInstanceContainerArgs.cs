@@ -29,6 +29,10 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
 
         /// <summary>
         /// A list of string arguments for a container's entrypoint process.
+        /// 
+        /// Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+        /// 
+        /// All arguments together must be 64KB or smaller.
         /// </summary>
         public InputList<string> Arguments
         {
@@ -92,6 +96,8 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
 
         /// <summary>
         /// A map of additional environment variables to set in the environment of the container's entrypoint process. These variables are in addition to any variables already defined in the container's image.
+        /// 
+        /// All environment variables together, name and values, must be 64KB or smaller.
         /// </summary>
         public InputMap<object> EnvironmentVariables
         {
@@ -157,7 +163,11 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public Input<Inputs.ContainerInstanceContainerResourceConfigArgs>? ResourceConfig { get; set; }
 
         /// <summary>
-        /// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+        /// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

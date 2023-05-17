@@ -158,12 +158,18 @@ public final class PrivateApplicationState extends com.pulumi.resources.Resource
     /**
      * (Updatable) A short description of the private application.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="shortDescription")
     private @Nullable Output<String> shortDescription;
 
     /**
      * @return (Updatable) A short description of the private application.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> shortDescription() {
@@ -453,6 +459,9 @@ public final class PrivateApplicationState extends com.pulumi.resources.Resource
         /**
          * @param shortDescription (Updatable) A short description of the private application.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -463,6 +472,9 @@ public final class PrivateApplicationState extends com.pulumi.resources.Resource
 
         /**
          * @param shortDescription (Updatable) A short description of the private application.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

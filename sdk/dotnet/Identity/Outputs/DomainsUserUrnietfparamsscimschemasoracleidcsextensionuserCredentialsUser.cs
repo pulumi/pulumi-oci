@@ -15,26 +15,98 @@ namespace Pulumi.Oci.Identity.Outputs
     {
         /// <summary>
         /// (Updatable) A list of api keys corresponding to user.
+        /// 
+        /// **Added In:** 2012271618
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public readonly ImmutableArray<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey> ApiKeys;
         /// <summary>
         /// (Updatable) A list of auth tokens corresponding to user.
+        /// 
+        /// **Added In:** 2012271618
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public readonly ImmutableArray<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken> AuthTokens;
         /// <summary>
         /// (Updatable) A list of customer secret keys corresponding to user.
+        /// 
+        /// **Added In:** 2102181953
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public readonly ImmutableArray<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey> CustomerSecretKeys;
         /// <summary>
         /// (Updatable) A list of db credentials corresponding to user.
+        /// 
+        /// **Added In:** 2102181953
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public readonly ImmutableArray<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential> DbCredentials;
         /// <summary>
         /// (Updatable) A list of oauth2 client credentials corresponding to user.
+        /// 
+        /// **Added In:** 2012271618
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public readonly ImmutableArray<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential> OAuth2clientCredentials;
         /// <summary>
         /// (Updatable) A list of smtp credentials corresponding to user.
+        /// 
+        /// **Added In:** 2012271618
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public readonly ImmutableArray<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential> SmtpCredentials;
 

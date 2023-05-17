@@ -31,12 +31,18 @@ public final class VolumeBackupPolicyAssignmentArgs extends com.pulumi.resources
     /**
      * The OCID of the volume backup policy to assign to the volume.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="policyId", required=true)
     private Output<String> policyId;
 
     /**
      * @return The OCID of the volume backup policy to assign to the volume.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> policyId() {
@@ -92,6 +98,9 @@ public final class VolumeBackupPolicyAssignmentArgs extends com.pulumi.resources
         /**
          * @param policyId The OCID of the volume backup policy to assign to the volume.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -102,6 +111,9 @@ public final class VolumeBackupPolicyAssignmentArgs extends com.pulumi.resources
 
         /**
          * @param policyId The OCID of the volume backup policy to assign to the volume.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -16,12 +16,28 @@ public final class AutoScalingConfigurationPolicyExecutionScheduleArgs extends c
     /**
      * A cron expression that represents the time at which to execute the autoscaling policy.
      * 
+     * Cron expressions have this format: `&lt;second&gt; &lt;minute&gt; &lt;hour&gt; &lt;day of month&gt; &lt;month&gt; &lt;day of week&gt; &lt;year&gt;`
+     * 
+     * You can use special characters that are supported with the Quartz cron implementation.
+     * 
+     * You must specify `0` as the value for seconds.
+     * 
+     * Example: `0 15 10 ? * *`
+     * 
      */
     @Import(name="expression", required=true)
     private Output<String> expression;
 
     /**
      * @return A cron expression that represents the time at which to execute the autoscaling policy.
+     * 
+     * Cron expressions have this format: `&lt;second&gt; &lt;minute&gt; &lt;hour&gt; &lt;day of month&gt; &lt;month&gt; &lt;day of week&gt; &lt;year&gt;`
+     * 
+     * You can use special characters that are supported with the Quartz cron implementation.
+     * 
+     * You must specify `0` as the value for seconds.
+     * 
+     * Example: `0 15 10 ? * *`
      * 
      */
     public Output<String> expression() {
@@ -87,6 +103,14 @@ public final class AutoScalingConfigurationPolicyExecutionScheduleArgs extends c
         /**
          * @param expression A cron expression that represents the time at which to execute the autoscaling policy.
          * 
+         * Cron expressions have this format: `&lt;second&gt; &lt;minute&gt; &lt;hour&gt; &lt;day of month&gt; &lt;month&gt; &lt;day of week&gt; &lt;year&gt;`
+         * 
+         * You can use special characters that are supported with the Quartz cron implementation.
+         * 
+         * You must specify `0` as the value for seconds.
+         * 
+         * Example: `0 15 10 ? * *`
+         * 
          * @return builder
          * 
          */
@@ -97,6 +121,14 @@ public final class AutoScalingConfigurationPolicyExecutionScheduleArgs extends c
 
         /**
          * @param expression A cron expression that represents the time at which to execute the autoscaling policy.
+         * 
+         * Cron expressions have this format: `&lt;second&gt; &lt;minute&gt; &lt;hour&gt; &lt;day of month&gt; &lt;month&gt; &lt;day of week&gt; &lt;year&gt;`
+         * 
+         * You can use special characters that are supported with the Quartz cron implementation.
+         * 
+         * You must specify `0` as the value for seconds.
+         * 
+         * Example: `0 15 10 ? * *`
          * 
          * @return builder
          * 

@@ -50,7 +50,10 @@ type BackupCancelManagement struct {
 
 	// The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	BackupId pulumi.StringOutput `pulumi:"backupId"`
-	// When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
+	// When changed to a different integer, re-triggers cancel backup on the backup specified by the backupId
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CancelBackupTrigger pulumi.IntPtrOutput `pulumi:"cancelBackupTrigger"`
 }
 
@@ -88,14 +91,20 @@ func GetBackupCancelManagement(ctx *pulumi.Context,
 type backupCancelManagementState struct {
 	// The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	BackupId *string `pulumi:"backupId"`
-	// When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
+	// When changed to a different integer, re-triggers cancel backup on the backup specified by the backupId
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CancelBackupTrigger *int `pulumi:"cancelBackupTrigger"`
 }
 
 type BackupCancelManagementState struct {
 	// The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	BackupId pulumi.StringPtrInput
-	// When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
+	// When changed to a different integer, re-triggers cancel backup on the backup specified by the backupId
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CancelBackupTrigger pulumi.IntPtrInput
 }
 
@@ -106,7 +115,10 @@ func (BackupCancelManagementState) ElementType() reflect.Type {
 type backupCancelManagementArgs struct {
 	// The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	BackupId string `pulumi:"backupId"`
-	// When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
+	// When changed to a different integer, re-triggers cancel backup on the backup specified by the backupId
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CancelBackupTrigger *int `pulumi:"cancelBackupTrigger"`
 }
 
@@ -114,7 +126,10 @@ type backupCancelManagementArgs struct {
 type BackupCancelManagementArgs struct {
 	// The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	BackupId pulumi.StringInput
-	// When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
+	// When changed to a different integer, re-triggers cancel backup on the backup specified by the backupId
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CancelBackupTrigger pulumi.IntPtrInput
 }
 
@@ -210,7 +225,10 @@ func (o BackupCancelManagementOutput) BackupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *BackupCancelManagement) pulumi.StringOutput { return v.BackupId }).(pulumi.StringOutput)
 }
 
-// When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
+// When changed to a different integer, re-triggers cancel backup on the backup specified by the backupId
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BackupCancelManagementOutput) CancelBackupTrigger() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BackupCancelManagement) pulumi.IntPtrOutput { return v.CancelBackupTrigger }).(pulumi.IntPtrOutput)
 }

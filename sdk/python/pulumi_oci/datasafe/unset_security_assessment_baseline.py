@@ -18,6 +18,10 @@ class UnsetSecurityAssessmentBaselineArgs:
         """
         The set of arguments for constructing a UnsetSecurityAssessmentBaseline resource.
         :param pulumi.Input[str] security_assessment_id: The OCID of the security assessment.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "security_assessment_id", security_assessment_id)
 
@@ -26,6 +30,10 @@ class UnsetSecurityAssessmentBaselineArgs:
     def security_assessment_id(self) -> pulumi.Input[str]:
         """
         The OCID of the security assessment.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "security_assessment_id")
 
@@ -41,6 +49,10 @@ class _UnsetSecurityAssessmentBaselineState:
         """
         Input properties used for looking up and filtering UnsetSecurityAssessmentBaseline resources.
         :param pulumi.Input[str] security_assessment_id: The OCID of the security assessment.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if security_assessment_id is not None:
             pulumi.set(__self__, "security_assessment_id", security_assessment_id)
@@ -50,6 +62,10 @@ class _UnsetSecurityAssessmentBaselineState:
     def security_assessment_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the security assessment.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "security_assessment_id")
 
@@ -91,6 +107,10 @@ class UnsetSecurityAssessmentBaseline(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] security_assessment_id: The OCID of the security assessment.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -168,6 +188,10 @@ class UnsetSecurityAssessmentBaseline(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] security_assessment_id: The OCID of the security assessment.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -181,6 +205,10 @@ class UnsetSecurityAssessmentBaseline(pulumi.CustomResource):
     def security_assessment_id(self) -> pulumi.Output[str]:
         """
         The OCID of the security assessment.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "security_assessment_id")
 

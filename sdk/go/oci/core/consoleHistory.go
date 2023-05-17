@@ -87,6 +87,9 @@ type ConsoleHistory struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The OCID of the instance to get the console history from.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
 	// The current state of the console history.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -137,6 +140,9 @@ type consoleHistoryState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the instance to get the console history from.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	InstanceId *string `pulumi:"instanceId"`
 	// The current state of the console history.
 	State *string `pulumi:"state"`
@@ -156,6 +162,9 @@ type ConsoleHistoryState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The OCID of the instance to get the console history from.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	InstanceId pulumi.StringPtrInput
 	// The current state of the console history.
 	State pulumi.StringPtrInput
@@ -175,6 +184,9 @@ type consoleHistoryArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the instance to get the console history from.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	InstanceId string `pulumi:"instanceId"`
 }
 
@@ -187,6 +199,9 @@ type ConsoleHistoryArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The OCID of the instance to get the console history from.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	InstanceId pulumi.StringInput
 }
 
@@ -303,6 +318,9 @@ func (o ConsoleHistoryOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the instance to get the console history from.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ConsoleHistoryOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ConsoleHistory) pulumi.StringOutput { return v.InstanceId }).(pulumi.StringOutput)
 }

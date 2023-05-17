@@ -55,6 +55,16 @@ type Certificate struct {
 	pulumi.CustomResourceState
 
 	// The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+	//
+	// Example:
+	//
+	// -----BEGIN CERTIFICATE-----
+	// MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+	// EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+	// VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+	// aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+	// ...
+	// -----END CERTIFICATE-----
 	CaCertificate pulumi.StringOutput `pulumi:"caCertificate"`
 	// A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
 	CertificateName pulumi.StringOutput `pulumi:"certificateName"`
@@ -63,8 +73,31 @@ type Certificate struct {
 	// A passphrase for encrypted private keys. This is needed only if you created your certificate with a passphrase.
 	Passphrase pulumi.StringPtrOutput `pulumi:"passphrase"`
 	// The SSL private key for your certificate, in PEM format.
+	//
+	// Example:
+	//
+	// -----BEGIN RSA PRIVATE KEY-----
+	// jO1O1v2ftXMsawM90tnXwc6xhOAT1gDBC9S8DKeca..JZNUgYYwNS0dP2UK
+	// tmyN+XqVcAKw4HqVmChXy5b5msu8eIq3uc2NqNVtR..2ksSLukP8pxXcHyb
+	// +sEwvM4uf8qbnHAqwnOnP9+KV9vds6BaH1eRA4CHz..n+NVZlzBsTxTlS16
+	// /Umr7wJzVrMqK5sDiSu4WuaaBdqMGfL5hLsTjcBFD..Da2iyQmSKuVD4lIZ
+	// ...
+	// -----END RSA PRIVATE KEY-----
 	PrivateKey pulumi.StringOutput `pulumi:"privateKey"`
 	// The public certificate, in PEM format, that you received from your SSL certificate provider.
+	//
+	// Example:
+	//
+	// -----BEGIN CERTIFICATE-----
+	// MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbM..QswCQYDVQQGEwJKU
+	// A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxE..TAPBgNVBAoTCEZyY
+	// MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWB..gNVBAMTD0ZyYW5rN
+	// YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmc..mFuazRkZC5jb20wH
+	// ...
+	// -----END CERTIFICATE-----
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PublicCertificate pulumi.StringOutput `pulumi:"publicCertificate"`
 	State             pulumi.StringOutput `pulumi:"state"`
 }
@@ -116,6 +149,16 @@ func GetCertificate(ctx *pulumi.Context,
 // Input properties used for looking up and filtering Certificate resources.
 type certificateState struct {
 	// The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+	//
+	// Example:
+	//
+	// -----BEGIN CERTIFICATE-----
+	// MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+	// EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+	// VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+	// aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+	// ...
+	// -----END CERTIFICATE-----
 	CaCertificate *string `pulumi:"caCertificate"`
 	// A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
 	CertificateName *string `pulumi:"certificateName"`
@@ -124,14 +167,47 @@ type certificateState struct {
 	// A passphrase for encrypted private keys. This is needed only if you created your certificate with a passphrase.
 	Passphrase *string `pulumi:"passphrase"`
 	// The SSL private key for your certificate, in PEM format.
+	//
+	// Example:
+	//
+	// -----BEGIN RSA PRIVATE KEY-----
+	// jO1O1v2ftXMsawM90tnXwc6xhOAT1gDBC9S8DKeca..JZNUgYYwNS0dP2UK
+	// tmyN+XqVcAKw4HqVmChXy5b5msu8eIq3uc2NqNVtR..2ksSLukP8pxXcHyb
+	// +sEwvM4uf8qbnHAqwnOnP9+KV9vds6BaH1eRA4CHz..n+NVZlzBsTxTlS16
+	// /Umr7wJzVrMqK5sDiSu4WuaaBdqMGfL5hLsTjcBFD..Da2iyQmSKuVD4lIZ
+	// ...
+	// -----END RSA PRIVATE KEY-----
 	PrivateKey *string `pulumi:"privateKey"`
 	// The public certificate, in PEM format, that you received from your SSL certificate provider.
+	//
+	// Example:
+	//
+	// -----BEGIN CERTIFICATE-----
+	// MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbM..QswCQYDVQQGEwJKU
+	// A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxE..TAPBgNVBAoTCEZyY
+	// MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWB..gNVBAMTD0ZyYW5rN
+	// YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmc..mFuazRkZC5jb20wH
+	// ...
+	// -----END CERTIFICATE-----
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PublicCertificate *string `pulumi:"publicCertificate"`
 	State             *string `pulumi:"state"`
 }
 
 type CertificateState struct {
 	// The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+	//
+	// Example:
+	//
+	// -----BEGIN CERTIFICATE-----
+	// MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+	// EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+	// VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+	// aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+	// ...
+	// -----END CERTIFICATE-----
 	CaCertificate pulumi.StringPtrInput
 	// A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
 	CertificateName pulumi.StringPtrInput
@@ -140,8 +216,31 @@ type CertificateState struct {
 	// A passphrase for encrypted private keys. This is needed only if you created your certificate with a passphrase.
 	Passphrase pulumi.StringPtrInput
 	// The SSL private key for your certificate, in PEM format.
+	//
+	// Example:
+	//
+	// -----BEGIN RSA PRIVATE KEY-----
+	// jO1O1v2ftXMsawM90tnXwc6xhOAT1gDBC9S8DKeca..JZNUgYYwNS0dP2UK
+	// tmyN+XqVcAKw4HqVmChXy5b5msu8eIq3uc2NqNVtR..2ksSLukP8pxXcHyb
+	// +sEwvM4uf8qbnHAqwnOnP9+KV9vds6BaH1eRA4CHz..n+NVZlzBsTxTlS16
+	// /Umr7wJzVrMqK5sDiSu4WuaaBdqMGfL5hLsTjcBFD..Da2iyQmSKuVD4lIZ
+	// ...
+	// -----END RSA PRIVATE KEY-----
 	PrivateKey pulumi.StringPtrInput
 	// The public certificate, in PEM format, that you received from your SSL certificate provider.
+	//
+	// Example:
+	//
+	// -----BEGIN CERTIFICATE-----
+	// MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbM..QswCQYDVQQGEwJKU
+	// A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxE..TAPBgNVBAoTCEZyY
+	// MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWB..gNVBAMTD0ZyYW5rN
+	// YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmc..mFuazRkZC5jb20wH
+	// ...
+	// -----END CERTIFICATE-----
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PublicCertificate pulumi.StringPtrInput
 	State             pulumi.StringPtrInput
 }
@@ -152,6 +251,16 @@ func (CertificateState) ElementType() reflect.Type {
 
 type certificateArgs struct {
 	// The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+	//
+	// Example:
+	//
+	// -----BEGIN CERTIFICATE-----
+	// MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+	// EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+	// VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+	// aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+	// ...
+	// -----END CERTIFICATE-----
 	CaCertificate *string `pulumi:"caCertificate"`
 	// A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
 	CertificateName string `pulumi:"certificateName"`
@@ -160,14 +269,47 @@ type certificateArgs struct {
 	// A passphrase for encrypted private keys. This is needed only if you created your certificate with a passphrase.
 	Passphrase *string `pulumi:"passphrase"`
 	// The SSL private key for your certificate, in PEM format.
+	//
+	// Example:
+	//
+	// -----BEGIN RSA PRIVATE KEY-----
+	// jO1O1v2ftXMsawM90tnXwc6xhOAT1gDBC9S8DKeca..JZNUgYYwNS0dP2UK
+	// tmyN+XqVcAKw4HqVmChXy5b5msu8eIq3uc2NqNVtR..2ksSLukP8pxXcHyb
+	// +sEwvM4uf8qbnHAqwnOnP9+KV9vds6BaH1eRA4CHz..n+NVZlzBsTxTlS16
+	// /Umr7wJzVrMqK5sDiSu4WuaaBdqMGfL5hLsTjcBFD..Da2iyQmSKuVD4lIZ
+	// ...
+	// -----END RSA PRIVATE KEY-----
 	PrivateKey *string `pulumi:"privateKey"`
 	// The public certificate, in PEM format, that you received from your SSL certificate provider.
+	//
+	// Example:
+	//
+	// -----BEGIN CERTIFICATE-----
+	// MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbM..QswCQYDVQQGEwJKU
+	// A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxE..TAPBgNVBAoTCEZyY
+	// MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWB..gNVBAMTD0ZyYW5rN
+	// YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmc..mFuazRkZC5jb20wH
+	// ...
+	// -----END CERTIFICATE-----
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PublicCertificate *string `pulumi:"publicCertificate"`
 }
 
 // The set of arguments for constructing a Certificate resource.
 type CertificateArgs struct {
 	// The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+	//
+	// Example:
+	//
+	// -----BEGIN CERTIFICATE-----
+	// MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+	// EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+	// VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+	// aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+	// ...
+	// -----END CERTIFICATE-----
 	CaCertificate pulumi.StringPtrInput
 	// A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
 	CertificateName pulumi.StringInput
@@ -176,8 +318,31 @@ type CertificateArgs struct {
 	// A passphrase for encrypted private keys. This is needed only if you created your certificate with a passphrase.
 	Passphrase pulumi.StringPtrInput
 	// The SSL private key for your certificate, in PEM format.
+	//
+	// Example:
+	//
+	// -----BEGIN RSA PRIVATE KEY-----
+	// jO1O1v2ftXMsawM90tnXwc6xhOAT1gDBC9S8DKeca..JZNUgYYwNS0dP2UK
+	// tmyN+XqVcAKw4HqVmChXy5b5msu8eIq3uc2NqNVtR..2ksSLukP8pxXcHyb
+	// +sEwvM4uf8qbnHAqwnOnP9+KV9vds6BaH1eRA4CHz..n+NVZlzBsTxTlS16
+	// /Umr7wJzVrMqK5sDiSu4WuaaBdqMGfL5hLsTjcBFD..Da2iyQmSKuVD4lIZ
+	// ...
+	// -----END RSA PRIVATE KEY-----
 	PrivateKey pulumi.StringPtrInput
 	// The public certificate, in PEM format, that you received from your SSL certificate provider.
+	//
+	// Example:
+	//
+	// -----BEGIN CERTIFICATE-----
+	// MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbM..QswCQYDVQQGEwJKU
+	// A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxE..TAPBgNVBAoTCEZyY
+	// MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWB..gNVBAMTD0ZyYW5rN
+	// YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmc..mFuazRkZC5jb20wH
+	// ...
+	// -----END CERTIFICATE-----
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PublicCertificate pulumi.StringPtrInput
 }
 
@@ -269,6 +434,16 @@ func (o CertificateOutput) ToCertificateOutputWithContext(ctx context.Context) C
 }
 
 // The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+//
+// Example:
+//
+// -----BEGIN CERTIFICATE-----
+// MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+// EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+// VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+// aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+// ...
+// -----END CERTIFICATE-----
 func (o CertificateOutput) CaCertificate() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.CaCertificate }).(pulumi.StringOutput)
 }
@@ -289,11 +464,34 @@ func (o CertificateOutput) Passphrase() pulumi.StringPtrOutput {
 }
 
 // The SSL private key for your certificate, in PEM format.
+//
+// Example:
+//
+// -----BEGIN RSA PRIVATE KEY-----
+// jO1O1v2ftXMsawM90tnXwc6xhOAT1gDBC9S8DKeca..JZNUgYYwNS0dP2UK
+// tmyN+XqVcAKw4HqVmChXy5b5msu8eIq3uc2NqNVtR..2ksSLukP8pxXcHyb
+// +sEwvM4uf8qbnHAqwnOnP9+KV9vds6BaH1eRA4CHz..n+NVZlzBsTxTlS16
+// /Umr7wJzVrMqK5sDiSu4WuaaBdqMGfL5hLsTjcBFD..Da2iyQmSKuVD4lIZ
+// ...
+// -----END RSA PRIVATE KEY-----
 func (o CertificateOutput) PrivateKey() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.PrivateKey }).(pulumi.StringOutput)
 }
 
 // The public certificate, in PEM format, that you received from your SSL certificate provider.
+//
+// Example:
+//
+// -----BEGIN CERTIFICATE-----
+// MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbM..QswCQYDVQQGEwJKU
+// A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxE..TAPBgNVBAoTCEZyY
+// MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWB..gNVBAMTD0ZyYW5rN
+// YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmc..mFuazRkZC5jb20wH
+// ...
+// -----END CERTIFICATE-----
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CertificateOutput) PublicCertificate() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.PublicCertificate }).(pulumi.StringOutput)
 }

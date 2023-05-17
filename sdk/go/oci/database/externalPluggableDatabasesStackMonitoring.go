@@ -50,6 +50,9 @@ type ExternalPluggableDatabasesStackMonitoring struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) Enabling Stack Monitoring on External Pluggable Databases . Requires boolean value "true" or "false".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableStackMonitoring pulumi.BoolOutput `pulumi:"enableStackMonitoring"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId pulumi.StringOutput `pulumi:"externalDatabaseConnectorId"`
@@ -96,6 +99,9 @@ func GetExternalPluggableDatabasesStackMonitoring(ctx *pulumi.Context,
 // Input properties used for looking up and filtering ExternalPluggableDatabasesStackMonitoring resources.
 type externalPluggableDatabasesStackMonitoringState struct {
 	// (Updatable) Enabling Stack Monitoring on External Pluggable Databases . Requires boolean value "true" or "false".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableStackMonitoring *bool `pulumi:"enableStackMonitoring"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId *string `pulumi:"externalDatabaseConnectorId"`
@@ -105,6 +111,9 @@ type externalPluggableDatabasesStackMonitoringState struct {
 
 type ExternalPluggableDatabasesStackMonitoringState struct {
 	// (Updatable) Enabling Stack Monitoring on External Pluggable Databases . Requires boolean value "true" or "false".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableStackMonitoring pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId pulumi.StringPtrInput
@@ -118,6 +127,9 @@ func (ExternalPluggableDatabasesStackMonitoringState) ElementType() reflect.Type
 
 type externalPluggableDatabasesStackMonitoringArgs struct {
 	// (Updatable) Enabling Stack Monitoring on External Pluggable Databases . Requires boolean value "true" or "false".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableStackMonitoring bool `pulumi:"enableStackMonitoring"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId string `pulumi:"externalDatabaseConnectorId"`
@@ -128,6 +140,9 @@ type externalPluggableDatabasesStackMonitoringArgs struct {
 // The set of arguments for constructing a ExternalPluggableDatabasesStackMonitoring resource.
 type ExternalPluggableDatabasesStackMonitoringArgs struct {
 	// (Updatable) Enabling Stack Monitoring on External Pluggable Databases . Requires boolean value "true" or "false".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableStackMonitoring pulumi.BoolInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId pulumi.StringInput
@@ -223,6 +238,9 @@ func (o ExternalPluggableDatabasesStackMonitoringOutput) ToExternalPluggableData
 }
 
 // (Updatable) Enabling Stack Monitoring on External Pluggable Databases . Requires boolean value "true" or "false".
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ExternalPluggableDatabasesStackMonitoringOutput) EnableStackMonitoring() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ExternalPluggableDatabasesStackMonitoring) pulumi.BoolOutput { return v.EnableStackMonitoring }).(pulumi.BoolOutput)
 }

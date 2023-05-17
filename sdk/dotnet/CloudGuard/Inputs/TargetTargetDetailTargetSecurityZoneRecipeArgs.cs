@@ -32,12 +32,16 @@ namespace Pulumi.Oci.CloudGuard.Inputs
 
         /// <summary>
         /// The target description.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
         /// (Updatable) DetectorTemplate identifier.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -47,6 +51,8 @@ namespace Pulumi.Oci.CloudGuard.Inputs
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         public InputMap<object> FreeformTags
         {

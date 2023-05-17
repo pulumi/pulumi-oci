@@ -127,12 +127,18 @@ public final class NetworkSourceArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`&#34;vcnId&#34;: &#34;ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID&#34;, &#34;ipRanges&#34;: [ &#34;129.213.39.0/24&#34; ]`
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="virtualSourceLists")
     private @Nullable Output<List<NetworkSourceVirtualSourceListArgs>> virtualSourceLists;
 
     /**
      * @return (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`&#34;vcnId&#34;: &#34;ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID&#34;, &#34;ipRanges&#34;: [ &#34;129.213.39.0/24&#34; ]`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<List<NetworkSourceVirtualSourceListArgs>>> virtualSourceLists() {
@@ -340,6 +346,9 @@ public final class NetworkSourceArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param virtualSourceLists (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`&#34;vcnId&#34;: &#34;ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID&#34;, &#34;ipRanges&#34;: [ &#34;129.213.39.0/24&#34; ]`
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -351,6 +360,9 @@ public final class NetworkSourceArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param virtualSourceLists (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`&#34;vcnId&#34;: &#34;ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID&#34;, &#34;ipRanges&#34;: [ &#34;129.213.39.0/24&#34; ]`
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -360,6 +372,9 @@ public final class NetworkSourceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param virtualSourceLists (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`&#34;vcnId&#34;: &#34;ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID&#34;, &#34;ipRanges&#34;: [ &#34;129.213.39.0/24&#34; ]`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

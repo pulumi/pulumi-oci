@@ -18,7 +18,11 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>

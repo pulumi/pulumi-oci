@@ -260,12 +260,18 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
     /**
      * The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="planId", type=String.class, parameters={})
     private Output<String> planId;
 
     /**
      * @return The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> planId() {

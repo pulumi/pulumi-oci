@@ -57,6 +57,9 @@ type GeneratedScopedAccessToken struct {
 	// A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
 	PublicKey pulumi.StringOutput `pulumi:"publicKey"`
 	// Scope definition for the scoped access token
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Scope pulumi.StringOutput `pulumi:"scope"`
 	// The security token, signed by auth service
 	Token pulumi.StringOutput `pulumi:"token"`
@@ -100,6 +103,9 @@ type generatedScopedAccessTokenState struct {
 	// A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
 	PublicKey *string `pulumi:"publicKey"`
 	// Scope definition for the scoped access token
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Scope *string `pulumi:"scope"`
 	// The security token, signed by auth service
 	Token *string `pulumi:"token"`
@@ -109,6 +115,9 @@ type GeneratedScopedAccessTokenState struct {
 	// A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
 	PublicKey pulumi.StringPtrInput
 	// Scope definition for the scoped access token
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Scope pulumi.StringPtrInput
 	// The security token, signed by auth service
 	Token pulumi.StringPtrInput
@@ -122,6 +131,9 @@ type generatedScopedAccessTokenArgs struct {
 	// A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
 	PublicKey string `pulumi:"publicKey"`
 	// Scope definition for the scoped access token
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Scope string `pulumi:"scope"`
 }
 
@@ -130,6 +142,9 @@ type GeneratedScopedAccessTokenArgs struct {
 	// A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
 	PublicKey pulumi.StringInput
 	// Scope definition for the scoped access token
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Scope pulumi.StringInput
 }
 
@@ -226,6 +241,9 @@ func (o GeneratedScopedAccessTokenOutput) PublicKey() pulumi.StringOutput {
 }
 
 // Scope definition for the scoped access token
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o GeneratedScopedAccessTokenOutput) Scope() pulumi.StringOutput {
 	return o.ApplyT(func(v *GeneratedScopedAccessToken) pulumi.StringOutput { return v.Scope }).(pulumi.StringOutput)
 }

@@ -15,6 +15,9 @@ public final class UserAssessmentIgnoredTarget {
     /**
      * @return The OCID of the target database on which the user assessment is to be run.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private @Nullable String targetId;
     private @Nullable String userAssessmentId;
@@ -25,6 +28,9 @@ public final class UserAssessmentIgnoredTarget {
     }
     /**
      * @return The OCID of the target database on which the user assessment is to be run.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> targetId() {

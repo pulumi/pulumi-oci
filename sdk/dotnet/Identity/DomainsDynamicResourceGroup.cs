@@ -45,48 +45,130 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("compartmentOcid")]
         public Output<string> CompartmentOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Output("deleteInProgress")]
         public Output<bool> DeleteInProgress { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) text that explains the purpose of this Dynamic Resource Group
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Description
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Description]]
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) User-friendly, mutable identifier
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCsvAttributeName: Display Name
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Name, deprecatedColumnHeaderName:Display Name]]
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: global
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("domainOcid")]
         public Output<string> DomainOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of appRoles that are currently granted to this Dynamic Resource Group.  The Identity service will assert these AppRoles for any resource that satisfies the matching-rule of this DynamicResourceGroup.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Output("dynamicGroupAppRoles")]
         public Output<ImmutableArray<Outputs.DomainsDynamicResourceGroupDynamicGroupAppRole>> DynamicGroupAppRoles { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Grants assigned to group
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsAddedSinceVersion: 3
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Output("grants")]
         public Output<ImmutableArray<Outputs.DomainsDynamicResourceGroupGrant>> Grants { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The User or App who created the Resource
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: true
+        /// * returned: default
+        /// * type: complex
         /// </summary>
         [Output("idcsCreatedBies")]
         public Output<ImmutableArray<Outputs.DomainsDynamicResourceGroupIdcsCreatedBy>> IdcsCreatedBies { get; private set; } = null!;
@@ -99,36 +181,92 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) The User or App who modified the Resource
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
         /// </summary>
         [Output("idcsLastModifiedBies")]
         public Output<ImmutableArray<Outputs.DomainsDynamicResourceGroupIdcsLastModifiedBy>> IdcsLastModifiedBies { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The release number when the resource was upgraded.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("idcsLastUpgradedInRelease")]
         public Output<string> IdcsLastUpgradedInRelease { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("idcsPreventedOperations")]
         public Output<ImmutableArray<string>> IdcsPreventedOperations { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Store as a string the matching-rule for this Dynamic Resource Group. This may match any number of Apps in this Domain, as well as matching any number of Oracle Cloud Infrastructure resources that are not in any Domain but that are in the Oracle Cloud Infrastructure Compartment that contains this Domain.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("matchingRule")]
         public Output<string> MatchingRule { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+        /// * type: complex
         /// </summary>
         [Output("metas")]
         public Output<ImmutableArray<Outputs.DomainsDynamicResourceGroupMeta>> Metas { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: global
         /// </summary>
         [Output("ocid")]
         public Output<string> Ocid { get; private set; } = null!;
@@ -141,18 +279,48 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("schemas")]
         public Output<ImmutableArray<string>> Schemas { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of tags on this resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [key, value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Output("tags")]
         public Output<ImmutableArray<Outputs.DomainsDynamicResourceGroupTag>> Tags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("tenancyOcid")]
         public Output<string> TenancyOcid { get; private set; } = null!;
@@ -235,12 +403,35 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) text that explains the purpose of this Dynamic Resource Group
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Description
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Description]]
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
         /// (Updatable) User-friendly, mutable identifier
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCsvAttributeName: Display Name
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Name, deprecatedColumnHeaderName:Display Name]]
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: global
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -253,12 +444,31 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Store as a string the matching-rule for this Dynamic Resource Group. This may match any number of Apps in this Domain, as well as matching any number of Oracle Cloud Infrastructure resources that are not in any Domain but that are in the Oracle Cloud Infrastructure Compartment that contains this Domain.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("matchingRule", required: true)]
         public Input<string> MatchingRule { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: global
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }
@@ -274,6 +484,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public InputList<string> Schemas
         {
@@ -286,6 +506,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) A list of tags on this resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [key, value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsDynamicResourceGroupTagArgs> Tags
         {
@@ -333,30 +563,83 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("compartmentOcid")]
         public Input<string>? CompartmentOcid { get; set; }
 
         /// <summary>
         /// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("deleteInProgress")]
         public Input<bool>? DeleteInProgress { get; set; }
 
         /// <summary>
         /// (Updatable) text that explains the purpose of this Dynamic Resource Group
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Description
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Description]]
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
         /// (Updatable) User-friendly, mutable identifier
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCsvAttributeName: Display Name
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Name, deprecatedColumnHeaderName:Display Name]]
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: global
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("domainOcid")]
         public Input<string>? DomainOcid { get; set; }
@@ -366,6 +649,17 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) A list of appRoles that are currently granted to this Dynamic Resource Group.  The Identity service will assert these AppRoles for any resource that satisfies the matching-rule of this DynamicResourceGroup.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsDynamicResourceGroupDynamicGroupAppRoleGetArgs> DynamicGroupAppRoles
         {
@@ -378,6 +672,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Grants assigned to group
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsAddedSinceVersion: 3
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsDynamicResourceGroupGrantGetArgs> Grants
         {
@@ -390,6 +694,14 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) The User or App who created the Resource
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: true
+        /// * returned: default
+        /// * type: complex
         /// </summary>
         public InputList<Inputs.DomainsDynamicResourceGroupIdcsCreatedByGetArgs> IdcsCreatedBies
         {
@@ -408,6 +720,14 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) The User or App who modified the Resource
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
         /// </summary>
         public InputList<Inputs.DomainsDynamicResourceGroupIdcsLastModifiedByGetArgs> IdcsLastModifiedBies
         {
@@ -417,6 +737,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) The release number when the resource was upgraded.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("idcsLastUpgradedInRelease")]
         public Input<string>? IdcsLastUpgradedInRelease { get; set; }
@@ -426,6 +756,15 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public InputList<string> IdcsPreventedOperations
         {
@@ -435,6 +774,15 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Store as a string the matching-rule for this Dynamic Resource Group. This may match any number of Apps in this Domain, as well as matching any number of Oracle Cloud Infrastructure resources that are not in any Domain but that are in the Oracle Cloud Infrastructure Compartment that contains this Domain.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("matchingRule")]
         public Input<string>? MatchingRule { get; set; }
@@ -444,6 +792,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+        /// * type: complex
         /// </summary>
         public InputList<Inputs.DomainsDynamicResourceGroupMetaGetArgs> Metas
         {
@@ -453,6 +811,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: global
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }
@@ -468,6 +836,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public InputList<string> Schemas
         {
@@ -480,6 +858,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) A list of tags on this resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [key, value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsDynamicResourceGroupTagGetArgs> Tags
         {
@@ -489,6 +877,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("tenancyOcid")]
         public Input<string>? TenancyOcid { get; set; }

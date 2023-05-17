@@ -154,12 +154,18 @@ public class Migration extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Replication schedule identifier
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="replicationScheduleId", type=String.class, parameters={})
     private Output<String> replicationScheduleId;
 
     /**
      * @return (Updatable) Replication schedule identifier
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> replicationScheduleId() {

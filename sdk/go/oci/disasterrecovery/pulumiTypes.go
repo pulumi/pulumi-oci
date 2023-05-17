@@ -774,6 +774,9 @@ type DrPlanPlanGroup struct {
 	// The list of steps in this plan group.
 	Steps []DrPlanPlanGroupStep `pulumi:"steps"`
 	// The type of DR Plan to be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type *string `pulumi:"type"`
 }
 
@@ -796,6 +799,9 @@ type DrPlanPlanGroupArgs struct {
 	// The list of steps in this plan group.
 	Steps DrPlanPlanGroupStepArrayInput `pulumi:"steps"`
 	// The type of DR Plan to be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -866,6 +872,9 @@ func (o DrPlanPlanGroupOutput) Steps() DrPlanPlanGroupStepArrayOutput {
 }
 
 // The type of DR Plan to be created.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DrPlanPlanGroupOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroup) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -906,6 +915,9 @@ type DrPlanPlanGroupStep struct {
 	// The timeout in seconds for executing this step.  Example: `600`
 	Timeout *int `pulumi:"timeout"`
 	// The type of DR Plan to be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type *string `pulumi:"type"`
 	// The details for a user-defined step in a DR Plan.
 	UserDefinedSteps []DrPlanPlanGroupStepUserDefinedStep `pulumi:"userDefinedSteps"`
@@ -938,6 +950,9 @@ type DrPlanPlanGroupStepArgs struct {
 	// The timeout in seconds for executing this step.  Example: `600`
 	Timeout pulumi.IntPtrInput `pulumi:"timeout"`
 	// The type of DR Plan to be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The details for a user-defined step in a DR Plan.
 	UserDefinedSteps DrPlanPlanGroupStepUserDefinedStepArrayInput `pulumi:"userDefinedSteps"`
@@ -1030,6 +1045,9 @@ func (o DrPlanPlanGroupStepOutput) Timeout() pulumi.IntPtrOutput {
 }
 
 // The type of DR Plan to be created.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DrPlanPlanGroupStepOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStep) *string { return v.Type }).(pulumi.StringPtrOutput)
 }

@@ -92,6 +92,9 @@ type MaskingPolicy struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	AddMaskingColumnsFromSdmTrigger pulumi.IntPtrOutput `pulumi:"addMaskingColumnsFromSdmTrigger"`
 	// (Updatable) The source of masking columns.
 	ColumnSources MaskingPolicyColumnSourceArrayOutput `pulumi:"columnSources"`
@@ -163,6 +166,9 @@ func GetMaskingPolicy(ctx *pulumi.Context,
 // Input properties used for looking up and filtering MaskingPolicy resources.
 type maskingPolicyState struct {
 	// (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	AddMaskingColumnsFromSdmTrigger *int `pulumi:"addMaskingColumnsFromSdmTrigger"`
 	// (Updatable) The source of masking columns.
 	ColumnSources []MaskingPolicyColumnSource `pulumi:"columnSources"`
@@ -200,6 +206,9 @@ type maskingPolicyState struct {
 
 type MaskingPolicyState struct {
 	// (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	AddMaskingColumnsFromSdmTrigger pulumi.IntPtrInput
 	// (Updatable) The source of masking columns.
 	ColumnSources MaskingPolicyColumnSourceArrayInput
@@ -241,6 +250,9 @@ func (MaskingPolicyState) ElementType() reflect.Type {
 
 type maskingPolicyArgs struct {
 	// (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	AddMaskingColumnsFromSdmTrigger *int `pulumi:"addMaskingColumnsFromSdmTrigger"`
 	// (Updatable) The source of masking columns.
 	ColumnSources []MaskingPolicyColumnSource `pulumi:"columnSources"`
@@ -273,6 +285,9 @@ type maskingPolicyArgs struct {
 // The set of arguments for constructing a MaskingPolicy resource.
 type MaskingPolicyArgs struct {
 	// (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	AddMaskingColumnsFromSdmTrigger pulumi.IntPtrInput
 	// (Updatable) The source of masking columns.
 	ColumnSources MaskingPolicyColumnSourceArrayInput
@@ -390,6 +405,9 @@ func (o MaskingPolicyOutput) ToMaskingPolicyOutputWithContext(ctx context.Contex
 }
 
 // (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MaskingPolicyOutput) AddMaskingColumnsFromSdmTrigger() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *MaskingPolicy) pulumi.IntPtrOutput { return v.AddMaskingColumnsFromSdmTrigger }).(pulumi.IntPtrOutput)
 }

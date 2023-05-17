@@ -61,7 +61,11 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<string> ResourceId { get; private set; } = null!;
 
         /// <summary>
-        /// The resource type of the resource for which categories are managed.
+        /// The resource type of the resource for which categories are managed. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("resourceType")]
         public Output<string> ResourceType { get; private set; } = null!;
@@ -137,7 +141,11 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string> ResourceId { get; set; } = null!;
 
         /// <summary>
-        /// The resource type of the resource for which categories are managed.
+        /// The resource type of the resource for which categories are managed. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("resourceType", required: true)]
         public Input<string> ResourceType { get; set; } = null!;
@@ -175,7 +183,11 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? ResourceId { get; set; }
 
         /// <summary>
-        /// The resource type of the resource for which categories are managed.
+        /// The resource type of the resource for which categories are managed. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("resourceType")]
         public Input<string>? ResourceType { get; set; }

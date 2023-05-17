@@ -140,12 +140,26 @@ public final class DkimState extends com.pulumi.resources.ResourceArgs {
     /**
      * The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you may be subscribed to. Selectors limited to ASCII characters may use alphanumeric, dash (&#34;-&#34;), and dot (&#34;.&#34;) characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
      * 
+     * Avoid entering confidential information.
+     * 
+     * Example: `mydomain-phx-20210228`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you may be subscribed to. Selectors limited to ASCII characters may use alphanumeric, dash (&#34;-&#34;), and dot (&#34;.&#34;) characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
+     * 
+     * Avoid entering confidential information.
+     * 
+     * Example: `mydomain-phx-20210228`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> name() {
@@ -435,6 +449,13 @@ public final class DkimState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param name The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you may be subscribed to. Selectors limited to ASCII characters may use alphanumeric, dash (&#34;-&#34;), and dot (&#34;.&#34;) characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
          * 
+         * Avoid entering confidential information.
+         * 
+         * Example: `mydomain-phx-20210228`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -445,6 +466,13 @@ public final class DkimState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you may be subscribed to. Selectors limited to ASCII characters may use alphanumeric, dash (&#34;-&#34;), and dot (&#34;.&#34;) characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
+         * 
+         * Avoid entering confidential information.
+         * 
+         * Example: `mydomain-phx-20210228`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

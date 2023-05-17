@@ -272,6 +272,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("standbyMaintenanceBufferInDays")]
         public Output<int> StandbyMaintenanceBufferInDays { get; private set; } = null!;
@@ -525,6 +529,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("standbyMaintenanceBufferInDays")]
         public Input<int>? StandbyMaintenanceBufferInDays { get; set; }
@@ -826,6 +834,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("standbyMaintenanceBufferInDays")]
         public Input<int>? StandbyMaintenanceBufferInDays { get; set; }

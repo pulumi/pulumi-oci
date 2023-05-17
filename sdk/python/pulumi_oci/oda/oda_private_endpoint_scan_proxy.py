@@ -25,7 +25,11 @@ class OdaPrivateEndpointScanProxyArgs:
         :param pulumi.Input[str] oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] protocol: The protocol used for communication between client, scanProxy and RAC's scan listeners
         :param pulumi.Input[Sequence[pulumi.Input['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]] scan_listener_infos: The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
-        :param pulumi.Input[str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs
+        :param pulumi.Input[str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "oda_private_endpoint_id", oda_private_endpoint_id)
         pulumi.set(__self__, "protocol", protocol)
@@ -72,7 +76,11 @@ class OdaPrivateEndpointScanProxyArgs:
     @pulumi.getter(name="scanListenerType")
     def scan_listener_type(self) -> pulumi.Input[str]:
         """
-        Type indicating whether Scan listener is specified by its FQDN or list of IPs
+        Type indicating whether Scan listener is specified by its FQDN or list of IPs 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "scan_listener_type")
 
@@ -95,7 +103,11 @@ class _OdaPrivateEndpointScanProxyState:
         :param pulumi.Input[str] oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] protocol: The protocol used for communication between client, scanProxy and RAC's scan listeners
         :param pulumi.Input[Sequence[pulumi.Input['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]] scan_listener_infos: The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
-        :param pulumi.Input[str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs
+        :param pulumi.Input[str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the ODA Private Endpoint Scan Proxy.
         :param pulumi.Input[str] time_created: When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         """
@@ -152,7 +164,11 @@ class _OdaPrivateEndpointScanProxyState:
     @pulumi.getter(name="scanListenerType")
     def scan_listener_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Type indicating whether Scan listener is specified by its FQDN or list of IPs
+        Type indicating whether Scan listener is specified by its FQDN or list of IPs 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "scan_listener_type")
 
@@ -233,7 +249,11 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
         :param pulumi.Input[str] oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] protocol: The protocol used for communication between client, scanProxy and RAC's scan listeners
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]]] scan_listener_infos: The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
-        :param pulumi.Input[str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs
+        :param pulumi.Input[str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -342,7 +362,11 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
         :param pulumi.Input[str] oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] protocol: The protocol used for communication between client, scanProxy and RAC's scan listeners
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]]] scan_listener_infos: The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
-        :param pulumi.Input[str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs
+        :param pulumi.Input[str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the ODA Private Endpoint Scan Proxy.
         :param pulumi.Input[str] time_created: When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         """
@@ -386,7 +410,11 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
     @pulumi.getter(name="scanListenerType")
     def scan_listener_type(self) -> pulumi.Output[str]:
         """
-        Type indicating whether Scan listener is specified by its FQDN or list of IPs
+        Type indicating whether Scan listener is specified by its FQDN or list of IPs 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "scan_listener_type")
 

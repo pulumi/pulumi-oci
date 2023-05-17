@@ -59,6 +59,9 @@ type VolumeBackupPolicyAssignment struct {
 	// The OCID of the volume to assign the policy to.
 	AssetId pulumi.StringOutput `pulumi:"assetId"`
 	// The OCID of the volume backup policy to assign to the volume.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PolicyId pulumi.StringOutput `pulumi:"policyId"`
 	// The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -102,6 +105,9 @@ type volumeBackupPolicyAssignmentState struct {
 	// The OCID of the volume to assign the policy to.
 	AssetId *string `pulumi:"assetId"`
 	// The OCID of the volume backup policy to assign to the volume.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PolicyId *string `pulumi:"policyId"`
 	// The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -111,6 +117,9 @@ type VolumeBackupPolicyAssignmentState struct {
 	// The OCID of the volume to assign the policy to.
 	AssetId pulumi.StringPtrInput
 	// The OCID of the volume backup policy to assign to the volume.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PolicyId pulumi.StringPtrInput
 	// The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringPtrInput
@@ -124,6 +133,9 @@ type volumeBackupPolicyAssignmentArgs struct {
 	// The OCID of the volume to assign the policy to.
 	AssetId string `pulumi:"assetId"`
 	// The OCID of the volume backup policy to assign to the volume.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PolicyId string `pulumi:"policyId"`
 }
 
@@ -132,6 +144,9 @@ type VolumeBackupPolicyAssignmentArgs struct {
 	// The OCID of the volume to assign the policy to.
 	AssetId pulumi.StringInput
 	// The OCID of the volume backup policy to assign to the volume.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PolicyId pulumi.StringInput
 }
 
@@ -228,6 +243,9 @@ func (o VolumeBackupPolicyAssignmentOutput) AssetId() pulumi.StringOutput {
 }
 
 // The OCID of the volume backup policy to assign to the volume.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o VolumeBackupPolicyAssignmentOutput) PolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VolumeBackupPolicyAssignment) pulumi.StringOutput { return v.PolicyId }).(pulumi.StringOutput)
 }

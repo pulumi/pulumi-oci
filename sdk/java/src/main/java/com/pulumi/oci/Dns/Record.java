@@ -17,6 +17,16 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * **Deprecated. Use oci.Dns.Rrset instead.**
+ * 
+ * This resource provides the Record resource in Oracle Cloud Infrastructure DNS service.
+ * 
+ * Replaces records in the specified zone with the records specified in the
+ * request body. If a specified record does not exist, it will be created.
+ * If the record exists, then it will be updated to represent the record in
+ * the body of the request. If a record in the zone does not exist in the
+ * request body, the record will be removed from the zone.
+ * 
  * ## Example Usage
  * ```java
  * package generated_program;
@@ -182,6 +192,9 @@ public class Record extends com.pulumi.resources.CustomResource {
     /**
      * The name or OCID of the target zone.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      * @deprecated
      * The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
      * 
@@ -192,6 +205,9 @@ public class Record extends com.pulumi.resources.CustomResource {
 
     /**
      * @return The name or OCID of the target zone.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> zoneNameOrId() {

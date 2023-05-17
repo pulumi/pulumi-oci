@@ -19,6 +19,9 @@ namespace Pulumi.Oci.Waas.Outputs
         public readonly ImmutableArray<string> Exclusions;
         /// <summary>
         /// The target of the exclusion.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string? Target;
 

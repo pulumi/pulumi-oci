@@ -55,6 +55,9 @@ type Hostname struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the hostname to.
 	LoadBalancerId pulumi.StringOutput `pulumi:"loadBalancerId"`
 	// A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name  pulumi.StringOutput `pulumi:"name"`
 	State pulumi.StringOutput `pulumi:"state"`
 }
@@ -99,6 +102,9 @@ type hostnameState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the hostname to.
 	LoadBalancerId *string `pulumi:"loadBalancerId"`
 	// A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name  *string `pulumi:"name"`
 	State *string `pulumi:"state"`
 }
@@ -109,6 +115,9 @@ type HostnameState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the hostname to.
 	LoadBalancerId pulumi.StringPtrInput
 	// A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name  pulumi.StringPtrInput
 	State pulumi.StringPtrInput
 }
@@ -123,6 +132,9 @@ type hostnameArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the hostname to.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
 	// A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 }
 
@@ -133,6 +145,9 @@ type HostnameArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the hostname to.
 	LoadBalancerId pulumi.StringInput
 	// A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput
 }
 
@@ -234,6 +249,9 @@ func (o HostnameOutput) LoadBalancerId() pulumi.StringOutput {
 }
 
 // A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o HostnameOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Hostname) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

@@ -31,12 +31,18 @@ public final class GeneratedScopedAccessTokenArgs extends com.pulumi.resources.R
     /**
      * Scope definition for the scoped access token
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="scope", required=true)
     private Output<String> scope;
 
     /**
      * @return Scope definition for the scoped access token
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> scope() {
@@ -92,6 +98,9 @@ public final class GeneratedScopedAccessTokenArgs extends com.pulumi.resources.R
         /**
          * @param scope Scope definition for the scoped access token
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -102,6 +111,9 @@ public final class GeneratedScopedAccessTokenArgs extends com.pulumi.resources.R
 
         /**
          * @param scope Scope definition for the scoped access token
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

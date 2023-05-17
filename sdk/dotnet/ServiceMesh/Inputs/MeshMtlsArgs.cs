@@ -13,7 +13,11 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
     public sealed class MeshMtlsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
+        /// (Updatable) DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("minimum", required: true)]
         public Input<string> Minimum { get; set; } = null!;

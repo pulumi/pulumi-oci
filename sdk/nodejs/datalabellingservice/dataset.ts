@@ -129,6 +129,10 @@ export class Dataset extends pulumi.CustomResource {
     public readonly labelSet!: pulumi.Output<outputs.DataLabellingService.DatasetLabelSet>;
     /**
      * (Updatable) The labeling instructions for human labelers in rich text format
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly labelingInstructions!: pulumi.Output<string>;
     /**
@@ -260,6 +264,10 @@ export interface DatasetState {
     labelSet?: pulumi.Input<inputs.DataLabellingService.DatasetLabelSet>;
     /**
      * (Updatable) The labeling instructions for human labelers in rich text format
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     labelingInstructions?: pulumi.Input<string>;
     /**
@@ -326,6 +334,10 @@ export interface DatasetArgs {
     labelSet: pulumi.Input<inputs.DataLabellingService.DatasetLabelSet>;
     /**
      * (Updatable) The labeling instructions for human labelers in rich text format
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     labelingInstructions?: pulumi.Input<string>;
 }

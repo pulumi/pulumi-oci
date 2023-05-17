@@ -2867,6 +2867,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "FusionApps/fusionEnvironmentServiceAttachment",
+  "fqn": "pulumi_oci.fusionapps",
+  "classes": {
+   "oci:FusionApps/fusionEnvironmentServiceAttachment:FusionEnvironmentServiceAttachment": "FusionEnvironmentServiceAttachment"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "GenericArtifactsContent/artifactByPath",
   "fqn": "pulumi_oci.genericartifactscontent",
   "classes": {

@@ -19,6 +19,8 @@ namespace Pulumi.Oci.Mysql.Outputs
         public readonly bool? Autocommit;
         /// <summary>
         /// If enabled, the server stores all temporary tables on disk rather than in memory.
+        /// 
+        /// bigTables corresponds to the MySQL server variable [big_tables](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_big_tables).
         /// </summary>
         public readonly bool? BigTables;
         /// <summary>
@@ -43,14 +45,22 @@ namespace Pulumi.Oci.Mysql.Outputs
         public readonly string? CompletionType;
         /// <summary>
         /// The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
+        /// 
+        /// connectTimeout corresponds to the MySQL system variable [connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_connect_timeout)
+        /// 
+        /// Increasing the connect_timeout value might help if clients frequently encounter errors of the form "Lost connection to MySQL server at 'XXX', system error: errno".
         /// </summary>
         public readonly int? ConnectTimeout;
         /// <summary>
         /// Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+        /// 
+        /// connectionMemoryChunkSize corresponds to the MySQL system variable [connection_memory_chunk_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_chunk_size).
         /// </summary>
         public readonly int? ConnectionMemoryChunkSize;
         /// <summary>
         /// Set the maximum amount of memory that can be used by a single user connection.
+        /// 
+        /// connectionMemoryLimit corresponds to the MySQL system variable [connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_limit).
         /// </summary>
         public readonly string? ConnectionMemoryLimit;
         /// <summary>
@@ -71,10 +81,14 @@ namespace Pulumi.Oci.Mysql.Outputs
         public readonly int? GeneratedRandomPasswordLength;
         /// <summary>
         /// Set the total amount of memory that can be used by all user connections.
+        /// 
+        /// globalConnectionMemoryLimit corresponds to the MySQL system variable [global_connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_limit).
         /// </summary>
         public readonly string? GlobalConnectionMemoryLimit;
         /// <summary>
         /// Determines whether the MySQL server calculates Global_connection_memory.
+        /// 
+        /// globalConnectionMemoryTracking corresponds to the MySQL system variable [global_connection_memory_tracking](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_tracking).
         /// </summary>
         public readonly bool? GlobalConnectionMemoryTracking;
         /// <summary>
@@ -91,6 +105,12 @@ namespace Pulumi.Oci.Mysql.Outputs
         public readonly int? InformationSchemaStatsExpiry;
         /// <summary>
         /// Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+        /// 
+        /// innodbBufferPoolDumpPct corresponds to the MySQL InnoDB system variable [innodb_buffer_pool_dump_pct](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_buffer_pool_dump_pct).
+        /// 
+        /// The range is 1 to 100. The default value is 25.
+        /// 
+        /// For example, if there are 4 buffer pools with 100 pages each, and innodb_buffer_pool_dump_pct is set to 25, the 25 most recently used pages from each buffer pool are dumped.
         /// </summary>
         public readonly int? InnodbBufferPoolDumpPct;
         /// <summary>
@@ -99,6 +119,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         public readonly int? InnodbBufferPoolInstances;
         /// <summary>
         /// The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
+        /// 
+        /// innodbBufferPoolSize corresponds to the MySQL server system variable [innodb_buffer_pool_size](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size).
+        /// 
+        /// The default and maximum values depend on the amount of RAM provisioned by the shape. See [Default User Variables](https://www.terraform.io/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
         /// </summary>
         public readonly string? InnodbBufferPoolSize;
         /// <summary>
@@ -139,26 +163,52 @@ namespace Pulumi.Oci.Mysql.Outputs
         public readonly int? InnodbLockWaitTimeout;
         /// <summary>
         /// Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
+        /// 
+        /// This is the MySQL variable "innodb_log_writer_threads". For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_log_writer_threads)
         /// </summary>
         public readonly bool? InnodbLogWriterThreads;
         /// <summary>
         /// The desired maximum purge lag in terms of transactions.
+        /// 
+        /// InnoDB maintains a list of transactions that have index records delete-marked by UPDATE or DELETE operations. The length of the list is the purge lag.
+        /// 
+        /// If this value is exceeded, a delay is imposed on INSERT, UPDATE, and DELETE operations to allow time for purge to catch up.
+        /// 
+        /// The default value is 0, which means there is no maximum purge lag and no delay.
+        /// 
+        /// innodbMaxPurgeLag corresponds to the MySQL server system variable [innodb_max_purge_lag](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag).
         /// </summary>
         public readonly string? InnodbMaxPurgeLag;
         /// <summary>
         /// The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
+        /// 
+        /// The specified innodb_max_purge_lag_delay value is an upper limit on the delay period.
+        /// 
+        /// innodbMaxPurgeLagDelay corresponds to the MySQL server system variable [innodb_max_purge_lag_delay](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag_delay).
         /// </summary>
         public readonly int? InnodbMaxPurgeLagDelay;
         /// <summary>
         /// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+        /// 
+        /// innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable [innodb_stats_persistent_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
+        /// 
+        /// innodb_stats_persistent_sample_pages only applies when innodb_stats_persistent is enabled for a table; when innodb_stats_persistent is disabled, innodb_stats_transient_sample_pages applies instead.
         /// </summary>
         public readonly string? InnodbStatsPersistentSamplePages;
         /// <summary>
         /// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+        /// 
+        /// innodbStatsTransientSamplePages corresponds to the MySQL InnoDB system variable [innodb_stats_transient_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_transient_sample_pages)
+        /// 
+        /// innodb_stats_transient_sample_pages only applies when innodb_stats_persistent is disabled for a table; when innodb_stats_persistent is enabled, innodb_stats_persistent_sample_pages applies instead.
+        /// 
+        /// innodb_stats_persistent is ON by default and cannot be changed. It is possible to override it using the STATS_PERSISTENT clause of the [CREATE TABLE](https://dev.mysql.com/doc/refman/8.0/en/create-table.html) and [ALTER TABLE](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html) statements.
         /// </summary>
         public readonly string? InnodbStatsTransientSamplePages;
         /// <summary>
         /// The number of seconds the server waits for activity on an interactive connection before closing it.
+        /// 
+        /// interactiveTimeout corresponds to the MySQL system variable. [interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
         /// </summary>
         public readonly int? InteractiveTimeout;
         /// <summary>
@@ -171,10 +221,14 @@ namespace Pulumi.Oci.Mysql.Outputs
         public readonly string? MandatoryRoles;
         /// <summary>
         /// The maximum size of one packet or any generated/intermediate string.
+        /// 
+        /// This is the mysql variable "max_allowed_packet".
         /// </summary>
         public readonly int? MaxAllowedPacket;
         /// <summary>
         /// Sets the size of the transaction cache.
+        /// 
+        /// maxBinlogCacheSize corresponds to the MySQL server system variable [max_binlog_cache_size](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_max_binlog_cache_size).
         /// </summary>
         public readonly string? MaxBinlogCacheSize;
         /// <summary>
@@ -191,6 +245,8 @@ namespace Pulumi.Oci.Mysql.Outputs
         public readonly string? MaxExecutionTime;
         /// <summary>
         /// This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+        /// 
+        /// maxHeapTableSize corresponds to the MySQL system variable [max_heap_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_heap_table_size)
         /// </summary>
         public readonly string? MaxHeapTableSize;
         /// <summary>
@@ -207,6 +263,8 @@ namespace Pulumi.Oci.Mysql.Outputs
         public readonly int? MysqlZstdDefaultCompressionLevel;
         /// <summary>
         /// The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
+        /// 
+        /// mysqlxConnectTimeout corresponds to the MySQL X Plugin system variable [mysqlx_connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_connect_timeout)
         /// </summary>
         public readonly int? MysqlxConnectTimeout;
         /// <summary>
@@ -231,6 +289,8 @@ namespace Pulumi.Oci.Mysql.Outputs
         public readonly int? MysqlxIdleWorkerThreadTimeout;
         /// <summary>
         /// The number of seconds to wait for interactive clients to timeout.
+        /// 
+        /// mysqlxInteractiveTimeout corresponds to the MySQL X Plugin system variable. [mysqlx_interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_interactive_timeout)
         /// </summary>
         public readonly int? MysqlxInteractiveTimeout;
         /// <summary>
@@ -243,6 +303,8 @@ namespace Pulumi.Oci.Mysql.Outputs
         public readonly int? MysqlxLz4maxClientCompressionLevel;
         /// <summary>
         /// The maximum size of network packets that can be received by X Plugin.
+        /// 
+        /// This is the mysql variable "mysqlx_max_allowed_packet".
         /// </summary>
         public readonly int? MysqlxMaxAllowedPacket;
         /// <summary>
@@ -251,14 +313,20 @@ namespace Pulumi.Oci.Mysql.Outputs
         public readonly int? MysqlxMinWorkerThreads;
         /// <summary>
         /// The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
+        /// 
+        /// mysqlxReadTimeout corresponds to the MySQL X Plugin system variable [mysqlx_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_read_timeout)
         /// </summary>
         public readonly int? MysqlxReadTimeout;
         /// <summary>
         /// The number of seconds that X Plugin waits for activity on a connection.
+        /// 
+        /// mysqlxWaitTimeout corresponds to the MySQL X Plugin system variable. [mysqlx_wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_wait_timeout)
         /// </summary>
         public readonly int? MysqlxWaitTimeout;
         /// <summary>
         /// The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
+        /// 
+        /// mysqlxReadmysqlxWriteTimeoutTimeout corresponds to the MySQL X Plugin system variable [mysqlx_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_write_timeout)
         /// </summary>
         public readonly int? MysqlxWriteTimeout;
         /// <summary>
@@ -271,10 +339,14 @@ namespace Pulumi.Oci.Mysql.Outputs
         public readonly int? MysqlxZstdMaxClientCompressionLevel;
         /// <summary>
         /// The number of seconds to wait for more data from a connection before aborting the read.
+        /// 
+        /// netReadTimeout corresponds to the MySQL system variable [net_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_read_timeout)
         /// </summary>
         public readonly int? NetReadTimeout;
         /// <summary>
         /// The number of seconds to wait for a block to be written to a connection before aborting the write.
+        /// 
+        /// netWriteTimeout corresponds to the MySQL system variable [net_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_write_timeout)
         /// </summary>
         public readonly int? NetWriteTimeout;
         /// <summary>
@@ -295,6 +367,8 @@ namespace Pulumi.Oci.Mysql.Outputs
         public readonly int? RegexpTimeLimit;
         /// <summary>
         /// Each session that must perform a sort allocates a buffer of this size.
+        /// 
+        /// sortBufferSize corresponds to the MySQL system variable [sort_buffer_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
         /// </summary>
         public readonly string? SortBufferSize;
         /// <summary>
@@ -319,10 +393,18 @@ namespace Pulumi.Oci.Mysql.Outputs
         public readonly int? ThreadPoolMaxTransactionsLimit;
         /// <summary>
         /// Initializes the time zone for each client that connects.
+        /// 
+        /// This corresponds to the MySQL System Variable "time_zone".
+        /// 
+        /// The values can be given in one of the following formats, none of which are case-sensitive:
+        /// * As a string indicating an offset from UTC of the form [H]H:MM, prefixed with a + or -, such as '+10:00', '-6:00', or '+05:30'. The permitted range is '-13:59' to '+14:00', inclusive.
+        /// * As a named time zone, as defined by the "IANA Time Zone database", such as 'Europe/Helsinki', 'US/Eastern', 'MET', or 'UTC'.
         /// </summary>
         public readonly string? TimeZone;
         /// <summary>
         /// The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+        /// 
+        /// tmp_table_size corresponds to the MySQL system variable [tmp_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_tmp_table_size)
         /// </summary>
         public readonly string? TmpTableSize;
         /// <summary>
@@ -331,6 +413,12 @@ namespace Pulumi.Oci.Mysql.Outputs
         public readonly string? TransactionIsolation;
         /// <summary>
         /// The number of seconds the server waits for activity on a noninteractive connection before closing it.
+        /// 
+        /// waitTimeout corresponds to the MySQL system variable. [wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_wait_timeout)
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly int? WaitTimeout;
 

@@ -39,6 +39,8 @@ public final class SecurityListIngressSecurityRuleArgs extends com.pulumi.resour
      * * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
      * * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
      * 
+     * If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 (&#34;Destination Unreachable&#34;) code 4 (&#34;Fragmentation Needed and Don&#39;t Fragment was Set&#34;). If you need to specify multiple codes for a single type, create a separate security list rule for each.
+     * 
      */
     @Import(name="icmpOptions")
     private @Nullable Output<SecurityListIngressSecurityRuleIcmpOptionsArgs> icmpOptions;
@@ -47,6 +49,8 @@ public final class SecurityListIngressSecurityRuleArgs extends com.pulumi.resour
      * @return (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
      * * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
      * * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+     * 
+     * If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 (&#34;Destination Unreachable&#34;) code 4 (&#34;Fragmentation Needed and Don&#39;t Fragment was Set&#34;). If you need to specify multiple codes for a single type, create a separate security list rule for each.
      * 
      */
     public Optional<Output<SecurityListIngressSecurityRuleIcmpOptionsArgs>> icmpOptions() {
@@ -71,12 +75,20 @@ public final class SecurityListIngressSecurityRuleArgs extends com.pulumi.resour
     /**
      * (Updatable) Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
      * 
+     * Allowed values:
+     * * IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you&#39;re setting up a security list rule for traffic coming from a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
+     * 
      */
     @Import(name="source", required=true)
     private Output<String> source;
 
     /**
      * @return (Updatable) Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
+     * 
+     * Allowed values:
+     * * IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you&#39;re setting up a security list rule for traffic coming from a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
      * 
      */
     public Output<String> source() {
@@ -200,6 +212,8 @@ public final class SecurityListIngressSecurityRuleArgs extends com.pulumi.resour
          * * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
          * * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
          * 
+         * If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 (&#34;Destination Unreachable&#34;) code 4 (&#34;Fragmentation Needed and Don&#39;t Fragment was Set&#34;). If you need to specify multiple codes for a single type, create a separate security list rule for each.
+         * 
          * @return builder
          * 
          */
@@ -212,6 +226,8 @@ public final class SecurityListIngressSecurityRuleArgs extends com.pulumi.resour
          * @param icmpOptions (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
          * * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
          * * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+         * 
+         * If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 (&#34;Destination Unreachable&#34;) code 4 (&#34;Fragmentation Needed and Don&#39;t Fragment was Set&#34;). If you need to specify multiple codes for a single type, create a separate security list rule for each.
          * 
          * @return builder
          * 
@@ -244,6 +260,10 @@ public final class SecurityListIngressSecurityRuleArgs extends com.pulumi.resour
         /**
          * @param source (Updatable) Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
          * 
+         * Allowed values:
+         * * IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you&#39;re setting up a security list rule for traffic coming from a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
+         * 
          * @return builder
          * 
          */
@@ -254,6 +274,10 @@ public final class SecurityListIngressSecurityRuleArgs extends com.pulumi.resour
 
         /**
          * @param source (Updatable) Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
+         * 
+         * Allowed values:
+         * * IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you&#39;re setting up a security list rule for traffic coming from a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
          * 
          * @return builder
          * 

@@ -23,6 +23,10 @@ class SteeringPolicyAttachmentArgs:
         :param pulumi.Input[str] domain_name: The attached domain within the attached zone. `domain_name` is case insensitive.
         :param pulumi.Input[str] steering_policy_id: The OCID of the attached steering policy.
         :param pulumi.Input[str] zone_id: The OCID of the attached zone.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the steering policy attachment. Does not have to be unique and can be changed. Avoid entering confidential information.
         """
         pulumi.set(__self__, "domain_name", domain_name)
@@ -60,6 +64,10 @@ class SteeringPolicyAttachmentArgs:
     def zone_id(self) -> pulumi.Input[str]:
         """
         The OCID of the attached zone.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "zone_id")
 
@@ -103,6 +111,10 @@ class _SteeringPolicyAttachmentState:
         :param pulumi.Input[str] steering_policy_id: The OCID of the attached steering policy.
         :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in RFC 3339 timestamp format.
         :param pulumi.Input[str] zone_id: The OCID of the attached zone.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -224,6 +236,10 @@ class _SteeringPolicyAttachmentState:
     def zone_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the attached zone.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "zone_id")
 
@@ -279,6 +295,10 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
         :param pulumi.Input[str] domain_name: The attached domain within the attached zone. `domain_name` is case insensitive.
         :param pulumi.Input[str] steering_policy_id: The OCID of the attached steering policy.
         :param pulumi.Input[str] zone_id: The OCID of the attached zone.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -395,6 +415,10 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
         :param pulumi.Input[str] steering_policy_id: The OCID of the attached steering policy.
         :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in RFC 3339 timestamp format.
         :param pulumi.Input[str] zone_id: The OCID of the attached zone.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -480,6 +504,10 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
     def zone_id(self) -> pulumi.Output[str]:
         """
         The OCID of the attached zone.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "zone_id")
 

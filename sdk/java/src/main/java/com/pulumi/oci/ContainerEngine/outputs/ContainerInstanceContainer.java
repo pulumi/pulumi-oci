@@ -27,6 +27,10 @@ public final class ContainerInstanceContainer {
     /**
      * @return A list of string arguments for a container&#39;s entrypoint process.
      * 
+     * Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+     * 
+     * All arguments together must be 64KB or smaller.
+     * 
      */
     private @Nullable List<String> arguments;
     /**
@@ -62,6 +66,8 @@ public final class ContainerInstanceContainer {
     private @Nullable String displayName;
     /**
      * @return A map of additional environment variables to set in the environment of the container&#39;s entrypoint process. These variables are in addition to any variables already defined in the container&#39;s image.
+     * 
+     * All environment variables together, name and values, must be 64KB or smaller.
      * 
      */
     private @Nullable Map<String,Object> environmentVariables;
@@ -104,6 +110,9 @@ public final class ContainerInstanceContainer {
     /**
      * @return (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private @Nullable String state;
     /**
@@ -143,6 +152,10 @@ public final class ContainerInstanceContainer {
     }
     /**
      * @return A list of string arguments for a container&#39;s entrypoint process.
+     * 
+     * Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+     * 
+     * All arguments together must be 64KB or smaller.
      * 
      */
     public List<String> arguments() {
@@ -195,6 +208,8 @@ public final class ContainerInstanceContainer {
     }
     /**
      * @return A map of additional environment variables to set in the environment of the container&#39;s entrypoint process. These variables are in addition to any variables already defined in the container&#39;s image.
+     * 
+     * All environment variables together, name and values, must be 64KB or smaller.
      * 
      */
     public Map<String,Object> environmentVariables() {
@@ -254,6 +269,9 @@ public final class ContainerInstanceContainer {
     }
     /**
      * @return (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> state() {

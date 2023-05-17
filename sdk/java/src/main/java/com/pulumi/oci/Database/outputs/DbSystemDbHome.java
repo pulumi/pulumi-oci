@@ -19,6 +19,8 @@ public final class DbSystemDbHome {
     /**
      * @return (Updatable) Details for creating a database by restoring from a source database system.
      * 
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+     * 
      */
     private DbSystemDbHomeDatabase database;
     /**
@@ -79,6 +81,8 @@ public final class DbSystemDbHome {
     }
     /**
      * @return (Updatable) Details for creating a database by restoring from a source database system.
+     * 
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      * 
      */
     public DbSystemDbHomeDatabase database() {

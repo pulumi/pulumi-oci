@@ -17,6 +17,18 @@ namespace Pulumi.Oci.Identity.Inputs
 
         /// <summary>
         /// (Updatable) DB global roles to which the user is granted access.
+        /// 
+        /// **Added In:** 18.2.2
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * idcsSensitive: none
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public InputList<string> DbGlobalRoles
         {
@@ -26,18 +38,54 @@ namespace Pulumi.Oci.Identity.Inputs
 
         /// <summary>
         /// (Updatable) DB domain level schema to which the user is granted access.
+        /// 
+        /// **Added In:** 18.2.2
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * idcsSensitive: none
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("domainLevelSchema")]
         public Input<string>? DomainLevelSchema { get; set; }
 
         /// <summary>
         /// (Updatable) DB instance level schema to which the user is granted access.
+        /// 
+        /// **Added In:** 18.2.2
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * idcsSensitive: none
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("instanceLevelSchema")]
         public Input<string>? InstanceLevelSchema { get; set; }
 
         /// <summary>
         /// (Updatable) If true, indicates this is a database user.
+        /// 
+        /// **Added In:** 18.2.2
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("isDbUser")]
         public Input<bool>? IsDbUser { get; set; }
@@ -47,6 +95,18 @@ namespace Pulumi.Oci.Identity.Inputs
 
         /// <summary>
         /// (Updatable) Password Verifiers for DB User.
+        /// 
+        /// **Added In:** 18.2.2
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [type]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArgs> PasswordVerifiers
         {

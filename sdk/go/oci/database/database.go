@@ -15,6 +15,8 @@ import (
 //
 // Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies only to Exadata systems.
 //
+// **Important:** When `autoBackupEnabled` is not present in the configuration or set to true, the `autoBackupWindow` and `autoFullBackupWindow` will be ignored
+//
 // ## Example Usage
 //
 // ```go
@@ -40,6 +42,8 @@ import (
 //					DbBackupConfig: &database.DatabaseDatabaseDbBackupConfigArgs{
 //						AutoBackupEnabled:    pulumi.Any(_var.Database_database_db_backup_config_auto_backup_enabled),
 //						AutoBackupWindow:     pulumi.Any(_var.Database_database_db_backup_config_auto_backup_window),
+//						AutoFullBackupDay:    pulumi.Any(_var.Database_database_db_backup_config_auto_full_backup_day),
+//						AutoFullBackupWindow: pulumi.Any(_var.Database_database_db_backup_config_auto_full_backup_window),
 //						BackupDeletionPolicy: pulumi.Any(_var.Database_database_db_backup_config_backup_deletion_policy),
 //						BackupDestinationDetails: database.DatabaseDatabaseDbBackupConfigBackupDestinationDetailArray{
 //							&database.DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs{
@@ -48,7 +52,8 @@ import (
 //								Type:         pulumi.Any(_var.Database_database_db_backup_config_backup_destination_details_type),
 //							},
 //						},
-//						RecoveryWindowInDays: pulumi.Any(_var.Database_database_db_backup_config_recovery_window_in_days),
+//						RecoveryWindowInDays:   pulumi.Any(_var.Database_database_db_backup_config_recovery_window_in_days),
+//						RunImmediateFullBackup: pulumi.Any(_var.Database_database_db_backup_config_run_immediate_full_backup),
 //					},
 //					DbUniqueName:      pulumi.Any(_var.Database_database_db_unique_name),
 //					DbWorkload:        pulumi.Any(_var.Database_database_db_workload),
@@ -90,12 +95,16 @@ type Database struct {
 	pulumi.CustomResourceState
 
 	// The character set for the database.  The default is AL32UTF8. Allowed values are:
+	//
+	// AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
 	CharacterSet pulumi.StringOutput `pulumi:"characterSet"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The Connection strings used to connect to the Oracle Database.
 	ConnectionStrings DatabaseConnectionStringArrayOutput `pulumi:"connectionStrings"`
 	// (Updatable) Details for creating a database.
+	//
+	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 	Database DatabaseDatabaseOutput `pulumi:"database"`
 	// The configuration of the Database Management service.
 	DatabaseManagementConfigs DatabaseDatabaseManagementConfigArrayOutput `pulumi:"databaseManagementConfigs"`
@@ -114,6 +123,8 @@ type Database struct {
 	// A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
 	DbVersion pulumi.StringOutput `pulumi:"dbVersion"`
 	// **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+	//
+	// The database workload type.
 	DbWorkload pulumi.StringOutput `pulumi:"dbWorkload"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
@@ -144,6 +155,9 @@ type Database struct {
 	// Specifies a prefix for the `Oracle SID` of the database to be created.
 	SidPrefix pulumi.StringOutput `pulumi:"sidPrefix"`
 	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Source pulumi.StringOutput `pulumi:"source"`
 	// Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
 	SourceDatabasePointInTimeRecoveryTimestamp pulumi.StringOutput `pulumi:"sourceDatabasePointInTimeRecoveryTimestamp"`
@@ -196,12 +210,16 @@ func GetDatabase(ctx *pulumi.Context,
 // Input properties used for looking up and filtering Database resources.
 type databaseState struct {
 	// The character set for the database.  The default is AL32UTF8. Allowed values are:
+	//
+	// AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
 	CharacterSet *string `pulumi:"characterSet"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The Connection strings used to connect to the Oracle Database.
 	ConnectionStrings []DatabaseConnectionString `pulumi:"connectionStrings"`
 	// (Updatable) Details for creating a database.
+	//
+	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 	Database *DatabaseDatabase `pulumi:"database"`
 	// The configuration of the Database Management service.
 	DatabaseManagementConfigs []DatabaseDatabaseManagementConfig `pulumi:"databaseManagementConfigs"`
@@ -220,6 +238,8 @@ type databaseState struct {
 	// A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
 	DbVersion *string `pulumi:"dbVersion"`
 	// **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+	//
+	// The database workload type.
 	DbWorkload *string `pulumi:"dbWorkload"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -250,6 +270,9 @@ type databaseState struct {
 	// Specifies a prefix for the `Oracle SID` of the database to be created.
 	SidPrefix *string `pulumi:"sidPrefix"`
 	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Source *string `pulumi:"source"`
 	// Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
 	SourceDatabasePointInTimeRecoveryTimestamp *string `pulumi:"sourceDatabasePointInTimeRecoveryTimestamp"`
@@ -265,12 +288,16 @@ type databaseState struct {
 
 type DatabaseState struct {
 	// The character set for the database.  The default is AL32UTF8. Allowed values are:
+	//
+	// AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
 	CharacterSet pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// The Connection strings used to connect to the Oracle Database.
 	ConnectionStrings DatabaseConnectionStringArrayInput
 	// (Updatable) Details for creating a database.
+	//
+	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 	Database DatabaseDatabasePtrInput
 	// The configuration of the Database Management service.
 	DatabaseManagementConfigs DatabaseDatabaseManagementConfigArrayInput
@@ -289,6 +316,8 @@ type DatabaseState struct {
 	// A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
 	DbVersion pulumi.StringPtrInput
 	// **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+	//
+	// The database workload type.
 	DbWorkload pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput
@@ -319,6 +348,9 @@ type DatabaseState struct {
 	// Specifies a prefix for the `Oracle SID` of the database to be created.
 	SidPrefix pulumi.StringPtrInput
 	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Source pulumi.StringPtrInput
 	// Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
 	SourceDatabasePointInTimeRecoveryTimestamp pulumi.StringPtrInput
@@ -338,6 +370,8 @@ func (DatabaseState) ElementType() reflect.Type {
 
 type databaseArgs struct {
 	// (Updatable) Details for creating a database.
+	//
+	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 	Database DatabaseDatabase `pulumi:"database"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
 	DbHomeId string `pulumi:"dbHomeId"`
@@ -352,6 +386,9 @@ type databaseArgs struct {
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
 	KmsKeyVersionId *string `pulumi:"kmsKeyVersionId"`
 	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Source string `pulumi:"source"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	VaultId *string `pulumi:"vaultId"`
@@ -360,6 +397,8 @@ type databaseArgs struct {
 // The set of arguments for constructing a Database resource.
 type DatabaseArgs struct {
 	// (Updatable) Details for creating a database.
+	//
+	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 	Database DatabaseDatabaseInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
 	DbHomeId pulumi.StringInput
@@ -374,6 +413,9 @@ type DatabaseArgs struct {
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
 	KmsKeyVersionId pulumi.StringPtrInput
 	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Source pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	VaultId pulumi.StringPtrInput
@@ -467,6 +509,8 @@ func (o DatabaseOutput) ToDatabaseOutputWithContext(ctx context.Context) Databas
 }
 
 // The character set for the database.  The default is AL32UTF8. Allowed values are:
+//
+// AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
 func (o DatabaseOutput) CharacterSet() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.CharacterSet }).(pulumi.StringOutput)
 }
@@ -482,6 +526,8 @@ func (o DatabaseOutput) ConnectionStrings() DatabaseConnectionStringArrayOutput 
 }
 
 // (Updatable) Details for creating a database.
+//
+// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 func (o DatabaseOutput) Database() DatabaseDatabaseOutput {
 	return o.ApplyT(func(v *Database) DatabaseDatabaseOutput { return v.Database }).(DatabaseDatabaseOutput)
 }
@@ -527,6 +573,8 @@ func (o DatabaseOutput) DbVersion() pulumi.StringOutput {
 }
 
 // **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+//
+// The database workload type.
 func (o DatabaseOutput) DbWorkload() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.DbWorkload }).(pulumi.StringOutput)
 }
@@ -602,6 +650,9 @@ func (o DatabaseOutput) SidPrefix() pulumi.StringOutput {
 }
 
 // The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DatabaseOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.Source }).(pulumi.StringOutput)
 }

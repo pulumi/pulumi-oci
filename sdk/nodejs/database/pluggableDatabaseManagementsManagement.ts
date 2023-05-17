@@ -83,6 +83,10 @@ export class PluggableDatabaseManagementsManagement extends pulumi.CustomResourc
     public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly enablePluggabledatabasemanagement!: pulumi.Output<boolean>;
     /**
@@ -250,6 +254,10 @@ export interface PluggableDatabaseManagementsManagementState {
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     enablePluggabledatabasemanagement?: pulumi.Input<boolean>;
     /**
@@ -324,6 +332,10 @@ export interface PluggableDatabaseManagementsManagementArgs {
     credentialDetails: pulumi.Input<inputs.Database.PluggableDatabaseManagementsManagementCredentialDetails>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     enablePluggabledatabasemanagement: pulumi.Input<boolean>;
     /**

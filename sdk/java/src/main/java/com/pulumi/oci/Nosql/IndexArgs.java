@@ -81,12 +81,18 @@ public final class IndexArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * A table name within the compartment, or a table OCID.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="tableNameOrId", required=true)
     private Output<String> tableNameOrId;
 
     /**
      * @return A table name within the compartment, or a table OCID.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> tableNameOrId() {
@@ -218,6 +224,9 @@ public final class IndexArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tableNameOrId A table name within the compartment, or a table OCID.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -228,6 +237,9 @@ public final class IndexArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tableNameOrId A table name within the compartment, or a table OCID.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

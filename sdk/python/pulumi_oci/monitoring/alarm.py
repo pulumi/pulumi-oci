@@ -40,10 +40,30 @@ class AlarmArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] destinations: (Updatable) A list of destinations to which the notifications for this alarm will be delivered. Each destination is represented by an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) related to the supported destination service. For example, a destination using the Notifications service is represented by a topic OCID. Supported destination services: Notifications Service. Limit: One destination per supported destination service.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the alarm. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+               
+               This name is sent as the title for notifications related to this alarm.
+               
+               Example: `High CPU Utilization`
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the alarm is enabled.  Example: `true`
         :param pulumi.Input[str] metric_compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
         :param pulumi.Input[str] namespace: (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
         :param pulumi.Input[str] query: (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+               
+               Example of threshold alarm:
+               
+               -----
+               
+               CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+               
+               -----
+               
+               Example of absence alarm:
+               
+               -----
+               
+               CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+               
+               -----
         :param pulumi.Input[str] severity: (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
         :param pulumi.Input[str] body: (Updatable) The human-readable content of the notification delivered. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
@@ -52,7 +72,19 @@ class AlarmArgs:
         :param pulumi.Input[str] message_format: (Updatable) The format to use for notification messages sent from this alarm. The formats are:
         :param pulumi.Input[bool] metric_compartment_id_in_subtree: (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
         :param pulumi.Input[str] pending_duration: (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
+               
+               The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
+               
+               Under the default value of PT1M, the first evaluation that breaches the alarm updates the state to "FIRING".
+               
+               The alarm updates its status to "OK" when the breaching condition has been clear for the most recent minute.
+               
+               Example: `PT5M`
         :param pulumi.Input[str] repeat_notification_duration: (Updatable) The frequency at which notifications are re-submitted, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
+               
+               Default value: null (notifications are not re-submitted).
+               
+               Example: `PT2H`
         :param pulumi.Input[str] resolution: (Updatable) The time between calculated aggregation windows for the alarm. Supported value: `1m`
         :param pulumi.Input[str] resource_group: (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
         :param pulumi.Input['AlarmSuppressionArgs'] suppression: (Updatable) The configuration details for suppressing an alarm.
@@ -117,6 +149,10 @@ class AlarmArgs:
     def display_name(self) -> pulumi.Input[str]:
         """
         (Updatable) A user-friendly name for the alarm. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+
+        This name is sent as the title for notifications related to this alarm.
+
+        Example: `High CPU Utilization`
         """
         return pulumi.get(self, "display_name")
 
@@ -165,6 +201,22 @@ class AlarmArgs:
     def query(self) -> pulumi.Input[str]:
         """
         (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+
+        Example of threshold alarm:
+
+        -----
+
+        CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+
+        -----
+
+        Example of absence alarm:
+
+        -----
+
+        CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+
+        -----
         """
         return pulumi.get(self, "query")
 
@@ -261,6 +313,14 @@ class AlarmArgs:
     def pending_duration(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
+
+        The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
+
+        Under the default value of PT1M, the first evaluation that breaches the alarm updates the state to "FIRING".
+
+        The alarm updates its status to "OK" when the breaching condition has been clear for the most recent minute.
+
+        Example: `PT5M`
         """
         return pulumi.get(self, "pending_duration")
 
@@ -273,6 +333,10 @@ class AlarmArgs:
     def repeat_notification_duration(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The frequency at which notifications are re-submitted, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
+
+        Default value: null (notifications are not re-submitted).
+
+        Example: `PT2H`
         """
         return pulumi.get(self, "repeat_notification_duration")
 
@@ -349,6 +413,10 @@ class _AlarmState:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] destinations: (Updatable) A list of destinations to which the notifications for this alarm will be delivered. Each destination is represented by an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) related to the supported destination service. For example, a destination using the Notifications service is represented by a topic OCID. Supported destination services: Notifications Service. Limit: One destination per supported destination service.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the alarm. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+               
+               This name is sent as the title for notifications related to this alarm.
+               
+               Example: `High CPU Utilization`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the alarm is enabled.  Example: `true`
         :param pulumi.Input[bool] is_notifications_per_metric_dimension_enabled: (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
@@ -357,8 +425,36 @@ class _AlarmState:
         :param pulumi.Input[bool] metric_compartment_id_in_subtree: (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
         :param pulumi.Input[str] namespace: (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
         :param pulumi.Input[str] pending_duration: (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
+               
+               The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
+               
+               Under the default value of PT1M, the first evaluation that breaches the alarm updates the state to "FIRING".
+               
+               The alarm updates its status to "OK" when the breaching condition has been clear for the most recent minute.
+               
+               Example: `PT5M`
         :param pulumi.Input[str] query: (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+               
+               Example of threshold alarm:
+               
+               -----
+               
+               CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+               
+               -----
+               
+               Example of absence alarm:
+               
+               -----
+               
+               CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+               
+               -----
         :param pulumi.Input[str] repeat_notification_duration: (Updatable) The frequency at which notifications are re-submitted, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
+               
+               Default value: null (notifications are not re-submitted).
+               
+               Example: `PT2H`
         :param pulumi.Input[str] resolution: (Updatable) The time between calculated aggregation windows for the alarm. Supported value: `1m`
         :param pulumi.Input[str] resource_group: (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
         :param pulumi.Input[str] severity: (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
@@ -465,6 +561,10 @@ class _AlarmState:
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) A user-friendly name for the alarm. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+
+        This name is sent as the title for notifications related to this alarm.
+
+        Example: `High CPU Utilization`
         """
         return pulumi.get(self, "display_name")
 
@@ -561,6 +661,14 @@ class _AlarmState:
     def pending_duration(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
+
+        The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
+
+        Under the default value of PT1M, the first evaluation that breaches the alarm updates the state to "FIRING".
+
+        The alarm updates its status to "OK" when the breaching condition has been clear for the most recent minute.
+
+        Example: `PT5M`
         """
         return pulumi.get(self, "pending_duration")
 
@@ -573,6 +681,22 @@ class _AlarmState:
     def query(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+
+        Example of threshold alarm:
+
+        -----
+
+        CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+
+        -----
+
+        Example of absence alarm:
+
+        -----
+
+        CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+
+        -----
         """
         return pulumi.get(self, "query")
 
@@ -585,6 +709,10 @@ class _AlarmState:
     def repeat_notification_duration(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The frequency at which notifications are re-submitted, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
+
+        Default value: null (notifications are not re-submitted).
+
+        Example: `PT2H`
         """
         return pulumi.get(self, "repeat_notification_duration")
 
@@ -763,6 +891,10 @@ class Alarm(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] destinations: (Updatable) A list of destinations to which the notifications for this alarm will be delivered. Each destination is represented by an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) related to the supported destination service. For example, a destination using the Notifications service is represented by a topic OCID. Supported destination services: Notifications Service. Limit: One destination per supported destination service.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the alarm. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+               
+               This name is sent as the title for notifications related to this alarm.
+               
+               Example: `High CPU Utilization`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the alarm is enabled.  Example: `true`
         :param pulumi.Input[bool] is_notifications_per_metric_dimension_enabled: (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
@@ -771,8 +903,36 @@ class Alarm(pulumi.CustomResource):
         :param pulumi.Input[bool] metric_compartment_id_in_subtree: (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
         :param pulumi.Input[str] namespace: (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
         :param pulumi.Input[str] pending_duration: (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
+               
+               The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
+               
+               Under the default value of PT1M, the first evaluation that breaches the alarm updates the state to "FIRING".
+               
+               The alarm updates its status to "OK" when the breaching condition has been clear for the most recent minute.
+               
+               Example: `PT5M`
         :param pulumi.Input[str] query: (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+               
+               Example of threshold alarm:
+               
+               -----
+               
+               CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+               
+               -----
+               
+               Example of absence alarm:
+               
+               -----
+               
+               CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+               
+               -----
         :param pulumi.Input[str] repeat_notification_duration: (Updatable) The frequency at which notifications are re-submitted, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
+               
+               Default value: null (notifications are not re-submitted).
+               
+               Example: `PT2H`
         :param pulumi.Input[str] resolution: (Updatable) The time between calculated aggregation windows for the alarm. Supported value: `1m`
         :param pulumi.Input[str] resource_group: (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
         :param pulumi.Input[str] severity: (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
@@ -963,6 +1123,10 @@ class Alarm(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] destinations: (Updatable) A list of destinations to which the notifications for this alarm will be delivered. Each destination is represented by an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) related to the supported destination service. For example, a destination using the Notifications service is represented by a topic OCID. Supported destination services: Notifications Service. Limit: One destination per supported destination service.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the alarm. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+               
+               This name is sent as the title for notifications related to this alarm.
+               
+               Example: `High CPU Utilization`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the alarm is enabled.  Example: `true`
         :param pulumi.Input[bool] is_notifications_per_metric_dimension_enabled: (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
@@ -971,8 +1135,36 @@ class Alarm(pulumi.CustomResource):
         :param pulumi.Input[bool] metric_compartment_id_in_subtree: (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
         :param pulumi.Input[str] namespace: (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
         :param pulumi.Input[str] pending_duration: (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
+               
+               The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
+               
+               Under the default value of PT1M, the first evaluation that breaches the alarm updates the state to "FIRING".
+               
+               The alarm updates its status to "OK" when the breaching condition has been clear for the most recent minute.
+               
+               Example: `PT5M`
         :param pulumi.Input[str] query: (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+               
+               Example of threshold alarm:
+               
+               -----
+               
+               CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+               
+               -----
+               
+               Example of absence alarm:
+               
+               -----
+               
+               CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+               
+               -----
         :param pulumi.Input[str] repeat_notification_duration: (Updatable) The frequency at which notifications are re-submitted, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
+               
+               Default value: null (notifications are not re-submitted).
+               
+               Example: `PT2H`
         :param pulumi.Input[str] resolution: (Updatable) The time between calculated aggregation windows for the alarm. Supported value: `1m`
         :param pulumi.Input[str] resource_group: (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
         :param pulumi.Input[str] severity: (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
@@ -1046,6 +1238,10 @@ class Alarm(pulumi.CustomResource):
     def display_name(self) -> pulumi.Output[str]:
         """
         (Updatable) A user-friendly name for the alarm. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+
+        This name is sent as the title for notifications related to this alarm.
+
+        Example: `High CPU Utilization`
         """
         return pulumi.get(self, "display_name")
 
@@ -1110,6 +1306,14 @@ class Alarm(pulumi.CustomResource):
     def pending_duration(self) -> pulumi.Output[str]:
         """
         (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
+
+        The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
+
+        Under the default value of PT1M, the first evaluation that breaches the alarm updates the state to "FIRING".
+
+        The alarm updates its status to "OK" when the breaching condition has been clear for the most recent minute.
+
+        Example: `PT5M`
         """
         return pulumi.get(self, "pending_duration")
 
@@ -1118,6 +1322,22 @@ class Alarm(pulumi.CustomResource):
     def query(self) -> pulumi.Output[str]:
         """
         (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+
+        Example of threshold alarm:
+
+        -----
+
+        CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+
+        -----
+
+        Example of absence alarm:
+
+        -----
+
+        CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+
+        -----
         """
         return pulumi.get(self, "query")
 
@@ -1126,6 +1346,10 @@ class Alarm(pulumi.CustomResource):
     def repeat_notification_duration(self) -> pulumi.Output[str]:
         """
         (Updatable) The frequency at which notifications are re-submitted, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
+
+        Default value: null (notifications are not re-submitted).
+
+        Example: `PT2H`
         """
         return pulumi.get(self, "repeat_notification_duration")
 

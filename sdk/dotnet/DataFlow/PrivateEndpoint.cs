@@ -100,7 +100,11 @@ namespace Pulumi.Oci.DataFlow
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of a subnet.
+        /// The OCID of a subnet. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
@@ -248,7 +252,11 @@ namespace Pulumi.Oci.DataFlow
         }
 
         /// <summary>
-        /// The OCID of a subnet.
+        /// The OCID of a subnet. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;
@@ -370,7 +378,11 @@ namespace Pulumi.Oci.DataFlow
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// The OCID of a subnet.
+        /// The OCID of a subnet. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }

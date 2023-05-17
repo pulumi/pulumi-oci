@@ -19,12 +19,18 @@ public final class ExternalNonContainerDatabaseOperationsInsightsManagementState
     /**
      * (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value &#34;true&#34; or &#34;false&#34;.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="enableOperationsInsights")
     private @Nullable Output<Boolean> enableOperationsInsights;
 
     /**
      * @return (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value &#34;true&#34; or &#34;false&#34;.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Boolean>> enableOperationsInsights() {
@@ -90,6 +96,9 @@ public final class ExternalNonContainerDatabaseOperationsInsightsManagementState
         /**
          * @param enableOperationsInsights (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value &#34;true&#34; or &#34;false&#34;.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -100,6 +109,9 @@ public final class ExternalNonContainerDatabaseOperationsInsightsManagementState
 
         /**
          * @param enableOperationsInsights (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value &#34;true&#34; or &#34;false&#34;.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

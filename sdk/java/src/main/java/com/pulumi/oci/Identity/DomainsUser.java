@@ -383,12 +383,34 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Status of the account
      * 
+     * **Added In:** 17.4.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Export(name="active", type=Boolean.class, parameters={})
     private Output<Boolean> active;
 
     /**
      * @return (Updatable) Status of the account
+     * 
+     * **Added In:** 17.4.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Output<Boolean> active() {
@@ -397,12 +419,34 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [type]
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Address Street, deprecatedColumnHeaderName:Work Street Address, mapsTo:addresses[work].streetAddress], [columnHeaderName:Work Address Locality, deprecatedColumnHeaderName:Work City, mapsTo:addresses[work].locality], [columnHeaderName:Work Address Region, deprecatedColumnHeaderName:Work State, mapsTo:addresses[work].region], [columnHeaderName:Work Address Postal Code, deprecatedColumnHeaderName:Work Postal Code, mapsTo:addresses[work].postalCode], [columnHeaderName:Work Address Country, deprecatedColumnHeaderName:Work Country, mapsTo:addresses[work].country], [columnHeaderName:Work Address Formatted, mapsTo:addresses[work].formatted], [columnHeaderName:Home Address Formatted, mapsTo:addresses[home].formatted], [columnHeaderName:Other Address Formatted, mapsTo:addresses[other].formatted], [columnHeaderName:Home Address Street, mapsTo:addresses[home].streetAddress], [columnHeaderName:Other Address Street, mapsTo:addresses[other].streetAddress], [columnHeaderName:Home Address Locality, mapsTo:addresses[home].locality], [columnHeaderName:Other Address Locality, mapsTo:addresses[other].locality], [columnHeaderName:Home Address Region, mapsTo:addresses[home].region], [columnHeaderName:Other Address Region, mapsTo:addresses[other].region], [columnHeaderName:Home Address Country, mapsTo:addresses[home].country], [columnHeaderName:Other Address Country, mapsTo:addresses[other].country], [columnHeaderName:Home Address Postal Code, mapsTo:addresses[home].postalCode], [columnHeaderName:Other Address Postal Code, mapsTo:addresses[other].postalCode], [columnHeaderName:Primary Address Type, mapsTo:addresses[$(type)].primary]]
+     * * idcsPii: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Export(name="addresses", type=List.class, parameters={DomainsUserAddress.class})
     private Output<List<DomainsUserAddress>> addresses;
 
     /**
      * @return (Updatable) A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [type]
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Address Street, deprecatedColumnHeaderName:Work Street Address, mapsTo:addresses[work].streetAddress], [columnHeaderName:Work Address Locality, deprecatedColumnHeaderName:Work City, mapsTo:addresses[work].locality], [columnHeaderName:Work Address Region, deprecatedColumnHeaderName:Work State, mapsTo:addresses[work].region], [columnHeaderName:Work Address Postal Code, deprecatedColumnHeaderName:Work Postal Code, mapsTo:addresses[work].postalCode], [columnHeaderName:Work Address Country, deprecatedColumnHeaderName:Work Country, mapsTo:addresses[work].country], [columnHeaderName:Work Address Formatted, mapsTo:addresses[work].formatted], [columnHeaderName:Home Address Formatted, mapsTo:addresses[home].formatted], [columnHeaderName:Other Address Formatted, mapsTo:addresses[other].formatted], [columnHeaderName:Home Address Street, mapsTo:addresses[home].streetAddress], [columnHeaderName:Other Address Street, mapsTo:addresses[other].streetAddress], [columnHeaderName:Home Address Locality, mapsTo:addresses[home].locality], [columnHeaderName:Other Address Locality, mapsTo:addresses[other].locality], [columnHeaderName:Home Address Region, mapsTo:addresses[home].region], [columnHeaderName:Other Address Region, mapsTo:addresses[other].region], [columnHeaderName:Home Address Country, mapsTo:addresses[home].country], [columnHeaderName:Other Address Country, mapsTo:addresses[other].country], [columnHeaderName:Home Address Postal Code, mapsTo:addresses[home].postalCode], [columnHeaderName:Other Address Postal Code, mapsTo:addresses[other].postalCode], [columnHeaderName:Primary Address Type, mapsTo:addresses[$(type)].primary]]
+     * * idcsPii: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Output<List<DomainsUserAddress>> addresses() {
@@ -453,12 +497,32 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="compartmentOcid", type=String.class, parameters={})
     private Output<String> compartmentOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> compartmentOcid() {
@@ -467,12 +531,32 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Export(name="deleteInProgress", type=Boolean.class, parameters={})
     private Output<Boolean> deleteInProgress;
 
     /**
      * @return (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Output<Boolean> deleteInProgress() {
@@ -481,12 +565,38 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Description of the user
      * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsPii: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="description", type=String.class, parameters={})
     private Output<String> description;
 
     /**
      * @return (Updatable) Description of the user
+     * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsPii: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> description() {
@@ -495,12 +605,30 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The displayName of the User&#39;s manager. OPTIONAL and READ-ONLY.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="displayName", type=String.class, parameters={})
     private Output<String> displayName;
 
     /**
      * @return (Updatable) The displayName of the User&#39;s manager. OPTIONAL and READ-ONLY.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> displayName() {
@@ -509,12 +637,32 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="domainOcid", type=String.class, parameters={})
     private Output<String> domainOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> domainOcid() {
@@ -523,12 +671,34 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) A complex attribute representing emails
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value, type]
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Email, mapsTo:emails[work].value], [columnHeaderName:Home Email, mapsTo:emails[home].value], [columnHeaderName:Primary Email Type, mapsTo:emails[$(type)].primary], [columnHeaderName:Other Email, mapsTo:emails[other].value], [columnHeaderName:Recovery Email, mapsTo:emails[recovery].value], [columnHeaderName:Work Email Verified, mapsTo:emails[work].verified], [columnHeaderName:Home Email Verified, mapsTo:emails[home].verified], [columnHeaderName:Other Email Verified, mapsTo:emails[other].verified], [columnHeaderName:Recovery Email Verified, mapsTo:emails[recovery].verified]]
+     * * idcsPii: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Export(name="emails", type=List.class, parameters={DomainsUserEmail.class})
     private Output<List<DomainsUserEmail>> emails;
 
     /**
      * @return (Updatable) A complex attribute representing emails
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value, type]
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Email, mapsTo:emails[work].value], [columnHeaderName:Home Email, mapsTo:emails[home].value], [columnHeaderName:Primary Email Type, mapsTo:emails[$(type)].primary], [columnHeaderName:Other Email, mapsTo:emails[other].value], [columnHeaderName:Recovery Email, mapsTo:emails[recovery].value], [columnHeaderName:Work Email Verified, mapsTo:emails[work].verified], [columnHeaderName:Home Email Verified, mapsTo:emails[home].verified], [columnHeaderName:Other Email Verified, mapsTo:emails[other].verified], [columnHeaderName:Recovery Email Verified, mapsTo:emails[recovery].verified]]
+     * * idcsPii: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Output<List<DomainsUserEmail>> emails() {
@@ -537,12 +707,30 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) A list of entitlements for the User that represent a thing the User has.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value, type]
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Export(name="entitlements", type=List.class, parameters={DomainsUserEntitlement.class})
     private Output<List<DomainsUserEntitlement>> entitlements;
 
     /**
      * @return (Updatable) A list of entitlements for the User that represent a thing the User has.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value, type]
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Output<List<DomainsUserEntitlement>> entitlements() {
@@ -551,12 +739,34 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="externalId", type=String.class, parameters={})
     private Output<String> externalId;
 
     /**
      * @return (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
+     * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> externalId() {
@@ -565,12 +775,32 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Export(name="groups", type=List.class, parameters={DomainsUserGroup.class})
     private Output<List<DomainsUserGroup>> groups;
 
     /**
      * @return (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Output<List<DomainsUserGroup>> groups() {
@@ -579,12 +809,28 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The User or App who created the Resource
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: complex
+     * 
      */
     @Export(name="idcsCreatedBies", type=List.class, parameters={DomainsUserIdcsCreatedBy.class})
     private Output<List<DomainsUserIdcsCreatedBy>> idcsCreatedBies;
 
     /**
      * @return (Updatable) The User or App who created the Resource
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: complex
      * 
      */
     public Output<List<DomainsUserIdcsCreatedBy>> idcsCreatedBies() {
@@ -607,12 +853,28 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The User or App who modified the Resource
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * 
      */
     @Export(name="idcsLastModifiedBies", type=List.class, parameters={DomainsUserIdcsLastModifiedBy.class})
     private Output<List<DomainsUserIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
      * @return (Updatable) The User or App who modified the Resource
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
      * 
      */
     public Output<List<DomainsUserIdcsLastModifiedBy>> idcsLastModifiedBies() {
@@ -621,12 +883,32 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The release number when the resource was upgraded.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="idcsLastUpgradedInRelease", type=String.class, parameters={})
     private Output<String> idcsLastUpgradedInRelease;
 
     /**
      * @return (Updatable) The release number when the resource was upgraded.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> idcsLastUpgradedInRelease() {
@@ -635,12 +917,30 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="idcsPreventedOperations", type=List.class, parameters={String.class})
     private Output<List<String>> idcsPreventedOperations;
 
     /**
      * @return (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<List<String>> idcsPreventedOperations() {
@@ -649,12 +949,32 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) User&#39;s instant messaging addresses
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value, type]
+     * * idcsPii: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Export(name="ims", type=List.class, parameters={DomainsUserIm.class})
     private Output<List<DomainsUserIm>> ims;
 
     /**
      * @return (Updatable) User&#39;s instant messaging addresses
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value, type]
+     * * idcsPii: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Output<List<DomainsUserIm>> ims() {
@@ -663,12 +983,36 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Used to indicate the User&#39;s default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Locale
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Locale]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="locale", type=String.class, parameters={})
     private Output<String> locale;
 
     /**
      * @return (Updatable) Used to indicate the User&#39;s default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Locale
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Locale]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> locale() {
@@ -677,12 +1021,32 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+     * * type: complex
+     * 
      */
     @Export(name="metas", type=List.class, parameters={DomainsUserMeta.class})
     private Output<List<DomainsUserMeta>> metas;
 
     /**
      * @return (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+     * * type: complex
      * 
      */
     public Output<List<DomainsUserMeta>> metas() {
@@ -691,12 +1055,36 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Name of the account assigned to the User.
      * 
+     * **Added In:** 17.4.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="name", type=DomainsUserName.class, parameters={})
     private Output<DomainsUserName> name;
 
     /**
      * @return (Updatable) Name of the account assigned to the User.
+     * 
+     * **Added In:** 17.4.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<DomainsUserName> name() {
@@ -705,12 +1093,38 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Nick name
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Nick Name
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Nick Name]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="nickName", type=String.class, parameters={})
     private Output<String> nickName;
 
     /**
      * @return (Updatable) Nick name
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Nick Name
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Nick Name]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> nickName() {
@@ -719,12 +1133,36 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Ocid of the User&#39;s Support Account.
      * 
+     * **Added In:** 2103141444
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="ocid", type=String.class, parameters={})
     private Output<String> ocid;
 
     /**
      * @return (Updatable) Ocid of the User&#39;s Support Account.
+     * 
+     * **Added In:** 2103141444
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> ocid() {
@@ -733,12 +1171,38 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Password attribute. Max length for password is controlled via Password Policy.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCsvAttributeName: Password
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Password]]
+     * * idcsPii: true
+     * * idcsSearchable: false
+     * * idcsSensitive: hash
+     * * multiValued: false
+     * * mutability: writeOnly
+     * * required: false
+     * * returned: never
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="password", type=String.class, parameters={})
     private Output<String> password;
 
     /**
      * @return (Updatable) Password attribute. Max length for password is controlled via Password Policy.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCsvAttributeName: Password
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Password]]
+     * * idcsPii: true
+     * * idcsSearchable: false
+     * * idcsSensitive: hash
+     * * multiValued: false
+     * * mutability: writeOnly
+     * * required: false
+     * * returned: never
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> password() {
@@ -747,12 +1211,34 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Phone numbers
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value, type]
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Phone, mapsTo:phoneNumbers[work].value], [columnHeaderName:Mobile No, mapsTo:phoneNumbers[mobile].value], [columnHeaderName:Home Phone, mapsTo:phoneNumbers[home].value], [columnHeaderName:Fax, mapsTo:phoneNumbers[fax].value], [columnHeaderName:Pager, mapsTo:phoneNumbers[pager].value], [columnHeaderName:Other Phone, mapsTo:phoneNumbers[other].value], [columnHeaderName:Recovery Phone, mapsTo:phoneNumbers[recovery].value], [columnHeaderName:Primary Phone Type, mapsTo:phoneNumbers[$(type)].primary]]
+     * * idcsPii: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Export(name="phoneNumbers", type=List.class, parameters={DomainsUserPhoneNumber.class})
     private Output<List<DomainsUserPhoneNumber>> phoneNumbers;
 
     /**
      * @return (Updatable) Phone numbers
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value, type]
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Phone, mapsTo:phoneNumbers[work].value], [columnHeaderName:Mobile No, mapsTo:phoneNumbers[mobile].value], [columnHeaderName:Home Phone, mapsTo:phoneNumbers[home].value], [columnHeaderName:Fax, mapsTo:phoneNumbers[fax].value], [columnHeaderName:Pager, mapsTo:phoneNumbers[pager].value], [columnHeaderName:Other Phone, mapsTo:phoneNumbers[other].value], [columnHeaderName:Recovery Phone, mapsTo:phoneNumbers[recovery].value], [columnHeaderName:Primary Phone Type, mapsTo:phoneNumbers[$(type)].primary]]
+     * * idcsPii: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Output<List<DomainsUserPhoneNumber>> phoneNumbers() {
@@ -761,12 +1247,32 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) URLs of photos for the User
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value, type]
+     * * idcsPii: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Export(name="photos", type=List.class, parameters={DomainsUserPhoto.class})
     private Output<List<DomainsUserPhoto>> photos;
 
     /**
      * @return (Updatable) URLs of photos for the User
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value, type]
+     * * idcsPii: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Output<List<DomainsUserPhoto>> photos() {
@@ -775,12 +1281,36 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) User&#39;s preferred written or spoken language used for localized user interfaces
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Preferred Language
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Preferred Language]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="preferredLanguage", type=String.class, parameters={})
     private Output<String> preferredLanguage;
 
     /**
      * @return (Updatable) User&#39;s preferred written or spoken language used for localized user interfaces
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Preferred Language
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Preferred Language]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> preferredLanguage() {
@@ -789,12 +1319,38 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) A fully-qualified URL to a page representing the User&#39;s online profile
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Profile URL
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Profile Url]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
+     * 
      */
     @Export(name="profileUrl", type=String.class, parameters={})
     private Output<String> profileUrl;
 
     /**
      * @return (Updatable) A fully-qualified URL to a page representing the User&#39;s online profile
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Profile URL
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Profile Url]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
      * 
      */
     public Output<String> profileUrl() {
@@ -817,12 +1373,30 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) A list of roles for the User that collectively represent who the User is; e.g., &#39;Student&#39;, &#39;Faculty&#39;.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value, type]
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Export(name="roles", type=List.class, parameters={DomainsUserRole.class})
     private Output<List<DomainsUserRole>> roles;
 
     /**
      * @return (Updatable) A list of roles for the User that collectively represent who the User is; e.g., &#39;Student&#39;, &#39;Faculty&#39;.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value, type]
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Output<List<DomainsUserRole>> roles() {
@@ -831,12 +1405,32 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="schemas", type=List.class, parameters={String.class})
     private Output<List<String>> schemas;
 
     /**
      * @return (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<List<String>> schemas() {
@@ -845,12 +1439,32 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) A list of tags on this resource.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Export(name="tags", type=List.class, parameters={DomainsUserTag.class})
     private Output<List<DomainsUserTag>> tags;
 
     /**
      * @return (Updatable) A list of tags on this resource.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Output<List<DomainsUserTag>> tags() {
@@ -859,12 +1473,32 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="tenancyOcid", type=String.class, parameters={})
     private Output<String> tenancyOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> tenancyOcid() {
@@ -873,12 +1507,40 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) User&#39;s timezone
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCanonicalValueSourceFilter: attrName eq &#34;timezones&#34; and attrValues.value eq &#34;$(timezone)&#34;
+     * * idcsCanonicalValueSourceResourceType: AllowedValue
+     * * idcsCsvAttributeName: TimeZone
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Time Zone, deprecatedColumnHeaderName:TimeZone]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="timezone", type=String.class, parameters={})
     private Output<String> timezone;
 
     /**
      * @return (Updatable) User&#39;s timezone
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCanonicalValueSourceFilter: attrName eq &#34;timezones&#34; and attrValues.value eq &#34;$(timezone)&#34;
+     * * idcsCanonicalValueSourceResourceType: AllowedValue
+     * * idcsCsvAttributeName: TimeZone
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Time Zone, deprecatedColumnHeaderName:TimeZone]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> timezone() {
@@ -887,12 +1549,38 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Title
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Title
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Title]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="title", type=String.class, parameters={})
     private Output<String> title;
 
     /**
      * @return (Updatable) Title
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Title
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Title]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> title() {
@@ -1181,12 +1869,38 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) User name
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: User ID
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:User Name, deprecatedColumnHeaderName:User ID]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: string
+     * * uniqueness: global
+     * 
      */
     @Export(name="userName", type=String.class, parameters={})
     private Output<String> userName;
 
     /**
      * @return (Updatable) User name
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: User ID
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:User Name, deprecatedColumnHeaderName:User ID]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: string
+     * * uniqueness: global
      * 
      */
     public Output<String> userName() {
@@ -1195,12 +1909,38 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Used to identify the organization-to-user relationship
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: User Type
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:User Type]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="userType", type=String.class, parameters={})
     private Output<String> userType;
 
     /**
      * @return (Updatable) Used to identify the organization-to-user relationship
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: User Type
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:User Type]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> userType() {
@@ -1209,12 +1949,30 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) A list of certificates issued to the User.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Export(name="x509certificates", type=List.class, parameters={DomainsUserX509certificate.class})
     private Output<List<DomainsUserX509certificate>> x509certificates;
 
     /**
      * @return (Updatable) A list of certificates issued to the User.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Output<List<DomainsUserX509certificate>> x509certificates() {

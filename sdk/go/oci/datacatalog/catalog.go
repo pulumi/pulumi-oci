@@ -62,6 +62,9 @@ type Catalog struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) The list of private reverse connection endpoints attached to the catalog
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	AttachedCatalogPrivateEndpoints pulumi.StringArrayOutput `pulumi:"attachedCatalogPrivateEndpoints"`
 	// (Updatable) Compartment identifier.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
@@ -120,6 +123,9 @@ func GetCatalog(ctx *pulumi.Context,
 // Input properties used for looking up and filtering Catalog resources.
 type catalogState struct {
 	// (Updatable) The list of private reverse connection endpoints attached to the catalog
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	AttachedCatalogPrivateEndpoints []string `pulumi:"attachedCatalogPrivateEndpoints"`
 	// (Updatable) Compartment identifier.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -147,6 +153,9 @@ type catalogState struct {
 
 type CatalogState struct {
 	// (Updatable) The list of private reverse connection endpoints attached to the catalog
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	AttachedCatalogPrivateEndpoints pulumi.StringArrayInput
 	// (Updatable) Compartment identifier.
 	CompartmentId pulumi.StringPtrInput
@@ -178,6 +187,9 @@ func (CatalogState) ElementType() reflect.Type {
 
 type catalogArgs struct {
 	// (Updatable) The list of private reverse connection endpoints attached to the catalog
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	AttachedCatalogPrivateEndpoints []string `pulumi:"attachedCatalogPrivateEndpoints"`
 	// (Updatable) Compartment identifier.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -192,6 +204,9 @@ type catalogArgs struct {
 // The set of arguments for constructing a Catalog resource.
 type CatalogArgs struct {
 	// (Updatable) The list of private reverse connection endpoints attached to the catalog
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	AttachedCatalogPrivateEndpoints pulumi.StringArrayInput
 	// (Updatable) Compartment identifier.
 	CompartmentId pulumi.StringInput
@@ -291,6 +306,9 @@ func (o CatalogOutput) ToCatalogOutputWithContext(ctx context.Context) CatalogOu
 }
 
 // (Updatable) The list of private reverse connection endpoints attached to the catalog
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CatalogOutput) AttachedCatalogPrivateEndpoints() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Catalog) pulumi.StringArrayOutput { return v.AttachedCatalogPrivateEndpoints }).(pulumi.StringArrayOutput)
 }

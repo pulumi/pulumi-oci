@@ -30,6 +30,10 @@ class RemotePeeringConnectionArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] peer_id: The OCID of the RPC you want to peer with.
         :param pulumi.Input[str] peer_region_name: The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "drg_id", drg_id)
@@ -121,6 +125,10 @@ class RemotePeeringConnectionArgs:
     def peer_region_name(self) -> Optional[pulumi.Input[str]]:
         """
         The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "peer_region_name")
 
@@ -154,6 +162,10 @@ class _RemotePeeringConnectionState:
         :param pulumi.Input[bool] is_cross_tenancy_peering: Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
         :param pulumi.Input[str] peer_id: The OCID of the RPC you want to peer with.
         :param pulumi.Input[str] peer_region_name: The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] peer_tenancy_id: If this RPC is peered, this value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the other RPC's tenancy.
         :param pulumi.Input[str] peering_status: Whether the RPC is peered with another RPC. `NEW` means the RPC has not yet been peered. `PENDING` means the peering is being established. `REVOKED` means the RPC at the other end of the peering has been deleted.
         :param pulumi.Input[str] state: The RPC's current lifecycle state.
@@ -273,6 +285,10 @@ class _RemotePeeringConnectionState:
     def peer_region_name(self) -> Optional[pulumi.Input[str]]:
         """
         The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "peer_region_name")
 
@@ -384,6 +400,10 @@ class RemotePeeringConnection(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] peer_id: The OCID of the RPC you want to peer with.
         :param pulumi.Input[str] peer_region_name: The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -508,6 +528,10 @@ class RemotePeeringConnection(pulumi.CustomResource):
         :param pulumi.Input[bool] is_cross_tenancy_peering: Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
         :param pulumi.Input[str] peer_id: The OCID of the RPC you want to peer with.
         :param pulumi.Input[str] peer_region_name: The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] peer_tenancy_id: If this RPC is peered, this value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the other RPC's tenancy.
         :param pulumi.Input[str] peering_status: Whether the RPC is peered with another RPC. `NEW` means the RPC has not yet been peered. `PENDING` means the peering is being established. `REVOKED` means the RPC at the other end of the peering has been deleted.
         :param pulumi.Input[str] state: The RPC's current lifecycle state.
@@ -592,6 +616,10 @@ class RemotePeeringConnection(pulumi.CustomResource):
     def peer_region_name(self) -> pulumi.Output[str]:
         """
         The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "peer_region_name")
 

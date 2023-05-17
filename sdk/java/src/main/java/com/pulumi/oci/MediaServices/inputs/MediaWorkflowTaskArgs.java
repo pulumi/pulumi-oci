@@ -111,12 +111,18 @@ public final class MediaWorkflowTaskArgs extends com.pulumi.resources.ResourceAr
     /**
      * (Updatable) The version of the MediaWorkflowTaskDeclaration.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="version", required=true)
     private Output<String> version;
 
     /**
      * @return (Updatable) The version of the MediaWorkflowTaskDeclaration.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> version() {
@@ -292,6 +298,9 @@ public final class MediaWorkflowTaskArgs extends com.pulumi.resources.ResourceAr
         /**
          * @param version (Updatable) The version of the MediaWorkflowTaskDeclaration.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -302,6 +311,9 @@ public final class MediaWorkflowTaskArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param version (Updatable) The version of the MediaWorkflowTaskDeclaration.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

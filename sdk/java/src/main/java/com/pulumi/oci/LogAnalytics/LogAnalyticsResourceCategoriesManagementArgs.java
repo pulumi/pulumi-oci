@@ -62,12 +62,18 @@ public final class LogAnalyticsResourceCategoriesManagementArgs extends com.pulu
     /**
      * The resource type of the resource for which categories are managed.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="resourceType", required=true)
     private Output<String> resourceType;
 
     /**
      * @return The resource type of the resource for which categories are managed.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> resourceType() {
@@ -177,6 +183,9 @@ public final class LogAnalyticsResourceCategoriesManagementArgs extends com.pulu
         /**
          * @param resourceType The resource type of the resource for which categories are managed.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -187,6 +196,9 @@ public final class LogAnalyticsResourceCategoriesManagementArgs extends com.pulu
 
         /**
          * @param resourceType The resource type of the resource for which categories are managed.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

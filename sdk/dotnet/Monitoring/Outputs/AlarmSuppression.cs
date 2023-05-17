@@ -15,6 +15,10 @@ namespace Pulumi.Oci.Monitoring.Outputs
     {
         /// <summary>
         /// (Updatable) Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// 
+        /// Oracle recommends including tracking information for the event or associated work, such as a ticket number.
+        /// 
+        /// Example: `Planned outage due to change IT-1234.`
         /// </summary>
         public readonly string? Description;
         /// <summary>
@@ -22,7 +26,11 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// </summary>
         public readonly string TimeSuppressFrom;
         /// <summary>
-        /// (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
+        /// (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string TimeSuppressUntil;
 

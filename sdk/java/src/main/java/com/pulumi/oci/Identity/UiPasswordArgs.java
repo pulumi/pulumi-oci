@@ -16,12 +16,18 @@ public final class UiPasswordArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The OCID of the user.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="userId", required=true)
     private Output<String> userId;
 
     /**
      * @return The OCID of the user.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> userId() {
@@ -55,6 +61,9 @@ public final class UiPasswordArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param userId The OCID of the user.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -65,6 +74,9 @@ public final class UiPasswordArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userId The OCID of the user.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

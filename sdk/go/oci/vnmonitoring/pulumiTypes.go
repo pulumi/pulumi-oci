@@ -1643,6 +1643,9 @@ type PathAnalysiDestinationEndpoint struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
 	SubnetId *string `pulumi:"subnetId"`
 	// The type of the `PathAnalysis` query.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type string `pulumi:"type"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
 	VlanId *string `pulumi:"vlanId"`
@@ -1676,6 +1679,9 @@ type PathAnalysiDestinationEndpointArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// The type of the `PathAnalysis` query.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringInput `pulumi:"type"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
 	VlanId pulumi.StringPtrInput `pulumi:"vlanId"`
@@ -1795,6 +1801,9 @@ func (o PathAnalysiDestinationEndpointOutput) SubnetId() pulumi.StringPtrOutput 
 }
 
 // The type of the `PathAnalysis` query.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PathAnalysiDestinationEndpointOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v PathAnalysiDestinationEndpoint) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -1903,6 +1912,9 @@ func (o PathAnalysiDestinationEndpointPtrOutput) SubnetId() pulumi.StringPtrOutp
 }
 
 // The type of the `PathAnalysis` query.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PathAnalysiDestinationEndpointPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PathAnalysiDestinationEndpoint) *string {
 		if v == nil {
@@ -1942,6 +1954,9 @@ type PathAnalysiProtocolParameters struct {
 	// The source port to use in a `PathAnalyzerTest` resource.
 	SourcePort *int `pulumi:"sourcePort"`
 	// The type of the `PathAnalysis` query.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type string `pulumi:"type"`
 }
 
@@ -1966,6 +1981,9 @@ type PathAnalysiProtocolParametersArgs struct {
 	// The source port to use in a `PathAnalyzerTest` resource.
 	SourcePort pulumi.IntPtrInput `pulumi:"sourcePort"`
 	// The type of the `PathAnalysis` query.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -2067,6 +2085,9 @@ func (o PathAnalysiProtocolParametersOutput) SourcePort() pulumi.IntPtrOutput {
 }
 
 // The type of the `PathAnalysis` query.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PathAnalysiProtocolParametersOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v PathAnalysiProtocolParameters) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -2136,6 +2157,9 @@ func (o PathAnalysiProtocolParametersPtrOutput) SourcePort() pulumi.IntPtrOutput
 }
 
 // The type of the `PathAnalysis` query.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PathAnalysiProtocolParametersPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PathAnalysiProtocolParameters) *string {
 		if v == nil {
@@ -2297,6 +2321,9 @@ type PathAnalysiSourceEndpoint struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
 	SubnetId *string `pulumi:"subnetId"`
 	// The type of the `PathAnalysis` query.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type string `pulumi:"type"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
 	VlanId *string `pulumi:"vlanId"`
@@ -2330,6 +2357,9 @@ type PathAnalysiSourceEndpointArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// The type of the `PathAnalysis` query.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringInput `pulumi:"type"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
 	VlanId pulumi.StringPtrInput `pulumi:"vlanId"`
@@ -2449,6 +2479,9 @@ func (o PathAnalysiSourceEndpointOutput) SubnetId() pulumi.StringPtrOutput {
 }
 
 // The type of the `PathAnalysis` query.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PathAnalysiSourceEndpointOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v PathAnalysiSourceEndpoint) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -2557,6 +2590,9 @@ func (o PathAnalysiSourceEndpointPtrOutput) SubnetId() pulumi.StringPtrOutput {
 }
 
 // The type of the `PathAnalysis` query.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PathAnalysiSourceEndpointPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PathAnalysiSourceEndpoint) *string {
 		if v == nil {
@@ -2606,6 +2642,9 @@ type PathAnalyzerTestDestinationEndpoint struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
 	VlanId *string `pulumi:"vlanId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VnicId *string `pulumi:"vnicId"`
 }
 
@@ -2640,6 +2679,9 @@ type PathAnalyzerTestDestinationEndpointArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
 	VlanId pulumi.StringPtrInput `pulumi:"vlanId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VnicId pulumi.StringPtrInput `pulumi:"vnicId"`
 }
 
@@ -2766,6 +2808,9 @@ func (o PathAnalyzerTestDestinationEndpointOutput) VlanId() pulumi.StringPtrOutp
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PathAnalyzerTestDestinationEndpointOutput) VnicId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PathAnalyzerTestDestinationEndpoint) *string { return v.VnicId }).(pulumi.StringPtrOutput)
 }
@@ -2885,6 +2930,9 @@ func (o PathAnalyzerTestDestinationEndpointPtrOutput) VlanId() pulumi.StringPtrO
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PathAnalyzerTestDestinationEndpointPtrOutput) VnicId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PathAnalyzerTestDestinationEndpoint) *string {
 		if v == nil {
@@ -3264,6 +3312,9 @@ type PathAnalyzerTestSourceEndpoint struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
 	VlanId *string `pulumi:"vlanId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VnicId *string `pulumi:"vnicId"`
 }
 
@@ -3298,6 +3349,9 @@ type PathAnalyzerTestSourceEndpointArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
 	VlanId pulumi.StringPtrInput `pulumi:"vlanId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VnicId pulumi.StringPtrInput `pulumi:"vnicId"`
 }
 
@@ -3424,6 +3478,9 @@ func (o PathAnalyzerTestSourceEndpointOutput) VlanId() pulumi.StringPtrOutput {
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PathAnalyzerTestSourceEndpointOutput) VnicId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PathAnalyzerTestSourceEndpoint) *string { return v.VnicId }).(pulumi.StringPtrOutput)
 }
@@ -3543,6 +3600,9 @@ func (o PathAnalyzerTestSourceEndpointPtrOutput) VlanId() pulumi.StringPtrOutput
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PathAnalyzerTestSourceEndpointPtrOutput) VnicId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PathAnalyzerTestSourceEndpoint) *string {
 		if v == nil {

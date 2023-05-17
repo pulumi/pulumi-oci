@@ -5,6 +5,16 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * **Deprecated. Use oci.Dns.Rrset instead.**
+ *
+ * This resource provides the Record resource in Oracle Cloud Infrastructure DNS service.
+ *
+ * Replaces records in the specified zone with the records specified in the
+ * request body. If a specified record does not exist, it will be created.
+ * If the record exists, then it will be updated to represent the record in
+ * the body of the request. If a record in the zone does not exist in the
+ * request body, the record will be removed from the zone.
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -91,6 +101,10 @@ export class Record extends pulumi.CustomResource {
     public readonly ttl!: pulumi.Output<number | undefined>;
     /**
      * The name or OCID of the target zone.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      *
      * @deprecated The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.
      */
@@ -187,6 +201,10 @@ export interface RecordState {
     /**
      * The name or OCID of the target zone.
      *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     *
      * @deprecated The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.
      */
     zoneNameOrId?: pulumi.Input<string>;
@@ -222,6 +240,10 @@ export interface RecordArgs {
     ttl?: pulumi.Input<number>;
     /**
      * The name or OCID of the target zone.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      *
      * @deprecated The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.
      */

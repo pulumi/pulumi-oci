@@ -18,12 +18,32 @@ public final class DomainsSmtpCredentialUserArgs extends com.pulumi.resources.Re
     /**
      * (Updatable) User display name
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="display")
     private @Nullable Output<String> display;
 
     /**
      * @return (Updatable) User display name
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> display() {
@@ -33,12 +53,32 @@ public final class DomainsSmtpCredentialUserArgs extends com.pulumi.resources.Re
     /**
      * (Updatable) User name
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return (Updatable) User name
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> name() {
@@ -48,12 +88,32 @@ public final class DomainsSmtpCredentialUserArgs extends com.pulumi.resources.Re
     /**
      * User&#39;s ocid
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
      * @return User&#39;s ocid
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -63,12 +123,32 @@ public final class DomainsSmtpCredentialUserArgs extends com.pulumi.resources.Re
     /**
      * (Updatable) The URI that corresponds to the user linked to this credential
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
+     * 
      */
     @Import(name="ref")
     private @Nullable Output<String> ref;
 
     /**
      * @return (Updatable) The URI that corresponds to the user linked to this credential
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ref() {
@@ -78,12 +158,32 @@ public final class DomainsSmtpCredentialUserArgs extends com.pulumi.resources.Re
     /**
      * User&#39;s id
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
      * @return User&#39;s id
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> value() {
@@ -121,6 +221,16 @@ public final class DomainsSmtpCredentialUserArgs extends com.pulumi.resources.Re
         /**
          * @param display (Updatable) User display name
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -132,6 +242,16 @@ public final class DomainsSmtpCredentialUserArgs extends com.pulumi.resources.Re
         /**
          * @param display (Updatable) User display name
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -141,6 +261,16 @@ public final class DomainsSmtpCredentialUserArgs extends com.pulumi.resources.Re
 
         /**
          * @param name (Updatable) User name
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -153,6 +283,16 @@ public final class DomainsSmtpCredentialUserArgs extends com.pulumi.resources.Re
         /**
          * @param name (Updatable) User name
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -162,6 +302,16 @@ public final class DomainsSmtpCredentialUserArgs extends com.pulumi.resources.Re
 
         /**
          * @param ocid User&#39;s ocid
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -174,6 +324,16 @@ public final class DomainsSmtpCredentialUserArgs extends com.pulumi.resources.Re
         /**
          * @param ocid User&#39;s ocid
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -183,6 +343,16 @@ public final class DomainsSmtpCredentialUserArgs extends com.pulumi.resources.Re
 
         /**
          * @param ref (Updatable) The URI that corresponds to the user linked to this credential
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -195,6 +365,16 @@ public final class DomainsSmtpCredentialUserArgs extends com.pulumi.resources.Re
         /**
          * @param ref (Updatable) The URI that corresponds to the user linked to this credential
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -204,6 +384,16 @@ public final class DomainsSmtpCredentialUserArgs extends com.pulumi.resources.Re
 
         /**
          * @param value User&#39;s id
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -215,6 +405,16 @@ public final class DomainsSmtpCredentialUserArgs extends com.pulumi.resources.Re
 
         /**
          * @param value User&#39;s id
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 

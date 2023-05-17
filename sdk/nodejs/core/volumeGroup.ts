@@ -88,7 +88,11 @@ export class VolumeGroup extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -213,7 +217,11 @@ export interface VolumeGroupState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -277,7 +285,11 @@ export interface VolumeGroupArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     displayName?: pulumi.Input<string>;
     /**

@@ -103,7 +103,11 @@ export class DynamicGroup extends pulumi.CustomResource {
      */
     public readonly matchingRule!: pulumi.Output<string>;
     /**
-     * The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+     * The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly name!: pulumi.Output<string>;
     /**
@@ -192,7 +196,11 @@ export interface DynamicGroupState {
      */
     matchingRule?: pulumi.Input<string>;
     /**
-     * The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+     * The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     name?: pulumi.Input<string>;
     /**
@@ -230,7 +238,11 @@ export interface DynamicGroupArgs {
      */
     matchingRule: pulumi.Input<string>;
     /**
-     * The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+     * The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     name?: pulumi.Input<string>;
 }

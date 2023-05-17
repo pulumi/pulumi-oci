@@ -83,6 +83,9 @@ type FusionEnvironmentFamily struct {
 	// The current state of the FusionEnvironmentFamily.
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubscriptionIds pulumi.StringArrayOutput `pulumi:"subscriptionIds"`
 	// Environment Specific Guid/ System Name
 	SystemName pulumi.StringOutput `pulumi:"systemName"`
@@ -146,6 +149,9 @@ type fusionEnvironmentFamilyState struct {
 	// The current state of the FusionEnvironmentFamily.
 	State *string `pulumi:"state"`
 	// (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubscriptionIds []string `pulumi:"subscriptionIds"`
 	// Environment Specific Guid/ System Name
 	SystemName *string `pulumi:"systemName"`
@@ -172,6 +178,9 @@ type FusionEnvironmentFamilyState struct {
 	// The current state of the FusionEnvironmentFamily.
 	State pulumi.StringPtrInput
 	// (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubscriptionIds pulumi.StringArrayInput
 	// Environment Specific Guid/ System Name
 	SystemName pulumi.StringPtrInput
@@ -196,6 +205,9 @@ type fusionEnvironmentFamilyArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubscriptionIds []string `pulumi:"subscriptionIds"`
 	TimeUpdated     *string  `pulumi:"timeUpdated"`
 }
@@ -213,6 +225,9 @@ type FusionEnvironmentFamilyArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubscriptionIds pulumi.StringArrayInput
 	TimeUpdated     pulumi.StringPtrInput
 }
@@ -347,6 +362,9 @@ func (o FusionEnvironmentFamilyOutput) State() pulumi.StringOutput {
 }
 
 // (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o FusionEnvironmentFamilyOutput) SubscriptionIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *FusionEnvironmentFamily) pulumi.StringArrayOutput { return v.SubscriptionIds }).(pulumi.StringArrayOutput)
 }

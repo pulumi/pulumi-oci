@@ -72,6 +72,9 @@ type DbManagementPrivateEndpoint struct {
 	// The current lifecycle state of the Database Management private endpoint.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -129,6 +132,9 @@ type dbManagementPrivateEndpointState struct {
 	// The current lifecycle state of the Database Management private endpoint.
 	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId *string `pulumi:"subnetId"`
 	// The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -152,6 +158,9 @@ type DbManagementPrivateEndpointState struct {
 	// The current lifecycle state of the Database Management private endpoint.
 	State pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringPtrInput
 	// The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringPtrInput
@@ -175,6 +184,9 @@ type dbManagementPrivateEndpointArgs struct {
 	// (Updatable) The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -191,6 +203,9 @@ type DbManagementPrivateEndpointArgs struct {
 	// (Updatable) The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
 	NsgIds pulumi.StringArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringInput
 }
 
@@ -317,6 +332,9 @@ func (o DbManagementPrivateEndpointOutput) State() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DbManagementPrivateEndpointOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbManagementPrivateEndpoint) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
 }

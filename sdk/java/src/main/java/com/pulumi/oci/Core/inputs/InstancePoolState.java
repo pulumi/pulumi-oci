@@ -129,12 +129,16 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
      * 
+     * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+     * 
      */
     @Import(name="placementConfigurations")
     private @Nullable Output<List<InstancePoolPlacementConfigurationArgs>> placementConfigurations;
 
     /**
      * @return (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
+     * 
+     * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
      * 
      */
     public Optional<Output<List<InstancePoolPlacementConfigurationArgs>>> placementConfigurations() {
@@ -159,12 +163,18 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
      * @return (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> state() {
@@ -380,6 +390,8 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param placementConfigurations (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
          * 
+         * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+         * 
          * @return builder
          * 
          */
@@ -391,6 +403,8 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param placementConfigurations (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
          * 
+         * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+         * 
          * @return builder
          * 
          */
@@ -400,6 +414,8 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param placementConfigurations (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
+         * 
+         * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
          * 
          * @return builder
          * 
@@ -432,6 +448,9 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param state (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -442,6 +461,9 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param state (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

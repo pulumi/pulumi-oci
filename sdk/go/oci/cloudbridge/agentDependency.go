@@ -96,6 +96,9 @@ type AgentDependency struct {
 	// The current state of AgentDependency.
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time when the AgentDependency was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -177,6 +180,9 @@ type agentDependencyState struct {
 	// The current state of AgentDependency.
 	State *string `pulumi:"state"`
 	// (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when the AgentDependency was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -212,6 +218,9 @@ type AgentDependencyState struct {
 	// The current state of AgentDependency.
 	State pulumi.StringPtrInput
 	// (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags pulumi.MapInput
 	// The time when the AgentDependency was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
@@ -243,6 +252,9 @@ type agentDependencyArgs struct {
 	// (Updatable) Name of the dependency object uploaded by the customer.
 	Object string `pulumi:"object"`
 	// (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 }
 
@@ -269,6 +281,9 @@ type AgentDependencyArgs struct {
 	// (Updatable) Name of the dependency object uploaded by the customer.
 	Object pulumi.StringInput
 	// (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags pulumi.MapInput
 }
 
@@ -430,6 +445,9 @@ func (o AgentDependencyOutput) State() pulumi.StringOutput {
 }
 
 // (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AgentDependencyOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *AgentDependency) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }

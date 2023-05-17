@@ -201,12 +201,18 @@ public final class MaskingPoliciesMaskingColumnState extends com.pulumi.resource
     /**
      * (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn&#39;t provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="sensitiveTypeId")
     private @Nullable Output<String> sensitiveTypeId;
 
     /**
      * @return (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn&#39;t provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> sensitiveTypeId() {
@@ -572,6 +578,9 @@ public final class MaskingPoliciesMaskingColumnState extends com.pulumi.resource
         /**
          * @param sensitiveTypeId (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn&#39;t provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -582,6 +591,9 @@ public final class MaskingPoliciesMaskingColumnState extends com.pulumi.resource
 
         /**
          * @param sensitiveTypeId (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn&#39;t provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

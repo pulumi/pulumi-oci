@@ -99,12 +99,18 @@ public class AnnouncementSubscriptionsFilterGroup extends com.pulumi.resources.C
     /**
      * The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
     /**
      * @return The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> name() {

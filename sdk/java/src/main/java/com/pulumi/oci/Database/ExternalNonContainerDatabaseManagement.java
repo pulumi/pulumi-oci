@@ -98,12 +98,18 @@ public class ExternalNonContainerDatabaseManagement extends com.pulumi.resources
     /**
      * The Oracle license model that applies to the external database. Required only for enabling database management.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="licenseModel", type=String.class, parameters={})
     private Output<String> licenseModel;
 
     /**
      * @return The Oracle license model that applies to the external database. Required only for enabling database management.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> licenseModel() {

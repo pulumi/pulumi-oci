@@ -162,12 +162,16 @@ public final class GetSecurityAssessmentsPlainArgs extends com.pulumi.resources.
     /**
      * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
      * 
+     * **Example:** 2016-12-19T16:39:57.600Z
+     * 
      */
     @Import(name="timeCreatedGreaterThanOrEqualTo")
     private @Nullable String timeCreatedGreaterThanOrEqualTo;
 
     /**
      * @return A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+     * 
+     * **Example:** 2016-12-19T16:39:57.600Z
      * 
      */
     public Optional<String> timeCreatedGreaterThanOrEqualTo() {
@@ -177,12 +181,16 @@ public final class GetSecurityAssessmentsPlainArgs extends com.pulumi.resources.
     /**
      * Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
+     * **Example:** 2016-12-19T16:39:57.600Z
+     * 
      */
     @Import(name="timeCreatedLessThan")
     private @Nullable String timeCreatedLessThan;
 
     /**
      * @return Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
+     * 
+     * **Example:** 2016-12-19T16:39:57.600Z
      * 
      */
     public Optional<String> timeCreatedLessThan() {
@@ -367,6 +375,8 @@ public final class GetSecurityAssessmentsPlainArgs extends com.pulumi.resources.
         /**
          * @param timeCreatedGreaterThanOrEqualTo A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
          * 
+         * **Example:** 2016-12-19T16:39:57.600Z
+         * 
          * @return builder
          * 
          */
@@ -377,6 +387,8 @@ public final class GetSecurityAssessmentsPlainArgs extends com.pulumi.resources.
 
         /**
          * @param timeCreatedLessThan Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
+         * 
+         * **Example:** 2016-12-19T16:39:57.600Z
          * 
          * @return builder
          * 

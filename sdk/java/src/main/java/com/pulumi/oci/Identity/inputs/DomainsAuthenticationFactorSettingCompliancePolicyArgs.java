@@ -16,12 +16,30 @@ public final class DomainsAuthenticationFactorSettingCompliancePolicyArgs extend
     /**
      * (Updatable) The action to be taken if the value of the attribute is not as expected
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="action", required=true)
     private Output<String> action;
 
     /**
      * @return (Updatable) The action to be taken if the value of the attribute is not as expected
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> action() {
@@ -31,12 +49,30 @@ public final class DomainsAuthenticationFactorSettingCompliancePolicyArgs extend
     /**
      * (Updatable) The name of the attribute being evaluated
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
      * @return (Updatable) The name of the attribute being evaluated
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> name() {
@@ -46,12 +82,32 @@ public final class DomainsAuthenticationFactorSettingCompliancePolicyArgs extend
     /**
      * (Updatable) Value of the tag.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
      * @return (Updatable) Value of the tag.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> value() {
@@ -87,6 +143,15 @@ public final class DomainsAuthenticationFactorSettingCompliancePolicyArgs extend
         /**
          * @param action (Updatable) The action to be taken if the value of the attribute is not as expected
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -98,6 +163,15 @@ public final class DomainsAuthenticationFactorSettingCompliancePolicyArgs extend
         /**
          * @param action (Updatable) The action to be taken if the value of the attribute is not as expected
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -107,6 +181,15 @@ public final class DomainsAuthenticationFactorSettingCompliancePolicyArgs extend
 
         /**
          * @param name (Updatable) The name of the attribute being evaluated
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -119,6 +202,15 @@ public final class DomainsAuthenticationFactorSettingCompliancePolicyArgs extend
         /**
          * @param name (Updatable) The name of the attribute being evaluated
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -128,6 +220,16 @@ public final class DomainsAuthenticationFactorSettingCompliancePolicyArgs extend
 
         /**
          * @param value (Updatable) Value of the tag.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -139,6 +241,16 @@ public final class DomainsAuthenticationFactorSettingCompliancePolicyArgs extend
 
         /**
          * @param value (Updatable) Value of the tag.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 

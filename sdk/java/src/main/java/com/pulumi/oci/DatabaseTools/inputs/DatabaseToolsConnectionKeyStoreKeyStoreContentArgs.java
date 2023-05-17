@@ -33,12 +33,18 @@ public final class DatabaseToolsConnectionKeyStoreKeyStoreContentArgs extends co
     /**
      * (Updatable) The value type of the user password.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="valueType", required=true)
     private Output<String> valueType;
 
     /**
      * @return (Updatable) The value type of the user password.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> valueType() {
@@ -94,6 +100,9 @@ public final class DatabaseToolsConnectionKeyStoreKeyStoreContentArgs extends co
         /**
          * @param valueType (Updatable) The value type of the user password.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -104,6 +113,9 @@ public final class DatabaseToolsConnectionKeyStoreKeyStoreContentArgs extends co
 
         /**
          * @param valueType (Updatable) The value type of the user password.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

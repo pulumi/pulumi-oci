@@ -63,7 +63,11 @@ namespace Pulumi.Oci.DataFlow
         public Output<double> Progress { get; private set; } = null!;
 
         /// <summary>
-        /// The unique ID for the run
+        /// The unique ID for the run 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("runId")]
         public Output<string> RunId { get; private set; } = null!;
@@ -139,7 +143,11 @@ namespace Pulumi.Oci.DataFlow
         public Input<string> Code { get; set; } = null!;
 
         /// <summary>
-        /// The unique ID for the run
+        /// The unique ID for the run 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("runId", required: true)]
         public Input<string> RunId { get; set; } = null!;
@@ -177,7 +185,11 @@ namespace Pulumi.Oci.DataFlow
         public Input<double>? Progress { get; set; }
 
         /// <summary>
-        /// The unique ID for the run
+        /// The unique ID for the run 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("runId")]
         public Input<string>? RunId { get; set; }

@@ -15,14 +15,44 @@ namespace Pulumi.Oci.Identity.Outputs
     {
         /// <summary>
         /// (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? Display;
         /// <summary>
         /// (Updatable) Group URI
+        /// 
+        /// **Added In:** 2205120021
+        /// 
+        /// **SCIM++ Properties:**
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: true
+        /// * returned: default
+        /// * type: reference
         /// </summary>
         public readonly string? Ref;
         /// <summary>
         /// (Updatable) Value of the tag.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string Value;
 

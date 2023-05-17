@@ -172,6 +172,9 @@ type NodePool struct {
 	// The state of the nodepool.
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetIds pulumi.StringArrayOutput `pulumi:"subnetIds"`
 }
 
@@ -262,6 +265,9 @@ type nodePoolState struct {
 	// The state of the nodepool.
 	State *string `pulumi:"state"`
 	// (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetIds []string `pulumi:"subnetIds"`
 }
 
@@ -315,6 +321,9 @@ type NodePoolState struct {
 	// The state of the nodepool.
 	State pulumi.StringPtrInput
 	// (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetIds pulumi.StringArrayInput
 }
 
@@ -364,6 +373,9 @@ type nodePoolArgs struct {
 	// (Updatable) The SSH public key on each node in the node pool on launch.
 	SshPublicKey *string `pulumi:"sshPublicKey"`
 	// (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetIds []string `pulumi:"subnetIds"`
 }
 
@@ -410,6 +422,9 @@ type NodePoolArgs struct {
 	// (Updatable) The SSH public key on each node in the node pool on launch.
 	SshPublicKey pulumi.StringPtrInput
 	// (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetIds pulumi.StringArrayInput
 }
 
@@ -615,6 +630,9 @@ func (o NodePoolOutput) State() pulumi.StringOutput {
 }
 
 // (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o NodePoolOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NodePool) pulumi.StringArrayOutput { return v.SubnetIds }).(pulumi.StringArrayOutput)
 }

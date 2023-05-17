@@ -97,6 +97,9 @@ type OpaInstance struct {
 	// MeteringType Identifier
 	MeteringType pulumi.StringOutput `pulumi:"meteringType"`
 	// Shape of the instance.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShapeName pulumi.StringOutput `pulumi:"shapeName"`
 	// The current state of the OpaInstance.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -177,6 +180,9 @@ type opaInstanceState struct {
 	// MeteringType Identifier
 	MeteringType *string `pulumi:"meteringType"`
 	// Shape of the instance.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShapeName *string `pulumi:"shapeName"`
 	// The current state of the OpaInstance.
 	State *string `pulumi:"state"`
@@ -220,6 +226,9 @@ type OpaInstanceState struct {
 	// MeteringType Identifier
 	MeteringType pulumi.StringPtrInput
 	// Shape of the instance.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShapeName pulumi.StringPtrInput
 	// The current state of the OpaInstance.
 	State pulumi.StringPtrInput
@@ -255,6 +264,9 @@ type opaInstanceArgs struct {
 	// MeteringType Identifier
 	MeteringType *string `pulumi:"meteringType"`
 	// Shape of the instance.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShapeName string `pulumi:"shapeName"`
 }
 
@@ -279,6 +291,9 @@ type OpaInstanceArgs struct {
 	// MeteringType Identifier
 	MeteringType pulumi.StringPtrInput
 	// Shape of the instance.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShapeName pulumi.StringInput
 }
 
@@ -445,6 +460,9 @@ func (o OpaInstanceOutput) MeteringType() pulumi.StringOutput {
 }
 
 // Shape of the instance.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o OpaInstanceOutput) ShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v *OpaInstance) pulumi.StringOutput { return v.ShapeName }).(pulumi.StringOutput)
 }

@@ -139,12 +139,32 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="compartmentOcid", type=String.class, parameters={})
     private Output<String> compartmentOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> compartmentOcid() {
@@ -153,12 +173,24 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
     /**
      * The db password of the user
      * 
+     * **SCIM++ Properties:**
+     * * type: string
+     * * mutability: immutable
+     * * returned: default
+     * * required: true
+     * 
      */
     @Export(name="dbPassword", type=String.class, parameters={})
     private Output<String> dbPassword;
 
     /**
      * @return The db password of the user
+     * 
+     * **SCIM++ Properties:**
+     * * type: string
+     * * mutability: immutable
+     * * returned: default
+     * * required: true
      * 
      */
     public Output<String> dbPassword() {
@@ -167,12 +199,32 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Export(name="deleteInProgress", type=Boolean.class, parameters={})
     private Output<Boolean> deleteInProgress;
 
     /**
      * @return (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Output<Boolean> deleteInProgress() {
@@ -181,12 +233,30 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
     /**
      * Description
      * 
+     * **Added In:** 2109020413
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * 
      */
     @Export(name="description", type=String.class, parameters={})
     private Output<String> description;
 
     /**
      * @return Description
+     * 
+     * **Added In:** 2109020413
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
      * 
      */
     public Output<String> description() {
@@ -195,12 +265,32 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="domainOcid", type=String.class, parameters={})
     private Output<String> domainOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> domainOcid() {
@@ -209,12 +299,22 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) Indicates that the db password has expired
      * 
+     * **SCIM++ Properties:**
+     * * type: boolean
+     * * mutability: readOnly
+     * * returned: default
+     * 
      */
     @Export(name="expired", type=Boolean.class, parameters={})
     private Output<Boolean> expired;
 
     /**
      * @return (Updatable) Indicates that the db password has expired
+     * 
+     * **SCIM++ Properties:**
+     * * type: boolean
+     * * mutability: readOnly
+     * * returned: default
      * 
      */
     public Output<Boolean> expired() {
@@ -223,12 +323,36 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
     /**
      * User credential expires on
      * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     @Export(name="expiresOn", type=String.class, parameters={})
     private Output<String> expiresOn;
 
     /**
      * @return User credential expires on
+     * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     public Output<String> expiresOn() {
@@ -237,12 +361,28 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) The User or App who created the Resource
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: complex
+     * 
      */
     @Export(name="idcsCreatedBies", type=List.class, parameters={DomainsUserDbCredentialIdcsCreatedBy.class})
     private Output<List<DomainsUserDbCredentialIdcsCreatedBy>> idcsCreatedBies;
 
     /**
      * @return (Updatable) The User or App who created the Resource
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: complex
      * 
      */
     public Output<List<DomainsUserDbCredentialIdcsCreatedBy>> idcsCreatedBies() {
@@ -265,12 +405,28 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) The User or App who modified the Resource
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * 
      */
     @Export(name="idcsLastModifiedBies", type=List.class, parameters={DomainsUserDbCredentialIdcsLastModifiedBy.class})
     private Output<List<DomainsUserDbCredentialIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
      * @return (Updatable) The User or App who modified the Resource
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
      * 
      */
     public Output<List<DomainsUserDbCredentialIdcsLastModifiedBy>> idcsLastModifiedBies() {
@@ -279,12 +435,32 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) The release number when the resource was upgraded.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="idcsLastUpgradedInRelease", type=String.class, parameters={})
     private Output<String> idcsLastUpgradedInRelease;
 
     /**
      * @return (Updatable) The release number when the resource was upgraded.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> idcsLastUpgradedInRelease() {
@@ -293,12 +469,30 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="idcsPreventedOperations", type=List.class, parameters={String.class})
     private Output<List<String>> idcsPreventedOperations;
 
     /**
      * @return (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<List<String>> idcsPreventedOperations() {
@@ -307,12 +501,22 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) A DateTime that specifies the date and time when the current db password was set
      * 
+     * **SCIM++ Properties:**
+     * * type: dateTime
+     * * mutability: readOnly
+     * * returned: default
+     * 
      */
     @Export(name="lastSetDate", type=String.class, parameters={})
     private Output<String> lastSetDate;
 
     /**
      * @return (Updatable) A DateTime that specifies the date and time when the current db password was set
+     * 
+     * **SCIM++ Properties:**
+     * * type: dateTime
+     * * mutability: readOnly
+     * * returned: default
      * 
      */
     public Output<String> lastSetDate() {
@@ -321,12 +525,32 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+     * * type: complex
+     * 
      */
     @Export(name="metas", type=List.class, parameters={DomainsUserDbCredentialMeta.class})
     private Output<List<DomainsUserDbCredentialMeta>> metas;
 
     /**
      * @return (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+     * * type: complex
      * 
      */
     public Output<List<DomainsUserDbCredentialMeta>> metas() {
@@ -335,12 +559,24 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) The db password of the user with mixed salt
      * 
+     * **SCIM++ Properties:**
+     * * type: string
+     * * mutability: readOnly
+     * * returned: default
+     * * required: false
+     * 
      */
     @Export(name="mixedDbPassword", type=String.class, parameters={})
     private Output<String> mixedDbPassword;
 
     /**
      * @return (Updatable) The db password of the user with mixed salt
+     * 
+     * **SCIM++ Properties:**
+     * * type: string
+     * * mutability: readOnly
+     * * returned: default
+     * * required: false
      * 
      */
     public Output<String> mixedDbPassword() {
@@ -349,12 +585,24 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) The mixed salt of the password
      * 
+     * **SCIM++ Properties:**
+     * * type: string
+     * * mutability: readOnly
+     * * returned: default
+     * * required: false
+     * 
      */
     @Export(name="mixedSalt", type=String.class, parameters={})
     private Output<String> mixedSalt;
 
     /**
      * @return (Updatable) The mixed salt of the password
+     * 
+     * **SCIM++ Properties:**
+     * * type: string
+     * * mutability: readOnly
+     * * returned: default
+     * * required: false
      * 
      */
     public Output<String> mixedSalt() {
@@ -363,12 +611,32 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) User name
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
     /**
      * @return (Updatable) User name
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> name() {
@@ -377,12 +645,32 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
     /**
      * User&#39;s ocid
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="ocid", type=String.class, parameters={})
     private Output<String> ocid;
 
     /**
      * @return User&#39;s ocid
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> ocid() {
@@ -405,12 +693,24 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) The salt of the password
      * 
+     * **SCIM++ Properties:**
+     * * type: string
+     * * mutability: readOnly
+     * * returned: default
+     * * required: false
+     * 
      */
     @Export(name="salt", type=String.class, parameters={})
     private Output<String> salt;
 
     /**
      * @return (Updatable) The salt of the password
+     * 
+     * **SCIM++ Properties:**
+     * * type: string
+     * * mutability: readOnly
+     * * returned: default
+     * * required: false
      * 
      */
     public Output<String> salt() {
@@ -419,12 +719,32 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="schemas", type=List.class, parameters={String.class})
     private Output<List<String>> schemas;
 
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<List<String>> schemas() {
@@ -433,12 +753,36 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
     /**
      * User credential status
      * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: never
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="status", type=String.class, parameters={})
     private Output<String> status;
 
     /**
      * @return User credential status
+     * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: never
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> status() {
@@ -447,12 +791,32 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
     /**
      * A list of tags on this resource.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Export(name="tags", type=List.class, parameters={DomainsUserDbCredentialTag.class})
     private Output<List<DomainsUserDbCredentialTag>> tags;
 
     /**
      * @return A list of tags on this resource.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Output<List<DomainsUserDbCredentialTag>> tags() {
@@ -461,12 +825,32 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Export(name="tenancyOcid", type=String.class, parameters={})
     private Output<String> tenancyOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> tenancyOcid() {
@@ -489,12 +873,34 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
     /**
      * User linked to db credential
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Export(name="user", type=DomainsUserDbCredentialUser.class, parameters={})
     private Output<DomainsUserDbCredentialUser> user;
 
     /**
      * @return User linked to db credential
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Output<DomainsUserDbCredentialUser> user() {

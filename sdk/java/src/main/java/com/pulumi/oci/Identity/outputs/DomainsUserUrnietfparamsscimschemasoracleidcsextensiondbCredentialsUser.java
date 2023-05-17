@@ -15,10 +15,33 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCrede
     /**
      * @return (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
      * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     private @Nullable Integer dbLoginAttempts;
     /**
      * @return (Updatable) The Database User Name
+     * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * type: string
+     * * returned: request
+     * * caseExact: false
+     * * uniqueness: none
+     * * idcsSearchable: true
      * 
      */
     private @Nullable String dbUserName;
@@ -27,12 +50,35 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCrede
     /**
      * @return (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
      * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     public Optional<Integer> dbLoginAttempts() {
         return Optional.ofNullable(this.dbLoginAttempts);
     }
     /**
      * @return (Updatable) The Database User Name
+     * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * type: string
+     * * returned: request
+     * * caseExact: false
+     * * uniqueness: none
+     * * idcsSearchable: true
      * 
      */
     public Optional<String> dbUserName() {

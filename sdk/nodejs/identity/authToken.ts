@@ -92,6 +92,10 @@ export class AuthToken extends pulumi.CustomResource {
     public /*out*/ readonly token!: pulumi.Output<string>;
     /**
      * The OCID of the user.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly userId!: pulumi.Output<string>;
 
@@ -166,6 +170,10 @@ export interface AuthTokenState {
     token?: pulumi.Input<string>;
     /**
      * The OCID of the user.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     userId?: pulumi.Input<string>;
 }
@@ -180,6 +188,10 @@ export interface AuthTokenArgs {
     description: pulumi.Input<string>;
     /**
      * The OCID of the user.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     userId: pulumi.Input<string>;
 }

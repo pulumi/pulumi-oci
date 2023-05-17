@@ -96,10 +96,14 @@ export class DataMaskRule extends pulumi.CustomResource {
     public readonly description!: pulumi.Output<string>;
     /**
      * (Updatable) Data mask rule name.
+     *
+     * Avoid entering confidential information.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     *
+     * Avoid entering confidential information.
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -221,10 +225,14 @@ export interface DataMaskRuleState {
     description?: pulumi.Input<string>;
     /**
      * (Updatable) Data mask rule name.
+     *
+     * Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     *
+     * Avoid entering confidential information.
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -283,10 +291,14 @@ export interface DataMaskRuleArgs {
     description?: pulumi.Input<string>;
     /**
      * (Updatable) Data mask rule name.
+     *
+     * Avoid entering confidential information.
      */
     displayName: pulumi.Input<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     *
+     * Avoid entering confidential information.
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**

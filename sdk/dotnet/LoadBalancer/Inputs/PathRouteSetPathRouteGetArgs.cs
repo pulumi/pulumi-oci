@@ -23,6 +23,8 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         /// *  Path strings are case-insensitive.
         /// *  Asterisk (*) wildcards are not supported.
         /// *  Regular expressions are not supported.
+        /// 
+        /// Example: `/example/video/123`
         /// </summary>
         [Input("path", required: true)]
         public Input<string> Path { get; set; } = null!;

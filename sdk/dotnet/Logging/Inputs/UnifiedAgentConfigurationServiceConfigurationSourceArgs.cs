@@ -50,6 +50,10 @@ namespace Pulumi.Oci.Logging.Inputs
 
         /// <summary>
         /// (Updatable) Unified schema logging source type.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("sourceType", required: true)]
         public Input<string> SourceType { get; set; } = null!;

@@ -118,6 +118,9 @@ type FileSystem struct {
 	// Source information for the file system.
 	SourceDetails FileSystemSourceDetailArrayOutput `pulumi:"sourceDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceSnapshotId pulumi.StringOutput `pulumi:"sourceSnapshotId"`
 	// The current state of the file system.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -187,6 +190,9 @@ type fileSystemState struct {
 	// Source information for the file system.
 	SourceDetails []FileSystemSourceDetail `pulumi:"sourceDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceSnapshotId *string `pulumi:"sourceSnapshotId"`
 	// The current state of the file system.
 	State *string `pulumi:"state"`
@@ -222,6 +228,9 @@ type FileSystemState struct {
 	// Source information for the file system.
 	SourceDetails FileSystemSourceDetailArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceSnapshotId pulumi.StringPtrInput
 	// The current state of the file system.
 	State pulumi.StringPtrInput
@@ -247,6 +256,9 @@ type fileSystemArgs struct {
 	// (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceSnapshotId *string `pulumi:"sourceSnapshotId"`
 }
 
@@ -265,6 +277,9 @@ type FileSystemArgs struct {
 	// (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
 	KmsKeyId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceSnapshotId pulumi.StringPtrInput
 }
 
@@ -421,6 +436,9 @@ func (o FileSystemOutput) SourceDetails() FileSystemSourceDetailArrayOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o FileSystemOutput) SourceSnapshotId() pulumi.StringOutput {
 	return o.ApplyT(func(v *FileSystem) pulumi.StringOutput { return v.SourceSnapshotId }).(pulumi.StringOutput)
 }

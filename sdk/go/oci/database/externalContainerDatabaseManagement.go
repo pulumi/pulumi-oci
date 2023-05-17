@@ -29,6 +29,9 @@ type ExternalContainerDatabaseManagement struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId pulumi.StringOutput `pulumi:"externalDatabaseConnectorId"`
 	// The Oracle license model that applies to the external database. Required only for enabling database management.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LicenseModel pulumi.StringOutput `pulumi:"licenseModel"`
 }
 
@@ -76,6 +79,9 @@ type externalContainerDatabaseManagementState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId *string `pulumi:"externalDatabaseConnectorId"`
 	// The Oracle license model that applies to the external database. Required only for enabling database management.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LicenseModel *string `pulumi:"licenseModel"`
 }
 
@@ -86,6 +92,9 @@ type ExternalContainerDatabaseManagementState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId pulumi.StringPtrInput
 	// The Oracle license model that applies to the external database. Required only for enabling database management.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LicenseModel pulumi.StringPtrInput
 }
 
@@ -100,6 +109,9 @@ type externalContainerDatabaseManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId string `pulumi:"externalDatabaseConnectorId"`
 	// The Oracle license model that applies to the external database. Required only for enabling database management.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LicenseModel *string `pulumi:"licenseModel"`
 }
 
@@ -111,6 +123,9 @@ type ExternalContainerDatabaseManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId pulumi.StringInput
 	// The Oracle license model that applies to the external database. Required only for enabling database management.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LicenseModel pulumi.StringPtrInput
 }
 
@@ -216,6 +231,9 @@ func (o ExternalContainerDatabaseManagementOutput) ExternalDatabaseConnectorId()
 }
 
 // The Oracle license model that applies to the external database. Required only for enabling database management.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ExternalContainerDatabaseManagementOutput) LicenseModel() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalContainerDatabaseManagement) pulumi.StringOutput { return v.LicenseModel }).(pulumi.StringOutput)
 }

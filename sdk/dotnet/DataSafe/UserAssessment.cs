@@ -125,6 +125,8 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// (Updatable) To schedule the assessment for saving periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - &lt;version-string&gt;;&lt;version-specific-schedule&gt;
+        /// 
+        /// Allowed version strings - "v1" v1's version specific schedule -&lt;ss&gt; &lt;mm&gt; &lt;hh&gt; &lt;day-of-week&gt; &lt;day-of-month&gt; Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = &lt;ss&gt; (So, the allowed range for &lt;ss&gt; is [0, 59]) 2. minutes = &lt;mm&gt; (So, the allowed range for &lt;mm&gt; is [0, 59]) 3. hours = &lt;hh&gt; (So, the allowed range for &lt;hh&gt; is [0, 23]) &lt;day-of-week&gt; can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value &lt;day-of-month&gt; can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
         /// </summary>
         [Output("schedule")]
         public Output<string> Schedule { get; private set; } = null!;
@@ -155,6 +157,10 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// The OCID of the target database on which the user assessment is to be run.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("targetId")]
         public Output<string> TargetId { get; private set; } = null!;
@@ -285,12 +291,18 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// (Updatable) To schedule the assessment for saving periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - &lt;version-string&gt;;&lt;version-specific-schedule&gt;
+        /// 
+        /// Allowed version strings - "v1" v1's version specific schedule -&lt;ss&gt; &lt;mm&gt; &lt;hh&gt; &lt;day-of-week&gt; &lt;day-of-month&gt; Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = &lt;ss&gt; (So, the allowed range for &lt;ss&gt; is [0, 59]) 2. minutes = &lt;mm&gt; (So, the allowed range for &lt;mm&gt; is [0, 59]) 3. hours = &lt;hh&gt; (So, the allowed range for &lt;hh&gt; is [0, 23]) &lt;day-of-week&gt; can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value &lt;day-of-month&gt; can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
         /// </summary>
         [Input("schedule")]
         public Input<string>? Schedule { get; set; }
 
         /// <summary>
         /// The OCID of the target database on which the user assessment is to be run.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("targetId", required: true)]
         public Input<string> TargetId { get; set; } = null!;
@@ -395,6 +407,8 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// (Updatable) To schedule the assessment for saving periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - &lt;version-string&gt;;&lt;version-specific-schedule&gt;
+        /// 
+        /// Allowed version strings - "v1" v1's version specific schedule -&lt;ss&gt; &lt;mm&gt; &lt;hh&gt; &lt;day-of-week&gt; &lt;day-of-month&gt; Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = &lt;ss&gt; (So, the allowed range for &lt;ss&gt; is [0, 59]) 2. minutes = &lt;mm&gt; (So, the allowed range for &lt;mm&gt; is [0, 59]) 3. hours = &lt;hh&gt; (So, the allowed range for &lt;hh&gt; is [0, 23]) &lt;day-of-week&gt; can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value &lt;day-of-month&gt; can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
         /// </summary>
         [Input("schedule")]
         public Input<string>? Schedule { get; set; }
@@ -431,6 +445,10 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// The OCID of the target database on which the user assessment is to be run.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }

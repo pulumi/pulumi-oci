@@ -19,6 +19,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         public readonly ImmutableArray<string> AdditionalCapabilities;
         /// <summary>
         /// A list of string arguments for a container's entrypoint process.
+        /// 
+        /// Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+        /// 
+        /// All arguments together must be 64KB or smaller.
         /// </summary>
         public readonly ImmutableArray<string> Arguments;
         /// <summary>
@@ -48,6 +52,8 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         public readonly string? DisplayName;
         /// <summary>
         /// A map of additional environment variables to set in the environment of the container's entrypoint process. These variables are in addition to any variables already defined in the container's image.
+        /// 
+        /// All environment variables together, name and values, must be 64KB or smaller.
         /// </summary>
         public readonly ImmutableDictionary<string, object>? EnvironmentVariables;
         public readonly int? ExitCode;
@@ -80,7 +86,11 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly Outputs.ContainerInstanceContainerResourceConfig? ResourceConfig;
         /// <summary>
-        /// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+        /// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string? State;
         /// <summary>

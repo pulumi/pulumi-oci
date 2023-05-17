@@ -153,6 +153,10 @@ namespace Pulumi.Oci.MediaServices
 
         /// <summary>
         /// (Updatable) The type of the media asset.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -331,6 +335,10 @@ namespace Pulumi.Oci.MediaServices
 
         /// <summary>
         /// (Updatable) The type of the media asset.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -501,6 +509,10 @@ namespace Pulumi.Oci.MediaServices
 
         /// <summary>
         /// (Updatable) The type of the media asset.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

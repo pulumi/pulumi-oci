@@ -78,12 +78,18 @@ public class FusionEnvironmentDataMaskingActivity extends com.pulumi.resources.C
     /**
      * This allows the Data Safe service to resume the previously failed data masking activity.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="isResumeDataMasking", type=Boolean.class, parameters={})
     private Output<Boolean> isResumeDataMasking;
 
     /**
      * @return This allows the Data Safe service to resume the previously failed data masking activity.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Boolean> isResumeDataMasking() {

@@ -96,6 +96,10 @@ export class ContainerImageSignature extends pulumi.CustomResource {
     public readonly signature!: pulumi.Output<string>;
     /**
      * The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly signingAlgorithm!: pulumi.Output<string>;
     /**
@@ -203,6 +207,10 @@ export interface ContainerImageSignatureState {
     signature?: pulumi.Input<string>;
     /**
      * The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     signingAlgorithm?: pulumi.Input<string>;
     /**
@@ -241,6 +249,10 @@ export interface ContainerImageSignatureArgs {
     signature: pulumi.Input<string>;
     /**
      * The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     signingAlgorithm: pulumi.Input<string>;
 }

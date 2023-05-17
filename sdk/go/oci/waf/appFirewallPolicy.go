@@ -222,6 +222,9 @@ type AppFirewallPolicy struct {
 	// The current state of the WebAppFirewallPolicy.
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -286,6 +289,9 @@ type appFirewallPolicyState struct {
 	// The current state of the WebAppFirewallPolicy.
 	State *string `pulumi:"state"`
 	// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -319,6 +325,9 @@ type AppFirewallPolicyState struct {
 	// The current state of the WebAppFirewallPolicy.
 	State pulumi.StringPtrInput
 	// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags pulumi.MapInput
 	// The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
@@ -352,6 +361,9 @@ type appFirewallPolicyArgs struct {
 	// (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
 	ResponseProtection *AppFirewallPolicyResponseProtection `pulumi:"responseProtection"`
 	// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 }
 
@@ -378,6 +390,9 @@ type AppFirewallPolicyArgs struct {
 	// (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
 	ResponseProtection AppFirewallPolicyResponseProtectionPtrInput
 	// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags pulumi.MapInput
 }
 
@@ -531,6 +546,9 @@ func (o AppFirewallPolicyOutput) State() pulumi.StringOutput {
 }
 
 // (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AppFirewallPolicyOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *AppFirewallPolicy) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }

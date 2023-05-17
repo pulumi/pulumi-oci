@@ -51,12 +51,20 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) A user-friendly name for the image. It does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
+     * You cannot use a platform image name as a custom image name.
+     * 
+     * Example: `My Oracle Linux image`
+     * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name for the image. It does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * 
+     * You cannot use a platform image name as a custom image name.
+     * 
+     * Example: `My Oracle Linux image`
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -190,6 +198,10 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param displayName (Updatable) A user-friendly name for the image. It does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
          * 
+         * You cannot use a platform image name as a custom image name.
+         * 
+         * Example: `My Oracle Linux image`
+         * 
          * @return builder
          * 
          */
@@ -200,6 +212,10 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param displayName (Updatable) A user-friendly name for the image. It does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * 
+         * You cannot use a platform image name as a custom image name.
+         * 
+         * Example: `My Oracle Linux image`
          * 
          * @return builder
          * 

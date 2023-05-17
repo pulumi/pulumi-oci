@@ -67,6 +67,19 @@ export class SslCipherSuite extends pulumi.CustomResource {
     public readonly loadBalancerId!: pulumi.Output<string>;
     /**
      * A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+     *
+     * **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle's predefined or reserved SSL cipher suite names:
+     * * oci-default-ssl-cipher-suite-v1
+     * * oci-modern-ssl-cipher-suite-v1
+     * * oci-compatible-ssl-cipher-suite-v1
+     * * oci-wider-compatible-ssl-cipher-suite-v1
+     * * oci-customized-ssl-cipher-suite
+     *
+     * example: `exampleCipherSuite`
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly name!: pulumi.Output<string>;
     public /*out*/ readonly state!: pulumi.Output<string>;
@@ -120,6 +133,19 @@ export interface SslCipherSuiteState {
     loadBalancerId?: pulumi.Input<string>;
     /**
      * A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+     *
+     * **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle's predefined or reserved SSL cipher suite names:
+     * * oci-default-ssl-cipher-suite-v1
+     * * oci-modern-ssl-cipher-suite-v1
+     * * oci-compatible-ssl-cipher-suite-v1
+     * * oci-wider-compatible-ssl-cipher-suite-v1
+     * * oci-customized-ssl-cipher-suite
+     *
+     * example: `exampleCipherSuite`
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     name?: pulumi.Input<string>;
     state?: pulumi.Input<string>;
@@ -139,6 +165,19 @@ export interface SslCipherSuiteArgs {
     loadBalancerId: pulumi.Input<string>;
     /**
      * A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+     *
+     * **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle's predefined or reserved SSL cipher suite names:
+     * * oci-default-ssl-cipher-suite-v1
+     * * oci-modern-ssl-cipher-suite-v1
+     * * oci-compatible-ssl-cipher-suite-v1
+     * * oci-wider-compatible-ssl-cipher-suite-v1
+     * * oci-customized-ssl-cipher-suite
+     *
+     * example: `exampleCipherSuite`
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     name?: pulumi.Input<string>;
 }

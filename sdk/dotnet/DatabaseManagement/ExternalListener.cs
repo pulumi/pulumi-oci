@@ -87,6 +87,10 @@ namespace Pulumi.Oci.DatabaseManagement
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("externalListenerId")]
         public Output<string> ExternalListenerId { get; private set; } = null!;
@@ -229,6 +233,10 @@ namespace Pulumi.Oci.DatabaseManagement
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("externalListenerId", required: true)]
         public Input<string> ExternalListenerId { get; set; } = null!;
@@ -315,6 +323,10 @@ namespace Pulumi.Oci.DatabaseManagement
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("externalListenerId")]
         public Input<string>? ExternalListenerId { get; set; }

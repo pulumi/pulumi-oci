@@ -63,6 +63,10 @@ type Backend struct {
 	// The name of the backend set to add the backend server to.  Example: `exampleBackendSet`
 	BackendsetName pulumi.StringOutput `pulumi:"backendsetName"`
 	// (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
+	//
+	// **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+	//
+	// Example: `false`
 	Backup pulumi.BoolPtrOutput `pulumi:"backup"`
 	// (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
 	Drain pulumi.BoolOutput `pulumi:"drain"`
@@ -78,6 +82,9 @@ type Backend struct {
 	Port  pulumi.IntOutput    `pulumi:"port"`
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Weight pulumi.IntOutput `pulumi:"weight"`
 }
 
@@ -125,6 +132,10 @@ type backendState struct {
 	// The name of the backend set to add the backend server to.  Example: `exampleBackendSet`
 	BackendsetName *string `pulumi:"backendsetName"`
 	// (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
+	//
+	// **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+	//
+	// Example: `false`
 	Backup *bool `pulumi:"backup"`
 	// (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
 	Drain *bool `pulumi:"drain"`
@@ -140,6 +151,9 @@ type backendState struct {
 	Port  *int    `pulumi:"port"`
 	State *string `pulumi:"state"`
 	// (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Weight *int `pulumi:"weight"`
 }
 
@@ -147,6 +161,10 @@ type BackendState struct {
 	// The name of the backend set to add the backend server to.  Example: `exampleBackendSet`
 	BackendsetName pulumi.StringPtrInput
 	// (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
+	//
+	// **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+	//
+	// Example: `false`
 	Backup pulumi.BoolPtrInput
 	// (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
 	Drain pulumi.BoolPtrInput
@@ -162,6 +180,9 @@ type BackendState struct {
 	Port  pulumi.IntPtrInput
 	State pulumi.StringPtrInput
 	// (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Weight pulumi.IntPtrInput
 }
 
@@ -173,6 +194,10 @@ type backendArgs struct {
 	// The name of the backend set to add the backend server to.  Example: `exampleBackendSet`
 	BackendsetName string `pulumi:"backendsetName"`
 	// (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
+	//
+	// **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+	//
+	// Example: `false`
 	Backup *bool `pulumi:"backup"`
 	// (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
 	Drain *bool `pulumi:"drain"`
@@ -185,6 +210,9 @@ type backendArgs struct {
 	// The communication port for the backend server.  Example: `8080`
 	Port int `pulumi:"port"`
 	// (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Weight *int `pulumi:"weight"`
 }
 
@@ -193,6 +221,10 @@ type BackendArgs struct {
 	// The name of the backend set to add the backend server to.  Example: `exampleBackendSet`
 	BackendsetName pulumi.StringInput
 	// (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
+	//
+	// **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+	//
+	// Example: `false`
 	Backup pulumi.BoolPtrInput
 	// (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
 	Drain pulumi.BoolPtrInput
@@ -205,6 +237,9 @@ type BackendArgs struct {
 	// The communication port for the backend server.  Example: `8080`
 	Port pulumi.IntInput
 	// (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Weight pulumi.IntPtrInput
 }
 
@@ -301,6 +336,10 @@ func (o BackendOutput) BackendsetName() pulumi.StringOutput {
 }
 
 // (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
+//
+// **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+//
+// Example: `false`
 func (o BackendOutput) Backup() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *Backend) pulumi.BoolPtrOutput { return v.Backup }).(pulumi.BoolPtrOutput)
 }
@@ -340,6 +379,9 @@ func (o BackendOutput) State() pulumi.StringOutput {
 }
 
 // (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BackendOutput) Weight() pulumi.IntOutput {
 	return o.ApplyT(func(v *Backend) pulumi.IntOutput { return v.Weight }).(pulumi.IntOutput)
 }

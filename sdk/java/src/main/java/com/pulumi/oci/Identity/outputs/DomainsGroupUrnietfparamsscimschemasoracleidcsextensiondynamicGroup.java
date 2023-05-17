@@ -14,10 +14,34 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynami
     /**
      * @return (Updatable) Membership rule
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String membershipRule;
     /**
      * @return (Updatable) Membership type
+     * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable String membershipType;
@@ -26,12 +50,36 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynami
     /**
      * @return (Updatable) Membership rule
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> membershipRule() {
         return Optional.ofNullable(this.membershipRule);
     }
     /**
      * @return (Updatable) Membership type
+     * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> membershipType() {

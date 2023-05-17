@@ -89,6 +89,9 @@ type Connection struct {
 	// The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// The key of the object type. Type key's can be found via the '/types' endpoint.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TypeKey pulumi.StringOutput `pulumi:"typeKey"`
 	// OCID of the user who modified the connection.
 	UpdatedById pulumi.StringOutput `pulumi:"updatedById"`
@@ -176,6 +179,9 @@ type connectionState struct {
 	// The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The key of the object type. Type key's can be found via the '/types' endpoint.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TypeKey *string `pulumi:"typeKey"`
 	// OCID of the user who modified the connection.
 	UpdatedById *string `pulumi:"updatedById"`
@@ -213,6 +219,9 @@ type ConnectionState struct {
 	// The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
 	// The key of the object type. Type key's can be found via the '/types' endpoint.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TypeKey pulumi.StringPtrInput
 	// OCID of the user who modified the connection.
 	UpdatedById pulumi.StringPtrInput
@@ -240,6 +249,9 @@ type connectionArgs struct {
 	// A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. Example: `{"properties": { "default": { "username": "user1"}}}`
 	Properties map[string]interface{} `pulumi:"properties"`
 	// The key of the object type. Type key's can be found via the '/types' endpoint.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TypeKey string `pulumi:"typeKey"`
 }
 
@@ -260,6 +272,9 @@ type ConnectionArgs struct {
 	// A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. Example: `{"properties": { "default": { "username": "user1"}}}`
 	Properties pulumi.MapInput
 	// The key of the object type. Type key's can be found via the '/types' endpoint.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TypeKey pulumi.StringInput
 }
 
@@ -421,6 +436,9 @@ func (o ConnectionOutput) TimeUpdated() pulumi.StringOutput {
 }
 
 // The key of the object type. Type key's can be found via the '/types' endpoint.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ConnectionOutput) TypeKey() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.TypeKey }).(pulumi.StringOutput)
 }

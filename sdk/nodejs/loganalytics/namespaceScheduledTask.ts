@@ -98,6 +98,10 @@ export class NamespaceScheduledTask extends pulumi.CustomResource {
     public /*out*/ readonly taskStatus!: pulumi.Output<string>;
     /**
      * Task type.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly taskType!: pulumi.Output<string>;
     /**
@@ -241,6 +245,10 @@ export interface NamespaceScheduledTaskState {
     taskStatus?: pulumi.Input<string>;
     /**
      * Task type.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     taskType?: pulumi.Input<string>;
     /**
@@ -299,6 +307,10 @@ export interface NamespaceScheduledTaskArgs {
     schedules: pulumi.Input<inputs.LogAnalytics.NamespaceScheduledTaskSchedules>;
     /**
      * Task type.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     taskType: pulumi.Input<string>;
 }

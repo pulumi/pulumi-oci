@@ -14,24 +14,68 @@ namespace Pulumi.Oci.Identity.Inputs
     {
         /// <summary>
         /// (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("expired")]
         public Input<bool>? Expired { get; set; }
 
         /// <summary>
         /// (Updatable) The date and time that the current resource was locked
+        /// 
+        /// **Added In:** 19.1.4
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: dateTime
+        /// * uniqueness: none
         /// </summary>
         [Input("lockDate")]
         public Input<string>? LockDate { get; set; }
 
         /// <summary>
         /// (Updatable) Indicates that the rev is locked
+        /// 
+        /// **Added In:** 19.1.4
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("on")]
         public Input<bool>? On { get; set; }
 
         /// <summary>
         /// (Updatable) Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: integer
+        /// * uniqueness: none
         /// </summary>
         [Input("reason")]
         public Input<int>? Reason { get; set; }

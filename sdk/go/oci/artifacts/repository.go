@@ -76,6 +76,9 @@ type Repository struct {
 	// Whether to make the repository immutable. The artifacts of an immutable repository cannot be overwritten.
 	IsImmutable pulumi.BoolOutput `pulumi:"isImmutable"`
 	// (Updatable) The repository's supported artifact type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RepositoryType pulumi.StringOutput `pulumi:"repositoryType"`
 	// The current state of the repository.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -134,6 +137,9 @@ type repositoryState struct {
 	// Whether to make the repository immutable. The artifacts of an immutable repository cannot be overwritten.
 	IsImmutable *bool `pulumi:"isImmutable"`
 	// (Updatable) The repository's supported artifact type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RepositoryType *string `pulumi:"repositoryType"`
 	// The current state of the repository.
 	State *string `pulumi:"state"`
@@ -155,6 +161,9 @@ type RepositoryState struct {
 	// Whether to make the repository immutable. The artifacts of an immutable repository cannot be overwritten.
 	IsImmutable pulumi.BoolPtrInput
 	// (Updatable) The repository's supported artifact type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RepositoryType pulumi.StringPtrInput
 	// The current state of the repository.
 	State pulumi.StringPtrInput
@@ -180,6 +189,9 @@ type repositoryArgs struct {
 	// Whether to make the repository immutable. The artifacts of an immutable repository cannot be overwritten.
 	IsImmutable bool `pulumi:"isImmutable"`
 	// (Updatable) The repository's supported artifact type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RepositoryType string `pulumi:"repositoryType"`
 }
 
@@ -198,6 +210,9 @@ type RepositoryArgs struct {
 	// Whether to make the repository immutable. The artifacts of an immutable repository cannot be overwritten.
 	IsImmutable pulumi.BoolInput
 	// (Updatable) The repository's supported artifact type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RepositoryType pulumi.StringInput
 }
 
@@ -319,6 +334,9 @@ func (o RepositoryOutput) IsImmutable() pulumi.BoolOutput {
 }
 
 // (Updatable) The repository's supported artifact type.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o RepositoryOutput) RepositoryType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.RepositoryType }).(pulumi.StringOutput)
 }

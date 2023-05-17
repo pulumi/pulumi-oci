@@ -69,6 +69,9 @@ type EncryptedData struct {
 	// Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
 	LoggingContext pulumi.MapOutput `pulumi:"loggingContext"`
 	// The plaintext data to encrypt.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Plaintext pulumi.StringOutput `pulumi:"plaintext"`
 }
 
@@ -125,6 +128,9 @@ type encryptedDataState struct {
 	// Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
 	LoggingContext map[string]interface{} `pulumi:"loggingContext"`
 	// The plaintext data to encrypt.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Plaintext *string `pulumi:"plaintext"`
 }
 
@@ -144,6 +150,9 @@ type EncryptedDataState struct {
 	// Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
 	LoggingContext pulumi.MapInput
 	// The plaintext data to encrypt.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Plaintext pulumi.StringPtrInput
 }
 
@@ -165,6 +174,9 @@ type encryptedDataArgs struct {
 	// Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
 	LoggingContext map[string]interface{} `pulumi:"loggingContext"`
 	// The plaintext data to encrypt.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Plaintext string `pulumi:"plaintext"`
 }
 
@@ -183,6 +195,9 @@ type EncryptedDataArgs struct {
 	// Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
 	LoggingContext pulumi.MapInput
 	// The plaintext data to encrypt.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Plaintext pulumi.StringInput
 }
 
@@ -309,6 +324,9 @@ func (o EncryptedDataOutput) LoggingContext() pulumi.MapOutput {
 }
 
 // The plaintext data to encrypt.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o EncryptedDataOutput) Plaintext() pulumi.StringOutput {
 	return o.ApplyT(func(v *EncryptedData) pulumi.StringOutput { return v.Plaintext }).(pulumi.StringOutput)
 }

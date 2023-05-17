@@ -157,6 +157,8 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// A filter to return users whose last login time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
         /// </summary>
         [Input("timeLastLoginGreaterThanOrEqualTo")]
         public string? TimeLastLoginGreaterThanOrEqualTo { get; set; }
@@ -169,12 +171,16 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
         /// </summary>
         [Input("timePasswordLastChangedGreaterThanOrEqualTo")]
         public string? TimePasswordLastChangedGreaterThanOrEqualTo { get; set; }
 
         /// <summary>
         /// A filter to return users whose last password change in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
         /// </summary>
         [Input("timePasswordLastChangedLessThan")]
         public string? TimePasswordLastChangedLessThan { get; set; }
@@ -286,6 +292,8 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// A filter to return users whose last login time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
         /// </summary>
         [Input("timeLastLoginGreaterThanOrEqualTo")]
         public Input<string>? TimeLastLoginGreaterThanOrEqualTo { get; set; }
@@ -298,12 +306,16 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
         /// </summary>
         [Input("timePasswordLastChangedGreaterThanOrEqualTo")]
         public Input<string>? TimePasswordLastChangedGreaterThanOrEqualTo { get; set; }
 
         /// <summary>
         /// A filter to return users whose last password change in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
         /// </summary>
         [Input("timePasswordLastChangedLessThan")]
         public Input<string>? TimePasswordLastChangedLessThan { get; set; }

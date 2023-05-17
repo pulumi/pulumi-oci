@@ -23,6 +23,9 @@ class ExternalContainerDatabaseManagementArgs:
         :param pulumi.Input[str] external_container_database_id: The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[str] license_model: The Oracle license model that applies to the external database. Required only for enabling database management.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "enable_management", enable_management)
         pulumi.set(__self__, "external_container_database_id", external_container_database_id)
@@ -68,6 +71,9 @@ class ExternalContainerDatabaseManagementArgs:
     def license_model(self) -> Optional[pulumi.Input[str]]:
         """
         The Oracle license model that applies to the external database. Required only for enabling database management.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "license_model")
 
@@ -88,6 +94,9 @@ class _ExternalContainerDatabaseManagementState:
         :param pulumi.Input[str] external_container_database_id: The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[str] license_model: The Oracle license model that applies to the external database. Required only for enabling database management.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if enable_management is not None:
             pulumi.set(__self__, "enable_management", enable_management)
@@ -136,6 +145,9 @@ class _ExternalContainerDatabaseManagementState:
     def license_model(self) -> Optional[pulumi.Input[str]]:
         """
         The Oracle license model that applies to the external database. Required only for enabling database management.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "license_model")
 
@@ -170,6 +182,9 @@ class ExternalContainerDatabaseManagement(pulumi.CustomResource):
         :param pulumi.Input[str] external_container_database_id: The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[str] license_model: The Oracle license model that applies to the external database. Required only for enabling database management.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -250,6 +265,9 @@ class ExternalContainerDatabaseManagement(pulumi.CustomResource):
         :param pulumi.Input[str] external_container_database_id: The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[str] license_model: The Oracle license model that applies to the external database. Required only for enabling database management.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -287,6 +305,9 @@ class ExternalContainerDatabaseManagement(pulumi.CustomResource):
     def license_model(self) -> pulumi.Output[str]:
         """
         The Oracle license model that applies to the external database. Required only for enabling database management.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "license_model")
 

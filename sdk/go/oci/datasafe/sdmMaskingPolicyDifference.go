@@ -77,6 +77,9 @@ type SdmMaskingPolicyDifference struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The OCID of the masking policy. Note that if the masking policy is not associated with an SDM, CreateSdmMaskingPolicyDifference operation won't be allowed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	MaskingPolicyId pulumi.StringOutput `pulumi:"maskingPolicyId"`
 	// The OCID of the sensitive data model associated with the SDM masking policy difference.
 	SensitiveDataModelId pulumi.StringOutput `pulumi:"sensitiveDataModelId"`
@@ -136,6 +139,9 @@ type sdmMaskingPolicyDifferenceState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the masking policy. Note that if the masking policy is not associated with an SDM, CreateSdmMaskingPolicyDifference operation won't be allowed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	MaskingPolicyId *string `pulumi:"maskingPolicyId"`
 	// The OCID of the sensitive data model associated with the SDM masking policy difference.
 	SensitiveDataModelId *string `pulumi:"sensitiveDataModelId"`
@@ -161,6 +167,9 @@ type SdmMaskingPolicyDifferenceState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The OCID of the masking policy. Note that if the masking policy is not associated with an SDM, CreateSdmMaskingPolicyDifference operation won't be allowed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	MaskingPolicyId pulumi.StringPtrInput
 	// The OCID of the sensitive data model associated with the SDM masking policy difference.
 	SensitiveDataModelId pulumi.StringPtrInput
@@ -190,6 +199,9 @@ type sdmMaskingPolicyDifferenceArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the masking policy. Note that if the masking policy is not associated with an SDM, CreateSdmMaskingPolicyDifference operation won't be allowed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	MaskingPolicyId string `pulumi:"maskingPolicyId"`
 }
 
@@ -206,6 +218,9 @@ type SdmMaskingPolicyDifferenceArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The OCID of the masking policy. Note that if the masking policy is not associated with an SDM, CreateSdmMaskingPolicyDifference operation won't be allowed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	MaskingPolicyId pulumi.StringInput
 }
 
@@ -322,6 +337,9 @@ func (o SdmMaskingPolicyDifferenceOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the masking policy. Note that if the masking policy is not associated with an SDM, CreateSdmMaskingPolicyDifference operation won't be allowed.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o SdmMaskingPolicyDifferenceOutput) MaskingPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SdmMaskingPolicyDifference) pulumi.StringOutput { return v.MaskingPolicyId }).(pulumi.StringOutput)
 }

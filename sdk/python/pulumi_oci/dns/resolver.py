@@ -30,10 +30,18 @@ class ResolverArgs:
         :param pulumi.Input[Sequence[pulumi.Input['ResolverAttachedViewArgs']]] attached_views: (Updatable) The attached views. Views are evaluated in order.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the owning compartment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+               
+               **Example:** `{"Operations": {"CostCenter": "42"}}`
         :param pulumi.Input[str] display_name: (Updatable) The display name of the resolver.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+               
+               **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['ResolverRuleArgs']]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order.
-        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers.
+        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "resolver_id", resolver_id)
         if attached_views is not None:
@@ -92,6 +100,8 @@ class ResolverArgs:
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+
+        **Example:** `{"Operations": {"CostCenter": "42"}}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -116,6 +126,8 @@ class ResolverArgs:
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+
+        **Example:** `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -139,7 +151,11 @@ class ResolverArgs:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
-        If specified, must be `PRIVATE` when creating private name resolvers.
+        If specified, must be `PRIVATE` when creating private name resolvers. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "scope")
 
@@ -174,13 +190,21 @@ class _ResolverState:
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the owning compartment.
         :param pulumi.Input[str] default_view_id: The OCID of the default view.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+               
+               **Example:** `{"Operations": {"CostCenter": "42"}}`
         :param pulumi.Input[str] display_name: (Updatable) The display name of the resolver.
         :param pulumi.Input[Sequence[pulumi.Input['ResolverEndpointArgs']]] endpoints: Read-only array of endpoints for the resolver.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+               
+               **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param pulumi.Input[str] resolver_id: The OCID of the target resolver.
         :param pulumi.Input[Sequence[pulumi.Input['ResolverRuleArgs']]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order.
-        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers.
+        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] self: The canonical absolute URL of the resource.
         :param pulumi.Input[str] state: The current state of the resource.
         :param pulumi.Input[str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
@@ -272,6 +296,8 @@ class _ResolverState:
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+
+        **Example:** `{"Operations": {"CostCenter": "42"}}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -308,6 +334,8 @@ class _ResolverState:
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+
+        **Example:** `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -355,7 +383,11 @@ class _ResolverState:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
-        If specified, must be `PRIVATE` when creating private name resolvers.
+        If specified, must be `PRIVATE` when creating private name resolvers. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "scope")
 
@@ -447,11 +479,19 @@ class Resolver(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResolverAttachedViewArgs']]]] attached_views: (Updatable) The attached views. Views are evaluated in order.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the owning compartment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+               
+               **Example:** `{"Operations": {"CostCenter": "42"}}`
         :param pulumi.Input[str] display_name: (Updatable) The display name of the resolver.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+               
+               **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[str] resolver_id: The OCID of the target resolver.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResolverRuleArgs']]]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order.
-        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers.
+        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -563,13 +603,21 @@ class Resolver(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the owning compartment.
         :param pulumi.Input[str] default_view_id: The OCID of the default view.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+               
+               **Example:** `{"Operations": {"CostCenter": "42"}}`
         :param pulumi.Input[str] display_name: (Updatable) The display name of the resolver.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResolverEndpointArgs']]]] endpoints: Read-only array of endpoints for the resolver.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+               
+               **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param pulumi.Input[str] resolver_id: The OCID of the target resolver.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResolverRuleArgs']]]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order.
-        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers.
+        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] self: The canonical absolute URL of the resource.
         :param pulumi.Input[str] state: The current state of the resource.
         :param pulumi.Input[str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
@@ -634,6 +682,8 @@ class Resolver(pulumi.CustomResource):
     def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+
+        **Example:** `{"Operations": {"CostCenter": "42"}}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -658,6 +708,8 @@ class Resolver(pulumi.CustomResource):
     def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+
+        **Example:** `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -689,7 +741,11 @@ class Resolver(pulumi.CustomResource):
     @pulumi.getter
     def scope(self) -> pulumi.Output[Optional[str]]:
         """
-        If specified, must be `PRIVATE` when creating private name resolvers.
+        If specified, must be `PRIVATE` when creating private name resolvers. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "scope")
 

@@ -34,6 +34,10 @@ class MysqlBackupArgs:
         :param pulumi.Input[str] display_name: (Updatable) A user-supplied display name for the backup.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] retention_in_days: (Updatable) Number of days to retain this backup.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "db_system_id", db_system_id)
         if backup_type is not None:
@@ -140,6 +144,10 @@ class MysqlBackupArgs:
     def retention_in_days(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) Number of days to retain this backup.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "retention_in_days")
 
@@ -185,6 +193,10 @@ class _MysqlBackupState:
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState.
         :param pulumi.Input[str] mysql_version: The MySQL server version of the DB System used for backup.
         :param pulumi.Input[int] retention_in_days: (Updatable) Number of days to retain this backup.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] shape_name: The shape of the DB System instance used for backup.
         :param pulumi.Input[str] state: The state of the backup.
         :param pulumi.Input[str] time_created: The time the backup record was created.
@@ -388,6 +400,10 @@ class _MysqlBackupState:
     def retention_in_days(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) Number of days to retain this backup.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "retention_in_days")
 
@@ -501,6 +517,10 @@ class MysqlBackup(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-supplied display name for the backup.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] retention_in_days: (Updatable) Number of days to retain this backup.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -642,6 +662,10 @@ class MysqlBackup(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState.
         :param pulumi.Input[str] mysql_version: The MySQL server version of the DB System used for backup.
         :param pulumi.Input[int] retention_in_days: (Updatable) Number of days to retain this backup.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] shape_name: The shape of the DB System instance used for backup.
         :param pulumi.Input[str] state: The state of the backup.
         :param pulumi.Input[str] time_created: The time the backup record was created.
@@ -780,6 +804,10 @@ class MysqlBackup(pulumi.CustomResource):
     def retention_in_days(self) -> pulumi.Output[int]:
         """
         (Updatable) Number of days to retain this backup.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "retention_in_days")
 

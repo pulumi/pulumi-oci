@@ -31,6 +31,10 @@ class OpaInstanceArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[str] display_name: (Updatable) OpaInstance Identifier. User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
         :param pulumi.Input[str] shape_name: Shape of the instance.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] consumption_model: Parameter specifying which entitlement to use for billing purposes
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Description of the Oracle Process Automation instance.
@@ -86,6 +90,10 @@ class OpaInstanceArgs:
     def shape_name(self) -> pulumi.Input[str]:
         """
         Shape of the instance.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "shape_name")
 
@@ -219,6 +227,10 @@ class _OpaInstanceState:
         :param pulumi.Input[bool] is_breakglass_enabled: indicates if breakGlass is enabled for the opa instance.
         :param pulumi.Input[str] metering_type: MeteringType Identifier
         :param pulumi.Input[str] shape_name: Shape of the instance.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the OpaInstance.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time when OpaInstance was created. An RFC3339 formatted datetime string
@@ -450,6 +462,10 @@ class _OpaInstanceState:
     def shape_name(self) -> Optional[pulumi.Input[str]]:
         """
         Shape of the instance.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "shape_name")
 
@@ -570,6 +586,10 @@ class OpaInstance(pulumi.CustomResource):
         :param pulumi.Input[bool] is_breakglass_enabled: indicates if breakGlass is enabled for the opa instance.
         :param pulumi.Input[str] metering_type: MeteringType Identifier
         :param pulumi.Input[str] shape_name: Shape of the instance.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -726,6 +746,10 @@ class OpaInstance(pulumi.CustomResource):
         :param pulumi.Input[bool] is_breakglass_enabled: indicates if breakGlass is enabled for the opa instance.
         :param pulumi.Input[str] metering_type: MeteringType Identifier
         :param pulumi.Input[str] shape_name: Shape of the instance.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the OpaInstance.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time when OpaInstance was created. An RFC3339 formatted datetime string
@@ -882,6 +906,10 @@ class OpaInstance(pulumi.CustomResource):
     def shape_name(self) -> pulumi.Output[str]:
         """
         Shape of the instance.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "shape_name")
 

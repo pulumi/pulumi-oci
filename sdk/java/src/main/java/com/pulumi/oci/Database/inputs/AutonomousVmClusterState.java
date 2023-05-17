@@ -562,12 +562,18 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="vmClusterNetworkId")
     private @Nullable Output<String> vmClusterNetworkId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> vmClusterNetworkId() {
@@ -1415,6 +1421,9 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         /**
          * @param vmClusterNetworkId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -1425,6 +1434,9 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
 
         /**
          * @param vmClusterNetworkId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

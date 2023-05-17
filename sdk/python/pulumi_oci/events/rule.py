@@ -30,8 +30,23 @@ class RuleArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
         :param pulumi.Input[str] condition: (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
                * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
+               
+               For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
+               * For a condition with fields to match an event, the event must contain all the field names  listed in the condition. Field names must appear in the condition with the same nesting  structure used in the event.
+               
+               For a list of reference events, see  [Services that Produce Events](https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm).
+               * Rules apply to events in the compartment in which you create them and any child compartments.  This means that a condition specified by a rule only matches events emitted from resources in  the compartment or any of its child compartments.
+               * Wildcard matching is supported with the asterisk (*) character.
+               
+               For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
+               
+               Example: `\\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"`
         :param pulumi.Input[str] display_name: (Updatable) A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true`
+        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -78,6 +93,17 @@ class RuleArgs:
         """
         (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
         * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
+
+        For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
+        * For a condition with fields to match an event, the event must contain all the field names  listed in the condition. Field names must appear in the condition with the same nesting  structure used in the event.
+
+        For a list of reference events, see  [Services that Produce Events](https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm).
+        * Rules apply to events in the compartment in which you create them and any child compartments.  This means that a condition specified by a rule only matches events emitted from resources in  the compartment or any of its child compartments.
+        * Wildcard matching is supported with the asterisk (*) character.
+
+        For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
+
+        Example: `\\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"`
         """
         return pulumi.get(self, "condition")
 
@@ -101,7 +127,11 @@ class RuleArgs:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Input[bool]:
         """
-        (Updatable) Whether or not this rule is currently enabled.  Example: `true`
+        (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_enabled")
 
@@ -166,11 +196,26 @@ class _RuleState:
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
         :param pulumi.Input[str] condition: (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
                * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
+               
+               For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
+               * For a condition with fields to match an event, the event must contain all the field names  listed in the condition. Field names must appear in the condition with the same nesting  structure used in the event.
+               
+               For a list of reference events, see  [Services that Produce Events](https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm).
+               * Rules apply to events in the compartment in which you create them and any child compartments.  This means that a condition specified by a rule only matches events emitted from resources in  the compartment or any of its child compartments.
+               * Wildcard matching is supported with the asterisk (*) character.
+               
+               For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
+               
+               Example: `\\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"`
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true`
+        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] lifecycle_message: A message generated by the Events service about the current state of this rule.
         :param pulumi.Input[str] state: The current state of the rule.
         :param pulumi.Input[str] time_created: The time this rule was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -228,6 +273,17 @@ class _RuleState:
         """
         (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
         * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
+
+        For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
+        * For a condition with fields to match an event, the event must contain all the field names  listed in the condition. Field names must appear in the condition with the same nesting  structure used in the event.
+
+        For a list of reference events, see  [Services that Produce Events](https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm).
+        * Rules apply to events in the compartment in which you create them and any child compartments.  This means that a condition specified by a rule only matches events emitted from resources in  the compartment or any of its child compartments.
+        * Wildcard matching is supported with the asterisk (*) character.
+
+        For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
+
+        Example: `\\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"`
         """
         return pulumi.get(self, "condition")
 
@@ -287,7 +343,11 @@ class _RuleState:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Whether or not this rule is currently enabled.  Example: `true`
+        (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_enabled")
 
@@ -395,11 +455,26 @@ class Rule(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
         :param pulumi.Input[str] condition: (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
                * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
+               
+               For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
+               * For a condition with fields to match an event, the event must contain all the field names  listed in the condition. Field names must appear in the condition with the same nesting  structure used in the event.
+               
+               For a list of reference events, see  [Services that Produce Events](https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm).
+               * Rules apply to events in the compartment in which you create them and any child compartments.  This means that a condition specified by a rule only matches events emitted from resources in  the compartment or any of its child compartments.
+               * Wildcard matching is supported with the asterisk (*) character.
+               
+               For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
+               
+               Example: `\\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"`
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true`
+        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -535,11 +610,26 @@ class Rule(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
         :param pulumi.Input[str] condition: (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
                * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
+               
+               For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
+               * For a condition with fields to match an event, the event must contain all the field names  listed in the condition. Field names must appear in the condition with the same nesting  structure used in the event.
+               
+               For a list of reference events, see  [Services that Produce Events](https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm).
+               * Rules apply to events in the compartment in which you create them and any child compartments.  This means that a condition specified by a rule only matches events emitted from resources in  the compartment or any of its child compartments.
+               * Wildcard matching is supported with the asterisk (*) character.
+               
+               For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
+               
+               Example: `\\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"`
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true`
+        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] lifecycle_message: A message generated by the Events service about the current state of this rule.
         :param pulumi.Input[str] state: The current state of the rule.
         :param pulumi.Input[str] time_created: The time this rule was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -583,6 +673,17 @@ class Rule(pulumi.CustomResource):
         """
         (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
         * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
+
+        For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
+        * For a condition with fields to match an event, the event must contain all the field names  listed in the condition. Field names must appear in the condition with the same nesting  structure used in the event.
+
+        For a list of reference events, see  [Services that Produce Events](https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm).
+        * Rules apply to events in the compartment in which you create them and any child compartments.  This means that a condition specified by a rule only matches events emitted from resources in  the compartment or any of its child compartments.
+        * Wildcard matching is supported with the asterisk (*) character.
+
+        For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
+
+        Example: `\\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"`
         """
         return pulumi.get(self, "condition")
 
@@ -622,7 +723,11 @@ class Rule(pulumi.CustomResource):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Output[bool]:
         """
-        (Updatable) Whether or not this rule is currently enabled.  Example: `true`
+        (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_enabled")
 

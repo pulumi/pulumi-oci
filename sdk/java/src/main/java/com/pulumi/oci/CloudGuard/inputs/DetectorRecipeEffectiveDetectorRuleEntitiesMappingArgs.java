@@ -18,12 +18,16 @@ public final class DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs extend
     /**
      * (Updatable) Detector recipe display name.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
      * @return (Updatable) Detector recipe display name.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -89,6 +93,8 @@ public final class DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs extend
         /**
          * @param displayName (Updatable) Detector recipe display name.
          * 
+         * Avoid entering confidential information.
+         * 
          * @return builder
          * 
          */
@@ -99,6 +105,8 @@ public final class DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs extend
 
         /**
          * @param displayName (Updatable) Detector recipe display name.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 

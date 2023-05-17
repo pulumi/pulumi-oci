@@ -219,12 +219,18 @@ public final class PluggableDatabaseState extends com.pulumi.resources.ResourceA
     /**
      * The existing TDE wallet password of the CDB.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="tdeWalletPassword")
     private @Nullable Output<String> tdeWalletPassword;
 
     /**
      * @return The existing TDE wallet password of the CDB.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> tdeWalletPassword() {
@@ -580,6 +586,9 @@ public final class PluggableDatabaseState extends com.pulumi.resources.ResourceA
         /**
          * @param tdeWalletPassword The existing TDE wallet password of the CDB.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -590,6 +599,9 @@ public final class PluggableDatabaseState extends com.pulumi.resources.ResourceA
 
         /**
          * @param tdeWalletPassword The existing TDE wallet password of the CDB.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

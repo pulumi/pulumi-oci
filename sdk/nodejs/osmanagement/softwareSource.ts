@@ -136,6 +136,10 @@ export class SoftwareSource extends pulumi.CustomResource {
     public /*out*/ readonly packages!: pulumi.Output<number>;
     /**
      * OCID for the parent software source, if there is one
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly parentId!: pulumi.Output<string>;
     /**
@@ -297,6 +301,10 @@ export interface SoftwareSourceState {
     packages?: pulumi.Input<number>;
     /**
      * OCID for the parent software source, if there is one
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     parentId?: pulumi.Input<string>;
     /**
@@ -367,6 +375,10 @@ export interface SoftwareSourceArgs {
     maintainerPhone?: pulumi.Input<string>;
     /**
      * OCID for the parent software source, if there is one
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     parentId?: pulumi.Input<string>;
 }

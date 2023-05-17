@@ -85,12 +85,18 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
     /**
      * (Updatable) Whether or not this rule is currently enabled.  Example: `true`
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="isEnabled", required=true)
     private Output<Boolean> isEnabled;
 
     /**
      * @return (Updatable) Whether or not this rule is currently enabled.  Example: `true`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Boolean> isEnabled() {
@@ -282,6 +288,9 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
         /**
          * @param isEnabled (Updatable) Whether or not this rule is currently enabled.  Example: `true`
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -292,6 +301,9 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param isEnabled (Updatable) Whether or not this rule is currently enabled.  Example: `true`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

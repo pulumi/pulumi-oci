@@ -44,7 +44,11 @@ namespace Pulumi.Oci.DatabaseMigration
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the job
+        /// The OCID of the job 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("jobId")]
         public Output<string> JobId { get; private set; } = null!;
@@ -180,7 +184,11 @@ namespace Pulumi.Oci.DatabaseMigration
         }
 
         /// <summary>
-        /// The OCID of the job
+        /// The OCID of the job 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("jobId", required: true)]
         public Input<string> JobId { get; set; } = null!;
@@ -224,7 +232,11 @@ namespace Pulumi.Oci.DatabaseMigration
         }
 
         /// <summary>
-        /// The OCID of the job
+        /// The OCID of the job 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("jobId")]
         public Input<string>? JobId { get; set; }

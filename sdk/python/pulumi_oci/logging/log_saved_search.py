@@ -23,7 +23,11 @@ class LogSavedSearchArgs:
         """
         The set of arguments for constructing a LogSavedSearch resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that the resource belongs to.
-        :param pulumi.Input[str] query: (Updatable) The search query that is saved.
+        :param pulumi.Input[str] query: (Updatable) The search query that is saved. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) Description for this resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -56,7 +60,11 @@ class LogSavedSearchArgs:
     @pulumi.getter
     def query(self) -> pulumi.Input[str]:
         """
-        (Updatable) The search query that is saved.
+        (Updatable) The search query that is saved. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "query")
 
@@ -132,7 +140,11 @@ class _LogSavedSearchState:
         :param pulumi.Input[str] description: (Updatable) Description for this resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] name: (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] query: (Updatable) The search query that is saved.
+        :param pulumi.Input[str] query: (Updatable) The search query that is saved. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The state of the LogSavedSearch
         :param pulumi.Input[str] time_created: Time the resource was created.
         :param pulumi.Input[str] time_last_modified: Time the resource was last modified.
@@ -220,7 +232,11 @@ class _LogSavedSearchState:
     @pulumi.getter
     def query(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The search query that is saved.
+        (Updatable) The search query that is saved. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "query")
 
@@ -315,7 +331,11 @@ class LogSavedSearch(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) Description for this resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] name: (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] query: (Updatable) The search query that is saved.
+        :param pulumi.Input[str] query: (Updatable) The search query that is saved. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -428,7 +448,11 @@ class LogSavedSearch(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) Description for this resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] name: (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] query: (Updatable) The search query that is saved.
+        :param pulumi.Input[str] query: (Updatable) The search query that is saved. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The state of the LogSavedSearch
         :param pulumi.Input[str] time_created: Time the resource was created.
         :param pulumi.Input[str] time_last_modified: Time the resource was last modified.
@@ -492,7 +516,11 @@ class LogSavedSearch(pulumi.CustomResource):
     @pulumi.getter
     def query(self) -> pulumi.Output[str]:
         """
-        (Updatable) The search query that is saved.
+        (Updatable) The search query that is saved. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "query")
 

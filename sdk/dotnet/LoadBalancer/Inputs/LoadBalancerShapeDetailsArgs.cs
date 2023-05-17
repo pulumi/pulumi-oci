@@ -14,6 +14,10 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
     {
         /// <summary>
         /// (Updatable) Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
+        /// 
+        /// The values must be between minimumBandwidthInMbps and 8000 (8Gbps).
+        /// 
+        /// Example: `1500`
         /// </summary>
         [Input("maximumBandwidthInMbps", required: true)]
         public Input<int> MaximumBandwidthInMbps { get; set; } = null!;

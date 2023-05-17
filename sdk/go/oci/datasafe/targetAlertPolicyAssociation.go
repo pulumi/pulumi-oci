@@ -83,6 +83,9 @@ type TargetAlertPolicyAssociation struct {
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The OCID of the target.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetId pulumi.StringOutput `pulumi:"targetId"`
 	// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -150,6 +153,9 @@ type targetAlertPolicyAssociationState struct {
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The OCID of the target.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetId *string `pulumi:"targetId"`
 	// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -177,6 +183,9 @@ type TargetAlertPolicyAssociationState struct {
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
 	// The OCID of the target.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetId pulumi.StringPtrInput
 	// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringPtrInput
@@ -204,6 +213,9 @@ type targetAlertPolicyAssociationArgs struct {
 	// The OCID of the alert policy.
 	PolicyId string `pulumi:"policyId"`
 	// The OCID of the target.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetId string `pulumi:"targetId"`
 }
 
@@ -224,6 +236,9 @@ type TargetAlertPolicyAssociationArgs struct {
 	// The OCID of the alert policy.
 	PolicyId pulumi.StringInput
 	// The OCID of the target.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetId pulumi.StringInput
 }
 
@@ -360,6 +375,9 @@ func (o TargetAlertPolicyAssociationOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The OCID of the target.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o TargetAlertPolicyAssociationOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.StringOutput { return v.TargetId }).(pulumi.StringOutput)
 }

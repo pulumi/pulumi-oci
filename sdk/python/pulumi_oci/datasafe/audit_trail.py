@@ -31,6 +31,10 @@ class AuditTrailArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_auto_purge_enabled: (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
         :param pulumi.Input[int] resume_trigger: (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: (Updatable) The target state for the Audit Trail. Could be set to `ACTIVE` or `INACTIVE`.
         """
         pulumi.set(__self__, "audit_trail_id", audit_trail_id)
@@ -126,6 +130,10 @@ class AuditTrailArgs:
     def resume_trigger(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "resume_trigger")
 
@@ -182,6 +190,10 @@ class _AuditTrailState:
         :param pulumi.Input[bool] is_auto_purge_enabled: (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
         :param pulumi.Input[str] lifecycle_details: Details about the current state of the audit trail in Data Safe.
         :param pulumi.Input[int] resume_trigger: (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: (Updatable) The target state for the Audit Trail. Could be set to `ACTIVE` or `INACTIVE`.
         :param pulumi.Input[str] status: The current sub-state of the audit trail.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -358,6 +370,10 @@ class _AuditTrailState:
     def resume_trigger(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "resume_trigger")
 
@@ -510,6 +526,10 @@ class AuditTrail(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_auto_purge_enabled: (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
         :param pulumi.Input[int] resume_trigger: (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: (Updatable) The target state for the Audit Trail. Could be set to `ACTIVE` or `INACTIVE`.
         """
         ...
@@ -633,6 +653,10 @@ class AuditTrail(pulumi.CustomResource):
         :param pulumi.Input[bool] is_auto_purge_enabled: (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
         :param pulumi.Input[str] lifecycle_details: Details about the current state of the audit trail in Data Safe.
         :param pulumi.Input[int] resume_trigger: (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: (Updatable) The target state for the Audit Trail. Could be set to `ACTIVE` or `INACTIVE`.
         :param pulumi.Input[str] status: The current sub-state of the audit trail.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -754,6 +778,10 @@ class AuditTrail(pulumi.CustomResource):
     def resume_trigger(self) -> pulumi.Output[Optional[int]]:
         """
         (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "resume_trigger")
 

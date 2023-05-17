@@ -125,6 +125,8 @@ export class MaintenanceRun extends pulumi.CustomResource {
     public /*out*/ readonly patchingEndTime!: pulumi.Output<string>;
     /**
      * (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+     *
+     * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
      */
     public readonly patchingMode!: pulumi.Output<string>;
     /**
@@ -165,6 +167,10 @@ export class MaintenanceRun extends pulumi.CustomResource {
     public /*out*/ readonly timeEnded!: pulumi.Output<string>;
     /**
      * (Updatable) The scheduled date and time of the maintenance run to update.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly timeScheduled!: pulumi.Output<string>;
     /**
@@ -340,6 +346,8 @@ export interface MaintenanceRunState {
     patchingEndTime?: pulumi.Input<string>;
     /**
      * (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+     *
+     * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
      */
     patchingMode?: pulumi.Input<string>;
     /**
@@ -380,6 +388,10 @@ export interface MaintenanceRunState {
     timeEnded?: pulumi.Input<string>;
     /**
      * (Updatable) The scheduled date and time of the maintenance run to update.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     timeScheduled?: pulumi.Input<string>;
     /**
@@ -426,6 +438,8 @@ export interface MaintenanceRunArgs {
     patchId?: pulumi.Input<string>;
     /**
      * (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+     *
+     * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
      */
     patchingMode?: pulumi.Input<string>;
     /**
@@ -438,6 +452,10 @@ export interface MaintenanceRunArgs {
     targetStorageServerVersion?: pulumi.Input<string>;
     /**
      * (Updatable) The scheduled date and time of the maintenance run to update.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     timeScheduled?: pulumi.Input<string>;
 }

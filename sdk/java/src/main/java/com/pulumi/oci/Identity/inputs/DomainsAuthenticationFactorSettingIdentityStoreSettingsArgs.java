@@ -18,12 +18,30 @@ public final class DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs e
     /**
      * (Updatable) If true, indicates that Multi-Factor Authentication should use the mobile number in the identity store
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="mobileNumberEnabled")
     private @Nullable Output<Boolean> mobileNumberEnabled;
 
     /**
      * @return (Updatable) If true, indicates that Multi-Factor Authentication should use the mobile number in the identity store
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> mobileNumberEnabled() {
@@ -33,12 +51,30 @@ public final class DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs e
     /**
      * (Updatable) If true, indicates that the user can update the mobile number in the user&#39;s Multi-Factor Authentication profile
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="mobileNumberUpdateEnabled")
     private @Nullable Output<Boolean> mobileNumberUpdateEnabled;
 
     /**
      * @return (Updatable) If true, indicates that the user can update the mobile number in the user&#39;s Multi-Factor Authentication profile
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> mobileNumberUpdateEnabled() {
@@ -73,6 +109,15 @@ public final class DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs e
         /**
          * @param mobileNumberEnabled (Updatable) If true, indicates that Multi-Factor Authentication should use the mobile number in the identity store
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -84,6 +129,15 @@ public final class DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs e
         /**
          * @param mobileNumberEnabled (Updatable) If true, indicates that Multi-Factor Authentication should use the mobile number in the identity store
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -93,6 +147,15 @@ public final class DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs e
 
         /**
          * @param mobileNumberUpdateEnabled (Updatable) If true, indicates that the user can update the mobile number in the user&#39;s Multi-Factor Authentication profile
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -104,6 +167,15 @@ public final class DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs e
 
         /**
          * @param mobileNumberUpdateEnabled (Updatable) If true, indicates that the user can update the mobile number in the user&#39;s Multi-Factor Authentication profile
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 

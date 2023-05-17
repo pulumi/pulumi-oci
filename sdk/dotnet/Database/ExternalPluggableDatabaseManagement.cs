@@ -53,6 +53,9 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("externalPluggableDatabaseId")]
         public Output<string> ExternalPluggableDatabaseId { get; private set; } = null!;
@@ -114,6 +117,9 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("externalPluggableDatabaseId", required: true)]
         public Input<string> ExternalPluggableDatabaseId { get; set; } = null!;
@@ -137,6 +143,9 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("externalPluggableDatabaseId")]
         public Input<string>? ExternalPluggableDatabaseId { get; set; }

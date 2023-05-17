@@ -14,30 +14,75 @@ namespace Pulumi.Oci.Identity.Inputs
     {
         /// <summary>
         /// (Updatable) General information about the POSIX account such as their real name and phone number
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("gecos")]
         public Input<string>? Gecos { get; set; }
 
         /// <summary>
         /// (Updatable) Primary Group identifier of the POSIX user
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: integer
+        /// * uniqueness: none
         /// </summary>
         [Input("gidNumber")]
         public Input<int>? GidNumber { get; set; }
 
         /// <summary>
         /// (Updatable) The absolute path to the home directory of the POSIX account
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("homeDirectory")]
         public Input<string>? HomeDirectory { get; set; }
 
         /// <summary>
         /// (Updatable) The path to the login shell of the POSIX account
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("loginShell")]
         public Input<string>? LoginShell { get; set; }
 
         /// <summary>
         /// (Updatable) Integer uniquely identifying a user in a POSIX administrative domain
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: integer
+        /// * uniqueness: server
         /// </summary>
         [Input("uidNumber")]
         public Input<int>? UidNumber { get; set; }

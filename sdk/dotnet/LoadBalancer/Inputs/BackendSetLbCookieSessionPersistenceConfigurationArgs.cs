@@ -26,6 +26,16 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
 
         /// <summary>
         /// (Updatable) The domain in which the cookie is valid. The `Set-cookie` header inserted by the load balancer contains a domain attribute with the specified value.
+        /// 
+        /// This attribute has no default value. If you do not specify a value, the load balancer does not insert the domain attribute into the `Set-cookie` header.
+        /// 
+        /// **Notes:**
+        /// *  [RFC 6265 - HTTP State Management Mechanism](https://www.ietf.org/rfc/rfc6265.txt) describes client and browser behavior when the domain attribute is present or not present in the `Set-cookie` header.
+        /// 
+        /// If the value of the `Domain` attribute is `example.com` in the `Set-cookie` header, the client includes the same cookie in the `Cookie` header when making HTTP requests to `example.com`, `www.example.com`, and `www.abc.example.com`. If the `Domain` attribute is not present, the client returns the cookie only for the domain to which the original request was made.
+        /// *  Ensure that this attribute specifies the correct domain value. If the `Domain` attribute in the `Set-cookie` header does not include the domain to which the original request was made, the client or browser might reject the cookie. As specified in RFC 6265, the client accepts a cookie with the `Domain` attribute value `example.com` or `www.example.com` sent from `www.example.com`. It does not accept a cookie with the `Domain` attribute `abc.example.com` or `www.abc.example.com` sent from `www.example.com`.
+        /// 
+        /// Example: `example.com`
         /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
@@ -38,18 +48,32 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
 
         /// <summary>
         /// (Updatable) Whether the `Set-cookie` header should contain the `Secure` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `Secure` attribute, which directs the client or browser to send the cookie only using a secure protocol.
+        /// 
+        /// **Note:** If you set this field to `true`, you cannot associate the corresponding backend set with an HTTP listener.
+        /// 
+        /// Example: `true`
         /// </summary>
         [Input("isSecure")]
         public Input<bool>? IsSecure { get; set; }
 
         /// <summary>
         /// (Updatable) The amount of time the cookie remains valid. The `Set-cookie` header inserted by the load balancer contains a `Max-Age` attribute with the specified value.
+        /// 
+        /// The specified value must be at least one second. There is no default value for this attribute. If you do not specify a value, the load balancer does not include the `Max-Age` attribute in the `Set-cookie` header. In most cases, the client or browser retains the cookie until the current session ends, as defined by the client.
+        /// 
+        /// Example: `3600`
         /// </summary>
         [Input("maxAgeInSeconds")]
         public Input<int>? MaxAgeInSeconds { get; set; }
 
         /// <summary>
         /// (Updatable) The path in which the cookie is valid. The `Set-cookie header` inserted by the load balancer contains a `Path` attribute with the specified value.
+        /// 
+        /// Clients include the cookie in an HTTP request only if the path portion of the request-uri matches, or is a subdirectory of, the cookie's `Path` attribute.
+        /// 
+        /// The default value is `/`.
+        /// 
+        /// Example: `/example`
         /// </summary>
         [Input("path")]
         public Input<string>? Path { get; set; }

@@ -235,12 +235,18 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) OCID of the ONS topic used to send notification to users
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="notificationTopicId", type=String.class, parameters={})
     private Output<String> notificationTopicId;
 
     /**
      * @return (Updatable) OCID of the ONS topic used to send notification to users
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> notificationTopicId() {

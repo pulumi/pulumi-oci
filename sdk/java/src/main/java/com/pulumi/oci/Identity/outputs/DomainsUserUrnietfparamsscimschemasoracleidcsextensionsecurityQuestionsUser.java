@@ -14,12 +14,30 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
     /**
      * @return (Updatable) Security question and answers provided by end-user for Account recovery and/or MFA. While setting up security questions, end-user can also provide hint along with answer.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     private @Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion> secQuestions;
 
     private DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser() {}
     /**
      * @return (Updatable) Security question and answers provided by end-user for Account recovery and/or MFA. While setting up security questions, end-user can also provide hint along with answer.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion> secQuestions() {

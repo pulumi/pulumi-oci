@@ -31,9 +31,19 @@ public final class AutoScalingConfigurationPolicyRuleActionArgs extends com.pulu
         return Optional.ofNullable(this.type);
     }
 
+    /**
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     @Import(name="value")
     private @Nullable Output<Integer> value;
 
+    /**
+     * @return ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     public Optional<Output<Integer>> value() {
         return Optional.ofNullable(this.value);
     }
@@ -84,11 +94,25 @@ public final class AutoScalingConfigurationPolicyRuleActionArgs extends com.pulu
             return type(Output.of(type));
         }
 
+        /**
+         * @param value ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
         public Builder value(@Nullable Output<Integer> value) {
             $.value = value;
             return this;
         }
 
+        /**
+         * @param value ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
         public Builder value(Integer value) {
             return value(Output.of(value));
         }

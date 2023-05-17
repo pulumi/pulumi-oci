@@ -92,6 +92,11 @@ type CloudGuardDataSource struct {
 	// (Updatable) Data Source display name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Information about the region and status of query replication
 	RegionStatusDetails CloudGuardDataSourceRegionStatusDetailArrayOutput `pulumi:"regionStatusDetails"`
@@ -158,6 +163,11 @@ type cloudGuardDataSourceState struct {
 	// (Updatable) Data Source display name.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Information about the region and status of query replication
 	RegionStatusDetails []CloudGuardDataSourceRegionStatusDetail `pulumi:"regionStatusDetails"`
@@ -187,6 +197,11 @@ type CloudGuardDataSourceState struct {
 	// (Updatable) Data Source display name.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapInput
 	// Information about the region and status of query replication
 	RegionStatusDetails CloudGuardDataSourceRegionStatusDetailArrayInput
@@ -218,6 +233,11 @@ type cloudGuardDataSourceArgs struct {
 	// (Updatable) Data Source display name.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 }
 
@@ -234,6 +254,11 @@ type CloudGuardDataSourceArgs struct {
 	// (Updatable) Data Source display name.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapInput
 }
 
@@ -357,6 +382,11 @@ func (o CloudGuardDataSourceOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+//
+// Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CloudGuardDataSourceOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }

@@ -27,7 +27,11 @@ class AnalyticsInstanceVanityUrlArgs:
         :param pulumi.Input[str] ca_certificate: (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] hosts: List of fully qualified hostnames supported by this vanity URL definition (max of 3).
         :param pulumi.Input[str] private_key: (Updatable) PEM Private key for HTTPS connections.
-        :param pulumi.Input[str] public_certificate: (Updatable) PEM certificate for HTTPS connections.
+        :param pulumi.Input[str] public_certificate: (Updatable) PEM certificate for HTTPS connections. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] description: Optional description.
         :param pulumi.Input[str] passphrase: (Updatable) Passphrase for the PEM Private key (if any).
         """
@@ -93,7 +97,11 @@ class AnalyticsInstanceVanityUrlArgs:
     @pulumi.getter(name="publicCertificate")
     def public_certificate(self) -> pulumi.Input[str]:
         """
-        (Updatable) PEM certificate for HTTPS connections.
+        (Updatable) PEM certificate for HTTPS connections. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "public_certificate")
 
@@ -144,7 +152,11 @@ class _AnalyticsInstanceVanityUrlState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] hosts: List of fully qualified hostnames supported by this vanity URL definition (max of 3).
         :param pulumi.Input[str] passphrase: (Updatable) Passphrase for the PEM Private key (if any).
         :param pulumi.Input[str] private_key: (Updatable) PEM Private key for HTTPS connections.
-        :param pulumi.Input[str] public_certificate: (Updatable) PEM certificate for HTTPS connections.
+        :param pulumi.Input[str] public_certificate: (Updatable) PEM certificate for HTTPS connections. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if analytics_instance_id is not None:
             pulumi.set(__self__, "analytics_instance_id", analytics_instance_id)
@@ -237,7 +249,11 @@ class _AnalyticsInstanceVanityUrlState:
     @pulumi.getter(name="publicCertificate")
     def public_certificate(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) PEM certificate for HTTPS connections.
+        (Updatable) PEM certificate for HTTPS connections. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "public_certificate")
 
@@ -297,7 +313,11 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] hosts: List of fully qualified hostnames supported by this vanity URL definition (max of 3).
         :param pulumi.Input[str] passphrase: (Updatable) Passphrase for the PEM Private key (if any).
         :param pulumi.Input[str] private_key: (Updatable) PEM Private key for HTTPS connections.
-        :param pulumi.Input[str] public_certificate: (Updatable) PEM certificate for HTTPS connections.
+        :param pulumi.Input[str] public_certificate: (Updatable) PEM certificate for HTTPS connections. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -415,7 +435,11 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] hosts: List of fully qualified hostnames supported by this vanity URL definition (max of 3).
         :param pulumi.Input[str] passphrase: (Updatable) Passphrase for the PEM Private key (if any).
         :param pulumi.Input[str] private_key: (Updatable) PEM Private key for HTTPS connections.
-        :param pulumi.Input[str] public_certificate: (Updatable) PEM certificate for HTTPS connections.
+        :param pulumi.Input[str] public_certificate: (Updatable) PEM certificate for HTTPS connections. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -482,7 +506,11 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
     @pulumi.getter(name="publicCertificate")
     def public_certificate(self) -> pulumi.Output[str]:
         """
-        (Updatable) PEM certificate for HTTPS connections.
+        (Updatable) PEM certificate for HTTPS connections. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "public_certificate")
 

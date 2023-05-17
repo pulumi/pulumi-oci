@@ -189,12 +189,18 @@ public final class UsageState extends com.pulumi.resources.ResourceArgs {
     /**
      * The usage start time.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="timeUsageStarted")
     private @Nullable Output<String> timeUsageStarted;
 
     /**
      * @return The usage start time.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> timeUsageStarted() {
@@ -500,6 +506,9 @@ public final class UsageState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param timeUsageStarted The usage start time.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -510,6 +519,9 @@ public final class UsageState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param timeUsageStarted The usage start time.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

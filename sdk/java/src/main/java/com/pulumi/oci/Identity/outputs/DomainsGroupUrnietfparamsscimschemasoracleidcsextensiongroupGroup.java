@@ -20,35 +20,114 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     /**
      * @return (Updatable) A list of appRoles that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     private @Nullable List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole> appRoles;
     /**
      * @return (Updatable) Source from which this group got created.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeNameMappings: [[defaultValue:import]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable String creationMechanism;
     /**
      * @return (Updatable) Group description
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Description
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Description]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String description;
     /**
      * @return (Updatable) Grants assigned to group
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     private @Nullable List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant> grants;
     /**
      * @return (Updatable) Group owners
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value, type]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     private @Nullable List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwner> owners;
     /**
      * @return (Updatable) Password Policy associated with this Group.
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     private @Nullable List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy> passwordPolicies;
     /**
      * @return (Updatable) The entity that created this Group.
+     * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     private @Nullable List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromApp> syncedFromApps;
@@ -57,12 +136,34 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     /**
      * @return (Updatable) A list of appRoles that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     public List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole> appRoles() {
         return this.appRoles == null ? List.of() : this.appRoles;
     }
     /**
      * @return (Updatable) Source from which this group got created.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeNameMappings: [[defaultValue:import]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> creationMechanism() {
@@ -71,12 +172,33 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     /**
      * @return (Updatable) Group description
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Description
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Description]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
      * @return (Updatable) Grants assigned to group
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant> grants() {
@@ -85,6 +207,17 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     /**
      * @return (Updatable) Group owners
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value, type]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     public List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwner> owners() {
         return this.owners == null ? List.of() : this.owners;
@@ -92,12 +225,37 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     /**
      * @return (Updatable) Password Policy associated with this Group.
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     public List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy> passwordPolicies() {
         return this.passwordPolicies == null ? List.of() : this.passwordPolicies;
     }
     /**
      * @return (Updatable) The entity that created this Group.
+     * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromApp> syncedFromApps() {

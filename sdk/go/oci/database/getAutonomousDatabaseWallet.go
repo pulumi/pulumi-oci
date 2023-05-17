@@ -10,6 +10,12 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// **Deprecated. Use Database.AutonomousDatabaseWallet instead.**
+//
+// This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
+//
+// Creates and downloads a wallet for the specified Autonomous Database.
+//
 // ## Example Usage
 //
 // ```go
@@ -55,6 +61,8 @@ type LookupAutonomousDatabaseWalletArgs struct {
 	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
 	Base64EncodeContent  *bool  `pulumi:"base64EncodeContent"`
 	// The type of wallet to generate.
+	//
+	// **Shared Exadata infrastructure usage:**
 	GenerateType *string `pulumi:"generateType"`
 	// The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
 	Password string `pulumi:"password"`
@@ -94,6 +102,8 @@ type LookupAutonomousDatabaseWalletOutputArgs struct {
 	AutonomousDatabaseId pulumi.StringInput  `pulumi:"autonomousDatabaseId"`
 	Base64EncodeContent  pulumi.BoolPtrInput `pulumi:"base64EncodeContent"`
 	// The type of wallet to generate.
+	//
+	// **Shared Exadata infrastructure usage:**
 	GenerateType pulumi.StringPtrInput `pulumi:"generateType"`
 	// The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
 	Password pulumi.StringInput `pulumi:"password"`

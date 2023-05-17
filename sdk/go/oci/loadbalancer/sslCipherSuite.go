@@ -59,6 +59,18 @@ type SslCipherSuite struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
 	LoadBalancerId pulumi.StringOutput `pulumi:"loadBalancerId"`
 	// A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+	//
+	// **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle's predefined or reserved SSL cipher suite names:
+	// * oci-default-ssl-cipher-suite-v1
+	// * oci-modern-ssl-cipher-suite-v1
+	// * oci-compatible-ssl-cipher-suite-v1
+	// * oci-wider-compatible-ssl-cipher-suite-v1
+	// * oci-customized-ssl-cipher-suite
+	//
+	// example: `exampleCipherSuite`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name  pulumi.StringOutput `pulumi:"name"`
 	State pulumi.StringOutput `pulumi:"state"`
 }
@@ -103,6 +115,18 @@ type sslCipherSuiteState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
 	LoadBalancerId *string `pulumi:"loadBalancerId"`
 	// A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+	//
+	// **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle's predefined or reserved SSL cipher suite names:
+	// * oci-default-ssl-cipher-suite-v1
+	// * oci-modern-ssl-cipher-suite-v1
+	// * oci-compatible-ssl-cipher-suite-v1
+	// * oci-wider-compatible-ssl-cipher-suite-v1
+	// * oci-customized-ssl-cipher-suite
+	//
+	// example: `exampleCipherSuite`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name  *string `pulumi:"name"`
 	State *string `pulumi:"state"`
 }
@@ -113,6 +137,18 @@ type SslCipherSuiteState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
 	LoadBalancerId pulumi.StringPtrInput
 	// A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+	//
+	// **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle's predefined or reserved SSL cipher suite names:
+	// * oci-default-ssl-cipher-suite-v1
+	// * oci-modern-ssl-cipher-suite-v1
+	// * oci-compatible-ssl-cipher-suite-v1
+	// * oci-wider-compatible-ssl-cipher-suite-v1
+	// * oci-customized-ssl-cipher-suite
+	//
+	// example: `exampleCipherSuite`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name  pulumi.StringPtrInput
 	State pulumi.StringPtrInput
 }
@@ -127,6 +163,18 @@ type sslCipherSuiteArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
 	// A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+	//
+	// **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle's predefined or reserved SSL cipher suite names:
+	// * oci-default-ssl-cipher-suite-v1
+	// * oci-modern-ssl-cipher-suite-v1
+	// * oci-compatible-ssl-cipher-suite-v1
+	// * oci-wider-compatible-ssl-cipher-suite-v1
+	// * oci-customized-ssl-cipher-suite
+	//
+	// example: `exampleCipherSuite`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 }
 
@@ -137,6 +185,18 @@ type SslCipherSuiteArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
 	LoadBalancerId pulumi.StringInput
 	// A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+	//
+	// **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle's predefined or reserved SSL cipher suite names:
+	// * oci-default-ssl-cipher-suite-v1
+	// * oci-modern-ssl-cipher-suite-v1
+	// * oci-compatible-ssl-cipher-suite-v1
+	// * oci-wider-compatible-ssl-cipher-suite-v1
+	// * oci-customized-ssl-cipher-suite
+	//
+	// example: `exampleCipherSuite`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput
 }
 
@@ -238,6 +298,18 @@ func (o SslCipherSuiteOutput) LoadBalancerId() pulumi.StringOutput {
 }
 
 // A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+//
+// **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle's predefined or reserved SSL cipher suite names:
+// * oci-default-ssl-cipher-suite-v1
+// * oci-modern-ssl-cipher-suite-v1
+// * oci-compatible-ssl-cipher-suite-v1
+// * oci-wider-compatible-ssl-cipher-suite-v1
+// * oci-customized-ssl-cipher-suite
+//
+// example: `exampleCipherSuite`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o SslCipherSuiteOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *SslCipherSuite) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

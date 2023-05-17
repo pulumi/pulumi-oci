@@ -97,12 +97,18 @@ public final class SubscriberArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="usagePlans", required=true)
     private Output<List<String>> usagePlans;
 
     /**
      * @return (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<List<String>> usagePlans() {
@@ -256,6 +262,9 @@ public final class SubscriberArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param usagePlans (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -267,6 +276,9 @@ public final class SubscriberArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param usagePlans (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -276,6 +288,9 @@ public final class SubscriberArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param usagePlans (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

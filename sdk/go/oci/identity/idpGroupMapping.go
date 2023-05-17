@@ -65,6 +65,9 @@ type IdpGroupMapping struct {
 	// The OCID of the identity provider.
 	IdentityProviderId pulumi.StringOutput `pulumi:"identityProviderId"`
 	// (Updatable) The name of the IdP group you want to map.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IdpGroupName pulumi.StringOutput `pulumi:"idpGroupName"`
 	// The detailed status of INACTIVE lifecycleState.
 	InactiveState pulumi.StringOutput `pulumi:"inactiveState"`
@@ -119,6 +122,9 @@ type idpGroupMappingState struct {
 	// The OCID of the identity provider.
 	IdentityProviderId *string `pulumi:"identityProviderId"`
 	// (Updatable) The name of the IdP group you want to map.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IdpGroupName *string `pulumi:"idpGroupName"`
 	// The detailed status of INACTIVE lifecycleState.
 	InactiveState *string `pulumi:"inactiveState"`
@@ -136,6 +142,9 @@ type IdpGroupMappingState struct {
 	// The OCID of the identity provider.
 	IdentityProviderId pulumi.StringPtrInput
 	// (Updatable) The name of the IdP group you want to map.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IdpGroupName pulumi.StringPtrInput
 	// The detailed status of INACTIVE lifecycleState.
 	InactiveState pulumi.StringPtrInput
@@ -155,6 +164,9 @@ type idpGroupMappingArgs struct {
 	// The OCID of the identity provider.
 	IdentityProviderId string `pulumi:"identityProviderId"`
 	// (Updatable) The name of the IdP group you want to map.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IdpGroupName string `pulumi:"idpGroupName"`
 }
 
@@ -165,6 +177,9 @@ type IdpGroupMappingArgs struct {
 	// The OCID of the identity provider.
 	IdentityProviderId pulumi.StringInput
 	// (Updatable) The name of the IdP group you want to map.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IdpGroupName pulumi.StringInput
 }
 
@@ -271,6 +286,9 @@ func (o IdpGroupMappingOutput) IdentityProviderId() pulumi.StringOutput {
 }
 
 // (Updatable) The name of the IdP group you want to map.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o IdpGroupMappingOutput) IdpGroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v *IdpGroupMapping) pulumi.StringOutput { return v.IdpGroupName }).(pulumi.StringOutput)
 }

@@ -74,6 +74,8 @@ type IpsecConnectionTunnelManagement struct {
 	pulumi.CustomResourceState
 
 	// Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+	//
+	// If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
 	BgpSessionInfos IpsecConnectionTunnelManagementBgpSessionInfoArrayOutput `pulumi:"bgpSessionInfos"`
 	// The OCID of the compartment containing the tunnel.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
@@ -151,6 +153,8 @@ func GetIpsecConnectionTunnelManagement(ctx *pulumi.Context,
 // Input properties used for looking up and filtering IpsecConnectionTunnelManagement resources.
 type ipsecConnectionTunnelManagementState struct {
 	// Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+	//
+	// If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
 	BgpSessionInfos []IpsecConnectionTunnelManagementBgpSessionInfo `pulumi:"bgpSessionInfos"`
 	// The OCID of the compartment containing the tunnel.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -191,6 +195,8 @@ type ipsecConnectionTunnelManagementState struct {
 
 type IpsecConnectionTunnelManagementState struct {
 	// Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+	//
+	// If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
 	BgpSessionInfos IpsecConnectionTunnelManagementBgpSessionInfoArrayInput
 	// The OCID of the compartment containing the tunnel.
 	CompartmentId pulumi.StringPtrInput
@@ -235,6 +241,8 @@ func (IpsecConnectionTunnelManagementState) ElementType() reflect.Type {
 
 type ipsecConnectionTunnelManagementArgs struct {
 	// Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+	//
+	// If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
 	BgpSessionInfos []IpsecConnectionTunnelManagementBgpSessionInfo `pulumi:"bgpSessionInfos"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string                                    `pulumi:"displayName"`
@@ -256,6 +264,8 @@ type ipsecConnectionTunnelManagementArgs struct {
 // The set of arguments for constructing a IpsecConnectionTunnelManagement resource.
 type IpsecConnectionTunnelManagementArgs struct {
 	// Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+	//
+	// If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
 	BgpSessionInfos IpsecConnectionTunnelManagementBgpSessionInfoArrayInput
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
@@ -362,6 +372,8 @@ func (o IpsecConnectionTunnelManagementOutput) ToIpsecConnectionTunnelManagement
 }
 
 // Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+//
+// If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
 func (o IpsecConnectionTunnelManagementOutput) BgpSessionInfos() IpsecConnectionTunnelManagementBgpSessionInfoArrayOutput {
 	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) IpsecConnectionTunnelManagementBgpSessionInfoArrayOutput {
 		return v.BgpSessionInfos

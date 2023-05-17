@@ -91,12 +91,16 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// Specifying `monthInConsiderationGreaterThan` parameter will retrieve all items for which the event month is greater than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// 
+        /// **Example:** 2016-12-19T00:00:00.000Z
         /// </summary>
         [Input("monthInConsiderationGreaterThan")]
         public string? MonthInConsiderationGreaterThan { get; set; }
 
         /// <summary>
         /// Specifying `monthInConsiderationLessThan` parameter will retrieve all items for which the event month is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// 
+        /// **Example:** 2016-12-19T00:00:00.000Z
         /// </summary>
         [Input("monthInConsiderationLessThan")]
         public string? MonthInConsiderationLessThan { get; set; }
@@ -129,12 +133,16 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// Specifying `monthInConsiderationGreaterThan` parameter will retrieve all items for which the event month is greater than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// 
+        /// **Example:** 2016-12-19T00:00:00.000Z
         /// </summary>
         [Input("monthInConsiderationGreaterThan")]
         public Input<string>? MonthInConsiderationGreaterThan { get; set; }
 
         /// <summary>
         /// Specifying `monthInConsiderationLessThan` parameter will retrieve all items for which the event month is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// 
+        /// **Example:** 2016-12-19T00:00:00.000Z
         /// </summary>
         [Input("monthInConsiderationLessThan")]
         public Input<string>? MonthInConsiderationLessThan { get; set; }

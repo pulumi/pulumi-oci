@@ -19,12 +19,36 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
     /**
      * (Updatable) The country name component.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCanonicalValueSourceFilter: attrName eq &#34;countries&#34; and attrValues.value eq &#34;upper($(country))&#34;
+     * * idcsCanonicalValueSourceResourceType: AllowedValue
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="country")
     private @Nullable Output<String> country;
 
     /**
      * @return (Updatable) The country name component.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCanonicalValueSourceFilter: attrName eq &#34;countries&#34; and attrValues.value eq &#34;upper($(country))&#34;
+     * * idcsCanonicalValueSourceResourceType: AllowedValue
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> country() {
@@ -34,12 +58,32 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
     /**
      * (Updatable) Full name
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="formatted")
     private @Nullable Output<String> formatted;
 
     /**
      * @return (Updatable) Full name
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> formatted() {
@@ -49,12 +93,32 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
     /**
      * (Updatable) The city or locality component.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="locality")
     private @Nullable Output<String> locality;
 
     /**
      * @return (Updatable) The city or locality component.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> locality() {
@@ -64,12 +128,32 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
     /**
      * (Updatable) The zipcode or postal code component.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="postalCode")
     private @Nullable Output<String> postalCode;
 
     /**
      * @return (Updatable) The zipcode or postal code component.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> postalCode() {
@@ -79,12 +163,30 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
     /**
      * (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="primary")
     private @Nullable Output<Boolean> primary;
 
     /**
      * @return (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> primary() {
@@ -94,12 +196,32 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
     /**
      * (Updatable) The state or region component.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="region")
     private @Nullable Output<String> region;
 
     /**
      * @return (Updatable) The state or region component.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> region() {
@@ -109,12 +231,32 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
     /**
      * (Updatable) The full street address component, which may include house number, street name, PO BOX, and multi-line extended street address information. This attribute MAY contain newlines.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="streetAddress")
     private @Nullable Output<String> streetAddress;
 
     /**
      * @return (Updatable) The full street address component, which may include house number, street name, PO BOX, and multi-line extended street address information. This attribute MAY contain newlines.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> streetAddress() {
@@ -124,12 +266,30 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
     /**
      * (Updatable) A label indicating the attribute&#39;s function.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
      * @return (Updatable) A label indicating the attribute&#39;s function.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> type() {
@@ -170,6 +330,18 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
         /**
          * @param country (Updatable) The country name component.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCanonicalValueSourceFilter: attrName eq &#34;countries&#34; and attrValues.value eq &#34;upper($(country))&#34;
+         * * idcsCanonicalValueSourceResourceType: AllowedValue
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -181,6 +353,18 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
         /**
          * @param country (Updatable) The country name component.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCanonicalValueSourceFilter: attrName eq &#34;countries&#34; and attrValues.value eq &#34;upper($(country))&#34;
+         * * idcsCanonicalValueSourceResourceType: AllowedValue
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -190,6 +374,16 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param formatted (Updatable) Full name
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -202,6 +396,16 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
         /**
          * @param formatted (Updatable) Full name
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -211,6 +415,16 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param locality (Updatable) The city or locality component.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -223,6 +437,16 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
         /**
          * @param locality (Updatable) The city or locality component.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -232,6 +456,16 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param postalCode (Updatable) The zipcode or postal code component.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -244,6 +478,16 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
         /**
          * @param postalCode (Updatable) The zipcode or postal code component.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -253,6 +497,15 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param primary (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -265,6 +518,15 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
         /**
          * @param primary (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -274,6 +536,16 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param region (Updatable) The state or region component.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -286,6 +558,16 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
         /**
          * @param region (Updatable) The state or region component.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -295,6 +577,16 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param streetAddress (Updatable) The full street address component, which may include house number, street name, PO BOX, and multi-line extended street address information. This attribute MAY contain newlines.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -307,6 +599,16 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
         /**
          * @param streetAddress (Updatable) The full street address component, which may include house number, street name, PO BOX, and multi-line extended street address information. This attribute MAY contain newlines.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -316,6 +618,15 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param type (Updatable) A label indicating the attribute&#39;s function.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -327,6 +638,15 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param type (Updatable) A label indicating the attribute&#39;s function.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 

@@ -23,6 +23,10 @@ class CatalogArgs:
         The set of arguments for constructing a Catalog resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] attached_catalog_private_endpoints: (Updatable) The list of private reverse connection endpoints attached to the catalog
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Data catalog identifier.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -54,6 +58,10 @@ class CatalogArgs:
     def attached_catalog_private_endpoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) The list of private reverse connection endpoints attached to the catalog
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "attached_catalog_private_endpoints")
 
@@ -116,6 +124,10 @@ class _CatalogState:
         """
         Input properties used for looking up and filtering Catalog resources.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] attached_catalog_private_endpoints: (Updatable) The list of private reverse connection endpoints attached to the catalog
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Data catalog identifier.
@@ -158,6 +170,10 @@ class _CatalogState:
     def attached_catalog_private_endpoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) The list of private reverse connection endpoints attached to the catalog
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "attached_catalog_private_endpoints")
 
@@ -343,6 +359,10 @@ class Catalog(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] attached_catalog_private_endpoints: (Updatable) The list of private reverse connection endpoints attached to the catalog
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Data catalog identifier.
@@ -458,6 +478,10 @@ class Catalog(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] attached_catalog_private_endpoints: (Updatable) The list of private reverse connection endpoints attached to the catalog
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Data catalog identifier.
@@ -493,6 +517,10 @@ class Catalog(pulumi.CustomResource):
     def attached_catalog_private_endpoints(self) -> pulumi.Output[Sequence[str]]:
         """
         (Updatable) The list of private reverse connection endpoints attached to the catalog
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "attached_catalog_private_endpoints")
 

@@ -98,10 +98,15 @@ type InstancePool struct {
 	// The load balancers to attach to the instance pool.
 	LoadBalancers InstancePoolLoadBalancerArrayOutput `pulumi:"loadBalancers"`
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
+	//
+	// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
 	PlacementConfigurations InstancePoolPlacementConfigurationArrayOutput `pulumi:"placementConfigurations"`
 	// (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
 	Size pulumi.IntOutput `pulumi:"size"`
 	// (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -163,10 +168,15 @@ type instancePoolState struct {
 	// The load balancers to attach to the instance pool.
 	LoadBalancers []InstancePoolLoadBalancer `pulumi:"loadBalancers"`
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
+	//
+	// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
 	PlacementConfigurations []InstancePoolPlacementConfiguration `pulumi:"placementConfigurations"`
 	// (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
 	Size *int `pulumi:"size"`
 	// (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
 	// The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -188,10 +198,15 @@ type InstancePoolState struct {
 	// The load balancers to attach to the instance pool.
 	LoadBalancers InstancePoolLoadBalancerArrayInput
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
+	//
+	// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
 	PlacementConfigurations InstancePoolPlacementConfigurationArrayInput
 	// (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
 	Size pulumi.IntPtrInput
 	// (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput
 	// The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
@@ -215,10 +230,15 @@ type instancePoolArgs struct {
 	// The load balancers to attach to the instance pool.
 	LoadBalancers []InstancePoolLoadBalancer `pulumi:"loadBalancers"`
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
+	//
+	// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
 	PlacementConfigurations []InstancePoolPlacementConfiguration `pulumi:"placementConfigurations"`
 	// (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
 	Size int `pulumi:"size"`
 	// (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
 }
 
@@ -237,10 +257,15 @@ type InstancePoolArgs struct {
 	// The load balancers to attach to the instance pool.
 	LoadBalancers InstancePoolLoadBalancerArrayInput
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
+	//
+	// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
 	PlacementConfigurations InstancePoolPlacementConfigurationArrayInput
 	// (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
 	Size pulumi.IntInput
 	// (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput
 }
 
@@ -367,6 +392,8 @@ func (o InstancePoolOutput) LoadBalancers() InstancePoolLoadBalancerArrayOutput 
 }
 
 // (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
+//
+// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
 func (o InstancePoolOutput) PlacementConfigurations() InstancePoolPlacementConfigurationArrayOutput {
 	return o.ApplyT(func(v *InstancePool) InstancePoolPlacementConfigurationArrayOutput { return v.PlacementConfigurations }).(InstancePoolPlacementConfigurationArrayOutput)
 }
@@ -377,6 +404,9 @@ func (o InstancePoolOutput) Size() pulumi.IntOutput {
 }
 
 // (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o InstancePoolOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *InstancePool) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

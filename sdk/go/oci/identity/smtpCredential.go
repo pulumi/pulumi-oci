@@ -70,6 +70,9 @@ type SmtpCredential struct {
 	// Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
 	TimeExpires pulumi.StringOutput `pulumi:"timeExpires"`
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringOutput `pulumi:"userId"`
 	// The SMTP user name.
 	Username pulumi.StringOutput `pulumi:"username"`
@@ -123,6 +126,9 @@ type smtpCredentialState struct {
 	// Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
 	TimeExpires *string `pulumi:"timeExpires"`
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId *string `pulumi:"userId"`
 	// The SMTP user name.
 	Username *string `pulumi:"username"`
@@ -142,6 +148,9 @@ type SmtpCredentialState struct {
 	// Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
 	TimeExpires pulumi.StringPtrInput
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringPtrInput
 	// The SMTP user name.
 	Username pulumi.StringPtrInput
@@ -155,6 +164,9 @@ type smtpCredentialArgs struct {
 	// (Updatable) The description you assign to the SMTP credentials during creation. Does not have to be unique, and it's changeable.
 	Description string `pulumi:"description"`
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId string `pulumi:"userId"`
 }
 
@@ -163,6 +175,9 @@ type SmtpCredentialArgs struct {
 	// (Updatable) The description you assign to the SMTP credentials during creation. Does not have to be unique, and it's changeable.
 	Description pulumi.StringInput
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringInput
 }
 
@@ -284,6 +299,9 @@ func (o SmtpCredentialOutput) TimeExpires() pulumi.StringOutput {
 }
 
 // The OCID of the user.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o SmtpCredentialOutput) UserId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SmtpCredential) pulumi.StringOutput { return v.UserId }).(pulumi.StringOutput)
 }

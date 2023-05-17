@@ -74,6 +74,9 @@ type CaBundle struct {
 	// Additional information about the current lifecycle state of the CA bundle.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The current lifecycle state of the CA bundle.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -129,6 +132,9 @@ type caBundleState struct {
 	// Additional information about the current lifecycle state of the CA bundle.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 	// The current lifecycle state of the CA bundle.
 	State *string `pulumi:"state"`
@@ -150,6 +156,9 @@ type CaBundleState struct {
 	// Additional information about the current lifecycle state of the CA bundle.
 	LifecycleDetails pulumi.StringPtrInput
 	// A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput
 	// The current lifecycle state of the CA bundle.
 	State pulumi.StringPtrInput
@@ -173,6 +182,9 @@ type caBundleArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 }
 
@@ -189,6 +201,9 @@ type CaBundleArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput
 }
 
@@ -310,6 +325,9 @@ func (o CaBundleOutput) LifecycleDetails() pulumi.StringOutput {
 }
 
 // A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CaBundleOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *CaBundle) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

@@ -176,6 +176,9 @@ type MonitoredResource struct {
 	// The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// Monitored Resource Type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringOutput `pulumi:"type"`
 }
 
@@ -257,6 +260,9 @@ type monitoredResourceState struct {
 	// The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Monitored Resource Type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type *string `pulumi:"type"`
 }
 
@@ -304,6 +310,9 @@ type MonitoredResourceState struct {
 	// The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeUpdated pulumi.StringPtrInput
 	// Monitored Resource Type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringPtrInput
 }
 
@@ -345,6 +354,9 @@ type monitoredResourceArgs struct {
 	// (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
 	ResourceTimeZone *string `pulumi:"resourceTimeZone"`
 	// Monitored Resource Type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type string `pulumi:"type"`
 }
 
@@ -383,6 +395,9 @@ type MonitoredResourceArgs struct {
 	// (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
 	ResourceTimeZone pulumi.StringPtrInput
 	// Monitored Resource Type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringInput
 }
 
@@ -583,6 +598,9 @@ func (o MonitoredResourceOutput) TimeUpdated() pulumi.StringOutput {
 }
 
 // Monitored Resource Type.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MonitoredResourceOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *MonitoredResource) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

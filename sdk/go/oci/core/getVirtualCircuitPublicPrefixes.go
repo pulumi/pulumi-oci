@@ -54,6 +54,8 @@ func GetVirtualCircuitPublicPrefixes(ctx *pulumi.Context, args *GetVirtualCircui
 type GetVirtualCircuitPublicPrefixesArgs struct {
 	Filters []GetVirtualCircuitPublicPrefixesFilter `pulumi:"filters"`
 	// A filter to only return resources that match the given verification state.
+	//
+	// The state value is case-insensitive.
 	VerificationState *string `pulumi:"verificationState"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
 	VirtualCircuitId string `pulumi:"virtualCircuitId"`
@@ -88,6 +90,8 @@ func GetVirtualCircuitPublicPrefixesOutput(ctx *pulumi.Context, args GetVirtualC
 type GetVirtualCircuitPublicPrefixesOutputArgs struct {
 	Filters GetVirtualCircuitPublicPrefixesFilterArrayInput `pulumi:"filters"`
 	// A filter to only return resources that match the given verification state.
+	//
+	// The state value is case-insensitive.
 	VerificationState pulumi.StringPtrInput `pulumi:"verificationState"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
 	VirtualCircuitId pulumi.StringInput `pulumi:"virtualCircuitId"`

@@ -234,12 +234,18 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
     /**
      * Name of snapshot bucket
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="snapShotBucketName", type=String.class, parameters={})
     private Output<String> snapShotBucketName;
 
     /**
      * @return Name of snapshot bucket
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> snapShotBucketName() {

@@ -61,6 +61,9 @@ namespace Pulumi.Oci.ManagementAgent
 
         /// <summary>
         /// (Updatable) Plugin Id list
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("deployPluginsIds")]
         public Output<ImmutableArray<string>> DeployPluginsIds { get; private set; } = null!;
@@ -260,6 +263,9 @@ namespace Pulumi.Oci.ManagementAgent
 
         /// <summary>
         /// (Updatable) Plugin Id list
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputList<string> DeployPluginsIds
         {
@@ -328,6 +334,9 @@ namespace Pulumi.Oci.ManagementAgent
 
         /// <summary>
         /// (Updatable) Plugin Id list
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputList<string> DeployPluginsIds
         {

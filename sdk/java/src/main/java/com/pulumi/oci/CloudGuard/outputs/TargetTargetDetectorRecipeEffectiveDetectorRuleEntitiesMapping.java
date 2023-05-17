@@ -14,6 +14,8 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappin
     /**
      * @return (Updatable) DetectorTemplate identifier.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     private @Nullable String displayName;
     /**
@@ -30,6 +32,8 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappin
     private TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping() {}
     /**
      * @return (Updatable) DetectorTemplate identifier.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {

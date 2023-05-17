@@ -14,6 +14,17 @@ namespace Pulumi.Oci.Identity.Inputs
     {
         /// <summary>
         /// (Updatable) To enable Duo Security factor
+        /// 
+        /// **Added In:** 19.2.1
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("duoSecurity", required: true)]
         public Input<bool> DuoSecurity { get; set; } = null!;

@@ -50,6 +50,10 @@ namespace Pulumi.Oci.BigDataService
     {
         /// <summary>
         /// (Updatable) An optional integer, when flipped triggers activation of metastore config.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("activateTrigger")]
         public Output<int?> ActivateTrigger { get; private set; } = null!;
@@ -167,6 +171,10 @@ namespace Pulumi.Oci.BigDataService
     {
         /// <summary>
         /// (Updatable) An optional integer, when flipped triggers activation of metastore config.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("activateTrigger")]
         public Input<int>? ActivateTrigger { get; set; }
@@ -237,6 +245,10 @@ namespace Pulumi.Oci.BigDataService
     {
         /// <summary>
         /// (Updatable) An optional integer, when flipped triggers activation of metastore config.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("activateTrigger")]
         public Input<int>? ActivateTrigger { get; set; }

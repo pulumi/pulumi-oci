@@ -192,12 +192,32 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
     /**
      * (Updatable) Policy definition for the autoscale configuration.
      * 
+     * An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
+     * 
+     * You can create following type of autoscaling policies:
+     * * **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
+     * * **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
+     * * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
+     * * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
+     * 
+     * An autoscaling configuration can have one of above supported policies.
+     * 
      */
     @Export(name="policyDetails", type=AutoScalingConfigurationPolicyDetails.class, parameters={})
     private Output<AutoScalingConfigurationPolicyDetails> policyDetails;
 
     /**
      * @return (Updatable) Policy definition for the autoscale configuration.
+     * 
+     * An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
+     * 
+     * You can create following type of autoscaling policies:
+     * * **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
+     * * **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
+     * * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
+     * * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
+     * 
+     * An autoscaling configuration can have one of above supported policies.
      * 
      */
     public Output<AutoScalingConfigurationPolicyDetails> policyDetails() {

@@ -67,6 +67,9 @@ type ExternalDbSystem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
 	DiscoveryAgentId pulumi.StringOutput `pulumi:"discoveryAgentId"`
 	// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
 	HomeDirectory pulumi.StringOutput `pulumi:"homeDirectory"`
@@ -126,6 +129,9 @@ type externalDbSystemState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
 	DiscoveryAgentId *string `pulumi:"discoveryAgentId"`
 	// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisplayName *string `pulumi:"displayName"`
 	// The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
 	HomeDirectory *string `pulumi:"homeDirectory"`
@@ -151,6 +157,9 @@ type ExternalDbSystemState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
 	DiscoveryAgentId pulumi.StringPtrInput
 	// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisplayName pulumi.StringPtrInput
 	// The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
 	HomeDirectory pulumi.StringPtrInput
@@ -178,6 +187,9 @@ type externalDbSystemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
 	DbSystemDiscoveryId string `pulumi:"dbSystemDiscoveryId"`
 	// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisplayName *string `pulumi:"displayName"`
 }
 
@@ -190,6 +202,9 @@ type ExternalDbSystemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
 	DbSystemDiscoveryId pulumi.StringInput
 	// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisplayName pulumi.StringPtrInput
 }
 
@@ -303,6 +318,9 @@ func (o ExternalDbSystemOutput) DiscoveryAgentId() pulumi.StringOutput {
 }
 
 // (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ExternalDbSystemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalDbSystem) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }

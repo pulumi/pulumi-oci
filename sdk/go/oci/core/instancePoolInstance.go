@@ -73,6 +73,9 @@ type InstancePoolInstance struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	InstancePoolId pulumi.StringOutput `pulumi:"instancePoolId"`
 	// The load balancer backends that are configured for the instance pool instance.
 	LoadBalancerBackends InstancePoolInstanceLoadBalancerBackendArrayOutput `pulumi:"loadBalancerBackends"`
@@ -136,6 +139,9 @@ type instancePoolInstanceState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
 	InstanceId *string `pulumi:"instanceId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	InstancePoolId *string `pulumi:"instancePoolId"`
 	// The load balancer backends that are configured for the instance pool instance.
 	LoadBalancerBackends []InstancePoolInstanceLoadBalancerBackend `pulumi:"loadBalancerBackends"`
@@ -165,6 +171,9 @@ type InstancePoolInstanceState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
 	InstanceId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	InstancePoolId pulumi.StringPtrInput
 	// The load balancer backends that are configured for the instance pool instance.
 	LoadBalancerBackends InstancePoolInstanceLoadBalancerBackendArrayInput
@@ -188,6 +197,9 @@ type instancePoolInstanceArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
 	InstanceId string `pulumi:"instanceId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	InstancePoolId string `pulumi:"instancePoolId"`
 }
 
@@ -198,6 +210,9 @@ type InstancePoolInstanceArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
 	InstanceId pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	InstancePoolId pulumi.StringInput
 }
 
@@ -327,6 +342,9 @@ func (o InstancePoolInstanceOutput) InstanceId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o InstancePoolInstanceOutput) InstancePoolId() pulumi.StringOutput {
 	return o.ApplyT(func(v *InstancePoolInstance) pulumi.StringOutput { return v.InstancePoolId }).(pulumi.StringOutput)
 }

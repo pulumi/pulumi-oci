@@ -47,6 +47,8 @@ export interface GetProfileLevelsArgs {
     compartmentId: string;
     /**
      * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+     *
+     * Can only be set to true when performing ListCompartments on the tenancy (root compartment).
      */
     compartmentIdInSubtree: boolean;
     filters?: inputs.Optimizer.GetProfileLevelsFilter[];
@@ -117,6 +119,8 @@ export interface GetProfileLevelsOutputArgs {
     compartmentId: pulumi.Input<string>;
     /**
      * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+     *
+     * Can only be set to true when performing ListCompartments on the tenancy (root compartment).
      */
     compartmentIdInSubtree: pulumi.Input<boolean>;
     filters?: pulumi.Input<pulumi.Input<inputs.Optimizer.GetProfileLevelsFilterArgs>[]>;

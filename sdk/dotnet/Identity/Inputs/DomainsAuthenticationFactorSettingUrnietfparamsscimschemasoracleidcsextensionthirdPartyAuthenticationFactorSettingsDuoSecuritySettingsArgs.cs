@@ -14,30 +14,85 @@ namespace Pulumi.Oci.Identity.Inputs
     {
         /// <summary>
         /// (Updatable) Hostname to access the Duo security account
+        /// 
+        /// **Added In:** 19.2.1
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("apiHostname", required: true)]
         public Input<string> ApiHostname { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Attestation key to attest the request and response between Duo Security
+        /// 
+        /// **Added In:** 19.2.1
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: never
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("attestationKey")]
         public Input<string>? AttestationKey { get; set; }
 
         /// <summary>
         /// (Updatable) Integration key from Duo Security authenticator
+        /// 
+        /// **Added In:** 19.2.1
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("integrationKey", required: true)]
         public Input<string> IntegrationKey { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Secret key from Duo Security authenticator
+        /// 
+        /// **Added In:** 19.2.1
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("secretKey", required: true)]
         public Input<string> SecretKey { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) User attribute mapping value
+        /// 
+        /// **Added In:** 19.2.1
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("userMappingAttribute", required: true)]
         public Input<string> UserMappingAttribute { get; set; } = null!;

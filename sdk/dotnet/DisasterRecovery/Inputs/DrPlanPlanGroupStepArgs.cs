@@ -55,7 +55,11 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<int>? Timeout { get; set; }
 
         /// <summary>
-        /// The type of DR Plan to be created.
+        /// The type of DR Plan to be created. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

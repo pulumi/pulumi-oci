@@ -64,7 +64,11 @@ export class LogAnalyticsUnprocessedDataBucketManagement extends pulumi.CustomRe
      */
     public readonly isEnabled!: pulumi.Output<boolean>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly namespace!: pulumi.Output<string>;
     /**
@@ -126,7 +130,11 @@ export interface LogAnalyticsUnprocessedDataBucketManagementState {
      */
     isEnabled?: pulumi.Input<boolean>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     namespace?: pulumi.Input<string>;
     /**
@@ -152,7 +160,11 @@ export interface LogAnalyticsUnprocessedDataBucketManagementArgs {
      */
     isEnabled?: pulumi.Input<boolean>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     namespace: pulumi.Input<string>;
 }

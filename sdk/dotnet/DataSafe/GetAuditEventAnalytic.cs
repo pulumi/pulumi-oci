@@ -141,6 +141,8 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
+        /// 
+        /// **Example:** query=(operationTime ge '2021-06-04T01-00-26') and (eventName eq 'LOGON')
         /// </summary>
         [Input("scimQuery")]
         public string? ScimQuery { get; set; }
@@ -215,6 +217,8 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
+        /// 
+        /// **Example:** query=(operationTime ge '2021-06-04T01-00-26') and (eventName eq 'LOGON')
         /// </summary>
         [Input("scimQuery")]
         public Input<string>? ScimQuery { get; set; }

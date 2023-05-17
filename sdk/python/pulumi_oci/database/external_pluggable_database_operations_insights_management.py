@@ -19,7 +19,10 @@ class ExternalPluggableDatabaseOperationsInsightsManagementArgs:
                  external_pluggable_database_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a ExternalPluggableDatabaseOperationsInsightsManagement resource.
-        :param pulumi.Input[bool] enable_operations_insights: (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false".
+        :param pulumi.Input[bool] enable_operations_insights: (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false". 
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[str] external_pluggable_database_id: The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
@@ -31,7 +34,10 @@ class ExternalPluggableDatabaseOperationsInsightsManagementArgs:
     @pulumi.getter(name="enableOperationsInsights")
     def enable_operations_insights(self) -> pulumi.Input[bool]:
         """
-        (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false".
+        (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false". 
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "enable_operations_insights")
 
@@ -72,7 +78,10 @@ class _ExternalPluggableDatabaseOperationsInsightsManagementState:
                  external_pluggable_database_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ExternalPluggableDatabaseOperationsInsightsManagement resources.
-        :param pulumi.Input[bool] enable_operations_insights: (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false".
+        :param pulumi.Input[bool] enable_operations_insights: (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false". 
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[str] external_pluggable_database_id: The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
@@ -87,7 +96,10 @@ class _ExternalPluggableDatabaseOperationsInsightsManagementState:
     @pulumi.getter(name="enableOperationsInsights")
     def enable_operations_insights(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false".
+        (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false". 
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "enable_operations_insights")
 
@@ -153,7 +165,10 @@ class ExternalPluggableDatabaseOperationsInsightsManagement(pulumi.CustomResourc
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] enable_operations_insights: (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false".
+        :param pulumi.Input[bool] enable_operations_insights: (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false". 
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[str] external_pluggable_database_id: The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
@@ -241,7 +256,10 @@ class ExternalPluggableDatabaseOperationsInsightsManagement(pulumi.CustomResourc
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] enable_operations_insights: (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false".
+        :param pulumi.Input[bool] enable_operations_insights: (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false". 
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[str] external_pluggable_database_id: The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
@@ -258,7 +276,10 @@ class ExternalPluggableDatabaseOperationsInsightsManagement(pulumi.CustomResourc
     @pulumi.getter(name="enableOperationsInsights")
     def enable_operations_insights(self) -> pulumi.Output[bool]:
         """
-        (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false".
+        (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false". 
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "enable_operations_insights")
 

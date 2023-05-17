@@ -80,12 +80,20 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
     /**
      * A user-friendly name for the backend set that must be unique and cannot be changed.
      * 
+     * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+     * 
+     * Example: `example_backend_set`
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return A user-friendly name for the backend set that must be unique and cannot be changed.
+     * 
+     * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+     * 
+     * Example: `example_backend_set`
      * 
      */
     public Optional<Output<String>> name() {
@@ -255,6 +263,10 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
         /**
          * @param name A user-friendly name for the backend set that must be unique and cannot be changed.
          * 
+         * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+         * 
+         * Example: `example_backend_set`
+         * 
          * @return builder
          * 
          */
@@ -265,6 +277,10 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param name A user-friendly name for the backend set that must be unique and cannot be changed.
+         * 
+         * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+         * 
+         * Example: `example_backend_set`
          * 
          * @return builder
          * 

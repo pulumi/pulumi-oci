@@ -25,8 +25,16 @@ class TsigKeyArgs:
         :param pulumi.Input[str] algorithm: TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the TSIG key.
         :param pulumi.Input[str] secret: A base64 string encoding the binary shared secret.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+               
+               **Example:** `{"Operations": {"CostCenter": "42"}}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+               
+               **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[str] name: A globally unique domain name identifying the key for a given pair of hosts.
         """
         pulumi.set(__self__, "algorithm", algorithm)
@@ -68,6 +76,10 @@ class TsigKeyArgs:
     def secret(self) -> pulumi.Input[str]:
         """
         A base64 string encoding the binary shared secret.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "secret")
 
@@ -80,6 +92,8 @@ class TsigKeyArgs:
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+
+        **Example:** `{"Operations": {"CostCenter": "42"}}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -92,6 +106,8 @@ class TsigKeyArgs:
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+
+        **Example:** `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -130,9 +146,17 @@ class _TsigKeyState:
         :param pulumi.Input[str] algorithm: TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the TSIG key.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+               
+               **Example:** `{"Operations": {"CostCenter": "42"}}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+               
+               **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[str] name: A globally unique domain name identifying the key for a given pair of hosts.
         :param pulumi.Input[str] secret: A base64 string encoding the binary shared secret.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] self: The canonical absolute URL of the resource.
         :param pulumi.Input[str] state: The current state of the resource.
         :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in RFC 3339 timestamp format.
@@ -188,6 +212,8 @@ class _TsigKeyState:
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+
+        **Example:** `{"Operations": {"CostCenter": "42"}}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -200,6 +226,8 @@ class _TsigKeyState:
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+
+        **Example:** `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -224,6 +252,10 @@ class _TsigKeyState:
     def secret(self) -> Optional[pulumi.Input[str]]:
         """
         A base64 string encoding the binary shared secret.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "secret")
 
@@ -325,9 +357,17 @@ class TsigKey(pulumi.CustomResource):
         :param pulumi.Input[str] algorithm: TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the TSIG key.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+               
+               **Example:** `{"Operations": {"CostCenter": "42"}}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+               
+               **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[str] name: A globally unique domain name identifying the key for a given pair of hosts.
         :param pulumi.Input[str] secret: A base64 string encoding the binary shared secret.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -441,9 +481,17 @@ class TsigKey(pulumi.CustomResource):
         :param pulumi.Input[str] algorithm: TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the TSIG key.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+               
+               **Example:** `{"Operations": {"CostCenter": "42"}}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+               
+               **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[str] name: A globally unique domain name identifying the key for a given pair of hosts.
         :param pulumi.Input[str] secret: A base64 string encoding the binary shared secret.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] self: The canonical absolute URL of the resource.
         :param pulumi.Input[str] state: The current state of the resource.
         :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in RFC 3339 timestamp format.
@@ -486,6 +534,8 @@ class TsigKey(pulumi.CustomResource):
     def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+
+        **Example:** `{"Operations": {"CostCenter": "42"}}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -494,6 +544,8 @@ class TsigKey(pulumi.CustomResource):
     def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+
+        **Example:** `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -510,6 +562,10 @@ class TsigKey(pulumi.CustomResource):
     def secret(self) -> pulumi.Output[str]:
         """
         A base64 string encoding the binary shared secret.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "secret")
 

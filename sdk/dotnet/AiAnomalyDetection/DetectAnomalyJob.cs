@@ -87,6 +87,10 @@ namespace Pulumi.Oci.AiAnomalyDetection
 
         /// <summary>
         /// The value that customer can adjust to control the sensitivity of anomaly detection
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("sensitivity")]
         public Output<double> Sensitivity { get; private set; } = null!;
@@ -205,6 +209,10 @@ namespace Pulumi.Oci.AiAnomalyDetection
 
         /// <summary>
         /// The value that customer can adjust to control the sensitivity of anomaly detection
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("sensitivity")]
         public Input<double>? Sensitivity { get; set; }
@@ -291,6 +299,10 @@ namespace Pulumi.Oci.AiAnomalyDetection
 
         /// <summary>
         /// The value that customer can adjust to control the sensitivity of anomaly detection
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("sensitivity")]
         public Input<double>? Sensitivity { get; set; }

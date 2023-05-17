@@ -101,6 +101,10 @@ export class DrProtectionGroup extends pulumi.CustomResource {
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly disassociateTrigger!: pulumi.Output<number | undefined>;
     /**
@@ -232,6 +236,10 @@ export interface DrProtectionGroupState {
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     disassociateTrigger?: pulumi.Input<number>;
     /**
@@ -302,6 +310,10 @@ export interface DrProtectionGroupArgs {
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     disassociateTrigger?: pulumi.Input<number>;
     /**

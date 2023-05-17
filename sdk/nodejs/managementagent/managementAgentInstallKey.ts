@@ -102,6 +102,10 @@ export class ManagementAgentInstallKey extends pulumi.CustomResource {
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
      * date after which key would expire after creation
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly timeExpires!: pulumi.Output<string>;
     /**
@@ -206,6 +210,10 @@ export interface ManagementAgentInstallKeyState {
     timeCreated?: pulumi.Input<string>;
     /**
      * date after which key would expire after creation
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     timeExpires?: pulumi.Input<string>;
     /**
@@ -236,6 +244,10 @@ export interface ManagementAgentInstallKeyArgs {
     isUnlimited?: pulumi.Input<boolean>;
     /**
      * date after which key would expire after creation
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     timeExpires?: pulumi.Input<string>;
 }

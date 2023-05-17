@@ -16,12 +16,16 @@ public final class GetNotificationTopicArgs extends com.pulumi.resources.InvokeA
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to retrieve.
      * 
+     * Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
+     * 
      */
     @Import(name="topicId", required=true)
     private Output<String> topicId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to retrieve.
+     * 
+     * Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
      * 
      */
     public Output<String> topicId() {
@@ -55,6 +59,8 @@ public final class GetNotificationTopicArgs extends com.pulumi.resources.InvokeA
         /**
          * @param topicId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to retrieve.
          * 
+         * Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
+         * 
          * @return builder
          * 
          */
@@ -65,6 +71,8 @@ public final class GetNotificationTopicArgs extends com.pulumi.resources.InvokeA
 
         /**
          * @param topicId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to retrieve.
+         * 
+         * Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
          * 
          * @return builder
          * 

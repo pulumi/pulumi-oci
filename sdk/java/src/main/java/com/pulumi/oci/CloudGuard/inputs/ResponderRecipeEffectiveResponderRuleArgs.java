@@ -35,12 +35,16 @@ public final class ResponderRecipeEffectiveResponderRuleArgs extends com.pulumi.
     /**
      * (Updatable) Responder recipe description.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return (Updatable) Responder recipe description.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -65,12 +69,16 @@ public final class ResponderRecipeEffectiveResponderRuleArgs extends com.pulumi.
     /**
      * (Updatable) Responder recipe display name.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
      * @return (Updatable) Responder recipe display name.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -256,6 +264,8 @@ public final class ResponderRecipeEffectiveResponderRuleArgs extends com.pulumi.
         /**
          * @param description (Updatable) Responder recipe description.
          * 
+         * Avoid entering confidential information.
+         * 
          * @return builder
          * 
          */
@@ -266,6 +276,8 @@ public final class ResponderRecipeEffectiveResponderRuleArgs extends com.pulumi.
 
         /**
          * @param description (Updatable) Responder recipe description.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -308,6 +320,8 @@ public final class ResponderRecipeEffectiveResponderRuleArgs extends com.pulumi.
         /**
          * @param displayName (Updatable) Responder recipe display name.
          * 
+         * Avoid entering confidential information.
+         * 
          * @return builder
          * 
          */
@@ -318,6 +332,8 @@ public final class ResponderRecipeEffectiveResponderRuleArgs extends com.pulumi.
 
         /**
          * @param displayName (Updatable) Responder recipe display name.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 

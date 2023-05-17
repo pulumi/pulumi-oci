@@ -297,12 +297,18 @@ public class Schedule extends com.pulumi.resources.CustomResource {
     /**
      * The date and time of the first time job execution.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="timeScheduled", type=String.class, parameters={})
     private Output<String> timeScheduled;
 
     /**
      * @return The date and time of the first time job execution.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> timeScheduled() {

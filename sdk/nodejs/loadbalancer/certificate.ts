@@ -59,6 +59,16 @@ export class Certificate extends pulumi.CustomResource {
 
     /**
      * The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+     *
+     * Example:
+     *
+     * -----BEGIN CERTIFICATE-----
+     * MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+     * EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+     * VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+     * aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+     * ...
+     * -----END CERTIFICATE-----
      */
     public readonly caCertificate!: pulumi.Output<string>;
     /**
@@ -75,10 +85,35 @@ export class Certificate extends pulumi.CustomResource {
     public readonly passphrase!: pulumi.Output<string | undefined>;
     /**
      * The SSL private key for your certificate, in PEM format.
+     *
+     * Example:
+     *
+     * -----BEGIN RSA PRIVATE KEY-----
+     * jO1O1v2ftXMsawM90tnXwc6xhOAT1gDBC9S8DKeca..JZNUgYYwNS0dP2UK
+     * tmyN+XqVcAKw4HqVmChXy5b5msu8eIq3uc2NqNVtR..2ksSLukP8pxXcHyb
+     * +sEwvM4uf8qbnHAqwnOnP9+KV9vds6BaH1eRA4CHz..n+NVZlzBsTxTlS16
+     * /Umr7wJzVrMqK5sDiSu4WuaaBdqMGfL5hLsTjcBFD..Da2iyQmSKuVD4lIZ
+     * ...
+     * -----END RSA PRIVATE KEY-----
      */
     public readonly privateKey!: pulumi.Output<string>;
     /**
      * The public certificate, in PEM format, that you received from your SSL certificate provider.
+     *
+     * Example:
+     *
+     * -----BEGIN CERTIFICATE-----
+     * MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbM..QswCQYDVQQGEwJKU
+     * A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxE..TAPBgNVBAoTCEZyY
+     * MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWB..gNVBAMTD0ZyYW5rN
+     * YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmc..mFuazRkZC5jb20wH
+     * ...
+     * -----END CERTIFICATE-----
+     *
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly publicCertificate!: pulumi.Output<string>;
     public /*out*/ readonly state!: pulumi.Output<string>;
@@ -132,6 +167,16 @@ export class Certificate extends pulumi.CustomResource {
 export interface CertificateState {
     /**
      * The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+     *
+     * Example:
+     *
+     * -----BEGIN CERTIFICATE-----
+     * MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+     * EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+     * VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+     * aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+     * ...
+     * -----END CERTIFICATE-----
      */
     caCertificate?: pulumi.Input<string>;
     /**
@@ -148,10 +193,35 @@ export interface CertificateState {
     passphrase?: pulumi.Input<string>;
     /**
      * The SSL private key for your certificate, in PEM format.
+     *
+     * Example:
+     *
+     * -----BEGIN RSA PRIVATE KEY-----
+     * jO1O1v2ftXMsawM90tnXwc6xhOAT1gDBC9S8DKeca..JZNUgYYwNS0dP2UK
+     * tmyN+XqVcAKw4HqVmChXy5b5msu8eIq3uc2NqNVtR..2ksSLukP8pxXcHyb
+     * +sEwvM4uf8qbnHAqwnOnP9+KV9vds6BaH1eRA4CHz..n+NVZlzBsTxTlS16
+     * /Umr7wJzVrMqK5sDiSu4WuaaBdqMGfL5hLsTjcBFD..Da2iyQmSKuVD4lIZ
+     * ...
+     * -----END RSA PRIVATE KEY-----
      */
     privateKey?: pulumi.Input<string>;
     /**
      * The public certificate, in PEM format, that you received from your SSL certificate provider.
+     *
+     * Example:
+     *
+     * -----BEGIN CERTIFICATE-----
+     * MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbM..QswCQYDVQQGEwJKU
+     * A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxE..TAPBgNVBAoTCEZyY
+     * MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWB..gNVBAMTD0ZyYW5rN
+     * YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmc..mFuazRkZC5jb20wH
+     * ...
+     * -----END CERTIFICATE-----
+     *
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     publicCertificate?: pulumi.Input<string>;
     state?: pulumi.Input<string>;
@@ -163,6 +233,16 @@ export interface CertificateState {
 export interface CertificateArgs {
     /**
      * The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+     *
+     * Example:
+     *
+     * -----BEGIN CERTIFICATE-----
+     * MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+     * EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+     * VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+     * aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+     * ...
+     * -----END CERTIFICATE-----
      */
     caCertificate?: pulumi.Input<string>;
     /**
@@ -179,10 +259,35 @@ export interface CertificateArgs {
     passphrase?: pulumi.Input<string>;
     /**
      * The SSL private key for your certificate, in PEM format.
+     *
+     * Example:
+     *
+     * -----BEGIN RSA PRIVATE KEY-----
+     * jO1O1v2ftXMsawM90tnXwc6xhOAT1gDBC9S8DKeca..JZNUgYYwNS0dP2UK
+     * tmyN+XqVcAKw4HqVmChXy5b5msu8eIq3uc2NqNVtR..2ksSLukP8pxXcHyb
+     * +sEwvM4uf8qbnHAqwnOnP9+KV9vds6BaH1eRA4CHz..n+NVZlzBsTxTlS16
+     * /Umr7wJzVrMqK5sDiSu4WuaaBdqMGfL5hLsTjcBFD..Da2iyQmSKuVD4lIZ
+     * ...
+     * -----END RSA PRIVATE KEY-----
      */
     privateKey?: pulumi.Input<string>;
     /**
      * The public certificate, in PEM format, that you received from your SSL certificate provider.
+     *
+     * Example:
+     *
+     * -----BEGIN CERTIFICATE-----
+     * MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbM..QswCQYDVQQGEwJKU
+     * A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxE..TAPBgNVBAoTCEZyY
+     * MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWB..gNVBAMTD0ZyYW5rN
+     * YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmc..mFuazRkZC5jb20wH
+     * ...
+     * -----END CERTIFICATE-----
+     *
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     publicCertificate?: pulumi.Input<string>;
 }

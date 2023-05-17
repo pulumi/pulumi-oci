@@ -15,9 +15,12 @@ import java.util.Objects;
 public final class GetDbHomesDbHomeDatabaseDbBackupConfig {
     private Boolean autoBackupEnabled;
     private String autoBackupWindow;
+    private String autoFullBackupDay;
+    private String autoFullBackupWindow;
     private String backupDeletionPolicy;
     private List<GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails;
     private Integer recoveryWindowInDays;
+    private Boolean runImmediateFullBackup;
 
     private GetDbHomesDbHomeDatabaseDbBackupConfig() {}
     public Boolean autoBackupEnabled() {
@@ -25,6 +28,12 @@ public final class GetDbHomesDbHomeDatabaseDbBackupConfig {
     }
     public String autoBackupWindow() {
         return this.autoBackupWindow;
+    }
+    public String autoFullBackupDay() {
+        return this.autoFullBackupDay;
+    }
+    public String autoFullBackupWindow() {
+        return this.autoFullBackupWindow;
     }
     public String backupDeletionPolicy() {
         return this.backupDeletionPolicy;
@@ -34,6 +43,9 @@ public final class GetDbHomesDbHomeDatabaseDbBackupConfig {
     }
     public Integer recoveryWindowInDays() {
         return this.recoveryWindowInDays;
+    }
+    public Boolean runImmediateFullBackup() {
+        return this.runImmediateFullBackup;
     }
 
     public static Builder builder() {
@@ -47,17 +59,23 @@ public final class GetDbHomesDbHomeDatabaseDbBackupConfig {
     public static final class Builder {
         private Boolean autoBackupEnabled;
         private String autoBackupWindow;
+        private String autoFullBackupDay;
+        private String autoFullBackupWindow;
         private String backupDeletionPolicy;
         private List<GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails;
         private Integer recoveryWindowInDays;
+        private Boolean runImmediateFullBackup;
         public Builder() {}
         public Builder(GetDbHomesDbHomeDatabaseDbBackupConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autoBackupEnabled = defaults.autoBackupEnabled;
     	      this.autoBackupWindow = defaults.autoBackupWindow;
+    	      this.autoFullBackupDay = defaults.autoFullBackupDay;
+    	      this.autoFullBackupWindow = defaults.autoFullBackupWindow;
     	      this.backupDeletionPolicy = defaults.backupDeletionPolicy;
     	      this.backupDestinationDetails = defaults.backupDestinationDetails;
     	      this.recoveryWindowInDays = defaults.recoveryWindowInDays;
+    	      this.runImmediateFullBackup = defaults.runImmediateFullBackup;
         }
 
         @CustomType.Setter
@@ -68,6 +86,16 @@ public final class GetDbHomesDbHomeDatabaseDbBackupConfig {
         @CustomType.Setter
         public Builder autoBackupWindow(String autoBackupWindow) {
             this.autoBackupWindow = Objects.requireNonNull(autoBackupWindow);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder autoFullBackupDay(String autoFullBackupDay) {
+            this.autoFullBackupDay = Objects.requireNonNull(autoFullBackupDay);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder autoFullBackupWindow(String autoFullBackupWindow) {
+            this.autoFullBackupWindow = Objects.requireNonNull(autoFullBackupWindow);
             return this;
         }
         @CustomType.Setter
@@ -88,13 +116,21 @@ public final class GetDbHomesDbHomeDatabaseDbBackupConfig {
             this.recoveryWindowInDays = Objects.requireNonNull(recoveryWindowInDays);
             return this;
         }
+        @CustomType.Setter
+        public Builder runImmediateFullBackup(Boolean runImmediateFullBackup) {
+            this.runImmediateFullBackup = Objects.requireNonNull(runImmediateFullBackup);
+            return this;
+        }
         public GetDbHomesDbHomeDatabaseDbBackupConfig build() {
             final var o = new GetDbHomesDbHomeDatabaseDbBackupConfig();
             o.autoBackupEnabled = autoBackupEnabled;
             o.autoBackupWindow = autoBackupWindow;
+            o.autoFullBackupDay = autoFullBackupDay;
+            o.autoFullBackupWindow = autoFullBackupWindow;
             o.backupDeletionPolicy = backupDeletionPolicy;
             o.backupDestinationDetails = backupDestinationDetails;
             o.recoveryWindowInDays = recoveryWindowInDays;
+            o.runImmediateFullBackup = runImmediateFullBackup;
             return o;
         }
     }

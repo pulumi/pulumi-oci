@@ -79,12 +79,18 @@ public class VolumeBackupPolicyAssignment extends com.pulumi.resources.CustomRes
     /**
      * The OCID of the volume backup policy to assign to the volume.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="policyId", type=String.class, parameters={})
     private Output<String> policyId;
 
     /**
      * @return The OCID of the volume backup policy to assign to the volume.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> policyId() {

@@ -16,20 +16,64 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     /**
      * @return (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     private @Nullable Boolean expired;
     /**
      * @return (Updatable) The date and time that the current resource was locked
+     * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     private @Nullable String lockDate;
     /**
      * @return (Updatable) Indicates that the rev is locked
      * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     private @Nullable Boolean on;
     /**
      * @return (Updatable) Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     private @Nullable Integer reason;
@@ -38,12 +82,35 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     /**
      * @return (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     public Optional<Boolean> expired() {
         return Optional.ofNullable(this.expired);
     }
     /**
      * @return (Updatable) The date and time that the current resource was locked
+     * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     public Optional<String> lockDate() {
@@ -52,12 +119,33 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     /**
      * @return (Updatable) Indicates that the rev is locked
      * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     public Optional<Boolean> on() {
         return Optional.ofNullable(this.on);
     }
     /**
      * @return (Updatable) Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Integer> reason() {

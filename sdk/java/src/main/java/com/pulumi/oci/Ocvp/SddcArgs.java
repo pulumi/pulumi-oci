@@ -115,12 +115,16 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
      * 
+     * **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
+     * 
      */
     @Import(name="esxiHostsCount", required=true)
     private Output<Integer> esxiHostsCount;
 
     /**
      * @return The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
+     * 
+     * **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
      * 
      */
     public Output<Integer> esxiHostsCount() {
@@ -220,12 +224,16 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn&#39;t set, the SDDC&#39;s `displayName` is used as the prefix.
      * 
+     * For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
+     * 
      */
     @Import(name="instanceDisplayNamePrefix")
     private @Nullable Output<String> instanceDisplayNamePrefix;
 
     /**
      * @return A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn&#39;t set, the SDDC&#39;s `displayName` is used as the prefix.
+     * 
+     * For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
      * 
      */
     public Optional<Output<String>> instanceDisplayNamePrefix() {
@@ -295,12 +303,16 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
      * 
+     * **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
+     * 
      */
     @Import(name="nsxEdgeUplink2vlanId", required=true)
     private Output<String> nsxEdgeUplink2vlanId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
+     * 
+     * **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
      * 
      */
     public Output<String> nsxEdgeUplink2vlanId() {
@@ -490,12 +502,18 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="workloadNetworkCidr")
     private @Nullable Output<String> workloadNetworkCidr;
 
     /**
      * @return The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> workloadNetworkCidr() {
@@ -696,6 +714,8 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param esxiHostsCount The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
          * 
+         * **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
+         * 
          * @return builder
          * 
          */
@@ -706,6 +726,8 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param esxiHostsCount The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
+         * 
+         * **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
          * 
          * @return builder
          * 
@@ -843,6 +865,8 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param instanceDisplayNamePrefix A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn&#39;t set, the SDDC&#39;s `displayName` is used as the prefix.
          * 
+         * For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
+         * 
          * @return builder
          * 
          */
@@ -853,6 +877,8 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceDisplayNamePrefix A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn&#39;t set, the SDDC&#39;s `displayName` is used as the prefix.
+         * 
+         * For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
          * 
          * @return builder
          * 
@@ -948,6 +974,8 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param nsxEdgeUplink2vlanId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
          * 
+         * **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
+         * 
          * @return builder
          * 
          */
@@ -958,6 +986,8 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nsxEdgeUplink2vlanId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
+         * 
+         * **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
          * 
          * @return builder
          * 
@@ -1231,6 +1261,9 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param workloadNetworkCidr The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -1241,6 +1274,9 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param workloadNetworkCidr The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

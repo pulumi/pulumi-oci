@@ -35,7 +35,11 @@ class MaskingPoliciesMaskingColumnArgs:
         :param pulumi.Input[str] masking_column_group: (Updatable) The group of the masking column. It's a masking group identifier and can be any string  of acceptable length. All the columns in a group are masked together to ensure that  the masked data across these columns continue to retain the same logical relationship.  For more details, check  <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
         :param pulumi.Input[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatArgs']]] masking_formats: (Updatable) The masking formats to be assigned to the masking column. You can specify a condition  as part of each masking format. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions. A masking format can have one or more format  entries. The combined output of all the format entries is used for masking. It  provides the flexibility to define a masking format that can generate different parts  of a data value separately and then combine them to get the final data value for masking.
         :param pulumi.Input[str] object_type: (Updatable) The type of the object that contains the database column.
-        :param pulumi.Input[str] sensitive_type_id: (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.
+        :param pulumi.Input[str] sensitive_type_id: (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.  
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "column_name", column_name)
         pulumi.set(__self__, "masking_policy_id", masking_policy_id)
@@ -152,7 +156,11 @@ class MaskingPoliciesMaskingColumnArgs:
     @pulumi.getter(name="sensitiveTypeId")
     def sensitive_type_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.
+        (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.  
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "sensitive_type_id")
 
@@ -194,7 +202,11 @@ class _MaskingPoliciesMaskingColumnState:
         :param pulumi.Input[str] object: The name of the object (table or editioning view) that contains the database column. This attribute cannot be updated for an existing masking column.
         :param pulumi.Input[str] object_type: (Updatable) The type of the object that contains the database column.
         :param pulumi.Input[str] schema_name: The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
-        :param pulumi.Input[str] sensitive_type_id: (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.
+        :param pulumi.Input[str] sensitive_type_id: (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.  
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the masking column.
         :param pulumi.Input[str] time_created: The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_updated: The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -380,7 +392,11 @@ class _MaskingPoliciesMaskingColumnState:
     @pulumi.getter(name="sensitiveTypeId")
     def sensitive_type_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.
+        (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.  
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "sensitive_type_id")
 
@@ -528,7 +544,11 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
         :param pulumi.Input[str] object: The name of the object (table or editioning view) that contains the database column. This attribute cannot be updated for an existing masking column.
         :param pulumi.Input[str] object_type: (Updatable) The type of the object that contains the database column.
         :param pulumi.Input[str] schema_name: The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
-        :param pulumi.Input[str] sensitive_type_id: (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.
+        :param pulumi.Input[str] sensitive_type_id: (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.  
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -716,7 +736,11 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
         :param pulumi.Input[str] object: The name of the object (table or editioning view) that contains the database column. This attribute cannot be updated for an existing masking column.
         :param pulumi.Input[str] object_type: (Updatable) The type of the object that contains the database column.
         :param pulumi.Input[str] schema_name: The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
-        :param pulumi.Input[str] sensitive_type_id: (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.
+        :param pulumi.Input[str] sensitive_type_id: (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.  
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the masking column.
         :param pulumi.Input[str] time_created: The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_updated: The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -843,7 +867,11 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
     @pulumi.getter(name="sensitiveTypeId")
     def sensitive_type_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.
+        (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.  
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "sensitive_type_id")
 

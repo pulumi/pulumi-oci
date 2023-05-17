@@ -25,9 +25,44 @@ class CertificateArgs:
         :param pulumi.Input[str] certificate_name: A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add the certificate bundle.
         :param pulumi.Input[str] ca_certificate: The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+               
+               Example:
+               
+               -----BEGIN CERTIFICATE-----
+               MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+               EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+               VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+               aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+               ...
+               -----END CERTIFICATE-----
         :param pulumi.Input[str] passphrase: A passphrase for encrypted private keys. This is needed only if you created your certificate with a passphrase.
         :param pulumi.Input[str] private_key: The SSL private key for your certificate, in PEM format.
+               
+               Example:
+               
+               -----BEGIN RSA PRIVATE KEY-----
+               jO1O1v2ftXMsawM90tnXwc6xhOAT1gDBC9S8DKeca..JZNUgYYwNS0dP2UK
+               tmyN+XqVcAKw4HqVmChXy5b5msu8eIq3uc2NqNVtR..2ksSLukP8pxXcHyb
+               +sEwvM4uf8qbnHAqwnOnP9+KV9vds6BaH1eRA4CHz..n+NVZlzBsTxTlS16
+               /Umr7wJzVrMqK5sDiSu4WuaaBdqMGfL5hLsTjcBFD..Da2iyQmSKuVD4lIZ
+               ...
+               -----END RSA PRIVATE KEY-----
         :param pulumi.Input[str] public_certificate: The public certificate, in PEM format, that you received from your SSL certificate provider.
+               
+               Example:
+               
+               -----BEGIN CERTIFICATE-----
+               MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbM..QswCQYDVQQGEwJKU
+               A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxE..TAPBgNVBAoTCEZyY
+               MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWB..gNVBAMTD0ZyYW5rN
+               YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmc..mFuazRkZC5jb20wH
+               ...
+               -----END CERTIFICATE-----
+               
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "certificate_name", certificate_name)
         pulumi.set(__self__, "load_balancer_id", load_balancer_id)
@@ -69,6 +104,16 @@ class CertificateArgs:
     def ca_certificate(self) -> Optional[pulumi.Input[str]]:
         """
         The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+
+        Example:
+
+        -----BEGIN CERTIFICATE-----
+        MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+        EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+        VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+        aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+        ...
+        -----END CERTIFICATE-----
         """
         return pulumi.get(self, "ca_certificate")
 
@@ -93,6 +138,16 @@ class CertificateArgs:
     def private_key(self) -> Optional[pulumi.Input[str]]:
         """
         The SSL private key for your certificate, in PEM format.
+
+        Example:
+
+        -----BEGIN RSA PRIVATE KEY-----
+        jO1O1v2ftXMsawM90tnXwc6xhOAT1gDBC9S8DKeca..JZNUgYYwNS0dP2UK
+        tmyN+XqVcAKw4HqVmChXy5b5msu8eIq3uc2NqNVtR..2ksSLukP8pxXcHyb
+        +sEwvM4uf8qbnHAqwnOnP9+KV9vds6BaH1eRA4CHz..n+NVZlzBsTxTlS16
+        /Umr7wJzVrMqK5sDiSu4WuaaBdqMGfL5hLsTjcBFD..Da2iyQmSKuVD4lIZ
+        ...
+        -----END RSA PRIVATE KEY-----
         """
         return pulumi.get(self, "private_key")
 
@@ -105,6 +160,21 @@ class CertificateArgs:
     def public_certificate(self) -> Optional[pulumi.Input[str]]:
         """
         The public certificate, in PEM format, that you received from your SSL certificate provider.
+
+        Example:
+
+        -----BEGIN CERTIFICATE-----
+        MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbM..QswCQYDVQQGEwJKU
+        A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxE..TAPBgNVBAoTCEZyY
+        MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWB..gNVBAMTD0ZyYW5rN
+        YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmc..mFuazRkZC5jb20wH
+        ...
+        -----END CERTIFICATE-----
+
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "public_certificate")
 
@@ -126,11 +196,46 @@ class _CertificateState:
         """
         Input properties used for looking up and filtering Certificate resources.
         :param pulumi.Input[str] ca_certificate: The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+               
+               Example:
+               
+               -----BEGIN CERTIFICATE-----
+               MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+               EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+               VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+               aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+               ...
+               -----END CERTIFICATE-----
         :param pulumi.Input[str] certificate_name: A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add the certificate bundle.
         :param pulumi.Input[str] passphrase: A passphrase for encrypted private keys. This is needed only if you created your certificate with a passphrase.
         :param pulumi.Input[str] private_key: The SSL private key for your certificate, in PEM format.
+               
+               Example:
+               
+               -----BEGIN RSA PRIVATE KEY-----
+               jO1O1v2ftXMsawM90tnXwc6xhOAT1gDBC9S8DKeca..JZNUgYYwNS0dP2UK
+               tmyN+XqVcAKw4HqVmChXy5b5msu8eIq3uc2NqNVtR..2ksSLukP8pxXcHyb
+               +sEwvM4uf8qbnHAqwnOnP9+KV9vds6BaH1eRA4CHz..n+NVZlzBsTxTlS16
+               /Umr7wJzVrMqK5sDiSu4WuaaBdqMGfL5hLsTjcBFD..Da2iyQmSKuVD4lIZ
+               ...
+               -----END RSA PRIVATE KEY-----
         :param pulumi.Input[str] public_certificate: The public certificate, in PEM format, that you received from your SSL certificate provider.
+               
+               Example:
+               
+               -----BEGIN CERTIFICATE-----
+               MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbM..QswCQYDVQQGEwJKU
+               A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxE..TAPBgNVBAoTCEZyY
+               MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWB..gNVBAMTD0ZyYW5rN
+               YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmc..mFuazRkZC5jb20wH
+               ...
+               -----END CERTIFICATE-----
+               
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if ca_certificate is not None:
             pulumi.set(__self__, "ca_certificate", ca_certificate)
@@ -152,6 +257,16 @@ class _CertificateState:
     def ca_certificate(self) -> Optional[pulumi.Input[str]]:
         """
         The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+
+        Example:
+
+        -----BEGIN CERTIFICATE-----
+        MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+        EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+        VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+        aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+        ...
+        -----END CERTIFICATE-----
         """
         return pulumi.get(self, "ca_certificate")
 
@@ -200,6 +315,16 @@ class _CertificateState:
     def private_key(self) -> Optional[pulumi.Input[str]]:
         """
         The SSL private key for your certificate, in PEM format.
+
+        Example:
+
+        -----BEGIN RSA PRIVATE KEY-----
+        jO1O1v2ftXMsawM90tnXwc6xhOAT1gDBC9S8DKeca..JZNUgYYwNS0dP2UK
+        tmyN+XqVcAKw4HqVmChXy5b5msu8eIq3uc2NqNVtR..2ksSLukP8pxXcHyb
+        +sEwvM4uf8qbnHAqwnOnP9+KV9vds6BaH1eRA4CHz..n+NVZlzBsTxTlS16
+        /Umr7wJzVrMqK5sDiSu4WuaaBdqMGfL5hLsTjcBFD..Da2iyQmSKuVD4lIZ
+        ...
+        -----END RSA PRIVATE KEY-----
         """
         return pulumi.get(self, "private_key")
 
@@ -212,6 +337,21 @@ class _CertificateState:
     def public_certificate(self) -> Optional[pulumi.Input[str]]:
         """
         The public certificate, in PEM format, that you received from your SSL certificate provider.
+
+        Example:
+
+        -----BEGIN CERTIFICATE-----
+        MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbM..QswCQYDVQQGEwJKU
+        A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxE..TAPBgNVBAoTCEZyY
+        MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWB..gNVBAMTD0ZyYW5rN
+        YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmc..mFuazRkZC5jb20wH
+        ...
+        -----END CERTIFICATE-----
+
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "public_certificate")
 
@@ -268,11 +408,46 @@ class Certificate(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] ca_certificate: The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+               
+               Example:
+               
+               -----BEGIN CERTIFICATE-----
+               MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+               EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+               VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+               aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+               ...
+               -----END CERTIFICATE-----
         :param pulumi.Input[str] certificate_name: A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add the certificate bundle.
         :param pulumi.Input[str] passphrase: A passphrase for encrypted private keys. This is needed only if you created your certificate with a passphrase.
         :param pulumi.Input[str] private_key: The SSL private key for your certificate, in PEM format.
+               
+               Example:
+               
+               -----BEGIN RSA PRIVATE KEY-----
+               jO1O1v2ftXMsawM90tnXwc6xhOAT1gDBC9S8DKeca..JZNUgYYwNS0dP2UK
+               tmyN+XqVcAKw4HqVmChXy5b5msu8eIq3uc2NqNVtR..2ksSLukP8pxXcHyb
+               +sEwvM4uf8qbnHAqwnOnP9+KV9vds6BaH1eRA4CHz..n+NVZlzBsTxTlS16
+               /Umr7wJzVrMqK5sDiSu4WuaaBdqMGfL5hLsTjcBFD..Da2iyQmSKuVD4lIZ
+               ...
+               -----END RSA PRIVATE KEY-----
         :param pulumi.Input[str] public_certificate: The public certificate, in PEM format, that you received from your SSL certificate provider.
+               
+               Example:
+               
+               -----BEGIN CERTIFICATE-----
+               MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbM..QswCQYDVQQGEwJKU
+               A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxE..TAPBgNVBAoTCEZyY
+               MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWB..gNVBAMTD0ZyYW5rN
+               YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmc..mFuazRkZC5jb20wH
+               ...
+               -----END CERTIFICATE-----
+               
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -372,11 +547,46 @@ class Certificate(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] ca_certificate: The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+               
+               Example:
+               
+               -----BEGIN CERTIFICATE-----
+               MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+               EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+               VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+               aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+               ...
+               -----END CERTIFICATE-----
         :param pulumi.Input[str] certificate_name: A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add the certificate bundle.
         :param pulumi.Input[str] passphrase: A passphrase for encrypted private keys. This is needed only if you created your certificate with a passphrase.
         :param pulumi.Input[str] private_key: The SSL private key for your certificate, in PEM format.
+               
+               Example:
+               
+               -----BEGIN RSA PRIVATE KEY-----
+               jO1O1v2ftXMsawM90tnXwc6xhOAT1gDBC9S8DKeca..JZNUgYYwNS0dP2UK
+               tmyN+XqVcAKw4HqVmChXy5b5msu8eIq3uc2NqNVtR..2ksSLukP8pxXcHyb
+               +sEwvM4uf8qbnHAqwnOnP9+KV9vds6BaH1eRA4CHz..n+NVZlzBsTxTlS16
+               /Umr7wJzVrMqK5sDiSu4WuaaBdqMGfL5hLsTjcBFD..Da2iyQmSKuVD4lIZ
+               ...
+               -----END RSA PRIVATE KEY-----
         :param pulumi.Input[str] public_certificate: The public certificate, in PEM format, that you received from your SSL certificate provider.
+               
+               Example:
+               
+               -----BEGIN CERTIFICATE-----
+               MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbM..QswCQYDVQQGEwJKU
+               A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxE..TAPBgNVBAoTCEZyY
+               MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWB..gNVBAMTD0ZyYW5rN
+               YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmc..mFuazRkZC5jb20wH
+               ...
+               -----END CERTIFICATE-----
+               
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -396,6 +606,16 @@ class Certificate(pulumi.CustomResource):
     def ca_certificate(self) -> pulumi.Output[str]:
         """
         The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+
+        Example:
+
+        -----BEGIN CERTIFICATE-----
+        MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+        EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+        VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+        aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+        ...
+        -----END CERTIFICATE-----
         """
         return pulumi.get(self, "ca_certificate")
 
@@ -428,6 +648,16 @@ class Certificate(pulumi.CustomResource):
     def private_key(self) -> pulumi.Output[str]:
         """
         The SSL private key for your certificate, in PEM format.
+
+        Example:
+
+        -----BEGIN RSA PRIVATE KEY-----
+        jO1O1v2ftXMsawM90tnXwc6xhOAT1gDBC9S8DKeca..JZNUgYYwNS0dP2UK
+        tmyN+XqVcAKw4HqVmChXy5b5msu8eIq3uc2NqNVtR..2ksSLukP8pxXcHyb
+        +sEwvM4uf8qbnHAqwnOnP9+KV9vds6BaH1eRA4CHz..n+NVZlzBsTxTlS16
+        /Umr7wJzVrMqK5sDiSu4WuaaBdqMGfL5hLsTjcBFD..Da2iyQmSKuVD4lIZ
+        ...
+        -----END RSA PRIVATE KEY-----
         """
         return pulumi.get(self, "private_key")
 
@@ -436,6 +666,21 @@ class Certificate(pulumi.CustomResource):
     def public_certificate(self) -> pulumi.Output[str]:
         """
         The public certificate, in PEM format, that you received from your SSL certificate provider.
+
+        Example:
+
+        -----BEGIN CERTIFICATE-----
+        MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbM..QswCQYDVQQGEwJKU
+        A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxE..TAPBgNVBAoTCEZyY
+        MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWB..gNVBAMTD0ZyYW5rN
+        YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmc..mFuazRkZC5jb20wH
+        ...
+        -----END CERTIFICATE-----
+
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "public_certificate")
 

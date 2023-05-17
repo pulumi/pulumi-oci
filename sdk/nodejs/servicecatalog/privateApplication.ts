@@ -111,6 +111,10 @@ export class PrivateApplication extends pulumi.CustomResource {
     public /*out*/ readonly packageType!: pulumi.Output<string>;
     /**
      * (Updatable) A short description of the private application.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly shortDescription!: pulumi.Output<string>;
     /**
@@ -227,6 +231,10 @@ export interface PrivateApplicationState {
     packageType?: pulumi.Input<string>;
     /**
      * (Updatable) A short description of the private application.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     shortDescription?: pulumi.Input<string>;
     /**
@@ -277,6 +285,10 @@ export interface PrivateApplicationArgs {
     packageDetails: pulumi.Input<inputs.ServiceCatalog.PrivateApplicationPackageDetails>;
     /**
      * (Updatable) A short description of the private application.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     shortDescription: pulumi.Input<string>;
 }

@@ -168,6 +168,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// 
+        /// You cannot use a platform image name as a custom image name.
+        /// 
+        /// Example: `My Oracle Linux image`
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -301,6 +305,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// 
+        /// You cannot use a platform image name as a custom image name.
+        /// 
+        /// Example: `My Oracle Linux image`
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -390,6 +398,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// 
+        /// You cannot use a platform image name as a custom image name.
+        /// 
+        /// Example: `My Oracle Linux image`
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

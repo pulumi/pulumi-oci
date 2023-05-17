@@ -76,6 +76,9 @@ type ApplicationVip struct {
 	// The current lifecycle state of the application virtual IP (VIP) address.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// The date and time when the create operation for the application virtual IP (VIP) address completed.
 	TimeAssigned pulumi.StringOutput `pulumi:"timeAssigned"`
@@ -138,6 +141,9 @@ type applicationVipState struct {
 	// The current lifecycle state of the application virtual IP (VIP) address.
 	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId *string `pulumi:"subnetId"`
 	// The date and time when the create operation for the application virtual IP (VIP) address completed.
 	TimeAssigned *string `pulumi:"timeAssigned"`
@@ -163,6 +169,9 @@ type ApplicationVipState struct {
 	// The current lifecycle state of the application virtual IP (VIP) address.
 	State pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringPtrInput
 	// The date and time when the create operation for the application virtual IP (VIP) address completed.
 	TimeAssigned pulumi.StringPtrInput
@@ -182,6 +191,9 @@ type applicationVipArgs struct {
 	// The application virtual IP (VIP) address.
 	IpAddress *string `pulumi:"ipAddress"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -196,6 +208,9 @@ type ApplicationVipArgs struct {
 	// The application virtual IP (VIP) address.
 	IpAddress pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringInput
 }
 
@@ -332,6 +347,9 @@ func (o ApplicationVipOutput) State() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ApplicationVipOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ApplicationVip) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
 }

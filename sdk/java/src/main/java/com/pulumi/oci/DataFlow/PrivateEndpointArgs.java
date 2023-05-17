@@ -158,12 +158,18 @@ public final class PrivateEndpointArgs extends com.pulumi.resources.ResourceArgs
     /**
      * The OCID of a subnet.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="subnetId", required=true)
     private Output<String> subnetId;
 
     /**
      * @return The OCID of a subnet.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> subnetId() {
@@ -425,6 +431,9 @@ public final class PrivateEndpointArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param subnetId The OCID of a subnet.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -435,6 +444,9 @@ public final class PrivateEndpointArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param subnetId The OCID of a subnet.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

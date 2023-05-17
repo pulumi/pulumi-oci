@@ -56,6 +56,9 @@ class DatabaseInsightArgs:
         :param pulumi.Input[str] opsi_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
         :param pulumi.Input[str] service_name: Database service name used for connection requests.
         :param pulumi.Input[str] status: (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same EM managed bridge OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "entity_source", entity_source)
@@ -315,6 +318,9 @@ class DatabaseInsightArgs:
     def status(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same EM managed bridge OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
         """
         return pulumi.get(self, "status")
 
@@ -393,6 +399,9 @@ class _DatabaseInsightState:
         :param pulumi.Input[str] service_name: Database service name used for connection requests.
         :param pulumi.Input[str] state: The current state of the database.
         :param pulumi.Input[str] status: (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same EM managed bridge OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the the database insight was first enabled. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the database insight was updated. An RFC3339 formatted datetime string
@@ -831,6 +840,9 @@ class _DatabaseInsightState:
     def status(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same EM managed bridge OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
         """
         return pulumi.get(self, "status")
 
@@ -930,6 +942,9 @@ class DatabaseInsight(pulumi.CustomResource):
         :param pulumi.Input[str] opsi_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
         :param pulumi.Input[str] service_name: Database service name used for connection requests.
         :param pulumi.Input[str] status: (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same EM managed bridge OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
         """
         ...
     @overload
@@ -1109,6 +1124,9 @@ class DatabaseInsight(pulumi.CustomResource):
         :param pulumi.Input[str] service_name: Database service name used for connection requests.
         :param pulumi.Input[str] state: The current state of the database.
         :param pulumi.Input[str] status: (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same EM managed bridge OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the the database insight was first enabled. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the database insight was updated. An RFC3339 formatted datetime string
@@ -1398,6 +1416,9 @@ class DatabaseInsight(pulumi.CustomResource):
     def status(self) -> pulumi.Output[str]:
         """
         (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same EM managed bridge OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
         """
         return pulumi.get(self, "status")
 

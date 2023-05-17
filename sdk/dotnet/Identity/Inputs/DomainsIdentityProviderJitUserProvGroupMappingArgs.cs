@@ -14,18 +14,46 @@ namespace Pulumi.Oci.Identity.Inputs
     {
         /// <summary>
         /// (Updatable) IDP Group Name
+        /// 
+        /// **Added In:** 2205120021
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * type: string
         /// </summary>
         [Input("idpGroup", required: true)]
         public Input<string> IdpGroup { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Group URI
+        /// 
+        /// **Added In:** 2205120021
+        /// 
+        /// **SCIM++ Properties:**
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: true
+        /// * returned: default
+        /// * type: reference
         /// </summary>
         [Input("ref")]
         public Input<string>? Ref { get; set; }
 
         /// <summary>
         /// (Updatable) Value of the tag.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

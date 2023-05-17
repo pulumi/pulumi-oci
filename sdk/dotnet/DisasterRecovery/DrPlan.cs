@@ -132,7 +132,11 @@ namespace Pulumi.Oci.DisasterRecovery
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// The type of DR Plan to be created.
+        /// The type of DR Plan to be created. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -220,7 +224,11 @@ namespace Pulumi.Oci.DisasterRecovery
         }
 
         /// <summary>
-        /// The type of DR Plan to be created.
+        /// The type of DR Plan to be created. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -336,7 +344,11 @@ namespace Pulumi.Oci.DisasterRecovery
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// The type of DR Plan to be created.
+        /// The type of DR Plan to be created. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

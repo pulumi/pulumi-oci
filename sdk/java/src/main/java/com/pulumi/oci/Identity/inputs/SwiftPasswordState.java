@@ -108,12 +108,18 @@ public final class SwiftPasswordState extends com.pulumi.resources.ResourceArgs 
     /**
      * The OCID of the user.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="userId")
     private @Nullable Output<String> userId;
 
     /**
      * @return The OCID of the user.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> userId() {
@@ -279,6 +285,9 @@ public final class SwiftPasswordState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param userId The OCID of the user.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -289,6 +298,9 @@ public final class SwiftPasswordState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param userId The OCID of the user.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

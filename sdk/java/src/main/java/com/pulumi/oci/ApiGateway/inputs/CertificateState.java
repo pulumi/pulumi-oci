@@ -126,12 +126,18 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     /**
      * The private key associated with the certificate in pem format.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="privateKey")
     private @Nullable Output<String> privateKey;
 
     /**
      * @return The private key associated with the certificate in pem format.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> privateKey() {
@@ -399,6 +405,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param privateKey The private key associated with the certificate in pem format.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -409,6 +418,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param privateKey The private key associated with the certificate in pem format.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -84,12 +84,24 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
      * 
+     * If &#34;IPV4&#34;, the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+     * 
+     * If &#34;IPV6&#34;, the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+     * 
+     * Example: &#34;ipMode&#34;:&#34;IPV6&#34;
+     * 
      */
     @Import(name="ipMode")
     private @Nullable Output<String> ipMode;
 
     /**
      * @return IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
+     * 
+     * If &#34;IPV4&#34;, the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+     * 
+     * If &#34;IPV6&#34;, the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+     * 
+     * Example: &#34;ipMode&#34;:&#34;IPV6&#34;
      * 
      */
     public Optional<Output<String>> ipMode() {
@@ -99,12 +111,28 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Whether the load balancer has a VCN-local (private) IP address.
      * 
+     * If &#34;true&#34;, the service assigns a private IP address to the load balancer.
+     * 
+     * If &#34;false&#34;, the service assigns a public IP address to the load balancer.
+     * 
+     * A public load balancer is accessible from the internet, depending on your VCN&#39;s [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+     * 
+     * Example: `true`
+     * 
      */
     @Import(name="isPrivate")
     private @Nullable Output<Boolean> isPrivate;
 
     /**
      * @return Whether the load balancer has a VCN-local (private) IP address.
+     * 
+     * If &#34;true&#34;, the service assigns a private IP address to the load balancer.
+     * 
+     * If &#34;false&#34;, the service assigns a public IP address to the load balancer.
+     * 
+     * A public load balancer is accessible from the internet, depending on your VCN&#39;s [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+     * 
+     * Example: `true`
      * 
      */
     public Optional<Output<Boolean>> isPrivate() {
@@ -114,12 +142,28 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
      * 
+     * During the load balancer&#39;s creation, the service adds the new load balancer to the specified NSGs.
+     * 
+     * The benefits of using NSGs with the load balancer include:
+     * *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+     * *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+     * 
+     * Example: `[&#34;ocid1.nsg.oc1.phx.unique_ID&#34;]`
+     * 
      */
     @Import(name="networkSecurityGroupIds")
     private @Nullable Output<List<String>> networkSecurityGroupIds;
 
     /**
      * @return (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
+     * 
+     * During the load balancer&#39;s creation, the service adds the new load balancer to the specified NSGs.
+     * 
+     * The benefits of using NSGs with the load balancer include:
+     * *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+     * *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+     * 
+     * Example: `[&#34;ocid1.nsg.oc1.phx.unique_ID&#34;]`
      * 
      */
     public Optional<Output<List<String>>> networkSecurityGroupIds() {
@@ -174,12 +218,18 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="subnetIds", required=true)
     private Output<List<String>> subnetIds;
 
     /**
      * @return An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<List<String>> subnetIds() {
@@ -307,6 +357,12 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param ipMode IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
          * 
+         * If &#34;IPV4&#34;, the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+         * 
+         * If &#34;IPV6&#34;, the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+         * 
+         * Example: &#34;ipMode&#34;:&#34;IPV6&#34;
+         * 
          * @return builder
          * 
          */
@@ -318,6 +374,12 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param ipMode IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
          * 
+         * If &#34;IPV4&#34;, the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+         * 
+         * If &#34;IPV6&#34;, the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+         * 
+         * Example: &#34;ipMode&#34;:&#34;IPV6&#34;
+         * 
          * @return builder
          * 
          */
@@ -327,6 +389,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param isPrivate Whether the load balancer has a VCN-local (private) IP address.
+         * 
+         * If &#34;true&#34;, the service assigns a private IP address to the load balancer.
+         * 
+         * If &#34;false&#34;, the service assigns a public IP address to the load balancer.
+         * 
+         * A public load balancer is accessible from the internet, depending on your VCN&#39;s [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+         * 
+         * Example: `true`
          * 
          * @return builder
          * 
@@ -339,6 +409,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param isPrivate Whether the load balancer has a VCN-local (private) IP address.
          * 
+         * If &#34;true&#34;, the service assigns a private IP address to the load balancer.
+         * 
+         * If &#34;false&#34;, the service assigns a public IP address to the load balancer.
+         * 
+         * A public load balancer is accessible from the internet, depending on your VCN&#39;s [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+         * 
+         * Example: `true`
+         * 
          * @return builder
          * 
          */
@@ -348,6 +426,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param networkSecurityGroupIds (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
+         * 
+         * During the load balancer&#39;s creation, the service adds the new load balancer to the specified NSGs.
+         * 
+         * The benefits of using NSGs with the load balancer include:
+         * *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+         * *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+         * 
+         * Example: `[&#34;ocid1.nsg.oc1.phx.unique_ID&#34;]`
          * 
          * @return builder
          * 
@@ -360,6 +446,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param networkSecurityGroupIds (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
          * 
+         * During the load balancer&#39;s creation, the service adds the new load balancer to the specified NSGs.
+         * 
+         * The benefits of using NSGs with the load balancer include:
+         * *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+         * *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+         * 
+         * Example: `[&#34;ocid1.nsg.oc1.phx.unique_ID&#34;]`
+         * 
          * @return builder
          * 
          */
@@ -369,6 +463,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param networkSecurityGroupIds (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
+         * 
+         * During the load balancer&#39;s creation, the service adds the new load balancer to the specified NSGs.
+         * 
+         * The benefits of using NSGs with the load balancer include:
+         * *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+         * *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+         * 
+         * Example: `[&#34;ocid1.nsg.oc1.phx.unique_ID&#34;]`
          * 
          * @return builder
          * 
@@ -453,6 +555,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param subnetIds An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -464,6 +569,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param subnetIds An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -473,6 +581,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetIds An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

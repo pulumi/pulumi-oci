@@ -34,12 +34,18 @@ public final class FusionEnvironmentDataMaskingActivityState extends com.pulumi.
     /**
      * This allows the Data Safe service to resume the previously failed data masking activity.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="isResumeDataMasking")
     private @Nullable Output<Boolean> isResumeDataMasking;
 
     /**
      * @return This allows the Data Safe service to resume the previously failed data masking activity.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Boolean>> isResumeDataMasking() {
@@ -143,6 +149,9 @@ public final class FusionEnvironmentDataMaskingActivityState extends com.pulumi.
         /**
          * @param isResumeDataMasking This allows the Data Safe service to resume the previously failed data masking activity.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -153,6 +162,9 @@ public final class FusionEnvironmentDataMaskingActivityState extends com.pulumi.
 
         /**
          * @param isResumeDataMasking This allows the Data Safe service to resume the previously failed data masking activity.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -19,6 +19,8 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         public readonly string? DataSourceId;
         /// <summary>
         /// The target description.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         public readonly string? Description;
         /// <summary>
@@ -35,6 +37,8 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         public readonly string DetectorRuleId;
         /// <summary>
         /// (Updatable) DetectorTemplate identifier.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>

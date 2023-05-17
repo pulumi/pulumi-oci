@@ -68,6 +68,10 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
 
         /// <summary>
         /// (Updatable) Type of protocol.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

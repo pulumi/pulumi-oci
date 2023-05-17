@@ -100,6 +100,9 @@ type HostInsight struct {
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same Management agent OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
 	ManagementAgentId pulumi.StringOutput `pulumi:"managementAgentId"`
 	// Platform name.
 	PlatformName pulumi.StringOutput `pulumi:"platformName"`
@@ -189,6 +192,9 @@ type hostInsightState struct {
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same Management agent OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
 	ManagementAgentId *string `pulumi:"managementAgentId"`
 	// Platform name.
 	PlatformName *string `pulumi:"platformName"`
@@ -244,6 +250,9 @@ type HostInsightState struct {
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same Management agent OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
 	ManagementAgentId pulumi.StringPtrInput
 	// Platform name.
 	PlatformName pulumi.StringPtrInput
@@ -289,6 +298,9 @@ type hostInsightArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same Management agent OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
 	ManagementAgentId *string `pulumi:"managementAgentId"`
 	// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
 	Status *string `pulumi:"status"`
@@ -315,6 +327,9 @@ type HostInsightArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same Management agent OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
 	ManagementAgentId pulumi.StringPtrInput
 	// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
 	Status pulumi.StringPtrInput
@@ -488,6 +503,9 @@ func (o HostInsightOutput) LifecycleDetails() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same Management agent OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
 func (o HostInsightOutput) ManagementAgentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.ManagementAgentId }).(pulumi.StringOutput)
 }

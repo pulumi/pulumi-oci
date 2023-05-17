@@ -62,12 +62,18 @@ public class ExternalPluggableDatabaseOperationsInsightsManagement extends com.p
     /**
      * (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value &#34;true&#34; or &#34;false&#34;.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="enableOperationsInsights", type=Boolean.class, parameters={})
     private Output<Boolean> enableOperationsInsights;
 
     /**
      * @return (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value &#34;true&#34; or &#34;false&#34;.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Boolean> enableOperationsInsights() {

@@ -83,6 +83,9 @@ type EmWarehouse struct {
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// operations Insights Warehouse Identifier
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseId pulumi.StringOutput `pulumi:"operationsInsightsWarehouseId"`
 	// The current state of the EmWarehouse.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -153,6 +156,9 @@ type emWarehouseState struct {
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// operations Insights Warehouse Identifier
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseId *string `pulumi:"operationsInsightsWarehouseId"`
 	// The current state of the EmWarehouse.
 	State *string `pulumi:"state"`
@@ -186,6 +192,9 @@ type EmWarehouseState struct {
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// operations Insights Warehouse Identifier
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseId pulumi.StringPtrInput
 	// The current state of the EmWarehouse.
 	State pulumi.StringPtrInput
@@ -213,6 +222,9 @@ type emWarehouseArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// operations Insights Warehouse Identifier
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseId string `pulumi:"operationsInsightsWarehouseId"`
 }
 
@@ -229,6 +241,9 @@ type EmWarehouseArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// operations Insights Warehouse Identifier
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseId pulumi.StringInput
 }
 
@@ -370,6 +385,9 @@ func (o EmWarehouseOutput) LifecycleDetails() pulumi.StringOutput {
 }
 
 // operations Insights Warehouse Identifier
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o EmWarehouseOutput) OperationsInsightsWarehouseId() pulumi.StringOutput {
 	return o.ApplyT(func(v *EmWarehouse) pulumi.StringOutput { return v.OperationsInsightsWarehouseId }).(pulumi.StringOutput)
 }

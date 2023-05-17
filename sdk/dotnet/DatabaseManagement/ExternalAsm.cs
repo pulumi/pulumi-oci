@@ -57,6 +57,10 @@ namespace Pulumi.Oci.DatabaseManagement
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("externalConnectorId")]
         public Output<string> ExternalConnectorId { get; private set; } = null!;
@@ -175,6 +179,10 @@ namespace Pulumi.Oci.DatabaseManagement
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("externalConnectorId")]
         public Input<string>? ExternalConnectorId { get; set; }
@@ -225,6 +233,10 @@ namespace Pulumi.Oci.DatabaseManagement
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("externalConnectorId")]
         public Input<string>? ExternalConnectorId { get; set; }

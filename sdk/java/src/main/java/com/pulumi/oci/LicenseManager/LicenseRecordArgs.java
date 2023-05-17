@@ -157,12 +157,18 @@ public final class LicenseRecordArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="supportEndDate")
     private @Nullable Output<String> supportEndDate;
 
     /**
      * @return (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> supportEndDate() {
@@ -394,6 +400,9 @@ public final class LicenseRecordArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param supportEndDate (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -404,6 +413,9 @@ public final class LicenseRecordArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param supportEndDate (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -214,7 +214,15 @@ class ProfileTargetTagsItem(dict):
         :param str tag_definition_name: (Updatable) The name you use to refer to the tag, also known as the tag key.
         :param str tag_namespace_name: (Updatable) The name of the tag namespace.
         :param str tag_value_type: (Updatable) Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
+               
+               When the value for this field is `ANY`, the `tagValues` field should be empty, which enforces overrides to the recommendation for resources with any tag values attached to them.
+               
+               When the value for this field value is `VALUE`, the `tagValues` field must include a specific value or list of values. Overrides to the recommendation criteria only occur for resources that match the values in the `tagValues` fields.
         :param Sequence[str] tag_values: (Updatable) The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "tag_definition_name", tag_definition_name)
         pulumi.set(__self__, "tag_namespace_name", tag_namespace_name)
@@ -243,6 +251,10 @@ class ProfileTargetTagsItem(dict):
     def tag_value_type(self) -> str:
         """
         (Updatable) Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
+
+        When the value for this field is `ANY`, the `tagValues` field should be empty, which enforces overrides to the recommendation for resources with any tag values attached to them.
+
+        When the value for this field value is `VALUE`, the `tagValues` field must include a specific value or list of values. Overrides to the recommendation criteria only occur for resources that match the values in the `tagValues` fields.
         """
         return pulumi.get(self, "tag_value_type")
 
@@ -251,6 +263,10 @@ class ProfileTargetTagsItem(dict):
     def tag_values(self) -> Optional[Sequence[str]]:
         """
         (Updatable) The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "tag_values")
 

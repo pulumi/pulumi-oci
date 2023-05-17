@@ -173,12 +173,18 @@ public final class PingMonitorArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) A list of names of vantage points from which to execute the probe.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="vantagePointNames")
     private @Nullable Output<List<String>> vantagePointNames;
 
     /**
      * @return (Updatable) A list of names of vantage points from which to execute the probe.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<List<String>>> vantagePointNames() {
@@ -442,6 +448,9 @@ public final class PingMonitorArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param vantagePointNames (Updatable) A list of names of vantage points from which to execute the probe.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -453,6 +462,9 @@ public final class PingMonitorArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param vantagePointNames (Updatable) A list of names of vantage points from which to execute the probe.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -462,6 +474,9 @@ public final class PingMonitorArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vantagePointNames (Updatable) A list of names of vantage points from which to execute the probe.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

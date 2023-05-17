@@ -31,12 +31,18 @@ public final class LoadBalancerRoutingPolicyRuleActionArgs extends com.pulumi.re
     /**
      * (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
      * @return (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> name() {
@@ -92,6 +98,9 @@ public final class LoadBalancerRoutingPolicyRuleActionArgs extends com.pulumi.re
         /**
          * @param name (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -102,6 +111,9 @@ public final class LoadBalancerRoutingPolicyRuleActionArgs extends com.pulumi.re
 
         /**
          * @param name (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

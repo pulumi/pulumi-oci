@@ -18,12 +18,36 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynami
     /**
      * (Updatable) Membership rule
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="membershipRule")
     private @Nullable Output<String> membershipRule;
 
     /**
      * @return (Updatable) Membership rule
+     * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> membershipRule() {
@@ -33,12 +57,36 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynami
     /**
      * (Updatable) Membership type
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="membershipType")
     private @Nullable Output<String> membershipType;
 
     /**
      * @return (Updatable) Membership type
+     * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> membershipType() {
@@ -73,6 +121,18 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynami
         /**
          * @param membershipRule (Updatable) Membership rule
          * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -84,6 +144,18 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynami
         /**
          * @param membershipRule (Updatable) Membership rule
          * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -93,6 +165,18 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynami
 
         /**
          * @param membershipType (Updatable) Membership type
+         * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -104,6 +188,18 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynami
 
         /**
          * @param membershipType (Updatable) Membership type
+         * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 

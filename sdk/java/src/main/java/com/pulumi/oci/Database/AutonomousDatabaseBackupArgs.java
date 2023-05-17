@@ -81,12 +81,18 @@ public final class AutonomousDatabaseBackupArgs extends com.pulumi.resources.Res
     /**
      * (Updatable) Retention period, in days, for long-term backups
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="retentionPeriodInDays")
     private @Nullable Output<Integer> retentionPeriodInDays;
 
     /**
      * @return (Updatable) Retention period, in days, for long-term backups
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> retentionPeriodInDays() {
@@ -208,6 +214,9 @@ public final class AutonomousDatabaseBackupArgs extends com.pulumi.resources.Res
         /**
          * @param retentionPeriodInDays (Updatable) Retention period, in days, for long-term backups
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -218,6 +227,9 @@ public final class AutonomousDatabaseBackupArgs extends com.pulumi.resources.Res
 
         /**
          * @param retentionPeriodInDays (Updatable) Retention period, in days, for long-term backups
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

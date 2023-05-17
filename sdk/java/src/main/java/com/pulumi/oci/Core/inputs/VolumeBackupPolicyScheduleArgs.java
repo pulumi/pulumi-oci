@@ -109,12 +109,40 @@ public final class VolumeBackupPolicyScheduleArgs extends com.pulumi.resources.R
     /**
      * (Updatable) Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
      * 
+     * `hourOfDay` is applicable for periods `ONE_DAY`, `ONE_WEEK`, `ONE_MONTH` and `ONE_YEAR`.
+     * 
+     * `dayOfWeek` is applicable for period `ONE_WEEK`.
+     * 
+     * `dayOfMonth` is applicable for periods `ONE_MONTH` and `ONE_YEAR`.
+     * 
+     * &#39;month&#39; is applicable for period &#39;ONE_YEAR&#39;.
+     * 
+     * They will be ignored in the requests for inapplicable periods.
+     * 
+     * If value is `NUMERIC_SECONDS`, then `offsetSeconds` will be used for both requests and responses and the structured fields will be ignored in the requests and users should ignore their values from the responses.
+     * 
+     * For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
+     * 
      */
     @Import(name="offsetType")
     private @Nullable Output<String> offsetType;
 
     /**
      * @return (Updatable) Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
+     * 
+     * `hourOfDay` is applicable for periods `ONE_DAY`, `ONE_WEEK`, `ONE_MONTH` and `ONE_YEAR`.
+     * 
+     * `dayOfWeek` is applicable for period `ONE_WEEK`.
+     * 
+     * `dayOfMonth` is applicable for periods `ONE_MONTH` and `ONE_YEAR`.
+     * 
+     * &#39;month&#39; is applicable for period &#39;ONE_YEAR&#39;.
+     * 
+     * They will be ignored in the requests for inapplicable periods.
+     * 
+     * If value is `NUMERIC_SECONDS`, then `offsetSeconds` will be used for both requests and responses and the structured fields will be ignored in the requests and users should ignore their values from the responses.
+     * 
+     * For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
      * 
      */
     public Optional<Output<String>> offsetType() {
@@ -330,6 +358,20 @@ public final class VolumeBackupPolicyScheduleArgs extends com.pulumi.resources.R
         /**
          * @param offsetType (Updatable) Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
          * 
+         * `hourOfDay` is applicable for periods `ONE_DAY`, `ONE_WEEK`, `ONE_MONTH` and `ONE_YEAR`.
+         * 
+         * `dayOfWeek` is applicable for period `ONE_WEEK`.
+         * 
+         * `dayOfMonth` is applicable for periods `ONE_MONTH` and `ONE_YEAR`.
+         * 
+         * &#39;month&#39; is applicable for period &#39;ONE_YEAR&#39;.
+         * 
+         * They will be ignored in the requests for inapplicable periods.
+         * 
+         * If value is `NUMERIC_SECONDS`, then `offsetSeconds` will be used for both requests and responses and the structured fields will be ignored in the requests and users should ignore their values from the responses.
+         * 
+         * For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
+         * 
          * @return builder
          * 
          */
@@ -340,6 +382,20 @@ public final class VolumeBackupPolicyScheduleArgs extends com.pulumi.resources.R
 
         /**
          * @param offsetType (Updatable) Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
+         * 
+         * `hourOfDay` is applicable for periods `ONE_DAY`, `ONE_WEEK`, `ONE_MONTH` and `ONE_YEAR`.
+         * 
+         * `dayOfWeek` is applicable for period `ONE_WEEK`.
+         * 
+         * `dayOfMonth` is applicable for periods `ONE_MONTH` and `ONE_YEAR`.
+         * 
+         * &#39;month&#39; is applicable for period &#39;ONE_YEAR&#39;.
+         * 
+         * They will be ignored in the requests for inapplicable periods.
+         * 
+         * If value is `NUMERIC_SECONDS`, then `offsetSeconds` will be used for both requests and responses and the structured fields will be ignored in the requests and users should ignore their values from the responses.
+         * 
+         * For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
          * 
          * @return builder
          * 

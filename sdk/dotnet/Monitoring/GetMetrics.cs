@@ -134,6 +134,8 @@ namespace Pulumi.Oci.Monitoring
 
         /// <summary>
         /// Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup.
+        /// 
+        /// Example - group by namespace: `[ "namespace" ]`
         /// </summary>
         public List<string> GroupBies
         {
@@ -204,6 +206,8 @@ namespace Pulumi.Oci.Monitoring
 
         /// <summary>
         /// Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup.
+        /// 
+        /// Example - group by namespace: `[ "namespace" ]`
         /// </summary>
         public InputList<string> GroupBies
         {

@@ -25,6 +25,10 @@ class EmWarehouseArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[str] em_bridge_id: (Updatable) EMBridge Identifier
         :param pulumi.Input[str] operations_insights_warehouse_id: operations Insights Warehouse Identifier
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: EmWarehouse Identifier
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -68,6 +72,10 @@ class EmWarehouseArgs:
     def operations_insights_warehouse_id(self) -> pulumi.Input[str]:
         """
         operations Insights Warehouse Identifier
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "operations_insights_warehouse_id")
 
@@ -143,6 +151,10 @@ class _EmWarehouseState:
         :param pulumi.Input[str] latest_etl_run_time: Data Flow Run Total Time
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] operations_insights_warehouse_id: operations Insights Warehouse Identifier
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the EmWarehouse.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the the EmWarehouse was created. An RFC3339 formatted datetime string
@@ -304,6 +316,10 @@ class _EmWarehouseState:
     def operations_insights_warehouse_id(self) -> Optional[pulumi.Input[str]]:
         """
         operations Insights Warehouse Identifier
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "operations_insights_warehouse_id")
 
@@ -412,6 +428,10 @@ class EmWarehouse(pulumi.CustomResource):
         :param pulumi.Input[str] em_bridge_id: (Updatable) EMBridge Identifier
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] operations_insights_warehouse_id: operations Insights Warehouse Identifier
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -545,6 +565,10 @@ class EmWarehouse(pulumi.CustomResource):
         :param pulumi.Input[str] latest_etl_run_time: Data Flow Run Total Time
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] operations_insights_warehouse_id: operations Insights Warehouse Identifier
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the EmWarehouse.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the the EmWarehouse was created. An RFC3339 formatted datetime string
@@ -656,6 +680,10 @@ class EmWarehouse(pulumi.CustomResource):
     def operations_insights_warehouse_id(self) -> pulumi.Output[str]:
         """
         operations Insights Warehouse Identifier
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "operations_insights_warehouse_id")
 

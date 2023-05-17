@@ -169,6 +169,10 @@ export class SecurityList extends pulumi.CustomResource {
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the security list belongs to.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly vcnId!: pulumi.Output<string>;
 
@@ -255,6 +259,10 @@ export interface SecurityListState {
     timeCreated?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the security list belongs to.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vcnId?: pulumi.Input<string>;
 }
@@ -289,6 +297,10 @@ export interface SecurityListArgs {
     ingressSecurityRules?: pulumi.Input<pulumi.Input<inputs.Core.SecurityListIngressSecurityRule>[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the security list belongs to.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vcnId: pulumi.Input<string>;
 }

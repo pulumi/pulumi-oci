@@ -12,12 +12,18 @@ public final class OsnOcpuAllocationParam {
     /**
      * @return (Updatable) Number of OCPU allocation
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private Double ocpuAllocationNumber;
 
     private OsnOcpuAllocationParam() {}
     /**
      * @return (Updatable) Number of OCPU allocation
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Double ocpuAllocationNumber() {

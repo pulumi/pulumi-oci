@@ -107,6 +107,10 @@ export class EmWarehouse extends pulumi.CustomResource {
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
      * operations Insights Warehouse Identifier
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly operationsInsightsWarehouseId!: pulumi.Output<string>;
     /**
@@ -232,6 +236,10 @@ export interface EmWarehouseState {
     lifecycleDetails?: pulumi.Input<string>;
     /**
      * operations Insights Warehouse Identifier
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     operationsInsightsWarehouseId?: pulumi.Input<string>;
     /**
@@ -278,6 +286,10 @@ export interface EmWarehouseArgs {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * operations Insights Warehouse Identifier
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     operationsInsightsWarehouseId: pulumi.Input<string>;
 }

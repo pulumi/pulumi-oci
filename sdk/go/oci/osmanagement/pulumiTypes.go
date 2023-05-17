@@ -429,6 +429,9 @@ type ManagedInstanceManagementChildSoftwareSource struct {
 	// software source identifier
 	Id *string `pulumi:"id"`
 	// software source name
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 }
 
@@ -447,6 +450,9 @@ type ManagedInstanceManagementChildSoftwareSourceArgs struct {
 	// software source identifier
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// software source name
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
@@ -507,6 +513,9 @@ func (o ManagedInstanceManagementChildSoftwareSourceOutput) Id() pulumi.StringPt
 }
 
 // software source name
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ManagedInstanceManagementChildSoftwareSourceOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagedInstanceManagementChildSoftwareSource) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -641,6 +650,9 @@ type ManagedInstanceManagementParentSoftwareSource struct {
 	// software source identifier
 	Id *string `pulumi:"id"`
 	// software source name
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 }
 
@@ -659,6 +671,9 @@ type ManagedInstanceManagementParentSoftwareSourceArgs struct {
 	// software source identifier
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// software source name
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
@@ -745,6 +760,9 @@ func (o ManagedInstanceManagementParentSoftwareSourceOutput) Id() pulumi.StringP
 }
 
 // software source name
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ManagedInstanceManagementParentSoftwareSourceOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagedInstanceManagementParentSoftwareSource) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -784,6 +802,9 @@ func (o ManagedInstanceManagementParentSoftwareSourcePtrOutput) Id() pulumi.Stri
 }
 
 // software source name
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ManagedInstanceManagementParentSoftwareSourcePtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ManagedInstanceManagementParentSoftwareSource) *string {
 		if v == nil {

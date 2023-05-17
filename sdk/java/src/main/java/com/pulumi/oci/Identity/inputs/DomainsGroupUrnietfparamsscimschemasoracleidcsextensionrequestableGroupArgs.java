@@ -18,12 +18,44 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionreques
     /**
      * (Updatable) Flag controlling whether group membership can be request by user through self service console.
      * 
+     * **Added In:** 17.3.4
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Requestable, mapsTo:requestable]]
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="requestable")
     private @Nullable Output<Boolean> requestable;
 
     /**
      * @return (Updatable) Flag controlling whether group membership can be request by user through self service console.
+     * 
+     * **Added In:** 17.3.4
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Requestable, mapsTo:requestable]]
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Boolean>> requestable() {
@@ -57,6 +89,22 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionreques
         /**
          * @param requestable (Updatable) Flag controlling whether group membership can be request by user through self service console.
          * 
+         * **Added In:** 17.3.4
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Requestable, mapsTo:requestable]]
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -67,6 +115,22 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionreques
 
         /**
          * @param requestable (Updatable) Flag controlling whether group membership can be request by user through self service console.
+         * 
+         * **Added In:** 17.3.4
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Requestable, mapsTo:requestable]]
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

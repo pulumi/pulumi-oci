@@ -18,12 +18,32 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) Date when the member is Added to the group
      * 
+     * **Added In:** 2105200541
+     * 
+     * **SCIM++ Properties:**
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     @Import(name="dateAdded")
     private @Nullable Output<String> dateAdded;
 
     /**
      * @return (Updatable) Date when the member is Added to the group
+     * 
+     * **Added In:** 2105200541
+     * 
+     * **SCIM++ Properties:**
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> dateAdded() {
@@ -33,12 +53,30 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) A human readable name, primarily used for display purposes.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="display")
     private @Nullable Output<String> display;
 
     /**
      * @return (Updatable) A human readable name, primarily used for display purposes.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> display() {
@@ -48,12 +86,34 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="externalId")
     private @Nullable Output<String> externalId;
 
     /**
      * @return (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
+     * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> externalId() {
@@ -63,12 +123,34 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) Membership Ocid
      * 
+     * **Added In:** 2103141444
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="membershipOcid")
     private @Nullable Output<String> membershipOcid;
 
     /**
      * @return (Updatable) Membership Ocid
+     * 
+     * **Added In:** 2103141444
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> membershipOcid() {
@@ -78,12 +160,34 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) A human readable name for Group as defined by the Service Consumer. READ-ONLY.
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="nonUniqueDisplay")
     private @Nullable Output<String> nonUniqueDisplay;
 
     /**
      * @return (Updatable) A human readable name for Group as defined by the Service Consumer. READ-ONLY.
+     * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> nonUniqueDisplay() {
@@ -93,12 +197,36 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) Ocid of the User&#39;s Support Account.
      * 
+     * **Added In:** 2103141444
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
      * @return (Updatable) Ocid of the User&#39;s Support Account.
+     * 
+     * **Added In:** 2103141444
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -108,12 +236,34 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) User Token URI
      * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
+     * 
      */
     @Import(name="ref")
     private @Nullable Output<String> ref;
 
     /**
      * @return (Updatable) User Token URI
+     * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ref() {
@@ -123,12 +273,30 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) A label indicating the attribute&#39;s function.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
      * @return (Updatable) A label indicating the attribute&#39;s function.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> type() {
@@ -138,12 +306,36 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) The value of a X509 certificate.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
      * @return (Updatable) The value of a X509 certificate.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -185,6 +377,16 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param dateAdded (Updatable) Date when the member is Added to the group
          * 
+         * **Added In:** 2105200541
+         * 
+         * **SCIM++ Properties:**
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -196,6 +398,16 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param dateAdded (Updatable) Date when the member is Added to the group
          * 
+         * **Added In:** 2105200541
+         * 
+         * **SCIM++ Properties:**
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -205,6 +417,15 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param display (Updatable) A human readable name, primarily used for display purposes.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -217,6 +438,15 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param display (Updatable) A human readable name, primarily used for display purposes.
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -226,6 +456,17 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param externalId (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
+         * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -238,6 +479,17 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param externalId (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
          * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -247,6 +499,17 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param membershipOcid (Updatable) Membership Ocid
+         * 
+         * **Added In:** 2103141444
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -259,6 +522,17 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param membershipOcid (Updatable) Membership Ocid
          * 
+         * **Added In:** 2103141444
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -268,6 +542,17 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param nonUniqueDisplay (Updatable) A human readable name for Group as defined by the Service Consumer. READ-ONLY.
+         * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -280,6 +565,17 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param nonUniqueDisplay (Updatable) A human readable name for Group as defined by the Service Consumer. READ-ONLY.
          * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -289,6 +585,18 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param ocid (Updatable) Ocid of the User&#39;s Support Account.
+         * 
+         * **Added In:** 2103141444
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -301,6 +609,18 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param ocid (Updatable) Ocid of the User&#39;s Support Account.
          * 
+         * **Added In:** 2103141444
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -310,6 +630,17 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param ref (Updatable) User Token URI
+         * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -322,6 +653,17 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param ref (Updatable) User Token URI
          * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -331,6 +673,15 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param type (Updatable) A label indicating the attribute&#39;s function.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -343,6 +694,15 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param type (Updatable) A label indicating the attribute&#39;s function.
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -352,6 +712,18 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param value (Updatable) The value of a X509 certificate.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -363,6 +735,18 @@ public final class DomainsUserGroupArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param value (Updatable) The value of a X509 certificate.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

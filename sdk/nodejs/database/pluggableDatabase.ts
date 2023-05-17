@@ -121,6 +121,10 @@ export class PluggableDatabase extends pulumi.CustomResource {
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
      * The existing TDE wallet password of the CDB.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly tdeWalletPassword!: pulumi.Output<string>;
     /**
@@ -245,6 +249,10 @@ export interface PluggableDatabaseState {
     state?: pulumi.Input<string>;
     /**
      * The existing TDE wallet password of the CDB.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     tdeWalletPassword?: pulumi.Input<string>;
     /**
@@ -283,6 +291,10 @@ export interface PluggableDatabaseArgs {
     shouldPdbAdminAccountBeLocked?: pulumi.Input<boolean>;
     /**
      * The existing TDE wallet password of the CDB.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     tdeWalletPassword?: pulumi.Input<string>;
 }

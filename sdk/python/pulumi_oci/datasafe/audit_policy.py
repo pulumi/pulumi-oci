@@ -34,6 +34,10 @@ class AuditPolicyArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[int] provision_trigger: (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
         :param pulumi.Input[int] retrieve_from_target_trigger: (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "audit_policy_id", audit_policy_id)
         if compartment_id is not None:
@@ -140,6 +144,10 @@ class AuditPolicyArgs:
     def retrieve_from_target_trigger(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "retrieve_from_target_trigger")
 
@@ -184,6 +192,10 @@ class _AuditPolicyState:
         :param pulumi.Input[str] lifecycle_details: Details about the current state of the audit policy in Data Safe.
         :param pulumi.Input[int] provision_trigger: (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
         :param pulumi.Input[int] retrieve_from_target_trigger: (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the audit policy.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] target_id: The OCID of the target for which the audit policy is created.
@@ -368,6 +380,10 @@ class _AuditPolicyState:
     def retrieve_from_target_trigger(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "retrieve_from_target_trigger")
 
@@ -497,6 +513,10 @@ class AuditPolicy(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[int] provision_trigger: (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
         :param pulumi.Input[int] retrieve_from_target_trigger: (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -618,6 +638,10 @@ class AuditPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: Details about the current state of the audit policy in Data Safe.
         :param pulumi.Input[int] provision_trigger: (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
         :param pulumi.Input[int] retrieve_from_target_trigger: (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the audit policy.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] target_id: The OCID of the target for which the audit policy is created.
@@ -744,6 +768,10 @@ class AuditPolicy(pulumi.CustomResource):
     def retrieve_from_target_trigger(self) -> pulumi.Output[Optional[int]]:
         """
         (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "retrieve_from_target_trigger")
 

@@ -156,6 +156,10 @@ export class AssetSource extends pulumi.CustomResource {
     public readonly type!: pulumi.Output<string>;
     /**
      * (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly vcenterEndpoint!: pulumi.Output<string>;
 
@@ -317,6 +321,10 @@ export interface AssetSourceState {
     type?: pulumi.Input<string>;
     /**
      * (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vcenterEndpoint?: pulumi.Input<string>;
 }
@@ -383,6 +391,10 @@ export interface AssetSourceArgs {
     type: pulumi.Input<string>;
     /**
      * (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vcenterEndpoint: pulumi.Input<string>;
 }

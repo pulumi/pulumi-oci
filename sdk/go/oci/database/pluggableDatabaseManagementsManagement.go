@@ -65,6 +65,9 @@ type PluggableDatabaseManagementsManagement struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnablePluggabledatabasemanagement pulumi.BoolOutput `pulumi:"enablePluggabledatabasemanagement"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
@@ -153,6 +156,9 @@ type pluggableDatabaseManagementsManagementState struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnablePluggabledatabasemanagement *bool `pulumi:"enablePluggabledatabasemanagement"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -198,6 +204,9 @@ type PluggableDatabaseManagementsManagementState struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnablePluggabledatabasemanagement pulumi.BoolPtrInput
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
@@ -239,6 +248,9 @@ type pluggableDatabaseManagementsManagementArgs struct {
 	// Data for the credential used to connect to the database.
 	CredentialDetails PluggableDatabaseManagementsManagementCredentialDetails `pulumi:"credentialDetails"`
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnablePluggabledatabasemanagement bool `pulumi:"enablePluggabledatabasemanagement"`
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	PluggableDatabaseId string `pulumi:"pluggableDatabaseId"`
@@ -261,6 +273,9 @@ type PluggableDatabaseManagementsManagementArgs struct {
 	// Data for the credential used to connect to the database.
 	CredentialDetails PluggableDatabaseManagementsManagementCredentialDetailsInput
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnablePluggabledatabasemanagement pulumi.BoolInput
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	PluggableDatabaseId pulumi.StringInput
@@ -395,6 +410,9 @@ func (o PluggableDatabaseManagementsManagementOutput) DefinedTags() pulumi.MapOu
 }
 
 // (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PluggableDatabaseManagementsManagementOutput) EnablePluggabledatabasemanagement() pulumi.BoolOutput {
 	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.BoolOutput {
 		return v.EnablePluggabledatabasemanagement

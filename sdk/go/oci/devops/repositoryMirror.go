@@ -54,6 +54,9 @@ type RepositoryMirror struct {
 	pulumi.CustomResourceState
 
 	// Unique repository identifier.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RepositoryId pulumi.StringOutput `pulumi:"repositoryId"`
 }
 
@@ -90,11 +93,17 @@ func GetRepositoryMirror(ctx *pulumi.Context,
 // Input properties used for looking up and filtering RepositoryMirror resources.
 type repositoryMirrorState struct {
 	// Unique repository identifier.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RepositoryId *string `pulumi:"repositoryId"`
 }
 
 type RepositoryMirrorState struct {
 	// Unique repository identifier.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RepositoryId pulumi.StringPtrInput
 }
 
@@ -104,12 +113,18 @@ func (RepositoryMirrorState) ElementType() reflect.Type {
 
 type repositoryMirrorArgs struct {
 	// Unique repository identifier.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RepositoryId string `pulumi:"repositoryId"`
 }
 
 // The set of arguments for constructing a RepositoryMirror resource.
 type RepositoryMirrorArgs struct {
 	// Unique repository identifier.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RepositoryId pulumi.StringInput
 }
 
@@ -201,6 +216,9 @@ func (o RepositoryMirrorOutput) ToRepositoryMirrorOutputWithContext(ctx context.
 }
 
 // Unique repository identifier.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o RepositoryMirrorOutput) RepositoryId() pulumi.StringOutput {
 	return o.ApplyT(func(v *RepositoryMirror) pulumi.StringOutput { return v.RepositoryId }).(pulumi.StringOutput)
 }

@@ -189,6 +189,9 @@ type ContainerInstance struct {
 	// The size and amount of resources available to the Container Instance.
 	ShapeConfig ContainerInstanceShapeConfigOutput `pulumi:"shapeConfig"`
 	// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
@@ -282,6 +285,9 @@ type containerInstanceState struct {
 	// The size and amount of resources available to the Container Instance.
 	ShapeConfig *ContainerInstanceShapeConfig `pulumi:"shapeConfig"`
 	// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
@@ -329,6 +335,9 @@ type ContainerInstanceState struct {
 	// The size and amount of resources available to the Container Instance.
 	ShapeConfig ContainerInstanceShapeConfigPtrInput
 	// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
@@ -376,6 +385,9 @@ type containerInstanceArgs struct {
 	// The size and amount of resources available to the Container Instance.
 	ShapeConfig ContainerInstanceShapeConfig `pulumi:"shapeConfig"`
 	// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
 	// The networks to make available to containers on this Instance.
 	Vnics []ContainerInstanceVnic `pulumi:"vnics"`
@@ -412,6 +424,9 @@ type ContainerInstanceArgs struct {
 	// The size and amount of resources available to the Container Instance.
 	ShapeConfig ContainerInstanceShapeConfigInput
 	// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput
 	// The networks to make available to containers on this Instance.
 	Vnics ContainerInstanceVnicArrayInput
@@ -582,6 +597,9 @@ func (o ContainerInstanceOutput) ShapeConfig() ContainerInstanceShapeConfigOutpu
 }
 
 // (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ContainerInstanceOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerInstance) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

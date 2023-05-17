@@ -107,18 +107,33 @@ type SteeringPolicy struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
+	//
+	// **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
 	HealthCheckMonitorId pulumi.StringOutput `pulumi:"healthCheckMonitorId"`
 	// The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
+	//
+	// The first rule receives a shuffled list of all answers, and every other rule receives the list of answers emitted by the one preceding it. The last rule populates the response.
 	Rules SteeringPolicyRuleArrayOutput `pulumi:"rules"`
 	// The canonical absolute URL of the resource.
 	Self pulumi.StringOutput `pulumi:"self"`
 	// The current state of the resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
+	//
+	// **Example:** The `FAILOVER` template determines answers by filtering the policy's answers using the `FILTER` rule first, then the following rules in succession: `HEALTH`, `PRIORITY`, and `LIMIT`. This gives the domain dynamic failover capability.
+	//
+	// It is **strongly recommended** to use a template other than `CUSTOM` when creating a steering policy.
+	//
+	// All templates require the rule order to begin with an unconditional `FILTER` rule that keeps answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`. The last rule of a template must must be a `LIMIT` rule. For more information about templates and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
+	//
+	// **Template Types**
 	Template pulumi.StringOutput `pulumi:"template"`
 	// The date and time the resource was created, expressed in RFC 3339 timestamp format.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ttl pulumi.IntOutput `pulumi:"ttl"`
 }
 
@@ -171,18 +186,33 @@ type steeringPolicyState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
+	//
+	// **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
 	HealthCheckMonitorId *string `pulumi:"healthCheckMonitorId"`
 	// The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
+	//
+	// The first rule receives a shuffled list of all answers, and every other rule receives the list of answers emitted by the one preceding it. The last rule populates the response.
 	Rules []SteeringPolicyRule `pulumi:"rules"`
 	// The canonical absolute URL of the resource.
 	Self *string `pulumi:"self"`
 	// The current state of the resource.
 	State *string `pulumi:"state"`
 	// (Updatable) A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
+	//
+	// **Example:** The `FAILOVER` template determines answers by filtering the policy's answers using the `FILTER` rule first, then the following rules in succession: `HEALTH`, `PRIORITY`, and `LIMIT`. This gives the domain dynamic failover capability.
+	//
+	// It is **strongly recommended** to use a template other than `CUSTOM` when creating a steering policy.
+	//
+	// All templates require the rule order to begin with an unconditional `FILTER` rule that keeps answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`. The last rule of a template must must be a `LIMIT` rule. For more information about templates and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
+	//
+	// **Template Types**
 	Template *string `pulumi:"template"`
 	// The date and time the resource was created, expressed in RFC 3339 timestamp format.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ttl *int `pulumi:"ttl"`
 }
 
@@ -198,18 +228,33 @@ type SteeringPolicyState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags pulumi.MapInput
 	// (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
+	//
+	// **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
 	HealthCheckMonitorId pulumi.StringPtrInput
 	// The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
+	//
+	// The first rule receives a shuffled list of all answers, and every other rule receives the list of answers emitted by the one preceding it. The last rule populates the response.
 	Rules SteeringPolicyRuleArrayInput
 	// The canonical absolute URL of the resource.
 	Self pulumi.StringPtrInput
 	// The current state of the resource.
 	State pulumi.StringPtrInput
 	// (Updatable) A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
+	//
+	// **Example:** The `FAILOVER` template determines answers by filtering the policy's answers using the `FILTER` rule first, then the following rules in succession: `HEALTH`, `PRIORITY`, and `LIMIT`. This gives the domain dynamic failover capability.
+	//
+	// It is **strongly recommended** to use a template other than `CUSTOM` when creating a steering policy.
+	//
+	// All templates require the rule order to begin with an unconditional `FILTER` rule that keeps answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`. The last rule of a template must must be a `LIMIT` rule. For more information about templates and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
+	//
+	// **Template Types**
 	Template pulumi.StringPtrInput
 	// The date and time the resource was created, expressed in RFC 3339 timestamp format.
 	TimeCreated pulumi.StringPtrInput
 	// (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ttl pulumi.IntPtrInput
 }
 
@@ -229,12 +274,27 @@ type steeringPolicyArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
+	//
+	// **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
 	HealthCheckMonitorId *string `pulumi:"healthCheckMonitorId"`
 	// The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
+	//
+	// The first rule receives a shuffled list of all answers, and every other rule receives the list of answers emitted by the one preceding it. The last rule populates the response.
 	Rules []SteeringPolicyRule `pulumi:"rules"`
 	// (Updatable) A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
+	//
+	// **Example:** The `FAILOVER` template determines answers by filtering the policy's answers using the `FILTER` rule first, then the following rules in succession: `HEALTH`, `PRIORITY`, and `LIMIT`. This gives the domain dynamic failover capability.
+	//
+	// It is **strongly recommended** to use a template other than `CUSTOM` when creating a steering policy.
+	//
+	// All templates require the rule order to begin with an unconditional `FILTER` rule that keeps answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`. The last rule of a template must must be a `LIMIT` rule. For more information about templates and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
+	//
+	// **Template Types**
 	Template string `pulumi:"template"`
 	// (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ttl *int `pulumi:"ttl"`
 }
 
@@ -251,12 +311,27 @@ type SteeringPolicyArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags pulumi.MapInput
 	// (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
+	//
+	// **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
 	HealthCheckMonitorId pulumi.StringPtrInput
 	// The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
+	//
+	// The first rule receives a shuffled list of all answers, and every other rule receives the list of answers emitted by the one preceding it. The last rule populates the response.
 	Rules SteeringPolicyRuleArrayInput
 	// (Updatable) A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
+	//
+	// **Example:** The `FAILOVER` template determines answers by filtering the policy's answers using the `FILTER` rule first, then the following rules in succession: `HEALTH`, `PRIORITY`, and `LIMIT`. This gives the domain dynamic failover capability.
+	//
+	// It is **strongly recommended** to use a template other than `CUSTOM` when creating a steering policy.
+	//
+	// All templates require the rule order to begin with an unconditional `FILTER` rule that keeps answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`. The last rule of a template must must be a `LIMIT` rule. For more information about templates and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
+	//
+	// **Template Types**
 	Template pulumi.StringInput
 	// (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ttl pulumi.IntPtrInput
 }
 
@@ -373,11 +448,15 @@ func (o SteeringPolicyOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
+//
+// **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
 func (o SteeringPolicyOutput) HealthCheckMonitorId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SteeringPolicy) pulumi.StringOutput { return v.HealthCheckMonitorId }).(pulumi.StringOutput)
 }
 
 // The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
+//
+// The first rule receives a shuffled list of all answers, and every other rule receives the list of answers emitted by the one preceding it. The last rule populates the response.
 func (o SteeringPolicyOutput) Rules() SteeringPolicyRuleArrayOutput {
 	return o.ApplyT(func(v *SteeringPolicy) SteeringPolicyRuleArrayOutput { return v.Rules }).(SteeringPolicyRuleArrayOutput)
 }
@@ -393,6 +472,14 @@ func (o SteeringPolicyOutput) State() pulumi.StringOutput {
 }
 
 // (Updatable) A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
+//
+// **Example:** The `FAILOVER` template determines answers by filtering the policy's answers using the `FILTER` rule first, then the following rules in succession: `HEALTH`, `PRIORITY`, and `LIMIT`. This gives the domain dynamic failover capability.
+//
+// It is **strongly recommended** to use a template other than `CUSTOM` when creating a steering policy.
+//
+// All templates require the rule order to begin with an unconditional `FILTER` rule that keeps answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`. The last rule of a template must must be a `LIMIT` rule. For more information about templates and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
+//
+// **Template Types**
 func (o SteeringPolicyOutput) Template() pulumi.StringOutput {
 	return o.ApplyT(func(v *SteeringPolicy) pulumi.StringOutput { return v.Template }).(pulumi.StringOutput)
 }
@@ -403,6 +490,9 @@ func (o SteeringPolicyOutput) TimeCreated() pulumi.StringOutput {
 }
 
 // (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o SteeringPolicyOutput) Ttl() pulumi.IntOutput {
 	return o.ApplyT(func(v *SteeringPolicy) pulumi.IntOutput { return v.Ttl }).(pulumi.IntOutput)
 }

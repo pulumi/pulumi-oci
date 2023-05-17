@@ -153,6 +153,10 @@ export class Image extends pulumi.CustomResource {
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+     *
+     * You cannot use a platform image name as a custom image name.
+     *
+     * Example: `My Oracle Linux image`
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -287,6 +291,10 @@ export interface ImageState {
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+     *
+     * You cannot use a platform image name as a custom image name.
+     *
+     * Example: `My Oracle Linux image`
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -346,6 +354,10 @@ export interface ImageArgs {
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+     *
+     * You cannot use a platform image name as a custom image name.
+     *
+     * Example: `My Oracle Linux image`
      */
     displayName?: pulumi.Input<string>;
     /**

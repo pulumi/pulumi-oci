@@ -21,6 +21,12 @@ public final class BackendSetHealthChecker {
     /**
      * @return (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
      * 
+     * If &#34;true&#34;, health checks will be done using plain text even if the associated backend set is configured to use SSL.
+     * 
+     * If &#34;false&#34;, health checks will be done using SSL encryption if the associated backend set is configured to use SSL. If the backend set is not so configured the health checks will be done using plain text.
+     * 
+     * Example: `false`
+     * 
      */
     private @Nullable Boolean isForcePlainText;
     /**
@@ -69,6 +75,12 @@ public final class BackendSetHealthChecker {
     }
     /**
      * @return (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+     * 
+     * If &#34;true&#34;, health checks will be done using plain text even if the associated backend set is configured to use SSL.
+     * 
+     * If &#34;false&#34;, health checks will be done using SSL encryption if the associated backend set is configured to use SSL. If the backend set is not so configured the health checks will be done using plain text.
+     * 
+     * Example: `false`
      * 
      */
     public Optional<Boolean> isForcePlainText() {

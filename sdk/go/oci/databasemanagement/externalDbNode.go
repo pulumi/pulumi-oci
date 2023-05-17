@@ -40,6 +40,9 @@ type ExternalDbNode struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
 	ExternalConnectorId pulumi.StringOutput `pulumi:"externalConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalDbNodeId pulumi.StringOutput `pulumi:"externalDbNodeId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB node is a part of.
 	ExternalDbSystemId pulumi.StringOutput `pulumi:"externalDbSystemId"`
@@ -102,6 +105,9 @@ type externalDbNodeState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
 	ExternalConnectorId *string `pulumi:"externalConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalDbNodeId *string `pulumi:"externalDbNodeId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB node is a part of.
 	ExternalDbSystemId *string `pulumi:"externalDbSystemId"`
@@ -133,6 +139,9 @@ type ExternalDbNodeState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
 	ExternalConnectorId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalDbNodeId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB node is a part of.
 	ExternalDbSystemId pulumi.StringPtrInput
@@ -158,6 +167,9 @@ type externalDbNodeArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
 	ExternalConnectorId *string `pulumi:"externalConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalDbNodeId string `pulumi:"externalDbNodeId"`
 }
 
@@ -166,6 +178,9 @@ type ExternalDbNodeArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
 	ExternalConnectorId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalDbNodeId pulumi.StringInput
 }
 
@@ -287,6 +302,9 @@ func (o ExternalDbNodeOutput) ExternalConnectorId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ExternalDbNodeOutput) ExternalDbNodeId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalDbNode) pulumi.StringOutput { return v.ExternalDbNodeId }).(pulumi.StringOutput)
 }

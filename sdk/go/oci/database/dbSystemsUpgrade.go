@@ -131,6 +131,9 @@ type DbSystemsUpgrade struct {
 	// * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
 	Shape pulumi.StringOutput `pulumi:"shape"`
 	// The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SnapshotRetentionPeriodInDays pulumi.IntOutput `pulumi:"snapshotRetentionPeriodInDays"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
 	SourceDbSystemId pulumi.StringOutput `pulumi:"sourceDbSystemId"`
@@ -269,6 +272,9 @@ type dbSystemsUpgradeState struct {
 	// * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
 	Shape *string `pulumi:"shape"`
 	// The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SnapshotRetentionPeriodInDays *int `pulumi:"snapshotRetentionPeriodInDays"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
 	SourceDbSystemId *string `pulumi:"sourceDbSystemId"`
@@ -373,6 +379,9 @@ type DbSystemsUpgradeState struct {
 	// * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
 	Shape pulumi.StringPtrInput
 	// The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SnapshotRetentionPeriodInDays pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
 	SourceDbSystemId pulumi.StringPtrInput
@@ -410,6 +419,9 @@ type dbSystemsUpgradeArgs struct {
 	// A valid Oracle Grid Infrastructure (GI) software version.
 	NewGiVersion *string `pulumi:"newGiVersion"`
 	// The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SnapshotRetentionPeriodInDays *int `pulumi:"snapshotRetentionPeriodInDays"`
 }
 
@@ -424,6 +436,9 @@ type DbSystemsUpgradeArgs struct {
 	// A valid Oracle Grid Infrastructure (GI) software version.
 	NewGiVersion pulumi.StringPtrInput
 	// The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SnapshotRetentionPeriodInDays pulumi.IntPtrInput
 }
 
@@ -708,6 +723,9 @@ func (o DbSystemsUpgradeOutput) Shape() pulumi.StringOutput {
 }
 
 // The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DbSystemsUpgradeOutput) SnapshotRetentionPeriodInDays() pulumi.IntOutput {
 	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.IntOutput { return v.SnapshotRetentionPeriodInDays }).(pulumi.IntOutput)
 }

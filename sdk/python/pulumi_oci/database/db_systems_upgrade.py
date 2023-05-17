@@ -28,6 +28,10 @@ class DbSystemsUpgradeArgs:
         :param pulumi.Input[bool] is_snapshot_retention_days_force_updated: If true, rollback time is updated even if operating system upgrade history contains errors.
         :param pulumi.Input[str] new_gi_version: A valid Oracle Grid Infrastructure (GI) software version.
         :param pulumi.Input[int] snapshot_retention_period_in_days: The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "db_system_id", db_system_id)
@@ -91,6 +95,10 @@ class DbSystemsUpgradeArgs:
     def snapshot_retention_period_in_days(self) -> Optional[pulumi.Input[int]]:
         """
         The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "snapshot_retention_period_in_days")
 
@@ -195,6 +203,10 @@ class _DbSystemsUpgradeState:
                * For virtual machine shapes, the number of CPU cores and memory
                * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
         :param pulumi.Input[int] snapshot_retention_period_in_days: The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] source_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param pulumi.Input[bool] sparse_diskgroup: True, if Sparse Diskgroup is configured for Exadata dbsystem, False, if Sparse diskgroup was not configured.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: The public key portion of one or more key pairs used for SSH access to the DB system.
@@ -769,6 +781,10 @@ class _DbSystemsUpgradeState:
     def snapshot_retention_period_in_days(self) -> Optional[pulumi.Input[int]]:
         """
         The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "snapshot_retention_period_in_days")
 
@@ -938,6 +954,10 @@ class DbSystemsUpgrade(pulumi.CustomResource):
         :param pulumi.Input[bool] is_snapshot_retention_days_force_updated: If true, rollback time is updated even if operating system upgrade history contains errors.
         :param pulumi.Input[str] new_gi_version: A valid Oracle Grid Infrastructure (GI) software version.
         :param pulumi.Input[int] snapshot_retention_period_in_days: The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -1158,6 +1178,10 @@ class DbSystemsUpgrade(pulumi.CustomResource):
                * For virtual machine shapes, the number of CPU cores and memory
                * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
         :param pulumi.Input[int] snapshot_retention_period_in_days: The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] source_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param pulumi.Input[bool] sparse_diskgroup: True, if Sparse Diskgroup is configured for Exadata dbsystem, False, if Sparse diskgroup was not configured.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: The public key portion of one or more key pairs used for SSH access to the DB system.
@@ -1536,6 +1560,10 @@ class DbSystemsUpgrade(pulumi.CustomResource):
     def snapshot_retention_period_in_days(self) -> pulumi.Output[int]:
         """
         The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "snapshot_retention_period_in_days")
 

@@ -49,6 +49,9 @@ public final class StorageObjectSourceUriDetails {
     /**
      * @return The version id of the object to be restored.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private @Nullable String sourceVersionId;
 
@@ -104,6 +107,9 @@ public final class StorageObjectSourceUriDetails {
     }
     /**
      * @return The version id of the object to be restored.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> sourceVersionId() {

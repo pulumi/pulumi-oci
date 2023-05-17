@@ -80,6 +80,9 @@ type InstVbsInstance struct {
 	// Service Instance Name
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) Compartment where VBS may create additional resources for the service instance
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResourceCompartmentId pulumi.StringOutput `pulumi:"resourceCompartmentId"`
 	// The current state of the VbsInstance.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -145,6 +148,9 @@ type instVbsInstanceState struct {
 	// Service Instance Name
 	Name *string `pulumi:"name"`
 	// (Updatable) Compartment where VBS may create additional resources for the service instance
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResourceCompartmentId *string `pulumi:"resourceCompartmentId"`
 	// The current state of the VbsInstance.
 	State *string `pulumi:"state"`
@@ -176,6 +182,9 @@ type InstVbsInstanceState struct {
 	// Service Instance Name
 	Name pulumi.StringPtrInput
 	// (Updatable) Compartment where VBS may create additional resources for the service instance
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResourceCompartmentId pulumi.StringPtrInput
 	// The current state of the VbsInstance.
 	State pulumi.StringPtrInput
@@ -209,6 +218,9 @@ type instVbsInstanceArgs struct {
 	// Service Instance Name
 	Name *string `pulumi:"name"`
 	// (Updatable) Compartment where VBS may create additional resources for the service instance
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResourceCompartmentId *string `pulumi:"resourceCompartmentId"`
 }
 
@@ -229,6 +241,9 @@ type InstVbsInstanceArgs struct {
 	// Service Instance Name
 	Name pulumi.StringPtrInput
 	// (Updatable) Compartment where VBS may create additional resources for the service instance
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResourceCompartmentId pulumi.StringPtrInput
 }
 
@@ -360,6 +375,9 @@ func (o InstVbsInstanceOutput) Name() pulumi.StringOutput {
 }
 
 // (Updatable) Compartment where VBS may create additional resources for the service instance
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o InstVbsInstanceOutput) ResourceCompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *InstVbsInstance) pulumi.StringOutput { return v.ResourceCompartmentId }).(pulumi.StringOutput)
 }

@@ -33,6 +33,10 @@ class UsageArgs:
         :param pulumi.Input[str] tenant_id: Tenant ID.
         :param pulumi.Input[str] time_usage_ended: The usage end time.
         :param pulumi.Input[str] time_usage_started: The usage start time.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[float] compartment_depth: The compartment depth level.
         :param pulumi.Input[str] filter: The filter object for query usage.
         :param pulumi.Input['UsageForecastArgs'] forecast: Forecast configuration of usage/cost.
@@ -101,6 +105,10 @@ class UsageArgs:
     def time_usage_started(self) -> pulumi.Input[str]:
         """
         The usage start time.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_usage_started")
 
@@ -222,6 +230,10 @@ class _UsageState:
         :param pulumi.Input[str] tenant_id: Tenant ID.
         :param pulumi.Input[str] time_usage_ended: The usage end time.
         :param pulumi.Input[str] time_usage_started: The usage start time.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_depth is not None:
             pulumi.set(__self__, "compartment_depth", compartment_depth)
@@ -385,6 +397,10 @@ class _UsageState:
     def time_usage_started(self) -> Optional[pulumi.Input[str]]:
         """
         The usage start time.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_usage_started")
 
@@ -460,6 +476,10 @@ class Usage(pulumi.CustomResource):
         :param pulumi.Input[str] tenant_id: Tenant ID.
         :param pulumi.Input[str] time_usage_ended: The usage end time.
         :param pulumi.Input[str] time_usage_started: The usage start time.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -600,6 +620,10 @@ class Usage(pulumi.CustomResource):
         :param pulumi.Input[str] tenant_id: Tenant ID.
         :param pulumi.Input[str] time_usage_ended: The usage end time.
         :param pulumi.Input[str] time_usage_started: The usage start time.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -712,6 +736,10 @@ class Usage(pulumi.CustomResource):
     def time_usage_started(self) -> pulumi.Output[str]:
         """
         The usage start time.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_usage_started")
 

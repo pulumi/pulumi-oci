@@ -25,6 +25,18 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? AutoBackupWindow { get; set; }
 
         /// <summary>
+        /// Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        /// </summary>
+        [Input("autoFullBackupDay")]
+        public Input<string>? AutoFullBackupDay { get; set; }
+
+        /// <summary>
+        /// Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        /// </summary>
+        [Input("autoFullBackupWindow")]
+        public Input<string>? AutoFullBackupWindow { get; set; }
+
+        /// <summary>
         /// This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
         /// </summary>
         [Input("backupDeletionPolicy")]
@@ -47,6 +59,12 @@ namespace Pulumi.Oci.Database.Inputs
         /// </summary>
         [Input("recoveryWindowInDays")]
         public Input<int>? RecoveryWindowInDays { get; set; }
+
+        /// <summary>
+        /// If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+        /// </summary>
+        [Input("runImmediateFullBackup")]
+        public Input<bool>? RunImmediateFullBackup { get; set; }
 
         public DbHomeDatabaseDbBackupConfigArgs()
         {

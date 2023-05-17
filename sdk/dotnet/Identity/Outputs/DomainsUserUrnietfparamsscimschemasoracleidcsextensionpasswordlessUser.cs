@@ -15,14 +15,50 @@ namespace Pulumi.Oci.Identity.Outputs
     {
         /// <summary>
         /// (Updatable) Factor Identifier ID
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public readonly Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier? FactorIdentifier;
         /// <summary>
         /// (Updatable) Authentication Factor Method
+        /// 
+        /// **Added In:** 2009232244
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? FactorMethod;
         /// <summary>
         /// (Updatable) Authentication Factor Type
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? FactorType;
 

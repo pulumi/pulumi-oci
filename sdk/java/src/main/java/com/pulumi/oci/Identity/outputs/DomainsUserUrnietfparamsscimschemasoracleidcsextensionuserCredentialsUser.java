@@ -19,30 +19,102 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
     /**
      * @return (Updatable) A list of api keys corresponding to user.
      * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     private @Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey> apiKeys;
     /**
      * @return (Updatable) A list of auth tokens corresponding to user.
+     * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     private @Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken> authTokens;
     /**
      * @return (Updatable) A list of customer secret keys corresponding to user.
      * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     private @Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey> customerSecretKeys;
     /**
      * @return (Updatable) A list of db credentials corresponding to user.
+     * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     private @Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential> dbCredentials;
     /**
      * @return (Updatable) A list of oauth2 client credentials corresponding to user.
      * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     private @Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential> oAuth2clientCredentials;
     /**
      * @return (Updatable) A list of smtp credentials corresponding to user.
+     * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     private @Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential> smtpCredentials;
@@ -51,12 +123,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
     /**
      * @return (Updatable) A list of api keys corresponding to user.
      * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     public List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey> apiKeys() {
         return this.apiKeys == null ? List.of() : this.apiKeys;
     }
     /**
      * @return (Updatable) A list of auth tokens corresponding to user.
+     * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken> authTokens() {
@@ -65,12 +161,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
     /**
      * @return (Updatable) A list of customer secret keys corresponding to user.
      * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     public List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey> customerSecretKeys() {
         return this.customerSecretKeys == null ? List.of() : this.customerSecretKeys;
     }
     /**
      * @return (Updatable) A list of db credentials corresponding to user.
+     * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential> dbCredentials() {
@@ -79,12 +199,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
     /**
      * @return (Updatable) A list of oauth2 client credentials corresponding to user.
      * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     public List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential> oAuth2clientCredentials() {
         return this.oAuth2clientCredentials == null ? List.of() : this.oAuth2clientCredentials;
     }
     /**
      * @return (Updatable) A list of smtp credentials corresponding to user.
+     * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential> smtpCredentials() {

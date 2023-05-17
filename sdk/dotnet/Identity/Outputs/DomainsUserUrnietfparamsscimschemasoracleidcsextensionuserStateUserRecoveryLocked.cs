@@ -15,10 +15,33 @@ namespace Pulumi.Oci.Identity.Outputs
     {
         /// <summary>
         /// (Updatable) The date and time that the current resource was locked
+        /// 
+        /// **Added In:** 19.1.4
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: dateTime
+        /// * uniqueness: none
         /// </summary>
         public readonly string? LockDate;
         /// <summary>
         /// (Updatable) Indicates that the rev is locked
+        /// 
+        /// **Added In:** 19.1.4
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         public readonly bool? On;
 

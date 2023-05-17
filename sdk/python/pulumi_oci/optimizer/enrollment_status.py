@@ -20,6 +20,10 @@ class EnrollmentStatusArgs:
         The set of arguments for constructing a EnrollmentStatus resource.
         :param pulumi.Input[str] enrollment_status_id: The unique OCID associated with the enrollment status.
         :param pulumi.Input[str] status: (Updatable) The Cloud Advisor enrollment status.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "enrollment_status_id", enrollment_status_id)
         pulumi.set(__self__, "status", status)
@@ -41,6 +45,10 @@ class EnrollmentStatusArgs:
     def status(self) -> pulumi.Input[str]:
         """
         (Updatable) The Cloud Advisor enrollment status.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "status")
 
@@ -65,6 +73,10 @@ class _EnrollmentStatusState:
         :param pulumi.Input[str] enrollment_status_id: The unique OCID associated with the enrollment status.
         :param pulumi.Input[str] state: The enrollment status' current state.
         :param pulumi.Input[str] status: (Updatable) The Cloud Advisor enrollment status.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] status_reason: The reason for the enrollment status of the tenancy.
         :param pulumi.Input[str] time_created: The date and time the enrollment status was created, in the format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the enrollment status was last updated, in the format defined by RFC3339.
@@ -125,6 +137,10 @@ class _EnrollmentStatusState:
     def status(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The Cloud Advisor enrollment status.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "status")
 
@@ -194,6 +210,10 @@ class EnrollmentStatus(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] enrollment_status_id: The unique OCID associated with the enrollment status.
         :param pulumi.Input[str] status: (Updatable) The Cloud Advisor enrollment status.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -279,6 +299,10 @@ class EnrollmentStatus(pulumi.CustomResource):
         :param pulumi.Input[str] enrollment_status_id: The unique OCID associated with the enrollment status.
         :param pulumi.Input[str] state: The enrollment status' current state.
         :param pulumi.Input[str] status: (Updatable) The Cloud Advisor enrollment status.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] status_reason: The reason for the enrollment status of the tenancy.
         :param pulumi.Input[str] time_created: The date and time the enrollment status was created, in the format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the enrollment status was last updated, in the format defined by RFC3339.
@@ -325,6 +349,10 @@ class EnrollmentStatus(pulumi.CustomResource):
     def status(self) -> pulumi.Output[str]:
         """
         (Updatable) The Cloud Advisor enrollment status.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "status")
 

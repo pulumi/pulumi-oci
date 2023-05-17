@@ -6,6 +6,17 @@ import * as inputs from "../types/input";
 import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
+/**
+ * **Deprecated. Use oci.Dns.Rrset instead.**
+ *
+ * This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
+ *
+ * Gets all records in the specified zone. The results are sorted by `domain` in alphabetical order by default.
+ * For more information about records, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+ * For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
+ * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
+ * parameter is required.
+ */
 export function getRecords(args: GetRecordsArgs, opts?: pulumi.InvokeOptions): Promise<GetRecordsResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -96,6 +107,17 @@ export interface GetRecordsResult {
     readonly zoneNameOrId: string;
     readonly zoneVersion?: string;
 }
+/**
+ * **Deprecated. Use oci.Dns.Rrset instead.**
+ *
+ * This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
+ *
+ * Gets all records in the specified zone. The results are sorted by `domain` in alphabetical order by default.
+ * For more information about records, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+ * For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
+ * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
+ * parameter is required.
+ */
 export function getRecordsOutput(args: GetRecordsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRecordsResult> {
     return pulumi.output(args).apply((a: any) => getRecords(a, opts))
 }

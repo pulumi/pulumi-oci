@@ -109,12 +109,18 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Plugin Id list
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="deployPluginsIds", type=List.class, parameters={String.class})
     private Output</* @Nullable */ List<String>> deployPluginsIds;
 
     /**
      * @return (Updatable) Plugin Id list
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Optional<List<String>>> deployPluginsIds() {

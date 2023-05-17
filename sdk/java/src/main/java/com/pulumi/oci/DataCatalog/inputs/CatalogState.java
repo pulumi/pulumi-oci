@@ -22,12 +22,18 @@ public final class CatalogState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The list of private reverse connection endpoints attached to the catalog
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="attachedCatalogPrivateEndpoints")
     private @Nullable Output<List<String>> attachedCatalogPrivateEndpoints;
 
     /**
      * @return (Updatable) The list of private reverse connection endpoints attached to the catalog
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<List<String>>> attachedCatalogPrivateEndpoints() {
@@ -237,6 +243,9 @@ public final class CatalogState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param attachedCatalogPrivateEndpoints (Updatable) The list of private reverse connection endpoints attached to the catalog
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -248,6 +257,9 @@ public final class CatalogState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param attachedCatalogPrivateEndpoints (Updatable) The list of private reverse connection endpoints attached to the catalog
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -257,6 +269,9 @@ public final class CatalogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param attachedCatalogPrivateEndpoints (Updatable) The list of private reverse connection endpoints attached to the catalog
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -77,6 +77,10 @@ export class DataSafeConfiguration extends pulumi.CustomResource {
     public /*out*/ readonly globalSettings!: pulumi.Output<outputs.DataSafe.DataSafeConfigurationGlobalSetting[]>;
     /**
      * (Updatable) Indicates if Data Safe is enabled.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly isEnabled!: pulumi.Output<boolean>;
     /**
@@ -160,6 +164,10 @@ export interface DataSafeConfigurationState {
     globalSettings?: pulumi.Input<pulumi.Input<inputs.DataSafe.DataSafeConfigurationGlobalSetting>[]>;
     /**
      * (Updatable) Indicates if Data Safe is enabled.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     isEnabled?: pulumi.Input<boolean>;
     /**
@@ -186,6 +194,10 @@ export interface DataSafeConfigurationArgs {
     compartmentId?: pulumi.Input<string>;
     /**
      * (Updatable) Indicates if Data Safe is enabled.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     isEnabled: pulumi.Input<boolean>;
 }

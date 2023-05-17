@@ -95,7 +95,11 @@ export class ManagedInstanceGroup extends pulumi.CustomResource {
      */
     public /*out*/ readonly managedInstances!: pulumi.Output<outputs.OsManagement.ManagedInstanceGroupManagedInstance[]>;
     /**
-     * The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
+     * The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly osFamily!: pulumi.Output<string>;
     /**
@@ -178,7 +182,11 @@ export interface ManagedInstanceGroupState {
      */
     managedInstances?: pulumi.Input<pulumi.Input<inputs.OsManagement.ManagedInstanceGroupManagedInstance>[]>;
     /**
-     * The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
+     * The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     osFamily?: pulumi.Input<string>;
     /**
@@ -212,7 +220,11 @@ export interface ManagedInstanceGroupArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
+     * The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     osFamily?: pulumi.Input<string>;
 }

@@ -58,6 +58,9 @@ public final class IngressGatewayRouteTableRouteRule {
     /**
      * @return (Updatable) Type of protocol.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private String type;
 
@@ -120,6 +123,9 @@ public final class IngressGatewayRouteTableRouteRule {
     }
     /**
      * @return (Updatable) Type of protocol.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String type() {

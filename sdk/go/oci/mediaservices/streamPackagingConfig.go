@@ -83,6 +83,9 @@ type StreamPackagingConfig struct {
 	// The current state of the Packaging Configuration.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The output format for the package.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StreamPackagingFormat pulumi.StringOutput `pulumi:"streamPackagingFormat"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
@@ -150,6 +153,9 @@ type streamPackagingConfigState struct {
 	// The current state of the Packaging Configuration.
 	State *string `pulumi:"state"`
 	// The output format for the package.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StreamPackagingFormat *string `pulumi:"streamPackagingFormat"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
@@ -177,6 +183,9 @@ type StreamPackagingConfigState struct {
 	// The current state of the Packaging Configuration.
 	State pulumi.StringPtrInput
 	// The output format for the package.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StreamPackagingFormat pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
@@ -204,6 +213,9 @@ type streamPackagingConfigArgs struct {
 	// The duration in seconds for each fragment.
 	SegmentTimeInSeconds int `pulumi:"segmentTimeInSeconds"`
 	// The output format for the package.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StreamPackagingFormat string `pulumi:"streamPackagingFormat"`
 }
 
@@ -222,6 +234,9 @@ type StreamPackagingConfigArgs struct {
 	// The duration in seconds for each fragment.
 	SegmentTimeInSeconds pulumi.IntInput
 	// The output format for the package.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StreamPackagingFormat pulumi.StringInput
 }
 
@@ -353,6 +368,9 @@ func (o StreamPackagingConfigOutput) State() pulumi.StringOutput {
 }
 
 // The output format for the package.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o StreamPackagingConfigOutput) StreamPackagingFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v *StreamPackagingConfig) pulumi.StringOutput { return v.StreamPackagingFormat }).(pulumi.StringOutput)
 }

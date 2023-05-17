@@ -52,6 +52,10 @@ export class NamespaceIngestTimeRulesManagement extends pulumi.CustomResource {
 
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly enableIngestTimeRule!: pulumi.Output<boolean>;
     /**
@@ -105,6 +109,10 @@ export class NamespaceIngestTimeRulesManagement extends pulumi.CustomResource {
 export interface NamespaceIngestTimeRulesManagementState {
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     enableIngestTimeRule?: pulumi.Input<boolean>;
     /**
@@ -123,6 +131,10 @@ export interface NamespaceIngestTimeRulesManagementState {
 export interface NamespaceIngestTimeRulesManagementArgs {
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     enableIngestTimeRule: pulumi.Input<boolean>;
     /**

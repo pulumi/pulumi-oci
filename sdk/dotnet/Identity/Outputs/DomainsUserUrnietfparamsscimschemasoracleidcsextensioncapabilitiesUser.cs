@@ -15,30 +15,114 @@ namespace Pulumi.Oci.Identity.Outputs
     {
         /// <summary>
         /// (Updatable) Indicates weather a user can use api keys
+        /// 
+        /// **Added In:** 2012271618
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         public readonly bool? CanUseApiKeys;
         /// <summary>
         /// (Updatable) Indicates weather a user can use auth tokens
+        /// 
+        /// **Added In:** 2012271618
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         public readonly bool? CanUseAuthTokens;
         /// <summary>
         /// (Updatable) Indicates weather a user can use console password
+        /// 
+        /// **Added In:** 2012271618
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         public readonly bool? CanUseConsolePassword;
         /// <summary>
         /// (Updatable) Indicates weather a user can use customer secret keys
+        /// 
+        /// **Added In:** 2012271618
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         public readonly bool? CanUseCustomerSecretKeys;
         /// <summary>
         /// (Updatable) Indicates weather a user can use db credentials
+        /// 
+        /// **Added In:** 2012271618
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         public readonly bool? CanUseDbCredentials;
         /// <summary>
         /// (Updatable) Indicates weather a user can use oauth2 client credentials
+        /// 
+        /// **Added In:** 2012271618
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         public readonly bool? CanUseOauth2clientCredentials;
         /// <summary>
         /// (Updatable) Indicates weather a user can use smtp credentials
+        /// 
+        /// **Added In:** 2012271618
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         public readonly bool? CanUseSmtpCredentials;
 

@@ -18,12 +18,32 @@ public final class DomainsMyUserDbCredentialMetaArgs extends com.pulumi.resource
     /**
      * The DateTime the Resource was added to the Service Provider
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     @Import(name="created")
     private @Nullable Output<String> created;
 
     /**
      * @return The DateTime the Resource was added to the Service Provider
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> created() {
@@ -33,12 +53,32 @@ public final class DomainsMyUserDbCredentialMetaArgs extends com.pulumi.resource
     /**
      * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     @Import(name="lastModified")
     private @Nullable Output<String> lastModified;
 
     /**
      * @return The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> lastModified() {
@@ -48,12 +88,32 @@ public final class DomainsMyUserDbCredentialMetaArgs extends com.pulumi.resource
     /**
      * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="location")
     private @Nullable Output<String> location;
 
     /**
      * @return The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> location() {
@@ -63,12 +123,32 @@ public final class DomainsMyUserDbCredentialMetaArgs extends com.pulumi.resource
     /**
      * Name of the resource type of the resource--for example, Users or Groups
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="resourceType")
     private @Nullable Output<String> resourceType;
 
     /**
      * @return Name of the resource type of the resource--for example, Users or Groups
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> resourceType() {
@@ -78,12 +158,32 @@ public final class DomainsMyUserDbCredentialMetaArgs extends com.pulumi.resource
     /**
      * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="version")
     private @Nullable Output<String> version;
 
     /**
      * @return The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> version() {
@@ -121,6 +221,16 @@ public final class DomainsMyUserDbCredentialMetaArgs extends com.pulumi.resource
         /**
          * @param created The DateTime the Resource was added to the Service Provider
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -132,6 +242,16 @@ public final class DomainsMyUserDbCredentialMetaArgs extends com.pulumi.resource
         /**
          * @param created The DateTime the Resource was added to the Service Provider
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -141,6 +261,16 @@ public final class DomainsMyUserDbCredentialMetaArgs extends com.pulumi.resource
 
         /**
          * @param lastModified The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -153,6 +283,16 @@ public final class DomainsMyUserDbCredentialMetaArgs extends com.pulumi.resource
         /**
          * @param lastModified The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -162,6 +302,16 @@ public final class DomainsMyUserDbCredentialMetaArgs extends com.pulumi.resource
 
         /**
          * @param location The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -174,6 +324,16 @@ public final class DomainsMyUserDbCredentialMetaArgs extends com.pulumi.resource
         /**
          * @param location The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -183,6 +343,16 @@ public final class DomainsMyUserDbCredentialMetaArgs extends com.pulumi.resource
 
         /**
          * @param resourceType Name of the resource type of the resource--for example, Users or Groups
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -195,6 +365,16 @@ public final class DomainsMyUserDbCredentialMetaArgs extends com.pulumi.resource
         /**
          * @param resourceType Name of the resource type of the resource--for example, Users or Groups
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -204,6 +384,16 @@ public final class DomainsMyUserDbCredentialMetaArgs extends com.pulumi.resource
 
         /**
          * @param version The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -215,6 +405,16 @@ public final class DomainsMyUserDbCredentialMetaArgs extends com.pulumi.resource
 
         /**
          * @param version The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 

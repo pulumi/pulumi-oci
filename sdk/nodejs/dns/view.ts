@@ -66,6 +66,8 @@ export class View extends pulumi.CustomResource {
     public readonly compartmentId!: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * **Example:** `{"Operations": {"CostCenter": "42"}}`
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -74,6 +76,8 @@ export class View extends pulumi.CustomResource {
     public readonly displayName!: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * **Example:** `{"Department": "Finance"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -82,6 +86,10 @@ export class View extends pulumi.CustomResource {
     public /*out*/ readonly isProtected!: pulumi.Output<boolean>;
     /**
      * If specified, must be `PRIVATE` when creating a view for private zones.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly scope!: pulumi.Output<string | undefined>;
     /**
@@ -155,6 +163,8 @@ export interface ViewState {
     compartmentId?: pulumi.Input<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * **Example:** `{"Operations": {"CostCenter": "42"}}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -163,6 +173,8 @@ export interface ViewState {
     displayName?: pulumi.Input<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * **Example:** `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -171,6 +183,10 @@ export interface ViewState {
     isProtected?: pulumi.Input<boolean>;
     /**
      * If specified, must be `PRIVATE` when creating a view for private zones.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     scope?: pulumi.Input<string>;
     /**
@@ -201,6 +217,8 @@ export interface ViewArgs {
     compartmentId: pulumi.Input<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * **Example:** `{"Operations": {"CostCenter": "42"}}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -209,10 +227,16 @@ export interface ViewArgs {
     displayName?: pulumi.Input<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * **Example:** `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * If specified, must be `PRIVATE` when creating a view for private zones.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     scope?: pulumi.Input<string>;
 }

@@ -18,6 +18,10 @@ class UnsetUserAssessmentBaselineArgs:
         """
         The set of arguments for constructing a UnsetUserAssessmentBaseline resource.
         :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "user_assessment_id", user_assessment_id)
 
@@ -26,6 +30,10 @@ class UnsetUserAssessmentBaselineArgs:
     def user_assessment_id(self) -> pulumi.Input[str]:
         """
         The OCID of the user assessment.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "user_assessment_id")
 
@@ -41,6 +49,10 @@ class _UnsetUserAssessmentBaselineState:
         """
         Input properties used for looking up and filtering UnsetUserAssessmentBaseline resources.
         :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if user_assessment_id is not None:
             pulumi.set(__self__, "user_assessment_id", user_assessment_id)
@@ -50,6 +62,10 @@ class _UnsetUserAssessmentBaselineState:
     def user_assessment_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the user assessment.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "user_assessment_id")
 
@@ -91,6 +107,10 @@ class UnsetUserAssessmentBaseline(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -168,6 +188,10 @@ class UnsetUserAssessmentBaseline(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -181,6 +205,10 @@ class UnsetUserAssessmentBaseline(pulumi.CustomResource):
     def user_assessment_id(self) -> pulumi.Output[str]:
         """
         The OCID of the user assessment.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "user_assessment_id")
 

@@ -62,6 +62,10 @@ class ClusterArgs:
         :param pulumi.Input[str] subnet_id: The OCID of the cluster's subnet.
         :param pulumi.Input[str] vcn_compartment_id: The OCID for the compartment where the cluster's VCN is located.
         :param pulumi.Input[str] vcn_id: The OCID of the cluster's VCN.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -328,6 +332,10 @@ class ClusterArgs:
     def vcn_id(self) -> pulumi.Input[str]:
         """
         The OCID of the cluster's VCN.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vcn_id")
 
@@ -515,6 +523,10 @@ class _ClusterState:
         :param pulumi.Input[int] total_storage_gb: The size in GB of the cluster's total storage.
         :param pulumi.Input[str] vcn_compartment_id: The OCID for the compartment where the cluster's VCN is located.
         :param pulumi.Input[str] vcn_id: The OCID of the cluster's VCN.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if availability_domains is not None:
             pulumi.set(__self__, "availability_domains", availability_domains)
@@ -1056,6 +1068,10 @@ class _ClusterState:
     def vcn_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the cluster's VCN.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vcn_id")
 
@@ -1191,6 +1207,10 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] vcn_compartment_id: The OCID for the compartment where the cluster's VCN is located.
         :param pulumi.Input[str] vcn_id: The OCID of the cluster's VCN.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -1488,6 +1508,10 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[int] total_storage_gb: The size in GB of the cluster's total storage.
         :param pulumi.Input[str] vcn_compartment_id: The OCID for the compartment where the cluster's VCN is located.
         :param pulumi.Input[str] vcn_id: The OCID of the cluster's VCN.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1843,6 +1867,10 @@ class Cluster(pulumi.CustomResource):
     def vcn_id(self) -> pulumi.Output[str]:
         """
         The OCID of the cluster's VCN.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vcn_id")
 

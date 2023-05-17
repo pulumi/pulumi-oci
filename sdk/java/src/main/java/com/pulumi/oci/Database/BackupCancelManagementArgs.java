@@ -34,12 +34,18 @@ public final class BackupCancelManagementArgs extends com.pulumi.resources.Resou
     /**
      * When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="cancelBackupTrigger")
     private @Nullable Output<Integer> cancelBackupTrigger;
 
     /**
      * @return When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> cancelBackupTrigger() {
@@ -95,6 +101,9 @@ public final class BackupCancelManagementArgs extends com.pulumi.resources.Resou
         /**
          * @param cancelBackupTrigger When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -105,6 +114,9 @@ public final class BackupCancelManagementArgs extends com.pulumi.resources.Resou
 
         /**
          * @param cancelBackupTrigger When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

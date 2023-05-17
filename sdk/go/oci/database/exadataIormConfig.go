@@ -68,6 +68,9 @@ type ExadataIormConfig struct {
 	// Additional information about the current `lifecycleState`.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Value for the IORM objective Default is "Auto"
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Objective pulumi.StringOutput `pulumi:"objective"`
 	// The current state of IORM configuration for the Exadata DB system.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -115,6 +118,9 @@ type exadataIormConfigState struct {
 	// Additional information about the current `lifecycleState`.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) Value for the IORM objective Default is "Auto"
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Objective *string `pulumi:"objective"`
 	// The current state of IORM configuration for the Exadata DB system.
 	State *string `pulumi:"state"`
@@ -128,6 +134,9 @@ type ExadataIormConfigState struct {
 	// Additional information about the current `lifecycleState`.
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) Value for the IORM objective Default is "Auto"
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Objective pulumi.StringPtrInput
 	// The current state of IORM configuration for the Exadata DB system.
 	State pulumi.StringPtrInput
@@ -143,6 +152,9 @@ type exadataIormConfigArgs struct {
 	// (Updatable) The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId string `pulumi:"dbSystemId"`
 	// (Updatable) Value for the IORM objective Default is "Auto"
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Objective *string `pulumi:"objective"`
 }
 
@@ -153,6 +165,9 @@ type ExadataIormConfigArgs struct {
 	// (Updatable) The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId pulumi.StringInput
 	// (Updatable) Value for the IORM objective Default is "Auto"
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Objective pulumi.StringPtrInput
 }
 
@@ -259,6 +274,9 @@ func (o ExadataIormConfigOutput) LifecycleDetails() pulumi.StringOutput {
 }
 
 // (Updatable) Value for the IORM objective Default is "Auto"
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ExadataIormConfigOutput) Objective() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadataIormConfig) pulumi.StringOutput { return v.Objective }).(pulumi.StringOutput)
 }

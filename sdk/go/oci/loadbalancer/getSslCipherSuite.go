@@ -54,6 +54,8 @@ type LookupSslCipherSuiteArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
 	// The name of the SSL cipher suite to retrieve.
+	//
+	// example: `exampleCipherSuite`
 	Name string `pulumi:"name"`
 }
 
@@ -86,6 +88,8 @@ type LookupSslCipherSuiteOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
 	LoadBalancerId pulumi.StringInput `pulumi:"loadBalancerId"`
 	// The name of the SSL cipher suite to retrieve.
+	//
+	// example: `exampleCipherSuite`
 	Name pulumi.StringInput `pulumi:"name"`
 }
 

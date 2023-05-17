@@ -46,6 +46,12 @@ public final class GetStacksStack {
     /**
      * @return A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
      * 
+     * Allowable values:
+     * * CREATING
+     * * ACTIVE
+     * * DELETING
+     * * DELETED
+     * 
      */
     private String state;
     /**
@@ -103,6 +109,12 @@ public final class GetStacksStack {
     }
     /**
      * @return A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
+     * 
+     * Allowable values:
+     * * CREATING
+     * * ACTIVE
+     * * DELETING
+     * * DELETED
      * 
      */
     public String state() {

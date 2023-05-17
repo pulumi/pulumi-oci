@@ -17,6 +17,10 @@ namespace Pulumi.Oci.Autoscaling.Outputs
         /// The type of action to take.
         /// </summary>
         public readonly string? Type;
+        /// <summary>
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
         public readonly int? Value;
 
         [OutputConstructor]

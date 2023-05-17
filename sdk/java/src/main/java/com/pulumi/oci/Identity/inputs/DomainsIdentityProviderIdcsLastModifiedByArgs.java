@@ -18,12 +18,34 @@ public final class DomainsIdentityProviderIdcsLastModifiedByArgs extends com.pul
     /**
      * (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="display")
     private @Nullable Output<String> display;
 
     /**
      * @return (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> display() {
@@ -33,12 +55,32 @@ public final class DomainsIdentityProviderIdcsLastModifiedByArgs extends com.pul
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: global
+     * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
      * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: global
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -48,12 +90,30 @@ public final class DomainsIdentityProviderIdcsLastModifiedByArgs extends com.pul
     /**
      * (Updatable) Group URI
      * 
+     * **Added In:** 2205120021
+     * 
+     * **SCIM++ Properties:**
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: reference
+     * 
      */
     @Import(name="ref")
     private @Nullable Output<String> ref;
 
     /**
      * @return (Updatable) Group URI
+     * 
+     * **Added In:** 2205120021
+     * 
+     * **SCIM++ Properties:**
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: reference
      * 
      */
     public Optional<Output<String>> ref() {
@@ -63,12 +123,36 @@ public final class DomainsIdentityProviderIdcsLastModifiedByArgs extends com.pul
     /**
      * (Updatable) Identity Provider Type
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
      * @return (Updatable) Identity Provider Type
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> type() {
@@ -78,12 +162,32 @@ public final class DomainsIdentityProviderIdcsLastModifiedByArgs extends com.pul
     /**
      * (Updatable) Value of the tag.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
      * @return (Updatable) Value of the tag.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> value() {
@@ -121,6 +225,17 @@ public final class DomainsIdentityProviderIdcsLastModifiedByArgs extends com.pul
         /**
          * @param display (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -132,6 +247,17 @@ public final class DomainsIdentityProviderIdcsLastModifiedByArgs extends com.pul
         /**
          * @param display (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -141,6 +267,16 @@ public final class DomainsIdentityProviderIdcsLastModifiedByArgs extends com.pul
 
         /**
          * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
          * 
          * @return builder
          * 
@@ -153,6 +289,16 @@ public final class DomainsIdentityProviderIdcsLastModifiedByArgs extends com.pul
         /**
          * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
+         * 
          * @return builder
          * 
          */
@@ -162,6 +308,15 @@ public final class DomainsIdentityProviderIdcsLastModifiedByArgs extends com.pul
 
         /**
          * @param ref (Updatable) Group URI
+         * 
+         * **Added In:** 2205120021
+         * 
+         * **SCIM++ Properties:**
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: reference
          * 
          * @return builder
          * 
@@ -174,6 +329,15 @@ public final class DomainsIdentityProviderIdcsLastModifiedByArgs extends com.pul
         /**
          * @param ref (Updatable) Group URI
          * 
+         * **Added In:** 2205120021
+         * 
+         * **SCIM++ Properties:**
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: reference
+         * 
          * @return builder
          * 
          */
@@ -183,6 +347,18 @@ public final class DomainsIdentityProviderIdcsLastModifiedByArgs extends com.pul
 
         /**
          * @param type (Updatable) Identity Provider Type
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -195,6 +371,18 @@ public final class DomainsIdentityProviderIdcsLastModifiedByArgs extends com.pul
         /**
          * @param type (Updatable) Identity Provider Type
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -204,6 +392,16 @@ public final class DomainsIdentityProviderIdcsLastModifiedByArgs extends com.pul
 
         /**
          * @param value (Updatable) Value of the tag.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -215,6 +413,16 @@ public final class DomainsIdentityProviderIdcsLastModifiedByArgs extends com.pul
 
         /**
          * @param value (Updatable) Value of the tag.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 

@@ -71,6 +71,9 @@ type FusionEnvironmentAdminUser struct {
 	// The password for the administrator.
 	Password pulumi.StringOutput `pulumi:"password"`
 	// The username for the administrator.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Username pulumi.StringOutput `pulumi:"username"`
 }
 
@@ -141,6 +144,9 @@ type fusionEnvironmentAdminUserState struct {
 	// The password for the administrator.
 	Password *string `pulumi:"password"`
 	// The username for the administrator.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Username *string `pulumi:"username"`
 }
 
@@ -158,6 +164,9 @@ type FusionEnvironmentAdminUserState struct {
 	// The password for the administrator.
 	Password pulumi.StringPtrInput
 	// The username for the administrator.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Username pulumi.StringPtrInput
 }
 
@@ -177,6 +186,9 @@ type fusionEnvironmentAdminUserArgs struct {
 	// The password for the administrator.
 	Password string `pulumi:"password"`
 	// The username for the administrator.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Username string `pulumi:"username"`
 }
 
@@ -193,6 +205,9 @@ type FusionEnvironmentAdminUserArgs struct {
 	// The password for the administrator.
 	Password pulumi.StringInput
 	// The username for the administrator.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Username pulumi.StringInput
 }
 
@@ -314,6 +329,9 @@ func (o FusionEnvironmentAdminUserOutput) Password() pulumi.StringOutput {
 }
 
 // The username for the administrator.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o FusionEnvironmentAdminUserOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v *FusionEnvironmentAdminUser) pulumi.StringOutput { return v.Username }).(pulumi.StringOutput)
 }

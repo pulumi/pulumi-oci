@@ -2404,6 +2404,9 @@ type AssetVmwareVm struct {
 	// (Updatable) Path directory of the asset.
 	Path *string `pulumi:"path"`
 	// (Updatable) VMware tools status.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VmwareToolsStatus *string `pulumi:"vmwareToolsStatus"`
 }
 
@@ -2440,6 +2443,9 @@ type AssetVmwareVmArgs struct {
 	// (Updatable) Path directory of the asset.
 	Path pulumi.StringPtrInput `pulumi:"path"`
 	// (Updatable) VMware tools status.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VmwareToolsStatus pulumi.StringPtrInput `pulumi:"vmwareToolsStatus"`
 }
 
@@ -2571,6 +2577,9 @@ func (o AssetVmwareVmOutput) Path() pulumi.StringPtrOutput {
 }
 
 // (Updatable) VMware tools status.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AssetVmwareVmOutput) VmwareToolsStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AssetVmwareVm) *string { return v.VmwareToolsStatus }).(pulumi.StringPtrOutput)
 }
@@ -2700,6 +2709,9 @@ func (o AssetVmwareVmPtrOutput) Path() pulumi.StringPtrOutput {
 }
 
 // (Updatable) VMware tools status.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AssetVmwareVmPtrOutput) VmwareToolsStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AssetVmwareVm) *string {
 		if v == nil {

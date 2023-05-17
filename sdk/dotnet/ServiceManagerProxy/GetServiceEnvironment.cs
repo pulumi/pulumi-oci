@@ -86,7 +86,9 @@ namespace Pulumi.Oci.ServiceManagerProxy
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// The unique identifier associated with the service environment.
+        /// The unique identifier associated with the service environment. 
+        /// 
+        /// **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("serviceEnvironmentId", required: true)]
         public string ServiceEnvironmentId { get; set; } = null!;
@@ -106,7 +108,9 @@ namespace Pulumi.Oci.ServiceManagerProxy
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// The unique identifier associated with the service environment.
+        /// The unique identifier associated with the service environment. 
+        /// 
+        /// **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("serviceEnvironmentId", required: true)]
         public Input<string> ServiceEnvironmentId { get; set; } = null!;

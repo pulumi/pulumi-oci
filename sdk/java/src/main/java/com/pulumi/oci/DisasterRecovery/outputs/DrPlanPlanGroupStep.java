@@ -53,6 +53,9 @@ public final class DrPlanPlanGroupStep {
     /**
      * @return The type of DR Plan to be created.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private @Nullable String type;
     /**
@@ -113,6 +116,9 @@ public final class DrPlanPlanGroupStep {
     }
     /**
      * @return The type of DR Plan to be created.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> type() {

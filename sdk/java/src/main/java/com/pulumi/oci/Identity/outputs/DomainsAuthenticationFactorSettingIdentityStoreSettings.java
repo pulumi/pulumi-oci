@@ -14,10 +14,28 @@ public final class DomainsAuthenticationFactorSettingIdentityStoreSettings {
     /**
      * @return (Updatable) If true, indicates that Multi-Factor Authentication should use the mobile number in the identity store
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     private @Nullable Boolean mobileNumberEnabled;
     /**
      * @return (Updatable) If true, indicates that the user can update the mobile number in the user&#39;s Multi-Factor Authentication profile
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     private @Nullable Boolean mobileNumberUpdateEnabled;
@@ -26,12 +44,30 @@ public final class DomainsAuthenticationFactorSettingIdentityStoreSettings {
     /**
      * @return (Updatable) If true, indicates that Multi-Factor Authentication should use the mobile number in the identity store
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     public Optional<Boolean> mobileNumberEnabled() {
         return Optional.ofNullable(this.mobileNumberEnabled);
     }
     /**
      * @return (Updatable) If true, indicates that the user can update the mobile number in the user&#39;s Multi-Factor Authentication profile
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Boolean> mobileNumberUpdateEnabled() {

@@ -118,6 +118,9 @@ type Replication struct {
 	// The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetId pulumi.StringOutput `pulumi:"targetId"`
 	// The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -190,6 +193,9 @@ type replicationState struct {
 	// The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
 	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetId *string `pulumi:"targetId"`
 	// The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -225,6 +231,9 @@ type ReplicationState struct {
 	// The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
 	State pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetId pulumi.StringPtrInput
 	// The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
 	TimeCreated pulumi.StringPtrInput
@@ -248,6 +257,9 @@ type replicationArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
 	SourceId string `pulumi:"sourceId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetId string `pulumi:"targetId"`
 }
 
@@ -266,6 +278,9 @@ type ReplicationArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
 	SourceId pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetId pulumi.StringInput
 }
 
@@ -427,6 +442,9 @@ func (o ReplicationOutput) State() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ReplicationOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Replication) pulumi.StringOutput { return v.TargetId }).(pulumi.StringOutput)
 }

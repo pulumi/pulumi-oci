@@ -113,6 +113,10 @@ export class Subscription extends pulumi.CustomResource {
     public readonly subscription!: pulumi.Output<outputs.OspGateway.SubscriptionSubscription>;
     /**
      * Subscription id(OCID).
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly subscriptionId!: pulumi.Output<string>;
     /**
@@ -292,6 +296,10 @@ export interface SubscriptionState {
     subscription?: pulumi.Input<inputs.OspGateway.SubscriptionSubscription>;
     /**
      * Subscription id(OCID).
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     subscriptionId?: pulumi.Input<string>;
     /**
@@ -342,6 +350,10 @@ export interface SubscriptionArgs {
     subscription: pulumi.Input<inputs.OspGateway.SubscriptionSubscription>;
     /**
      * Subscription id(OCID).
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     subscriptionId: pulumi.Input<string>;
 }

@@ -135,6 +135,10 @@ export class VbInstance extends pulumi.CustomResource {
     public /*out*/ readonly managementVcnId!: pulumi.Output<string>;
     /**
      * (Updatable) The number of Nodes
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly nodeCount!: pulumi.Output<number>;
     /**
@@ -304,6 +308,10 @@ export interface VbInstanceState {
     managementVcnId?: pulumi.Input<string>;
     /**
      * (Updatable) The number of Nodes
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     nodeCount?: pulumi.Input<number>;
     /**
@@ -378,6 +386,10 @@ export interface VbInstanceArgs {
     isVisualBuilderEnabled?: pulumi.Input<boolean>;
     /**
      * (Updatable) The number of Nodes
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     nodeCount: pulumi.Input<number>;
 }

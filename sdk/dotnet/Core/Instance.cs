@@ -264,13 +264,19 @@ namespace Pulumi.Oci.Core
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+        /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         /// </summary>
         [Output("extendedMetadata")]
         public Output<ImmutableDictionary<string, object>?> ExtendedMetadata { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+        /// 
+        /// If you do not specify the fault domain, the system selects one for you.
+        /// 
+        /// To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+        /// 
+        /// Example: `FAULT-DOMAIN-1`
         /// </summary>
         [Output("faultDomain")]
         public Output<string> FaultDomain { get; private set; } = null!;
@@ -301,6 +307,18 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// This is an advanced option.
+        /// 
+        /// When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+        /// 
+        /// If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots. Be aware that the same iPXE script will run every time an instance boots, not only after the initial LaunchInstance call.
+        /// 
+        /// The default iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI the same way as the default iPXE script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+        /// 
+        /// If your instance boot volume type is paravirtualized, the boot volume is attached to the instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is paravirtualized and you use custom iPXE to network boot into your instance, the primary boot volume is attached as a data volume through virtio-scsi drive.
+        /// 
+        /// For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+        /// 
+        /// For more information about iPXE, see http://ipxe.org.
         /// </summary>
         [Output("ipxeScript")]
         public Output<string> IpxeScript { get; private set; } = null!;
@@ -331,12 +349,55 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+        /// 
+        /// A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
+        /// * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
+        /// * Get information about the instance, including the custom metadata that you provide when you launch the instance.
+        /// 
+        /// **Providing Cloud-Init Metadata**
+        /// 
+        /// You can use the following metadata key names to provide information to Cloud-Init:
+        /// 
+        /// **"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+        /// 
+        /// **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+        /// 
+        /// **Metadata Example**
+        /// 
+        /// 
+        /// **Getting Metadata on the Instance**
+        /// 
+        /// To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        /// });
+        /// ```
+        /// 
+        /// You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+        /// 
+        /// The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+        /// 
+        /// **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
         /// </summary>
         [Output("metadata")]
         public Output<ImmutableDictionary<string, object>?> Metadata { get; private set; } = null!;
 
         /// <summary>
         /// The platform configuration requested for the instance.
+        /// 
+        /// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
+        /// 
+        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+        /// 
+        /// For more information about shielded instances, see [Shielded Instances](https://docs.cloud.oracle. com/iaas/Content/Compute/References/shielded-instances.htm).
+        /// 
+        /// For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
         /// </summary>
         [Output("platformConfig")]
         public Output<Outputs.InstancePlatformConfig> PlatformConfig { get; private set; } = null!;
@@ -355,6 +416,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+        /// 
+        /// If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+        /// 
+        /// Example: `10.0.3.3`
         /// </summary>
         [Output("privateIp")]
         public Output<string> PrivateIp { get; private set; } = null!;
@@ -373,12 +438,18 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+        /// 
+        /// You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         /// </summary>
         [Output("shape")]
         public Output<string> Shape { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The shape configuration requested for the instance.
+        /// 
+        /// If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+        /// 
+        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         /// </summary>
         [Output("shapeConfig")]
         public Output<Outputs.InstanceShapeConfig> ShapeConfig { get; private set; } = null!;
@@ -391,6 +462,9 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) The target state for the instance. Could be set to RUNNING or STOPPED.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -541,7 +615,7 @@ namespace Pulumi.Oci.Core
         private InputMap<object>? _extendedMetadata;
 
         /// <summary>
-        /// (Updatable) Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+        /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         /// </summary>
         public InputMap<object> ExtendedMetadata
         {
@@ -551,6 +625,12 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+        /// 
+        /// If you do not specify the fault domain, the system selects one for you.
+        /// 
+        /// To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+        /// 
+        /// Example: `FAULT-DOMAIN-1`
         /// </summary>
         [Input("faultDomain")]
         public Input<string>? FaultDomain { get; set; }
@@ -587,6 +667,18 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// This is an advanced option.
+        /// 
+        /// When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+        /// 
+        /// If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots. Be aware that the same iPXE script will run every time an instance boots, not only after the initial LaunchInstance call.
+        /// 
+        /// The default iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI the same way as the default iPXE script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+        /// 
+        /// If your instance boot volume type is paravirtualized, the boot volume is attached to the instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is paravirtualized and you use custom iPXE to network boot into your instance, the primary boot volume is attached as a data volume through virtio-scsi drive.
+        /// 
+        /// For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+        /// 
+        /// For more information about iPXE, see http://ipxe.org.
         /// </summary>
         [Input("ipxeScript")]
         public Input<string>? IpxeScript { get; set; }
@@ -608,6 +700,41 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+        /// 
+        /// A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
+        /// * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
+        /// * Get information about the instance, including the custom metadata that you provide when you launch the instance.
+        /// 
+        /// **Providing Cloud-Init Metadata**
+        /// 
+        /// You can use the following metadata key names to provide information to Cloud-Init:
+        /// 
+        /// **"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+        /// 
+        /// **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+        /// 
+        /// **Metadata Example**
+        /// 
+        /// 
+        /// **Getting Metadata on the Instance**
+        /// 
+        /// To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        /// });
+        /// ```
+        /// 
+        /// You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+        /// 
+        /// The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+        /// 
+        /// **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
         /// </summary>
         public InputMap<object> Metadata
         {
@@ -617,6 +744,14 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The platform configuration requested for the instance.
+        /// 
+        /// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
+        /// 
+        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+        /// 
+        /// For more information about shielded instances, see [Shielded Instances](https://docs.cloud.oracle. com/iaas/Content/Compute/References/shielded-instances.htm).
+        /// 
+        /// For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
         /// </summary>
         [Input("platformConfig")]
         public Input<Inputs.InstancePlatformConfigArgs>? PlatformConfig { get; set; }
@@ -635,12 +770,18 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+        /// 
+        /// You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         /// </summary>
         [Input("shape", required: true)]
         public Input<string> Shape { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) The shape configuration requested for the instance.
+        /// 
+        /// If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+        /// 
+        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         /// </summary>
         [Input("shapeConfig")]
         public Input<Inputs.InstanceShapeConfigArgs>? ShapeConfig { get; set; }
@@ -653,6 +794,9 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) The target state for the instance. Could be set to RUNNING or STOPPED.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -753,7 +897,7 @@ namespace Pulumi.Oci.Core
         private InputMap<object>? _extendedMetadata;
 
         /// <summary>
-        /// (Updatable) Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+        /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         /// </summary>
         public InputMap<object> ExtendedMetadata
         {
@@ -763,6 +907,12 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+        /// 
+        /// If you do not specify the fault domain, the system selects one for you.
+        /// 
+        /// To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+        /// 
+        /// Example: `FAULT-DOMAIN-1`
         /// </summary>
         [Input("faultDomain")]
         public Input<string>? FaultDomain { get; set; }
@@ -799,6 +949,18 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// This is an advanced option.
+        /// 
+        /// When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+        /// 
+        /// If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots. Be aware that the same iPXE script will run every time an instance boots, not only after the initial LaunchInstance call.
+        /// 
+        /// The default iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI the same way as the default iPXE script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+        /// 
+        /// If your instance boot volume type is paravirtualized, the boot volume is attached to the instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is paravirtualized and you use custom iPXE to network boot into your instance, the primary boot volume is attached as a data volume through virtio-scsi drive.
+        /// 
+        /// For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+        /// 
+        /// For more information about iPXE, see http://ipxe.org.
         /// </summary>
         [Input("ipxeScript")]
         public Input<string>? IpxeScript { get; set; }
@@ -832,6 +994,41 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+        /// 
+        /// A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
+        /// * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
+        /// * Get information about the instance, including the custom metadata that you provide when you launch the instance.
+        /// 
+        /// **Providing Cloud-Init Metadata**
+        /// 
+        /// You can use the following metadata key names to provide information to Cloud-Init:
+        /// 
+        /// **"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+        /// 
+        /// **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+        /// 
+        /// **Metadata Example**
+        /// 
+        /// 
+        /// **Getting Metadata on the Instance**
+        /// 
+        /// To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        /// });
+        /// ```
+        /// 
+        /// You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+        /// 
+        /// The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+        /// 
+        /// **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
         /// </summary>
         public InputMap<object> Metadata
         {
@@ -841,6 +1038,14 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The platform configuration requested for the instance.
+        /// 
+        /// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
+        /// 
+        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+        /// 
+        /// For more information about shielded instances, see [Shielded Instances](https://docs.cloud.oracle. com/iaas/Content/Compute/References/shielded-instances.htm).
+        /// 
+        /// For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
         /// </summary>
         [Input("platformConfig")]
         public Input<Inputs.InstancePlatformConfigGetArgs>? PlatformConfig { get; set; }
@@ -859,6 +1064,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+        /// 
+        /// If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+        /// 
+        /// Example: `10.0.3.3`
         /// </summary>
         [Input("privateIp")]
         public Input<string>? PrivateIp { get; set; }
@@ -877,12 +1086,18 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+        /// 
+        /// You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         /// </summary>
         [Input("shape")]
         public Input<string>? Shape { get; set; }
 
         /// <summary>
         /// (Updatable) The shape configuration requested for the instance.
+        /// 
+        /// If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+        /// 
+        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         /// </summary>
         [Input("shapeConfig")]
         public Input<Inputs.InstanceShapeConfigGetArgs>? ShapeConfig { get; set; }
@@ -895,6 +1110,9 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) The target state for the instance. Could be set to RUNNING or STOPPED.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

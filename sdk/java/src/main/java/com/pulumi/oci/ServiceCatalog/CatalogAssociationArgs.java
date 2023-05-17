@@ -48,12 +48,18 @@ public final class CatalogAssociationArgs extends com.pulumi.resources.ResourceA
     /**
      * Identifier of the service catalog.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="serviceCatalogId", required=true)
     private Output<String> serviceCatalogId;
 
     /**
      * @return Identifier of the service catalog.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> serviceCatalogId() {
@@ -131,6 +137,9 @@ public final class CatalogAssociationArgs extends com.pulumi.resources.ResourceA
         /**
          * @param serviceCatalogId Identifier of the service catalog.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -141,6 +150,9 @@ public final class CatalogAssociationArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param serviceCatalogId Identifier of the service catalog.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

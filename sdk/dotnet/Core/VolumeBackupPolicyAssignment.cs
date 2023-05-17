@@ -54,6 +54,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The OCID of the volume backup policy to assign to the volume.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("policyId")]
         public Output<string> PolicyId { get; private set; } = null!;
@@ -118,6 +122,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The OCID of the volume backup policy to assign to the volume.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("policyId", required: true)]
         public Input<string> PolicyId { get; set; } = null!;
@@ -138,6 +146,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The OCID of the volume backup policy to assign to the volume.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("policyId")]
         public Input<string>? PolicyId { get; set; }

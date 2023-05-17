@@ -119,6 +119,10 @@ export class AuditArchiveRetrieval extends pulumi.CustomResource {
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * The OCID of the target associated with the archive retrieval.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly targetId!: pulumi.Output<string>;
     /**
@@ -253,6 +257,10 @@ export interface AuditArchiveRetrievalState {
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The OCID of the target associated with the archive retrieval.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     targetId?: pulumi.Input<string>;
     /**
@@ -303,6 +311,10 @@ export interface AuditArchiveRetrievalArgs {
     startDate: pulumi.Input<string>;
     /**
      * The OCID of the target associated with the archive retrieval.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     targetId: pulumi.Input<string>;
 }

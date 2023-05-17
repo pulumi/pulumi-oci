@@ -112,6 +112,10 @@ export class Log extends pulumi.CustomResource {
     public readonly logType!: pulumi.Output<string>;
     /**
      * (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly retentionDuration!: pulumi.Output<number>;
     /**
@@ -225,6 +229,10 @@ export interface LogState {
     logType?: pulumi.Input<string>;
     /**
      * (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     retentionDuration?: pulumi.Input<number>;
     /**
@@ -279,6 +287,10 @@ export interface LogArgs {
     logType: pulumi.Input<string>;
     /**
      * (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     retentionDuration?: pulumi.Input<number>;
 }

@@ -15,34 +15,119 @@ namespace Pulumi.Oci.Identity.Outputs
     {
         /// <summary>
         /// (Updatable) If true, then the role provides administrative access privileges. READ-ONLY.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         public readonly bool? AdminRole;
         /// <summary>
         /// (Updatable) App identifier
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? AppId;
         /// <summary>
         /// (Updatable) Name of parent App. READ-ONLY.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? AppName;
         /// <summary>
         /// (Updatable) App Display Name
+        /// 
+        /// **Added In:** 18.4.2
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? Display;
         /// <summary>
         /// (Updatable) The name of the legacy group associated with this AppRole.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? LegacyGroupName;
         /// <summary>
         /// (Updatable) App URI
+        /// 
+        /// **Added In:** 18.4.2
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: reference
+        /// * uniqueness: none
         /// </summary>
         public readonly string? Ref;
         /// <summary>
         /// (Updatable) The type of the entity that created this Group.
+        /// 
+        /// **Added In:** 18.4.2
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsDefaultValue: App
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? Type;
         /// <summary>
         /// (Updatable) The ID of the App.
+        /// 
+        /// **Added In:** 18.4.2
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string Value;
 

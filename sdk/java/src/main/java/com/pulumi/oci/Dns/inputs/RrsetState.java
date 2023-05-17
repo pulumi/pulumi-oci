@@ -114,12 +114,18 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
     /**
      * The name or OCID of the target zone.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="zoneNameOrId")
     private @Nullable Output<String> zoneNameOrId;
 
     /**
      * @return The name or OCID of the target zone.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> zoneNameOrId() {
@@ -300,6 +306,9 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param zoneNameOrId The name or OCID of the target zone.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -310,6 +319,9 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneNameOrId The name or OCID of the target zone.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

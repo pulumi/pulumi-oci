@@ -33,6 +33,8 @@ type DbHome struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Details for creating a database.
+	//
+	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 	Database DbHomeDatabaseOutput `pulumi:"database"`
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 	DatabaseSoftwareImageId pulumi.StringOutput `pulumi:"databaseSoftwareImageId"`
@@ -67,6 +69,9 @@ type DbHome struct {
 	// The date and time the Database Home was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VmClusterId pulumi.StringOutput `pulumi:"vmClusterId"`
 }
 
@@ -102,6 +107,8 @@ type dbHomeState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Details for creating a database.
+	//
+	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 	Database *DbHomeDatabase `pulumi:"database"`
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 	DatabaseSoftwareImageId *string `pulumi:"databaseSoftwareImageId"`
@@ -136,6 +143,9 @@ type dbHomeState struct {
 	// The date and time the Database Home was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VmClusterId *string `pulumi:"vmClusterId"`
 }
 
@@ -143,6 +153,8 @@ type DbHomeState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Details for creating a database.
+	//
+	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 	Database DbHomeDatabasePtrInput
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 	DatabaseSoftwareImageId pulumi.StringPtrInput
@@ -177,6 +189,9 @@ type DbHomeState struct {
 	// The date and time the Database Home was created.
 	TimeCreated pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VmClusterId pulumi.StringPtrInput
 }
 
@@ -186,6 +201,8 @@ func (DbHomeState) ElementType() reflect.Type {
 
 type dbHomeArgs struct {
 	// (Updatable) Details for creating a database.
+	//
+	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 	Database *DbHomeDatabase `pulumi:"database"`
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 	DatabaseSoftwareImageId *string `pulumi:"databaseSoftwareImageId"`
@@ -210,12 +227,17 @@ type dbHomeArgs struct {
 	// The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
 	Source *string `pulumi:"source"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VmClusterId *string `pulumi:"vmClusterId"`
 }
 
 // The set of arguments for constructing a DbHome resource.
 type DbHomeArgs struct {
 	// (Updatable) Details for creating a database.
+	//
+	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 	Database DbHomeDatabasePtrInput
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 	DatabaseSoftwareImageId pulumi.StringPtrInput
@@ -240,6 +262,9 @@ type DbHomeArgs struct {
 	// The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
 	Source pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VmClusterId pulumi.StringPtrInput
 }
 
@@ -336,6 +361,8 @@ func (o DbHomeOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Details for creating a database.
+//
+// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 func (o DbHomeOutput) Database() DbHomeDatabaseOutput {
 	return o.ApplyT(func(v *DbHome) DbHomeDatabaseOutput { return v.Database }).(DbHomeDatabaseOutput)
 }
@@ -421,6 +448,9 @@ func (o DbHomeOutput) TimeCreated() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DbHomeOutput) VmClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbHome) pulumi.StringOutput { return v.VmClusterId }).(pulumi.StringOutput)
 }

@@ -14,18 +14,48 @@ namespace Pulumi.Oci.Identity.Inputs
     {
         /// <summary>
         /// (Updatable) A boolean value that indicates whether the consent is granted.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("consentGranted")]
         public Input<bool>? ConsentGranted { get; set; }
 
         /// <summary>
         /// (Updatable) Self registration profile used when user is self registered.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: true
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Input("selfRegistrationProfile", required: true)]
         public Input<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArgs> SelfRegistrationProfile { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) User token returned if userFlowControlledByExternalClient is true
+        /// 
+        /// **Added In:** 18.4.2
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Input("userToken")]
         public Input<string>? UserToken { get; set; }

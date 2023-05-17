@@ -56,6 +56,9 @@ type OperatorControl struct {
 	// The current lifecycle state of the operator control.
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) This is the message that will be displayed to the operator users while accessing the system.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemMessage pulumi.StringOutput `pulumi:"systemMessage"`
 	// Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
 	TimeOfCreation pulumi.StringOutput `pulumi:"timeOfCreation"`
@@ -138,6 +141,9 @@ type operatorControlState struct {
 	// The current lifecycle state of the operator control.
 	State *string `pulumi:"state"`
 	// (Updatable) This is the message that will be displayed to the operator users while accessing the system.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemMessage *string `pulumi:"systemMessage"`
 	// Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
 	TimeOfCreation *string `pulumi:"timeOfCreation"`
@@ -177,6 +183,9 @@ type OperatorControlState struct {
 	// The current lifecycle state of the operator control.
 	State pulumi.StringPtrInput
 	// (Updatable) This is the message that will be displayed to the operator users while accessing the system.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemMessage pulumi.StringPtrInput
 	// Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
 	TimeOfCreation pulumi.StringPtrInput
@@ -214,6 +223,9 @@ type operatorControlArgs struct {
 	// resourceType for which the OperatorControl is applicable
 	ResourceType string `pulumi:"resourceType"`
 	// (Updatable) This is the message that will be displayed to the operator users while accessing the system.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemMessage *string `pulumi:"systemMessage"`
 }
 
@@ -242,6 +254,9 @@ type OperatorControlArgs struct {
 	// resourceType for which the OperatorControl is applicable
 	ResourceType pulumi.StringInput
 	// (Updatable) This is the message that will be displayed to the operator users while accessing the system.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemMessage pulumi.StringPtrInput
 }
 
@@ -403,6 +418,9 @@ func (o OperatorControlOutput) State() pulumi.StringOutput {
 }
 
 // (Updatable) This is the message that will be displayed to the operator users while accessing the system.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o OperatorControlOutput) SystemMessage() pulumi.StringOutput {
 	return o.ApplyT(func(v *OperatorControl) pulumi.StringOutput { return v.SystemMessage }).(pulumi.StringOutput)
 }

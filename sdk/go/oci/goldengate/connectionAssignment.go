@@ -61,6 +61,9 @@ type ConnectionAssignment struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 	ConnectionId pulumi.StringOutput `pulumi:"connectionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DeploymentId pulumi.StringOutput `pulumi:"deploymentId"`
 	// Possible lifecycle states for connection assignments.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -112,6 +115,9 @@ type connectionAssignmentState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 	ConnectionId *string `pulumi:"connectionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DeploymentId *string `pulumi:"deploymentId"`
 	// Possible lifecycle states for connection assignments.
 	State *string `pulumi:"state"`
@@ -129,6 +135,9 @@ type ConnectionAssignmentState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 	ConnectionId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DeploymentId pulumi.StringPtrInput
 	// Possible lifecycle states for connection assignments.
 	State pulumi.StringPtrInput
@@ -146,6 +155,9 @@ type connectionAssignmentArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 	ConnectionId string `pulumi:"connectionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DeploymentId string `pulumi:"deploymentId"`
 }
 
@@ -154,6 +166,9 @@ type ConnectionAssignmentArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 	ConnectionId pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DeploymentId pulumi.StringInput
 }
 
@@ -260,6 +275,9 @@ func (o ConnectionAssignmentOutput) ConnectionId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ConnectionAssignmentOutput) DeploymentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ConnectionAssignment) pulumi.StringOutput { return v.DeploymentId }).(pulumi.StringOutput)
 }

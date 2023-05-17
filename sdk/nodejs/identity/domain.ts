@@ -148,6 +148,10 @@ export class Domain extends pulumi.CustomResource {
     public readonly isPrimaryEmailRequired!: pulumi.Output<boolean>;
     /**
      * The License type of Domain
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly licenseType!: pulumi.Output<string>;
     /**
@@ -315,6 +319,10 @@ export interface DomainState {
     isPrimaryEmailRequired?: pulumi.Input<boolean>;
     /**
      * The License type of Domain
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     licenseType?: pulumi.Input<string>;
     /**
@@ -401,6 +409,10 @@ export interface DomainArgs {
     isPrimaryEmailRequired?: pulumi.Input<boolean>;
     /**
      * The License type of Domain
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     licenseType: pulumi.Input<string>;
     /**

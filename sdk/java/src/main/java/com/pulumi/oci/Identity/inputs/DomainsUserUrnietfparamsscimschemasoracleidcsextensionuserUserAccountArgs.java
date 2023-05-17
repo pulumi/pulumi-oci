@@ -19,12 +19,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) Status of the account
      * 
+     * **Added In:** 17.4.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="active")
     private @Nullable Output<Boolean> active;
 
     /**
      * @return (Updatable) Status of the account
+     * 
+     * **Added In:** 17.4.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> active() {
@@ -34,12 +56,32 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) The ID of the App in this Grant.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="appId")
     private @Nullable Output<String> appId;
 
     /**
      * @return (Updatable) The ID of the App in this Grant.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> appId() {
@@ -49,12 +91,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) Name of the account assigned to the User.
      * 
+     * **Added In:** 17.4.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return (Updatable) Name of the account assigned to the User.
+     * 
+     * **Added In:** 17.4.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> name() {
@@ -64,12 +130,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) User Token URI
      * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
+     * 
      */
     @Import(name="ref")
     private @Nullable Output<String> ref;
 
     /**
      * @return (Updatable) User Token URI
+     * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ref() {
@@ -79,12 +167,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) The value of a X509 certificate.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
      * @return (Updatable) The value of a X509 certificate.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> value() {
@@ -122,6 +234,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param active (Updatable) Status of the account
          * 
+         * **Added In:** 17.4.6
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -133,6 +256,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param active (Updatable) Status of the account
          * 
+         * **Added In:** 17.4.6
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -142,6 +276,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param appId (Updatable) The ID of the App in this Grant.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -154,6 +298,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param appId (Updatable) The ID of the App in this Grant.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -163,6 +317,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param name (Updatable) Name of the account assigned to the User.
+         * 
+         * **Added In:** 17.4.6
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -175,6 +341,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param name (Updatable) Name of the account assigned to the User.
          * 
+         * **Added In:** 17.4.6
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -184,6 +362,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param ref (Updatable) User Token URI
+         * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -196,6 +385,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param ref (Updatable) User Token URI
          * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -205,6 +405,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param value (Updatable) The value of a X509 certificate.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -216,6 +428,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param value (Updatable) The value of a X509 certificate.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

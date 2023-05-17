@@ -106,6 +106,9 @@ type LogAnalyticsEntity struct {
 	// The date and time the resource was last updated, in the format defined by RFC3339.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// (Updatable) The timezone region of the log analytics entity.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimezoneRegion pulumi.StringOutput `pulumi:"timezoneRegion"`
 }
 
@@ -186,6 +189,9 @@ type logAnalyticsEntityState struct {
 	// The date and time the resource was last updated, in the format defined by RFC3339.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// (Updatable) The timezone region of the log analytics entity.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimezoneRegion *string `pulumi:"timezoneRegion"`
 }
 
@@ -229,6 +235,9 @@ type LogAnalyticsEntityState struct {
 	// The date and time the resource was last updated, in the format defined by RFC3339.
 	TimeUpdated pulumi.StringPtrInput
 	// (Updatable) The timezone region of the log analytics entity.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimezoneRegion pulumi.StringPtrInput
 }
 
@@ -260,6 +269,9 @@ type logAnalyticsEntityArgs struct {
 	// This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
 	SourceId *string `pulumi:"sourceId"`
 	// (Updatable) The timezone region of the log analytics entity.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimezoneRegion *string `pulumi:"timezoneRegion"`
 }
 
@@ -288,6 +300,9 @@ type LogAnalyticsEntityArgs struct {
 	// This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
 	SourceId pulumi.StringPtrInput
 	// (Updatable) The timezone region of the log analytics entity.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimezoneRegion pulumi.StringPtrInput
 }
 
@@ -474,6 +489,9 @@ func (o LogAnalyticsEntityOutput) TimeUpdated() pulumi.StringOutput {
 }
 
 // (Updatable) The timezone region of the log analytics entity.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o LogAnalyticsEntityOutput) TimezoneRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringOutput { return v.TimezoneRegion }).(pulumi.StringOutput)
 }

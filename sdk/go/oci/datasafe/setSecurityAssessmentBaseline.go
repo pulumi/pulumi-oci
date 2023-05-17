@@ -57,6 +57,9 @@ type SetSecurityAssessmentBaseline struct {
 	// List of security assessment OCIDs that need to be updated while setting the baseline.
 	AssessmentIds pulumi.StringArrayOutput `pulumi:"assessmentIds"`
 	// The OCID of the security assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityAssessmentId pulumi.StringOutput `pulumi:"securityAssessmentId"`
 }
 
@@ -95,6 +98,9 @@ type setSecurityAssessmentBaselineState struct {
 	// List of security assessment OCIDs that need to be updated while setting the baseline.
 	AssessmentIds []string `pulumi:"assessmentIds"`
 	// The OCID of the security assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityAssessmentId *string `pulumi:"securityAssessmentId"`
 }
 
@@ -102,6 +108,9 @@ type SetSecurityAssessmentBaselineState struct {
 	// List of security assessment OCIDs that need to be updated while setting the baseline.
 	AssessmentIds pulumi.StringArrayInput
 	// The OCID of the security assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityAssessmentId pulumi.StringPtrInput
 }
 
@@ -113,6 +122,9 @@ type setSecurityAssessmentBaselineArgs struct {
 	// List of security assessment OCIDs that need to be updated while setting the baseline.
 	AssessmentIds []string `pulumi:"assessmentIds"`
 	// The OCID of the security assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityAssessmentId string `pulumi:"securityAssessmentId"`
 }
 
@@ -121,6 +133,9 @@ type SetSecurityAssessmentBaselineArgs struct {
 	// List of security assessment OCIDs that need to be updated while setting the baseline.
 	AssessmentIds pulumi.StringArrayInput
 	// The OCID of the security assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityAssessmentId pulumi.StringInput
 }
 
@@ -217,6 +232,9 @@ func (o SetSecurityAssessmentBaselineOutput) AssessmentIds() pulumi.StringArrayO
 }
 
 // The OCID of the security assessment.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o SetSecurityAssessmentBaselineOutput) SecurityAssessmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SetSecurityAssessmentBaseline) pulumi.StringOutput { return v.SecurityAssessmentId }).(pulumi.StringOutput)
 }

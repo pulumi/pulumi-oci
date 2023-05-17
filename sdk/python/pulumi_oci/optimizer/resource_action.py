@@ -24,6 +24,12 @@ class ResourceActionArgs:
         :param pulumi.Input[str] resource_action_id: The unique OCID associated with the resource action.
         :param pulumi.Input[str] status: (Updatable) The status of the resource action.
         :param pulumi.Input[str] time_status_end: (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+               
+               For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "resource_action_id", resource_action_id)
         pulumi.set(__self__, "status", status)
@@ -59,6 +65,12 @@ class ResourceActionArgs:
     def time_status_end(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+
+        For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_status_end")
 
@@ -107,6 +119,12 @@ class _ResourceActionState:
         :param pulumi.Input[str] time_created: The date and time the resource action details were created, in the format defined by RFC3339.
         :param pulumi.Input[str] time_status_begin: The date and time that the resource action entered its current status. The format is defined by RFC3339.
         :param pulumi.Input[str] time_status_end: (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+               
+               For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_updated: The date and time the resource action details were last updated, in the format defined by RFC3339.
         """
         if actions is not None:
@@ -343,6 +361,12 @@ class _ResourceActionState:
     def time_status_end(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+
+        For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_status_end")
 
@@ -395,6 +419,12 @@ class ResourceAction(pulumi.CustomResource):
         :param pulumi.Input[str] resource_action_id: The unique OCID associated with the resource action.
         :param pulumi.Input[str] status: (Updatable) The status of the resource action.
         :param pulumi.Input[str] time_status_end: (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+               
+               For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -521,6 +551,12 @@ class ResourceAction(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The date and time the resource action details were created, in the format defined by RFC3339.
         :param pulumi.Input[str] time_status_begin: The date and time that the resource action entered its current status. The format is defined by RFC3339.
         :param pulumi.Input[str] time_status_end: (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+               
+               For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_updated: The date and time the resource action details were last updated, in the format defined by RFC3339.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -680,6 +716,12 @@ class ResourceAction(pulumi.CustomResource):
     def time_status_end(self) -> pulumi.Output[str]:
         """
         (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+
+        For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_status_end")
 

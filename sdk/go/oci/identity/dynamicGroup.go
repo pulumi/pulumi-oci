@@ -88,6 +88,9 @@ type DynamicGroup struct {
 	// (Updatable) The matching rule to dynamically match an instance certificate to this dynamic group. For rule syntax, see [Managing Dynamic Groups](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingdynamicgroups.htm).
 	MatchingRule pulumi.StringOutput `pulumi:"matchingRule"`
 	// The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The group's current state.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -146,6 +149,9 @@ type dynamicGroupState struct {
 	// (Updatable) The matching rule to dynamically match an instance certificate to this dynamic group. For rule syntax, see [Managing Dynamic Groups](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingdynamicgroups.htm).
 	MatchingRule *string `pulumi:"matchingRule"`
 	// The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 	// The group's current state.
 	State *string `pulumi:"state"`
@@ -167,6 +173,9 @@ type DynamicGroupState struct {
 	// (Updatable) The matching rule to dynamically match an instance certificate to this dynamic group. For rule syntax, see [Managing Dynamic Groups](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingdynamicgroups.htm).
 	MatchingRule pulumi.StringPtrInput
 	// The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput
 	// The group's current state.
 	State pulumi.StringPtrInput
@@ -190,6 +199,9 @@ type dynamicGroupArgs struct {
 	// (Updatable) The matching rule to dynamically match an instance certificate to this dynamic group. For rule syntax, see [Managing Dynamic Groups](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingdynamicgroups.htm).
 	MatchingRule string `pulumi:"matchingRule"`
 	// The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 }
 
@@ -206,6 +218,9 @@ type DynamicGroupArgs struct {
 	// (Updatable) The matching rule to dynamically match an instance certificate to this dynamic group. For rule syntax, see [Managing Dynamic Groups](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingdynamicgroups.htm).
 	MatchingRule pulumi.StringInput
 	// The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput
 }
 
@@ -327,6 +342,9 @@ func (o DynamicGroupOutput) MatchingRule() pulumi.StringOutput {
 }
 
 // The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DynamicGroupOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *DynamicGroup) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

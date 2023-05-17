@@ -17,6 +17,8 @@ public final class GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix {
     /**
      * @return A filter to only return resources that match the given verification state.
      * 
+     * The state value is case-insensitive.
+     * 
      */
     private String verificationState;
 
@@ -30,6 +32,8 @@ public final class GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix {
     }
     /**
      * @return A filter to only return resources that match the given verification state.
+     * 
+     * The state value is case-insensitive.
      * 
      */
     public String verificationState() {

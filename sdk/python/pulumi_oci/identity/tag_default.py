@@ -22,10 +22,16 @@ class TagDefaultArgs:
         The set of arguments for constructing a TagDefault resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment. The tag default will be applied to all new resources created in this compartment.
         :param pulumi.Input[str] tag_definition_id: The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
-        :param pulumi.Input[str] value: (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
+        :param pulumi.Input[str] value: (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[bool] is_required: (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
                * If the `isRequired` flag is set to "true", the value is set during resource creation.
                * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
+               
+               Example: `false`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "tag_definition_id", tag_definition_id)
@@ -61,7 +67,11 @@ class TagDefaultArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
+        (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "value")
 
@@ -76,6 +86,8 @@ class TagDefaultArgs:
         (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
         * If the `isRequired` flag is set to "true", the value is set during resource creation.
         * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
+
+        Example: `false`
         """
         return pulumi.get(self, "is_required")
 
@@ -101,12 +113,18 @@ class _TagDefaultState:
         :param pulumi.Input[bool] is_required: (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
                * If the `isRequired` flag is set to "true", the value is set during resource creation.
                * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
+               
+               Example: `false`
         :param pulumi.Input[str] state: The tag default's current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
         :param pulumi.Input[str] tag_definition_id: The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
         :param pulumi.Input[str] tag_definition_name: The name used in the tag definition. This field is informational in the context of the tag default.
         :param pulumi.Input[str] tag_namespace_id: The OCID of the tag namespace that contains the tag definition.
         :param pulumi.Input[str] time_created: Date and time the `TagDefault` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] value: (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
+        :param pulumi.Input[str] value: (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -144,6 +162,8 @@ class _TagDefaultState:
         (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
         * If the `isRequired` flag is set to "true", the value is set during resource creation.
         * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
+
+        Example: `false`
         """
         return pulumi.get(self, "is_required")
 
@@ -215,7 +235,11 @@ class _TagDefaultState:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
+        (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "value")
 
@@ -273,8 +297,14 @@ class TagDefault(pulumi.CustomResource):
         :param pulumi.Input[bool] is_required: (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
                * If the `isRequired` flag is set to "true", the value is set during resource creation.
                * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
+               
+               Example: `false`
         :param pulumi.Input[str] tag_definition_id: The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
-        :param pulumi.Input[str] value: (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
+        :param pulumi.Input[str] value: (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -386,12 +416,18 @@ class TagDefault(pulumi.CustomResource):
         :param pulumi.Input[bool] is_required: (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
                * If the `isRequired` flag is set to "true", the value is set during resource creation.
                * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
+               
+               Example: `false`
         :param pulumi.Input[str] state: The tag default's current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
         :param pulumi.Input[str] tag_definition_id: The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
         :param pulumi.Input[str] tag_definition_name: The name used in the tag definition. This field is informational in the context of the tag default.
         :param pulumi.Input[str] tag_namespace_id: The OCID of the tag namespace that contains the tag definition.
         :param pulumi.Input[str] time_created: Date and time the `TagDefault` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] value: (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
+        :param pulumi.Input[str] value: (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -422,6 +458,8 @@ class TagDefault(pulumi.CustomResource):
         (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
         * If the `isRequired` flag is set to "true", the value is set during resource creation.
         * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
+
+        Example: `false`
         """
         return pulumi.get(self, "is_required")
 
@@ -469,7 +507,11 @@ class TagDefault(pulumi.CustomResource):
     @pulumi.getter
     def value(self) -> pulumi.Output[str]:
         """
-        (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
+        (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "value")
 

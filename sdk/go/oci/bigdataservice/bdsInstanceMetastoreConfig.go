@@ -59,6 +59,9 @@ type BdsInstanceMetastoreConfig struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) An optional integer, when flipped triggers activation of metastore config.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ActivateTrigger pulumi.IntPtrOutput `pulumi:"activateTrigger"`
 	// (Updatable) The ID of BDS Api Key used for Data Catalog metastore integration.
 	BdsApiKeyId pulumi.StringOutput `pulumi:"bdsApiKeyId"`
@@ -138,6 +141,9 @@ func GetBdsInstanceMetastoreConfig(ctx *pulumi.Context,
 // Input properties used for looking up and filtering BdsInstanceMetastoreConfig resources.
 type bdsInstanceMetastoreConfigState struct {
 	// (Updatable) An optional integer, when flipped triggers activation of metastore config.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ActivateTrigger *int `pulumi:"activateTrigger"`
 	// (Updatable) The ID of BDS Api Key used for Data Catalog metastore integration.
 	BdsApiKeyId *string `pulumi:"bdsApiKeyId"`
@@ -163,6 +169,9 @@ type bdsInstanceMetastoreConfigState struct {
 
 type BdsInstanceMetastoreConfigState struct {
 	// (Updatable) An optional integer, when flipped triggers activation of metastore config.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ActivateTrigger pulumi.IntPtrInput
 	// (Updatable) The ID of BDS Api Key used for Data Catalog metastore integration.
 	BdsApiKeyId pulumi.StringPtrInput
@@ -192,6 +201,9 @@ func (BdsInstanceMetastoreConfigState) ElementType() reflect.Type {
 
 type bdsInstanceMetastoreConfigArgs struct {
 	// (Updatable) An optional integer, when flipped triggers activation of metastore config.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ActivateTrigger *int `pulumi:"activateTrigger"`
 	// (Updatable) The ID of BDS Api Key used for Data Catalog metastore integration.
 	BdsApiKeyId string `pulumi:"bdsApiKeyId"`
@@ -210,6 +222,9 @@ type bdsInstanceMetastoreConfigArgs struct {
 // The set of arguments for constructing a BdsInstanceMetastoreConfig resource.
 type BdsInstanceMetastoreConfigArgs struct {
 	// (Updatable) An optional integer, when flipped triggers activation of metastore config.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ActivateTrigger pulumi.IntPtrInput
 	// (Updatable) The ID of BDS Api Key used for Data Catalog metastore integration.
 	BdsApiKeyId pulumi.StringInput
@@ -313,6 +328,9 @@ func (o BdsInstanceMetastoreConfigOutput) ToBdsInstanceMetastoreConfigOutputWith
 }
 
 // (Updatable) An optional integer, when flipped triggers activation of metastore config.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceMetastoreConfigOutput) ActivateTrigger() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceMetastoreConfig) pulumi.IntPtrOutput { return v.ActivateTrigger }).(pulumi.IntPtrOutput)
 }

@@ -110,6 +110,9 @@ type VolumeAttachment struct {
 	// Whether to use CHAP authentication for the volume attachment. Defaults to false.
 	UseChap pulumi.BoolOutput `pulumi:"useChap"`
 	// The OCID of the volume.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VolumeId pulumi.StringOutput `pulumi:"volumeId"`
 }
 
@@ -198,6 +201,9 @@ type volumeAttachmentState struct {
 	// Whether to use CHAP authentication for the volume attachment. Defaults to false.
 	UseChap *bool `pulumi:"useChap"`
 	// The OCID of the volume.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VolumeId *string `pulumi:"volumeId"`
 }
 
@@ -249,6 +255,9 @@ type VolumeAttachmentState struct {
 	// Whether to use CHAP authentication for the volume attachment. Defaults to false.
 	UseChap pulumi.BoolPtrInput
 	// The OCID of the volume.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VolumeId pulumi.StringPtrInput
 }
 
@@ -282,6 +291,9 @@ type volumeAttachmentArgs struct {
 	// Whether to use CHAP authentication for the volume attachment. Defaults to false.
 	UseChap *bool `pulumi:"useChap"`
 	// The OCID of the volume.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VolumeId string `pulumi:"volumeId"`
 }
 
@@ -312,6 +324,9 @@ type VolumeAttachmentArgs struct {
 	// Whether to use CHAP authentication for the volume attachment. Defaults to false.
 	UseChap pulumi.BoolPtrInput
 	// The OCID of the volume.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VolumeId pulumi.StringInput
 }
 
@@ -515,6 +530,9 @@ func (o VolumeAttachmentOutput) UseChap() pulumi.BoolOutput {
 }
 
 // The OCID of the volume.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o VolumeAttachmentOutput) VolumeId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringOutput { return v.VolumeId }).(pulumi.StringOutput)
 }

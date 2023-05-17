@@ -59,6 +59,9 @@ type DataSafeConfiguration struct {
 	// Details of the tenancy level global settings in Data Safe.
 	GlobalSettings DataSafeConfigurationGlobalSettingArrayOutput `pulumi:"globalSettings"`
 	// (Updatable) Indicates if Data Safe is enabled.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
 	// The current state of Data Safe.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -111,6 +114,9 @@ type dataSafeConfigurationState struct {
 	// Details of the tenancy level global settings in Data Safe.
 	GlobalSettings []DataSafeConfigurationGlobalSetting `pulumi:"globalSettings"`
 	// (Updatable) Indicates if Data Safe is enabled.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// The current state of Data Safe.
 	State *string `pulumi:"state"`
@@ -132,6 +138,9 @@ type DataSafeConfigurationState struct {
 	// Details of the tenancy level global settings in Data Safe.
 	GlobalSettings DataSafeConfigurationGlobalSettingArrayInput
 	// (Updatable) Indicates if Data Safe is enabled.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsEnabled pulumi.BoolPtrInput
 	// The current state of Data Safe.
 	State pulumi.StringPtrInput
@@ -149,6 +158,9 @@ type dataSafeConfigurationArgs struct {
 	// (Updatable) A filter to return only resources that match the specified compartment OCID.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Indicates if Data Safe is enabled.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsEnabled bool `pulumi:"isEnabled"`
 }
 
@@ -157,6 +169,9 @@ type DataSafeConfigurationArgs struct {
 	// (Updatable) A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Indicates if Data Safe is enabled.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsEnabled pulumi.BoolInput
 }
 
@@ -273,6 +288,9 @@ func (o DataSafeConfigurationOutput) GlobalSettings() DataSafeConfigurationGloba
 }
 
 // (Updatable) Indicates if Data Safe is enabled.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DataSafeConfigurationOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DataSafeConfiguration) pulumi.BoolOutput { return v.IsEnabled }).(pulumi.BoolOutput)
 }

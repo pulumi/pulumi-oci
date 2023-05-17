@@ -24,12 +24,34 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     /**
      * (Updatable) A list of appRoles that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="appRoles")
     private @Nullable Output<List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRoleArgs>> appRoles;
 
     /**
      * @return (Updatable) A list of appRoles that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRoleArgs>>> appRoles() {
@@ -39,12 +61,34 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     /**
      * (Updatable) Source from which this group got created.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeNameMappings: [[defaultValue:import]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="creationMechanism")
     private @Nullable Output<String> creationMechanism;
 
     /**
      * @return (Updatable) Source from which this group got created.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeNameMappings: [[defaultValue:import]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> creationMechanism() {
@@ -54,12 +98,36 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     /**
      * (Updatable) Group description
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Description
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Description]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return (Updatable) Group description
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Description
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Description]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> description() {
@@ -69,12 +137,30 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     /**
      * (Updatable) Grants assigned to group
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="grants")
     private @Nullable Output<List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrantArgs>> grants;
 
     /**
      * @return (Updatable) Grants assigned to group
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrantArgs>>> grants() {
@@ -84,12 +170,34 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     /**
      * (Updatable) Group owners
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value, type]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="owners")
     private @Nullable Output<List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnerArgs>> owners;
 
     /**
      * @return (Updatable) Group owners
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value, type]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnerArgs>>> owners() {
@@ -99,12 +207,38 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     /**
      * (Updatable) Password Policy associated with this Group.
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="passwordPolicies")
     private @Nullable Output<List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicyArgs>> passwordPolicies;
 
     /**
      * @return (Updatable) Password Policy associated with this Group.
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicyArgs>>> passwordPolicies() {
@@ -114,12 +248,36 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     /**
      * (Updatable) The entity that created this Group.
      * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="syncedFromApps")
     private @Nullable Output<List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromAppArgs>> syncedFromApps;
 
     /**
      * @return (Updatable) The entity that created this Group.
+     * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromAppArgs>>> syncedFromApps() {
@@ -159,6 +317,17 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         /**
          * @param appRoles (Updatable) A list of appRoles that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -170,6 +339,17 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         /**
          * @param appRoles (Updatable) A list of appRoles that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -180,6 +360,17 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         /**
          * @param appRoles (Updatable) A list of appRoles that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -189,6 +380,17 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
 
         /**
          * @param creationMechanism (Updatable) Source from which this group got created.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeNameMappings: [[defaultValue:import]]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -201,6 +403,17 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         /**
          * @param creationMechanism (Updatable) Source from which this group got created.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeNameMappings: [[defaultValue:import]]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -210,6 +423,18 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
 
         /**
          * @param description (Updatable) Group description
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Description
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Description]]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -222,6 +447,18 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         /**
          * @param description (Updatable) Group description
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Description
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Description]]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -231,6 +468,15 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
 
         /**
          * @param grants (Updatable) Grants assigned to group
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -243,6 +489,15 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         /**
          * @param grants (Updatable) Grants assigned to group
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -253,6 +508,15 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         /**
          * @param grants (Updatable) Grants assigned to group
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -262,6 +526,17 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
 
         /**
          * @param owners (Updatable) Group owners
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value, type]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -274,6 +549,17 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         /**
          * @param owners (Updatable) Group owners
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value, type]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -284,6 +570,17 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         /**
          * @param owners (Updatable) Group owners
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value, type]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -293,6 +590,19 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
 
         /**
          * @param passwordPolicies (Updatable) Password Policy associated with this Group.
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -305,6 +615,19 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         /**
          * @param passwordPolicies (Updatable) Password Policy associated with this Group.
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -315,6 +638,19 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         /**
          * @param passwordPolicies (Updatable) Password Policy associated with this Group.
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -324,6 +660,18 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
 
         /**
          * @param syncedFromApps (Updatable) The entity that created this Group.
+         * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -336,6 +684,18 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         /**
          * @param syncedFromApps (Updatable) The entity that created this Group.
          * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -345,6 +705,18 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
 
         /**
          * @param syncedFromApps (Updatable) The entity that created this Group.
+         * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 

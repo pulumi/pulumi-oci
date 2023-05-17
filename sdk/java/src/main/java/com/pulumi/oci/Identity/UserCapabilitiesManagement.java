@@ -126,12 +126,18 @@ public class UserCapabilitiesManagement extends com.pulumi.resources.CustomResou
     /**
      * (Updatable) Indicates if the user can use SMTP passwords.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="canUseSmtpCredentials", type=Boolean.class, parameters={})
     private Output<Boolean> canUseSmtpCredentials;
 
     /**
      * @return (Updatable) Indicates if the user can use SMTP passwords.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Boolean> canUseSmtpCredentials() {

@@ -44,6 +44,8 @@ class BootVolumeArgs:
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
         :param pulumi.Input[str] vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+               
+               Allowed values:
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -229,6 +231,8 @@ class BootVolumeArgs:
     def vpus_per_gb(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+
+        Allowed values:
         """
         return pulumi.get(self, "vpus_per_gb")
 
@@ -284,6 +288,8 @@ class _BootVolumeState:
         :param pulumi.Input[str] time_created: The date and time the boot volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] volume_group_id: The OCID of the source volume group.
         :param pulumi.Input[str] vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+               
+               Allowed values:
         """
         if auto_tuned_vpus_per_gb is not None:
             pulumi.set(__self__, "auto_tuned_vpus_per_gb", auto_tuned_vpus_per_gb)
@@ -584,6 +590,8 @@ class _BootVolumeState:
     def vpus_per_gb(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+
+        Allowed values:
         """
         return pulumi.get(self, "vpus_per_gb")
 
@@ -678,6 +686,8 @@ class BootVolume(pulumi.CustomResource):
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
         :param pulumi.Input[str] vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+               
+               Allowed values:
         """
         ...
     @overload
@@ -865,6 +875,8 @@ class BootVolume(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The date and time the boot volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] volume_group_id: The OCID of the source volume group.
         :param pulumi.Input[str] vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+               
+               Allowed values:
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1061,6 +1073,8 @@ class BootVolume(pulumi.CustomResource):
     def vpus_per_gb(self) -> pulumi.Output[str]:
         """
         (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+
+        Allowed values:
         """
         return pulumi.get(self, "vpus_per_gb")
 

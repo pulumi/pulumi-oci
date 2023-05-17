@@ -72,6 +72,9 @@ namespace Pulumi.Oci.Functions
 
         /// <summary>
         /// An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invoke_function_body` or `invoke_function_body_base64_encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("inputBodySourcePath")]
         public Output<string?> InputBodySourcePath { get; private set; } = null!;
@@ -157,6 +160,9 @@ namespace Pulumi.Oci.Functions
 
         /// <summary>
         /// An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invoke_function_body` or `invoke_function_body_base64_encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("inputBodySourcePath")]
         public Input<string>? InputBodySourcePath { get; set; }
@@ -207,6 +213,9 @@ namespace Pulumi.Oci.Functions
 
         /// <summary>
         /// An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invoke_function_body` or `invoke_function_body_base64_encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("inputBodySourcePath")]
         public Input<string>? InputBodySourcePath { get; set; }

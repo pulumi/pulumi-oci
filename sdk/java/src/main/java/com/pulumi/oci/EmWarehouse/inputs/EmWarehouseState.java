@@ -170,12 +170,18 @@ public final class EmWarehouseState extends com.pulumi.resources.ResourceArgs {
     /**
      * operations Insights Warehouse Identifier
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="operationsInsightsWarehouseId")
     private @Nullable Output<String> operationsInsightsWarehouseId;
 
     /**
      * @return operations Insights Warehouse Identifier
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> operationsInsightsWarehouseId() {
@@ -493,6 +499,9 @@ public final class EmWarehouseState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param operationsInsightsWarehouseId operations Insights Warehouse Identifier
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -503,6 +512,9 @@ public final class EmWarehouseState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param operationsInsightsWarehouseId operations Insights Warehouse Identifier
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

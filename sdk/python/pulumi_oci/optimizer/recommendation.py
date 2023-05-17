@@ -24,6 +24,12 @@ class RecommendationArgs:
         :param pulumi.Input[str] recommendation_id: The unique OCID associated with the recommendation.
         :param pulumi.Input[str] status: (Updatable) The status of the recommendation.
         :param pulumi.Input[str] time_status_end: (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+               
+               For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "recommendation_id", recommendation_id)
         pulumi.set(__self__, "status", status)
@@ -59,6 +65,12 @@ class RecommendationArgs:
     def time_status_end(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+
+        For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_status_end")
 
@@ -103,6 +115,12 @@ class _RecommendationState:
         :param pulumi.Input[str] time_created: The date and time the recommendation details were created, in the format defined by RFC3339.
         :param pulumi.Input[str] time_status_begin: The date and time that the recommendation entered its current status. The format is defined by RFC3339.
         :param pulumi.Input[str] time_status_end: (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+               
+               For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_updated: The date and time the recommendation details were last updated, in the format defined by RFC3339.
         """
         if category_id is not None:
@@ -311,6 +329,12 @@ class _RecommendationState:
     def time_status_end(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+
+        For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_status_end")
 
@@ -363,6 +387,12 @@ class Recommendation(pulumi.CustomResource):
         :param pulumi.Input[str] recommendation_id: The unique OCID associated with the recommendation.
         :param pulumi.Input[str] status: (Updatable) The status of the recommendation.
         :param pulumi.Input[str] time_status_end: (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+               
+               For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -483,6 +513,12 @@ class Recommendation(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The date and time the recommendation details were created, in the format defined by RFC3339.
         :param pulumi.Input[str] time_status_begin: The date and time that the recommendation entered its current status. The format is defined by RFC3339.
         :param pulumi.Input[str] time_status_end: (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+               
+               For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_updated: The date and time the recommendation details were last updated, in the format defined by RFC3339.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -624,6 +660,12 @@ class Recommendation(pulumi.CustomResource):
     def time_status_end(self) -> pulumi.Output[str]:
         """
         (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+
+        For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_status_end")
 

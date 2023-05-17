@@ -149,12 +149,16 @@ public class DataMaskRule extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Data mask rule name.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     @Export(name="displayName", type=String.class, parameters={})
     private Output<String> displayName;
 
     /**
      * @return (Updatable) Data mask rule name.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -163,12 +167,16 @@ public class DataMaskRule extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
+     * Avoid entering confidential information.
+     * 
      */
     @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
     private Output<Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Output<Map<String,Object>> freeformTags() {

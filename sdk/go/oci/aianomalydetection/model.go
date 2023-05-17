@@ -86,6 +86,9 @@ type Model struct {
 	// Specifies the details for an Anomaly Detection model trained with MSET.
 	ModelTrainingResults ModelModelTrainingResultArrayOutput `pulumi:"modelTrainingResults"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// The state of the model.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -152,6 +155,9 @@ type modelState struct {
 	// Specifies the details for an Anomaly Detection model trained with MSET.
 	ModelTrainingResults []ModelModelTrainingResult `pulumi:"modelTrainingResults"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId *string `pulumi:"projectId"`
 	// The state of the model.
 	State *string `pulumi:"state"`
@@ -181,6 +187,9 @@ type ModelState struct {
 	// Specifies the details for an Anomaly Detection model trained with MSET.
 	ModelTrainingResults ModelModelTrainingResultArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringPtrInput
 	// The state of the model.
 	State pulumi.StringPtrInput
@@ -210,6 +219,9 @@ type modelArgs struct {
 	// Specifies the details of the MSET model during the create call.
 	ModelTrainingDetails ModelModelTrainingDetails `pulumi:"modelTrainingDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId string `pulumi:"projectId"`
 }
 
@@ -228,6 +240,9 @@ type ModelArgs struct {
 	// Specifies the details of the MSET model during the create call.
 	ModelTrainingDetails ModelModelTrainingDetailsInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringInput
 }
 
@@ -359,6 +374,9 @@ func (o ModelOutput) ModelTrainingResults() ModelModelTrainingResultArrayOutput 
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ModelOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.ProjectId }).(pulumi.StringOutput)
 }

@@ -111,6 +111,10 @@ namespace Pulumi.Oci.Streaming
 
         /// <summary>
         /// (Updatable) The OCID of the stream pool that contains the stream.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("streamPoolId")]
         public Output<string> StreamPoolId { get; private set; } = null!;
@@ -217,6 +221,10 @@ namespace Pulumi.Oci.Streaming
 
         /// <summary>
         /// (Updatable) The OCID of the stream pool that contains the stream.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("streamPoolId")]
         public Input<string>? StreamPoolId { get; set; }
@@ -297,6 +305,10 @@ namespace Pulumi.Oci.Streaming
 
         /// <summary>
         /// (Updatable) The OCID of the stream pool that contains the stream.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("streamPoolId")]
         public Input<string>? StreamPoolId { get; set; }

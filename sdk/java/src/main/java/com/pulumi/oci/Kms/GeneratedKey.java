@@ -157,12 +157,18 @@ public class GeneratedKey extends com.pulumi.resources.CustomResource {
     /**
      * Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="loggingContext", type=Map.class, parameters={String.class, Object.class})
     private Output</* @Nullable */ Map<String,Object>> loggingContext;
 
     /**
      * @return Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Optional<Map<String,Object>>> loggingContext() {

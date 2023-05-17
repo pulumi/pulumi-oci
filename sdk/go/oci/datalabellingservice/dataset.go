@@ -105,6 +105,9 @@ type Dataset struct {
 	// An ordered collection of labels that are unique by name.
 	LabelSet DatasetLabelSetOutput `pulumi:"labelSet"`
 	// (Updatable) The labeling instructions for human labelers in rich text format
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LabelingInstructions pulumi.StringOutput `pulumi:"labelingInstructions"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
@@ -181,6 +184,9 @@ type datasetState struct {
 	// An ordered collection of labels that are unique by name.
 	LabelSet *DatasetLabelSet `pulumi:"labelSet"`
 	// (Updatable) The labeling instructions for human labelers in rich text format
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LabelingInstructions *string `pulumi:"labelingInstructions"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -214,6 +220,9 @@ type DatasetState struct {
 	// An ordered collection of labels that are unique by name.
 	LabelSet DatasetLabelSetPtrInput
 	// (Updatable) The labeling instructions for human labelers in rich text format
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LabelingInstructions pulumi.StringPtrInput
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
 	LifecycleDetails pulumi.StringPtrInput
@@ -251,6 +260,9 @@ type datasetArgs struct {
 	// An ordered collection of labels that are unique by name.
 	LabelSet DatasetLabelSet `pulumi:"labelSet"`
 	// (Updatable) The labeling instructions for human labelers in rich text format
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LabelingInstructions *string `pulumi:"labelingInstructions"`
 }
 
@@ -277,6 +289,9 @@ type DatasetArgs struct {
 	// An ordered collection of labels that are unique by name.
 	LabelSet DatasetLabelSetInput
 	// (Updatable) The labeling instructions for human labelers in rich text format
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LabelingInstructions pulumi.StringPtrInput
 }
 
@@ -420,6 +435,9 @@ func (o DatasetOutput) LabelSet() DatasetLabelSetOutput {
 }
 
 // (Updatable) The labeling instructions for human labelers in rich text format
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DatasetOutput) LabelingInstructions() pulumi.StringOutput {
 	return o.ApplyT(func(v *Dataset) pulumi.StringOutput { return v.LabelingInstructions }).(pulumi.StringOutput)
 }

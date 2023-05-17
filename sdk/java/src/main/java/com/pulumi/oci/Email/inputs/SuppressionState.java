@@ -33,12 +33,18 @@ public final class SuppressionState extends com.pulumi.resources.ResourceArgs {
     /**
      * The recipient email address of the suppression.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="emailAddress")
     private @Nullable Output<String> emailAddress;
 
     /**
      * @return The recipient email address of the suppression.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> emailAddress() {
@@ -190,6 +196,9 @@ public final class SuppressionState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param emailAddress The recipient email address of the suppression.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -200,6 +209,9 @@ public final class SuppressionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param emailAddress The recipient email address of the suppression.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

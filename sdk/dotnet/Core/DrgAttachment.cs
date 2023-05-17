@@ -96,6 +96,8 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
+        /// 
+        /// The DRG route table manages traffic inside the DRG.
         /// </summary>
         [Output("drgRouteTableId")]
         public Output<string> DrgRouteTableId { get; private set; } = null!;
@@ -127,12 +129,20 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("removeExportDrgRouteDistributionTrigger")]
         public Output<bool?> RemoveExportDrgRouteDistributionTrigger { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the DRG attachment.
+        /// 
+        /// If you don't specify a route table here, the DRG attachment is created without an associated route table. The Networking service does NOT automatically associate the attached VCN's default route table with the DRG attachment. For information about why you would associate a route table with a DRG attachment, see:
+        /// * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+        /// * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+        /// This field is deprecated. Instead, use the networkDetails field to specify the VCN route table for this attachment.
         /// </summary>
         [Output("routeTableId")]
         public Output<string> RouteTableId { get; private set; } = null!;
@@ -227,6 +237,8 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
+        /// 
+        /// The DRG route table manages traffic inside the DRG.
         /// </summary>
         [Input("drgRouteTableId")]
         public Input<string>? DrgRouteTableId { get; set; }
@@ -258,12 +270,20 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("removeExportDrgRouteDistributionTrigger")]
         public Input<bool>? RemoveExportDrgRouteDistributionTrigger { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the DRG attachment.
+        /// 
+        /// If you don't specify a route table here, the DRG attachment is created without an associated route table. The Networking service does NOT automatically associate the attached VCN's default route table with the DRG attachment. For information about why you would associate a route table with a DRG attachment, see:
+        /// * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+        /// * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+        /// This field is deprecated. Instead, use the networkDetails field to specify the VCN route table for this attachment.
         /// </summary>
         [Input("routeTableId")]
         public Input<string>? RouteTableId { get; set; }
@@ -314,6 +334,8 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
+        /// 
+        /// The DRG route table manages traffic inside the DRG.
         /// </summary>
         [Input("drgRouteTableId")]
         public Input<string>? DrgRouteTableId { get; set; }
@@ -351,12 +373,20 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("removeExportDrgRouteDistributionTrigger")]
         public Input<bool>? RemoveExportDrgRouteDistributionTrigger { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the DRG attachment.
+        /// 
+        /// If you don't specify a route table here, the DRG attachment is created without an associated route table. The Networking service does NOT automatically associate the attached VCN's default route table with the DRG attachment. For information about why you would associate a route table with a DRG attachment, see:
+        /// * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+        /// * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+        /// This field is deprecated. Instead, use the networkDetails field to specify the VCN route table for this attachment.
         /// </summary>
         [Input("routeTableId")]
         public Input<string>? RouteTableId { get; set; }

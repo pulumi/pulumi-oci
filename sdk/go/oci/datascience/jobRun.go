@@ -100,6 +100,9 @@ type JobRun struct {
 	// Customer logging details for job run.
 	LogDetails JobRunLogDetailArrayOutput `pulumi:"logDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// The state of the job run.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -174,6 +177,9 @@ type jobRunState struct {
 	// Customer logging details for job run.
 	LogDetails []JobRunLogDetail `pulumi:"logDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId *string `pulumi:"projectId"`
 	// The state of the job run.
 	State *string `pulumi:"state"`
@@ -211,6 +217,9 @@ type JobRunState struct {
 	// Customer logging details for job run.
 	LogDetails JobRunLogDetailArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringPtrInput
 	// The state of the job run.
 	State pulumi.StringPtrInput
@@ -244,6 +253,9 @@ type jobRunArgs struct {
 	// Logging configuration for resource.
 	JobLogConfigurationOverrideDetails *JobRunJobLogConfigurationOverrideDetails `pulumi:"jobLogConfigurationOverrideDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId string `pulumi:"projectId"`
 }
 
@@ -266,6 +278,9 @@ type JobRunArgs struct {
 	// Logging configuration for resource.
 	JobLogConfigurationOverrideDetails JobRunJobLogConfigurationOverrideDetailsPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringInput
 }
 
@@ -421,6 +436,9 @@ func (o JobRunOutput) LogDetails() JobRunLogDetailArrayOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o JobRunOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v *JobRun) pulumi.StringOutput { return v.ProjectId }).(pulumi.StringOutput)
 }

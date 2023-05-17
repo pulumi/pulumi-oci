@@ -23,6 +23,8 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly string? BootVolumeSizeInGbs;
         /// <summary>
         /// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+        /// 
+        /// Allowed values:
         /// </summary>
         public readonly string? BootVolumeVpusPerGb;
         /// <summary>

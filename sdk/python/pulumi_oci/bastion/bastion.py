@@ -30,6 +30,10 @@ class BastionArgs:
         :param pulumi.Input[str] bastion_type: The type of bastion. Use `standard`.
         :param pulumi.Input[str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
         :param pulumi.Input[str] target_subnet_id: The unique identifier (OCID) of the subnet that the bastion connects to.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[str]]] client_cidr_block_allow_lists: (Updatable) A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] dns_proxy_status: Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
@@ -88,6 +92,10 @@ class BastionArgs:
     def target_subnet_id(self) -> pulumi.Input[str]:
         """
         The unique identifier (OCID) of the subnet that the bastion connects to.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "target_subnet_id")
 
@@ -232,6 +240,10 @@ class _BastionState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] static_jump_host_ip_addresses: (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] target_subnet_id: The unique identifier (OCID) of the subnet that the bastion connects to.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] target_vcn_id: The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
         :param pulumi.Input[str] time_created: The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
@@ -460,6 +472,10 @@ class _BastionState:
     def target_subnet_id(self) -> Optional[pulumi.Input[str]]:
         """
         The unique identifier (OCID) of the subnet that the bastion connects to.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "target_subnet_id")
 
@@ -570,6 +586,10 @@ class Bastion(pulumi.CustomResource):
         :param pulumi.Input[str] phone_book_entry: The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] static_jump_host_ip_addresses: (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
         :param pulumi.Input[str] target_subnet_id: The unique identifier (OCID) of the subnet that the bastion connects to.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -725,6 +745,10 @@ class Bastion(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] static_jump_host_ip_addresses: (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] target_subnet_id: The unique identifier (OCID) of the subnet that the bastion connects to.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] target_vcn_id: The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
         :param pulumi.Input[str] time_created: The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
@@ -879,6 +903,10 @@ class Bastion(pulumi.CustomResource):
     def target_subnet_id(self) -> pulumi.Output[str]:
         """
         The unique identifier (OCID) of the subnet that the bastion connects to.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "target_subnet_id")
 

@@ -53,12 +53,16 @@ public final class ResolverArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
+     * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
+     * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
      * 
      */
     public Optional<Output<Map<String,Object>>> definedTags() {
@@ -83,12 +87,16 @@ public final class ResolverArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
+     * **Example:** `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     * **Example:** `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
@@ -128,12 +136,18 @@ public final class ResolverArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * If specified, must be `PRIVATE` when creating private name resolvers.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="scope")
     private @Nullable Output<String> scope;
 
     /**
      * @return If specified, must be `PRIVATE` when creating private name resolvers.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> scope() {
@@ -226,6 +240,8 @@ public final class ResolverArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * 
+         * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
+         * 
          * @return builder
          * 
          */
@@ -236,6 +252,8 @@ public final class ResolverArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
          * 
          * @return builder
          * 
@@ -268,6 +286,8 @@ public final class ResolverArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * 
+         * **Example:** `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * 
          * @return builder
          * 
          */
@@ -278,6 +298,8 @@ public final class ResolverArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * **Example:** `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
          * 
@@ -341,6 +363,9 @@ public final class ResolverArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param scope If specified, must be `PRIVATE` when creating private name resolvers.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -351,6 +376,9 @@ public final class ResolverArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param scope If specified, must be `PRIVATE` when creating private name resolvers.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

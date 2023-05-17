@@ -215,6 +215,10 @@ export class DbSystemsUpgrade extends pulumi.CustomResource {
     public /*out*/ readonly shape!: pulumi.Output<string>;
     /**
      * The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly snapshotRetentionPeriodInDays!: pulumi.Output<number>;
     /**
@@ -544,6 +548,10 @@ export interface DbSystemsUpgradeState {
     shape?: pulumi.Input<string>;
     /**
      * The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     snapshotRetentionPeriodInDays?: pulumi.Input<number>;
     /**
@@ -610,6 +618,10 @@ export interface DbSystemsUpgradeArgs {
     newGiVersion?: pulumi.Input<string>;
     /**
      * The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     snapshotRetentionPeriodInDays?: pulumi.Input<number>;
 }

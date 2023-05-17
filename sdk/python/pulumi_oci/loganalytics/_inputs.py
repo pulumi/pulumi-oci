@@ -284,7 +284,11 @@ class NamespaceIngestTimeRuleActionArgs:
         """
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] metric_name: (Updatable) The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] type: (Updatable) Discriminator.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] dimensions: (Updatable) Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
         :param pulumi.Input[str] resource_group: (Updatable) The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
@@ -326,7 +330,11 @@ class NamespaceIngestTimeRuleActionArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
         """
-        The Logging Analytics namespace used for the request.
+        The Logging Analytics namespace used for the request. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "namespace")
 

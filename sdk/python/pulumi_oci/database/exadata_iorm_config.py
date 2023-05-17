@@ -23,7 +23,11 @@ class ExadataIormConfigArgs:
         The set of arguments for constructing a ExadataIormConfig resource.
         :param pulumi.Input[Sequence[pulumi.Input['ExadataIormConfigDbPlanArgs']]] db_plans: (Updatable) Array of IORM Setting for all the database in this Exadata DB System
         :param pulumi.Input[str] db_system_id: (Updatable) The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] objective: (Updatable) Value for the IORM objective Default is "Auto"
+        :param pulumi.Input[str] objective: (Updatable) Value for the IORM objective Default is "Auto" 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "db_plans", db_plans)
         pulumi.set(__self__, "db_system_id", db_system_id)
@@ -58,7 +62,11 @@ class ExadataIormConfigArgs:
     @pulumi.getter
     def objective(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Value for the IORM objective Default is "Auto"
+        (Updatable) Value for the IORM objective Default is "Auto" 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "objective")
 
@@ -80,7 +88,11 @@ class _ExadataIormConfigState:
         :param pulumi.Input[Sequence[pulumi.Input['ExadataIormConfigDbPlanArgs']]] db_plans: (Updatable) Array of IORM Setting for all the database in this Exadata DB System
         :param pulumi.Input[str] db_system_id: (Updatable) The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] lifecycle_details: Additional information about the current `lifecycleState`.
-        :param pulumi.Input[str] objective: (Updatable) Value for the IORM objective Default is "Auto"
+        :param pulumi.Input[str] objective: (Updatable) Value for the IORM objective Default is "Auto" 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of IORM configuration for the Exadata DB system.
         """
         if db_plans is not None:
@@ -134,7 +146,11 @@ class _ExadataIormConfigState:
     @pulumi.getter
     def objective(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Value for the IORM objective Default is "Auto"
+        (Updatable) Value for the IORM objective Default is "Auto" 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "objective")
 
@@ -199,7 +215,11 @@ class ExadataIormConfig(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExadataIormConfigDbPlanArgs']]]] db_plans: (Updatable) Array of IORM Setting for all the database in this Exadata DB System
         :param pulumi.Input[str] db_system_id: (Updatable) The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] objective: (Updatable) Value for the IORM objective Default is "Auto"
+        :param pulumi.Input[str] objective: (Updatable) Value for the IORM objective Default is "Auto" 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -299,7 +319,11 @@ class ExadataIormConfig(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExadataIormConfigDbPlanArgs']]]] db_plans: (Updatable) Array of IORM Setting for all the database in this Exadata DB System
         :param pulumi.Input[str] db_system_id: (Updatable) The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] lifecycle_details: Additional information about the current `lifecycleState`.
-        :param pulumi.Input[str] objective: (Updatable) Value for the IORM objective Default is "Auto"
+        :param pulumi.Input[str] objective: (Updatable) Value for the IORM objective Default is "Auto" 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of IORM configuration for the Exadata DB system.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -341,7 +365,11 @@ class ExadataIormConfig(pulumi.CustomResource):
     @pulumi.getter
     def objective(self) -> pulumi.Output[str]:
         """
-        (Updatable) Value for the IORM objective Default is "Auto"
+        (Updatable) Value for the IORM objective Default is "Auto" 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "objective")
 

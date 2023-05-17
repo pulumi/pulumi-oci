@@ -54,6 +54,8 @@ type GetServiceEnvironmentArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The unique identifier associated with the service environment.
+	//
+	// **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ServiceEnvironmentId string `pulumi:"serviceEnvironmentId"`
 }
 
@@ -94,6 +96,8 @@ type GetServiceEnvironmentOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The unique identifier associated with the service environment.
+	//
+	// **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ServiceEnvironmentId pulumi.StringInput `pulumi:"serviceEnvironmentId"`
 }
 

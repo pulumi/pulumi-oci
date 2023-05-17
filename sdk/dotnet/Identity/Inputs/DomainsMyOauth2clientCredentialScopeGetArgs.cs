@@ -14,12 +14,28 @@ namespace Pulumi.Oci.Identity.Inputs
     {
         /// <summary>
         /// Audience
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * type: string
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
         /// </summary>
         [Input("audience", required: true)]
         public Input<string> Audience { get; set; } = null!;
 
         /// <summary>
         /// Scope
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsScimCompliant: false
+        /// * type: string
+        /// * mutability: readWrite
+        /// * multiValued: false
+        /// * required: true
+        /// * returned: default
         /// </summary>
         [Input("scope", required: true)]
         public Input<string> Scope { get; set; } = null!;

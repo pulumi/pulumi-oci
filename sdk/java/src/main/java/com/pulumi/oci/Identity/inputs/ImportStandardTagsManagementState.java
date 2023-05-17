@@ -33,12 +33,18 @@ public final class ImportStandardTagsManagementState extends com.pulumi.resource
     /**
      * The name of standard tag namespace that will be imported in bulk
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="standardTagNamespaceName")
     private @Nullable Output<String> standardTagNamespaceName;
 
     /**
      * @return The name of standard tag namespace that will be imported in bulk
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> standardTagNamespaceName() {
@@ -102,6 +108,9 @@ public final class ImportStandardTagsManagementState extends com.pulumi.resource
         /**
          * @param standardTagNamespaceName The name of standard tag namespace that will be imported in bulk
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -112,6 +121,9 @@ public final class ImportStandardTagsManagementState extends com.pulumi.resource
 
         /**
          * @param standardTagNamespaceName The name of standard tag namespace that will be imported in bulk
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

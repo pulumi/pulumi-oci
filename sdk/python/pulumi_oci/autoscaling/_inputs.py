@@ -213,8 +213,14 @@ class AutoScalingConfigurationPolicyCapacityArgs:
                  min: Optional[pulumi.Input[int]] = None):
         """
         :param pulumi.Input[int] initial: For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+               
+               For a schedule-based autoscaling policy, this value is the target pool size to scale to when executing the schedule that's defined in the autoscaling policy.
         :param pulumi.Input[int] max: For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
+               
+               For a schedule-based autoscaling policy, this value is not used.
         :param pulumi.Input[int] min: For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
+               
+               For a schedule-based autoscaling policy, this value is not used.
         """
         if initial is not None:
             pulumi.set(__self__, "initial", initial)
@@ -228,6 +234,8 @@ class AutoScalingConfigurationPolicyCapacityArgs:
     def initial(self) -> Optional[pulumi.Input[int]]:
         """
         For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+
+        For a schedule-based autoscaling policy, this value is the target pool size to scale to when executing the schedule that's defined in the autoscaling policy.
         """
         return pulumi.get(self, "initial")
 
@@ -240,6 +248,8 @@ class AutoScalingConfigurationPolicyCapacityArgs:
     def max(self) -> Optional[pulumi.Input[int]]:
         """
         For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
+
+        For a schedule-based autoscaling policy, this value is not used.
         """
         return pulumi.get(self, "max")
 
@@ -252,6 +262,8 @@ class AutoScalingConfigurationPolicyCapacityArgs:
     def min(self) -> Optional[pulumi.Input[int]]:
         """
         For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
+
+        For a schedule-based autoscaling policy, this value is not used.
         """
         return pulumi.get(self, "min")
 
@@ -268,6 +280,14 @@ class AutoScalingConfigurationPolicyExecutionScheduleArgs:
                  type: pulumi.Input[str]):
         """
         :param pulumi.Input[str] expression: A cron expression that represents the time at which to execute the autoscaling policy.
+               
+               Cron expressions have this format: `<second> <minute> <hour> <day of month> <month> <day of week> <year>`
+               
+               You can use special characters that are supported with the Quartz cron implementation.
+               
+               You must specify `0` as the value for seconds.
+               
+               Example: `0 15 10 ? * *`
         :param pulumi.Input[str] timezone: The time zone for the execution schedule.
         :param pulumi.Input[str] type: The type of action to take.
         """
@@ -280,6 +300,14 @@ class AutoScalingConfigurationPolicyExecutionScheduleArgs:
     def expression(self) -> pulumi.Input[str]:
         """
         A cron expression that represents the time at which to execute the autoscaling policy.
+
+        Cron expressions have this format: `<second> <minute> <hour> <day of month> <month> <day of week> <year>`
+
+        You can use special characters that are supported with the Quartz cron implementation.
+
+        You must specify `0` as the value for seconds.
+
+        Example: `0 15 10 ? * *`
         """
         return pulumi.get(self, "expression")
 
@@ -426,6 +454,8 @@ class AutoScalingConfigurationPolicyRuleActionArgs:
                  value: Optional[pulumi.Input[int]] = None):
         """
         :param pulumi.Input[str] type: The type of action to take.
+        :param pulumi.Input[int] value: ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if type is not None:
             pulumi.set(__self__, "type", type)
@@ -447,6 +477,10 @@ class AutoScalingConfigurationPolicyRuleActionArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[int]]:
+        """
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -490,6 +524,8 @@ class AutoScalingConfigurationPolicyRuleMetricThresholdArgs:
                  value: Optional[pulumi.Input[int]] = None):
         """
         :param pulumi.Input[str] operator: The comparison operator to use. Options are greater than (`GT`), greater than or equal to (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
+        :param pulumi.Input[int] value: ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if operator is not None:
             pulumi.set(__self__, "operator", operator)
@@ -511,6 +547,10 @@ class AutoScalingConfigurationPolicyRuleMetricThresholdArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[int]]:
+        """
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
         return pulumi.get(self, "value")
 
     @value.setter

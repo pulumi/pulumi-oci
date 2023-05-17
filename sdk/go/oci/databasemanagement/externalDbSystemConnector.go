@@ -70,6 +70,9 @@ type ExternalDbSystemConnector struct {
 	// The user-friendly name for the external connector. The name does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalDbSystemId pulumi.StringOutput `pulumi:"externalDbSystemId"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
@@ -133,6 +136,9 @@ type externalDbSystemConnectorState struct {
 	// The user-friendly name for the external connector. The name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalDbSystemId *string `pulumi:"externalDbSystemId"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -162,6 +168,9 @@ type ExternalDbSystemConnectorState struct {
 	// The user-friendly name for the external connector. The name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalDbSystemId pulumi.StringPtrInput
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringPtrInput
@@ -189,6 +198,9 @@ type externalDbSystemConnectorArgs struct {
 	// The user-friendly name for the external connector. The name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
 }
 
@@ -203,6 +215,9 @@ type ExternalDbSystemConnectorArgs struct {
 	// The user-friendly name for the external connector. The name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalDbSystemId pulumi.StringInput
 }
 
@@ -331,6 +346,9 @@ func (o ExternalDbSystemConnectorOutput) DisplayName() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ExternalDbSystemConnectorOutput) ExternalDbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalDbSystemConnector) pulumi.StringOutput { return v.ExternalDbSystemId }).(pulumi.StringOutput)
 }

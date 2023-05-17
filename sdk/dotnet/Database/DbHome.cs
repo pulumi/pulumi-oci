@@ -37,6 +37,8 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) Details for creating a database.
+        /// 
+        /// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         /// </summary>
         [Output("database")]
         public Output<Outputs.DbHomeDatabase> Database { get; private set; } = null!;
@@ -139,6 +141,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("vmClusterId")]
         public Output<string> VmClusterId { get; private set; } = null!;
@@ -191,6 +197,8 @@ namespace Pulumi.Oci.Database
     {
         /// <summary>
         /// (Updatable) Details for creating a database.
+        /// 
+        /// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         /// </summary>
         [Input("database")]
         public Input<Inputs.DbHomeDatabaseArgs>? Database { get; set; }
@@ -275,6 +283,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("vmClusterId")]
         public Input<string>? VmClusterId { get; set; }
@@ -295,6 +307,8 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) Details for creating a database.
+        /// 
+        /// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         /// </summary>
         [Input("database")]
         public Input<Inputs.DbHomeDatabaseGetArgs>? Database { get; set; }
@@ -409,6 +423,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("vmClusterId")]
         public Input<string>? VmClusterId { get; set; }

@@ -138,12 +138,20 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
      * 
+     * If this attribute is not specified, the SDDC&#39;s `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you&#39;re creating the fourth ESXi host in the SDDC, and `instanceDisplayNamePrefix` is `MySDDC`, the host&#39;s display name is `MySDDC-4`.
+     * 
+     * Avoid entering confidential information.
+     * 
      */
     @Export(name="displayName", type=String.class, parameters={})
     private Output<String> displayName;
 
     /**
      * @return (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
+     * 
+     * If this attribute is not specified, the SDDC&#39;s `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you&#39;re creating the fourth ESXi host in the SDDC, and `instanceDisplayNamePrefix` is `MySDDC`, the host&#39;s display name is `MySDDC-4`.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -264,12 +272,18 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="sddcId", type=String.class, parameters={})
     private Output<String> sddcId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> sddcId() {

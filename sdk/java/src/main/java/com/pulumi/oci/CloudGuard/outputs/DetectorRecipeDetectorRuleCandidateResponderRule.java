@@ -15,6 +15,8 @@ public final class DetectorRecipeDetectorRuleCandidateResponderRule {
     /**
      * @return (Updatable) Detector recipe display name.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     private @Nullable String displayName;
     /**
@@ -31,6 +33,8 @@ public final class DetectorRecipeDetectorRuleCandidateResponderRule {
     private DetectorRecipeDetectorRuleCandidateResponderRule() {}
     /**
      * @return (Updatable) Detector recipe display name.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {

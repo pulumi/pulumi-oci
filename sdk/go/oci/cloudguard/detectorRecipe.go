@@ -38,14 +38,21 @@ type DetectorRecipe struct {
 	// (Updatable) Detector Rules to override from source detector recipe
 	DetectorRules DetectorRecipeDetectorRuleArrayOutput `pulumi:"detectorRules"`
 	// (Updatable) Detector recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// List of effective detector rules for the detector type for recipe after applying defaults
 	EffectiveDetectorRules DetectorRecipeEffectiveDetectorRuleArrayOutput `pulumi:"effectiveDetectorRules"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Owner of detector recipe
 	Owner pulumi.StringOutput `pulumi:"owner"`
 	// The id of the source detector recipe.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceDetectorRecipeId pulumi.StringOutput `pulumi:"sourceDetectorRecipeId"`
 	// The current state of the resource.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -105,14 +112,21 @@ type detectorRecipeState struct {
 	// (Updatable) Detector Rules to override from source detector recipe
 	DetectorRules []DetectorRecipeDetectorRule `pulumi:"detectorRules"`
 	// (Updatable) Detector recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// List of effective detector rules for the detector type for recipe after applying defaults
 	EffectiveDetectorRules []DetectorRecipeEffectiveDetectorRule `pulumi:"effectiveDetectorRules"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Owner of detector recipe
 	Owner *string `pulumi:"owner"`
 	// The id of the source detector recipe.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceDetectorRecipeId *string `pulumi:"sourceDetectorRecipeId"`
 	// The current state of the resource.
 	State *string `pulumi:"state"`
@@ -138,14 +152,21 @@ type DetectorRecipeState struct {
 	// (Updatable) Detector Rules to override from source detector recipe
 	DetectorRules DetectorRecipeDetectorRuleArrayInput
 	// (Updatable) Detector recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// List of effective detector rules for the detector type for recipe after applying defaults
 	EffectiveDetectorRules DetectorRecipeEffectiveDetectorRuleArrayInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags pulumi.MapInput
 	// Owner of detector recipe
 	Owner pulumi.StringPtrInput
 	// The id of the source detector recipe.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceDetectorRecipeId pulumi.StringPtrInput
 	// The current state of the resource.
 	State pulumi.StringPtrInput
@@ -175,10 +196,17 @@ type detectorRecipeArgs struct {
 	// (Updatable) Detector Rules to override from source detector recipe
 	DetectorRules []DetectorRecipeDetectorRule `pulumi:"detectorRules"`
 	// (Updatable) Detector recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The id of the source detector recipe.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceDetectorRecipeId *string `pulumi:"sourceDetectorRecipeId"`
 }
 
@@ -195,10 +223,17 @@ type DetectorRecipeArgs struct {
 	// (Updatable) Detector Rules to override from source detector recipe
 	DetectorRules DetectorRecipeDetectorRuleArrayInput
 	// (Updatable) Detector recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags pulumi.MapInput
 	// The id of the source detector recipe.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceDetectorRecipeId pulumi.StringPtrInput
 }
 
@@ -315,6 +350,8 @@ func (o DetectorRecipeOutput) DetectorRules() DetectorRecipeDetectorRuleArrayOut
 }
 
 // (Updatable) Detector recipe display name.
+//
+// Avoid entering confidential information.
 func (o DetectorRecipeOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DetectorRecipe) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -327,6 +364,8 @@ func (o DetectorRecipeOutput) EffectiveDetectorRules() DetectorRecipeEffectiveDe
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+//
+// Avoid entering confidential information.
 func (o DetectorRecipeOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DetectorRecipe) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
@@ -337,6 +376,9 @@ func (o DetectorRecipeOutput) Owner() pulumi.StringOutput {
 }
 
 // The id of the source detector recipe.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DetectorRecipeOutput) SourceDetectorRecipeId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DetectorRecipe) pulumi.StringOutput { return v.SourceDetectorRecipeId }).(pulumi.StringOutput)
 }

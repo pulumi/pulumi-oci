@@ -63,6 +63,10 @@ export class SetUserAssessmentBaseline extends pulumi.CustomResource {
     public readonly assessmentIds!: pulumi.Output<string[]>;
     /**
      * The OCID of the user assessment.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly userAssessmentId!: pulumi.Output<string>;
 
@@ -104,6 +108,10 @@ export interface SetUserAssessmentBaselineState {
     assessmentIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The OCID of the user assessment.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     userAssessmentId?: pulumi.Input<string>;
 }
@@ -118,6 +126,10 @@ export interface SetUserAssessmentBaselineArgs {
     assessmentIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The OCID of the user assessment.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     userAssessmentId: pulumi.Input<string>;
 }

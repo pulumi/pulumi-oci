@@ -195,12 +195,18 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, the targets contain the list of compartment OCIDs. If targetType is &#34;TAG&#34;, the targets contain the list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain exactly one item.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="targets")
     private @Nullable Output<List<String>> targets;
 
     /**
      * @return The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, the targets contain the list of compartment OCIDs. If targetType is &#34;TAG&#34;, the targets contain the list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain exactly one item.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<List<String>>> targets() {
@@ -484,6 +490,9 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param targets The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, the targets contain the list of compartment OCIDs. If targetType is &#34;TAG&#34;, the targets contain the list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain exactly one item.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -495,6 +504,9 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param targets The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, the targets contain the list of compartment OCIDs. If targetType is &#34;TAG&#34;, the targets contain the list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain exactly one item.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -504,6 +516,9 @@ public final class BudgetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param targets The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, the targets contain the list of compartment OCIDs. If targetType is &#34;TAG&#34;, the targets contain the list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain exactly one item.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

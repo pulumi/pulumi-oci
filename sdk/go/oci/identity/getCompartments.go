@@ -72,6 +72,8 @@ func GetCompartments(ctx *pulumi.Context, args *GetCompartmentsArgs, opts ...pul
 // A collection of arguments for invoking getCompartments.
 type GetCompartmentsArgs struct {
 	// Valid values are `ANY` and `ACCESSIBLE`. Default is `ANY`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). For the compartments on which the user indirectly has INSPECT permissions, a restricted set of fields is returned.
+	//
+	// When set to `ANY` permissions are not checked.
 	AccessLevel *string `pulumi:"accessLevel"`
 	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
 	CompartmentId string `pulumi:"compartmentId"`
@@ -117,6 +119,8 @@ func GetCompartmentsOutput(ctx *pulumi.Context, args GetCompartmentsOutputArgs, 
 // A collection of arguments for invoking getCompartments.
 type GetCompartmentsOutputArgs struct {
 	// Valid values are `ANY` and `ACCESSIBLE`. Default is `ANY`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). For the compartments on which the user indirectly has INSPECT permissions, a restricted set of fields is returned.
+	//
+	// When set to `ANY` permissions are not checked.
 	AccessLevel pulumi.StringPtrInput `pulumi:"accessLevel"`
 	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`

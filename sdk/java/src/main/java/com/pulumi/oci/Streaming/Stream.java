@@ -200,12 +200,18 @@ public class Stream extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The OCID of the stream pool that contains the stream.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="streamPoolId", type=String.class, parameters={})
     private Output<String> streamPoolId;
 
     /**
      * @return (Updatable) The OCID of the stream pool that contains the stream.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> streamPoolId() {

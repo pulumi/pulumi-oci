@@ -195,7 +195,11 @@ namespace Pulumi.Oci.Core
         public Output<string> VcnId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
+        /// (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("vxlanNetworkIdentifier")]
         public Output<string> VxlanNetworkIdentifier { get; private set; } = null!;
@@ -361,7 +365,11 @@ namespace Pulumi.Oci.Core
         public Input<string> VcnId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
+        /// (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("vxlanNetworkIdentifier")]
         public Input<string>? VxlanNetworkIdentifier { get; set; }
@@ -507,7 +515,11 @@ namespace Pulumi.Oci.Core
         public Input<string>? VcnId { get; set; }
 
         /// <summary>
-        /// (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
+        /// (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("vxlanNetworkIdentifier")]
         public Input<string>? VxlanNetworkIdentifier { get; set; }

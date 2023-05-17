@@ -30,6 +30,11 @@ export type FusionEnvironmentRefreshActivity = import("./fusionEnvironmentRefres
 export const FusionEnvironmentRefreshActivity: typeof import("./fusionEnvironmentRefreshActivity").FusionEnvironmentRefreshActivity = null as any;
 utilities.lazyLoad(exports, ["FusionEnvironmentRefreshActivity"], () => require("./fusionEnvironmentRefreshActivity"));
 
+export { FusionEnvironmentServiceAttachmentArgs, FusionEnvironmentServiceAttachmentState } from "./fusionEnvironmentServiceAttachment";
+export type FusionEnvironmentServiceAttachment = import("./fusionEnvironmentServiceAttachment").FusionEnvironmentServiceAttachment;
+export const FusionEnvironmentServiceAttachment: typeof import("./fusionEnvironmentServiceAttachment").FusionEnvironmentServiceAttachment = null as any;
+utilities.lazyLoad(exports, ["FusionEnvironmentServiceAttachment"], () => require("./fusionEnvironmentServiceAttachment"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -45,6 +50,8 @@ const _module = {
                 return new FusionEnvironmentFamily(name, <any>undefined, { urn })
             case "oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity":
                 return new FusionEnvironmentRefreshActivity(name, <any>undefined, { urn })
+            case "oci:FusionApps/fusionEnvironmentServiceAttachment:FusionEnvironmentServiceAttachment":
+                return new FusionEnvironmentServiceAttachment(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -55,3 +62,4 @@ pulumi.runtime.registerResourceModule("oci", "FusionApps/fusionEnvironmentAdminU
 pulumi.runtime.registerResourceModule("oci", "FusionApps/fusionEnvironmentDataMaskingActivity", _module)
 pulumi.runtime.registerResourceModule("oci", "FusionApps/fusionEnvironmentFamily", _module)
 pulumi.runtime.registerResourceModule("oci", "FusionApps/fusionEnvironmentRefreshActivity", _module)
+pulumi.runtime.registerResourceModule("oci", "FusionApps/fusionEnvironmentServiceAttachment", _module)

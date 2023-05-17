@@ -1050,6 +1050,10 @@ class ContainerInstanceContainer(dict):
         :param str image_url: The container image information. Currently only support public docker registry. Can be either image name, e.g `containerImage`, image name with version, e.g `containerImage:v1` or complete docker image Url e.g `docker.io/library/containerImage:latest`. If no registry is provided, will default the registry to public docker hub `docker.io/library`. The registry used for container image must be reachable over the Container Instance's VNIC.
         :param Sequence[str] additional_capabilities: A list of additional capabilities for the container.
         :param Sequence[str] arguments: A list of string arguments for a container's entrypoint process.
+               
+               Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+               
+               All arguments together must be 64KB or smaller.
         :param str availability_domain: Availability Domain where the ContainerInstance should be created.
         :param Sequence[str] commands: The list of strings which will be concatenated to a single command for checking container's status.
         :param str compartment_id: (Updatable) Compartment Identifier
@@ -1057,13 +1061,19 @@ class ContainerInstanceContainer(dict):
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
         :param Mapping[str, Any] environment_variables: A map of additional environment variables to set in the environment of the container's entrypoint process. These variables are in addition to any variables already defined in the container's image.
+               
+               All environment variables together, name and values, must be 64KB or smaller.
         :param str fault_domain: Fault Domain where the ContainerInstance should run.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param Sequence['ContainerInstanceContainerHealthCheckArgs'] health_checks: list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
         :param bool is_resource_principal_disabled: Determines if the Container will have access to the Container Instance Resource Principal.  This method utilizes resource principal version 2.2. Please refer to  https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal  for detailed explanation of how to leverage the exposed resource principal elements.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param 'ContainerInstanceContainerResourceConfigArgs' resource_config: The size and amount of resources available to the Container.
-        :param str state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+        :param str state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the the ContainerInstance was created. An RFC3339 formatted datetime string
         :param str time_updated: The time the ContainerInstance was updated. An RFC3339 formatted datetime string
@@ -1141,6 +1151,10 @@ class ContainerInstanceContainer(dict):
     def arguments(self) -> Optional[Sequence[str]]:
         """
         A list of string arguments for a container's entrypoint process.
+
+        Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+
+        All arguments together must be 64KB or smaller.
         """
         return pulumi.get(self, "arguments")
 
@@ -1202,6 +1216,8 @@ class ContainerInstanceContainer(dict):
     def environment_variables(self) -> Optional[Mapping[str, Any]]:
         """
         A map of additional environment variables to set in the environment of the container's entrypoint process. These variables are in addition to any variables already defined in the container's image.
+
+        All environment variables together, name and values, must be 64KB or smaller.
         """
         return pulumi.get(self, "environment_variables")
 
@@ -1262,7 +1278,11 @@ class ContainerInstanceContainer(dict):
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+        (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "state")
 
@@ -2458,6 +2478,8 @@ class NodePoolNodeConfigDetails(dict):
                  nsg_ids: Optional[Sequence[str]] = None):
         """
         :param Sequence['NodePoolNodeConfigDetailsPlacementConfigArgs'] placement_configs: (Updatable) The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
+               
+               To use the node pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
         :param int size: (Updatable) The number of nodes that should be in the node pool.
         :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -2486,6 +2508,8 @@ class NodePoolNodeConfigDetails(dict):
     def placement_configs(self) -> Sequence['outputs.NodePoolNodeConfigDetailsPlacementConfig']:
         """
         (Updatable) The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
+
+        To use the node pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
         """
         return pulumi.get(self, "placement_configs")
 
@@ -3348,6 +3372,10 @@ class VirtualNodePoolVirtualNodeTags(dict):
         """
         :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
@@ -3367,6 +3395,10 @@ class VirtualNodePoolVirtualNodeTags(dict):
     def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "freeform_tags")
 

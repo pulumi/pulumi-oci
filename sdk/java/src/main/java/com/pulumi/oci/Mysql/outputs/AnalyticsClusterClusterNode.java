@@ -19,6 +19,9 @@ public final class AnalyticsClusterClusterNode {
     /**
      * @return (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private @Nullable String state;
     /**
@@ -42,6 +45,9 @@ public final class AnalyticsClusterClusterNode {
     }
     /**
      * @return (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> state() {

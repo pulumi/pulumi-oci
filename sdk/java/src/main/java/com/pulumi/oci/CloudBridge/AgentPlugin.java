@@ -150,12 +150,18 @@ public class AgentPlugin extends com.pulumi.resources.CustomResource {
     /**
      * Unique plugin identifier path parameter.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="pluginName", type=String.class, parameters={})
     private Output<String> pluginName;
 
     /**
      * @return Unique plugin identifier path parameter.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> pluginName() {

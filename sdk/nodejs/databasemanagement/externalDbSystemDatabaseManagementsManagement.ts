@@ -53,6 +53,10 @@ export class ExternalDbSystemDatabaseManagementsManagement extends pulumi.Custom
 
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly enableDatabaseManagement!: pulumi.Output<boolean>;
     /**
@@ -103,6 +107,10 @@ export class ExternalDbSystemDatabaseManagementsManagement extends pulumi.Custom
 export interface ExternalDbSystemDatabaseManagementsManagementState {
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     enableDatabaseManagement?: pulumi.Input<boolean>;
     /**
@@ -121,6 +129,10 @@ export interface ExternalDbSystemDatabaseManagementsManagementState {
 export interface ExternalDbSystemDatabaseManagementsManagementArgs {
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     enableDatabaseManagement: pulumi.Input<boolean>;
     /**

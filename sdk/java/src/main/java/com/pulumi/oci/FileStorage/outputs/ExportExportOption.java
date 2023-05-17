@@ -40,6 +40,8 @@ public final class ExportExportOption {
     /**
      * @return (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
      * 
+     * **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
+     * 
      */
     private String source;
 
@@ -81,6 +83,8 @@ public final class ExportExportOption {
     }
     /**
      * @return (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
+     * 
+     * **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
      * 
      */
     public String source() {

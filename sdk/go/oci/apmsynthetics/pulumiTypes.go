@@ -2474,6 +2474,9 @@ type ScriptParameter struct {
 	// (Updatable) Name of the parameter.
 	ParamName string `pulumi:"paramName"`
 	// (Updatable) Value of the parameter.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ParamValue *string `pulumi:"paramValue"`
 	// Details of the script parameters, paramName must be from the script content and these details can be used to overwrite the default parameter present in the script content.
 	ScriptParameters []ScriptParameterScriptParameter `pulumi:"scriptParameters"`
@@ -2498,6 +2501,9 @@ type ScriptParameterArgs struct {
 	// (Updatable) Name of the parameter.
 	ParamName pulumi.StringInput `pulumi:"paramName"`
 	// (Updatable) Value of the parameter.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ParamValue pulumi.StringPtrInput `pulumi:"paramValue"`
 	// Details of the script parameters, paramName must be from the script content and these details can be used to overwrite the default parameter present in the script content.
 	ScriptParameters ScriptParameterScriptParameterArrayInput `pulumi:"scriptParameters"`
@@ -2570,6 +2576,9 @@ func (o ScriptParameterOutput) ParamName() pulumi.StringOutput {
 }
 
 // (Updatable) Value of the parameter.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ScriptParameterOutput) ParamValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScriptParameter) *string { return v.ParamValue }).(pulumi.StringPtrOutput)
 }
@@ -2605,6 +2614,9 @@ type ScriptParameterScriptParameter struct {
 	// (Updatable) Name of the parameter.
 	ParamName *string `pulumi:"paramName"`
 	// (Updatable) Value of the parameter.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ParamValue *string `pulumi:"paramValue"`
 }
 
@@ -2625,6 +2637,9 @@ type ScriptParameterScriptParameterArgs struct {
 	// (Updatable) Name of the parameter.
 	ParamName pulumi.StringPtrInput `pulumi:"paramName"`
 	// (Updatable) Value of the parameter.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ParamValue pulumi.StringPtrInput `pulumi:"paramValue"`
 }
 
@@ -2690,6 +2705,9 @@ func (o ScriptParameterScriptParameterOutput) ParamName() pulumi.StringPtrOutput
 }
 
 // (Updatable) Value of the parameter.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ScriptParameterScriptParameterOutput) ParamValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScriptParameterScriptParameter) *string { return v.ParamValue }).(pulumi.StringPtrOutput)
 }

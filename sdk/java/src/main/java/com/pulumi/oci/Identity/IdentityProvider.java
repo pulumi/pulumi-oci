@@ -227,12 +227,18 @@ public class IdentityProvider extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The protocol used for federation.  Example: `SAML2`
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="protocol", type=String.class, parameters={})
     private Output<String> protocol;
 
     /**
      * @return (Updatable) The protocol used for federation.  Example: `SAML2`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> protocol() {

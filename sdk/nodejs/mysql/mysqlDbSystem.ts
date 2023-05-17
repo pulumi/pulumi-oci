@@ -120,6 +120,10 @@ export class MysqlDbSystem extends pulumi.CustomResource {
     public /*out*/ readonly analyticsClusters!: pulumi.Output<outputs.Mysql.MysqlDbSystemAnalyticsCluster[]>;
     /**
      * The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+     *
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+     *
+     * For a standalone DB System, this defines the availability domain in which the DB System is placed.
      */
     public readonly availabilityDomain!: pulumi.Output<string>;
     /**
@@ -172,6 +176,10 @@ export class MysqlDbSystem extends pulumi.CustomResource {
     public /*out*/ readonly endpoints!: pulumi.Output<outputs.Mysql.MysqlDbSystemEndpoint[]>;
     /**
      * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+     *
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+     *
+     * For a standalone DB System, this defines the fault domain in which the DB System is placed.
      */
     public readonly faultDomain!: pulumi.Output<string>;
     /**
@@ -184,6 +192,10 @@ export class MysqlDbSystem extends pulumi.CustomResource {
     public /*out*/ readonly heatWaveClusters!: pulumi.Output<outputs.Mysql.MysqlDbSystemHeatWaveCluster[]>;
     /**
      * The hostname for the primary endpoint of the DB System. Used for DNS.
+     *
+     * The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+     *
+     * Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
      */
     public readonly hostnameLabel!: pulumi.Output<string>;
     /**
@@ -200,6 +212,8 @@ export class MysqlDbSystem extends pulumi.CustomResource {
     public /*out*/ readonly isHeatWaveClusterAttached!: pulumi.Output<boolean>;
     /**
      * (Updatable) Specifies if the DB System is highly available.
+     *
+     * When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
      */
     public readonly isHighlyAvailable!: pulumi.Output<boolean>;
     /**
@@ -233,6 +247,9 @@ export class MysqlDbSystem extends pulumi.CustomResource {
     public readonly shapeName!: pulumi.Output<string>;
     /**
      * It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly shutdownType!: pulumi.Output<string | undefined>;
     /**
@@ -383,6 +400,10 @@ export interface MysqlDbSystemState {
     analyticsClusters?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemAnalyticsCluster>[]>;
     /**
      * The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+     *
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+     *
+     * For a standalone DB System, this defines the availability domain in which the DB System is placed.
      */
     availabilityDomain?: pulumi.Input<string>;
     /**
@@ -435,6 +456,10 @@ export interface MysqlDbSystemState {
     endpoints?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemEndpoint>[]>;
     /**
      * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+     *
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+     *
+     * For a standalone DB System, this defines the fault domain in which the DB System is placed.
      */
     faultDomain?: pulumi.Input<string>;
     /**
@@ -447,6 +472,10 @@ export interface MysqlDbSystemState {
     heatWaveClusters?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemHeatWaveCluster>[]>;
     /**
      * The hostname for the primary endpoint of the DB System. Used for DNS.
+     *
+     * The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+     *
+     * Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
      */
     hostnameLabel?: pulumi.Input<string>;
     /**
@@ -463,6 +492,8 @@ export interface MysqlDbSystemState {
     isHeatWaveClusterAttached?: pulumi.Input<boolean>;
     /**
      * (Updatable) Specifies if the DB System is highly available.
+     *
+     * When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
      */
     isHighlyAvailable?: pulumi.Input<boolean>;
     /**
@@ -496,6 +527,9 @@ export interface MysqlDbSystemState {
     shapeName?: pulumi.Input<string>;
     /**
      * It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     shutdownType?: pulumi.Input<string>;
     /**
@@ -534,6 +568,10 @@ export interface MysqlDbSystemArgs {
     adminUsername?: pulumi.Input<string>;
     /**
      * The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+     *
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+     *
+     * For a standalone DB System, this defines the availability domain in which the DB System is placed.
      */
     availabilityDomain: pulumi.Input<string>;
     /**
@@ -574,6 +612,10 @@ export interface MysqlDbSystemArgs {
     displayName?: pulumi.Input<string>;
     /**
      * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+     *
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+     *
+     * For a standalone DB System, this defines the fault domain in which the DB System is placed.
      */
     faultDomain?: pulumi.Input<string>;
     /**
@@ -582,6 +624,10 @@ export interface MysqlDbSystemArgs {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The hostname for the primary endpoint of the DB System. Used for DNS.
+     *
+     * The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+     *
+     * Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
      */
     hostnameLabel?: pulumi.Input<string>;
     /**
@@ -590,6 +636,8 @@ export interface MysqlDbSystemArgs {
     ipAddress?: pulumi.Input<string>;
     /**
      * (Updatable) Specifies if the DB System is highly available.
+     *
+     * When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
      */
     isHighlyAvailable?: pulumi.Input<boolean>;
     /**
@@ -615,6 +663,9 @@ export interface MysqlDbSystemArgs {
     shapeName: pulumi.Input<string>;
     /**
      * It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     shutdownType?: pulumi.Input<string>;
     /**

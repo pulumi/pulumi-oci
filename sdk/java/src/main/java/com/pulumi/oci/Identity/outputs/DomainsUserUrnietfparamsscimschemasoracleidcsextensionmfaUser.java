@@ -20,55 +20,181 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * @return (Updatable) A list of bypass codes belongs to user
      * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     private @Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode> bypassCodes;
     /**
      * @return (Updatable) A list of devices enrolled by the user.
+     * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     private @Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice> devices;
     /**
      * @return (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * idcsAllowUpdatesInReadOnlyMode: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     private @Nullable Integer loginAttempts;
     /**
      * @return (Updatable) This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+     * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     private @Nullable String mfaEnabledOn;
     /**
      * @return (Updatable) User MFA Ignored Apps Identifiers
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable List<String> mfaIgnoredApps;
     /**
      * @return (Updatable) User Opted for MFA
+     * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable String mfaStatus;
     /**
      * @return (Updatable) Preferred Authentication Factor Type
      * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String preferredAuthenticationFactor;
     /**
      * @return (Updatable) Preferred Authentication method
+     * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable String preferredAuthenticationMethod;
     /**
      * @return (Updatable) User preferred device
      * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     private @Nullable DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice preferredDevice;
     /**
      * @return (Updatable) Preferred Third party vendor name
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String preferredThirdPartyVendor;
     /**
      * @return (Updatable) A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted User Agents to authenticate users.  A User Agent is software application that a user uses to issue requests. For example, a User Agent could be a particular browser (possibly one of several executing on a desktop or laptop) or a particular mobile application (again, oneof several executing on a particular mobile device). A User Agent is trusted once the Multi-Factor Authentication has verified it in some way.
+     * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     private @Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent> trustedUserAgents;
@@ -77,12 +203,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * @return (Updatable) A list of bypass codes belongs to user
      * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     public List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode> bypassCodes() {
         return this.bypassCodes == null ? List.of() : this.bypassCodes;
     }
     /**
      * @return (Updatable) A list of devices enrolled by the user.
+     * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice> devices() {
@@ -91,12 +239,33 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * @return (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * idcsAllowUpdatesInReadOnlyMode: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     public Optional<Integer> loginAttempts() {
         return Optional.ofNullable(this.loginAttempts);
     }
     /**
      * @return (Updatable) This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+     * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     public Optional<String> mfaEnabledOn() {
@@ -105,12 +274,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * @return (Updatable) User MFA Ignored Apps Identifiers
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public List<String> mfaIgnoredApps() {
         return this.mfaIgnoredApps == null ? List.of() : this.mfaIgnoredApps;
     }
     /**
      * @return (Updatable) User Opted for MFA
+     * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> mfaStatus() {
@@ -119,12 +312,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * @return (Updatable) Preferred Authentication Factor Type
      * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> preferredAuthenticationFactor() {
         return Optional.ofNullable(this.preferredAuthenticationFactor);
     }
     /**
      * @return (Updatable) Preferred Authentication method
+     * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> preferredAuthenticationMethod() {
@@ -133,6 +350,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * @return (Updatable) User preferred device
      * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     public Optional<DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice> preferredDevice() {
         return Optional.ofNullable(this.preferredDevice);
@@ -140,12 +369,35 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * @return (Updatable) Preferred Third party vendor name
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> preferredThirdPartyVendor() {
         return Optional.ofNullable(this.preferredThirdPartyVendor);
     }
     /**
      * @return (Updatable) A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted User Agents to authenticate users.  A User Agent is software application that a user uses to issue requests. For example, a User Agent could be a particular browser (possibly one of several executing on a desktop or laptop) or a particular mobile application (again, oneof several executing on a particular mobile device). A User Agent is trusted once the Multi-Factor Authentication has verified it in some way.
+     * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent> trustedUserAgents() {

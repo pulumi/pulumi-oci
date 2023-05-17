@@ -100,6 +100,9 @@ type NetworkSource struct {
 	// Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VirtualSourceLists NetworkSourceVirtualSourceListArrayOutput `pulumi:"virtualSourceLists"`
 }
 
@@ -159,6 +162,9 @@ type networkSourceState struct {
 	// Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 	// (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VirtualSourceLists []NetworkSourceVirtualSourceList `pulumi:"virtualSourceLists"`
 }
 
@@ -184,6 +190,9 @@ type NetworkSourceState struct {
 	// Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 	// (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VirtualSourceLists NetworkSourceVirtualSourceListArrayInput
 }
 
@@ -207,6 +216,9 @@ type networkSourceArgs struct {
 	// (Updatable) A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses than those listed in the network source. Currently, only `all` and `none` are supported. The default is `all`.
 	Services []string `pulumi:"services"`
 	// (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VirtualSourceLists []NetworkSourceVirtualSourceList `pulumi:"virtualSourceLists"`
 }
 
@@ -227,6 +239,9 @@ type NetworkSourceArgs struct {
 	// (Updatable) A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses than those listed in the network source. Currently, only `all` and `none` are supported. The default is `all`.
 	Services pulumi.StringArrayInput
 	// (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VirtualSourceLists NetworkSourceVirtualSourceListArrayInput
 }
 
@@ -368,6 +383,9 @@ func (o NetworkSourceOutput) TimeCreated() pulumi.StringOutput {
 }
 
 // (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o NetworkSourceOutput) VirtualSourceLists() NetworkSourceVirtualSourceListArrayOutput {
 	return o.ApplyT(func(v *NetworkSource) NetworkSourceVirtualSourceListArrayOutput { return v.VirtualSourceLists }).(NetworkSourceVirtualSourceListArrayOutput)
 }

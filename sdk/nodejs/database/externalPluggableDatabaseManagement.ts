@@ -62,6 +62,9 @@ export class ExternalPluggableDatabaseManagement extends pulumi.CustomResource {
     public readonly externalDatabaseConnectorId!: pulumi.Output<string>;
     /**
      * The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly externalPluggableDatabaseId!: pulumi.Output<string>;
 
@@ -112,6 +115,9 @@ export interface ExternalPluggableDatabaseManagementState {
     externalDatabaseConnectorId?: pulumi.Input<string>;
     /**
      * The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     externalPluggableDatabaseId?: pulumi.Input<string>;
 }
@@ -127,6 +133,9 @@ export interface ExternalPluggableDatabaseManagementArgs {
     externalDatabaseConnectorId: pulumi.Input<string>;
     /**
      * The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     externalPluggableDatabaseId: pulumi.Input<string>;
 }

@@ -14,12 +14,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOf
     /**
      * @return (Updatable) Description:
      * 
+     * **Added In:** 18.2.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     private @Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent> termsOfUseConsents;
 
     private DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser() {}
     /**
      * @return (Updatable) Description:
+     * 
+     * **Added In:** 18.2.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public List<DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent> termsOfUseConsents() {

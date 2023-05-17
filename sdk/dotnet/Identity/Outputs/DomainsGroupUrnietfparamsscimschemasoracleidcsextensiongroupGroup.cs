@@ -15,30 +15,109 @@ namespace Pulumi.Oci.Identity.Outputs
     {
         /// <summary>
         /// (Updatable) A list of appRoles that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public readonly ImmutableArray<Outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole> AppRoles;
         /// <summary>
         /// (Updatable) Source from which this group got created.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeNameMappings: [[defaultValue:import]]
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? CreationMechanism;
         /// <summary>
         /// (Updatable) Group description
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Description
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Description]]
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? Description;
         /// <summary>
         /// (Updatable) Grants assigned to group
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public readonly ImmutableArray<Outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant> Grants;
         /// <summary>
         /// (Updatable) Group owners
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCompositeKey: [value, type]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public readonly ImmutableArray<Outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwner> Owners;
         /// <summary>
         /// (Updatable) Password Policy associated with this Group.
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public readonly ImmutableArray<Outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy> PasswordPolicies;
         /// <summary>
         /// (Updatable) The entity that created this Group.
+        /// 
+        /// **Added In:** 18.4.2
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public readonly ImmutableArray<Outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromApp> SyncedFromApps;
 

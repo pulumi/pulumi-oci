@@ -12,6 +12,8 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigP
     /**
      * @return Whether the plugin should be enabled or disabled. Accepted values are `ENABLED` and `DISABLED`
      * 
+     * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
+     * 
      */
     private String desiredState;
     /**
@@ -23,6 +25,8 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigP
     private InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig() {}
     /**
      * @return Whether the plugin should be enabled or disabled. Accepted values are `ENABLED` and `DISABLED`
+     * 
+     * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
      * 
      */
     public String desiredState() {

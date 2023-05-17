@@ -20,6 +20,10 @@ class SmtpCredentialArgs:
         The set of arguments for constructing a SmtpCredential resource.
         :param pulumi.Input[str] description: (Updatable) The description you assign to the SMTP credentials during creation. Does not have to be unique, and it's changeable.
         :param pulumi.Input[str] user_id: The OCID of the user.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "user_id", user_id)
@@ -41,6 +45,10 @@ class SmtpCredentialArgs:
     def user_id(self) -> pulumi.Input[str]:
         """
         The OCID of the user.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "user_id")
 
@@ -69,6 +77,10 @@ class _SmtpCredentialState:
         :param pulumi.Input[str] time_created: Date and time the `SmtpCredential` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_expires: Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] user_id: The OCID of the user.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] username: The SMTP user name.
         """
         if description is not None:
@@ -165,6 +177,10 @@ class _SmtpCredentialState:
     def user_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the user.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "user_id")
 
@@ -224,6 +240,10 @@ class SmtpCredential(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] description: (Updatable) The description you assign to the SMTP credentials during creation. Does not have to be unique, and it's changeable.
         :param pulumi.Input[str] user_id: The OCID of the user.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -328,6 +348,10 @@ class SmtpCredential(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: Date and time the `SmtpCredential` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_expires: Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] user_id: The OCID of the user.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] username: The SMTP user name.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -397,6 +421,10 @@ class SmtpCredential(pulumi.CustomResource):
     def user_id(self) -> pulumi.Output[str]:
         """
         The OCID of the user.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "user_id")
 

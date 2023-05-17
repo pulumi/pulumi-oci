@@ -91,6 +91,10 @@ export class Migration extends pulumi.CustomResource {
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
      * (Updatable) Replication schedule identifier
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly replicationScheduleId!: pulumi.Output<string>;
     /**
@@ -189,6 +193,10 @@ export interface MigrationState {
     lifecycleDetails?: pulumi.Input<string>;
     /**
      * (Updatable) Replication schedule identifier
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     replicationScheduleId?: pulumi.Input<string>;
     /**
@@ -235,6 +243,10 @@ export interface MigrationArgs {
     isCompleted?: pulumi.Input<boolean>;
     /**
      * (Updatable) Replication schedule identifier
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     replicationScheduleId?: pulumi.Input<string>;
 }

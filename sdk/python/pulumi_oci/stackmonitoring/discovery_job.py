@@ -31,7 +31,11 @@ class DiscoveryJobArgs:
         :param pulumi.Input[str] discovery_client: Client who submits discovery job.
         :param pulumi.Input[str] discovery_type: Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] should_propagate_tags_to_discovered_resources: If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+        :param pulumi.Input[bool] should_propagate_tags_to_discovered_resources: If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "discovery_details", discovery_details)
@@ -122,7 +126,11 @@ class DiscoveryJobArgs:
     @pulumi.getter(name="shouldPropagateTagsToDiscoveredResources")
     def should_propagate_tags_to_discovered_resources(self) -> Optional[pulumi.Input[bool]]:
         """
-        If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+        If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "should_propagate_tags_to_discovered_resources")
 
@@ -156,7 +164,11 @@ class _DiscoveryJobState:
         :param pulumi.Input['DiscoveryJobDiscoveryDetailsArgs'] discovery_details: The request of DiscoveryJob Resource details.
         :param pulumi.Input[str] discovery_type: Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] should_propagate_tags_to_discovered_resources: If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+        :param pulumi.Input[bool] should_propagate_tags_to_discovered_resources: If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the DiscoveryJob Resource.
         :param pulumi.Input[str] status: Specifies the status of the discovery job
         :param pulumi.Input[str] status_message: The short summary of the status of the discovery job
@@ -270,7 +282,11 @@ class _DiscoveryJobState:
     @pulumi.getter(name="shouldPropagateTagsToDiscoveredResources")
     def should_propagate_tags_to_discovered_resources(self) -> Optional[pulumi.Input[bool]]:
         """
-        If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+        If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "should_propagate_tags_to_discovered_resources")
 
@@ -436,7 +452,11 @@ class DiscoveryJob(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['DiscoveryJobDiscoveryDetailsArgs']] discovery_details: The request of DiscoveryJob Resource details.
         :param pulumi.Input[str] discovery_type: Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] should_propagate_tags_to_discovered_resources: If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+        :param pulumi.Input[bool] should_propagate_tags_to_discovered_resources: If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -582,7 +602,11 @@ class DiscoveryJob(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['DiscoveryJobDiscoveryDetailsArgs']] discovery_details: The request of DiscoveryJob Resource details.
         :param pulumi.Input[str] discovery_type: Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] should_propagate_tags_to_discovered_resources: If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+        :param pulumi.Input[bool] should_propagate_tags_to_discovered_resources: If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the DiscoveryJob Resource.
         :param pulumi.Input[str] status: Specifies the status of the discovery job
         :param pulumi.Input[str] status_message: The short summary of the status of the discovery job
@@ -663,7 +687,11 @@ class DiscoveryJob(pulumi.CustomResource):
     @pulumi.getter(name="shouldPropagateTagsToDiscoveredResources")
     def should_propagate_tags_to_discovered_resources(self) -> pulumi.Output[bool]:
         """
-        If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+        If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "should_propagate_tags_to_discovered_resources")
 

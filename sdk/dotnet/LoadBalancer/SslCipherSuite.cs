@@ -58,6 +58,19 @@ namespace Pulumi.Oci.LoadBalancer
 
         /// <summary>
         /// A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+        /// 
+        /// **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle's predefined or reserved SSL cipher suite names:
+        /// * oci-default-ssl-cipher-suite-v1
+        /// * oci-modern-ssl-cipher-suite-v1
+        /// * oci-compatible-ssl-cipher-suite-v1
+        /// * oci-wider-compatible-ssl-cipher-suite-v1
+        /// * oci-customized-ssl-cipher-suite
+        /// 
+        /// example: `example_cipher_suite`
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -131,6 +144,19 @@ namespace Pulumi.Oci.LoadBalancer
 
         /// <summary>
         /// A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+        /// 
+        /// **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle's predefined or reserved SSL cipher suite names:
+        /// * oci-default-ssl-cipher-suite-v1
+        /// * oci-modern-ssl-cipher-suite-v1
+        /// * oci-compatible-ssl-cipher-suite-v1
+        /// * oci-wider-compatible-ssl-cipher-suite-v1
+        /// * oci-customized-ssl-cipher-suite
+        /// 
+        /// example: `example_cipher_suite`
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -163,6 +189,19 @@ namespace Pulumi.Oci.LoadBalancer
 
         /// <summary>
         /// A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+        /// 
+        /// **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle's predefined or reserved SSL cipher suite names:
+        /// * oci-default-ssl-cipher-suite-v1
+        /// * oci-modern-ssl-cipher-suite-v1
+        /// * oci-compatible-ssl-cipher-suite-v1
+        /// * oci-wider-compatible-ssl-cipher-suite-v1
+        /// * oci-customized-ssl-cipher-suite
+        /// 
+        /// example: `example_cipher_suite`
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

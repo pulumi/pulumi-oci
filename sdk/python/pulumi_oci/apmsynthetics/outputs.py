@@ -1217,6 +1217,10 @@ class ScriptParameter(dict):
         :param bool is_overwritten: If parameter value is default or overwritten.
         :param bool is_secret: (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
         :param str param_value: (Updatable) Value of the parameter.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param Sequence['ScriptParameterScriptParameterArgs'] script_parameters: Details of the script parameters, paramName must be from the script content and these details can be used to overwrite the default parameter present in the script content.
         """
         pulumi.set(__self__, "param_name", param_name)
@@ -1258,6 +1262,10 @@ class ScriptParameter(dict):
     def param_value(self) -> Optional[str]:
         """
         (Updatable) Value of the parameter.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "param_value")
 
@@ -1301,6 +1309,10 @@ class ScriptParameterScriptParameter(dict):
         :param bool is_secret: (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
         :param str param_name: (Updatable) Name of the parameter.
         :param str param_value: (Updatable) Value of the parameter.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if is_secret is not None:
             pulumi.set(__self__, "is_secret", is_secret)
@@ -1330,6 +1342,10 @@ class ScriptParameterScriptParameter(dict):
     def param_value(self) -> Optional[str]:
         """
         (Updatable) Value of the parameter.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "param_value")
 

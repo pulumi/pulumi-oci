@@ -126,12 +126,18 @@ public final class RemotePeeringConnectionState extends com.pulumi.resources.Res
     /**
      * The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="peerRegionName")
     private @Nullable Output<String> peerRegionName;
 
     /**
      * @return The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> peerRegionName() {
@@ -383,6 +389,9 @@ public final class RemotePeeringConnectionState extends com.pulumi.resources.Res
         /**
          * @param peerRegionName The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -393,6 +402,9 @@ public final class RemotePeeringConnectionState extends com.pulumi.resources.Res
 
         /**
          * @param peerRegionName The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

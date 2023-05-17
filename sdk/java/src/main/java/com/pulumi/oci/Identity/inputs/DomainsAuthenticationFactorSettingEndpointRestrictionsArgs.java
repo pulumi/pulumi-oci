@@ -17,12 +17,34 @@ public final class DomainsAuthenticationFactorSettingEndpointRestrictionsArgs ex
     /**
      * (Updatable) Maximum number of days until an endpoint can be trusted
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 180
+     * * idcsMinValue: 1
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="maxEndpointTrustDurationInDays", required=true)
     private Output<Integer> maxEndpointTrustDurationInDays;
 
     /**
      * @return (Updatable) Maximum number of days until an endpoint can be trusted
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 180
+     * * idcsMinValue: 1
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Output<Integer> maxEndpointTrustDurationInDays() {
@@ -32,12 +54,34 @@ public final class DomainsAuthenticationFactorSettingEndpointRestrictionsArgs ex
     /**
      * (Updatable) Maximum number of enrolled devices per user
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 20
+     * * idcsMinValue: 1
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="maxEnrolledDevices", required=true)
     private Output<Integer> maxEnrolledDevices;
 
     /**
      * @return (Updatable) Maximum number of enrolled devices per user
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 20
+     * * idcsMinValue: 1
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Output<Integer> maxEnrolledDevices() {
@@ -47,12 +91,34 @@ public final class DomainsAuthenticationFactorSettingEndpointRestrictionsArgs ex
     /**
      * (Updatable) An integer that represents the maximum number of failed MFA logins before an account is locked
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 20
+     * * idcsMinValue: 5
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="maxIncorrectAttempts", required=true)
     private Output<Integer> maxIncorrectAttempts;
 
     /**
      * @return (Updatable) An integer that represents the maximum number of failed MFA logins before an account is locked
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 20
+     * * idcsMinValue: 5
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Output<Integer> maxIncorrectAttempts() {
@@ -62,12 +128,34 @@ public final class DomainsAuthenticationFactorSettingEndpointRestrictionsArgs ex
     /**
      * (Updatable) Max number of trusted endpoints per user
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 20
+     * * idcsMinValue: 1
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="maxTrustedEndpoints", required=true)
     private Output<Integer> maxTrustedEndpoints;
 
     /**
      * @return (Updatable) Max number of trusted endpoints per user
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 20
+     * * idcsMinValue: 1
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Output<Integer> maxTrustedEndpoints() {
@@ -77,12 +165,30 @@ public final class DomainsAuthenticationFactorSettingEndpointRestrictionsArgs ex
     /**
      * (Updatable) Specify if trusted endpoints are enabled
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="trustedEndpointsEnabled", required=true)
     private Output<Boolean> trustedEndpointsEnabled;
 
     /**
      * @return (Updatable) Specify if trusted endpoints are enabled
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Output<Boolean> trustedEndpointsEnabled() {
@@ -120,6 +226,17 @@ public final class DomainsAuthenticationFactorSettingEndpointRestrictionsArgs ex
         /**
          * @param maxEndpointTrustDurationInDays (Updatable) Maximum number of days until an endpoint can be trusted
          * 
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 180
+         * * idcsMinValue: 1
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -131,6 +248,17 @@ public final class DomainsAuthenticationFactorSettingEndpointRestrictionsArgs ex
         /**
          * @param maxEndpointTrustDurationInDays (Updatable) Maximum number of days until an endpoint can be trusted
          * 
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 180
+         * * idcsMinValue: 1
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -140,6 +268,17 @@ public final class DomainsAuthenticationFactorSettingEndpointRestrictionsArgs ex
 
         /**
          * @param maxEnrolledDevices (Updatable) Maximum number of enrolled devices per user
+         * 
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 20
+         * * idcsMinValue: 1
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -152,6 +291,17 @@ public final class DomainsAuthenticationFactorSettingEndpointRestrictionsArgs ex
         /**
          * @param maxEnrolledDevices (Updatable) Maximum number of enrolled devices per user
          * 
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 20
+         * * idcsMinValue: 1
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -161,6 +311,17 @@ public final class DomainsAuthenticationFactorSettingEndpointRestrictionsArgs ex
 
         /**
          * @param maxIncorrectAttempts (Updatable) An integer that represents the maximum number of failed MFA logins before an account is locked
+         * 
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 20
+         * * idcsMinValue: 5
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -173,6 +334,17 @@ public final class DomainsAuthenticationFactorSettingEndpointRestrictionsArgs ex
         /**
          * @param maxIncorrectAttempts (Updatable) An integer that represents the maximum number of failed MFA logins before an account is locked
          * 
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 20
+         * * idcsMinValue: 5
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -182,6 +354,17 @@ public final class DomainsAuthenticationFactorSettingEndpointRestrictionsArgs ex
 
         /**
          * @param maxTrustedEndpoints (Updatable) Max number of trusted endpoints per user
+         * 
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 20
+         * * idcsMinValue: 1
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -194,6 +377,17 @@ public final class DomainsAuthenticationFactorSettingEndpointRestrictionsArgs ex
         /**
          * @param maxTrustedEndpoints (Updatable) Max number of trusted endpoints per user
          * 
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 20
+         * * idcsMinValue: 1
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -203,6 +397,15 @@ public final class DomainsAuthenticationFactorSettingEndpointRestrictionsArgs ex
 
         /**
          * @param trustedEndpointsEnabled (Updatable) Specify if trusted endpoints are enabled
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -214,6 +417,15 @@ public final class DomainsAuthenticationFactorSettingEndpointRestrictionsArgs ex
 
         /**
          * @param trustedEndpointsEnabled (Updatable) Specify if trusted endpoints are enabled
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 

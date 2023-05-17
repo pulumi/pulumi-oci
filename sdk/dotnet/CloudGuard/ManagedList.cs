@@ -39,12 +39,16 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// (Updatable) Managed list description.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Managed list display name.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -57,6 +61,8 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
@@ -87,6 +93,10 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// OCID of the Source ManagedList
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("sourceManagedListId")]
         public Output<string> SourceManagedListId { get; private set; } = null!;
@@ -181,12 +191,16 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// (Updatable) Managed list description.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
         /// (Updatable) Managed list display name.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -196,6 +210,8 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -223,6 +239,10 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// OCID of the Source ManagedList
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("sourceManagedListId")]
         public Input<string>? SourceManagedListId { get; set; }
@@ -255,12 +275,16 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// (Updatable) Managed list description.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
         /// (Updatable) Managed list display name.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -276,6 +300,8 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -315,6 +341,10 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// OCID of the Source ManagedList
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("sourceManagedListId")]
         public Input<string>? SourceManagedListId { get; set; }

@@ -149,12 +149,20 @@ public class NetworkLoadBalancersBackendSetsUnified extends com.pulumi.resources
     /**
      * A user-friendly name for the backend set that must be unique and cannot be changed.
      * 
+     * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+     * 
+     * Example: `example_backend_set`
+     * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
     /**
      * @return A user-friendly name for the backend set that must be unique and cannot be changed.
+     * 
+     * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+     * 
+     * Example: `example_backend_set`
      * 
      */
     public Output<String> name() {
@@ -177,12 +185,18 @@ public class NetworkLoadBalancersBackendSetsUnified extends com.pulumi.resources
     /**
      * (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="policy", type=String.class, parameters={})
     private Output<String> policy;
 
     /**
      * @return (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> policy() {

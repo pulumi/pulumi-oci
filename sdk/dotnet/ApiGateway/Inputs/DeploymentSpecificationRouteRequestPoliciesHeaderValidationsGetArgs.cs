@@ -26,6 +26,12 @@ namespace Pulumi.Oci.ApiGateway.Inputs
 
         /// <summary>
         /// (Updatable) Validation behavior mode.
+        /// 
+        /// In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
+        /// 
+        /// In `PERMISSIVE` mode, the result of the validation will be exposed as metrics while the request will follow the normal path.
+        /// 
+        /// `DISABLED` type turns the validation off.
         /// </summary>
         [Input("validationMode")]
         public Input<string>? ValidationMode { get; set; }

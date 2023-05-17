@@ -70,6 +70,9 @@ type MediaAsset struct {
 	// The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// (Updatable) The type of the media asset.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringOutput `pulumi:"type"`
 }
 
@@ -151,6 +154,9 @@ type mediaAssetState struct {
 	// The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// (Updatable) The type of the media asset.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type *string `pulumi:"type"`
 }
 
@@ -198,6 +204,9 @@ type MediaAssetState struct {
 	// The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
 	// (Updatable) The type of the media asset.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringPtrInput
 }
 
@@ -241,6 +250,9 @@ type mediaAssetArgs struct {
 	// The version of the MediaWorkflow used to produce this asset.
 	SourceMediaWorkflowVersion *string `pulumi:"sourceMediaWorkflowVersion"`
 	// (Updatable) The type of the media asset.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type string `pulumi:"type"`
 }
 
@@ -281,6 +293,9 @@ type MediaAssetArgs struct {
 	// The version of the MediaWorkflow used to produce this asset.
 	SourceMediaWorkflowVersion pulumi.StringPtrInput
 	// (Updatable) The type of the media asset.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringInput
 }
 
@@ -477,6 +492,9 @@ func (o MediaAssetOutput) TimeUpdated() pulumi.StringOutput {
 }
 
 // (Updatable) The type of the media asset.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MediaAssetOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *MediaAsset) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

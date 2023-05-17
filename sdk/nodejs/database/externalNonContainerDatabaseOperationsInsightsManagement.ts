@@ -57,6 +57,9 @@ export class ExternalNonContainerDatabaseOperationsInsightsManagement extends pu
 
     /**
      * (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value "true" or "false".
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly enableOperationsInsights!: pulumi.Output<boolean>;
     /**
@@ -110,6 +113,9 @@ export class ExternalNonContainerDatabaseOperationsInsightsManagement extends pu
 export interface ExternalNonContainerDatabaseOperationsInsightsManagementState {
     /**
      * (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value "true" or "false".
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     enableOperationsInsights?: pulumi.Input<boolean>;
     /**
@@ -128,6 +134,9 @@ export interface ExternalNonContainerDatabaseOperationsInsightsManagementState {
 export interface ExternalNonContainerDatabaseOperationsInsightsManagementArgs {
     /**
      * (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value "true" or "false".
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     enableOperationsInsights: pulumi.Input<boolean>;
     /**

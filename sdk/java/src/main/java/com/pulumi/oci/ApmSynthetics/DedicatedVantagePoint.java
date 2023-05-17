@@ -191,12 +191,18 @@ public class DedicatedVantagePoint extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Status of the dedicated vantage point.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="status", type=String.class, parameters={})
     private Output<String> status;
 
     /**
      * @return (Updatable) Status of the dedicated vantage point.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> status() {

@@ -61,34 +61,116 @@ export class DomainsDynamicResourceGroup extends pulumi.CustomResource {
     public readonly authorization!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      */
     public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      */
     public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
     /**
      * (Updatable) text that explains the purpose of this Dynamic Resource Group
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Description
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Description]]
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      */
     public readonly description!: pulumi.Output<string>;
     /**
      * (Updatable) User-friendly, mutable identifier
+     *
+     * **SCIM++ Properties:**
+     * * idcsCsvAttributeName: Display Name
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Name, deprecatedColumnHeaderName:Display Name]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: string
+     * * uniqueness: global
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      */
     public /*out*/ readonly domainOcid!: pulumi.Output<string>;
     /**
      * (Updatable) A list of appRoles that are currently granted to this Dynamic Resource Group.  The Identity service will assert these AppRoles for any resource that satisfies the matching-rule of this DynamicResourceGroup.
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      */
     public /*out*/ readonly dynamicGroupAppRoles!: pulumi.Output<outputs.Identity.DomainsDynamicResourceGroupDynamicGroupAppRole[]>;
     /**
      * (Updatable) Grants assigned to group
+     *
+     * **SCIM++ Properties:**
+     * * idcsAddedSinceVersion: 3
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      */
     public /*out*/ readonly grants!: pulumi.Output<outputs.Identity.DomainsDynamicResourceGroupGrant[]>;
     /**
      * (Updatable) The User or App who created the Resource
+     *
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: complex
      */
     public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsDynamicResourceGroupIdcsCreatedBy[]>;
     /**
@@ -97,26 +179,82 @@ export class DomainsDynamicResourceGroup extends pulumi.CustomResource {
     public readonly idcsEndpoint!: pulumi.Output<string>;
     /**
      * (Updatable) The User or App who modified the Resource
+     *
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
      */
     public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsDynamicResourceGroupIdcsLastModifiedBy[]>;
     /**
      * (Updatable) The release number when the resource was upgraded.
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      */
     public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+     *
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      */
     public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
     /**
      * (Updatable) Store as a string the matching-rule for this Dynamic Resource Group. This may match any number of Apps in this Domain, as well as matching any number of Oracle Cloud Infrastructure resources that are not in any Domain but that are in the Oracle Cloud Infrastructure Compartment that contains this Domain.
+     *
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      */
     public readonly matchingRule!: pulumi.Output<string>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+     * * type: complex
      */
     public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsDynamicResourceGroupMeta[]>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: global
      */
     public readonly ocid!: pulumi.Output<string>;
     /**
@@ -125,14 +263,44 @@ export class DomainsDynamicResourceGroup extends pulumi.CustomResource {
     public readonly resourceTypeSchemaVersion!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      */
     public readonly schemas!: pulumi.Output<string[]>;
     /**
      * (Updatable) A list of tags on this resource.
+     *
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      */
     public readonly tags!: pulumi.Output<outputs.Identity.DomainsDynamicResourceGroupTag[]>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      */
     public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
     /**
@@ -237,34 +405,116 @@ export interface DomainsDynamicResourceGroupState {
     authorization?: pulumi.Input<string>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      */
     compartmentOcid?: pulumi.Input<string>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      */
     deleteInProgress?: pulumi.Input<boolean>;
     /**
      * (Updatable) text that explains the purpose of this Dynamic Resource Group
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Description
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Description]]
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      */
     description?: pulumi.Input<string>;
     /**
      * (Updatable) User-friendly, mutable identifier
+     *
+     * **SCIM++ Properties:**
+     * * idcsCsvAttributeName: Display Name
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Name, deprecatedColumnHeaderName:Display Name]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: string
+     * * uniqueness: global
      */
     displayName?: pulumi.Input<string>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      */
     domainOcid?: pulumi.Input<string>;
     /**
      * (Updatable) A list of appRoles that are currently granted to this Dynamic Resource Group.  The Identity service will assert these AppRoles for any resource that satisfies the matching-rule of this DynamicResourceGroup.
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      */
     dynamicGroupAppRoles?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsDynamicResourceGroupDynamicGroupAppRole>[]>;
     /**
      * (Updatable) Grants assigned to group
+     *
+     * **SCIM++ Properties:**
+     * * idcsAddedSinceVersion: 3
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      */
     grants?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsDynamicResourceGroupGrant>[]>;
     /**
      * (Updatable) The User or App who created the Resource
+     *
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: complex
      */
     idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsDynamicResourceGroupIdcsCreatedBy>[]>;
     /**
@@ -273,26 +523,82 @@ export interface DomainsDynamicResourceGroupState {
     idcsEndpoint?: pulumi.Input<string>;
     /**
      * (Updatable) The User or App who modified the Resource
+     *
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
      */
     idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsDynamicResourceGroupIdcsLastModifiedBy>[]>;
     /**
      * (Updatable) The release number when the resource was upgraded.
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      */
     idcsLastUpgradedInRelease?: pulumi.Input<string>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+     *
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      */
     idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * (Updatable) Store as a string the matching-rule for this Dynamic Resource Group. This may match any number of Apps in this Domain, as well as matching any number of Oracle Cloud Infrastructure resources that are not in any Domain but that are in the Oracle Cloud Infrastructure Compartment that contains this Domain.
+     *
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      */
     matchingRule?: pulumi.Input<string>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+     * * type: complex
      */
     metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsDynamicResourceGroupMeta>[]>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: global
      */
     ocid?: pulumi.Input<string>;
     /**
@@ -301,14 +607,44 @@ export interface DomainsDynamicResourceGroupState {
     resourceTypeSchemaVersion?: pulumi.Input<string>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      */
     schemas?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * (Updatable) A list of tags on this resource.
+     *
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      */
     tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsDynamicResourceGroupTag>[]>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      */
     tenancyOcid?: pulumi.Input<string>;
     /**
@@ -335,10 +671,33 @@ export interface DomainsDynamicResourceGroupArgs {
     authorization?: pulumi.Input<string>;
     /**
      * (Updatable) text that explains the purpose of this Dynamic Resource Group
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Description
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Description]]
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      */
     description?: pulumi.Input<string>;
     /**
      * (Updatable) User-friendly, mutable identifier
+     *
+     * **SCIM++ Properties:**
+     * * idcsCsvAttributeName: Display Name
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Name, deprecatedColumnHeaderName:Display Name]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: string
+     * * uniqueness: global
      */
     displayName: pulumi.Input<string>;
     /**
@@ -347,10 +706,29 @@ export interface DomainsDynamicResourceGroupArgs {
     idcsEndpoint: pulumi.Input<string>;
     /**
      * (Updatable) Store as a string the matching-rule for this Dynamic Resource Group. This may match any number of Apps in this Domain, as well as matching any number of Oracle Cloud Infrastructure resources that are not in any Domain but that are in the Oracle Cloud Infrastructure Compartment that contains this Domain.
+     *
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      */
     matchingRule: pulumi.Input<string>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: global
      */
     ocid?: pulumi.Input<string>;
     /**
@@ -359,10 +737,30 @@ export interface DomainsDynamicResourceGroupArgs {
     resourceTypeSchemaVersion?: pulumi.Input<string>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      */
     schemas: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * (Updatable) A list of tags on this resource.
+     *
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      */
     tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsDynamicResourceGroupTag>[]>;
     /**

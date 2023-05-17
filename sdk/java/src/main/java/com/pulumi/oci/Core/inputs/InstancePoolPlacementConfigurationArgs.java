@@ -35,12 +35,28 @@ public final class InstancePoolPlacementConfigurationArgs extends com.pulumi.res
     /**
      * (Updatable) The fault domains to place instances.
      * 
+     * If you don&#39;t provide any values, the system makes a best effort to distribute instances across all fault domains based on capacity.
+     * 
+     * To distribute the instances evenly across selected fault domains, provide a set of fault domains. For example, you might want instances to be evenly distributed if your applications require high availability.
+     * 
+     * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+     * 
+     * Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
+     * 
      */
     @Import(name="faultDomains")
     private @Nullable Output<List<String>> faultDomains;
 
     /**
      * @return (Updatable) The fault domains to place instances.
+     * 
+     * If you don&#39;t provide any values, the system makes a best effort to distribute instances across all fault domains based on capacity.
+     * 
+     * To distribute the instances evenly across selected fault domains, provide a set of fault domains. For example, you might want instances to be evenly distributed if your applications require high availability.
+     * 
+     * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+     * 
+     * Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
      * 
      */
     public Optional<Output<List<String>>> faultDomains() {
@@ -128,6 +144,14 @@ public final class InstancePoolPlacementConfigurationArgs extends com.pulumi.res
         /**
          * @param faultDomains (Updatable) The fault domains to place instances.
          * 
+         * If you don&#39;t provide any values, the system makes a best effort to distribute instances across all fault domains based on capacity.
+         * 
+         * To distribute the instances evenly across selected fault domains, provide a set of fault domains. For example, you might want instances to be evenly distributed if your applications require high availability.
+         * 
+         * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+         * 
+         * Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
+         * 
          * @return builder
          * 
          */
@@ -139,6 +163,14 @@ public final class InstancePoolPlacementConfigurationArgs extends com.pulumi.res
         /**
          * @param faultDomains (Updatable) The fault domains to place instances.
          * 
+         * If you don&#39;t provide any values, the system makes a best effort to distribute instances across all fault domains based on capacity.
+         * 
+         * To distribute the instances evenly across selected fault domains, provide a set of fault domains. For example, you might want instances to be evenly distributed if your applications require high availability.
+         * 
+         * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+         * 
+         * Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
+         * 
          * @return builder
          * 
          */
@@ -148,6 +180,14 @@ public final class InstancePoolPlacementConfigurationArgs extends com.pulumi.res
 
         /**
          * @param faultDomains (Updatable) The fault domains to place instances.
+         * 
+         * If you don&#39;t provide any values, the system makes a best effort to distribute instances across all fault domains based on capacity.
+         * 
+         * To distribute the instances evenly across selected fault domains, provide a set of fault domains. For example, you might want instances to be evenly distributed if your applications require high availability.
+         * 
+         * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+         * 
+         * Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
          * 
          * @return builder
          * 

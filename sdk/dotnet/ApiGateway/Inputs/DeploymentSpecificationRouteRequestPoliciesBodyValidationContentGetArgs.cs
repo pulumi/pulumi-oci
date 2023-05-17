@@ -14,12 +14,18 @@ namespace Pulumi.Oci.ApiGateway.Inputs
     {
         /// <summary>
         /// (Updatable) The media_type is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
+        /// 
+        /// media_type ::= ( / (  "*" "/" "*" ) / ( type "/" "*" ) / ( type "/" subtype ) )
+        /// 
+        /// For requests that match multiple media types, only the most specific media type is applicable. e.g. `text/plain` overrides `text/*`
         /// </summary>
         [Input("mediaType", required: true)]
         public Input<string> MediaType { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Validation type defines the content validation method.
+        /// 
+        /// Make the validation to first parse the body as the respective format.
         /// </summary>
         [Input("validationType", required: true)]
         public Input<string> ValidationType { get; set; } = null!;

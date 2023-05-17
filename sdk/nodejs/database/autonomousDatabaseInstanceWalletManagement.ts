@@ -64,6 +64,10 @@ export class AutonomousDatabaseInstanceWalletManagement extends pulumi.CustomRes
     public readonly gracePeriod!: pulumi.Output<number>;
     /**
      * (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly shouldRotate!: pulumi.Output<boolean | undefined>;
     /**
@@ -123,6 +127,10 @@ export interface AutonomousDatabaseInstanceWalletManagementState {
     gracePeriod?: pulumi.Input<number>;
     /**
      * (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     shouldRotate?: pulumi.Input<boolean>;
     /**
@@ -149,6 +157,10 @@ export interface AutonomousDatabaseInstanceWalletManagementArgs {
     gracePeriod?: pulumi.Input<number>;
     /**
      * (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     shouldRotate?: pulumi.Input<boolean>;
 }

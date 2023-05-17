@@ -65,12 +65,20 @@ public final class BackendSetArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * A user-friendly name for the backend set that must be unique and cannot be changed.
      * 
+     * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+     * 
+     * Example: `example_backend_set`
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return A user-friendly name for the backend set that must be unique and cannot be changed.
+     * 
+     * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+     * 
+     * Example: `example_backend_set`
      * 
      */
     public Optional<Output<String>> name() {
@@ -95,12 +103,18 @@ public final class BackendSetArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="policy", required=true)
     private Output<String> policy;
 
     /**
      * @return (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> policy() {
@@ -202,6 +216,10 @@ public final class BackendSetArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param name A user-friendly name for the backend set that must be unique and cannot be changed.
          * 
+         * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+         * 
+         * Example: `example_backend_set`
+         * 
          * @return builder
          * 
          */
@@ -212,6 +230,10 @@ public final class BackendSetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name A user-friendly name for the backend set that must be unique and cannot be changed.
+         * 
+         * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+         * 
+         * Example: `example_backend_set`
          * 
          * @return builder
          * 
@@ -244,6 +266,9 @@ public final class BackendSetArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param policy (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -254,6 +279,9 @@ public final class BackendSetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param policy (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

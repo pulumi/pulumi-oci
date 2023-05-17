@@ -29,6 +29,17 @@ public final class PolicyPolicyConfig {
     /**
      * @return (Updatable) Specifies an HTTP header name which is treated as the connecting client&#39;s IP address. Applicable only if `isBehindCdn` is enabled.
      * 
+     * The edge node reads this header and its value and sets the client IP address as specified. It does not create the header if the header is not present in the request. If the header is not present, the connecting IP address will be used as the client&#39;s true IP address. It uses the last IP address in the header&#39;s value as the true IP address.
+     * 
+     * Example: `X-Client-Ip: 11.1.1.1, 13.3.3.3`
+     * 
+     * In the case of multiple headers with the same name, only the first header will be used. It is assumed that CDN sets the correct client IP address to prevent spoofing.
+     * * **X_FORWARDED_FOR:** Corresponds to `X-Forwarded-For` header name.
+     * * **X_CLIENT_IP:** Corresponds to `X-Client-Ip` header name.
+     * * **X_REAL_IP:** Corresponds to `X-Real-Ip` header name.
+     * * **CLIENT_IP:** Corresponds to `Client-Ip` header name.
+     * * **TRUE_CLIENT_IP:** Corresponds to `True-Client-Ip` header name.
+     * 
      */
     private @Nullable String clientAddressHeader;
     /**
@@ -83,6 +94,8 @@ public final class PolicyPolicyConfig {
      * * **TLS_V1_2:** corresponds to TLS 1.2 specification.
      * * **TLS_V1_3:** corresponds to TLS 1.3 specification.
      * 
+     * Enabled TLS protocols must go in a row. For example if `TLS_v1_1` and `TLS_V1_3` are enabled, `TLS_V1_2` must be enabled too.
+     * 
      */
     private @Nullable List<String> tlsProtocols;
     /**
@@ -109,6 +122,17 @@ public final class PolicyPolicyConfig {
     }
     /**
      * @return (Updatable) Specifies an HTTP header name which is treated as the connecting client&#39;s IP address. Applicable only if `isBehindCdn` is enabled.
+     * 
+     * The edge node reads this header and its value and sets the client IP address as specified. It does not create the header if the header is not present in the request. If the header is not present, the connecting IP address will be used as the client&#39;s true IP address. It uses the last IP address in the header&#39;s value as the true IP address.
+     * 
+     * Example: `X-Client-Ip: 11.1.1.1, 13.3.3.3`
+     * 
+     * In the case of multiple headers with the same name, only the first header will be used. It is assumed that CDN sets the correct client IP address to prevent spoofing.
+     * * **X_FORWARDED_FOR:** Corresponds to `X-Forwarded-For` header name.
+     * * **X_CLIENT_IP:** Corresponds to `X-Client-Ip` header name.
+     * * **X_REAL_IP:** Corresponds to `X-Real-Ip` header name.
+     * * **CLIENT_IP:** Corresponds to `Client-Ip` header name.
+     * * **TRUE_CLIENT_IP:** Corresponds to `True-Client-Ip` header name.
      * 
      */
     public Optional<String> clientAddressHeader() {
@@ -183,6 +207,8 @@ public final class PolicyPolicyConfig {
      * * **TLS_V1_1:** corresponds to TLS 1.1 specification.
      * * **TLS_V1_2:** corresponds to TLS 1.2 specification.
      * * **TLS_V1_3:** corresponds to TLS 1.3 specification.
+     * 
+     * Enabled TLS protocols must go in a row. For example if `TLS_v1_1` and `TLS_V1_3` are enabled, `TLS_V1_2` must be enabled too.
      * 
      */
     public List<String> tlsProtocols() {

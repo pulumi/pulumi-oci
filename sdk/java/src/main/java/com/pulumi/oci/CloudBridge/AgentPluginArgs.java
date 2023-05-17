@@ -48,12 +48,18 @@ public final class AgentPluginArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Unique plugin identifier path parameter.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="pluginName", required=true)
     private Output<String> pluginName;
 
     /**
      * @return Unique plugin identifier path parameter.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> pluginName() {
@@ -131,6 +137,9 @@ public final class AgentPluginArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param pluginName Unique plugin identifier path parameter.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -141,6 +150,9 @@ public final class AgentPluginArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param pluginName Unique plugin identifier path parameter.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

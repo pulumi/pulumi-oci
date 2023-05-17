@@ -46,6 +46,9 @@ public final class ConfigRule {
     /**
      * @return (Updatable) The maximum response time in milliseconds that is considered &#34;tolerable&#34; for the end user. A response time beyond this threshold is considered &#34;frustrating&#34;. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private @Nullable Integer toleratingResponseTime;
 
@@ -94,6 +97,9 @@ public final class ConfigRule {
     }
     /**
      * @return (Updatable) The maximum response time in milliseconds that is considered &#34;tolerable&#34; for the end user. A response time beyond this threshold is considered &#34;frustrating&#34;. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Integer> toleratingResponseTime() {

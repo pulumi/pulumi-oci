@@ -79,6 +79,9 @@ type AiPrivateEndpoint struct {
 	// The current state of the private endpoint resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The OCID of subnet to which the reverse connection is to be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
@@ -143,6 +146,9 @@ type aiPrivateEndpointState struct {
 	// The current state of the private endpoint resource.
 	State *string `pulumi:"state"`
 	// The OCID of subnet to which the reverse connection is to be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId *string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
@@ -170,6 +176,9 @@ type AiPrivateEndpointState struct {
 	// The current state of the private endpoint resource.
 	State pulumi.StringPtrInput
 	// The OCID of subnet to which the reverse connection is to be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
@@ -195,6 +204,9 @@ type aiPrivateEndpointArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of subnet to which the reverse connection is to be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -211,6 +223,9 @@ type AiPrivateEndpointArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// The OCID of subnet to which the reverse connection is to be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringInput
 }
 
@@ -342,6 +357,9 @@ func (o AiPrivateEndpointOutput) State() pulumi.StringOutput {
 }
 
 // The OCID of subnet to which the reverse connection is to be created.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AiPrivateEndpointOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AiPrivateEndpoint) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
 }

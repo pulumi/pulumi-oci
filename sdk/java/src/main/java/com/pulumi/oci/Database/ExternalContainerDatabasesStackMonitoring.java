@@ -61,12 +61,18 @@ public class ExternalContainerDatabasesStackMonitoring extends com.pulumi.resour
     /**
      * (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value &#34;true&#34; or &#34;false&#34;.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="enableStackMonitoring", type=Boolean.class, parameters={})
     private Output<Boolean> enableStackMonitoring;
 
     /**
      * @return (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value &#34;true&#34; or &#34;false&#34;.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Boolean> enableStackMonitoring() {

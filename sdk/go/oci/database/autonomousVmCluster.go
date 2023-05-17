@@ -165,6 +165,9 @@ type AutonomousVmCluster struct {
 	// The total number of Autonomous Container Databases that can be created.
 	TotalContainerDatabases pulumi.IntOutput `pulumi:"totalContainerDatabases"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VmClusterNetworkId pulumi.StringOutput `pulumi:"vmClusterNetworkId"`
 }
 
@@ -283,6 +286,9 @@ type autonomousVmClusterState struct {
 	// The total number of Autonomous Container Databases that can be created.
 	TotalContainerDatabases *int `pulumi:"totalContainerDatabases"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VmClusterNetworkId *string `pulumi:"vmClusterNetworkId"`
 }
 
@@ -361,6 +367,9 @@ type AutonomousVmClusterState struct {
 	// The total number of Autonomous Container Databases that can be created.
 	TotalContainerDatabases pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VmClusterNetworkId pulumi.StringPtrInput
 }
 
@@ -406,6 +415,9 @@ type autonomousVmClusterArgs struct {
 	// The total number of Autonomous Container Databases that can be created.
 	TotalContainerDatabases *int `pulumi:"totalContainerDatabases"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VmClusterNetworkId string `pulumi:"vmClusterNetworkId"`
 }
 
@@ -448,6 +460,9 @@ type AutonomousVmClusterArgs struct {
 	// The total number of Autonomous Container Databases that can be created.
 	TotalContainerDatabases pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VmClusterNetworkId pulumi.StringInput
 }
 
@@ -724,6 +739,9 @@ func (o AutonomousVmClusterOutput) TotalContainerDatabases() pulumi.IntOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AutonomousVmClusterOutput) VmClusterNetworkId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringOutput { return v.VmClusterNetworkId }).(pulumi.StringOutput)
 }

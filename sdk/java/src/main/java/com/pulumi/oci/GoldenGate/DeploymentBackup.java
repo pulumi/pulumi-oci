@@ -213,12 +213,18 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
     /**
      * Name of the object to be uploaded to object storage
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="object", type=String.class, parameters={})
     private Output<String> object;
 
     /**
      * @return Name of the object to be uploaded to object storage
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> object() {

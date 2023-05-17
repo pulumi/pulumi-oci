@@ -68,6 +68,12 @@ namespace Pulumi.Oci.CloudMigrations.Inputs
 
         /// <summary>
         /// (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+        /// 
+        /// If you do not specify the fault domain, the system selects one for you.
+        /// 
+        /// To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+        /// 
+        /// Example: `FAULT-DOMAIN-1`
         /// </summary>
         [Input("faultDomain")]
         public Input<string>? FaultDomain { get; set; }
@@ -98,6 +104,18 @@ namespace Pulumi.Oci.CloudMigrations.Inputs
 
         /// <summary>
         /// (Updatable) This is an advanced option.
+        /// 
+        /// When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+        /// 
+        /// If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots. Be aware that the same iPXE script will run every time an instance boots, not only after the initial LaunchInstance call.
+        /// 
+        /// By default, the iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI in the same way as the default iPXE script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+        /// 
+        /// If your instance boot volume type is paravirtualized, the boot volume is attached to the instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is paravirtualized and you use custom iPXE to perform network-boot into your instance, the primary boot volume is attached as a data volume through the virtio-scsi drive.
+        /// 
+        /// For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+        /// 
+        /// For more information about iPXE, see http://ipxe.org.
         /// </summary>
         [Input("ipxeScript")]
         public Input<string>? IpxeScript { get; set; }
@@ -116,12 +134,18 @@ namespace Pulumi.Oci.CloudMigrations.Inputs
 
         /// <summary>
         /// (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+        /// 
+        /// You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         /// </summary>
         [Input("shape")]
         public Input<string>? Shape { get; set; }
 
         /// <summary>
         /// (Updatable) The shape configuration requested for the instance.
+        /// 
+        /// If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+        /// 
+        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         /// </summary>
         [Input("shapeConfig")]
         public Input<Inputs.TargetAssetUserSpecShapeConfigArgs>? ShapeConfig { get; set; }

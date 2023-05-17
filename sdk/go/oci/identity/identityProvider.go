@@ -101,6 +101,9 @@ type IdentityProvider struct {
 	// The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).  Example: `IDCS`
 	ProductType pulumi.StringOutput `pulumi:"productType"`
 	// (Updatable) The protocol used for federation.  Example: `SAML2`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Protocol pulumi.StringOutput `pulumi:"protocol"`
 	// The URL to redirect federated users to for authentication with the identity provider.
 	RedirectUrl pulumi.StringOutput `pulumi:"redirectUrl"`
@@ -180,6 +183,9 @@ type identityProviderState struct {
 	// The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).  Example: `IDCS`
 	ProductType *string `pulumi:"productType"`
 	// (Updatable) The protocol used for federation.  Example: `SAML2`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Protocol *string `pulumi:"protocol"`
 	// The URL to redirect federated users to for authentication with the identity provider.
 	RedirectUrl *string `pulumi:"redirectUrl"`
@@ -213,6 +219,9 @@ type IdentityProviderState struct {
 	// The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).  Example: `IDCS`
 	ProductType pulumi.StringPtrInput
 	// (Updatable) The protocol used for federation.  Example: `SAML2`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Protocol pulumi.StringPtrInput
 	// The URL to redirect federated users to for authentication with the identity provider.
 	RedirectUrl pulumi.StringPtrInput
@@ -248,6 +257,9 @@ type identityProviderArgs struct {
 	// The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).  Example: `IDCS`
 	ProductType string `pulumi:"productType"`
 	// (Updatable) The protocol used for federation.  Example: `SAML2`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Protocol string `pulumi:"protocol"`
 }
 
@@ -272,6 +284,9 @@ type IdentityProviderArgs struct {
 	// The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).  Example: `IDCS`
 	ProductType pulumi.StringInput
 	// (Updatable) The protocol used for federation.  Example: `SAML2`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Protocol pulumi.StringInput
 }
 
@@ -413,6 +428,9 @@ func (o IdentityProviderOutput) ProductType() pulumi.StringOutput {
 }
 
 // (Updatable) The protocol used for federation.  Example: `SAML2`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o IdentityProviderOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v *IdentityProvider) pulumi.StringOutput { return v.Protocol }).(pulumi.StringOutput)
 }

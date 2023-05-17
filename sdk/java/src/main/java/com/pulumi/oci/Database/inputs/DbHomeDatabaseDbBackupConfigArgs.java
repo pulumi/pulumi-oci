@@ -50,6 +50,36 @@ public final class DbHomeDatabaseDbBackupConfigArgs extends com.pulumi.resources
     }
 
     /**
+     * Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+     * 
+     */
+    @Import(name="autoFullBackupDay")
+    private @Nullable Output<String> autoFullBackupDay;
+
+    /**
+     * @return Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+     * 
+     */
+    public Optional<Output<String>> autoFullBackupDay() {
+        return Optional.ofNullable(this.autoFullBackupDay);
+    }
+
+    /**
+     * Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+     * 
+     */
+    @Import(name="autoFullBackupWindow")
+    private @Nullable Output<String> autoFullBackupWindow;
+
+    /**
+     * @return Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+     * 
+     */
+    public Optional<Output<String>> autoFullBackupWindow() {
+        return Optional.ofNullable(this.autoFullBackupWindow);
+    }
+
+    /**
      * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
      * 
      */
@@ -94,14 +124,32 @@ public final class DbHomeDatabaseDbBackupConfigArgs extends com.pulumi.resources
         return Optional.ofNullable(this.recoveryWindowInDays);
     }
 
+    /**
+     * If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+     * 
+     */
+    @Import(name="runImmediateFullBackup")
+    private @Nullable Output<Boolean> runImmediateFullBackup;
+
+    /**
+     * @return If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+     * 
+     */
+    public Optional<Output<Boolean>> runImmediateFullBackup() {
+        return Optional.ofNullable(this.runImmediateFullBackup);
+    }
+
     private DbHomeDatabaseDbBackupConfigArgs() {}
 
     private DbHomeDatabaseDbBackupConfigArgs(DbHomeDatabaseDbBackupConfigArgs $) {
         this.autoBackupEnabled = $.autoBackupEnabled;
         this.autoBackupWindow = $.autoBackupWindow;
+        this.autoFullBackupDay = $.autoFullBackupDay;
+        this.autoFullBackupWindow = $.autoFullBackupWindow;
         this.backupDeletionPolicy = $.backupDeletionPolicy;
         this.backupDestinationDetails = $.backupDestinationDetails;
         this.recoveryWindowInDays = $.recoveryWindowInDays;
+        this.runImmediateFullBackup = $.runImmediateFullBackup;
     }
 
     public static Builder builder() {
@@ -162,6 +210,48 @@ public final class DbHomeDatabaseDbBackupConfigArgs extends com.pulumi.resources
          */
         public Builder autoBackupWindow(String autoBackupWindow) {
             return autoBackupWindow(Output.of(autoBackupWindow));
+        }
+
+        /**
+         * @param autoFullBackupDay Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autoFullBackupDay(@Nullable Output<String> autoFullBackupDay) {
+            $.autoFullBackupDay = autoFullBackupDay;
+            return this;
+        }
+
+        /**
+         * @param autoFullBackupDay Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autoFullBackupDay(String autoFullBackupDay) {
+            return autoFullBackupDay(Output.of(autoFullBackupDay));
+        }
+
+        /**
+         * @param autoFullBackupWindow Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autoFullBackupWindow(@Nullable Output<String> autoFullBackupWindow) {
+            $.autoFullBackupWindow = autoFullBackupWindow;
+            return this;
+        }
+
+        /**
+         * @param autoFullBackupWindow Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autoFullBackupWindow(String autoFullBackupWindow) {
+            return autoFullBackupWindow(Output.of(autoFullBackupWindow));
         }
 
         /**
@@ -235,6 +325,27 @@ public final class DbHomeDatabaseDbBackupConfigArgs extends com.pulumi.resources
          */
         public Builder recoveryWindowInDays(Integer recoveryWindowInDays) {
             return recoveryWindowInDays(Output.of(recoveryWindowInDays));
+        }
+
+        /**
+         * @param runImmediateFullBackup If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runImmediateFullBackup(@Nullable Output<Boolean> runImmediateFullBackup) {
+            $.runImmediateFullBackup = runImmediateFullBackup;
+            return this;
+        }
+
+        /**
+         * @param runImmediateFullBackup If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runImmediateFullBackup(Boolean runImmediateFullBackup) {
+            return runImmediateFullBackup(Output.of(runImmediateFullBackup));
         }
 
         public DbHomeDatabaseDbBackupConfigArgs build() {

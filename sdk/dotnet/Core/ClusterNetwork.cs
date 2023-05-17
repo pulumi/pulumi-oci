@@ -115,6 +115,8 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) The data to create the instance pools in the cluster network.
+        /// 
+        /// Each cluster network can have one instance pool.
         /// </summary>
         [Output("instancePools")]
         public Output<ImmutableArray<Outputs.ClusterNetworkInstancePool>> InstancePools { get; private set; } = null!;
@@ -236,6 +238,8 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) The data to create the instance pools in the cluster network.
+        /// 
+        /// Each cluster network can have one instance pool.
         /// </summary>
         public InputList<Inputs.ClusterNetworkInstancePoolArgs> InstancePools
         {
@@ -304,6 +308,8 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) The data to create the instance pools in the cluster network.
+        /// 
+        /// Each cluster network can have one instance pool.
         /// </summary>
         public InputList<Inputs.ClusterNetworkInstancePoolGetArgs> InstancePools
         {

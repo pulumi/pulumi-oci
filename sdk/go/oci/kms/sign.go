@@ -73,6 +73,9 @@ type Sign struct {
 	// The base64-encoded binary data object denoting the cryptographic signature generated for the message or message digest.
 	Signature pulumi.StringOutput `pulumi:"signature"`
 	// The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with  different hashing algorithms.  For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm  as used when creating the message digest.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SigningAlgorithm pulumi.StringOutput `pulumi:"signingAlgorithm"`
 }
 
@@ -130,6 +133,9 @@ type signState struct {
 	// The base64-encoded binary data object denoting the cryptographic signature generated for the message or message digest.
 	Signature *string `pulumi:"signature"`
 	// The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with  different hashing algorithms.  For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm  as used when creating the message digest.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SigningAlgorithm *string `pulumi:"signingAlgorithm"`
 }
 
@@ -147,6 +153,9 @@ type SignState struct {
 	// The base64-encoded binary data object denoting the cryptographic signature generated for the message or message digest.
 	Signature pulumi.StringPtrInput
 	// The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with  different hashing algorithms.  For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm  as used when creating the message digest.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SigningAlgorithm pulumi.StringPtrInput
 }
 
@@ -166,6 +175,9 @@ type signArgs struct {
 	// Denotes whether the value of the message parameter is a raw message or a message digest.  The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
 	MessageType *string `pulumi:"messageType"`
 	// The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with  different hashing algorithms.  For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm  as used when creating the message digest.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SigningAlgorithm string `pulumi:"signingAlgorithm"`
 }
 
@@ -182,6 +194,9 @@ type SignArgs struct {
 	// Denotes whether the value of the message parameter is a raw message or a message digest.  The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
 	MessageType pulumi.StringPtrInput
 	// The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with  different hashing algorithms.  For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm  as used when creating the message digest.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SigningAlgorithm pulumi.StringInput
 }
 
@@ -303,6 +318,9 @@ func (o SignOutput) Signature() pulumi.StringOutput {
 }
 
 // The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with  different hashing algorithms.  For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm  as used when creating the message digest.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o SignOutput) SigningAlgorithm() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sign) pulumi.StringOutput { return v.SigningAlgorithm }).(pulumi.StringOutput)
 }

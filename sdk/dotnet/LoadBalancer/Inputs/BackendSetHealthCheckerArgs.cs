@@ -20,6 +20,12 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
 
         /// <summary>
         /// (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+        /// 
+        /// If "true", health checks will be done using plain text even if the associated backend set is configured to use SSL.
+        /// 
+        /// If "false", health checks will be done using SSL encryption if the associated backend set is configured to use SSL. If the backend set is not so configured the health checks will be done using plain text.
+        /// 
+        /// Example: `false`
         /// </summary>
         [Input("isForcePlainText")]
         public Input<bool>? IsForcePlainText { get; set; }

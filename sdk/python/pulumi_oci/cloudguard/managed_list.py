@@ -26,12 +26,22 @@ class ManagedListArgs:
         The set of arguments for constructing a ManagedList resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[str] display_name: (Updatable) Managed list display name.
+               
+               Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Managed list description.
+               
+               Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+               
+               Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] list_items: (Updatable) List of ManagedListItem
         :param pulumi.Input[str] list_type: type of the list
         :param pulumi.Input[str] source_managed_list_id: OCID of the Source ManagedList
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -65,6 +75,8 @@ class ManagedListArgs:
     def display_name(self) -> pulumi.Input[str]:
         """
         (Updatable) Managed list display name.
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -89,6 +101,8 @@ class ManagedListArgs:
     def description(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Managed list description.
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
@@ -101,6 +115,8 @@ class ManagedListArgs:
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -137,6 +153,10 @@ class ManagedListArgs:
     def source_managed_list_id(self) -> Optional[pulumi.Input[str]]:
         """
         OCID of the Source ManagedList
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source_managed_list_id")
 
@@ -168,14 +188,24 @@ class _ManagedListState:
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Managed list description.
+               
+               Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) Managed list display name.
+               
+               Avoid entering confidential information.
         :param pulumi.Input[str] feed_provider: provider of the feed
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+               
+               Avoid entering confidential information.
         :param pulumi.Input[bool] is_editable: If this list is editable or not
         :param pulumi.Input[str] lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] list_items: (Updatable) List of ManagedListItem
         :param pulumi.Input[str] list_type: type of the list
         :param pulumi.Input[str] source_managed_list_id: OCID of the Source ManagedList
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the resource.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the managed list was created. Format defined by RFC3339.
@@ -241,6 +271,8 @@ class _ManagedListState:
     def description(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Managed list description.
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
@@ -253,6 +285,8 @@ class _ManagedListState:
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Managed list display name.
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -277,6 +311,8 @@ class _ManagedListState:
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -337,6 +373,10 @@ class _ManagedListState:
     def source_managed_list_id(self) -> Optional[pulumi.Input[str]]:
         """
         OCID of the Source ManagedList
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source_managed_list_id")
 
@@ -425,11 +465,21 @@ class ManagedList(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Managed list description.
+               
+               Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) Managed list display name.
+               
+               Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+               
+               Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] list_items: (Updatable) List of ManagedListItem
         :param pulumi.Input[str] list_type: type of the list
         :param pulumi.Input[str] source_managed_list_id: OCID of the Source ManagedList
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -536,14 +586,24 @@ class ManagedList(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Managed list description.
+               
+               Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) Managed list display name.
+               
+               Avoid entering confidential information.
         :param pulumi.Input[str] feed_provider: provider of the feed
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+               
+               Avoid entering confidential information.
         :param pulumi.Input[bool] is_editable: If this list is editable or not
         :param pulumi.Input[str] lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] list_items: (Updatable) List of ManagedListItem
         :param pulumi.Input[str] list_type: type of the list
         :param pulumi.Input[str] source_managed_list_id: OCID of the Source ManagedList
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the resource.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the managed list was created. Format defined by RFC3339.
@@ -591,6 +651,8 @@ class ManagedList(pulumi.CustomResource):
     def description(self) -> pulumi.Output[str]:
         """
         (Updatable) Managed list description.
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
@@ -599,6 +661,8 @@ class ManagedList(pulumi.CustomResource):
     def display_name(self) -> pulumi.Output[str]:
         """
         (Updatable) Managed list display name.
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -615,6 +679,8 @@ class ManagedList(pulumi.CustomResource):
     def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -655,6 +721,10 @@ class ManagedList(pulumi.CustomResource):
     def source_managed_list_id(self) -> pulumi.Output[str]:
         """
         OCID of the Source ManagedList
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source_managed_list_id")
 

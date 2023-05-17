@@ -28,6 +28,10 @@ class RrsetArgs:
         :param pulumi.Input[str] domain: The fully qualified domain name where the record can be located.
         :param pulumi.Input[str] rtype: The type of the target RRSet within the target zone.
         :param pulumi.Input[str] zone_name_or_id: The name or OCID of the target zone.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to.
         :param pulumi.Input[Sequence[pulumi.Input['RrsetItemArgs']]] items: (Updatable) 
                **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
@@ -76,6 +80,10 @@ class RrsetArgs:
     def zone_name_or_id(self) -> pulumi.Input[str]:
         """
         The name or OCID of the target zone.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "zone_name_or_id")
 
@@ -155,6 +163,10 @@ class _RrsetState:
                This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
         :param pulumi.Input[str] view_id: The OCID of the view the resource is associated with.
         :param pulumi.Input[str] zone_name_or_id: The name or OCID of the target zone.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -250,6 +262,10 @@ class _RrsetState:
     def zone_name_or_id(self) -> Optional[pulumi.Input[str]]:
         """
         The name or OCID of the target zone.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "zone_name_or_id")
 
@@ -325,6 +341,10 @@ class Rrset(pulumi.CustomResource):
                This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
         :param pulumi.Input[str] view_id: The OCID of the view the resource is associated with.
         :param pulumi.Input[str] zone_name_or_id: The name or OCID of the target zone.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -452,6 +472,10 @@ class Rrset(pulumi.CustomResource):
                This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
         :param pulumi.Input[str] view_id: The OCID of the view the resource is associated with.
         :param pulumi.Input[str] zone_name_or_id: The name or OCID of the target zone.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -521,6 +545,10 @@ class Rrset(pulumi.CustomResource):
     def zone_name_or_id(self) -> pulumi.Output[str]:
         """
         The name or OCID of the target zone.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "zone_name_or_id")
 

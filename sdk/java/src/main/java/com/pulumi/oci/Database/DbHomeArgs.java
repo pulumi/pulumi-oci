@@ -22,12 +22,16 @@ public final class DbHomeArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Details for creating a database.
      * 
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+     * 
      */
     @Import(name="database")
     private @Nullable Output<DbHomeDatabaseArgs> database;
 
     /**
      * @return (Updatable) Details for creating a database.
+     * 
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      * 
      */
     public Optional<Output<DbHomeDatabaseArgs>> database() {
@@ -202,12 +206,18 @@ public final class DbHomeArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="vmClusterId")
     private @Nullable Output<String> vmClusterId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> vmClusterId() {
@@ -253,6 +263,8 @@ public final class DbHomeArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param database (Updatable) Details for creating a database.
          * 
+         * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+         * 
          * @return builder
          * 
          */
@@ -263,6 +275,8 @@ public final class DbHomeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param database (Updatable) Details for creating a database.
+         * 
+         * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
          * 
          * @return builder
          * 
@@ -505,6 +519,9 @@ public final class DbHomeArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param vmClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -515,6 +532,9 @@ public final class DbHomeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vmClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -148,6 +148,10 @@ namespace Pulumi.Oci.ServiceMesh
 
         /// <summary>
         /// The OCID of the service mesh in which this access policy is created.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("virtualServiceId")]
         public Output<string> VirtualServiceId { get; private set; } = null!;
@@ -260,6 +264,10 @@ namespace Pulumi.Oci.ServiceMesh
 
         /// <summary>
         /// The OCID of the service mesh in which this access policy is created.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("virtualServiceId", required: true)]
         public Input<string> VirtualServiceId { get; set; } = null!;
@@ -370,6 +378,10 @@ namespace Pulumi.Oci.ServiceMesh
 
         /// <summary>
         /// The OCID of the service mesh in which this access policy is created.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("virtualServiceId")]
         public Input<string>? VirtualServiceId { get; set; }

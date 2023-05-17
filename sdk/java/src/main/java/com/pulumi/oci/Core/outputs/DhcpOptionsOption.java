@@ -20,6 +20,10 @@ public final class DhcpOptionsOption {
     /**
      * @return (Updatable) A single search domain name according to [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). During a DNS query, the OS will append this search domain name to the value being queried.
      * 
+     * If you set [DhcpDnsOption](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DhcpDnsOption/) to `VcnLocalPlusInternet`, and you assign a DNS label to the VCN during creation, the search domain name in the VCN&#39;s default set of DHCP options is automatically set to the VCN domain (for example, `vcn1.oraclevcn.com`).
+     * 
+     * If you don&#39;t want to use a search domain name, omit this option from the set of DHCP options. Do not include this option with an empty list of search domain names, or with an empty string as the value for any search domain name.
+     * 
      */
     private @Nullable List<String> searchDomainNames;
     /**
@@ -46,6 +50,10 @@ public final class DhcpOptionsOption {
     }
     /**
      * @return (Updatable) A single search domain name according to [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). During a DNS query, the OS will append this search domain name to the value being queried.
+     * 
+     * If you set [DhcpDnsOption](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DhcpDnsOption/) to `VcnLocalPlusInternet`, and you assign a DNS label to the VCN during creation, the search domain name in the VCN&#39;s default set of DHCP options is automatically set to the VCN domain (for example, `vcn1.oraclevcn.com`).
+     * 
+     * If you don&#39;t want to use a search domain name, omit this option from the set of DHCP options. Do not include this option with an empty list of search domain names, or with an empty string as the value for any search domain name.
      * 
      */
     public List<String> searchDomainNames() {

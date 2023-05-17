@@ -78,6 +78,9 @@ type DrgRouteTable struct {
 	// (Updatable) If you want traffic to be routed using ECMP across your virtual circuits or IPSec tunnels to your on-premises networks, enable ECMP on the DRG route table.
 	IsEcmpEnabled pulumi.BoolOutput `pulumi:"isEcmpEnabled"`
 	// (Updatable) An optional property when flipped disables the import of route Distribution by setting importDrgRouteDistributionId to null.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RemoveImportTrigger pulumi.BoolPtrOutput `pulumi:"removeImportTrigger"`
 	// The DRG route table's current state.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -132,6 +135,9 @@ type drgRouteTableState struct {
 	// (Updatable) If you want traffic to be routed using ECMP across your virtual circuits or IPSec tunnels to your on-premises networks, enable ECMP on the DRG route table.
 	IsEcmpEnabled *bool `pulumi:"isEcmpEnabled"`
 	// (Updatable) An optional property when flipped disables the import of route Distribution by setting importDrgRouteDistributionId to null.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RemoveImportTrigger *bool `pulumi:"removeImportTrigger"`
 	// The DRG route table's current state.
 	State *string `pulumi:"state"`
@@ -155,6 +161,9 @@ type DrgRouteTableState struct {
 	// (Updatable) If you want traffic to be routed using ECMP across your virtual circuits or IPSec tunnels to your on-premises networks, enable ECMP on the DRG route table.
 	IsEcmpEnabled pulumi.BoolPtrInput
 	// (Updatable) An optional property when flipped disables the import of route Distribution by setting importDrgRouteDistributionId to null.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RemoveImportTrigger pulumi.BoolPtrInput
 	// The DRG route table's current state.
 	State pulumi.StringPtrInput
@@ -180,6 +189,9 @@ type drgRouteTableArgs struct {
 	// (Updatable) If you want traffic to be routed using ECMP across your virtual circuits or IPSec tunnels to your on-premises networks, enable ECMP on the DRG route table.
 	IsEcmpEnabled *bool `pulumi:"isEcmpEnabled"`
 	// (Updatable) An optional property when flipped disables the import of route Distribution by setting importDrgRouteDistributionId to null.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RemoveImportTrigger *bool `pulumi:"removeImportTrigger"`
 }
 
@@ -198,6 +210,9 @@ type DrgRouteTableArgs struct {
 	// (Updatable) If you want traffic to be routed using ECMP across your virtual circuits or IPSec tunnels to your on-premises networks, enable ECMP on the DRG route table.
 	IsEcmpEnabled pulumi.BoolPtrInput
 	// (Updatable) An optional property when flipped disables the import of route Distribution by setting importDrgRouteDistributionId to null.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RemoveImportTrigger pulumi.BoolPtrInput
 }
 
@@ -324,6 +339,9 @@ func (o DrgRouteTableOutput) IsEcmpEnabled() pulumi.BoolOutput {
 }
 
 // (Updatable) An optional property when flipped disables the import of route Distribution by setting importDrgRouteDistributionId to null.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DrgRouteTableOutput) RemoveImportTrigger() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DrgRouteTable) pulumi.BoolPtrOutput { return v.RemoveImportTrigger }).(pulumi.BoolPtrOutput)
 }

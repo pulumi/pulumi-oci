@@ -172,12 +172,20 @@ public final class LocalPeeringGatewayState extends com.pulumi.resources.Resourc
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG will use.
      * 
+     * If you don&#39;t specify a route table here, the LPG is created without an associated route table. The Networking service does NOT automatically associate the attached VCN&#39;s default route table with the LPG.
+     * 
+     * For information about why you would associate a route table with an LPG, see [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
+     * 
      */
     @Import(name="routeTableId")
     private @Nullable Output<String> routeTableId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG will use.
+     * 
+     * If you don&#39;t specify a route table here, the LPG is created without an associated route table. The Networking service does NOT automatically associate the attached VCN&#39;s default route table with the LPG.
+     * 
+     * For information about why you would associate a route table with an LPG, see [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
      * 
      */
     public Optional<Output<String>> routeTableId() {
@@ -217,12 +225,18 @@ public final class LocalPeeringGatewayState extends com.pulumi.resources.Resourc
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the LPG belongs to.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="vcnId")
     private @Nullable Output<String> vcnId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the LPG belongs to.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> vcnId() {
@@ -489,6 +503,10 @@ public final class LocalPeeringGatewayState extends com.pulumi.resources.Resourc
         /**
          * @param routeTableId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG will use.
          * 
+         * If you don&#39;t specify a route table here, the LPG is created without an associated route table. The Networking service does NOT automatically associate the attached VCN&#39;s default route table with the LPG.
+         * 
+         * For information about why you would associate a route table with an LPG, see [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
+         * 
          * @return builder
          * 
          */
@@ -499,6 +517,10 @@ public final class LocalPeeringGatewayState extends com.pulumi.resources.Resourc
 
         /**
          * @param routeTableId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG will use.
+         * 
+         * If you don&#39;t specify a route table here, the LPG is created without an associated route table. The Networking service does NOT automatically associate the attached VCN&#39;s default route table with the LPG.
+         * 
+         * For information about why you would associate a route table with an LPG, see [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
          * 
          * @return builder
          * 
@@ -552,6 +574,9 @@ public final class LocalPeeringGatewayState extends com.pulumi.resources.Resourc
         /**
          * @param vcnId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the LPG belongs to.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -562,6 +587,9 @@ public final class LocalPeeringGatewayState extends com.pulumi.resources.Resourc
 
         /**
          * @param vcnId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the LPG belongs to.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

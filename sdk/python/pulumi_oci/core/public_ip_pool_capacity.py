@@ -21,6 +21,9 @@ class PublicIpPoolCapacityArgs:
         The set of arguments for constructing a PublicIpPoolCapacity resource.
         :param pulumi.Input[str] byoip_id: The OCID of the Byoip Range Id object to which the cidr block belongs.
         :param pulumi.Input[str] cidr_block: The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] public_ip_pool_id: The OCID of the pool object created by the current tenancy
         """
         pulumi.set(__self__, "byoip_id", byoip_id)
@@ -44,6 +47,9 @@ class PublicIpPoolCapacityArgs:
     def cidr_block(self) -> pulumi.Input[str]:
         """
         The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "cidr_block")
 
@@ -74,6 +80,9 @@ class _PublicIpPoolCapacityState:
         Input properties used for looking up and filtering PublicIpPoolCapacity resources.
         :param pulumi.Input[str] byoip_id: The OCID of the Byoip Range Id object to which the cidr block belongs.
         :param pulumi.Input[str] cidr_block: The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] public_ip_pool_id: The OCID of the pool object created by the current tenancy
         """
         if byoip_id is not None:
@@ -100,6 +109,9 @@ class _PublicIpPoolCapacityState:
     def cidr_block(self) -> Optional[pulumi.Input[str]]:
         """
         The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "cidr_block")
 
@@ -154,6 +166,9 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] byoip_id: The OCID of the Byoip Range Id object to which the cidr block belongs.
         :param pulumi.Input[str] cidr_block: The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] public_ip_pool_id: The OCID of the pool object created by the current tenancy
         """
         ...
@@ -241,6 +256,9 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] byoip_id: The OCID of the Byoip Range Id object to which the cidr block belongs.
         :param pulumi.Input[str] cidr_block: The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] public_ip_pool_id: The OCID of the pool object created by the current tenancy
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -265,6 +283,9 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
     def cidr_block(self) -> pulumi.Output[str]:
         """
         The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "cidr_block")
 

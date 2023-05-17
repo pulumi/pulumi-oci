@@ -81,12 +81,18 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="changeRetentionTrigger", type=Integer.class, parameters={})
     private Output</* @Nullable */ Integer> changeRetentionTrigger;
 
     /**
      * @return (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Optional<Integer>> changeRetentionTrigger() {

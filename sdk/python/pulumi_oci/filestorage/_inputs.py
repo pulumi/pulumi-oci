@@ -32,6 +32,8 @@ class ExportExportOptionArgs:
                  require_privileged_source_port: Optional[pulumi.Input[bool]] = None):
         """
         :param pulumi.Input[str] source: (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
+               
+               **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
         :param pulumi.Input[str] access: (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
         :param pulumi.Input[str] anonymous_gid: (Updatable) GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
         :param pulumi.Input[str] anonymous_uid: (Updatable) UID value to remap to when squashing a client UID (see identitySquash for more details.) If unspecified, defaults to `65534`.
@@ -55,6 +57,8 @@ class ExportExportOptionArgs:
     def source(self) -> pulumi.Input[str]:
         """
         (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
+
+        **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
         """
         return pulumi.get(self, "source")
 
@@ -130,7 +134,11 @@ class FileSystemSourceDetailArgs:
                  source_snapshot_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] parent_file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-        :param pulumi.Input[str] source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+        :param pulumi.Input[str] source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm). 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if parent_file_system_id is not None:
             pulumi.set(__self__, "parent_file_system_id", parent_file_system_id)
@@ -153,7 +161,11 @@ class FileSystemSourceDetailArgs:
     @pulumi.getter(name="sourceSnapshotId")
     def source_snapshot_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm). 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source_snapshot_id")
 

@@ -86,6 +86,9 @@ type NotificationTopic struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringOutput `pulumi:"name"`
 	// A unique short topic Id. This is used only for SMS subscriptions.
 	ShortTopicId pulumi.StringOutput `pulumi:"shortTopicId"`
@@ -142,6 +145,9 @@ type notificationTopicState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 	// A unique short topic Id. This is used only for SMS subscriptions.
 	ShortTopicId *string `pulumi:"shortTopicId"`
@@ -167,6 +173,9 @@ type NotificationTopicState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput
 	// A unique short topic Id. This is used only for SMS subscriptions.
 	ShortTopicId pulumi.StringPtrInput
@@ -192,6 +201,9 @@ type notificationTopicArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 }
 
@@ -206,6 +218,9 @@ type NotificationTopicArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput
 }
 
@@ -327,6 +342,9 @@ func (o NotificationTopicOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o NotificationTopicOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *NotificationTopic) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

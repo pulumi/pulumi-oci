@@ -34,6 +34,9 @@ public final class TargetDatabaseTlsConfig {
     /**
      * @return (Updatable) Base64 encoded string of trust store file content.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private @Nullable String trustStoreContent;
 
@@ -68,6 +71,9 @@ public final class TargetDatabaseTlsConfig {
     }
     /**
      * @return (Updatable) Base64 encoded string of trust store file content.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> trustStoreContent() {

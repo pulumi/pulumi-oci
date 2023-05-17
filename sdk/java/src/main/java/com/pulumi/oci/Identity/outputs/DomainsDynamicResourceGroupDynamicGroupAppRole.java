@@ -15,35 +15,106 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRole {
     /**
      * @return (Updatable) If true, then the role provides administrative access privileges. READ-ONLY.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     private @Nullable Boolean adminRole;
     /**
      * @return (Updatable) App identifier
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsAddedSinceVersion: 3
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable String appId;
     /**
      * @return (Updatable) Name of parent App. READ-ONLY.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String appName;
     /**
      * @return (Updatable) The displayName of the User or App who modified this Resource
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable String display;
     /**
      * @return (Updatable) The name of the legacy group associated with this AppRole.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String legacyGroupName;
     /**
      * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
+     * 
      */
     private @Nullable String ref;
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tag value
+     * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * required: true
+     * * mutability: readWrite
+     * * returned: default
+     * * type: string
+     * * idcsSearchable: true
+     * * uniqueness: none
      * 
      */
     private String value;
@@ -52,12 +123,33 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRole {
     /**
      * @return (Updatable) If true, then the role provides administrative access privileges. READ-ONLY.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     public Optional<Boolean> adminRole() {
         return Optional.ofNullable(this.adminRole);
     }
     /**
      * @return (Updatable) App identifier
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsAddedSinceVersion: 3
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> appId() {
@@ -66,12 +158,32 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRole {
     /**
      * @return (Updatable) Name of parent App. READ-ONLY.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> appName() {
         return Optional.ofNullable(this.appName);
     }
     /**
      * @return (Updatable) The displayName of the User or App who modified this Resource
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> display() {
@@ -80,6 +192,15 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRole {
     /**
      * @return (Updatable) The name of the legacy group associated with this AppRole.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> legacyGroupName() {
         return Optional.ofNullable(this.legacyGroupName);
@@ -87,12 +208,33 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRole {
     /**
      * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
+     * 
      */
     public Optional<String> ref() {
         return Optional.ofNullable(this.ref);
     }
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tag value
+     * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * required: true
+     * * mutability: readWrite
+     * * returned: default
+     * * type: string
+     * * idcsSearchable: true
+     * * uniqueness: none
      * 
      */
     public String value() {

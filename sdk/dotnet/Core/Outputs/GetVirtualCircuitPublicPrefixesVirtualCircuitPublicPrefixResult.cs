@@ -19,6 +19,8 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly string CidrBlock;
         /// <summary>
         /// A filter to only return resources that match the given verification state.
+        /// 
+        /// The state value is case-insensitive.
         /// </summary>
         public readonly string VerificationState;
 

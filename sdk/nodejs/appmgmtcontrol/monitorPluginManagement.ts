@@ -57,6 +57,10 @@ export class MonitorPluginManagement extends pulumi.CustomResource {
     public /*out*/ readonly monitoredInstanceDisplayName!: pulumi.Output<string>;
     /**
      * OCID of monitored instance.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly monitoredInstanceId!: pulumi.Output<string>;
     public /*out*/ readonly monitoredInstanceManagementAgentId!: pulumi.Output<string>;
@@ -107,6 +111,10 @@ export interface MonitorPluginManagementState {
     monitoredInstanceDisplayName?: pulumi.Input<string>;
     /**
      * OCID of monitored instance.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     monitoredInstanceId?: pulumi.Input<string>;
     monitoredInstanceManagementAgentId?: pulumi.Input<string>;
@@ -119,6 +127,10 @@ export interface MonitorPluginManagementState {
 export interface MonitorPluginManagementArgs {
     /**
      * OCID of monitored instance.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     monitoredInstanceId: pulumi.Input<string>;
 }

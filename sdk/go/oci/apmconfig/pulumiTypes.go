@@ -378,6 +378,9 @@ type ConfigRule struct {
 	// (Updatable) The maximum response time in milliseconds that is considered "satisfactory" for the end user.
 	SatisfiedResponseTime *int `pulumi:"satisfiedResponseTime"`
 	// (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ToleratingResponseTime *int `pulumi:"toleratingResponseTime"`
 }
 
@@ -406,6 +409,9 @@ type ConfigRuleArgs struct {
 	// (Updatable) The maximum response time in milliseconds that is considered "satisfactory" for the end user.
 	SatisfiedResponseTime pulumi.IntPtrInput `pulumi:"satisfiedResponseTime"`
 	// (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ToleratingResponseTime pulumi.IntPtrInput `pulumi:"toleratingResponseTime"`
 }
 
@@ -491,6 +497,9 @@ func (o ConfigRuleOutput) SatisfiedResponseTime() pulumi.IntPtrOutput {
 }
 
 // (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ConfigRuleOutput) ToleratingResponseTime() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ConfigRule) *int { return v.ToleratingResponseTime }).(pulumi.IntPtrOutput)
 }

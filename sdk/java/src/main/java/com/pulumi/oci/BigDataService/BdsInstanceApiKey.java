@@ -193,12 +193,18 @@ public class BdsInstanceApiKey extends com.pulumi.resources.CustomResource {
     /**
      * The OCID of the user for whom this new generated API key pair will be created.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="userId", type=String.class, parameters={})
     private Output<String> userId;
 
     /**
      * @return The OCID of the user for whom this new generated API key pair will be created.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> userId() {

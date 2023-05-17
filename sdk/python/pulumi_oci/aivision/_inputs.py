@@ -31,6 +31,10 @@ class ModelTestingDatasetArgs:
         :param pulumi.Input[str] dataset_id: The OCID of the Data Science Labeling Dataset.
         :param pulumi.Input[str] namespace_name: The namespace name of the ObjectStorage bucket that contains the input data file.
         :param pulumi.Input[str] object: The object name of the input data file.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "dataset_type", dataset_type)
         if bucket is not None:
@@ -95,6 +99,10 @@ class ModelTestingDatasetArgs:
     def object(self) -> Optional[pulumi.Input[str]]:
         """
         The object name of the input data file.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "object")
 
@@ -117,6 +125,10 @@ class ModelTrainingDatasetArgs:
         :param pulumi.Input[str] dataset_id: The OCID of the Data Science Labeling Dataset.
         :param pulumi.Input[str] namespace_name: The namespace name of the ObjectStorage bucket that contains the input data file.
         :param pulumi.Input[str] object: The object name of the input data file.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "dataset_type", dataset_type)
         if bucket is not None:
@@ -181,6 +193,10 @@ class ModelTrainingDatasetArgs:
     def object(self) -> Optional[pulumi.Input[str]]:
         """
         The object name of the input data file.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "object")
 
@@ -203,6 +219,10 @@ class ModelValidationDatasetArgs:
         :param pulumi.Input[str] dataset_id: The OCID of the Data Science Labeling Dataset.
         :param pulumi.Input[str] namespace_name: The namespace name of the ObjectStorage bucket that contains the input data file.
         :param pulumi.Input[str] object: The object name of the input data file.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "dataset_type", dataset_type)
         if bucket is not None:
@@ -267,6 +287,10 @@ class ModelValidationDatasetArgs:
     def object(self) -> Optional[pulumi.Input[str]]:
         """
         The object name of the input data file.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "object")
 

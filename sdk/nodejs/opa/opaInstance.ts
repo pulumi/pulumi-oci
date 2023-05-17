@@ -133,6 +133,10 @@ export class OpaInstance extends pulumi.CustomResource {
     public readonly meteringType!: pulumi.Output<string>;
     /**
      * Shape of the instance.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly shapeName!: pulumi.Output<string>;
     /**
@@ -288,6 +292,10 @@ export interface OpaInstanceState {
     meteringType?: pulumi.Input<string>;
     /**
      * Shape of the instance.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     shapeName?: pulumi.Input<string>;
     /**
@@ -350,6 +358,10 @@ export interface OpaInstanceArgs {
     meteringType?: pulumi.Input<string>;
     /**
      * Shape of the instance.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     shapeName: pulumi.Input<string>;
 }

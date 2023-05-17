@@ -45,6 +45,10 @@ class MysqlDbSystemArgs:
         """
         The set of arguments for constructing a MysqlDbSystem resource.
         :param pulumi.Input[str] availability_domain: The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+               
+               In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+               
+               For a standalone DB System, this defines the availability domain in which the DB System is placed.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
@@ -60,15 +64,28 @@ class MysqlDbSystemArgs:
         :param pulumi.Input[str] description: (Updatable) User-provided data about the DB System.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB System. It does not have to be unique.
         :param pulumi.Input[str] fault_domain: The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+               
+               In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+               
+               For a standalone DB System, this defines the fault domain in which the DB System is placed.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] hostname_label: The hostname for the primary endpoint of the DB System. Used for DNS.
+               
+               The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+               
+               Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         :param pulumi.Input[str] ip_address: The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
         :param pulumi.Input[bool] is_highly_available: (Updatable) Specifies if the DB System is highly available.
+               
+               When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
         :param pulumi.Input['MysqlDbSystemMaintenanceArgs'] maintenance: (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
         :param pulumi.Input[str] mysql_version: The specific MySQL version identifier.
         :param pulumi.Input[int] port: The port for primary endpoint of the DB System to listen on.
         :param pulumi.Input[int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
         :param pulumi.Input[str] shutdown_type: It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['MysqlDbSystemSourceArgs'] source: Parameters detailing how to provision the initial data of the system.
         :param pulumi.Input[str] state: (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
         """
@@ -126,6 +143,10 @@ class MysqlDbSystemArgs:
     def availability_domain(self) -> pulumi.Input[str]:
         """
         The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+
+        In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+
+        For a standalone DB System, this defines the availability domain in which the DB System is placed.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -295,6 +316,10 @@ class MysqlDbSystemArgs:
     def fault_domain(self) -> Optional[pulumi.Input[str]]:
         """
         The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+
+        In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+
+        For a standalone DB System, this defines the fault domain in which the DB System is placed.
         """
         return pulumi.get(self, "fault_domain")
 
@@ -319,6 +344,10 @@ class MysqlDbSystemArgs:
     def hostname_label(self) -> Optional[pulumi.Input[str]]:
         """
         The hostname for the primary endpoint of the DB System. Used for DNS.
+
+        The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+
+        Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         """
         return pulumi.get(self, "hostname_label")
 
@@ -343,6 +372,8 @@ class MysqlDbSystemArgs:
     def is_highly_available(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Specifies if the DB System is highly available.
+
+        When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
         """
         return pulumi.get(self, "is_highly_available")
 
@@ -403,6 +434,9 @@ class MysqlDbSystemArgs:
     def shutdown_type(self) -> Optional[pulumi.Input[str]]:
         """
         It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "shutdown_type")
 
@@ -481,6 +515,10 @@ class _MysqlDbSystemState:
         :param pulumi.Input[str] admin_username: The username for the administrative user.
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemAnalyticsClusterArgs']]] analytics_clusters: DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
         :param pulumi.Input[str] availability_domain: The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+               
+               In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+               
+               For a standalone DB System, this defines the availability domain in which the DB System is placed.
         :param pulumi.Input['MysqlDbSystemBackupPolicyArgs'] backup_policy: (Updatable) Backup policy as optionally used for DB System Creation.
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelArgs']]] channels: A list with a summary of all the Channels attached to the DB System.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment.
@@ -494,13 +532,23 @@ class _MysqlDbSystemState:
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB System. It does not have to be unique.
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemEndpointArgs']]] endpoints: The network endpoints available for this DB System.
         :param pulumi.Input[str] fault_domain: The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+               
+               In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+               
+               For a standalone DB System, this defines the fault domain in which the DB System is placed.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemHeatWaveClusterArgs']]] heat_wave_clusters: A summary of a HeatWave cluster.
         :param pulumi.Input[str] hostname_label: The hostname for the primary endpoint of the DB System. Used for DNS.
+               
+               The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+               
+               Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         :param pulumi.Input[str] ip_address: The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
         :param pulumi.Input[bool] is_analytics_cluster_attached: DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
         :param pulumi.Input[bool] is_heat_wave_cluster_attached: If the DB System has a HeatWave Cluster attached.
         :param pulumi.Input[bool] is_highly_available: (Updatable) Specifies if the DB System is highly available.
+               
+               When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState.
         :param pulumi.Input['MysqlDbSystemMaintenanceArgs'] maintenance: (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
         :param pulumi.Input[str] mysql_version: The specific MySQL version identifier.
@@ -510,6 +558,9 @@ class _MysqlDbSystemState:
         :param pulumi.Input[str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param pulumi.Input[str] shutdown_type: It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['MysqlDbSystemSourceArgs'] source: Parameters detailing how to provision the initial data of the system.
         :param pulumi.Input[str] state: (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet the DB System is associated with.
@@ -632,6 +683,10 @@ class _MysqlDbSystemState:
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
         """
         The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+
+        In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+
+        For a standalone DB System, this defines the availability domain in which the DB System is placed.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -788,6 +843,10 @@ class _MysqlDbSystemState:
     def fault_domain(self) -> Optional[pulumi.Input[str]]:
         """
         The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+
+        In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+
+        For a standalone DB System, this defines the fault domain in which the DB System is placed.
         """
         return pulumi.get(self, "fault_domain")
 
@@ -824,6 +883,10 @@ class _MysqlDbSystemState:
     def hostname_label(self) -> Optional[pulumi.Input[str]]:
         """
         The hostname for the primary endpoint of the DB System. Used for DNS.
+
+        The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+
+        Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         """
         return pulumi.get(self, "hostname_label")
 
@@ -872,6 +935,8 @@ class _MysqlDbSystemState:
     def is_highly_available(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Specifies if the DB System is highly available.
+
+        When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
         """
         return pulumi.get(self, "is_highly_available")
 
@@ -969,6 +1034,9 @@ class _MysqlDbSystemState:
     def shutdown_type(self) -> Optional[pulumi.Input[str]]:
         """
         It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "shutdown_type")
 
@@ -1145,6 +1213,10 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] admin_password: The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
         :param pulumi.Input[str] admin_username: The username for the administrative user.
         :param pulumi.Input[str] availability_domain: The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+               
+               In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+               
+               For a standalone DB System, this defines the availability domain in which the DB System is placed.
         :param pulumi.Input[pulumi.InputType['MysqlDbSystemBackupPolicyArgs']] backup_policy: (Updatable) Backup policy as optionally used for DB System Creation.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[str] configuration_id: (Updatable) The OCID of the Configuration to be used for this DB System.
@@ -1155,10 +1227,20 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) User-provided data about the DB System.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB System. It does not have to be unique.
         :param pulumi.Input[str] fault_domain: The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+               
+               In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+               
+               For a standalone DB System, this defines the fault domain in which the DB System is placed.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] hostname_label: The hostname for the primary endpoint of the DB System. Used for DNS.
+               
+               The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+               
+               Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         :param pulumi.Input[str] ip_address: The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
         :param pulumi.Input[bool] is_highly_available: (Updatable) Specifies if the DB System is highly available.
+               
+               When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
         :param pulumi.Input[pulumi.InputType['MysqlDbSystemMaintenanceArgs']] maintenance: (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
         :param pulumi.Input[str] mysql_version: The specific MySQL version identifier.
         :param pulumi.Input[int] port: The port for primary endpoint of the DB System to listen on.
@@ -1166,6 +1248,9 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param pulumi.Input[str] shutdown_type: It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[pulumi.InputType['MysqlDbSystemSourceArgs']] source: Parameters detailing how to provision the initial data of the system.
         :param pulumi.Input[str] state: (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet the DB System is associated with.
@@ -1402,6 +1487,10 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] admin_username: The username for the administrative user.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MysqlDbSystemAnalyticsClusterArgs']]]] analytics_clusters: DEPRECATED -- please use HeatWave API instead. A summary of an Analytics Cluster.
         :param pulumi.Input[str] availability_domain: The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+               
+               In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+               
+               For a standalone DB System, this defines the availability domain in which the DB System is placed.
         :param pulumi.Input[pulumi.InputType['MysqlDbSystemBackupPolicyArgs']] backup_policy: (Updatable) Backup policy as optionally used for DB System Creation.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MysqlDbSystemChannelArgs']]]] channels: A list with a summary of all the Channels attached to the DB System.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment.
@@ -1415,13 +1504,23 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB System. It does not have to be unique.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MysqlDbSystemEndpointArgs']]]] endpoints: The network endpoints available for this DB System.
         :param pulumi.Input[str] fault_domain: The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+               
+               In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+               
+               For a standalone DB System, this defines the fault domain in which the DB System is placed.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MysqlDbSystemHeatWaveClusterArgs']]]] heat_wave_clusters: A summary of a HeatWave cluster.
         :param pulumi.Input[str] hostname_label: The hostname for the primary endpoint of the DB System. Used for DNS.
+               
+               The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+               
+               Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         :param pulumi.Input[str] ip_address: The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
         :param pulumi.Input[bool] is_analytics_cluster_attached: DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
         :param pulumi.Input[bool] is_heat_wave_cluster_attached: If the DB System has a HeatWave Cluster attached.
         :param pulumi.Input[bool] is_highly_available: (Updatable) Specifies if the DB System is highly available.
+               
+               When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState.
         :param pulumi.Input[pulumi.InputType['MysqlDbSystemMaintenanceArgs']] maintenance: (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
         :param pulumi.Input[str] mysql_version: The specific MySQL version identifier.
@@ -1431,6 +1530,9 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param pulumi.Input[str] shutdown_type: It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[pulumi.InputType['MysqlDbSystemSourceArgs']] source: Parameters detailing how to provision the initial data of the system.
         :param pulumi.Input[str] state: (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet the DB System is associated with.
@@ -1509,6 +1611,10 @@ class MysqlDbSystem(pulumi.CustomResource):
     def availability_domain(self) -> pulumi.Output[str]:
         """
         The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+
+        In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+
+        For a standalone DB System, this defines the availability domain in which the DB System is placed.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -1613,6 +1719,10 @@ class MysqlDbSystem(pulumi.CustomResource):
     def fault_domain(self) -> pulumi.Output[str]:
         """
         The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+
+        In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+
+        For a standalone DB System, this defines the fault domain in which the DB System is placed.
         """
         return pulumi.get(self, "fault_domain")
 
@@ -1637,6 +1747,10 @@ class MysqlDbSystem(pulumi.CustomResource):
     def hostname_label(self) -> pulumi.Output[str]:
         """
         The hostname for the primary endpoint of the DB System. Used for DNS.
+
+        The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+
+        Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         """
         return pulumi.get(self, "hostname_label")
 
@@ -1669,6 +1783,8 @@ class MysqlDbSystem(pulumi.CustomResource):
     def is_highly_available(self) -> pulumi.Output[bool]:
         """
         (Updatable) Specifies if the DB System is highly available.
+
+        When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
         """
         return pulumi.get(self, "is_highly_available")
 
@@ -1734,6 +1850,9 @@ class MysqlDbSystem(pulumi.CustomResource):
     def shutdown_type(self) -> pulumi.Output[Optional[str]]:
         """
         It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "shutdown_type")
 

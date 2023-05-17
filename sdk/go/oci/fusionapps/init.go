@@ -31,6 +31,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &FusionEnvironmentFamily{}
 	case "oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity":
 		r = &FusionEnvironmentRefreshActivity{}
+	case "oci:FusionApps/fusionEnvironmentServiceAttachment:FusionEnvironmentServiceAttachment":
+		r = &FusionEnvironmentServiceAttachment{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -67,6 +69,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"FusionApps/fusionEnvironmentRefreshActivity",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"FusionApps/fusionEnvironmentServiceAttachment",
 		&module{version},
 	)
 }

@@ -99,6 +99,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("peerRegionName")]
         public Output<string> PeerRegionName { get; private set; } = null!;
@@ -223,6 +227,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("peerRegionName")]
         public Input<string>? PeerRegionName { get; set; }
@@ -291,6 +299,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("peerRegionName")]
         public Input<string>? PeerRegionName { get; set; }

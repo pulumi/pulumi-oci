@@ -91,6 +91,8 @@ namespace Pulumi.Oci.Optimizer
 
         /// <summary>
         /// When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+        /// 
+        /// Can only be set to true when performing ListCompartments on the tenancy (root compartment).
         /// </summary>
         [Input("compartmentIdInSubtree", required: true)]
         public bool CompartmentIdInSubtree { get; set; }
@@ -123,6 +125,8 @@ namespace Pulumi.Oci.Optimizer
 
         /// <summary>
         /// When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+        /// 
+        /// Can only be set to true when performing ListCompartments on the tenancy (root compartment).
         /// </summary>
         [Input("compartmentIdInSubtree", required: true)]
         public Input<bool> CompartmentIdInSubtree { get; set; } = null!;

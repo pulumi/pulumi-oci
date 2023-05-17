@@ -22,6 +22,10 @@ class FusionEnvironmentRefreshActivityArgs:
         The set of arguments for constructing a FusionEnvironmentRefreshActivity resource.
         :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[str] source_fusion_environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "fusion_environment_id", fusion_environment_id)
         pulumi.set(__self__, "source_fusion_environment_id", source_fusion_environment_id)
@@ -43,6 +47,10 @@ class FusionEnvironmentRefreshActivityArgs:
     def source_fusion_environment_id(self) -> pulumi.Input[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source_fusion_environment_id")
 
@@ -75,6 +83,10 @@ class _FusionEnvironmentRefreshActivityState:
         :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs']]] refresh_issue_details_lists: Details of refresh investigation information, each item represents a different issue.
         :param pulumi.Input[str] service_availability: Service availability / impact during refresh activity execution up down
         :param pulumi.Input[str] source_fusion_environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the refreshActivity.
         :param pulumi.Input[str] time_accepted: The time the refresh activity record was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_expected_finish: The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
@@ -183,6 +195,10 @@ class _FusionEnvironmentRefreshActivityState:
     def source_fusion_environment_id(self) -> Optional[pulumi.Input[str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source_fusion_environment_id")
 
@@ -299,6 +315,10 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[str] source_fusion_environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -409,6 +429,10 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs']]]] refresh_issue_details_lists: Details of refresh investigation information, each item represents a different issue.
         :param pulumi.Input[str] service_availability: Service availability / impact during refresh activity execution up down
         :param pulumi.Input[str] source_fusion_environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the refreshActivity.
         :param pulumi.Input[str] time_accepted: The time the refresh activity record was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_expected_finish: The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
@@ -485,6 +509,10 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
     def source_fusion_environment_id(self) -> pulumi.Output[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source_fusion_environment_id")
 

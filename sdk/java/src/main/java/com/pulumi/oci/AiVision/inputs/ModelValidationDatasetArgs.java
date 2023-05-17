@@ -78,12 +78,18 @@ public final class ModelValidationDatasetArgs extends com.pulumi.resources.Resou
     /**
      * The object name of the input data file.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="object")
     private @Nullable Output<String> object;
 
     /**
      * @return The object name of the input data file.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> object() {
@@ -205,6 +211,9 @@ public final class ModelValidationDatasetArgs extends com.pulumi.resources.Resou
         /**
          * @param object The object name of the input data file.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -215,6 +224,9 @@ public final class ModelValidationDatasetArgs extends com.pulumi.resources.Resou
 
         /**
          * @param object The object name of the input data file.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

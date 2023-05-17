@@ -170,12 +170,18 @@ public final class IdentityProviderState extends com.pulumi.resources.ResourceAr
     /**
      * (Updatable) The protocol used for federation.  Example: `SAML2`
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="protocol")
     private @Nullable Output<String> protocol;
 
     /**
      * @return (Updatable) The protocol used for federation.  Example: `SAML2`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> protocol() {
@@ -493,6 +499,9 @@ public final class IdentityProviderState extends com.pulumi.resources.ResourceAr
         /**
          * @param protocol (Updatable) The protocol used for federation.  Example: `SAML2`
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -503,6 +512,9 @@ public final class IdentityProviderState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param protocol (Updatable) The protocol used for federation.  Example: `SAML2`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

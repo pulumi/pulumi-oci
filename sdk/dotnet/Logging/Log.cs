@@ -117,6 +117,10 @@ namespace Pulumi.Oci.Logging
 
         /// <summary>
         /// (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("retentionDuration")]
         public Output<int> RetentionDuration { get; private set; } = null!;
@@ -247,6 +251,10 @@ namespace Pulumi.Oci.Logging
 
         /// <summary>
         /// (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("retentionDuration")]
         public Input<int>? RetentionDuration { get; set; }
@@ -321,6 +329,10 @@ namespace Pulumi.Oci.Logging
 
         /// <summary>
         /// (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("retentionDuration")]
         public Input<int>? RetentionDuration { get; set; }

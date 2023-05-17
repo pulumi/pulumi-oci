@@ -102,6 +102,10 @@ namespace Pulumi.Oci.LogAnalytics
 
         /// <summary>
         /// Task type.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("taskType")]
         public Output<string> TaskType { get; private set; } = null!;
@@ -238,6 +242,10 @@ namespace Pulumi.Oci.LogAnalytics
 
         /// <summary>
         /// Task type.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("taskType", required: true)]
         public Input<string> TaskType { get; set; } = null!;
@@ -339,6 +347,10 @@ namespace Pulumi.Oci.LogAnalytics
 
         /// <summary>
         /// Task type.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("taskType")]
         public Input<string>? TaskType { get; set; }

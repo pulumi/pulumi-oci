@@ -18,12 +18,32 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
      * 
+     * Example:
+     * 
+     * -----BEGIN CERTIFICATE-----
+     * MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+     * EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+     * VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+     * aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+     * ...
+     * -----END CERTIFICATE-----
+     * 
      */
     @Import(name="caCertificate")
     private @Nullable Output<String> caCertificate;
 
     /**
      * @return The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+     * 
+     * Example:
+     * 
+     * -----BEGIN CERTIFICATE-----
+     * MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+     * EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+     * VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+     * aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+     * ...
+     * -----END CERTIFICATE-----
      * 
      */
     public Optional<Output<String>> caCertificate() {
@@ -78,12 +98,32 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The SSL private key for your certificate, in PEM format.
      * 
+     * Example:
+     * 
+     * -----BEGIN RSA PRIVATE KEY-----
+     * jO1O1v2ftXMsawM90tnXwc6xhOAT1gDBC9S8DKeca..JZNUgYYwNS0dP2UK
+     * tmyN+XqVcAKw4HqVmChXy5b5msu8eIq3uc2NqNVtR..2ksSLukP8pxXcHyb
+     * +sEwvM4uf8qbnHAqwnOnP9+KV9vds6BaH1eRA4CHz..n+NVZlzBsTxTlS16
+     * /Umr7wJzVrMqK5sDiSu4WuaaBdqMGfL5hLsTjcBFD..Da2iyQmSKuVD4lIZ
+     * ...
+     * -----END RSA PRIVATE KEY-----
+     * 
      */
     @Import(name="privateKey")
     private @Nullable Output<String> privateKey;
 
     /**
      * @return The SSL private key for your certificate, in PEM format.
+     * 
+     * Example:
+     * 
+     * -----BEGIN RSA PRIVATE KEY-----
+     * jO1O1v2ftXMsawM90tnXwc6xhOAT1gDBC9S8DKeca..JZNUgYYwNS0dP2UK
+     * tmyN+XqVcAKw4HqVmChXy5b5msu8eIq3uc2NqNVtR..2ksSLukP8pxXcHyb
+     * +sEwvM4uf8qbnHAqwnOnP9+KV9vds6BaH1eRA4CHz..n+NVZlzBsTxTlS16
+     * /Umr7wJzVrMqK5sDiSu4WuaaBdqMGfL5hLsTjcBFD..Da2iyQmSKuVD4lIZ
+     * ...
+     * -----END RSA PRIVATE KEY-----
      * 
      */
     public Optional<Output<String>> privateKey() {
@@ -93,12 +133,38 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The public certificate, in PEM format, that you received from your SSL certificate provider.
      * 
+     * Example:
+     * 
+     * -----BEGIN CERTIFICATE-----
+     * MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbM..QswCQYDVQQGEwJKU
+     * A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxE..TAPBgNVBAoTCEZyY
+     * MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWB..gNVBAMTD0ZyYW5rN
+     * YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmc..mFuazRkZC5jb20wH
+     * ...
+     * -----END CERTIFICATE-----
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="publicCertificate")
     private @Nullable Output<String> publicCertificate;
 
     /**
      * @return The public certificate, in PEM format, that you received from your SSL certificate provider.
+     * 
+     * Example:
+     * 
+     * -----BEGIN CERTIFICATE-----
+     * MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbM..QswCQYDVQQGEwJKU
+     * A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxE..TAPBgNVBAoTCEZyY
+     * MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWB..gNVBAMTD0ZyYW5rN
+     * YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmc..mFuazRkZC5jb20wH
+     * ...
+     * -----END CERTIFICATE-----
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> publicCertificate() {
@@ -137,6 +203,16 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param caCertificate The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
          * 
+         * Example:
+         * 
+         * -----BEGIN CERTIFICATE-----
+         * MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+         * EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+         * VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+         * aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+         * ...
+         * -----END CERTIFICATE-----
+         * 
          * @return builder
          * 
          */
@@ -147,6 +223,16 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param caCertificate The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+         * 
+         * Example:
+         * 
+         * -----BEGIN CERTIFICATE-----
+         * MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+         * EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+         * VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+         * aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+         * ...
+         * -----END CERTIFICATE-----
          * 
          * @return builder
          * 
@@ -221,6 +307,16 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param privateKey The SSL private key for your certificate, in PEM format.
          * 
+         * Example:
+         * 
+         * -----BEGIN RSA PRIVATE KEY-----
+         * jO1O1v2ftXMsawM90tnXwc6xhOAT1gDBC9S8DKeca..JZNUgYYwNS0dP2UK
+         * tmyN+XqVcAKw4HqVmChXy5b5msu8eIq3uc2NqNVtR..2ksSLukP8pxXcHyb
+         * +sEwvM4uf8qbnHAqwnOnP9+KV9vds6BaH1eRA4CHz..n+NVZlzBsTxTlS16
+         * /Umr7wJzVrMqK5sDiSu4WuaaBdqMGfL5hLsTjcBFD..Da2iyQmSKuVD4lIZ
+         * ...
+         * -----END RSA PRIVATE KEY-----
+         * 
          * @return builder
          * 
          */
@@ -232,6 +328,16 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param privateKey The SSL private key for your certificate, in PEM format.
          * 
+         * Example:
+         * 
+         * -----BEGIN RSA PRIVATE KEY-----
+         * jO1O1v2ftXMsawM90tnXwc6xhOAT1gDBC9S8DKeca..JZNUgYYwNS0dP2UK
+         * tmyN+XqVcAKw4HqVmChXy5b5msu8eIq3uc2NqNVtR..2ksSLukP8pxXcHyb
+         * +sEwvM4uf8qbnHAqwnOnP9+KV9vds6BaH1eRA4CHz..n+NVZlzBsTxTlS16
+         * /Umr7wJzVrMqK5sDiSu4WuaaBdqMGfL5hLsTjcBFD..Da2iyQmSKuVD4lIZ
+         * ...
+         * -----END RSA PRIVATE KEY-----
+         * 
          * @return builder
          * 
          */
@@ -241,6 +347,19 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param publicCertificate The public certificate, in PEM format, that you received from your SSL certificate provider.
+         * 
+         * Example:
+         * 
+         * -----BEGIN CERTIFICATE-----
+         * MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbM..QswCQYDVQQGEwJKU
+         * A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxE..TAPBgNVBAoTCEZyY
+         * MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWB..gNVBAMTD0ZyYW5rN
+         * YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmc..mFuazRkZC5jb20wH
+         * ...
+         * -----END CERTIFICATE-----
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -252,6 +371,19 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param publicCertificate The public certificate, in PEM format, that you received from your SSL certificate provider.
+         * 
+         * Example:
+         * 
+         * -----BEGIN CERTIFICATE-----
+         * MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbM..QswCQYDVQQGEwJKU
+         * A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxE..TAPBgNVBAoTCEZyY
+         * MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWB..gNVBAMTD0ZyYW5rN
+         * YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmc..mFuazRkZC5jb20wH
+         * ...
+         * -----END CERTIFICATE-----
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

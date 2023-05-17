@@ -154,12 +154,18 @@ public class ApmDomain extends com.pulumi.resources.CustomResource {
     /**
      * Indicates whether this is an &#34;Always Free&#34; resource. The default value is false.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="isFreeTier", type=Boolean.class, parameters={})
     private Output<Boolean> isFreeTier;
 
     /**
      * @return Indicates whether this is an &#34;Always Free&#34; resource. The default value is false.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Boolean> isFreeTier() {

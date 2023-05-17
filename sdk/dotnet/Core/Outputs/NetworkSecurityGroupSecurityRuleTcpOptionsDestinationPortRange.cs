@@ -18,7 +18,11 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly int Max;
         /// <summary>
-        /// The minimum port number, which must not be greater than the maximum port number.
+        /// The minimum port number, which must not be greater than the maximum port number. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly int Min;
 

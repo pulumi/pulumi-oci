@@ -16,12 +16,20 @@ public final class LoadBalancerShapeDetailsArgs extends com.pulumi.resources.Res
     /**
      * (Updatable) Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
      * 
+     * The values must be between minimumBandwidthInMbps and 8000 (8Gbps).
+     * 
+     * Example: `1500`
+     * 
      */
     @Import(name="maximumBandwidthInMbps", required=true)
     private Output<Integer> maximumBandwidthInMbps;
 
     /**
      * @return (Updatable) Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
+     * 
+     * The values must be between minimumBandwidthInMbps and 8000 (8Gbps).
+     * 
+     * Example: `1500`
      * 
      */
     public Output<Integer> maximumBandwidthInMbps() {
@@ -71,6 +79,10 @@ public final class LoadBalancerShapeDetailsArgs extends com.pulumi.resources.Res
         /**
          * @param maximumBandwidthInMbps (Updatable) Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
          * 
+         * The values must be between minimumBandwidthInMbps and 8000 (8Gbps).
+         * 
+         * Example: `1500`
+         * 
          * @return builder
          * 
          */
@@ -81,6 +93,10 @@ public final class LoadBalancerShapeDetailsArgs extends com.pulumi.resources.Res
 
         /**
          * @param maximumBandwidthInMbps (Updatable) Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
+         * 
+         * The values must be between minimumBandwidthInMbps and 8000 (8Gbps).
+         * 
+         * Example: `1500`
          * 
          * @return builder
          * 

@@ -247,12 +247,18 @@ public class Secret extends com.pulumi.resources.CustomResource {
     /**
      * The OCID of the vault where you want to create the secret.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="vaultId", type=String.class, parameters={})
     private Output<String> vaultId;
 
     /**
      * @return The OCID of the vault where you want to create the secret.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> vaultId() {

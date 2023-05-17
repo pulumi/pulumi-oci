@@ -216,8 +216,14 @@ class AutoScalingConfigurationPolicyCapacity(dict):
                  min: Optional[int] = None):
         """
         :param int initial: For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+               
+               For a schedule-based autoscaling policy, this value is the target pool size to scale to when executing the schedule that's defined in the autoscaling policy.
         :param int max: For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
+               
+               For a schedule-based autoscaling policy, this value is not used.
         :param int min: For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
+               
+               For a schedule-based autoscaling policy, this value is not used.
         """
         if initial is not None:
             pulumi.set(__self__, "initial", initial)
@@ -231,6 +237,8 @@ class AutoScalingConfigurationPolicyCapacity(dict):
     def initial(self) -> Optional[int]:
         """
         For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+
+        For a schedule-based autoscaling policy, this value is the target pool size to scale to when executing the schedule that's defined in the autoscaling policy.
         """
         return pulumi.get(self, "initial")
 
@@ -239,6 +247,8 @@ class AutoScalingConfigurationPolicyCapacity(dict):
     def max(self) -> Optional[int]:
         """
         For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
+
+        For a schedule-based autoscaling policy, this value is not used.
         """
         return pulumi.get(self, "max")
 
@@ -247,6 +257,8 @@ class AutoScalingConfigurationPolicyCapacity(dict):
     def min(self) -> Optional[int]:
         """
         For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
+
+        For a schedule-based autoscaling policy, this value is not used.
         """
         return pulumi.get(self, "min")
 
@@ -259,6 +271,14 @@ class AutoScalingConfigurationPolicyExecutionSchedule(dict):
                  type: str):
         """
         :param str expression: A cron expression that represents the time at which to execute the autoscaling policy.
+               
+               Cron expressions have this format: `<second> <minute> <hour> <day of month> <month> <day of week> <year>`
+               
+               You can use special characters that are supported with the Quartz cron implementation.
+               
+               You must specify `0` as the value for seconds.
+               
+               Example: `0 15 10 ? * *`
         :param str timezone: The time zone for the execution schedule.
         :param str type: The type of action to take.
         """
@@ -271,6 +291,14 @@ class AutoScalingConfigurationPolicyExecutionSchedule(dict):
     def expression(self) -> str:
         """
         A cron expression that represents the time at which to execute the autoscaling policy.
+
+        Cron expressions have this format: `<second> <minute> <hour> <day of month> <month> <day of week> <year>`
+
+        You can use special characters that are supported with the Quartz cron implementation.
+
+        You must specify `0` as the value for seconds.
+
+        Example: `0 15 10 ? * *`
         """
         return pulumi.get(self, "expression")
 
@@ -415,6 +443,8 @@ class AutoScalingConfigurationPolicyRuleAction(dict):
                  value: Optional[int] = None):
         """
         :param str type: The type of action to take.
+        :param int value: ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if type is not None:
             pulumi.set(__self__, "type", type)
@@ -432,6 +462,10 @@ class AutoScalingConfigurationPolicyRuleAction(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[int]:
+        """
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
         return pulumi.get(self, "value")
 
 
@@ -480,6 +514,8 @@ class AutoScalingConfigurationPolicyRuleMetricThreshold(dict):
                  value: Optional[int] = None):
         """
         :param str operator: The comparison operator to use. Options are greater than (`GT`), greater than or equal to (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
+        :param int value: ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if operator is not None:
             pulumi.set(__self__, "operator", operator)
@@ -497,6 +533,10 @@ class AutoScalingConfigurationPolicyRuleMetricThreshold(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[int]:
+        """
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
         return pulumi.get(self, "value")
 
 

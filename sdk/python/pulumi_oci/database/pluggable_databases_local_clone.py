@@ -28,6 +28,10 @@ class PluggableDatabasesLocalCloneArgs:
         :param pulumi.Input[str] pdb_admin_password: A strong password for PDB Admin of the newly cloned PDB. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
         :param pulumi.Input[bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
         :param pulumi.Input[str] target_tde_wallet_password: The existing TDE wallet password of the target CDB.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "cloned_pdb_name", cloned_pdb_name)
         pulumi.set(__self__, "pluggable_database_id", pluggable_database_id)
@@ -91,6 +95,10 @@ class PluggableDatabasesLocalCloneArgs:
     def target_tde_wallet_password(self) -> Optional[pulumi.Input[str]]:
         """
         The existing TDE wallet password of the target CDB.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "target_tde_wallet_password")
 
@@ -137,6 +145,10 @@ class _PluggableDatabasesLocalCloneState:
         :param pulumi.Input[bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
         :param pulumi.Input[str] state: The current state of the pluggable database.
         :param pulumi.Input[str] target_tde_wallet_password: The existing TDE wallet password of the target CDB.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The date and time the pluggable database was created.
         """
         if cloned_pdb_name is not None:
@@ -359,6 +371,10 @@ class _PluggableDatabasesLocalCloneState:
     def target_tde_wallet_password(self) -> Optional[pulumi.Input[str]]:
         """
         The existing TDE wallet password of the target CDB.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "target_tde_wallet_password")
 
@@ -420,6 +436,10 @@ class PluggableDatabasesLocalClone(pulumi.CustomResource):
         :param pulumi.Input[str] pluggable_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
         :param pulumi.Input[str] target_tde_wallet_password: The existing TDE wallet password of the target CDB.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -552,6 +572,10 @@ class PluggableDatabasesLocalClone(pulumi.CustomResource):
         :param pulumi.Input[bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
         :param pulumi.Input[str] state: The current state of the pluggable database.
         :param pulumi.Input[str] target_tde_wallet_password: The existing TDE wallet password of the target CDB.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The date and time the pluggable database was created.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -702,6 +726,10 @@ class PluggableDatabasesLocalClone(pulumi.CustomResource):
     def target_tde_wallet_password(self) -> pulumi.Output[str]:
         """
         The existing TDE wallet password of the target CDB.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "target_tde_wallet_password")
 

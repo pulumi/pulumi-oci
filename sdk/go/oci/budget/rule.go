@@ -91,6 +91,9 @@ type Rule struct {
 	// The time when the budget was updated.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringOutput `pulumi:"type"`
 	// The version of the alert rule. Starts from 1 and increments by 1.
 	Version pulumi.IntOutput `pulumi:"version"`
@@ -162,6 +165,9 @@ type ruleState struct {
 	// The time when the budget was updated.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type *string `pulumi:"type"`
 	// The version of the alert rule. Starts from 1 and increments by 1.
 	Version *int `pulumi:"version"`
@@ -193,6 +199,9 @@ type RuleState struct {
 	// The time when the budget was updated.
 	TimeUpdated pulumi.StringPtrInput
 	// (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringPtrInput
 	// The version of the alert rule. Starts from 1 and increments by 1.
 	Version pulumi.IntPtrInput
@@ -222,6 +231,9 @@ type ruleArgs struct {
 	// (Updatable) The type of threshold.
 	ThresholdType string `pulumi:"thresholdType"`
 	// (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type string `pulumi:"type"`
 }
 
@@ -246,6 +258,9 @@ type RuleArgs struct {
 	// (Updatable) The type of threshold.
 	ThresholdType pulumi.StringInput
 	// (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringInput
 }
 
@@ -397,6 +412,9 @@ func (o RuleOutput) TimeUpdated() pulumi.StringOutput {
 }
 
 // (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o RuleOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

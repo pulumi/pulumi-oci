@@ -76,6 +76,9 @@ type ApiKey struct {
 	// Date and time the `ApiKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringOutput `pulumi:"userId"`
 }
 
@@ -125,6 +128,9 @@ type apiKeyState struct {
 	// Date and time the `ApiKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId *string `pulumi:"userId"`
 }
 
@@ -140,6 +146,9 @@ type ApiKeyState struct {
 	// Date and time the `ApiKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringPtrInput
 }
 
@@ -151,6 +160,9 @@ type apiKeyArgs struct {
 	// The public key.  Must be an RSA key in PEM format.
 	KeyValue string `pulumi:"keyValue"`
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId string `pulumi:"userId"`
 }
 
@@ -159,6 +171,9 @@ type ApiKeyArgs struct {
 	// The public key.  Must be an RSA key in PEM format.
 	KeyValue pulumi.StringInput
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringInput
 }
 
@@ -275,6 +290,9 @@ func (o ApiKeyOutput) TimeCreated() pulumi.StringOutput {
 }
 
 // The OCID of the user.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ApiKeyOutput) UserId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ApiKey) pulumi.StringOutput { return v.UserId }).(pulumi.StringOutput)
 }

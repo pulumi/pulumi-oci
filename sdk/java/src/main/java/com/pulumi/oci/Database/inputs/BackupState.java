@@ -94,12 +94,18 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     /**
      * The user-friendly name for the backup. The name does not have to be unique.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
      * @return The user-friendly name for the backup. The name does not have to be unique.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -403,6 +409,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param displayName The user-friendly name for the backup. The name does not have to be unique.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -413,6 +422,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param displayName The user-friendly name for the backup. The name does not have to be unique.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

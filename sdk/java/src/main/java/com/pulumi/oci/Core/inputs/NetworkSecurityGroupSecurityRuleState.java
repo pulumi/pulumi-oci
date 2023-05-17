@@ -37,12 +37,22 @@ public final class NetworkSecurityGroupSecurityRuleState extends com.pulumi.reso
     /**
      * Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
      * 
+     * Allowed values:
+     * * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56` IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you&#39;re setting up a security rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
+     * * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) in the same VCN. The value can be the NSG that the rule belongs to if the rule&#39;s intent is to control traffic between VNICs in the same NSG.
+     * 
      */
     @Import(name="destination")
     private @Nullable Output<String> destination;
 
     /**
      * @return Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
+     * 
+     * Allowed values:
+     * * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56` IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you&#39;re setting up a security rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
+     * * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) in the same VCN. The value can be the NSG that the rule belongs to if the rule&#39;s intent is to control traffic between VNICs in the same NSG.
      * 
      */
     public Optional<Output<String>> destination() {
@@ -52,12 +62,16 @@ public final class NetworkSecurityGroupSecurityRuleState extends com.pulumi.reso
     /**
      * Type of destination for the rule. Required if `direction` = `EGRESS`.
      * 
+     * Allowed values:
+     * 
      */
     @Import(name="destinationType")
     private @Nullable Output<String> destinationType;
 
     /**
      * @return Type of destination for the rule. Required if `direction` = `EGRESS`.
+     * 
+     * Allowed values:
      * 
      */
     public Optional<Output<String>> destinationType() {
@@ -84,6 +98,8 @@ public final class NetworkSecurityGroupSecurityRuleState extends com.pulumi.reso
      * * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
      * * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
      * 
+     * If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 (&#34;Destination Unreachable&#34;) code 4 (&#34;Fragmentation Needed and Don&#39;t Fragment was Set&#34;). If you need to specify multiple codes for a single type, create a separate security list rule for each.
+     * 
      */
     @Import(name="icmpOptions")
     private @Nullable Output<NetworkSecurityGroupSecurityRuleIcmpOptionsArgs> icmpOptions;
@@ -92,6 +108,8 @@ public final class NetworkSecurityGroupSecurityRuleState extends com.pulumi.reso
      * @return Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
      * * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
      * * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+     * 
+     * If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 (&#34;Destination Unreachable&#34;) code 4 (&#34;Fragmentation Needed and Don&#39;t Fragment was Set&#34;). If you need to specify multiple codes for a single type, create a separate security list rule for each.
      * 
      */
     public Optional<Output<NetworkSecurityGroupSecurityRuleIcmpOptionsArgs>> icmpOptions() {
@@ -146,12 +164,22 @@ public final class NetworkSecurityGroupSecurityRuleState extends com.pulumi.reso
     /**
      * Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
      * 
+     * Allowed values:
+     * * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56` IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you&#39;re setting up a security rule for traffic coming from a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
+     * * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) in the same VCN. The value can be the NSG that the rule belongs to if the rule&#39;s intent is to control traffic between VNICs in the same NSG.
+     * 
      */
     @Import(name="source")
     private @Nullable Output<String> source;
 
     /**
      * @return Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
+     * 
+     * Allowed values:
+     * * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56` IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you&#39;re setting up a security rule for traffic coming from a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
+     * * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) in the same VCN. The value can be the NSG that the rule belongs to if the rule&#39;s intent is to control traffic between VNICs in the same NSG.
      * 
      */
     public Optional<Output<String>> source() {
@@ -294,6 +322,11 @@ public final class NetworkSecurityGroupSecurityRuleState extends com.pulumi.reso
         /**
          * @param destination Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
          * 
+         * Allowed values:
+         * * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56` IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you&#39;re setting up a security rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
+         * * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) in the same VCN. The value can be the NSG that the rule belongs to if the rule&#39;s intent is to control traffic between VNICs in the same NSG.
+         * 
          * @return builder
          * 
          */
@@ -305,6 +338,11 @@ public final class NetworkSecurityGroupSecurityRuleState extends com.pulumi.reso
         /**
          * @param destination Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
          * 
+         * Allowed values:
+         * * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56` IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you&#39;re setting up a security rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
+         * * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) in the same VCN. The value can be the NSG that the rule belongs to if the rule&#39;s intent is to control traffic between VNICs in the same NSG.
+         * 
          * @return builder
          * 
          */
@@ -314,6 +352,8 @@ public final class NetworkSecurityGroupSecurityRuleState extends com.pulumi.reso
 
         /**
          * @param destinationType Type of destination for the rule. Required if `direction` = `EGRESS`.
+         * 
+         * Allowed values:
          * 
          * @return builder
          * 
@@ -325,6 +365,8 @@ public final class NetworkSecurityGroupSecurityRuleState extends com.pulumi.reso
 
         /**
          * @param destinationType Type of destination for the rule. Required if `direction` = `EGRESS`.
+         * 
+         * Allowed values:
          * 
          * @return builder
          * 
@@ -359,6 +401,8 @@ public final class NetworkSecurityGroupSecurityRuleState extends com.pulumi.reso
          * * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
          * * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
          * 
+         * If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 (&#34;Destination Unreachable&#34;) code 4 (&#34;Fragmentation Needed and Don&#39;t Fragment was Set&#34;). If you need to specify multiple codes for a single type, create a separate security list rule for each.
+         * 
          * @return builder
          * 
          */
@@ -371,6 +415,8 @@ public final class NetworkSecurityGroupSecurityRuleState extends com.pulumi.reso
          * @param icmpOptions Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
          * * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
          * * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+         * 
+         * If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 (&#34;Destination Unreachable&#34;) code 4 (&#34;Fragmentation Needed and Don&#39;t Fragment was Set&#34;). If you need to specify multiple codes for a single type, create a separate security list rule for each.
          * 
          * @return builder
          * 
@@ -445,6 +491,11 @@ public final class NetworkSecurityGroupSecurityRuleState extends com.pulumi.reso
         /**
          * @param source Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
          * 
+         * Allowed values:
+         * * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56` IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you&#39;re setting up a security rule for traffic coming from a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
+         * * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) in the same VCN. The value can be the NSG that the rule belongs to if the rule&#39;s intent is to control traffic between VNICs in the same NSG.
+         * 
          * @return builder
          * 
          */
@@ -455,6 +506,11 @@ public final class NetworkSecurityGroupSecurityRuleState extends com.pulumi.reso
 
         /**
          * @param source Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
+         * 
+         * Allowed values:
+         * * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56` IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you&#39;re setting up a security rule for traffic coming from a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
+         * * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) in the same VCN. The value can be the NSG that the rule belongs to if the rule&#39;s intent is to control traffic between VNICs in the same NSG.
          * 
          * @return builder
          * 

@@ -174,12 +174,18 @@ public final class DatasetState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The labeling instructions for human labelers in rich text format
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="labelingInstructions")
     private @Nullable Output<String> labelingInstructions;
 
     /**
      * @return (Updatable) The labeling instructions for human labelers in rich text format
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> labelingInstructions() {
@@ -497,6 +503,9 @@ public final class DatasetState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param labelingInstructions (Updatable) The labeling instructions for human labelers in rich text format
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -507,6 +516,9 @@ public final class DatasetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param labelingInstructions (Updatable) The labeling instructions for human labelers in rich text format
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -38,12 +38,18 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The content length of the model_artifact.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="artifactContentLength", required=true)
     private Output<String> artifactContentLength;
 
     /**
      * @return The content length of the model_artifact.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> artifactContentLength() {
@@ -291,6 +297,9 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param artifactContentLength The content length of the model_artifact.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -301,6 +310,9 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param artifactContentLength The content length of the model_artifact.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

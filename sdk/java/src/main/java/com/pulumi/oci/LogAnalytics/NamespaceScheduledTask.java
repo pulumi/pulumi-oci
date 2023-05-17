@@ -274,12 +274,18 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
     /**
      * Task type.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="taskType", type=String.class, parameters={})
     private Output<String> taskType;
 
     /**
      * @return Task type.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> taskType() {

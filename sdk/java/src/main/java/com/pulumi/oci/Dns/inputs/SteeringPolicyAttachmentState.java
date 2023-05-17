@@ -139,12 +139,18 @@ public final class SteeringPolicyAttachmentState extends com.pulumi.resources.Re
     /**
      * The OCID of the attached zone.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
      * @return The OCID of the attached zone.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -364,6 +370,9 @@ public final class SteeringPolicyAttachmentState extends com.pulumi.resources.Re
         /**
          * @param zoneId The OCID of the attached zone.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -374,6 +383,9 @@ public final class SteeringPolicyAttachmentState extends com.pulumi.resources.Re
 
         /**
          * @param zoneId The OCID of the attached zone.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

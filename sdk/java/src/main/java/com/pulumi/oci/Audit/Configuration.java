@@ -72,12 +72,18 @@ public class Configuration extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="retentionPeriodDays", type=Integer.class, parameters={})
     private Output<Integer> retentionPeriodDays;
 
     /**
      * @return (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Integer> retentionPeriodDays() {

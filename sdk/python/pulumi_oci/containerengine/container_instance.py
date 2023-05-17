@@ -48,7 +48,11 @@ class ContainerInstanceArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] graceful_shutdown_timeout_in_seconds: Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
         :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceImagePullSecretArgs']]] image_pull_secrets: The image pull secrets for accessing private registry to pull images for containers
-        :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+        :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVolumeArgs']]] volumes: A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance. Up to 32 volumes can be attached to single container instance.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -250,7 +254,11 @@ class ContainerInstanceArgs:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+        (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "state")
 
@@ -313,7 +321,11 @@ class _ContainerInstanceState:
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] shape: The shape of the Container Instance. The shape determines the resources available to the Container Instance.
         :param pulumi.Input['ContainerInstanceShapeConfigArgs'] shape_config: The size and amount of resources available to the Container Instance.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+        :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the the ContainerInstance was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the ContainerInstance was updated. An RFC3339 formatted datetime string
@@ -550,7 +562,11 @@ class _ContainerInstanceState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+        (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "state")
 
@@ -780,7 +796,11 @@ class ContainerInstance(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceImagePullSecretArgs']]]] image_pull_secrets: The image pull secrets for accessing private registry to pull images for containers
         :param pulumi.Input[str] shape: The shape of the Container Instance. The shape determines the resources available to the Container Instance.
         :param pulumi.Input[pulumi.InputType['ContainerInstanceShapeConfigArgs']] shape_config: The size and amount of resources available to the Container Instance.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+        :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceVnicArgs']]]] vnics: The networks to make available to containers on this Instance.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceVolumeArgs']]]] volumes: A Volume represents a directory with data that is accessible across multiple containers in a ContainerInstance. Up to 32 volumes can be attached to single container instance.
         """
@@ -1030,7 +1050,11 @@ class ContainerInstance(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] shape: The shape of the Container Instance. The shape determines the resources available to the Container Instance.
         :param pulumi.Input[pulumi.InputType['ContainerInstanceShapeConfigArgs']] shape_config: The size and amount of resources available to the Container Instance.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+        :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the the ContainerInstance was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the ContainerInstance was updated. An RFC3339 formatted datetime string
@@ -1190,7 +1214,11 @@ class ContainerInstance(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+        (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "state")
 

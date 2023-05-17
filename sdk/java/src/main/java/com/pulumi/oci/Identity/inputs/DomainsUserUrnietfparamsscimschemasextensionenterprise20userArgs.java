@@ -19,12 +19,38 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userA
     /**
      * (Updatable) Identifies the name of a cost center.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Cost Center
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Cost Center]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="costCenter")
     private @Nullable Output<String> costCenter;
 
     /**
      * @return (Updatable) Identifies the name of a cost center.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Cost Center
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Cost Center]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> costCenter() {
@@ -34,12 +60,38 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userA
     /**
      * (Updatable) Identifies the name of a department.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Department
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Department]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="department")
     private @Nullable Output<String> department;
 
     /**
      * @return (Updatable) Identifies the name of a department.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Department
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Department]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> department() {
@@ -49,12 +101,38 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userA
     /**
      * (Updatable) Identifies the name of a division.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Division
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Division]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="division")
     private @Nullable Output<String> division;
 
     /**
      * @return (Updatable) Identifies the name of a division.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Division
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Division]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> division() {
@@ -64,12 +142,38 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userA
     /**
      * (Updatable) Numeric or alphanumeric identifier assigned to  a person, typically based on order of hire or association with an organization.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Employee Number
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Employee Number]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="employeeNumber")
     private @Nullable Output<String> employeeNumber;
 
     /**
      * @return (Updatable) Numeric or alphanumeric identifier assigned to  a person, typically based on order of hire or association with an organization.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Employee Number
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Employee Number]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> employeeNumber() {
@@ -79,12 +183,32 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userA
     /**
      * (Updatable) The User&#39;s manager. A complex type that optionally allows Service Providers to represent organizational hierarchy by referencing the &#39;id&#39; attribute of another User.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Manager, deprecatedColumnHeaderName:Manager Name, mapsTo:manager.value]]
+     * * idcsPii: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="manager")
     private @Nullable Output<DomainsUserUrnietfparamsscimschemasextensionenterprise20userManagerArgs> manager;
 
     /**
      * @return (Updatable) The User&#39;s manager. A complex type that optionally allows Service Providers to represent organizational hierarchy by referencing the &#39;id&#39; attribute of another User.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Manager, deprecatedColumnHeaderName:Manager Name, mapsTo:manager.value]]
+     * * idcsPii: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<DomainsUserUrnietfparamsscimschemasextensionenterprise20userManagerArgs>> manager() {
@@ -94,12 +218,38 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userA
     /**
      * (Updatable) Identifies the name of an organization.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Organization
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Organization Name, deprecatedColumnHeaderName:Organization]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="organization")
     private @Nullable Output<String> organization;
 
     /**
      * @return (Updatable) Identifies the name of an organization.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Organization
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Organization Name, deprecatedColumnHeaderName:Organization]]
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> organization() {
@@ -138,6 +288,19 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userA
         /**
          * @param costCenter (Updatable) Identifies the name of a cost center.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Cost Center
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Cost Center]]
+         * * idcsPii: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -149,6 +312,19 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userA
         /**
          * @param costCenter (Updatable) Identifies the name of a cost center.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Cost Center
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Cost Center]]
+         * * idcsPii: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -158,6 +334,19 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userA
 
         /**
          * @param department (Updatable) Identifies the name of a department.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Department
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Department]]
+         * * idcsPii: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -170,6 +359,19 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userA
         /**
          * @param department (Updatable) Identifies the name of a department.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Department
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Department]]
+         * * idcsPii: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -179,6 +381,19 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userA
 
         /**
          * @param division (Updatable) Identifies the name of a division.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Division
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Division]]
+         * * idcsPii: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -191,6 +406,19 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userA
         /**
          * @param division (Updatable) Identifies the name of a division.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Division
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Division]]
+         * * idcsPii: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -200,6 +428,19 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userA
 
         /**
          * @param employeeNumber (Updatable) Numeric or alphanumeric identifier assigned to  a person, typically based on order of hire or association with an organization.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Employee Number
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Employee Number]]
+         * * idcsPii: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -212,6 +453,19 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userA
         /**
          * @param employeeNumber (Updatable) Numeric or alphanumeric identifier assigned to  a person, typically based on order of hire or association with an organization.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Employee Number
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Employee Number]]
+         * * idcsPii: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -221,6 +475,16 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userA
 
         /**
          * @param manager (Updatable) The User&#39;s manager. A complex type that optionally allows Service Providers to represent organizational hierarchy by referencing the &#39;id&#39; attribute of another User.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Manager, deprecatedColumnHeaderName:Manager Name, mapsTo:manager.value]]
+         * * idcsPii: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -233,6 +497,16 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userA
         /**
          * @param manager (Updatable) The User&#39;s manager. A complex type that optionally allows Service Providers to represent organizational hierarchy by referencing the &#39;id&#39; attribute of another User.
          * 
+         * **SCIM++ Properties:**
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Manager, deprecatedColumnHeaderName:Manager Name, mapsTo:manager.value]]
+         * * idcsPii: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -242,6 +516,19 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userA
 
         /**
          * @param organization (Updatable) Identifies the name of an organization.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Organization
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Organization Name, deprecatedColumnHeaderName:Organization]]
+         * * idcsPii: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -253,6 +540,19 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userA
 
         /**
          * @param organization (Updatable) Identifies the name of an organization.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Organization
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Organization Name, deprecatedColumnHeaderName:Organization]]
+         * * idcsPii: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 

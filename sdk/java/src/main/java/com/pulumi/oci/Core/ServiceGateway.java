@@ -154,12 +154,20 @@ public class ServiceGateway extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the service gateway will use.
      * 
+     * If you don&#39;t specify a route table here, the service gateway is created without an associated route table. The Networking service does NOT automatically associate the attached VCN&#39;s default route table with the service gateway.
+     * 
+     * For information about why you would associate a route table with a service gateway, see [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
+     * 
      */
     @Export(name="routeTableId", type=String.class, parameters={})
     private Output<String> routeTableId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the service gateway will use.
+     * 
+     * If you don&#39;t specify a route table here, the service gateway is created without an associated route table. The Networking service does NOT automatically associate the attached VCN&#39;s default route table with the service gateway.
+     * 
+     * For information about why you would associate a route table with a service gateway, see [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
      * 
      */
     public Output<String> routeTableId() {
@@ -168,12 +176,16 @@ public class ServiceGateway extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) List of the OCIDs of the [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) objects to enable for the service gateway. This list can be empty if you don&#39;t want to enable any `Service` objects when you create the gateway. You can enable a `Service` object later by using either [AttachServiceId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/AttachServiceId) or [UpdateServiceGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/UpdateServiceGateway).
      * 
+     * For each enabled `Service`, make sure there&#39;s a route rule with the `Service` object&#39;s `cidrBlock` as the rule&#39;s destination and the service gateway as the rule&#39;s target. See [Route Table](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/RouteTable/).
+     * 
      */
     @Export(name="services", type=List.class, parameters={ServiceGatewayService.class})
     private Output<List<ServiceGatewayService>> services;
 
     /**
      * @return (Updatable) List of the OCIDs of the [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) objects to enable for the service gateway. This list can be empty if you don&#39;t want to enable any `Service` objects when you create the gateway. You can enable a `Service` object later by using either [AttachServiceId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/AttachServiceId) or [UpdateServiceGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/UpdateServiceGateway).
+     * 
+     * For each enabled `Service`, make sure there&#39;s a route rule with the `Service` object&#39;s `cidrBlock` as the rule&#39;s destination and the service gateway as the rule&#39;s target. See [Route Table](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/RouteTable/).
      * 
      */
     public Output<List<ServiceGatewayService>> services() {
@@ -210,12 +222,18 @@ public class ServiceGateway extends com.pulumi.resources.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="vcnId", type=String.class, parameters={})
     private Output<String> vcnId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> vcnId() {

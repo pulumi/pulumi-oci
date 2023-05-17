@@ -111,6 +111,9 @@ type AnalyticsInstance struct {
 	// URL of the Analytics service.
 	ServiceUrl pulumi.StringOutput `pulumi:"serviceUrl"`
 	// (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -196,6 +199,9 @@ type analyticsInstanceState struct {
 	// URL of the Analytics service.
 	ServiceUrl *string `pulumi:"serviceUrl"`
 	// (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
 	// The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -231,6 +237,9 @@ type AnalyticsInstanceState struct {
 	// URL of the Analytics service.
 	ServiceUrl pulumi.StringPtrInput
 	// (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput
 	// The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
@@ -268,6 +277,9 @@ type analyticsInstanceArgs struct {
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails *AnalyticsInstanceNetworkEndpointDetails `pulumi:"networkEndpointDetails"`
 	// (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
 }
 
@@ -298,6 +310,9 @@ type AnalyticsInstanceArgs struct {
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails AnalyticsInstanceNetworkEndpointDetailsPtrInput
 	// (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput
 }
 
@@ -456,6 +471,9 @@ func (o AnalyticsInstanceOutput) ServiceUrl() pulumi.StringOutput {
 }
 
 // (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AnalyticsInstanceOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *AnalyticsInstance) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

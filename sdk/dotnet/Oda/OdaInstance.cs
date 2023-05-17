@@ -157,6 +157,10 @@ namespace Pulumi.Oci.Oda
 
         /// <summary>
         /// Shape or size of the instance.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("shapeName")]
         public Output<string> ShapeName { get; private set; } = null!;
@@ -293,6 +297,10 @@ namespace Pulumi.Oci.Oda
 
         /// <summary>
         /// Shape or size of the instance.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("shapeName", required: true)]
         public Input<string> ShapeName { get; set; } = null!;
@@ -451,6 +459,10 @@ namespace Pulumi.Oci.Oda
 
         /// <summary>
         /// Shape or size of the instance.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("shapeName")]
         public Input<string>? ShapeName { get; set; }

@@ -112,12 +112,18 @@ public final class DiscoveryJobState extends com.pulumi.resources.ResourceArgs {
     /**
      * If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="shouldPropagateTagsToDiscoveredResources")
     private @Nullable Output<Boolean> shouldPropagateTagsToDiscoveredResources;
 
     /**
      * @return If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Boolean>> shouldPropagateTagsToDiscoveredResources() {
@@ -395,6 +401,9 @@ public final class DiscoveryJobState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param shouldPropagateTagsToDiscoveredResources If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -405,6 +414,9 @@ public final class DiscoveryJobState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param shouldPropagateTagsToDiscoveredResources If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

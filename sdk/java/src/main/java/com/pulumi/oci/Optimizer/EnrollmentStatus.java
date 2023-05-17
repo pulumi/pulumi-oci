@@ -74,12 +74,18 @@ public class EnrollmentStatus extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The Cloud Advisor enrollment status.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="status", type=String.class, parameters={})
     private Output<String> status;
 
     /**
      * @return (Updatable) The Cloud Advisor enrollment status.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> status() {

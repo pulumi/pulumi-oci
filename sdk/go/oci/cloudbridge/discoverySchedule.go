@@ -70,6 +70,9 @@ type DiscoverySchedule struct {
 	// (Updatable) Recurrence specification for the discovery schedule execution.
 	ExecutionRecurrences pulumi.StringOutput `pulumi:"executionRecurrences"`
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The detailed state of the discovery schedule.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
@@ -127,6 +130,9 @@ type discoveryScheduleState struct {
 	// (Updatable) Recurrence specification for the discovery schedule execution.
 	ExecutionRecurrences *string `pulumi:"executionRecurrences"`
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The detailed state of the discovery schedule.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -150,6 +156,9 @@ type DiscoveryScheduleState struct {
 	// (Updatable) Recurrence specification for the discovery schedule execution.
 	ExecutionRecurrences pulumi.StringPtrInput
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapInput
 	// The detailed state of the discovery schedule.
 	LifecycleDetails pulumi.StringPtrInput
@@ -177,6 +186,9 @@ type discoveryScheduleArgs struct {
 	// (Updatable) Recurrence specification for the discovery schedule execution.
 	ExecutionRecurrences string `pulumi:"executionRecurrences"`
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 }
 
@@ -191,6 +203,9 @@ type DiscoveryScheduleArgs struct {
 	// (Updatable) Recurrence specification for the discovery schedule execution.
 	ExecutionRecurrences pulumi.StringInput
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapInput
 }
 
@@ -302,6 +317,9 @@ func (o DiscoveryScheduleOutput) ExecutionRecurrences() pulumi.StringOutput {
 }
 
 // (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DiscoveryScheduleOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DiscoverySchedule) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }

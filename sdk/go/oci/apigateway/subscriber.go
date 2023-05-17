@@ -86,6 +86,9 @@ type Subscriber struct {
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UsagePlans pulumi.StringArrayOutput `pulumi:"usagePlans"`
 }
 
@@ -146,6 +149,9 @@ type subscriberState struct {
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UsagePlans []string `pulumi:"usagePlans"`
 }
 
@@ -169,6 +175,9 @@ type SubscriberState struct {
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
 	// (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UsagePlans pulumi.StringArrayInput
 }
 
@@ -188,6 +197,9 @@ type subscriberArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UsagePlans []string `pulumi:"usagePlans"`
 }
 
@@ -204,6 +216,9 @@ type SubscriberArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UsagePlans pulumi.StringArrayInput
 }
 
@@ -340,6 +355,9 @@ func (o SubscriberOutput) TimeUpdated() pulumi.StringOutput {
 }
 
 // (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o SubscriberOutput) UsagePlans() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Subscriber) pulumi.StringArrayOutput { return v.UsagePlans }).(pulumi.StringArrayOutput)
 }

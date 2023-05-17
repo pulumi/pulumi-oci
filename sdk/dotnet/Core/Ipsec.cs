@@ -98,6 +98,14 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the fully qualified domain name (FQDN)). The type of identifier you provide here must correspond to the value for `cpeLocalIdentifierType`.
+        /// 
+        /// If you don't provide a value, the `ipAddress` attribute for the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object specified by `cpeId` is used as the `cpeLocalIdentifier`.
+        /// 
+        /// For information about why you'd provide this value, see [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
+        /// 
+        /// Example IP address: `10.0.3.3`
+        /// 
+        /// Example hostname: `cpe.example.com`
         /// </summary>
         [Output("cpeLocalIdentifier")]
         public Output<string> CpeLocalIdentifier { get; private set; } = null!;
@@ -140,6 +148,14 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address.
+        /// 
+        /// Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
+        /// 
+        /// Example: `10.0.1.0/24`
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("staticRoutes")]
         public Output<ImmutableArray<string>> StaticRoutes { get; private set; } = null!;
@@ -210,6 +226,14 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the fully qualified domain name (FQDN)). The type of identifier you provide here must correspond to the value for `cpeLocalIdentifierType`.
+        /// 
+        /// If you don't provide a value, the `ipAddress` attribute for the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object specified by `cpeId` is used as the `cpeLocalIdentifier`.
+        /// 
+        /// For information about why you'd provide this value, see [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
+        /// 
+        /// Example IP address: `10.0.3.3`
+        /// 
+        /// Example hostname: `cpe.example.com`
         /// </summary>
         [Input("cpeLocalIdentifier")]
         public Input<string>? CpeLocalIdentifier { get; set; }
@@ -261,6 +285,14 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address.
+        /// 
+        /// Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
+        /// 
+        /// Example: `10.0.1.0/24`
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputList<string> StaticRoutes
         {
@@ -290,6 +322,14 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the fully qualified domain name (FQDN)). The type of identifier you provide here must correspond to the value for `cpeLocalIdentifierType`.
+        /// 
+        /// If you don't provide a value, the `ipAddress` attribute for the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object specified by `cpeId` is used as the `cpeLocalIdentifier`.
+        /// 
+        /// For information about why you'd provide this value, see [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
+        /// 
+        /// Example IP address: `10.0.3.3`
+        /// 
+        /// Example hostname: `cpe.example.com`
         /// </summary>
         [Input("cpeLocalIdentifier")]
         public Input<string>? CpeLocalIdentifier { get; set; }
@@ -347,6 +387,14 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address.
+        /// 
+        /// Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
+        /// 
+        /// Example: `10.0.1.0/24`
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputList<string> StaticRoutes
         {

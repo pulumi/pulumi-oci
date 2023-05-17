@@ -182,6 +182,8 @@ export class Volume extends pulumi.CustomResource {
     public /*out*/ readonly volumeGroupId!: pulumi.Output<string>;
     /**
      * (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+     *
+     * Allowed values:
      */
     public readonly vpusPerGb!: pulumi.Output<string>;
 
@@ -344,6 +346,8 @@ export interface VolumeState {
     volumeGroupId?: pulumi.Input<string>;
     /**
      * (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+     *
+     * Allowed values:
      */
     vpusPerGb?: pulumi.Input<string>;
 }
@@ -412,6 +416,8 @@ export interface VolumeArgs {
     volumeBackupId?: pulumi.Input<string>;
     /**
      * (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+     *
+     * Allowed values:
      */
     vpusPerGb?: pulumi.Input<string>;
 }

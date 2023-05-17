@@ -38,6 +38,10 @@ namespace Pulumi.Oci.AiVision.Inputs
 
         /// <summary>
         /// The object name of the input data file.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("object")]
         public Input<string>? Object { get; set; }

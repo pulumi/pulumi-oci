@@ -25,7 +25,11 @@ class GroupArgs:
         :param pulumi.Input[str] compartment_id: The OCID of the tenancy containing the group.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] name: The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+        :param pulumi.Input[str] name: The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "description", description)
         if compartment_id is not None:
@@ -89,7 +93,11 @@ class GroupArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+        The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "name")
 
@@ -116,7 +124,11 @@ class _GroupState:
         :param pulumi.Input[str] description: (Updatable) The description you assign to the group during creation. Does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] inactive_state: The detailed status of INACTIVE lifecycleState.
-        :param pulumi.Input[str] name: The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+        :param pulumi.Input[str] name: The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The group's current state.
         :param pulumi.Input[str] time_created: Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -201,7 +213,11 @@ class _GroupState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+        The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "name")
 
@@ -297,7 +313,11 @@ class Group(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description you assign to the group during creation. Does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] name: The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+        :param pulumi.Input[str] name: The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -420,7 +440,11 @@ class Group(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) The description you assign to the group during creation. Does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] inactive_state: The detailed status of INACTIVE lifecycleState.
-        :param pulumi.Input[str] name: The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+        :param pulumi.Input[str] name: The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The group's current state.
         :param pulumi.Input[str] time_created: Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -482,7 +506,11 @@ class Group(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+        The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "name")
 

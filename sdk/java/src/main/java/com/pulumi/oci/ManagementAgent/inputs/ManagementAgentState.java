@@ -69,12 +69,18 @@ public final class ManagementAgentState extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) Plugin Id list
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="deployPluginsIds")
     private @Nullable Output<List<String>> deployPluginsIds;
 
     /**
      * @return (Updatable) Plugin Id list
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<List<String>>> deployPluginsIds() {
@@ -526,6 +532,9 @@ public final class ManagementAgentState extends com.pulumi.resources.ResourceArg
         /**
          * @param deployPluginsIds (Updatable) Plugin Id list
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -537,6 +546,9 @@ public final class ManagementAgentState extends com.pulumi.resources.ResourceArg
         /**
          * @param deployPluginsIds (Updatable) Plugin Id list
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -546,6 +558,9 @@ public final class ManagementAgentState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param deployPluginsIds (Updatable) Plugin Id list
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

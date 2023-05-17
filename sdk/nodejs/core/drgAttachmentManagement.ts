@@ -115,6 +115,10 @@ export class DrgAttachmentManagement extends pulumi.CustomResource {
     public readonly removeExportDrgRouteDistributionTrigger!: pulumi.Output<boolean | undefined>;
     /**
      * The OCID of the route table the DRG attachment is using.
+     *
+     * For information about why you would associate a route table with a DRG attachment, see:
+     * * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+     * * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
      */
     public readonly routeTableId!: pulumi.Output<string>;
     /**
@@ -246,6 +250,10 @@ export interface DrgAttachmentManagementState {
     removeExportDrgRouteDistributionTrigger?: pulumi.Input<boolean>;
     /**
      * The OCID of the route table the DRG attachment is using.
+     *
+     * For information about why you would associate a route table with a DRG attachment, see:
+     * * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+     * * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
      */
     routeTableId?: pulumi.Input<string>;
     /**
@@ -312,6 +320,10 @@ export interface DrgAttachmentManagementArgs {
     removeExportDrgRouteDistributionTrigger?: pulumi.Input<boolean>;
     /**
      * The OCID of the route table the DRG attachment is using.
+     *
+     * For information about why you would associate a route table with a DRG attachment, see:
+     * * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+     * * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
      */
     routeTableId?: pulumi.Input<string>;
     /**

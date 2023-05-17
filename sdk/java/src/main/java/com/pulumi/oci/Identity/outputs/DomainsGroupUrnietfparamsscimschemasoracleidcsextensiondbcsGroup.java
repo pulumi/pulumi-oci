@@ -17,20 +17,66 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGr
     /**
      * @return (Updatable) DBCS Domain-level schema-name.  This attribute refers implicitly to a value of &#39;domainLevelSchemaNames&#39; for a particular DB Domain.
      * 
+     * **Added In:** 18.2.4
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * idcsSensitive: none
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String domainLevelSchema;
     /**
      * @return (Updatable) DBCS Domain-level schema-names. Each value is specific to a DB Domain.
+     * 
+     * **Added In:** 18.2.4
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [domainName, schemaName]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
      * 
      */
     private @Nullable List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaName> domainLevelSchemaNames;
     /**
      * @return (Updatable) DBCS instance-level schema-name. This attribute refers implicitly to a value of &#39;instanceLevelSchemaNames&#39; for a particular DB Instance.
      * 
+     * **Added In:** 18.2.4
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * idcsSensitive: none
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String instanceLevelSchema;
     /**
      * @return (Updatable) DBCS instance-level schema-names. Each schema-name is specific to a DB Instance.
+     * 
+     * **Added In:** 18.2.4
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [dbInstanceId, schemaName]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
      * 
      */
     private @Nullable List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaName> instanceLevelSchemaNames;
@@ -39,12 +85,35 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGr
     /**
      * @return (Updatable) DBCS Domain-level schema-name.  This attribute refers implicitly to a value of &#39;domainLevelSchemaNames&#39; for a particular DB Domain.
      * 
+     * **Added In:** 18.2.4
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * idcsSensitive: none
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> domainLevelSchema() {
         return Optional.ofNullable(this.domainLevelSchema);
     }
     /**
      * @return (Updatable) DBCS Domain-level schema-names. Each value is specific to a DB Domain.
+     * 
+     * **Added In:** 18.2.4
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [domainName, schemaName]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
      * 
      */
     public List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaName> domainLevelSchemaNames() {
@@ -53,12 +122,35 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGr
     /**
      * @return (Updatable) DBCS instance-level schema-name. This attribute refers implicitly to a value of &#39;instanceLevelSchemaNames&#39; for a particular DB Instance.
      * 
+     * **Added In:** 18.2.4
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * idcsSensitive: none
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> instanceLevelSchema() {
         return Optional.ofNullable(this.instanceLevelSchema);
     }
     /**
      * @return (Updatable) DBCS instance-level schema-names. Each schema-name is specific to a DB Instance.
+     * 
+     * **Added In:** 18.2.4
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [dbInstanceId, schemaName]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
      * 
      */
     public List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaName> instanceLevelSchemaNames() {

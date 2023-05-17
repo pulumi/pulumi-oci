@@ -92,6 +92,9 @@ type Rrset struct {
 	// The OCID of the view the resource is associated with.
 	ViewId pulumi.StringPtrOutput `pulumi:"viewId"`
 	// The name or OCID of the target zone.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ZoneNameOrId pulumi.StringOutput `pulumi:"zoneNameOrId"`
 }
 
@@ -148,6 +151,9 @@ type rrsetState struct {
 	// The OCID of the view the resource is associated with.
 	ViewId *string `pulumi:"viewId"`
 	// The name or OCID of the target zone.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ZoneNameOrId *string `pulumi:"zoneNameOrId"`
 }
 
@@ -167,6 +173,9 @@ type RrsetState struct {
 	// The OCID of the view the resource is associated with.
 	ViewId pulumi.StringPtrInput
 	// The name or OCID of the target zone.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ZoneNameOrId pulumi.StringPtrInput
 }
 
@@ -190,6 +199,9 @@ type rrsetArgs struct {
 	// The OCID of the view the resource is associated with.
 	ViewId *string `pulumi:"viewId"`
 	// The name or OCID of the target zone.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ZoneNameOrId string `pulumi:"zoneNameOrId"`
 }
 
@@ -210,6 +222,9 @@ type RrsetArgs struct {
 	// The OCID of the view the resource is associated with.
 	ViewId pulumi.StringPtrInput
 	// The name or OCID of the target zone.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ZoneNameOrId pulumi.StringInput
 }
 
@@ -333,6 +348,9 @@ func (o RrsetOutput) ViewId() pulumi.StringPtrOutput {
 }
 
 // The name or OCID of the target zone.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o RrsetOutput) ZoneNameOrId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rrset) pulumi.StringOutput { return v.ZoneNameOrId }).(pulumi.StringOutput)
 }

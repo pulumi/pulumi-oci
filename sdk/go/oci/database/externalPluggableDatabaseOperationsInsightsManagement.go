@@ -51,6 +51,9 @@ type ExternalPluggableDatabaseOperationsInsightsManagement struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableOperationsInsights pulumi.BoolOutput `pulumi:"enableOperationsInsights"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId pulumi.StringOutput `pulumi:"externalDatabaseConnectorId"`
@@ -97,6 +100,9 @@ func GetExternalPluggableDatabaseOperationsInsightsManagement(ctx *pulumi.Contex
 // Input properties used for looking up and filtering ExternalPluggableDatabaseOperationsInsightsManagement resources.
 type externalPluggableDatabaseOperationsInsightsManagementState struct {
 	// (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableOperationsInsights *bool `pulumi:"enableOperationsInsights"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId *string `pulumi:"externalDatabaseConnectorId"`
@@ -106,6 +112,9 @@ type externalPluggableDatabaseOperationsInsightsManagementState struct {
 
 type ExternalPluggableDatabaseOperationsInsightsManagementState struct {
 	// (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableOperationsInsights pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId pulumi.StringPtrInput
@@ -119,6 +128,9 @@ func (ExternalPluggableDatabaseOperationsInsightsManagementState) ElementType() 
 
 type externalPluggableDatabaseOperationsInsightsManagementArgs struct {
 	// (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableOperationsInsights bool `pulumi:"enableOperationsInsights"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId string `pulumi:"externalDatabaseConnectorId"`
@@ -129,6 +141,9 @@ type externalPluggableDatabaseOperationsInsightsManagementArgs struct {
 // The set of arguments for constructing a ExternalPluggableDatabaseOperationsInsightsManagement resource.
 type ExternalPluggableDatabaseOperationsInsightsManagementArgs struct {
 	// (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableOperationsInsights pulumi.BoolInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId pulumi.StringInput
@@ -224,6 +239,9 @@ func (o ExternalPluggableDatabaseOperationsInsightsManagementOutput) ToExternalP
 }
 
 // (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false".
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ExternalPluggableDatabaseOperationsInsightsManagementOutput) EnableOperationsInsights() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ExternalPluggableDatabaseOperationsInsightsManagement) pulumi.BoolOutput {
 		return v.EnableOperationsInsights

@@ -28,6 +28,10 @@ class TargetAlertPolicyAssociationArgs:
         :param pulumi.Input[bool] is_enabled: (Updatable) Indicates if the target-alert policy association is enabled or disabled.
         :param pulumi.Input[str] policy_id: The OCID of the alert policy.
         :param pulumi.Input[str] target_id: The OCID of the target.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) Describes the target-alert policy association.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the target-alert policy association.
@@ -87,6 +91,10 @@ class TargetAlertPolicyAssociationArgs:
     def target_id(self) -> pulumi.Input[str]:
         """
         The OCID of the target.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "target_id")
 
@@ -170,6 +178,10 @@ class _TargetAlertPolicyAssociationState:
         :param pulumi.Input[str] state: The current state of the target-alert policy association.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] target_id: The OCID of the target.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_updated: Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
@@ -311,6 +323,10 @@ class _TargetAlertPolicyAssociationState:
     def target_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the target.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "target_id")
 
@@ -401,6 +417,10 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
         :param pulumi.Input[bool] is_enabled: (Updatable) Indicates if the target-alert policy association is enabled or disabled.
         :param pulumi.Input[str] policy_id: The OCID of the alert policy.
         :param pulumi.Input[str] target_id: The OCID of the target.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -533,6 +553,10 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
         :param pulumi.Input[str] state: The current state of the target-alert policy association.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] target_id: The OCID of the target.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_updated: Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
@@ -631,6 +655,10 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
     def target_id(self) -> pulumi.Output[str]:
         """
         The OCID of the target.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "target_id")
 

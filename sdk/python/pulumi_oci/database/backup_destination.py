@@ -36,6 +36,10 @@ class BackupDestinationArgs:
         :param pulumi.Input[str] local_mount_point_path: The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
         :param pulumi.Input['BackupDestinationMountTypeDetailsArgs'] mount_type_details: Mount type details for backup destination.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vpc_users: (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -157,6 +161,10 @@ class BackupDestinationArgs:
     def vpc_users(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vpc_users")
 
@@ -202,6 +210,10 @@ class _BackupDestinationState:
         :param pulumi.Input[str] time_created: The date and time the backup destination was created.
         :param pulumi.Input[str] type: Type of the backup destination.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vpc_users: (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if associated_databases is not None:
             pulumi.set(__self__, "associated_databases", associated_databases)
@@ -424,6 +436,10 @@ class _BackupDestinationState:
     def vpc_users(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vpc_users")
 
@@ -496,6 +512,10 @@ class BackupDestination(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['BackupDestinationMountTypeDetailsArgs']] mount_type_details: Mount type details for backup destination.
         :param pulumi.Input[str] type: Type of the backup destination.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vpc_users: (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -648,6 +668,10 @@ class BackupDestination(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The date and time the backup destination was created.
         :param pulumi.Input[str] type: Type of the backup destination.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vpc_users: (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -796,6 +820,10 @@ class BackupDestination(pulumi.CustomResource):
     def vpc_users(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
         (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vpc_users")
 

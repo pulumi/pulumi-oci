@@ -105,6 +105,9 @@ type VmClusterRemoveVirtualMachine struct {
 	// The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone pulumi.StringOutput `pulumi:"timeZone"`
 	// The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VmClusterId pulumi.StringOutput `pulumi:"vmClusterId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 	VmClusterNetworkId pulumi.StringOutput `pulumi:"vmClusterNetworkId"`
@@ -192,6 +195,9 @@ type vmClusterRemoveVirtualMachineState struct {
 	// The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone *string `pulumi:"timeZone"`
 	// The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VmClusterId *string `pulumi:"vmClusterId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 	VmClusterNetworkId *string `pulumi:"vmClusterNetworkId"`
@@ -245,6 +251,9 @@ type VmClusterRemoveVirtualMachineState struct {
 	// The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone pulumi.StringPtrInput
 	// The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VmClusterId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 	VmClusterNetworkId pulumi.StringPtrInput
@@ -258,6 +267,9 @@ type vmClusterRemoveVirtualMachineArgs struct {
 	// The list of Exacc DB servers for the cluster to be removed.
 	DbServers []VmClusterRemoveVirtualMachineDbServer `pulumi:"dbServers"`
 	// The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VmClusterId string `pulumi:"vmClusterId"`
 }
 
@@ -266,6 +278,9 @@ type VmClusterRemoveVirtualMachineArgs struct {
 	// The list of Exacc DB servers for the cluster to be removed.
 	DbServers VmClusterRemoveVirtualMachineDbServerArrayInput
 	// The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VmClusterId pulumi.StringInput
 }
 
@@ -476,6 +491,9 @@ func (o VmClusterRemoveVirtualMachineOutput) TimeZone() pulumi.StringOutput {
 }
 
 // The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o VmClusterRemoveVirtualMachineOutput) VmClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmClusterRemoveVirtualMachine) pulumi.StringOutput { return v.VmClusterId }).(pulumi.StringOutput)
 }

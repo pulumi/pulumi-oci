@@ -24,6 +24,10 @@ class DbManagementPrivateEndpointArgs:
         The set of arguments for constructing a DbManagementPrivateEndpoint resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] description: (Updatable) The description of the private endpoint.
         :param pulumi.Input[bool] is_cluster: Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.
         :param pulumi.Input[str] name: (Updatable) The display name of the Database Management private endpoint.
@@ -57,6 +61,10 @@ class DbManagementPrivateEndpointArgs:
     def subnet_id(self) -> pulumi.Input[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subnet_id")
 
@@ -136,6 +144,10 @@ class _DbManagementPrivateEndpointState:
         :param pulumi.Input[str] private_ip: The IP addresses assigned to the Database Management private endpoint.
         :param pulumi.Input[str] state: The current lifecycle state of the Database Management private endpoint.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
         """
@@ -249,6 +261,10 @@ class _DbManagementPrivateEndpointState:
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subnet_id")
 
@@ -328,6 +344,10 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[str] name: (Updatable) The display name of the Database Management private endpoint.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -441,6 +461,10 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[str] private_ip: The IP addresses assigned to the Database Management private endpoint.
         :param pulumi.Input[str] state: The current lifecycle state of the Database Management private endpoint.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
         """
@@ -521,6 +545,10 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
     def subnet_id(self) -> pulumi.Output[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subnet_id")
 

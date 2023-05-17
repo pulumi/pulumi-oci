@@ -61,6 +61,8 @@ type GetHistoriesArgs struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+	//
+	// Can only be set to true when performing ListCompartments on the tenancy (root compartment).
 	CompartmentIdInSubtree bool                 `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetHistoriesFilter `pulumi:"filters"`
 	// Optional. A filter that returns results that match the name specified.
@@ -119,6 +121,8 @@ type GetHistoriesOutputArgs struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+	//
+	// Can only be set to true when performing ListCompartments on the tenancy (root compartment).
 	CompartmentIdInSubtree pulumi.BoolInput             `pulumi:"compartmentIdInSubtree"`
 	Filters                GetHistoriesFilterArrayInput `pulumi:"filters"`
 	// Optional. A filter that returns results that match the name specified.

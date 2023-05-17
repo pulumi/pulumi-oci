@@ -850,6 +850,9 @@ type DataMaskRuleTargetSelected struct {
 	// (Updatable) Target selection.
 	Kind string `pulumi:"kind"`
 	// (Updatable) Types of Targets
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Values []string `pulumi:"values"`
 }
 
@@ -868,6 +871,9 @@ type DataMaskRuleTargetSelectedArgs struct {
 	// (Updatable) Target selection.
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// (Updatable) Types of Targets
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Values pulumi.StringArrayInput `pulumi:"values"`
 }
 
@@ -954,6 +960,9 @@ func (o DataMaskRuleTargetSelectedOutput) Kind() pulumi.StringOutput {
 }
 
 // (Updatable) Types of Targets
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DataMaskRuleTargetSelectedOutput) Values() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DataMaskRuleTargetSelected) []string { return v.Values }).(pulumi.StringArrayOutput)
 }
@@ -993,6 +1002,9 @@ func (o DataMaskRuleTargetSelectedPtrOutput) Kind() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Types of Targets
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DataMaskRuleTargetSelectedPtrOutput) Values() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DataMaskRuleTargetSelected) []string {
 		if v == nil {
@@ -1016,6 +1028,8 @@ type DetectorRecipeDetectorRule struct {
 	// (Updatable) DetectorRecipeRule Identifier
 	DetectorRuleId string `pulumi:"detectorRuleId"`
 	// (Updatable) Detector recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Data Source entities mapping for a Detector Rule
 	EntitiesMappings []DetectorRecipeDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
@@ -1062,6 +1076,8 @@ type DetectorRecipeDetectorRuleArgs struct {
 	// (Updatable) DetectorRecipeRule Identifier
 	DetectorRuleId pulumi.StringInput `pulumi:"detectorRuleId"`
 	// (Updatable) Detector recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// (Updatable) Data Source entities mapping for a Detector Rule
 	EntitiesMappings DetectorRecipeDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
@@ -1167,6 +1183,8 @@ func (o DetectorRecipeDetectorRuleOutput) DetectorRuleId() pulumi.StringOutput {
 }
 
 // (Updatable) Detector recipe display name.
+//
+// Avoid entering confidential information.
 func (o DetectorRecipeDetectorRuleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -1240,6 +1258,8 @@ func (o DetectorRecipeDetectorRuleArrayOutput) Index(i pulumi.IntInput) Detector
 
 type DetectorRecipeDetectorRuleCandidateResponderRule struct {
 	// (Updatable) Detector recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// Ocid for detector recipe
 	Id *string `pulumi:"id"`
@@ -1260,6 +1280,8 @@ type DetectorRecipeDetectorRuleCandidateResponderRuleInput interface {
 
 type DetectorRecipeDetectorRuleCandidateResponderRuleArgs struct {
 	// (Updatable) Detector recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Ocid for detector recipe
 	Id pulumi.StringPtrInput `pulumi:"id"`
@@ -1319,6 +1341,8 @@ func (o DetectorRecipeDetectorRuleCandidateResponderRuleOutput) ToDetectorRecipe
 }
 
 // (Updatable) Detector recipe display name.
+//
+// Avoid entering confidential information.
 func (o DetectorRecipeDetectorRuleCandidateResponderRuleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRuleCandidateResponderRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -1742,6 +1766,8 @@ func (o DetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutput) Index(i 
 
 type DetectorRecipeDetectorRuleDetailsEntitiesMapping struct {
 	// (Updatable) Detector recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Possible type of entity
 	EntityType *string `pulumi:"entityType"`
@@ -1762,6 +1788,8 @@ type DetectorRecipeDetectorRuleDetailsEntitiesMappingInput interface {
 
 type DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs struct {
 	// (Updatable) Detector recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// (Updatable) Possible type of entity
 	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
@@ -1821,6 +1849,8 @@ func (o DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput) ToDetectorRecipe
 }
 
 // (Updatable) Detector recipe display name.
+//
+// Avoid entering confidential information.
 func (o DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRuleDetailsEntitiesMapping) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -1857,6 +1887,8 @@ func (o DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput) Index(i pul
 
 type DetectorRecipeDetectorRuleEntitiesMapping struct {
 	// (Updatable) Detector recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Possible type of entity
 	EntityType *string `pulumi:"entityType"`
@@ -1877,6 +1909,8 @@ type DetectorRecipeDetectorRuleEntitiesMappingInput interface {
 
 type DetectorRecipeDetectorRuleEntitiesMappingArgs struct {
 	// (Updatable) Detector recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// (Updatable) Possible type of entity
 	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
@@ -1936,6 +1970,8 @@ func (o DetectorRecipeDetectorRuleEntitiesMappingOutput) ToDetectorRecipeDetecto
 }
 
 // (Updatable) Detector recipe display name.
+//
+// Avoid entering confidential information.
 func (o DetectorRecipeDetectorRuleEntitiesMappingOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRuleEntitiesMapping) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -1984,6 +2020,8 @@ type DetectorRecipeEffectiveDetectorRule struct {
 	// (Updatable) DetectorRecipeRule Identifier
 	DetectorRuleId *string `pulumi:"detectorRuleId"`
 	// (Updatable) Detector recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Data Source entities mapping for a Detector Rule
 	EntitiesMappings []DetectorRecipeEffectiveDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
@@ -2030,6 +2068,8 @@ type DetectorRecipeEffectiveDetectorRuleArgs struct {
 	// (Updatable) DetectorRecipeRule Identifier
 	DetectorRuleId pulumi.StringPtrInput `pulumi:"detectorRuleId"`
 	// (Updatable) Detector recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// (Updatable) Data Source entities mapping for a Detector Rule
 	EntitiesMappings DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
@@ -2137,6 +2177,8 @@ func (o DetectorRecipeEffectiveDetectorRuleOutput) DetectorRuleId() pulumi.Strin
 }
 
 // (Updatable) Detector recipe display name.
+//
+// Avoid entering confidential information.
 func (o DetectorRecipeEffectiveDetectorRuleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -2210,6 +2252,8 @@ func (o DetectorRecipeEffectiveDetectorRuleArrayOutput) Index(i pulumi.IntInput)
 
 type DetectorRecipeEffectiveDetectorRuleCandidateResponderRule struct {
 	// (Updatable) Detector recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// Ocid for detector recipe
 	Id *string `pulumi:"id"`
@@ -2230,6 +2274,8 @@ type DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleInput interface {
 
 type DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs struct {
 	// (Updatable) Detector recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Ocid for detector recipe
 	Id pulumi.StringPtrInput `pulumi:"id"`
@@ -2289,6 +2335,8 @@ func (o DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput) ToDetec
 }
 
 // (Updatable) Detector recipe display name.
+//
+// Avoid entering confidential information.
 func (o DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleCandidateResponderRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -2719,6 +2767,8 @@ func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput) 
 
 type DetectorRecipeEffectiveDetectorRuleEntitiesMapping struct {
 	// (Updatable) Detector recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Possible type of entity
 	EntityType *string `pulumi:"entityType"`
@@ -2739,6 +2789,8 @@ type DetectorRecipeEffectiveDetectorRuleEntitiesMappingInput interface {
 
 type DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs struct {
 	// (Updatable) Detector recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// (Updatable) Possible type of entity
 	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
@@ -2798,6 +2850,8 @@ func (o DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ToDetectorReci
 }
 
 // (Updatable) Detector recipe display name.
+//
+// Avoid entering confidential information.
 func (o DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleEntitiesMapping) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -2836,10 +2890,14 @@ type ResponderRecipeEffectiveResponderRule struct {
 	// (Updatable) Compartment Identifier
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Responder recipe description.
+	//
+	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Details of UpdateResponderRuleDetails.
 	Details []ResponderRecipeEffectiveResponderRuleDetail `pulumi:"details"`
 	// (Updatable) Responder recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -2874,10 +2932,14 @@ type ResponderRecipeEffectiveResponderRuleArgs struct {
 	// (Updatable) Compartment Identifier
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// (Updatable) Responder recipe description.
+	//
+	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Details of UpdateResponderRuleDetails.
 	Details ResponderRecipeEffectiveResponderRuleDetailArrayInput `pulumi:"details"`
 	// (Updatable) Responder recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
@@ -2954,6 +3016,8 @@ func (o ResponderRecipeEffectiveResponderRuleOutput) CompartmentId() pulumi.Stri
 }
 
 // (Updatable) Responder recipe description.
+//
+// Avoid entering confidential information.
 func (o ResponderRecipeEffectiveResponderRuleOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResponderRecipeEffectiveResponderRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -2966,6 +3030,8 @@ func (o ResponderRecipeEffectiveResponderRuleOutput) Details() ResponderRecipeEf
 }
 
 // (Updatable) Responder recipe display name.
+//
+// Avoid entering confidential information.
 func (o ResponderRecipeEffectiveResponderRuleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResponderRecipeEffectiveResponderRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -3275,10 +3341,14 @@ type ResponderRecipeResponderRule struct {
 	// (Updatable) Compartment Identifier
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Responder recipe description.
+	//
+	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Details of UpdateResponderRuleDetails.
 	Details ResponderRecipeResponderRuleDetails `pulumi:"details"`
 	// (Updatable) Responder recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -3313,10 +3383,14 @@ type ResponderRecipeResponderRuleArgs struct {
 	// (Updatable) Compartment Identifier
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// (Updatable) Responder recipe description.
+	//
+	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Details of UpdateResponderRuleDetails.
 	Details ResponderRecipeResponderRuleDetailsInput `pulumi:"details"`
 	// (Updatable) Responder recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
@@ -3393,6 +3467,8 @@ func (o ResponderRecipeResponderRuleOutput) CompartmentId() pulumi.StringPtrOutp
 }
 
 // (Updatable) Responder recipe description.
+//
+// Avoid entering confidential information.
 func (o ResponderRecipeResponderRuleOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResponderRecipeResponderRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -3403,6 +3479,8 @@ func (o ResponderRecipeResponderRuleOutput) Details() ResponderRecipeResponderRu
 }
 
 // (Updatable) Responder recipe display name.
+//
+// Avoid entering confidential information.
 func (o ResponderRecipeResponderRuleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResponderRecipeResponderRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -3795,10 +3873,16 @@ type TargetTargetDetailTargetSecurityZoneRecipe struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The target description.
+	//
+	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) DetectorTemplate identifier.
+	//
+	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier of TargetResponderRecipe that can't be changed after creation.
 	Id *string `pulumi:"id"`
@@ -3835,10 +3919,16 @@ type TargetTargetDetailTargetSecurityZoneRecipeArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The target description.
+	//
+	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) DetectorTemplate identifier.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique identifier of TargetResponderRecipe that can't be changed after creation.
 	Id pulumi.StringPtrInput `pulumi:"id"`
@@ -3920,16 +4010,22 @@ func (o TargetTargetDetailTargetSecurityZoneRecipeOutput) DefinedTags() pulumi.M
 }
 
 // The target description.
+//
+// Avoid entering confidential information.
 func (o TargetTargetDetailTargetSecurityZoneRecipeOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetailTargetSecurityZoneRecipe) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) DetectorTemplate identifier.
+//
+// Avoid entering confidential information.
 func (o TargetTargetDetailTargetSecurityZoneRecipeOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetailTargetSecurityZoneRecipe) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+//
+// Avoid entering confidential information.
 func (o TargetTargetDetailTargetSecurityZoneRecipeOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v TargetTargetDetailTargetSecurityZoneRecipe) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
@@ -3998,6 +4094,8 @@ type TargetTargetDetectorRecipe struct {
 	// (Updatable) compartment associated with condition
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The target description.
+	//
+	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// detector for the rule
 	Detector *string `pulumi:"detector"`
@@ -4006,6 +4104,8 @@ type TargetTargetDetectorRecipe struct {
 	// (Updatable) Overrides to be applied to Detector Rule associated with the target
 	DetectorRules []TargetTargetDetectorRecipeDetectorRule `pulumi:"detectorRules"`
 	// (Updatable) DetectorTemplate identifier.
+	//
+	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// List of effective detector rules for the detector type for recipe after applying defaults
 	EffectiveDetectorRules []TargetTargetDetectorRecipeEffectiveDetectorRule `pulumi:"effectiveDetectorRules"`
@@ -4036,6 +4136,8 @@ type TargetTargetDetectorRecipeArgs struct {
 	// (Updatable) compartment associated with condition
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The target description.
+	//
+	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// detector for the rule
 	Detector pulumi.StringPtrInput `pulumi:"detector"`
@@ -4044,6 +4146,8 @@ type TargetTargetDetectorRecipeArgs struct {
 	// (Updatable) Overrides to be applied to Detector Rule associated with the target
 	DetectorRules TargetTargetDetectorRecipeDetectorRuleArrayInput `pulumi:"detectorRules"`
 	// (Updatable) DetectorTemplate identifier.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// List of effective detector rules for the detector type for recipe after applying defaults
 	EffectiveDetectorRules TargetTargetDetectorRecipeEffectiveDetectorRuleArrayInput `pulumi:"effectiveDetectorRules"`
@@ -4116,6 +4220,8 @@ func (o TargetTargetDetectorRecipeOutput) CompartmentId() pulumi.StringPtrOutput
 }
 
 // The target description.
+//
+// Avoid entering confidential information.
 func (o TargetTargetDetectorRecipeOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipe) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -4136,6 +4242,8 @@ func (o TargetTargetDetectorRecipeOutput) DetectorRules() TargetTargetDetectorRe
 }
 
 // (Updatable) DetectorTemplate identifier.
+//
+// Avoid entering confidential information.
 func (o TargetTargetDetectorRecipeOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipe) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -4196,6 +4304,8 @@ type TargetTargetDetectorRecipeDetectorRule struct {
 	// The id of the attached DataSource.
 	DataSourceId *string `pulumi:"dataSourceId"`
 	// The target description.
+	//
+	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Details of ResponderRule.
 	Details TargetTargetDetectorRecipeDetectorRuleDetails `pulumi:"details"`
@@ -4204,6 +4314,8 @@ type TargetTargetDetectorRecipeDetectorRule struct {
 	// (Updatable) Identifier for DetectorRule.
 	DetectorRuleId string `pulumi:"detectorRuleId"`
 	// (Updatable) DetectorTemplate identifier.
+	//
+	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// Data Source entities mapping for a Detector Rule
 	EntitiesMappings []TargetTargetDetectorRecipeDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
@@ -4240,6 +4352,8 @@ type TargetTargetDetectorRecipeDetectorRuleArgs struct {
 	// The id of the attached DataSource.
 	DataSourceId pulumi.StringPtrInput `pulumi:"dataSourceId"`
 	// The target description.
+	//
+	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Details of ResponderRule.
 	Details TargetTargetDetectorRecipeDetectorRuleDetailsInput `pulumi:"details"`
@@ -4248,6 +4362,8 @@ type TargetTargetDetectorRecipeDetectorRuleArgs struct {
 	// (Updatable) Identifier for DetectorRule.
 	DetectorRuleId pulumi.StringInput `pulumi:"detectorRuleId"`
 	// (Updatable) DetectorTemplate identifier.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Data Source entities mapping for a Detector Rule
 	EntitiesMappings TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
@@ -4326,6 +4442,8 @@ func (o TargetTargetDetectorRecipeDetectorRuleOutput) DataSourceId() pulumi.Stri
 }
 
 // The target description.
+//
+// Avoid entering confidential information.
 func (o TargetTargetDetectorRecipeDetectorRuleOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -4348,6 +4466,8 @@ func (o TargetTargetDetectorRecipeDetectorRuleOutput) DetectorRuleId() pulumi.St
 }
 
 // (Updatable) DetectorTemplate identifier.
+//
+// Avoid entering confidential information.
 func (o TargetTargetDetectorRecipeDetectorRuleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -4880,6 +5000,8 @@ func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutp
 
 type TargetTargetDetectorRecipeDetectorRuleEntitiesMapping struct {
 	// (Updatable) DetectorTemplate identifier.
+	//
+	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// Possible type of entity
 	EntityType *string `pulumi:"entityType"`
@@ -4900,6 +5022,8 @@ type TargetTargetDetectorRecipeDetectorRuleEntitiesMappingInput interface {
 
 type TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs struct {
 	// (Updatable) DetectorTemplate identifier.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Possible type of entity
 	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
@@ -4959,6 +5083,8 @@ func (o TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) ToTargetTar
 }
 
 // (Updatable) DetectorTemplate identifier.
+//
+// Avoid entering confidential information.
 func (o TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRuleEntitiesMapping) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -4997,6 +5123,8 @@ type TargetTargetDetectorRecipeEffectiveDetectorRule struct {
 	// The id of the attached DataSource.
 	DataSourceId *string `pulumi:"dataSourceId"`
 	// The target description.
+	//
+	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Details of ResponderRule.
 	Details []TargetTargetDetectorRecipeEffectiveDetectorRuleDetail `pulumi:"details"`
@@ -5005,6 +5133,8 @@ type TargetTargetDetectorRecipeEffectiveDetectorRule struct {
 	// (Updatable) Identifier for DetectorRule.
 	DetectorRuleId *string `pulumi:"detectorRuleId"`
 	// (Updatable) DetectorTemplate identifier.
+	//
+	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// Data Source entities mapping for a Detector Rule
 	EntitiesMappings []TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
@@ -5041,6 +5171,8 @@ type TargetTargetDetectorRecipeEffectiveDetectorRuleArgs struct {
 	// The id of the attached DataSource.
 	DataSourceId pulumi.StringPtrInput `pulumi:"dataSourceId"`
 	// The target description.
+	//
+	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Details of ResponderRule.
 	Details TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayInput `pulumi:"details"`
@@ -5049,6 +5181,8 @@ type TargetTargetDetectorRecipeEffectiveDetectorRuleArgs struct {
 	// (Updatable) Identifier for DetectorRule.
 	DetectorRuleId pulumi.StringPtrInput `pulumi:"detectorRuleId"`
 	// (Updatable) DetectorTemplate identifier.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Data Source entities mapping for a Detector Rule
 	EntitiesMappings TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
@@ -5127,6 +5261,8 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) DataSourceId() pu
 }
 
 // The target description.
+//
+// Avoid entering confidential information.
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -5149,6 +5285,8 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) DetectorRuleId() 
 }
 
 // (Updatable) DetectorTemplate identifier.
+//
+// Avoid entering confidential information.
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -5734,6 +5872,8 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueA
 
 type TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping struct {
 	// (Updatable) DetectorTemplate identifier.
+	//
+	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// Possible type of entity
 	EntityType *string `pulumi:"entityType"`
@@ -5754,6 +5894,8 @@ type TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingInput interfa
 
 type TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs struct {
 	// (Updatable) DetectorTemplate identifier.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Possible type of entity
 	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
@@ -5813,6 +5955,8 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) To
 }
 
 // (Updatable) DetectorTemplate identifier.
+//
+// Avoid entering confidential information.
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -5851,8 +5995,12 @@ type TargetTargetResponderRecipe struct {
 	// (Updatable) compartment associated with condition
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The target description.
+	//
+	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) DetectorTemplate identifier.
+	//
+	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// List of responder rules associated with the recipe after applying all defaults
 	EffectiveResponderRules []TargetTargetResponderRecipeEffectiveResponderRule `pulumi:"effectiveResponderRules"`
@@ -5885,8 +6033,12 @@ type TargetTargetResponderRecipeArgs struct {
 	// (Updatable) compartment associated with condition
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The target description.
+	//
+	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) DetectorTemplate identifier.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// List of responder rules associated with the recipe after applying all defaults
 	EffectiveResponderRules TargetTargetResponderRecipeEffectiveResponderRuleArrayInput `pulumi:"effectiveResponderRules"`
@@ -5961,11 +6113,15 @@ func (o TargetTargetResponderRecipeOutput) CompartmentId() pulumi.StringPtrOutpu
 }
 
 // The target description.
+//
+// Avoid entering confidential information.
 func (o TargetTargetResponderRecipeOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetResponderRecipe) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) DetectorTemplate identifier.
+//
+// Avoid entering confidential information.
 func (o TargetTargetResponderRecipeOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetResponderRecipe) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -6033,16 +6189,23 @@ type TargetTargetResponderRecipeEffectiveResponderRule struct {
 	// (Updatable) compartment associated with condition
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The target description.
+	//
+	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Details of ResponderRule.
 	Details []TargetTargetResponderRecipeEffectiveResponderRuleDetail `pulumi:"details"`
 	// (Updatable) DetectorTemplate identifier.
+	//
+	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// List of Policy
 	Policies []string `pulumi:"policies"`
 	// (Updatable) Identifier for ResponderRule.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResponderRuleId *string `pulumi:"responderRuleId"`
 	// (Updatable) The current state of the DetectorRule.
 	State *string `pulumi:"state"`
@@ -6071,16 +6234,23 @@ type TargetTargetResponderRecipeEffectiveResponderRuleArgs struct {
 	// (Updatable) compartment associated with condition
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The target description.
+	//
+	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Details of ResponderRule.
 	Details TargetTargetResponderRecipeEffectiveResponderRuleDetailArrayInput `pulumi:"details"`
 	// (Updatable) DetectorTemplate identifier.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// List of Policy
 	Policies pulumi.StringArrayInput `pulumi:"policies"`
 	// (Updatable) Identifier for ResponderRule.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResponderRuleId pulumi.StringPtrInput `pulumi:"responderRuleId"`
 	// (Updatable) The current state of the DetectorRule.
 	State pulumi.StringPtrInput `pulumi:"state"`
@@ -6151,6 +6321,8 @@ func (o TargetTargetResponderRecipeEffectiveResponderRuleOutput) CompartmentId()
 }
 
 // The target description.
+//
+// Avoid entering confidential information.
 func (o TargetTargetResponderRecipeEffectiveResponderRuleOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetResponderRecipeEffectiveResponderRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -6163,6 +6335,8 @@ func (o TargetTargetResponderRecipeEffectiveResponderRuleOutput) Details() Targe
 }
 
 // (Updatable) DetectorTemplate identifier.
+//
+// Avoid entering confidential information.
 func (o TargetTargetResponderRecipeEffectiveResponderRuleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetResponderRecipeEffectiveResponderRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -6178,6 +6352,9 @@ func (o TargetTargetResponderRecipeEffectiveResponderRuleOutput) Policies() pulu
 }
 
 // (Updatable) Identifier for ResponderRule.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o TargetTargetResponderRecipeEffectiveResponderRuleOutput) ResponderRuleId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetResponderRecipeEffectiveResponderRule) *string { return v.ResponderRuleId }).(pulumi.StringPtrOutput)
 }
@@ -6474,16 +6651,23 @@ type TargetTargetResponderRecipeResponderRule struct {
 	// (Updatable) compartment associated with condition
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The target description.
+	//
+	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Details of ResponderRule.
 	Details TargetTargetResponderRecipeResponderRuleDetails `pulumi:"details"`
 	// (Updatable) DetectorTemplate identifier.
+	//
+	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// List of Policy
 	Policies []string `pulumi:"policies"`
 	// (Updatable) Identifier for ResponderRule.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResponderRuleId string `pulumi:"responderRuleId"`
 	// (Updatable) The current state of the DetectorRule.
 	State *string `pulumi:"state"`
@@ -6512,16 +6696,23 @@ type TargetTargetResponderRecipeResponderRuleArgs struct {
 	// (Updatable) compartment associated with condition
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The target description.
+	//
+	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Details of ResponderRule.
 	Details TargetTargetResponderRecipeResponderRuleDetailsInput `pulumi:"details"`
 	// (Updatable) DetectorTemplate identifier.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// List of Policy
 	Policies pulumi.StringArrayInput `pulumi:"policies"`
 	// (Updatable) Identifier for ResponderRule.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResponderRuleId pulumi.StringInput `pulumi:"responderRuleId"`
 	// (Updatable) The current state of the DetectorRule.
 	State pulumi.StringPtrInput `pulumi:"state"`
@@ -6592,6 +6783,8 @@ func (o TargetTargetResponderRecipeResponderRuleOutput) CompartmentId() pulumi.S
 }
 
 // The target description.
+//
+// Avoid entering confidential information.
 func (o TargetTargetResponderRecipeResponderRuleOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetResponderRecipeResponderRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -6604,6 +6797,8 @@ func (o TargetTargetResponderRecipeResponderRuleOutput) Details() TargetTargetRe
 }
 
 // (Updatable) DetectorTemplate identifier.
+//
+// Avoid entering confidential information.
 func (o TargetTargetResponderRecipeResponderRuleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetResponderRecipeResponderRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -6619,6 +6814,9 @@ func (o TargetTargetResponderRecipeResponderRuleOutput) Policies() pulumi.String
 }
 
 // (Updatable) Identifier for ResponderRule.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o TargetTargetResponderRecipeResponderRuleOutput) ResponderRuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v TargetTargetResponderRecipeResponderRule) string { return v.ResponderRuleId }).(pulumi.StringOutput)
 }

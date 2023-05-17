@@ -97,6 +97,9 @@ type Vault struct {
 	// The date and time this vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeOfDeletion pulumi.StringOutput `pulumi:"timeOfDeletion"`
 	// The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
 	VaultType pulumi.StringOutput `pulumi:"vaultType"`
@@ -168,6 +171,9 @@ type vaultState struct {
 	// The date and time this vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 	// (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 	// The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
 	VaultType *string `pulumi:"vaultType"`
@@ -202,6 +208,9 @@ type VaultState struct {
 	// The date and time this vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 	// (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeOfDeletion pulumi.StringPtrInput
 	// The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
 	VaultType pulumi.StringPtrInput
@@ -226,6 +235,9 @@ type vaultArgs struct {
 	RestoreFromObjectStore *VaultRestoreFromObjectStore `pulumi:"restoreFromObjectStore"`
 	RestoreTrigger         *bool                        `pulumi:"restoreTrigger"`
 	// (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 	// The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
 	VaultType string `pulumi:"vaultType"`
@@ -247,6 +259,9 @@ type VaultArgs struct {
 	RestoreFromObjectStore VaultRestoreFromObjectStorePtrInput
 	RestoreTrigger         pulumi.BoolPtrInput
 	// (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeOfDeletion pulumi.StringPtrInput
 	// The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
 	VaultType pulumi.StringInput
@@ -409,6 +424,9 @@ func (o VaultOutput) TimeCreated() pulumi.StringOutput {
 }
 
 // (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o VaultOutput) TimeOfDeletion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Vault) pulumi.StringOutput { return v.TimeOfDeletion }).(pulumi.StringOutput)
 }

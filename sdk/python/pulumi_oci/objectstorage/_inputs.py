@@ -177,7 +177,11 @@ class ObjectLifecyclePolicyRuleArgs:
         :param pulumi.Input[bool] is_enabled: (Updatable) A Boolean that determines whether this rule is currently enabled.
         :param pulumi.Input[str] name: (Updatable) The name of the lifecycle rule to be applied.
         :param pulumi.Input[str] time_amount: (Updatable) Specifies the age of objects to apply the rule to. The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified time.
-        :param pulumi.Input[str] time_unit: (Updatable) The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
+        :param pulumi.Input[str] time_unit: (Updatable) The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['ObjectLifecyclePolicyRuleObjectNameFilterArgs'] object_name_filter: (Updatable) A filter that compares object names to a set of prefixes or patterns to determine if a rule applies to a given object. The filter can contain include glob patterns, exclude glob patterns and inclusion prefixes. The inclusion prefixes property is kept for backward compatibility. It is recommended to use inclusion patterns instead of prefixes. Exclusions take precedence over inclusions.
         :param pulumi.Input[str] target: (Updatable) The target of the object lifecycle policy rule. The values of target can be either "objects", "multipart-uploads" or "previous-object-versions". This field when declared as "objects" is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for objects. This field when declared as "previous-object-versions" is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for previous versions of existing objects. This field when declared as "multipart-uploads" is used to specify the ABORT (only) rule for uncommitted multipart-uploads.
         """
@@ -243,7 +247,11 @@ class ObjectLifecyclePolicyRuleArgs:
     @pulumi.getter(name="timeUnit")
     def time_unit(self) -> pulumi.Input[str]:
         """
-        (Updatable) The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
+        (Updatable) The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_unit")
 
@@ -284,7 +292,17 @@ class ObjectLifecyclePolicyRuleObjectNameFilterArgs:
                  inclusion_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[str]]] exclusion_patterns: (Updatable) An array of glob patterns to match the object names to exclude. An empty array is ignored. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
+               
+               The special pattern characters have the following meanings:
+               
+               \\           Escapes the following character
+               *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a '-' in the range, make it the first or last character.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] inclusion_patterns: (Updatable) An array of glob patterns to match the object names to include. An empty array includes all objects in the bucket. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
+               
+               The special pattern characters have the following meanings:
+               
+               \\           Escapes the following character
+               *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a '-' in the range, make it the first or last character.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] inclusion_prefixes: (Updatable) An array of object name prefixes that the rule will apply to. An empty array means to include all objects.
         """
         if exclusion_patterns is not None:
@@ -299,6 +317,11 @@ class ObjectLifecyclePolicyRuleObjectNameFilterArgs:
     def exclusion_patterns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) An array of glob patterns to match the object names to exclude. An empty array is ignored. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
+
+        The special pattern characters have the following meanings:
+
+        \\           Escapes the following character
+        *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a '-' in the range, make it the first or last character.
         """
         return pulumi.get(self, "exclusion_patterns")
 
@@ -311,6 +334,11 @@ class ObjectLifecyclePolicyRuleObjectNameFilterArgs:
     def inclusion_patterns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) An array of glob patterns to match the object names to include. An empty array includes all objects in the bucket. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
+
+        The special pattern characters have the following meanings:
+
+        \\           Escapes the following character
+        *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a '-' in the range, make it the first or last character.
         """
         return pulumi.get(self, "inclusion_patterns")
 
@@ -351,6 +379,10 @@ class StorageObjectSourceUriDetailsArgs:
         :param pulumi.Input[str] destination_object_if_none_match_etag: The entity tag to not match the target object.
         :param pulumi.Input[str] source_object_if_match_etag: The entity tag to match the source object.
         :param pulumi.Input[str] source_version_id: The version id of the object to be restored.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "namespace", namespace)
@@ -454,6 +486,10 @@ class StorageObjectSourceUriDetailsArgs:
     def source_version_id(self) -> Optional[pulumi.Input[str]]:
         """
         The version id of the object to be restored.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source_version_id")
 

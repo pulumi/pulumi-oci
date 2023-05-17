@@ -22,6 +22,19 @@ class SslCipherSuiteArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ciphers: A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
         :param pulumi.Input[str] name: A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+               
+               **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle's predefined or reserved SSL cipher suite names:
+               * oci-default-ssl-cipher-suite-v1
+               * oci-modern-ssl-cipher-suite-v1
+               * oci-compatible-ssl-cipher-suite-v1
+               * oci-wider-compatible-ssl-cipher-suite-v1
+               * oci-customized-ssl-cipher-suite
+               
+               example: `example_cipher_suite`
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "ciphers", ciphers)
         pulumi.set(__self__, "load_balancer_id", load_balancer_id)
@@ -57,6 +70,19 @@ class SslCipherSuiteArgs:
     def name(self) -> Optional[pulumi.Input[str]]:
         """
         A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+
+        **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle's predefined or reserved SSL cipher suite names:
+        * oci-default-ssl-cipher-suite-v1
+        * oci-modern-ssl-cipher-suite-v1
+        * oci-compatible-ssl-cipher-suite-v1
+        * oci-wider-compatible-ssl-cipher-suite-v1
+        * oci-customized-ssl-cipher-suite
+
+        example: `example_cipher_suite`
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "name")
 
@@ -77,6 +103,19 @@ class _SslCipherSuiteState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ciphers: A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
         :param pulumi.Input[str] name: A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+               
+               **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle's predefined or reserved SSL cipher suite names:
+               * oci-default-ssl-cipher-suite-v1
+               * oci-modern-ssl-cipher-suite-v1
+               * oci-compatible-ssl-cipher-suite-v1
+               * oci-wider-compatible-ssl-cipher-suite-v1
+               * oci-customized-ssl-cipher-suite
+               
+               example: `example_cipher_suite`
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if ciphers is not None:
             pulumi.set(__self__, "ciphers", ciphers)
@@ -116,6 +155,19 @@ class _SslCipherSuiteState:
     def name(self) -> Optional[pulumi.Input[str]]:
         """
         A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+
+        **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle's predefined or reserved SSL cipher suite names:
+        * oci-default-ssl-cipher-suite-v1
+        * oci-modern-ssl-cipher-suite-v1
+        * oci-compatible-ssl-cipher-suite-v1
+        * oci-wider-compatible-ssl-cipher-suite-v1
+        * oci-customized-ssl-cipher-suite
+
+        example: `example_cipher_suite`
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "name")
 
@@ -171,6 +223,19 @@ class SslCipherSuite(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ciphers: A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
         :param pulumi.Input[str] name: A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+               
+               **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle's predefined or reserved SSL cipher suite names:
+               * oci-default-ssl-cipher-suite-v1
+               * oci-modern-ssl-cipher-suite-v1
+               * oci-compatible-ssl-cipher-suite-v1
+               * oci-wider-compatible-ssl-cipher-suite-v1
+               * oci-customized-ssl-cipher-suite
+               
+               example: `example_cipher_suite`
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -261,6 +326,19 @@ class SslCipherSuite(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ciphers: A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
         :param pulumi.Input[str] name: A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+               
+               **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle's predefined or reserved SSL cipher suite names:
+               * oci-default-ssl-cipher-suite-v1
+               * oci-modern-ssl-cipher-suite-v1
+               * oci-compatible-ssl-cipher-suite-v1
+               * oci-wider-compatible-ssl-cipher-suite-v1
+               * oci-customized-ssl-cipher-suite
+               
+               example: `example_cipher_suite`
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -293,6 +371,19 @@ class SslCipherSuite(pulumi.CustomResource):
     def name(self) -> pulumi.Output[str]:
         """
         A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+
+        **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle's predefined or reserved SSL cipher suite names:
+        * oci-default-ssl-cipher-suite-v1
+        * oci-modern-ssl-cipher-suite-v1
+        * oci-compatible-ssl-cipher-suite-v1
+        * oci-wider-compatible-ssl-cipher-suite-v1
+        * oci-customized-ssl-cipher-suite
+
+        example: `example_cipher_suite`
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "name")
 

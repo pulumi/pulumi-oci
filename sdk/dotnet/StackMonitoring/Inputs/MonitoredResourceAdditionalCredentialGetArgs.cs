@@ -58,7 +58,11 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public Input<string>? Source { get; set; }
 
         /// <summary>
-        /// Monitored Resource Type.
+        /// Monitored Resource Type. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

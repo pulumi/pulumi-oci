@@ -217,12 +217,16 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
     /**
      * Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
+     * **Example:** 2016-12-19T16:39:57.600Z
+     * 
      */
     @Import(name="timeCreatedGreaterThanOrEqualTo")
     private @Nullable Output<String> timeCreatedGreaterThanOrEqualTo;
 
     /**
      * @return Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     * **Example:** 2016-12-19T16:39:57.600Z
      * 
      */
     public Optional<Output<String>> timeCreatedGreaterThanOrEqualTo() {
@@ -232,12 +236,16 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
     /**
      * Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
+     * **Example:** 2016-12-19T16:39:57.600Z
+     * 
      */
     @Import(name="timeCreatedLessThan")
     private @Nullable Output<String> timeCreatedLessThan;
 
     /**
      * @return Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     * **Example:** 2016-12-19T16:39:57.600Z
      * 
      */
     public Optional<Output<String>> timeCreatedLessThan() {
@@ -247,12 +255,16 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
     /**
      * Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
+     * **Example:** 2016-12-19T16:39:57.600Z
+     * 
      */
     @Import(name="timeUpdatedGreaterThanOrEqualTo")
     private @Nullable Output<String> timeUpdatedGreaterThanOrEqualTo;
 
     /**
      * @return Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     * **Example:** 2016-12-19T16:39:57.600Z
      * 
      */
     public Optional<Output<String>> timeUpdatedGreaterThanOrEqualTo() {
@@ -262,12 +274,16 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
     /**
      * Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
+     * **Example:** 2016-12-19T16:39:57.600Z
+     * 
      */
     @Import(name="timeUpdatedLessThan")
     private @Nullable Output<String> timeUpdatedLessThan;
 
     /**
      * @return Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     * **Example:** 2016-12-19T16:39:57.600Z
      * 
      */
     public Optional<Output<String>> timeUpdatedLessThan() {
@@ -277,12 +293,18 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
     /**
      * A filter to return resources that match resource type.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
      * @return A filter to return resources that match resource type.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> type() {
@@ -636,6 +658,8 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
         /**
          * @param timeCreatedGreaterThanOrEqualTo Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          * 
+         * **Example:** 2016-12-19T16:39:57.600Z
+         * 
          * @return builder
          * 
          */
@@ -647,6 +671,8 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
         /**
          * @param timeCreatedGreaterThanOrEqualTo Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          * 
+         * **Example:** 2016-12-19T16:39:57.600Z
+         * 
          * @return builder
          * 
          */
@@ -656,6 +682,8 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
 
         /**
          * @param timeCreatedLessThan Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * 
+         * **Example:** 2016-12-19T16:39:57.600Z
          * 
          * @return builder
          * 
@@ -668,6 +696,8 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
         /**
          * @param timeCreatedLessThan Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          * 
+         * **Example:** 2016-12-19T16:39:57.600Z
+         * 
          * @return builder
          * 
          */
@@ -677,6 +707,8 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
 
         /**
          * @param timeUpdatedGreaterThanOrEqualTo Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * 
+         * **Example:** 2016-12-19T16:39:57.600Z
          * 
          * @return builder
          * 
@@ -689,6 +721,8 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
         /**
          * @param timeUpdatedGreaterThanOrEqualTo Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          * 
+         * **Example:** 2016-12-19T16:39:57.600Z
+         * 
          * @return builder
          * 
          */
@@ -698,6 +732,8 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
 
         /**
          * @param timeUpdatedLessThan Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         * 
+         * **Example:** 2016-12-19T16:39:57.600Z
          * 
          * @return builder
          * 
@@ -710,6 +746,8 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
         /**
          * @param timeUpdatedLessThan Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          * 
+         * **Example:** 2016-12-19T16:39:57.600Z
+         * 
          * @return builder
          * 
          */
@@ -719,6 +757,9 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
 
         /**
          * @param type A filter to return resources that match resource type.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -730,6 +771,9 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
 
         /**
          * @param type A filter to return resources that match resource type.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

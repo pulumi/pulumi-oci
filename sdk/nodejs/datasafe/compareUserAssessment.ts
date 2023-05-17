@@ -64,6 +64,10 @@ export class CompareUserAssessment extends pulumi.CustomResource {
     public readonly comparisonUserAssessmentId!: pulumi.Output<string>;
     /**
      * The OCID of the user assessment.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly userAssessmentId!: pulumi.Output<string>;
 
@@ -108,6 +112,10 @@ export interface CompareUserAssessmentState {
     comparisonUserAssessmentId?: pulumi.Input<string>;
     /**
      * The OCID of the user assessment.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     userAssessmentId?: pulumi.Input<string>;
 }
@@ -122,6 +130,10 @@ export interface CompareUserAssessmentArgs {
     comparisonUserAssessmentId: pulumi.Input<string>;
     /**
      * The OCID of the user assessment.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     userAssessmentId: pulumi.Input<string>;
 }

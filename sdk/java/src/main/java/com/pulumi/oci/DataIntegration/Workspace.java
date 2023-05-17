@@ -360,12 +360,18 @@ public class Workspace extends com.pulumi.resources.CustomResource {
     /**
      * The OCID of the VCN the subnet is in.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="vcnId", type=String.class, parameters={})
     private Output<String> vcnId;
 
     /**
      * @return The OCID of the VCN the subnet is in.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> vcnId() {

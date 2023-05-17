@@ -430,12 +430,18 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
     /**
      * (Updatable) The number of storage servers for the cloud Exadata infrastructure.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="storageCount")
     private @Nullable Output<Integer> storageCount;
 
     /**
      * @return (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> storageCount() {
@@ -1121,6 +1127,9 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
         /**
          * @param storageCount (Updatable) The number of storage servers for the cloud Exadata infrastructure.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -1131,6 +1140,9 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
 
         /**
          * @param storageCount (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -15,10 +15,33 @@ namespace Pulumi.Oci.Identity.Outputs
     {
         /// <summary>
         /// (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
+        /// 
+        /// **Added In:** 2102181953
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: integer
+        /// * uniqueness: none
         /// </summary>
         public readonly int? DbLoginAttempts;
         /// <summary>
         /// (Updatable) The Database User Name
+        /// 
+        /// **Added In:** 2102181953
+        /// 
+        /// **SCIM++ Properties:**
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * type: string
+        /// * returned: request
+        /// * caseExact: false
+        /// * uniqueness: none
+        /// * idcsSearchable: true
         /// </summary>
         public readonly string? DbUserName;
 

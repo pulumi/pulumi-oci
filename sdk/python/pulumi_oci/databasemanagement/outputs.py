@@ -3295,7 +3295,11 @@ class ExternalDbSystemDiscoveryPatchOperation(dict):
         """
         :param str operation: (Updatable) The operation can be one of these values: `MERGE`
         :param str selection: (Updatable)
-        :param 'ExternalDbSystemDiscoveryPatchOperationValueArgs' value: (Updatable)
+        :param 'ExternalDbSystemDiscoveryPatchOperationValueArgs' value: (Updatable) 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "operation", operation)
         pulumi.set(__self__, "selection", selection)
@@ -3322,7 +3326,11 @@ class ExternalDbSystemDiscoveryPatchOperation(dict):
     @pulumi.getter
     def value(self) -> Optional['outputs.ExternalDbSystemDiscoveryPatchOperationValue']:
         """
-        (Updatable)
+        (Updatable) 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "value")
 
@@ -4019,7 +4027,11 @@ class ManagedDatabaseGroupManagedDatabase(dict):
         :param str database_sub_type: The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         :param str database_type: The type of Oracle Database installation.
         :param str deployment_type: The infrastructure used to deploy the Oracle Database.
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str name: The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
         :param str time_added: The date and time the Managed Database was added to the group.
         :param str workload_type: The workload type of the Autonomous Database.
@@ -4077,7 +4089,11 @@ class ManagedDatabaseGroupManagedDatabase(dict):
     @pulumi.getter
     def id(self) -> Optional[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "id")
 

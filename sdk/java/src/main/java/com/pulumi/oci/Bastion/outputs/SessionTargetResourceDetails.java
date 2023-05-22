@@ -45,6 +45,9 @@ public final class SessionTargetResourceDetails {
     /**
      * @return The private IP address of the target resource that the session connects to.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private @Nullable String targetResourcePrivateIpAddress;
 
@@ -93,6 +96,9 @@ public final class SessionTargetResourceDetails {
     }
     /**
      * @return The private IP address of the target resource that the session connects to.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> targetResourcePrivateIpAddress() {

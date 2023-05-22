@@ -31,11 +31,31 @@ class NetworkLoadBalancerArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
         :param pulumi.Input[str] display_name: (Updatable) Network load balancer identifier, which can be renamed.
         :param pulumi.Input[str] subnet_id: The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_preserve_source_destination: (Updatable) This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
         :param pulumi.Input[bool] is_private: Whether the network load balancer has a virtual cloud network-local (private) IP address.
+               
+               If "true", then the service assigns a private IP address to the network load balancer.
+               
+               If "false", then the service assigns a public IP address to the network load balancer.
+               
+               A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+               
+               Example: `true`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
+               
+               During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
+               
+               The benefits of associating the network load balancer with network security groups include:
+               *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+               *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+               
+               Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         :param pulumi.Input[str] nlb_ip_version: (Updatable) IP version associated with the NLB.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerReservedIpArgs']]] reserved_ips: An array of reserved Ips.
         """
@@ -86,6 +106,10 @@ class NetworkLoadBalancerArgs:
     def subnet_id(self) -> pulumi.Input[str]:
         """
         The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subnet_id")
 
@@ -134,6 +158,14 @@ class NetworkLoadBalancerArgs:
     def is_private(self) -> Optional[pulumi.Input[bool]]:
         """
         Whether the network load balancer has a virtual cloud network-local (private) IP address.
+
+        If "true", then the service assigns a private IP address to the network load balancer.
+
+        If "false", then the service assigns a public IP address to the network load balancer.
+
+        A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+
+        Example: `true`
         """
         return pulumi.get(self, "is_private")
 
@@ -146,6 +178,14 @@ class NetworkLoadBalancerArgs:
     def network_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
+
+        During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
+
+        The benefits of associating the network load balancer with network security groups include:
+        *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+        *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+
+        Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         """
         return pulumi.get(self, "network_security_group_ids")
 
@@ -206,12 +246,32 @@ class _NetworkLoadBalancerState:
         :param pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerIpAddressArgs']]] ip_addresses: An array of IP addresses.
         :param pulumi.Input[bool] is_preserve_source_destination: (Updatable) This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
         :param pulumi.Input[bool] is_private: Whether the network load balancer has a virtual cloud network-local (private) IP address.
+               
+               If "true", then the service assigns a private IP address to the network load balancer.
+               
+               If "false", then the service assigns a public IP address to the network load balancer.
+               
+               A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+               
+               Example: `true`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
+               
+               During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
+               
+               The benefits of associating the network load balancer with network security groups include:
+               *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+               *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+               
+               Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         :param pulumi.Input[str] nlb_ip_version: (Updatable) IP version associated with the NLB.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerReservedIpArgs']]] reserved_ips: An array of reserved Ips.
         :param pulumi.Input[str] state: The current state of the network load balancer.
         :param pulumi.Input[str] subnet_id: The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] system_tags: Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] time_created: The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
@@ -326,6 +386,14 @@ class _NetworkLoadBalancerState:
     def is_private(self) -> Optional[pulumi.Input[bool]]:
         """
         Whether the network load balancer has a virtual cloud network-local (private) IP address.
+
+        If "true", then the service assigns a private IP address to the network load balancer.
+
+        If "false", then the service assigns a public IP address to the network load balancer.
+
+        A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+
+        Example: `true`
         """
         return pulumi.get(self, "is_private")
 
@@ -350,6 +418,14 @@ class _NetworkLoadBalancerState:
     def network_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
+
+        During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
+
+        The benefits of associating the network load balancer with network security groups include:
+        *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+        *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+
+        Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         """
         return pulumi.get(self, "network_security_group_ids")
 
@@ -398,6 +474,10 @@ class _NetworkLoadBalancerState:
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
         """
         The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subnet_id")
 
@@ -504,10 +584,30 @@ class NetworkLoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_preserve_source_destination: (Updatable) This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
         :param pulumi.Input[bool] is_private: Whether the network load balancer has a virtual cloud network-local (private) IP address.
+               
+               If "true", then the service assigns a private IP address to the network load balancer.
+               
+               If "false", then the service assigns a public IP address to the network load balancer.
+               
+               A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+               
+               Example: `true`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
+               
+               During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
+               
+               The benefits of associating the network load balancer with network security groups include:
+               *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+               *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+               
+               Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         :param pulumi.Input[str] nlb_ip_version: (Updatable) IP version associated with the NLB.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkLoadBalancerReservedIpArgs']]]] reserved_ips: An array of reserved Ips.
         :param pulumi.Input[str] subnet_id: The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -649,12 +749,32 @@ class NetworkLoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkLoadBalancerIpAddressArgs']]]] ip_addresses: An array of IP addresses.
         :param pulumi.Input[bool] is_preserve_source_destination: (Updatable) This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
         :param pulumi.Input[bool] is_private: Whether the network load balancer has a virtual cloud network-local (private) IP address.
+               
+               If "true", then the service assigns a private IP address to the network load balancer.
+               
+               If "false", then the service assigns a public IP address to the network load balancer.
+               
+               A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+               
+               Example: `true`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
+               
+               During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
+               
+               The benefits of associating the network load balancer with network security groups include:
+               *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+               *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+               
+               Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         :param pulumi.Input[str] nlb_ip_version: (Updatable) IP version associated with the NLB.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkLoadBalancerReservedIpArgs']]]] reserved_ips: An array of reserved Ips.
         :param pulumi.Input[str] state: The current state of the network load balancer.
         :param pulumi.Input[str] subnet_id: The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] system_tags: Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] time_created: The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
@@ -734,6 +854,14 @@ class NetworkLoadBalancer(pulumi.CustomResource):
     def is_private(self) -> pulumi.Output[bool]:
         """
         Whether the network load balancer has a virtual cloud network-local (private) IP address.
+
+        If "true", then the service assigns a private IP address to the network load balancer.
+
+        If "false", then the service assigns a public IP address to the network load balancer.
+
+        A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+
+        Example: `true`
         """
         return pulumi.get(self, "is_private")
 
@@ -750,6 +878,14 @@ class NetworkLoadBalancer(pulumi.CustomResource):
     def network_security_group_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
         (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
+
+        During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
+
+        The benefits of associating the network load balancer with network security groups include:
+        *  Network security groups define network security rules to govern ingress and egress traffic for the network load balancer.
+        *  The network security rules of other resources can reference the network security groups associated with the network load balancer to ensure access.
+
+        Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         """
         return pulumi.get(self, "network_security_group_ids")
 
@@ -782,6 +918,10 @@ class NetworkLoadBalancer(pulumi.CustomResource):
     def subnet_id(self) -> pulumi.Output[str]:
         """
         The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subnet_id")
 

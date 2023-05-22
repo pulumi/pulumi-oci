@@ -89,6 +89,10 @@ type Listener struct {
 	// A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleListener`
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) Deprecated. Please use `routingPolicies` instead.
+	//
+	// The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
+	//
+	// Example: `examplePathRouteSet`
 	PathRouteSetName pulumi.StringOutput `pulumi:"pathRouteSetName"`
 	// (Updatable) The communication port for the listener.  Example: `80`
 	Port pulumi.IntOutput `pulumi:"port"`
@@ -99,6 +103,8 @@ type Listener struct {
 	// (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["exampleRuleSet"]
 	RuleSetNames pulumi.StringArrayOutput `pulumi:"ruleSetNames"`
 	// (Updatable) The load balancer's SSL handling configuration details.
+	//
+	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 	SslConfiguration ListenerSslConfigurationPtrOutput `pulumi:"sslConfiguration"`
 	State            pulumi.StringOutput               `pulumi:"state"`
 }
@@ -155,6 +161,10 @@ type listenerState struct {
 	// A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleListener`
 	Name *string `pulumi:"name"`
 	// (Updatable) Deprecated. Please use `routingPolicies` instead.
+	//
+	// The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
+	//
+	// Example: `examplePathRouteSet`
 	PathRouteSetName *string `pulumi:"pathRouteSetName"`
 	// (Updatable) The communication port for the listener.  Example: `80`
 	Port *int `pulumi:"port"`
@@ -165,6 +175,8 @@ type listenerState struct {
 	// (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["exampleRuleSet"]
 	RuleSetNames []string `pulumi:"ruleSetNames"`
 	// (Updatable) The load balancer's SSL handling configuration details.
+	//
+	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 	SslConfiguration *ListenerSslConfiguration `pulumi:"sslConfiguration"`
 	State            *string                   `pulumi:"state"`
 }
@@ -181,6 +193,10 @@ type ListenerState struct {
 	// A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleListener`
 	Name pulumi.StringPtrInput
 	// (Updatable) Deprecated. Please use `routingPolicies` instead.
+	//
+	// The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
+	//
+	// Example: `examplePathRouteSet`
 	PathRouteSetName pulumi.StringPtrInput
 	// (Updatable) The communication port for the listener.  Example: `80`
 	Port pulumi.IntPtrInput
@@ -191,6 +207,8 @@ type ListenerState struct {
 	// (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["exampleRuleSet"]
 	RuleSetNames pulumi.StringArrayInput
 	// (Updatable) The load balancer's SSL handling configuration details.
+	//
+	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 	SslConfiguration ListenerSslConfigurationPtrInput
 	State            pulumi.StringPtrInput
 }
@@ -211,6 +229,10 @@ type listenerArgs struct {
 	// A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleListener`
 	Name *string `pulumi:"name"`
 	// (Updatable) Deprecated. Please use `routingPolicies` instead.
+	//
+	// The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
+	//
+	// Example: `examplePathRouteSet`
 	PathRouteSetName *string `pulumi:"pathRouteSetName"`
 	// (Updatable) The communication port for the listener.  Example: `80`
 	Port int `pulumi:"port"`
@@ -221,6 +243,8 @@ type listenerArgs struct {
 	// (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["exampleRuleSet"]
 	RuleSetNames []string `pulumi:"ruleSetNames"`
 	// (Updatable) The load balancer's SSL handling configuration details.
+	//
+	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 	SslConfiguration *ListenerSslConfiguration `pulumi:"sslConfiguration"`
 }
 
@@ -237,6 +261,10 @@ type ListenerArgs struct {
 	// A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleListener`
 	Name pulumi.StringPtrInput
 	// (Updatable) Deprecated. Please use `routingPolicies` instead.
+	//
+	// The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
+	//
+	// Example: `examplePathRouteSet`
 	PathRouteSetName pulumi.StringPtrInput
 	// (Updatable) The communication port for the listener.  Example: `80`
 	Port pulumi.IntInput
@@ -247,6 +275,8 @@ type ListenerArgs struct {
 	// (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["exampleRuleSet"]
 	RuleSetNames pulumi.StringArrayInput
 	// (Updatable) The load balancer's SSL handling configuration details.
+	//
+	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 	SslConfiguration ListenerSslConfigurationPtrInput
 }
 
@@ -363,6 +393,10 @@ func (o ListenerOutput) Name() pulumi.StringOutput {
 }
 
 // (Updatable) Deprecated. Please use `routingPolicies` instead.
+//
+// The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
+//
+// Example: `examplePathRouteSet`
 func (o ListenerOutput) PathRouteSetName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.PathRouteSetName }).(pulumi.StringOutput)
 }
@@ -388,6 +422,8 @@ func (o ListenerOutput) RuleSetNames() pulumi.StringArrayOutput {
 }
 
 // (Updatable) The load balancer's SSL handling configuration details.
+//
+// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 func (o ListenerOutput) SslConfiguration() ListenerSslConfigurationPtrOutput {
 	return o.ApplyT(func(v *Listener) ListenerSslConfigurationPtrOutput { return v.SslConfiguration }).(ListenerSslConfigurationPtrOutput)
 }

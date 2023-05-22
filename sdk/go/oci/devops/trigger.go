@@ -107,6 +107,9 @@ type Trigger struct {
 	// The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TriggerSource pulumi.StringOutput `pulumi:"triggerSource"`
 	// The endpoint that listens to trigger events.
 	TriggerUrl pulumi.StringOutput `pulumi:"triggerUrl"`
@@ -179,6 +182,9 @@ type triggerState struct {
 	// The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TriggerSource *string `pulumi:"triggerSource"`
 	// The endpoint that listens to trigger events.
 	TriggerUrl *string `pulumi:"triggerUrl"`
@@ -214,6 +220,9 @@ type TriggerState struct {
 	// The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringPtrInput
 	// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TriggerSource pulumi.StringPtrInput
 	// The endpoint that listens to trigger events.
 	TriggerUrl pulumi.StringPtrInput
@@ -241,6 +250,9 @@ type triggerArgs struct {
 	// (Updatable) The OCID of the DevOps code repository.
 	RepositoryId *string `pulumi:"repositoryId"`
 	// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TriggerSource string `pulumi:"triggerSource"`
 }
 
@@ -263,6 +275,9 @@ type TriggerArgs struct {
 	// (Updatable) The OCID of the DevOps code repository.
 	RepositoryId pulumi.StringPtrInput
 	// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TriggerSource pulumi.StringInput
 }
 
@@ -424,6 +439,9 @@ func (o TriggerOutput) TimeUpdated() pulumi.StringOutput {
 }
 
 // (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o TriggerOutput) TriggerSource() pulumi.StringOutput {
 	return o.ApplyT(func(v *Trigger) pulumi.StringOutput { return v.TriggerSource }).(pulumi.StringOutput)
 }

@@ -28,6 +28,10 @@ class AddonArgs:
         :param pulumi.Input[bool] remove_addon_resources_on_delete: Whether to remove addon resource in deletion.
         :param pulumi.Input[Sequence[pulumi.Input['AddonConfigurationArgs']]] configurations: (Updatable) Addon configuration details.
         :param pulumi.Input[str] version: (Updatable) The version of addon to be installed.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "addon_name", addon_name)
         pulumi.set(__self__, "cluster_id", cluster_id)
@@ -90,6 +94,10 @@ class AddonArgs:
     def version(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The version of addon to be installed.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "version")
 
@@ -121,6 +129,10 @@ class _AddonState:
         :param pulumi.Input[str] state: The state of the addon.
         :param pulumi.Input[str] time_created: The time the cluster was created.
         :param pulumi.Input[str] version: (Updatable) The version of addon to be installed.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if addon_errors is not None:
             pulumi.set(__self__, "addon_errors", addon_errors)
@@ -242,6 +254,10 @@ class _AddonState:
     def version(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The version of addon to be installed.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "version")
 
@@ -281,6 +297,10 @@ class Addon(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AddonConfigurationArgs']]]] configurations: (Updatable) Addon configuration details.
         :param pulumi.Input[bool] remove_addon_resources_on_delete: Whether to remove addon resource in deletion.
         :param pulumi.Input[str] version: (Updatable) The version of addon to be installed.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -380,6 +400,10 @@ class Addon(pulumi.CustomResource):
         :param pulumi.Input[str] state: The state of the addon.
         :param pulumi.Input[str] time_created: The time the cluster was created.
         :param pulumi.Input[str] version: (Updatable) The version of addon to be installed.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -465,6 +489,10 @@ class Addon(pulumi.CustomResource):
     def version(self) -> pulumi.Output[str]:
         """
         (Updatable) The version of addon to be installed.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "version")
 

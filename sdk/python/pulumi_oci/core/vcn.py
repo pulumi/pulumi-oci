@@ -41,13 +41,23 @@ class VcnArgs:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] dns_label: A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it's a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
                You must set this value if you want instances to be able to use hostnames to resolve other instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
+               
+               For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+               
+               Example: `vcn1`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ipv6private_cidr_blocks: The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
                * The CIDR blocks must be valid.
                * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
                * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+               
+               **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
         :param pulumi.Input[bool] is_ipv6enabled: Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
-        :param pulumi.Input[bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+        :param pulumi.Input[bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         if byoipv6cidr_details is not None:
@@ -153,6 +163,10 @@ class VcnArgs:
         """
         A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it's a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
         You must set this value if you want instances to be able to use hostnames to resolve other instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
+
+        For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+
+        Example: `vcn1`
         """
         return pulumi.get(self, "dns_label")
 
@@ -180,6 +194,8 @@ class VcnArgs:
         * The CIDR blocks must be valid.
         * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
         * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+
+        **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
         """
         return pulumi.get(self, "ipv6private_cidr_blocks")
 
@@ -203,7 +219,11 @@ class VcnArgs:
     @pulumi.getter(name="isOracleGuaAllocationEnabled")
     def is_oracle_gua_allocation_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+        Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_oracle_gua_allocation_enabled")
 
@@ -252,14 +272,24 @@ class _VcnState:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] dns_label: A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it's a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
                You must set this value if you want instances to be able to use hostnames to resolve other instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
+               
+               For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+               
+               Example: `vcn1`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ipv6cidr_blocks: For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space. The CIDRs are provided by Oracle and the sizes are always /56.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ipv6private_cidr_blocks: The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
                * The CIDR blocks must be valid.
                * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
                * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+               
+               **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
         :param pulumi.Input[bool] is_ipv6enabled: Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
-        :param pulumi.Input[bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+        :param pulumi.Input[bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The VCN's current state.
         :param pulumi.Input[str] time_created: The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] vcn_domain_name: The VCN's domain name, which consists of the VCN's DNS label, and the `oraclevcn.com` domain.
@@ -433,6 +463,10 @@ class _VcnState:
         """
         A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it's a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
         You must set this value if you want instances to be able to use hostnames to resolve other instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
+
+        For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+
+        Example: `vcn1`
         """
         return pulumi.get(self, "dns_label")
 
@@ -472,6 +506,8 @@ class _VcnState:
         * The CIDR blocks must be valid.
         * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
         * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+
+        **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
         """
         return pulumi.get(self, "ipv6private_cidr_blocks")
 
@@ -495,7 +531,11 @@ class _VcnState:
     @pulumi.getter(name="isOracleGuaAllocationEnabled")
     def is_oracle_gua_allocation_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+        Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_oracle_gua_allocation_enabled")
 
@@ -650,13 +690,23 @@ class Vcn(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] dns_label: A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it's a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
                You must set this value if you want instances to be able to use hostnames to resolve other instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
+               
+               For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+               
+               Example: `vcn1`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ipv6private_cidr_blocks: The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
                * The CIDR blocks must be valid.
                * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
                * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+               
+               **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
         :param pulumi.Input[bool] is_ipv6enabled: Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
-        :param pulumi.Input[bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+        :param pulumi.Input[bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -851,14 +901,24 @@ class Vcn(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] dns_label: A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it's a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
                You must set this value if you want instances to be able to use hostnames to resolve other instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
+               
+               For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+               
+               Example: `vcn1`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ipv6cidr_blocks: For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space. The CIDRs are provided by Oracle and the sizes are always /56.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ipv6private_cidr_blocks: The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
                * The CIDR blocks must be valid.
                * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
                * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+               
+               **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
         :param pulumi.Input[bool] is_ipv6enabled: Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
-        :param pulumi.Input[bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+        :param pulumi.Input[bool] is_oracle_gua_allocation_enabled: Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The VCN's current state.
         :param pulumi.Input[str] time_created: The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] vcn_domain_name: The VCN's domain name, which consists of the VCN's DNS label, and the `oraclevcn.com` domain.
@@ -978,6 +1038,10 @@ class Vcn(pulumi.CustomResource):
         """
         A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it's a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
         You must set this value if you want instances to be able to use hostnames to resolve other instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
+
+        For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+
+        Example: `vcn1`
         """
         return pulumi.get(self, "dns_label")
 
@@ -1005,6 +1069,8 @@ class Vcn(pulumi.CustomResource):
         * The CIDR blocks must be valid.
         * Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
         * The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+
+        **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
         """
         return pulumi.get(self, "ipv6private_cidr_blocks")
 
@@ -1020,7 +1086,11 @@ class Vcn(pulumi.CustomResource):
     @pulumi.getter(name="isOracleGuaAllocationEnabled")
     def is_oracle_gua_allocation_enabled(self) -> pulumi.Output[bool]:
         """
-        Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+        Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_oracle_gua_allocation_enabled")
 

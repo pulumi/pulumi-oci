@@ -75,16 +75,23 @@ type Subscription struct {
 	// The delivery policy of the subscription. Stored as a JSON string.
 	DeliveryPolicy pulumi.StringOutput `pulumi:"deliveryPolicy"`
 	// A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol. HTTP-based protocols use URL endpoints that begin with "http:" or "https:". A URL cannot exceed 512 characters. Avoid entering confidential information.
+	//
+	// For protocol-specific endpoint formats and steps to get or create endpoints, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
 	Endpoint pulumi.StringOutput `pulumi:"endpoint"`
 	// For optimistic concurrency control. See `if-match`.
 	Etag pulumi.StringOutput `pulumi:"etag"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The protocol used for the subscription.
+	//
+	// Allowed values:
 	Protocol pulumi.StringOutput `pulumi:"protocol"`
 	// The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TopicId pulumi.StringOutput `pulumi:"topicId"`
 }
 
@@ -138,16 +145,23 @@ type subscriptionState struct {
 	// The delivery policy of the subscription. Stored as a JSON string.
 	DeliveryPolicy *string `pulumi:"deliveryPolicy"`
 	// A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol. HTTP-based protocols use URL endpoints that begin with "http:" or "https:". A URL cannot exceed 512 characters. Avoid entering confidential information.
+	//
+	// For protocol-specific endpoint formats and steps to get or create endpoints, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
 	Endpoint *string `pulumi:"endpoint"`
 	// For optimistic concurrency control. See `if-match`.
 	Etag *string `pulumi:"etag"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The protocol used for the subscription.
+	//
+	// Allowed values:
 	Protocol *string `pulumi:"protocol"`
 	// The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
 	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TopicId *string `pulumi:"topicId"`
 }
 
@@ -161,16 +175,23 @@ type SubscriptionState struct {
 	// The delivery policy of the subscription. Stored as a JSON string.
 	DeliveryPolicy pulumi.StringPtrInput
 	// A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol. HTTP-based protocols use URL endpoints that begin with "http:" or "https:". A URL cannot exceed 512 characters. Avoid entering confidential information.
+	//
+	// For protocol-specific endpoint formats and steps to get or create endpoints, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
 	Endpoint pulumi.StringPtrInput
 	// For optimistic concurrency control. See `if-match`.
 	Etag pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The protocol used for the subscription.
+	//
+	// Allowed values:
 	Protocol pulumi.StringPtrInput
 	// The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
 	State pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TopicId pulumi.StringPtrInput
 }
 
@@ -186,12 +207,19 @@ type subscriptionArgs struct {
 	// The delivery policy of the subscription. Stored as a JSON string.
 	DeliveryPolicy *string `pulumi:"deliveryPolicy"`
 	// A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol. HTTP-based protocols use URL endpoints that begin with "http:" or "https:". A URL cannot exceed 512 characters. Avoid entering confidential information.
+	//
+	// For protocol-specific endpoint formats and steps to get or create endpoints, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
 	Endpoint string `pulumi:"endpoint"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The protocol used for the subscription.
+	//
+	// Allowed values:
 	Protocol string `pulumi:"protocol"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TopicId string `pulumi:"topicId"`
 }
 
@@ -204,12 +232,19 @@ type SubscriptionArgs struct {
 	// The delivery policy of the subscription. Stored as a JSON string.
 	DeliveryPolicy pulumi.StringPtrInput
 	// A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol. HTTP-based protocols use URL endpoints that begin with "http:" or "https:". A URL cannot exceed 512 characters. Avoid entering confidential information.
+	//
+	// For protocol-specific endpoint formats and steps to get or create endpoints, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
 	Endpoint pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The protocol used for the subscription.
+	//
+	// Allowed values:
 	Protocol pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TopicId pulumi.StringInput
 }
 
@@ -321,6 +356,8 @@ func (o SubscriptionOutput) DeliveryPolicy() pulumi.StringOutput {
 }
 
 // A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol. HTTP-based protocols use URL endpoints that begin with "http:" or "https:". A URL cannot exceed 512 characters. Avoid entering confidential information.
+//
+// For protocol-specific endpoint formats and steps to get or create endpoints, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
 func (o SubscriptionOutput) Endpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.Endpoint }).(pulumi.StringOutput)
 }
@@ -336,6 +373,8 @@ func (o SubscriptionOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The protocol used for the subscription.
+//
+// Allowed values:
 func (o SubscriptionOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.Protocol }).(pulumi.StringOutput)
 }
@@ -346,6 +385,9 @@ func (o SubscriptionOutput) State() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o SubscriptionOutput) TopicId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.TopicId }).(pulumi.StringOutput)
 }

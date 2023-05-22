@@ -83,6 +83,9 @@ type Stream struct {
 	// The current state of the stream.
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) The OCID of the stream pool that contains the stream.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StreamPoolId pulumi.StringOutput `pulumi:"streamPoolId"`
 	// The date and time the stream was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -139,6 +142,9 @@ type streamState struct {
 	// The current state of the stream.
 	State *string `pulumi:"state"`
 	// (Updatable) The OCID of the stream pool that contains the stream.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StreamPoolId *string `pulumi:"streamPoolId"`
 	// The date and time the stream was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -164,6 +170,9 @@ type StreamState struct {
 	// The current state of the stream.
 	State pulumi.StringPtrInput
 	// (Updatable) The OCID of the stream pool that contains the stream.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StreamPoolId pulumi.StringPtrInput
 	// The date and time the stream was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
 	TimeCreated pulumi.StringPtrInput
@@ -187,6 +196,9 @@ type streamArgs struct {
 	// The retention period of the stream, in hours. Accepted values are between 24 and 168 (7 days). If not specified, the stream will have a retention period of 24 hours.
 	RetentionInHours *int `pulumi:"retentionInHours"`
 	// (Updatable) The OCID of the stream pool that contains the stream.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StreamPoolId *string `pulumi:"streamPoolId"`
 }
 
@@ -205,6 +217,9 @@ type StreamArgs struct {
 	// The retention period of the stream, in hours. Accepted values are between 24 and 168 (7 days). If not specified, the stream will have a retention period of 24 hours.
 	RetentionInHours pulumi.IntPtrInput
 	// (Updatable) The OCID of the stream pool that contains the stream.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StreamPoolId pulumi.StringPtrInput
 }
 
@@ -341,6 +356,9 @@ func (o StreamOutput) State() pulumi.StringOutput {
 }
 
 // (Updatable) The OCID of the stream pool that contains the stream.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o StreamOutput) StreamPoolId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Stream) pulumi.StringOutput { return v.StreamPoolId }).(pulumi.StringOutput)
 }

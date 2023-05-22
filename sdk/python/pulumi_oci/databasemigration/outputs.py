@@ -401,7 +401,11 @@ class ConnectionVaultDetails(dict):
         """
         :param str compartment_id: (Updatable) OCID of the compartment where the secret containing the credentials will be created.
         :param str key_id: (Updatable) OCID of the vault encryption key
-        :param str vault_id: (Updatable) OCID of the vault
+        :param str vault_id: (Updatable) OCID of the vault 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "key_id", key_id)
@@ -427,7 +431,11 @@ class ConnectionVaultDetails(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> str:
         """
-        (Updatable) OCID of the vault
+        (Updatable) OCID of the vault 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vault_id")
 
@@ -1951,7 +1959,11 @@ class MigrationVaultDetails(dict):
         """
         :param str compartment_id: (Updatable) OCID of the compartment where the secret containing the credentials will be created.
         :param str key_id: (Updatable) OCID of the vault encryption key
-        :param str vault_id: (Updatable) OCID of the vault
+        :param str vault_id: (Updatable) OCID of the vault 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "key_id", key_id)
@@ -1977,7 +1989,11 @@ class MigrationVaultDetails(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> str:
         """
-        (Updatable) OCID of the vault
+        (Updatable) OCID of the vault 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vault_id")
 

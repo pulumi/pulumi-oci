@@ -126,12 +126,18 @@ public final class OdaInstanceArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Shape or size of the instance.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="shapeName", required=true)
     private Output<String> shapeName;
 
     /**
      * @return Shape or size of the instance.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> shapeName() {
@@ -335,6 +341,9 @@ public final class OdaInstanceArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param shapeName Shape or size of the instance.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -345,6 +354,9 @@ public final class OdaInstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param shapeName Shape or size of the instance.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

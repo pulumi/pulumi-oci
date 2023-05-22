@@ -168,7 +168,11 @@ namespace Pulumi.Oci.DataScience
         public Output<string> ProjectId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
+        /// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -286,7 +290,11 @@ namespace Pulumi.Oci.DataScience
         public Input<string> ProjectId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
+        /// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -378,7 +386,11 @@ namespace Pulumi.Oci.DataScience
         public Input<string>? ProjectId { get; set; }
 
         /// <summary>
-        /// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
+        /// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

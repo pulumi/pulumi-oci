@@ -22,6 +22,10 @@ class InstanceConsoleConnectionArgs:
         The set of arguments for constructing a InstanceConsoleConnection resource.
         :param pulumi.Input[str] instance_id: The OCID of the instance to create the console connection to.
         :param pulumi.Input[str] public_key: The SSH public key used to authenticate the console connection.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -49,6 +53,10 @@ class InstanceConsoleConnectionArgs:
     def public_key(self) -> pulumi.Input[str]:
         """
         The SSH public key used to authenticate the console connection.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "public_key")
 
@@ -103,6 +111,10 @@ class _InstanceConsoleConnectionState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] instance_id: The OCID of the instance to create the console connection to.
         :param pulumi.Input[str] public_key: The SSH public key used to authenticate the console connection.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] service_host_key_fingerprint: The SSH public key's fingerprint for the console connection service host.
         :param pulumi.Input[str] state: The current state of the console connection.
         :param pulumi.Input[str] vnc_connection_string: The SSH connection string for the SSH tunnel used to connect to the console connection over VNC.
@@ -205,6 +217,10 @@ class _InstanceConsoleConnectionState:
     def public_key(self) -> Optional[pulumi.Input[str]]:
         """
         The SSH public key used to authenticate the console connection.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "public_key")
 
@@ -299,6 +315,10 @@ class InstanceConsoleConnection(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] instance_id: The OCID of the instance to create the console connection to.
         :param pulumi.Input[str] public_key: The SSH public key used to authenticate the console connection.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -416,6 +436,10 @@ class InstanceConsoleConnection(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] instance_id: The OCID of the instance to create the console connection to.
         :param pulumi.Input[str] public_key: The SSH public key used to authenticate the console connection.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] service_host_key_fingerprint: The SSH public key's fingerprint for the console connection service host.
         :param pulumi.Input[str] state: The current state of the console connection.
         :param pulumi.Input[str] vnc_connection_string: The SSH connection string for the SSH tunnel used to connect to the console connection over VNC.
@@ -489,6 +513,10 @@ class InstanceConsoleConnection(pulumi.CustomResource):
     def public_key(self) -> pulumi.Output[str]:
         """
         The SSH public key used to authenticate the console connection.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "public_key")
 

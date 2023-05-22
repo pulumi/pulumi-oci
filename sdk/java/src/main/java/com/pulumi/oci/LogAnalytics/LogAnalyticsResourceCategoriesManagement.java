@@ -104,12 +104,18 @@ public class LogAnalyticsResourceCategoriesManagement extends com.pulumi.resourc
     /**
      * The resource type of the resource for which categories are managed.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="resourceType", type=String.class, parameters={})
     private Output<String> resourceType;
 
     /**
      * @return The resource type of the resource for which categories are managed.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> resourceType() {

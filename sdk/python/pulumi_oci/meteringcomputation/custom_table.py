@@ -24,6 +24,10 @@ class CustomTableArgs:
         :param pulumi.Input[str] compartment_id: The compartment OCID.
         :param pulumi.Input['CustomTableSavedCustomTableArgs'] saved_custom_table: (Updatable) The custom table for Cost Analysis UI rendering.
         :param pulumi.Input[str] saved_report_id: The associated saved report OCID.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "saved_custom_table", saved_custom_table)
@@ -58,6 +62,10 @@ class CustomTableArgs:
     def saved_report_id(self) -> pulumi.Input[str]:
         """
         The associated saved report OCID.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "saved_report_id")
 
@@ -77,6 +85,10 @@ class _CustomTableState:
         :param pulumi.Input[str] compartment_id: The compartment OCID.
         :param pulumi.Input['CustomTableSavedCustomTableArgs'] saved_custom_table: (Updatable) The custom table for Cost Analysis UI rendering.
         :param pulumi.Input[str] saved_report_id: The associated saved report OCID.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -114,6 +126,10 @@ class _CustomTableState:
     def saved_report_id(self) -> Optional[pulumi.Input[str]]:
         """
         The associated saved report OCID.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "saved_report_id")
 
@@ -172,6 +188,10 @@ class CustomTable(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: The compartment OCID.
         :param pulumi.Input[pulumi.InputType['CustomTableSavedCustomTableArgs']] saved_custom_table: (Updatable) The custom table for Cost Analysis UI rendering.
         :param pulumi.Input[str] saved_report_id: The associated saved report OCID.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -274,6 +294,10 @@ class CustomTable(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: The compartment OCID.
         :param pulumi.Input[pulumi.InputType['CustomTableSavedCustomTableArgs']] saved_custom_table: (Updatable) The custom table for Cost Analysis UI rendering.
         :param pulumi.Input[str] saved_report_id: The associated saved report OCID.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -305,6 +329,10 @@ class CustomTable(pulumi.CustomResource):
     def saved_report_id(self) -> pulumi.Output[str]:
         """
         The associated saved report OCID.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "saved_report_id")
 

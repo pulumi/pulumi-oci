@@ -849,6 +849,10 @@ class MigrationPlanTargetEnvironment(dict):
         :param str subnet: (Updatable) OCID of the VM configuration subnet.
         :param str target_environment_type: (Updatable) The type of target environment.
         :param str vcn: (Updatable) OCID of the VM configuration VCN.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str availability_domain: (Updatable) Availability Domain of the VM configuration.
         :param str dedicated_vm_host: (Updatable) OCID of the dedicated VM configuration host.
         :param str fault_domain: (Updatable) Fault domain of the VM configuration.
@@ -893,6 +897,10 @@ class MigrationPlanTargetEnvironment(dict):
     def vcn(self) -> str:
         """
         (Updatable) OCID of the VM configuration VCN.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vcn")
 
@@ -1854,14 +1862,38 @@ class TargetAssetRecommendedSpec(dict):
         :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param str fault_domain: (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+               
+               If you do not specify the fault domain, the system selects one for you.
+               
+               To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+               
+               Example: `FAULT-DOMAIN-1`
         :param Mapping[str, Any] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str hostname_label: (Updatable) Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param Sequence['TargetAssetRecommendedSpecInstanceOptionArgs'] instance_options: (Updatable) Optional mutable instance options
         :param str ipxe_script: (Updatable) This is an advanced option.
+               
+               When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+               
+               If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots. Be aware that the same iPXE script will run every time an instance boots, not only after the initial LaunchInstance call.
+               
+               By default, the iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI in the same way as the default iPXE script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+               
+               If your instance boot volume type is paravirtualized, the boot volume is attached to the instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is paravirtualized and you use custom iPXE to perform network-boot into your instance, the primary boot volume is attached as a data volume through the virtio-scsi drive.
+               
+               For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+               
+               For more information about iPXE, see http://ipxe.org.
         :param bool is_pv_encryption_in_transit_enabled: (Updatable) Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
         :param Sequence['TargetAssetRecommendedSpecPreemptibleInstanceConfigArgs'] preemptible_instance_configs: (Updatable) Configuration options for preemptible instances.
         :param str shape: (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+               
+               You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         :param Sequence['TargetAssetRecommendedSpecShapeConfigArgs'] shape_configs: (Updatable) The shape configuration requested for the instance.
+               
+               If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+               
+               Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         :param Sequence['TargetAssetRecommendedSpecSourceDetailArgs'] source_details: (Updatable)
         """
         if agent_configs is not None:
@@ -1970,6 +2002,12 @@ class TargetAssetRecommendedSpec(dict):
     def fault_domain(self) -> Optional[str]:
         """
         (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+
+        If you do not specify the fault domain, the system selects one for you.
+
+        To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+
+        Example: `FAULT-DOMAIN-1`
         """
         return pulumi.get(self, "fault_domain")
 
@@ -2002,6 +2040,18 @@ class TargetAssetRecommendedSpec(dict):
     def ipxe_script(self) -> Optional[str]:
         """
         (Updatable) This is an advanced option.
+
+        When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+
+        If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots. Be aware that the same iPXE script will run every time an instance boots, not only after the initial LaunchInstance call.
+
+        By default, the iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI in the same way as the default iPXE script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+
+        If your instance boot volume type is paravirtualized, the boot volume is attached to the instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is paravirtualized and you use custom iPXE to perform network-boot into your instance, the primary boot volume is attached as a data volume through the virtio-scsi drive.
+
+        For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+
+        For more information about iPXE, see http://ipxe.org.
         """
         return pulumi.get(self, "ipxe_script")
 
@@ -2026,6 +2076,8 @@ class TargetAssetRecommendedSpec(dict):
     def shape(self) -> Optional[str]:
         """
         (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+
+        You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         """
         return pulumi.get(self, "shape")
 
@@ -2034,6 +2086,10 @@ class TargetAssetRecommendedSpec(dict):
     def shape_configs(self) -> Optional[Sequence['outputs.TargetAssetRecommendedSpecShapeConfig']]:
         """
         (Updatable) The shape configuration requested for the instance.
+
+        If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+
+        Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         """
         return pulumi.get(self, "shape_configs")
 
@@ -2078,8 +2134,22 @@ class TargetAssetRecommendedSpecAgentConfig(dict):
                  plugins_configs: Optional[Sequence['outputs.TargetAssetRecommendedSpecAgentConfigPluginsConfig']] = None):
         """
         :param bool are_all_plugins_disabled: (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+               
+               To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         :param bool is_management_disabled: (Updatable) Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
+               
+               These are the management plugins: OS Management Service Agent and Compute instance run command.
+               
+               The management plugins are controlled by this parameter and the per-plugin configuration in the `pluginsConfig` object.
+               * If `isManagementDisabled` is true, all the management plugins are disabled, regardless of the per-plugin configuration.
+               * If `isManagementDisabled` is false, all the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
         :param bool is_monitoring_disabled: (Updatable) Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
+               
+               These are the monitoring plugins: Compute instance monitoring and Custom logs monitoring.
+               
+               The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+               * If `isMonitoringDisabled` is true, all the monitoring plugins are disabled, regardless of the per-plugin configuration.
+               * If `isMonitoringDisabled` is false, all the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
         :param Sequence['TargetAssetRecommendedSpecAgentConfigPluginsConfigArgs'] plugins_configs: (Updatable) The configuration of plugins associated with this instance.
         """
         if are_all_plugins_disabled is not None:
@@ -2096,6 +2166,8 @@ class TargetAssetRecommendedSpecAgentConfig(dict):
     def are_all_plugins_disabled(self) -> Optional[bool]:
         """
         (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+
+        To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
         return pulumi.get(self, "are_all_plugins_disabled")
 
@@ -2104,6 +2176,12 @@ class TargetAssetRecommendedSpecAgentConfig(dict):
     def is_management_disabled(self) -> Optional[bool]:
         """
         (Updatable) Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
+
+        These are the management plugins: OS Management Service Agent and Compute instance run command.
+
+        The management plugins are controlled by this parameter and the per-plugin configuration in the `pluginsConfig` object.
+        * If `isManagementDisabled` is true, all the management plugins are disabled, regardless of the per-plugin configuration.
+        * If `isManagementDisabled` is false, all the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
         """
         return pulumi.get(self, "is_management_disabled")
 
@@ -2112,6 +2190,12 @@ class TargetAssetRecommendedSpecAgentConfig(dict):
     def is_monitoring_disabled(self) -> Optional[bool]:
         """
         (Updatable) Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
+
+        These are the monitoring plugins: Compute instance monitoring and Custom logs monitoring.
+
+        The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+        * If `isMonitoringDisabled` is true, all the monitoring plugins are disabled, regardless of the per-plugin configuration.
+        * If `isMonitoringDisabled` is false, all the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
         """
         return pulumi.get(self, "is_monitoring_disabled")
 
@@ -2148,6 +2232,8 @@ class TargetAssetRecommendedSpecAgentConfigPluginsConfig(dict):
                  name: Optional[str] = None):
         """
         :param str desired_state: (Updatable) Whether the plugin should be enabled or disabled.
+               
+               To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         :param str name: (Updatable) The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
         if desired_state is not None:
@@ -2160,6 +2246,8 @@ class TargetAssetRecommendedSpecAgentConfigPluginsConfig(dict):
     def desired_state(self) -> Optional[str]:
         """
         (Updatable) Whether the plugin should be enabled or disabled.
+
+        To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         """
         return pulumi.get(self, "desired_state")
 
@@ -2225,16 +2313,40 @@ class TargetAssetRecommendedSpecCreateVnicDetail(dict):
                  vlan_id: Optional[str] = None):
         """
         :param bool assign_private_dns_record: (Updatable) Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
+               
+               If you specify a `hostnameLabel`, then `assignPrivateDnsRecord` must be set to true.
         :param bool assign_public_ip: (Updatable) Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
+               
+               **Note:** This public IP address is associated with the primary private IP on the VNIC. For more information, see [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+               
+               **Note:** There's a limit to the number of [public IPs](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/) a VNIC or instance can have. If you try to create a secondary VNIC with an assigned public IP for an instance that has already reached its public IP limit, an error is returned. For information about the public IP limits, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+               
+               Example: `false`
+               
+               If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, Any] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str hostname_label: (Updatable) Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param Sequence[str] nsg_ids: (Updatable) List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+               
+               If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         :param str private_ip: (Updatable) A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+               
+               If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+               
+               Example: `10.0.3.3`
         :param bool skip_source_dest_check: (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you should skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+               
+               If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+               
+               Example: `true`
         :param str subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
+               
+               If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both `vlanId` and `subnetId`, the request fails.
         :param str vlan_id: (Updatable) Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+               
+               Provide a `vlanId` instead of a `subnetId`. If you provide both `vlanId` and `subnetId`, the request fails.
         """
         if assign_private_dns_record is not None:
             pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
@@ -2264,6 +2376,8 @@ class TargetAssetRecommendedSpecCreateVnicDetail(dict):
     def assign_private_dns_record(self) -> Optional[bool]:
         """
         (Updatable) Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
+
+        If you specify a `hostnameLabel`, then `assignPrivateDnsRecord` must be set to true.
         """
         return pulumi.get(self, "assign_private_dns_record")
 
@@ -2272,6 +2386,14 @@ class TargetAssetRecommendedSpecCreateVnicDetail(dict):
     def assign_public_ip(self) -> Optional[bool]:
         """
         (Updatable) Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
+
+        **Note:** This public IP address is associated with the primary private IP on the VNIC. For more information, see [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+
+        **Note:** There's a limit to the number of [public IPs](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/) a VNIC or instance can have. If you try to create a secondary VNIC with an assigned public IP for an instance that has already reached its public IP limit, an error is returned. For information about the public IP limits, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+
+        Example: `false`
+
+        If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         """
         return pulumi.get(self, "assign_public_ip")
 
@@ -2312,6 +2434,8 @@ class TargetAssetRecommendedSpecCreateVnicDetail(dict):
     def nsg_ids(self) -> Optional[Sequence[str]]:
         """
         (Updatable) List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+
+        If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -2320,6 +2444,10 @@ class TargetAssetRecommendedSpecCreateVnicDetail(dict):
     def private_ip(self) -> Optional[str]:
         """
         (Updatable) A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+
+        If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+
+        Example: `10.0.3.3`
         """
         return pulumi.get(self, "private_ip")
 
@@ -2328,6 +2456,10 @@ class TargetAssetRecommendedSpecCreateVnicDetail(dict):
     def skip_source_dest_check(self) -> Optional[bool]:
         """
         (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you should skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+
+        If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+
+        Example: `true`
         """
         return pulumi.get(self, "skip_source_dest_check")
 
@@ -2336,6 +2468,8 @@ class TargetAssetRecommendedSpecCreateVnicDetail(dict):
     def subnet_id(self) -> Optional[str]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
+
+        If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both `vlanId` and `subnetId`, the request fails.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -2344,6 +2478,8 @@ class TargetAssetRecommendedSpecCreateVnicDetail(dict):
     def vlan_id(self) -> Optional[str]:
         """
         (Updatable) Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+
+        Provide a `vlanId` instead of a `subnetId`. If you provide both `vlanId` and `subnetId`, the request fails.
         """
         return pulumi.get(self, "vlan_id")
 
@@ -2495,6 +2631,8 @@ class TargetAssetRecommendedSpecShapeConfig(dict):
                  ocpus: Optional[float] = None):
         """
         :param str baseline_ocpu_utilization: (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+               
+               The following values are supported:
         :param float memory_in_gbs: (Updatable) The total amount of memory in gigabytes that is available to the instance.
         :param float ocpus: (Updatable) The total number of OCPUs available to the instance.
         """
@@ -2510,6 +2648,8 @@ class TargetAssetRecommendedSpecShapeConfig(dict):
     def baseline_ocpu_utilization(self) -> Optional[str]:
         """
         (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+
+        The following values are supported:
         """
         return pulumi.get(self, "baseline_ocpu_utilization")
 
@@ -2570,9 +2710,15 @@ class TargetAssetRecommendedSpecSourceDetail(dict):
         :param str boot_volume_id: (Updatable) The OCID of the boot volume used to boot the instance.
         :param str boot_volume_size_in_gbs: (Updatable) The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
         :param str boot_volume_vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+               
+               Allowed values:
         :param str image_id: (Updatable) The OCID of the image used to boot the instance.
         :param str kms_key_id: (Updatable) The OCID of the key management key to assign as the master encryption key for the boot volume.
-        :param str source_type: (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+        :param str source_type: (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if boot_volume_id is not None:
             pulumi.set(__self__, "boot_volume_id", boot_volume_id)
@@ -2608,6 +2754,8 @@ class TargetAssetRecommendedSpecSourceDetail(dict):
     def boot_volume_vpus_per_gb(self) -> Optional[str]:
         """
         (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+
+        Allowed values:
         """
         return pulumi.get(self, "boot_volume_vpus_per_gb")
 
@@ -2631,7 +2779,11 @@ class TargetAssetRecommendedSpecSourceDetail(dict):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> Optional[str]:
         """
-        (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+        (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source_type")
 
@@ -2716,14 +2868,38 @@ class TargetAssetTestSpec(dict):
         :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param str fault_domain: (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+               
+               If you do not specify the fault domain, the system selects one for you.
+               
+               To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+               
+               Example: `FAULT-DOMAIN-1`
         :param Mapping[str, Any] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str hostname_label: (Updatable) Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param Sequence['TargetAssetTestSpecInstanceOptionArgs'] instance_options: (Updatable) Optional mutable instance options
         :param str ipxe_script: (Updatable) This is an advanced option.
+               
+               When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+               
+               If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots. Be aware that the same iPXE script will run every time an instance boots, not only after the initial LaunchInstance call.
+               
+               By default, the iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI in the same way as the default iPXE script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+               
+               If your instance boot volume type is paravirtualized, the boot volume is attached to the instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is paravirtualized and you use custom iPXE to perform network-boot into your instance, the primary boot volume is attached as a data volume through the virtio-scsi drive.
+               
+               For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+               
+               For more information about iPXE, see http://ipxe.org.
         :param bool is_pv_encryption_in_transit_enabled: (Updatable) Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
         :param Sequence['TargetAssetTestSpecPreemptibleInstanceConfigArgs'] preemptible_instance_configs: (Updatable) Configuration options for preemptible instances.
         :param str shape: (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+               
+               You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         :param Sequence['TargetAssetTestSpecShapeConfigArgs'] shape_configs: (Updatable) The shape configuration requested for the instance.
+               
+               If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+               
+               Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         :param Sequence['TargetAssetTestSpecSourceDetailArgs'] source_details: (Updatable)
         """
         if agent_configs is not None:
@@ -2832,6 +3008,12 @@ class TargetAssetTestSpec(dict):
     def fault_domain(self) -> Optional[str]:
         """
         (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+
+        If you do not specify the fault domain, the system selects one for you.
+
+        To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+
+        Example: `FAULT-DOMAIN-1`
         """
         return pulumi.get(self, "fault_domain")
 
@@ -2864,6 +3046,18 @@ class TargetAssetTestSpec(dict):
     def ipxe_script(self) -> Optional[str]:
         """
         (Updatable) This is an advanced option.
+
+        When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+
+        If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots. Be aware that the same iPXE script will run every time an instance boots, not only after the initial LaunchInstance call.
+
+        By default, the iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI in the same way as the default iPXE script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+
+        If your instance boot volume type is paravirtualized, the boot volume is attached to the instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is paravirtualized and you use custom iPXE to perform network-boot into your instance, the primary boot volume is attached as a data volume through the virtio-scsi drive.
+
+        For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+
+        For more information about iPXE, see http://ipxe.org.
         """
         return pulumi.get(self, "ipxe_script")
 
@@ -2888,6 +3082,8 @@ class TargetAssetTestSpec(dict):
     def shape(self) -> Optional[str]:
         """
         (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+
+        You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         """
         return pulumi.get(self, "shape")
 
@@ -2896,6 +3092,10 @@ class TargetAssetTestSpec(dict):
     def shape_configs(self) -> Optional[Sequence['outputs.TargetAssetTestSpecShapeConfig']]:
         """
         (Updatable) The shape configuration requested for the instance.
+
+        If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+
+        Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         """
         return pulumi.get(self, "shape_configs")
 
@@ -2940,8 +3140,22 @@ class TargetAssetTestSpecAgentConfig(dict):
                  plugins_configs: Optional[Sequence['outputs.TargetAssetTestSpecAgentConfigPluginsConfig']] = None):
         """
         :param bool are_all_plugins_disabled: (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+               
+               To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         :param bool is_management_disabled: (Updatable) Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
+               
+               These are the management plugins: OS Management Service Agent and Compute instance run command.
+               
+               The management plugins are controlled by this parameter and the per-plugin configuration in the `pluginsConfig` object.
+               * If `isManagementDisabled` is true, all the management plugins are disabled, regardless of the per-plugin configuration.
+               * If `isManagementDisabled` is false, all the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
         :param bool is_monitoring_disabled: (Updatable) Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
+               
+               These are the monitoring plugins: Compute instance monitoring and Custom logs monitoring.
+               
+               The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+               * If `isMonitoringDisabled` is true, all the monitoring plugins are disabled, regardless of the per-plugin configuration.
+               * If `isMonitoringDisabled` is false, all the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
         :param Sequence['TargetAssetTestSpecAgentConfigPluginsConfigArgs'] plugins_configs: (Updatable) The configuration of plugins associated with this instance.
         """
         if are_all_plugins_disabled is not None:
@@ -2958,6 +3172,8 @@ class TargetAssetTestSpecAgentConfig(dict):
     def are_all_plugins_disabled(self) -> Optional[bool]:
         """
         (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+
+        To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
         return pulumi.get(self, "are_all_plugins_disabled")
 
@@ -2966,6 +3182,12 @@ class TargetAssetTestSpecAgentConfig(dict):
     def is_management_disabled(self) -> Optional[bool]:
         """
         (Updatable) Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
+
+        These are the management plugins: OS Management Service Agent and Compute instance run command.
+
+        The management plugins are controlled by this parameter and the per-plugin configuration in the `pluginsConfig` object.
+        * If `isManagementDisabled` is true, all the management plugins are disabled, regardless of the per-plugin configuration.
+        * If `isManagementDisabled` is false, all the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
         """
         return pulumi.get(self, "is_management_disabled")
 
@@ -2974,6 +3196,12 @@ class TargetAssetTestSpecAgentConfig(dict):
     def is_monitoring_disabled(self) -> Optional[bool]:
         """
         (Updatable) Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
+
+        These are the monitoring plugins: Compute instance monitoring and Custom logs monitoring.
+
+        The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+        * If `isMonitoringDisabled` is true, all the monitoring plugins are disabled, regardless of the per-plugin configuration.
+        * If `isMonitoringDisabled` is false, all the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
         """
         return pulumi.get(self, "is_monitoring_disabled")
 
@@ -3010,6 +3238,8 @@ class TargetAssetTestSpecAgentConfigPluginsConfig(dict):
                  name: Optional[str] = None):
         """
         :param str desired_state: (Updatable) Whether the plugin should be enabled or disabled.
+               
+               To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         :param str name: (Updatable) The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
         if desired_state is not None:
@@ -3022,6 +3252,8 @@ class TargetAssetTestSpecAgentConfigPluginsConfig(dict):
     def desired_state(self) -> Optional[str]:
         """
         (Updatable) Whether the plugin should be enabled or disabled.
+
+        To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         """
         return pulumi.get(self, "desired_state")
 
@@ -3087,16 +3319,40 @@ class TargetAssetTestSpecCreateVnicDetail(dict):
                  vlan_id: Optional[str] = None):
         """
         :param bool assign_private_dns_record: (Updatable) Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
+               
+               If you specify a `hostnameLabel`, then `assignPrivateDnsRecord` must be set to true.
         :param bool assign_public_ip: (Updatable) Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
+               
+               **Note:** This public IP address is associated with the primary private IP on the VNIC. For more information, see [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+               
+               **Note:** There's a limit to the number of [public IPs](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/) a VNIC or instance can have. If you try to create a secondary VNIC with an assigned public IP for an instance that has already reached its public IP limit, an error is returned. For information about the public IP limits, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+               
+               Example: `false`
+               
+               If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, Any] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str hostname_label: (Updatable) Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param Sequence[str] nsg_ids: (Updatable) List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+               
+               If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         :param str private_ip: (Updatable) A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+               
+               If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+               
+               Example: `10.0.3.3`
         :param bool skip_source_dest_check: (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you should skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+               
+               If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+               
+               Example: `true`
         :param str subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
+               
+               If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both `vlanId` and `subnetId`, the request fails.
         :param str vlan_id: (Updatable) Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+               
+               Provide a `vlanId` instead of a `subnetId`. If you provide both `vlanId` and `subnetId`, the request fails.
         """
         if assign_private_dns_record is not None:
             pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
@@ -3126,6 +3382,8 @@ class TargetAssetTestSpecCreateVnicDetail(dict):
     def assign_private_dns_record(self) -> Optional[bool]:
         """
         (Updatable) Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
+
+        If you specify a `hostnameLabel`, then `assignPrivateDnsRecord` must be set to true.
         """
         return pulumi.get(self, "assign_private_dns_record")
 
@@ -3134,6 +3392,14 @@ class TargetAssetTestSpecCreateVnicDetail(dict):
     def assign_public_ip(self) -> Optional[bool]:
         """
         (Updatable) Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
+
+        **Note:** This public IP address is associated with the primary private IP on the VNIC. For more information, see [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+
+        **Note:** There's a limit to the number of [public IPs](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/) a VNIC or instance can have. If you try to create a secondary VNIC with an assigned public IP for an instance that has already reached its public IP limit, an error is returned. For information about the public IP limits, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+
+        Example: `false`
+
+        If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         """
         return pulumi.get(self, "assign_public_ip")
 
@@ -3174,6 +3440,8 @@ class TargetAssetTestSpecCreateVnicDetail(dict):
     def nsg_ids(self) -> Optional[Sequence[str]]:
         """
         (Updatable) List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+
+        If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -3182,6 +3450,10 @@ class TargetAssetTestSpecCreateVnicDetail(dict):
     def private_ip(self) -> Optional[str]:
         """
         (Updatable) A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+
+        If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+
+        Example: `10.0.3.3`
         """
         return pulumi.get(self, "private_ip")
 
@@ -3190,6 +3462,10 @@ class TargetAssetTestSpecCreateVnicDetail(dict):
     def skip_source_dest_check(self) -> Optional[bool]:
         """
         (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you should skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+
+        If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+
+        Example: `true`
         """
         return pulumi.get(self, "skip_source_dest_check")
 
@@ -3198,6 +3474,8 @@ class TargetAssetTestSpecCreateVnicDetail(dict):
     def subnet_id(self) -> Optional[str]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
+
+        If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both `vlanId` and `subnetId`, the request fails.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -3206,6 +3484,8 @@ class TargetAssetTestSpecCreateVnicDetail(dict):
     def vlan_id(self) -> Optional[str]:
         """
         (Updatable) Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+
+        Provide a `vlanId` instead of a `subnetId`. If you provide both `vlanId` and `subnetId`, the request fails.
         """
         return pulumi.get(self, "vlan_id")
 
@@ -3357,6 +3637,8 @@ class TargetAssetTestSpecShapeConfig(dict):
                  ocpus: Optional[float] = None):
         """
         :param str baseline_ocpu_utilization: (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+               
+               The following values are supported:
         :param float memory_in_gbs: (Updatable) The total amount of memory in gigabytes that is available to the instance.
         :param float ocpus: (Updatable) The total number of OCPUs available to the instance.
         """
@@ -3372,6 +3654,8 @@ class TargetAssetTestSpecShapeConfig(dict):
     def baseline_ocpu_utilization(self) -> Optional[str]:
         """
         (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+
+        The following values are supported:
         """
         return pulumi.get(self, "baseline_ocpu_utilization")
 
@@ -3432,9 +3716,15 @@ class TargetAssetTestSpecSourceDetail(dict):
         :param str boot_volume_id: (Updatable) The OCID of the boot volume used to boot the instance.
         :param str boot_volume_size_in_gbs: (Updatable) The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
         :param str boot_volume_vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+               
+               Allowed values:
         :param str image_id: (Updatable) The OCID of the image used to boot the instance.
         :param str kms_key_id: (Updatable) The OCID of the key management key to assign as the master encryption key for the boot volume.
-        :param str source_type: (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+        :param str source_type: (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if boot_volume_id is not None:
             pulumi.set(__self__, "boot_volume_id", boot_volume_id)
@@ -3470,6 +3760,8 @@ class TargetAssetTestSpecSourceDetail(dict):
     def boot_volume_vpus_per_gb(self) -> Optional[str]:
         """
         (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+
+        Allowed values:
         """
         return pulumi.get(self, "boot_volume_vpus_per_gb")
 
@@ -3493,7 +3785,11 @@ class TargetAssetTestSpecSourceDetail(dict):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> Optional[str]:
         """
-        (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+        (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source_type")
 
@@ -3578,14 +3874,38 @@ class TargetAssetUserSpec(dict):
         :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param str fault_domain: (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+               
+               If you do not specify the fault domain, the system selects one for you.
+               
+               To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+               
+               Example: `FAULT-DOMAIN-1`
         :param Mapping[str, Any] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str hostname_label: (Updatable) Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param 'TargetAssetUserSpecInstanceOptionsArgs' instance_options: (Updatable) Optional mutable instance options
         :param str ipxe_script: (Updatable) This is an advanced option.
+               
+               When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+               
+               If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots. Be aware that the same iPXE script will run every time an instance boots, not only after the initial LaunchInstance call.
+               
+               By default, the iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI in the same way as the default iPXE script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+               
+               If your instance boot volume type is paravirtualized, the boot volume is attached to the instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is paravirtualized and you use custom iPXE to perform network-boot into your instance, the primary boot volume is attached as a data volume through the virtio-scsi drive.
+               
+               For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+               
+               For more information about iPXE, see http://ipxe.org.
         :param bool is_pv_encryption_in_transit_enabled: (Updatable) Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
         :param 'TargetAssetUserSpecPreemptibleInstanceConfigArgs' preemptible_instance_config: (Updatable) Configuration options for preemptible instances.
         :param str shape: (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+               
+               You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         :param 'TargetAssetUserSpecShapeConfigArgs' shape_config: (Updatable) The shape configuration requested for the instance.
+               
+               If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+               
+               Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         :param 'TargetAssetUserSpecSourceDetailsArgs' source_details: (Updatable)
         """
         if agent_config is not None:
@@ -3694,6 +4014,12 @@ class TargetAssetUserSpec(dict):
     def fault_domain(self) -> Optional[str]:
         """
         (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+
+        If you do not specify the fault domain, the system selects one for you.
+
+        To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+
+        Example: `FAULT-DOMAIN-1`
         """
         return pulumi.get(self, "fault_domain")
 
@@ -3726,6 +4052,18 @@ class TargetAssetUserSpec(dict):
     def ipxe_script(self) -> Optional[str]:
         """
         (Updatable) This is an advanced option.
+
+        When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+
+        If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots. Be aware that the same iPXE script will run every time an instance boots, not only after the initial LaunchInstance call.
+
+        By default, the iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI in the same way as the default iPXE script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+
+        If your instance boot volume type is paravirtualized, the boot volume is attached to the instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is paravirtualized and you use custom iPXE to perform network-boot into your instance, the primary boot volume is attached as a data volume through the virtio-scsi drive.
+
+        For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+
+        For more information about iPXE, see http://ipxe.org.
         """
         return pulumi.get(self, "ipxe_script")
 
@@ -3750,6 +4088,8 @@ class TargetAssetUserSpec(dict):
     def shape(self) -> Optional[str]:
         """
         (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+
+        You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         """
         return pulumi.get(self, "shape")
 
@@ -3758,6 +4098,10 @@ class TargetAssetUserSpec(dict):
     def shape_config(self) -> Optional['outputs.TargetAssetUserSpecShapeConfig']:
         """
         (Updatable) The shape configuration requested for the instance.
+
+        If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+
+        Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         """
         return pulumi.get(self, "shape_config")
 
@@ -3802,8 +4146,22 @@ class TargetAssetUserSpecAgentConfig(dict):
                  plugins_configs: Optional[Sequence['outputs.TargetAssetUserSpecAgentConfigPluginsConfig']] = None):
         """
         :param bool are_all_plugins_disabled: (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+               
+               To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         :param bool is_management_disabled: (Updatable) Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
+               
+               These are the management plugins: OS Management Service Agent and Compute instance run command.
+               
+               The management plugins are controlled by this parameter and the per-plugin configuration in the `pluginsConfig` object.
+               * If `isManagementDisabled` is true, all the management plugins are disabled, regardless of the per-plugin configuration.
+               * If `isManagementDisabled` is false, all the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
         :param bool is_monitoring_disabled: (Updatable) Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
+               
+               These are the monitoring plugins: Compute instance monitoring and Custom logs monitoring.
+               
+               The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+               * If `isMonitoringDisabled` is true, all the monitoring plugins are disabled, regardless of the per-plugin configuration.
+               * If `isMonitoringDisabled` is false, all the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
         :param Sequence['TargetAssetUserSpecAgentConfigPluginsConfigArgs'] plugins_configs: (Updatable) The configuration of plugins associated with this instance.
         """
         if are_all_plugins_disabled is not None:
@@ -3820,6 +4178,8 @@ class TargetAssetUserSpecAgentConfig(dict):
     def are_all_plugins_disabled(self) -> Optional[bool]:
         """
         (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+
+        To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
         return pulumi.get(self, "are_all_plugins_disabled")
 
@@ -3828,6 +4188,12 @@ class TargetAssetUserSpecAgentConfig(dict):
     def is_management_disabled(self) -> Optional[bool]:
         """
         (Updatable) Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
+
+        These are the management plugins: OS Management Service Agent and Compute instance run command.
+
+        The management plugins are controlled by this parameter and the per-plugin configuration in the `pluginsConfig` object.
+        * If `isManagementDisabled` is true, all the management plugins are disabled, regardless of the per-plugin configuration.
+        * If `isManagementDisabled` is false, all the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
         """
         return pulumi.get(self, "is_management_disabled")
 
@@ -3836,6 +4202,12 @@ class TargetAssetUserSpecAgentConfig(dict):
     def is_monitoring_disabled(self) -> Optional[bool]:
         """
         (Updatable) Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
+
+        These are the monitoring plugins: Compute instance monitoring and Custom logs monitoring.
+
+        The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+        * If `isMonitoringDisabled` is true, all the monitoring plugins are disabled, regardless of the per-plugin configuration.
+        * If `isMonitoringDisabled` is false, all the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
         """
         return pulumi.get(self, "is_monitoring_disabled")
 
@@ -3872,6 +4244,8 @@ class TargetAssetUserSpecAgentConfigPluginsConfig(dict):
                  name: str):
         """
         :param str desired_state: (Updatable) Whether the plugin should be enabled or disabled.
+               
+               To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         :param str name: (Updatable) The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
         pulumi.set(__self__, "desired_state", desired_state)
@@ -3882,6 +4256,8 @@ class TargetAssetUserSpecAgentConfigPluginsConfig(dict):
     def desired_state(self) -> str:
         """
         (Updatable) Whether the plugin should be enabled or disabled.
+
+        To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         """
         return pulumi.get(self, "desired_state")
 
@@ -3947,16 +4323,40 @@ class TargetAssetUserSpecCreateVnicDetails(dict):
                  vlan_id: Optional[str] = None):
         """
         :param bool assign_private_dns_record: (Updatable) Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
+               
+               If you specify a `hostnameLabel`, then `assignPrivateDnsRecord` must be set to true.
         :param bool assign_public_ip: (Updatable) Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
+               
+               **Note:** This public IP address is associated with the primary private IP on the VNIC. For more information, see [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+               
+               **Note:** There's a limit to the number of [public IPs](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/) a VNIC or instance can have. If you try to create a secondary VNIC with an assigned public IP for an instance that has already reached its public IP limit, an error is returned. For information about the public IP limits, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+               
+               Example: `false`
+               
+               If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, Any] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str hostname_label: (Updatable) Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param Sequence[str] nsg_ids: (Updatable) List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+               
+               If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         :param str private_ip: (Updatable) A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+               
+               If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+               
+               Example: `10.0.3.3`
         :param bool skip_source_dest_check: (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you should skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+               
+               If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+               
+               Example: `true`
         :param str subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
+               
+               If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both `vlanId` and `subnetId`, the request fails.
         :param str vlan_id: (Updatable) Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+               
+               Provide a `vlanId` instead of a `subnetId`. If you provide both `vlanId` and `subnetId`, the request fails.
         """
         if assign_private_dns_record is not None:
             pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
@@ -3986,6 +4386,8 @@ class TargetAssetUserSpecCreateVnicDetails(dict):
     def assign_private_dns_record(self) -> Optional[bool]:
         """
         (Updatable) Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
+
+        If you specify a `hostnameLabel`, then `assignPrivateDnsRecord` must be set to true.
         """
         return pulumi.get(self, "assign_private_dns_record")
 
@@ -3994,6 +4396,14 @@ class TargetAssetUserSpecCreateVnicDetails(dict):
     def assign_public_ip(self) -> Optional[bool]:
         """
         (Updatable) Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
+
+        **Note:** This public IP address is associated with the primary private IP on the VNIC. For more information, see [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+
+        **Note:** There's a limit to the number of [public IPs](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/) a VNIC or instance can have. If you try to create a secondary VNIC with an assigned public IP for an instance that has already reached its public IP limit, an error is returned. For information about the public IP limits, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+
+        Example: `false`
+
+        If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         """
         return pulumi.get(self, "assign_public_ip")
 
@@ -4034,6 +4444,8 @@ class TargetAssetUserSpecCreateVnicDetails(dict):
     def nsg_ids(self) -> Optional[Sequence[str]]:
         """
         (Updatable) List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+
+        If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -4042,6 +4454,10 @@ class TargetAssetUserSpecCreateVnicDetails(dict):
     def private_ip(self) -> Optional[str]:
         """
         (Updatable) A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+
+        If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+
+        Example: `10.0.3.3`
         """
         return pulumi.get(self, "private_ip")
 
@@ -4050,6 +4466,10 @@ class TargetAssetUserSpecCreateVnicDetails(dict):
     def skip_source_dest_check(self) -> Optional[bool]:
         """
         (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you should skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+
+        If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+
+        Example: `true`
         """
         return pulumi.get(self, "skip_source_dest_check")
 
@@ -4058,6 +4478,8 @@ class TargetAssetUserSpecCreateVnicDetails(dict):
     def subnet_id(self) -> Optional[str]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
+
+        If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both `vlanId` and `subnetId`, the request fails.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -4066,6 +4488,8 @@ class TargetAssetUserSpecCreateVnicDetails(dict):
     def vlan_id(self) -> Optional[str]:
         """
         (Updatable) Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+
+        Provide a `vlanId` instead of a `subnetId`. If you provide both `vlanId` and `subnetId`, the request fails.
         """
         return pulumi.get(self, "vlan_id")
 
@@ -4215,6 +4639,8 @@ class TargetAssetUserSpecShapeConfig(dict):
                  ocpus: Optional[float] = None):
         """
         :param str baseline_ocpu_utilization: (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+               
+               The following values are supported:
         :param float memory_in_gbs: (Updatable) The total amount of memory in gigabytes that is available to the instance.
         :param float ocpus: (Updatable) The total number of OCPUs available to the instance.
         """
@@ -4230,6 +4656,8 @@ class TargetAssetUserSpecShapeConfig(dict):
     def baseline_ocpu_utilization(self) -> Optional[str]:
         """
         (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+
+        The following values are supported:
         """
         return pulumi.get(self, "baseline_ocpu_utilization")
 
@@ -4287,10 +4715,16 @@ class TargetAssetUserSpecSourceDetails(dict):
                  image_id: Optional[str] = None,
                  kms_key_id: Optional[str] = None):
         """
-        :param str source_type: (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+        :param str source_type: (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str boot_volume_id: (Updatable) The OCID of the boot volume used to boot the instance.
         :param str boot_volume_size_in_gbs: (Updatable) The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
         :param str boot_volume_vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+               
+               Allowed values:
         :param str image_id: (Updatable) The OCID of the image used to boot the instance.
         :param str kms_key_id: (Updatable) The OCID of the key management key to assign as the master encryption key for the boot volume.
         """
@@ -4310,7 +4744,11 @@ class TargetAssetUserSpecSourceDetails(dict):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
         """
-        (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+        (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source_type")
 
@@ -4335,6 +4773,8 @@ class TargetAssetUserSpecSourceDetails(dict):
     def boot_volume_vpus_per_gb(self) -> Optional[str]:
         """
         (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+
+        Allowed values:
         """
         return pulumi.get(self, "boot_volume_vpus_per_gb")
 

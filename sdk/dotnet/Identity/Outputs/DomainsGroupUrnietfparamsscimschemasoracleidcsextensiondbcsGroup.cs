@@ -15,18 +15,64 @@ namespace Pulumi.Oci.Identity.Outputs
     {
         /// <summary>
         /// (Updatable) DBCS Domain-level schema-name.  This attribute refers implicitly to a value of 'domainLevelSchemaNames' for a particular DB Domain.
+        /// 
+        /// **Added In:** 18.2.4
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * idcsSensitive: none
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? DomainLevelSchema;
         /// <summary>
         /// (Updatable) DBCS Domain-level schema-names. Each value is specific to a DB Domain.
+        /// 
+        /// **Added In:** 18.2.4
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [domainName, schemaName]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
         /// </summary>
         public readonly ImmutableArray<Outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaName> DomainLevelSchemaNames;
         /// <summary>
         /// (Updatable) DBCS instance-level schema-name. This attribute refers implicitly to a value of 'instanceLevelSchemaNames' for a particular DB Instance.
+        /// 
+        /// **Added In:** 18.2.4
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * idcsSensitive: none
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? InstanceLevelSchema;
         /// <summary>
         /// (Updatable) DBCS instance-level schema-names. Each schema-name is specific to a DB Instance.
+        /// 
+        /// **Added In:** 18.2.4
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [dbInstanceId, schemaName]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
         /// </summary>
         public readonly ImmutableArray<Outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaName> InstanceLevelSchemaNames;
 

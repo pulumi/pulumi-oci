@@ -856,6 +856,10 @@ class LibraryMasingFormatFormatEntryArgs:
         :param pulumi.Input[str] post_processing_function: (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] random_lists: (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
         :param pulumi.Input[str] regular_expression: (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
+               
+               In the case of ASCII characters, if a regular expression is not provided,  Deterministic Encryption can encrypt variable-length column values while  preserving their original format.
+               
+               If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
         :param pulumi.Input[str] replace_with: (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
         :param pulumi.Input[str] schema_name: (Updatable) The name of the schema that contains the substitution column.
         :param pulumi.Input[str] sql_expression: (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
@@ -1073,6 +1077,10 @@ class LibraryMasingFormatFormatEntryArgs:
     def regular_expression(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
+
+        In the case of ASCII characters, if a regular expression is not provided,  Deterministic Encryption can encrypt variable-length column values while  preserving their original format.
+
+        If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
         """
         return pulumi.get(self, "regular_expression")
 
@@ -1284,6 +1292,10 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
         :param pulumi.Input[str] post_processing_function: (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] random_lists: (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
         :param pulumi.Input[str] regular_expression: (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
+               
+               In the case of ASCII characters, if a regular expression is not provided,  Deterministic Encryption can encrypt variable-length column values while  preserving their original format.
+               
+               If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
         :param pulumi.Input[str] replace_with: (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
         :param pulumi.Input[str] schema_name: The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
         :param pulumi.Input[str] sql_expression: (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
@@ -1501,6 +1513,10 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     def regular_expression(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
+
+        In the case of ASCII characters, if a regular expression is not provided,  Deterministic Encryption can encrypt variable-length column values while  preserving their original format.
+
+        If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
         """
         return pulumi.get(self, "regular_expression")
 
@@ -1904,6 +1920,10 @@ class ReportDefinitionSummaryArgs:
         :param pulumi.Input[str] group_by_field_name: (Updatable) A comma-delimited string that specifies the names of the fields by which the records must be aggregated to get the summary.
         :param pulumi.Input[bool] is_hidden: (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         :param pulumi.Input[str] scim_filter: (Updatable) Additional scim filters used to get the specific summary.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "display_order", display_order)
         pulumi.set(__self__, "name", name)
@@ -1981,6 +2001,10 @@ class ReportDefinitionSummaryArgs:
     def scim_filter(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Additional scim filters used to get the specific summary.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "scim_filter")
 
@@ -3176,6 +3200,10 @@ class TargetDatabaseTlsConfigArgs:
         :param pulumi.Input[str] key_store_content: (Updatable) Base64 encoded string of key store file content.
         :param pulumi.Input[str] store_password: (Updatable) The password to read the trust store and key store files, if they are password protected.
         :param pulumi.Input[str] trust_store_content: (Updatable) Base64 encoded string of trust store file content.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "status", status)
         if certificate_store_type is not None:
@@ -3240,6 +3268,10 @@ class TargetDatabaseTlsConfigArgs:
     def trust_store_content(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Base64 encoded string of trust store file content.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "trust_store_content")
 
@@ -3256,6 +3288,10 @@ class UserAssessmentIgnoredTargetArgs:
                  user_assessment_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] target_id: The OCID of the target database on which the user assessment is to be run.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if lifecycle_state is not None:
             pulumi.set(__self__, "lifecycle_state", lifecycle_state)
@@ -3278,6 +3314,10 @@ class UserAssessmentIgnoredTargetArgs:
     def target_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the target database on which the user assessment is to be run.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "target_id")
 

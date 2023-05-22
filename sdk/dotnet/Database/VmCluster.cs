@@ -223,6 +223,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("vmClusterNetworkId")]
         public Output<string> VmClusterNetworkId { get; private set; } = null!;
@@ -407,6 +411,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("vmClusterNetworkId", required: true)]
         public Input<string> VmClusterNetworkId { get; set; } = null!;
@@ -598,6 +606,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("vmClusterNetworkId")]
         public Input<string>? VmClusterNetworkId { get; set; }

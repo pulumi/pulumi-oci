@@ -95,12 +95,18 @@ public final class SdmMaskingPolicyDifferenceState extends com.pulumi.resources.
     /**
      * The OCID of the masking policy. Note that if the masking policy is not associated with an SDM, CreateSdmMaskingPolicyDifference operation won&#39;t be allowed.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="maskingPolicyId")
     private @Nullable Output<String> maskingPolicyId;
 
     /**
      * @return The OCID of the masking policy. Note that if the masking policy is not associated with an SDM, CreateSdmMaskingPolicyDifference operation won&#39;t be allowed.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> maskingPolicyId() {
@@ -324,6 +330,9 @@ public final class SdmMaskingPolicyDifferenceState extends com.pulumi.resources.
         /**
          * @param maskingPolicyId The OCID of the masking policy. Note that if the masking policy is not associated with an SDM, CreateSdmMaskingPolicyDifference operation won&#39;t be allowed.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -334,6 +343,9 @@ public final class SdmMaskingPolicyDifferenceState extends com.pulumi.resources.
 
         /**
          * @param maskingPolicyId The OCID of the masking policy. Note that if the masking policy is not associated with an SDM, CreateSdmMaskingPolicyDifference operation won&#39;t be allowed.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

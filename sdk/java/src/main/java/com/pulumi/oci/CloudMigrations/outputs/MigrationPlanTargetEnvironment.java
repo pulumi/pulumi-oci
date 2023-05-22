@@ -54,6 +54,9 @@ public final class MigrationPlanTargetEnvironment {
     /**
      * @return (Updatable) OCID of the VM configuration VCN.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private String vcn;
 
@@ -116,6 +119,9 @@ public final class MigrationPlanTargetEnvironment {
     }
     /**
      * @return (Updatable) OCID of the VM configuration VCN.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String vcn() {

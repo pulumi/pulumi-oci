@@ -58,6 +58,12 @@ export interface GetStacksArgs {
     id?: string;
     /**
      * A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
+     *
+     * Allowable values:
+     * * CREATING
+     * * ACTIVE
+     * * DELETING
+     * * DELETED
      */
     state?: string;
 }
@@ -132,6 +138,12 @@ export interface GetStacksOutputArgs {
     id?: pulumi.Input<string>;
     /**
      * A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
+     *
+     * Allowable values:
+     * * CREATING
+     * * ACTIVE
+     * * DELETING
+     * * DELETED
      */
     state?: pulumi.Input<string>;
 }

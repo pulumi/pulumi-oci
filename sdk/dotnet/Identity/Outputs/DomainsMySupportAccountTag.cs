@@ -15,10 +15,30 @@ namespace Pulumi.Oci.Identity.Outputs
     {
         /// <summary>
         /// Key or name of the tag.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string Key;
         /// <summary>
         /// User's id
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string Value;
 

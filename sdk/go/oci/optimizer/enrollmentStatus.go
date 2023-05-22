@@ -34,6 +34,9 @@ type EnrollmentStatus struct {
 	// The enrollment status' current state.
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) The Cloud Advisor enrollment status.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringOutput `pulumi:"status"`
 	// The reason for the enrollment status of the tenancy.
 	StatusReason pulumi.StringOutput `pulumi:"statusReason"`
@@ -85,6 +88,9 @@ type enrollmentStatusState struct {
 	// The enrollment status' current state.
 	State *string `pulumi:"state"`
 	// (Updatable) The Cloud Advisor enrollment status.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status *string `pulumi:"status"`
 	// The reason for the enrollment status of the tenancy.
 	StatusReason *string `pulumi:"statusReason"`
@@ -102,6 +108,9 @@ type EnrollmentStatusState struct {
 	// The enrollment status' current state.
 	State pulumi.StringPtrInput
 	// (Updatable) The Cloud Advisor enrollment status.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringPtrInput
 	// The reason for the enrollment status of the tenancy.
 	StatusReason pulumi.StringPtrInput
@@ -119,6 +128,9 @@ type enrollmentStatusArgs struct {
 	// The unique OCID associated with the enrollment status.
 	EnrollmentStatusId string `pulumi:"enrollmentStatusId"`
 	// (Updatable) The Cloud Advisor enrollment status.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status string `pulumi:"status"`
 }
 
@@ -127,6 +139,9 @@ type EnrollmentStatusArgs struct {
 	// The unique OCID associated with the enrollment status.
 	EnrollmentStatusId pulumi.StringInput
 	// (Updatable) The Cloud Advisor enrollment status.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringInput
 }
 
@@ -233,6 +248,9 @@ func (o EnrollmentStatusOutput) State() pulumi.StringOutput {
 }
 
 // (Updatable) The Cloud Advisor enrollment status.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o EnrollmentStatusOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *EnrollmentStatus) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }

@@ -91,6 +91,10 @@ export class ApmDomain extends pulumi.CustomResource {
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * Indicates whether this is an "Always Free" resource. The default value is false.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly isFreeTier!: pulumi.Output<boolean>;
     /**
@@ -183,6 +187,10 @@ export interface ApmDomainState {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * Indicates whether this is an "Always Free" resource. The default value is false.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     isFreeTier?: pulumi.Input<boolean>;
     /**
@@ -225,6 +233,10 @@ export interface ApmDomainArgs {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * Indicates whether this is an "Always Free" resource. The default value is false.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     isFreeTier?: pulumi.Input<boolean>;
 }

@@ -21,10 +21,7 @@ class GetFusionEnvironmentServiceAttachmentResult:
     """
     A collection of values returned by getFusionEnvironmentServiceAttachment.
     """
-    def __init__(__self__, action=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, fusion_environment_id=None, id=None, is_sku_based=None, service_attachment_id=None, service_instance_id=None, service_instance_type=None, service_url=None, state=None, time_created=None, time_updated=None):
-        if action and not isinstance(action, str):
-            raise TypeError("Expected argument 'action' to be a str")
-        pulumi.set(__self__, "action", action)
+    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, fusion_environment_id=None, id=None, is_sku_based=None, service_attachment_id=None, service_instance_id=None, service_instance_type=None, service_url=None, state=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -69,14 +66,6 @@ class GetFusionEnvironmentServiceAttachmentResult:
         pulumi.set(__self__, "time_updated", time_updated)
 
     @property
-    @pulumi.getter
-    def action(self) -> str:
-        """
-        Action
-        """
-        return pulumi.get(self, "action")
-
-    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
@@ -117,7 +106,7 @@ class GetFusionEnvironmentServiceAttachmentResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The provider-assigned unique ID for this managed resource.
+        Unique identifier that is immutable on creation
         """
         return pulumi.get(self, "id")
 
@@ -189,7 +178,6 @@ class AwaitableGetFusionEnvironmentServiceAttachmentResult(GetFusionEnvironmentS
         if False:
             yield self
         return GetFusionEnvironmentServiceAttachmentResult(
-            action=self.action,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
@@ -235,7 +223,6 @@ def get_fusion_environment_service_attachment(fusion_environment_id: Optional[st
     __ret__ = pulumi.runtime.invoke('oci:Functions/getFusionEnvironmentServiceAttachment:getFusionEnvironmentServiceAttachment', __args__, opts=opts, typ=GetFusionEnvironmentServiceAttachmentResult).value
 
     return AwaitableGetFusionEnvironmentServiceAttachmentResult(
-        action=__ret__.action,
         compartment_id=__ret__.compartment_id,
         defined_tags=__ret__.defined_tags,
         display_name=__ret__.display_name,

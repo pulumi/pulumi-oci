@@ -85,6 +85,9 @@ type DeploymentBackup struct {
 	// Name of namespace that serves as a container for all of your buckets
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// Name of the object to be uploaded to object storage
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Object pulumi.StringOutput `pulumi:"object"`
 	// Version of OGG
 	OggVersion pulumi.StringOutput `pulumi:"oggVersion"`
@@ -172,6 +175,9 @@ type deploymentBackupState struct {
 	// Name of namespace that serves as a container for all of your buckets
 	Namespace *string `pulumi:"namespace"`
 	// Name of the object to be uploaded to object storage
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Object *string `pulumi:"object"`
 	// Version of OGG
 	OggVersion *string `pulumi:"oggVersion"`
@@ -213,6 +219,9 @@ type DeploymentBackupState struct {
 	// Name of namespace that serves as a container for all of your buckets
 	Namespace pulumi.StringPtrInput
 	// Name of the object to be uploaded to object storage
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Object pulumi.StringPtrInput
 	// Version of OGG
 	OggVersion pulumi.StringPtrInput
@@ -252,6 +261,9 @@ type deploymentBackupArgs struct {
 	// Name of namespace that serves as a container for all of your buckets
 	Namespace string `pulumi:"namespace"`
 	// Name of the object to be uploaded to object storage
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Object string `pulumi:"object"`
 }
 
@@ -272,6 +284,9 @@ type DeploymentBackupArgs struct {
 	// Name of namespace that serves as a container for all of your buckets
 	Namespace pulumi.StringInput
 	// Name of the object to be uploaded to object storage
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Object pulumi.StringInput
 }
 
@@ -413,6 +428,9 @@ func (o DeploymentBackupOutput) Namespace() pulumi.StringOutput {
 }
 
 // Name of the object to be uploaded to object storage
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DeploymentBackupOutput) Object() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringOutput { return v.Object }).(pulumi.StringOutput)
 }

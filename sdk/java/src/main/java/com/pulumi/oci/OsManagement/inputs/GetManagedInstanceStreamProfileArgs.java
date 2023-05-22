@@ -87,12 +87,20 @@ public final class GetManagedInstanceStreamProfileArgs extends com.pulumi.resour
     /**
      * The status of the profile.
      * 
+     * A profile with the &#34;INSTALLED&#34; status indicates that the profile has been installed.
+     * 
+     * A profile with the &#34;AVAILABLE&#34; status indicates that the profile is not installed, but can be.
+     * 
      */
     @Import(name="profileStatus")
     private @Nullable Output<String> profileStatus;
 
     /**
      * @return The status of the profile.
+     * 
+     * A profile with the &#34;INSTALLED&#34; status indicates that the profile has been installed.
+     * 
+     * A profile with the &#34;AVAILABLE&#34; status indicates that the profile is not installed, but can be.
      * 
      */
     public Optional<Output<String>> profileStatus() {
@@ -244,6 +252,10 @@ public final class GetManagedInstanceStreamProfileArgs extends com.pulumi.resour
         /**
          * @param profileStatus The status of the profile.
          * 
+         * A profile with the &#34;INSTALLED&#34; status indicates that the profile has been installed.
+         * 
+         * A profile with the &#34;AVAILABLE&#34; status indicates that the profile is not installed, but can be.
+         * 
          * @return builder
          * 
          */
@@ -254,6 +266,10 @@ public final class GetManagedInstanceStreamProfileArgs extends com.pulumi.resour
 
         /**
          * @param profileStatus The status of the profile.
+         * 
+         * A profile with the &#34;INSTALLED&#34; status indicates that the profile has been installed.
+         * 
+         * A profile with the &#34;AVAILABLE&#34; status indicates that the profile is not installed, but can be.
          * 
          * @return builder
          * 

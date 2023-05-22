@@ -188,12 +188,16 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
     /**
      * (Updatable) To schedule the assessment for saving periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - &lt;version-string&gt;;&lt;version-specific-schedule&gt;
      * 
+     * Allowed version strings - &#34;v1&#34; v1&#39;s version specific schedule -&lt;ss&gt; &lt;mm&gt; &lt;hh&gt; &lt;day-of-week&gt; &lt;day-of-month&gt; Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = &lt;ss&gt; (So, the allowed range for &lt;ss&gt; is [0, 59]) 2. minutes = &lt;mm&gt; (So, the allowed range for &lt;mm&gt; is [0, 59]) 3. hours = &lt;hh&gt; (So, the allowed range for &lt;hh&gt; is [0, 23]) &lt;day-of-week&gt; can be either &#39;*&#39; (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is &#39;*&#39;. When not, day of week must equal the given value &lt;day-of-month&gt; can be either &#39;*&#39; (without quotes or a number between 1 and 28) 5. No constraint introduced when it is &#39;*&#39;. When not, day of month must equal the given value
+     * 
      */
     @Import(name="schedule")
     private @Nullable Output<String> schedule;
 
     /**
      * @return (Updatable) To schedule the assessment for saving periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - &lt;version-string&gt;;&lt;version-specific-schedule&gt;
+     * 
+     * Allowed version strings - &#34;v1&#34; v1&#39;s version specific schedule -&lt;ss&gt; &lt;mm&gt; &lt;hh&gt; &lt;day-of-week&gt; &lt;day-of-month&gt; Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = &lt;ss&gt; (So, the allowed range for &lt;ss&gt; is [0, 59]) 2. minutes = &lt;mm&gt; (So, the allowed range for &lt;mm&gt; is [0, 59]) 3. hours = &lt;hh&gt; (So, the allowed range for &lt;hh&gt; is [0, 23]) &lt;day-of-week&gt; can be either &#39;*&#39; (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is &#39;*&#39;. When not, day of week must equal the given value &lt;day-of-month&gt; can be either &#39;*&#39; (without quotes or a number between 1 and 28) 5. No constraint introduced when it is &#39;*&#39;. When not, day of month must equal the given value
      * 
      */
     public Optional<Output<String>> schedule() {
@@ -263,12 +267,18 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
     /**
      * The OCID of the target database on which the user assessment is to be run.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="targetId")
     private @Nullable Output<String> targetId;
 
     /**
      * @return The OCID of the target database on which the user assessment is to be run.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> targetId() {
@@ -665,6 +675,8 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
         /**
          * @param schedule (Updatable) To schedule the assessment for saving periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - &lt;version-string&gt;;&lt;version-specific-schedule&gt;
          * 
+         * Allowed version strings - &#34;v1&#34; v1&#39;s version specific schedule -&lt;ss&gt; &lt;mm&gt; &lt;hh&gt; &lt;day-of-week&gt; &lt;day-of-month&gt; Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = &lt;ss&gt; (So, the allowed range for &lt;ss&gt; is [0, 59]) 2. minutes = &lt;mm&gt; (So, the allowed range for &lt;mm&gt; is [0, 59]) 3. hours = &lt;hh&gt; (So, the allowed range for &lt;hh&gt; is [0, 23]) &lt;day-of-week&gt; can be either &#39;*&#39; (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is &#39;*&#39;. When not, day of week must equal the given value &lt;day-of-month&gt; can be either &#39;*&#39; (without quotes or a number between 1 and 28) 5. No constraint introduced when it is &#39;*&#39;. When not, day of month must equal the given value
+         * 
          * @return builder
          * 
          */
@@ -675,6 +687,8 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param schedule (Updatable) To schedule the assessment for saving periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - &lt;version-string&gt;;&lt;version-specific-schedule&gt;
+         * 
+         * Allowed version strings - &#34;v1&#34; v1&#39;s version specific schedule -&lt;ss&gt; &lt;mm&gt; &lt;hh&gt; &lt;day-of-week&gt; &lt;day-of-month&gt; Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = &lt;ss&gt; (So, the allowed range for &lt;ss&gt; is [0, 59]) 2. minutes = &lt;mm&gt; (So, the allowed range for &lt;mm&gt; is [0, 59]) 3. hours = &lt;hh&gt; (So, the allowed range for &lt;hh&gt; is [0, 23]) &lt;day-of-week&gt; can be either &#39;*&#39; (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is &#39;*&#39;. When not, day of week must equal the given value &lt;day-of-month&gt; can be either &#39;*&#39; (without quotes or a number between 1 and 28) 5. No constraint introduced when it is &#39;*&#39;. When not, day of month must equal the given value
          * 
          * @return builder
          * 
@@ -770,6 +784,9 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
         /**
          * @param targetId The OCID of the target database on which the user assessment is to be run.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -780,6 +797,9 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param targetId The OCID of the target database on which the user assessment is to be run.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

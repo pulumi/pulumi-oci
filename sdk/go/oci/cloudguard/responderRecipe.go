@@ -32,12 +32,18 @@ type ResponderRecipe struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Responder recipe description.
+	//
+	// Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Responder recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// List of responder rules associated with the recipe
 	EffectiveResponderRules ResponderRecipeEffectiveResponderRuleArrayOutput `pulumi:"effectiveResponderRules"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
@@ -46,6 +52,9 @@ type ResponderRecipe struct {
 	// (Updatable) Responder Rules to override from source responder recipe
 	ResponderRules ResponderRecipeResponderRuleArrayOutput `pulumi:"responderRules"`
 	// The id of the source responder recipe.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceResponderRecipeId pulumi.StringOutput `pulumi:"sourceResponderRecipeId"`
 	// The current state of the Example.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -100,12 +109,18 @@ type responderRecipeState struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Responder recipe description.
+	//
+	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Responder recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// List of responder rules associated with the recipe
 	EffectiveResponderRules []ResponderRecipeEffectiveResponderRule `pulumi:"effectiveResponderRules"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -114,6 +129,9 @@ type responderRecipeState struct {
 	// (Updatable) Responder Rules to override from source responder recipe
 	ResponderRules []ResponderRecipeResponderRule `pulumi:"responderRules"`
 	// The id of the source responder recipe.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceResponderRecipeId *string `pulumi:"sourceResponderRecipeId"`
 	// The current state of the Example.
 	State *string `pulumi:"state"`
@@ -131,12 +149,18 @@ type ResponderRecipeState struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) Responder recipe description.
+	//
+	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) Responder recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// List of responder rules associated with the recipe
 	EffectiveResponderRules ResponderRecipeEffectiveResponderRuleArrayInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags pulumi.MapInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
@@ -145,6 +169,9 @@ type ResponderRecipeState struct {
 	// (Updatable) Responder Rules to override from source responder recipe
 	ResponderRules ResponderRecipeResponderRuleArrayInput
 	// The id of the source responder recipe.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceResponderRecipeId pulumi.StringPtrInput
 	// The current state of the Example.
 	State pulumi.StringPtrInput
@@ -166,14 +193,23 @@ type responderRecipeArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Responder recipe description.
+	//
+	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Responder recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Responder Rules to override from source responder recipe
 	ResponderRules []ResponderRecipeResponderRule `pulumi:"responderRules"`
 	// The id of the source responder recipe.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceResponderRecipeId string `pulumi:"sourceResponderRecipeId"`
 }
 
@@ -184,14 +220,23 @@ type ResponderRecipeArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) Responder recipe description.
+	//
+	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) Responder recipe display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags pulumi.MapInput
 	// (Updatable) Responder Rules to override from source responder recipe
 	ResponderRules ResponderRecipeResponderRuleArrayInput
 	// The id of the source responder recipe.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceResponderRecipeId pulumi.StringInput
 }
 
@@ -293,11 +338,15 @@ func (o ResponderRecipeOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Responder recipe description.
+//
+// Avoid entering confidential information.
 func (o ResponderRecipeOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
 // (Updatable) Responder recipe display name.
+//
+// Avoid entering confidential information.
 func (o ResponderRecipeOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -310,6 +359,8 @@ func (o ResponderRecipeOutput) EffectiveResponderRules() ResponderRecipeEffectiv
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+//
+// Avoid entering confidential information.
 func (o ResponderRecipeOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *ResponderRecipe) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
@@ -330,6 +381,9 @@ func (o ResponderRecipeOutput) ResponderRules() ResponderRecipeResponderRuleArra
 }
 
 // The id of the source responder recipe.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ResponderRecipeOutput) SourceResponderRecipeId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringOutput { return v.SourceResponderRecipeId }).(pulumi.StringOutput)
 }

@@ -19,12 +19,18 @@ public final class BdsInstanceMetastoreConfigArgs extends com.pulumi.resources.R
     /**
      * (Updatable) An optional integer, when flipped triggers activation of metastore config.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="activateTrigger")
     private @Nullable Output<Integer> activateTrigger;
 
     /**
      * @return (Updatable) An optional integer, when flipped triggers activation of metastore config.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> activateTrigger() {
@@ -154,6 +160,9 @@ public final class BdsInstanceMetastoreConfigArgs extends com.pulumi.resources.R
         /**
          * @param activateTrigger (Updatable) An optional integer, when flipped triggers activation of metastore config.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -164,6 +173,9 @@ public final class BdsInstanceMetastoreConfigArgs extends com.pulumi.resources.R
 
         /**
          * @param activateTrigger (Updatable) An optional integer, when flipped triggers activation of metastore config.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

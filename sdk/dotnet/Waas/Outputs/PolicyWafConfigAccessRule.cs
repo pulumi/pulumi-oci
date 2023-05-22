@@ -67,6 +67,10 @@ namespace Pulumi.Oci.Waas.Outputs
         public readonly ImmutableArray<Outputs.PolicyWafConfigAccessRuleCriteria> Criterias;
         /// <summary>
         /// (Updatable) The unique name of the whitelist.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Name;
         /// <summary>

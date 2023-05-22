@@ -78,6 +78,9 @@ type ManagementAgentInstallKey struct {
 	// The time when Management Agent install Key was created. An RFC3339 formatted date time string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// date after which key would expire after creation
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeExpires pulumi.StringOutput `pulumi:"timeExpires"`
 	// The time when Management Agent install Key was updated. An RFC3339 formatted date time string
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
@@ -139,6 +142,9 @@ type managementAgentInstallKeyState struct {
 	// The time when Management Agent install Key was created. An RFC3339 formatted date time string
 	TimeCreated *string `pulumi:"timeCreated"`
 	// date after which key would expire after creation
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeExpires *string `pulumi:"timeExpires"`
 	// The time when Management Agent install Key was updated. An RFC3339 formatted date time string
 	TimeUpdated *string `pulumi:"timeUpdated"`
@@ -166,6 +172,9 @@ type ManagementAgentInstallKeyState struct {
 	// The time when Management Agent install Key was created. An RFC3339 formatted date time string
 	TimeCreated pulumi.StringPtrInput
 	// date after which key would expire after creation
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeExpires pulumi.StringPtrInput
 	// The time when Management Agent install Key was updated. An RFC3339 formatted date time string
 	TimeUpdated pulumi.StringPtrInput
@@ -185,6 +194,9 @@ type managementAgentInstallKeyArgs struct {
 	// If set to true, the install key has no expiration date or usage limit. Defaults to false
 	IsUnlimited *bool `pulumi:"isUnlimited"`
 	// date after which key would expire after creation
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeExpires *string `pulumi:"timeExpires"`
 }
 
@@ -199,6 +211,9 @@ type ManagementAgentInstallKeyArgs struct {
 	// If set to true, the install key has no expiration date or usage limit. Defaults to false
 	IsUnlimited pulumi.BoolPtrInput
 	// date after which key would expire after creation
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeExpires pulumi.StringPtrInput
 }
 
@@ -340,6 +355,9 @@ func (o ManagementAgentInstallKeyOutput) TimeCreated() pulumi.StringOutput {
 }
 
 // date after which key would expire after creation
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ManagementAgentInstallKeyOutput) TimeExpires() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.StringOutput { return v.TimeExpires }).(pulumi.StringOutput)
 }

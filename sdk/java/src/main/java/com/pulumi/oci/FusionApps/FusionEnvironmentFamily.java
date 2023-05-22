@@ -190,12 +190,18 @@ public class FusionEnvironmentFamily extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="subscriptionIds", type=List.class, parameters={String.class})
     private Output<List<String>> subscriptionIds;
 
     /**
      * @return (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<List<String>> subscriptionIds() {

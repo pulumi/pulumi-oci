@@ -17,15 +17,47 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Defined Tags
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [namespace, key, value]
+     * * type: complex
+     * * idcsSearchable: true
+     * * required: false
+     * * mutability: readWrite
+     * * multiValued: true
+     * * returned: default
+     * 
      */
     private @Nullable List<DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTag> definedTags;
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Freeform Tags
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * type: complex
+     * * required: false
+     * * mutability: readWrite
+     * * returned: default
+     * * multiValued: true
+     * 
      */
     private @Nullable List<DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTag> freeformTags;
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tag slug
+     * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * type: binary
+     * * mutability: readOnly
+     * * returned: request
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private @Nullable String tagSlug;
@@ -34,6 +66,17 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Defined Tags
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [namespace, key, value]
+     * * type: complex
+     * * idcsSearchable: true
+     * * required: false
+     * * mutability: readWrite
+     * * multiValued: true
+     * * returned: default
+     * 
      */
     public List<DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTag> definedTags() {
         return this.definedTags == null ? List.of() : this.definedTags;
@@ -41,12 +84,33 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Freeform Tags
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * type: complex
+     * * required: false
+     * * mutability: readWrite
+     * * returned: default
+     * * multiValued: true
+     * 
      */
     public List<DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTag> freeformTags() {
         return this.freeformTags == null ? List.of() : this.freeformTags;
     }
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tag slug
+     * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * type: binary
+     * * mutability: readOnly
+     * * returned: request
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> tagSlug() {

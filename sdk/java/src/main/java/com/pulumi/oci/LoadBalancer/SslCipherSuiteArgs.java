@@ -49,12 +49,36 @@ public final class SslCipherSuiteArgs extends com.pulumi.resources.ResourceArgs 
     /**
      * A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
      * 
+     * **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle&#39;s predefined or reserved SSL cipher suite names:
+     * * oci-default-ssl-cipher-suite-v1
+     * * oci-modern-ssl-cipher-suite-v1
+     * * oci-compatible-ssl-cipher-suite-v1
+     * * oci-wider-compatible-ssl-cipher-suite-v1
+     * * oci-customized-ssl-cipher-suite
+     * 
+     * example: `example_cipher_suite`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+     * 
+     * **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle&#39;s predefined or reserved SSL cipher suite names:
+     * * oci-default-ssl-cipher-suite-v1
+     * * oci-modern-ssl-cipher-suite-v1
+     * * oci-compatible-ssl-cipher-suite-v1
+     * * oci-wider-compatible-ssl-cipher-suite-v1
+     * * oci-customized-ssl-cipher-suite
+     * 
+     * example: `example_cipher_suite`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> name() {
@@ -142,6 +166,18 @@ public final class SslCipherSuiteArgs extends com.pulumi.resources.ResourceArgs 
         /**
          * @param name A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
          * 
+         * **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle&#39;s predefined or reserved SSL cipher suite names:
+         * * oci-default-ssl-cipher-suite-v1
+         * * oci-modern-ssl-cipher-suite-v1
+         * * oci-compatible-ssl-cipher-suite-v1
+         * * oci-wider-compatible-ssl-cipher-suite-v1
+         * * oci-customized-ssl-cipher-suite
+         * 
+         * example: `example_cipher_suite`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -152,6 +188,18 @@ public final class SslCipherSuiteArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param name A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+         * 
+         * **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle&#39;s predefined or reserved SSL cipher suite names:
+         * * oci-default-ssl-cipher-suite-v1
+         * * oci-modern-ssl-cipher-suite-v1
+         * * oci-compatible-ssl-cipher-suite-v1
+         * * oci-wider-compatible-ssl-cipher-suite-v1
+         * * oci-customized-ssl-cipher-suite
+         * 
+         * example: `example_cipher_suite`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

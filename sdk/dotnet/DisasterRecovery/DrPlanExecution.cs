@@ -137,7 +137,11 @@ namespace Pulumi.Oci.DisasterRecovery
         public Output<string> PlanExecutionType { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+        /// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("planId")]
         public Output<string> PlanId { get; private set; } = null!;
@@ -261,7 +265,11 @@ namespace Pulumi.Oci.DisasterRecovery
         }
 
         /// <summary>
-        /// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+        /// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("planId", required: true)]
         public Input<string> PlanId { get; set; } = null!;
@@ -377,7 +385,11 @@ namespace Pulumi.Oci.DisasterRecovery
         public Input<string>? PlanExecutionType { get; set; }
 
         /// <summary>
-        /// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+        /// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("planId")]
         public Input<string>? PlanId { get; set; }

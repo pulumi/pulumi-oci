@@ -16,6 +16,8 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly bool? CreateAsync;
         /// <summary>
         /// (Updatable) Details for creating a database by restoring from a source database system.
+        /// 
+        /// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         /// </summary>
         public readonly Outputs.DbSystemDbHomeDatabase Database;
         /// <summary>

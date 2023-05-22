@@ -109,6 +109,10 @@ export class Secret extends pulumi.CustomResource {
     public /*out*/ readonly timeOfDeletion!: pulumi.Output<string>;
     /**
      * The OCID of the vault where you want to create the secret.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly vaultId!: pulumi.Output<string>;
 
@@ -246,6 +250,10 @@ export interface SecretState {
     timeOfDeletion?: pulumi.Input<string>;
     /**
      * The OCID of the vault where you want to create the secret.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vaultId?: pulumi.Input<string>;
 }
@@ -292,6 +300,10 @@ export interface SecretArgs {
     secretRules?: pulumi.Input<pulumi.Input<inputs.Vault.SecretSecretRule>[]>;
     /**
      * The OCID of the vault where you want to create the secret.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vaultId: pulumi.Input<string>;
 }

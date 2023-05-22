@@ -115,6 +115,12 @@ namespace Pulumi.Oci.ResourceManager
 
         /// <summary>
         /// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
+        /// 
+        /// Allowable values:
+        /// * CREATING
+        /// * ACTIVE
+        /// * DELETING
+        /// * DELETED
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -155,6 +161,12 @@ namespace Pulumi.Oci.ResourceManager
 
         /// <summary>
         /// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
+        /// 
+        /// Allowable values:
+        /// * CREATING
+        /// * ACTIVE
+        /// * DELETING
+        /// * DELETED
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

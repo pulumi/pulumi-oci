@@ -238,6 +238,10 @@ class UnifiedAgentConfigurationServiceConfigurationSourceArgs:
                  paths: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input[str] source_type: (Updatable) Unified schema logging source type.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[str]]] channels: (Updatable)
         :param pulumi.Input[str] name: (Updatable) The name key to tag this grok pattern.
         :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserArgs'] parser: (Updatable) source parser object.
@@ -258,6 +262,10 @@ class UnifiedAgentConfigurationServiceConfigurationSourceArgs:
     def source_type(self) -> pulumi.Input[str]:
         """
         (Updatable) Unified schema logging source type.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source_type")
 

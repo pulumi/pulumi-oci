@@ -124,7 +124,11 @@ export class IdentityProvider extends pulumi.CustomResource {
      */
     public readonly productType!: pulumi.Output<string>;
     /**
-     * (Updatable) The protocol used for federation.  Example: `SAML2`
+     * (Updatable) The protocol used for federation.  Example: `SAML2` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly protocol!: pulumi.Output<string>;
     /**
@@ -258,7 +262,11 @@ export interface IdentityProviderState {
      */
     productType?: pulumi.Input<string>;
     /**
-     * (Updatable) The protocol used for federation.  Example: `SAML2`
+     * (Updatable) The protocol used for federation.  Example: `SAML2` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     protocol?: pulumi.Input<string>;
     /**
@@ -320,7 +328,11 @@ export interface IdentityProviderArgs {
      */
     productType: pulumi.Input<string>;
     /**
-     * (Updatable) The protocol used for federation.  Example: `SAML2`
+     * (Updatable) The protocol used for federation.  Example: `SAML2` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     protocol: pulumi.Input<string>;
 }

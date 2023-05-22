@@ -35,12 +35,16 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
     /**
      * The target description.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return The target description.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -65,12 +69,16 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
     /**
      * (Updatable) DetectorTemplate identifier.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
      * @return (Updatable) DetectorTemplate identifier.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -110,12 +118,18 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
     /**
      * (Updatable) Identifier for ResponderRule.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="responderRuleId")
     private @Nullable Output<String> responderRuleId;
 
     /**
      * @return (Updatable) Identifier for ResponderRule.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> responderRuleId() {
@@ -256,6 +270,8 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         /**
          * @param description The target description.
          * 
+         * Avoid entering confidential information.
+         * 
          * @return builder
          * 
          */
@@ -266,6 +282,8 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
 
         /**
          * @param description The target description.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -308,6 +326,8 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         /**
          * @param displayName (Updatable) DetectorTemplate identifier.
          * 
+         * Avoid entering confidential information.
+         * 
          * @return builder
          * 
          */
@@ -318,6 +338,8 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
 
         /**
          * @param displayName (Updatable) DetectorTemplate identifier.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -381,6 +403,9 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         /**
          * @param responderRuleId (Updatable) Identifier for ResponderRule.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -391,6 +416,9 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
 
         /**
          * @param responderRuleId (Updatable) Identifier for ResponderRule.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

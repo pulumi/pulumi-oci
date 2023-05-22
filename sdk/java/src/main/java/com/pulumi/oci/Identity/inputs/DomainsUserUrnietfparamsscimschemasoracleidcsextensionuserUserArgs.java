@@ -29,12 +29,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) Boolean value to prompt user to setup account recovery during login.
      * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="accountRecoveryRequired")
     private @Nullable Output<Boolean> accountRecoveryRequired;
 
     /**
      * @return (Updatable) Boolean value to prompt user to setup account recovery during login.
+     * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> accountRecoveryRequired() {
@@ -44,12 +66,32 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) Accounts assigned to this User. Each value of this attribute refers to an app-specific identity that is owned by this User. Therefore, this attribute is a convenience that allows one to see on each User the Apps to which that User has access.
      * 
+     * **SCIM++ Properties:**
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="accounts")
     private @Nullable Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArgs>> accounts;
 
     /**
      * @return (Updatable) Accounts assigned to this User. Each value of this attribute refers to an app-specific identity that is owned by this User. Therefore, this attribute is a convenience that allows one to see on each User the Apps to which that User has access.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArgs>>> accounts() {
@@ -59,12 +101,30 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) A list of all AppRoles to which this User belongs directly, indirectly or implicitly. The User could belong directly because the User is a member of the AppRole, could belong indirectly because the User is a member of a Group that is a member of the AppRole, or could belong implicitly because the AppRole is public.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="appRoles")
     private @Nullable Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArgs>> appRoles;
 
     /**
      * @return (Updatable) A list of all AppRoles to which this User belongs directly, indirectly or implicitly. The User could belong directly because the User is a member of the AppRole, could belong indirectly because the User is a member of a Group that is a member of the AppRole, or could belong implicitly because the AppRole is public.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArgs>>> appRoles() {
@@ -74,12 +134,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) The app against which the user will authenticate. The value is not persisted but rather calculated. If the user&#39;s delegatedAuthenticationTargetApp is set, that value is returned. Otherwise, the app returned by evaluating the user&#39;s applicable Delegated Authentication Policy is returned.
      * 
+     * **Added In:** 18.1.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="applicableAuthenticationTargetApps")
     private @Nullable Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArgs>> applicableAuthenticationTargetApps;
 
     /**
      * @return (Updatable) The app against which the user will authenticate. The value is not persisted but rather calculated. If the user&#39;s delegatedAuthenticationTargetApp is set, that value is returned. Otherwise, the app returned by evaluating the user&#39;s applicable Delegated Authentication Policy is returned.
+     * 
+     * **Added In:** 18.1.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArgs>>> applicableAuthenticationTargetApps() {
@@ -89,12 +171,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) A Boolean value indicating whether or not to send email notification after creating the user. This attribute is not used in update/replace operations.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:ByPass Notification]]
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: never
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="bypassNotification")
     private @Nullable Output<Boolean> bypassNotification;
 
     /**
      * @return (Updatable) A Boolean value indicating whether or not to send email notification after creating the user. This attribute is not used in update/replace operations.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:ByPass Notification]]
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: never
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> bypassNotification() {
@@ -104,12 +208,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) User creation mechanism
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeNameMappings: [[defaultValue:import]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="creationMechanism")
     private @Nullable Output<String> creationMechanism;
 
     /**
      * @return (Updatable) User creation mechanism
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeNameMappings: [[defaultValue:import]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> creationMechanism() {
@@ -119,12 +245,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Cloud Infrastructure IAM.
      * 
+     * **Added In:** 17.4.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="delegatedAuthenticationTargetApp")
     private @Nullable Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArgs> delegatedAuthenticationTargetApp;
 
     /**
      * @return (Updatable) If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Cloud Infrastructure IAM.
+     * 
+     * **Added In:** 17.4.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArgs>> delegatedAuthenticationTargetApp() {
@@ -134,12 +284,32 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) A Boolean value indicating whether or not to hide the getting started page
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="doNotShowGettingStarted")
     private @Nullable Output<Boolean> doNotShowGettingStarted;
 
     /**
      * @return (Updatable) A Boolean value indicating whether or not to hide the getting started page
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> doNotShowGettingStarted() {
@@ -149,12 +319,30 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) Grants to this User. Each value of this attribute refers to a Grant to this User of some App (and optionally of some entitlement). Therefore, this attribute is a convenience that allows one to see on each User all of the Grants to that User.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="grants")
     private @Nullable Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArgs>> grants;
 
     /**
      * @return (Updatable) Grants to this User. Each value of this attribute refers to a Grant to this User of some App (and optionally of some entitlement). Therefore, this attribute is a convenience that allows one to see on each User all of the Grants to that User.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArgs>>> grants() {
@@ -164,12 +352,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) Description:
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value, idcsAppRoleId]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * 
      */
     @Import(name="idcsAppRolesLimitedToGroups")
     private @Nullable Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArgs>> idcsAppRolesLimitedToGroups;
 
     /**
      * @return (Updatable) Description:
+     * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value, idcsAppRoleId]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
      * 
      */
     public Optional<Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArgs>>> idcsAppRolesLimitedToGroups() {
@@ -179,12 +389,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) A Boolean value indicating whether or not a user is enrolled for account recovery
      * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="isAccountRecoveryEnrolled")
     private @Nullable Output<Boolean> isAccountRecoveryEnrolled;
 
     /**
      * @return (Updatable) A Boolean value indicating whether or not a user is enrolled for account recovery
+     * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> isAccountRecoveryEnrolled() {
@@ -194,12 +428,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) A Boolean value indicating whether or not authentication request by this user should be delegated to a remote app. This value should be true only when the User was originally synced from an app which is enabled for delegated authentication
      * 
+     * **Added In:** 17.4.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: never
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="isAuthenticationDelegated")
     private @Nullable Output<Boolean> isAuthenticationDelegated;
 
     /**
      * @return (Updatable) A Boolean value indicating whether or not authentication request by this user should be delegated to a remote app. This value should be true only when the User was originally synced from an app which is enabled for delegated authentication
+     * 
+     * **Added In:** 17.4.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: never
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> isAuthenticationDelegated() {
@@ -209,12 +467,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) A Boolean value indicating whether or not the user is federated.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Federated
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Federated]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="isFederatedUser")
     private @Nullable Output<Boolean> isFederatedUser;
 
     /**
      * @return (Updatable) A Boolean value indicating whether or not the user is federated.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Federated
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Federated]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> isFederatedUser() {
@@ -224,12 +506,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) A Boolean value indicating whether or not group membership is normalized for this user.
      * 
+     * **Deprecated Since: 19.3.3**
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: never
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="isGroupMembershipNormalized")
     private @Nullable Output<Boolean> isGroupMembershipNormalized;
 
     /**
      * @return (Updatable) A Boolean value indicating whether or not group membership is normalized for this user.
+     * 
+     * **Deprecated Since: 19.3.3**
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: never
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> isGroupMembershipNormalized() {
@@ -239,12 +545,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) A Boolean value Indicates whether this User&#39;s group membership has been sync&#39;ed from Group.members to UsersGroups.
      * 
+     * **Added In:** 19.3.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: never
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="isGroupMembershipSyncedToUsersGroups")
     private @Nullable Output<Boolean> isGroupMembershipSyncedToUsersGroups;
 
     /**
      * @return (Updatable) A Boolean value Indicates whether this User&#39;s group membership has been sync&#39;ed from Group.members to UsersGroups.
+     * 
+     * **Added In:** 19.3.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: never
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> isGroupMembershipSyncedToUsersGroups() {
@@ -254,12 +584,32 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) Specifies the EmailTemplate to be used when sending notification to the user this request is for. If specified, it overrides the default EmailTemplate for this event.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: writeOnly
+     * * required: false
+     * * returned: never
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="notificationEmailTemplateId")
     private @Nullable Output<String> notificationEmailTemplateId;
 
     /**
      * @return (Updatable) Specifies the EmailTemplate to be used when sending notification to the user this request is for. If specified, it overrides the default EmailTemplate for this event.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: writeOnly
+     * * required: false
+     * * returned: never
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> notificationEmailTemplateId() {
@@ -269,12 +619,32 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) A supplemental status indicating the reason why a user is disabled
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return (Updatable) A supplemental status indicating the reason why a user is disabled
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> status() {
@@ -284,12 +654,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) A list of Support Accounts corresponding to user.
      * 
+     * **Added In:** 2103141444
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="supportAccounts")
     private @Nullable Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArgs>> supportAccounts;
 
     /**
      * @return (Updatable) A list of Support Accounts corresponding to user.
+     * 
+     * **Added In:** 2103141444
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArgs>>> supportAccounts() {
@@ -299,12 +693,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) Managed App or an Identity Source from where the user is synced. If enabled, this Managed App or Identity Source can be used for performing delegated authentication.
      * 
+     * **Added In:** 18.2.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="syncedFromApp")
     private @Nullable Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArgs> syncedFromApp;
 
     /**
      * @return (Updatable) Managed App or an Identity Source from where the user is synced. If enabled, this Managed App or Identity Source can be used for performing delegated authentication.
+     * 
+     * **Added In:** 18.2.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArgs>> syncedFromApp() {
@@ -314,12 +732,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) A Boolean value indicating whether to bypass notification and return user token to be used by an external client to control the user flow.
      * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: never
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="userFlowControlledByExternalClient")
     private @Nullable Output<Boolean> userFlowControlledByExternalClient;
 
     /**
      * @return (Updatable) A Boolean value indicating whether to bypass notification and return user token to be used by an external client to control the user flow.
+     * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: never
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> userFlowControlledByExternalClient() {
@@ -329,12 +771,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) User Support Account Provider
      * 
+     * **Added In:** 2103141444
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="userProvider")
     private @Nullable Output<String> userProvider;
 
     /**
      * @return (Updatable) User Support Account Provider
+     * 
+     * **Added In:** 2103141444
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> userProvider() {
@@ -344,12 +810,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     /**
      * (Updatable) User token returned if userFlowControlledByExternalClient is true
      * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="userTokens")
     private @Nullable Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArgs>> userTokens;
 
     /**
      * @return (Updatable) User token returned if userFlowControlledByExternalClient is true
+     * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArgs>>> userTokens() {
@@ -404,6 +892,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param accountRecoveryRequired (Updatable) Boolean value to prompt user to setup account recovery during login.
          * 
+         * **Added In:** 19.1.4
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -415,6 +914,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param accountRecoveryRequired (Updatable) Boolean value to prompt user to setup account recovery during login.
          * 
+         * **Added In:** 19.1.4
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -424,6 +934,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param accounts (Updatable) Accounts assigned to this User. Each value of this attribute refers to an app-specific identity that is owned by this User. Therefore, this attribute is a convenience that allows one to see on each User the Apps to which that User has access.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsPii: true
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -436,6 +956,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param accounts (Updatable) Accounts assigned to this User. Each value of this attribute refers to an app-specific identity that is owned by this User. Therefore, this attribute is a convenience that allows one to see on each User the Apps to which that User has access.
          * 
+         * **SCIM++ Properties:**
+         * * idcsPii: true
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -446,6 +976,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param accounts (Updatable) Accounts assigned to this User. Each value of this attribute refers to an app-specific identity that is owned by this User. Therefore, this attribute is a convenience that allows one to see on each User the Apps to which that User has access.
          * 
+         * **SCIM++ Properties:**
+         * * idcsPii: true
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -455,6 +995,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param appRoles (Updatable) A list of all AppRoles to which this User belongs directly, indirectly or implicitly. The User could belong directly because the User is a member of the AppRole, could belong indirectly because the User is a member of a Group that is a member of the AppRole, or could belong implicitly because the AppRole is public.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -467,6 +1016,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param appRoles (Updatable) A list of all AppRoles to which this User belongs directly, indirectly or implicitly. The User could belong directly because the User is a member of the AppRole, could belong indirectly because the User is a member of a Group that is a member of the AppRole, or could belong implicitly because the AppRole is public.
          * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -477,6 +1035,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param appRoles (Updatable) A list of all AppRoles to which this User belongs directly, indirectly or implicitly. The User could belong directly because the User is a member of the AppRole, could belong indirectly because the User is a member of a Group that is a member of the AppRole, or could belong implicitly because the AppRole is public.
          * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -486,6 +1053,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param applicableAuthenticationTargetApps (Updatable) The app against which the user will authenticate. The value is not persisted but rather calculated. If the user&#39;s delegatedAuthenticationTargetApp is set, that value is returned. Otherwise, the app returned by evaluating the user&#39;s applicable Delegated Authentication Policy is returned.
+         * 
+         * **Added In:** 18.1.6
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -498,6 +1076,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param applicableAuthenticationTargetApps (Updatable) The app against which the user will authenticate. The value is not persisted but rather calculated. If the user&#39;s delegatedAuthenticationTargetApp is set, that value is returned. Otherwise, the app returned by evaluating the user&#39;s applicable Delegated Authentication Policy is returned.
          * 
+         * **Added In:** 18.1.6
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -508,6 +1097,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param applicableAuthenticationTargetApps (Updatable) The app against which the user will authenticate. The value is not persisted but rather calculated. If the user&#39;s delegatedAuthenticationTargetApp is set, that value is returned. Otherwise, the app returned by evaluating the user&#39;s applicable Delegated Authentication Policy is returned.
          * 
+         * **Added In:** 18.1.6
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -517,6 +1117,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param bypassNotification (Updatable) A Boolean value indicating whether or not to send email notification after creating the user. This attribute is not used in update/replace operations.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:ByPass Notification]]
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -529,6 +1140,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param bypassNotification (Updatable) A Boolean value indicating whether or not to send email notification after creating the user. This attribute is not used in update/replace operations.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:ByPass Notification]]
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -538,6 +1160,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param creationMechanism (Updatable) User creation mechanism
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeNameMappings: [[defaultValue:import]]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -550,6 +1183,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param creationMechanism (Updatable) User creation mechanism
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeNameMappings: [[defaultValue:import]]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -559,6 +1203,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param delegatedAuthenticationTargetApp (Updatable) If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Cloud Infrastructure IAM.
+         * 
+         * **Added In:** 17.4.6
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -571,6 +1227,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param delegatedAuthenticationTargetApp (Updatable) If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Cloud Infrastructure IAM.
          * 
+         * **Added In:** 17.4.6
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -580,6 +1248,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param doNotShowGettingStarted (Updatable) A Boolean value indicating whether or not to hide the getting started page
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -592,6 +1270,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param doNotShowGettingStarted (Updatable) A Boolean value indicating whether or not to hide the getting started page
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -601,6 +1289,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param grants (Updatable) Grants to this User. Each value of this attribute refers to a Grant to this User of some App (and optionally of some entitlement). Therefore, this attribute is a convenience that allows one to see on each User all of the Grants to that User.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -613,6 +1310,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param grants (Updatable) Grants to this User. Each value of this attribute refers to a Grant to this User of some App (and optionally of some entitlement). Therefore, this attribute is a convenience that allows one to see on each User all of the Grants to that User.
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -623,6 +1329,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param grants (Updatable) Grants to this User. Each value of this attribute refers to a Grant to this User of some App (and optionally of some entitlement). Therefore, this attribute is a convenience that allows one to see on each User all of the Grants to that User.
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -632,6 +1347,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param idcsAppRolesLimitedToGroups (Updatable) Description:
+         * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value, idcsAppRoleId]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
          * 
          * @return builder
          * 
@@ -644,6 +1370,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param idcsAppRolesLimitedToGroups (Updatable) Description:
          * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value, idcsAppRoleId]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * 
          * @return builder
          * 
          */
@@ -654,6 +1391,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param idcsAppRolesLimitedToGroups (Updatable) Description:
          * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value, idcsAppRoleId]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * 
          * @return builder
          * 
          */
@@ -663,6 +1411,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param isAccountRecoveryEnrolled (Updatable) A Boolean value indicating whether or not a user is enrolled for account recovery
+         * 
+         * **Added In:** 19.1.4
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -675,6 +1435,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param isAccountRecoveryEnrolled (Updatable) A Boolean value indicating whether or not a user is enrolled for account recovery
          * 
+         * **Added In:** 19.1.4
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -684,6 +1456,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param isAuthenticationDelegated (Updatable) A Boolean value indicating whether or not authentication request by this user should be delegated to a remote app. This value should be true only when the User was originally synced from an app which is enabled for delegated authentication
+         * 
+         * **Added In:** 17.4.6
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -696,6 +1480,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param isAuthenticationDelegated (Updatable) A Boolean value indicating whether or not authentication request by this user should be delegated to a remote app. This value should be true only when the User was originally synced from an app which is enabled for delegated authentication
          * 
+         * **Added In:** 17.4.6
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -705,6 +1501,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param isFederatedUser (Updatable) A Boolean value indicating whether or not the user is federated.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Federated
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Federated]]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -717,6 +1525,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param isFederatedUser (Updatable) A Boolean value indicating whether or not the user is federated.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Federated
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Federated]]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -726,6 +1546,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param isGroupMembershipNormalized (Updatable) A Boolean value indicating whether or not group membership is normalized for this user.
+         * 
+         * **Deprecated Since: 19.3.3**
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -738,6 +1570,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param isGroupMembershipNormalized (Updatable) A Boolean value indicating whether or not group membership is normalized for this user.
          * 
+         * **Deprecated Since: 19.3.3**
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -747,6 +1591,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param isGroupMembershipSyncedToUsersGroups (Updatable) A Boolean value Indicates whether this User&#39;s group membership has been sync&#39;ed from Group.members to UsersGroups.
+         * 
+         * **Added In:** 19.3.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -759,6 +1615,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param isGroupMembershipSyncedToUsersGroups (Updatable) A Boolean value Indicates whether this User&#39;s group membership has been sync&#39;ed from Group.members to UsersGroups.
          * 
+         * **Added In:** 19.3.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -768,6 +1636,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param notificationEmailTemplateId (Updatable) Specifies the EmailTemplate to be used when sending notification to the user this request is for. If specified, it overrides the default EmailTemplate for this event.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: writeOnly
+         * * required: false
+         * * returned: never
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -780,6 +1658,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param notificationEmailTemplateId (Updatable) Specifies the EmailTemplate to be used when sending notification to the user this request is for. If specified, it overrides the default EmailTemplate for this event.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: writeOnly
+         * * required: false
+         * * returned: never
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -789,6 +1677,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param status (Updatable) A supplemental status indicating the reason why a user is disabled
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -801,6 +1699,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param status (Updatable) A supplemental status indicating the reason why a user is disabled
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -810,6 +1718,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param supportAccounts (Updatable) A list of Support Accounts corresponding to user.
+         * 
+         * **Added In:** 2103141444
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -822,6 +1742,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param supportAccounts (Updatable) A list of Support Accounts corresponding to user.
          * 
+         * **Added In:** 2103141444
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -832,6 +1764,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param supportAccounts (Updatable) A list of Support Accounts corresponding to user.
          * 
+         * **Added In:** 2103141444
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -841,6 +1785,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param syncedFromApp (Updatable) Managed App or an Identity Source from where the user is synced. If enabled, this Managed App or Identity Source can be used for performing delegated authentication.
+         * 
+         * **Added In:** 18.2.6
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -853,6 +1809,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param syncedFromApp (Updatable) Managed App or an Identity Source from where the user is synced. If enabled, this Managed App or Identity Source can be used for performing delegated authentication.
          * 
+         * **Added In:** 18.2.6
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -862,6 +1830,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param userFlowControlledByExternalClient (Updatable) A Boolean value indicating whether to bypass notification and return user token to be used by an external client to control the user flow.
+         * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -874,6 +1854,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param userFlowControlledByExternalClient (Updatable) A Boolean value indicating whether to bypass notification and return user token to be used by an external client to control the user flow.
          * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -883,6 +1875,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param userProvider (Updatable) User Support Account Provider
+         * 
+         * **Added In:** 2103141444
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -895,6 +1899,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param userProvider (Updatable) User Support Account Provider
          * 
+         * **Added In:** 2103141444
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -904,6 +1920,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param userTokens (Updatable) User token returned if userFlowControlledByExternalClient is true
+         * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -916,6 +1943,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         /**
          * @param userTokens (Updatable) User token returned if userFlowControlledByExternalClient is true
          * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -925,6 +1963,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
 
         /**
          * @param userTokens (Updatable) User token returned if userFlowControlledByExternalClient is true
+         * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 

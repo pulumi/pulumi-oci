@@ -184,6 +184,10 @@ class VulnerabilityAuditSource(dict):
                  oci_resource_id: Optional[str] = None):
         """
         :param str type: Source type of the Vulnerability Audit.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str description: Description of the external resource source.
         :param str oci_resource_id: The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the Vulnerability Audit.
         """
@@ -198,6 +202,10 @@ class VulnerabilityAuditSource(dict):
     def type(self) -> str:
         """
         Source type of the Vulnerability Audit.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 

@@ -103,7 +103,11 @@ namespace Pulumi.Oci.AiAnomalyDetection
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of subnet to which the reverse connection is to be created.
+        /// The OCID of subnet to which the reverse connection is to be created. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
@@ -221,7 +225,11 @@ namespace Pulumi.Oci.AiAnomalyDetection
         }
 
         /// <summary>
-        /// The OCID of subnet to which the reverse connection is to be created.
+        /// The OCID of subnet to which the reverse connection is to be created. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;
@@ -307,7 +315,11 @@ namespace Pulumi.Oci.AiAnomalyDetection
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// The OCID of subnet to which the reverse connection is to be created.
+        /// The OCID of subnet to which the reverse connection is to be created. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }

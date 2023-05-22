@@ -266,12 +266,22 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The date and time the current status will change. The format is defined by RFC3339.
      * 
+     * For example, &#34;The current `postponed` status of the resource action will end and change to `pending` on this date and time.&#34;
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="timeStatusEnd", type=String.class, parameters={})
     private Output<String> timeStatusEnd;
 
     /**
      * @return (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+     * 
+     * For example, &#34;The current `postponed` status of the resource action will end and change to `pending` on this date and time.&#34;
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> timeStatusEnd() {

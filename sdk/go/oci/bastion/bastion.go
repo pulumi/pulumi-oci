@@ -97,6 +97,9 @@ type Bastion struct {
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The unique identifier (OCID) of the subnet that the bastion connects to.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetSubnetId pulumi.StringOutput `pulumi:"targetSubnetId"`
 	// The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
 	TargetVcnId pulumi.StringOutput `pulumi:"targetVcnId"`
@@ -175,6 +178,9 @@ type bastionState struct {
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The unique identifier (OCID) of the subnet that the bastion connects to.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetSubnetId *string `pulumi:"targetSubnetId"`
 	// The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
 	TargetVcnId *string `pulumi:"targetVcnId"`
@@ -216,6 +222,9 @@ type BastionState struct {
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
 	// The unique identifier (OCID) of the subnet that the bastion connects to.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetSubnetId pulumi.StringPtrInput
 	// The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
 	TargetVcnId pulumi.StringPtrInput
@@ -251,6 +260,9 @@ type bastionArgs struct {
 	// (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
 	StaticJumpHostIpAddresses []string `pulumi:"staticJumpHostIpAddresses"`
 	// The unique identifier (OCID) of the subnet that the bastion connects to.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetSubnetId string `pulumi:"targetSubnetId"`
 }
 
@@ -277,6 +289,9 @@ type BastionArgs struct {
 	// (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
 	StaticJumpHostIpAddresses pulumi.StringArrayInput
 	// The unique identifier (OCID) of the subnet that the bastion connects to.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetSubnetId pulumi.StringInput
 }
 
@@ -443,6 +458,9 @@ func (o BastionOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The unique identifier (OCID) of the subnet that the bastion connects to.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BastionOutput) TargetSubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Bastion) pulumi.StringOutput { return v.TargetSubnetId }).(pulumi.StringOutput)
 }

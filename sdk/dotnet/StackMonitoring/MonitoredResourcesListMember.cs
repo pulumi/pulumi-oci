@@ -65,6 +65,10 @@ namespace Pulumi.Oci.StackMonitoring
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("monitoredResourceId")]
         public Output<string> MonitoredResourceId { get; private set; } = null!;
@@ -129,6 +133,10 @@ namespace Pulumi.Oci.StackMonitoring
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("monitoredResourceId", required: true)]
         public Input<string> MonitoredResourceId { get; set; } = null!;
@@ -167,6 +175,10 @@ namespace Pulumi.Oci.StackMonitoring
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("monitoredResourceId")]
         public Input<string>? MonitoredResourceId { get; set; }

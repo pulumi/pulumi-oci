@@ -174,6 +174,10 @@ namespace Pulumi.Oci.MeteringComputation
 
         /// <summary>
         /// The date and time of the first time job execution.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("timeScheduled")]
         public Output<string> TimeScheduled { get; private set; } = null!;
@@ -298,6 +302,10 @@ namespace Pulumi.Oci.MeteringComputation
 
         /// <summary>
         /// The date and time of the first time job execution.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("timeScheduled", required: true)]
         public Input<string> TimeScheduled { get; set; } = null!;
@@ -414,6 +422,10 @@ namespace Pulumi.Oci.MeteringComputation
 
         /// <summary>
         /// The date and time of the first time job execution.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("timeScheduled")]
         public Input<string>? TimeScheduled { get; set; }

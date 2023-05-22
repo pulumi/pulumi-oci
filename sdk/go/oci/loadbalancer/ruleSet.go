@@ -88,6 +88,9 @@ type RuleSet struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
 	LoadBalancerId pulumi.StringOutput `pulumi:"loadBalancerId"`
 	// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name  pulumi.StringOutput `pulumi:"name"`
 	State pulumi.StringOutput `pulumi:"state"`
 }
@@ -132,6 +135,9 @@ type ruleSetState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
 	LoadBalancerId *string `pulumi:"loadBalancerId"`
 	// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name  *string `pulumi:"name"`
 	State *string `pulumi:"state"`
 }
@@ -142,6 +148,9 @@ type RuleSetState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
 	LoadBalancerId pulumi.StringPtrInput
 	// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name  pulumi.StringPtrInput
 	State pulumi.StringPtrInput
 }
@@ -156,6 +165,9 @@ type ruleSetArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
 	// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 }
 
@@ -166,6 +178,9 @@ type RuleSetArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
 	LoadBalancerId pulumi.StringInput
 	// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput
 }
 
@@ -267,6 +282,9 @@ func (o RuleSetOutput) LoadBalancerId() pulumi.StringOutput {
 }
 
 // The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o RuleSetOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *RuleSet) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

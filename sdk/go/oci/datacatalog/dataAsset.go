@@ -80,6 +80,9 @@ type DataAsset struct {
 	// The last time that any change was made to the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// The key of the data asset type. This can be obtained via the '/types' endpoint.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TypeKey pulumi.StringOutput `pulumi:"typeKey"`
 	// OCID of the user who last modified the data asset.
 	UpdatedById pulumi.StringOutput `pulumi:"updatedById"`
@@ -148,6 +151,9 @@ type dataAssetState struct {
 	// The last time that any change was made to the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The key of the data asset type. This can be obtained via the '/types' endpoint.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TypeKey *string `pulumi:"typeKey"`
 	// OCID of the user who last modified the data asset.
 	UpdatedById *string `pulumi:"updatedById"`
@@ -179,6 +185,9 @@ type DataAssetState struct {
 	// The last time that any change was made to the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
 	// The key of the data asset type. This can be obtained via the '/types' endpoint.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TypeKey pulumi.StringPtrInput
 	// OCID of the user who last modified the data asset.
 	UpdatedById pulumi.StringPtrInput
@@ -200,6 +209,9 @@ type dataAssetArgs struct {
 	// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
 	Properties map[string]interface{} `pulumi:"properties"`
 	// The key of the data asset type. This can be obtained via the '/types' endpoint.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TypeKey string `pulumi:"typeKey"`
 }
 
@@ -214,6 +226,9 @@ type DataAssetArgs struct {
 	// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
 	Properties pulumi.MapInput
 	// The key of the data asset type. This can be obtained via the '/types' endpoint.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TypeKey pulumi.StringInput
 }
 
@@ -360,6 +375,9 @@ func (o DataAssetOutput) TimeUpdated() pulumi.StringOutput {
 }
 
 // The key of the data asset type. This can be obtained via the '/types' endpoint.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DataAssetOutput) TypeKey() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataAsset) pulumi.StringOutput { return v.TypeKey }).(pulumi.StringOutput)
 }

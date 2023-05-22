@@ -187,12 +187,18 @@ public final class DiscoveryModArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="sensitiveTypeIdsForDiscoveries")
     private @Nullable Output<List<String>> sensitiveTypeIdsForDiscoveries;
 
     /**
      * @return The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<List<String>>> sensitiveTypeIdsForDiscoveries() {
@@ -478,6 +484,9 @@ public final class DiscoveryModArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param sensitiveTypeIdsForDiscoveries The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -489,6 +498,9 @@ public final class DiscoveryModArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param sensitiveTypeIdsForDiscoveries The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -498,6 +510,9 @@ public final class DiscoveryModArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sensitiveTypeIdsForDiscoveries The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

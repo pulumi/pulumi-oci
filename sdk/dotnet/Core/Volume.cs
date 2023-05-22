@@ -216,6 +216,8 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+        /// 
+        /// Allowed values:
         /// </summary>
         [Output("vpusPerGb")]
         public Output<string> VpusPerGb { get; private set; } = null!;
@@ -376,6 +378,8 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+        /// 
+        /// Allowed values:
         /// </summary>
         [Input("vpusPerGb")]
         public Input<string>? VpusPerGb { get; set; }
@@ -540,6 +544,8 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+        /// 
+        /// Allowed values:
         /// </summary>
         [Input("vpusPerGb")]
         public Input<string>? VpusPerGb { get; set; }

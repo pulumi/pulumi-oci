@@ -12,10 +12,17 @@ import (
 
 type AlarmSuppression struct {
 	// (Updatable) Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+	//
+	// Oracle recommends including tracking information for the event or associated work, such as a ticket number.
+	//
+	// Example: `Planned outage due to change IT-1234.`
 	Description *string `pulumi:"description"`
 	// (Updatable) The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
 	TimeSuppressFrom string `pulumi:"timeSuppressFrom"`
 	// (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeSuppressUntil string `pulumi:"timeSuppressUntil"`
 }
 
@@ -32,10 +39,17 @@ type AlarmSuppressionInput interface {
 
 type AlarmSuppressionArgs struct {
 	// (Updatable) Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+	//
+	// Oracle recommends including tracking information for the event or associated work, such as a ticket number.
+	//
+	// Example: `Planned outage due to change IT-1234.`
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
 	TimeSuppressFrom pulumi.StringInput `pulumi:"timeSuppressFrom"`
 	// (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeSuppressUntil pulumi.StringInput `pulumi:"timeSuppressUntil"`
 }
 
@@ -117,6 +131,10 @@ func (o AlarmSuppressionOutput) ToAlarmSuppressionPtrOutputWithContext(ctx conte
 }
 
 // (Updatable) Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+//
+// Oracle recommends including tracking information for the event or associated work, such as a ticket number.
+//
+// Example: `Planned outage due to change IT-1234.`
 func (o AlarmSuppressionOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AlarmSuppression) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -127,6 +145,9 @@ func (o AlarmSuppressionOutput) TimeSuppressFrom() pulumi.StringOutput {
 }
 
 // (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AlarmSuppressionOutput) TimeSuppressUntil() pulumi.StringOutput {
 	return o.ApplyT(func(v AlarmSuppression) string { return v.TimeSuppressUntil }).(pulumi.StringOutput)
 }
@@ -156,6 +177,10 @@ func (o AlarmSuppressionPtrOutput) Elem() AlarmSuppressionOutput {
 }
 
 // (Updatable) Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+//
+// Oracle recommends including tracking information for the event or associated work, such as a ticket number.
+//
+// Example: `Planned outage due to change IT-1234.`
 func (o AlarmSuppressionPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AlarmSuppression) *string {
 		if v == nil {
@@ -176,6 +201,9 @@ func (o AlarmSuppressionPtrOutput) TimeSuppressFrom() pulumi.StringPtrOutput {
 }
 
 // (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AlarmSuppressionPtrOutput) TimeSuppressUntil() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AlarmSuppression) *string {
 		if v == nil {
@@ -1421,6 +1449,12 @@ type GetMetricDataMetricData struct {
 	// The source service or application to use when searching for metric data points to aggregate.  Example: `ociComputeagent`
 	Namespace string `pulumi:"namespace"`
 	// The Monitoring Query Language (MQL) expression to use when searching for metric data points to aggregate. The query must specify a metric, statistic, and interval. Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+	//
+	// Construct your query to avoid exceeding limits on returned data. See [MetricData Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/20180401/MetricData).
+	//
+	// For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+	//
+	// Example: `CpuUtilization[1m].sum()`
 	Query string `pulumi:"query"`
 	// The time between calculated aggregation windows. Use with the query interval to vary the frequency at which aggregated data points are returned. For example, use a query interval of 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute frequency. The resolution must be equal or less than the interval in the query. The default resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.  Example: `5m`
 	Resolution string `pulumi:"resolution"`
@@ -1459,6 +1493,12 @@ type GetMetricDataMetricDataArgs struct {
 	// The source service or application to use when searching for metric data points to aggregate.  Example: `ociComputeagent`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The Monitoring Query Language (MQL) expression to use when searching for metric data points to aggregate. The query must specify a metric, statistic, and interval. Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+	//
+	// Construct your query to avoid exceeding limits on returned data. See [MetricData Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/20180401/MetricData).
+	//
+	// For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+	//
+	// Example: `CpuUtilization[1m].sum()`
 	Query pulumi.StringInput `pulumi:"query"`
 	// The time between calculated aggregation windows. Use with the query interval to vary the frequency at which aggregated data points are returned. For example, use a query interval of 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute frequency. The resolution must be equal or less than the interval in the query. The default resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.  Example: `5m`
 	Resolution pulumi.StringInput `pulumi:"resolution"`
@@ -1562,6 +1602,12 @@ func (o GetMetricDataMetricDataOutput) Namespace() pulumi.StringOutput {
 }
 
 // The Monitoring Query Language (MQL) expression to use when searching for metric data points to aggregate. The query must specify a metric, statistic, and interval. Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+//
+// Construct your query to avoid exceeding limits on returned data. See [MetricData Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/20180401/MetricData).
+//
+// For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+//
+// Example: `CpuUtilization[1m].sum()`
 func (o GetMetricDataMetricDataOutput) Query() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMetricDataMetricData) string { return v.Query }).(pulumi.StringOutput)
 }
@@ -1826,6 +1872,8 @@ type GetMetricsMetric struct {
 	// Qualifiers provided in a metric definition. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
 	Dimensions map[string]interface{} `pulumi:"dimensions"`
 	// Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup.
+	//
+	// Example - group by namespace: `[ "namespace" ]`
 	GroupBies []string `pulumi:"groupBies"`
 	// The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
 	Name string `pulumi:"name"`
@@ -1856,6 +1904,8 @@ type GetMetricsMetricArgs struct {
 	// Qualifiers provided in a metric definition. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
 	Dimensions pulumi.MapInput `pulumi:"dimensions"`
 	// Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup.
+	//
+	// Example - group by namespace: `[ "namespace" ]`
 	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
 	// The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
 	Name pulumi.StringInput `pulumi:"name"`
@@ -1937,6 +1987,8 @@ func (o GetMetricsMetricOutput) Dimensions() pulumi.MapOutput {
 }
 
 // Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup.
+//
+// Example - group by namespace: `[ "namespace" ]`
 func (o GetMetricsMetricOutput) GroupBies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetMetricsMetric) []string { return v.GroupBies }).(pulumi.StringArrayOutput)
 }

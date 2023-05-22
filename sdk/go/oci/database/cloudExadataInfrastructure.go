@@ -142,6 +142,9 @@ type CloudExadataInfrastructure struct {
 	// The current lifecycle state of the cloud Exadata infrastructure resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StorageCount pulumi.IntOutput `pulumi:"storageCount"`
 	// The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
 	StorageServerVersion pulumi.StringOutput `pulumi:"storageServerVersion"`
@@ -247,6 +250,9 @@ type cloudExadataInfrastructureState struct {
 	// The current lifecycle state of the cloud Exadata infrastructure resource.
 	State *string `pulumi:"state"`
 	// (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StorageCount *int `pulumi:"storageCount"`
 	// The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
 	StorageServerVersion *string `pulumi:"storageServerVersion"`
@@ -312,6 +318,9 @@ type CloudExadataInfrastructureState struct {
 	// The current lifecycle state of the cloud Exadata infrastructure resource.
 	State pulumi.StringPtrInput
 	// (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StorageCount pulumi.IntPtrInput
 	// The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
 	StorageServerVersion pulumi.StringPtrInput
@@ -345,6 +354,9 @@ type cloudExadataInfrastructureArgs struct {
 	// The shape of the cloud Exadata infrastructure resource.
 	Shape string `pulumi:"shape"`
 	// (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StorageCount *int `pulumi:"storageCount"`
 }
 
@@ -369,6 +381,9 @@ type CloudExadataInfrastructureArgs struct {
 	// The shape of the cloud Exadata infrastructure resource.
 	Shape pulumi.StringInput
 	// (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StorageCount pulumi.IntPtrInput
 }
 
@@ -599,6 +614,9 @@ func (o CloudExadataInfrastructureOutput) State() pulumi.StringOutput {
 }
 
 // (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CloudExadataInfrastructureOutput) StorageCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.IntOutput { return v.StorageCount }).(pulumi.IntOutput)
 }

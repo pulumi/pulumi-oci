@@ -64,12 +64,18 @@ public final class TableTableLimitsArgs extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) Maximum sustained write throughput limit for the table.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="maxWriteUnits", required=true)
     private Output<Integer> maxWriteUnits;
 
     /**
      * @return (Updatable) Maximum sustained write throughput limit for the table.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Integer> maxWriteUnits() {
@@ -169,6 +175,9 @@ public final class TableTableLimitsArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param maxWriteUnits (Updatable) Maximum sustained write throughput limit for the table.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -179,6 +188,9 @@ public final class TableTableLimitsArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param maxWriteUnits (Updatable) Maximum sustained write throughput limit for the table.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

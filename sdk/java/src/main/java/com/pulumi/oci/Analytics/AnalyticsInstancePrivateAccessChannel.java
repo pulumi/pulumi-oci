@@ -207,12 +207,18 @@ public class AnalyticsInstancePrivateAccessChannel extends com.pulumi.resources.
     /**
      * (Updatable) OCID of the customer VCN peered with private access channel.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="vcnId", type=String.class, parameters={})
     private Output<String> vcnId;
 
     /**
      * @return (Updatable) OCID of the customer VCN peered with private access channel.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> vcnId() {

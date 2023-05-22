@@ -267,6 +267,9 @@ type ApplicationTraceConfig struct {
 	// (Updatable) The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
 	DomainId *string `pulumi:"domainId"`
 	// (Updatable) Define if tracing is enabled for the resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsEnabled *bool `pulumi:"isEnabled"`
 }
 
@@ -285,6 +288,9 @@ type ApplicationTraceConfigArgs struct {
 	// (Updatable) The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
 	DomainId pulumi.StringPtrInput `pulumi:"domainId"`
 	// (Updatable) Define if tracing is enabled for the resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 }
 
@@ -371,6 +377,9 @@ func (o ApplicationTraceConfigOutput) DomainId() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Define if tracing is enabled for the resource.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ApplicationTraceConfigOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ApplicationTraceConfig) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -410,6 +419,9 @@ func (o ApplicationTraceConfigPtrOutput) DomainId() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Define if tracing is enabled for the resource.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ApplicationTraceConfigPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ApplicationTraceConfig) *bool {
 		if v == nil {
@@ -733,6 +745,9 @@ func (o FunctionSourceDetailsPtrOutput) SourceType() pulumi.StringPtrOutput {
 
 type FunctionTraceConfig struct {
 	// (Updatable) Define if tracing is enabled for the resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsEnabled *bool `pulumi:"isEnabled"`
 }
 
@@ -749,6 +764,9 @@ type FunctionTraceConfigInput interface {
 
 type FunctionTraceConfigArgs struct {
 	// (Updatable) Define if tracing is enabled for the resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 }
 
@@ -830,6 +848,9 @@ func (o FunctionTraceConfigOutput) ToFunctionTraceConfigPtrOutputWithContext(ctx
 }
 
 // (Updatable) Define if tracing is enabled for the resource.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o FunctionTraceConfigOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v FunctionTraceConfig) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -859,6 +880,9 @@ func (o FunctionTraceConfigPtrOutput) Elem() FunctionTraceConfigOutput {
 }
 
 // (Updatable) Define if tracing is enabled for the resource.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o FunctionTraceConfigPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *FunctionTraceConfig) *bool {
 		if v == nil {
@@ -7411,8 +7435,6 @@ func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOu
 }
 
 type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem struct {
-	// Action
-	Action string `pulumi:"action"`
 	// Compartment Identifier
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -7421,6 +7443,8 @@ type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem struc
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// unique FusionEnvironment identifier
+	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`
 	// Unique identifier that is immutable on creation
 	Id string `pulumi:"id"`
 	// Whether this service is provisioned due to the customer being subscribed to a specific SKU
@@ -7451,8 +7475,6 @@ type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemInput 
 }
 
 type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArgs struct {
-	// Action
-	Action pulumi.StringInput `pulumi:"action"`
 	// Compartment Identifier
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -7461,6 +7483,8 @@ type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArgs s
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// unique FusionEnvironment identifier
+	FusionEnvironmentId pulumi.StringInput `pulumi:"fusionEnvironmentId"`
 	// Unique identifier that is immutable on creation
 	Id pulumi.StringInput `pulumi:"id"`
 	// Whether this service is provisioned due to the customer being subscribed to a specific SKU
@@ -7530,11 +7554,6 @@ func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOut
 	return o
 }
 
-// Action
-func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) string { return v.Action }).(pulumi.StringOutput)
-}
-
 // Compartment Identifier
 func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) string {
@@ -7561,6 +7580,13 @@ func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOut
 	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) map[string]interface{} {
 		return v.FreeformTags
 	}).(pulumi.MapOutput)
+}
+
+// unique FusionEnvironment identifier
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) FusionEnvironmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) string {
+		return v.FusionEnvironmentId
+	}).(pulumi.StringOutput)
 }
 
 // Unique identifier that is immutable on creation

@@ -94,6 +94,10 @@ export class SwiftPassword extends pulumi.CustomResource {
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
      * The OCID of the user.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly userId!: pulumi.Output<string>;
 
@@ -168,6 +172,10 @@ export interface SwiftPasswordState {
     timeCreated?: pulumi.Input<string>;
     /**
      * The OCID of the user.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     userId?: pulumi.Input<string>;
 }
@@ -182,6 +190,10 @@ export interface SwiftPasswordArgs {
     description: pulumi.Input<string>;
     /**
      * The OCID of the user.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     userId: pulumi.Input<string>;
 }

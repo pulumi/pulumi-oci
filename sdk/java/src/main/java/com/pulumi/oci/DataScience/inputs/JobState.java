@@ -39,12 +39,18 @@ public final class JobState extends com.pulumi.resources.ResourceArgs {
     /**
      * The content length of the body.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="artifactContentLength")
     private @Nullable Output<String> artifactContentLength;
 
     /**
      * @return The content length of the body.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> artifactContentLength() {
@@ -364,6 +370,9 @@ public final class JobState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param artifactContentLength The content length of the body.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -374,6 +383,9 @@ public final class JobState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param artifactContentLength The content length of the body.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

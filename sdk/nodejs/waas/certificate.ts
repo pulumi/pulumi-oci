@@ -68,6 +68,10 @@ export class Certificate extends pulumi.CustomResource {
 
     /**
      * The data of the SSL certificate.
+     *
+     * **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status. If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you are unsure if your certificate requires an intermediate certificate chain, see your certificate provider's documentation.
+     *
+     * The example below shows an intermediate certificate appended to a leaf certificate.
      */
     public readonly certificateData!: pulumi.Output<string>;
     /**
@@ -101,6 +105,10 @@ export class Certificate extends pulumi.CustomResource {
     public /*out*/ readonly issuerNames!: pulumi.Output<outputs.Waas.CertificateIssuerName[]>;
     /**
      * The private key of the SSL certificate.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly privateKeyData!: pulumi.Output<string>;
     /**
@@ -216,6 +224,10 @@ export class Certificate extends pulumi.CustomResource {
 export interface CertificateState {
     /**
      * The data of the SSL certificate.
+     *
+     * **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status. If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you are unsure if your certificate requires an intermediate certificate chain, see your certificate provider's documentation.
+     *
+     * The example below shows an intermediate certificate appended to a leaf certificate.
      */
     certificateData?: pulumi.Input<string>;
     /**
@@ -249,6 +261,10 @@ export interface CertificateState {
     issuerNames?: pulumi.Input<pulumi.Input<inputs.Waas.CertificateIssuerName>[]>;
     /**
      * The private key of the SSL certificate.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     privateKeyData?: pulumi.Input<string>;
     /**
@@ -295,6 +311,10 @@ export interface CertificateState {
 export interface CertificateArgs {
     /**
      * The data of the SSL certificate.
+     *
+     * **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status. If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you are unsure if your certificate requires an intermediate certificate chain, see your certificate provider's documentation.
+     *
+     * The example below shows an intermediate certificate appended to a leaf certificate.
      */
     certificateData: pulumi.Input<string>;
     /**
@@ -319,6 +339,10 @@ export interface CertificateArgs {
     isTrustVerificationDisabled?: pulumi.Input<boolean>;
     /**
      * The private key of the SSL certificate.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     privateKeyData: pulumi.Input<string>;
 }

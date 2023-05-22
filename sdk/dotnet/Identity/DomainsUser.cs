@@ -27,12 +27,34 @@ namespace Pulumi.Oci.Identity
     {
         /// <summary>
         /// (Updatable) Status of the account
+        /// 
+        /// **Added In:** 17.4.6
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Output("active")]
         public Output<bool> Active { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [type]
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Address Street, deprecatedColumnHeaderName:Work Street Address, mapsTo:addresses[work].streetAddress], [columnHeaderName:Work Address Locality, deprecatedColumnHeaderName:Work City, mapsTo:addresses[work].locality], [columnHeaderName:Work Address Region, deprecatedColumnHeaderName:Work State, mapsTo:addresses[work].region], [columnHeaderName:Work Address Postal Code, deprecatedColumnHeaderName:Work Postal Code, mapsTo:addresses[work].postalCode], [columnHeaderName:Work Address Country, deprecatedColumnHeaderName:Work Country, mapsTo:addresses[work].country], [columnHeaderName:Work Address Formatted, mapsTo:addresses[work].formatted], [columnHeaderName:Home Address Formatted, mapsTo:addresses[home].formatted], [columnHeaderName:Other Address Formatted, mapsTo:addresses[other].formatted], [columnHeaderName:Home Address Street, mapsTo:addresses[home].streetAddress], [columnHeaderName:Other Address Street, mapsTo:addresses[other].streetAddress], [columnHeaderName:Home Address Locality, mapsTo:addresses[home].locality], [columnHeaderName:Other Address Locality, mapsTo:addresses[other].locality], [columnHeaderName:Home Address Region, mapsTo:addresses[home].region], [columnHeaderName:Other Address Region, mapsTo:addresses[other].region], [columnHeaderName:Home Address Country, mapsTo:addresses[home].country], [columnHeaderName:Other Address Country, mapsTo:addresses[other].country], [columnHeaderName:Home Address Postal Code, mapsTo:addresses[home].postalCode], [columnHeaderName:Other Address Postal Code, mapsTo:addresses[other].postalCode], [columnHeaderName:Primary Address Type, mapsTo:addresses[$(type)].primary]]
+        /// * idcsPii: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Output("addresses")]
         public Output<ImmutableArray<Outputs.DomainsUserAddress>> Addresses { get; private set; } = null!;
@@ -57,60 +79,161 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("compartmentOcid")]
         public Output<string> CompartmentOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Output("deleteInProgress")]
         public Output<bool> DeleteInProgress { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Description of the user
+        /// 
+        /// **Added In:** 2012271618
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsPii: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("domainOcid")]
         public Output<string> DomainOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A complex attribute representing emails
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value, type]
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Email, mapsTo:emails[work].value], [columnHeaderName:Home Email, mapsTo:emails[home].value], [columnHeaderName:Primary Email Type, mapsTo:emails[$(type)].primary], [columnHeaderName:Other Email, mapsTo:emails[other].value], [columnHeaderName:Recovery Email, mapsTo:emails[recovery].value], [columnHeaderName:Work Email Verified, mapsTo:emails[work].verified], [columnHeaderName:Home Email Verified, mapsTo:emails[home].verified], [columnHeaderName:Other Email Verified, mapsTo:emails[other].verified], [columnHeaderName:Recovery Email Verified, mapsTo:emails[recovery].verified]]
+        /// * idcsPii: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Output("emails")]
         public Output<ImmutableArray<Outputs.DomainsUserEmail>> Emails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of entitlements for the User that represent a thing the User has.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value, type]
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Output("entitlements")]
         public Output<ImmutableArray<Outputs.DomainsUserEntitlement>> Entitlements { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
+        /// 
+        /// **Added In:** 2011192329
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("externalId")]
         public Output<string> ExternalId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Output("groups")]
         public Output<ImmutableArray<Outputs.DomainsUserGroup>> Groups { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The User or App who created the Resource
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: true
+        /// * returned: default
+        /// * type: complex
         /// </summary>
         [Output("idcsCreatedBies")]
         public Output<ImmutableArray<Outputs.DomainsUserIdcsCreatedBy>> IdcsCreatedBies { get; private set; } = null!;
@@ -123,84 +246,239 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) The User or App who modified the Resource
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
         /// </summary>
         [Output("idcsLastModifiedBies")]
         public Output<ImmutableArray<Outputs.DomainsUserIdcsLastModifiedBy>> IdcsLastModifiedBies { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The release number when the resource was upgraded.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("idcsLastUpgradedInRelease")]
         public Output<string> IdcsLastUpgradedInRelease { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("idcsPreventedOperations")]
         public Output<ImmutableArray<string>> IdcsPreventedOperations { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) User's instant messaging addresses
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value, type]
+        /// * idcsPii: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Output("ims")]
         public Output<ImmutableArray<Outputs.DomainsUserIm>> Ims { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Used to indicate the User's default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Locale
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Locale]]
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("locale")]
         public Output<string> Locale { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+        /// * type: complex
         /// </summary>
         [Output("metas")]
         public Output<ImmutableArray<Outputs.DomainsUserMeta>> Metas { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Name of the account assigned to the User.
+        /// 
+        /// **Added In:** 17.4.6
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("name")]
         public Output<Outputs.DomainsUserName> Name { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Nick name
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Nick Name
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Nick Name]]
+        /// * idcsPii: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("nickName")]
         public Output<string> NickName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Ocid of the User's Support Account.
+        /// 
+        /// **Added In:** 2103141444
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("ocid")]
         public Output<string> Ocid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Password attribute. Max length for password is controlled via Password Policy.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCsvAttributeName: Password
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Password]]
+        /// * idcsPii: true
+        /// * idcsSearchable: false
+        /// * idcsSensitive: hash
+        /// * multiValued: false
+        /// * mutability: writeOnly
+        /// * required: false
+        /// * returned: never
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("password")]
         public Output<string> Password { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Phone numbers
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value, type]
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Phone, mapsTo:phoneNumbers[work].value], [columnHeaderName:Mobile No, mapsTo:phoneNumbers[mobile].value], [columnHeaderName:Home Phone, mapsTo:phoneNumbers[home].value], [columnHeaderName:Fax, mapsTo:phoneNumbers[fax].value], [columnHeaderName:Pager, mapsTo:phoneNumbers[pager].value], [columnHeaderName:Other Phone, mapsTo:phoneNumbers[other].value], [columnHeaderName:Recovery Phone, mapsTo:phoneNumbers[recovery].value], [columnHeaderName:Primary Phone Type, mapsTo:phoneNumbers[$(type)].primary]]
+        /// * idcsPii: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Output("phoneNumbers")]
         public Output<ImmutableArray<Outputs.DomainsUserPhoneNumber>> PhoneNumbers { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) URLs of photos for the User
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value, type]
+        /// * idcsPii: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Output("photos")]
         public Output<ImmutableArray<Outputs.DomainsUserPhoto>> Photos { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) User's preferred written or spoken language used for localized user interfaces
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Preferred Language
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Preferred Language]]
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("preferredLanguage")]
         public Output<string> PreferredLanguage { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A fully-qualified URL to a page representing the User's online profile
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Profile URL
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Profile Url]]
+        /// * idcsPii: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: reference
+        /// * uniqueness: none
         /// </summary>
         [Output("profileUrl")]
         public Output<string> ProfileUrl { get; private set; } = null!;
@@ -213,36 +491,102 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) A list of roles for the User that collectively represent who the User is; e.g., 'Student', 'Faculty'.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value, type]
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Output("roles")]
         public Output<ImmutableArray<Outputs.DomainsUserRole>> Roles { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("schemas")]
         public Output<ImmutableArray<string>> Schemas { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of tags on this resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [key, value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Output("tags")]
         public Output<ImmutableArray<Outputs.DomainsUserTag>> Tags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("tenancyOcid")]
         public Output<string> TenancyOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) User's timezone
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCanonicalValueSourceFilter: attrName eq "timezones" and attrValues.value eq "$(timezone)"
+        /// * idcsCanonicalValueSourceResourceType: AllowedValue
+        /// * idcsCsvAttributeName: TimeZone
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Time Zone, deprecatedColumnHeaderName:TimeZone]]
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("timezone")]
         public Output<string> Timezone { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Title
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Title
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Title]]
+        /// * idcsPii: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("title")]
         public Output<string> Title { get; private set; } = null!;
@@ -369,18 +713,53 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) User name
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: User ID
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:User Name, deprecatedColumnHeaderName:User ID]]
+        /// * idcsPii: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: global
         /// </summary>
         [Output("userName")]
         public Output<string> UserName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Used to identify the organization-to-user relationship
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: User Type
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:User Type]]
+        /// * idcsPii: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("userType")]
         public Output<string> UserType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of certificates issued to the User.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Output("x509certificates")]
         public Output<ImmutableArray<Outputs.DomainsUserX509certificate>> X509certificates { get; private set; } = null!;
@@ -437,6 +816,17 @@ namespace Pulumi.Oci.Identity
     {
         /// <summary>
         /// (Updatable) Status of the account
+        /// 
+        /// **Added In:** 17.4.6
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }
@@ -446,6 +836,17 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [type]
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Address Street, deprecatedColumnHeaderName:Work Street Address, mapsTo:addresses[work].streetAddress], [columnHeaderName:Work Address Locality, deprecatedColumnHeaderName:Work City, mapsTo:addresses[work].locality], [columnHeaderName:Work Address Region, deprecatedColumnHeaderName:Work State, mapsTo:addresses[work].region], [columnHeaderName:Work Address Postal Code, deprecatedColumnHeaderName:Work Postal Code, mapsTo:addresses[work].postalCode], [columnHeaderName:Work Address Country, deprecatedColumnHeaderName:Work Country, mapsTo:addresses[work].country], [columnHeaderName:Work Address Formatted, mapsTo:addresses[work].formatted], [columnHeaderName:Home Address Formatted, mapsTo:addresses[home].formatted], [columnHeaderName:Other Address Formatted, mapsTo:addresses[other].formatted], [columnHeaderName:Home Address Street, mapsTo:addresses[home].streetAddress], [columnHeaderName:Other Address Street, mapsTo:addresses[other].streetAddress], [columnHeaderName:Home Address Locality, mapsTo:addresses[home].locality], [columnHeaderName:Other Address Locality, mapsTo:addresses[other].locality], [columnHeaderName:Home Address Region, mapsTo:addresses[home].region], [columnHeaderName:Other Address Region, mapsTo:addresses[other].region], [columnHeaderName:Home Address Country, mapsTo:addresses[home].country], [columnHeaderName:Other Address Country, mapsTo:addresses[other].country], [columnHeaderName:Home Address Postal Code, mapsTo:addresses[home].postalCode], [columnHeaderName:Other Address Postal Code, mapsTo:addresses[other].postalCode], [columnHeaderName:Primary Address Type, mapsTo:addresses[$(type)].primary]]
+        /// * idcsPii: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserAddressArgs> Addresses
         {
@@ -479,12 +880,34 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Description of the user
+        /// 
+        /// **Added In:** 2012271618
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsPii: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
         /// (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -494,6 +917,17 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) A complex attribute representing emails
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value, type]
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Email, mapsTo:emails[work].value], [columnHeaderName:Home Email, mapsTo:emails[home].value], [columnHeaderName:Primary Email Type, mapsTo:emails[$(type)].primary], [columnHeaderName:Other Email, mapsTo:emails[other].value], [columnHeaderName:Recovery Email, mapsTo:emails[recovery].value], [columnHeaderName:Work Email Verified, mapsTo:emails[work].verified], [columnHeaderName:Home Email Verified, mapsTo:emails[home].verified], [columnHeaderName:Other Email Verified, mapsTo:emails[other].verified], [columnHeaderName:Recovery Email Verified, mapsTo:emails[recovery].verified]]
+        /// * idcsPii: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserEmailArgs> Emails
         {
@@ -506,6 +940,15 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) A list of entitlements for the User that represent a thing the User has.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value, type]
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserEntitlementArgs> Entitlements
         {
@@ -515,6 +958,17 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
+        /// 
+        /// **Added In:** 2011192329
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("externalId")]
         public Input<string>? ExternalId { get; set; }
@@ -530,6 +984,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) User's instant messaging addresses
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value, type]
+        /// * idcsPii: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserImArgs> Ims
         {
@@ -539,24 +1003,73 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Used to indicate the User's default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Locale
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Locale]]
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("locale")]
         public Input<string>? Locale { get; set; }
 
         /// <summary>
         /// (Updatable) Name of the account assigned to the User.
+        /// 
+        /// **Added In:** 17.4.6
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("name", required: true)]
         public Input<Inputs.DomainsUserNameArgs> Name { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Nick name
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Nick Name
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Nick Name]]
+        /// * idcsPii: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("nickName")]
         public Input<string>? NickName { get; set; }
 
         /// <summary>
         /// (Updatable) Ocid of the User's Support Account.
+        /// 
+        /// **Added In:** 2103141444
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }
@@ -566,6 +1079,19 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Password attribute. Max length for password is controlled via Password Policy.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCsvAttributeName: Password
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Password]]
+        /// * idcsPii: true
+        /// * idcsSearchable: false
+        /// * idcsSensitive: hash
+        /// * multiValued: false
+        /// * mutability: writeOnly
+        /// * required: false
+        /// * returned: never
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public Input<string>? Password
         {
@@ -582,6 +1108,17 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Phone numbers
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value, type]
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Phone, mapsTo:phoneNumbers[work].value], [columnHeaderName:Mobile No, mapsTo:phoneNumbers[mobile].value], [columnHeaderName:Home Phone, mapsTo:phoneNumbers[home].value], [columnHeaderName:Fax, mapsTo:phoneNumbers[fax].value], [columnHeaderName:Pager, mapsTo:phoneNumbers[pager].value], [columnHeaderName:Other Phone, mapsTo:phoneNumbers[other].value], [columnHeaderName:Recovery Phone, mapsTo:phoneNumbers[recovery].value], [columnHeaderName:Primary Phone Type, mapsTo:phoneNumbers[$(type)].primary]]
+        /// * idcsPii: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserPhoneNumberArgs> PhoneNumbers
         {
@@ -594,6 +1131,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) URLs of photos for the User
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value, type]
+        /// * idcsPii: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserPhotoArgs> Photos
         {
@@ -603,12 +1150,37 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) User's preferred written or spoken language used for localized user interfaces
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Preferred Language
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Preferred Language]]
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("preferredLanguage")]
         public Input<string>? PreferredLanguage { get; set; }
 
         /// <summary>
         /// (Updatable) A fully-qualified URL to a page representing the User's online profile
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Profile URL
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Profile Url]]
+        /// * idcsPii: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: reference
+        /// * uniqueness: none
         /// </summary>
         [Input("profileUrl")]
         public Input<string>? ProfileUrl { get; set; }
@@ -624,6 +1196,15 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) A list of roles for the User that collectively represent who the User is; e.g., 'Student', 'Faculty'.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value, type]
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserRoleArgs> Roles
         {
@@ -636,6 +1217,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public InputList<string> Schemas
         {
@@ -648,6 +1239,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) A list of tags on this resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [key, value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserTagArgs> Tags
         {
@@ -657,12 +1258,39 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) User's timezone
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCanonicalValueSourceFilter: attrName eq "timezones" and attrValues.value eq "$(timezone)"
+        /// * idcsCanonicalValueSourceResourceType: AllowedValue
+        /// * idcsCsvAttributeName: TimeZone
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Time Zone, deprecatedColumnHeaderName:TimeZone]]
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("timezone")]
         public Input<string>? Timezone { get; set; }
 
         /// <summary>
         /// (Updatable) Title
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Title
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Title]]
+        /// * idcsPii: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("title")]
         public Input<string>? Title { get; set; }
@@ -771,12 +1399,38 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) User name
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: User ID
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:User Name, deprecatedColumnHeaderName:User ID]]
+        /// * idcsPii: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: global
         /// </summary>
         [Input("userName", required: true)]
         public Input<string> UserName { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Used to identify the organization-to-user relationship
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: User Type
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:User Type]]
+        /// * idcsPii: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("userType")]
         public Input<string>? UserType { get; set; }
@@ -786,6 +1440,15 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) A list of certificates issued to the User.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserX509certificateArgs> X509certificates
         {
@@ -803,6 +1466,17 @@ namespace Pulumi.Oci.Identity
     {
         /// <summary>
         /// (Updatable) Status of the account
+        /// 
+        /// **Added In:** 17.4.6
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }
@@ -812,6 +1486,17 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [type]
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Address Street, deprecatedColumnHeaderName:Work Street Address, mapsTo:addresses[work].streetAddress], [columnHeaderName:Work Address Locality, deprecatedColumnHeaderName:Work City, mapsTo:addresses[work].locality], [columnHeaderName:Work Address Region, deprecatedColumnHeaderName:Work State, mapsTo:addresses[work].region], [columnHeaderName:Work Address Postal Code, deprecatedColumnHeaderName:Work Postal Code, mapsTo:addresses[work].postalCode], [columnHeaderName:Work Address Country, deprecatedColumnHeaderName:Work Country, mapsTo:addresses[work].country], [columnHeaderName:Work Address Formatted, mapsTo:addresses[work].formatted], [columnHeaderName:Home Address Formatted, mapsTo:addresses[home].formatted], [columnHeaderName:Other Address Formatted, mapsTo:addresses[other].formatted], [columnHeaderName:Home Address Street, mapsTo:addresses[home].streetAddress], [columnHeaderName:Other Address Street, mapsTo:addresses[other].streetAddress], [columnHeaderName:Home Address Locality, mapsTo:addresses[home].locality], [columnHeaderName:Other Address Locality, mapsTo:addresses[other].locality], [columnHeaderName:Home Address Region, mapsTo:addresses[home].region], [columnHeaderName:Other Address Region, mapsTo:addresses[other].region], [columnHeaderName:Home Address Country, mapsTo:addresses[home].country], [columnHeaderName:Other Address Country, mapsTo:addresses[other].country], [columnHeaderName:Home Address Postal Code, mapsTo:addresses[home].postalCode], [columnHeaderName:Other Address Postal Code, mapsTo:addresses[other].postalCode], [columnHeaderName:Primary Address Type, mapsTo:addresses[$(type)].primary]]
+        /// * idcsPii: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserAddressGetArgs> Addresses
         {
@@ -845,30 +1530,82 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("compartmentOcid")]
         public Input<string>? CompartmentOcid { get; set; }
 
         /// <summary>
         /// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("deleteInProgress")]
         public Input<bool>? DeleteInProgress { get; set; }
 
         /// <summary>
         /// (Updatable) Description of the user
+        /// 
+        /// **Added In:** 2012271618
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsPii: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
         /// (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("domainOcid")]
         public Input<string>? DomainOcid { get; set; }
@@ -878,6 +1615,17 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) A complex attribute representing emails
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value, type]
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Email, mapsTo:emails[work].value], [columnHeaderName:Home Email, mapsTo:emails[home].value], [columnHeaderName:Primary Email Type, mapsTo:emails[$(type)].primary], [columnHeaderName:Other Email, mapsTo:emails[other].value], [columnHeaderName:Recovery Email, mapsTo:emails[recovery].value], [columnHeaderName:Work Email Verified, mapsTo:emails[work].verified], [columnHeaderName:Home Email Verified, mapsTo:emails[home].verified], [columnHeaderName:Other Email Verified, mapsTo:emails[other].verified], [columnHeaderName:Recovery Email Verified, mapsTo:emails[recovery].verified]]
+        /// * idcsPii: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserEmailGetArgs> Emails
         {
@@ -890,6 +1638,15 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) A list of entitlements for the User that represent a thing the User has.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value, type]
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserEntitlementGetArgs> Entitlements
         {
@@ -899,6 +1656,17 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
+        /// 
+        /// **Added In:** 2011192329
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("externalId")]
         public Input<string>? ExternalId { get; set; }
@@ -908,6 +1676,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserGroupGetArgs> Groups
         {
@@ -920,6 +1698,14 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) The User or App who created the Resource
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: true
+        /// * returned: default
+        /// * type: complex
         /// </summary>
         public InputList<Inputs.DomainsUserIdcsCreatedByGetArgs> IdcsCreatedBies
         {
@@ -938,6 +1724,14 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) The User or App who modified the Resource
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
         /// </summary>
         public InputList<Inputs.DomainsUserIdcsLastModifiedByGetArgs> IdcsLastModifiedBies
         {
@@ -947,6 +1741,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) The release number when the resource was upgraded.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("idcsLastUpgradedInRelease")]
         public Input<string>? IdcsLastUpgradedInRelease { get; set; }
@@ -956,6 +1760,15 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public InputList<string> IdcsPreventedOperations
         {
@@ -968,6 +1781,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) User's instant messaging addresses
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value, type]
+        /// * idcsPii: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserImGetArgs> Ims
         {
@@ -977,6 +1800,18 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Used to indicate the User's default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Locale
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Locale]]
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("locale")]
         public Input<string>? Locale { get; set; }
@@ -986,6 +1821,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+        /// * type: complex
         /// </summary>
         public InputList<Inputs.DomainsUserMetaGetArgs> Metas
         {
@@ -995,18 +1840,55 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Name of the account assigned to the User.
+        /// 
+        /// **Added In:** 17.4.6
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("name")]
         public Input<Inputs.DomainsUserNameGetArgs>? Name { get; set; }
 
         /// <summary>
         /// (Updatable) Nick name
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Nick Name
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Nick Name]]
+        /// * idcsPii: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("nickName")]
         public Input<string>? NickName { get; set; }
 
         /// <summary>
         /// (Updatable) Ocid of the User's Support Account.
+        /// 
+        /// **Added In:** 2103141444
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }
@@ -1016,6 +1898,19 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Password attribute. Max length for password is controlled via Password Policy.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCsvAttributeName: Password
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Password]]
+        /// * idcsPii: true
+        /// * idcsSearchable: false
+        /// * idcsSensitive: hash
+        /// * multiValued: false
+        /// * mutability: writeOnly
+        /// * required: false
+        /// * returned: never
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public Input<string>? Password
         {
@@ -1032,6 +1927,17 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Phone numbers
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value, type]
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Phone, mapsTo:phoneNumbers[work].value], [columnHeaderName:Mobile No, mapsTo:phoneNumbers[mobile].value], [columnHeaderName:Home Phone, mapsTo:phoneNumbers[home].value], [columnHeaderName:Fax, mapsTo:phoneNumbers[fax].value], [columnHeaderName:Pager, mapsTo:phoneNumbers[pager].value], [columnHeaderName:Other Phone, mapsTo:phoneNumbers[other].value], [columnHeaderName:Recovery Phone, mapsTo:phoneNumbers[recovery].value], [columnHeaderName:Primary Phone Type, mapsTo:phoneNumbers[$(type)].primary]]
+        /// * idcsPii: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserPhoneNumberGetArgs> PhoneNumbers
         {
@@ -1044,6 +1950,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) URLs of photos for the User
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value, type]
+        /// * idcsPii: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserPhotoGetArgs> Photos
         {
@@ -1053,12 +1969,37 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) User's preferred written or spoken language used for localized user interfaces
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Preferred Language
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Preferred Language]]
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("preferredLanguage")]
         public Input<string>? PreferredLanguage { get; set; }
 
         /// <summary>
         /// (Updatable) A fully-qualified URL to a page representing the User's online profile
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Profile URL
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Profile Url]]
+        /// * idcsPii: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: reference
+        /// * uniqueness: none
         /// </summary>
         [Input("profileUrl")]
         public Input<string>? ProfileUrl { get; set; }
@@ -1074,6 +2015,15 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) A list of roles for the User that collectively represent who the User is; e.g., 'Student', 'Faculty'.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value, type]
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserRoleGetArgs> Roles
         {
@@ -1086,6 +2036,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public InputList<string> Schemas
         {
@@ -1098,6 +2058,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) A list of tags on this resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [key, value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserTagGetArgs> Tags
         {
@@ -1107,18 +2077,55 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("tenancyOcid")]
         public Input<string>? TenancyOcid { get; set; }
 
         /// <summary>
         /// (Updatable) User's timezone
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCanonicalValueSourceFilter: attrName eq "timezones" and attrValues.value eq "$(timezone)"
+        /// * idcsCanonicalValueSourceResourceType: AllowedValue
+        /// * idcsCsvAttributeName: TimeZone
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Time Zone, deprecatedColumnHeaderName:TimeZone]]
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("timezone")]
         public Input<string>? Timezone { get; set; }
 
         /// <summary>
         /// (Updatable) Title
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Title
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Title]]
+        /// * idcsPii: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("title")]
         public Input<string>? Title { get; set; }
@@ -1263,12 +2270,38 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) User name
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: User ID
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:User Name, deprecatedColumnHeaderName:User ID]]
+        /// * idcsPii: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: global
         /// </summary>
         [Input("userName")]
         public Input<string>? UserName { get; set; }
 
         /// <summary>
         /// (Updatable) Used to identify the organization-to-user relationship
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: User Type
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:User Type]]
+        /// * idcsPii: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("userType")]
         public Input<string>? UserType { get; set; }
@@ -1278,6 +2311,15 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) A list of certificates issued to the User.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserX509certificateGetArgs> X509certificates
         {

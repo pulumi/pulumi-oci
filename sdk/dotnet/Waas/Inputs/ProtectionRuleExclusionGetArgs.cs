@@ -26,6 +26,9 @@ namespace Pulumi.Oci.Waas.Inputs
 
         /// <summary>
         /// The target of the exclusion.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("target")]
         public Input<string>? Target { get; set; }

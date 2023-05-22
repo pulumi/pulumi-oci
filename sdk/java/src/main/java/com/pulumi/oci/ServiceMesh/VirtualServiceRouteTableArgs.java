@@ -128,12 +128,18 @@ public final class VirtualServiceRouteTableArgs extends com.pulumi.resources.Res
     /**
      * The OCID of the service mesh in which this access policy is created.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="virtualServiceId", required=true)
     private Output<String> virtualServiceId;
 
     /**
      * @return The OCID of the service mesh in which this access policy is created.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> virtualServiceId() {
@@ -331,6 +337,9 @@ public final class VirtualServiceRouteTableArgs extends com.pulumi.resources.Res
         /**
          * @param virtualServiceId The OCID of the service mesh in which this access policy is created.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -341,6 +350,9 @@ public final class VirtualServiceRouteTableArgs extends com.pulumi.resources.Res
 
         /**
          * @param virtualServiceId The OCID of the service mesh in which this access policy is created.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

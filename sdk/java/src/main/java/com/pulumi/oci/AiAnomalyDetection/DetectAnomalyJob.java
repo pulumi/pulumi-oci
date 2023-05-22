@@ -236,12 +236,18 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
     /**
      * The value that customer can adjust to control the sensitivity of anomaly detection
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="sensitivity", type=Double.class, parameters={})
     private Output<Double> sensitivity;
 
     /**
      * @return The value that customer can adjust to control the sensitivity of anomaly detection
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Double> sensitivity() {

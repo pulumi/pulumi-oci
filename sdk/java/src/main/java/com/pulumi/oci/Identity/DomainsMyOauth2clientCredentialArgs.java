@@ -38,12 +38,30 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
     /**
      * Description
      * 
+     * **Added In:** 2101262133
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description
+     * 
+     * **Added In:** 2101262133
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
      * 
      */
     public Optional<Output<String>> description() {
@@ -53,12 +71,36 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
     /**
      * User credential expires on
      * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     @Import(name="expiresOn")
     private @Nullable Output<String> expiresOn;
 
     /**
      * @return User credential expires on
+     * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> expiresOn() {
@@ -83,12 +125,36 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
     /**
      * Specifies if secret need to be reset
      * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: writeOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="isResetSecret")
     private @Nullable Output<Boolean> isResetSecret;
 
     /**
      * @return Specifies if secret need to be reset
+     * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: writeOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> isResetSecret() {
@@ -98,12 +164,32 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
     /**
      * (Updatable) User name
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return (Updatable) User name
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> name() {
@@ -113,12 +199,32 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
     /**
      * User&#39;s ocid
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
      * @return User&#39;s ocid
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -143,12 +249,32 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="schemas", required=true)
     private Output<List<String>> schemas;
 
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<List<String>> schemas() {
@@ -158,12 +284,30 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
     /**
      * Scopes
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [audience, scope]
+     * * type: complex
+     * * mutability: readWrite
+     * * multiValued: true
+     * * required: true
+     * * returned: default
+     * 
      */
     @Import(name="scopes", required=true)
     private Output<List<DomainsMyOauth2clientCredentialScopeArgs>> scopes;
 
     /**
      * @return Scopes
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [audience, scope]
+     * * type: complex
+     * * mutability: readWrite
+     * * multiValued: true
+     * * required: true
+     * * returned: default
      * 
      */
     public Output<List<DomainsMyOauth2clientCredentialScopeArgs>> scopes() {
@@ -173,12 +317,36 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
     /**
      * User credential status
      * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: never
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return User credential status
+     * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: never
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> status() {
@@ -188,12 +356,32 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
     /**
      * A list of tags on this resource.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<DomainsMyOauth2clientCredentialTagArgs>> tags;
 
     /**
      * @return A list of tags on this resource.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsMyOauth2clientCredentialTagArgs>>> tags() {
@@ -203,12 +391,32 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
     /**
      * User linked to oauth2 client credential
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="user")
     private @Nullable Output<DomainsMyOauth2clientCredentialUserArgs> user;
 
     /**
      * @return User linked to oauth2 client credential
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<DomainsMyOauth2clientCredentialUserArgs>> user() {
@@ -275,6 +483,15 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
         /**
          * @param description Description
          * 
+         * **Added In:** 2101262133
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * 
          * @return builder
          * 
          */
@@ -286,6 +503,15 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
         /**
          * @param description Description
          * 
+         * **Added In:** 2101262133
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * 
          * @return builder
          * 
          */
@@ -295,6 +521,18 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
 
         /**
          * @param expiresOn User credential expires on
+         * 
+         * **Added In:** 2109090424
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -306,6 +544,18 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
 
         /**
          * @param expiresOn User credential expires on
+         * 
+         * **Added In:** 2109090424
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -338,6 +588,18 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
         /**
          * @param isResetSecret Specifies if secret need to be reset
          * 
+         * **Added In:** 2109090424
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: writeOnly
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -349,6 +611,18 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
         /**
          * @param isResetSecret Specifies if secret need to be reset
          * 
+         * **Added In:** 2109090424
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: writeOnly
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -358,6 +632,16 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
 
         /**
          * @param name (Updatable) User name
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -370,6 +654,16 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
         /**
          * @param name (Updatable) User name
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -379,6 +673,16 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
 
         /**
          * @param ocid User&#39;s ocid
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -390,6 +694,16 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
 
         /**
          * @param ocid User&#39;s ocid
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -422,6 +736,16 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
         /**
          * @param schemas REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -433,6 +757,16 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
         /**
          * @param schemas REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -443,6 +777,16 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
         /**
          * @param schemas REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -452,6 +796,15 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
 
         /**
          * @param scopes Scopes
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [audience, scope]
+         * * type: complex
+         * * mutability: readWrite
+         * * multiValued: true
+         * * required: true
+         * * returned: default
          * 
          * @return builder
          * 
@@ -464,6 +817,15 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
         /**
          * @param scopes Scopes
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [audience, scope]
+         * * type: complex
+         * * mutability: readWrite
+         * * multiValued: true
+         * * required: true
+         * * returned: default
+         * 
          * @return builder
          * 
          */
@@ -474,6 +836,15 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
         /**
          * @param scopes Scopes
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [audience, scope]
+         * * type: complex
+         * * mutability: readWrite
+         * * multiValued: true
+         * * required: true
+         * * returned: default
+         * 
          * @return builder
          * 
          */
@@ -483,6 +854,18 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
 
         /**
          * @param status User credential status
+         * 
+         * **Added In:** 2109090424
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: never
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -495,6 +878,18 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
         /**
          * @param status User credential status
          * 
+         * **Added In:** 2109090424
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: never
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -504,6 +899,16 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
 
         /**
          * @param tags A list of tags on this resource.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -516,6 +921,16 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
         /**
          * @param tags A list of tags on this resource.
          * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -525,6 +940,16 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
 
         /**
          * @param tags A list of tags on this resource.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -536,6 +961,16 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
         /**
          * @param user User linked to oauth2 client credential
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -546,6 +981,16 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
 
         /**
          * @param user User linked to oauth2 client credential
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 

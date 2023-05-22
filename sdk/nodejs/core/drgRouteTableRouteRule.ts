@@ -65,6 +65,9 @@ export class DrgRouteTableRouteRule extends pulumi.CustomResource {
     public /*out*/ readonly attributes!: pulumi.Output<{[key: string]: any}>;
     /**
      * (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+     *
+     * Potential values:
+     * * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
      */
     public readonly destination!: pulumi.Output<string>;
     /**
@@ -85,6 +88,9 @@ export class DrgRouteTableRouteRule extends pulumi.CustomResource {
     public /*out*/ readonly isConflict!: pulumi.Output<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly nextHopDrgAttachmentId!: pulumi.Output<string>;
     /**
@@ -157,6 +163,9 @@ export interface DrgRouteTableRouteRuleState {
     attributes?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+     *
+     * Potential values:
+     * * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
      */
     destination?: pulumi.Input<string>;
     /**
@@ -177,6 +186,9 @@ export interface DrgRouteTableRouteRuleState {
     isConflict?: pulumi.Input<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     nextHopDrgAttachmentId?: pulumi.Input<string>;
     /**
@@ -195,6 +207,9 @@ export interface DrgRouteTableRouteRuleState {
 export interface DrgRouteTableRouteRuleArgs {
     /**
      * (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+     *
+     * Potential values:
+     * * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
      */
     destination: pulumi.Input<string>;
     /**
@@ -207,6 +222,9 @@ export interface DrgRouteTableRouteRuleArgs {
     drgRouteTableId: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     nextHopDrgAttachmentId: pulumi.Input<string>;
 }

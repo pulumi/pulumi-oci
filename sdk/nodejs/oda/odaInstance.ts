@@ -138,6 +138,10 @@ export class OdaInstance extends pulumi.CustomResource {
     public /*out*/ readonly restrictedOperations!: pulumi.Output<outputs.Oda.OdaInstanceRestrictedOperation[]>;
     /**
      * Shape or size of the instance.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly shapeName!: pulumi.Output<string>;
     /**
@@ -302,6 +306,10 @@ export interface OdaInstanceState {
     restrictedOperations?: pulumi.Input<pulumi.Input<inputs.Oda.OdaInstanceRestrictedOperation>[]>;
     /**
      * Shape or size of the instance.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     shapeName?: pulumi.Input<string>;
     /**
@@ -360,6 +368,10 @@ export interface OdaInstanceArgs {
     isRoleBasedAccess?: pulumi.Input<boolean>;
     /**
      * Shape or size of the instance.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     shapeName: pulumi.Input<string>;
     /**

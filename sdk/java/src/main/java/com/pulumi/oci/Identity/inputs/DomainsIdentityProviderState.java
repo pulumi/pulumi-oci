@@ -30,12 +30,38 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Assertion attribute name.
      * 
+     * **Deprecated Since: 20.1.3**
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * * idcsValuePersistedInOtherAttribute: true
+     * 
      */
     @Import(name="assertionAttribute")
     private @Nullable Output<String> assertionAttribute;
 
     /**
      * @return (Updatable) Assertion attribute name.
+     * 
+     * **Deprecated Since: 20.1.3**
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * * idcsValuePersistedInOtherAttribute: true
      * 
      */
     public Optional<Output<String>> assertionAttribute() {
@@ -75,12 +101,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) HTTP binding to use for authentication requests.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="authnRequestBinding")
     private @Nullable Output<String> authnRequestBinding;
 
     /**
      * @return (Updatable) HTTP binding to use for authentication requests.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> authnRequestBinding() {
@@ -105,12 +151,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="compartmentOcid")
     private @Nullable Output<String> compartmentOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> compartmentOcid() {
@@ -120,12 +186,36 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Correlation policy
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="correlationPolicy")
     private @Nullable Output<DomainsIdentityProviderCorrelationPolicyArgs> correlationPolicy;
 
     /**
      * @return (Updatable) Correlation policy
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<DomainsIdentityProviderCorrelationPolicyArgs>> correlationPolicy() {
@@ -135,12 +225,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="deleteInProgress")
     private @Nullable Output<Boolean> deleteInProgress;
 
     /**
      * @return (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> deleteInProgress() {
@@ -150,12 +260,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Description
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return (Updatable) Description
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> description() {
@@ -165,12 +295,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="domainOcid")
     private @Nullable Output<String> domainOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> domainOcid() {
@@ -180,12 +330,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Set to true to indicate Partner enabled.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
     /**
      * @return (Updatable) Set to true to indicate Partner enabled.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> enabled() {
@@ -195,12 +365,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Encryption certificate
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="encryptionCertificate")
     private @Nullable Output<String> encryptionCertificate;
 
     /**
      * @return (Updatable) Encryption certificate
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> encryptionCertificate() {
@@ -210,12 +400,30 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="externalId")
     private @Nullable Output<String> externalId;
 
     /**
      * @return (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> externalId() {
@@ -225,12 +433,30 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Identity Provider Icon URL.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="iconUrl")
     private @Nullable Output<String> iconUrl;
 
     /**
      * @return (Updatable) Identity Provider Icon URL.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> iconUrl() {
@@ -240,12 +466,28 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) The User or App who created the Resource
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: complex
+     * 
      */
     @Import(name="idcsCreatedBies")
     private @Nullable Output<List<DomainsIdentityProviderIdcsCreatedByArgs>> idcsCreatedBies;
 
     /**
      * @return (Updatable) The User or App who created the Resource
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: complex
      * 
      */
     public Optional<Output<List<DomainsIdentityProviderIdcsCreatedByArgs>>> idcsCreatedBies() {
@@ -270,12 +512,28 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) The User or App who modified the Resource
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * 
      */
     @Import(name="idcsLastModifiedBies")
     private @Nullable Output<List<DomainsIdentityProviderIdcsLastModifiedByArgs>> idcsLastModifiedBies;
 
     /**
      * @return (Updatable) The User or App who modified the Resource
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
      * 
      */
     public Optional<Output<List<DomainsIdentityProviderIdcsLastModifiedByArgs>>> idcsLastModifiedBies() {
@@ -285,12 +543,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) The release number when the resource was upgraded.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="idcsLastUpgradedInRelease")
     private @Nullable Output<String> idcsLastUpgradedInRelease;
 
     /**
      * @return (Updatable) The release number when the resource was upgraded.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> idcsLastUpgradedInRelease() {
@@ -300,12 +578,30 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="idcsPreventedOperations")
     private @Nullable Output<List<String>> idcsPreventedOperations;
 
     /**
      * @return (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<String>>> idcsPreventedOperations() {
@@ -315,12 +611,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Identity Provider SSO URL
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="idpSsoUrl")
     private @Nullable Output<String> idpSsoUrl;
 
     /**
      * @return (Updatable) Identity Provider SSO URL
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> idpSsoUrl() {
@@ -330,12 +646,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Set to true to include the signing certificate in the signature.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="includeSigningCertInSignature")
     private @Nullable Output<Boolean> includeSigningCertInSignature;
 
     /**
      * @return (Updatable) Set to true to include the signing certificate in the signature.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> includeSigningCertInSignature() {
@@ -345,12 +681,36 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="jitUserProvAssignedGroups")
     private @Nullable Output<List<DomainsIdentityProviderJitUserProvAssignedGroupArgs>> jitUserProvAssignedGroups;
 
     /**
      * @return (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsIdentityProviderJitUserProvAssignedGroupArgs>>> jitUserProvAssignedGroups() {
@@ -360,12 +720,36 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Set to true to indicate JIT User Creation is enabled
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="jitUserProvAttributeUpdateEnabled")
     private @Nullable Output<Boolean> jitUserProvAttributeUpdateEnabled;
 
     /**
      * @return (Updatable) Set to true to indicate JIT User Creation is enabled
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> jitUserProvAttributeUpdateEnabled() {
@@ -375,12 +759,36 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Assertion To User Mapping
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="jitUserProvAttributes")
     private @Nullable Output<DomainsIdentityProviderJitUserProvAttributesArgs> jitUserProvAttributes;
 
     /**
      * @return (Updatable) Assertion To User Mapping
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<DomainsIdentityProviderJitUserProvAttributesArgs>> jitUserProvAttributes() {
@@ -390,12 +798,36 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Set to true to indicate JIT User Creation is enabled
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="jitUserProvCreateUserEnabled")
     private @Nullable Output<Boolean> jitUserProvCreateUserEnabled;
 
     /**
      * @return (Updatable) Set to true to indicate JIT User Creation is enabled
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> jitUserProvCreateUserEnabled() {
@@ -405,12 +837,36 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Set to true to indicate JIT User Provisioning is enabled
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="jitUserProvEnabled")
     private @Nullable Output<Boolean> jitUserProvEnabled;
 
     /**
      * @return (Updatable) Set to true to indicate JIT User Provisioning is enabled
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> jitUserProvEnabled() {
@@ -420,12 +876,36 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="jitUserProvGroupAssertionAttributeEnabled")
     private @Nullable Output<Boolean> jitUserProvGroupAssertionAttributeEnabled;
 
     /**
      * @return (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> jitUserProvGroupAssertionAttributeEnabled() {
@@ -435,12 +915,36 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) The default value is &#39;Overwrite&#39;, which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify &#39;Merge&#39; if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="jitUserProvGroupAssignmentMethod")
     private @Nullable Output<String> jitUserProvGroupAssignmentMethod;
 
     /**
      * @return (Updatable) The default value is &#39;Overwrite&#39;, which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify &#39;Merge&#39; if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> jitUserProvGroupAssignmentMethod() {
@@ -450,12 +954,36 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Property to indicate the mode of group mapping
      * 
+     * **Added In:** 2205120021
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="jitUserProvGroupMappingMode")
     private @Nullable Output<String> jitUserProvGroupMappingMode;
 
     /**
      * @return (Updatable) Property to indicate the mode of group mapping
+     * 
+     * **Added In:** 2205120021
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> jitUserProvGroupMappingMode() {
@@ -465,12 +993,34 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
      * 
+     * **Added In:** 2205120021
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [idpGroup]
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="jitUserProvGroupMappings")
     private @Nullable Output<List<DomainsIdentityProviderJitUserProvGroupMappingArgs>> jitUserProvGroupMappings;
 
     /**
      * @return (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
+     * 
+     * **Added In:** 2205120021
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [idpGroup]
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsIdentityProviderJitUserProvGroupMappingArgs>>> jitUserProvGroupMappings() {
@@ -480,12 +1030,36 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Name of the assertion attribute containing the users groups
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="jitUserProvGroupSamlAttributeName")
     private @Nullable Output<String> jitUserProvGroupSamlAttributeName;
 
     /**
      * @return (Updatable) Name of the assertion attribute containing the users groups
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> jitUserProvGroupSamlAttributeName() {
@@ -495,12 +1069,36 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="jitUserProvGroupStaticListEnabled")
     private @Nullable Output<Boolean> jitUserProvGroupStaticListEnabled;
 
     /**
      * @return (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> jitUserProvGroupStaticListEnabled() {
@@ -510,12 +1108,38 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Set to true to indicate ignoring absence of group while provisioning
      * 
+     * **Added In:** 2111112015
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsAddedSinceVersion: 30
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="jitUserProvIgnoreErrorOnAbsentGroups")
     private @Nullable Output<Boolean> jitUserProvIgnoreErrorOnAbsentGroups;
 
     /**
      * @return (Updatable) Set to true to indicate ignoring absence of group while provisioning
+     * 
+     * **Added In:** 2111112015
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsAddedSinceVersion: 30
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> jitUserProvIgnoreErrorOnAbsentGroups() {
@@ -525,12 +1149,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) HTTP binding to use for logout.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="logoutBinding")
     private @Nullable Output<String> logoutBinding;
 
     /**
      * @return (Updatable) HTTP binding to use for logout.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> logoutBinding() {
@@ -540,12 +1184,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Set to true to enable logout.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="logoutEnabled")
     private @Nullable Output<Boolean> logoutEnabled;
 
     /**
      * @return (Updatable) Set to true to enable logout.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> logoutEnabled() {
@@ -555,12 +1219,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Logout request URL
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="logoutRequestUrl")
     private @Nullable Output<String> logoutRequestUrl;
 
     /**
      * @return (Updatable) Logout request URL
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> logoutRequestUrl() {
@@ -570,12 +1254,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Logout response URL
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="logoutResponseUrl")
     private @Nullable Output<String> logoutResponseUrl;
 
     /**
      * @return (Updatable) Logout response URL
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> logoutResponseUrl() {
@@ -585,12 +1289,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Metadata
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="metadata")
     private @Nullable Output<String> metadata;
 
     /**
      * @return (Updatable) Metadata
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> metadata() {
@@ -600,12 +1324,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+     * * type: complex
+     * 
      */
     @Import(name="metas")
     private @Nullable Output<List<DomainsIdentityProviderMetaArgs>> metas;
 
     /**
      * @return (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+     * * type: complex
      * 
      */
     public Optional<Output<List<DomainsIdentityProviderMetaArgs>>> metas() {
@@ -615,12 +1359,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Default authentication request name ID format.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="nameIdFormat")
     private @Nullable Output<String> nameIdFormat;
 
     /**
      * @return (Updatable) Default authentication request name ID format.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> nameIdFormat() {
@@ -630,12 +1394,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: global
+     * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
      * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: global
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -645,12 +1429,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Unique name of the trusted Identity Provider.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: string
+     * * uniqueness: server
+     * 
      */
     @Import(name="partnerName")
     private @Nullable Output<String> partnerName;
 
     /**
      * @return (Updatable) Unique name of the trusted Identity Provider.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: string
+     * * uniqueness: server
      * 
      */
     public Optional<Output<String>> partnerName() {
@@ -660,12 +1464,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Provider ID
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: server
+     * 
      */
     @Import(name="partnerProviderId")
     private @Nullable Output<String> partnerProviderId;
 
     /**
      * @return (Updatable) Provider ID
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: server
      * 
      */
     public Optional<Output<String>> partnerProviderId() {
@@ -675,12 +1499,36 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) SAML SP authentication type.
      * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="requestedAuthenticationContexts")
     private @Nullable Output<List<String>> requestedAuthenticationContexts;
 
     /**
      * @return (Updatable) SAML SP authentication type.
+     * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<String>>> requestedAuthenticationContexts() {
@@ -690,12 +1538,36 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) This SP requires requests SAML IdP to enforce re-authentication.
      * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="requireForceAuthn")
     private @Nullable Output<Boolean> requireForceAuthn;
 
     /**
      * @return (Updatable) This SP requires requests SAML IdP to enforce re-authentication.
+     * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> requireForceAuthn() {
@@ -705,12 +1577,36 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) SAML SP must accept encrypted assertion only.
      * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="requiresEncryptedAssertion")
     private @Nullable Output<Boolean> requiresEncryptedAssertion;
 
     /**
      * @return (Updatable) SAML SP must accept encrypted assertion only.
+     * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> requiresEncryptedAssertion() {
@@ -735,12 +1631,36 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) SAML SP HoK Enabled.
      * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="samlHoKrequired")
     private @Nullable Output<Boolean> samlHoKrequired;
 
     /**
      * @return (Updatable) SAML SP HoK Enabled.
+     * 
+     * **Added In:** 2102181953
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> samlHoKrequired() {
@@ -750,12 +1670,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="schemas")
     private @Nullable Output<List<String>> schemas;
 
     /**
      * @return (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<String>>> schemas() {
@@ -765,12 +1705,36 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
      * 
+     * **Added In:** 18.2.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: never
+     * * type: string
+     * * uniqueness: server
+     * 
      */
     @Import(name="serviceInstanceIdentifier")
     private @Nullable Output<String> serviceInstanceIdentifier;
 
     /**
      * @return (Updatable) The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
+     * 
+     * **Added In:** 18.2.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: never
+     * * type: string
+     * * uniqueness: server
      * 
      */
     public Optional<Output<String>> serviceInstanceIdentifier() {
@@ -780,12 +1744,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Set to true to indicate whether to show IdP in login page or not.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="shownOnLoginPage")
     private @Nullable Output<Boolean> shownOnLoginPage;
 
     /**
      * @return (Updatable) Set to true to indicate whether to show IdP in login page or not.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> shownOnLoginPage() {
@@ -795,12 +1779,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Signature hash algorithm.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="signatureHashAlgorithm")
     private @Nullable Output<String> signatureHashAlgorithm;
 
     /**
      * @return (Updatable) Signature hash algorithm.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> signatureHashAlgorithm() {
@@ -810,12 +1814,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Signing certificate
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="signingCertificate")
     private @Nullable Output<String> signingCertificate;
 
     /**
      * @return (Updatable) Signing certificate
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> signingCertificate() {
@@ -825,12 +1849,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Succinct ID
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: server
+     * 
      */
     @Import(name="succinctId")
     private @Nullable Output<String> succinctId;
 
     /**
      * @return (Updatable) Succinct ID
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: server
      * 
      */
     public Optional<Output<String>> succinctId() {
@@ -840,12 +1884,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) A list of tags on this resource.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<DomainsIdentityProviderTagArgs>> tags;
 
     /**
      * @return (Updatable) A list of tags on this resource.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsIdentityProviderTagArgs>>> tags() {
@@ -855,12 +1919,32 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="tenancyOcid")
     private @Nullable Output<String> tenancyOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> tenancyOcid() {
@@ -870,12 +1954,36 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this IdP.
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="tenantProviderId")
     private @Nullable Output<String> tenantProviderId;
 
     /**
      * @return (Updatable) The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this IdP.
+     * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> tenantProviderId() {
@@ -885,12 +1993,36 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) Identity Provider Type
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
      * @return (Updatable) Identity Provider Type
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> type() {
@@ -930,12 +2062,38 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) User mapping method.
      * 
+     * **Deprecated Since: 20.1.3**
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * * idcsValuePersistedInOtherAttribute: true
+     * 
      */
     @Import(name="userMappingMethod")
     private @Nullable Output<String> userMappingMethod;
 
     /**
      * @return (Updatable) User mapping method.
+     * 
+     * **Deprecated Since: 20.1.3**
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * * idcsValuePersistedInOtherAttribute: true
      * 
      */
     public Optional<Output<String>> userMappingMethod() {
@@ -945,12 +2103,44 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
     /**
      * (Updatable) This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.&lt;br&gt;You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the &lt;b&gt;Example of a Request Body&lt;/b&gt; section of the Examples tab for the &lt;a href=&#39;./op-admin-v1-identityproviders-post.html&#39;&gt;POST&lt;/a&gt; and &lt;a href=&#39;./op-admin-v1-identityproviders-id-put.html&#39;&gt;PUT&lt;/a&gt; methods of the /IdentityProviders endpoint.
      * 
+     * **Deprecated Since: 20.1.3**
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * * idcsValuePersistedInOtherAttribute: true
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="userMappingStoreAttribute")
     private @Nullable Output<String> userMappingStoreAttribute;
 
     /**
      * @return (Updatable) This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.&lt;br&gt;You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the &lt;b&gt;Example of a Request Body&lt;/b&gt; section of the Examples tab for the &lt;a href=&#39;./op-admin-v1-identityproviders-post.html&#39;&gt;POST&lt;/a&gt; and &lt;a href=&#39;./op-admin-v1-identityproviders-id-put.html&#39;&gt;PUT&lt;/a&gt; methods of the /IdentityProviders endpoint.
+     * 
+     * **Deprecated Since: 20.1.3**
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * * idcsValuePersistedInOtherAttribute: true
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> userMappingStoreAttribute() {
@@ -1045,6 +2235,19 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param assertionAttribute (Updatable) Assertion attribute name.
          * 
+         * **Deprecated Since: 20.1.3**
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * * idcsValuePersistedInOtherAttribute: true
+         * 
          * @return builder
          * 
          */
@@ -1055,6 +2258,19 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param assertionAttribute (Updatable) Assertion attribute name.
+         * 
+         * **Deprecated Since: 20.1.3**
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * * idcsValuePersistedInOtherAttribute: true
          * 
          * @return builder
          * 
@@ -1118,6 +2334,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param authnRequestBinding (Updatable) HTTP binding to use for authentication requests.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1128,6 +2354,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param authnRequestBinding (Updatable) HTTP binding to use for authentication requests.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1160,6 +2396,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param compartmentOcid (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1171,6 +2417,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param compartmentOcid (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1180,6 +2436,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param correlationPolicy (Updatable) Correlation policy
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1192,6 +2460,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param correlationPolicy (Updatable) Correlation policy
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1201,6 +2481,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param deleteInProgress (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1213,6 +2503,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param deleteInProgress (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1222,6 +2522,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param description (Updatable) Description
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1234,6 +2544,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param description (Updatable) Description
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1243,6 +2563,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param domainOcid (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1255,6 +2585,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param domainOcid (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1264,6 +2604,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param enabled (Updatable) Set to true to indicate Partner enabled.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1276,6 +2626,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param enabled (Updatable) Set to true to indicate Partner enabled.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1285,6 +2645,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param encryptionCertificate (Updatable) Encryption certificate
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1297,6 +2667,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param encryptionCertificate (Updatable) Encryption certificate
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1306,6 +2686,15 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param externalId (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1318,6 +2707,15 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param externalId (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1327,6 +2725,15 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param iconUrl (Updatable) Identity Provider Icon URL.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1339,6 +2746,15 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param iconUrl (Updatable) Identity Provider Icon URL.
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1348,6 +2764,14 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param idcsCreatedBies (Updatable) The User or App who created the Resource
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: complex
          * 
          * @return builder
          * 
@@ -1360,6 +2784,14 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param idcsCreatedBies (Updatable) The User or App who created the Resource
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: complex
+         * 
          * @return builder
          * 
          */
@@ -1369,6 +2801,14 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param idcsCreatedBies (Updatable) The User or App who created the Resource
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: complex
          * 
          * @return builder
          * 
@@ -1401,6 +2841,14 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param idcsLastModifiedBies (Updatable) The User or App who modified the Resource
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * 
          * @return builder
          * 
          */
@@ -1412,6 +2860,14 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param idcsLastModifiedBies (Updatable) The User or App who modified the Resource
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * 
          * @return builder
          * 
          */
@@ -1422,6 +2878,14 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param idcsLastModifiedBies (Updatable) The User or App who modified the Resource
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * 
          * @return builder
          * 
          */
@@ -1431,6 +2895,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param idcsLastUpgradedInRelease (Updatable) The release number when the resource was upgraded.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1443,6 +2917,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param idcsLastUpgradedInRelease (Updatable) The release number when the resource was upgraded.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1452,6 +2936,15 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param idcsPreventedOperations (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1464,6 +2957,15 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param idcsPreventedOperations (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1474,6 +2976,15 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param idcsPreventedOperations (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1483,6 +2994,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param idpSsoUrl (Updatable) Identity Provider SSO URL
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1495,6 +3016,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param idpSsoUrl (Updatable) Identity Provider SSO URL
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1504,6 +3035,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param includeSigningCertInSignature (Updatable) Set to true to include the signing certificate in the signature.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1516,6 +3057,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param includeSigningCertInSignature (Updatable) Set to true to include the signing certificate in the signature.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1525,6 +3076,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param jitUserProvAssignedGroups (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1537,6 +3100,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param jitUserProvAssignedGroups (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1547,6 +3122,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param jitUserProvAssignedGroups (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1556,6 +3143,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param jitUserProvAttributeUpdateEnabled (Updatable) Set to true to indicate JIT User Creation is enabled
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1568,6 +3167,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param jitUserProvAttributeUpdateEnabled (Updatable) Set to true to indicate JIT User Creation is enabled
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1577,6 +3188,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param jitUserProvAttributes (Updatable) Assertion To User Mapping
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1589,6 +3212,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param jitUserProvAttributes (Updatable) Assertion To User Mapping
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1598,6 +3233,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param jitUserProvCreateUserEnabled (Updatable) Set to true to indicate JIT User Creation is enabled
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1610,6 +3257,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param jitUserProvCreateUserEnabled (Updatable) Set to true to indicate JIT User Creation is enabled
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1619,6 +3278,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param jitUserProvEnabled (Updatable) Set to true to indicate JIT User Provisioning is enabled
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1631,6 +3302,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param jitUserProvEnabled (Updatable) Set to true to indicate JIT User Provisioning is enabled
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1640,6 +3323,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param jitUserProvGroupAssertionAttributeEnabled (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1652,6 +3347,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param jitUserProvGroupAssertionAttributeEnabled (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1661,6 +3368,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param jitUserProvGroupAssignmentMethod (Updatable) The default value is &#39;Overwrite&#39;, which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify &#39;Merge&#39; if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1673,6 +3392,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param jitUserProvGroupAssignmentMethod (Updatable) The default value is &#39;Overwrite&#39;, which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify &#39;Merge&#39; if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1682,6 +3413,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param jitUserProvGroupMappingMode (Updatable) Property to indicate the mode of group mapping
+         * 
+         * **Added In:** 2205120021
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1694,6 +3437,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param jitUserProvGroupMappingMode (Updatable) Property to indicate the mode of group mapping
          * 
+         * **Added In:** 2205120021
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1703,6 +3458,17 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param jitUserProvGroupMappings (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
+         * 
+         * **Added In:** 2205120021
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [idpGroup]
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1715,6 +3481,17 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param jitUserProvGroupMappings (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
          * 
+         * **Added In:** 2205120021
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [idpGroup]
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1725,6 +3502,17 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param jitUserProvGroupMappings (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
          * 
+         * **Added In:** 2205120021
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [idpGroup]
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1734,6 +3522,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param jitUserProvGroupSamlAttributeName (Updatable) Name of the assertion attribute containing the users groups
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1746,6 +3546,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param jitUserProvGroupSamlAttributeName (Updatable) Name of the assertion attribute containing the users groups
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1755,6 +3567,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param jitUserProvGroupStaticListEnabled (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1767,6 +3591,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param jitUserProvGroupStaticListEnabled (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1776,6 +3612,19 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param jitUserProvIgnoreErrorOnAbsentGroups (Updatable) Set to true to indicate ignoring absence of group while provisioning
+         * 
+         * **Added In:** 2111112015
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsAddedSinceVersion: 30
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1788,6 +3637,19 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param jitUserProvIgnoreErrorOnAbsentGroups (Updatable) Set to true to indicate ignoring absence of group while provisioning
          * 
+         * **Added In:** 2111112015
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsAddedSinceVersion: 30
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1797,6 +3659,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param logoutBinding (Updatable) HTTP binding to use for logout.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1809,6 +3681,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param logoutBinding (Updatable) HTTP binding to use for logout.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1818,6 +3700,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param logoutEnabled (Updatable) Set to true to enable logout.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1830,6 +3722,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param logoutEnabled (Updatable) Set to true to enable logout.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1839,6 +3741,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param logoutRequestUrl (Updatable) Logout request URL
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1851,6 +3763,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param logoutRequestUrl (Updatable) Logout request URL
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1860,6 +3782,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param logoutResponseUrl (Updatable) Logout response URL
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1872,6 +3804,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param logoutResponseUrl (Updatable) Logout response URL
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1881,6 +3823,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param metadata (Updatable) Metadata
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1893,6 +3845,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param metadata (Updatable) Metadata
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1902,6 +3864,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param metas (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+         * * type: complex
          * 
          * @return builder
          * 
@@ -1914,6 +3886,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param metas (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+         * * type: complex
+         * 
          * @return builder
          * 
          */
@@ -1924,6 +3906,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param metas (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+         * * type: complex
+         * 
          * @return builder
          * 
          */
@@ -1933,6 +3925,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param nameIdFormat (Updatable) Default authentication request name ID format.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1945,6 +3947,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param nameIdFormat (Updatable) Default authentication request name ID format.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1954,6 +3966,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
          * 
          * @return builder
          * 
@@ -1966,6 +3988,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
+         * 
          * @return builder
          * 
          */
@@ -1975,6 +4007,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param partnerName (Updatable) Unique name of the trusted Identity Provider.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: always
+         * * type: string
+         * * uniqueness: server
          * 
          * @return builder
          * 
@@ -1987,6 +4029,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param partnerName (Updatable) Unique name of the trusted Identity Provider.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: always
+         * * type: string
+         * * uniqueness: server
+         * 
          * @return builder
          * 
          */
@@ -1996,6 +4048,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param partnerProviderId (Updatable) Provider ID
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: server
          * 
          * @return builder
          * 
@@ -2008,6 +4070,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param partnerProviderId (Updatable) Provider ID
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: server
+         * 
          * @return builder
          * 
          */
@@ -2017,6 +4089,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param requestedAuthenticationContexts (Updatable) SAML SP authentication type.
+         * 
+         * **Added In:** 2102181953
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -2029,6 +4113,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param requestedAuthenticationContexts (Updatable) SAML SP authentication type.
          * 
+         * **Added In:** 2102181953
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -2039,6 +4135,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param requestedAuthenticationContexts (Updatable) SAML SP authentication type.
          * 
+         * **Added In:** 2102181953
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -2048,6 +4156,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param requireForceAuthn (Updatable) This SP requires requests SAML IdP to enforce re-authentication.
+         * 
+         * **Added In:** 2102181953
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -2060,6 +4180,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param requireForceAuthn (Updatable) This SP requires requests SAML IdP to enforce re-authentication.
          * 
+         * **Added In:** 2102181953
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -2069,6 +4201,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param requiresEncryptedAssertion (Updatable) SAML SP must accept encrypted assertion only.
+         * 
+         * **Added In:** 2102181953
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -2080,6 +4224,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param requiresEncryptedAssertion (Updatable) SAML SP must accept encrypted assertion only.
+         * 
+         * **Added In:** 2102181953
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -2112,6 +4268,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param samlHoKrequired (Updatable) SAML SP HoK Enabled.
          * 
+         * **Added In:** 2102181953
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -2123,6 +4291,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param samlHoKrequired (Updatable) SAML SP HoK Enabled.
          * 
+         * **Added In:** 2102181953
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -2132,6 +4312,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -2144,6 +4334,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -2154,6 +4354,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -2163,6 +4373,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param serviceInstanceIdentifier (Updatable) The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
+         * 
+         * **Added In:** 18.2.6
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: never
+         * * type: string
+         * * uniqueness: server
          * 
          * @return builder
          * 
@@ -2175,6 +4397,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param serviceInstanceIdentifier (Updatable) The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
          * 
+         * **Added In:** 18.2.6
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: never
+         * * type: string
+         * * uniqueness: server
+         * 
          * @return builder
          * 
          */
@@ -2184,6 +4418,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param shownOnLoginPage (Updatable) Set to true to indicate whether to show IdP in login page or not.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -2196,6 +4440,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param shownOnLoginPage (Updatable) Set to true to indicate whether to show IdP in login page or not.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -2205,6 +4459,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param signatureHashAlgorithm (Updatable) Signature hash algorithm.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -2217,6 +4481,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param signatureHashAlgorithm (Updatable) Signature hash algorithm.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -2226,6 +4500,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param signingCertificate (Updatable) Signing certificate
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -2238,6 +4522,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param signingCertificate (Updatable) Signing certificate
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -2247,6 +4541,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param succinctId (Updatable) Succinct ID
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: server
          * 
          * @return builder
          * 
@@ -2259,6 +4563,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param succinctId (Updatable) Succinct ID
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: server
+         * 
          * @return builder
          * 
          */
@@ -2268,6 +4582,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param tags (Updatable) A list of tags on this resource.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -2280,6 +4604,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param tags (Updatable) A list of tags on this resource.
          * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -2290,6 +4624,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param tags (Updatable) A list of tags on this resource.
          * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -2299,6 +4643,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param tenancyOcid (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -2311,6 +4665,16 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param tenancyOcid (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -2320,6 +4684,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param tenantProviderId (Updatable) The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this IdP.
+         * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -2332,6 +4708,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param tenantProviderId (Updatable) The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this IdP.
          * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -2341,6 +4729,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param type (Updatable) Identity Provider Type
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -2352,6 +4752,18 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param type (Updatable) Identity Provider Type
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -2405,6 +4817,19 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param userMappingMethod (Updatable) User mapping method.
          * 
+         * **Deprecated Since: 20.1.3**
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * * idcsValuePersistedInOtherAttribute: true
+         * 
          * @return builder
          * 
          */
@@ -2416,6 +4841,19 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
         /**
          * @param userMappingMethod (Updatable) User mapping method.
          * 
+         * **Deprecated Since: 20.1.3**
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * * idcsValuePersistedInOtherAttribute: true
+         * 
          * @return builder
          * 
          */
@@ -2425,6 +4863,22 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param userMappingStoreAttribute (Updatable) This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.&lt;br&gt;You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the &lt;b&gt;Example of a Request Body&lt;/b&gt; section of the Examples tab for the &lt;a href=&#39;./op-admin-v1-identityproviders-post.html&#39;&gt;POST&lt;/a&gt; and &lt;a href=&#39;./op-admin-v1-identityproviders-id-put.html&#39;&gt;PUT&lt;/a&gt; methods of the /IdentityProviders endpoint.
+         * 
+         * **Deprecated Since: 20.1.3**
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * * idcsValuePersistedInOtherAttribute: true
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -2436,6 +4890,22 @@ public final class DomainsIdentityProviderState extends com.pulumi.resources.Res
 
         /**
          * @param userMappingStoreAttribute (Updatable) This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.&lt;br&gt;You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the &lt;b&gt;Example of a Request Body&lt;/b&gt; section of the Examples tab for the &lt;a href=&#39;./op-admin-v1-identityproviders-post.html&#39;&gt;POST&lt;/a&gt; and &lt;a href=&#39;./op-admin-v1-identityproviders-id-put.html&#39;&gt;PUT&lt;/a&gt; methods of the /IdentityProviders endpoint.
+         * 
+         * **Deprecated Since: 20.1.3**
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * * idcsValuePersistedInOtherAttribute: true
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

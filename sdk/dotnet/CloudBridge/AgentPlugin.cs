@@ -83,6 +83,10 @@ namespace Pulumi.Oci.CloudBridge
 
         /// <summary>
         /// Unique plugin identifier path parameter.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("pluginName")]
         public Output<string> PluginName { get; private set; } = null!;
@@ -177,6 +181,10 @@ namespace Pulumi.Oci.CloudBridge
 
         /// <summary>
         /// Unique plugin identifier path parameter.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("pluginName", required: true)]
         public Input<string> PluginName { get; set; } = null!;
@@ -239,6 +247,10 @@ namespace Pulumi.Oci.CloudBridge
 
         /// <summary>
         /// Unique plugin identifier path parameter.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("pluginName")]
         public Input<string>? PluginName { get; set; }

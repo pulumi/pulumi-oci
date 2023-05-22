@@ -21,6 +21,8 @@ public final class MysqlConfigurationVariables {
     /**
      * @return If enabled, the server stores all temporary tables on disk rather than in memory.
      * 
+     * bigTables corresponds to the MySQL server variable [big_tables](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_big_tables).
+     * 
      */
     private @Nullable Boolean bigTables;
     /**
@@ -51,15 +53,23 @@ public final class MysqlConfigurationVariables {
     /**
      * @return The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
      * 
+     * connectTimeout corresponds to the MySQL system variable [connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_connect_timeout)
+     * 
+     * Increasing the connect_timeout value might help if clients frequently encounter errors of the form &#34;Lost connection to MySQL server at &#39;XXX&#39;, system error: errno&#34;.
+     * 
      */
     private @Nullable Integer connectTimeout;
     /**
      * @return Set the chunking size for updates to the global memory usage counter Global_connection_memory.
      * 
+     * connectionMemoryChunkSize corresponds to the MySQL system variable [connection_memory_chunk_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_chunk_size).
+     * 
      */
     private @Nullable Integer connectionMemoryChunkSize;
     /**
      * @return Set the maximum amount of memory that can be used by a single user connection.
+     * 
+     * connectionMemoryLimit corresponds to the MySQL system variable [connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_limit).
      * 
      */
     private @Nullable String connectionMemoryLimit;
@@ -90,10 +100,14 @@ public final class MysqlConfigurationVariables {
     /**
      * @return Set the total amount of memory that can be used by all user connections.
      * 
+     * globalConnectionMemoryLimit corresponds to the MySQL system variable [global_connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_limit).
+     * 
      */
     private @Nullable String globalConnectionMemoryLimit;
     /**
      * @return Determines whether the MySQL server calculates Global_connection_memory.
+     * 
+     * globalConnectionMemoryTracking corresponds to the MySQL system variable [global_connection_memory_tracking](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_tracking).
      * 
      */
     private @Nullable Boolean globalConnectionMemoryTracking;
@@ -114,6 +128,12 @@ public final class MysqlConfigurationVariables {
     /**
      * @return Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
      * 
+     * innodbBufferPoolDumpPct corresponds to the MySQL InnoDB system variable [innodb_buffer_pool_dump_pct](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_buffer_pool_dump_pct).
+     * 
+     * The range is 1 to 100. The default value is 25.
+     * 
+     * For example, if there are 4 buffer pools with 100 pages each, and innodb_buffer_pool_dump_pct is set to 25, the 25 most recently used pages from each buffer pool are dumped.
+     * 
      */
     private @Nullable Integer innodbBufferPoolDumpPct;
     /**
@@ -123,6 +143,10 @@ public final class MysqlConfigurationVariables {
     private @Nullable Integer innodbBufferPoolInstances;
     /**
      * @return The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
+     * 
+     * innodbBufferPoolSize corresponds to the MySQL server system variable [innodb_buffer_pool_size](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size).
+     * 
+     * The default and maximum values depend on the amount of RAM provisioned by the shape. See [Default User Variables](https://www.terraform.io/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
      * 
      */
     private @Nullable String innodbBufferPoolSize;
@@ -174,30 +198,56 @@ public final class MysqlConfigurationVariables {
     /**
      * @return Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
      * 
+     * This is the MySQL variable &#34;innodb_log_writer_threads&#34;. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_log_writer_threads)
+     * 
      */
     private @Nullable Boolean innodbLogWriterThreads;
     /**
      * @return The desired maximum purge lag in terms of transactions.
+     * 
+     * InnoDB maintains a list of transactions that have index records delete-marked by UPDATE or DELETE operations. The length of the list is the purge lag.
+     * 
+     * If this value is exceeded, a delay is imposed on INSERT, UPDATE, and DELETE operations to allow time for purge to catch up.
+     * 
+     * The default value is 0, which means there is no maximum purge lag and no delay.
+     * 
+     * innodbMaxPurgeLag corresponds to the MySQL server system variable [innodb_max_purge_lag](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag).
      * 
      */
     private @Nullable String innodbMaxPurgeLag;
     /**
      * @return The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
      * 
+     * The specified innodb_max_purge_lag_delay value is an upper limit on the delay period.
+     * 
+     * innodbMaxPurgeLagDelay corresponds to the MySQL server system variable [innodb_max_purge_lag_delay](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag_delay).
+     * 
      */
     private @Nullable Integer innodbMaxPurgeLagDelay;
     /**
      * @return The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+     * 
+     * innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable [innodb_stats_persistent_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
+     * 
+     * innodb_stats_persistent_sample_pages only applies when innodb_stats_persistent is enabled for a table; when innodb_stats_persistent is disabled, innodb_stats_transient_sample_pages applies instead.
      * 
      */
     private @Nullable String innodbStatsPersistentSamplePages;
     /**
      * @return The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
      * 
+     * innodbStatsTransientSamplePages corresponds to the MySQL InnoDB system variable [innodb_stats_transient_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_transient_sample_pages)
+     * 
+     * innodb_stats_transient_sample_pages only applies when innodb_stats_persistent is disabled for a table; when innodb_stats_persistent is enabled, innodb_stats_persistent_sample_pages applies instead.
+     * 
+     * innodb_stats_persistent is ON by default and cannot be changed. It is possible to override it using the STATS_PERSISTENT clause of the [CREATE TABLE](https://dev.mysql.com/doc/refman/8.0/en/create-table.html) and [ALTER TABLE](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html) statements.
+     * 
      */
     private @Nullable String innodbStatsTransientSamplePages;
     /**
      * @return The number of seconds the server waits for activity on an interactive connection before closing it.
+     * 
+     * interactiveTimeout corresponds to the MySQL system variable. [interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
      * 
      */
     private @Nullable Integer interactiveTimeout;
@@ -214,10 +264,14 @@ public final class MysqlConfigurationVariables {
     /**
      * @return The maximum size of one packet or any generated/intermediate string.
      * 
+     * This is the mysql variable &#34;max_allowed_packet&#34;.
+     * 
      */
     private @Nullable Integer maxAllowedPacket;
     /**
      * @return Sets the size of the transaction cache.
+     * 
+     * maxBinlogCacheSize corresponds to the MySQL server system variable [max_binlog_cache_size](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_max_binlog_cache_size).
      * 
      */
     private @Nullable String maxBinlogCacheSize;
@@ -238,6 +292,8 @@ public final class MysqlConfigurationVariables {
     private @Nullable String maxExecutionTime;
     /**
      * @return This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+     * 
+     * maxHeapTableSize corresponds to the MySQL system variable [max_heap_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_heap_table_size)
      * 
      */
     private @Nullable String maxHeapTableSize;
@@ -262,6 +318,8 @@ public final class MysqlConfigurationVariables {
     private @Nullable Integer mysqlZstdDefaultCompressionLevel;
     /**
      * @return The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
+     * 
+     * mysqlxConnectTimeout corresponds to the MySQL X Plugin system variable [mysqlx_connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_connect_timeout)
      * 
      */
     private @Nullable Integer mysqlxConnectTimeout;
@@ -301,6 +359,8 @@ public final class MysqlConfigurationVariables {
     /**
      * @return The number of seconds to wait for interactive clients to timeout.
      * 
+     * mysqlxInteractiveTimeout corresponds to the MySQL X Plugin system variable. [mysqlx_interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_interactive_timeout)
+     * 
      */
     private @Nullable Integer mysqlxInteractiveTimeout;
     /**
@@ -316,6 +376,8 @@ public final class MysqlConfigurationVariables {
     /**
      * @return The maximum size of network packets that can be received by X Plugin.
      * 
+     * This is the mysql variable &#34;mysqlx_max_allowed_packet&#34;.
+     * 
      */
     private @Nullable Integer mysqlxMaxAllowedPacket;
     /**
@@ -330,15 +392,21 @@ public final class MysqlConfigurationVariables {
     /**
      * @return The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
      * 
+     * mysqlxReadTimeout corresponds to the MySQL X Plugin system variable [mysqlx_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_read_timeout)
+     * 
      */
     private @Nullable Integer mysqlxReadTimeout;
     /**
      * @return The number of seconds that X Plugin waits for activity on a connection.
      * 
+     * mysqlxWaitTimeout corresponds to the MySQL X Plugin system variable. [mysqlx_wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_wait_timeout)
+     * 
      */
     private @Nullable Integer mysqlxWaitTimeout;
     /**
      * @return The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
+     * 
+     * mysqlxReadmysqlxWriteTimeoutTimeout corresponds to the MySQL X Plugin system variable [mysqlx_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_write_timeout)
      * 
      */
     private @Nullable Integer mysqlxWriteTimeout;
@@ -355,10 +423,14 @@ public final class MysqlConfigurationVariables {
     /**
      * @return The number of seconds to wait for more data from a connection before aborting the read.
      * 
+     * netReadTimeout corresponds to the MySQL system variable [net_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_read_timeout)
+     * 
      */
     private @Nullable Integer netReadTimeout;
     /**
      * @return The number of seconds to wait for a block to be written to a connection before aborting the write.
+     * 
+     * netWriteTimeout corresponds to the MySQL system variable [net_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_write_timeout)
      * 
      */
     private @Nullable Integer netWriteTimeout;
@@ -393,6 +465,8 @@ public final class MysqlConfigurationVariables {
     /**
      * @return Each session that must perform a sort allocates a buffer of this size.
      * 
+     * sortBufferSize corresponds to the MySQL system variable [sort_buffer_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
+     * 
      */
     private @Nullable String sortBufferSize;
     /**
@@ -423,10 +497,18 @@ public final class MysqlConfigurationVariables {
     /**
      * @return Initializes the time zone for each client that connects.
      * 
+     * This corresponds to the MySQL System Variable &#34;time_zone&#34;.
+     * 
+     * The values can be given in one of the following formats, none of which are case-sensitive:
+     * * As a string indicating an offset from UTC of the form [H]H:MM, prefixed with a + or -, such as &#39;+10:00&#39;, &#39;-6:00&#39;, or &#39;+05:30&#39;. The permitted range is &#39;-13:59&#39; to &#39;+14:00&#39;, inclusive.
+     * * As a named time zone, as defined by the &#34;IANA Time Zone database&#34;, such as &#39;Europe/Helsinki&#39;, &#39;US/Eastern&#39;, &#39;MET&#39;, or &#39;UTC&#39;.
+     * 
      */
     private @Nullable String timeZone;
     /**
      * @return The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+     * 
+     * tmp_table_size corresponds to the MySQL system variable [tmp_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_tmp_table_size)
      * 
      */
     private @Nullable String tmpTableSize;
@@ -437,6 +519,11 @@ public final class MysqlConfigurationVariables {
     private @Nullable String transactionIsolation;
     /**
      * @return The number of seconds the server waits for activity on a noninteractive connection before closing it.
+     * 
+     * waitTimeout corresponds to the MySQL system variable. [wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_wait_timeout)
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private @Nullable Integer waitTimeout;
@@ -451,6 +538,8 @@ public final class MysqlConfigurationVariables {
     }
     /**
      * @return If enabled, the server stores all temporary tables on disk rather than in memory.
+     * 
+     * bigTables corresponds to the MySQL server variable [big_tables](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_big_tables).
      * 
      */
     public Optional<Boolean> bigTables() {
@@ -494,6 +583,10 @@ public final class MysqlConfigurationVariables {
     /**
      * @return The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
      * 
+     * connectTimeout corresponds to the MySQL system variable [connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_connect_timeout)
+     * 
+     * Increasing the connect_timeout value might help if clients frequently encounter errors of the form &#34;Lost connection to MySQL server at &#39;XXX&#39;, system error: errno&#34;.
+     * 
      */
     public Optional<Integer> connectTimeout() {
         return Optional.ofNullable(this.connectTimeout);
@@ -501,12 +594,16 @@ public final class MysqlConfigurationVariables {
     /**
      * @return Set the chunking size for updates to the global memory usage counter Global_connection_memory.
      * 
+     * connectionMemoryChunkSize corresponds to the MySQL system variable [connection_memory_chunk_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_chunk_size).
+     * 
      */
     public Optional<Integer> connectionMemoryChunkSize() {
         return Optional.ofNullable(this.connectionMemoryChunkSize);
     }
     /**
      * @return Set the maximum amount of memory that can be used by a single user connection.
+     * 
+     * connectionMemoryLimit corresponds to the MySQL system variable [connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_limit).
      * 
      */
     public Optional<String> connectionMemoryLimit() {
@@ -547,12 +644,16 @@ public final class MysqlConfigurationVariables {
     /**
      * @return Set the total amount of memory that can be used by all user connections.
      * 
+     * globalConnectionMemoryLimit corresponds to the MySQL system variable [global_connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_limit).
+     * 
      */
     public Optional<String> globalConnectionMemoryLimit() {
         return Optional.ofNullable(this.globalConnectionMemoryLimit);
     }
     /**
      * @return Determines whether the MySQL server calculates Global_connection_memory.
+     * 
+     * globalConnectionMemoryTracking corresponds to the MySQL system variable [global_connection_memory_tracking](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_tracking).
      * 
      */
     public Optional<Boolean> globalConnectionMemoryTracking() {
@@ -579,6 +680,12 @@ public final class MysqlConfigurationVariables {
     /**
      * @return Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
      * 
+     * innodbBufferPoolDumpPct corresponds to the MySQL InnoDB system variable [innodb_buffer_pool_dump_pct](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_buffer_pool_dump_pct).
+     * 
+     * The range is 1 to 100. The default value is 25.
+     * 
+     * For example, if there are 4 buffer pools with 100 pages each, and innodb_buffer_pool_dump_pct is set to 25, the 25 most recently used pages from each buffer pool are dumped.
+     * 
      */
     public Optional<Integer> innodbBufferPoolDumpPct() {
         return Optional.ofNullable(this.innodbBufferPoolDumpPct);
@@ -592,6 +699,10 @@ public final class MysqlConfigurationVariables {
     }
     /**
      * @return The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
+     * 
+     * innodbBufferPoolSize corresponds to the MySQL server system variable [innodb_buffer_pool_size](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size).
+     * 
+     * The default and maximum values depend on the amount of RAM provisioned by the shape. See [Default User Variables](https://www.terraform.io/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
      * 
      */
     public Optional<String> innodbBufferPoolSize() {
@@ -663,12 +774,22 @@ public final class MysqlConfigurationVariables {
     /**
      * @return Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
      * 
+     * This is the MySQL variable &#34;innodb_log_writer_threads&#34;. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_log_writer_threads)
+     * 
      */
     public Optional<Boolean> innodbLogWriterThreads() {
         return Optional.ofNullable(this.innodbLogWriterThreads);
     }
     /**
      * @return The desired maximum purge lag in terms of transactions.
+     * 
+     * InnoDB maintains a list of transactions that have index records delete-marked by UPDATE or DELETE operations. The length of the list is the purge lag.
+     * 
+     * If this value is exceeded, a delay is imposed on INSERT, UPDATE, and DELETE operations to allow time for purge to catch up.
+     * 
+     * The default value is 0, which means there is no maximum purge lag and no delay.
+     * 
+     * innodbMaxPurgeLag corresponds to the MySQL server system variable [innodb_max_purge_lag](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag).
      * 
      */
     public Optional<String> innodbMaxPurgeLag() {
@@ -677,12 +798,20 @@ public final class MysqlConfigurationVariables {
     /**
      * @return The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
      * 
+     * The specified innodb_max_purge_lag_delay value is an upper limit on the delay period.
+     * 
+     * innodbMaxPurgeLagDelay corresponds to the MySQL server system variable [innodb_max_purge_lag_delay](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag_delay).
+     * 
      */
     public Optional<Integer> innodbMaxPurgeLagDelay() {
         return Optional.ofNullable(this.innodbMaxPurgeLagDelay);
     }
     /**
      * @return The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+     * 
+     * innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable [innodb_stats_persistent_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
+     * 
+     * innodb_stats_persistent_sample_pages only applies when innodb_stats_persistent is enabled for a table; when innodb_stats_persistent is disabled, innodb_stats_transient_sample_pages applies instead.
      * 
      */
     public Optional<String> innodbStatsPersistentSamplePages() {
@@ -691,12 +820,20 @@ public final class MysqlConfigurationVariables {
     /**
      * @return The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
      * 
+     * innodbStatsTransientSamplePages corresponds to the MySQL InnoDB system variable [innodb_stats_transient_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_transient_sample_pages)
+     * 
+     * innodb_stats_transient_sample_pages only applies when innodb_stats_persistent is disabled for a table; when innodb_stats_persistent is enabled, innodb_stats_persistent_sample_pages applies instead.
+     * 
+     * innodb_stats_persistent is ON by default and cannot be changed. It is possible to override it using the STATS_PERSISTENT clause of the [CREATE TABLE](https://dev.mysql.com/doc/refman/8.0/en/create-table.html) and [ALTER TABLE](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html) statements.
+     * 
      */
     public Optional<String> innodbStatsTransientSamplePages() {
         return Optional.ofNullable(this.innodbStatsTransientSamplePages);
     }
     /**
      * @return The number of seconds the server waits for activity on an interactive connection before closing it.
+     * 
+     * interactiveTimeout corresponds to the MySQL system variable. [interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
      * 
      */
     public Optional<Integer> interactiveTimeout() {
@@ -719,12 +856,16 @@ public final class MysqlConfigurationVariables {
     /**
      * @return The maximum size of one packet or any generated/intermediate string.
      * 
+     * This is the mysql variable &#34;max_allowed_packet&#34;.
+     * 
      */
     public Optional<Integer> maxAllowedPacket() {
         return Optional.ofNullable(this.maxAllowedPacket);
     }
     /**
      * @return Sets the size of the transaction cache.
+     * 
+     * maxBinlogCacheSize corresponds to the MySQL server system variable [max_binlog_cache_size](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_max_binlog_cache_size).
      * 
      */
     public Optional<String> maxBinlogCacheSize() {
@@ -753,6 +894,8 @@ public final class MysqlConfigurationVariables {
     }
     /**
      * @return This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+     * 
+     * maxHeapTableSize corresponds to the MySQL system variable [max_heap_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_heap_table_size)
      * 
      */
     public Optional<String> maxHeapTableSize() {
@@ -785,6 +928,8 @@ public final class MysqlConfigurationVariables {
     }
     /**
      * @return The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
+     * 
+     * mysqlxConnectTimeout corresponds to the MySQL X Plugin system variable [mysqlx_connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_connect_timeout)
      * 
      */
     public Optional<Integer> mysqlxConnectTimeout() {
@@ -836,6 +981,8 @@ public final class MysqlConfigurationVariables {
     /**
      * @return The number of seconds to wait for interactive clients to timeout.
      * 
+     * mysqlxInteractiveTimeout corresponds to the MySQL X Plugin system variable. [mysqlx_interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_interactive_timeout)
+     * 
      */
     public Optional<Integer> mysqlxInteractiveTimeout() {
         return Optional.ofNullable(this.mysqlxInteractiveTimeout);
@@ -857,6 +1004,8 @@ public final class MysqlConfigurationVariables {
     /**
      * @return The maximum size of network packets that can be received by X Plugin.
      * 
+     * This is the mysql variable &#34;mysqlx_max_allowed_packet&#34;.
+     * 
      */
     public Optional<Integer> mysqlxMaxAllowedPacket() {
         return Optional.ofNullable(this.mysqlxMaxAllowedPacket);
@@ -875,6 +1024,8 @@ public final class MysqlConfigurationVariables {
     /**
      * @return The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
      * 
+     * mysqlxReadTimeout corresponds to the MySQL X Plugin system variable [mysqlx_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_read_timeout)
+     * 
      */
     public Optional<Integer> mysqlxReadTimeout() {
         return Optional.ofNullable(this.mysqlxReadTimeout);
@@ -882,12 +1033,16 @@ public final class MysqlConfigurationVariables {
     /**
      * @return The number of seconds that X Plugin waits for activity on a connection.
      * 
+     * mysqlxWaitTimeout corresponds to the MySQL X Plugin system variable. [mysqlx_wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_wait_timeout)
+     * 
      */
     public Optional<Integer> mysqlxWaitTimeout() {
         return Optional.ofNullable(this.mysqlxWaitTimeout);
     }
     /**
      * @return The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
+     * 
+     * mysqlxReadmysqlxWriteTimeoutTimeout corresponds to the MySQL X Plugin system variable [mysqlx_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_write_timeout)
      * 
      */
     public Optional<Integer> mysqlxWriteTimeout() {
@@ -910,12 +1065,16 @@ public final class MysqlConfigurationVariables {
     /**
      * @return The number of seconds to wait for more data from a connection before aborting the read.
      * 
+     * netReadTimeout corresponds to the MySQL system variable [net_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_read_timeout)
+     * 
      */
     public Optional<Integer> netReadTimeout() {
         return Optional.ofNullable(this.netReadTimeout);
     }
     /**
      * @return The number of seconds to wait for a block to be written to a connection before aborting the write.
+     * 
+     * netWriteTimeout corresponds to the MySQL system variable [net_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_write_timeout)
      * 
      */
     public Optional<Integer> netWriteTimeout() {
@@ -960,6 +1119,8 @@ public final class MysqlConfigurationVariables {
     /**
      * @return Each session that must perform a sort allocates a buffer of this size.
      * 
+     * sortBufferSize corresponds to the MySQL system variable [sort_buffer_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
+     * 
      */
     public Optional<String> sortBufferSize() {
         return Optional.ofNullable(this.sortBufferSize);
@@ -1002,12 +1163,20 @@ public final class MysqlConfigurationVariables {
     /**
      * @return Initializes the time zone for each client that connects.
      * 
+     * This corresponds to the MySQL System Variable &#34;time_zone&#34;.
+     * 
+     * The values can be given in one of the following formats, none of which are case-sensitive:
+     * * As a string indicating an offset from UTC of the form [H]H:MM, prefixed with a + or -, such as &#39;+10:00&#39;, &#39;-6:00&#39;, or &#39;+05:30&#39;. The permitted range is &#39;-13:59&#39; to &#39;+14:00&#39;, inclusive.
+     * * As a named time zone, as defined by the &#34;IANA Time Zone database&#34;, such as &#39;Europe/Helsinki&#39;, &#39;US/Eastern&#39;, &#39;MET&#39;, or &#39;UTC&#39;.
+     * 
      */
     public Optional<String> timeZone() {
         return Optional.ofNullable(this.timeZone);
     }
     /**
      * @return The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+     * 
+     * tmp_table_size corresponds to the MySQL system variable [tmp_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_tmp_table_size)
      * 
      */
     public Optional<String> tmpTableSize() {
@@ -1022,6 +1191,11 @@ public final class MysqlConfigurationVariables {
     }
     /**
      * @return The number of seconds the server waits for activity on a noninteractive connection before closing it.
+     * 
+     * waitTimeout corresponds to the MySQL system variable. [wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_wait_timeout)
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Integer> waitTimeout() {

@@ -89,6 +89,9 @@ type PluggableDatabasesRemoteClone struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target CDB
 	TargetContainerDatabaseId pulumi.StringOutput `pulumi:"targetContainerDatabaseId"`
 	// The existing TDE wallet password of the target CDB.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetTdeWalletPassword pulumi.StringOutput `pulumi:"targetTdeWalletPassword"`
 	// The date and time the pluggable database was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -185,6 +188,9 @@ type pluggableDatabasesRemoteCloneState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target CDB
 	TargetContainerDatabaseId *string `pulumi:"targetContainerDatabaseId"`
 	// The existing TDE wallet password of the target CDB.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetTdeWalletPassword *string `pulumi:"targetTdeWalletPassword"`
 	// The date and time the pluggable database was created.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -226,6 +232,9 @@ type PluggableDatabasesRemoteCloneState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target CDB
 	TargetContainerDatabaseId pulumi.StringPtrInput
 	// The existing TDE wallet password of the target CDB.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetTdeWalletPassword pulumi.StringPtrInput
 	// The date and time the pluggable database was created.
 	TimeCreated pulumi.StringPtrInput
@@ -249,6 +258,9 @@ type pluggableDatabasesRemoteCloneArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target CDB
 	TargetContainerDatabaseId string `pulumi:"targetContainerDatabaseId"`
 	// The existing TDE wallet password of the target CDB.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetTdeWalletPassword *string `pulumi:"targetTdeWalletPassword"`
 }
 
@@ -267,6 +279,9 @@ type PluggableDatabasesRemoteCloneArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target CDB
 	TargetContainerDatabaseId pulumi.StringInput
 	// The existing TDE wallet password of the target CDB.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetTdeWalletPassword pulumi.StringPtrInput
 }
 
@@ -447,6 +462,9 @@ func (o PluggableDatabasesRemoteCloneOutput) TargetContainerDatabaseId() pulumi.
 }
 
 // The existing TDE wallet password of the target CDB.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PluggableDatabasesRemoteCloneOutput) TargetTdeWalletPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v *PluggableDatabasesRemoteClone) pulumi.StringOutput { return v.TargetTdeWalletPassword }).(pulumi.StringOutput)
 }

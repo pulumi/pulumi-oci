@@ -85,6 +85,9 @@ type BuildPipeline struct {
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The OCID of the DevOps project.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// The current state of the build pipeline.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -143,6 +146,9 @@ type buildPipelineState struct {
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The OCID of the DevOps project.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId *string `pulumi:"projectId"`
 	// The current state of the build pipeline.
 	State *string `pulumi:"state"`
@@ -170,6 +176,9 @@ type BuildPipelineState struct {
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// The OCID of the DevOps project.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringPtrInput
 	// The current state of the build pipeline.
 	State pulumi.StringPtrInput
@@ -197,6 +206,9 @@ type buildPipelineArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the DevOps project.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId string `pulumi:"projectId"`
 }
 
@@ -213,6 +225,9 @@ type BuildPipelineArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// The OCID of the DevOps project.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringInput
 }
 
@@ -339,6 +354,9 @@ func (o BuildPipelineOutput) LifecycleDetails() pulumi.StringOutput {
 }
 
 // The OCID of the DevOps project.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BuildPipelineOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v *BuildPipeline) pulumi.StringOutput { return v.ProjectId }).(pulumi.StringOutput)
 }

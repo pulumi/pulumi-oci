@@ -63,12 +63,18 @@ public final class IdpGroupMappingState extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) The name of the IdP group you want to map.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="idpGroupName")
     private @Nullable Output<String> idpGroupName;
 
     /**
      * @return (Updatable) The name of the IdP group you want to map.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> idpGroupName() {
@@ -216,6 +222,9 @@ public final class IdpGroupMappingState extends com.pulumi.resources.ResourceArg
         /**
          * @param idpGroupName (Updatable) The name of the IdP group you want to map.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -226,6 +235,9 @@ public final class IdpGroupMappingState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param idpGroupName (Updatable) The name of the IdP group you want to map.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -14,6 +14,9 @@ public final class MediaAssetMediaAssetTag {
     /**
      * @return (Updatable) The type of the media asset.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private @Nullable String type;
     /**
@@ -25,6 +28,9 @@ public final class MediaAssetMediaAssetTag {
     private MediaAssetMediaAssetTag() {}
     /**
      * @return (Updatable) The type of the media asset.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> type() {

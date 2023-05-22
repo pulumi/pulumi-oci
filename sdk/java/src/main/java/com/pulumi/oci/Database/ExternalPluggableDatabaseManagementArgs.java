@@ -39,12 +39,18 @@ public final class ExternalPluggableDatabaseManagementArgs extends com.pulumi.re
     /**
      * The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="externalPluggableDatabaseId", required=true)
     private Output<String> externalPluggableDatabaseId;
 
     /**
      * @return The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> externalPluggableDatabaseId() {
@@ -110,6 +116,9 @@ public final class ExternalPluggableDatabaseManagementArgs extends com.pulumi.re
         /**
          * @param externalPluggableDatabaseId The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -120,6 +129,9 @@ public final class ExternalPluggableDatabaseManagementArgs extends com.pulumi.re
 
         /**
          * @param externalPluggableDatabaseId The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

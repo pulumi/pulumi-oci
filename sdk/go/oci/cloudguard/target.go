@@ -108,10 +108,16 @@ type Target struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The target description.
+	//
+	// Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) DetectorTemplate identifier.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// List of inherited compartments
 	InheritedByCompartments pulumi.StringArrayOutput `pulumi:"inheritedByCompartments"`
@@ -185,10 +191,16 @@ type targetState struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The target description.
+	//
+	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) DetectorTemplate identifier.
+	//
+	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// List of inherited compartments
 	InheritedByCompartments []string `pulumi:"inheritedByCompartments"`
@@ -222,10 +234,16 @@ type TargetState struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// The target description.
+	//
+	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) DetectorTemplate identifier.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags pulumi.MapInput
 	// List of inherited compartments
 	InheritedByCompartments pulumi.StringArrayInput
@@ -263,10 +281,16 @@ type targetArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The target description.
+	//
+	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) DetectorTemplate identifier.
+	//
+	// Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) The current state of the DetectorRule.
 	State *string `pulumi:"state"`
@@ -287,10 +311,16 @@ type TargetArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// The target description.
+	//
+	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) DetectorTemplate identifier.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags pulumi.MapInput
 	// (Updatable) The current state of the DetectorRule.
 	State pulumi.StringPtrInput
@@ -402,16 +432,22 @@ func (o TargetOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The target description.
+//
+// Avoid entering confidential information.
 func (o TargetOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Target) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
 // (Updatable) DetectorTemplate identifier.
+//
+// Avoid entering confidential information.
 func (o TargetOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Target) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+//
+// Avoid entering confidential information.
 func (o TargetOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Target) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }

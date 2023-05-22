@@ -133,6 +133,10 @@ export class VirtualDeployment extends pulumi.CustomResource {
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
      * The OCID of the service mesh in which this access policy is created.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly virtualServiceId!: pulumi.Output<string>;
 
@@ -249,6 +253,10 @@ export interface VirtualDeploymentState {
     timeUpdated?: pulumi.Input<string>;
     /**
      * The OCID of the service mesh in which this access policy is created.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     virtualServiceId?: pulumi.Input<string>;
 }
@@ -291,6 +299,10 @@ export interface VirtualDeploymentArgs {
     serviceDiscovery?: pulumi.Input<inputs.ServiceMesh.VirtualDeploymentServiceDiscovery>;
     /**
      * The OCID of the service mesh in which this access policy is created.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     virtualServiceId: pulumi.Input<string>;
 }

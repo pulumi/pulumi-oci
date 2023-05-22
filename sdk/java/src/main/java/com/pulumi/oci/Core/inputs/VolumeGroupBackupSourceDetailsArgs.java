@@ -48,12 +48,18 @@ public final class VolumeGroupBackupSourceDetailsArgs extends com.pulumi.resourc
     /**
      * The OCID of the source volume group backup.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="volumeGroupBackupId", required=true)
     private Output<String> volumeGroupBackupId;
 
     /**
      * @return The OCID of the source volume group backup.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> volumeGroupBackupId() {
@@ -131,6 +137,9 @@ public final class VolumeGroupBackupSourceDetailsArgs extends com.pulumi.resourc
         /**
          * @param volumeGroupBackupId The OCID of the source volume group backup.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -141,6 +150,9 @@ public final class VolumeGroupBackupSourceDetailsArgs extends com.pulumi.resourc
 
         /**
          * @param volumeGroupBackupId The OCID of the source volume group backup.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

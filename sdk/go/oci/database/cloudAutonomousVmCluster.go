@@ -181,6 +181,9 @@ type CloudAutonomousVmCluster struct {
 	// The last date and time that the cloud Autonomous VM cluster was updated.
 	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// The total number of Autonomous Container Databases that can be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TotalContainerDatabases pulumi.IntOutput `pulumi:"totalContainerDatabases"`
 }
 
@@ -313,6 +316,9 @@ type cloudAutonomousVmClusterState struct {
 	// The last date and time that the cloud Autonomous VM cluster was updated.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The total number of Autonomous Container Databases that can be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TotalContainerDatabases *int `pulumi:"totalContainerDatabases"`
 }
 
@@ -405,6 +411,9 @@ type CloudAutonomousVmClusterState struct {
 	// The last date and time that the cloud Autonomous VM cluster was updated.
 	TimeUpdated pulumi.StringPtrInput
 	// The total number of Autonomous Container Databases that can be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TotalContainerDatabases pulumi.IntPtrInput
 }
 
@@ -455,6 +464,9 @@ type cloudAutonomousVmClusterArgs struct {
 	// The last date and time that the cloud Autonomous VM cluster was updated.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The total number of Autonomous Container Databases that can be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TotalContainerDatabases *int `pulumi:"totalContainerDatabases"`
 }
 
@@ -502,6 +514,9 @@ type CloudAutonomousVmClusterArgs struct {
 	// The last date and time that the cloud Autonomous VM cluster was updated.
 	TimeUpdated pulumi.StringPtrInput
 	// The total number of Autonomous Container Databases that can be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TotalContainerDatabases pulumi.IntPtrInput
 }
 
@@ -812,6 +827,9 @@ func (o CloudAutonomousVmClusterOutput) TimeUpdated() pulumi.StringPtrOutput {
 }
 
 // The total number of Autonomous Container Databases that can be created.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CloudAutonomousVmClusterOutput) TotalContainerDatabases() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.IntOutput { return v.TotalContainerDatabases }).(pulumi.IntOutput)
 }

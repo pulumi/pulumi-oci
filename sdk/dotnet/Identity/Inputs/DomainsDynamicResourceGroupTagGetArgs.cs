@@ -14,12 +14,34 @@ namespace Pulumi.Oci.Identity.Inputs
     {
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Tag key
+        /// 
+        /// **Added In:** 2011192329
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * type: string
+        /// * required: true
+        /// * mutability: readWrite
+        /// * returned: default
+        /// * idcsSearchable: true
+        /// * uniqueness: none
         /// </summary>
         [Input("key", required: true)]
         public Input<string> Key { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Tag value
+        /// 
+        /// **Added In:** 2011192329
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * required: true
+        /// * mutability: readWrite
+        /// * returned: default
+        /// * type: string
+        /// * idcsSearchable: true
+        /// * uniqueness: none
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

@@ -90,6 +90,10 @@ class BackendSetBackend(dict):
         :param bool is_drain: Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
         :param bool is_offline: Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param str name: A user-friendly name for the backend set that must be unique and cannot be changed.
+               
+               Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+               
+               Example: `example_backend_set`
         :param str target_id: The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
         :param int weight: The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         """
@@ -154,6 +158,10 @@ class BackendSetBackend(dict):
     def name(self) -> Optional[str]:
         """
         A user-friendly name for the backend set that must be unique and cannot be changed.
+
+        Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+
+        Example: `example_backend_set`
         """
         return pulumi.get(self, "name")
 
@@ -413,6 +421,14 @@ class NetworkLoadBalancerIpAddressReservedIp(dict):
                  id: Optional[str] = None):
         """
         :param str id: OCID of the reserved public IP address created with the virtual cloud network.
+               
+               Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+               
+               Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+               
+               Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+               
+               Example: "ocid1.publicip.oc1.phx.unique_ID"
         """
         if id is not None:
             pulumi.set(__self__, "id", id)
@@ -422,6 +438,14 @@ class NetworkLoadBalancerIpAddressReservedIp(dict):
     def id(self) -> Optional[str]:
         """
         OCID of the reserved public IP address created with the virtual cloud network.
+
+        Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+
+        Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+
+        Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+
+        Example: "ocid1.publicip.oc1.phx.unique_ID"
         """
         return pulumi.get(self, "id")
 
@@ -432,6 +456,14 @@ class NetworkLoadBalancerReservedIp(dict):
                  id: Optional[str] = None):
         """
         :param str id: OCID of the reserved public IP address created with the virtual cloud network.
+               
+               Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+               
+               Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+               
+               Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+               
+               Example: "ocid1.publicip.oc1.phx.unique_ID"
         """
         if id is not None:
             pulumi.set(__self__, "id", id)
@@ -441,6 +473,14 @@ class NetworkLoadBalancerReservedIp(dict):
     def id(self) -> Optional[str]:
         """
         OCID of the reserved public IP address created with the virtual cloud network.
+
+        Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+
+        Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+
+        Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+
+        Example: "ocid1.publicip.oc1.phx.unique_ID"
         """
         return pulumi.get(self, "id")
 
@@ -488,6 +528,10 @@ class NetworkLoadBalancersBackendSetsUnifiedBackend(dict):
         :param bool is_drain: (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
         :param bool is_offline: (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param str name: A user-friendly name for the backend set that must be unique and cannot be changed.
+               
+               Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+               
+               Example: `example_backend_set`
         :param str target_id: (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
         :param int weight: (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         """
@@ -552,6 +596,10 @@ class NetworkLoadBalancersBackendSetsUnifiedBackend(dict):
     def name(self) -> Optional[str]:
         """
         A user-friendly name for the backend set that must be unique and cannot be changed.
+
+        Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+
+        Example: `example_backend_set`
         """
         return pulumi.get(self, "name")
 

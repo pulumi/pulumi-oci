@@ -103,12 +103,18 @@ public class Model extends com.pulumi.resources.CustomResource {
     /**
      * The content length of the model_artifact.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="artifactContentLength", type=String.class, parameters={})
     private Output<String> artifactContentLength;
 
     /**
      * @return The content length of the model_artifact.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> artifactContentLength() {

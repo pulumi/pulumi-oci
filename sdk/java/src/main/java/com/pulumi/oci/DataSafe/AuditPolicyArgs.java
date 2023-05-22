@@ -126,12 +126,18 @@ public final class AuditPolicyArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="retrieveFromTargetTrigger")
     private @Nullable Output<Integer> retrieveFromTargetTrigger;
 
     /**
      * @return (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> retrieveFromTargetTrigger() {
@@ -319,6 +325,9 @@ public final class AuditPolicyArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param retrieveFromTargetTrigger (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -329,6 +338,9 @@ public final class AuditPolicyArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param retrieveFromTargetTrigger (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

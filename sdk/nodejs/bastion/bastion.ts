@@ -131,6 +131,10 @@ export class Bastion extends pulumi.CustomResource {
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * The unique identifier (OCID) of the subnet that the bastion connects to.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly targetSubnetId!: pulumi.Output<string>;
     /**
@@ -280,6 +284,10 @@ export interface BastionState {
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The unique identifier (OCID) of the subnet that the bastion connects to.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     targetSubnetId?: pulumi.Input<string>;
     /**
@@ -342,6 +350,10 @@ export interface BastionArgs {
     staticJumpHostIpAddresses?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The unique identifier (OCID) of the subnet that the bastion connects to.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     targetSubnetId: pulumi.Input<string>;
 }

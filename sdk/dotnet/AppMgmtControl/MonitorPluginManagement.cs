@@ -52,6 +52,10 @@ namespace Pulumi.Oci.AppMgmtControl
 
         /// <summary>
         /// OCID of monitored instance.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("monitoredInstanceId")]
         public Output<string> MonitoredInstanceId { get; private set; } = null!;
@@ -110,6 +114,10 @@ namespace Pulumi.Oci.AppMgmtControl
     {
         /// <summary>
         /// OCID of monitored instance.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("monitoredInstanceId", required: true)]
         public Input<string> MonitoredInstanceId { get; set; } = null!;
@@ -133,6 +141,10 @@ namespace Pulumi.Oci.AppMgmtControl
 
         /// <summary>
         /// OCID of monitored instance.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("monitoredInstanceId")]
         public Input<string>? MonitoredInstanceId { get; set; }

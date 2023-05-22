@@ -97,12 +97,18 @@ public final class ReplicationPolicyState extends com.pulumi.resources.ResourceA
     /**
      * The Object Storage namespace used for the request.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
     /**
      * @return The Object Storage namespace used for the request.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> namespace() {
@@ -314,6 +320,9 @@ public final class ReplicationPolicyState extends com.pulumi.resources.ResourceA
         /**
          * @param namespace The Object Storage namespace used for the request.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -324,6 +333,9 @@ public final class ReplicationPolicyState extends com.pulumi.resources.ResourceA
 
         /**
          * @param namespace The Object Storage namespace used for the request.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

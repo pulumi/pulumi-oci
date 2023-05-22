@@ -40,6 +40,10 @@ class OperatorControlArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] pre_approved_op_action_lists: (Updatable) List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be auto-approved if the access request only contain operator actions in the pre-approved list.
         :param pulumi.Input[str] system_message: (Updatable) This is the message that will be displayed to the operator users while accessing the system.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "approver_groups_lists", approver_groups_lists)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -198,6 +202,10 @@ class OperatorControlArgs:
     def system_message(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) This is the message that will be displayed to the operator users while accessing the system.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "system_message")
 
@@ -244,6 +252,10 @@ class _OperatorControlState:
         :param pulumi.Input[str] resource_type: resourceType for which the OperatorControl is applicable
         :param pulumi.Input[str] state: The current lifecycle state of the operator control.
         :param pulumi.Input[str] system_message: (Updatable) This is the message that will be displayed to the operator users while accessing the system.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_of_creation: Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
         :param pulumi.Input[str] time_of_deletion: Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'. Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests raised on target resources governed by the deleted operator control.
         :param pulumi.Input[str] time_of_modification: Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
@@ -458,6 +470,10 @@ class _OperatorControlState:
     def system_message(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) This is the message that will be displayed to the operator users while accessing the system.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "system_message")
 
@@ -547,6 +563,10 @@ class OperatorControl(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] pre_approved_op_action_lists: (Updatable) List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be auto-approved if the access request only contain operator actions in the pre-approved list.
         :param pulumi.Input[str] resource_type: resourceType for which the OperatorControl is applicable
         :param pulumi.Input[str] system_message: (Updatable) This is the message that will be displayed to the operator users while accessing the system.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -681,6 +701,10 @@ class OperatorControl(pulumi.CustomResource):
         :param pulumi.Input[str] resource_type: resourceType for which the OperatorControl is applicable
         :param pulumi.Input[str] state: The current lifecycle state of the operator control.
         :param pulumi.Input[str] system_message: (Updatable) This is the message that will be displayed to the operator users while accessing the system.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_of_creation: Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
         :param pulumi.Input[str] time_of_deletion: Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'. Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests raised on target resources governed by the deleted operator control.
         :param pulumi.Input[str] time_of_modification: Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
@@ -826,6 +850,10 @@ class OperatorControl(pulumi.CustomResource):
     def system_message(self) -> pulumi.Output[str]:
         """
         (Updatable) This is the message that will be displayed to the operator users while accessing the system.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "system_message")
 

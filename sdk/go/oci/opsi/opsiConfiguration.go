@@ -101,6 +101,9 @@ type OpsiConfiguration struct {
 	// OPSI configuration resource lifecycle state.
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -167,6 +170,9 @@ type opsiConfigurationState struct {
 	// OPSI configuration resource lifecycle state.
 	State *string `pulumi:"state"`
 	// (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -202,6 +208,9 @@ type OpsiConfigurationState struct {
 	// OPSI configuration resource lifecycle state.
 	State pulumi.StringPtrInput
 	// (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags pulumi.MapInput
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput
@@ -237,6 +246,9 @@ type opsiConfigurationArgs struct {
 	// (Updatable) OPSI configuration type.
 	OpsiConfigType string `pulumi:"opsiConfigType"`
 	// (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 }
 
@@ -265,6 +277,9 @@ type OpsiConfigurationArgs struct {
 	// (Updatable) OPSI configuration type.
 	OpsiConfigType pulumi.StringInput
 	// (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags pulumi.MapInput
 }
 
@@ -421,6 +436,9 @@ func (o OpsiConfigurationOutput) State() pulumi.StringOutput {
 }
 
 // (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o OpsiConfigurationOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *OpsiConfiguration) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }

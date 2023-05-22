@@ -52,6 +52,10 @@ class IntegrationInstanceArgs:
         :param pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs'] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[str] shape: Shape
         :param pulumi.Input[str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -280,6 +284,10 @@ class IntegrationInstanceArgs:
     def state(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "state")
 
@@ -336,6 +344,10 @@ class _IntegrationInstanceState:
         :param pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs'] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[str] shape: Shape
         :param pulumi.Input[str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state_message: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] time_created: The time the the Integration Instance was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
@@ -620,6 +632,10 @@ class _IntegrationInstanceState:
     def state(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "state")
 
@@ -762,6 +778,10 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['IntegrationInstanceNetworkEndpointDetailsArgs']] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[str] shape: Shape
         :param pulumi.Input[str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -961,6 +981,10 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['IntegrationInstanceNetworkEndpointDetailsArgs']] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[str] shape: Shape
         :param pulumi.Input[str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state_message: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] time_created: The time the the Integration Instance was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
@@ -1151,6 +1175,10 @@ class IntegrationInstance(pulumi.CustomResource):
     def state(self) -> pulumi.Output[str]:
         """
         (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "state")
 

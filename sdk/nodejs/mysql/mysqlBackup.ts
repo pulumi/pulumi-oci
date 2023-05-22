@@ -122,6 +122,10 @@ export class MysqlBackup extends pulumi.CustomResource {
     public /*out*/ readonly mysqlVersion!: pulumi.Output<string>;
     /**
      * (Updatable) Number of days to retain this backup.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly retentionInDays!: pulumi.Output<number>;
     /**
@@ -259,6 +263,10 @@ export interface MysqlBackupState {
     mysqlVersion?: pulumi.Input<string>;
     /**
      * (Updatable) Number of days to retain this backup.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     retentionInDays?: pulumi.Input<number>;
     /**
@@ -313,6 +321,10 @@ export interface MysqlBackupArgs {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) Number of days to retain this backup.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     retentionInDays?: pulumi.Input<number>;
 }

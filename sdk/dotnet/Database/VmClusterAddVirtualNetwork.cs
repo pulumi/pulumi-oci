@@ -201,6 +201,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("vmClusterId")]
         public Output<string> VmClusterId { get; private set; } = null!;
@@ -271,6 +275,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("vmClusterId", required: true)]
         public Input<string> VmClusterId { get; set; } = null!;
@@ -462,6 +470,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("vmClusterId")]
         public Input<string>? VmClusterId { get; set; }

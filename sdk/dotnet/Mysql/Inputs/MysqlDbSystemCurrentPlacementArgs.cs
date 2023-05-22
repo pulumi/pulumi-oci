@@ -14,12 +14,20 @@ namespace Pulumi.Oci.Mysql.Inputs
     {
         /// <summary>
         /// The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+        /// 
+        /// In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+        /// 
+        /// For a standalone DB System, this defines the availability domain in which the DB System is placed.
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
         /// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+        /// 
+        /// In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+        /// 
+        /// For a standalone DB System, this defines the fault domain in which the DB System is placed.
         /// </summary>
         [Input("faultDomain")]
         public Input<string>? FaultDomain { get; set; }

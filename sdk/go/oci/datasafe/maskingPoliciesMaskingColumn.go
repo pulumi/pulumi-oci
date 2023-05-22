@@ -137,6 +137,9 @@ type MaskingPoliciesMaskingColumn struct {
 	// The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
 	SchemaName pulumi.StringOutput `pulumi:"schemaName"`
 	// (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SensitiveTypeId pulumi.StringOutput `pulumi:"sensitiveTypeId"`
 	// The current state of the masking column.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -212,6 +215,9 @@ type maskingPoliciesMaskingColumnState struct {
 	// The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
 	SchemaName *string `pulumi:"schemaName"`
 	// (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SensitiveTypeId *string `pulumi:"sensitiveTypeId"`
 	// The current state of the masking column.
 	State *string `pulumi:"state"`
@@ -247,6 +253,9 @@ type MaskingPoliciesMaskingColumnState struct {
 	// The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
 	SchemaName pulumi.StringPtrInput
 	// (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SensitiveTypeId pulumi.StringPtrInput
 	// The current state of the masking column.
 	State pulumi.StringPtrInput
@@ -278,6 +287,9 @@ type maskingPoliciesMaskingColumnArgs struct {
 	// The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
 	SchemaName string `pulumi:"schemaName"`
 	// (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SensitiveTypeId *string `pulumi:"sensitiveTypeId"`
 }
 
@@ -300,6 +312,9 @@ type MaskingPoliciesMaskingColumnArgs struct {
 	// The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
 	SchemaName pulumi.StringInput
 	// (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SensitiveTypeId pulumi.StringPtrInput
 }
 
@@ -453,6 +468,9 @@ func (o MaskingPoliciesMaskingColumnOutput) SchemaName() pulumi.StringOutput {
 }
 
 // (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MaskingPoliciesMaskingColumnOutput) SensitiveTypeId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.StringOutput { return v.SensitiveTypeId }).(pulumi.StringOutput)
 }

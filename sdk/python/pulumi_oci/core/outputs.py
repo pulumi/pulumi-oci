@@ -789,6 +789,8 @@ class CaptureFilterVtapCaptureFilterRule(dict):
         :param 'CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs' icmp_options: (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
                * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
                * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+               
+               If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
         :param str protocol: (Updatable) The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
                * 1 = ICMP
                * 6 = TCP
@@ -837,6 +839,8 @@ class CaptureFilterVtapCaptureFilterRule(dict):
         (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
         * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
         * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+
+        If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
         """
         return pulumi.get(self, "icmp_options")
 
@@ -971,7 +975,11 @@ class CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRange(dict):
                  min: int):
         """
         :param int max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
@@ -988,7 +996,11 @@ class CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRange(dict):
     @pulumi.getter
     def min(self) -> int:
         """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "min")
 
@@ -1000,7 +1012,11 @@ class CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRange(dict):
                  min: int):
         """
         :param int max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
@@ -1017,7 +1033,11 @@ class CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRange(dict):
     @pulumi.getter
     def min(self) -> int:
         """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "min")
 
@@ -1079,7 +1099,11 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRange(dict):
                  min: int):
         """
         :param int max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
@@ -1096,7 +1120,11 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRange(dict):
     @pulumi.getter
     def min(self) -> int:
         """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "min")
 
@@ -1108,7 +1136,11 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange(dict):
                  min: int):
         """
         :param int max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
@@ -1125,7 +1157,11 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange(dict):
     @pulumi.getter
     def min(self) -> int:
         """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "min")
 
@@ -1517,6 +1553,10 @@ class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet(dict):
         """
         :param str display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         :param str subnet_id: The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
@@ -1536,6 +1576,10 @@ class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet(dict):
     def subnet_id(self) -> Optional[str]:
         """
         The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1628,6 +1672,10 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnet(dict):
                  display_name: Optional[str] = None):
         """
         :param str subnet_id: The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -1639,6 +1687,10 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnet(dict):
     def subnet_id(self) -> str:
         """
         The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1691,8 +1743,20 @@ class ComputeCapacityReservationInstanceReservationConfig(dict):
         :param str instance_shape: (Updatable) The shape requested when launching instances using reserved capacity. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance. You can list all available shapes by calling [ListComputeCapacityReservationInstanceShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/computeCapacityReservationInstanceShapes/ListComputeCapacityReservationInstanceShapes).
         :param str reserved_count: (Updatable) The total number of instances that can be launched from the capacity configuration.
         :param 'ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs' cluster_config: (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
+               
+               If the parameter is provided, the reservation is created with the HPC island and a list of HPC blocks that you specify. If a list of HPC blocks are missing or not provided, the reservation is created with any HPC blocks in the HPC island that you specify. If the values of HPC island or HPC block that you provide are not valid, an error is returned.
         :param str fault_domain: (Updatable) The fault domain to use for instances created using this capacity configuration. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the capacity is available for an instance that does not specify a fault domain. To change the fault domain for a reservation, delete the reservation and create a new one in the preferred fault domain.
+               
+               To retrieve a list of fault domains, use the `ListFaultDomains` operation in the [Identity and Access Management Service API](https://www.terraform.io/iaas/api/#/en/identity/20160918/).
+               
+               Example: `FAULT-DOMAIN-1`
         :param 'ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs' instance_shape_config: (Updatable) The shape configuration requested when launching instances in a compute capacity reservation.
+               
+               If the parameter is provided, the reservation is created with the resources that you specify. If some properties are missing or the parameter is not provided, the reservation is created with the default configuration values for the `shape` that you specify.
+               
+               Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+               
+               For more information about customizing the resources that are allocated to flexible shapes, see [Flexible Shapes](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible).
         :param str used_count: The amount of capacity in use out of the total capacity reserved in this capacity configuration.
         """
         pulumi.set(__self__, "instance_shape", instance_shape)
@@ -1727,6 +1791,8 @@ class ComputeCapacityReservationInstanceReservationConfig(dict):
     def cluster_config(self) -> Optional['outputs.ComputeCapacityReservationInstanceReservationConfigClusterConfig']:
         """
         (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
+
+        If the parameter is provided, the reservation is created with the HPC island and a list of HPC blocks that you specify. If a list of HPC blocks are missing or not provided, the reservation is created with any HPC blocks in the HPC island that you specify. If the values of HPC island or HPC block that you provide are not valid, an error is returned.
         """
         return pulumi.get(self, "cluster_config")
 
@@ -1735,6 +1801,10 @@ class ComputeCapacityReservationInstanceReservationConfig(dict):
     def fault_domain(self) -> Optional[str]:
         """
         (Updatable) The fault domain to use for instances created using this capacity configuration. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the capacity is available for an instance that does not specify a fault domain. To change the fault domain for a reservation, delete the reservation and create a new one in the preferred fault domain.
+
+        To retrieve a list of fault domains, use the `ListFaultDomains` operation in the [Identity and Access Management Service API](https://www.terraform.io/iaas/api/#/en/identity/20160918/).
+
+        Example: `FAULT-DOMAIN-1`
         """
         return pulumi.get(self, "fault_domain")
 
@@ -1743,6 +1813,12 @@ class ComputeCapacityReservationInstanceReservationConfig(dict):
     def instance_shape_config(self) -> Optional['outputs.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig']:
         """
         (Updatable) The shape configuration requested when launching instances in a compute capacity reservation.
+
+        If the parameter is provided, the reservation is created with the resources that you specify. If some properties are missing or the parameter is not provided, the reservation is created with the default configuration values for the `shape` that you specify.
+
+        Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+
+        For more information about customizing the resources that are allocated to flexible shapes, see [Flexible Shapes](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible).
         """
         return pulumi.get(self, "instance_shape_config")
 
@@ -2770,6 +2846,10 @@ class DhcpOptionsOption(dict):
         :param str type: (Updatable) The specific DHCP option. Either `DomainNameServer` (for [DhcpDnsOption](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DhcpDnsOption/)) or `SearchDomain` (for [DhcpSearchDomainOption](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DhcpSearchDomainOption/)).
         :param Sequence[str] custom_dns_servers: (Updatable) If you set `serverType` to `CustomDnsServer`, specify the IP address of at least one DNS server of your choice (three maximum).
         :param Sequence[str] search_domain_names: (Updatable) A single search domain name according to [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). During a DNS query, the OS will append this search domain name to the value being queried.
+               
+               If you set [DhcpDnsOption](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DhcpDnsOption/) to `VcnLocalPlusInternet`, and you assign a DNS label to the VCN during creation, the search domain name in the VCN's default set of DHCP options is automatically set to the VCN domain (for example, `vcn1.oraclevcn.com`).
+               
+               If you don't want to use a search domain name, omit this option from the set of DHCP options. Do not include this option with an empty list of search domain names, or with an empty string as the value for any search domain name.
         :param str server_type: (Updatable) 
                * **VcnLocal:** Reserved for future use.
                * **VcnLocalPlusInternet:** Also referred to as "Internet and VCN Resolver". Instances can resolve internet hostnames (no internet gateway is required), and can resolve hostnames of instances in the VCN. This is the default value in the default set of DHCP options in the VCN. For the Internet and VCN Resolver to work across the VCN, there must also be a DNS label set for the VCN, a DNS label set for each subnet, and a hostname for each instance. The Internet and VCN Resolver also enables reverse DNS lookup, which lets you determine the hostname corresponding to the private IP address. For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
@@ -2804,6 +2884,10 @@ class DhcpOptionsOption(dict):
     def search_domain_names(self) -> Optional[Sequence[str]]:
         """
         (Updatable) A single search domain name according to [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). During a DNS query, the OS will append this search domain name to the value being queried.
+
+        If you set [DhcpDnsOption](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DhcpDnsOption/) to `VcnLocalPlusInternet`, and you assign a DNS label to the VCN during creation, the search domain name in the VCN's default set of DHCP options is automatically set to the VCN domain (for example, `vcn1.oraclevcn.com`).
+
+        If you don't want to use a search domain name, omit this option from the set of DHCP options. Do not include this option with an empty list of search domain names, or with an empty string as the value for any search domain name.
         """
         return pulumi.get(self, "search_domain_names")
 
@@ -2850,6 +2934,10 @@ class DrgAttachmentManagementNetworkDetails(dict):
         :param str type: The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`,`VIRTUAL_CIRCUIT`
         :param str ipsec_connection_id: The IPSec connection that contains the attached IPSec tunnel.
         :param str route_table_id: The OCID of the route table the DRG attachment is using.
+               
+               For information about why you would associate a route table with a DRG attachment, see:
+               * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+               * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
         """
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "type", type)
@@ -2887,6 +2975,10 @@ class DrgAttachmentManagementNetworkDetails(dict):
     def route_table_id(self) -> Optional[str]:
         """
         The OCID of the route table the DRG attachment is using.
+
+        For information about why you would associate a route table with a DRG attachment, see:
+        * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+        * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
         """
         return pulumi.get(self, "route_table_id")
 
@@ -2925,6 +3017,11 @@ class DrgAttachmentNetworkDetails(dict):
         :param str type: (Updatable) The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
         :param str ipsec_connection_id: The IPSec connection that contains the attached IPSec tunnel.
         :param str route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the DRG attachment.
+               
+               If you don't specify a route table here, the DRG attachment is created without an associated route table. The Networking service does NOT automatically associate the attached VCN's default route table with the DRG attachment. For information about why you would associate a route table with a DRG attachment, see:
+               * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+               * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+               This field is deprecated. Instead, use the networkDetails field to specify the VCN route table for this attachment.
         :param str vcn_route_type: (Updatable) Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment. Routes from the VCN ingress route table are always imported.
         """
         pulumi.set(__self__, "id", id)
@@ -2965,6 +3062,11 @@ class DrgAttachmentNetworkDetails(dict):
     def route_table_id(self) -> Optional[str]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the DRG attachment.
+
+        If you don't specify a route table here, the DRG attachment is created without an associated route table. The Networking service does NOT automatically associate the attached VCN's default route table with the DRG attachment. For information about why you would associate a route table with a DRG attachment, see:
+        * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+        * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+        This field is deprecated. Instead, use the networkDetails field to specify the VCN route table for this attachment.
         """
         return pulumi.get(self, "route_table_id")
 
@@ -3455,8 +3557,22 @@ class InstanceAgentConfig(dict):
                  plugins_configs: Optional[Sequence['outputs.InstanceAgentConfigPluginsConfig']] = None):
         """
         :param bool are_all_plugins_disabled: (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+               
+               To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         :param bool is_management_disabled: (Updatable) Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
+               
+               These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
+               
+               The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+               * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
+               * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
         :param bool is_monitoring_disabled: (Updatable) Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
+               
+               These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
+               
+               The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+               * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
+               * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
         :param Sequence['InstanceAgentConfigPluginsConfigArgs'] plugins_configs: (Updatable) The configuration of plugins associated with this instance.
         """
         if are_all_plugins_disabled is not None:
@@ -3473,6 +3589,8 @@ class InstanceAgentConfig(dict):
     def are_all_plugins_disabled(self) -> Optional[bool]:
         """
         (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+
+        To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
         return pulumi.get(self, "are_all_plugins_disabled")
 
@@ -3481,6 +3599,12 @@ class InstanceAgentConfig(dict):
     def is_management_disabled(self) -> Optional[bool]:
         """
         (Updatable) Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
+
+        These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
+
+        The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+        * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
+        * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
         """
         return pulumi.get(self, "is_management_disabled")
 
@@ -3489,6 +3613,12 @@ class InstanceAgentConfig(dict):
     def is_monitoring_disabled(self) -> Optional[bool]:
         """
         (Updatable) Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
+
+        These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
+
+        The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+        * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
+        * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
         """
         return pulumi.get(self, "is_monitoring_disabled")
 
@@ -3525,6 +3655,8 @@ class InstanceAgentConfigPluginsConfig(dict):
                  name: str):
         """
         :param str desired_state: (Updatable) Whether the plugin should be enabled or disabled.
+               
+               To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         :param str name: (Updatable) The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
         pulumi.set(__self__, "desired_state", desired_state)
@@ -3535,6 +3667,8 @@ class InstanceAgentConfigPluginsConfig(dict):
     def desired_state(self) -> str:
         """
         (Updatable) Whether the plugin should be enabled or disabled.
+
+        To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         """
         return pulumi.get(self, "desired_state")
 
@@ -3631,6 +3765,8 @@ class InstanceConfigurationInstanceDetails(dict):
         :param str instance_type: The type of instance details. Supported instanceType is compute
         :param Sequence['InstanceConfigurationInstanceDetailsBlockVolumeArgs'] block_volumes: Block volume parameters.
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsArgs' launch_details: Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+               
+               See [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) for more information.
         :param Sequence['InstanceConfigurationInstanceDetailsSecondaryVnicArgs'] secondary_vnics: Secondary VNIC parameters.
         """
         pulumi.set(__self__, "instance_type", instance_type)
@@ -3662,6 +3798,8 @@ class InstanceConfigurationInstanceDetails(dict):
     def launch_details(self) -> Optional['outputs.InstanceConfigurationInstanceDetailsLaunchDetails']:
         """
         Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+
+        See [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) for more information.
         """
         return pulumi.get(self, "launch_details")
 
@@ -3915,6 +4053,8 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
         :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param str size_in_gbs: The size of the volume in GBs.
         :param str vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+               
+               Allowed values:
         """
         if autotune_policies is not None:
             pulumi.set(__self__, "autotune_policies", autotune_policies)
@@ -4021,6 +4161,8 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
     def vpus_per_gb(self) -> Optional[str]:
         """
         The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+
+        Allowed values:
         """
         return pulumi.get(self, "vpus_per_gb")
 
@@ -4198,22 +4340,78 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
         :param str compartment_id: The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs' create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
         :param str dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
+               
+               Dedicated VM hosts can be used when launching individual instances from an instance configuration. They cannot be used to launch instance pools.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, Any] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+               
+               They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+               
+               The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         :param str fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+               
+               If you do not specify the fault domain, the system selects one for you.
+               
+               To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+               
+               Example: `FAULT-DOMAIN-1`
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs' instance_options: Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
         :param str ipxe_script: This is an advanced option.
+               
+               When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+               
+               If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots; however, you should be aware that the same iPXE script will run every time an instance boots; not only after the initial LaunchInstance call.
+               
+               The default iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI the same way as the default iPXE script, you should use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+               
+               For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+               
+               For more information about iPXE, see http://ipxe.org.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs' launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Mapping[str, Any] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+               
+               A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
+               * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
+               * Get information about the instance, including the custom metadata that you provide when you launch the instance.
+               
+               **Providing Cloud-Init Metadata**
+               
+               You can use the following metadata key names to provide information to Cloud-Init:
+               
+               **"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+               
+               **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+               
+               **Metadata Example**
+               
+               "metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" } **Getting Metadata on the Instance**
+               
+               To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+               
+               curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+               
+               You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+               
+               The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs' platform_config: The platform configuration requested for the instance.
+               
+               If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
+               
+               Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs' preemptible_instance_config: Configuration options for preemptible instances.
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
         :param str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+               
+               You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs' shape_config: The shape configuration requested for the instance.
+               
+               If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+               
+               Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         """
         if agent_config is not None:
             pulumi.set(__self__, "agent_config", agent_config)
@@ -4317,6 +4515,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def dedicated_vm_host_id(self) -> Optional[str]:
         """
         The OCID of the dedicated virtual machine host to place the instance on.
+
+        Dedicated VM hosts can be used when launching individual instances from an instance configuration. They cannot be used to launch instance pools.
         """
         return pulumi.get(self, "dedicated_vm_host_id")
 
@@ -4341,6 +4541,10 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def extended_metadata(self) -> Optional[Mapping[str, Any]]:
         """
         Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+
+        They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+
+        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         """
         return pulumi.get(self, "extended_metadata")
 
@@ -4349,6 +4553,12 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def fault_domain(self) -> Optional[str]:
         """
         A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+
+        If you do not specify the fault domain, the system selects one for you.
+
+        To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+
+        Example: `FAULT-DOMAIN-1`
         """
         return pulumi.get(self, "fault_domain")
 
@@ -4373,6 +4583,16 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def ipxe_script(self) -> Optional[str]:
         """
         This is an advanced option.
+
+        When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+
+        If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots; however, you should be aware that the same iPXE script will run every time an instance boots; not only after the initial LaunchInstance call.
+
+        The default iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI the same way as the default iPXE script, you should use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+
+        For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+
+        For more information about iPXE, see http://ipxe.org.
         """
         return pulumi.get(self, "ipxe_script")
 
@@ -4405,6 +4625,30 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def metadata(self) -> Optional[Mapping[str, Any]]:
         """
         Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+
+        A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
+        * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
+        * Get information about the instance, including the custom metadata that you provide when you launch the instance.
+
+        **Providing Cloud-Init Metadata**
+
+        You can use the following metadata key names to provide information to Cloud-Init:
+
+        **"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+
+        **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+
+        **Metadata Example**
+
+        "metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" } **Getting Metadata on the Instance**
+
+        To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+
+        curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+
+        You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+
+        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         """
         return pulumi.get(self, "metadata")
 
@@ -4413,6 +4657,10 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def platform_config(self) -> Optional['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig']:
         """
         The platform configuration requested for the instance.
+
+        If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
+
+        Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         """
         return pulumi.get(self, "platform_config")
 
@@ -4437,6 +4685,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def shape(self) -> Optional[str]:
         """
         The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+
+        You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         """
         return pulumi.get(self, "shape")
 
@@ -4445,6 +4695,10 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def shape_config(self) -> Optional['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig']:
         """
         The shape configuration requested for the instance.
+
+        If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+
+        Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         """
         return pulumi.get(self, "shape_config")
 
@@ -4486,8 +4740,22 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfig(dict):
                  plugins_configs: Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig']] = None):
         """
         :param bool are_all_plugins_disabled: Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+               
+               To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         :param bool is_management_disabled: Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
+               
+               These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
+               
+               The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+               * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
+               * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
         :param bool is_monitoring_disabled: Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
+               
+               These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
+               
+               The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+               * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
+               * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
         :param Sequence['InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs'] plugins_configs: The configuration of plugins associated with this instance.
         """
         if are_all_plugins_disabled is not None:
@@ -4504,6 +4772,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfig(dict):
     def are_all_plugins_disabled(self) -> Optional[bool]:
         """
         Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+
+        To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
         return pulumi.get(self, "are_all_plugins_disabled")
 
@@ -4512,6 +4782,12 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfig(dict):
     def is_management_disabled(self) -> Optional[bool]:
         """
         Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
+
+        These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
+
+        The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+        * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
+        * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
         """
         return pulumi.get(self, "is_management_disabled")
 
@@ -4520,6 +4796,12 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfig(dict):
     def is_monitoring_disabled(self) -> Optional[bool]:
         """
         Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
+
+        These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
+
+        The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+        * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
+        * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
         """
         return pulumi.get(self, "is_monitoring_disabled")
 
@@ -4556,6 +4838,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig(
                  name: str):
         """
         :param str desired_state: Whether the plugin should be enabled or disabled. Accepted values are `ENABLED` and `DISABLED`
+               
+               To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         :param str name: The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
         pulumi.set(__self__, "desired_state", desired_state)
@@ -4566,6 +4850,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig(
     def desired_state(self) -> str:
         """
         Whether the plugin should be enabled or disabled. Accepted values are `ENABLED` and `DISABLED`
+
+        To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         """
         return pulumi.get(self, "desired_state")
 
@@ -4974,9 +5260,13 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig(dict):
         :param bool is_memory_encryption_enabled: Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
         :param bool is_secure_boot_enabled: Whether Secure Boot is enabled on the instance.
         :param bool is_symmetric_multi_threading_enabled: Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+               
+               Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
         :param bool is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
         :param str numa_nodes_per_socket: The number of NUMA nodes per socket (NPS).
         :param int percentage_of_cores_enabled: The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+               
+               If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
         """
         pulumi.set(__self__, "type", type)
         if are_virtual_instructions_enabled is not None:
@@ -5061,6 +5351,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig(dict):
     def is_symmetric_multi_threading_enabled(self) -> Optional[bool]:
         """
         Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+
+        Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
         """
         return pulumi.get(self, "is_symmetric_multi_threading_enabled")
 
@@ -5085,6 +5377,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig(dict):
     def percentage_of_cores_enabled(self) -> Optional[int]:
         """
         The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+
+        If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
         """
         return pulumi.get(self, "percentage_of_cores_enabled")
 
@@ -5199,6 +5493,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig(dict):
                  ocpus: Optional[float] = None):
         """
         :param str baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+               
+               The following values are supported:
         :param float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param float ocpus: The total number of OCPUs available to the instance.
@@ -5217,6 +5513,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig(dict):
     def baseline_ocpu_utilization(self) -> Optional[str]:
         """
         The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+
+        The following values are supported:
         """
         return pulumi.get(self, "baseline_ocpu_utilization")
 
@@ -5283,6 +5581,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetails(dict):
         :param str boot_volume_id: The OCID of the boot volume used to boot the instance.
         :param str boot_volume_size_in_gbs: The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
         :param str boot_volume_vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+               
+               Allowed values:
         :param str image_id: The OCID of the image used to boot the instance.
         """
         pulumi.set(__self__, "source_type", source_type)
@@ -5324,6 +5624,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetails(dict):
     def boot_volume_vpus_per_gb(self) -> Optional[str]:
         """
         The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+
+        Allowed values:
         """
         return pulumi.get(self, "boot_volume_vpus_per_gb")
 
@@ -5615,16 +5917,38 @@ class InstanceCreateVnicDetails(dict):
                  vlan_id: Optional[str] = None):
         """
         :param bool assign_private_dns_record: Whether the VNIC should be assigned a DNS record. If set to false, no DNS record registion for the VNIC; if set to true, DNS record will be registered. The default value is true.  Example: `true`
+               
+               If you specify a `hostnameLabel`, the `assignPrivateDnsRecord` is require to be set to true.
         :param str assign_public_ip: (Updatable) Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
+               
+               **Note:** This public IP address is associated with the primary private IP on the VNIC. For more information, see [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+               
+               **Note:** There's a limit to the number of [public IPs](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/) a VNIC or instance can have. If you try to create a secondary VNIC with an assigned public IP for an instance that has already reached its public IP limit, an error is returned. For information about the public IP limits, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+               
+               Example: `false`
+               
+               If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param Sequence[str] nsg_ids: (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+               
+               If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+               
+               If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+               
+               Example: `10.0.3.3`
         :param bool skip_source_dest_check: (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+               
+               If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+               
+               Example: `true`
         :param str subnet_id: Deprecated. Instead use `subnetId` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). At least one of them is required; if you provide both, the values must match.
         :param str vlan_id: Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+               
+               Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
         """
         if assign_private_dns_record is not None:
             pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
@@ -5654,6 +5978,8 @@ class InstanceCreateVnicDetails(dict):
     def assign_private_dns_record(self) -> Optional[bool]:
         """
         Whether the VNIC should be assigned a DNS record. If set to false, no DNS record registion for the VNIC; if set to true, DNS record will be registered. The default value is true.  Example: `true`
+
+        If you specify a `hostnameLabel`, the `assignPrivateDnsRecord` is require to be set to true.
         """
         return pulumi.get(self, "assign_private_dns_record")
 
@@ -5662,6 +5988,14 @@ class InstanceCreateVnicDetails(dict):
     def assign_public_ip(self) -> Optional[str]:
         """
         (Updatable) Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
+
+        **Note:** This public IP address is associated with the primary private IP on the VNIC. For more information, see [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+
+        **Note:** There's a limit to the number of [public IPs](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/) a VNIC or instance can have. If you try to create a secondary VNIC with an assigned public IP for an instance that has already reached its public IP limit, an error is returned. For information about the public IP limits, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+
+        Example: `false`
+
+        If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         """
         return pulumi.get(self, "assign_public_ip")
 
@@ -5702,6 +6036,8 @@ class InstanceCreateVnicDetails(dict):
     def nsg_ids(self) -> Optional[Sequence[str]]:
         """
         (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+
+        If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -5710,6 +6046,10 @@ class InstanceCreateVnicDetails(dict):
     def private_ip(self) -> Optional[str]:
         """
         A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+
+        If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+
+        Example: `10.0.3.3`
         """
         return pulumi.get(self, "private_ip")
 
@@ -5718,6 +6058,10 @@ class InstanceCreateVnicDetails(dict):
     def skip_source_dest_check(self) -> Optional[bool]:
         """
         (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+
+        If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+
+        Example: `true`
         """
         return pulumi.get(self, "skip_source_dest_check")
 
@@ -5734,6 +6078,8 @@ class InstanceCreateVnicDetails(dict):
     def vlan_id(self) -> Optional[str]:
         """
         Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+
+        Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
         """
         return pulumi.get(self, "vlan_id")
 
@@ -5936,9 +6282,13 @@ class InstancePlatformConfig(dict):
         :param bool is_memory_encryption_enabled: Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
         :param bool is_secure_boot_enabled: Whether Secure Boot is enabled on the instance.
         :param bool is_symmetric_multi_threading_enabled: Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+               
+               Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
         :param bool is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
         :param str numa_nodes_per_socket: The number of NUMA nodes per socket (NPS).
         :param int percentage_of_cores_enabled: The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+               
+               If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
         """
         pulumi.set(__self__, "type", type)
         if are_virtual_instructions_enabled is not None:
@@ -6023,6 +6373,8 @@ class InstancePlatformConfig(dict):
     def is_symmetric_multi_threading_enabled(self) -> Optional[bool]:
         """
         Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+
+        Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
         """
         return pulumi.get(self, "is_symmetric_multi_threading_enabled")
 
@@ -6047,6 +6399,8 @@ class InstancePlatformConfig(dict):
     def percentage_of_cores_enabled(self) -> Optional[int]:
         """
         The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+
+        If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
         """
         return pulumi.get(self, "percentage_of_cores_enabled")
 
@@ -6182,6 +6536,10 @@ class InstancePoolLoadBalancer(dict):
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
         :param str instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
         :param str state: (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "backend_set_name", backend_set_name)
         pulumi.set(__self__, "load_balancer_id", load_balancer_id)
@@ -6247,6 +6605,10 @@ class InstancePoolLoadBalancer(dict):
     def state(self) -> Optional[str]:
         """
         (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "state")
 
@@ -6285,6 +6647,14 @@ class InstancePoolPlacementConfiguration(dict):
         :param str availability_domain: (Updatable) The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
         :param str primary_subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
         :param Sequence[str] fault_domains: (Updatable) The fault domains to place instances.
+               
+               If you don't provide any values, the system makes a best effort to distribute instances across all fault domains based on capacity.
+               
+               To distribute the instances evenly across selected fault domains, provide a set of fault domains. For example, you might want instances to be evenly distributed if your applications require high availability.
+               
+               To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+               
+               Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
         :param Sequence['InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs'] secondary_vnic_subnets: (Updatable) The set of secondary VNIC data for instances in the pool.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -6315,6 +6685,14 @@ class InstancePoolPlacementConfiguration(dict):
     def fault_domains(self) -> Optional[Sequence[str]]:
         """
         (Updatable) The fault domains to place instances.
+
+        If you don't provide any values, the system makes a best effort to distribute instances across all fault domains based on capacity.
+
+        To distribute the instances evenly across selected fault domains, provide a set of fault domains. For example, you might want instances to be evenly distributed if your applications require high availability.
+
+        To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+
+        Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
         """
         return pulumi.get(self, "fault_domains")
 
@@ -6508,6 +6886,8 @@ class InstanceShapeConfig(dict):
                  processor_description: Optional[str] = None):
         """
         :param str baseline_ocpu_utilization: (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+               
+               The following values are supported:
         :param str gpu_description: A short description of the instance's graphics processing unit (GPU).
         :param int gpus: The number of GPUs available to the instance.
         :param str local_disk_description: A short description of the local disks available to this instance.
@@ -6550,6 +6930,8 @@ class InstanceShapeConfig(dict):
     def baseline_ocpu_utilization(self) -> Optional[str]:
         """
         (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+
+        The following values are supported:
         """
         return pulumi.get(self, "baseline_ocpu_utilization")
 
@@ -6680,6 +7062,8 @@ class InstanceSourceDetails(dict):
         :param str source_type: The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
         :param str boot_volume_size_in_gbs: (Updatable) The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
         :param str boot_volume_vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+               
+               Allowed values:
         :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         """
         pulumi.set(__self__, "source_id", source_id)
@@ -6720,6 +7104,8 @@ class InstanceSourceDetails(dict):
     def boot_volume_vpus_per_gb(self) -> Optional[str]:
         """
         The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+
+        Allowed values:
         """
         return pulumi.get(self, "boot_volume_vpus_per_gb")
 
@@ -6771,9 +7157,29 @@ class IpsecConnectionTunnelManagementBgpSessionInfo(dict):
         """
         :param str bgp_state: the state of the BGP.
         :param str customer_bgp_asn: If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this ASN is required and used for the tunnel's BGP session. This is the ASN of the network on the CPE end of the BGP session. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.
+               
+               If the tunnel's `routing` attribute is set to `STATIC`, the `customerBgpAsn` must be null.
+               
+               Example: `12345` (2-byte) or `1587232876` (4-byte)
         :param str customer_interface_ip: The IP address for the CPE end of the inside tunnel interface.
+               
+               If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this IP address is required and used for the tunnel's BGP session.
+               
+               If `routing` is instead set to `STATIC`, this IP address is optional. You can set this IP address to troubleshoot or monitor the tunnel.
+               
+               The value must be a /30 or /31.
+               
+               Example: `10.0.0.5/31`
         :param str oracle_bgp_asn: This is the value of the Oracle Bgp ASN in asplain format, as a string. Example: 1587232876 (4 byte ASN) or 12345 (2 byte ASN)
         :param str oracle_interface_ip: The IP address for the Oracle end of the inside tunnel interface.
+               
+               If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this IP address is required and used for the tunnel's BGP session.
+               
+               If `routing` is instead set to `STATIC`, this IP address is optional. You can set this IP address to troubleshoot or monitor the tunnel.
+               
+               The value must be a /30 or /31.
+               
+               Example: `10.0.0.4/31`
         """
         if bgp_ipv6state is not None:
             pulumi.set(__self__, "bgp_ipv6state", bgp_ipv6state)
@@ -6806,6 +7212,10 @@ class IpsecConnectionTunnelManagementBgpSessionInfo(dict):
     def customer_bgp_asn(self) -> Optional[str]:
         """
         If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this ASN is required and used for the tunnel's BGP session. This is the ASN of the network on the CPE end of the BGP session. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.
+
+        If the tunnel's `routing` attribute is set to `STATIC`, the `customerBgpAsn` must be null.
+
+        Example: `12345` (2-byte) or `1587232876` (4-byte)
         """
         return pulumi.get(self, "customer_bgp_asn")
 
@@ -6814,6 +7224,14 @@ class IpsecConnectionTunnelManagementBgpSessionInfo(dict):
     def customer_interface_ip(self) -> Optional[str]:
         """
         The IP address for the CPE end of the inside tunnel interface.
+
+        If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this IP address is required and used for the tunnel's BGP session.
+
+        If `routing` is instead set to `STATIC`, this IP address is optional. You can set this IP address to troubleshoot or monitor the tunnel.
+
+        The value must be a /30 or /31.
+
+        Example: `10.0.0.5/31`
         """
         return pulumi.get(self, "customer_interface_ip")
 
@@ -6830,6 +7248,14 @@ class IpsecConnectionTunnelManagementBgpSessionInfo(dict):
     def oracle_interface_ip(self) -> Optional[str]:
         """
         The IP address for the Oracle end of the inside tunnel interface.
+
+        If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this IP address is required and used for the tunnel's BGP session.
+
+        If `routing` is instead set to `STATIC`, this IP address is optional. You can set this IP address to troubleshoot or monitor the tunnel.
+
+        The value must be a /30 or /31.
+
+        Example: `10.0.0.4/31`
         """
         return pulumi.get(self, "oracle_interface_ip")
 
@@ -7267,7 +7693,11 @@ class NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRange(dict):
                  min: int):
         """
         :param int max: The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: The minimum port number, which must not be greater than the maximum port number.
+        :param int min: The minimum port number, which must not be greater than the maximum port number. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
@@ -7284,7 +7714,11 @@ class NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRange(dict):
     @pulumi.getter
     def min(self) -> int:
         """
-        The minimum port number, which must not be greater than the maximum port number.
+        The minimum port number, which must not be greater than the maximum port number. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "min")
 
@@ -7296,7 +7730,11 @@ class NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRange(dict):
                  min: int):
         """
         :param int max: The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: The minimum port number, which must not be greater than the maximum port number.
+        :param int min: The minimum port number, which must not be greater than the maximum port number. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
@@ -7313,7 +7751,11 @@ class NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRange(dict):
     @pulumi.getter
     def min(self) -> int:
         """
-        The minimum port number, which must not be greater than the maximum port number.
+        The minimum port number, which must not be greater than the maximum port number. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "min")
 
@@ -7365,7 +7807,11 @@ class NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRange(dict):
                  min: int):
         """
         :param int max: The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: The minimum port number, which must not be greater than the maximum port number.
+        :param int min: The minimum port number, which must not be greater than the maximum port number. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
@@ -7382,7 +7828,11 @@ class NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRange(dict):
     @pulumi.getter
     def min(self) -> int:
         """
-        The minimum port number, which must not be greater than the maximum port number.
+        The minimum port number, which must not be greater than the maximum port number. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "min")
 
@@ -7394,7 +7844,11 @@ class NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRange(dict):
                  min: int):
         """
         :param int max: The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: The minimum port number, which must not be greater than the maximum port number.
+        :param int min: The minimum port number, which must not be greater than the maximum port number. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
@@ -7411,7 +7865,11 @@ class NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRange(dict):
     @pulumi.getter
     def min(self) -> int:
         """
-        The minimum port number, which must not be greater than the maximum port number.
+        The minimum port number, which must not be greater than the maximum port number. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "min")
 
@@ -7451,8 +7909,18 @@ class RouteTableRouteRule(dict):
         """
         :param str network_entity_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of targets you can specify, see [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
         :param str cidr_block: (Updatable) Deprecated. Instead use `destination` and `destinationType`. Requests that include both `cidrBlock` and `destination` will be rejected.
+               
+               A destination IP address range in CIDR notation. Matching packets will be routed to the indicated network entity (the target).
+               
+               Cannot be an IPv6 CIDR.
+               
+               Example: `0.0.0.0/0`
         :param str description: (Updatable) An optional description of your choice for the rule.
         :param str destination: (Updatable) Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
+               
+               Allowed values:
+               * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. If you set this to an IPv6 CIDR, the route rule's target can only be a DRG or internet gateway. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+               * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you're setting up a route rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
         :param str destination_type: (Updatable) Type of destination for the rule. Required if you provide a `destination`.
         :param str route_type: (Updatable) A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
         """
@@ -7481,6 +7949,12 @@ class RouteTableRouteRule(dict):
     def cidr_block(self) -> Optional[str]:
         """
         (Updatable) Deprecated. Instead use `destination` and `destinationType`. Requests that include both `cidrBlock` and `destination` will be rejected.
+
+        A destination IP address range in CIDR notation. Matching packets will be routed to the indicated network entity (the target).
+
+        Cannot be an IPv6 CIDR.
+
+        Example: `0.0.0.0/0`
         """
         return pulumi.get(self, "cidr_block")
 
@@ -7497,6 +7971,10 @@ class RouteTableRouteRule(dict):
     def destination(self) -> Optional[str]:
         """
         (Updatable) Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
+
+        Allowed values:
+        * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. If you set this to an IPv6 CIDR, the route rule's target can only be a DRG or internet gateway. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+        * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you're setting up a route rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
         """
         return pulumi.get(self, "destination")
 
@@ -7553,12 +8031,20 @@ class SecurityListEgressSecurityRule(dict):
                  udp_options: Optional['outputs.SecurityListEgressSecurityRuleUdpOptions'] = None):
         """
         :param str destination: (Updatable) Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
+               
+               Allowed values:
+               * IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56` Note that IPv6 addressing is currently supported only in certain regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+               * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you're setting up a security list rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
         :param str protocol: (Updatable) The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
         :param str description: (Updatable) An optional description of your choice for the rule.
         :param str destination_type: (Updatable) Type of destination for the rule. The default is `CIDR_BLOCK`.
+               
+               Allowed values:
         :param 'SecurityListEgressSecurityRuleIcmpOptionsArgs' icmp_options: (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
                * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
                * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+               
+               If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
         :param bool stateless: (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
         :param 'SecurityListEgressSecurityRuleTcpOptionsArgs' tcp_options: (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
         :param 'SecurityListEgressSecurityRuleUdpOptionsArgs' udp_options: (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
@@ -7583,6 +8069,10 @@ class SecurityListEgressSecurityRule(dict):
     def destination(self) -> str:
         """
         (Updatable) Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
+
+        Allowed values:
+        * IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56` Note that IPv6 addressing is currently supported only in certain regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+        * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you're setting up a security list rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
         """
         return pulumi.get(self, "destination")
 
@@ -7607,6 +8097,8 @@ class SecurityListEgressSecurityRule(dict):
     def destination_type(self) -> Optional[str]:
         """
         (Updatable) Type of destination for the rule. The default is `CIDR_BLOCK`.
+
+        Allowed values:
         """
         return pulumi.get(self, "destination_type")
 
@@ -7617,6 +8109,8 @@ class SecurityListEgressSecurityRule(dict):
         (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
         * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
         * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+
+        If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
         """
         return pulumi.get(self, "icmp_options")
 
@@ -7890,10 +8384,16 @@ class SecurityListIngressSecurityRule(dict):
         """
         :param str protocol: (Updatable) The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
         :param str source: (Updatable) Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
+               
+               Allowed values:
+               * IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+               * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you're setting up a security list rule for traffic coming from a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
         :param str description: (Updatable) An optional description of your choice for the rule.
         :param 'SecurityListIngressSecurityRuleIcmpOptionsArgs' icmp_options: (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
                * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
                * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+               
+               If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
         :param str source_type: (Updatable) Type of source for the rule. The default is `CIDR_BLOCK`.
         :param bool stateless: (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
         :param 'SecurityListIngressSecurityRuleTcpOptionsArgs' tcp_options: (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
@@ -7927,6 +8427,10 @@ class SecurityListIngressSecurityRule(dict):
     def source(self) -> str:
         """
         (Updatable) Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
+
+        Allowed values:
+        * IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+        * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you're setting up a security list rule for traffic coming from a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
         """
         return pulumi.get(self, "source")
 
@@ -7945,6 +8449,8 @@ class SecurityListIngressSecurityRule(dict):
         (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
         * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
         * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+
+        If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
         """
         return pulumi.get(self, "icmp_options")
 
@@ -8327,9 +8833,29 @@ class VirtualCircuitCrossConnectMapping(dict):
         :param str bgp_md5auth_key: (Updatable) The key for BGP MD5 authentication. Only applicable if your system requires MD5 authentication. If empty or not set (null), that means you don't use BGP MD5 authentication.
         :param str cross_connect_or_cross_connect_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).
         :param str customer_bgp_peering_ip: (Updatable) The BGP IPv4 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv4 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv4 address of the provider's edge router. Must use a subnet mask from /28 to /31.
+               
+               There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
+               
+               Example: `10.0.0.18/31`
         :param str customer_bgp_peering_ipv6: (Updatable) IPv6 is currently supported only in the Government Cloud. The BGP IPv6 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv6 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv6 address of the provider's edge router. Only subnet masks from /64 up to /127 are allowed.
+               
+               There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
+               
+               IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+               
+               Example: `2001:db8::1/64`
         :param str oracle_bgp_peering_ip: (Updatable) The IPv4 address for Oracle's end of the BGP session. Must use a subnet mask from /28 to /31. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
+               
+               There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
+               
+               Example: `10.0.0.19/31`
         :param str oracle_bgp_peering_ipv6: (Updatable) IPv6 is currently supported only in the Government Cloud. The IPv6 address for Oracle's end of the BGP session.  Only subnet masks from /64 up to /127 are allowed. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
+               
+               There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
+               
+               Note that IPv6 addressing is currently supported only in certain regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+               
+               Example: `2001:db8::2/64`
         :param int vlan: (Updatable) The number of the specific VLAN (on the cross-connect or cross-connect group) that is assigned to this virtual circuit. Specified by the owner of the cross-connect or cross-connect group (the customer if the customer is colocated with Oracle, or the provider if the customer is connecting via provider).  Example: `200`
         """
         if bgp_md5auth_key is not None:
@@ -8368,6 +8894,10 @@ class VirtualCircuitCrossConnectMapping(dict):
     def customer_bgp_peering_ip(self) -> Optional[str]:
         """
         (Updatable) The BGP IPv4 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv4 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv4 address of the provider's edge router. Must use a subnet mask from /28 to /31.
+
+        There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
+
+        Example: `10.0.0.18/31`
         """
         return pulumi.get(self, "customer_bgp_peering_ip")
 
@@ -8376,6 +8906,12 @@ class VirtualCircuitCrossConnectMapping(dict):
     def customer_bgp_peering_ipv6(self) -> Optional[str]:
         """
         (Updatable) IPv6 is currently supported only in the Government Cloud. The BGP IPv6 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv6 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv6 address of the provider's edge router. Only subnet masks from /64 up to /127 are allowed.
+
+        There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
+
+        IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+
+        Example: `2001:db8::1/64`
         """
         return pulumi.get(self, "customer_bgp_peering_ipv6")
 
@@ -8384,6 +8920,10 @@ class VirtualCircuitCrossConnectMapping(dict):
     def oracle_bgp_peering_ip(self) -> Optional[str]:
         """
         (Updatable) The IPv4 address for Oracle's end of the BGP session. Must use a subnet mask from /28 to /31. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
+
+        There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
+
+        Example: `10.0.0.19/31`
         """
         return pulumi.get(self, "oracle_bgp_peering_ip")
 
@@ -8392,6 +8932,12 @@ class VirtualCircuitCrossConnectMapping(dict):
     def oracle_bgp_peering_ipv6(self) -> Optional[str]:
         """
         (Updatable) IPv6 is currently supported only in the Government Cloud. The IPv6 address for Oracle's end of the BGP session.  Only subnet masks from /64 up to /127 are allowed. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
+
+        There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
+
+        Note that IPv6 addressing is currently supported only in certain regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+
+        Example: `2001:db8::2/64`
         """
         return pulumi.get(self, "oracle_bgp_peering_ipv6")
 
@@ -8530,16 +9076,48 @@ class VnicAttachmentCreateVnicDetails(dict):
                  vlan_id: Optional[str] = None):
         """
         :param bool assign_private_dns_record: Whether the VNIC should be assigned a DNS record. If set to false, no DNS record registion for the VNIC; if set to true, DNS record will be registered. Example: `true`
+               
+               If you specify a `hostnameLabel`, the `assignPrivateDnsRecord` is require to be set to true.
         :param str assign_public_ip: Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
+               
+               **Note:** This public IP address is associated with the primary private IP on the VNIC. For more information, see [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+               
+               **Note:** There's a limit to the number of [public IPs](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/) a VNIC or instance can have. If you try to create a secondary VNIC with an assigned public IP for an instance that has already reached its public IP limit, an error is returned. For information about the public IP limits, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+               
+               Example: `false`
+               
+               If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+               
+               For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+               
+               When launching an instance, use this `hostnameLabel` instead of the deprecated `hostnameLabel` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). If you provide both, the values must match.
+               
+               Example: `bminstance1`
+               
+               If you specify a `vlanId`, the `hostnameLabel` cannot be specified. VNICs on a VLAN can not be assigned a hostname. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         :param Sequence[str] nsg_ids: (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+               
+               If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+               
+               If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+               
+               Example: `10.0.3.3`
         :param bool skip_source_dest_check: (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+               
+               If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+               
+               Example: `true`
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
+               
+               If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
         :param str vlan_id: Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+               
+               Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
         """
         if assign_private_dns_record is not None:
             pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
@@ -8569,6 +9147,8 @@ class VnicAttachmentCreateVnicDetails(dict):
     def assign_private_dns_record(self) -> Optional[bool]:
         """
         Whether the VNIC should be assigned a DNS record. If set to false, no DNS record registion for the VNIC; if set to true, DNS record will be registered. Example: `true`
+
+        If you specify a `hostnameLabel`, the `assignPrivateDnsRecord` is require to be set to true.
         """
         return pulumi.get(self, "assign_private_dns_record")
 
@@ -8577,6 +9157,14 @@ class VnicAttachmentCreateVnicDetails(dict):
     def assign_public_ip(self) -> Optional[str]:
         """
         Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
+
+        **Note:** This public IP address is associated with the primary private IP on the VNIC. For more information, see [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+
+        **Note:** There's a limit to the number of [public IPs](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/) a VNIC or instance can have. If you try to create a secondary VNIC with an assigned public IP for an instance that has already reached its public IP limit, an error is returned. For information about the public IP limits, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+
+        Example: `false`
+
+        If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         """
         return pulumi.get(self, "assign_public_ip")
 
@@ -8609,6 +9197,14 @@ class VnicAttachmentCreateVnicDetails(dict):
     def hostname_label(self) -> Optional[str]:
         """
         (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+
+        For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+
+        When launching an instance, use this `hostnameLabel` instead of the deprecated `hostnameLabel` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). If you provide both, the values must match.
+
+        Example: `bminstance1`
+
+        If you specify a `vlanId`, the `hostnameLabel` cannot be specified. VNICs on a VLAN can not be assigned a hostname. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         """
         return pulumi.get(self, "hostname_label")
 
@@ -8617,6 +9213,8 @@ class VnicAttachmentCreateVnicDetails(dict):
     def nsg_ids(self) -> Optional[Sequence[str]]:
         """
         (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+
+        If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -8625,6 +9223,10 @@ class VnicAttachmentCreateVnicDetails(dict):
     def private_ip(self) -> Optional[str]:
         """
         A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+
+        If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+
+        Example: `10.0.3.3`
         """
         return pulumi.get(self, "private_ip")
 
@@ -8633,6 +9235,10 @@ class VnicAttachmentCreateVnicDetails(dict):
     def skip_source_dest_check(self) -> Optional[bool]:
         """
         (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+
+        If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+
+        Example: `true`
         """
         return pulumi.get(self, "skip_source_dest_check")
 
@@ -8641,6 +9247,8 @@ class VnicAttachmentCreateVnicDetails(dict):
     def subnet_id(self) -> Optional[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
+
+        If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -8649,6 +9257,8 @@ class VnicAttachmentCreateVnicDetails(dict):
     def vlan_id(self) -> Optional[str]:
         """
         Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+
+        Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
         """
         return pulumi.get(self, "vlan_id")
 
@@ -8799,6 +9409,20 @@ class VolumeBackupPolicySchedule(dict):
         :param str month: (Updatable) The month of the year to schedule the volume backup.
         :param int offset_seconds: (Updatable) The number of seconds that the volume backup start time should be shifted from the default interval boundaries specified by the period. The volume backup start time is the frequency start time plus the offset.
         :param str offset_type: (Updatable) Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
+               
+               `hourOfDay` is applicable for periods `ONE_DAY`, `ONE_WEEK`, `ONE_MONTH` and `ONE_YEAR`.
+               
+               `dayOfWeek` is applicable for period `ONE_WEEK`.
+               
+               `dayOfMonth` is applicable for periods `ONE_MONTH` and `ONE_YEAR`.
+               
+               'month' is applicable for period 'ONE_YEAR'.
+               
+               They will be ignored in the requests for inapplicable periods.
+               
+               If value is `NUMERIC_SECONDS`, then `offsetSeconds` will be used for both requests and responses and the structured fields will be ignored in the requests and users should ignore their values from the responses.
+               
+               For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
         :param str time_zone: (Updatable) Specifies what time zone is the schedule in
                enum:
         """
@@ -8889,6 +9513,20 @@ class VolumeBackupPolicySchedule(dict):
     def offset_type(self) -> Optional[str]:
         """
         (Updatable) Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
+
+        `hourOfDay` is applicable for periods `ONE_DAY`, `ONE_WEEK`, `ONE_MONTH` and `ONE_YEAR`.
+
+        `dayOfWeek` is applicable for period `ONE_WEEK`.
+
+        `dayOfMonth` is applicable for periods `ONE_MONTH` and `ONE_YEAR`.
+
+        'month' is applicable for period 'ONE_YEAR'.
+
+        They will be ignored in the requests for inapplicable periods.
+
+        If value is `NUMERIC_SECONDS`, then `offsetSeconds` will be used for both requests and responses and the structured fields will be ignored in the requests and users should ignore their values from the responses.
+
+        For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
         """
         return pulumi.get(self, "offset_type")
 
@@ -8930,6 +9568,10 @@ class VolumeBackupSourceDetails(dict):
         """
         :param str region: The region of the volume backup source.
         :param str volume_backup_id: The OCID of the source volume backup.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str kms_key_id: The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
         """
         pulumi.set(__self__, "region", region)
@@ -8950,6 +9592,10 @@ class VolumeBackupSourceDetails(dict):
     def volume_backup_id(self) -> str:
         """
         The OCID of the source volume backup.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "volume_backup_id")
 
@@ -9053,6 +9699,11 @@ class VolumeGroupBackupSourceDetails(dict):
         """
         :param str region: The region of the volume backup source.
         :param str volume_group_backup_id: The OCID of the source volume group backup.
+               
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str kms_key_id: The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
         """
         pulumi.set(__self__, "region", region)
@@ -9073,6 +9724,11 @@ class VolumeGroupBackupSourceDetails(dict):
     def volume_group_backup_id(self) -> str:
         """
         The OCID of the source volume group backup.
+
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "volume_group_backup_id")
 
@@ -9203,7 +9859,11 @@ class VolumeGroupVolumeGroupReplica(dict):
                  volume_group_replica_id: Optional[str] = None):
         """
         :param str availability_domain: (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str volume_group_replica_id: The OCID of the volume group replica.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -9224,7 +9884,11 @@ class VolumeGroupVolumeGroupReplica(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "display_name")
 
@@ -30768,6 +31432,8 @@ class GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixResult(dict):
         """
         :param str cidr_block: Publix IP prefix (CIDR) that the customer specified.
         :param str verification_state: A filter to only return resources that match the given verification state.
+               
+               The state value is case-insensitive.
         """
         pulumi.set(__self__, "cidr_block", cidr_block)
         pulumi.set(__self__, "verification_state", verification_state)
@@ -30785,6 +31451,8 @@ class GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixResult(dict):
     def verification_state(self) -> str:
         """
         A filter to only return resources that match the given verification state.
+
+        The state value is case-insensitive.
         """
         return pulumi.get(self, "verification_state")
 

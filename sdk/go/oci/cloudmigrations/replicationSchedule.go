@@ -70,6 +70,9 @@ type ReplicationSchedule struct {
 	// (Updatable) Recurrence specification for replication schedule execution.
 	ExecutionRecurrences pulumi.StringOutput `pulumi:"executionRecurrences"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The detailed state of the replication schedule.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
@@ -130,6 +133,9 @@ type replicationScheduleState struct {
 	// (Updatable) Recurrence specification for replication schedule execution.
 	ExecutionRecurrences *string `pulumi:"executionRecurrences"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The detailed state of the replication schedule.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -153,6 +159,9 @@ type ReplicationScheduleState struct {
 	// (Updatable) Recurrence specification for replication schedule execution.
 	ExecutionRecurrences pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapInput
 	// The detailed state of the replication schedule.
 	LifecycleDetails pulumi.StringPtrInput
@@ -180,6 +189,9 @@ type replicationScheduleArgs struct {
 	// (Updatable) Recurrence specification for replication schedule execution.
 	ExecutionRecurrences string `pulumi:"executionRecurrences"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 }
 
@@ -194,6 +206,9 @@ type ReplicationScheduleArgs struct {
 	// (Updatable) Recurrence specification for replication schedule execution.
 	ExecutionRecurrences pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapInput
 }
 
@@ -305,6 +320,9 @@ func (o ReplicationScheduleOutput) ExecutionRecurrences() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ReplicationScheduleOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *ReplicationSchedule) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }

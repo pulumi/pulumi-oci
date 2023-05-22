@@ -16,12 +16,26 @@ public final class DomainsOauth2clientCredentialScopeArgs extends com.pulumi.res
     /**
      * Audience
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * 
      */
     @Import(name="audience", required=true)
     private Output<String> audience;
 
     /**
      * @return Audience
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
      * 
      */
     public Output<String> audience() {
@@ -31,12 +45,30 @@ public final class DomainsOauth2clientCredentialScopeArgs extends com.pulumi.res
     /**
      * Scope
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsScimCompliant: false
+     * * type: string
+     * * mutability: readWrite
+     * * multiValued: false
+     * * required: true
+     * * returned: default
+     * 
      */
     @Import(name="scope", required=true)
     private Output<String> scope;
 
     /**
      * @return Scope
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsScimCompliant: false
+     * * type: string
+     * * mutability: readWrite
+     * * multiValued: false
+     * * required: true
+     * * returned: default
      * 
      */
     public Output<String> scope() {
@@ -71,6 +103,13 @@ public final class DomainsOauth2clientCredentialScopeArgs extends com.pulumi.res
         /**
          * @param audience Audience
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * 
          * @return builder
          * 
          */
@@ -82,6 +121,13 @@ public final class DomainsOauth2clientCredentialScopeArgs extends com.pulumi.res
         /**
          * @param audience Audience
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * 
          * @return builder
          * 
          */
@@ -91,6 +137,15 @@ public final class DomainsOauth2clientCredentialScopeArgs extends com.pulumi.res
 
         /**
          * @param scope Scope
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsScimCompliant: false
+         * * type: string
+         * * mutability: readWrite
+         * * multiValued: false
+         * * required: true
+         * * returned: default
          * 
          * @return builder
          * 
@@ -102,6 +157,15 @@ public final class DomainsOauth2clientCredentialScopeArgs extends com.pulumi.res
 
         /**
          * @param scope Scope
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsScimCompliant: false
+         * * type: string
+         * * mutability: readWrite
+         * * multiValued: false
+         * * required: true
+         * * returned: default
          * 
          * @return builder
          * 

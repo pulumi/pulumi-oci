@@ -76,6 +76,9 @@ type AuthToken struct {
 	// The auth token. The value is available only in the response for `CreateAuthToken`, and not for `ListAuthTokens` or `UpdateAuthToken`.
 	Token pulumi.StringOutput `pulumi:"token"`
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringOutput `pulumi:"userId"`
 }
 
@@ -127,6 +130,9 @@ type authTokenState struct {
 	// The auth token. The value is available only in the response for `CreateAuthToken`, and not for `ListAuthTokens` or `UpdateAuthToken`.
 	Token *string `pulumi:"token"`
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId *string `pulumi:"userId"`
 }
 
@@ -144,6 +150,9 @@ type AuthTokenState struct {
 	// The auth token. The value is available only in the response for `CreateAuthToken`, and not for `ListAuthTokens` or `UpdateAuthToken`.
 	Token pulumi.StringPtrInput
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringPtrInput
 }
 
@@ -155,6 +164,9 @@ type authTokenArgs struct {
 	// (Updatable) The description you assign to the auth token during creation. Does not have to be unique, and it's changeable.
 	Description string `pulumi:"description"`
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId string `pulumi:"userId"`
 }
 
@@ -163,6 +175,9 @@ type AuthTokenArgs struct {
 	// (Updatable) The description you assign to the auth token during creation. Does not have to be unique, and it's changeable.
 	Description pulumi.StringInput
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringInput
 }
 
@@ -284,6 +299,9 @@ func (o AuthTokenOutput) Token() pulumi.StringOutput {
 }
 
 // The OCID of the user.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AuthTokenOutput) UserId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AuthToken) pulumi.StringOutput { return v.UserId }).(pulumi.StringOutput)
 }

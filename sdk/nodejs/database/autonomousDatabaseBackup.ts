@@ -119,6 +119,10 @@ export class AutonomousDatabaseBackup extends pulumi.CustomResource {
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
      * (Updatable) Retention period, in days, for long-term backups
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly retentionPeriodInDays!: pulumi.Output<number>;
     /**
@@ -280,6 +284,10 @@ export interface AutonomousDatabaseBackupState {
     lifecycleDetails?: pulumi.Input<string>;
     /**
      * (Updatable) Retention period, in days, for long-term backups
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     retentionPeriodInDays?: pulumi.Input<number>;
     /**
@@ -334,6 +342,10 @@ export interface AutonomousDatabaseBackupArgs {
     isLongTermBackup?: pulumi.Input<boolean>;
     /**
      * (Updatable) Retention period, in days, for long-term backups
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     retentionPeriodInDays?: pulumi.Input<number>;
 }

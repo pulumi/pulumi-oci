@@ -16,12 +16,18 @@ public final class OsnOcpuAllocationParamArgs extends com.pulumi.resources.Resou
     /**
      * (Updatable) Number of OCPU allocation
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="ocpuAllocationNumber", required=true)
     private Output<Double> ocpuAllocationNumber;
 
     /**
      * @return (Updatable) Number of OCPU allocation
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Double> ocpuAllocationNumber() {
@@ -55,6 +61,9 @@ public final class OsnOcpuAllocationParamArgs extends com.pulumi.resources.Resou
         /**
          * @param ocpuAllocationNumber (Updatable) Number of OCPU allocation
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -65,6 +74,9 @@ public final class OsnOcpuAllocationParamArgs extends com.pulumi.resources.Resou
 
         /**
          * @param ocpuAllocationNumber (Updatable) Number of OCPU allocation
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

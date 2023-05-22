@@ -104,6 +104,10 @@ namespace Pulumi.Oci.LoadBalancer
 
         /// <summary>
         /// (Updatable) Deprecated. Please use `routingPolicies` instead.
+        /// 
+        /// The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
+        /// 
+        /// Example: `example_path_route_set`
         /// </summary>
         [Output("pathRouteSetName")]
         public Output<string> PathRouteSetName { get; private set; } = null!;
@@ -134,6 +138,8 @@ namespace Pulumi.Oci.LoadBalancer
 
         /// <summary>
         /// (Updatable) The load balancer's SSL handling configuration details.
+        /// 
+        /// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         /// </summary>
         [Output("sslConfiguration")]
         public Output<Outputs.ListenerSslConfiguration?> SslConfiguration { get; private set; } = null!;
@@ -225,6 +231,10 @@ namespace Pulumi.Oci.LoadBalancer
 
         /// <summary>
         /// (Updatable) Deprecated. Please use `routingPolicies` instead.
+        /// 
+        /// The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
+        /// 
+        /// Example: `example_path_route_set`
         /// </summary>
         [Input("pathRouteSetName")]
         public Input<string>? PathRouteSetName { get; set; }
@@ -261,6 +271,8 @@ namespace Pulumi.Oci.LoadBalancer
 
         /// <summary>
         /// (Updatable) The load balancer's SSL handling configuration details.
+        /// 
+        /// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         /// </summary>
         [Input("sslConfiguration")]
         public Input<Inputs.ListenerSslConfigurationArgs>? SslConfiguration { get; set; }
@@ -311,6 +323,10 @@ namespace Pulumi.Oci.LoadBalancer
 
         /// <summary>
         /// (Updatable) Deprecated. Please use `routingPolicies` instead.
+        /// 
+        /// The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
+        /// 
+        /// Example: `example_path_route_set`
         /// </summary>
         [Input("pathRouteSetName")]
         public Input<string>? PathRouteSetName { get; set; }
@@ -347,6 +363,8 @@ namespace Pulumi.Oci.LoadBalancer
 
         /// <summary>
         /// (Updatable) The load balancer's SSL handling configuration details.
+        /// 
+        /// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         /// </summary>
         [Input("sslConfiguration")]
         public Input<Inputs.ListenerSslConfigurationGetArgs>? SslConfiguration { get; set; }

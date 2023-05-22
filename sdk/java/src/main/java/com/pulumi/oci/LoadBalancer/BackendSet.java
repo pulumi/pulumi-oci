@@ -136,12 +136,40 @@ public class BackendSet extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
      * 
+     * Session persistence enables the Load Balancing service to direct all requests that originate from a single logical client to a single backend web server. For more information, see [Session Persistence](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/sessionpersistence.htm).
+     * 
+     * When you configure LB cookie stickiness, the load balancer inserts a cookie into the response. The parameters configured in the cookie enable session stickiness. This method is useful when you have applications and Web backend services that cannot generate their own cookies.
+     * 
+     * Path route rules take precedence to determine the target backend server. The load balancer verifies that session stickiness is enabled for the backend server and that the cookie configuration (domain, path, and cookie hash) is valid for the target. The system ignores invalid cookies.
+     * 
+     * To disable LB cookie stickiness on a running load balancer, use the [UpdateBackendSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendSet/UpdateBackendSet) operation and specify `null` for the `LBCookieSessionPersistenceConfigurationDetails` object.
+     * 
+     * Example: `LBCookieSessionPersistenceConfigurationDetails: null`
+     * 
+     * **Note:** `SessionPersistenceConfigurationDetails` (application cookie stickiness) and `LBCookieSessionPersistenceConfigurationDetails` (LB cookie stickiness) are mutually exclusive. An error results if you try to enable both types of session persistence.
+     * 
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+     * 
      */
     @Export(name="lbCookieSessionPersistenceConfiguration", type=BackendSetLbCookieSessionPersistenceConfiguration.class, parameters={})
     private Output<BackendSetLbCookieSessionPersistenceConfiguration> lbCookieSessionPersistenceConfiguration;
 
     /**
      * @return (Updatable) The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
+     * 
+     * Session persistence enables the Load Balancing service to direct all requests that originate from a single logical client to a single backend web server. For more information, see [Session Persistence](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/sessionpersistence.htm).
+     * 
+     * When you configure LB cookie stickiness, the load balancer inserts a cookie into the response. The parameters configured in the cookie enable session stickiness. This method is useful when you have applications and Web backend services that cannot generate their own cookies.
+     * 
+     * Path route rules take precedence to determine the target backend server. The load balancer verifies that session stickiness is enabled for the backend server and that the cookie configuration (domain, path, and cookie hash) is valid for the target. The system ignores invalid cookies.
+     * 
+     * To disable LB cookie stickiness on a running load balancer, use the [UpdateBackendSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendSet/UpdateBackendSet) operation and specify `null` for the `LBCookieSessionPersistenceConfigurationDetails` object.
+     * 
+     * Example: `LBCookieSessionPersistenceConfigurationDetails: null`
+     * 
+     * **Note:** `SessionPersistenceConfigurationDetails` (application cookie stickiness) and `LBCookieSessionPersistenceConfigurationDetails` (LB cookie stickiness) are mutually exclusive. An error results if you try to enable both types of session persistence.
+     * 
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      * 
      */
     public Output<BackendSetLbCookieSessionPersistenceConfiguration> lbCookieSessionPersistenceConfiguration() {
@@ -164,12 +192,20 @@ public class BackendSet extends com.pulumi.resources.CustomResource {
     /**
      * A friendly name for the backend set. It must be unique and it cannot be changed.
      * 
+     * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+     * 
+     * Example: `example_backend_set`
+     * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
     /**
      * @return A friendly name for the backend set. It must be unique and it cannot be changed.
+     * 
+     * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+     * 
+     * Example: `example_backend_set`
      * 
      */
     public Output<String> name() {
@@ -192,12 +228,36 @@ public class BackendSet extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The configuration details for implementing session persistence based on a user-specified cookie name (application cookie stickiness).
      * 
+     * Session persistence enables the Load Balancing service to direct any number of requests that originate from a single logical client to a single backend web server. For more information, see [Session Persistence](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/sessionpersistence.htm).
+     * 
+     * With application cookie stickiness, the load balancer enables session persistence only when the response from a backend application server includes a `Set-cookie` header with the user-specified cookie name.
+     * 
+     * To disable application cookie stickiness on a running load balancer, use the [UpdateBackendSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendSet/UpdateBackendSet) operation and specify `null` for the `SessionPersistenceConfigurationDetails` object.
+     * 
+     * Example: `SessionPersistenceConfigurationDetails: null`
+     * 
+     * **Note:** `SessionPersistenceConfigurationDetails` (application cookie stickiness) and `LBCookieSessionPersistenceConfigurationDetails` (LB cookie stickiness) are mutually exclusive. An error results if you try to enable both types of session persistence.
+     * 
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+     * 
      */
     @Export(name="sessionPersistenceConfiguration", type=BackendSetSessionPersistenceConfiguration.class, parameters={})
     private Output<BackendSetSessionPersistenceConfiguration> sessionPersistenceConfiguration;
 
     /**
      * @return (Updatable) The configuration details for implementing session persistence based on a user-specified cookie name (application cookie stickiness).
+     * 
+     * Session persistence enables the Load Balancing service to direct any number of requests that originate from a single logical client to a single backend web server. For more information, see [Session Persistence](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/sessionpersistence.htm).
+     * 
+     * With application cookie stickiness, the load balancer enables session persistence only when the response from a backend application server includes a `Set-cookie` header with the user-specified cookie name.
+     * 
+     * To disable application cookie stickiness on a running load balancer, use the [UpdateBackendSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendSet/UpdateBackendSet) operation and specify `null` for the `SessionPersistenceConfigurationDetails` object.
+     * 
+     * Example: `SessionPersistenceConfigurationDetails: null`
+     * 
+     * **Note:** `SessionPersistenceConfigurationDetails` (application cookie stickiness) and `LBCookieSessionPersistenceConfigurationDetails` (LB cookie stickiness) are mutually exclusive. An error results if you try to enable both types of session persistence.
+     * 
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      * 
      */
     public Output<BackendSetSessionPersistenceConfiguration> sessionPersistenceConfiguration() {
@@ -206,12 +266,16 @@ public class BackendSet extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The load balancer&#39;s SSL handling configuration details.
      * 
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+     * 
      */
     @Export(name="sslConfiguration", type=BackendSetSslConfiguration.class, parameters={})
     private Output</* @Nullable */ BackendSetSslConfiguration> sslConfiguration;
 
     /**
      * @return (Updatable) The load balancer&#39;s SSL handling configuration details.
+     * 
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      * 
      */
     public Output<Optional<BackendSetSslConfiguration>> sslConfiguration() {

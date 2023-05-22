@@ -109,12 +109,18 @@ public class IdpGroupMapping extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The name of the IdP group you want to map.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="idpGroupName", type=String.class, parameters={})
     private Output<String> idpGroupName;
 
     /**
      * @return (Updatable) The name of the IdP group you want to map.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> idpGroupName() {

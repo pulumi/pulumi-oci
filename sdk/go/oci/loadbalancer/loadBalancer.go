@@ -116,10 +116,32 @@ type LoadBalancer struct {
 	// Deprecated: The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.
 	IpAddresses pulumi.StringArrayOutput `pulumi:"ipAddresses"`
 	// IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
+	//
+	// If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+	//
+	// If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+	//
+	// Example: "ipMode":"IPV6"
 	IpMode pulumi.StringOutput `pulumi:"ipMode"`
 	// Whether the load balancer has a VCN-local (private) IP address.
+	//
+	// If "true", the service assigns a private IP address to the load balancer.
+	//
+	// If "false", the service assigns a public IP address to the load balancer.
+	//
+	// A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+	//
+	// Example: `true`
 	IsPrivate pulumi.BoolOutput `pulumi:"isPrivate"`
 	// (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
+	//
+	// During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+	//
+	// The benefits of using NSGs with the load balancer include:
+	// *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+	// *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+	//
+	// Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
 	NetworkSecurityGroupIds pulumi.StringArrayOutput `pulumi:"networkSecurityGroupIds"`
 	// An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 	ReservedIps LoadBalancerReservedIpArrayOutput `pulumi:"reservedIps"`
@@ -130,6 +152,9 @@ type LoadBalancer struct {
 	// The current state of the load balancer.
 	State pulumi.StringOutput `pulumi:"state"`
 	// An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetIds pulumi.StringArrayOutput `pulumi:"subnetIds"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
@@ -193,10 +218,32 @@ type loadBalancerState struct {
 	// Deprecated: The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.
 	IpAddresses []string `pulumi:"ipAddresses"`
 	// IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
+	//
+	// If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+	//
+	// If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+	//
+	// Example: "ipMode":"IPV6"
 	IpMode *string `pulumi:"ipMode"`
 	// Whether the load balancer has a VCN-local (private) IP address.
+	//
+	// If "true", the service assigns a private IP address to the load balancer.
+	//
+	// If "false", the service assigns a public IP address to the load balancer.
+	//
+	// A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+	//
+	// Example: `true`
 	IsPrivate *bool `pulumi:"isPrivate"`
 	// (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
+	//
+	// During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+	//
+	// The benefits of using NSGs with the load balancer include:
+	// *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+	// *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+	//
+	// Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
 	// An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 	ReservedIps []LoadBalancerReservedIp `pulumi:"reservedIps"`
@@ -207,6 +254,9 @@ type loadBalancerState struct {
 	// The current state of the load balancer.
 	State *string `pulumi:"state"`
 	// An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetIds []string `pulumi:"subnetIds"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
@@ -230,10 +280,32 @@ type LoadBalancerState struct {
 	// Deprecated: The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.
 	IpAddresses pulumi.StringArrayInput
 	// IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
+	//
+	// If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+	//
+	// If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+	//
+	// Example: "ipMode":"IPV6"
 	IpMode pulumi.StringPtrInput
 	// Whether the load balancer has a VCN-local (private) IP address.
+	//
+	// If "true", the service assigns a private IP address to the load balancer.
+	//
+	// If "false", the service assigns a public IP address to the load balancer.
+	//
+	// A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+	//
+	// Example: `true`
 	IsPrivate pulumi.BoolPtrInput
 	// (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
+	//
+	// During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+	//
+	// The benefits of using NSGs with the load balancer include:
+	// *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+	// *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+	//
+	// Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
 	NetworkSecurityGroupIds pulumi.StringArrayInput
 	// An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 	ReservedIps LoadBalancerReservedIpArrayInput
@@ -244,6 +316,9 @@ type LoadBalancerState struct {
 	// The current state of the load balancer.
 	State pulumi.StringPtrInput
 	// An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetIds pulumi.StringArrayInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
@@ -265,10 +340,32 @@ type loadBalancerArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
+	//
+	// If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+	//
+	// If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+	//
+	// Example: "ipMode":"IPV6"
 	IpMode *string `pulumi:"ipMode"`
 	// Whether the load balancer has a VCN-local (private) IP address.
+	//
+	// If "true", the service assigns a private IP address to the load balancer.
+	//
+	// If "false", the service assigns a public IP address to the load balancer.
+	//
+	// A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+	//
+	// Example: `true`
 	IsPrivate *bool `pulumi:"isPrivate"`
 	// (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
+	//
+	// During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+	//
+	// The benefits of using NSGs with the load balancer include:
+	// *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+	// *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+	//
+	// Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
 	// An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 	ReservedIps []LoadBalancerReservedIp `pulumi:"reservedIps"`
@@ -277,6 +374,9 @@ type loadBalancerArgs struct {
 	// (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
 	ShapeDetails *LoadBalancerShapeDetails `pulumi:"shapeDetails"`
 	// An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetIds []string `pulumi:"subnetIds"`
 }
 
@@ -291,10 +391,32 @@ type LoadBalancerArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
+	//
+	// If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+	//
+	// If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+	//
+	// Example: "ipMode":"IPV6"
 	IpMode pulumi.StringPtrInput
 	// Whether the load balancer has a VCN-local (private) IP address.
+	//
+	// If "true", the service assigns a private IP address to the load balancer.
+	//
+	// If "false", the service assigns a public IP address to the load balancer.
+	//
+	// A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+	//
+	// Example: `true`
 	IsPrivate pulumi.BoolPtrInput
 	// (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
+	//
+	// During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+	//
+	// The benefits of using NSGs with the load balancer include:
+	// *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+	// *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+	//
+	// Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
 	NetworkSecurityGroupIds pulumi.StringArrayInput
 	// An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 	ReservedIps LoadBalancerReservedIpArrayInput
@@ -303,6 +425,9 @@ type LoadBalancerArgs struct {
 	// (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
 	ShapeDetails LoadBalancerShapeDetailsPtrInput
 	// An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetIds pulumi.StringArrayInput
 }
 
@@ -426,16 +551,38 @@ func (o LoadBalancerOutput) IpAddresses() pulumi.StringArrayOutput {
 }
 
 // IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
+//
+// If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+//
+// If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+//
+// Example: "ipMode":"IPV6"
 func (o LoadBalancerOutput) IpMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *LoadBalancer) pulumi.StringOutput { return v.IpMode }).(pulumi.StringOutput)
 }
 
 // Whether the load balancer has a VCN-local (private) IP address.
+//
+// If "true", the service assigns a private IP address to the load balancer.
+//
+// If "false", the service assigns a public IP address to the load balancer.
+//
+// A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+//
+// Example: `true`
 func (o LoadBalancerOutput) IsPrivate() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LoadBalancer) pulumi.BoolOutput { return v.IsPrivate }).(pulumi.BoolOutput)
 }
 
 // (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
+//
+// During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+//
+// The benefits of using NSGs with the load balancer include:
+// *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+// *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+//
+// Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
 func (o LoadBalancerOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *LoadBalancer) pulumi.StringArrayOutput { return v.NetworkSecurityGroupIds }).(pulumi.StringArrayOutput)
 }
@@ -461,6 +608,9 @@ func (o LoadBalancerOutput) State() pulumi.StringOutput {
 }
 
 // An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o LoadBalancerOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *LoadBalancer) pulumi.StringArrayOutput { return v.SubnetIds }).(pulumi.StringArrayOutput)
 }

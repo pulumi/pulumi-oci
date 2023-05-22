@@ -76,6 +76,10 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Indicates if the user can use SMTP passwords.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("canUseSmtpCredentials")]
         public Output<bool> CanUseSmtpCredentials { get; private set; } = null!;
@@ -158,6 +162,10 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Indicates if the user can use SMTP passwords.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("canUseSmtpCredentials")]
         public Input<bool>? CanUseSmtpCredentials { get; set; }
@@ -202,6 +210,10 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Indicates if the user can use SMTP passwords.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("canUseSmtpCredentials")]
         public Input<bool>? CanUseSmtpCredentials { get; set; }

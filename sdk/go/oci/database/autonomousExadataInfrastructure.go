@@ -125,6 +125,14 @@ type AutonomousExadataInfrastructure struct {
 	// The current lifecycle state of the Autonomous Exadata Infrastructure.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Autonomous Exadata Infrastructure is associated with.
+	//
+	// **Subnet Restrictions:**
+	// * For Autonomous Exadata Infrastructures, do not use a subnet that overlaps with 192.168.128.0/20
+	//
+	// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// The date and time the Autonomous Exadata Infrastructure was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -212,6 +220,14 @@ type autonomousExadataInfrastructureState struct {
 	// The current lifecycle state of the Autonomous Exadata Infrastructure.
 	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Autonomous Exadata Infrastructure is associated with.
+	//
+	// **Subnet Restrictions:**
+	// * For Autonomous Exadata Infrastructures, do not use a subnet that overlaps with 192.168.128.0/20
+	//
+	// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId *string `pulumi:"subnetId"`
 	// The date and time the Autonomous Exadata Infrastructure was created.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -259,6 +275,14 @@ type AutonomousExadataInfrastructureState struct {
 	// The current lifecycle state of the Autonomous Exadata Infrastructure.
 	State pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Autonomous Exadata Infrastructure is associated with.
+	//
+	// **Subnet Restrictions:**
+	// * For Autonomous Exadata Infrastructures, do not use a subnet that overlaps with 192.168.128.0/20
+	//
+	// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringPtrInput
 	// The date and time the Autonomous Exadata Infrastructure was created.
 	TimeCreated pulumi.StringPtrInput
@@ -296,6 +320,14 @@ type autonomousExadataInfrastructureArgs struct {
 	// The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
 	Shape string `pulumi:"shape"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Autonomous Exadata Infrastructure is associated with.
+	//
+	// **Subnet Restrictions:**
+	// * For Autonomous Exadata Infrastructures, do not use a subnet that overlaps with 192.168.128.0/20
+	//
+	// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -326,6 +358,14 @@ type AutonomousExadataInfrastructureArgs struct {
 	// The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
 	Shape pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Autonomous Exadata Infrastructure is associated with.
+	//
+	// **Subnet Restrictions:**
+	// * For Autonomous Exadata Infrastructures, do not use a subnet that overlaps with 192.168.128.0/20
+	//
+	// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringInput
 }
 
@@ -513,6 +553,14 @@ func (o AutonomousExadataInfrastructureOutput) State() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Autonomous Exadata Infrastructure is associated with.
+//
+// **Subnet Restrictions:**
+// * For Autonomous Exadata Infrastructures, do not use a subnet that overlaps with 192.168.128.0/20
+//
+// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AutonomousExadataInfrastructureOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousExadataInfrastructure) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
 }

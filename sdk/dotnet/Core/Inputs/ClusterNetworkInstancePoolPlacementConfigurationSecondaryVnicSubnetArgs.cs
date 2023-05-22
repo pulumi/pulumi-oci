@@ -20,6 +20,10 @@ namespace Pulumi.Oci.Core.Inputs
 
         /// <summary>
         /// The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }

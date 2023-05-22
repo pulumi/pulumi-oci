@@ -10,5 +10,6 @@ from .fusion_environment_admin_user import *
 from .fusion_environment_data_masking_activity import *
 from .fusion_environment_family import *
 from .fusion_environment_refresh_activity import *
+from .fusion_environment_service_attachment import *
 from ._inputs import *
 from . import outputs

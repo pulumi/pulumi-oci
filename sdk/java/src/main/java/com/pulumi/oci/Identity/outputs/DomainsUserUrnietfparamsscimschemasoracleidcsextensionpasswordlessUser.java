@@ -15,15 +15,51 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
     /**
      * @return (Updatable) Factor Identifier ID
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     private @Nullable DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier factorIdentifier;
     /**
      * @return (Updatable) Authentication Factor Method
      * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String factorMethod;
     /**
      * @return (Updatable) Authentication Factor Type
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable String factorType;
@@ -32,6 +68,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
     /**
      * @return (Updatable) Factor Identifier ID
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     public Optional<DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier> factorIdentifier() {
         return Optional.ofNullable(this.factorIdentifier);
@@ -39,12 +87,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
     /**
      * @return (Updatable) Authentication Factor Method
      * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> factorMethod() {
         return Optional.ofNullable(this.factorMethod);
     }
     /**
      * @return (Updatable) Authentication Factor Type
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> factorType() {

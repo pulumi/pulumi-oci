@@ -14,6 +14,8 @@ namespace Pulumi.Oci.Mysql.Inputs
     {
         /// <summary>
         /// (Updatable) The type of the filter rule.
+        /// 
+        /// For details on each type, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html)
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

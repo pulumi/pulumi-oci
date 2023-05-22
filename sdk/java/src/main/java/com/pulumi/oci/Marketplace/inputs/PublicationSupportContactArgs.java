@@ -63,12 +63,18 @@ public final class PublicationSupportContactArgs extends com.pulumi.resources.Re
     /**
      * (Updatable) The email subject line to use when contacting support.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="subject")
     private @Nullable Output<String> subject;
 
     /**
      * @return (Updatable) The email subject line to use when contacting support.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> subject() {
@@ -168,6 +174,9 @@ public final class PublicationSupportContactArgs extends com.pulumi.resources.Re
         /**
          * @param subject (Updatable) The email subject line to use when contacting support.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -178,6 +187,9 @@ public final class PublicationSupportContactArgs extends com.pulumi.resources.Re
 
         /**
          * @param subject (Updatable) The email subject line to use when contacting support.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

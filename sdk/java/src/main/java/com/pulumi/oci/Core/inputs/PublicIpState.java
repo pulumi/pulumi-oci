@@ -155,12 +155,20 @@ public final class PublicIpState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP to assign the public IP to.
      * 
+     * Required for an ephemeral public IP because it must always be assigned to a private IP (specifically a *primary* private IP).
+     * 
+     * Optional for a reserved public IP. If you don&#39;t provide it, the public IP is created but not assigned to a private IP. You can later assign the public IP with [UpdatePublicIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/UpdatePublicIp).
+     * 
      */
     @Import(name="privateIpId")
     private @Nullable Output<String> privateIpId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP to assign the public IP to.
+     * 
+     * Required for an ephemeral public IP because it must always be assigned to a private IP (specifically a *primary* private IP).
+     * 
+     * Optional for a reserved public IP. If you don&#39;t provide it, the public IP is created but not assigned to a private IP. You can later assign the public IP with [UpdatePublicIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/UpdatePublicIp).
      * 
      */
     public Optional<Output<String>> privateIpId() {
@@ -170,12 +178,18 @@ public final class PublicIpState extends com.pulumi.resources.ResourceArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="publicIpPoolId")
     private @Nullable Output<String> publicIpPoolId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> publicIpPoolId() {
@@ -456,6 +470,10 @@ public final class PublicIpState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param privateIpId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP to assign the public IP to.
          * 
+         * Required for an ephemeral public IP because it must always be assigned to a private IP (specifically a *primary* private IP).
+         * 
+         * Optional for a reserved public IP. If you don&#39;t provide it, the public IP is created but not assigned to a private IP. You can later assign the public IP with [UpdatePublicIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/UpdatePublicIp).
+         * 
          * @return builder
          * 
          */
@@ -467,6 +485,10 @@ public final class PublicIpState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param privateIpId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP to assign the public IP to.
          * 
+         * Required for an ephemeral public IP because it must always be assigned to a private IP (specifically a *primary* private IP).
+         * 
+         * Optional for a reserved public IP. If you don&#39;t provide it, the public IP is created but not assigned to a private IP. You can later assign the public IP with [UpdatePublicIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/UpdatePublicIp).
+         * 
          * @return builder
          * 
          */
@@ -476,6 +498,9 @@ public final class PublicIpState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param publicIpPoolId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -487,6 +512,9 @@ public final class PublicIpState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param publicIpPoolId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

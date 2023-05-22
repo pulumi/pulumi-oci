@@ -76,6 +76,8 @@ namespace Pulumi.Oci.Functions
 
         /// <summary>
         /// (Updatable) Application configuration. These values are passed on to the function as environment variables, functions may override application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
+        /// 
+        /// The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
         /// </summary>
         [Output("config")]
         public Output<ImmutableDictionary<string, object>> Config { get; private set; } = null!;
@@ -203,6 +205,8 @@ namespace Pulumi.Oci.Functions
 
         /// <summary>
         /// (Updatable) Application configuration. These values are passed on to the function as environment variables, functions may override application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
+        /// 
+        /// The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
         /// </summary>
         public InputMap<object> Config
         {
@@ -301,6 +305,8 @@ namespace Pulumi.Oci.Functions
 
         /// <summary>
         /// (Updatable) Application configuration. These values are passed on to the function as environment variables, functions may override application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
+        /// 
+        /// The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
         /// </summary>
         public InputMap<object> Config
         {

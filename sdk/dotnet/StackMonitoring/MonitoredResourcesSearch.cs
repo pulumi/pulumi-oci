@@ -138,30 +138,42 @@ namespace Pulumi.Oci.StackMonitoring
 
         /// <summary>
         /// Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
         /// </summary>
         [Output("timeCreatedGreaterThanOrEqualTo")]
         public Output<string?> TimeCreatedGreaterThanOrEqualTo { get; private set; } = null!;
 
         /// <summary>
         /// Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
         /// </summary>
         [Output("timeCreatedLessThan")]
         public Output<string?> TimeCreatedLessThan { get; private set; } = null!;
 
         /// <summary>
         /// Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
         /// </summary>
         [Output("timeUpdatedGreaterThanOrEqualTo")]
         public Output<string?> TimeUpdatedGreaterThanOrEqualTo { get; private set; } = null!;
 
         /// <summary>
         /// Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
         /// </summary>
         [Output("timeUpdatedLessThan")]
         public Output<string?> TimeUpdatedLessThan { get; private set; } = null!;
 
         /// <summary>
-        /// A filter to return resources that match resource type.
+        /// A filter to return resources that match resource type. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("type")]
         public Output<string?> Type { get; private set; } = null!;
@@ -304,30 +316,42 @@ namespace Pulumi.Oci.StackMonitoring
 
         /// <summary>
         /// Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
         /// </summary>
         [Input("timeCreatedGreaterThanOrEqualTo")]
         public Input<string>? TimeCreatedGreaterThanOrEqualTo { get; set; }
 
         /// <summary>
         /// Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
         /// </summary>
         [Input("timeCreatedLessThan")]
         public Input<string>? TimeCreatedLessThan { get; set; }
 
         /// <summary>
         /// Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
         /// </summary>
         [Input("timeUpdatedGreaterThanOrEqualTo")]
         public Input<string>? TimeUpdatedGreaterThanOrEqualTo { get; set; }
 
         /// <summary>
         /// Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
         /// </summary>
         [Input("timeUpdatedLessThan")]
         public Input<string>? TimeUpdatedLessThan { get; set; }
 
         /// <summary>
-        /// A filter to return resources that match resource type.
+        /// A filter to return resources that match resource type. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
@@ -444,30 +468,42 @@ namespace Pulumi.Oci.StackMonitoring
 
         /// <summary>
         /// Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
         /// </summary>
         [Input("timeCreatedGreaterThanOrEqualTo")]
         public Input<string>? TimeCreatedGreaterThanOrEqualTo { get; set; }
 
         /// <summary>
         /// Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
         /// </summary>
         [Input("timeCreatedLessThan")]
         public Input<string>? TimeCreatedLessThan { get; set; }
 
         /// <summary>
         /// Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
         /// </summary>
         [Input("timeUpdatedGreaterThanOrEqualTo")]
         public Input<string>? TimeUpdatedGreaterThanOrEqualTo { get; set; }
 
         /// <summary>
         /// Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
         /// </summary>
         [Input("timeUpdatedLessThan")]
         public Input<string>? TimeUpdatedLessThan { get; set; }
 
         /// <summary>
-        /// A filter to return resources that match resource type.
+        /// A filter to return resources that match resource type. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

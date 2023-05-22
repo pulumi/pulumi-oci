@@ -48,6 +48,9 @@ type ExternalListener struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the listener is a part of.
 	ExternalDbSystemId pulumi.StringOutput `pulumi:"externalDbSystemId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalListenerId pulumi.StringOutput `pulumi:"externalListenerId"`
 	// The name of the host on which the external listener is running.
 	HostName pulumi.StringOutput `pulumi:"hostName"`
@@ -132,6 +135,9 @@ type externalListenerState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the listener is a part of.
 	ExternalDbSystemId *string `pulumi:"externalDbSystemId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalListenerId *string `pulumi:"externalListenerId"`
 	// The name of the host on which the external listener is running.
 	HostName *string `pulumi:"hostName"`
@@ -185,6 +191,9 @@ type ExternalListenerState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the listener is a part of.
 	ExternalDbSystemId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalListenerId pulumi.StringPtrInput
 	// The name of the host on which the external listener is running.
 	HostName pulumi.StringPtrInput
@@ -224,6 +233,9 @@ type externalListenerArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
 	ExternalConnectorId *string `pulumi:"externalConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalListenerId string `pulumi:"externalListenerId"`
 }
 
@@ -232,6 +244,9 @@ type ExternalListenerArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
 	ExternalConnectorId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalListenerId pulumi.StringInput
 }
 
@@ -373,6 +388,9 @@ func (o ExternalListenerOutput) ExternalDbSystemId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ExternalListenerOutput) ExternalListenerId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalListener) pulumi.StringOutput { return v.ExternalListenerId }).(pulumi.StringOutput)
 }

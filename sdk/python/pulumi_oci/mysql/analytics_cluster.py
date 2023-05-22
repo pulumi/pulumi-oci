@@ -25,7 +25,10 @@ class AnalyticsClusterArgs:
         :param pulumi.Input[int] cluster_size: (Updatable) A change to the number of nodes in the Analytics Cluster will result in the entire cluster being torn down and re-created with the new cluster of nodes. This may result in a significant downtime for the analytics capability while the Analytics Cluster is re-provisioned.
         :param pulumi.Input[str] db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] shape_name: (Updatable) A change to the shape of the nodes in the Analytics Cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the Analytics Cluster is re-provisioned.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`.
+        :param pulumi.Input[str] state: (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`. 
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "cluster_size", cluster_size)
         pulumi.set(__self__, "db_system_id", db_system_id)
@@ -73,7 +76,10 @@ class AnalyticsClusterArgs:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`.
+        (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`. 
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "state")
 
@@ -100,7 +106,10 @@ class _AnalyticsClusterState:
         :param pulumi.Input[str] db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState.
         :param pulumi.Input[str] shape_name: (Updatable) A change to the shape of the nodes in the Analytics Cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the Analytics Cluster is re-provisioned.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`.
+        :param pulumi.Input[str] state: (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`. 
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The date and time the Analytics Cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[str] time_updated: The time the Analytics Cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
@@ -185,7 +194,10 @@ class _AnalyticsClusterState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`.
+        (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`. 
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "state")
 
@@ -259,7 +271,10 @@ class AnalyticsCluster(pulumi.CustomResource):
         :param pulumi.Input[int] cluster_size: (Updatable) A change to the number of nodes in the Analytics Cluster will result in the entire cluster being torn down and re-created with the new cluster of nodes. This may result in a significant downtime for the analytics capability while the Analytics Cluster is re-provisioned.
         :param pulumi.Input[str] db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] shape_name: (Updatable) A change to the shape of the nodes in the Analytics Cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the Analytics Cluster is re-provisioned.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`.
+        :param pulumi.Input[str] state: (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`. 
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -365,7 +380,10 @@ class AnalyticsCluster(pulumi.CustomResource):
         :param pulumi.Input[str] db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState.
         :param pulumi.Input[str] shape_name: (Updatable) A change to the shape of the nodes in the Analytics Cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the Analytics Cluster is re-provisioned.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`.
+        :param pulumi.Input[str] state: (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`. 
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The date and time the Analytics Cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[str] time_updated: The time the Analytics Cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
@@ -427,7 +445,10 @@ class AnalyticsCluster(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`.
+        (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`. 
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "state")
 

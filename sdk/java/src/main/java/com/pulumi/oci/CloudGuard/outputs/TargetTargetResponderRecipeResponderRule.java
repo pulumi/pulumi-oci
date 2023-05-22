@@ -21,6 +21,8 @@ public final class TargetTargetResponderRecipeResponderRule {
     /**
      * @return The target description.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     private @Nullable String description;
     /**
@@ -30,6 +32,8 @@ public final class TargetTargetResponderRecipeResponderRule {
     private TargetTargetResponderRecipeResponderRuleDetails details;
     /**
      * @return (Updatable) DetectorTemplate identifier.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
@@ -45,6 +49,9 @@ public final class TargetTargetResponderRecipeResponderRule {
     private @Nullable List<String> policies;
     /**
      * @return (Updatable) Identifier for ResponderRule.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String responderRuleId;
@@ -85,6 +92,8 @@ public final class TargetTargetResponderRecipeResponderRule {
     /**
      * @return The target description.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
@@ -98,6 +107,8 @@ public final class TargetTargetResponderRecipeResponderRule {
     }
     /**
      * @return (Updatable) DetectorTemplate identifier.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {
@@ -119,6 +130,9 @@ public final class TargetTargetResponderRecipeResponderRule {
     }
     /**
      * @return (Updatable) Identifier for ResponderRule.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String responderRuleId() {

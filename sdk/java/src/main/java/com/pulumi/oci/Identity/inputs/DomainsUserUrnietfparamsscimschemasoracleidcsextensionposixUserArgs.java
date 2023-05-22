@@ -19,12 +19,30 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUs
     /**
      * (Updatable) General information about the POSIX account such as their real name and phone number
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="gecos")
     private @Nullable Output<String> gecos;
 
     /**
      * @return (Updatable) General information about the POSIX account such as their real name and phone number
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> gecos() {
@@ -34,12 +52,30 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUs
     /**
      * (Updatable) Primary Group identifier of the POSIX user
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="gidNumber")
     private @Nullable Output<Integer> gidNumber;
 
     /**
      * @return (Updatable) Primary Group identifier of the POSIX user
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> gidNumber() {
@@ -49,12 +85,30 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUs
     /**
      * (Updatable) The absolute path to the home directory of the POSIX account
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="homeDirectory")
     private @Nullable Output<String> homeDirectory;
 
     /**
      * @return (Updatable) The absolute path to the home directory of the POSIX account
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> homeDirectory() {
@@ -64,12 +118,30 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUs
     /**
      * (Updatable) The path to the login shell of the POSIX account
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="loginShell")
     private @Nullable Output<String> loginShell;
 
     /**
      * @return (Updatable) The path to the login shell of the POSIX account
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> loginShell() {
@@ -79,12 +151,30 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUs
     /**
      * (Updatable) Integer uniquely identifying a user in a POSIX administrative domain
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: integer
+     * * uniqueness: server
+     * 
      */
     @Import(name="uidNumber")
     private @Nullable Output<Integer> uidNumber;
 
     /**
      * @return (Updatable) Integer uniquely identifying a user in a POSIX administrative domain
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: integer
+     * * uniqueness: server
      * 
      */
     public Optional<Output<Integer>> uidNumber() {
@@ -122,6 +212,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUs
         /**
          * @param gecos (Updatable) General information about the POSIX account such as their real name and phone number
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -133,6 +232,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUs
         /**
          * @param gecos (Updatable) General information about the POSIX account such as their real name and phone number
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -142,6 +250,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUs
 
         /**
          * @param gidNumber (Updatable) Primary Group identifier of the POSIX user
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -154,6 +271,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUs
         /**
          * @param gidNumber (Updatable) Primary Group identifier of the POSIX user
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -163,6 +289,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUs
 
         /**
          * @param homeDirectory (Updatable) The absolute path to the home directory of the POSIX account
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -175,6 +310,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUs
         /**
          * @param homeDirectory (Updatable) The absolute path to the home directory of the POSIX account
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -184,6 +328,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUs
 
         /**
          * @param loginShell (Updatable) The path to the login shell of the POSIX account
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -196,6 +349,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUs
         /**
          * @param loginShell (Updatable) The path to the login shell of the POSIX account
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -205,6 +367,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUs
 
         /**
          * @param uidNumber (Updatable) Integer uniquely identifying a user in a POSIX administrative domain
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: integer
+         * * uniqueness: server
          * 
          * @return builder
          * 
@@ -216,6 +387,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUs
 
         /**
          * @param uidNumber (Updatable) Integer uniquely identifying a user in a POSIX administrative domain
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: integer
+         * * uniqueness: server
          * 
          * @return builder
          * 

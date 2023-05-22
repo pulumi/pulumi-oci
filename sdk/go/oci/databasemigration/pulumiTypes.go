@@ -754,6 +754,9 @@ type ConnectionVaultDetails struct {
 	// (Updatable) OCID of the vault encryption key
 	KeyId string `pulumi:"keyId"`
 	// (Updatable) OCID of the vault
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VaultId string `pulumi:"vaultId"`
 }
 
@@ -774,6 +777,9 @@ type ConnectionVaultDetailsArgs struct {
 	// (Updatable) OCID of the vault encryption key
 	KeyId pulumi.StringInput `pulumi:"keyId"`
 	// (Updatable) OCID of the vault
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VaultId pulumi.StringInput `pulumi:"vaultId"`
 }
 
@@ -865,6 +871,9 @@ func (o ConnectionVaultDetailsOutput) KeyId() pulumi.StringOutput {
 }
 
 // (Updatable) OCID of the vault
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ConnectionVaultDetailsOutput) VaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v ConnectionVaultDetails) string { return v.VaultId }).(pulumi.StringOutput)
 }
@@ -914,6 +923,9 @@ func (o ConnectionVaultDetailsPtrOutput) KeyId() pulumi.StringPtrOutput {
 }
 
 // (Updatable) OCID of the vault
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ConnectionVaultDetailsPtrOutput) VaultId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConnectionVaultDetails) *string {
 		if v == nil {
@@ -5479,6 +5491,9 @@ type MigrationVaultDetails struct {
 	// (Updatable) OCID of the vault encryption key
 	KeyId string `pulumi:"keyId"`
 	// (Updatable) OCID of the vault
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VaultId string `pulumi:"vaultId"`
 }
 
@@ -5499,6 +5514,9 @@ type MigrationVaultDetailsArgs struct {
 	// (Updatable) OCID of the vault encryption key
 	KeyId pulumi.StringInput `pulumi:"keyId"`
 	// (Updatable) OCID of the vault
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VaultId pulumi.StringInput `pulumi:"vaultId"`
 }
 
@@ -5590,6 +5608,9 @@ func (o MigrationVaultDetailsOutput) KeyId() pulumi.StringOutput {
 }
 
 // (Updatable) OCID of the vault
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MigrationVaultDetailsOutput) VaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationVaultDetails) string { return v.VaultId }).(pulumi.StringOutput)
 }
@@ -5639,6 +5660,9 @@ func (o MigrationVaultDetailsPtrOutput) KeyId() pulumi.StringPtrOutput {
 }
 
 // (Updatable) OCID of the vault
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MigrationVaultDetailsPtrOutput) VaultId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationVaultDetails) *string {
 		if v == nil {

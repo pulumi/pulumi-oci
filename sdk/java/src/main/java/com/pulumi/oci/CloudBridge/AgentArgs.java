@@ -125,12 +125,18 @@ public final class AgentArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * OS version.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="osVersion", required=true)
     private Output<String> osVersion;
 
     /**
      * @return OS version.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> osVersion() {
@@ -318,6 +324,9 @@ public final class AgentArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param osVersion OS version.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -328,6 +337,9 @@ public final class AgentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param osVersion OS version.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

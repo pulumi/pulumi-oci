@@ -129,6 +129,8 @@ type BootVolume struct {
 	// The OCID of the source volume group.
 	VolumeGroupId pulumi.StringOutput `pulumi:"volumeGroupId"`
 	// (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+	//
+	// Allowed values:
 	VpusPerGb pulumi.StringOutput `pulumi:"vpusPerGb"`
 }
 
@@ -213,6 +215,8 @@ type bootVolumeState struct {
 	// The OCID of the source volume group.
 	VolumeGroupId *string `pulumi:"volumeGroupId"`
 	// (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+	//
+	// Allowed values:
 	VpusPerGb *string `pulumi:"vpusPerGb"`
 }
 
@@ -260,6 +264,8 @@ type BootVolumeState struct {
 	// The OCID of the source volume group.
 	VolumeGroupId pulumi.StringPtrInput
 	// (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+	//
+	// Allowed values:
 	VpusPerGb pulumi.StringPtrInput
 }
 
@@ -295,6 +301,8 @@ type bootVolumeArgs struct {
 	SizeInGbs     *string                 `pulumi:"sizeInGbs"`
 	SourceDetails BootVolumeSourceDetails `pulumi:"sourceDetails"`
 	// (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+	//
+	// Allowed values:
 	VpusPerGb *string `pulumi:"vpusPerGb"`
 }
 
@@ -327,6 +335,8 @@ type BootVolumeArgs struct {
 	SizeInGbs     pulumi.StringPtrInput
 	SourceDetails BootVolumeSourceDetailsInput
 	// (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+	//
+	// Allowed values:
 	VpusPerGb pulumi.StringPtrInput
 }
 
@@ -523,6 +533,8 @@ func (o BootVolumeOutput) VolumeGroupId() pulumi.StringOutput {
 }
 
 // (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+//
+// Allowed values:
 func (o BootVolumeOutput) VpusPerGb() pulumi.StringOutput {
 	return o.ApplyT(func(v *BootVolume) pulumi.StringOutput { return v.VpusPerGb }).(pulumi.StringOutput)
 }

@@ -144,12 +144,16 @@ public class DrgAttachment extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
      * 
+     * The DRG route table manages traffic inside the DRG.
+     * 
      */
     @Export(name="drgRouteTableId", type=String.class, parameters={})
     private Output<String> drgRouteTableId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
+     * 
+     * The DRG route table manages traffic inside the DRG.
      * 
      */
     public Output<String> drgRouteTableId() {
@@ -216,12 +220,18 @@ public class DrgAttachment extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="removeExportDrgRouteDistributionTrigger", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> removeExportDrgRouteDistributionTrigger;
 
     /**
      * @return (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Optional<Boolean>> removeExportDrgRouteDistributionTrigger() {
@@ -230,12 +240,22 @@ public class DrgAttachment extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the DRG attachment.
      * 
+     * If you don&#39;t specify a route table here, the DRG attachment is created without an associated route table. The Networking service does NOT automatically associate the attached VCN&#39;s default route table with the DRG attachment. For information about why you would associate a route table with a DRG attachment, see:
+     * * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+     * * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+     *   This field is deprecated. Instead, use the networkDetails field to specify the VCN route table for this attachment.
+     * 
      */
     @Export(name="routeTableId", type=String.class, parameters={})
     private Output<String> routeTableId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the DRG attachment.
+     * 
+     * If you don&#39;t specify a route table here, the DRG attachment is created without an associated route table. The Networking service does NOT automatically associate the attached VCN&#39;s default route table with the DRG attachment. For information about why you would associate a route table with a DRG attachment, see:
+     * * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+     * * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+     *   This field is deprecated. Instead, use the networkDetails field to specify the VCN route table for this attachment.
      * 
      */
     public Output<String> routeTableId() {

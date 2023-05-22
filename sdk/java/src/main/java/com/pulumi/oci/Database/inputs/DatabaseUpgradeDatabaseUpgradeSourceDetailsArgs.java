@@ -65,6 +65,9 @@ public final class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs extends com.p
      * * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
      * * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="source")
     private @Nullable Output<String> source;
@@ -73,6 +76,9 @@ public final class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs extends com.p
      * @return The source of the Oracle Database software to be used for the upgrade.
      * * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
      * * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> source() {
@@ -174,6 +180,9 @@ public final class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs extends com.p
          * * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
          * * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -186,6 +195,9 @@ public final class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs extends com.p
          * @param source The source of the Oracle Database software to be used for the upgrade.
          * * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
          * * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

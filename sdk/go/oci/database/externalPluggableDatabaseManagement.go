@@ -54,6 +54,9 @@ type ExternalPluggableDatabaseManagement struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId pulumi.StringOutput `pulumi:"externalDatabaseConnectorId"`
 	// The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalPluggableDatabaseId pulumi.StringOutput `pulumi:"externalPluggableDatabaseId"`
 }
 
@@ -99,6 +102,9 @@ type externalPluggableDatabaseManagementState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId *string `pulumi:"externalDatabaseConnectorId"`
 	// The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalPluggableDatabaseId *string `pulumi:"externalPluggableDatabaseId"`
 }
 
@@ -107,6 +113,9 @@ type ExternalPluggableDatabaseManagementState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId pulumi.StringPtrInput
 	// The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalPluggableDatabaseId pulumi.StringPtrInput
 }
 
@@ -119,6 +128,9 @@ type externalPluggableDatabaseManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId string `pulumi:"externalDatabaseConnectorId"`
 	// The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalPluggableDatabaseId string `pulumi:"externalPluggableDatabaseId"`
 }
 
@@ -128,6 +140,9 @@ type ExternalPluggableDatabaseManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId pulumi.StringInput
 	// The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalPluggableDatabaseId pulumi.StringInput
 }
 
@@ -228,6 +243,9 @@ func (o ExternalPluggableDatabaseManagementOutput) ExternalDatabaseConnectorId()
 }
 
 // The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ExternalPluggableDatabaseManagementOutput) ExternalPluggableDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalPluggableDatabaseManagement) pulumi.StringOutput { return v.ExternalPluggableDatabaseId }).(pulumi.StringOutput)
 }

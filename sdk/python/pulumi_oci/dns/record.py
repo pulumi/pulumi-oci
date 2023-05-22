@@ -25,6 +25,10 @@ class RecordArgs:
         :param pulumi.Input[str] domain: The fully qualified domain name where the record can be located. Domain value is case insensitive.
         :param pulumi.Input[str] rtype: The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
         :param pulumi.Input[str] zone_name_or_id: The name or OCID of the target zone.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to. If supplied, it must match the Zone's compartment ocid.
         :param pulumi.Input[str] rdata: (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
         :param pulumi.Input[int] ttl: (Updatable) The Time To Live for the record, in seconds.
@@ -77,6 +81,10 @@ class RecordArgs:
     def zone_name_or_id(self) -> pulumi.Input[str]:
         """
         The name or OCID of the target zone.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "zone_name_or_id")
 
@@ -144,6 +152,10 @@ class _RecordState:
         :param pulumi.Input[str] rtype: The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
         :param pulumi.Input[int] ttl: (Updatable) The Time To Live for the record, in seconds.
         :param pulumi.Input[str] zone_name_or_id: The name or OCID of the target zone.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -274,6 +286,10 @@ class _RecordState:
     def zone_name_or_id(self) -> Optional[pulumi.Input[str]]:
         """
         The name or OCID of the target zone.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "zone_name_or_id")
 
@@ -295,6 +311,16 @@ class Record(pulumi.CustomResource):
                  zone_name_or_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
+        **Deprecated. Use Dns.Rrset instead.**
+
+        This resource provides the Record resource in Oracle Cloud Infrastructure DNS service.
+
+        Replaces records in the specified zone with the records specified in the
+        request body. If a specified record does not exist, it will be created.
+        If the record exists, then it will be updated to represent the record in
+        the body of the request. If a record in the zone does not exist in the
+        request body, the record will be removed from the zone.
+
         ## Example Usage
 
         ```python
@@ -322,6 +348,10 @@ class Record(pulumi.CustomResource):
         :param pulumi.Input[str] rtype: The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
         :param pulumi.Input[int] ttl: (Updatable) The Time To Live for the record, in seconds.
         :param pulumi.Input[str] zone_name_or_id: The name or OCID of the target zone.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -330,6 +360,16 @@ class Record(pulumi.CustomResource):
                  args: RecordArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        **Deprecated. Use Dns.Rrset instead.**
+
+        This resource provides the Record resource in Oracle Cloud Infrastructure DNS service.
+
+        Replaces records in the specified zone with the records specified in the
+        request body. If a specified record does not exist, it will be created.
+        If the record exists, then it will be updated to represent the record in
+        the body of the request. If a record in the zone does not exist in the
+        request body, the record will be removed from the zone.
+
         ## Example Usage
 
         ```python
@@ -438,6 +478,10 @@ class Record(pulumi.CustomResource):
         :param pulumi.Input[str] rtype: The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
         :param pulumi.Input[int] ttl: (Updatable) The Time To Live for the record, in seconds.
         :param pulumi.Input[str] zone_name_or_id: The name or OCID of the target zone.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -523,6 +567,10 @@ class Record(pulumi.CustomResource):
     def zone_name_or_id(self) -> pulumi.Output[str]:
         """
         The name or OCID of the target zone.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "zone_name_or_id")
 

@@ -91,6 +91,8 @@ export class Function extends pulumi.CustomResource {
     public /*out*/ readonly compartmentId!: pulumi.Output<string>;
     /**
      * (Updatable) Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
+     *
+     * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
      */
     public readonly config!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -228,6 +230,8 @@ export interface FunctionState {
     compartmentId?: pulumi.Input<string>;
     /**
      * (Updatable) Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
+     *
+     * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
      */
     config?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -298,6 +302,8 @@ export interface FunctionArgs {
     applicationId: pulumi.Input<string>;
     /**
      * (Updatable) Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
+     *
+     * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
      */
     config?: pulumi.Input<{[key: string]: any}>;
     /**

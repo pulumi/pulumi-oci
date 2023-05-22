@@ -14,20 +14,62 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
     /**
      * @return (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
      * 
+     * **SCIM++ Properties:**
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String principalName;
     /**
      * @return (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable String realmName;
     /**
      * @return (Updatable) User Token URI
      * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
+     * 
      */
     private @Nullable String ref;
     /**
      * @return (Updatable) The value of a X509 certificate.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
@@ -36,12 +78,31 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
     /**
      * @return (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
      * 
+     * **SCIM++ Properties:**
+     * * idcsPii: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> principalName() {
         return Optional.ofNullable(this.principalName);
     }
     /**
      * @return (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> realmName() {
@@ -50,12 +111,35 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
     /**
      * @return (Updatable) User Token URI
      * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
+     * 
      */
     public Optional<String> ref() {
         return Optional.ofNullable(this.ref);
     }
     /**
      * @return (Updatable) The value of a X509 certificate.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

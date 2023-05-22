@@ -55,6 +55,9 @@ type LogAnalyticsImportCustomContent struct {
 	// The content name.
 	ContentName pulumi.StringOutput `pulumi:"contentName"`
 	// A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Expect pulumi.StringOutput `pulumi:"expect"`
 	// The field names.
 	FieldNames pulumi.StringArrayOutput `pulumi:"fieldNames"`
@@ -110,6 +113,9 @@ type logAnalyticsImportCustomContentState struct {
 	// The content name.
 	ContentName *string `pulumi:"contentName"`
 	// A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Expect *string `pulumi:"expect"`
 	// The field names.
 	FieldNames []string `pulumi:"fieldNames"`
@@ -131,6 +137,9 @@ type LogAnalyticsImportCustomContentState struct {
 	// The content name.
 	ContentName pulumi.StringPtrInput
 	// A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Expect pulumi.StringPtrInput
 	// The field names.
 	FieldNames pulumi.StringArrayInput
@@ -152,6 +161,9 @@ func (LogAnalyticsImportCustomContentState) ElementType() reflect.Type {
 
 type logAnalyticsImportCustomContentArgs struct {
 	// A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Expect *string `pulumi:"expect"`
 	// Path to the file to upload which contains the custom content.
 	ImportCustomContentFile string `pulumi:"importCustomContentFile"`
@@ -164,6 +176,9 @@ type logAnalyticsImportCustomContentArgs struct {
 // The set of arguments for constructing a LogAnalyticsImportCustomContent resource.
 type LogAnalyticsImportCustomContentArgs struct {
 	// A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Expect pulumi.StringPtrInput
 	// Path to the file to upload which contains the custom content.
 	ImportCustomContentFile pulumi.StringInput
@@ -273,6 +288,9 @@ func (o LogAnalyticsImportCustomContentOutput) ContentName() pulumi.StringOutput
 }
 
 // A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o LogAnalyticsImportCustomContentOutput) Expect() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsImportCustomContent) pulumi.StringOutput { return v.Expect }).(pulumi.StringOutput)
 }

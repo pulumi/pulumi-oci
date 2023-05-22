@@ -80,12 +80,16 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
     /**
      * A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol. HTTP-based protocols use URL endpoints that begin with &#34;http:&#34; or &#34;https:&#34;. A URL cannot exceed 512 characters. Avoid entering confidential information.
      * 
+     * For protocol-specific endpoint formats and steps to get or create endpoints, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
+     * 
      */
     @Import(name="endpoint")
     private @Nullable Output<String> endpoint;
 
     /**
      * @return A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol. HTTP-based protocols use URL endpoints that begin with &#34;http:&#34; or &#34;https:&#34;. A URL cannot exceed 512 characters. Avoid entering confidential information.
+     * 
+     * For protocol-specific endpoint formats and steps to get or create endpoints, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
      * 
      */
     public Optional<Output<String>> endpoint() {
@@ -125,12 +129,16 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
     /**
      * The protocol used for the subscription.
      * 
+     * Allowed values:
+     * 
      */
     @Import(name="protocol")
     private @Nullable Output<String> protocol;
 
     /**
      * @return The protocol used for the subscription.
+     * 
+     * Allowed values:
      * 
      */
     public Optional<Output<String>> protocol() {
@@ -155,12 +163,18 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="topicId")
     private @Nullable Output<String> topicId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> topicId() {
@@ -287,6 +301,8 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param endpoint A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol. HTTP-based protocols use URL endpoints that begin with &#34;http:&#34; or &#34;https:&#34;. A URL cannot exceed 512 characters. Avoid entering confidential information.
          * 
+         * For protocol-specific endpoint formats and steps to get or create endpoints, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
+         * 
          * @return builder
          * 
          */
@@ -297,6 +313,8 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpoint A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol. HTTP-based protocols use URL endpoints that begin with &#34;http:&#34; or &#34;https:&#34;. A URL cannot exceed 512 characters. Avoid entering confidential information.
+         * 
+         * For protocol-specific endpoint formats and steps to get or create endpoints, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
          * 
          * @return builder
          * 
@@ -350,6 +368,8 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param protocol The protocol used for the subscription.
          * 
+         * Allowed values:
+         * 
          * @return builder
          * 
          */
@@ -360,6 +380,8 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocol The protocol used for the subscription.
+         * 
+         * Allowed values:
          * 
          * @return builder
          * 
@@ -392,6 +414,9 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param topicId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -402,6 +427,9 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param topicId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

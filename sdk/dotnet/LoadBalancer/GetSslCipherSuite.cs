@@ -85,6 +85,8 @@ namespace Pulumi.Oci.LoadBalancer
 
         /// <summary>
         /// The name of the SSL cipher suite to retrieve.
+        /// 
+        /// example: `example_cipher_suite`
         /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -105,6 +107,8 @@ namespace Pulumi.Oci.LoadBalancer
 
         /// <summary>
         /// The name of the SSL cipher suite to retrieve.
+        /// 
+        /// example: `example_cipher_suite`
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

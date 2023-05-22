@@ -162,6 +162,10 @@ class _MediaWorkflowState:
         :param pulumi.Input[str] time_created: The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the MediaWorkflow was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] version: (Updatable) The version of the MediaWorkflowTaskDeclaration.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -339,6 +343,10 @@ class _MediaWorkflowState:
     def version(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The version of the MediaWorkflowTaskDeclaration.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "version")
 
@@ -549,6 +557,10 @@ class MediaWorkflow(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the MediaWorkflow was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] version: (Updatable) The version of the MediaWorkflowTaskDeclaration.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -670,6 +682,10 @@ class MediaWorkflow(pulumi.CustomResource):
     def version(self) -> pulumi.Output[str]:
         """
         (Updatable) The version of the MediaWorkflowTaskDeclaration.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "version")
 

@@ -24,7 +24,11 @@ class DrPlanExecutionArgs:
         """
         The set of arguments for constructing a DrPlanExecution resource.
         :param pulumi.Input['DrPlanExecutionExecutionOptionsArgs'] execution_options: The options for a plan execution.
-        :param pulumi.Input[str] plan_id: The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+        :param pulumi.Input[str] plan_id: The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
@@ -54,7 +58,11 @@ class DrPlanExecutionArgs:
     @pulumi.getter(name="planId")
     def plan_id(self) -> pulumi.Input[str]:
         """
-        The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+        The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "plan_id")
 
@@ -137,7 +145,11 @@ class _DrPlanExecutionState:
         :param pulumi.Input[str] peer_dr_protection_group_id: The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
         :param pulumi.Input[str] peer_region: The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
         :param pulumi.Input[str] plan_execution_type: The type of the plan execution.
-        :param pulumi.Input[str] plan_id: The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+        :param pulumi.Input[str] plan_id: The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the DR Plan Execution.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time at which DR Plan Execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
@@ -346,7 +358,11 @@ class _DrPlanExecutionState:
     @pulumi.getter(name="planId")
     def plan_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+        The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "plan_id")
 
@@ -479,7 +495,11 @@ class DrPlanExecution(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
         :param pulumi.Input[pulumi.InputType['DrPlanExecutionExecutionOptionsArgs']] execution_options: The options for a plan execution.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] plan_id: The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+        :param pulumi.Input[str] plan_id: The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -625,7 +645,11 @@ class DrPlanExecution(pulumi.CustomResource):
         :param pulumi.Input[str] peer_dr_protection_group_id: The OCID of peer (remote) DR Protection Group associated with this plan's DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
         :param pulumi.Input[str] peer_region: The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
         :param pulumi.Input[str] plan_execution_type: The type of the plan execution.
-        :param pulumi.Input[str] plan_id: The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+        :param pulumi.Input[str] plan_id: The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the DR Plan Execution.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time at which DR Plan Execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
@@ -767,7 +791,11 @@ class DrPlanExecution(pulumi.CustomResource):
     @pulumi.getter(name="planId")
     def plan_id(self) -> pulumi.Output[str]:
         """
-        The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+        The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "plan_id")
 

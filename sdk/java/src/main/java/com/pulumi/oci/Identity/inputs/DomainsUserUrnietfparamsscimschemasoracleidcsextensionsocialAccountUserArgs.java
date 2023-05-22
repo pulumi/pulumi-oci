@@ -19,12 +19,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialA
     /**
      * (Updatable) Description:
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * idcsPii: true
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="socialAccounts")
     private @Nullable Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArgs>> socialAccounts;
 
     /**
      * @return (Updatable) Description:
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * idcsPii: true
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArgs>>> socialAccounts() {
@@ -58,6 +80,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialA
         /**
          * @param socialAccounts (Updatable) Description:
          * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * idcsPii: true
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -69,6 +102,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialA
         /**
          * @param socialAccounts (Updatable) Description:
          * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * idcsPii: true
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -78,6 +122,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialA
 
         /**
          * @param socialAccounts (Updatable) Description:
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * idcsPii: true
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 

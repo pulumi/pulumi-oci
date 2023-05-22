@@ -64,12 +64,18 @@ public final class ExternalDbSystemArgs extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
      * @return (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -169,6 +175,9 @@ public final class ExternalDbSystemArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param displayName (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -179,6 +188,9 @@ public final class ExternalDbSystemArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param displayName (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -128,12 +128,16 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
+        /// 
+        /// **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
         /// </summary>
         [Output("healthCheckMonitorId")]
         public Output<string> HealthCheckMonitorId { get; private set; } = null!;
 
         /// <summary>
         /// The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
+        /// 
+        /// The first rule receives a shuffled list of all answers, and every other rule receives the list of answers emitted by the one preceding it. The last rule populates the response.
         /// </summary>
         [Output("rules")]
         public Output<ImmutableArray<Outputs.SteeringPolicyRule>> Rules { get; private set; } = null!;
@@ -152,6 +156,14 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// (Updatable) A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
+        /// 
+        /// **Example:** The `FAILOVER` template determines answers by filtering the policy's answers using the `FILTER` rule first, then the following rules in succession: `HEALTH`, `PRIORITY`, and `LIMIT`. This gives the domain dynamic failover capability.
+        /// 
+        /// It is **strongly recommended** to use a template other than `CUSTOM` when creating a steering policy.
+        /// 
+        /// All templates require the rule order to begin with an unconditional `FILTER` rule that keeps answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`. The last rule of a template must must be a `LIMIT` rule. For more information about templates and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
+        /// 
+        /// **Template Types**
         /// </summary>
         [Output("template")]
         public Output<string> Template { get; private set; } = null!;
@@ -163,7 +175,11 @@ namespace Pulumi.Oci.Dns
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
+        /// (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("ttl")]
         public Output<int> Ttl { get; private set; } = null!;
@@ -264,6 +280,8 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
+        /// 
+        /// **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
         /// </summary>
         [Input("healthCheckMonitorId")]
         public Input<string>? HealthCheckMonitorId { get; set; }
@@ -273,6 +291,8 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
+        /// 
+        /// The first rule receives a shuffled list of all answers, and every other rule receives the list of answers emitted by the one preceding it. The last rule populates the response.
         /// </summary>
         public InputList<Inputs.SteeringPolicyRuleArgs> Rules
         {
@@ -282,12 +302,24 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// (Updatable) A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
+        /// 
+        /// **Example:** The `FAILOVER` template determines answers by filtering the policy's answers using the `FILTER` rule first, then the following rules in succession: `HEALTH`, `PRIORITY`, and `LIMIT`. This gives the domain dynamic failover capability.
+        /// 
+        /// It is **strongly recommended** to use a template other than `CUSTOM` when creating a steering policy.
+        /// 
+        /// All templates require the rule order to begin with an unconditional `FILTER` rule that keeps answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`. The last rule of a template must must be a `LIMIT` rule. For more information about templates and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
+        /// 
+        /// **Template Types**
         /// </summary>
         [Input("template", required: true)]
         public Input<string> Template { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
+        /// (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("ttl")]
         public Input<int>? Ttl { get; set; }
@@ -350,6 +382,8 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
+        /// 
+        /// **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
         /// </summary>
         [Input("healthCheckMonitorId")]
         public Input<string>? HealthCheckMonitorId { get; set; }
@@ -359,6 +393,8 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
+        /// 
+        /// The first rule receives a shuffled list of all answers, and every other rule receives the list of answers emitted by the one preceding it. The last rule populates the response.
         /// </summary>
         public InputList<Inputs.SteeringPolicyRuleGetArgs> Rules
         {
@@ -380,6 +416,14 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// (Updatable) A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
+        /// 
+        /// **Example:** The `FAILOVER` template determines answers by filtering the policy's answers using the `FILTER` rule first, then the following rules in succession: `HEALTH`, `PRIORITY`, and `LIMIT`. This gives the domain dynamic failover capability.
+        /// 
+        /// It is **strongly recommended** to use a template other than `CUSTOM` when creating a steering policy.
+        /// 
+        /// All templates require the rule order to begin with an unconditional `FILTER` rule that keeps answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`. The last rule of a template must must be a `LIMIT` rule. For more information about templates and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
+        /// 
+        /// **Template Types**
         /// </summary>
         [Input("template")]
         public Input<string>? Template { get; set; }
@@ -391,7 +435,11 @@ namespace Pulumi.Oci.Dns
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
+        /// (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("ttl")]
         public Input<int>? Ttl { get; set; }

@@ -87,6 +87,9 @@ type Job struct {
 	// This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
 	ArtifactContentDisposition pulumi.StringPtrOutput `pulumi:"artifactContentDisposition"`
 	// The content length of the body.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ArtifactContentLength pulumi.StringPtrOutput `pulumi:"artifactContentLength"`
 	ArtifactContentMd5    pulumi.StringOutput    `pulumi:"artifactContentMd5"`
 	ArtifactLastModified  pulumi.StringOutput    `pulumi:"artifactLastModified"`
@@ -167,6 +170,9 @@ type jobState struct {
 	// This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
 	ArtifactContentDisposition *string `pulumi:"artifactContentDisposition"`
 	// The content length of the body.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ArtifactContentLength *string `pulumi:"artifactContentLength"`
 	ArtifactContentMd5    *string `pulumi:"artifactContentMd5"`
 	ArtifactLastModified  *string `pulumi:"artifactLastModified"`
@@ -207,6 +213,9 @@ type JobState struct {
 	// This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
 	ArtifactContentDisposition pulumi.StringPtrInput
 	// The content length of the body.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ArtifactContentLength pulumi.StringPtrInput
 	ArtifactContentMd5    pulumi.StringPtrInput
 	ArtifactLastModified  pulumi.StringPtrInput
@@ -251,6 +260,9 @@ type jobArgs struct {
 	// This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
 	ArtifactContentDisposition *string `pulumi:"artifactContentDisposition"`
 	// The content length of the body.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ArtifactContentLength *string `pulumi:"artifactContentLength"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -281,6 +293,9 @@ type JobArgs struct {
 	// This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
 	ArtifactContentDisposition pulumi.StringPtrInput
 	// The content length of the body.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ArtifactContentLength pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
 	CompartmentId pulumi.StringInput
@@ -399,6 +414,9 @@ func (o JobOutput) ArtifactContentDisposition() pulumi.StringPtrOutput {
 }
 
 // The content length of the body.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o JobOutput) ArtifactContentLength() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Job) pulumi.StringPtrOutput { return v.ArtifactContentLength }).(pulumi.StringPtrOutput)
 }

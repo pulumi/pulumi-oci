@@ -70,6 +70,8 @@ namespace Pulumi.Oci.Core
     {
         /// <summary>
         /// Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+        /// 
+        /// If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
         /// </summary>
         [Output("bgpSessionInfos")]
         public Output<ImmutableArray<Outputs.IpsecConnectionTunnelManagementBgpSessionInfo>> BgpSessionInfos { get; private set; } = null!;
@@ -230,6 +232,8 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+        /// 
+        /// If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
         /// </summary>
         public InputList<Inputs.IpsecConnectionTunnelManagementBgpSessionInfoArgs> BgpSessionInfos
         {
@@ -300,6 +304,8 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+        /// 
+        /// If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
         /// </summary>
         public InputList<Inputs.IpsecConnectionTunnelManagementBgpSessionInfoGetArgs> BgpSessionInfos
         {

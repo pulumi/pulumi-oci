@@ -186,6 +186,8 @@ def get_alert_analytic(access_level: Optional[str] = None,
     :param Sequence[str] group_bies: A groupBy can only be used in combination with summaryField parameter. A groupBy value has to be a subset of the values mentioned in summaryField parameter.
     :param str query_time_zone: Default time zone is UTC if no time zone provided. The date-time considerations of the resource will be in accordance with the specified time zone.
     :param str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
+           
+           **Example:** query=(timeCreated ge '2021-06-04T01-00-26') and (targetNames eq 'target_1') Supported fields: severity status alertType targetIds targetNames operationTime lifecycleState displayName timeCreated timeUpdated
     :param Sequence[str] summary_fields: Specifies a subset of summarized fields to be returned in the response.
     :param str time_ended: An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
     :param str time_started: An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -257,6 +259,8 @@ def get_alert_analytic_output(access_level: Optional[pulumi.Input[Optional[str]]
     :param Sequence[str] group_bies: A groupBy can only be used in combination with summaryField parameter. A groupBy value has to be a subset of the values mentioned in summaryField parameter.
     :param str query_time_zone: Default time zone is UTC if no time zone provided. The date-time considerations of the resource will be in accordance with the specified time zone.
     :param str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
+           
+           **Example:** query=(timeCreated ge '2021-06-04T01-00-26') and (targetNames eq 'target_1') Supported fields: severity status alertType targetIds targetNames operationTime lifecycleState displayName timeCreated timeUpdated
     :param Sequence[str] summary_fields: Specifies a subset of summarized fields to be returned in the response.
     :param str time_ended: An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
     :param str time_started: An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

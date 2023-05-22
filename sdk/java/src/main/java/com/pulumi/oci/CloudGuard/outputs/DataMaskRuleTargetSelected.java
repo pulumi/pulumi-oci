@@ -19,6 +19,9 @@ public final class DataMaskRuleTargetSelected {
     /**
      * @return (Updatable) Types of Targets
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private @Nullable List<String> values;
 
@@ -32,6 +35,9 @@ public final class DataMaskRuleTargetSelected {
     }
     /**
      * @return (Updatable) Types of Targets
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public List<String> values() {

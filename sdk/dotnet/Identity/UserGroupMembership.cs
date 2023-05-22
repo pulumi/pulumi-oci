@@ -76,6 +76,10 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// The OCID of the user.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("userId")]
         public Output<string> UserId { get; private set; } = null!;
@@ -140,6 +144,10 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// The OCID of the user.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("userId", required: true)]
         public Input<string> UserId { get; set; } = null!;
@@ -184,6 +192,10 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// The OCID of the user.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("userId")]
         public Input<string>? UserId { get; set; }

@@ -598,6 +598,9 @@ type PublicationSupportContact struct {
 	// (Updatable) The phone number of the contact.
 	Phone *string `pulumi:"phone"`
 	// (Updatable) The email subject line to use when contacting support.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Subject *string `pulumi:"subject"`
 }
 
@@ -620,6 +623,9 @@ type PublicationSupportContactArgs struct {
 	// (Updatable) The phone number of the contact.
 	Phone pulumi.StringPtrInput `pulumi:"phone"`
 	// (Updatable) The email subject line to use when contacting support.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Subject pulumi.StringPtrInput `pulumi:"subject"`
 }
 
@@ -690,6 +696,9 @@ func (o PublicationSupportContactOutput) Phone() pulumi.StringPtrOutput {
 }
 
 // (Updatable) The email subject line to use when contacting support.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PublicationSupportContactOutput) Subject() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PublicationSupportContact) *string { return v.Subject }).(pulumi.StringPtrOutput)
 }

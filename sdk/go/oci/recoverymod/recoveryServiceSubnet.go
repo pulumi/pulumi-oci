@@ -89,6 +89,9 @@ type RecoveryServiceSubnet struct {
 	// An RFC3339 formatted datetime string that indicates the last updated time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId pulumi.StringOutput `pulumi:"vcnId"`
 }
 
@@ -160,6 +163,9 @@ type recoveryServiceSubnetState struct {
 	// An RFC3339 formatted datetime string that indicates the last updated time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId *string `pulumi:"vcnId"`
 }
 
@@ -191,6 +197,9 @@ type RecoveryServiceSubnetState struct {
 	// An RFC3339 formatted datetime string that indicates the last updated time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
 	TimeUpdated pulumi.StringPtrInput
 	// The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId pulumi.StringPtrInput
 }
 
@@ -210,6 +219,9 @@ type recoveryServiceSubnetArgs struct {
 	// The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
 	SubnetId string `pulumi:"subnetId"`
 	// The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId string `pulumi:"vcnId"`
 }
 
@@ -226,6 +238,9 @@ type RecoveryServiceSubnetArgs struct {
 	// The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
 	SubnetId pulumi.StringInput
 	// The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId pulumi.StringInput
 }
 
@@ -373,6 +388,9 @@ func (o RecoveryServiceSubnetOutput) TimeUpdated() pulumi.StringOutput {
 }
 
 // The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o RecoveryServiceSubnetOutput) VcnId() pulumi.StringOutput {
 	return o.ApplyT(func(v *RecoveryServiceSubnet) pulumi.StringOutput { return v.VcnId }).(pulumi.StringOutput)
 }

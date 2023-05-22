@@ -164,12 +164,18 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
     /**
      * The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="osFamily", type=String.class, parameters={})
     private Output<String> osFamily;
 
     /**
      * @return The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> osFamily() {

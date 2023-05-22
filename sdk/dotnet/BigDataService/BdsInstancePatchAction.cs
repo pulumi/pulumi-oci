@@ -55,6 +55,10 @@ namespace Pulumi.Oci.BigDataService
 
         /// <summary>
         /// The version of the patch to be installed.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("version")]
         public Output<string> Version { get; private set; } = null!;
@@ -133,6 +137,10 @@ namespace Pulumi.Oci.BigDataService
 
         /// <summary>
         /// The version of the patch to be installed.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("version", required: true)]
         public Input<string> Version { get; set; } = null!;
@@ -169,6 +177,10 @@ namespace Pulumi.Oci.BigDataService
 
         /// <summary>
         /// The version of the patch to be installed.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("version")]
         public Input<string>? Version { get; set; }

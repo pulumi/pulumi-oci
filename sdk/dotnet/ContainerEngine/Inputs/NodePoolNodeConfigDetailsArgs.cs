@@ -71,6 +71,8 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
 
         /// <summary>
         /// (Updatable) The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
+        /// 
+        /// To use the node pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
         /// </summary>
         public InputList<Inputs.NodePoolNodeConfigDetailsPlacementConfigArgs> PlacementConfigs
         {

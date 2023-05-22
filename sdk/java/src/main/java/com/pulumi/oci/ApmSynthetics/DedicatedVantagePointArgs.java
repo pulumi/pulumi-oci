@@ -111,12 +111,18 @@ public final class DedicatedVantagePointArgs extends com.pulumi.resources.Resour
     /**
      * (Updatable) Status of the dedicated vantage point.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return (Updatable) Status of the dedicated vantage point.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> status() {
@@ -282,6 +288,9 @@ public final class DedicatedVantagePointArgs extends com.pulumi.resources.Resour
         /**
          * @param status (Updatable) Status of the dedicated vantage point.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -292,6 +301,9 @@ public final class DedicatedVantagePointArgs extends com.pulumi.resources.Resour
 
         /**
          * @param status (Updatable) Status of the dedicated vantage point.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

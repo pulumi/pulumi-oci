@@ -183,12 +183,18 @@ public class InstVbsInstance extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Compartment where VBS may create additional resources for the service instance
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="resourceCompartmentId", type=String.class, parameters={})
     private Output<String> resourceCompartmentId;
 
     /**
      * @return (Updatable) Compartment where VBS may create additional resources for the service instance
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> resourceCompartmentId() {

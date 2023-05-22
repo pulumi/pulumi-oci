@@ -109,6 +109,10 @@ export class DeploymentBackup extends pulumi.CustomResource {
     public readonly namespace!: pulumi.Output<string>;
     /**
      * Name of the object to be uploaded to object storage
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly object!: pulumi.Output<string>;
     /**
@@ -267,6 +271,10 @@ export interface DeploymentBackupState {
     namespace?: pulumi.Input<string>;
     /**
      * Name of the object to be uploaded to object storage
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     object?: pulumi.Input<string>;
     /**
@@ -337,6 +345,10 @@ export interface DeploymentBackupArgs {
     namespace: pulumi.Input<string>;
     /**
      * Name of the object to be uploaded to object storage
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     object: pulumi.Input<string>;
 }

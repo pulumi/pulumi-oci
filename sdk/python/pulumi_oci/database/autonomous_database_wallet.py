@@ -22,7 +22,13 @@ class AutonomousDatabaseWalletArgs:
         The set of arguments for constructing a AutonomousDatabaseWallet resource.
         :param pulumi.Input[str] autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] generate_type: The type of wallet to generate.
+               
+               **Shared Exadata infrastructure usage:**
         """
         pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
         pulumi.set(__self__, "password", password)
@@ -48,6 +54,10 @@ class AutonomousDatabaseWalletArgs:
     def password(self) -> pulumi.Input[str]:
         """
         The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "password")
 
@@ -69,6 +79,8 @@ class AutonomousDatabaseWalletArgs:
     def generate_type(self) -> Optional[pulumi.Input[str]]:
         """
         The type of wallet to generate.
+
+        **Shared Exadata infrastructure usage:**
         """
         return pulumi.get(self, "generate_type")
 
@@ -90,7 +102,13 @@ class _AutonomousDatabaseWalletState:
         :param pulumi.Input[str] autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] content: content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
         :param pulumi.Input[str] generate_type: The type of wallet to generate.
+               
+               **Shared Exadata infrastructure usage:**
         :param pulumi.Input[str] password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if autonomous_database_id is not None:
             pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
@@ -141,6 +159,8 @@ class _AutonomousDatabaseWalletState:
     def generate_type(self) -> Optional[pulumi.Input[str]]:
         """
         The type of wallet to generate.
+
+        **Shared Exadata infrastructure usage:**
         """
         return pulumi.get(self, "generate_type")
 
@@ -153,6 +173,10 @@ class _AutonomousDatabaseWalletState:
     def password(self) -> Optional[pulumi.Input[str]]:
         """
         The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "password")
 
@@ -193,7 +217,13 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] generate_type: The type of wallet to generate.
+               
+               **Shared Exadata infrastructure usage:**
         :param pulumi.Input[str] password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -283,7 +313,13 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
         :param pulumi.Input[str] autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] content: content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
         :param pulumi.Input[str] generate_type: The type of wallet to generate.
+               
+               **Shared Exadata infrastructure usage:**
         :param pulumi.Input[str] password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -322,6 +358,8 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
     def generate_type(self) -> pulumi.Output[Optional[str]]:
         """
         The type of wallet to generate.
+
+        **Shared Exadata infrastructure usage:**
         """
         return pulumi.get(self, "generate_type")
 
@@ -330,6 +368,10 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
     def password(self) -> pulumi.Output[str]:
         """
         The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "password")
 

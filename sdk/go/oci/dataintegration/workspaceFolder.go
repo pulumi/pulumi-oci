@@ -95,6 +95,9 @@ type WorkspaceFolder struct {
 	// (Updatable) Information about the object and its parent.
 	RegistryMetadata WorkspaceFolderRegistryMetadataOutput `pulumi:"registryMetadata"`
 	// The workspace ID.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WorkspaceId pulumi.StringOutput `pulumi:"workspaceId"`
 }
 
@@ -164,6 +167,9 @@ type workspaceFolderState struct {
 	// (Updatable) Information about the object and its parent.
 	RegistryMetadata *WorkspaceFolderRegistryMetadata `pulumi:"registryMetadata"`
 	// The workspace ID.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WorkspaceId *string `pulumi:"workspaceId"`
 }
 
@@ -196,6 +202,9 @@ type WorkspaceFolderState struct {
 	// (Updatable) Information about the object and its parent.
 	RegistryMetadata WorkspaceFolderRegistryMetadataPtrInput
 	// The workspace ID.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WorkspaceId pulumi.StringPtrInput
 }
 
@@ -222,6 +231,9 @@ type workspaceFolderArgs struct {
 	// (Updatable) Information about the object and its parent.
 	RegistryMetadata WorkspaceFolderRegistryMetadata `pulumi:"registryMetadata"`
 	// The workspace ID.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WorkspaceId string `pulumi:"workspaceId"`
 }
 
@@ -245,6 +257,9 @@ type WorkspaceFolderArgs struct {
 	// (Updatable) Information about the object and its parent.
 	RegistryMetadata WorkspaceFolderRegistryMetadataInput
 	// The workspace ID.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WorkspaceId pulumi.StringInput
 }
 
@@ -405,6 +420,9 @@ func (o WorkspaceFolderOutput) RegistryMetadata() WorkspaceFolderRegistryMetadat
 }
 
 // The workspace ID.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o WorkspaceFolderOutput) WorkspaceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *WorkspaceFolder) pulumi.StringOutput { return v.WorkspaceId }).(pulumi.StringOutput)
 }

@@ -11,6 +11,16 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// **Deprecated. Use Dns.Rrset instead.**
+//
+// This resource provides the Record resource in Oracle Cloud Infrastructure DNS service.
+//
+// Replaces records in the specified zone with the records specified in the
+// request body. If a specified record does not exist, it will be created.
+// If the record exists, then it will be updated to represent the record in
+// the body of the request. If a record in the zone does not exist in the
+// request body, the record will be removed from the zone.
+//
 // ## Example Usage
 //
 // ```go
@@ -69,6 +79,9 @@ type Record struct {
 	// (Updatable) The Time To Live for the record, in seconds.
 	Ttl pulumi.IntPtrOutput `pulumi:"ttl"`
 	// The name or OCID of the target zone.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	//
 	// Deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.
 	ZoneNameOrId pulumi.StringOutput `pulumi:"zoneNameOrId"`
@@ -134,6 +147,9 @@ type recordState struct {
 	Ttl *int `pulumi:"ttl"`
 	// The name or OCID of the target zone.
 	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	//
 	// Deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.
 	ZoneNameOrId *string `pulumi:"zoneNameOrId"`
 }
@@ -161,6 +177,9 @@ type RecordState struct {
 	Ttl pulumi.IntPtrInput
 	// The name or OCID of the target zone.
 	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	//
 	// Deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.
 	ZoneNameOrId pulumi.StringPtrInput
 }
@@ -186,6 +205,9 @@ type recordArgs struct {
 	Ttl *int `pulumi:"ttl"`
 	// The name or OCID of the target zone.
 	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	//
 	// Deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.
 	ZoneNameOrId string `pulumi:"zoneNameOrId"`
 }
@@ -207,6 +229,9 @@ type RecordArgs struct {
 	// (Updatable) The Time To Live for the record, in seconds.
 	Ttl pulumi.IntPtrInput
 	// The name or OCID of the target zone.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	//
 	// Deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.
 	ZoneNameOrId pulumi.StringInput
@@ -344,6 +369,9 @@ func (o RecordOutput) Ttl() pulumi.IntPtrOutput {
 }
 
 // The name or OCID of the target zone.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 //
 // Deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.
 func (o RecordOutput) ZoneNameOrId() pulumi.StringOutput {

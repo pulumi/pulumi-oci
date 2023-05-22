@@ -95,12 +95,22 @@ namespace Pulumi.Oci.Core
     {
         /// <summary>
         /// Controls whether the subnet is regional or specific to an availability domain. Oracle recommends creating regional subnets because they're more flexible and make it easier to implement failover across availability domains. Originally, AD-specific subnets were the only kind available to use.
+        /// 
+        /// To create a regional subnet, omit this attribute. Then any resources later created in this subnet (such as a Compute instance) can be created in any availability domain in the region.
+        /// 
+        /// To instead create an AD-specific subnet, set this attribute to the availability domain you want this subnet to be in. Then any resources later created in this subnet can only be created in that availability domain.
+        /// 
+        /// Example: `Uocm:PHX-AD-1`
         /// </summary>
         [Output("availabilityDomain")]
         public Output<string> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The CIDR IP address range of the subnet. The CIDR must maintain the following rules -
+        /// 
+        /// a. The CIDR block is valid and correctly formatted. b. The new range is within one of the parent VCN ranges.
+        /// 
+        /// Example: `10.0.1.0/24`
         /// </summary>
         [Output("cidrBlock")]
         public Output<string> CidrBlock { get; private set; } = null!;
@@ -131,6 +141,12 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
+        /// 
+        /// This value must be set if you want to use the Internet and VCN Resolver to resolve the hostnames of instances in the subnet. It can only be set if the VCN itself was created with a DNS label.
+        /// 
+        /// For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+        /// 
+        /// Example: `subnet123`
         /// </summary>
         [Output("dnsLabel")]
         public Output<string> DnsLabel { get; private set; } = null!;
@@ -143,6 +159,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
+        /// 
+        /// For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+        /// 
+        /// Example: `2001:0db8:0123:1111::/64`
         /// </summary>
         [Output("ipv6cidrBlock")]
         public Output<string> Ipv6cidrBlock { get; private set; } = null!;
@@ -164,12 +184,22 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
+        /// 
+        /// For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
+        /// 
+        /// `prohibitPublicIpOnVnic` will be set to the value of `prohibitInternetIngress` to dictate IPv4 behavior in this subnet. Only one or the other flag should be specified.
+        /// 
+        /// Example: `true`
         /// </summary>
         [Output("prohibitInternetIngress")]
         public Output<bool> ProhibitInternetIngress { get; private set; } = null!;
 
         /// <summary>
         /// Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).
+        /// 
+        /// If you intend to use an IPv6 CIDR block, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
+        /// 
+        /// Example: `true`
         /// </summary>
         [Output("prohibitPublicIpOnVnic")]
         public Output<bool> ProhibitPublicIpOnVnic { get; private set; } = null!;
@@ -206,6 +236,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN to contain the subnet.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("vcnId")]
         public Output<string> VcnId { get; private set; } = null!;
@@ -270,12 +304,22 @@ namespace Pulumi.Oci.Core
     {
         /// <summary>
         /// Controls whether the subnet is regional or specific to an availability domain. Oracle recommends creating regional subnets because they're more flexible and make it easier to implement failover across availability domains. Originally, AD-specific subnets were the only kind available to use.
+        /// 
+        /// To create a regional subnet, omit this attribute. Then any resources later created in this subnet (such as a Compute instance) can be created in any availability domain in the region.
+        /// 
+        /// To instead create an AD-specific subnet, set this attribute to the availability domain you want this subnet to be in. Then any resources later created in this subnet can only be created in that availability domain.
+        /// 
+        /// Example: `Uocm:PHX-AD-1`
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
         /// (Updatable) The CIDR IP address range of the subnet. The CIDR must maintain the following rules -
+        /// 
+        /// a. The CIDR block is valid and correctly formatted. b. The new range is within one of the parent VCN ranges.
+        /// 
+        /// Example: `10.0.1.0/24`
         /// </summary>
         [Input("cidrBlock", required: true)]
         public Input<string> CidrBlock { get; set; } = null!;
@@ -312,6 +356,12 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
+        /// 
+        /// This value must be set if you want to use the Internet and VCN Resolver to resolve the hostnames of instances in the subnet. It can only be set if the VCN itself was created with a DNS label.
+        /// 
+        /// For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+        /// 
+        /// Example: `subnet123`
         /// </summary>
         [Input("dnsLabel")]
         public Input<string>? DnsLabel { get; set; }
@@ -330,6 +380,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
+        /// 
+        /// For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+        /// 
+        /// Example: `2001:0db8:0123:1111::/64`
         /// </summary>
         [Input("ipv6cidrBlock")]
         public Input<string>? Ipv6cidrBlock { get; set; }
@@ -351,12 +405,22 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
+        /// 
+        /// For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
+        /// 
+        /// `prohibitPublicIpOnVnic` will be set to the value of `prohibitInternetIngress` to dictate IPv4 behavior in this subnet. Only one or the other flag should be specified.
+        /// 
+        /// Example: `true`
         /// </summary>
         [Input("prohibitInternetIngress")]
         public Input<bool>? ProhibitInternetIngress { get; set; }
 
         /// <summary>
         /// Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).
+        /// 
+        /// If you intend to use an IPv6 CIDR block, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
+        /// 
+        /// Example: `true`
         /// </summary>
         [Input("prohibitPublicIpOnVnic")]
         public Input<bool>? ProhibitPublicIpOnVnic { get; set; }
@@ -381,6 +445,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN to contain the subnet.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("vcnId", required: true)]
         public Input<string> VcnId { get; set; } = null!;
@@ -395,12 +463,22 @@ namespace Pulumi.Oci.Core
     {
         /// <summary>
         /// Controls whether the subnet is regional or specific to an availability domain. Oracle recommends creating regional subnets because they're more flexible and make it easier to implement failover across availability domains. Originally, AD-specific subnets were the only kind available to use.
+        /// 
+        /// To create a regional subnet, omit this attribute. Then any resources later created in this subnet (such as a Compute instance) can be created in any availability domain in the region.
+        /// 
+        /// To instead create an AD-specific subnet, set this attribute to the availability domain you want this subnet to be in. Then any resources later created in this subnet can only be created in that availability domain.
+        /// 
+        /// Example: `Uocm:PHX-AD-1`
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
         /// (Updatable) The CIDR IP address range of the subnet. The CIDR must maintain the following rules -
+        /// 
+        /// a. The CIDR block is valid and correctly formatted. b. The new range is within one of the parent VCN ranges.
+        /// 
+        /// Example: `10.0.1.0/24`
         /// </summary>
         [Input("cidrBlock")]
         public Input<string>? CidrBlock { get; set; }
@@ -437,6 +515,12 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
+        /// 
+        /// This value must be set if you want to use the Internet and VCN Resolver to resolve the hostnames of instances in the subnet. It can only be set if the VCN itself was created with a DNS label.
+        /// 
+        /// For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+        /// 
+        /// Example: `subnet123`
         /// </summary>
         [Input("dnsLabel")]
         public Input<string>? DnsLabel { get; set; }
@@ -455,6 +539,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
+        /// 
+        /// For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+        /// 
+        /// Example: `2001:0db8:0123:1111::/64`
         /// </summary>
         [Input("ipv6cidrBlock")]
         public Input<string>? Ipv6cidrBlock { get; set; }
@@ -482,12 +570,22 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
+        /// 
+        /// For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
+        /// 
+        /// `prohibitPublicIpOnVnic` will be set to the value of `prohibitInternetIngress` to dictate IPv4 behavior in this subnet. Only one or the other flag should be specified.
+        /// 
+        /// Example: `true`
         /// </summary>
         [Input("prohibitInternetIngress")]
         public Input<bool>? ProhibitInternetIngress { get; set; }
 
         /// <summary>
         /// Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).
+        /// 
+        /// If you intend to use an IPv6 CIDR block, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
+        /// 
+        /// Example: `true`
         /// </summary>
         [Input("prohibitPublicIpOnVnic")]
         public Input<bool>? ProhibitPublicIpOnVnic { get; set; }
@@ -530,6 +628,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN to contain the subnet.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("vcnId")]
         public Input<string>? VcnId { get; set; }

@@ -29,6 +29,9 @@ type ExternalNonContainerDatabaseManagement struct {
 	// The external non-container database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExternalNonContainerDatabaseId pulumi.StringOutput `pulumi:"externalNonContainerDatabaseId"`
 	// The Oracle license model that applies to the external database. Required only for enabling database management.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LicenseModel pulumi.StringOutput `pulumi:"licenseModel"`
 }
 
@@ -76,6 +79,9 @@ type externalNonContainerDatabaseManagementState struct {
 	// The external non-container database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExternalNonContainerDatabaseId *string `pulumi:"externalNonContainerDatabaseId"`
 	// The Oracle license model that applies to the external database. Required only for enabling database management.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LicenseModel *string `pulumi:"licenseModel"`
 }
 
@@ -86,6 +92,9 @@ type ExternalNonContainerDatabaseManagementState struct {
 	// The external non-container database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExternalNonContainerDatabaseId pulumi.StringPtrInput
 	// The Oracle license model that applies to the external database. Required only for enabling database management.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LicenseModel pulumi.StringPtrInput
 }
 
@@ -100,6 +109,9 @@ type externalNonContainerDatabaseManagementArgs struct {
 	// The external non-container database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExternalNonContainerDatabaseId string `pulumi:"externalNonContainerDatabaseId"`
 	// The Oracle license model that applies to the external database. Required only for enabling database management.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LicenseModel *string `pulumi:"licenseModel"`
 }
 
@@ -111,6 +123,9 @@ type ExternalNonContainerDatabaseManagementArgs struct {
 	// The external non-container database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExternalNonContainerDatabaseId pulumi.StringInput
 	// The Oracle license model that applies to the external database. Required only for enabling database management.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LicenseModel pulumi.StringPtrInput
 }
 
@@ -220,6 +235,9 @@ func (o ExternalNonContainerDatabaseManagementOutput) ExternalNonContainerDataba
 }
 
 // The Oracle license model that applies to the external database. Required only for enabling database management.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ExternalNonContainerDatabaseManagementOutput) LicenseModel() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalNonContainerDatabaseManagement) pulumi.StringOutput { return v.LicenseModel }).(pulumi.StringOutput)
 }

@@ -141,12 +141,18 @@ public final class DataSafePrivateEndpointArgs extends com.pulumi.resources.Reso
     /**
      * The OCID of the VCN.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="vcnId", required=true)
     private Output<String> vcnId;
 
     /**
      * @return The OCID of the VCN.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> vcnId() {
@@ -366,6 +372,9 @@ public final class DataSafePrivateEndpointArgs extends com.pulumi.resources.Reso
         /**
          * @param vcnId The OCID of the VCN.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -376,6 +385,9 @@ public final class DataSafePrivateEndpointArgs extends com.pulumi.resources.Reso
 
         /**
          * @param vcnId The OCID of the VCN.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

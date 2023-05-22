@@ -292,12 +292,18 @@ public class Budget extends com.pulumi.resources.CustomResource {
     /**
      * The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, the targets contain the list of compartment OCIDs. If targetType is &#34;TAG&#34;, the targets contain the list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain exactly one item.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="targets", type=List.class, parameters={String.class})
     private Output<List<String>> targets;
 
     /**
      * @return The list of targets on which the budget is applied. If targetType is &#34;COMPARTMENT&#34;, the targets contain the list of compartment OCIDs. If targetType is &#34;TAG&#34;, the targets contain the list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;. Curerntly, the array should contain exactly one item.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<List<String>> targets() {

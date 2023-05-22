@@ -112,12 +112,18 @@ public final class LibraryMasingFormatState extends com.pulumi.resources.Resourc
     /**
      * (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="sensitiveTypeIds")
     private @Nullable Output<List<String>> sensitiveTypeIds;
 
     /**
      * @return (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<List<String>>> sensitiveTypeIds() {
@@ -357,6 +363,9 @@ public final class LibraryMasingFormatState extends com.pulumi.resources.Resourc
         /**
          * @param sensitiveTypeIds (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -368,6 +377,9 @@ public final class LibraryMasingFormatState extends com.pulumi.resources.Resourc
         /**
          * @param sensitiveTypeIds (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -377,6 +389,9 @@ public final class LibraryMasingFormatState extends com.pulumi.resources.Resourc
 
         /**
          * @param sensitiveTypeIds (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

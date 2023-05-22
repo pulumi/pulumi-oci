@@ -74,6 +74,9 @@ type MonitoredResourcesAssociateMonitoredResource struct {
 	// Association Resource Details.
 	SourceResourceDetails MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOutput `pulumi:"sourceResourceDetails"`
 	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceResourceId pulumi.StringOutput `pulumi:"sourceResourceId"`
 	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	TenantId pulumi.StringOutput `pulumi:"tenantId"`
@@ -138,6 +141,9 @@ type monitoredResourcesAssociateMonitoredResourceState struct {
 	// Association Resource Details.
 	SourceResourceDetails []MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail `pulumi:"sourceResourceDetails"`
 	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceResourceId *string `pulumi:"sourceResourceId"`
 	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	TenantId *string `pulumi:"tenantId"`
@@ -162,6 +168,9 @@ type MonitoredResourcesAssociateMonitoredResourceState struct {
 	// Association Resource Details.
 	SourceResourceDetails MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayInput
 	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceResourceId pulumi.StringPtrInput
 	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	TenantId pulumi.StringPtrInput
@@ -181,6 +190,9 @@ type monitoredResourcesAssociateMonitoredResourceArgs struct {
 	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DestinationResourceId string `pulumi:"destinationResourceId"`
 	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceResourceId string `pulumi:"sourceResourceId"`
 }
 
@@ -193,6 +205,9 @@ type MonitoredResourcesAssociateMonitoredResourceArgs struct {
 	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DestinationResourceId pulumi.StringInput
 	// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceResourceId pulumi.StringInput
 }
 
@@ -323,6 +338,9 @@ func (o MonitoredResourcesAssociateMonitoredResourceOutput) SourceResourceDetail
 }
 
 // Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MonitoredResourcesAssociateMonitoredResourceOutput) SourceResourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MonitoredResourcesAssociateMonitoredResource) pulumi.StringOutput { return v.SourceResourceId }).(pulumi.StringOutput)
 }

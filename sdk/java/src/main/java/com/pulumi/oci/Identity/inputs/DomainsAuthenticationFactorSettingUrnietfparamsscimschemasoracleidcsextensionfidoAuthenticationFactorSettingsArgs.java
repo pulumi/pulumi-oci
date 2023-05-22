@@ -21,12 +21,34 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
     /**
      * (Updatable) Attribute used to define the type of attestation required.
      * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="attestation", required=true)
     private Output<String> attestation;
 
     /**
      * @return (Updatable) Attribute used to define the type of attestation required.
+     * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> attestation() {
@@ -36,12 +58,34 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
     /**
      * (Updatable) Attribute used to define authenticator selection attachment.
      * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="authenticatorSelectionAttachment", required=true)
     private Output<String> authenticatorSelectionAttachment;
 
     /**
      * @return (Updatable) Attribute used to define authenticator selection attachment.
+     * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> authenticatorSelectionAttachment() {
@@ -51,12 +95,34 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
     /**
      * (Updatable) Flag used to indicate authenticator selection is required or not
      * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="authenticatorSelectionRequireResidentKey", required=true)
     private Output<Boolean> authenticatorSelectionRequireResidentKey;
 
     /**
      * @return (Updatable) Flag used to indicate authenticator selection is required or not
+     * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Output<Boolean> authenticatorSelectionRequireResidentKey() {
@@ -66,12 +132,34 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
     /**
      * (Updatable) Attribute used to define authenticator selection resident key requirement.
      * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="authenticatorSelectionResidentKey", required=true)
     private Output<String> authenticatorSelectionResidentKey;
 
     /**
      * @return (Updatable) Attribute used to define authenticator selection resident key requirement.
+     * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> authenticatorSelectionResidentKey() {
@@ -81,12 +169,34 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
     /**
      * (Updatable) Attribute used to define authenticator selection verification.
      * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="authenticatorSelectionUserVerification", required=true)
     private Output<String> authenticatorSelectionUserVerification;
 
     /**
      * @return (Updatable) Attribute used to define authenticator selection verification.
+     * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> authenticatorSelectionUserVerification() {
@@ -96,12 +206,38 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
     /**
      * (Updatable) Number of domain levels IDCS should use for origin comparision
      * 
+     * **Added In:** 2109020413
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * idcsMaxValue: 2
+     * * idcsMinValue: 0
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="domainValidationLevel")
     private @Nullable Output<Integer> domainValidationLevel;
 
     /**
      * @return (Updatable) Number of domain levels IDCS should use for origin comparision
+     * 
+     * **Added In:** 2109020413
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * idcsMaxValue: 2
+     * * idcsMinValue: 0
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> domainValidationLevel() {
@@ -111,12 +247,34 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
     /**
      * (Updatable) Flag used to indicate whether we need to restrict creation of multiple credentials in same authenticator
      * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="excludeCredentials", required=true)
     private Output<Boolean> excludeCredentials;
 
     /**
      * @return (Updatable) Flag used to indicate whether we need to restrict creation of multiple credentials in same authenticator
+     * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Output<Boolean> excludeCredentials() {
@@ -126,12 +284,34 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
     /**
      * (Updatable) List of server supported public key algorithms
      * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="publicKeyTypes", required=true)
     private Output<List<String>> publicKeyTypes;
 
     /**
      * @return (Updatable) List of server supported public key algorithms
+     * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<List<String>> publicKeyTypes() {
@@ -141,12 +321,38 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
     /**
      * (Updatable) Timeout for the fido authentication to complete
      * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * idcsMaxValue: 600000
+     * * idcsMinValue: 10000
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="timeout", required=true)
     private Output<Integer> timeout;
 
     /**
      * @return (Updatable) Timeout for the fido authentication to complete
+     * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * idcsMaxValue: 600000
+     * * idcsMinValue: 10000
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Output<Integer> timeout() {
@@ -188,6 +394,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
         /**
          * @param attestation (Updatable) Attribute used to define the type of attestation required.
          * 
+         * **Added In:** 2009232244
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -199,6 +416,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
         /**
          * @param attestation (Updatable) Attribute used to define the type of attestation required.
          * 
+         * **Added In:** 2009232244
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -208,6 +436,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
 
         /**
          * @param authenticatorSelectionAttachment (Updatable) Attribute used to define authenticator selection attachment.
+         * 
+         * **Added In:** 2009232244
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -220,6 +459,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
         /**
          * @param authenticatorSelectionAttachment (Updatable) Attribute used to define authenticator selection attachment.
          * 
+         * **Added In:** 2009232244
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -229,6 +479,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
 
         /**
          * @param authenticatorSelectionRequireResidentKey (Updatable) Flag used to indicate authenticator selection is required or not
+         * 
+         * **Added In:** 2009232244
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -241,6 +502,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
         /**
          * @param authenticatorSelectionRequireResidentKey (Updatable) Flag used to indicate authenticator selection is required or not
          * 
+         * **Added In:** 2009232244
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -250,6 +522,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
 
         /**
          * @param authenticatorSelectionResidentKey (Updatable) Attribute used to define authenticator selection resident key requirement.
+         * 
+         * **Added In:** 2009232244
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -262,6 +545,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
         /**
          * @param authenticatorSelectionResidentKey (Updatable) Attribute used to define authenticator selection resident key requirement.
          * 
+         * **Added In:** 2009232244
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -271,6 +565,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
 
         /**
          * @param authenticatorSelectionUserVerification (Updatable) Attribute used to define authenticator selection verification.
+         * 
+         * **Added In:** 2009232244
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -283,6 +588,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
         /**
          * @param authenticatorSelectionUserVerification (Updatable) Attribute used to define authenticator selection verification.
          * 
+         * **Added In:** 2009232244
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -292,6 +608,19 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
 
         /**
          * @param domainValidationLevel (Updatable) Number of domain levels IDCS should use for origin comparision
+         * 
+         * **Added In:** 2109020413
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * idcsMaxValue: 2
+         * * idcsMinValue: 0
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -304,6 +633,19 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
         /**
          * @param domainValidationLevel (Updatable) Number of domain levels IDCS should use for origin comparision
          * 
+         * **Added In:** 2109020413
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * idcsMaxValue: 2
+         * * idcsMinValue: 0
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -313,6 +655,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
 
         /**
          * @param excludeCredentials (Updatable) Flag used to indicate whether we need to restrict creation of multiple credentials in same authenticator
+         * 
+         * **Added In:** 2009232244
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -325,6 +678,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
         /**
          * @param excludeCredentials (Updatable) Flag used to indicate whether we need to restrict creation of multiple credentials in same authenticator
          * 
+         * **Added In:** 2009232244
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -334,6 +698,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
 
         /**
          * @param publicKeyTypes (Updatable) List of server supported public key algorithms
+         * 
+         * **Added In:** 2009232244
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -346,6 +721,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
         /**
          * @param publicKeyTypes (Updatable) List of server supported public key algorithms
          * 
+         * **Added In:** 2009232244
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -355,6 +741,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
 
         /**
          * @param publicKeyTypes (Updatable) List of server supported public key algorithms
+         * 
+         * **Added In:** 2009232244
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -366,6 +763,19 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
         /**
          * @param timeout (Updatable) Timeout for the fido authentication to complete
          * 
+         * **Added In:** 2009232244
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * idcsMaxValue: 600000
+         * * idcsMinValue: 10000
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -376,6 +786,19 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
 
         /**
          * @param timeout (Updatable) Timeout for the fido authentication to complete
+         * 
+         * **Added In:** 2009232244
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * idcsMaxValue: 600000
+         * * idcsMinValue: 10000
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 

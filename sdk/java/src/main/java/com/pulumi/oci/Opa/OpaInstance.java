@@ -286,12 +286,18 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
     /**
      * Shape of the instance.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="shapeName", type=String.class, parameters={})
     private Output<String> shapeName;
 
     /**
      * @return Shape of the instance.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> shapeName() {

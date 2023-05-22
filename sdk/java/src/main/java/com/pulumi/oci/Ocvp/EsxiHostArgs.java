@@ -81,12 +81,20 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
      * 
+     * If this attribute is not specified, the SDDC&#39;s `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you&#39;re creating the fourth ESXi host in the SDDC, and `instanceDisplayNamePrefix` is `MySDDC`, the host&#39;s display name is `MySDDC-4`.
+     * 
+     * Avoid entering confidential information.
+     * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
      * @return (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
+     * 
+     * If this attribute is not specified, the SDDC&#39;s `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you&#39;re creating the fourth ESXi host in the SDDC, and `instanceDisplayNamePrefix` is `MySDDC`, the host&#39;s display name is `MySDDC-4`.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -186,12 +194,18 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="sddcId", required=true)
     private Output<String> sddcId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> sddcId() {
@@ -320,6 +334,10 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param displayName (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
          * 
+         * If this attribute is not specified, the SDDC&#39;s `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you&#39;re creating the fourth ESXi host in the SDDC, and `instanceDisplayNamePrefix` is `MySDDC`, the host&#39;s display name is `MySDDC-4`.
+         * 
+         * Avoid entering confidential information.
+         * 
          * @return builder
          * 
          */
@@ -330,6 +348,10 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param displayName (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
+         * 
+         * If this attribute is not specified, the SDDC&#39;s `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you&#39;re creating the fourth ESXi host in the SDDC, and `instanceDisplayNamePrefix` is `MySDDC`, the host&#39;s display name is `MySDDC-4`.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -467,6 +489,9 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param sddcId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -477,6 +502,9 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sddcId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

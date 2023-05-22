@@ -22,6 +22,8 @@ public final class TargetTargetDetectorRecipe {
     /**
      * @return The target description.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     private @Nullable String description;
     /**
@@ -41,6 +43,8 @@ public final class TargetTargetDetectorRecipe {
     private @Nullable List<TargetTargetDetectorRecipeDetectorRule> detectorRules;
     /**
      * @return (Updatable) DetectorTemplate identifier.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
@@ -86,6 +90,8 @@ public final class TargetTargetDetectorRecipe {
     /**
      * @return The target description.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
@@ -113,6 +119,8 @@ public final class TargetTargetDetectorRecipe {
     }
     /**
      * @return (Updatable) DetectorTemplate identifier.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {

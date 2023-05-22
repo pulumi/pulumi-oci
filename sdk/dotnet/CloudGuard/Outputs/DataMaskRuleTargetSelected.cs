@@ -19,6 +19,10 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         public readonly string Kind;
         /// <summary>
         /// (Updatable) Types of Targets
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly ImmutableArray<string> Values;
 

@@ -120,6 +120,9 @@ type Schedule struct {
 	// The date and time of the next job execution.
 	TimeNextRun pulumi.StringOutput `pulumi:"timeNextRun"`
 	// The date and time of the first time job execution.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeScheduled pulumi.StringOutput `pulumi:"timeScheduled"`
 }
 
@@ -193,6 +196,9 @@ type scheduleState struct {
 	// The date and time of the next job execution.
 	TimeNextRun *string `pulumi:"timeNextRun"`
 	// The date and time of the first time job execution.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeScheduled *string `pulumi:"timeScheduled"`
 }
 
@@ -226,6 +232,9 @@ type ScheduleState struct {
 	// The date and time of the next job execution.
 	TimeNextRun pulumi.StringPtrInput
 	// The date and time of the first time job execution.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeScheduled pulumi.StringPtrInput
 }
 
@@ -255,6 +264,9 @@ type scheduleArgs struct {
 	// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
 	ScheduleRecurrences string `pulumi:"scheduleRecurrences"`
 	// The date and time of the first time job execution.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeScheduled string `pulumi:"timeScheduled"`
 }
 
@@ -281,6 +293,9 @@ type ScheduleArgs struct {
 	// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
 	ScheduleRecurrences pulumi.StringInput
 	// The date and time of the first time job execution.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeScheduled pulumi.StringInput
 }
 
@@ -442,6 +457,9 @@ func (o ScheduleOutput) TimeNextRun() pulumi.StringOutput {
 }
 
 // The date and time of the first time job execution.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ScheduleOutput) TimeScheduled() pulumi.StringOutput {
 	return o.ApplyT(func(v *Schedule) pulumi.StringOutput { return v.TimeScheduled }).(pulumi.StringOutput)
 }

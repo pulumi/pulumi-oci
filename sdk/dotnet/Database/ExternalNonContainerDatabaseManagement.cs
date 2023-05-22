@@ -40,6 +40,9 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The Oracle license model that applies to the external database. Required only for enabling database management.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("licenseModel")]
         public Output<string> LicenseModel { get; private set; } = null!;
@@ -107,6 +110,9 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The Oracle license model that applies to the external database. Required only for enabling database management.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("licenseModel")]
         public Input<string>? LicenseModel { get; set; }
@@ -136,6 +142,9 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The Oracle license model that applies to the external database. Required only for enabling database management.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("licenseModel")]
         public Input<string>? LicenseModel { get; set; }

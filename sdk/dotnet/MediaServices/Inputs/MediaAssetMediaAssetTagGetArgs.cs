@@ -14,6 +14,10 @@ namespace Pulumi.Oci.MediaServices.Inputs
     {
         /// <summary>
         /// (Updatable) The type of the media asset.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

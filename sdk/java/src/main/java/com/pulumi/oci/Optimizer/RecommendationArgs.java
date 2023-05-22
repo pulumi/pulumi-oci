@@ -48,12 +48,22 @@ public final class RecommendationArgs extends com.pulumi.resources.ResourceArgs 
     /**
      * (Updatable) The date and time the current status will change. The format is defined by RFC3339.
      * 
+     * For example, &#34;The current `postponed` status of the recommendation will end and change to `pending` on this date and time.&#34;
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="timeStatusEnd")
     private @Nullable Output<String> timeStatusEnd;
 
     /**
      * @return (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+     * 
+     * For example, &#34;The current `postponed` status of the recommendation will end and change to `pending` on this date and time.&#34;
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> timeStatusEnd() {
@@ -131,6 +141,11 @@ public final class RecommendationArgs extends com.pulumi.resources.ResourceArgs 
         /**
          * @param timeStatusEnd (Updatable) The date and time the current status will change. The format is defined by RFC3339.
          * 
+         * For example, &#34;The current `postponed` status of the recommendation will end and change to `pending` on this date and time.&#34;
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -141,6 +156,11 @@ public final class RecommendationArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param timeStatusEnd (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+         * 
+         * For example, &#34;The current `postponed` status of the recommendation will end and change to `pending` on this date and time.&#34;
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

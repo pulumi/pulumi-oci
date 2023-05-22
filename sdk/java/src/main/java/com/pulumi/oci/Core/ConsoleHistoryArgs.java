@@ -65,12 +65,18 @@ public final class ConsoleHistoryArgs extends com.pulumi.resources.ResourceArgs 
     /**
      * The OCID of the instance to get the console history from.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="instanceId", required=true)
     private Output<String> instanceId;
 
     /**
      * @return The OCID of the instance to get the console history from.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> instanceId() {
@@ -170,6 +176,9 @@ public final class ConsoleHistoryArgs extends com.pulumi.resources.ResourceArgs 
         /**
          * @param instanceId The OCID of the instance to get the console history from.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -180,6 +189,9 @@ public final class ConsoleHistoryArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param instanceId The OCID of the instance to get the console history from.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

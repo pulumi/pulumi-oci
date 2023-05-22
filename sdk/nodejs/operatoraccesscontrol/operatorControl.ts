@@ -103,6 +103,10 @@ export class OperatorControl extends pulumi.CustomResource {
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
      * (Updatable) This is the message that will be displayed to the operator users while accessing the system.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly systemMessage!: pulumi.Output<string>;
     /**
@@ -252,6 +256,10 @@ export interface OperatorControlState {
     state?: pulumi.Input<string>;
     /**
      * (Updatable) This is the message that will be displayed to the operator users while accessing the system.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     systemMessage?: pulumi.Input<string>;
     /**
@@ -318,6 +326,10 @@ export interface OperatorControlArgs {
     resourceType: pulumi.Input<string>;
     /**
      * (Updatable) This is the message that will be displayed to the operator users while accessing the system.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     systemMessage?: pulumi.Input<string>;
 }

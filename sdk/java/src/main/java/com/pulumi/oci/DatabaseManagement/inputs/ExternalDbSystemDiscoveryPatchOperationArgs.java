@@ -49,12 +49,18 @@ public final class ExternalDbSystemDiscoveryPatchOperationArgs extends com.pulum
     /**
      * (Updatable)
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="value")
     private @Nullable Output<ExternalDbSystemDiscoveryPatchOperationValueArgs> value;
 
     /**
      * @return (Updatable)
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<ExternalDbSystemDiscoveryPatchOperationValueArgs>> value() {
@@ -132,6 +138,9 @@ public final class ExternalDbSystemDiscoveryPatchOperationArgs extends com.pulum
         /**
          * @param value (Updatable)
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -142,6 +151,9 @@ public final class ExternalDbSystemDiscoveryPatchOperationArgs extends com.pulum
 
         /**
          * @param value (Updatable)
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

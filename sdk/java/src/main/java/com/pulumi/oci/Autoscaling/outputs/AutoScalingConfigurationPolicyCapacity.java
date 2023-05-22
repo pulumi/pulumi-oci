@@ -14,15 +14,21 @@ public final class AutoScalingConfigurationPolicyCapacity {
     /**
      * @return For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
      * 
+     * For a schedule-based autoscaling policy, this value is the target pool size to scale to when executing the schedule that&#39;s defined in the autoscaling policy.
+     * 
      */
     private @Nullable Integer initial;
     /**
      * @return For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
      * 
+     * For a schedule-based autoscaling policy, this value is not used.
+     * 
      */
     private @Nullable Integer max;
     /**
      * @return For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
+     * 
+     * For a schedule-based autoscaling policy, this value is not used.
      * 
      */
     private @Nullable Integer min;
@@ -31,6 +37,8 @@ public final class AutoScalingConfigurationPolicyCapacity {
     /**
      * @return For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
      * 
+     * For a schedule-based autoscaling policy, this value is the target pool size to scale to when executing the schedule that&#39;s defined in the autoscaling policy.
+     * 
      */
     public Optional<Integer> initial() {
         return Optional.ofNullable(this.initial);
@@ -38,12 +46,16 @@ public final class AutoScalingConfigurationPolicyCapacity {
     /**
      * @return For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
      * 
+     * For a schedule-based autoscaling policy, this value is not used.
+     * 
      */
     public Optional<Integer> max() {
         return Optional.ofNullable(this.max);
     }
     /**
      * @return For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
+     * 
+     * For a schedule-based autoscaling policy, this value is not used.
      * 
      */
     public Optional<Integer> min() {

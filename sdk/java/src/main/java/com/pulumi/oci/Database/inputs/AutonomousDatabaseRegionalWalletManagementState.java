@@ -35,12 +35,18 @@ public final class AutonomousDatabaseRegionalWalletManagementState extends com.p
     /**
      * (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="shouldRotate")
     private @Nullable Output<Boolean> shouldRotate;
 
     /**
      * @return (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Boolean>> shouldRotate() {
@@ -128,6 +134,9 @@ public final class AutonomousDatabaseRegionalWalletManagementState extends com.p
         /**
          * @param shouldRotate (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -138,6 +147,9 @@ public final class AutonomousDatabaseRegionalWalletManagementState extends com.p
 
         /**
          * @param shouldRotate (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

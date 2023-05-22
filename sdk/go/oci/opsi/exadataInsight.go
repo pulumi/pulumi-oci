@@ -105,6 +105,9 @@ type ExadataInsight struct {
 	// The current state of the Exadata insight.
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringOutput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
@@ -190,6 +193,9 @@ type exadataInsightState struct {
 	// The current state of the Exadata insight.
 	State *string `pulumi:"state"`
 	// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status *string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
@@ -241,6 +247,9 @@ type ExadataInsightState struct {
 	// The current state of the Exadata insight.
 	State pulumi.StringPtrInput
 	// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
@@ -274,6 +283,9 @@ type exadataInsightArgs struct {
 	IsAutoSyncEnabled      *bool                                 `pulumi:"isAutoSyncEnabled"`
 	MemberVmClusterDetails []ExadataInsightMemberVmClusterDetail `pulumi:"memberVmClusterDetails"`
 	// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status *string `pulumi:"status"`
 }
 
@@ -298,6 +310,9 @@ type ExadataInsightArgs struct {
 	IsAutoSyncEnabled      pulumi.BoolPtrInput
 	MemberVmClusterDetails ExadataInsightMemberVmClusterDetailArrayInput
 	// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringPtrInput
 }
 
@@ -497,6 +512,9 @@ func (o ExadataInsightOutput) State() pulumi.StringOutput {
 }
 
 // (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ExadataInsightOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadataInsight) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }

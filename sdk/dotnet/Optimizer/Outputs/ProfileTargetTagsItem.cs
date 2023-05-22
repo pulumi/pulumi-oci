@@ -23,10 +23,18 @@ namespace Pulumi.Oci.Optimizer.Outputs
         public readonly string TagNamespaceName;
         /// <summary>
         /// (Updatable) Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
+        /// 
+        /// When the value for this field is `ANY`, the `tagValues` field should be empty, which enforces overrides to the recommendation for resources with any tag values attached to them.
+        /// 
+        /// When the value for this field value is `VALUE`, the `tagValues` field must include a specific value or list of values. Overrides to the recommendation criteria only occur for resources that match the values in the `tagValues` fields.
         /// </summary>
         public readonly string TagValueType;
         /// <summary>
         /// (Updatable) The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly ImmutableArray<string> TagValues;
 

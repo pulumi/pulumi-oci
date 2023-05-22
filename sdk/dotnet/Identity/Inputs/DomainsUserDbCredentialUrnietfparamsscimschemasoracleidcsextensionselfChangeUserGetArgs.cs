@@ -14,6 +14,17 @@ namespace Pulumi.Oci.Identity.Inputs
     {
         /// <summary>
         /// If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+        /// 
+        /// **Added In:** 2205182039
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: writeOnly
+        /// * required: false
+        /// * returned: never
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("allowSelfChange")]
         public Input<bool>? AllowSelfChange { get; set; }

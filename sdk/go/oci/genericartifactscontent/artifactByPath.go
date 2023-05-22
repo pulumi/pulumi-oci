@@ -55,6 +55,9 @@ type ArtifactByPath struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Content pulumi.StringPtrOutput `pulumi:"content"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
@@ -122,6 +125,9 @@ type artifactByPathState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Content *string `pulumi:"content"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -152,6 +158,9 @@ type ArtifactByPathState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
 	CompartmentId pulumi.StringPtrInput
 	// Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Content pulumi.StringPtrInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
@@ -183,6 +192,9 @@ type artifactByPathArgs struct {
 	// A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
 	ArtifactPath string `pulumi:"artifactPath"`
 	// Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Content *string `pulumi:"content"`
 	// The [OCID](https://www.terraform.io/iaas/Content/General/Concepts/identifiers.htm) of the repository.
 	RepositoryId string `pulumi:"repositoryId"`
@@ -197,6 +209,9 @@ type ArtifactByPathArgs struct {
 	// A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
 	ArtifactPath pulumi.StringInput
 	// Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Content pulumi.StringPtrInput
 	// The [OCID](https://www.terraform.io/iaas/Content/General/Concepts/identifiers.htm) of the repository.
 	RepositoryId pulumi.StringInput
@@ -308,6 +323,9 @@ func (o ArtifactByPathOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ArtifactByPathOutput) Content() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ArtifactByPath) pulumi.StringPtrOutput { return v.Content }).(pulumi.StringPtrOutput)
 }

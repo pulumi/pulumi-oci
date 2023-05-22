@@ -105,6 +105,10 @@ export class Stream extends pulumi.CustomResource {
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the stream pool that contains the stream.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly streamPoolId!: pulumi.Output<string>;
     /**
@@ -200,6 +204,10 @@ export interface StreamState {
     state?: pulumi.Input<string>;
     /**
      * (Updatable) The OCID of the stream pool that contains the stream.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     streamPoolId?: pulumi.Input<string>;
     /**
@@ -238,6 +246,10 @@ export interface StreamArgs {
     retentionInHours?: pulumi.Input<number>;
     /**
      * (Updatable) The OCID of the stream pool that contains the stream.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     streamPoolId?: pulumi.Input<string>;
 }

@@ -48,12 +48,18 @@ public final class BdsInstancePatchActionState extends com.pulumi.resources.Reso
     /**
      * The version of the patch to be installed.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="version")
     private @Nullable Output<String> version;
 
     /**
      * @return The version of the patch to be installed.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> version() {
@@ -131,6 +137,9 @@ public final class BdsInstancePatchActionState extends com.pulumi.resources.Reso
         /**
          * @param version The version of the patch to be installed.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -141,6 +150,9 @@ public final class BdsInstancePatchActionState extends com.pulumi.resources.Reso
 
         /**
          * @param version The version of the patch to be installed.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

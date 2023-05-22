@@ -163,7 +163,16 @@ def get_records(compartment_id: Optional[str] = None,
                 zone_version: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRecordsResult:
     """
-    Use this data source to access information about an existing resource.
+    **Deprecated. Use Dns.Rrset instead.**
+
+    This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
+
+    Gets all records in the specified zone. The results are sorted by `domain` in alphabetical order by default.
+    For more information about records, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+    For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
+    provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
+    parameter is required.
+
 
     :param str compartment_id: The OCID of the compartment the resource belongs to.
     :param str domain: Search by domain. Will match any record whose domain (case-insensitive) equals the provided value.
@@ -213,7 +222,16 @@ def get_records_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
                        zone_version: Optional[pulumi.Input[Optional[str]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRecordsResult]:
     """
-    Use this data source to access information about an existing resource.
+    **Deprecated. Use Dns.Rrset instead.**
+
+    This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
+
+    Gets all records in the specified zone. The results are sorted by `domain` in alphabetical order by default.
+    For more information about records, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+    For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
+    provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
+    parameter is required.
+
 
     :param str compartment_id: The OCID of the compartment the resource belongs to.
     :param str domain: Search by domain. Will match any record whose domain (case-insensitive) equals the provided value.

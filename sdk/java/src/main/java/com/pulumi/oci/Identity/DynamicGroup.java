@@ -166,12 +166,18 @@ public class DynamicGroup extends com.pulumi.resources.CustomResource {
     /**
      * The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
     /**
      * @return The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> name() {

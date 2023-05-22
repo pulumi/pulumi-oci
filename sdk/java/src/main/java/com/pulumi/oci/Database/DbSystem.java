@@ -40,6 +40,8 @@ import javax.annotation.Nullable;
  * 
  * Use the [CreateCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/CreateCloudExadataInfrastructure/) and [CreateCloudVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/CreateCloudVmCluster/) APIs to provision a new Exadata Cloud Service instance.
  * 
+ * **Important:** When `auto_backup_enabled` is not present in the configuration or set to true, the `auto_backup_window` and `auto_full_backup_window` will be ignored
+ * 
  * ## Import
  * 
  * DbSystems can be imported using the `id`, e.g.
@@ -102,12 +104,16 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
      * 
+     * **Subnet Restrictions:** See the subnet restrictions information for **subnetId**.
+     * 
      */
     @Export(name="backupSubnetId", type=String.class, parameters={})
     private Output<String> backupSubnetId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
+     * 
+     * **Subnet Restrictions:** See the subnet restrictions information for **subnetId**.
      * 
      */
     public Output<String> backupSubnetId() {
@@ -154,6 +160,8 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      * * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
      * * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
      * 
+     * This parameter is not used for INTEL virtual machine DB systems because virtual machine DB systems have a set number of cores for each shape. For information about the number of cores for a virtual machine DB system shape, see [Virtual Machine DB Systems](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/overview.htm#virtualmachine)
+     * 
      */
     @Export(name="cpuCoreCount", type=Integer.class, parameters={})
     private Output<Integer> cpuCoreCount;
@@ -170,6 +178,8 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      * * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
      * * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
      * * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
+     * 
+     * This parameter is not used for INTEL virtual machine DB systems because virtual machine DB systems have a set number of cores for each shape. For information about the number of cores for a virtual machine DB system shape, see [Virtual Machine DB Systems](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/overview.htm#virtualmachine)
      * 
      */
     public Output<Integer> cpuCoreCount() {
@@ -234,12 +244,16 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Details for creating a Database Home if you are creating a database by restoring from a database backup.
      * 
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+     * 
      */
     @Export(name="dbHome", type=DbSystemDbHome.class, parameters={})
     private Output<DbSystemDbHome> dbHome;
 
     /**
      * @return (Updatable) Details for creating a Database Home if you are creating a database by restoring from a database backup.
+     * 
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      * 
      */
     public Output<DbSystemDbHome> dbHome() {
@@ -318,12 +332,28 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
     /**
      * A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
      * 
+     * If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
+     * 
+     * If the node count is greater than 1, you can specify which Fault Domains these nodes will be distributed into. The system assigns your nodes automatically to the Fault Domains you specify so that no Fault Domain contains more than one node.
+     * 
+     * To get a list of Fault Domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+     * 
+     * Example: `FAULT-DOMAIN-1`
+     * 
      */
     @Export(name="faultDomains", type=List.class, parameters={String.class})
     private Output<List<String>> faultDomains;
 
     /**
      * @return A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+     * 
+     * If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
+     * 
+     * If the node count is greater than 1, you can specify which Fault Domains these nodes will be distributed into. The system assigns your nodes automatically to the Fault Domains you specify so that no Fault Domain contains more than one node.
+     * 
+     * To get a list of Fault Domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+     * 
+     * Example: `FAULT-DOMAIN-1`
      * 
      */
     public Output<List<String>> faultDomains() {
@@ -346,12 +376,20 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
     /**
      * The hostname for the DB system. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata DB systems.
      * 
+     * The maximum length of the combined hostname and domain is 63 characters.
+     * 
+     * **Note:** The hostname must be unique within the subnet. If it is not unique, the DB system will fail to provision.
+     * 
      */
     @Export(name="hostname", type=String.class, parameters={})
     private Output<String> hostname;
 
     /**
      * @return The hostname for the DB system. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata DB systems.
+     * 
+     * The maximum length of the combined hostname and domain is 63 characters.
+     * 
+     * **Note:** The hostname must be unique within the subnet. If it is not unique, the DB system will fail to provision.
      * 
      */
     public Output<String> hostname() {
@@ -658,6 +696,8 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      * * For virtual machine shapes, the number of CPU cores and memory
      * * For bare metal and Exadata shapes, the number of CPU cores, memory, and storage
      * 
+     * To get a list of shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
+     * 
      */
     @Export(name="shape", type=String.class, parameters={})
     private Output<String> shape;
@@ -666,6 +706,8 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      * @return (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
      * * For virtual machine shapes, the number of CPU cores and memory
      * * For bare metal and Exadata shapes, the number of CPU cores, memory, and storage
+     * 
+     * To get a list of shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
      * 
      */
     public Output<String> shape() {
@@ -758,12 +800,24 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
      * 
+     * **Subnet Restrictions:**
+     * * For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
+     * * For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
+     * 
+     * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
+     * 
      */
     @Export(name="subnetId", type=String.class, parameters={})
     private Output<String> subnetId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
+     * 
+     * **Subnet Restrictions:**
+     * * For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
+     * * For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
+     * 
+     * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
      * 
      */
     public Output<String> subnetId() {
@@ -786,12 +840,18 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
     /**
      * The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="timeZone", type=String.class, parameters={})
     private Output<String> timeZone;
 
     /**
      * @return The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> timeZone() {

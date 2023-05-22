@@ -322,6 +322,9 @@ type ObjectLifecyclePolicyRule struct {
 	// (Updatable) Specifies the age of objects to apply the rule to. The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified time.
 	TimeAmount string `pulumi:"timeAmount"`
 	// (Updatable) The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeUnit string `pulumi:"timeUnit"`
 }
 
@@ -350,6 +353,9 @@ type ObjectLifecyclePolicyRuleArgs struct {
 	// (Updatable) Specifies the age of objects to apply the rule to. The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified time.
 	TimeAmount pulumi.StringInput `pulumi:"timeAmount"`
 	// (Updatable) The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeUnit pulumi.StringInput `pulumi:"timeUnit"`
 }
 
@@ -437,6 +443,9 @@ func (o ObjectLifecyclePolicyRuleOutput) TimeAmount() pulumi.StringOutput {
 }
 
 // (Updatable) The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ObjectLifecyclePolicyRuleOutput) TimeUnit() pulumi.StringOutput {
 	return o.ApplyT(func(v ObjectLifecyclePolicyRule) string { return v.TimeUnit }).(pulumi.StringOutput)
 }
@@ -463,8 +472,18 @@ func (o ObjectLifecyclePolicyRuleArrayOutput) Index(i pulumi.IntInput) ObjectLif
 
 type ObjectLifecyclePolicyRuleObjectNameFilter struct {
 	// (Updatable) An array of glob patterns to match the object names to exclude. An empty array is ignored. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
+	//
+	// The special pattern characters have the following meanings:
+	//
+	// \           Escapes the following character
+	// *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a '-' in the range, make it the first or last character.
 	ExclusionPatterns []string `pulumi:"exclusionPatterns"`
 	// (Updatable) An array of glob patterns to match the object names to include. An empty array includes all objects in the bucket. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
+	//
+	// The special pattern characters have the following meanings:
+	//
+	// \           Escapes the following character
+	// *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a '-' in the range, make it the first or last character.
 	InclusionPatterns []string `pulumi:"inclusionPatterns"`
 	// (Updatable) An array of object name prefixes that the rule will apply to. An empty array means to include all objects.
 	InclusionPrefixes []string `pulumi:"inclusionPrefixes"`
@@ -483,8 +502,18 @@ type ObjectLifecyclePolicyRuleObjectNameFilterInput interface {
 
 type ObjectLifecyclePolicyRuleObjectNameFilterArgs struct {
 	// (Updatable) An array of glob patterns to match the object names to exclude. An empty array is ignored. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
+	//
+	// The special pattern characters have the following meanings:
+	//
+	// \           Escapes the following character
+	// *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a '-' in the range, make it the first or last character.
 	ExclusionPatterns pulumi.StringArrayInput `pulumi:"exclusionPatterns"`
 	// (Updatable) An array of glob patterns to match the object names to include. An empty array includes all objects in the bucket. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
+	//
+	// The special pattern characters have the following meanings:
+	//
+	// \           Escapes the following character
+	// *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a '-' in the range, make it the first or last character.
 	InclusionPatterns pulumi.StringArrayInput `pulumi:"inclusionPatterns"`
 	// (Updatable) An array of object name prefixes that the rule will apply to. An empty array means to include all objects.
 	InclusionPrefixes pulumi.StringArrayInput `pulumi:"inclusionPrefixes"`
@@ -568,11 +597,21 @@ func (o ObjectLifecyclePolicyRuleObjectNameFilterOutput) ToObjectLifecyclePolicy
 }
 
 // (Updatable) An array of glob patterns to match the object names to exclude. An empty array is ignored. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
+//
+// The special pattern characters have the following meanings:
+//
+// \           Escapes the following character
+// *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a '-' in the range, make it the first or last character.
 func (o ObjectLifecyclePolicyRuleObjectNameFilterOutput) ExclusionPatterns() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ObjectLifecyclePolicyRuleObjectNameFilter) []string { return v.ExclusionPatterns }).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) An array of glob patterns to match the object names to include. An empty array includes all objects in the bucket. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
+//
+// The special pattern characters have the following meanings:
+//
+// \           Escapes the following character
+// *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a '-' in the range, make it the first or last character.
 func (o ObjectLifecyclePolicyRuleObjectNameFilterOutput) InclusionPatterns() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ObjectLifecyclePolicyRuleObjectNameFilter) []string { return v.InclusionPatterns }).(pulumi.StringArrayOutput)
 }
@@ -607,6 +646,11 @@ func (o ObjectLifecyclePolicyRuleObjectNameFilterPtrOutput) Elem() ObjectLifecyc
 }
 
 // (Updatable) An array of glob patterns to match the object names to exclude. An empty array is ignored. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
+//
+// The special pattern characters have the following meanings:
+//
+// \           Escapes the following character
+// *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a '-' in the range, make it the first or last character.
 func (o ObjectLifecyclePolicyRuleObjectNameFilterPtrOutput) ExclusionPatterns() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ObjectLifecyclePolicyRuleObjectNameFilter) []string {
 		if v == nil {
@@ -617,6 +661,11 @@ func (o ObjectLifecyclePolicyRuleObjectNameFilterPtrOutput) ExclusionPatterns() 
 }
 
 // (Updatable) An array of glob patterns to match the object names to include. An empty array includes all objects in the bucket. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
+//
+// The special pattern characters have the following meanings:
+//
+// \           Escapes the following character
+// *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a '-' in the range, make it the first or last character.
 func (o ObjectLifecyclePolicyRuleObjectNameFilterPtrOutput) InclusionPatterns() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ObjectLifecyclePolicyRuleObjectNameFilter) []string {
 		if v == nil {
@@ -652,6 +701,9 @@ type StorageObjectSourceUriDetails struct {
 	// The entity tag to match the source object.
 	SourceObjectIfMatchEtag *string `pulumi:"sourceObjectIfMatchEtag"`
 	// The version id of the object to be restored.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceVersionId *string `pulumi:"sourceVersionId"`
 }
 
@@ -682,6 +734,9 @@ type StorageObjectSourceUriDetailsArgs struct {
 	// The entity tag to match the source object.
 	SourceObjectIfMatchEtag pulumi.StringPtrInput `pulumi:"sourceObjectIfMatchEtag"`
 	// The version id of the object to be restored.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceVersionId pulumi.StringPtrInput `pulumi:"sourceVersionId"`
 }
 
@@ -798,6 +853,9 @@ func (o StorageObjectSourceUriDetailsOutput) SourceObjectIfMatchEtag() pulumi.St
 }
 
 // The version id of the object to be restored.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o StorageObjectSourceUriDetailsOutput) SourceVersionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v StorageObjectSourceUriDetails) *string { return v.SourceVersionId }).(pulumi.StringPtrOutput)
 }
@@ -897,6 +955,9 @@ func (o StorageObjectSourceUriDetailsPtrOutput) SourceObjectIfMatchEtag() pulumi
 }
 
 // The version id of the object to be restored.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o StorageObjectSourceUriDetailsPtrOutput) SourceVersionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *StorageObjectSourceUriDetails) *string {
 		if v == nil {

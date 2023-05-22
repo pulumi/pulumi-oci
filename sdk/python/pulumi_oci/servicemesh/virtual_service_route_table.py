@@ -29,6 +29,10 @@ class VirtualServiceRouteTableArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input['VirtualServiceRouteTableRouteRuleArgs']]] route_rules: (Updatable) The route rules for the virtual service.
         :param pulumi.Input[str] virtual_service_id: The OCID of the service mesh in which this access policy is created.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -78,6 +82,10 @@ class VirtualServiceRouteTableArgs:
     def virtual_service_id(self) -> pulumi.Input[str]:
         """
         The OCID of the service mesh in which this access policy is created.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "virtual_service_id")
 
@@ -177,6 +185,10 @@ class _VirtualServiceRouteTableState:
         :param pulumi.Input[str] time_created: The time when this resource was created in an RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         :param pulumi.Input[str] virtual_service_id: The OCID of the service mesh in which this access policy is created.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -354,6 +366,10 @@ class _VirtualServiceRouteTableState:
     def virtual_service_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the service mesh in which this access policy is created.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "virtual_service_id")
 
@@ -430,6 +446,10 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
         :param pulumi.Input[int] priority: (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualServiceRouteTableRouteRuleArgs']]]] route_rules: (Updatable) The route rules for the virtual service.
         :param pulumi.Input[str] virtual_service_id: The OCID of the service mesh in which this access policy is created.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -575,6 +595,10 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The time when this resource was created in an RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         :param pulumi.Input[str] virtual_service_id: The OCID of the service mesh in which this access policy is created.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -696,6 +720,10 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
     def virtual_service_id(self) -> pulumi.Output[str]:
         """
         The OCID of the service mesh in which this access policy is created.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "virtual_service_id")
 

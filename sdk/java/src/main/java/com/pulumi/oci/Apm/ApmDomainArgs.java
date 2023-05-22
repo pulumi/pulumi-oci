@@ -96,12 +96,18 @@ public final class ApmDomainArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Indicates whether this is an &#34;Always Free&#34; resource. The default value is false.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="isFreeTier")
     private @Nullable Output<Boolean> isFreeTier;
 
     /**
      * @return Indicates whether this is an &#34;Always Free&#34; resource. The default value is false.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Boolean>> isFreeTier() {
@@ -245,6 +251,9 @@ public final class ApmDomainArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param isFreeTier Indicates whether this is an &#34;Always Free&#34; resource. The default value is false.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -255,6 +264,9 @@ public final class ApmDomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param isFreeTier Indicates whether this is an &#34;Always Free&#34; resource. The default value is false.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -45,6 +45,10 @@ namespace Pulumi.Oci.Optimizer
 
         /// <summary>
         /// (Updatable) The Cloud Advisor enrollment status.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -121,6 +125,10 @@ namespace Pulumi.Oci.Optimizer
 
         /// <summary>
         /// (Updatable) The Cloud Advisor enrollment status.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("status", required: true)]
         public Input<string> Status { get; set; } = null!;
@@ -153,6 +161,10 @@ namespace Pulumi.Oci.Optimizer
 
         /// <summary>
         /// (Updatable) The Cloud Advisor enrollment status.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }

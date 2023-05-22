@@ -36,6 +36,10 @@ class CertificateAuthorityArgs:
         :param pulumi.Input[str] description: (Updatable) A brief description of the CA.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] name: A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "certificate_authority_config", certificate_authority_config)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -154,6 +158,10 @@ class CertificateAuthorityArgs:
     def name(self) -> Optional[pulumi.Input[str]]:
         """
         A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "name")
 
@@ -198,6 +206,10 @@ class _CertificateAuthorityState:
         :param pulumi.Input[str] kms_key_id: The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current CA lifecycle state.
         :param pulumi.Input[str] name: A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] signing_algorithm: The algorithm used to sign public key certificates that the CA issues.
         :param pulumi.Input[str] state: The current lifecycle state of the certificate authority.
         :param pulumi.Input[Sequence[pulumi.Input['CertificateAuthoritySubjectArgs']]] subjects: The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
@@ -390,6 +402,10 @@ class _CertificateAuthorityState:
     def name(self) -> Optional[pulumi.Input[str]]:
         """
         A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "name")
 
@@ -497,6 +513,10 @@ class CertificateAuthority(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] kms_key_id: The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
         :param pulumi.Input[str] name: A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -622,6 +642,10 @@ class CertificateAuthority(pulumi.CustomResource):
         :param pulumi.Input[str] kms_key_id: The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current CA lifecycle state.
         :param pulumi.Input[str] name: A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] signing_algorithm: The algorithm used to sign public key certificates that the CA issues.
         :param pulumi.Input[str] state: The current lifecycle state of the certificate authority.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CertificateAuthoritySubjectArgs']]]] subjects: The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
@@ -753,6 +777,10 @@ class CertificateAuthority(pulumi.CustomResource):
     def name(self) -> pulumi.Output[str]:
         """
         A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "name")
 

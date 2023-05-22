@@ -15,35 +15,115 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
     /**
      * @return (Updatable) Last update timestamp for the risk score
      * 
+     * **Added In:** 18.1.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     private String lastUpdateTimestamp;
     /**
      * @return (Updatable) User Token URI
+     * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
      * 
      */
     private @Nullable String ref;
     /**
      * @return (Updatable) Risk Level
      * 
+     * **Added In:** 18.1.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private String riskLevel;
     /**
      * @return (Updatable) Risk Score value
+     * 
+     * **Added In:** 18.1.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     private Integer score;
     /**
      * @return (Updatable) Risk Provider Profile Source
      * 
+     * **Added In:** 18.1.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String source;
     /**
      * @return (Updatable) A supplemental status indicating the reason why a user is disabled
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String status;
     /**
      * @return (Updatable) The value of a X509 certificate.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
@@ -52,12 +132,35 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
     /**
      * @return (Updatable) Last update timestamp for the risk score
      * 
+     * **Added In:** 18.1.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     public String lastUpdateTimestamp() {
         return this.lastUpdateTimestamp;
     }
     /**
      * @return (Updatable) User Token URI
+     * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
      * 
      */
     public Optional<String> ref() {
@@ -66,12 +169,35 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
     /**
      * @return (Updatable) Risk Level
      * 
+     * **Added In:** 18.1.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public String riskLevel() {
         return this.riskLevel;
     }
     /**
      * @return (Updatable) Risk Score value
+     * 
+     * **Added In:** 18.1.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Integer score() {
@@ -80,6 +206,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
     /**
      * @return (Updatable) Risk Provider Profile Source
      * 
+     * **Added In:** 18.1.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> source() {
         return Optional.ofNullable(this.source);
@@ -87,12 +225,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
     /**
      * @return (Updatable) A supplemental status indicating the reason why a user is disabled
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> status() {
         return Optional.ofNullable(this.status);
     }
     /**
      * @return (Updatable) The value of a X509 certificate.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

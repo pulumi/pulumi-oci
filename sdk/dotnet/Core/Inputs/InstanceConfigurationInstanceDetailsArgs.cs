@@ -32,6 +32,8 @@ namespace Pulumi.Oci.Core.Inputs
 
         /// <summary>
         /// Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+        /// 
+        /// See [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) for more information.
         /// </summary>
         [Input("launchDetails")]
         public Input<Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsArgs>? LaunchDetails { get; set; }

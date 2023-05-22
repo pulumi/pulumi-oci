@@ -33,6 +33,10 @@ class ScheduleArgs:
         :param pulumi.Input['ScheduleResultLocationArgs'] result_location: (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
         :param pulumi.Input[str] schedule_recurrences: Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         :param pulumi.Input[str] time_scheduled: The date and time of the first time job execution.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) The description of the schedule.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
@@ -101,6 +105,10 @@ class ScheduleArgs:
     def time_scheduled(self) -> pulumi.Input[str]:
         """
         The date and time of the first time job execution.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_scheduled")
 
@@ -228,6 +236,10 @@ class _ScheduleState:
         :param pulumi.Input[str] time_created: The date and time the schedule was created.
         :param pulumi.Input[str] time_next_run: The date and time of the next job execution.
         :param pulumi.Input[str] time_scheduled: The date and time of the first time job execution.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -433,6 +445,10 @@ class _ScheduleState:
     def time_scheduled(self) -> Optional[pulumi.Input[str]]:
         """
         The date and time of the first time job execution.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_scheduled")
 
@@ -530,6 +546,10 @@ class Schedule(pulumi.CustomResource):
         :param pulumi.Input[str] saved_report_id: The saved report id which can also be used to generate query.
         :param pulumi.Input[str] schedule_recurrences: Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         :param pulumi.Input[str] time_scheduled: The date and time of the first time job execution.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -701,6 +721,10 @@ class Schedule(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The date and time the schedule was created.
         :param pulumi.Input[str] time_next_run: The date and time of the next job execution.
         :param pulumi.Input[str] time_scheduled: The date and time of the first time job execution.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -840,6 +864,10 @@ class Schedule(pulumi.CustomResource):
     def time_scheduled(self) -> pulumi.Output[str]:
         """
         The date and time of the first time job execution.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_scheduled")
 

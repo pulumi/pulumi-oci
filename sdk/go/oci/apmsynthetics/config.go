@@ -34,7 +34,7 @@ import (
 //				DisplayName:             pulumi.Any(_var.Monitor_display_name),
 //				MonitorType:             pulumi.Any(_var.Monitor_monitor_type),
 //				RepeatIntervalInSeconds: pulumi.Any(_var.Monitor_repeat_interval_in_seconds),
-//				VantagePoints:           pulumi.StringArray{},
+//				VantagePoints:           pulumi.Any(_var.Vantage_points),
 //				AvailabilityConfiguration: &apmsynthetics.ConfigAvailabilityConfigurationArgs{
 //					MaxAllowedFailuresPerInterval: pulumi.Any(_var.Monitor_availability_configuration_max_allowed_failures_per_interval),
 //					MinAllowedRunsPerInterval:     pulumi.Any(_var.Monitor_availability_configuration_min_allowed_runs_per_interval),
@@ -184,6 +184,9 @@ type Config struct {
 	// Number of vantage points where monitor is running.
 	VantagePointCount pulumi.IntOutput `pulumi:"vantagePointCount"`
 	// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VantagePoints pulumi.StringArrayOutput `pulumi:"vantagePoints"`
 }
 
@@ -276,6 +279,9 @@ type configState struct {
 	// Number of vantage points where monitor is running.
 	VantagePointCount *int `pulumi:"vantagePointCount"`
 	// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VantagePoints []string `pulumi:"vantagePoints"`
 }
 
@@ -325,6 +331,9 @@ type ConfigState struct {
 	// Number of vantage points where monitor is running.
 	VantagePointCount pulumi.IntPtrInput
 	// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VantagePoints pulumi.StringArrayInput
 }
 
@@ -372,6 +381,9 @@ type configArgs struct {
 	// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VantagePoints []string `pulumi:"vantagePoints"`
 }
 
@@ -416,6 +428,9 @@ type ConfigArgs struct {
 	// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 	TimeoutInSeconds pulumi.IntPtrInput
 	// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VantagePoints pulumi.StringArrayInput
 }
 
@@ -617,6 +632,9 @@ func (o ConfigOutput) VantagePointCount() pulumi.IntOutput {
 }
 
 // (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ConfigOutput) VantagePoints() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Config) pulumi.StringArrayOutput { return v.VantagePoints }).(pulumi.StringArrayOutput)
 }

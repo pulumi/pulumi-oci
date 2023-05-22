@@ -67,6 +67,9 @@ type ReplicationPolicy struct {
 	// The name of the policy. Avoid entering confidential information.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The Object Storage namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
 	Status pulumi.StringOutput `pulumi:"status"`
@@ -130,6 +133,9 @@ type replicationPolicyState struct {
 	// The name of the policy. Avoid entering confidential information.
 	Name *string `pulumi:"name"`
 	// The Object Storage namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace *string `pulumi:"namespace"`
 	// The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
 	Status *string `pulumi:"status"`
@@ -153,6 +159,9 @@ type ReplicationPolicyState struct {
 	// The name of the policy. Avoid entering confidential information.
 	Name pulumi.StringPtrInput
 	// The Object Storage namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace pulumi.StringPtrInput
 	// The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
 	Status pulumi.StringPtrInput
@@ -180,6 +189,9 @@ type replicationPolicyArgs struct {
 	// The name of the policy. Avoid entering confidential information.
 	Name *string `pulumi:"name"`
 	// The Object Storage namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace string `pulumi:"namespace"`
 }
 
@@ -196,6 +208,9 @@ type ReplicationPolicyArgs struct {
 	// The name of the policy. Avoid entering confidential information.
 	Name pulumi.StringPtrInput
 	// The Object Storage namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace pulumi.StringInput
 }
 
@@ -312,6 +327,9 @@ func (o ReplicationPolicyOutput) Name() pulumi.StringOutput {
 }
 
 // The Object Storage namespace used for the request.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ReplicationPolicyOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v *ReplicationPolicy) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
 }

@@ -117,6 +117,10 @@ namespace Pulumi.Oci.Vault
 
         /// <summary>
         /// The OCID of the vault where you want to create the secret.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("vaultId")]
         public Output<string> VaultId { get; private set; } = null!;
@@ -247,6 +251,10 @@ namespace Pulumi.Oci.Vault
 
         /// <summary>
         /// The OCID of the vault where you want to create the secret.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("vaultId", required: true)]
         public Input<string> VaultId { get; set; } = null!;
@@ -375,6 +383,10 @@ namespace Pulumi.Oci.Vault
 
         /// <summary>
         /// The OCID of the vault where you want to create the secret.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("vaultId")]
         public Input<string>? VaultId { get; set; }

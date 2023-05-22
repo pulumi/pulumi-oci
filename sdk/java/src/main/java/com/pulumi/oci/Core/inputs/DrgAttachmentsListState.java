@@ -66,12 +66,18 @@ public final class DrgAttachmentsListState extends com.pulumi.resources.Resource
     /**
      * Whether the DRG attachment lives in a different tenancy than the DRG.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="isCrossTenancy")
     private @Nullable Output<Boolean> isCrossTenancy;
 
     /**
      * @return Whether the DRG attachment lives in a different tenancy than the DRG.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Boolean>> isCrossTenancy() {
@@ -181,6 +187,9 @@ public final class DrgAttachmentsListState extends com.pulumi.resources.Resource
         /**
          * @param isCrossTenancy Whether the DRG attachment lives in a different tenancy than the DRG.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -191,6 +200,9 @@ public final class DrgAttachmentsListState extends com.pulumi.resources.Resource
 
         /**
          * @param isCrossTenancy Whether the DRG attachment lives in a different tenancy than the DRG.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

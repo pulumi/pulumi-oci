@@ -64,12 +64,18 @@ public final class CloudGuardConfigurationArgs extends com.pulumi.resources.Reso
     /**
      * (Updatable) Status of Cloud Guard Tenant
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="status", required=true)
     private Output<String> status;
 
     /**
      * @return (Updatable) Status of Cloud Guard Tenant
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> status() {
@@ -169,6 +175,9 @@ public final class CloudGuardConfigurationArgs extends com.pulumi.resources.Reso
         /**
          * @param status (Updatable) Status of Cloud Guard Tenant
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -179,6 +188,9 @@ public final class CloudGuardConfigurationArgs extends com.pulumi.resources.Reso
 
         /**
          * @param status (Updatable) Status of Cloud Guard Tenant
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

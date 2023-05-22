@@ -76,12 +76,18 @@ public class AutonomousDatabaseRegionalWalletManagement extends com.pulumi.resou
     /**
      * (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="shouldRotate", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> shouldRotate;
 
     /**
      * @return (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Optional<Boolean>> shouldRotate() {

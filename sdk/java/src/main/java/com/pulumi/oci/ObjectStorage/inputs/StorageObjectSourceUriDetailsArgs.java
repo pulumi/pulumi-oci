@@ -123,12 +123,18 @@ public final class StorageObjectSourceUriDetailsArgs extends com.pulumi.resource
     /**
      * The version id of the object to be restored.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="sourceVersionId")
     private @Nullable Output<String> sourceVersionId;
 
     /**
      * @return The version id of the object to be restored.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> sourceVersionId() {
@@ -316,6 +322,9 @@ public final class StorageObjectSourceUriDetailsArgs extends com.pulumi.resource
         /**
          * @param sourceVersionId The version id of the object to be restored.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -326,6 +335,9 @@ public final class StorageObjectSourceUriDetailsArgs extends com.pulumi.resource
 
         /**
          * @param sourceVersionId The version id of the object to be restored.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -102,6 +102,9 @@ type DeployEnvironment struct {
 	// (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
 	NetworkChannel DeployEnvironmentNetworkChannelOutput `pulumi:"networkChannel"`
 	// The OCID of a project.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// The current state of the deployment environment.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -171,6 +174,9 @@ type deployEnvironmentState struct {
 	// (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
 	NetworkChannel *DeployEnvironmentNetworkChannel `pulumi:"networkChannel"`
 	// The OCID of a project.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId *string `pulumi:"projectId"`
 	// The current state of the deployment environment.
 	State *string `pulumi:"state"`
@@ -206,6 +212,9 @@ type DeployEnvironmentState struct {
 	// (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
 	NetworkChannel DeployEnvironmentNetworkChannelPtrInput
 	// The OCID of a project.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringPtrInput
 	// The current state of the deployment environment.
 	State pulumi.StringPtrInput
@@ -241,6 +250,9 @@ type deployEnvironmentArgs struct {
 	// (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
 	NetworkChannel *DeployEnvironmentNetworkChannel `pulumi:"networkChannel"`
 	// The OCID of a project.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId string `pulumi:"projectId"`
 }
 
@@ -265,6 +277,9 @@ type DeployEnvironmentArgs struct {
 	// (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
 	NetworkChannel DeployEnvironmentNetworkChannelPtrInput
 	// The OCID of a project.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringInput
 }
 
@@ -413,6 +428,9 @@ func (o DeployEnvironmentOutput) NetworkChannel() DeployEnvironmentNetworkChanne
 }
 
 // The OCID of a project.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DeployEnvironmentOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeployEnvironment) pulumi.StringOutput { return v.ProjectId }).(pulumi.StringOutput)
 }

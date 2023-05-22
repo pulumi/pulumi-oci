@@ -97,12 +97,18 @@ public final class ReplicationPolicyArgs extends com.pulumi.resources.ResourceAr
     /**
      * The Object Storage namespace used for the request.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="namespace", required=true)
     private Output<String> namespace;
 
     /**
      * @return The Object Storage namespace used for the request.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> namespace() {
@@ -250,6 +256,9 @@ public final class ReplicationPolicyArgs extends com.pulumi.resources.ResourceAr
         /**
          * @param namespace The Object Storage namespace used for the request.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -260,6 +269,9 @@ public final class ReplicationPolicyArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param namespace The Object Storage namespace used for the request.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

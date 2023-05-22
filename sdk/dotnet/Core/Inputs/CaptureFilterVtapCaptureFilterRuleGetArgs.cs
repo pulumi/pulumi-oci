@@ -22,6 +22,8 @@ namespace Pulumi.Oci.Core.Inputs
         /// (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
         /// * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
         /// * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+        /// 
+        /// If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
         /// </summary>
         [Input("icmpOptions")]
         public Input<Inputs.CaptureFilterVtapCaptureFilterRuleIcmpOptionsGetArgs>? IcmpOptions { get; set; }

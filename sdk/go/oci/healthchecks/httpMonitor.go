@@ -81,6 +81,8 @@ type HttpMonitor struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) A dictionary of HTTP request headers.
+	//
+	// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
 	Headers pulumi.MapOutput `pulumi:"headers"`
 	// The region where updates must be made and where results must be fetched from.
 	HomeRegion pulumi.StringOutput `pulumi:"homeRegion"`
@@ -105,6 +107,9 @@ type HttpMonitor struct {
 	// (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
 	TimeoutInSeconds pulumi.IntOutput `pulumi:"timeoutInSeconds"`
 	// (Updatable) A list of names of vantage points from which to execute the probe.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VantagePointNames pulumi.StringArrayOutput `pulumi:"vantagePointNames"`
 }
 
@@ -161,6 +166,8 @@ type httpMonitorState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) A dictionary of HTTP request headers.
+	//
+	// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
 	Headers map[string]interface{} `pulumi:"headers"`
 	// The region where updates must be made and where results must be fetched from.
 	HomeRegion *string `pulumi:"homeRegion"`
@@ -185,6 +192,9 @@ type httpMonitorState struct {
 	// (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
 	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// (Updatable) A list of names of vantage points from which to execute the probe.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VantagePointNames []string `pulumi:"vantagePointNames"`
 }
 
@@ -198,6 +208,8 @@ type HttpMonitorState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) A dictionary of HTTP request headers.
+	//
+	// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
 	Headers pulumi.MapInput
 	// The region where updates must be made and where results must be fetched from.
 	HomeRegion pulumi.StringPtrInput
@@ -222,6 +234,9 @@ type HttpMonitorState struct {
 	// (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
 	TimeoutInSeconds pulumi.IntPtrInput
 	// (Updatable) A list of names of vantage points from which to execute the probe.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VantagePointNames pulumi.StringArrayInput
 }
 
@@ -239,6 +254,8 @@ type httpMonitorArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) A dictionary of HTTP request headers.
+	//
+	// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
 	Headers map[string]interface{} `pulumi:"headers"`
 	// (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
 	IntervalInSeconds int `pulumi:"intervalInSeconds"`
@@ -257,6 +274,9 @@ type httpMonitorArgs struct {
 	// (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
 	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// (Updatable) A list of names of vantage points from which to execute the probe.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VantagePointNames []string `pulumi:"vantagePointNames"`
 }
 
@@ -271,6 +291,8 @@ type HttpMonitorArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) A dictionary of HTTP request headers.
+	//
+	// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
 	Headers pulumi.MapInput
 	// (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
 	IntervalInSeconds pulumi.IntInput
@@ -289,6 +311,9 @@ type HttpMonitorArgs struct {
 	// (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
 	TimeoutInSeconds pulumi.IntPtrInput
 	// (Updatable) A list of names of vantage points from which to execute the probe.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VantagePointNames pulumi.StringArrayInput
 }
 
@@ -400,6 +425,8 @@ func (o HttpMonitorOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) A dictionary of HTTP request headers.
+//
+// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
 func (o HttpMonitorOutput) Headers() pulumi.MapOutput {
 	return o.ApplyT(func(v *HttpMonitor) pulumi.MapOutput { return v.Headers }).(pulumi.MapOutput)
 }
@@ -460,6 +487,9 @@ func (o HttpMonitorOutput) TimeoutInSeconds() pulumi.IntOutput {
 }
 
 // (Updatable) A list of names of vantage points from which to execute the probe.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o HttpMonitorOutput) VantagePointNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *HttpMonitor) pulumi.StringArrayOutput { return v.VantagePointNames }).(pulumi.StringArrayOutput)
 }

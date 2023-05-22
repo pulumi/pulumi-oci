@@ -77,10 +77,17 @@ type BackendSet struct {
 	// (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
 	IsPreserveSource pulumi.BoolOutput `pulumi:"isPreserveSource"`
 	// A user-friendly name for the backend set that must be unique and cannot be changed.
+	//
+	// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+	//
+	// Example: `exampleBackendSet`
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
 	NetworkLoadBalancerId pulumi.StringOutput `pulumi:"networkLoadBalancerId"`
 	// (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Policy pulumi.StringOutput `pulumi:"policy"`
 }
 
@@ -131,10 +138,17 @@ type backendSetState struct {
 	// (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
 	IsPreserveSource *bool `pulumi:"isPreserveSource"`
 	// A user-friendly name for the backend set that must be unique and cannot be changed.
+	//
+	// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+	//
+	// Example: `exampleBackendSet`
 	Name *string `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
 	NetworkLoadBalancerId *string `pulumi:"networkLoadBalancerId"`
 	// (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Policy *string `pulumi:"policy"`
 }
 
@@ -148,10 +162,17 @@ type BackendSetState struct {
 	// (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
 	IsPreserveSource pulumi.BoolPtrInput
 	// A user-friendly name for the backend set that must be unique and cannot be changed.
+	//
+	// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+	//
+	// Example: `exampleBackendSet`
 	Name pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
 	NetworkLoadBalancerId pulumi.StringPtrInput
 	// (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Policy pulumi.StringPtrInput
 }
 
@@ -167,10 +188,17 @@ type backendSetArgs struct {
 	// (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
 	IsPreserveSource *bool `pulumi:"isPreserveSource"`
 	// A user-friendly name for the backend set that must be unique and cannot be changed.
+	//
+	// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+	//
+	// Example: `exampleBackendSet`
 	Name *string `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
 	NetworkLoadBalancerId string `pulumi:"networkLoadBalancerId"`
 	// (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Policy string `pulumi:"policy"`
 }
 
@@ -183,10 +211,17 @@ type BackendSetArgs struct {
 	// (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
 	IsPreserveSource pulumi.BoolPtrInput
 	// A user-friendly name for the backend set that must be unique and cannot be changed.
+	//
+	// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+	//
+	// Example: `exampleBackendSet`
 	Name pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
 	NetworkLoadBalancerId pulumi.StringInput
 	// (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Policy pulumi.StringInput
 }
 
@@ -298,6 +333,10 @@ func (o BackendSetOutput) IsPreserveSource() pulumi.BoolOutput {
 }
 
 // A user-friendly name for the backend set that must be unique and cannot be changed.
+//
+// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+//
+// Example: `exampleBackendSet`
 func (o BackendSetOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *BackendSet) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
@@ -308,6 +347,9 @@ func (o BackendSetOutput) NetworkLoadBalancerId() pulumi.StringOutput {
 }
 
 // (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE“
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BackendSetOutput) Policy() pulumi.StringOutput {
 	return o.ApplyT(func(v *BackendSet) pulumi.StringOutput { return v.Policy }).(pulumi.StringOutput)
 }

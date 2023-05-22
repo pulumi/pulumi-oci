@@ -253,12 +253,18 @@ public class VirtualServiceRouteTable extends com.pulumi.resources.CustomResourc
     /**
      * The OCID of the service mesh in which this access policy is created.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="virtualServiceId", type=String.class, parameters={})
     private Output<String> virtualServiceId;
 
     /**
      * @return The OCID of the service mesh in which this access policy is created.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> virtualServiceId() {

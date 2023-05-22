@@ -92,6 +92,10 @@ namespace Pulumi.Oci.Apm
 
         /// <summary>
         /// Indicates whether this is an "Always Free" resource. The default value is false.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("isFreeTier")]
         public Output<bool> IsFreeTier { get; private set; } = null!;
@@ -204,6 +208,10 @@ namespace Pulumi.Oci.Apm
 
         /// <summary>
         /// Indicates whether this is an "Always Free" resource. The default value is false.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("isFreeTier")]
         public Input<bool>? IsFreeTier { get; set; }
@@ -266,6 +274,10 @@ namespace Pulumi.Oci.Apm
 
         /// <summary>
         /// Indicates whether this is an "Always Free" resource. The default value is false.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("isFreeTier")]
         public Input<bool>? IsFreeTier { get; set; }

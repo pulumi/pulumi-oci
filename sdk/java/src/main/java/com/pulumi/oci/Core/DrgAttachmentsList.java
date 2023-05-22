@@ -106,12 +106,18 @@ public class DrgAttachmentsList extends com.pulumi.resources.CustomResource {
     /**
      * Whether the DRG attachment lives in a different tenancy than the DRG.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="isCrossTenancy", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> isCrossTenancy;
 
     /**
      * @return Whether the DRG attachment lives in a different tenancy than the DRG.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Optional<Boolean>> isCrossTenancy() {

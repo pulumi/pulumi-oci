@@ -83,6 +83,9 @@ type MigrationAsset struct {
 	// (Updatable) Replication schedule identifier
 	ReplicationScheduleId pulumi.StringOutput `pulumi:"replicationScheduleId"`
 	// Name of snapshot bucket
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SnapShotBucketName pulumi.StringOutput `pulumi:"snapShotBucketName"`
 	// Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
 	Snapshots pulumi.MapOutput `pulumi:"snapshots"`
@@ -168,6 +171,9 @@ type migrationAssetState struct {
 	// (Updatable) Replication schedule identifier
 	ReplicationScheduleId *string `pulumi:"replicationScheduleId"`
 	// Name of snapshot bucket
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SnapShotBucketName *string `pulumi:"snapShotBucketName"`
 	// Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
 	Snapshots map[string]interface{} `pulumi:"snapshots"`
@@ -210,6 +216,9 @@ type MigrationAssetState struct {
 	// (Updatable) Replication schedule identifier
 	ReplicationScheduleId pulumi.StringPtrInput
 	// Name of snapshot bucket
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SnapShotBucketName pulumi.StringPtrInput
 	// Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
 	Snapshots pulumi.MapInput
@@ -246,6 +255,9 @@ type migrationAssetArgs struct {
 	// (Updatable) Replication schedule identifier
 	ReplicationScheduleId *string `pulumi:"replicationScheduleId"`
 	// Name of snapshot bucket
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SnapShotBucketName string `pulumi:"snapShotBucketName"`
 }
 
@@ -265,6 +277,9 @@ type MigrationAssetArgs struct {
 	// (Updatable) Replication schedule identifier
 	ReplicationScheduleId pulumi.StringPtrInput
 	// Name of snapshot bucket
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SnapShotBucketName pulumi.StringInput
 }
 
@@ -415,6 +430,9 @@ func (o MigrationAssetOutput) ReplicationScheduleId() pulumi.StringOutput {
 }
 
 // Name of snapshot bucket
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MigrationAssetOutput) SnapShotBucketName() pulumi.StringOutput {
 	return o.ApplyT(func(v *MigrationAsset) pulumi.StringOutput { return v.SnapShotBucketName }).(pulumi.StringOutput)
 }

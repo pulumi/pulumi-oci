@@ -133,6 +133,12 @@ def get_stacks(compartment_id: Optional[str] = None,
     :param str display_name: Display name on which to query.
     :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a stack.
     :param str state: A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
+           
+           Allowable values:
+           * CREATING
+           * ACTIVE
+           * DELETING
+           * DELETED
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -183,5 +189,11 @@ def get_stacks_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param str display_name: Display name on which to query.
     :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a stack.
     :param str state: A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
+           
+           Allowable values:
+           * CREATING
+           * ACTIVE
+           * DELETING
+           * DELETED
     """
     ...

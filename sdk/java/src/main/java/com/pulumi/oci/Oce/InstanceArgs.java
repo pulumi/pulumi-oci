@@ -261,12 +261,18 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Web Application Firewall(WAF) primary domain
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="wafPrimaryDomain")
     private @Nullable Output<String> wafPrimaryDomain;
 
     /**
      * @return (Updatable) Web Application Firewall(WAF) primary domain
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> wafPrimaryDomain() {
@@ -662,6 +668,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param wafPrimaryDomain (Updatable) Web Application Firewall(WAF) primary domain
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -672,6 +681,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param wafPrimaryDomain (Updatable) Web Application Firewall(WAF) primary domain
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

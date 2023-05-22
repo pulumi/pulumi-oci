@@ -489,6 +489,10 @@ class OsnOcpuAllocationParam(dict):
                  ocpu_allocation_number: float):
         """
         :param float ocpu_allocation_number: (Updatable) Number of OCPU allocation
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
 
@@ -497,6 +501,10 @@ class OsnOcpuAllocationParam(dict):
     def ocpu_allocation_number(self) -> float:
         """
         (Updatable) Number of OCPU allocation
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "ocpu_allocation_number")
 

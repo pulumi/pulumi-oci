@@ -21,12 +21,32 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     /**
      * (Updatable) The last failed login date
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * idcsAllowUpdatesInReadOnlyMode: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     @Import(name="lastFailedLoginDate")
     private @Nullable Output<String> lastFailedLoginDate;
 
     /**
      * @return (Updatable) The last failed login date
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * idcsAllowUpdatesInReadOnlyMode: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> lastFailedLoginDate() {
@@ -36,12 +56,32 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     /**
      * (Updatable) The last successful login date
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * idcsAllowUpdatesInReadOnlyMode: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     @Import(name="lastSuccessfulLoginDate")
     private @Nullable Output<String> lastSuccessfulLoginDate;
 
     /**
      * @return (Updatable) The last successful login date
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * idcsAllowUpdatesInReadOnlyMode: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> lastSuccessfulLoginDate() {
@@ -51,12 +91,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     /**
      * (Updatable) A complex attribute that indicates an account is locked (blocking new sessions)
      * 
+     * **SCIM++ Properties:**
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Locked, mapsTo:locked.on], [columnHeaderName:Locked Reason, mapsTo:locked.reason], [columnHeaderName:Locked Date, mapsTo:locked.lockDate]]
+     * * idcsSearchable: false
+     * * idcsAllowUpdatesInReadOnlyMode: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="locked")
     private @Nullable Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArgs> locked;
 
     /**
      * @return (Updatable) A complex attribute that indicates an account is locked (blocking new sessions)
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Locked, mapsTo:locked.on], [columnHeaderName:Locked Reason, mapsTo:locked.reason], [columnHeaderName:Locked Date, mapsTo:locked.lockDate]]
+     * * idcsSearchable: false
+     * * idcsAllowUpdatesInReadOnlyMode: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArgs>> locked() {
@@ -66,12 +128,32 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     /**
      * (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * idcsAllowUpdatesInReadOnlyMode: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="loginAttempts")
     private @Nullable Output<Integer> loginAttempts;
 
     /**
      * @return (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * idcsAllowUpdatesInReadOnlyMode: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> loginAttempts() {
@@ -81,12 +163,38 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     /**
      * (Updatable) Maximum number of concurrent sessions for a User
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsMaxValue: 999
+     * * idcsMinValue: 1
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="maxConcurrentSessions")
     private @Nullable Output<Integer> maxConcurrentSessions;
 
     /**
      * @return (Updatable) Maximum number of concurrent sessions for a User
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsMaxValue: 999
+     * * idcsMinValue: 1
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> maxConcurrentSessions() {
@@ -96,12 +204,32 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     /**
      * (Updatable) The previous successful login date
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     @Import(name="previousSuccessfulLoginDate")
     private @Nullable Output<String> previousSuccessfulLoginDate;
 
     /**
      * @return (Updatable) The previous successful login date
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> previousSuccessfulLoginDate() {
@@ -111,12 +239,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     /**
      * (Updatable) The number of failed recovery attempts. The value is reset to 0 after a successful login.
      * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="recoveryAttempts")
     private @Nullable Output<Integer> recoveryAttempts;
 
     /**
      * @return (Updatable) The number of failed recovery attempts. The value is reset to 0 after a successful login.
+     * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> recoveryAttempts() {
@@ -126,12 +276,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     /**
      * (Updatable) The number of failed account recovery enrollment attempts.
      * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="recoveryEnrollAttempts")
     private @Nullable Output<Integer> recoveryEnrollAttempts;
 
     /**
      * @return (Updatable) The number of failed account recovery enrollment attempts.
+     * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> recoveryEnrollAttempts() {
@@ -141,12 +313,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     /**
      * (Updatable) A complex attribute that indicates an password recovery is locked (blocking new sessions)
      * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="recoveryLocked")
     private @Nullable Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArgs> recoveryLocked;
 
     /**
      * @return (Updatable) A complex attribute that indicates an password recovery is locked (blocking new sessions)
+     * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArgs>> recoveryLocked() {
@@ -188,6 +382,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         /**
          * @param lastFailedLoginDate (Updatable) The last failed login date
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * idcsAllowUpdatesInReadOnlyMode: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: dateTime
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -199,6 +403,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         /**
          * @param lastFailedLoginDate (Updatable) The last failed login date
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * idcsAllowUpdatesInReadOnlyMode: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: dateTime
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -208,6 +422,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
 
         /**
          * @param lastSuccessfulLoginDate (Updatable) The last successful login date
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * idcsAllowUpdatesInReadOnlyMode: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: dateTime
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -220,6 +444,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         /**
          * @param lastSuccessfulLoginDate (Updatable) The last successful login date
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * idcsAllowUpdatesInReadOnlyMode: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: dateTime
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -229,6 +463,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
 
         /**
          * @param locked (Updatable) A complex attribute that indicates an account is locked (blocking new sessions)
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Locked, mapsTo:locked.on], [columnHeaderName:Locked Reason, mapsTo:locked.reason], [columnHeaderName:Locked Date, mapsTo:locked.lockDate]]
+         * * idcsSearchable: false
+         * * idcsAllowUpdatesInReadOnlyMode: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -241,6 +486,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         /**
          * @param locked (Updatable) A complex attribute that indicates an account is locked (blocking new sessions)
          * 
+         * **SCIM++ Properties:**
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Locked, mapsTo:locked.on], [columnHeaderName:Locked Reason, mapsTo:locked.reason], [columnHeaderName:Locked Date, mapsTo:locked.lockDate]]
+         * * idcsSearchable: false
+         * * idcsAllowUpdatesInReadOnlyMode: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -250,6 +506,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
 
         /**
          * @param loginAttempts (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * idcsAllowUpdatesInReadOnlyMode: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -262,6 +528,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         /**
          * @param loginAttempts (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * idcsAllowUpdatesInReadOnlyMode: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -271,6 +547,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
 
         /**
          * @param maxConcurrentSessions (Updatable) Maximum number of concurrent sessions for a User
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsMaxValue: 999
+         * * idcsMinValue: 1
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -283,6 +572,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         /**
          * @param maxConcurrentSessions (Updatable) Maximum number of concurrent sessions for a User
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsMaxValue: 999
+         * * idcsMinValue: 1
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -292,6 +594,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
 
         /**
          * @param previousSuccessfulLoginDate (Updatable) The previous successful login date
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: dateTime
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -304,6 +616,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         /**
          * @param previousSuccessfulLoginDate (Updatable) The previous successful login date
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: dateTime
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -313,6 +635,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
 
         /**
          * @param recoveryAttempts (Updatable) The number of failed recovery attempts. The value is reset to 0 after a successful login.
+         * 
+         * **Added In:** 19.1.4
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -325,6 +658,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         /**
          * @param recoveryAttempts (Updatable) The number of failed recovery attempts. The value is reset to 0 after a successful login.
          * 
+         * **Added In:** 19.1.4
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -334,6 +678,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
 
         /**
          * @param recoveryEnrollAttempts (Updatable) The number of failed account recovery enrollment attempts.
+         * 
+         * **Added In:** 19.1.4
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -346,6 +701,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         /**
          * @param recoveryEnrollAttempts (Updatable) The number of failed account recovery enrollment attempts.
          * 
+         * **Added In:** 19.1.4
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -355,6 +721,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
 
         /**
          * @param recoveryLocked (Updatable) A complex attribute that indicates an password recovery is locked (blocking new sessions)
+         * 
+         * **Added In:** 19.1.4
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -366,6 +743,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
 
         /**
          * @param recoveryLocked (Updatable) A complex attribute that indicates an password recovery is locked (blocking new sessions)
+         * 
+         * **Added In:** 19.1.4
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 

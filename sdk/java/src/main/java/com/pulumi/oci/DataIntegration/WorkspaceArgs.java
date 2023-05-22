@@ -261,12 +261,18 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The OCID of the VCN the subnet is in.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="vcnId")
     private @Nullable Output<String> vcnId;
 
     /**
      * @return The OCID of the VCN the subnet is in.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> vcnId() {
@@ -650,6 +656,9 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param vcnId The OCID of the VCN the subnet is in.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -660,6 +669,9 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vcnId The OCID of the VCN the subnet is in.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

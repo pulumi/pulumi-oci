@@ -81,6 +81,9 @@ type Ipv6 struct {
 	// The date and time the IPv6 was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VnicId pulumi.StringOutput `pulumi:"vnicId"`
 }
 
@@ -135,6 +138,9 @@ type ipv6State struct {
 	// The date and time the IPv6 was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VnicId *string `pulumi:"vnicId"`
 }
 
@@ -158,6 +164,9 @@ type Ipv6State struct {
 	// The date and time the IPv6 was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VnicId pulumi.StringPtrInput
 }
 
@@ -177,6 +186,9 @@ type ipv6Args struct {
 	// The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
 	Ipv6subnetCidr *string `pulumi:"ipv6subnetCidr"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VnicId string `pulumi:"vnicId"`
 }
 
@@ -193,6 +205,9 @@ type Ipv6Args struct {
 	// The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
 	Ipv6subnetCidr pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VnicId pulumi.StringInput
 }
 
@@ -329,6 +344,9 @@ func (o Ipv6Output) TimeCreated() pulumi.StringOutput {
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o Ipv6Output) VnicId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Ipv6) pulumi.StringOutput { return v.VnicId }).(pulumi.StringOutput)
 }

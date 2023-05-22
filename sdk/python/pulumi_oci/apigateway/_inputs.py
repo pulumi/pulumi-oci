@@ -442,6 +442,10 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgs:
                  verify_claims: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgs']]]] = None):
         """
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[str]]] audiences: (Updatable) The list of intended recipients for the token.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] cache_keys: (Updatable) A list of keys from "parameters" attribute value whose values will be added to the cache key.
         :param pulumi.Input[str] function_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
@@ -492,6 +496,10 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgs:
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -678,6 +686,10 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs:
                  uri: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[bool] is_ssl_verify_disabled: (Updatable) Defines whether or not to uphold SSL verification.
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs']]] keys: (Updatable) The set of static public keys.
         :param pulumi.Input[int] max_cache_duration_in_hours: (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
@@ -698,6 +710,10 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs:
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -923,6 +939,10 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
                  use_pkce: Optional[pulumi.Input[bool]] = None):
         """
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetailsArgs'] client_details: (Updatable) Client App Credential details.
         :param pulumi.Input[str] fallback_redirect_path: (Updatable) The path to be used as fallback after OAuth2.
         :param pulumi.Input[str] logout_path: (Updatable) The path to be used as logout.
@@ -970,6 +990,10 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -1143,6 +1167,10 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
                  client_secret_version_number: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] client_id: (Updatable) Client ID for the OAuth2/OIDC app.
         :param pulumi.Input[str] client_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
         :param pulumi.Input[str] client_secret_version_number: (Updatable) The version number of the client secret to use.
@@ -1160,6 +1188,10 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -1267,6 +1299,10 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
         """
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgs']]] items: (Updatable) The list of headers.
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -1290,6 +1326,10 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     def type(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -1468,6 +1508,10 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
                  uri: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] uri: (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
         """
         pulumi.set(__self__, "type", type)
@@ -1479,6 +1523,10 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -1512,6 +1560,10 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs:
                  uri: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyArgs'] additional_validation_policy: (Updatable) Additional JWT validation checks.
         :param pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetailsArgs'] client_details: (Updatable) Client App Credential details.
         :param pulumi.Input[bool] is_ssl_verify_disabled: (Updatable) Defines whether or not to uphold SSL verification.
@@ -1541,6 +1593,10 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs:
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -1752,6 +1808,10 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClient
                  client_secret_version_number: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] client_id: (Updatable) Client ID for the OAuth2/OIDC app.
         :param pulumi.Input[str] client_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
         :param pulumi.Input[str] client_secret_version_number: (Updatable) The version number of the client secret to use.
@@ -1769,6 +1829,10 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClient
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -1970,6 +2034,10 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySource
                  uri: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] uri: (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
         """
         pulumi.set(__self__, "type", type)
@@ -1981,6 +2049,10 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySource
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -2252,6 +2324,10 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                  verify_claims: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimArgs']]]] = None):
         """
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[str]]] audiences: (Updatable) The list of intended recipients for the token.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] cache_keys: (Updatable) A list of keys from "parameters" attribute value whose values will be added to the cache key.
         :param pulumi.Input[str] function_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
@@ -2302,6 +2378,10 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -2488,6 +2568,10 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                  uri: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[bool] is_ssl_verify_disabled: (Updatable) Defines whether or not to uphold SSL verification.
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKeyArgs']]] keys: (Updatable) The set of static public keys.
         :param pulumi.Input[int] max_cache_duration_in_hours: (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
@@ -2508,6 +2592,10 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -2733,6 +2821,10 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                  use_pkce: Optional[pulumi.Input[bool]] = None):
         """
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailsArgs'] client_details: (Updatable) Client App Credential details.
         :param pulumi.Input[str] fallback_redirect_path: (Updatable) The path to be used as fallback after OAuth2.
         :param pulumi.Input[str] logout_path: (Updatable) The path to be used as logout.
@@ -2780,6 +2872,10 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -2953,6 +3049,10 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                  client_secret_version_number: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] client_id: (Updatable) Client ID for the OAuth2/OIDC app.
         :param pulumi.Input[str] client_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
         :param pulumi.Input[str] client_secret_version_number: (Updatable) The version number of the client secret to use.
@@ -2970,6 +3070,10 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -3077,6 +3181,10 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         """
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgs']]] items: (Updatable) The list of headers.
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -3100,6 +3208,10 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     def type(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -3278,6 +3390,10 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                  uri: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] uri: (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
         """
         pulumi.set(__self__, "type", type)
@@ -3289,6 +3405,10 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -3322,6 +3442,10 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                  uri: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyArgs'] additional_validation_policy: (Updatable) Additional JWT validation checks.
         :param pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetailsArgs'] client_details: (Updatable) Client App Credential details.
         :param pulumi.Input[bool] is_ssl_verify_disabled: (Updatable) Defines whether or not to uphold SSL verification.
@@ -3351,6 +3475,10 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -3562,6 +3690,10 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                  client_secret_version_number: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] client_id: (Updatable) Client ID for the OAuth2/OIDC app.
         :param pulumi.Input[str] client_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
         :param pulumi.Input[str] client_secret_version_number: (Updatable) The version number of the client secret to use.
@@ -3579,6 +3711,10 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -3780,6 +3916,10 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                  uri: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] uri: (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
         """
         pulumi.set(__self__, "type", type)
@@ -3791,6 +3931,10 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -3879,6 +4023,10 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         :param pulumi.Input[str] expression: (Updatable) String describing the expression with wildcards.
         :param pulumi.Input[bool] is_default: (Updatable) Information regarding whether this is the default branch.
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
         pulumi.set(__self__, "name", name)
@@ -3932,6 +4080,10 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     def type(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -3960,6 +4112,10 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSource
         """
         :param pulumi.Input[str] selector: (Updatable) String describing the context variable used as selector.
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "selector", selector)
         pulumi.set(__self__, "type", type)
@@ -3981,6 +4137,10 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSource
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -4215,6 +4375,10 @@ class DeploymentSpecificationRouteBackendArgs:
                  url: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_post_logout_uris: (Updatable)
         :param pulumi.Input[str] body: (Updatable) The body of the stock response from the mock backend.
         :param pulumi.Input[float] connect_timeout_in_seconds: (Updatable) Defines a timeout for establishing a connection with a proxied server.
@@ -4262,6 +4426,10 @@ class DeploymentSpecificationRouteBackendArgs:
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -4519,6 +4687,10 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
                  url: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] body: (Updatable) The body of the stock response from the mock backend.
         :param pulumi.Input[float] connect_timeout_in_seconds: (Updatable) Defines a timeout for establishing a connection with a proxied server.
         :param pulumi.Input[str] function_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
@@ -4554,6 +4726,10 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -4720,6 +4896,10 @@ class DeploymentSpecificationRouteBackendRoutingBackendKeyArgs:
         """
         :param pulumi.Input[str] name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] expression: (Updatable) String describing the expression with wildcards.
         :param pulumi.Input[bool] is_default: (Updatable) Information regarding whether this is the default branch.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
@@ -4750,6 +4930,10 @@ class DeploymentSpecificationRouteBackendRoutingBackendKeyArgs:
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -4802,6 +4986,10 @@ class DeploymentSpecificationRouteBackendSelectionSourceArgs:
         """
         :param pulumi.Input[str] selector: (Updatable) String describing the context variable used as selector.
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "selector", selector)
         pulumi.set(__self__, "type", type)
@@ -4823,6 +5011,10 @@ class DeploymentSpecificationRouteBackendSelectionSourceArgs:
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -5075,6 +5267,10 @@ class DeploymentSpecificationRouteRequestPoliciesAuthorizationArgs:
         """
         :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_scopes: (Updatable) A user whose scope includes any of these access ranges is allowed on this route. Access ranges are case-sensitive.
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if allowed_scopes is not None:
             pulumi.set(__self__, "allowed_scopes", allowed_scopes)
@@ -5098,6 +5294,10 @@ class DeploymentSpecificationRouteRequestPoliciesAuthorizationArgs:
     def type(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -5116,6 +5316,12 @@ class DeploymentSpecificationRouteRequestPoliciesBodyValidationArgs:
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs']]] contents: (Updatable) The content of the request body.
         :param pulumi.Input[bool] required: (Updatable) Determines if the parameter is required in the request.
         :param pulumi.Input[str] validation_mode: (Updatable) Validation behavior mode.
+               
+               In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
+               
+               In `PERMISSIVE` mode, the result of the validation will be exposed as metrics while the request will follow the normal path.
+               
+               `DISABLED` type turns the validation off.
         """
         if contents is not None:
             pulumi.set(__self__, "contents", contents)
@@ -5153,6 +5359,12 @@ class DeploymentSpecificationRouteRequestPoliciesBodyValidationArgs:
     def validation_mode(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Validation behavior mode.
+
+        In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
+
+        In `PERMISSIVE` mode, the result of the validation will be exposed as metrics while the request will follow the normal path.
+
+        `DISABLED` type turns the validation off.
         """
         return pulumi.get(self, "validation_mode")
 
@@ -5168,7 +5380,13 @@ class DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs:
                  validation_type: pulumi.Input[str]):
         """
         :param pulumi.Input[str] media_type: (Updatable) The media_type is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
+               
+               media_type ::= ( / (  "*" "/" "*" ) / ( type "/" "*" ) / ( type "/" subtype ) )
+               
+               For requests that match multiple media types, only the most specific media type is applicable. e.g. `text/plain` overrides `text/*`
         :param pulumi.Input[str] validation_type: (Updatable) Validation type defines the content validation method.
+               
+               Make the validation to first parse the body as the respective format.
         """
         pulumi.set(__self__, "media_type", media_type)
         pulumi.set(__self__, "validation_type", validation_type)
@@ -5178,6 +5396,10 @@ class DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs:
     def media_type(self) -> pulumi.Input[str]:
         """
         (Updatable) The media_type is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
+
+        media_type ::= ( / (  "*" "/" "*" ) / ( type "/" "*" ) / ( type "/" subtype ) )
+
+        For requests that match multiple media types, only the most specific media type is applicable. e.g. `text/plain` overrides `text/*`
         """
         return pulumi.get(self, "media_type")
 
@@ -5190,6 +5412,8 @@ class DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs:
     def validation_type(self) -> pulumi.Input[str]:
         """
         (Updatable) Validation type defines the content validation method.
+
+        Make the validation to first parse the body as the respective format.
         """
         return pulumi.get(self, "validation_type")
 
@@ -5363,6 +5587,10 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHead
         """
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersItemArgs']]] items: (Updatable) The list of headers.
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "items", items)
         pulumi.set(__self__, "type", type)
@@ -5384,6 +5612,10 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHead
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -5556,6 +5788,12 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgs:
         """
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs']]] headers: (Updatable)
         :param pulumi.Input[str] validation_mode: (Updatable) Validation behavior mode.
+               
+               In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
+               
+               In `PERMISSIVE` mode, the result of the validation will be exposed as metrics while the request will follow the normal path.
+               
+               `DISABLED` type turns the validation off.
         """
         if headers is not None:
             pulumi.set(__self__, "headers", headers)
@@ -5579,6 +5817,12 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgs:
     def validation_mode(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Validation behavior mode.
+
+        In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
+
+        In `PERMISSIVE` mode, the result of the validation will be exposed as metrics while the request will follow the normal path.
+
+        `DISABLED` type turns the validation off.
         """
         return pulumi.get(self, "validation_mode")
 
@@ -5688,6 +5932,10 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFi
         """
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemArgs']]] items: (Updatable) The list of headers.
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "items", items)
         pulumi.set(__self__, "type", type)
@@ -5709,6 +5957,10 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFi
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -5881,6 +6133,12 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgs:
         """
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgs']]] parameters: (Updatable)
         :param pulumi.Input[str] validation_mode: (Updatable) Validation behavior mode.
+               
+               In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
+               
+               In `PERMISSIVE` mode, the result of the validation will be exposed as metrics while the request will follow the normal path.
+               
+               `DISABLED` type turns the validation off.
         """
         if parameters is not None:
             pulumi.set(__self__, "parameters", parameters)
@@ -5904,6 +6162,12 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgs:
     def validation_mode(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Validation behavior mode.
+
+        In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
+
+        In `PERMISSIVE` mode, the result of the validation will be exposed as metrics while the request will follow the normal path.
+
+        `DISABLED` type turns the validation off.
         """
         return pulumi.get(self, "validation_mode")
 
@@ -5959,9 +6223,17 @@ class DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs:
                  is_private_caching_enabled: Optional[pulumi.Input[bool]] = None):
         """
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[str]]] cache_key_additions: (Updatable) A list of context expressions whose values will be added to the base cache key. Values should contain an expression enclosed within ${} delimiters. Only the request context is available.
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether this policy is currently enabled.
         :param pulumi.Input[bool] is_private_caching_enabled: (Updatable) Set true to allow caching responses where the request has an Authorization header. Ensure you have configured your  cache key additions to get the level of isolation across authenticated requests that you require.
+               
+               When false, any request with an Authorization header will not be stored in the Response Cache.
+               
+               If using the CustomAuthenticationPolicy then the tokenHeader/tokenQueryParam are also subject to this check.
         """
         pulumi.set(__self__, "type", type)
         if cache_key_additions is not None:
@@ -5976,6 +6248,10 @@ class DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs:
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -6012,6 +6288,10 @@ class DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs:
     def is_private_caching_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Set true to allow caching responses where the request has an Authorization header. Ensure you have configured your  cache key additions to get the level of isolation across authenticated requests that you require.
+
+        When false, any request with an Authorization header will not be stored in the Response Cache.
+
+        If using the CustomAuthenticationPolicy then the tokenHeader/tokenQueryParam are also subject to this check.
         """
         return pulumi.get(self, "is_private_caching_enabled")
 
@@ -6122,6 +6402,10 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHea
         """
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersItemArgs']]] items: (Updatable) The list of headers.
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "items", items)
         pulumi.set(__self__, "type", type)
@@ -6143,6 +6427,10 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHea
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -6315,6 +6603,10 @@ class DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgs:
         """
         :param pulumi.Input[int] time_to_live_in_seconds: (Updatable) Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
         :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "time_to_live_in_seconds", time_to_live_in_seconds)
         pulumi.set(__self__, "type", type)
@@ -6336,6 +6628,10 @@ class DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgs:
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 

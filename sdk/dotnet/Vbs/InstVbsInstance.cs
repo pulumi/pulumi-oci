@@ -105,6 +105,10 @@ namespace Pulumi.Oci.Vbs
 
         /// <summary>
         /// (Updatable) Compartment where VBS may create additional resources for the service instance
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("resourceCompartmentId")]
         public Output<string> ResourceCompartmentId { get; private set; } = null!;
@@ -241,6 +245,10 @@ namespace Pulumi.Oci.Vbs
 
         /// <summary>
         /// (Updatable) Compartment where VBS may create additional resources for the service instance
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("resourceCompartmentId")]
         public Input<string>? ResourceCompartmentId { get; set; }
@@ -315,6 +323,10 @@ namespace Pulumi.Oci.Vbs
 
         /// <summary>
         /// (Updatable) Compartment where VBS may create additional resources for the service instance
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("resourceCompartmentId")]
         public Input<string>? ResourceCompartmentId { get; set; }

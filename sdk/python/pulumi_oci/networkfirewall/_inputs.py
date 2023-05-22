@@ -765,6 +765,10 @@ class NetworkFirewallPolicyUrlListUrlListValueArgs:
         """
         :param pulumi.Input[str] type: (Updatable) Type of the url lists based on the policy
         :param pulumi.Input[str] pattern: (Updatable) URL lists to allow or deny traffic to a group of URLs. You can include a maximum of 25 URLs in each list.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "type", type)
         if pattern is not None:
@@ -787,6 +791,10 @@ class NetworkFirewallPolicyUrlListUrlListValueArgs:
     def pattern(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) URL lists to allow or deny traffic to a group of URLs. You can include a maximum of 25 URLs in each list.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "pattern")
 

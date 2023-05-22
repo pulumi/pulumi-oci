@@ -13,25 +13,78 @@ public final class DomainsAuthenticationFactorSettingEndpointRestrictions {
     /**
      * @return (Updatable) Maximum number of days until an endpoint can be trusted
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 180
+     * * idcsMinValue: 1
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     private Integer maxEndpointTrustDurationInDays;
     /**
      * @return (Updatable) Maximum number of enrolled devices per user
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 20
+     * * idcsMinValue: 1
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     private Integer maxEnrolledDevices;
     /**
      * @return (Updatable) An integer that represents the maximum number of failed MFA logins before an account is locked
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 20
+     * * idcsMinValue: 5
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     private Integer maxIncorrectAttempts;
     /**
      * @return (Updatable) Max number of trusted endpoints per user
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 20
+     * * idcsMinValue: 1
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     private Integer maxTrustedEndpoints;
     /**
      * @return (Updatable) Specify if trusted endpoints are enabled
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     private Boolean trustedEndpointsEnabled;
@@ -40,12 +93,34 @@ public final class DomainsAuthenticationFactorSettingEndpointRestrictions {
     /**
      * @return (Updatable) Maximum number of days until an endpoint can be trusted
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 180
+     * * idcsMinValue: 1
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     public Integer maxEndpointTrustDurationInDays() {
         return this.maxEndpointTrustDurationInDays;
     }
     /**
      * @return (Updatable) Maximum number of enrolled devices per user
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 20
+     * * idcsMinValue: 1
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Integer maxEnrolledDevices() {
@@ -54,6 +129,17 @@ public final class DomainsAuthenticationFactorSettingEndpointRestrictions {
     /**
      * @return (Updatable) An integer that represents the maximum number of failed MFA logins before an account is locked
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 20
+     * * idcsMinValue: 5
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     public Integer maxIncorrectAttempts() {
         return this.maxIncorrectAttempts;
@@ -61,12 +147,32 @@ public final class DomainsAuthenticationFactorSettingEndpointRestrictions {
     /**
      * @return (Updatable) Max number of trusted endpoints per user
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 20
+     * * idcsMinValue: 1
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     public Integer maxTrustedEndpoints() {
         return this.maxTrustedEndpoints;
     }
     /**
      * @return (Updatable) Specify if trusted endpoints are enabled
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Boolean trustedEndpointsEnabled() {

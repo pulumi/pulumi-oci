@@ -95,12 +95,18 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The name you assign to the user during creation. This is the user&#39;s login for the Console. The name must be unique across all users in the tenancy and cannot be changed.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return The name you assign to the user during creation. This is the user&#39;s login for the Console. The name must be unique across all users in the tenancy and cannot be changed.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> name() {
@@ -244,6 +250,9 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param name The name you assign to the user during creation. This is the user&#39;s login for the Console. The name must be unique across all users in the tenancy and cannot be changed.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -254,6 +263,9 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name The name you assign to the user during creation. This is the user&#39;s login for the Console. The name must be unique across all users in the tenancy and cannot be changed.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

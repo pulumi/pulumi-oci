@@ -17,6 +17,9 @@ public final class BuildPipelineStageWaitCriteria {
     /**
      * @return (Updatable) Wait criteria type.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private String waitType;
 
@@ -30,6 +33,9 @@ public final class BuildPipelineStageWaitCriteria {
     }
     /**
      * @return (Updatable) Wait criteria type.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String waitType() {

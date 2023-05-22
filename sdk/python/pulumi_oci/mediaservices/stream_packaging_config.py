@@ -29,6 +29,10 @@ class StreamPackagingConfigArgs:
         :param pulumi.Input[str] distribution_channel_id: Unique identifier of the Distribution Channel that this stream packaging configuration belongs to.
         :param pulumi.Input[int] segment_time_in_seconds: The duration in seconds for each fragment.
         :param pulumi.Input[str] stream_packaging_format: The output format for the package.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input['StreamPackagingConfigEncryptionArgs'] encryption: The encryption used by the stream packaging configuration.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -85,6 +89,10 @@ class StreamPackagingConfigArgs:
     def stream_packaging_format(self) -> pulumi.Input[str]:
         """
         The output format for the package.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "stream_packaging_format")
 
@@ -155,6 +163,10 @@ class _StreamPackagingConfigState:
         :param pulumi.Input[int] segment_time_in_seconds: The duration in seconds for each fragment.
         :param pulumi.Input[str] state: The current state of the Packaging Configuration.
         :param pulumi.Input[str] stream_packaging_format: The output format for the package.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
@@ -285,6 +297,10 @@ class _StreamPackagingConfigState:
     def stream_packaging_format(self) -> Optional[pulumi.Input[str]]:
         """
         The output format for the package.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "stream_packaging_format")
 
@@ -387,6 +403,10 @@ class StreamPackagingConfig(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] segment_time_in_seconds: The duration in seconds for each fragment.
         :param pulumi.Input[str] stream_packaging_format: The output format for the package.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -519,6 +539,10 @@ class StreamPackagingConfig(pulumi.CustomResource):
         :param pulumi.Input[int] segment_time_in_seconds: The duration in seconds for each fragment.
         :param pulumi.Input[str] state: The current state of the Packaging Configuration.
         :param pulumi.Input[str] stream_packaging_format: The output format for the package.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
@@ -610,6 +634,10 @@ class StreamPackagingConfig(pulumi.CustomResource):
     def stream_packaging_format(self) -> pulumi.Output[str]:
         """
         The output format for the package.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "stream_packaging_format")
 

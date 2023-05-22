@@ -113,6 +113,9 @@ type CrossConnect struct {
 	// A string identifying the meet-me room port for this cross-connect.
 	PortName pulumi.StringOutput `pulumi:"portName"`
 	// The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PortSpeedShapeName pulumi.StringOutput `pulumi:"portSpeedShapeName"`
 	// The cross-connect's current state.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -187,6 +190,9 @@ type crossConnectState struct {
 	// A string identifying the meet-me room port for this cross-connect.
 	PortName *string `pulumi:"portName"`
 	// The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PortSpeedShapeName *string `pulumi:"portSpeedShapeName"`
 	// The cross-connect's current state.
 	State *string `pulumi:"state"`
@@ -224,6 +230,9 @@ type CrossConnectState struct {
 	// A string identifying the meet-me room port for this cross-connect.
 	PortName pulumi.StringPtrInput
 	// The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PortSpeedShapeName pulumi.StringPtrInput
 	// The cross-connect's current state.
 	State pulumi.StringPtrInput
@@ -259,6 +268,9 @@ type crossConnectArgs struct {
 	// If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the OCID of that existing cross-connect or cross-connect group.
 	NearCrossConnectOrCrossConnectGroupId *string `pulumi:"nearCrossConnectOrCrossConnectGroupId"`
 	// The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PortSpeedShapeName string `pulumi:"portSpeedShapeName"`
 }
 
@@ -287,6 +299,9 @@ type CrossConnectArgs struct {
 	// If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the OCID of that existing cross-connect or cross-connect group.
 	NearCrossConnectOrCrossConnectGroupId pulumi.StringPtrInput
 	// The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PortSpeedShapeName pulumi.StringInput
 }
 
@@ -448,6 +463,9 @@ func (o CrossConnectOutput) PortName() pulumi.StringOutput {
 }
 
 // The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CrossConnectOutput) PortSpeedShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v *CrossConnect) pulumi.StringOutput { return v.PortSpeedShapeName }).(pulumi.StringOutput)
 }

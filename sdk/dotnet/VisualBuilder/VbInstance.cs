@@ -155,6 +155,10 @@ namespace Pulumi.Oci.VisualBuilder
 
         /// <summary>
         /// (Updatable) The number of Nodes
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("nodeCount")]
         public Output<int> NodeCount { get; private set; } = null!;
@@ -335,6 +339,10 @@ namespace Pulumi.Oci.VisualBuilder
 
         /// <summary>
         /// (Updatable) The number of Nodes
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("nodeCount", required: true)]
         public Input<int> NodeCount { get; set; } = null!;
@@ -473,6 +481,10 @@ namespace Pulumi.Oci.VisualBuilder
 
         /// <summary>
         /// (Updatable) The number of Nodes
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("nodeCount")]
         public Input<int>? NodeCount { get; set; }

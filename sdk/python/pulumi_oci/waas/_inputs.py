@@ -414,6 +414,10 @@ class HttpRedirectTargetArgs:
         :param pulumi.Input[str] path: (Updatable) The path component of the target URL (e.g., "/path/to/resource" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying, or request-prefixing. Use of \\ is not permitted except to escape a following \\, {, or }. An empty value is treated the same as static "/". A static value must begin with a leading "/", optionally followed by other path characters. A request-copying value must exactly match "{path}", and will be replaced with the path component of the request URL (including its initial "/"). A request-prefixing value must start with "/" and end with a non-escaped "{path}", which will be replaced with the path component of the request URL (including its initial "/"). Only one such replacement token is allowed.
         :param pulumi.Input[str] protocol: (Updatable) The protocol used for the target, http or https.
         :param pulumi.Input[str] query: (Updatable) The query component of the target URL (e.g., "?redirected" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying. Use of \\ is not permitted except to escape a following \\, {, or }. An empty value results in a redirection target URL with no query component. A static value must begin with a leading "?", optionally followed by other query characters. A request-copying value must exactly match "{query}", and will be replaced with the query component of the request URL (including a leading "?" if and only if the request URL includes a query component).
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[int] port: (Updatable) Port number of the target destination of the redirect, default to match protocol
         """
         pulumi.set(__self__, "host", host)
@@ -464,6 +468,10 @@ class HttpRedirectTargetArgs:
     def query(self) -> pulumi.Input[str]:
         """
         (Updatable) The query component of the target URL (e.g., "?redirected" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying. Use of \\ is not permitted except to escape a following \\, {, or }. An empty value results in a redirection target URL with no query component. A static value must begin with a leading "?", optionally followed by other query characters. A request-copying value must exactly match "{query}", and will be replaced with the query component of the request URL (including a leading "?" if and only if the request URL includes a query component).
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "query")
 
@@ -572,6 +580,10 @@ class PolicyOriginCustomHeaderArgs:
                  value: pulumi.Input[str]):
         """
         :param pulumi.Input[str] name: (Updatable) The unique name of the whitelist.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] value: (Updatable) The value of the header.
         """
         pulumi.set(__self__, "name", name)
@@ -582,6 +594,10 @@ class PolicyOriginCustomHeaderArgs:
     def name(self) -> pulumi.Input[str]:
         """
         (Updatable) The unique name of the whitelist.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "name")
 
@@ -685,6 +701,17 @@ class PolicyPolicyConfigArgs:
         :param pulumi.Input[str] cipher_group: (Updatable) The set cipher group for the configured TLS protocol. This sets the configuration for the TLS connections between clients and edge nodes only.
                * **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: `ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA`
         :param pulumi.Input[str] client_address_header: (Updatable) Specifies an HTTP header name which is treated as the connecting client's IP address. Applicable only if `isBehindCdn` is enabled.
+               
+               The edge node reads this header and its value and sets the client IP address as specified. It does not create the header if the header is not present in the request. If the header is not present, the connecting IP address will be used as the client's true IP address. It uses the last IP address in the header's value as the true IP address.
+               
+               Example: `X-Client-Ip: 11.1.1.1, 13.3.3.3`
+               
+               In the case of multiple headers with the same name, only the first header will be used. It is assumed that CDN sets the correct client IP address to prevent spoofing.
+               * **X_FORWARDED_FOR:** Corresponds to `X-Forwarded-For` header name.
+               * **X_CLIENT_IP:** Corresponds to `X-Client-Ip` header name.
+               * **X_REAL_IP:** Corresponds to `X-Real-Ip` header name.
+               * **CLIENT_IP:** Corresponds to `Client-Ip` header name.
+               * **TRUE_CLIENT_IP:** Corresponds to `True-Client-Ip` header name.
         :param pulumi.Input['PolicyPolicyConfigHealthChecksArgs'] health_checks: (Updatable) Health checks monitor the status of your origin servers and only route traffic to the origins that pass the health check. If the health check fails, origin is automatically removed from the load balancing. There is roughly one health check per EDGE POP per period. Any checks that pass will be reported as "healthy".
         :param pulumi.Input[bool] is_behind_cdn: (Updatable) Enabling `isBehindCdn` allows for the collection of IP addresses from client requests if the WAF is connected to a CDN.
         :param pulumi.Input[bool] is_cache_control_respected: (Updatable) Enable or disable automatic content caching based on the response `cache-control` header. This feature enables the origin to act as a proxy cache. Caching is usually defined using `cache-control` header. For example `cache-control: max-age=120` means that the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
@@ -699,6 +726,8 @@ class PolicyPolicyConfigArgs:
                * **TLS_V1_1:** corresponds to TLS 1.1 specification.
                * **TLS_V1_2:** corresponds to TLS 1.2 specification.
                * **TLS_V1_3:** corresponds to TLS 1.3 specification.
+               
+               Enabled TLS protocols must go in a row. For example if `TLS_v1_1` and `TLS_V1_3` are enabled, `TLS_V1_2` must be enabled too.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] websocket_path_prefixes: (Updatable) ModSecurity is not capable to inspect WebSockets. Therefore paths specified here have WAF disabled if Connection request header from the client has the value Upgrade (case insensitive matching) and Upgrade request header has the value websocket (case insensitive matching). Paths matches if the concatenation of request URL path and query starts with the contents of the one of `websocketPathPrefixes` array value. In All other cases challenges, like JSC, HIC and etc., remain active.
         """
         if certificate_id is not None:
@@ -760,6 +789,17 @@ class PolicyPolicyConfigArgs:
     def client_address_header(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Specifies an HTTP header name which is treated as the connecting client's IP address. Applicable only if `isBehindCdn` is enabled.
+
+        The edge node reads this header and its value and sets the client IP address as specified. It does not create the header if the header is not present in the request. If the header is not present, the connecting IP address will be used as the client's true IP address. It uses the last IP address in the header's value as the true IP address.
+
+        Example: `X-Client-Ip: 11.1.1.1, 13.3.3.3`
+
+        In the case of multiple headers with the same name, only the first header will be used. It is assumed that CDN sets the correct client IP address to prevent spoofing.
+        * **X_FORWARDED_FOR:** Corresponds to `X-Forwarded-For` header name.
+        * **X_CLIENT_IP:** Corresponds to `X-Client-Ip` header name.
+        * **X_REAL_IP:** Corresponds to `X-Real-Ip` header name.
+        * **CLIENT_IP:** Corresponds to `Client-Ip` header name.
+        * **TRUE_CLIENT_IP:** Corresponds to `True-Client-Ip` header name.
         """
         return pulumi.get(self, "client_address_header")
 
@@ -884,6 +924,8 @@ class PolicyPolicyConfigArgs:
         * **TLS_V1_1:** corresponds to TLS 1.1 specification.
         * **TLS_V1_2:** corresponds to TLS 1.2 specification.
         * **TLS_V1_3:** corresponds to TLS 1.3 specification.
+
+        Enabled TLS protocols must go in a row. For example if `TLS_v1_1` and `TLS_V1_3` are enabled, `TLS_V1_2` must be enabled too.
         """
         return pulumi.get(self, "tls_protocols")
 
@@ -926,6 +968,8 @@ class PolicyPolicyConfigHealthChecksArgs:
                * **5XX:** Server errors response code group.
         :param pulumi.Input[str] expected_response_text: (Updatable) Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
         :param pulumi.Input[Mapping[str, Any]] headers: (Updatable) HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
+               
+               **Note:** The only currently-supported header fields are Host and User-Agent.
         :param pulumi.Input[int] healthy_threshold: (Updatable) Number of successful health checks after which the server is marked up.
         :param pulumi.Input[int] interval_in_seconds: (Updatable) Time between health checks of an individual origin server, in seconds.
         :param pulumi.Input[bool] is_enabled: (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
@@ -994,6 +1038,8 @@ class PolicyPolicyConfigHealthChecksArgs:
     def headers(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
         (Updatable) HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
+
+        **Note:** The only currently-supported header fields are Host and User-Agent.
         """
         return pulumi.get(self, "headers")
 
@@ -1116,6 +1162,10 @@ class PolicyPolicyConfigLoadBalancingMethodArgs:
         :param pulumi.Input[str] domain: (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
         :param pulumi.Input[int] expiration_time_in_seconds: (Updatable) The time for which a browser should keep the cookie in seconds. Empty value will cause the cookie to expire at the end of a browser session.
         :param pulumi.Input[str] name: (Updatable) The unique name of the whitelist.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "method", method)
         if domain is not None:
@@ -1169,6 +1219,10 @@ class PolicyPolicyConfigLoadBalancingMethodArgs:
     def name(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The unique name of the whitelist.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "name")
 
@@ -1399,6 +1453,10 @@ class PolicyWafConfigAccessRuleArgs:
         :param pulumi.Input[str] action: (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
         :param pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleCriteriaArgs']]] criterias: (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
         :param pulumi.Input[str] name: (Updatable) The unique name of the whitelist.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] block_action: (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
         :param pulumi.Input[str] block_error_page_code: (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
         :param pulumi.Input[str] block_error_page_description: (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
@@ -1478,6 +1536,10 @@ class PolicyWafConfigAccessRuleArgs:
     def name(self) -> pulumi.Input[str]:
         """
         (Updatable) The unique name of the whitelist.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "name")
 
@@ -1672,6 +1734,15 @@ class PolicyWafConfigAccessRuleCriteriaArgs:
                * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
                * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
                * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
+               
+               *Example:* "GET\\nPOST"
+               * **HTTP_METHOD_IS_NOT:** Matches if the request is not identical to any of the contents of the `value` field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
+               
+               *Example:* "GET\\nPOST"
+               * **COUNTRY_IS:** Matches if the request originates from one of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
+               * **COUNTRY_IS_NOT:** Matches if the request does not originate from any of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
+               * **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
+               * **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
         :param pulumi.Input[str] value: (Updatable) The value of the header.
         :param pulumi.Input[bool] is_case_sensitive: (Updatable) When enabled, the condition will be matched with case-sensitive rules.
         """
@@ -1701,6 +1772,15 @@ class PolicyWafConfigAccessRuleCriteriaArgs:
         * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
         * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
         * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
+
+        *Example:* "GET\\nPOST"
+        * **HTTP_METHOD_IS_NOT:** Matches if the request is not identical to any of the contents of the `value` field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
+
+        *Example:* "GET\\nPOST"
+        * **COUNTRY_IS:** Matches if the request originates from one of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
+        * **COUNTRY_IS_NOT:** Matches if the request does not originate from any of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
+        * **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
+        * **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
         """
         return pulumi.get(self, "condition")
 
@@ -1870,6 +1950,10 @@ class PolicyWafConfigCachingRuleArgs:
         :param pulumi.Input[str] action: (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
         :param pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCachingRuleCriteriaArgs']]] criterias: (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
         :param pulumi.Input[str] name: (Updatable) The unique name of the whitelist.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] caching_duration: (Updatable) The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
         :param pulumi.Input[str] client_caching_duration: (Updatable) The duration to cache content in the user's browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
         :param pulumi.Input[bool] is_client_caching_enabled: (Updatable) Enables or disables client caching. Browsers use the `Cache-Control` header value for caching content locally in the browser. This setting overrides the addition of a `Cache-Control` header in responses.
@@ -1916,6 +2000,10 @@ class PolicyWafConfigCachingRuleArgs:
     def name(self) -> pulumi.Input[str]:
         """
         (Updatable) The unique name of the whitelist.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "name")
 
@@ -1995,6 +2083,15 @@ class PolicyWafConfigCachingRuleCriteriaArgs:
                * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
                * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
                * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
+               
+               *Example:* "GET\\nPOST"
+               * **HTTP_METHOD_IS_NOT:** Matches if the request is not identical to any of the contents of the `value` field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
+               
+               *Example:* "GET\\nPOST"
+               * **COUNTRY_IS:** Matches if the request originates from one of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
+               * **COUNTRY_IS_NOT:** Matches if the request does not originate from any of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
+               * **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
+               * **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
         :param pulumi.Input[str] value: (Updatable) The value of the header.
         """
         pulumi.set(__self__, "condition", condition)
@@ -2021,6 +2118,15 @@ class PolicyWafConfigCachingRuleCriteriaArgs:
         * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
         * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
         * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
+
+        *Example:* "GET\\nPOST"
+        * **HTTP_METHOD_IS_NOT:** Matches if the request is not identical to any of the contents of the `value` field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
+
+        *Example:* "GET\\nPOST"
+        * **COUNTRY_IS:** Matches if the request originates from one of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
+        * **COUNTRY_IS_NOT:** Matches if the request does not originate from any of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
+        * **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
+        * **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
         """
         return pulumi.get(self, "condition")
 
@@ -2858,6 +2964,10 @@ class PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs:
                  value: pulumi.Input[str]):
         """
         :param pulumi.Input[str] name: (Updatable) The unique name of the whitelist.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] value: (Updatable) The value of the header.
         """
         pulumi.set(__self__, "name", name)
@@ -2868,6 +2978,10 @@ class PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs:
     def name(self) -> pulumi.Input[str]:
         """
         (Updatable) The unique name of the whitelist.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "name")
 
@@ -3213,6 +3327,15 @@ class PolicyWafConfigJsChallengeCriteriaArgs:
                * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
                * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
                * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
+               
+               *Example:* "GET\\nPOST"
+               * **HTTP_METHOD_IS_NOT:** Matches if the request is not identical to any of the contents of the `value` field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
+               
+               *Example:* "GET\\nPOST"
+               * **COUNTRY_IS:** Matches if the request originates from one of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
+               * **COUNTRY_IS_NOT:** Matches if the request does not originate from any of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
+               * **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
+               * **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
         :param pulumi.Input[str] value: (Updatable) The value of the header.
         :param pulumi.Input[bool] is_case_sensitive: (Updatable) When enabled, the condition will be matched with case-sensitive rules.
         """
@@ -3242,6 +3365,15 @@ class PolicyWafConfigJsChallengeCriteriaArgs:
         * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
         * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
         * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
+
+        *Example:* "GET\\nPOST"
+        * **HTTP_METHOD_IS_NOT:** Matches if the request is not identical to any of the contents of the `value` field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
+
+        *Example:* "GET\\nPOST"
+        * **COUNTRY_IS:** Matches if the request originates from one of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
+        * **COUNTRY_IS_NOT:** Matches if the request does not originate from any of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
+        * **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
+        * **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
         """
         return pulumi.get(self, "condition")
 
@@ -3281,6 +3413,10 @@ class PolicyWafConfigJsChallengeSetHttpHeaderArgs:
                  value: pulumi.Input[str]):
         """
         :param pulumi.Input[str] name: (Updatable) The unique name of the whitelist.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] value: (Updatable) The value of the header.
         """
         pulumi.set(__self__, "name", name)
@@ -3291,6 +3427,10 @@ class PolicyWafConfigJsChallengeSetHttpHeaderArgs:
     def name(self) -> pulumi.Input[str]:
         """
         (Updatable) The unique name of the whitelist.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "name")
 
@@ -3335,12 +3475,36 @@ class PolicyWafConfigProtectionSettingsArgs:
         :param pulumi.Input[str] block_error_page_message: (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
         :param pulumi.Input[int] block_response_code: (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
         :param pulumi.Input[bool] is_response_inspected: (Updatable) Inspects the response body of origin responses. Can be used to detect leakage of sensitive data. If unspecified, defaults to `false`.
+               
+               **Note:** Only origin responses with a Content-Type matching a value in `mediaTypes` will be inspected.
         :param pulumi.Input[int] max_argument_count: (Updatable) The maximum number of arguments allowed to be passed to your application before an action is taken. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `255`. This setting only applies if a corresponding protection rule is enabled, such as the "Number of Arguments Limits" rule (key: 960335).  Example: If `maxArgumentCount` to `2` for the Max Number of Arguments protection rule (key: 960335), the following requests would be blocked: `GET /myapp/path?query=one&query=two&query=three` `POST /myapp/path` with Body `{"argument1":"one","argument2":"two","argument3":"three"}`
         :param pulumi.Input[int] max_name_length_per_argument: (Updatable) The maximum length allowed for each argument name, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `400`. This setting only applies if a corresponding protection rule is enabled, such as the "Values Limits" rule (key: 960208).
         :param pulumi.Input[int] max_response_size_in_ki_b: (Updatable) The maximum response size to be fully inspected, in binary kilobytes (KiB). Anything over this limit will be partially inspected. If unspecified, defaults to `1024`.
         :param pulumi.Input[int] max_total_name_length_of_arguments: (Updatable) The maximum length allowed for the sum of the argument name and value, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `64000`. This setting only applies if a corresponding protection rule is enabled, such as the "Total Arguments Limits" rule (key: 960341).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] media_types: (Updatable) The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `["text/html", "text/plain", "text/xml"]`.
+               
+               Supported MIME types include:
+               * text/html
+               * text/plain
+               * text/asp
+               * text/css
+               * text/x-script
+               * application/json
+               * text/webviewhtml
+               * text/x-java-source
+               * application/x-javascript
+               * application/javascript
+               * application/ecmascript
+               * text/javascript
+               * text/ecmascript
+               * text/x-script.perl
+               * text/x-script.phyton
+               * application/plain
+               * application/xml
+               * text/xml
         :param pulumi.Input[int] recommendations_period_in_days: (Updatable) The length of time to analyze traffic traffic, in days. After the analysis period, `WafRecommendations` will be populated. If unspecified, defaults to `10`.
+               
+               Use `GET /waasPolicies/{waasPolicyId}/wafRecommendations` to view WAF recommendations.
         """
         if allowed_http_methods is not None:
             pulumi.set(__self__, "allowed_http_methods", allowed_http_methods)
@@ -3446,6 +3610,8 @@ class PolicyWafConfigProtectionSettingsArgs:
     def is_response_inspected(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Inspects the response body of origin responses. Can be used to detect leakage of sensitive data. If unspecified, defaults to `false`.
+
+        **Note:** Only origin responses with a Content-Type matching a value in `mediaTypes` will be inspected.
         """
         return pulumi.get(self, "is_response_inspected")
 
@@ -3506,6 +3672,26 @@ class PolicyWafConfigProtectionSettingsArgs:
     def media_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `["text/html", "text/plain", "text/xml"]`.
+
+        Supported MIME types include:
+        * text/html
+        * text/plain
+        * text/asp
+        * text/css
+        * text/x-script
+        * application/json
+        * text/webviewhtml
+        * text/x-java-source
+        * application/x-javascript
+        * application/javascript
+        * application/ecmascript
+        * text/javascript
+        * text/ecmascript
+        * text/x-script.perl
+        * text/x-script.phyton
+        * application/plain
+        * application/xml
+        * text/xml
         """
         return pulumi.get(self, "media_types")
 
@@ -3518,6 +3704,8 @@ class PolicyWafConfigProtectionSettingsArgs:
     def recommendations_period_in_days(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) The length of time to analyze traffic traffic, in days. After the analysis period, `WafRecommendations` will be populated. If unspecified, defaults to `10`.
+
+        Use `GET /waasPolicies/{waasPolicyId}/wafRecommendations` to view WAF recommendations.
         """
         return pulumi.get(self, "recommendations_period_in_days")
 
@@ -3534,6 +3722,10 @@ class PolicyWafConfigWhitelistArgs:
                  addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input[str] name: (Updatable) The unique name of the whitelist.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[str]]] address_lists: (Updatable) A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] addresses: (Updatable) A set of IP addresses or CIDR notations to include in the whitelist.
         """
@@ -3548,6 +3740,10 @@ class PolicyWafConfigWhitelistArgs:
     def name(self) -> pulumi.Input[str]:
         """
         (Updatable) The unique name of the whitelist.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "name")
 
@@ -3588,6 +3784,9 @@ class ProtectionRuleExclusionArgs:
         """
         :param pulumi.Input[Sequence[pulumi.Input[str]]] exclusions: An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
         :param pulumi.Input[str] target: The target of the exclusion.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if exclusions is not None:
             pulumi.set(__self__, "exclusions", exclusions)
@@ -3611,6 +3810,9 @@ class ProtectionRuleExclusionArgs:
     def target(self) -> Optional[pulumi.Input[str]]:
         """
         The target of the exclusion.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "target")
 

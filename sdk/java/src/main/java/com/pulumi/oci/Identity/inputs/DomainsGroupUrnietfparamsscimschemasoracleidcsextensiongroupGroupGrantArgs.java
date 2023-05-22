@@ -18,12 +18,32 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     /**
      * (Updatable) App identifier
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="appId")
     private @Nullable Output<String> appId;
 
     /**
      * @return (Updatable) App identifier
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> appId() {
@@ -33,12 +53,32 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     /**
      * (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\nA customer or the UI should use only grantMechanism values that start with &#39;ADMINISTRATOR&#39;:\n - &#39;ADMINISTRATOR_TO_USER&#39; is for a direct grant to a specific User.\n - &#39;ADMINISTRATOR_TO_GROUP&#39; is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\n - &#39;ADMINISTRATOR_TO_APP&#39; is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="grantMechanism")
     private @Nullable Output<String> grantMechanism;
 
     /**
      * @return (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\nA customer or the UI should use only grantMechanism values that start with &#39;ADMINISTRATOR&#39;:\n - &#39;ADMINISTRATOR_TO_USER&#39; is for a direct grant to a specific User.\n - &#39;ADMINISTRATOR_TO_GROUP&#39; is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\n - &#39;ADMINISTRATOR_TO_APP&#39; is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> grantMechanism() {
@@ -48,12 +88,34 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     /**
      * (Updatable) App URI
      * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
+     * 
      */
     @Import(name="ref")
     private @Nullable Output<String> ref;
 
     /**
      * @return (Updatable) App URI
+     * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ref() {
@@ -63,12 +125,36 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     /**
      * (Updatable) The ID of the App.
      * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
      * @return (Updatable) The ID of the App.
+     * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> value() {
@@ -105,6 +191,16 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         /**
          * @param appId (Updatable) App identifier
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -116,6 +212,16 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         /**
          * @param appId (Updatable) App identifier
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -125,6 +231,16 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
 
         /**
          * @param grantMechanism (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\nA customer or the UI should use only grantMechanism values that start with &#39;ADMINISTRATOR&#39;:\n - &#39;ADMINISTRATOR_TO_USER&#39; is for a direct grant to a specific User.\n - &#39;ADMINISTRATOR_TO_GROUP&#39; is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\n - &#39;ADMINISTRATOR_TO_APP&#39; is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -137,6 +253,16 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         /**
          * @param grantMechanism (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\nA customer or the UI should use only grantMechanism values that start with &#39;ADMINISTRATOR&#39;:\n - &#39;ADMINISTRATOR_TO_USER&#39; is for a direct grant to a specific User.\n - &#39;ADMINISTRATOR_TO_GROUP&#39; is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\n - &#39;ADMINISTRATOR_TO_APP&#39; is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -146,6 +272,17 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
 
         /**
          * @param ref (Updatable) App URI
+         * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -158,6 +295,17 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         /**
          * @param ref (Updatable) App URI
          * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -167,6 +315,18 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
 
         /**
          * @param value (Updatable) The ID of the App.
+         * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -178,6 +338,18 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
 
         /**
          * @param value (Updatable) The ID of the App.
+         * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 

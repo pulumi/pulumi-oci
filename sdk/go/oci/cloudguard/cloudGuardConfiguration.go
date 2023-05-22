@@ -57,6 +57,9 @@ type CloudGuardConfiguration struct {
 	// (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
 	SelfManageResources pulumi.BoolOutput `pulumi:"selfManageResources"`
 	// (Updatable) Status of Cloud Guard Tenant
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringOutput `pulumi:"status"`
 }
 
@@ -105,6 +108,9 @@ type cloudGuardConfigurationState struct {
 	// (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
 	SelfManageResources *bool `pulumi:"selfManageResources"`
 	// (Updatable) Status of Cloud Guard Tenant
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status *string `pulumi:"status"`
 }
 
@@ -116,6 +122,9 @@ type CloudGuardConfigurationState struct {
 	// (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
 	SelfManageResources pulumi.BoolPtrInput
 	// (Updatable) Status of Cloud Guard Tenant
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringPtrInput
 }
 
@@ -131,6 +140,9 @@ type cloudGuardConfigurationArgs struct {
 	// (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
 	SelfManageResources *bool `pulumi:"selfManageResources"`
 	// (Updatable) Status of Cloud Guard Tenant
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status string `pulumi:"status"`
 }
 
@@ -143,6 +155,9 @@ type CloudGuardConfigurationArgs struct {
 	// (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
 	SelfManageResources pulumi.BoolPtrInput
 	// (Updatable) Status of Cloud Guard Tenant
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringInput
 }
 
@@ -249,6 +264,9 @@ func (o CloudGuardConfigurationOutput) SelfManageResources() pulumi.BoolOutput {
 }
 
 // (Updatable) Status of Cloud Guard Tenant
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CloudGuardConfigurationOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudGuardConfiguration) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }

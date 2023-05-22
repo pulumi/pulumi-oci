@@ -801,6 +801,10 @@ class BuildPipelineStageWaitCriteria(dict):
         """
         :param str wait_duration: (Updatable) The absolute wait duration. Minimum wait duration must be 5 seconds. Maximum wait duration can be up to 2 days.
         :param str wait_type: (Updatable) Wait criteria type.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "wait_duration", wait_duration)
         pulumi.set(__self__, "wait_type", wait_type)
@@ -818,6 +822,10 @@ class BuildPipelineStageWaitCriteria(dict):
     def wait_type(self) -> str:
         """
         (Updatable) Wait criteria type.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "wait_type")
 
@@ -3744,6 +3752,10 @@ class DeployStageWaitCriteria(dict):
         """
         :param str wait_duration: (Updatable) The absolute wait duration. An ISO 8601 formatted duration string. Minimum waitDuration should be 5 seconds. Maximum waitDuration can be up to 2 days.
         :param str wait_type: (Updatable) Wait criteria type.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "wait_duration", wait_duration)
         pulumi.set(__self__, "wait_type", wait_type)
@@ -3761,6 +3773,10 @@ class DeployStageWaitCriteria(dict):
     def wait_type(self) -> str:
         """
         (Updatable) Wait criteria type.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "wait_type")
 
@@ -4370,6 +4386,10 @@ class ProjectNotificationConfig(dict):
                  topic_id: str):
         """
         :param str topic_id: (Updatable) The topic ID for notifications.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "topic_id", topic_id)
 
@@ -4378,6 +4398,10 @@ class ProjectNotificationConfig(dict):
     def topic_id(self) -> str:
         """
         (Updatable) The topic ID for notifications.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "topic_id")
 
@@ -4579,6 +4603,10 @@ class TriggerActionFilter(dict):
                  include: Optional['outputs.TriggerActionFilterInclude'] = None):
         """
         :param str trigger_source: (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param Sequence[str] events: (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
         :param 'TriggerActionFilterExcludeArgs' exclude: (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
         :param 'TriggerActionFilterIncludeArgs' include: (Updatable) Attributes to filter GitLab self-hosted server events.
@@ -4596,6 +4624,10 @@ class TriggerActionFilter(dict):
     def trigger_source(self) -> str:
         """
         (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "trigger_source")
 

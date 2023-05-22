@@ -18,12 +18,16 @@ public final class ExternalDatabaseConnectorConnectionCredentialsArgs extends co
     /**
      * (Updatable) The name of the credential information that used to connect to the database. The name should be in &#34;x.y&#34; format, where the length of &#34;x&#34; has a maximum of 64 characters, and length of &#34;y&#34; has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the &#34;.&#34; character that separates the &#34;x&#34; and &#34;y&#34; portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
      * 
+     * For example: inventorydb.abc112233445566778899
+     * 
      */
     @Import(name="credentialName")
     private @Nullable Output<String> credentialName;
 
     /**
      * @return (Updatable) The name of the credential information that used to connect to the database. The name should be in &#34;x.y&#34; format, where the length of &#34;x&#34; has a maximum of 64 characters, and length of &#34;y&#34; has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the &#34;.&#34; character that separates the &#34;x&#34; and &#34;y&#34; portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+     * 
+     * For example: inventorydb.abc112233445566778899
      * 
      */
     public Optional<Output<String>> credentialName() {
@@ -137,6 +141,8 @@ public final class ExternalDatabaseConnectorConnectionCredentialsArgs extends co
         /**
          * @param credentialName (Updatable) The name of the credential information that used to connect to the database. The name should be in &#34;x.y&#34; format, where the length of &#34;x&#34; has a maximum of 64 characters, and length of &#34;y&#34; has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the &#34;.&#34; character that separates the &#34;x&#34; and &#34;y&#34; portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
          * 
+         * For example: inventorydb.abc112233445566778899
+         * 
          * @return builder
          * 
          */
@@ -147,6 +153,8 @@ public final class ExternalDatabaseConnectorConnectionCredentialsArgs extends co
 
         /**
          * @param credentialName (Updatable) The name of the credential information that used to connect to the database. The name should be in &#34;x.y&#34; format, where the length of &#34;x&#34; has a maximum of 64 characters, and length of &#34;y&#34; has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the &#34;.&#34; character that separates the &#34;x&#34; and &#34;y&#34; portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+         * 
+         * For example: inventorydb.abc112233445566778899
          * 
          * @return builder
          * 

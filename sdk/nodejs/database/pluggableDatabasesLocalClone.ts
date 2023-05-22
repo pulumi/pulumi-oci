@@ -120,6 +120,10 @@ export class PluggableDatabasesLocalClone extends pulumi.CustomResource {
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
      * The existing TDE wallet password of the target CDB.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly targetTdeWalletPassword!: pulumi.Output<string>;
     /**
@@ -256,6 +260,10 @@ export interface PluggableDatabasesLocalCloneState {
     state?: pulumi.Input<string>;
     /**
      * The existing TDE wallet password of the target CDB.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     targetTdeWalletPassword?: pulumi.Input<string>;
     /**
@@ -286,6 +294,10 @@ export interface PluggableDatabasesLocalCloneArgs {
     shouldPdbAdminAccountBeLocked?: pulumi.Input<boolean>;
     /**
      * The existing TDE wallet password of the target CDB.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     targetTdeWalletPassword?: pulumi.Input<string>;
 }

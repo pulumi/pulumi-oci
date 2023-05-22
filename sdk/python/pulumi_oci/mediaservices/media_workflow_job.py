@@ -29,6 +29,10 @@ class MediaWorkflowJobArgs:
         The set of arguments for constructing a MediaWorkflowJob resource.
         :param pulumi.Input[str] compartment_id: (Updatable) ID of the compartment in which the job should be created.
         :param pulumi.Input[str] workflow_identifier_type: Discriminate identification of a workflow by name versus a workflow by ID.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -71,6 +75,10 @@ class MediaWorkflowJobArgs:
     def workflow_identifier_type(self) -> pulumi.Input[str]:
         """
         Discriminate identification of a workflow by name versus a workflow by ID.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "workflow_identifier_type")
 
@@ -206,6 +214,10 @@ class _MediaWorkflowJobState:
         :param pulumi.Input[str] time_started: Time when the job started to execute. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: Updated time of the job. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] workflow_identifier_type: Discriminate identification of a workflow by name versus a workflow by ID.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -467,6 +479,10 @@ class _MediaWorkflowJobState:
     def workflow_identifier_type(self) -> Optional[pulumi.Input[str]]:
         """
         Discriminate identification of a workflow by name versus a workflow by ID.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "workflow_identifier_type")
 
@@ -536,6 +552,10 @@ class MediaWorkflowJob(pulumi.CustomResource):
         :param pulumi.Input[str] media_workflow_name: Name of the system MediaWorkflow that should be run.
         :param pulumi.Input[str] parameters: Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON. The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
         :param pulumi.Input[str] workflow_identifier_type: Discriminate identification of a workflow by name versus a workflow by ID.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -689,6 +709,10 @@ class MediaWorkflowJob(pulumi.CustomResource):
         :param pulumi.Input[str] time_started: Time when the job started to execute. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: Updated time of the job. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] workflow_identifier_type: Discriminate identification of a workflow by name versus a workflow by ID.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -864,6 +888,10 @@ class MediaWorkflowJob(pulumi.CustomResource):
     def workflow_identifier_type(self) -> pulumi.Output[str]:
         """
         Discriminate identification of a workflow by name versus a workflow by ID.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "workflow_identifier_type")
 

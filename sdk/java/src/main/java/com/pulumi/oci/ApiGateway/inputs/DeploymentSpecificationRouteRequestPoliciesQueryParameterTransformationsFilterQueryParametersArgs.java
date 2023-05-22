@@ -33,12 +33,18 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
     /**
      * (Updatable) Type of the Response Cache Store Policy.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
      * @return (Updatable) Type of the Response Cache Store Policy.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> type() {
@@ -104,6 +110,9 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
         /**
          * @param type (Updatable) Type of the Response Cache Store Policy.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -114,6 +123,9 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
 
         /**
          * @param type (Updatable) Type of the Response Cache Store Policy.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

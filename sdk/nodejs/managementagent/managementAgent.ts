@@ -68,6 +68,9 @@ export class ManagementAgent extends pulumi.CustomResource {
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * (Updatable) Plugin Id list
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly deployPluginsIds!: pulumi.Output<string[] | undefined>;
     /**
@@ -253,6 +256,9 @@ export interface ManagementAgentState {
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) Plugin Id list
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     deployPluginsIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -355,6 +361,9 @@ export interface ManagementAgentArgs {
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) Plugin Id list
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     deployPluginsIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**

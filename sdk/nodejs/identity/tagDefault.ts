@@ -74,6 +74,8 @@ export class TagDefault extends pulumi.CustomResource {
      * (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
      * * If the `isRequired` flag is set to "true", the value is set during resource creation.
      * * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
+     *
+     * Example: `false`
      */
     public readonly isRequired!: pulumi.Output<boolean>;
     /**
@@ -97,7 +99,11 @@ export class TagDefault extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
+     * (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly value!: pulumi.Output<string>;
 
@@ -159,6 +165,8 @@ export interface TagDefaultState {
      * (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
      * * If the `isRequired` flag is set to "true", the value is set during resource creation.
      * * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
+     *
+     * Example: `false`
      */
     isRequired?: pulumi.Input<boolean>;
     /**
@@ -182,7 +190,11 @@ export interface TagDefaultState {
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
+     * (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     value?: pulumi.Input<string>;
 }
@@ -199,6 +211,8 @@ export interface TagDefaultArgs {
      * (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
      * * If the `isRequired` flag is set to "true", the value is set during resource creation.
      * * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
+     *
+     * Example: `false`
      */
     isRequired?: pulumi.Input<boolean>;
     /**
@@ -206,7 +220,11 @@ export interface TagDefaultArgs {
      */
     tagDefinitionId: pulumi.Input<string>;
     /**
-     * (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
+     * (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     value: pulumi.Input<string>;
 }

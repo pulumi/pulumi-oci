@@ -21,12 +21,16 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Details for creating a database.
      * 
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+     * 
      */
     @Import(name="database", required=true)
     private Output<DatabaseDatabaseArgs> database;
 
     /**
      * @return (Updatable) Details for creating a database.
+     * 
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      * 
      */
     public Output<DatabaseDatabaseArgs> database() {
@@ -126,12 +130,18 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="source", required=true)
     private Output<String> source;
 
     /**
      * @return The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> source() {
@@ -188,6 +198,8 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param database (Updatable) Details for creating a database.
          * 
+         * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+         * 
          * @return builder
          * 
          */
@@ -198,6 +210,8 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param database (Updatable) Details for creating a database.
+         * 
+         * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
          * 
          * @return builder
          * 
@@ -335,6 +349,9 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param source The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -345,6 +362,9 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param source The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

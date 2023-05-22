@@ -1170,6 +1170,7 @@
         "fusionapps/fusionEnvironmentDataMaskingActivity.ts",
         "fusionapps/fusionEnvironmentFamily.ts",
         "fusionapps/fusionEnvironmentRefreshActivity.ts",
+        "fusionapps/fusionEnvironmentServiceAttachment.ts",
         "fusionapps/index.ts",
         "genericartifactscontent/artifactByPath.ts",
         "genericartifactscontent/getArtifactByPath.ts",

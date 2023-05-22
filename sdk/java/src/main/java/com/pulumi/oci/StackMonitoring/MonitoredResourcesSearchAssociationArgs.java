@@ -123,12 +123,18 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
     /**
      * Source Monitored Resource Type.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="sourceResourceType")
     private @Nullable Output<String> sourceResourceType;
 
     /**
      * @return Source Monitored Resource Type.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> sourceResourceType() {
@@ -316,6 +322,9 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
         /**
          * @param sourceResourceType Source Monitored Resource Type.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -326,6 +335,9 @@ public final class MonitoredResourcesSearchAssociationArgs extends com.pulumi.re
 
         /**
          * @param sourceResourceType Source Monitored Resource Type.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

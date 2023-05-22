@@ -106,14 +106,20 @@ export class Target extends pulumi.CustomResource {
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * The target description.
+     *
+     * Avoid entering confidential information.
      */
     public readonly description!: pulumi.Output<string>;
     /**
      * (Updatable) DetectorTemplate identifier.
+     *
+     * Avoid entering confidential information.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     *
+     * Avoid entering confidential information.
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -246,14 +252,20 @@ export interface TargetState {
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The target description.
+     *
+     * Avoid entering confidential information.
      */
     description?: pulumi.Input<string>;
     /**
      * (Updatable) DetectorTemplate identifier.
+     *
+     * Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     *
+     * Avoid entering confidential information.
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -320,14 +332,20 @@ export interface TargetArgs {
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The target description.
+     *
+     * Avoid entering confidential information.
      */
     description?: pulumi.Input<string>;
     /**
      * (Updatable) DetectorTemplate identifier.
+     *
+     * Avoid entering confidential information.
      */
     displayName: pulumi.Input<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     *
+     * Avoid entering confidential information.
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**

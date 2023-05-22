@@ -77,6 +77,10 @@ export class DbNodeConsoleConnection extends pulumi.CustomResource {
     public /*out*/ readonly fingerprint!: pulumi.Output<string>;
     /**
      * The SSH public key used to authenticate the console connection.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly publicKey!: pulumi.Output<string>;
     /**
@@ -145,6 +149,10 @@ export interface DbNodeConsoleConnectionState {
     fingerprint?: pulumi.Input<string>;
     /**
      * The SSH public key used to authenticate the console connection.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     publicKey?: pulumi.Input<string>;
     /**
@@ -163,6 +171,10 @@ export interface DbNodeConsoleConnectionArgs {
     dbNodeId: pulumi.Input<string>;
     /**
      * The SSH public key used to authenticate the console connection.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     publicKey: pulumi.Input<string>;
 }

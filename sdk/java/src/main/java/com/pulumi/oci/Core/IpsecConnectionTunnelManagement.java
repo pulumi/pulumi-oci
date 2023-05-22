@@ -92,12 +92,16 @@ public class IpsecConnectionTunnelManagement extends com.pulumi.resources.Custom
     /**
      * Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
      * 
+     * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
+     * 
      */
     @Export(name="bgpSessionInfos", type=List.class, parameters={IpsecConnectionTunnelManagementBgpSessionInfo.class})
     private Output<List<IpsecConnectionTunnelManagementBgpSessionInfo>> bgpSessionInfos;
 
     /**
      * @return Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+     * 
+     * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
      * 
      */
     public Output<List<IpsecConnectionTunnelManagementBgpSessionInfo>> bgpSessionInfos() {

@@ -14,12 +14,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialA
     /**
      * @return (Updatable) Description:
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * idcsPii: true
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     private @Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount> socialAccounts;
 
     private DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser() {}
     /**
      * @return (Updatable) Description:
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * idcsPii: true
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount> socialAccounts() {

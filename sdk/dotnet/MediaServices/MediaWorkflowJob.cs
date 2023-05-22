@@ -167,6 +167,10 @@ namespace Pulumi.Oci.MediaServices
 
         /// <summary>
         /// Discriminate identification of a workflow by name versus a workflow by ID.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("workflowIdentifierType")]
         public Output<string> WorkflowIdentifierType { get; private set; } = null!;
@@ -285,6 +289,10 @@ namespace Pulumi.Oci.MediaServices
 
         /// <summary>
         /// Discriminate identification of a workflow by name versus a workflow by ID.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("workflowIdentifierType", required: true)]
         public Input<string> WorkflowIdentifierType { get; set; } = null!;
@@ -443,6 +451,10 @@ namespace Pulumi.Oci.MediaServices
 
         /// <summary>
         /// Discriminate identification of a workflow by name versus a workflow by ID.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("workflowIdentifierType")]
         public Input<string>? WorkflowIdentifierType { get; set; }

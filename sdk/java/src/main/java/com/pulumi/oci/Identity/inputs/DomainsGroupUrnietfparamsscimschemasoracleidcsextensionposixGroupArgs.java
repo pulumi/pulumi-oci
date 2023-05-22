@@ -18,12 +18,30 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixG
     /**
      * (Updatable) Integer uniquely identifying a group in a POSIX administrative domain
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: integer
+     * * uniqueness: server
+     * 
      */
     @Import(name="gidNumber")
     private @Nullable Output<Integer> gidNumber;
 
     /**
      * @return (Updatable) Integer uniquely identifying a group in a POSIX administrative domain
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: integer
+     * * uniqueness: server
      * 
      */
     public Optional<Output<Integer>> gidNumber() {
@@ -57,6 +75,15 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixG
         /**
          * @param gidNumber (Updatable) Integer uniquely identifying a group in a POSIX administrative domain
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: integer
+         * * uniqueness: server
+         * 
          * @return builder
          * 
          */
@@ -67,6 +94,15 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixG
 
         /**
          * @param gidNumber (Updatable) Integer uniquely identifying a group in a POSIX administrative domain
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: integer
+         * * uniqueness: server
          * 
          * @return builder
          * 

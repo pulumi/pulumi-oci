@@ -405,6 +405,9 @@ type NamespaceIngestTimeRuleAction struct {
 	// (Updatable) The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
 	MetricName string `pulumi:"metricName"`
 	// The Logging Analytics namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace string `pulumi:"namespace"`
 	// (Updatable) The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
 	ResourceGroup *string `pulumi:"resourceGroup"`
@@ -431,6 +434,9 @@ type NamespaceIngestTimeRuleActionArgs struct {
 	// (Updatable) The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
 	MetricName pulumi.StringInput `pulumi:"metricName"`
 	// The Logging Analytics namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// (Updatable) The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
 	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
@@ -505,6 +511,9 @@ func (o NamespaceIngestTimeRuleActionOutput) MetricName() pulumi.StringOutput {
 }
 
 // The Logging Analytics namespace used for the request.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o NamespaceIngestTimeRuleActionOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v NamespaceIngestTimeRuleAction) string { return v.Namespace }).(pulumi.StringOutput)
 }

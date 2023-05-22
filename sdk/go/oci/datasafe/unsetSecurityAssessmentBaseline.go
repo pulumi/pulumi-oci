@@ -55,6 +55,9 @@ type UnsetSecurityAssessmentBaseline struct {
 	pulumi.CustomResourceState
 
 	// The OCID of the security assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityAssessmentId pulumi.StringOutput `pulumi:"securityAssessmentId"`
 }
 
@@ -91,11 +94,17 @@ func GetUnsetSecurityAssessmentBaseline(ctx *pulumi.Context,
 // Input properties used for looking up and filtering UnsetSecurityAssessmentBaseline resources.
 type unsetSecurityAssessmentBaselineState struct {
 	// The OCID of the security assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityAssessmentId *string `pulumi:"securityAssessmentId"`
 }
 
 type UnsetSecurityAssessmentBaselineState struct {
 	// The OCID of the security assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityAssessmentId pulumi.StringPtrInput
 }
 
@@ -105,12 +114,18 @@ func (UnsetSecurityAssessmentBaselineState) ElementType() reflect.Type {
 
 type unsetSecurityAssessmentBaselineArgs struct {
 	// The OCID of the security assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityAssessmentId string `pulumi:"securityAssessmentId"`
 }
 
 // The set of arguments for constructing a UnsetSecurityAssessmentBaseline resource.
 type UnsetSecurityAssessmentBaselineArgs struct {
 	// The OCID of the security assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityAssessmentId pulumi.StringInput
 }
 
@@ -202,6 +217,9 @@ func (o UnsetSecurityAssessmentBaselineOutput) ToUnsetSecurityAssessmentBaseline
 }
 
 // The OCID of the security assessment.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o UnsetSecurityAssessmentBaselineOutput) SecurityAssessmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *UnsetSecurityAssessmentBaseline) pulumi.StringOutput { return v.SecurityAssessmentId }).(pulumi.StringOutput)
 }

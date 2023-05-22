@@ -35,6 +35,10 @@ class MaskingPolicyArgs:
         :param pulumi.Input[Sequence[pulumi.Input['MaskingPolicyColumnSourceArgs']]] column_sources: (Updatable) The source of masking columns.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the masking policy should be created.
         :param pulumi.Input[int] add_masking_columns_from_sdm_trigger: (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the masking policy.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
@@ -103,6 +107,10 @@ class MaskingPolicyArgs:
     def add_masking_columns_from_sdm_trigger(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "add_masking_columns_from_sdm_trigger")
 
@@ -266,6 +274,10 @@ class _MaskingPolicyState:
         """
         Input properties used for looking up and filtering MaskingPolicy resources.
         :param pulumi.Input[int] add_masking_columns_from_sdm_trigger: (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['MaskingPolicyColumnSourceArgs']]] column_sources: (Updatable) The source of masking columns.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the masking policy should be created.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -323,6 +335,10 @@ class _MaskingPolicyState:
     def add_masking_columns_from_sdm_trigger(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "add_masking_columns_from_sdm_trigger")
 
@@ -605,6 +621,10 @@ class MaskingPolicy(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] add_masking_columns_from_sdm_trigger: (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaskingPolicyColumnSourceArgs']]]] column_sources: (Updatable) The source of masking columns.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the masking policy should be created.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -778,6 +798,10 @@ class MaskingPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] add_masking_columns_from_sdm_trigger: (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaskingPolicyColumnSourceArgs']]]] column_sources: (Updatable) The source of masking columns.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the masking policy should be created.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -823,6 +847,10 @@ class MaskingPolicy(pulumi.CustomResource):
     def add_masking_columns_from_sdm_trigger(self) -> pulumi.Output[Optional[int]]:
         """
         (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "add_masking_columns_from_sdm_trigger")
 

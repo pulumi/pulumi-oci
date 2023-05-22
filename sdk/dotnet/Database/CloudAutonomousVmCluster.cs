@@ -346,6 +346,9 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The total number of Autonomous Container Databases that can be created.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("totalContainerDatabases")]
         public Output<int> TotalContainerDatabases { get; private set; } = null!;
@@ -543,6 +546,9 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The total number of Autonomous Container Databases that can be created.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("totalContainerDatabases")]
         public Input<int>? TotalContainerDatabases { get; set; }
@@ -842,6 +848,9 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The total number of Autonomous Container Databases that can be created.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("totalContainerDatabases")]
         public Input<int>? TotalContainerDatabases { get; set; }

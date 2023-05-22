@@ -34,6 +34,8 @@ export function getNotificationTopic(args: GetNotificationTopicArgs, opts?: pulu
 export interface GetNotificationTopicArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to retrieve.
+     *
+     * Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
      */
     topicId: string;
 }
@@ -114,6 +116,8 @@ export function getNotificationTopicOutput(args: GetNotificationTopicOutputArgs,
 export interface GetNotificationTopicOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to retrieve.
+     *
+     * Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
      */
     topicId: pulumi.Input<string>;
 }

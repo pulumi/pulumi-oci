@@ -180,6 +180,9 @@ type InvokeRun struct {
 	// The Spark application processing type.
 	Type pulumi.StringOutput `pulumi:"type"`
 	// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WarehouseBucketUri pulumi.StringOutput `pulumi:"warehouseBucketUri"`
 }
 
@@ -299,6 +302,9 @@ type invokeRunState struct {
 	// The Spark application processing type.
 	Type *string `pulumi:"type"`
 	// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WarehouseBucketUri *string `pulumi:"warehouseBucketUri"`
 }
 
@@ -387,6 +393,9 @@ type InvokeRunState struct {
 	// The Spark application processing type.
 	Type pulumi.StringPtrInput
 	// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WarehouseBucketUri pulumi.StringPtrInput
 }
 
@@ -441,6 +450,9 @@ type invokeRunArgs struct {
 	// The Spark application processing type.
 	Type *string `pulumi:"type"`
 	// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WarehouseBucketUri *string `pulumi:"warehouseBucketUri"`
 }
 
@@ -492,6 +504,9 @@ type InvokeRunArgs struct {
 	// The Spark application processing type.
 	Type pulumi.StringPtrInput
 	// An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WarehouseBucketUri pulumi.StringPtrInput
 }
 
@@ -792,6 +807,9 @@ func (o InvokeRunOutput) Type() pulumi.StringOutput {
 }
 
 // An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o InvokeRunOutput) WarehouseBucketUri() pulumi.StringOutput {
 	return o.ApplyT(func(v *InvokeRun) pulumi.StringOutput { return v.WarehouseBucketUri }).(pulumi.StringOutput)
 }

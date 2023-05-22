@@ -14,35 +14,119 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
     /**
      * @return (Updatable) Indicates weather a user can use api keys
      * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     private @Nullable Boolean canUseApiKeys;
     /**
      * @return (Updatable) Indicates weather a user can use auth tokens
+     * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     private @Nullable Boolean canUseAuthTokens;
     /**
      * @return (Updatable) Indicates weather a user can use console password
      * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     private @Nullable Boolean canUseConsolePassword;
     /**
      * @return (Updatable) Indicates weather a user can use customer secret keys
+     * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     private @Nullable Boolean canUseCustomerSecretKeys;
     /**
      * @return (Updatable) Indicates weather a user can use db credentials
      * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     private @Nullable Boolean canUseDbCredentials;
     /**
      * @return (Updatable) Indicates weather a user can use oauth2 client credentials
      * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     private @Nullable Boolean canUseOauth2clientCredentials;
     /**
      * @return (Updatable) Indicates weather a user can use smtp credentials
+     * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     private @Nullable Boolean canUseSmtpCredentials;
@@ -51,12 +135,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
     /**
      * @return (Updatable) Indicates weather a user can use api keys
      * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     public Optional<Boolean> canUseApiKeys() {
         return Optional.ofNullable(this.canUseApiKeys);
     }
     /**
      * @return (Updatable) Indicates weather a user can use auth tokens
+     * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Boolean> canUseAuthTokens() {
@@ -65,12 +173,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
     /**
      * @return (Updatable) Indicates weather a user can use console password
      * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     public Optional<Boolean> canUseConsolePassword() {
         return Optional.ofNullable(this.canUseConsolePassword);
     }
     /**
      * @return (Updatable) Indicates weather a user can use customer secret keys
+     * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Boolean> canUseCustomerSecretKeys() {
@@ -79,6 +211,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
     /**
      * @return (Updatable) Indicates weather a user can use db credentials
      * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     public Optional<Boolean> canUseDbCredentials() {
         return Optional.ofNullable(this.canUseDbCredentials);
@@ -86,12 +230,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabil
     /**
      * @return (Updatable) Indicates weather a user can use oauth2 client credentials
      * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     public Optional<Boolean> canUseOauth2clientCredentials() {
         return Optional.ofNullable(this.canUseOauth2clientCredentials);
     }
     /**
      * @return (Updatable) Indicates weather a user can use smtp credentials
+     * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Boolean> canUseSmtpCredentials() {

@@ -79,6 +79,10 @@ export class Backup extends pulumi.CustomResource {
     public /*out*/ readonly databaseSizeInGbs!: pulumi.Output<number>;
     /**
      * The user-friendly name for the backup. The name does not have to be unique.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -207,6 +211,10 @@ export interface BackupState {
     databaseSizeInGbs?: pulumi.Input<number>;
     /**
      * The user-friendly name for the backup. The name does not have to be unique.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -261,6 +269,10 @@ export interface BackupArgs {
     databaseId: pulumi.Input<string>;
     /**
      * The user-friendly name for the backup. The name does not have to be unique.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     displayName: pulumi.Input<string>;
 }

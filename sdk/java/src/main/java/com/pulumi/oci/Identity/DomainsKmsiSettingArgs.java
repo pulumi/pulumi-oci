@@ -67,12 +67,30 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="externalId")
     private @Nullable Output<String> externalId;
 
     /**
      * @return (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> externalId() {
@@ -97,12 +115,30 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
     /**
      * (Updatable) Identifier represents KMSI feature is enabled or not.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="kmsiFeatureEnabled")
     private @Nullable Output<Boolean> kmsiFeatureEnabled;
 
     /**
      * @return (Updatable) Identifier represents KMSI feature is enabled or not.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> kmsiFeatureEnabled() {
@@ -112,12 +148,30 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
     /**
      * (Updatable) Identifier represents KMSI to be prompted to user or not.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="kmsiPromptEnabled")
     private @Nullable Output<Boolean> kmsiPromptEnabled;
 
     /**
      * @return (Updatable) Identifier represents KMSI to be prompted to user or not.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> kmsiPromptEnabled() {
@@ -142,12 +196,36 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
     /**
      * (Updatable) Timestamp of when the KmsiSettings was enabled last time.
      * 
+     * **Added In:** 2203071610
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     @Import(name="lastEnabledOn")
     private @Nullable Output<String> lastEnabledOn;
 
     /**
      * @return (Updatable) Timestamp of when the KmsiSettings was enabled last time.
+     * 
+     * **Added In:** 2203071610
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> lastEnabledOn() {
@@ -157,12 +235,34 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
     /**
      * (Updatable) Identifier represents duration in days within which kmsi token must be used.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * idcsMaxValue: 365
+     * * idcsMinValue: 1
+     * * uniqueness: none
+     * 
      */
     @Import(name="lastUsedValidityInDays")
     private @Nullable Output<Integer> lastUsedValidityInDays;
 
     /**
      * @return (Updatable) Identifier represents duration in days within which kmsi token must be used.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * idcsMaxValue: 365
+     * * idcsMinValue: 1
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> lastUsedValidityInDays() {
@@ -172,12 +272,34 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
     /**
      * (Updatable) Identifier represents maximum KMSI sessions allowed in the system.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * idcsMaxValue: 10
+     * * idcsMinValue: 1
+     * * uniqueness: none
+     * 
      */
     @Import(name="maxAllowedSessions")
     private @Nullable Output<Integer> maxAllowedSessions;
 
     /**
      * @return (Updatable) Identifier represents maximum KMSI sessions allowed in the system.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * idcsMaxValue: 10
+     * * idcsMinValue: 1
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> maxAllowedSessions() {
@@ -187,12 +309,32 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: global
+     * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
      * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: global
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -217,12 +359,32 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="schemas", required=true)
     private Output<List<String>> schemas;
 
     /**
      * @return (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<List<String>> schemas() {
@@ -232,12 +394,32 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
     /**
      * (Updatable) A list of tags on this resource.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<DomainsKmsiSettingTagArgs>> tags;
 
     /**
      * @return (Updatable) A list of tags on this resource.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsKmsiSettingTagArgs>>> tags() {
@@ -247,12 +429,34 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
     /**
      * (Updatable) Identifier represents validity duration in days.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * idcsMaxValue: 1100
+     * * idcsMinValue: 1
+     * * uniqueness: none
+     * 
      */
     @Import(name="tokenValidityInDays")
     private @Nullable Output<Integer> tokenValidityInDays;
 
     /**
      * @return (Updatable) Identifier represents validity duration in days.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * idcsMaxValue: 1100
+     * * idcsMinValue: 1
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> tokenValidityInDays() {
@@ -262,12 +466,36 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
     /**
      * (Updatable) Identifier represents whether user is prompted for ToU or not.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="touPromptDisabled")
     private @Nullable Output<Boolean> touPromptDisabled;
 
     /**
      * @return (Updatable) Identifier represents whether user is prompted for ToU or not.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Boolean>> touPromptDisabled() {
@@ -390,6 +618,15 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
         /**
          * @param externalId (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -400,6 +637,15 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param externalId (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -432,6 +678,15 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
         /**
          * @param kmsiFeatureEnabled (Updatable) Identifier represents KMSI feature is enabled or not.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -443,6 +698,15 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
         /**
          * @param kmsiFeatureEnabled (Updatable) Identifier represents KMSI feature is enabled or not.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -452,6 +716,15 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param kmsiPromptEnabled (Updatable) Identifier represents KMSI to be prompted to user or not.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -463,6 +736,15 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param kmsiPromptEnabled (Updatable) Identifier represents KMSI to be prompted to user or not.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -495,6 +777,18 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
         /**
          * @param lastEnabledOn (Updatable) Timestamp of when the KmsiSettings was enabled last time.
          * 
+         * **Added In:** 2203071610
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -506,6 +800,18 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
         /**
          * @param lastEnabledOn (Updatable) Timestamp of when the KmsiSettings was enabled last time.
          * 
+         * **Added In:** 2203071610
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -515,6 +821,17 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param lastUsedValidityInDays (Updatable) Identifier represents duration in days within which kmsi token must be used.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * idcsMaxValue: 365
+         * * idcsMinValue: 1
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -527,6 +844,17 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
         /**
          * @param lastUsedValidityInDays (Updatable) Identifier represents duration in days within which kmsi token must be used.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * idcsMaxValue: 365
+         * * idcsMinValue: 1
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -536,6 +864,17 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param maxAllowedSessions (Updatable) Identifier represents maximum KMSI sessions allowed in the system.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * idcsMaxValue: 10
+         * * idcsMinValue: 1
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -548,6 +887,17 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
         /**
          * @param maxAllowedSessions (Updatable) Identifier represents maximum KMSI sessions allowed in the system.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * idcsMaxValue: 10
+         * * idcsMinValue: 1
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -557,6 +907,16 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
          * 
          * @return builder
          * 
@@ -568,6 +928,16 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
          * 
          * @return builder
          * 
@@ -600,6 +970,16 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
         /**
          * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -611,6 +991,16 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
         /**
          * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -621,6 +1011,16 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
         /**
          * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -630,6 +1030,16 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param tags (Updatable) A list of tags on this resource.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -642,6 +1052,16 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
         /**
          * @param tags (Updatable) A list of tags on this resource.
          * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -652,6 +1072,16 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
         /**
          * @param tags (Updatable) A list of tags on this resource.
          * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -661,6 +1091,17 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param tokenValidityInDays (Updatable) Identifier represents validity duration in days.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * idcsMaxValue: 1100
+         * * idcsMinValue: 1
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -673,6 +1114,17 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
         /**
          * @param tokenValidityInDays (Updatable) Identifier represents validity duration in days.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * idcsMaxValue: 1100
+         * * idcsMinValue: 1
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -682,6 +1134,18 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param touPromptDisabled (Updatable) Identifier represents whether user is prompted for ToU or not.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -693,6 +1157,18 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param touPromptDisabled (Updatable) Identifier represents whether user is prompted for ToU or not.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

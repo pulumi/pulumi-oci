@@ -103,6 +103,9 @@ type VirtualDeployment struct {
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// The OCID of the service mesh in which this access policy is created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VirtualServiceId pulumi.StringOutput `pulumi:"virtualServiceId"`
 }
 
@@ -168,6 +171,9 @@ type virtualDeploymentState struct {
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The OCID of the service mesh in which this access policy is created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VirtualServiceId *string `pulumi:"virtualServiceId"`
 }
 
@@ -199,6 +205,9 @@ type VirtualDeploymentState struct {
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
 	// The OCID of the service mesh in which this access policy is created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VirtualServiceId pulumi.StringPtrInput
 }
 
@@ -224,6 +233,9 @@ type virtualDeploymentArgs struct {
 	// (Updatable) Service Discovery configuration for virtual deployments.
 	ServiceDiscovery *VirtualDeploymentServiceDiscovery `pulumi:"serviceDiscovery"`
 	// The OCID of the service mesh in which this access policy is created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VirtualServiceId string `pulumi:"virtualServiceId"`
 }
 
@@ -246,6 +258,9 @@ type VirtualDeploymentArgs struct {
 	// (Updatable) Service Discovery configuration for virtual deployments.
 	ServiceDiscovery VirtualDeploymentServiceDiscoveryPtrInput
 	// The OCID of the service mesh in which this access policy is created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VirtualServiceId pulumi.StringInput
 }
 
@@ -402,6 +417,9 @@ func (o VirtualDeploymentOutput) TimeUpdated() pulumi.StringOutput {
 }
 
 // The OCID of the service mesh in which this access policy is created.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o VirtualDeploymentOutput) VirtualServiceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VirtualDeployment) pulumi.StringOutput { return v.VirtualServiceId }).(pulumi.StringOutput)
 }

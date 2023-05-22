@@ -76,6 +76,9 @@ export class CloudDatabaseManagement extends pulumi.CustomResource {
     public readonly databaseId!: pulumi.Output<string>;
     /**
      * (Updatable) Use this flag to enable/disable database management
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly enableManagement!: pulumi.Output<boolean>;
     /**
@@ -178,6 +181,9 @@ export interface CloudDatabaseManagementState {
     databaseId?: pulumi.Input<string>;
     /**
      * (Updatable) Use this flag to enable/disable database management
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     enableManagement?: pulumi.Input<boolean>;
     /**
@@ -222,6 +228,9 @@ export interface CloudDatabaseManagementArgs {
     databaseId: pulumi.Input<string>;
     /**
      * (Updatable) Use this flag to enable/disable database management
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     enableManagement: pulumi.Input<boolean>;
     /**

@@ -210,12 +210,18 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
     /**
      * (Updatable) The unique name of the whitelist.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
      * @return (Updatable) The unique name of the whitelist.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> name() {
@@ -597,6 +603,9 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         /**
          * @param name (Updatable) The unique name of the whitelist.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -607,6 +616,9 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
 
         /**
          * @param name (Updatable) The unique name of the whitelist.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -34,6 +34,10 @@ class LogArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this resource is currently enabled.
         :param pulumi.Input[int] retention_duration: (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "log_group_id", log_group_id)
@@ -138,6 +142,10 @@ class LogArgs:
     def retention_duration(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "retention_duration")
 
@@ -173,6 +181,10 @@ class _LogState:
         :param pulumi.Input[str] log_group_id: (Updatable) OCID of a log group to work with.
         :param pulumi.Input[str] log_type: The logType that the log object is for, whether custom or service.
         :param pulumi.Input[int] retention_duration: (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The pipeline state.
         :param pulumi.Input[str] tenancy_id: The OCID of the tenancy.
         :param pulumi.Input[str] time_created: Time the resource was created.
@@ -306,6 +318,10 @@ class _LogState:
     def retention_duration(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "retention_duration")
 
@@ -429,6 +445,10 @@ class Log(pulumi.CustomResource):
         :param pulumi.Input[str] log_group_id: (Updatable) OCID of a log group to work with.
         :param pulumi.Input[str] log_type: The logType that the log object is for, whether custom or service.
         :param pulumi.Input[int] retention_duration: (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -569,6 +589,10 @@ class Log(pulumi.CustomResource):
         :param pulumi.Input[str] log_group_id: (Updatable) OCID of a log group to work with.
         :param pulumi.Input[str] log_type: The logType that the log object is for, whether custom or service.
         :param pulumi.Input[int] retention_duration: (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The pipeline state.
         :param pulumi.Input[str] tenancy_id: The OCID of the tenancy.
         :param pulumi.Input[str] time_created: Time the resource was created.
@@ -662,6 +686,10 @@ class Log(pulumi.CustomResource):
     def retention_duration(self) -> pulumi.Output[int]:
         """
         (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "retention_duration")
 

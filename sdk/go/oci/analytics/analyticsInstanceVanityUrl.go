@@ -73,6 +73,9 @@ type AnalyticsInstanceVanityUrl struct {
 	// (Updatable) PEM Private key for HTTPS connections.
 	PrivateKey pulumi.StringOutput `pulumi:"privateKey"`
 	// (Updatable) PEM certificate for HTTPS connections.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PublicCertificate pulumi.StringOutput `pulumi:"publicCertificate"`
 }
 
@@ -144,6 +147,9 @@ type analyticsInstanceVanityUrlState struct {
 	// (Updatable) PEM Private key for HTTPS connections.
 	PrivateKey *string `pulumi:"privateKey"`
 	// (Updatable) PEM certificate for HTTPS connections.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PublicCertificate *string `pulumi:"publicCertificate"`
 }
 
@@ -161,6 +167,9 @@ type AnalyticsInstanceVanityUrlState struct {
 	// (Updatable) PEM Private key for HTTPS connections.
 	PrivateKey pulumi.StringPtrInput
 	// (Updatable) PEM certificate for HTTPS connections.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PublicCertificate pulumi.StringPtrInput
 }
 
@@ -182,6 +191,9 @@ type analyticsInstanceVanityUrlArgs struct {
 	// (Updatable) PEM Private key for HTTPS connections.
 	PrivateKey string `pulumi:"privateKey"`
 	// (Updatable) PEM certificate for HTTPS connections.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PublicCertificate string `pulumi:"publicCertificate"`
 }
 
@@ -200,6 +212,9 @@ type AnalyticsInstanceVanityUrlArgs struct {
 	// (Updatable) PEM Private key for HTTPS connections.
 	PrivateKey pulumi.StringInput
 	// (Updatable) PEM certificate for HTTPS connections.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PublicCertificate pulumi.StringInput
 }
 
@@ -321,6 +336,9 @@ func (o AnalyticsInstanceVanityUrlOutput) PrivateKey() pulumi.StringOutput {
 }
 
 // (Updatable) PEM certificate for HTTPS connections.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AnalyticsInstanceVanityUrlOutput) PublicCertificate() pulumi.StringOutput {
 	return o.ApplyT(func(v *AnalyticsInstanceVanityUrl) pulumi.StringOutput { return v.PublicCertificate }).(pulumi.StringOutput)
 }

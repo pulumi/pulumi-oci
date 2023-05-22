@@ -27,15 +27,21 @@ public final class TargetTargetDetailTargetSecurityZoneRecipe {
     /**
      * @return The target description.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     private @Nullable String description;
     /**
      * @return (Updatable) DetectorTemplate identifier.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     private @Nullable String displayName;
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     * Avoid entering confidential information.
      * 
      */
     private @Nullable Map<String,Object> freeformTags;
@@ -98,6 +104,8 @@ public final class TargetTargetDetailTargetSecurityZoneRecipe {
     /**
      * @return The target description.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
@@ -105,12 +113,16 @@ public final class TargetTargetDetailTargetSecurityZoneRecipe {
     /**
      * @return (Updatable) DetectorTemplate identifier.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Map<String,Object> freeformTags() {

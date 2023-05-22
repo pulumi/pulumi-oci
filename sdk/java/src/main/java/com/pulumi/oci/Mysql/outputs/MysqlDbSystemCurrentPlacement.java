@@ -14,10 +14,18 @@ public final class MysqlDbSystemCurrentPlacement {
     /**
      * @return The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
      * 
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+     * 
+     * For a standalone DB System, this defines the availability domain in which the DB System is placed.
+     * 
      */
     private @Nullable String availabilityDomain;
     /**
      * @return The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+     * 
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+     * 
+     * For a standalone DB System, this defines the fault domain in which the DB System is placed.
      * 
      */
     private @Nullable String faultDomain;
@@ -26,12 +34,20 @@ public final class MysqlDbSystemCurrentPlacement {
     /**
      * @return The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
      * 
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+     * 
+     * For a standalone DB System, this defines the availability domain in which the DB System is placed.
+     * 
      */
     public Optional<String> availabilityDomain() {
         return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+     * 
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+     * 
+     * For a standalone DB System, this defines the fault domain in which the DB System is placed.
      * 
      */
     public Optional<String> faultDomain() {

@@ -73,6 +73,9 @@ type CustomTable struct {
 	// (Updatable) The custom table for Cost Analysis UI rendering.
 	SavedCustomTable CustomTableSavedCustomTableOutput `pulumi:"savedCustomTable"`
 	// The associated saved report OCID.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SavedReportId pulumi.StringOutput `pulumi:"savedReportId"`
 }
 
@@ -119,6 +122,9 @@ type customTableState struct {
 	// (Updatable) The custom table for Cost Analysis UI rendering.
 	SavedCustomTable *CustomTableSavedCustomTable `pulumi:"savedCustomTable"`
 	// The associated saved report OCID.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SavedReportId *string `pulumi:"savedReportId"`
 }
 
@@ -128,6 +134,9 @@ type CustomTableState struct {
 	// (Updatable) The custom table for Cost Analysis UI rendering.
 	SavedCustomTable CustomTableSavedCustomTablePtrInput
 	// The associated saved report OCID.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SavedReportId pulumi.StringPtrInput
 }
 
@@ -141,6 +150,9 @@ type customTableArgs struct {
 	// (Updatable) The custom table for Cost Analysis UI rendering.
 	SavedCustomTable CustomTableSavedCustomTable `pulumi:"savedCustomTable"`
 	// The associated saved report OCID.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SavedReportId string `pulumi:"savedReportId"`
 }
 
@@ -151,6 +163,9 @@ type CustomTableArgs struct {
 	// (Updatable) The custom table for Cost Analysis UI rendering.
 	SavedCustomTable CustomTableSavedCustomTableInput
 	// The associated saved report OCID.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SavedReportId pulumi.StringInput
 }
 
@@ -252,6 +267,9 @@ func (o CustomTableOutput) SavedCustomTable() CustomTableSavedCustomTableOutput 
 }
 
 // The associated saved report OCID.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CustomTableOutput) SavedReportId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CustomTable) pulumi.StringOutput { return v.SavedReportId }).(pulumi.StringOutput)
 }

@@ -60,6 +60,9 @@ type Cluster struct {
 	// (Updatable) Type of cluster
 	Type pulumi.StringOutput `pulumi:"type"`
 	// The OCID of the virtual cloud network (VCN) in which to create the cluster.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId pulumi.StringOutput `pulumi:"vcnId"`
 }
 
@@ -134,6 +137,9 @@ type clusterState struct {
 	// (Updatable) Type of cluster
 	Type *string `pulumi:"type"`
 	// The OCID of the virtual cloud network (VCN) in which to create the cluster.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId *string `pulumi:"vcnId"`
 }
 
@@ -171,6 +177,9 @@ type ClusterState struct {
 	// (Updatable) Type of cluster
 	Type pulumi.StringPtrInput
 	// The OCID of the virtual cloud network (VCN) in which to create the cluster.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId pulumi.StringPtrInput
 }
 
@@ -202,6 +211,9 @@ type clusterArgs struct {
 	// (Updatable) Type of cluster
 	Type *string `pulumi:"type"`
 	// The OCID of the virtual cloud network (VCN) in which to create the cluster.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId string `pulumi:"vcnId"`
 }
 
@@ -230,6 +242,9 @@ type ClusterArgs struct {
 	// (Updatable) Type of cluster
 	Type pulumi.StringPtrInput
 	// The OCID of the virtual cloud network (VCN) in which to create the cluster.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId pulumi.StringInput
 }
 
@@ -401,6 +416,9 @@ func (o ClusterOutput) Type() pulumi.StringOutput {
 }
 
 // The OCID of the virtual cloud network (VCN) in which to create the cluster.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ClusterOutput) VcnId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.VcnId }).(pulumi.StringOutput)
 }

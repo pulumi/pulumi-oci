@@ -31,6 +31,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
         public readonly bool? IsOffline;
         /// <summary>
         /// A user-friendly name for the backend set that must be unique and cannot be changed.
+        /// 
+        /// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+        /// 
+        /// Example: `example_backend_set`
         /// </summary>
         public readonly string? Name;
         /// <summary>

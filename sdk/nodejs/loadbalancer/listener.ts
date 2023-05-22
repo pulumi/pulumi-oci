@@ -101,6 +101,10 @@ export class Listener extends pulumi.CustomResource {
     public readonly name!: pulumi.Output<string>;
     /**
      * (Updatable) Deprecated. Please use `routingPolicies` instead.
+     *
+     * The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
+     *
+     * Example: `examplePathRouteSet`
      */
     public readonly pathRouteSetName!: pulumi.Output<string>;
     /**
@@ -121,6 +125,8 @@ export class Listener extends pulumi.CustomResource {
     public readonly ruleSetNames!: pulumi.Output<string[]>;
     /**
      * (Updatable) The load balancer's SSL handling configuration details.
+     *
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
     public readonly sslConfiguration!: pulumi.Output<outputs.LoadBalancer.ListenerSslConfiguration | undefined>;
     public /*out*/ readonly state!: pulumi.Output<string>;
@@ -208,6 +214,10 @@ export interface ListenerState {
     name?: pulumi.Input<string>;
     /**
      * (Updatable) Deprecated. Please use `routingPolicies` instead.
+     *
+     * The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
+     *
+     * Example: `examplePathRouteSet`
      */
     pathRouteSetName?: pulumi.Input<string>;
     /**
@@ -228,6 +238,8 @@ export interface ListenerState {
     ruleSetNames?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * (Updatable) The load balancer's SSL handling configuration details.
+     *
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
     sslConfiguration?: pulumi.Input<inputs.LoadBalancer.ListenerSslConfiguration>;
     state?: pulumi.Input<string>;
@@ -259,6 +271,10 @@ export interface ListenerArgs {
     name?: pulumi.Input<string>;
     /**
      * (Updatable) Deprecated. Please use `routingPolicies` instead.
+     *
+     * The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
+     *
+     * Example: `examplePathRouteSet`
      */
     pathRouteSetName?: pulumi.Input<string>;
     /**
@@ -279,6 +295,8 @@ export interface ListenerArgs {
     ruleSetNames?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * (Updatable) The load balancer's SSL handling configuration details.
+     *
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
     sslConfiguration?: pulumi.Input<inputs.LoadBalancer.ListenerSslConfiguration>;
 }

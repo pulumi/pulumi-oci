@@ -62,6 +62,9 @@ type OdaPrivateEndpointAttachment struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
 	OdaInstanceId pulumi.StringOutput `pulumi:"odaInstanceId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OdaPrivateEndpointId pulumi.StringOutput `pulumi:"odaPrivateEndpointId"`
 	// The current state of the ODA Private Endpoint attachment.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -111,6 +114,9 @@ type odaPrivateEndpointAttachmentState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
 	OdaInstanceId *string `pulumi:"odaInstanceId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OdaPrivateEndpointId *string `pulumi:"odaPrivateEndpointId"`
 	// The current state of the ODA Private Endpoint attachment.
 	State *string `pulumi:"state"`
@@ -126,6 +132,9 @@ type OdaPrivateEndpointAttachmentState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
 	OdaInstanceId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OdaPrivateEndpointId pulumi.StringPtrInput
 	// The current state of the ODA Private Endpoint attachment.
 	State pulumi.StringPtrInput
@@ -143,6 +152,9 @@ type odaPrivateEndpointAttachmentArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
 	OdaInstanceId string `pulumi:"odaInstanceId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OdaPrivateEndpointId string `pulumi:"odaPrivateEndpointId"`
 }
 
@@ -151,6 +163,9 @@ type OdaPrivateEndpointAttachmentArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
 	OdaInstanceId pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OdaPrivateEndpointId pulumi.StringInput
 }
 
@@ -252,6 +267,9 @@ func (o OdaPrivateEndpointAttachmentOutput) OdaInstanceId() pulumi.StringOutput 
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o OdaPrivateEndpointAttachmentOutput) OdaPrivateEndpointId() pulumi.StringOutput {
 	return o.ApplyT(func(v *OdaPrivateEndpointAttachment) pulumi.StringOutput { return v.OdaPrivateEndpointId }).(pulumi.StringOutput)
 }

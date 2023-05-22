@@ -141,12 +141,18 @@ public final class MediaWorkflowJobArgs extends com.pulumi.resources.ResourceArg
     /**
      * Discriminate identification of a workflow by name versus a workflow by ID.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="workflowIdentifierType", required=true)
     private Output<String> workflowIdentifierType;
 
     /**
      * @return Discriminate identification of a workflow by name versus a workflow by ID.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> workflowIdentifierType() {
@@ -366,6 +372,9 @@ public final class MediaWorkflowJobArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param workflowIdentifierType Discriminate identification of a workflow by name versus a workflow by ID.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -376,6 +385,9 @@ public final class MediaWorkflowJobArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param workflowIdentifierType Discriminate identification of a workflow by name versus a workflow by ID.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

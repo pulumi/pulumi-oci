@@ -139,6 +139,9 @@ type AccessPolicyRuleDestination struct {
 	// (Updatable) Traffic type of the target.
 	Type string `pulumi:"type"`
 	// (Updatable) The OCID of the virtual service resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VirtualServiceId *string `pulumi:"virtualServiceId"`
 }
 
@@ -167,6 +170,9 @@ type AccessPolicyRuleDestinationArgs struct {
 	// (Updatable) Traffic type of the target.
 	Type pulumi.StringInput `pulumi:"type"`
 	// (Updatable) The OCID of the virtual service resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VirtualServiceId pulumi.StringPtrInput `pulumi:"virtualServiceId"`
 }
 
@@ -227,6 +233,9 @@ func (o AccessPolicyRuleDestinationOutput) Type() pulumi.StringOutput {
 }
 
 // (Updatable) The OCID of the virtual service resource.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AccessPolicyRuleDestinationOutput) VirtualServiceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AccessPolicyRuleDestination) *string { return v.VirtualServiceId }).(pulumi.StringPtrOutput)
 }
@@ -245,6 +254,9 @@ type AccessPolicyRuleSource struct {
 	// (Updatable) Traffic type of the target.
 	Type string `pulumi:"type"`
 	// (Updatable) The OCID of the virtual service resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VirtualServiceId *string `pulumi:"virtualServiceId"`
 }
 
@@ -273,6 +285,9 @@ type AccessPolicyRuleSourceArgs struct {
 	// (Updatable) Traffic type of the target.
 	Type pulumi.StringInput `pulumi:"type"`
 	// (Updatable) The OCID of the virtual service resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VirtualServiceId pulumi.StringPtrInput `pulumi:"virtualServiceId"`
 }
 
@@ -333,6 +348,9 @@ func (o AccessPolicyRuleSourceOutput) Type() pulumi.StringOutput {
 }
 
 // (Updatable) The OCID of the virtual service resource.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AccessPolicyRuleSourceOutput) VirtualServiceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AccessPolicyRuleSource) *string { return v.VirtualServiceId }).(pulumi.StringPtrOutput)
 }
@@ -480,6 +498,9 @@ type IngressGatewayHost struct {
 	// (Updatable) The listeners for the ingress gateway.
 	Listeners []IngressGatewayHostListener `pulumi:"listeners"`
 	// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name string `pulumi:"name"`
 }
 
@@ -500,6 +521,9 @@ type IngressGatewayHostArgs struct {
 	// (Updatable) The listeners for the ingress gateway.
 	Listeners IngressGatewayHostListenerArrayInput `pulumi:"listeners"`
 	// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringInput `pulumi:"name"`
 }
 
@@ -565,6 +589,9 @@ func (o IngressGatewayHostOutput) Listeners() IngressGatewayHostListenerArrayOut
 }
 
 // A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o IngressGatewayHostOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v IngressGatewayHost) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -1565,6 +1592,9 @@ type IngressGatewayRouteTableRouteRule struct {
 	// (Updatable) The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
 	RequestTimeoutInMs *string `pulumi:"requestTimeoutInMs"`
 	// (Updatable) Type of protocol.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type string `pulumi:"type"`
 }
 
@@ -1597,6 +1627,9 @@ type IngressGatewayRouteTableRouteRuleArgs struct {
 	// (Updatable) The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
 	RequestTimeoutInMs pulumi.StringPtrInput `pulumi:"requestTimeoutInMs"`
 	// (Updatable) Type of protocol.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -1696,6 +1729,9 @@ func (o IngressGatewayRouteTableRouteRuleOutput) RequestTimeoutInMs() pulumi.Str
 }
 
 // (Updatable) Type of protocol.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o IngressGatewayRouteTableRouteRuleOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v IngressGatewayRouteTableRouteRule) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -2090,6 +2126,9 @@ func (o MeshCertificateAuthorityArrayOutput) Index(i pulumi.IntInput) MeshCertif
 
 type MeshMtls struct {
 	// (Updatable) DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Minimum string `pulumi:"minimum"`
 }
 
@@ -2106,6 +2145,9 @@ type MeshMtlsInput interface {
 
 type MeshMtlsArgs struct {
 	// (Updatable) DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Minimum pulumi.StringInput `pulumi:"minimum"`
 }
 
@@ -2187,6 +2229,9 @@ func (o MeshMtlsOutput) ToMeshMtlsPtrOutputWithContext(ctx context.Context) Mesh
 }
 
 // (Updatable) DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MeshMtlsOutput) Minimum() pulumi.StringOutput {
 	return o.ApplyT(func(v MeshMtls) string { return v.Minimum }).(pulumi.StringOutput)
 }
@@ -2216,6 +2261,9 @@ func (o MeshMtlsPtrOutput) Elem() MeshMtlsOutput {
 }
 
 // (Updatable) DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MeshMtlsPtrOutput) Minimum() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MeshMtls) *string {
 		if v == nil {

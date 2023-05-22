@@ -20,6 +20,10 @@ class ConfigurationArgs:
         The set of arguments for constructing a Configuration resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] email_ids: (Updatable) List of email IDs associated with the configuration.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "email_ids", email_ids)
@@ -41,6 +45,10 @@ class ConfigurationArgs:
     def email_ids(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
         (Updatable) List of email IDs associated with the configuration.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "email_ids")
 
@@ -60,6 +68,10 @@ class _ConfigurationState:
         Input properties used for looking up and filtering Configuration resources.
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] email_ids: (Updatable) List of email IDs associated with the configuration.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The time the configuration was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the configuration was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
         """
@@ -89,6 +101,10 @@ class _ConfigurationState:
     def email_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) List of email IDs associated with the configuration.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "email_ids")
 
@@ -157,6 +173,10 @@ class Configuration(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] email_ids: (Updatable) List of email IDs associated with the configuration.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -245,6 +265,10 @@ class Configuration(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] email_ids: (Updatable) List of email IDs associated with the configuration.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The time the configuration was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the configuration was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
         """
@@ -271,6 +295,10 @@ class Configuration(pulumi.CustomResource):
     def email_ids(self) -> pulumi.Output[Sequence[str]]:
         """
         (Updatable) List of email IDs associated with the configuration.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "email_ids")
 

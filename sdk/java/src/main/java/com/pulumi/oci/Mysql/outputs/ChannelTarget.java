@@ -36,6 +36,9 @@ public final class ChannelTarget {
     /**
      * @return (Updatable) The specific target identifier.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private String targetType;
 
@@ -70,6 +73,9 @@ public final class ChannelTarget {
     }
     /**
      * @return (Updatable) The specific target identifier.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String targetType() {

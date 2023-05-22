@@ -65,6 +65,10 @@ export class VolumeBackupPolicyAssignment extends pulumi.CustomResource {
     public readonly assetId!: pulumi.Output<string>;
     /**
      * The OCID of the volume backup policy to assign to the volume.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly policyId!: pulumi.Output<string>;
     /**
@@ -115,6 +119,10 @@ export interface VolumeBackupPolicyAssignmentState {
     assetId?: pulumi.Input<string>;
     /**
      * The OCID of the volume backup policy to assign to the volume.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     policyId?: pulumi.Input<string>;
     /**
@@ -133,6 +141,10 @@ export interface VolumeBackupPolicyAssignmentArgs {
     assetId: pulumi.Input<string>;
     /**
      * The OCID of the volume backup policy to assign to the volume.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     policyId: pulumi.Input<string>;
 }

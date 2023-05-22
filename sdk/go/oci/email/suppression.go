@@ -60,6 +60,9 @@ type Suppression struct {
 	// The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The recipient email address of the suppression.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EmailAddress pulumi.StringOutput `pulumi:"emailAddress"`
 	// The specific error message returned by a system that resulted in the suppression. This message is usually an SMTP error code with additional descriptive text. Not provided for all types of suppressions.
 	ErrorDetail pulumi.StringOutput `pulumi:"errorDetail"`
@@ -113,6 +116,9 @@ type suppressionState struct {
 	// The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The recipient email address of the suppression.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EmailAddress *string `pulumi:"emailAddress"`
 	// The specific error message returned by a system that resulted in the suppression. This message is usually an SMTP error code with additional descriptive text. Not provided for all types of suppressions.
 	ErrorDetail *string `pulumi:"errorDetail"`
@@ -132,6 +138,9 @@ type SuppressionState struct {
 	// The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
 	CompartmentId pulumi.StringPtrInput
 	// The recipient email address of the suppression.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EmailAddress pulumi.StringPtrInput
 	// The specific error message returned by a system that resulted in the suppression. This message is usually an SMTP error code with additional descriptive text. Not provided for all types of suppressions.
 	ErrorDetail pulumi.StringPtrInput
@@ -155,6 +164,9 @@ type suppressionArgs struct {
 	// The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The recipient email address of the suppression.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EmailAddress string `pulumi:"emailAddress"`
 }
 
@@ -163,6 +175,9 @@ type SuppressionArgs struct {
 	// The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
 	CompartmentId pulumi.StringInput
 	// The recipient email address of the suppression.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EmailAddress pulumi.StringInput
 }
 
@@ -259,6 +274,9 @@ func (o SuppressionOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // The recipient email address of the suppression.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o SuppressionOutput) EmailAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v *Suppression) pulumi.StringOutput { return v.EmailAddress }).(pulumi.StringOutput)
 }

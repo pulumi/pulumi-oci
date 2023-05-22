@@ -138,12 +138,18 @@ public class LogSavedSearch extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The search query that is saved.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="query", type=String.class, parameters={})
     private Output<String> query;
 
     /**
      * @return (Updatable) The search query that is saved.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> query() {

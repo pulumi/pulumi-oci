@@ -50,6 +50,9 @@ type ExternalNonContainerDatabasesStackMonitoring struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) Enabling Stack Monitoring on External Non Container Databases . Requires boolean value "true" or "false".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableStackMonitoring pulumi.BoolOutput `pulumi:"enableStackMonitoring"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId pulumi.StringOutput `pulumi:"externalDatabaseConnectorId"`
@@ -96,6 +99,9 @@ func GetExternalNonContainerDatabasesStackMonitoring(ctx *pulumi.Context,
 // Input properties used for looking up and filtering ExternalNonContainerDatabasesStackMonitoring resources.
 type externalNonContainerDatabasesStackMonitoringState struct {
 	// (Updatable) Enabling Stack Monitoring on External Non Container Databases . Requires boolean value "true" or "false".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableStackMonitoring *bool `pulumi:"enableStackMonitoring"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId *string `pulumi:"externalDatabaseConnectorId"`
@@ -105,6 +111,9 @@ type externalNonContainerDatabasesStackMonitoringState struct {
 
 type ExternalNonContainerDatabasesStackMonitoringState struct {
 	// (Updatable) Enabling Stack Monitoring on External Non Container Databases . Requires boolean value "true" or "false".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableStackMonitoring pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId pulumi.StringPtrInput
@@ -118,6 +127,9 @@ func (ExternalNonContainerDatabasesStackMonitoringState) ElementType() reflect.T
 
 type externalNonContainerDatabasesStackMonitoringArgs struct {
 	// (Updatable) Enabling Stack Monitoring on External Non Container Databases . Requires boolean value "true" or "false".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableStackMonitoring bool `pulumi:"enableStackMonitoring"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId string `pulumi:"externalDatabaseConnectorId"`
@@ -128,6 +140,9 @@ type externalNonContainerDatabasesStackMonitoringArgs struct {
 // The set of arguments for constructing a ExternalNonContainerDatabasesStackMonitoring resource.
 type ExternalNonContainerDatabasesStackMonitoringArgs struct {
 	// (Updatable) Enabling Stack Monitoring on External Non Container Databases . Requires boolean value "true" or "false".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableStackMonitoring pulumi.BoolInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ExternalDatabaseConnectorId pulumi.StringInput
@@ -223,6 +238,9 @@ func (o ExternalNonContainerDatabasesStackMonitoringOutput) ToExternalNonContain
 }
 
 // (Updatable) Enabling Stack Monitoring on External Non Container Databases . Requires boolean value "true" or "false".
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ExternalNonContainerDatabasesStackMonitoringOutput) EnableStackMonitoring() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ExternalNonContainerDatabasesStackMonitoring) pulumi.BoolOutput {
 		return v.EnableStackMonitoring

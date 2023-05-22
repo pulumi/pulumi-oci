@@ -174,7 +174,11 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The timezone region of the log analytics entity.
+        /// (Updatable) The timezone region of the log analytics entity. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("timezoneRegion")]
         public Output<string> TimezoneRegion { get; private set; } = null!;
@@ -310,7 +314,11 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? SourceId { get; set; }
 
         /// <summary>
-        /// (Updatable) The timezone region of the log analytics entity.
+        /// (Updatable) The timezone region of the log analytics entity. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("timezoneRegion")]
         public Input<string>? TimezoneRegion { get; set; }
@@ -456,7 +464,11 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// (Updatable) The timezone region of the log analytics entity.
+        /// (Updatable) The timezone region of the log analytics entity. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("timezoneRegion")]
         public Input<string>? TimezoneRegion { get; set; }

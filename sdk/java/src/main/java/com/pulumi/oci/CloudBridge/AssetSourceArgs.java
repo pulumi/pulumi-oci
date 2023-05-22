@@ -233,12 +233,18 @@ public final class AssetSourceArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;/sdk```
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="vcenterEndpoint", required=true)
     private Output<String> vcenterEndpoint;
 
     /**
      * @return (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;/sdk```
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> vcenterEndpoint() {
@@ -580,6 +586,9 @@ public final class AssetSourceArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param vcenterEndpoint (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;/sdk```
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -590,6 +599,9 @@ public final class AssetSourceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vcenterEndpoint (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://&lt;host&gt;:&lt;port&gt;/sdk```
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

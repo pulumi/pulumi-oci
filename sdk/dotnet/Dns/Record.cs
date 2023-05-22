@@ -10,6 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Dns
 {
     /// <summary>
+    /// **Deprecated. Use oci.Dns.Rrset instead.**
+    /// 
+    /// This resource provides the Record resource in Oracle Cloud Infrastructure DNS service.
+    /// 
+    /// Replaces records in the specified zone with the records specified in the
+    /// request body. If a specified record does not exist, it will be created.
+    /// If the record exists, then it will be updated to represent the record in
+    /// the body of the request. If a record in the zone does not exist in the
+    /// request body, the record will be removed from the zone.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -90,6 +100,10 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// The name or OCID of the target zone.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("zoneNameOrId")]
         public Output<string> ZoneNameOrId { get; private set; } = null!;
@@ -172,6 +186,10 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// The name or OCID of the target zone.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("zoneNameOrId", required: true)]
         public Input<string> ZoneNameOrId { get; set; } = null!;
@@ -234,6 +252,10 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// The name or OCID of the target zone.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("zoneNameOrId")]
         public Input<string>? ZoneNameOrId { get; set; }

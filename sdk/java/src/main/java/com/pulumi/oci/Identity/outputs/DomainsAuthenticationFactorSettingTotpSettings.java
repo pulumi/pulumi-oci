@@ -13,50 +13,162 @@ public final class DomainsAuthenticationFactorSettingTotpSettings {
     /**
      * @return (Updatable) The period of time (in minutes) that a one-time passcode remains valid that the system sends by email.
      * 
+     * **Added In:** 18.1.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 60
+     * * idcsMinValue: 2
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     private Integer emailOtpValidityDurationInMins;
     /**
      * @return (Updatable) Exact length of the email one-time passcode.
+     * 
+     * **Added In:** 18.1.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 10
+     * * idcsMinValue: 4
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     private Integer emailPasscodeLength;
     /**
      * @return (Updatable) The hashing algorithm to be used to calculate a One-Time Passcode. By default, the system uses SHA1.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private String hashingAlgorithm;
     /**
      * @return (Updatable) The period of time (in seconds) that a JSON Web Token (JWT) is valid
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 99999
+     * * idcsMinValue: 30
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     private Integer jwtValidityDurationInSecs;
     /**
      * @return (Updatable) The duration of time (in days) after which the shared secret has to be refreshed
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 999
+     * * idcsMinValue: 30
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     private Integer keyRefreshIntervalInDays;
     /**
      * @return (Updatable) Exact length of the One-Time Passcode that the system should generate
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 10
+     * * idcsMinValue: 4
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     private Integer passcodeLength;
     /**
      * @return (Updatable) The period of time (in minutes) for which a One-Time Passcode that the system sends by Short Message Service (SMS) or by voice remains valid
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 60
+     * * idcsMinValue: 2
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     private Integer smsOtpValidityDurationInMins;
     /**
      * @return (Updatable) Exact length of the Short Message Service (SMS) One-Time Passcode
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 10
+     * * idcsMinValue: 4
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     private Integer smsPasscodeLength;
     /**
      * @return (Updatable) Time (in secs) to be used as the time step
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 300
+     * * idcsMinValue: 30
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     private Integer timeStepInSecs;
     /**
      * @return (Updatable) The tolerance/step-size that the system should use when validating a One-Time Passcode
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 3
+     * * idcsMinValue: 2
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     private Integer timeStepTolerance;
@@ -65,12 +177,38 @@ public final class DomainsAuthenticationFactorSettingTotpSettings {
     /**
      * @return (Updatable) The period of time (in minutes) that a one-time passcode remains valid that the system sends by email.
      * 
+     * **Added In:** 18.1.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 60
+     * * idcsMinValue: 2
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     public Integer emailOtpValidityDurationInMins() {
         return this.emailOtpValidityDurationInMins;
     }
     /**
      * @return (Updatable) Exact length of the email one-time passcode.
+     * 
+     * **Added In:** 18.1.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 10
+     * * idcsMinValue: 4
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Integer emailPasscodeLength() {
@@ -79,12 +217,32 @@ public final class DomainsAuthenticationFactorSettingTotpSettings {
     /**
      * @return (Updatable) The hashing algorithm to be used to calculate a One-Time Passcode. By default, the system uses SHA1.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public String hashingAlgorithm() {
         return this.hashingAlgorithm;
     }
     /**
      * @return (Updatable) The period of time (in seconds) that a JSON Web Token (JWT) is valid
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 99999
+     * * idcsMinValue: 30
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Integer jwtValidityDurationInSecs() {
@@ -93,12 +251,34 @@ public final class DomainsAuthenticationFactorSettingTotpSettings {
     /**
      * @return (Updatable) The duration of time (in days) after which the shared secret has to be refreshed
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 999
+     * * idcsMinValue: 30
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     public Integer keyRefreshIntervalInDays() {
         return this.keyRefreshIntervalInDays;
     }
     /**
      * @return (Updatable) Exact length of the One-Time Passcode that the system should generate
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 10
+     * * idcsMinValue: 4
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Integer passcodeLength() {
@@ -107,12 +287,34 @@ public final class DomainsAuthenticationFactorSettingTotpSettings {
     /**
      * @return (Updatable) The period of time (in minutes) for which a One-Time Passcode that the system sends by Short Message Service (SMS) or by voice remains valid
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 60
+     * * idcsMinValue: 2
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     public Integer smsOtpValidityDurationInMins() {
         return this.smsOtpValidityDurationInMins;
     }
     /**
      * @return (Updatable) Exact length of the Short Message Service (SMS) One-Time Passcode
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 10
+     * * idcsMinValue: 4
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Integer smsPasscodeLength() {
@@ -121,12 +323,34 @@ public final class DomainsAuthenticationFactorSettingTotpSettings {
     /**
      * @return (Updatable) Time (in secs) to be used as the time step
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 300
+     * * idcsMinValue: 30
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     public Integer timeStepInSecs() {
         return this.timeStepInSecs;
     }
     /**
      * @return (Updatable) The tolerance/step-size that the system should use when validating a One-Time Passcode
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 3
+     * * idcsMinValue: 2
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Integer timeStepTolerance() {

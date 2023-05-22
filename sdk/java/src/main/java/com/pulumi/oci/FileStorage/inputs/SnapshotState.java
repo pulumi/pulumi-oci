@@ -96,12 +96,26 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
     /**
      * Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
      * 
+     * Avoid entering confidential information.
+     * 
+     * Example: `Sunday`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
+     * 
+     * Avoid entering confidential information.
+     * 
+     * Example: `Sunday`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> name() {
@@ -331,6 +345,13 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param name Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
          * 
+         * Avoid entering confidential information.
+         * 
+         * Example: `Sunday`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -341,6 +362,13 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
+         * 
+         * Avoid entering confidential information.
+         * 
+         * Example: `Sunday`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

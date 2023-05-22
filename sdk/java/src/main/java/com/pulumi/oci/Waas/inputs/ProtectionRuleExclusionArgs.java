@@ -34,12 +34,18 @@ public final class ProtectionRuleExclusionArgs extends com.pulumi.resources.Reso
     /**
      * The target of the exclusion.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="target")
     private @Nullable Output<String> target;
 
     /**
      * @return The target of the exclusion.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> target() {
@@ -105,6 +111,9 @@ public final class ProtectionRuleExclusionArgs extends com.pulumi.resources.Reso
         /**
          * @param target The target of the exclusion.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -115,6 +124,9 @@ public final class ProtectionRuleExclusionArgs extends com.pulumi.resources.Reso
 
         /**
          * @param target The target of the exclusion.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -31,6 +31,10 @@ class VbInstanceArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[str] display_name: (Updatable) Vb Instance Identifier.
         :param pulumi.Input[int] node_count: (Updatable) The number of Nodes
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['VbInstanceAlternateCustomEndpointArgs']]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
         :param pulumi.Input[str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
         :param pulumi.Input['VbInstanceCustomEndpointArgs'] custom_endpoint: (Updatable) Details for a custom endpoint for the vb instance (update).
@@ -86,6 +90,10 @@ class VbInstanceArgs:
     def node_count(self) -> pulumi.Input[int]:
         """
         (Updatable) The number of Nodes
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "node_count")
 
@@ -220,6 +228,10 @@ class _VbInstanceState:
         :param pulumi.Input[str] management_nat_gateway_ip: The NAT gateway IP address for the VB management VCN
         :param pulumi.Input[str] management_vcn_id: The Oracle Cloud ID (OCID) of the Visual Builder management VCN
         :param pulumi.Input[int] node_count: (Updatable) The number of Nodes
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] service_nat_gateway_ip: The NAT gateway IP address for the VB service VCN
         :param pulumi.Input[str] service_vcn_id: The Oracle Cloud ID (OCID) of the Visual Builder service VCN
         :param pulumi.Input[str] state: The current state of the vb instance.
@@ -446,6 +458,10 @@ class _VbInstanceState:
     def node_count(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) The number of Nodes
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "node_count")
 
@@ -608,6 +624,10 @@ class VbInstance(pulumi.CustomResource):
         :param pulumi.Input[str] idcs_open_id: (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
         :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
         :param pulumi.Input[int] node_count: (Updatable) The number of Nodes
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -775,6 +795,10 @@ class VbInstance(pulumi.CustomResource):
         :param pulumi.Input[str] management_nat_gateway_ip: The NAT gateway IP address for the VB management VCN
         :param pulumi.Input[str] management_vcn_id: The Oracle Cloud ID (OCID) of the Visual Builder management VCN
         :param pulumi.Input[int] node_count: (Updatable) The number of Nodes
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] service_nat_gateway_ip: The NAT gateway IP address for the VB service VCN
         :param pulumi.Input[str] service_vcn_id: The Oracle Cloud ID (OCID) of the Visual Builder service VCN
         :param pulumi.Input[str] state: The current state of the vb instance.
@@ -928,6 +952,10 @@ class VbInstance(pulumi.CustomResource):
     def node_count(self) -> pulumi.Output[int]:
         """
         (Updatable) The number of Nodes
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "node_count")
 

@@ -327,12 +327,18 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
     /**
      * The total number of Autonomous Container Databases that can be created.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="totalContainerDatabases")
     private @Nullable Output<Integer> totalContainerDatabases;
 
     /**
      * @return The total number of Autonomous Container Databases that can be created.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> totalContainerDatabases() {
@@ -829,6 +835,9 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
         /**
          * @param totalContainerDatabases The total number of Autonomous Container Databases that can be created.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -839,6 +848,9 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
 
         /**
          * @param totalContainerDatabases The total number of Autonomous Container Databases that can be created.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -38,6 +38,10 @@ class DatabaseSoftwareImageArgs:
         :param pulumi.Input[str] ls_inventory: The output from the OPatch lsInventory command, which is passed as a string.
         :param pulumi.Input[str] patch_set: The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
         :param pulumi.Input[str] source_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -185,6 +189,10 @@ class DatabaseSoftwareImageArgs:
     def source_db_home_id(self) -> Optional[pulumi.Input[str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source_db_home_id")
 
@@ -230,6 +238,10 @@ class _DatabaseSoftwareImageState:
         :param pulumi.Input[str] ls_inventory: The output from the OPatch lsInventory command, which is passed as a string.
         :param pulumi.Input[str] patch_set: The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
         :param pulumi.Input[str] source_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the database software image.
         :param pulumi.Input[str] time_created: The date and time the database software image was created.
         """
@@ -441,6 +453,10 @@ class _DatabaseSoftwareImageState:
     def source_db_home_id(self) -> Optional[pulumi.Input[str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source_db_home_id")
 
@@ -538,6 +554,10 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
         :param pulumi.Input[str] ls_inventory: The output from the OPatch lsInventory command, which is passed as a string.
         :param pulumi.Input[str] patch_set: The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
         :param pulumi.Input[str] source_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -685,6 +705,10 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
         :param pulumi.Input[str] ls_inventory: The output from the OPatch lsInventory command, which is passed as a string.
         :param pulumi.Input[str] patch_set: The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
         :param pulumi.Input[str] source_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the database software image.
         :param pulumi.Input[str] time_created: The date and time the database software image was created.
         """
@@ -828,6 +852,10 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
     def source_db_home_id(self) -> pulumi.Output[str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source_db_home_id")
 

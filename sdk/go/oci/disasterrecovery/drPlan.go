@@ -88,6 +88,9 @@ type DrPlan struct {
 	// The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// The type of DR Plan to be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringOutput `pulumi:"type"`
 }
 
@@ -156,6 +159,9 @@ type drPlanState struct {
 	// The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The type of DR Plan to be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type *string `pulumi:"type"`
 }
 
@@ -187,6 +193,9 @@ type DrPlanState struct {
 	// The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeUpdated pulumi.StringPtrInput
 	// The type of DR Plan to be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringPtrInput
 }
 
@@ -204,6 +213,9 @@ type drPlanArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The type of DR Plan to be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type string `pulumi:"type"`
 }
 
@@ -218,6 +230,9 @@ type DrPlanArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The type of DR Plan to be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringInput
 }
 
@@ -374,6 +389,9 @@ func (o DrPlanOutput) TimeUpdated() pulumi.StringOutput {
 }
 
 // The type of DR Plan to be created.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DrPlanOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlan) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

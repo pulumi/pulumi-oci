@@ -71,6 +71,14 @@ export class Export extends pulumi.CustomResource {
 
     /**
      * (Updatable) Export options for the new export. If left unspecified, defaults to:
+     *
+     * []
+     *
+     * **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
+     *
+     * **If set to the empty array then the export will not be visible to any clients.**
+     *
+     * The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
      */
     public readonly exportOptions!: pulumi.Output<outputs.FileStorage.ExportExportOption[]>;
     /**
@@ -83,6 +91,14 @@ export class Export extends pulumi.CustomResource {
     public readonly fileSystemId!: pulumi.Output<string>;
     /**
      * Path used to access the associated file system.
+     *
+     * Avoid entering confidential information.
+     *
+     * Example: `/mediafiles`
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly path!: pulumi.Output<string>;
     /**
@@ -142,6 +158,14 @@ export class Export extends pulumi.CustomResource {
 export interface ExportState {
     /**
      * (Updatable) Export options for the new export. If left unspecified, defaults to:
+     *
+     * []
+     *
+     * **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
+     *
+     * **If set to the empty array then the export will not be visible to any clients.**
+     *
+     * The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
      */
     exportOptions?: pulumi.Input<pulumi.Input<inputs.FileStorage.ExportExportOption>[]>;
     /**
@@ -154,6 +178,14 @@ export interface ExportState {
     fileSystemId?: pulumi.Input<string>;
     /**
      * Path used to access the associated file system.
+     *
+     * Avoid entering confidential information.
+     *
+     * Example: `/mediafiles`
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     path?: pulumi.Input<string>;
     /**
@@ -172,6 +204,14 @@ export interface ExportState {
 export interface ExportArgs {
     /**
      * (Updatable) Export options for the new export. If left unspecified, defaults to:
+     *
+     * []
+     *
+     * **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
+     *
+     * **If set to the empty array then the export will not be visible to any clients.**
+     *
+     * The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
      */
     exportOptions?: pulumi.Input<pulumi.Input<inputs.FileStorage.ExportExportOption>[]>;
     /**
@@ -184,6 +224,14 @@ export interface ExportArgs {
     fileSystemId: pulumi.Input<string>;
     /**
      * Path used to access the associated file system.
+     *
+     * Avoid entering confidential information.
+     *
+     * Example: `/mediafiles`
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     path: pulumi.Input<string>;
 }

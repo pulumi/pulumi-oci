@@ -15,9 +15,12 @@ namespace Pulumi.Oci.Database.Outputs
     {
         public readonly bool AutoBackupEnabled;
         public readonly string AutoBackupWindow;
+        public readonly string AutoFullBackupDay;
+        public readonly string AutoFullBackupWindow;
         public readonly string BackupDeletionPolicy;
         public readonly ImmutableArray<Outputs.GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult> BackupDestinationDetails;
         public readonly int RecoveryWindowInDays;
+        public readonly bool RunImmediateFullBackup;
 
         [OutputConstructor]
         private GetDbHomesDbHomeDatabaseDbBackupConfigResult(
@@ -25,17 +28,26 @@ namespace Pulumi.Oci.Database.Outputs
 
             string autoBackupWindow,
 
+            string autoFullBackupDay,
+
+            string autoFullBackupWindow,
+
             string backupDeletionPolicy,
 
             ImmutableArray<Outputs.GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult> backupDestinationDetails,
 
-            int recoveryWindowInDays)
+            int recoveryWindowInDays,
+
+            bool runImmediateFullBackup)
         {
             AutoBackupEnabled = autoBackupEnabled;
             AutoBackupWindow = autoBackupWindow;
+            AutoFullBackupDay = autoFullBackupDay;
+            AutoFullBackupWindow = autoFullBackupWindow;
             BackupDeletionPolicy = backupDeletionPolicy;
             BackupDestinationDetails = backupDestinationDetails;
             RecoveryWindowInDays = recoveryWindowInDays;
+            RunImmediateFullBackup = runImmediateFullBackup;
         }
     }
 }

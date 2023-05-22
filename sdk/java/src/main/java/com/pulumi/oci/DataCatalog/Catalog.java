@@ -70,12 +70,18 @@ public class Catalog extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The list of private reverse connection endpoints attached to the catalog
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="attachedCatalogPrivateEndpoints", type=List.class, parameters={String.class})
     private Output<List<String>> attachedCatalogPrivateEndpoints;
 
     /**
      * @return (Updatable) The list of private reverse connection endpoints attached to the catalog
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<List<String>> attachedCatalogPrivateEndpoints() {

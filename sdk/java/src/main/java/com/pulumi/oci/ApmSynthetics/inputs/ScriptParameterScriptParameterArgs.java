@@ -49,12 +49,18 @@ public final class ScriptParameterScriptParameterArgs extends com.pulumi.resourc
     /**
      * (Updatable) Value of the parameter.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="paramValue")
     private @Nullable Output<String> paramValue;
 
     /**
      * @return (Updatable) Value of the parameter.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> paramValue() {
@@ -132,6 +138,9 @@ public final class ScriptParameterScriptParameterArgs extends com.pulumi.resourc
         /**
          * @param paramValue (Updatable) Value of the parameter.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -142,6 +151,9 @@ public final class ScriptParameterScriptParameterArgs extends com.pulumi.resourc
 
         /**
          * @param paramValue (Updatable) Value of the parameter.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

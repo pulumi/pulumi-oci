@@ -131,6 +131,10 @@ export class BlockchainPlatform extends pulumi.CustomResource {
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
      * (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly loadBalancerShape!: pulumi.Output<string>;
     /**
@@ -336,6 +340,10 @@ export interface BlockchainPlatformState {
     lifecycleDetails?: pulumi.Input<string>;
     /**
      * (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     loadBalancerShape?: pulumi.Input<string>;
     /**
@@ -434,6 +442,10 @@ export interface BlockchainPlatformArgs {
     isByol?: pulumi.Input<boolean>;
     /**
      * (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     loadBalancerShape?: pulumi.Input<string>;
     /**

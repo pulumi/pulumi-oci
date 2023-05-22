@@ -395,12 +395,16 @@ public class Volume extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      * 
+     * Allowed values:
+     * 
      */
     @Export(name="vpusPerGb", type=String.class, parameters={})
     private Output<String> vpusPerGb;
 
     /**
      * @return (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+     * 
+     * Allowed values:
      * 
      */
     public Output<String> vpusPerGb() {

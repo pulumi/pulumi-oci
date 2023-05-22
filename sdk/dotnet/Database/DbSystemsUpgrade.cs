@@ -276,6 +276,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("snapshotRetentionPeriodInDays")]
         public Output<int> SnapshotRetentionPeriodInDays { get; private set; } = null!;
@@ -412,6 +416,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("snapshotRetentionPeriodInDays")]
         public Input<int>? SnapshotRetentionPeriodInDays { get; set; }
@@ -711,6 +719,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("snapshotRetentionPeriodInDays")]
         public Input<int>? SnapshotRetentionPeriodInDays { get; set; }

@@ -212,12 +212,18 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
     /**
      * (Updatable) Storage allocated to OPSI Warehouse ADW.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="storageAllocatedInGbs", type=Double.class, parameters={})
     private Output<Double> storageAllocatedInGbs;
 
     /**
      * @return (Updatable) Storage allocated to OPSI Warehouse ADW.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Double> storageAllocatedInGbs() {

@@ -53,7 +53,33 @@ class AppFirewallPolicyActionArgs:
         :param pulumi.Input[str] type: (Updatable) Type of WebAppFirewallPolicyRule.
         :param pulumi.Input['AppFirewallPolicyActionBodyArgs'] body: (Updatable) Type of returned HTTP response body.
         :param pulumi.Input[int] code: (Updatable) Response code.
+               
+               The following response codes are valid values for this property:
+               * 2xx
+               
+               200 OK 201 Created 202 Accepted 206 Partial Content
+               * 3xx
+               
+               300 Multiple Choices 301 Moved Permanently 302 Found 303 See Other 307 Temporary Redirect
+               * 4xx
+               
+               400 Bad Request 401 Unauthorized 403 Forbidden 404 Not Found 405 Method Not Allowed 408 Request Timeout 409 Conflict 411 Length Required 412 Precondition Failed 413 Payload Too Large 414 URI Too Long 415 Unsupported Media Type 416 Range Not Satisfiable 422 Unprocessable Entity 494 Request Header Too Large 495 Cert Error 496 No Cert 497 HTTP to HTTPS
+               * 5xx
+               
+               500 Internal Server Error 501 Not Implemented 502 Bad Gateway 503 Service Unavailable 504 Gateway Timeout 507 Insufficient Storage
+               
+               Example: `200`
         :param pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyActionHeaderArgs']]] headers: (Updatable) Adds headers defined in this array for HTTP response.
+               
+               Hop-by-hop headers are not allowed to be set:
+               * Connection
+               * Keep-Alive
+               * Proxy-Authenticate
+               * Proxy-Authorization
+               * TE
+               * Trailer
+               * Transfer-Encoding
+               * Upgrade
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "type", type)
@@ -105,6 +131,22 @@ class AppFirewallPolicyActionArgs:
     def code(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) Response code.
+
+        The following response codes are valid values for this property:
+        * 2xx
+
+        200 OK 201 Created 202 Accepted 206 Partial Content
+        * 3xx
+
+        300 Multiple Choices 301 Moved Permanently 302 Found 303 See Other 307 Temporary Redirect
+        * 4xx
+
+        400 Bad Request 401 Unauthorized 403 Forbidden 404 Not Found 405 Method Not Allowed 408 Request Timeout 409 Conflict 411 Length Required 412 Precondition Failed 413 Payload Too Large 414 URI Too Long 415 Unsupported Media Type 416 Range Not Satisfiable 422 Unprocessable Entity 494 Request Header Too Large 495 Cert Error 496 No Cert 497 HTTP to HTTPS
+        * 5xx
+
+        500 Internal Server Error 501 Not Implemented 502 Bad Gateway 503 Service Unavailable 504 Gateway Timeout 507 Insufficient Storage
+
+        Example: `200`
         """
         return pulumi.get(self, "code")
 
@@ -117,6 +159,16 @@ class AppFirewallPolicyActionArgs:
     def headers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyActionHeaderArgs']]]]:
         """
         (Updatable) Adds headers defined in this array for HTTP response.
+
+        Hop-by-hop headers are not allowed to be set:
+        * Connection
+        * Keep-Alive
+        * Proxy-Authenticate
+        * Proxy-Authorization
+        * TE
+        * Trailer
+        * Transfer-Encoding
+        * Upgrade
         """
         return pulumi.get(self, "headers")
 
@@ -337,7 +389,16 @@ class AppFirewallPolicyRequestProtectionArgs:
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleArgs']]]] = None):
         """
         :param pulumi.Input[str] body_inspection_size_limit_exceeded_action_name: (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+               
+               If this field is `null` HTTP message body will inspected up to `bodyInspectionSizeLimitInBytes` and the rest will not be inspected by Protection Capabilities.
+               
+               Allowed action types:
+               * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
         :param pulumi.Input[int] body_inspection_size_limit_in_bytes: (Updatable) Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+               
+               Body inspection maximum size allowed is defined with per-tenancy limit: 8192 bytes.
+               
+               For steps to request a limit increase, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
         :param pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleArgs']]] rules: (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
         """
         if body_inspection_size_limit_exceeded_action_name is not None:
@@ -352,6 +413,11 @@ class AppFirewallPolicyRequestProtectionArgs:
     def body_inspection_size_limit_exceeded_action_name(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+
+        If this field is `null` HTTP message body will inspected up to `bodyInspectionSizeLimitInBytes` and the rest will not be inspected by Protection Capabilities.
+
+        Allowed action types:
+        * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
         """
         return pulumi.get(self, "body_inspection_size_limit_exceeded_action_name")
 
@@ -364,6 +430,10 @@ class AppFirewallPolicyRequestProtectionArgs:
     def body_inspection_size_limit_in_bytes(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+
+        Body inspection maximum size allowed is defined with per-tenancy limit: 8192 bytes.
+
+        For steps to request a limit increase, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
         """
         return pulumi.get(self, "body_inspection_size_limit_in_bytes")
 
@@ -1527,6 +1597,10 @@ class NetworkAddressListVcnAddressArgs:
         """
         :param pulumi.Input[str] addresses: (Updatable) A private IP address or CIDR IP address range.
         :param pulumi.Input[str] vcn_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if addresses is not None:
             pulumi.set(__self__, "addresses", addresses)
@@ -1550,6 +1624,10 @@ class NetworkAddressListVcnAddressArgs:
     def vcn_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vcn_id")
 

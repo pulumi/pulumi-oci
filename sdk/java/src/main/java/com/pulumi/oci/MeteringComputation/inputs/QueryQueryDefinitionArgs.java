@@ -64,12 +64,18 @@ public final class QueryQueryDefinitionArgs extends com.pulumi.resources.Resourc
     /**
      * (Updatable) The saved query version.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="version", required=true)
     private Output<Double> version;
 
     /**
      * @return (Updatable) The saved query version.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Double> version() {
@@ -169,6 +175,9 @@ public final class QueryQueryDefinitionArgs extends com.pulumi.resources.Resourc
         /**
          * @param version (Updatable) The saved query version.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -179,6 +188,9 @@ public final class QueryQueryDefinitionArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param version (Updatable) The saved query version.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

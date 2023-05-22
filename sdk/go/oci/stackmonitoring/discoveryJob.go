@@ -97,6 +97,9 @@ type DiscoveryJob struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShouldPropagateTagsToDiscoveredResources pulumi.BoolOutput `pulumi:"shouldPropagateTagsToDiscoveredResources"`
 	// The current state of the DiscoveryJob Resource.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -162,6 +165,9 @@ type discoveryJobState struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShouldPropagateTagsToDiscoveredResources *bool `pulumi:"shouldPropagateTagsToDiscoveredResources"`
 	// The current state of the DiscoveryJob Resource.
 	State *string `pulumi:"state"`
@@ -193,6 +199,9 @@ type DiscoveryJobState struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShouldPropagateTagsToDiscoveredResources pulumi.BoolPtrInput
 	// The current state of the DiscoveryJob Resource.
 	State pulumi.StringPtrInput
@@ -228,6 +237,9 @@ type discoveryJobArgs struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShouldPropagateTagsToDiscoveredResources *bool `pulumi:"shouldPropagateTagsToDiscoveredResources"`
 }
 
@@ -246,6 +258,9 @@ type DiscoveryJobArgs struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShouldPropagateTagsToDiscoveredResources pulumi.BoolPtrInput
 }
 
@@ -367,6 +382,9 @@ func (o DiscoveryJobOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DiscoveryJobOutput) ShouldPropagateTagsToDiscoveredResources() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DiscoveryJob) pulumi.BoolOutput { return v.ShouldPropagateTagsToDiscoveredResources }).(pulumi.BoolOutput)
 }

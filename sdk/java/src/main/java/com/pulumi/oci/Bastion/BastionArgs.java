@@ -172,12 +172,18 @@ public final class BastionArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The unique identifier (OCID) of the subnet that the bastion connects to.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="targetSubnetId", required=true)
     private Output<String> targetSubnetId;
 
     /**
      * @return The unique identifier (OCID) of the subnet that the bastion connects to.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> targetSubnetId() {
@@ -451,6 +457,9 @@ public final class BastionArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param targetSubnetId The unique identifier (OCID) of the subnet that the bastion connects to.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -461,6 +470,9 @@ public final class BastionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param targetSubnetId The unique identifier (OCID) of the subnet that the bastion connects to.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

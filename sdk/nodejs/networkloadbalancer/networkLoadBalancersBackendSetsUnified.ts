@@ -101,6 +101,10 @@ export class NetworkLoadBalancersBackendSetsUnified extends pulumi.CustomResourc
     public readonly isPreserveSource!: pulumi.Output<boolean>;
     /**
      * A user-friendly name for the backend set that must be unique and cannot be changed.
+     *
+     * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+     *
+     * Example: `exampleBackendSet`
      */
     public readonly name!: pulumi.Output<string>;
     /**
@@ -108,7 +112,11 @@ export class NetworkLoadBalancersBackendSetsUnified extends pulumi.CustomResourc
      */
     public readonly networkLoadBalancerId!: pulumi.Output<string>;
     /**
-     * (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
+     * (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly policy!: pulumi.Output<string>;
 
@@ -178,6 +186,10 @@ export interface NetworkLoadBalancersBackendSetsUnifiedState {
     isPreserveSource?: pulumi.Input<boolean>;
     /**
      * A user-friendly name for the backend set that must be unique and cannot be changed.
+     *
+     * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+     *
+     * Example: `exampleBackendSet`
      */
     name?: pulumi.Input<string>;
     /**
@@ -185,7 +197,11 @@ export interface NetworkLoadBalancersBackendSetsUnifiedState {
      */
     networkLoadBalancerId?: pulumi.Input<string>;
     /**
-     * (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
+     * (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     policy?: pulumi.Input<string>;
 }
@@ -212,6 +228,10 @@ export interface NetworkLoadBalancersBackendSetsUnifiedArgs {
     isPreserveSource?: pulumi.Input<boolean>;
     /**
      * A user-friendly name for the backend set that must be unique and cannot be changed.
+     *
+     * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+     *
+     * Example: `exampleBackendSet`
      */
     name?: pulumi.Input<string>;
     /**
@@ -219,7 +239,11 @@ export interface NetworkLoadBalancersBackendSetsUnifiedArgs {
      */
     networkLoadBalancerId: pulumi.Input<string>;
     /**
-     * (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE``
+     * (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     policy: pulumi.Input<string>;
 }

@@ -30,7 +30,11 @@ class PrivateEndpointArgs:
         The set of arguments for constructing a PrivateEndpoint resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of a compartment.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] dns_zones: (Updatable) An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
-        :param pulumi.Input[str] subnet_id: The OCID of a subnet.
+        :param pulumi.Input[str] subnet_id: The OCID of a subnet. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A user-friendly description. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
@@ -85,7 +89,11 @@ class PrivateEndpointArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
         """
-        The OCID of a subnet.
+        The OCID of a subnet. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subnet_id")
 
@@ -212,7 +220,11 @@ class _PrivateEndpointState:
         :param pulumi.Input[str] owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
         :param pulumi.Input[Sequence[pulumi.Input['PrivateEndpointScanDetailArgs']]] scan_details: (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
         :param pulumi.Input[str] state: The current state of this private endpoint.
-        :param pulumi.Input[str] subnet_id: The OCID of a subnet.
+        :param pulumi.Input[str] subnet_id: The OCID of a subnet. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
@@ -409,7 +421,11 @@ class _PrivateEndpointState:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of a subnet.
+        The OCID of a subnet. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subnet_id")
 
@@ -478,7 +494,11 @@ class PrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[int] max_host_count: (Updatable) The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of network security group OCIDs.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PrivateEndpointScanDetailArgs']]]] scan_details: (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
-        :param pulumi.Input[str] subnet_id: The OCID of a subnet.
+        :param pulumi.Input[str] subnet_id: The OCID of a subnet. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -597,7 +617,11 @@ class PrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[str] owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PrivateEndpointScanDetailArgs']]]] scan_details: (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
         :param pulumi.Input[str] state: The current state of this private endpoint.
-        :param pulumi.Input[str] subnet_id: The OCID of a subnet.
+        :param pulumi.Input[str] subnet_id: The OCID of a subnet. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
@@ -731,7 +755,11 @@ class PrivateEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[str]:
         """
-        The OCID of a subnet.
+        The OCID of a subnet. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subnet_id")
 

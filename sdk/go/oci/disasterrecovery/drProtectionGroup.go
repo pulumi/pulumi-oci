@@ -93,6 +93,9 @@ type DrProtectionGroup struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisassociateTrigger pulumi.IntPtrOutput `pulumi:"disassociateTrigger"`
 	// (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
@@ -165,6 +168,9 @@ type drProtectionGroupState struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisassociateTrigger *int `pulumi:"disassociateTrigger"`
 	// (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
 	DisplayName *string `pulumi:"displayName"`
@@ -200,6 +206,9 @@ type DrProtectionGroupState struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisassociateTrigger pulumi.IntPtrInput
 	// (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
 	DisplayName pulumi.StringPtrInput
@@ -239,6 +248,9 @@ type drProtectionGroupArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisassociateTrigger *int `pulumi:"disassociateTrigger"`
 	// (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
 	DisplayName string `pulumi:"displayName"`
@@ -259,6 +271,9 @@ type DrProtectionGroupArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisassociateTrigger pulumi.IntPtrInput
 	// (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
 	DisplayName pulumi.StringInput
@@ -373,6 +388,9 @@ func (o DrProtectionGroupOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DrProtectionGroupOutput) DisassociateTrigger() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DrProtectionGroup) pulumi.IntPtrOutput { return v.DisassociateTrigger }).(pulumi.IntPtrOutput)
 }

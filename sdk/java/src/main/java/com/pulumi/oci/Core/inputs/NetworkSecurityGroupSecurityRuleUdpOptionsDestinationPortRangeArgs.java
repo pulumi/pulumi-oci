@@ -31,12 +31,18 @@ public final class NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRang
     /**
      * The minimum port number, which must not be greater than the maximum port number.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="min", required=true)
     private Output<Integer> min;
 
     /**
      * @return The minimum port number, which must not be greater than the maximum port number.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Integer> min() {
@@ -92,6 +98,9 @@ public final class NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRang
         /**
          * @param min The minimum port number, which must not be greater than the maximum port number.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -102,6 +111,9 @@ public final class NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRang
 
         /**
          * @param min The minimum port number, which must not be greater than the maximum port number.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

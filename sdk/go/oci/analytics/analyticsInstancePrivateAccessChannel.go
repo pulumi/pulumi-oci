@@ -90,6 +90,9 @@ type AnalyticsInstancePrivateAccessChannel struct {
 	// (Updatable) OCID of the customer subnet connected to private access channel.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// (Updatable) OCID of the customer VCN peered with private access channel.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId pulumi.StringOutput `pulumi:"vcnId"`
 }
 
@@ -156,6 +159,9 @@ type analyticsInstancePrivateAccessChannelState struct {
 	// (Updatable) OCID of the customer subnet connected to private access channel.
 	SubnetId *string `pulumi:"subnetId"`
 	// (Updatable) OCID of the customer VCN peered with private access channel.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId *string `pulumi:"vcnId"`
 }
 
@@ -179,6 +185,9 @@ type AnalyticsInstancePrivateAccessChannelState struct {
 	// (Updatable) OCID of the customer subnet connected to private access channel.
 	SubnetId pulumi.StringPtrInput
 	// (Updatable) OCID of the customer VCN peered with private access channel.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId pulumi.StringPtrInput
 }
 
@@ -200,6 +209,9 @@ type analyticsInstancePrivateAccessChannelArgs struct {
 	// (Updatable) OCID of the customer subnet connected to private access channel.
 	SubnetId string `pulumi:"subnetId"`
 	// (Updatable) OCID of the customer VCN peered with private access channel.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId string `pulumi:"vcnId"`
 }
 
@@ -218,6 +230,9 @@ type AnalyticsInstancePrivateAccessChannelArgs struct {
 	// (Updatable) OCID of the customer subnet connected to private access channel.
 	SubnetId pulumi.StringInput
 	// (Updatable) OCID of the customer VCN peered with private access channel.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId pulumi.StringInput
 }
 
@@ -362,6 +377,9 @@ func (o AnalyticsInstancePrivateAccessChannelOutput) SubnetId() pulumi.StringOut
 }
 
 // (Updatable) OCID of the customer VCN peered with private access channel.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AnalyticsInstancePrivateAccessChannelOutput) VcnId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AnalyticsInstancePrivateAccessChannel) pulumi.StringOutput { return v.VcnId }).(pulumi.StringOutput)
 }

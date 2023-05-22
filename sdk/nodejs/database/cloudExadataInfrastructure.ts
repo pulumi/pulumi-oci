@@ -196,6 +196,10 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
      * (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly storageCount!: pulumi.Output<number>;
     /**
@@ -420,6 +424,10 @@ export interface CloudExadataInfrastructureState {
     state?: pulumi.Input<string>;
     /**
      * (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     storageCount?: pulumi.Input<number>;
     /**
@@ -478,6 +486,10 @@ export interface CloudExadataInfrastructureArgs {
     shape: pulumi.Input<string>;
     /**
      * (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     storageCount?: pulumi.Input<number>;
 }

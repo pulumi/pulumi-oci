@@ -53,8 +53,12 @@ class SddcArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
         :param pulumi.Input[str] compute_availability_domain: The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
         :param pulumi.Input[int] esxi_hosts_count: The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
+               
+               **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
         :param pulumi.Input[str] nsx_edge_uplink1vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
         :param pulumi.Input[str] nsx_edge_uplink2vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
+               
+               **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
         :param pulumi.Input[str] nsx_edge_vtep_vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
         :param pulumi.Input[str] nsx_vtep_vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment.
         :param pulumi.Input[str] provisioning_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC.
@@ -74,6 +78,8 @@ class SddcArgs:
         :param pulumi.Input[str] initial_host_shape_name: The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         :param pulumi.Input[str] initial_sku: The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param pulumi.Input[str] instance_display_name_prefix: A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
+               
+               For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
         :param pulumi.Input[bool] is_hcx_enabled: For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
         :param pulumi.Input[bool] is_shielded_instance_enabled: Indicates whether shielded instance is enabled for this SDDC.
         :param pulumi.Input[bool] is_single_host_sddc: Indicates whether this SDDC is designated for only single ESXi host.
@@ -81,7 +87,11 @@ class SddcArgs:
         :param pulumi.Input[bool] refresh_hcx_license_status: (Updatable) HCX on-premise licenses status will be refreshed whenever the value of this field is changed.
         :param pulumi.Input[str] replication_vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] reserving_hcx_on_premise_license_keys: (Updatable) The HCX on-premise licenses to be reserved when downgrade from HCX Enterprise to HCX Advanced. It should not be provided during resource creation. It is required and can only be set when the hcx_action is "DOWNGRADE". Its value can only be changed when hcx_action is updated.
-        :param pulumi.Input[str] workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+        :param pulumi.Input[str] workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
@@ -164,6 +174,8 @@ class SddcArgs:
     def esxi_hosts_count(self) -> pulumi.Input[int]:
         """
         The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
+
+        **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
         """
         return pulumi.get(self, "esxi_hosts_count")
 
@@ -188,6 +200,8 @@ class SddcArgs:
     def nsx_edge_uplink2vlan_id(self) -> pulumi.Input[str]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
+
+        **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
         """
         return pulumi.get(self, "nsx_edge_uplink2vlan_id")
 
@@ -416,6 +430,8 @@ class SddcArgs:
     def instance_display_name_prefix(self) -> Optional[pulumi.Input[str]]:
         """
         A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
+
+        For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
         """
         return pulumi.get(self, "instance_display_name_prefix")
 
@@ -511,7 +527,11 @@ class SddcArgs:
     @pulumi.getter(name="workloadNetworkCidr")
     def workload_network_cidr(self) -> Optional[pulumi.Input[str]]:
         """
-        The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+        The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "workload_network_cidr")
 
@@ -591,6 +611,8 @@ class _SddcState:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         :param pulumi.Input[int] esxi_hosts_count: The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
+               
+               **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] hcx_action: (Updatable) The action to be performed upon HCX licenses. "UPGRADE" will upgrade the SDDC from HCX Advanced to HCX Enterprise. "DOWNGRADE" will downgrade the SDDC from HCX Enterprise to HCX Advanced after current HCX Enterprise billing cycle end date. "CANCEL_DOWNGRADE" will cancel the pending downgrade of HCX licenses. The action will only be performed when its value is changed. This field can also be used to enable HCX Enterprise during SDDC creation. If "UPGRADE" is set during SDDC creation, the SDDC will be created with HCX Enterprise enable. Supported actions during update: UPGRADE, DOWNGRADE, CANCEL_DOWNGRADE. Supported actions during creation: UPGRADE.
         :param pulumi.Input[str] hcx_fqdn: The FQDN for HCX Manager.  Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
@@ -603,6 +625,8 @@ class _SddcState:
         :param pulumi.Input[str] initial_host_shape_name: The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         :param pulumi.Input[str] initial_sku: The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param pulumi.Input[str] instance_display_name_prefix: A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
+               
+               For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
         :param pulumi.Input[bool] is_hcx_enabled: For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
         :param pulumi.Input[bool] is_hcx_enterprise_enabled: Indicates whether to enable HCX Enterprise for this SDDC.
         :param pulumi.Input[bool] is_hcx_pending_downgrade: Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
@@ -610,6 +634,8 @@ class _SddcState:
         :param pulumi.Input[bool] is_single_host_sddc: Indicates whether this SDDC is designated for only single ESXi host.
         :param pulumi.Input[str] nsx_edge_uplink1vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
         :param pulumi.Input[str] nsx_edge_uplink2vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
+               
+               **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
         :param pulumi.Input[str] nsx_edge_uplink_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
         :param pulumi.Input[str] nsx_edge_vtep_vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
         :param pulumi.Input[str] nsx_manager_fqdn: The FQDN for NSX Manager.  Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
@@ -640,7 +666,11 @@ class _SddcState:
         :param pulumi.Input[str] vsphere_upgrade_guide: The link to guidance for upgrading vSphere.
         :param pulumi.Input[Sequence[pulumi.Input['SddcVsphereUpgradeObjectArgs']]] vsphere_upgrade_objects: The links to binary objects needed to upgrade vSphere.
         :param pulumi.Input[str] vsphere_vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
-        :param pulumi.Input[str] workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+        :param pulumi.Input[str] workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if actual_esxi_hosts_count is not None:
             pulumi.set(__self__, "actual_esxi_hosts_count", actual_esxi_hosts_count)
@@ -848,6 +878,8 @@ class _SddcState:
     def esxi_hosts_count(self) -> Optional[pulumi.Input[int]]:
         """
         The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
+
+        **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
         """
         return pulumi.get(self, "esxi_hosts_count")
 
@@ -992,6 +1024,8 @@ class _SddcState:
     def instance_display_name_prefix(self) -> Optional[pulumi.Input[str]]:
         """
         A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
+
+        For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
         """
         return pulumi.get(self, "instance_display_name_prefix")
 
@@ -1076,6 +1110,8 @@ class _SddcState:
     def nsx_edge_uplink2vlan_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
+
+        **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
         """
         return pulumi.get(self, "nsx_edge_uplink2vlan_id")
 
@@ -1447,7 +1483,11 @@ class _SddcState:
     @pulumi.getter(name="workloadNetworkCidr")
     def workload_network_cidr(self) -> Optional[pulumi.Input[str]]:
         """
-        The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+        The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "workload_network_cidr")
 
@@ -1569,6 +1609,8 @@ class Sddc(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         :param pulumi.Input[int] esxi_hosts_count: The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
+               
+               **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] hcx_action: (Updatable) The action to be performed upon HCX licenses. "UPGRADE" will upgrade the SDDC from HCX Advanced to HCX Enterprise. "DOWNGRADE" will downgrade the SDDC from HCX Enterprise to HCX Advanced after current HCX Enterprise billing cycle end date. "CANCEL_DOWNGRADE" will cancel the pending downgrade of HCX licenses. The action will only be performed when its value is changed. This field can also be used to enable HCX Enterprise during SDDC creation. If "UPGRADE" is set during SDDC creation, the SDDC will be created with HCX Enterprise enable. Supported actions during update: UPGRADE, DOWNGRADE, CANCEL_DOWNGRADE. Supported actions during creation: UPGRADE.
         :param pulumi.Input[str] hcx_vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
@@ -1576,11 +1618,15 @@ class Sddc(pulumi.CustomResource):
         :param pulumi.Input[str] initial_host_shape_name: The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         :param pulumi.Input[str] initial_sku: The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param pulumi.Input[str] instance_display_name_prefix: A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
+               
+               For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
         :param pulumi.Input[bool] is_hcx_enabled: For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
         :param pulumi.Input[bool] is_shielded_instance_enabled: Indicates whether shielded instance is enabled for this SDDC.
         :param pulumi.Input[bool] is_single_host_sddc: Indicates whether this SDDC is designated for only single ESXi host.
         :param pulumi.Input[str] nsx_edge_uplink1vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
         :param pulumi.Input[str] nsx_edge_uplink2vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
+               
+               **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
         :param pulumi.Input[str] nsx_edge_vtep_vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
         :param pulumi.Input[str] nsx_vtep_vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment.
         :param pulumi.Input[str] provisioning_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC.
@@ -1593,7 +1639,11 @@ class Sddc(pulumi.CustomResource):
         :param pulumi.Input[str] vmware_software_version: (Updatable) The VMware software bundle to install on the ESXi hosts in the SDDC. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
         :param pulumi.Input[str] vsan_vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
         :param pulumi.Input[str] vsphere_vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
-        :param pulumi.Input[str] workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+        :param pulumi.Input[str] workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -1890,6 +1940,8 @@ class Sddc(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         :param pulumi.Input[int] esxi_hosts_count: The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
+               
+               **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] hcx_action: (Updatable) The action to be performed upon HCX licenses. "UPGRADE" will upgrade the SDDC from HCX Advanced to HCX Enterprise. "DOWNGRADE" will downgrade the SDDC from HCX Enterprise to HCX Advanced after current HCX Enterprise billing cycle end date. "CANCEL_DOWNGRADE" will cancel the pending downgrade of HCX licenses. The action will only be performed when its value is changed. This field can also be used to enable HCX Enterprise during SDDC creation. If "UPGRADE" is set during SDDC creation, the SDDC will be created with HCX Enterprise enable. Supported actions during update: UPGRADE, DOWNGRADE, CANCEL_DOWNGRADE. Supported actions during creation: UPGRADE.
         :param pulumi.Input[str] hcx_fqdn: The FQDN for HCX Manager.  Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
@@ -1902,6 +1954,8 @@ class Sddc(pulumi.CustomResource):
         :param pulumi.Input[str] initial_host_shape_name: The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         :param pulumi.Input[str] initial_sku: The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         :param pulumi.Input[str] instance_display_name_prefix: A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
+               
+               For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
         :param pulumi.Input[bool] is_hcx_enabled: For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
         :param pulumi.Input[bool] is_hcx_enterprise_enabled: Indicates whether to enable HCX Enterprise for this SDDC.
         :param pulumi.Input[bool] is_hcx_pending_downgrade: Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
@@ -1909,6 +1963,8 @@ class Sddc(pulumi.CustomResource):
         :param pulumi.Input[bool] is_single_host_sddc: Indicates whether this SDDC is designated for only single ESXi host.
         :param pulumi.Input[str] nsx_edge_uplink1vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
         :param pulumi.Input[str] nsx_edge_uplink2vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
+               
+               **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
         :param pulumi.Input[str] nsx_edge_uplink_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
         :param pulumi.Input[str] nsx_edge_vtep_vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
         :param pulumi.Input[str] nsx_manager_fqdn: The FQDN for NSX Manager.  Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
@@ -1939,7 +1995,11 @@ class Sddc(pulumi.CustomResource):
         :param pulumi.Input[str] vsphere_upgrade_guide: The link to guidance for upgrading vSphere.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SddcVsphereUpgradeObjectArgs']]]] vsphere_upgrade_objects: The links to binary objects needed to upgrade vSphere.
         :param pulumi.Input[str] vsphere_vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
-        :param pulumi.Input[str] workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+        :param pulumi.Input[str] workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -2066,6 +2126,8 @@ class Sddc(pulumi.CustomResource):
     def esxi_hosts_count(self) -> pulumi.Output[int]:
         """
         The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
+
+        **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
         """
         return pulumi.get(self, "esxi_hosts_count")
 
@@ -2162,6 +2224,8 @@ class Sddc(pulumi.CustomResource):
     def instance_display_name_prefix(self) -> pulumi.Output[str]:
         """
         A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
+
+        For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
         """
         return pulumi.get(self, "instance_display_name_prefix")
 
@@ -2218,6 +2282,8 @@ class Sddc(pulumi.CustomResource):
     def nsx_edge_uplink2vlan_id(self) -> pulumi.Output[str]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
+
+        **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
         """
         return pulumi.get(self, "nsx_edge_uplink2vlan_id")
 
@@ -2465,7 +2531,11 @@ class Sddc(pulumi.CustomResource):
     @pulumi.getter(name="workloadNetworkCidr")
     def workload_network_cidr(self) -> pulumi.Output[str]:
         """
-        The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+        The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "workload_network_cidr")
 

@@ -217,12 +217,18 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
     /**
      * A filter to return resources that match resource type.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
      * @return A filter to return resources that match resource type.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> type() {
@@ -552,6 +558,9 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
         /**
          * @param type A filter to return resources that match resource type.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -562,6 +571,9 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
 
         /**
          * @param type A filter to return resources that match resource type.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

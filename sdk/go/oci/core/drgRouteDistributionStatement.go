@@ -67,6 +67,9 @@ type DrgRouteDistributionStatement struct {
 	// (Updatable) The action is applied only if all of the match criteria are met. MATCH_ALL match type implies any input is considered a match.
 	MatchCriteria DrgRouteDistributionStatementMatchCriteriaOutput `pulumi:"matchCriteria"`
 	// (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Priority pulumi.IntOutput `pulumi:"priority"`
 }
 
@@ -118,6 +121,9 @@ type drgRouteDistributionStatementState struct {
 	// (Updatable) The action is applied only if all of the match criteria are met. MATCH_ALL match type implies any input is considered a match.
 	MatchCriteria *DrgRouteDistributionStatementMatchCriteria `pulumi:"matchCriteria"`
 	// (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Priority *int `pulumi:"priority"`
 }
 
@@ -129,6 +135,9 @@ type DrgRouteDistributionStatementState struct {
 	// (Updatable) The action is applied only if all of the match criteria are met. MATCH_ALL match type implies any input is considered a match.
 	MatchCriteria DrgRouteDistributionStatementMatchCriteriaPtrInput
 	// (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Priority pulumi.IntPtrInput
 }
 
@@ -144,6 +153,9 @@ type drgRouteDistributionStatementArgs struct {
 	// (Updatable) The action is applied only if all of the match criteria are met. MATCH_ALL match type implies any input is considered a match.
 	MatchCriteria DrgRouteDistributionStatementMatchCriteria `pulumi:"matchCriteria"`
 	// (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Priority int `pulumi:"priority"`
 }
 
@@ -156,6 +168,9 @@ type DrgRouteDistributionStatementArgs struct {
 	// (Updatable) The action is applied only if all of the match criteria are met. MATCH_ALL match type implies any input is considered a match.
 	MatchCriteria DrgRouteDistributionStatementMatchCriteriaInput
 	// (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Priority pulumi.IntInput
 }
 
@@ -264,6 +279,9 @@ func (o DrgRouteDistributionStatementOutput) MatchCriteria() DrgRouteDistributio
 }
 
 // (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DrgRouteDistributionStatementOutput) Priority() pulumi.IntOutput {
 	return o.ApplyT(func(v *DrgRouteDistributionStatement) pulumi.IntOutput { return v.Priority }).(pulumi.IntOutput)
 }

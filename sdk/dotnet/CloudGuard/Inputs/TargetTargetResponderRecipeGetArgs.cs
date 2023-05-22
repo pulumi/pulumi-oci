@@ -20,12 +20,16 @@ namespace Pulumi.Oci.CloudGuard.Inputs
 
         /// <summary>
         /// The target description.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
         /// (Updatable) DetectorTemplate identifier.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

@@ -89,6 +89,10 @@ export class DetectAnomalyJob extends pulumi.CustomResource {
     public /*out*/ readonly projectId!: pulumi.Output<string>;
     /**
      * The value that customer can adjust to control the sensitivity of anomaly detection
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly sensitivity!: pulumi.Output<number>;
     /**
@@ -223,6 +227,10 @@ export interface DetectAnomalyJobState {
     projectId?: pulumi.Input<string>;
     /**
      * The value that customer can adjust to control the sensitivity of anomaly detection
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     sensitivity?: pulumi.Input<number>;
     /**
@@ -277,6 +285,10 @@ export interface DetectAnomalyJobArgs {
     outputDetails: pulumi.Input<inputs.AiAnomalyDetection.DetectAnomalyJobOutputDetails>;
     /**
      * The value that customer can adjust to control the sensitivity of anomaly detection
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     sensitivity?: pulumi.Input<number>;
 }

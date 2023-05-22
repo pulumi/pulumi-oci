@@ -19,6 +19,10 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         public readonly int? BackendTcpProxyProtocolVersion;
         /// <summary>
         /// (Updatable) The maximum idle time, in seconds, allowed between two successive receive or two successive send operations between the client and backend servers. A send operation does not reset the timer for receive operations. A receive operation does not reset the timer for send operations.
+        /// 
+        /// For more information, see [Connection Configuration](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
+        /// 
+        /// Example: `1200`
         /// </summary>
         public readonly string IdleTimeoutInSeconds;
 

@@ -141,12 +141,18 @@ public final class OperationsInsightsWarehouseUserArgs extends com.pulumi.resour
     /**
      * OPSI Warehouse OCID
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="operationsInsightsWarehouseId", required=true)
     private Output<String> operationsInsightsWarehouseId;
 
     /**
      * @return OPSI Warehouse OCID
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> operationsInsightsWarehouseId() {
@@ -356,6 +362,9 @@ public final class OperationsInsightsWarehouseUserArgs extends com.pulumi.resour
         /**
          * @param operationsInsightsWarehouseId OPSI Warehouse OCID
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -366,6 +375,9 @@ public final class OperationsInsightsWarehouseUserArgs extends com.pulumi.resour
 
         /**
          * @param operationsInsightsWarehouseId OPSI Warehouse OCID
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -79,12 +79,18 @@ public final class PathAnalysiProtocolParametersArgs extends com.pulumi.resource
     /**
      * The type of the `PathAnalysis` query.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
      * @return The type of the `PathAnalysis` query.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> type() {
@@ -206,6 +212,9 @@ public final class PathAnalysiProtocolParametersArgs extends com.pulumi.resource
         /**
          * @param type The type of the `PathAnalysis` query.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -216,6 +225,9 @@ public final class PathAnalysiProtocolParametersArgs extends com.pulumi.resource
 
         /**
          * @param type The type of the `PathAnalysis` query.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

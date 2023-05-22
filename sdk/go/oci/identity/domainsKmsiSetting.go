@@ -34,50 +34,249 @@ type DomainsKmsiSetting struct {
 	// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization pulumi.StringPtrOutput `pulumi:"authorization"`
 	// (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	CompartmentOcid pulumi.StringOutput `pulumi:"compartmentOcid"`
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	DeleteInProgress pulumi.BoolOutput `pulumi:"deleteInProgress"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
 	// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	ExternalId pulumi.StringOutput `pulumi:"externalId"`
 	// (Updatable) The User or App who created the Resource
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: true
+	// * returned: default
+	// * type: complex
 	IdcsCreatedBies DomainsKmsiSettingIdcsCreatedByArrayOutput `pulumi:"idcsCreatedBies"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringOutput `pulumi:"idcsEndpoint"`
 	// (Updatable) The User or App who modified the Resource
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: complex
 	IdcsLastModifiedBies DomainsKmsiSettingIdcsLastModifiedByArrayOutput `pulumi:"idcsLastModifiedBies"`
 	// (Updatable) The release number when the resource was upgraded.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: string
+	// * uniqueness: none
 	IdcsLastUpgradedInRelease pulumi.StringOutput `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: string
+	// * uniqueness: none
 	IdcsPreventedOperations pulumi.StringArrayOutput `pulumi:"idcsPreventedOperations"`
 	// (Updatable) Identifier represents KMSI feature is enabled or not.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	KmsiFeatureEnabled pulumi.BoolOutput `pulumi:"kmsiFeatureEnabled"`
 	// (Updatable) Identifier represents KMSI to be prompted to user or not.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	KmsiPromptEnabled pulumi.BoolOutput `pulumi:"kmsiPromptEnabled"`
 	// ID of the resource
 	KmsiSettingId pulumi.StringOutput `pulumi:"kmsiSettingId"`
 	// (Updatable) Timestamp of when the KmsiSettings was enabled last time.
+	//
+	// **Added In:** 2203071610
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: dateTime
+	// * uniqueness: none
 	LastEnabledOn pulumi.StringOutput `pulumi:"lastEnabledOn"`
 	// (Updatable) Identifier represents duration in days within which kmsi token must be used.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * idcsMaxValue: 365
+	// * idcsMinValue: 1
+	// * uniqueness: none
 	LastUsedValidityInDays pulumi.IntOutput `pulumi:"lastUsedValidityInDays"`
 	// (Updatable) Identifier represents maximum KMSI sessions allowed in the system.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * idcsMaxValue: 10
+	// * idcsMinValue: 1
+	// * uniqueness: none
 	MaxAllowedSessions pulumi.IntOutput `pulumi:"maxAllowedSessions"`
 	// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+	// * type: complex
 	Metas DomainsKmsiSettingMetaArrayOutput `pulumi:"metas"`
 	// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: global
 	Ocid pulumi.StringOutput `pulumi:"ocid"`
 	// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
 	// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Schemas pulumi.StringArrayOutput `pulumi:"schemas"`
 	// (Updatable) A list of tags on this resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [key, value]
+	// * idcsSearchable: true
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
 	Tags DomainsKmsiSettingTagArrayOutput `pulumi:"tags"`
 	// (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
 	// (Updatable) Identifier represents validity duration in days.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * idcsMaxValue: 1100
+	// * idcsMinValue: 1
+	// * uniqueness: none
 	TokenValidityInDays pulumi.IntOutput `pulumi:"tokenValidityInDays"`
 	// (Updatable) Identifier represents whether user is prompted for ToU or not.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TouPromptDisabled pulumi.BoolOutput `pulumi:"touPromptDisabled"`
 }
 
@@ -126,50 +325,249 @@ type domainsKmsiSettingState struct {
 	// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization *string `pulumi:"authorization"`
 	// (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	CompartmentOcid *string `pulumi:"compartmentOcid"`
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	DeleteInProgress *bool `pulumi:"deleteInProgress"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DomainOcid *string `pulumi:"domainOcid"`
 	// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	ExternalId *string `pulumi:"externalId"`
 	// (Updatable) The User or App who created the Resource
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: true
+	// * returned: default
+	// * type: complex
 	IdcsCreatedBies []DomainsKmsiSettingIdcsCreatedBy `pulumi:"idcsCreatedBies"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint *string `pulumi:"idcsEndpoint"`
 	// (Updatable) The User or App who modified the Resource
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: complex
 	IdcsLastModifiedBies []DomainsKmsiSettingIdcsLastModifiedBy `pulumi:"idcsLastModifiedBies"`
 	// (Updatable) The release number when the resource was upgraded.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: string
+	// * uniqueness: none
 	IdcsLastUpgradedInRelease *string `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: string
+	// * uniqueness: none
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
 	// (Updatable) Identifier represents KMSI feature is enabled or not.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	KmsiFeatureEnabled *bool `pulumi:"kmsiFeatureEnabled"`
 	// (Updatable) Identifier represents KMSI to be prompted to user or not.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	KmsiPromptEnabled *bool `pulumi:"kmsiPromptEnabled"`
 	// ID of the resource
 	KmsiSettingId *string `pulumi:"kmsiSettingId"`
 	// (Updatable) Timestamp of when the KmsiSettings was enabled last time.
+	//
+	// **Added In:** 2203071610
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: dateTime
+	// * uniqueness: none
 	LastEnabledOn *string `pulumi:"lastEnabledOn"`
 	// (Updatable) Identifier represents duration in days within which kmsi token must be used.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * idcsMaxValue: 365
+	// * idcsMinValue: 1
+	// * uniqueness: none
 	LastUsedValidityInDays *int `pulumi:"lastUsedValidityInDays"`
 	// (Updatable) Identifier represents maximum KMSI sessions allowed in the system.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * idcsMaxValue: 10
+	// * idcsMinValue: 1
+	// * uniqueness: none
 	MaxAllowedSessions *int `pulumi:"maxAllowedSessions"`
 	// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+	// * type: complex
 	Metas []DomainsKmsiSettingMeta `pulumi:"metas"`
 	// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: global
 	Ocid *string `pulumi:"ocid"`
 	// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Schemas []string `pulumi:"schemas"`
 	// (Updatable) A list of tags on this resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [key, value]
+	// * idcsSearchable: true
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
 	Tags []DomainsKmsiSettingTag `pulumi:"tags"`
 	// (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	TenancyOcid *string `pulumi:"tenancyOcid"`
 	// (Updatable) Identifier represents validity duration in days.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * idcsMaxValue: 1100
+	// * idcsMinValue: 1
+	// * uniqueness: none
 	TokenValidityInDays *int `pulumi:"tokenValidityInDays"`
 	// (Updatable) Identifier represents whether user is prompted for ToU or not.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TouPromptDisabled *bool `pulumi:"touPromptDisabled"`
 }
 
@@ -181,50 +579,249 @@ type DomainsKmsiSettingState struct {
 	// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization pulumi.StringPtrInput
 	// (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	CompartmentOcid pulumi.StringPtrInput
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	DeleteInProgress pulumi.BoolPtrInput
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DomainOcid pulumi.StringPtrInput
 	// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	ExternalId pulumi.StringPtrInput
 	// (Updatable) The User or App who created the Resource
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: true
+	// * returned: default
+	// * type: complex
 	IdcsCreatedBies DomainsKmsiSettingIdcsCreatedByArrayInput
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringPtrInput
 	// (Updatable) The User or App who modified the Resource
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: complex
 	IdcsLastModifiedBies DomainsKmsiSettingIdcsLastModifiedByArrayInput
 	// (Updatable) The release number when the resource was upgraded.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: string
+	// * uniqueness: none
 	IdcsLastUpgradedInRelease pulumi.StringPtrInput
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: string
+	// * uniqueness: none
 	IdcsPreventedOperations pulumi.StringArrayInput
 	// (Updatable) Identifier represents KMSI feature is enabled or not.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	KmsiFeatureEnabled pulumi.BoolPtrInput
 	// (Updatable) Identifier represents KMSI to be prompted to user or not.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	KmsiPromptEnabled pulumi.BoolPtrInput
 	// ID of the resource
 	KmsiSettingId pulumi.StringPtrInput
 	// (Updatable) Timestamp of when the KmsiSettings was enabled last time.
+	//
+	// **Added In:** 2203071610
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: dateTime
+	// * uniqueness: none
 	LastEnabledOn pulumi.StringPtrInput
 	// (Updatable) Identifier represents duration in days within which kmsi token must be used.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * idcsMaxValue: 365
+	// * idcsMinValue: 1
+	// * uniqueness: none
 	LastUsedValidityInDays pulumi.IntPtrInput
 	// (Updatable) Identifier represents maximum KMSI sessions allowed in the system.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * idcsMaxValue: 10
+	// * idcsMinValue: 1
+	// * uniqueness: none
 	MaxAllowedSessions pulumi.IntPtrInput
 	// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+	// * type: complex
 	Metas DomainsKmsiSettingMetaArrayInput
 	// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: global
 	Ocid pulumi.StringPtrInput
 	// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrInput
 	// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Schemas pulumi.StringArrayInput
 	// (Updatable) A list of tags on this resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [key, value]
+	// * idcsSearchable: true
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
 	Tags DomainsKmsiSettingTagArrayInput
 	// (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	TenancyOcid pulumi.StringPtrInput
 	// (Updatable) Identifier represents validity duration in days.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * idcsMaxValue: 1100
+	// * idcsMinValue: 1
+	// * uniqueness: none
 	TokenValidityInDays pulumi.IntPtrInput
 	// (Updatable) Identifier represents whether user is prompted for ToU or not.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TouPromptDisabled pulumi.BoolPtrInput
 }
 
@@ -240,32 +837,146 @@ type domainsKmsiSettingArgs struct {
 	// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization *string `pulumi:"authorization"`
 	// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	ExternalId *string `pulumi:"externalId"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint string `pulumi:"idcsEndpoint"`
 	// (Updatable) Identifier represents KMSI feature is enabled or not.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	KmsiFeatureEnabled *bool `pulumi:"kmsiFeatureEnabled"`
 	// (Updatable) Identifier represents KMSI to be prompted to user or not.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	KmsiPromptEnabled *bool `pulumi:"kmsiPromptEnabled"`
 	// ID of the resource
 	KmsiSettingId string `pulumi:"kmsiSettingId"`
 	// (Updatable) Timestamp of when the KmsiSettings was enabled last time.
+	//
+	// **Added In:** 2203071610
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: dateTime
+	// * uniqueness: none
 	LastEnabledOn *string `pulumi:"lastEnabledOn"`
 	// (Updatable) Identifier represents duration in days within which kmsi token must be used.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * idcsMaxValue: 365
+	// * idcsMinValue: 1
+	// * uniqueness: none
 	LastUsedValidityInDays *int `pulumi:"lastUsedValidityInDays"`
 	// (Updatable) Identifier represents maximum KMSI sessions allowed in the system.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * idcsMaxValue: 10
+	// * idcsMinValue: 1
+	// * uniqueness: none
 	MaxAllowedSessions *int `pulumi:"maxAllowedSessions"`
 	// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: global
 	Ocid *string `pulumi:"ocid"`
 	// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Schemas []string `pulumi:"schemas"`
 	// (Updatable) A list of tags on this resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [key, value]
+	// * idcsSearchable: true
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
 	Tags []DomainsKmsiSettingTag `pulumi:"tags"`
 	// (Updatable) Identifier represents validity duration in days.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * idcsMaxValue: 1100
+	// * idcsMinValue: 1
+	// * uniqueness: none
 	TokenValidityInDays *int `pulumi:"tokenValidityInDays"`
 	// (Updatable) Identifier represents whether user is prompted for ToU or not.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TouPromptDisabled *bool `pulumi:"touPromptDisabled"`
 }
 
@@ -278,32 +989,146 @@ type DomainsKmsiSettingArgs struct {
 	// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization pulumi.StringPtrInput
 	// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	ExternalId pulumi.StringPtrInput
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringInput
 	// (Updatable) Identifier represents KMSI feature is enabled or not.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	KmsiFeatureEnabled pulumi.BoolPtrInput
 	// (Updatable) Identifier represents KMSI to be prompted to user or not.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	KmsiPromptEnabled pulumi.BoolPtrInput
 	// ID of the resource
 	KmsiSettingId pulumi.StringInput
 	// (Updatable) Timestamp of when the KmsiSettings was enabled last time.
+	//
+	// **Added In:** 2203071610
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: dateTime
+	// * uniqueness: none
 	LastEnabledOn pulumi.StringPtrInput
 	// (Updatable) Identifier represents duration in days within which kmsi token must be used.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * idcsMaxValue: 365
+	// * idcsMinValue: 1
+	// * uniqueness: none
 	LastUsedValidityInDays pulumi.IntPtrInput
 	// (Updatable) Identifier represents maximum KMSI sessions allowed in the system.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * idcsMaxValue: 10
+	// * idcsMinValue: 1
+	// * uniqueness: none
 	MaxAllowedSessions pulumi.IntPtrInput
 	// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: global
 	Ocid pulumi.StringPtrInput
 	// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrInput
 	// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Schemas pulumi.StringArrayInput
 	// (Updatable) A list of tags on this resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [key, value]
+	// * idcsSearchable: true
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
 	Tags DomainsKmsiSettingTagArrayInput
 	// (Updatable) Identifier represents validity duration in days.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * idcsMaxValue: 1100
+	// * idcsMinValue: 1
+	// * uniqueness: none
 	TokenValidityInDays pulumi.IntPtrInput
 	// (Updatable) Identifier represents whether user is prompted for ToU or not.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TouPromptDisabled pulumi.BoolPtrInput
 }
 
@@ -410,26 +1235,73 @@ func (o DomainsKmsiSettingOutput) Authorization() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsKmsiSettingOutput) CompartmentOcid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.StringOutput { return v.CompartmentOcid }).(pulumi.StringOutput)
 }
 
 // (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * type: boolean
+// * uniqueness: none
 func (o DomainsKmsiSettingOutput) DeleteInProgress() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.BoolOutput { return v.DeleteInProgress }).(pulumi.BoolOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsKmsiSettingOutput) DomainOcid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
 }
 
 // (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsKmsiSettingOutput) ExternalId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.StringOutput { return v.ExternalId }).(pulumi.StringOutput)
 }
 
 // (Updatable) The User or App who created the Resource
+//
+// **SCIM++ Properties:**
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readOnly
+// * required: true
+// * returned: default
+// * type: complex
 func (o DomainsKmsiSettingOutput) IdcsCreatedBies() DomainsKmsiSettingIdcsCreatedByArrayOutput {
 	return o.ApplyT(func(v *DomainsKmsiSetting) DomainsKmsiSettingIdcsCreatedByArrayOutput { return v.IdcsCreatedBies }).(DomainsKmsiSettingIdcsCreatedByArrayOutput)
 }
@@ -440,6 +1312,14 @@ func (o DomainsKmsiSettingOutput) IdcsEndpoint() pulumi.StringOutput {
 }
 
 // (Updatable) The User or App who modified the Resource
+//
+// **SCIM++ Properties:**
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * type: complex
 func (o DomainsKmsiSettingOutput) IdcsLastModifiedBies() DomainsKmsiSettingIdcsLastModifiedByArrayOutput {
 	return o.ApplyT(func(v *DomainsKmsiSetting) DomainsKmsiSettingIdcsLastModifiedByArrayOutput {
 		return v.IdcsLastModifiedBies
@@ -447,21 +1327,58 @@ func (o DomainsKmsiSettingOutput) IdcsLastModifiedBies() DomainsKmsiSettingIdcsL
 }
 
 // (Updatable) The release number when the resource was upgraded.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: request
+// * type: string
+// * uniqueness: none
 func (o DomainsKmsiSettingOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.StringOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
 }
 
 // (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+//
+// **SCIM++ Properties:**
+// * idcsSearchable: false
+// * multiValued: true
+// * mutability: readOnly
+// * required: false
+// * returned: request
+// * type: string
+// * uniqueness: none
 func (o DomainsKmsiSettingOutput) IdcsPreventedOperations() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.StringArrayOutput { return v.IdcsPreventedOperations }).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) Identifier represents KMSI feature is enabled or not.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: boolean
+// * uniqueness: none
 func (o DomainsKmsiSettingOutput) KmsiFeatureEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.BoolOutput { return v.KmsiFeatureEnabled }).(pulumi.BoolOutput)
 }
 
 // (Updatable) Identifier represents KMSI to be prompted to user or not.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: boolean
+// * uniqueness: none
 func (o DomainsKmsiSettingOutput) KmsiPromptEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.BoolOutput { return v.KmsiPromptEnabled }).(pulumi.BoolOutput)
 }
@@ -472,26 +1389,80 @@ func (o DomainsKmsiSettingOutput) KmsiSettingId() pulumi.StringOutput {
 }
 
 // (Updatable) Timestamp of when the KmsiSettings was enabled last time.
+//
+// **Added In:** 2203071610
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: dateTime
+// * uniqueness: none
 func (o DomainsKmsiSettingOutput) LastEnabledOn() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.StringOutput { return v.LastEnabledOn }).(pulumi.StringOutput)
 }
 
 // (Updatable) Identifier represents duration in days within which kmsi token must be used.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: integer
+// * idcsMaxValue: 365
+// * idcsMinValue: 1
+// * uniqueness: none
 func (o DomainsKmsiSettingOutput) LastUsedValidityInDays() pulumi.IntOutput {
 	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.IntOutput { return v.LastUsedValidityInDays }).(pulumi.IntOutput)
 }
 
 // (Updatable) Identifier represents maximum KMSI sessions allowed in the system.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: integer
+// * idcsMaxValue: 10
+// * idcsMinValue: 1
+// * uniqueness: none
 func (o DomainsKmsiSettingOutput) MaxAllowedSessions() pulumi.IntOutput {
 	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.IntOutput { return v.MaxAllowedSessions }).(pulumi.IntOutput)
 }
 
 // (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+// * type: complex
 func (o DomainsKmsiSettingOutput) Metas() DomainsKmsiSettingMetaArrayOutput {
 	return o.ApplyT(func(v *DomainsKmsiSetting) DomainsKmsiSettingMetaArrayOutput { return v.Metas }).(DomainsKmsiSettingMetaArrayOutput)
 }
 
 // (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+//
+// **SCIM++ Properties:**
+// * caseExact: true
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: immutable
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: global
 func (o DomainsKmsiSettingOutput) Ocid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
 }
@@ -502,26 +1473,79 @@ func (o DomainsKmsiSettingOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOu
 }
 
 // (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: true
+// * mutability: readWrite
+// * required: true
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsKmsiSettingOutput) Schemas() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.StringArrayOutput { return v.Schemas }).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) A list of tags on this resource.
+//
+// **SCIM++ Properties:**
+// * idcsCompositeKey: [key, value]
+// * idcsSearchable: true
+// * multiValued: true
+// * mutability: readWrite
+// * required: false
+// * returned: request
+// * type: complex
+// * uniqueness: none
 func (o DomainsKmsiSettingOutput) Tags() DomainsKmsiSettingTagArrayOutput {
 	return o.ApplyT(func(v *DomainsKmsiSetting) DomainsKmsiSettingTagArrayOutput { return v.Tags }).(DomainsKmsiSettingTagArrayOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsKmsiSettingOutput) TenancyOcid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
 }
 
 // (Updatable) Identifier represents validity duration in days.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: integer
+// * idcsMaxValue: 1100
+// * idcsMinValue: 1
+// * uniqueness: none
 func (o DomainsKmsiSettingOutput) TokenValidityInDays() pulumi.IntOutput {
 	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.IntOutput { return v.TokenValidityInDays }).(pulumi.IntOutput)
 }
 
 // (Updatable) Identifier represents whether user is prompted for ToU or not.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: boolean
+// * uniqueness: none
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DomainsKmsiSettingOutput) TouPromptDisabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.BoolOutput { return v.TouPromptDisabled }).(pulumi.BoolOutput)
 }

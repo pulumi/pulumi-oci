@@ -58,6 +58,9 @@ type ManagementAgent struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Plugin Id list
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DeployPluginsIds pulumi.StringArrayOutput `pulumi:"deployPluginsIds"`
 	// (Updatable) New displayName of Agent.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
@@ -144,6 +147,9 @@ type managementAgentState struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Plugin Id list
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DeployPluginsIds []string `pulumi:"deployPluginsIds"`
 	// (Updatable) New displayName of Agent.
 	DisplayName *string `pulumi:"displayName"`
@@ -199,6 +205,9 @@ type ManagementAgentState struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) Plugin Id list
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DeployPluginsIds pulumi.StringArrayInput
 	// (Updatable) New displayName of Agent.
 	DisplayName pulumi.StringPtrInput
@@ -254,6 +263,9 @@ type managementAgentArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Plugin Id list
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DeployPluginsIds []string `pulumi:"deployPluginsIds"`
 	// (Updatable) New displayName of Agent.
 	DisplayName *string `pulumi:"displayName"`
@@ -268,6 +280,9 @@ type ManagementAgentArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) Plugin Id list
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DeployPluginsIds pulumi.StringArrayInput
 	// (Updatable) New displayName of Agent.
 	DisplayName pulumi.StringPtrInput
@@ -380,6 +395,9 @@ func (o ManagementAgentOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Plugin Id list
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ManagementAgentOutput) DeployPluginsIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ManagementAgent) pulumi.StringArrayOutput { return v.DeployPluginsIds }).(pulumi.StringArrayOutput)
 }

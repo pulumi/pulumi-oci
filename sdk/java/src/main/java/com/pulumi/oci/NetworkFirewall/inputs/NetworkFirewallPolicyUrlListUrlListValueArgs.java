@@ -18,12 +18,18 @@ public final class NetworkFirewallPolicyUrlListUrlListValueArgs extends com.pulu
     /**
      * (Updatable) URL lists to allow or deny traffic to a group of URLs. You can include a maximum of 25 URLs in each list.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="pattern")
     private @Nullable Output<String> pattern;
 
     /**
      * @return (Updatable) URL lists to allow or deny traffic to a group of URLs. You can include a maximum of 25 URLs in each list.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> pattern() {
@@ -73,6 +79,9 @@ public final class NetworkFirewallPolicyUrlListUrlListValueArgs extends com.pulu
         /**
          * @param pattern (Updatable) URL lists to allow or deny traffic to a group of URLs. You can include a maximum of 25 URLs in each list.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -83,6 +92,9 @@ public final class NetworkFirewallPolicyUrlListUrlListValueArgs extends com.pulu
 
         /**
          * @param pattern (Updatable) URL lists to allow or deny traffic to a group of URLs. You can include a maximum of 25 URLs in each list.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -55,6 +55,8 @@ import javax.annotation.Nullable;
  *                 .dbBackupConfig(DbHomeDatabaseDbBackupConfigArgs.builder()
  *                     .autoBackupEnabled(var_.db_home_database_db_backup_config_auto_backup_enabled())
  *                     .autoBackupWindow(var_.db_home_database_db_backup_config_auto_backup_window())
+ *                     .autoFullBackupDay(var_.db_home_database_db_backup_config_auto_full_backup_day())
+ *                     .autoFullBackupWindow(var_.db_home_database_db_backup_config_auto_full_backup_window())
  *                     .backupDeletionPolicy(var_.db_home_database_db_backup_config_backup_deletion_policy())
  *                     .backupDestinationDetails(DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs.builder()
  *                         .dbrsPolicyId(oci_identity_policy.test_policy().id())
@@ -62,6 +64,7 @@ import javax.annotation.Nullable;
  *                         .type(var_.db_home_database_db_backup_config_backup_destination_details_type())
  *                         .build())
  *                     .recoveryWindowInDays(var_.db_home_database_db_backup_config_recovery_window_in_days())
+ *                     .runImmediateFullBackup(var_.db_home_database_db_backup_config_run_immediate_full_backup())
  *                     .build())
  *                 .dbName(var_.db_home_database_db_name())
  *                 .dbWorkload(var_.db_home_database_db_workload())
@@ -130,12 +133,16 @@ public class DbHome extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Details for creating a database.
      * 
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+     * 
      */
     @Export(name="database", type=DbHomeDatabase.class, parameters={})
     private Output<DbHomeDatabase> database;
 
     /**
      * @return (Updatable) Details for creating a database.
+     * 
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      * 
      */
     public Output<DbHomeDatabase> database() {
@@ -368,12 +375,18 @@ public class DbHome extends com.pulumi.resources.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="vmClusterId", type=String.class, parameters={})
     private Output<String> vmClusterId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> vmClusterId() {

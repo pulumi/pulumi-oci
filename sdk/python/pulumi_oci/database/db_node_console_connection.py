@@ -20,6 +20,10 @@ class DbNodeConsoleConnectionArgs:
         The set of arguments for constructing a DbNodeConsoleConnection resource.
         :param pulumi.Input[str] db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] public_key: The SSH public key used to authenticate the console connection.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "db_node_id", db_node_id)
         pulumi.set(__self__, "public_key", public_key)
@@ -41,6 +45,10 @@ class DbNodeConsoleConnectionArgs:
     def public_key(self) -> pulumi.Input[str]:
         """
         The SSH public key used to authenticate the console connection.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "public_key")
 
@@ -65,6 +73,10 @@ class _DbNodeConsoleConnectionState:
         :param pulumi.Input[str] db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] fingerprint: The SSH public key fingerprint for the console connection.
         :param pulumi.Input[str] public_key: The SSH public key used to authenticate the console connection.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the console connection.
         """
         if compartment_id is not None:
@@ -133,6 +145,10 @@ class _DbNodeConsoleConnectionState:
     def public_key(self) -> Optional[pulumi.Input[str]]:
         """
         The SSH public key used to authenticate the console connection.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "public_key")
 
@@ -191,6 +207,10 @@ class DbNodeConsoleConnection(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] public_key: The SSH public key used to authenticate the console connection.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -288,6 +308,10 @@ class DbNodeConsoleConnection(pulumi.CustomResource):
         :param pulumi.Input[str] db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] fingerprint: The SSH public key fingerprint for the console connection.
         :param pulumi.Input[str] public_key: The SSH public key used to authenticate the console connection.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the console connection.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -339,6 +363,10 @@ class DbNodeConsoleConnection(pulumi.CustomResource):
     def public_key(self) -> pulumi.Output[str]:
         """
         The SSH public key used to authenticate the console connection.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "public_key")
 

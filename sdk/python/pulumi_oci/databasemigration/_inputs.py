@@ -305,7 +305,11 @@ class ConnectionVaultDetailsArgs:
         """
         :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment where the secret containing the credentials will be created.
         :param pulumi.Input[str] key_id: (Updatable) OCID of the vault encryption key
-        :param pulumi.Input[str] vault_id: (Updatable) OCID of the vault
+        :param pulumi.Input[str] vault_id: (Updatable) OCID of the vault 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "key_id", key_id)
@@ -339,7 +343,11 @@ class ConnectionVaultDetailsArgs:
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) OCID of the vault
+        (Updatable) OCID of the vault 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vault_id")
 
@@ -1906,7 +1914,11 @@ class MigrationVaultDetailsArgs:
         """
         :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment where the secret containing the credentials will be created.
         :param pulumi.Input[str] key_id: (Updatable) OCID of the vault encryption key
-        :param pulumi.Input[str] vault_id: (Updatable) OCID of the vault
+        :param pulumi.Input[str] vault_id: (Updatable) OCID of the vault 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "key_id", key_id)
@@ -1940,7 +1952,11 @@ class MigrationVaultDetailsArgs:
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) OCID of the vault
+        (Updatable) OCID of the vault 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vault_id")
 

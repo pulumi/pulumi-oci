@@ -32,6 +32,10 @@ class DetectAnomalyJobArgs:
         :param pulumi.Input[str] description: (Updatable) A short description of the detect anomaly job.
         :param pulumi.Input[str] display_name: (Updatable) Detect anomaly job display name.
         :param pulumi.Input[float] sensitivity: The value that customer can adjust to control the sensitivity of anomaly detection
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "input_details", input_details)
@@ -121,6 +125,10 @@ class DetectAnomalyJobArgs:
     def sensitivity(self) -> Optional[pulumi.Input[float]]:
         """
         The value that customer can adjust to control the sensitivity of anomaly detection
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "sensitivity")
 
@@ -161,6 +169,10 @@ class _DetectAnomalyJobState:
         :param pulumi.Input['DetectAnomalyJobOutputDetailsArgs'] output_details: Detect anomaly job output details.
         :param pulumi.Input[str] project_id: The OCID of the project.
         :param pulumi.Input[float] sensitivity: The value that customer can adjust to control the sensitivity of anomaly detection
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the batch document job.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_accepted: Job accepted time
@@ -325,6 +337,10 @@ class _DetectAnomalyJobState:
     def sensitivity(self) -> Optional[pulumi.Input[float]]:
         """
         The value that customer can adjust to control the sensitivity of anomaly detection
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "sensitivity")
 
@@ -428,6 +444,10 @@ class DetectAnomalyJob(pulumi.CustomResource):
         :param pulumi.Input[str] model_id: The OCID of the trained model.
         :param pulumi.Input[pulumi.InputType['DetectAnomalyJobOutputDetailsArgs']] output_details: Detect anomaly job output details.
         :param pulumi.Input[float] sensitivity: The value that customer can adjust to control the sensitivity of anomaly detection
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -547,6 +567,10 @@ class DetectAnomalyJob(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['DetectAnomalyJobOutputDetailsArgs']] output_details: Detect anomaly job output details.
         :param pulumi.Input[str] project_id: The OCID of the project.
         :param pulumi.Input[float] sensitivity: The value that customer can adjust to control the sensitivity of anomaly detection
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the batch document job.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_accepted: Job accepted time
@@ -660,6 +684,10 @@ class DetectAnomalyJob(pulumi.CustomResource):
     def sensitivity(self) -> pulumi.Output[float]:
         """
         The value that customer can adjust to control the sensitivity of anomaly detection
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "sensitivity")
 

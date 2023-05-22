@@ -90,12 +90,18 @@ type GetUserAssessmentUserAnalyticsArgs struct {
 	// A filter to return only items related to a specific target OCID.
 	TargetId *string `pulumi:"targetId"`
 	// A filter to return users whose last login time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	//
+	// **Example:** 2016-12-19T16:39:57.600Z
 	TimeLastLoginGreaterThanOrEqualTo *string `pulumi:"timeLastLoginGreaterThanOrEqualTo"`
 	// A filter to return users whose last login time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
 	TimeLastLoginLessThan *string `pulumi:"timeLastLoginLessThan"`
 	// A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	//
+	// **Example:** 2016-12-19T16:39:57.600Z
 	TimePasswordLastChangedGreaterThanOrEqualTo *string `pulumi:"timePasswordLastChangedGreaterThanOrEqualTo"`
 	// A filter to return users whose last password change in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	//
+	// **Example:** 2016-12-19T16:39:57.600Z
 	TimePasswordLastChangedLessThan *string `pulumi:"timePasswordLastChangedLessThan"`
 	// A filter to return users whose creation time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
 	TimeUserCreatedGreaterThanOrEqualTo *string `pulumi:"timeUserCreatedGreaterThanOrEqualTo"`
@@ -162,12 +168,18 @@ type GetUserAssessmentUserAnalyticsOutputArgs struct {
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 	// A filter to return users whose last login time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	//
+	// **Example:** 2016-12-19T16:39:57.600Z
 	TimeLastLoginGreaterThanOrEqualTo pulumi.StringPtrInput `pulumi:"timeLastLoginGreaterThanOrEqualTo"`
 	// A filter to return users whose last login time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
 	TimeLastLoginLessThan pulumi.StringPtrInput `pulumi:"timeLastLoginLessThan"`
 	// A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	//
+	// **Example:** 2016-12-19T16:39:57.600Z
 	TimePasswordLastChangedGreaterThanOrEqualTo pulumi.StringPtrInput `pulumi:"timePasswordLastChangedGreaterThanOrEqualTo"`
 	// A filter to return users whose last password change in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	//
+	// **Example:** 2016-12-19T16:39:57.600Z
 	TimePasswordLastChangedLessThan pulumi.StringPtrInput `pulumi:"timePasswordLastChangedLessThan"`
 	// A filter to return users whose creation time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
 	TimeUserCreatedGreaterThanOrEqualTo pulumi.StringPtrInput `pulumi:"timeUserCreatedGreaterThanOrEqualTo"`

@@ -110,6 +110,9 @@ type NotebookSession struct {
 	// The URL to interact with the notebook session.
 	NotebookSessionUrl pulumi.StringOutput `pulumi:"notebookSessionUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// The state of the notebook session.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -173,6 +176,9 @@ type notebookSessionState struct {
 	// The URL to interact with the notebook session.
 	NotebookSessionUrl *string `pulumi:"notebookSessionUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId *string `pulumi:"projectId"`
 	// The state of the notebook session.
 	State *string `pulumi:"state"`
@@ -202,6 +208,9 @@ type NotebookSessionState struct {
 	// The URL to interact with the notebook session.
 	NotebookSessionUrl pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringPtrInput
 	// The state of the notebook session.
 	State pulumi.StringPtrInput
@@ -229,6 +238,9 @@ type notebookSessionArgs struct {
 	// (Updatable) Notebook Session runtime configuration details.
 	NotebookSessionRuntimeConfigDetails *NotebookSessionNotebookSessionRuntimeConfigDetails `pulumi:"notebookSessionRuntimeConfigDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId string `pulumi:"projectId"`
 	// The state of the notebook session.
 	State *string `pulumi:"state"`
@@ -251,6 +263,9 @@ type NotebookSessionArgs struct {
 	// (Updatable) Notebook Session runtime configuration details.
 	NotebookSessionRuntimeConfigDetails NotebookSessionNotebookSessionRuntimeConfigDetailsPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringInput
 	// The state of the notebook session.
 	State pulumi.StringPtrInput
@@ -400,6 +415,9 @@ func (o NotebookSessionOutput) NotebookSessionUrl() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o NotebookSessionOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NotebookSession) pulumi.StringOutput { return v.ProjectId }).(pulumi.StringOutput)
 }

@@ -12,10 +12,16 @@ public final class DeploymentSpecificationRouteRequestPoliciesBodyValidationCont
     /**
      * @return (Updatable) The media_type is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
      * 
+     * media_type ::= ( / (  &#34;*&#34; &#34;/&#34; &#34;*&#34; ) / ( type &#34;/&#34; &#34;*&#34; ) / ( type &#34;/&#34; subtype ) )
+     * 
+     * For requests that match multiple media types, only the most specific media type is applicable. e.g. `text/plain` overrides `text/*`
+     * 
      */
     private String mediaType;
     /**
      * @return (Updatable) Validation type defines the content validation method.
+     * 
+     * Make the validation to first parse the body as the respective format.
      * 
      */
     private String validationType;
@@ -24,12 +30,18 @@ public final class DeploymentSpecificationRouteRequestPoliciesBodyValidationCont
     /**
      * @return (Updatable) The media_type is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
      * 
+     * media_type ::= ( / (  &#34;*&#34; &#34;/&#34; &#34;*&#34; ) / ( type &#34;/&#34; &#34;*&#34; ) / ( type &#34;/&#34; subtype ) )
+     * 
+     * For requests that match multiple media types, only the most specific media type is applicable. e.g. `text/plain` overrides `text/*`
+     * 
      */
     public String mediaType() {
         return this.mediaType;
     }
     /**
      * @return (Updatable) Validation type defines the content validation method.
+     * 
+     * Make the validation to first parse the body as the respective format.
      * 
      */
     public String validationType() {

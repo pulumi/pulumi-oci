@@ -63,6 +63,8 @@ namespace Pulumi.Oci.Identity
         /// (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
         /// * If the `isRequired` flag is set to "true", the value is set during resource creation.
         /// * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
+        /// 
+        /// Example: `false`
         /// </summary>
         [Output("isRequired")]
         public Output<bool> IsRequired { get; private set; } = null!;
@@ -98,7 +100,11 @@ namespace Pulumi.Oci.Identity
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
+        /// (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("value")]
         public Output<string> Value { get; private set; } = null!;
@@ -159,6 +165,8 @@ namespace Pulumi.Oci.Identity
         /// (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
         /// * If the `isRequired` flag is set to "true", the value is set during resource creation.
         /// * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
+        /// 
+        /// Example: `false`
         /// </summary>
         [Input("isRequired")]
         public Input<bool>? IsRequired { get; set; }
@@ -170,7 +178,11 @@ namespace Pulumi.Oci.Identity
         public Input<string> TagDefinitionId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
+        /// (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;
@@ -193,6 +205,8 @@ namespace Pulumi.Oci.Identity
         /// (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
         /// * If the `isRequired` flag is set to "true", the value is set during resource creation.
         /// * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
+        /// 
+        /// Example: `false`
         /// </summary>
         [Input("isRequired")]
         public Input<bool>? IsRequired { get; set; }
@@ -228,7 +242,11 @@ namespace Pulumi.Oci.Identity
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
+        /// (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

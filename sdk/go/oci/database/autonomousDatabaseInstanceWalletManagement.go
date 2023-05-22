@@ -54,6 +54,9 @@ type AutonomousDatabaseInstanceWalletManagement struct {
 	// (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
 	GracePeriod pulumi.IntOutput `pulumi:"gracePeriod"`
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShouldRotate pulumi.BoolPtrOutput `pulumi:"shouldRotate"`
 	// The current lifecycle state of the Autonomous Database wallet.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -98,6 +101,9 @@ type autonomousDatabaseInstanceWalletManagementState struct {
 	// (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
 	GracePeriod *int `pulumi:"gracePeriod"`
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShouldRotate *bool `pulumi:"shouldRotate"`
 	// The current lifecycle state of the Autonomous Database wallet.
 	State *string `pulumi:"state"`
@@ -111,6 +117,9 @@ type AutonomousDatabaseInstanceWalletManagementState struct {
 	// (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
 	GracePeriod pulumi.IntPtrInput
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShouldRotate pulumi.BoolPtrInput
 	// The current lifecycle state of the Autonomous Database wallet.
 	State pulumi.StringPtrInput
@@ -128,6 +137,9 @@ type autonomousDatabaseInstanceWalletManagementArgs struct {
 	// (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
 	GracePeriod *int `pulumi:"gracePeriod"`
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShouldRotate *bool `pulumi:"shouldRotate"`
 }
 
@@ -138,6 +150,9 @@ type AutonomousDatabaseInstanceWalletManagementArgs struct {
 	// (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
 	GracePeriod pulumi.IntPtrInput
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShouldRotate pulumi.BoolPtrInput
 }
 
@@ -239,6 +254,9 @@ func (o AutonomousDatabaseInstanceWalletManagementOutput) GracePeriod() pulumi.I
 }
 
 // (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AutonomousDatabaseInstanceWalletManagementOutput) ShouldRotate() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseInstanceWalletManagement) pulumi.BoolPtrOutput { return v.ShouldRotate }).(pulumi.BoolPtrOutput)
 }

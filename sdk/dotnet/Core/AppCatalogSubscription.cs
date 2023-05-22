@@ -116,7 +116,11 @@ namespace Pulumi.Oci.Core
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
+        /// Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("timeRetrieved")]
         public Output<string> TimeRetrieved { get; private set; } = null!;
@@ -204,7 +208,11 @@ namespace Pulumi.Oci.Core
         public Input<string> Signature { get; set; } = null!;
 
         /// <summary>
-        /// Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
+        /// Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("timeRetrieved", required: true)]
         public Input<string> TimeRetrieved { get; set; } = null!;
@@ -284,7 +292,11 @@ namespace Pulumi.Oci.Core
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
+        /// Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("timeRetrieved")]
         public Input<string>? TimeRetrieved { get; set; }

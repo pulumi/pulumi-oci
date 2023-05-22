@@ -88,6 +88,10 @@ namespace Pulumi.Oci.DataScience
 
         /// <summary>
         /// The content length of the body.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("artifactContentLength")]
         public Output<string?> ArtifactContentLength { get; private set; } = null!;
@@ -245,6 +249,10 @@ namespace Pulumi.Oci.DataScience
 
         /// <summary>
         /// The content length of the body.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("artifactContentLength")]
         public Input<string>? ArtifactContentLength { get; set; }
@@ -343,6 +351,10 @@ namespace Pulumi.Oci.DataScience
 
         /// <summary>
         /// The content length of the body.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("artifactContentLength")]
         public Input<string>? ArtifactContentLength { get; set; }

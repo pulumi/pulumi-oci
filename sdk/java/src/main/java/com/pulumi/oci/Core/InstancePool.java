@@ -188,12 +188,16 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
      * 
+     * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+     * 
      */
     @Export(name="placementConfigurations", type=List.class, parameters={InstancePoolPlacementConfiguration.class})
     private Output<List<InstancePoolPlacementConfiguration>> placementConfigurations;
 
     /**
      * @return (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
+     * 
+     * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
      * 
      */
     public Output<List<InstancePoolPlacementConfiguration>> placementConfigurations() {
@@ -216,12 +220,18 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="state", type=String.class, parameters={})
     private Output<String> state;
 
     /**
      * @return (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> state() {

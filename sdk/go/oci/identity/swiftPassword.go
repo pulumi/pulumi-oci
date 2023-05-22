@@ -78,6 +78,9 @@ type SwiftPassword struct {
 	// Date and time the `SwiftPassword` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringOutput `pulumi:"userId"`
 }
 
@@ -129,6 +132,9 @@ type swiftPasswordState struct {
 	// Date and time the `SwiftPassword` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId *string `pulumi:"userId"`
 }
 
@@ -146,6 +152,9 @@ type SwiftPasswordState struct {
 	// Date and time the `SwiftPassword` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringPtrInput
 }
 
@@ -157,6 +166,9 @@ type swiftPasswordArgs struct {
 	// (Updatable) The description you assign to the Swift password during creation. Does not have to be unique, and it's changeable.
 	Description string `pulumi:"description"`
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId string `pulumi:"userId"`
 }
 
@@ -165,6 +177,9 @@ type SwiftPasswordArgs struct {
 	// (Updatable) The description you assign to the Swift password during creation. Does not have to be unique, and it's changeable.
 	Description pulumi.StringInput
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringInput
 }
 
@@ -286,6 +301,9 @@ func (o SwiftPasswordOutput) TimeCreated() pulumi.StringOutput {
 }
 
 // The OCID of the user.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o SwiftPasswordOutput) UserId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SwiftPassword) pulumi.StringOutput { return v.UserId }).(pulumi.StringOutput)
 }

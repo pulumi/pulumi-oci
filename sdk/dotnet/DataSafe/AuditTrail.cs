@@ -87,6 +87,10 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("resumeTrigger")]
         public Output<int?> ResumeTrigger { get; private set; } = null!;
@@ -241,6 +245,10 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("resumeTrigger")]
         public Input<int>? ResumeTrigger { get; set; }
@@ -333,6 +341,10 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("resumeTrigger")]
         public Input<int>? ResumeTrigger { get; set; }

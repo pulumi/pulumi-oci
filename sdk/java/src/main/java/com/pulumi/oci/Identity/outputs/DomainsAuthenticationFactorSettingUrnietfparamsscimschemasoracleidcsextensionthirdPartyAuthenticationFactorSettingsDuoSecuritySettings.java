@@ -14,25 +14,80 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
     /**
      * @return (Updatable) Hostname to access the Duo security account
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private String apiHostname;
     /**
      * @return (Updatable) Attestation key to attest the request and response between Duo Security
+     * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: never
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable String attestationKey;
     /**
      * @return (Updatable) Integration key from Duo Security authenticator
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private String integrationKey;
     /**
      * @return (Updatable) Secret key from Duo Security authenticator
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private String secretKey;
     /**
      * @return (Updatable) User attribute mapping value
+     * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private String userMappingAttribute;
@@ -41,12 +96,34 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
     /**
      * @return (Updatable) Hostname to access the Duo security account
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public String apiHostname() {
         return this.apiHostname;
     }
     /**
      * @return (Updatable) Attestation key to attest the request and response between Duo Security
+     * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: never
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> attestationKey() {
@@ -55,6 +132,17 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
     /**
      * @return (Updatable) Integration key from Duo Security authenticator
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public String integrationKey() {
         return this.integrationKey;
@@ -62,12 +150,34 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
     /**
      * @return (Updatable) Secret key from Duo Security authenticator
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public String secretKey() {
         return this.secretKey;
     }
     /**
      * @return (Updatable) User attribute mapping value
+     * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public String userMappingAttribute() {

@@ -286,12 +286,20 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
     /**
      * The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
      * 
+     * The maximum length of the combined hostname and domain is 63 characters.
+     * 
+     * **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
+     * 
      */
     @Import(name="hostname", required=true)
     private Output<String> hostname;
 
     /**
      * @return The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
+     * 
+     * The maximum length of the combined hostname and domain is 63 characters.
+     * 
+     * **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
      * 
      */
     public Output<String> hostname() {
@@ -468,12 +476,18 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
     /**
      * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="timeZone")
     private @Nullable Output<String> timeZone;
 
     /**
      * @return The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> timeZone() {
@@ -915,6 +929,10 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
         /**
          * @param hostname The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
          * 
+         * The maximum length of the combined hostname and domain is 63 characters.
+         * 
+         * **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
+         * 
          * @return builder
          * 
          */
@@ -925,6 +943,10 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param hostname The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
+         * 
+         * The maximum length of the combined hostname and domain is 63 characters.
+         * 
+         * **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
          * 
          * @return builder
          * 
@@ -1190,6 +1212,9 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
         /**
          * @param timeZone The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -1200,6 +1225,9 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param timeZone The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

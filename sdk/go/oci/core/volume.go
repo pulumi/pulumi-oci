@@ -142,6 +142,8 @@ type Volume struct {
 	// The OCID of the source volume group.
 	VolumeGroupId pulumi.StringOutput `pulumi:"volumeGroupId"`
 	// (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+	//
+	// Allowed values:
 	VpusPerGb pulumi.StringOutput `pulumi:"vpusPerGb"`
 }
 
@@ -225,6 +227,8 @@ type volumeState struct {
 	// The OCID of the source volume group.
 	VolumeGroupId *string `pulumi:"volumeGroupId"`
 	// (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+	//
+	// Allowed values:
 	VpusPerGb *string `pulumi:"vpusPerGb"`
 }
 
@@ -274,6 +278,8 @@ type VolumeState struct {
 	// The OCID of the source volume group.
 	VolumeGroupId pulumi.StringPtrInput
 	// (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+	//
+	// Allowed values:
 	VpusPerGb pulumi.StringPtrInput
 }
 
@@ -315,6 +321,8 @@ type volumeArgs struct {
 	// The OCID of the volume backup from which the data should be restored on the newly created volume. This field is deprecated. Use the sourceDetails field instead to specify the backup for the volume.
 	VolumeBackupId *string `pulumi:"volumeBackupId"`
 	// (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+	//
+	// Allowed values:
 	VpusPerGb *string `pulumi:"vpusPerGb"`
 }
 
@@ -353,6 +361,8 @@ type VolumeArgs struct {
 	// The OCID of the volume backup from which the data should be restored on the newly created volume. This field is deprecated. Use the sourceDetails field instead to specify the backup for the volume.
 	VolumeBackupId pulumi.StringPtrInput
 	// (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+	//
+	// Allowed values:
 	VpusPerGb pulumi.StringPtrInput
 }
 
@@ -551,6 +561,8 @@ func (o VolumeOutput) VolumeGroupId() pulumi.StringOutput {
 }
 
 // (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+//
+// Allowed values:
 func (o VolumeOutput) VpusPerGb() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.VpusPerGb }).(pulumi.StringOutput)
 }

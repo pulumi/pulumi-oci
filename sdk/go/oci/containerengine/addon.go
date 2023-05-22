@@ -44,6 +44,9 @@ type Addon struct {
 	// The time the cluster was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// (Updatable) The version of addon to be installed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Version pulumi.StringOutput `pulumi:"version"`
 }
 
@@ -102,6 +105,9 @@ type addonState struct {
 	// The time the cluster was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// (Updatable) The version of addon to be installed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Version *string `pulumi:"version"`
 }
 
@@ -123,6 +129,9 @@ type AddonState struct {
 	// The time the cluster was created.
 	TimeCreated pulumi.StringPtrInput
 	// (Updatable) The version of addon to be installed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Version pulumi.StringPtrInput
 }
 
@@ -140,6 +149,9 @@ type addonArgs struct {
 	// Whether to remove addon resource in deletion.
 	RemoveAddonResourcesOnDelete bool `pulumi:"removeAddonResourcesOnDelete"`
 	// (Updatable) The version of addon to be installed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Version *string `pulumi:"version"`
 }
 
@@ -154,6 +166,9 @@ type AddonArgs struct {
 	// Whether to remove addon resource in deletion.
 	RemoveAddonResourcesOnDelete pulumi.BoolInput
 	// (Updatable) The version of addon to be installed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Version pulumi.StringPtrInput
 }
 
@@ -285,6 +300,9 @@ func (o AddonOutput) TimeCreated() pulumi.StringOutput {
 }
 
 // (Updatable) The version of addon to be installed.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AddonOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *Addon) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }

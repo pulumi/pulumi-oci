@@ -29,7 +29,11 @@ class RuleArgs:
         :param pulumi.Input[str] budget_id: The unique budget OCID.
         :param pulumi.Input[float] threshold: (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
         :param pulumi.Input[str] threshold_type: (Updatable) The type of threshold.
-        :param pulumi.Input[str] type: (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
+        :param pulumi.Input[str] type: (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage). 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the alert rule.
         :param pulumi.Input[str] display_name: (Updatable) The name of the alert rule. Avoid entering confidential information.
@@ -94,7 +98,11 @@ class RuleArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
+        (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage). 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -206,7 +214,11 @@ class _RuleState:
         :param pulumi.Input[str] threshold_type: (Updatable) The type of threshold.
         :param pulumi.Input[str] time_created: The time when the budget was created.
         :param pulumi.Input[str] time_updated: The time when the budget was updated.
-        :param pulumi.Input[str] type: (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
+        :param pulumi.Input[str] type: (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage). 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[int] version: The version of the alert rule. Starts from 1 and increments by 1.
         """
         if budget_id is not None:
@@ -386,7 +398,11 @@ class _RuleState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
+        (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage). 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -470,7 +486,11 @@ class Rule(pulumi.CustomResource):
         :param pulumi.Input[str] recipients: (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
         :param pulumi.Input[float] threshold: (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
         :param pulumi.Input[str] threshold_type: (Updatable) The type of threshold.
-        :param pulumi.Input[str] type: (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
+        :param pulumi.Input[str] type: (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage). 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -613,7 +633,11 @@ class Rule(pulumi.CustomResource):
         :param pulumi.Input[str] threshold_type: (Updatable) The type of threshold.
         :param pulumi.Input[str] time_created: The time when the budget was created.
         :param pulumi.Input[str] time_updated: The time when the budget was updated.
-        :param pulumi.Input[str] type: (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
+        :param pulumi.Input[str] type: (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage). 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[int] version: The version of the alert rule. Starts from 1 and increments by 1.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -736,7 +760,11 @@ class Rule(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
         """
-        (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
+        (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage). 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 

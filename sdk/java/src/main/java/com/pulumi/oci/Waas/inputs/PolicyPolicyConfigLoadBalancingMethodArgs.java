@@ -70,12 +70,18 @@ public final class PolicyPolicyConfigLoadBalancingMethodArgs extends com.pulumi.
     /**
      * (Updatable) The unique name of the whitelist.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return (Updatable) The unique name of the whitelist.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> name() {
@@ -181,6 +187,9 @@ public final class PolicyPolicyConfigLoadBalancingMethodArgs extends com.pulumi.
         /**
          * @param name (Updatable) The unique name of the whitelist.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -191,6 +200,9 @@ public final class PolicyPolicyConfigLoadBalancingMethodArgs extends com.pulumi.
 
         /**
          * @param name (Updatable) The unique name of the whitelist.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

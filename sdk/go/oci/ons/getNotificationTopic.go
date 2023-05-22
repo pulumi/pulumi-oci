@@ -51,6 +51,8 @@ func LookupNotificationTopic(ctx *pulumi.Context, args *LookupNotificationTopicA
 // A collection of arguments for invoking getNotificationTopic.
 type LookupNotificationTopicArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to retrieve.
+	//
+	// Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
 	TopicId string `pulumi:"topicId"`
 }
 
@@ -97,6 +99,8 @@ func LookupNotificationTopicOutput(ctx *pulumi.Context, args LookupNotificationT
 // A collection of arguments for invoking getNotificationTopic.
 type LookupNotificationTopicOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to retrieve.
+	//
+	// Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
 	TopicId pulumi.StringInput `pulumi:"topicId"`
 }
 

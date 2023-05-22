@@ -28,128 +28,723 @@ type DomainsIdentityProvider struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) Assertion attribute name.
+	//
+	// **Deprecated Since: 20.1.3**
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	// * idcsValuePersistedInOtherAttribute: true
 	AssertionAttribute pulumi.StringOutput `pulumi:"assertionAttribute"`
 	// (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
 	AttributeSets pulumi.StringArrayOutput `pulumi:"attributeSets"`
 	// (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
 	Attributes pulumi.StringPtrOutput `pulumi:"attributes"`
 	// (Updatable) HTTP binding to use for authentication requests.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	AuthnRequestBinding pulumi.StringOutput `pulumi:"authnRequestBinding"`
 	// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization pulumi.StringPtrOutput `pulumi:"authorization"`
 	// (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	CompartmentOcid pulumi.StringOutput `pulumi:"compartmentOcid"`
 	// (Updatable) Correlation policy
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	CorrelationPolicy DomainsIdentityProviderCorrelationPolicyOutput `pulumi:"correlationPolicy"`
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	DeleteInProgress pulumi.BoolOutput `pulumi:"deleteInProgress"`
 	// (Updatable) Description
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
 	// (Updatable) Set to true to indicate Partner enabled.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// (Updatable) Encryption certificate
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	EncryptionCertificate pulumi.StringOutput `pulumi:"encryptionCertificate"`
 	// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	ExternalId pulumi.StringOutput `pulumi:"externalId"`
 	// (Updatable) Identity Provider Icon URL.
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	IconUrl pulumi.StringOutput `pulumi:"iconUrl"`
 	// (Updatable) The User or App who created the Resource
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: true
+	// * returned: default
+	// * type: complex
 	IdcsCreatedBies DomainsIdentityProviderIdcsCreatedByArrayOutput `pulumi:"idcsCreatedBies"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringOutput `pulumi:"idcsEndpoint"`
 	// (Updatable) The User or App who modified the Resource
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: complex
 	IdcsLastModifiedBies DomainsIdentityProviderIdcsLastModifiedByArrayOutput `pulumi:"idcsLastModifiedBies"`
 	// (Updatable) The release number when the resource was upgraded.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: string
+	// * uniqueness: none
 	IdcsLastUpgradedInRelease pulumi.StringOutput `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: string
+	// * uniqueness: none
 	IdcsPreventedOperations pulumi.StringArrayOutput `pulumi:"idcsPreventedOperations"`
 	// (Updatable) Identity Provider SSO URL
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	IdpSsoUrl pulumi.StringOutput `pulumi:"idpSsoUrl"`
 	// (Updatable) Set to true to include the signing certificate in the signature.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	IncludeSigningCertInSignature pulumi.BoolOutput `pulumi:"includeSigningCertInSignature"`
 	// (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [value]
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	JitUserProvAssignedGroups DomainsIdentityProviderJitUserProvAssignedGroupArrayOutput `pulumi:"jitUserProvAssignedGroups"`
 	// (Updatable) Set to true to indicate JIT User Creation is enabled
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvAttributeUpdateEnabled pulumi.BoolOutput `pulumi:"jitUserProvAttributeUpdateEnabled"`
 	// (Updatable) Assertion To User Mapping
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsCompositeKey: [value]
+	// * idcsSearchable: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	JitUserProvAttributes DomainsIdentityProviderJitUserProvAttributesOutput `pulumi:"jitUserProvAttributes"`
 	// (Updatable) Set to true to indicate JIT User Creation is enabled
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvCreateUserEnabled pulumi.BoolOutput `pulumi:"jitUserProvCreateUserEnabled"`
 	// (Updatable) Set to true to indicate JIT User Provisioning is enabled
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvEnabled pulumi.BoolOutput `pulumi:"jitUserProvEnabled"`
 	// (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvGroupAssertionAttributeEnabled pulumi.BoolOutput `pulumi:"jitUserProvGroupAssertionAttributeEnabled"`
 	// (Updatable) The default value is 'Overwrite', which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify 'Merge' if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	JitUserProvGroupAssignmentMethod pulumi.StringOutput `pulumi:"jitUserProvGroupAssignmentMethod"`
 	// (Updatable) Property to indicate the mode of group mapping
+	//
+	// **Added In:** 2205120021
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	JitUserProvGroupMappingMode pulumi.StringOutput `pulumi:"jitUserProvGroupMappingMode"`
 	// (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
+	//
+	// **Added In:** 2205120021
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [idpGroup]
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	JitUserProvGroupMappings DomainsIdentityProviderJitUserProvGroupMappingArrayOutput `pulumi:"jitUserProvGroupMappings"`
 	// (Updatable) Name of the assertion attribute containing the users groups
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	JitUserProvGroupSamlAttributeName pulumi.StringOutput `pulumi:"jitUserProvGroupSamlAttributeName"`
 	// (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvGroupStaticListEnabled pulumi.BoolOutput `pulumi:"jitUserProvGroupStaticListEnabled"`
 	// (Updatable) Set to true to indicate ignoring absence of group while provisioning
+	//
+	// **Added In:** 2111112015
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsAddedSinceVersion: 30
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvIgnoreErrorOnAbsentGroups pulumi.BoolOutput `pulumi:"jitUserProvIgnoreErrorOnAbsentGroups"`
 	// (Updatable) HTTP binding to use for logout.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	LogoutBinding pulumi.StringOutput `pulumi:"logoutBinding"`
 	// (Updatable) Set to true to enable logout.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	LogoutEnabled pulumi.BoolOutput `pulumi:"logoutEnabled"`
 	// (Updatable) Logout request URL
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	LogoutRequestUrl pulumi.StringOutput `pulumi:"logoutRequestUrl"`
 	// (Updatable) Logout response URL
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	LogoutResponseUrl pulumi.StringOutput `pulumi:"logoutResponseUrl"`
 	// (Updatable) Metadata
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Metadata pulumi.StringOutput `pulumi:"metadata"`
 	// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+	// * type: complex
 	Metas DomainsIdentityProviderMetaArrayOutput `pulumi:"metas"`
 	// (Updatable) Default authentication request name ID format.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	NameIdFormat pulumi.StringOutput `pulumi:"nameIdFormat"`
 	// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: global
 	Ocid pulumi.StringOutput `pulumi:"ocid"`
 	// (Updatable) Unique name of the trusted Identity Provider.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: true
+	// * returned: always
+	// * type: string
+	// * uniqueness: server
 	PartnerName pulumi.StringOutput `pulumi:"partnerName"`
 	// (Updatable) Provider ID
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: server
 	PartnerProviderId pulumi.StringOutput `pulumi:"partnerProviderId"`
 	// (Updatable) SAML SP authentication type.
+	//
+	// **Added In:** 2102181953
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	RequestedAuthenticationContexts pulumi.StringArrayOutput `pulumi:"requestedAuthenticationContexts"`
 	// (Updatable) This SP requires requests SAML IdP to enforce re-authentication.
+	//
+	// **Added In:** 2102181953
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	RequireForceAuthn pulumi.BoolOutput `pulumi:"requireForceAuthn"`
 	// (Updatable) SAML SP must accept encrypted assertion only.
+	//
+	// **Added In:** 2102181953
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	RequiresEncryptedAssertion pulumi.BoolOutput `pulumi:"requiresEncryptedAssertion"`
 	// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
 	// (Updatable) SAML SP HoK Enabled.
+	//
+	// **Added In:** 2102181953
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	SamlHoKrequired pulumi.BoolOutput `pulumi:"samlHoKrequired"`
 	// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Schemas pulumi.StringArrayOutput `pulumi:"schemas"`
 	// (Updatable) The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
+	//
+	// **Added In:** 18.2.6
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: never
+	// * type: string
+	// * uniqueness: server
 	ServiceInstanceIdentifier pulumi.StringOutput `pulumi:"serviceInstanceIdentifier"`
 	// (Updatable) Set to true to indicate whether to show IdP in login page or not.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	ShownOnLoginPage pulumi.BoolOutput `pulumi:"shownOnLoginPage"`
 	// (Updatable) Signature hash algorithm.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	SignatureHashAlgorithm pulumi.StringOutput `pulumi:"signatureHashAlgorithm"`
 	// (Updatable) Signing certificate
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	SigningCertificate pulumi.StringOutput `pulumi:"signingCertificate"`
 	// (Updatable) Succinct ID
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: server
 	SuccinctId pulumi.StringOutput `pulumi:"succinctId"`
 	// (Updatable) A list of tags on this resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [key, value]
+	// * idcsSearchable: true
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
 	Tags DomainsIdentityProviderTagArrayOutput `pulumi:"tags"`
 	// (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
 	// (Updatable) The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this IdP.
+	//
+	// **Added In:** 19.2.1
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	TenantProviderId pulumi.StringOutput `pulumi:"tenantProviderId"`
 	// (Updatable) Identity Provider Type
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: always
+	// * type: string
+	// * uniqueness: none
 	Type pulumi.StringOutput `pulumi:"type"`
 	// (Updatable) Social Identity Provider Extension Schema
 	UrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider"`
 	// (Updatable) X509 Identity Provider Extension Schema
 	Urnietfparamsscimschemasoracleidcsextensionx509identityProvider DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionx509identityProvider"`
 	// (Updatable) User mapping method.
+	//
+	// **Deprecated Since: 20.1.3**
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	// * idcsValuePersistedInOtherAttribute: true
 	UserMappingMethod pulumi.StringOutput `pulumi:"userMappingMethod"`
 	// (Updatable) This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.<br>You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the <b>Example of a Request Body</b> section of the Examples tab for the <a href='./op-admin-v1-identityproviders-post.html'>POST</a> and <a href='./op-admin-v1-identityproviders-id-put.html'>PUT</a> methods of the /IdentityProviders endpoint.
+	//
+	// **Deprecated Since: 20.1.3**
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	// * idcsValuePersistedInOtherAttribute: true
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserMappingStoreAttribute pulumi.StringOutput `pulumi:"userMappingStoreAttribute"`
 }
 
@@ -195,255 +790,1445 @@ func GetDomainsIdentityProvider(ctx *pulumi.Context,
 // Input properties used for looking up and filtering DomainsIdentityProvider resources.
 type domainsIdentityProviderState struct {
 	// (Updatable) Assertion attribute name.
+	//
+	// **Deprecated Since: 20.1.3**
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	// * idcsValuePersistedInOtherAttribute: true
 	AssertionAttribute *string `pulumi:"assertionAttribute"`
 	// (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
 	AttributeSets []string `pulumi:"attributeSets"`
 	// (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
 	Attributes *string `pulumi:"attributes"`
 	// (Updatable) HTTP binding to use for authentication requests.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	AuthnRequestBinding *string `pulumi:"authnRequestBinding"`
 	// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization *string `pulumi:"authorization"`
 	// (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	CompartmentOcid *string `pulumi:"compartmentOcid"`
 	// (Updatable) Correlation policy
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	CorrelationPolicy *DomainsIdentityProviderCorrelationPolicy `pulumi:"correlationPolicy"`
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	DeleteInProgress *bool `pulumi:"deleteInProgress"`
 	// (Updatable) Description
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Description *string `pulumi:"description"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DomainOcid *string `pulumi:"domainOcid"`
 	// (Updatable) Set to true to indicate Partner enabled.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	Enabled *bool `pulumi:"enabled"`
 	// (Updatable) Encryption certificate
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	EncryptionCertificate *string `pulumi:"encryptionCertificate"`
 	// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	ExternalId *string `pulumi:"externalId"`
 	// (Updatable) Identity Provider Icon URL.
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	IconUrl *string `pulumi:"iconUrl"`
 	// (Updatable) The User or App who created the Resource
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: true
+	// * returned: default
+	// * type: complex
 	IdcsCreatedBies []DomainsIdentityProviderIdcsCreatedBy `pulumi:"idcsCreatedBies"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint *string `pulumi:"idcsEndpoint"`
 	// (Updatable) The User or App who modified the Resource
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: complex
 	IdcsLastModifiedBies []DomainsIdentityProviderIdcsLastModifiedBy `pulumi:"idcsLastModifiedBies"`
 	// (Updatable) The release number when the resource was upgraded.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: string
+	// * uniqueness: none
 	IdcsLastUpgradedInRelease *string `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: string
+	// * uniqueness: none
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
 	// (Updatable) Identity Provider SSO URL
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	IdpSsoUrl *string `pulumi:"idpSsoUrl"`
 	// (Updatable) Set to true to include the signing certificate in the signature.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	IncludeSigningCertInSignature *bool `pulumi:"includeSigningCertInSignature"`
 	// (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [value]
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	JitUserProvAssignedGroups []DomainsIdentityProviderJitUserProvAssignedGroup `pulumi:"jitUserProvAssignedGroups"`
 	// (Updatable) Set to true to indicate JIT User Creation is enabled
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvAttributeUpdateEnabled *bool `pulumi:"jitUserProvAttributeUpdateEnabled"`
 	// (Updatable) Assertion To User Mapping
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsCompositeKey: [value]
+	// * idcsSearchable: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	JitUserProvAttributes *DomainsIdentityProviderJitUserProvAttributes `pulumi:"jitUserProvAttributes"`
 	// (Updatable) Set to true to indicate JIT User Creation is enabled
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvCreateUserEnabled *bool `pulumi:"jitUserProvCreateUserEnabled"`
 	// (Updatable) Set to true to indicate JIT User Provisioning is enabled
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvEnabled *bool `pulumi:"jitUserProvEnabled"`
 	// (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvGroupAssertionAttributeEnabled *bool `pulumi:"jitUserProvGroupAssertionAttributeEnabled"`
 	// (Updatable) The default value is 'Overwrite', which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify 'Merge' if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	JitUserProvGroupAssignmentMethod *string `pulumi:"jitUserProvGroupAssignmentMethod"`
 	// (Updatable) Property to indicate the mode of group mapping
+	//
+	// **Added In:** 2205120021
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	JitUserProvGroupMappingMode *string `pulumi:"jitUserProvGroupMappingMode"`
 	// (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
+	//
+	// **Added In:** 2205120021
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [idpGroup]
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	JitUserProvGroupMappings []DomainsIdentityProviderJitUserProvGroupMapping `pulumi:"jitUserProvGroupMappings"`
 	// (Updatable) Name of the assertion attribute containing the users groups
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	JitUserProvGroupSamlAttributeName *string `pulumi:"jitUserProvGroupSamlAttributeName"`
 	// (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvGroupStaticListEnabled *bool `pulumi:"jitUserProvGroupStaticListEnabled"`
 	// (Updatable) Set to true to indicate ignoring absence of group while provisioning
+	//
+	// **Added In:** 2111112015
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsAddedSinceVersion: 30
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvIgnoreErrorOnAbsentGroups *bool `pulumi:"jitUserProvIgnoreErrorOnAbsentGroups"`
 	// (Updatable) HTTP binding to use for logout.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	LogoutBinding *string `pulumi:"logoutBinding"`
 	// (Updatable) Set to true to enable logout.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	LogoutEnabled *bool `pulumi:"logoutEnabled"`
 	// (Updatable) Logout request URL
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	LogoutRequestUrl *string `pulumi:"logoutRequestUrl"`
 	// (Updatable) Logout response URL
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	LogoutResponseUrl *string `pulumi:"logoutResponseUrl"`
 	// (Updatable) Metadata
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Metadata *string `pulumi:"metadata"`
 	// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+	// * type: complex
 	Metas []DomainsIdentityProviderMeta `pulumi:"metas"`
 	// (Updatable) Default authentication request name ID format.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	NameIdFormat *string `pulumi:"nameIdFormat"`
 	// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: global
 	Ocid *string `pulumi:"ocid"`
 	// (Updatable) Unique name of the trusted Identity Provider.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: true
+	// * returned: always
+	// * type: string
+	// * uniqueness: server
 	PartnerName *string `pulumi:"partnerName"`
 	// (Updatable) Provider ID
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: server
 	PartnerProviderId *string `pulumi:"partnerProviderId"`
 	// (Updatable) SAML SP authentication type.
+	//
+	// **Added In:** 2102181953
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	RequestedAuthenticationContexts []string `pulumi:"requestedAuthenticationContexts"`
 	// (Updatable) This SP requires requests SAML IdP to enforce re-authentication.
+	//
+	// **Added In:** 2102181953
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	RequireForceAuthn *bool `pulumi:"requireForceAuthn"`
 	// (Updatable) SAML SP must accept encrypted assertion only.
+	//
+	// **Added In:** 2102181953
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	RequiresEncryptedAssertion *bool `pulumi:"requiresEncryptedAssertion"`
 	// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// (Updatable) SAML SP HoK Enabled.
+	//
+	// **Added In:** 2102181953
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	SamlHoKrequired *bool `pulumi:"samlHoKrequired"`
 	// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Schemas []string `pulumi:"schemas"`
 	// (Updatable) The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
+	//
+	// **Added In:** 18.2.6
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: never
+	// * type: string
+	// * uniqueness: server
 	ServiceInstanceIdentifier *string `pulumi:"serviceInstanceIdentifier"`
 	// (Updatable) Set to true to indicate whether to show IdP in login page or not.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	ShownOnLoginPage *bool `pulumi:"shownOnLoginPage"`
 	// (Updatable) Signature hash algorithm.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	SignatureHashAlgorithm *string `pulumi:"signatureHashAlgorithm"`
 	// (Updatable) Signing certificate
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	SigningCertificate *string `pulumi:"signingCertificate"`
 	// (Updatable) Succinct ID
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: server
 	SuccinctId *string `pulumi:"succinctId"`
 	// (Updatable) A list of tags on this resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [key, value]
+	// * idcsSearchable: true
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
 	Tags []DomainsIdentityProviderTag `pulumi:"tags"`
 	// (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	TenancyOcid *string `pulumi:"tenancyOcid"`
 	// (Updatable) The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this IdP.
+	//
+	// **Added In:** 19.2.1
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	TenantProviderId *string `pulumi:"tenantProviderId"`
 	// (Updatable) Identity Provider Type
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: always
+	// * type: string
+	// * uniqueness: none
 	Type *string `pulumi:"type"`
 	// (Updatable) Social Identity Provider Extension Schema
 	UrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider *DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider `pulumi:"urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider"`
 	// (Updatable) X509 Identity Provider Extension Schema
 	Urnietfparamsscimschemasoracleidcsextensionx509identityProvider *DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider `pulumi:"urnietfparamsscimschemasoracleidcsextensionx509identityProvider"`
 	// (Updatable) User mapping method.
+	//
+	// **Deprecated Since: 20.1.3**
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	// * idcsValuePersistedInOtherAttribute: true
 	UserMappingMethod *string `pulumi:"userMappingMethod"`
 	// (Updatable) This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.<br>You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the <b>Example of a Request Body</b> section of the Examples tab for the <a href='./op-admin-v1-identityproviders-post.html'>POST</a> and <a href='./op-admin-v1-identityproviders-id-put.html'>PUT</a> methods of the /IdentityProviders endpoint.
+	//
+	// **Deprecated Since: 20.1.3**
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	// * idcsValuePersistedInOtherAttribute: true
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserMappingStoreAttribute *string `pulumi:"userMappingStoreAttribute"`
 }
 
 type DomainsIdentityProviderState struct {
 	// (Updatable) Assertion attribute name.
+	//
+	// **Deprecated Since: 20.1.3**
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	// * idcsValuePersistedInOtherAttribute: true
 	AssertionAttribute pulumi.StringPtrInput
 	// (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
 	AttributeSets pulumi.StringArrayInput
 	// (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
 	Attributes pulumi.StringPtrInput
 	// (Updatable) HTTP binding to use for authentication requests.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	AuthnRequestBinding pulumi.StringPtrInput
 	// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization pulumi.StringPtrInput
 	// (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	CompartmentOcid pulumi.StringPtrInput
 	// (Updatable) Correlation policy
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	CorrelationPolicy DomainsIdentityProviderCorrelationPolicyPtrInput
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	DeleteInProgress pulumi.BoolPtrInput
 	// (Updatable) Description
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Description pulumi.StringPtrInput
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DomainOcid pulumi.StringPtrInput
 	// (Updatable) Set to true to indicate Partner enabled.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	Enabled pulumi.BoolPtrInput
 	// (Updatable) Encryption certificate
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	EncryptionCertificate pulumi.StringPtrInput
 	// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	ExternalId pulumi.StringPtrInput
 	// (Updatable) Identity Provider Icon URL.
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	IconUrl pulumi.StringPtrInput
 	// (Updatable) The User or App who created the Resource
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: true
+	// * returned: default
+	// * type: complex
 	IdcsCreatedBies DomainsIdentityProviderIdcsCreatedByArrayInput
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringPtrInput
 	// (Updatable) The User or App who modified the Resource
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: complex
 	IdcsLastModifiedBies DomainsIdentityProviderIdcsLastModifiedByArrayInput
 	// (Updatable) The release number when the resource was upgraded.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: string
+	// * uniqueness: none
 	IdcsLastUpgradedInRelease pulumi.StringPtrInput
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: string
+	// * uniqueness: none
 	IdcsPreventedOperations pulumi.StringArrayInput
 	// (Updatable) Identity Provider SSO URL
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	IdpSsoUrl pulumi.StringPtrInput
 	// (Updatable) Set to true to include the signing certificate in the signature.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	IncludeSigningCertInSignature pulumi.BoolPtrInput
 	// (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [value]
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	JitUserProvAssignedGroups DomainsIdentityProviderJitUserProvAssignedGroupArrayInput
 	// (Updatable) Set to true to indicate JIT User Creation is enabled
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvAttributeUpdateEnabled pulumi.BoolPtrInput
 	// (Updatable) Assertion To User Mapping
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsCompositeKey: [value]
+	// * idcsSearchable: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	JitUserProvAttributes DomainsIdentityProviderJitUserProvAttributesPtrInput
 	// (Updatable) Set to true to indicate JIT User Creation is enabled
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvCreateUserEnabled pulumi.BoolPtrInput
 	// (Updatable) Set to true to indicate JIT User Provisioning is enabled
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvEnabled pulumi.BoolPtrInput
 	// (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvGroupAssertionAttributeEnabled pulumi.BoolPtrInput
 	// (Updatable) The default value is 'Overwrite', which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify 'Merge' if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	JitUserProvGroupAssignmentMethod pulumi.StringPtrInput
 	// (Updatable) Property to indicate the mode of group mapping
+	//
+	// **Added In:** 2205120021
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	JitUserProvGroupMappingMode pulumi.StringPtrInput
 	// (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
+	//
+	// **Added In:** 2205120021
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [idpGroup]
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	JitUserProvGroupMappings DomainsIdentityProviderJitUserProvGroupMappingArrayInput
 	// (Updatable) Name of the assertion attribute containing the users groups
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	JitUserProvGroupSamlAttributeName pulumi.StringPtrInput
 	// (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvGroupStaticListEnabled pulumi.BoolPtrInput
 	// (Updatable) Set to true to indicate ignoring absence of group while provisioning
+	//
+	// **Added In:** 2111112015
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsAddedSinceVersion: 30
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvIgnoreErrorOnAbsentGroups pulumi.BoolPtrInput
 	// (Updatable) HTTP binding to use for logout.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	LogoutBinding pulumi.StringPtrInput
 	// (Updatable) Set to true to enable logout.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	LogoutEnabled pulumi.BoolPtrInput
 	// (Updatable) Logout request URL
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	LogoutRequestUrl pulumi.StringPtrInput
 	// (Updatable) Logout response URL
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	LogoutResponseUrl pulumi.StringPtrInput
 	// (Updatable) Metadata
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Metadata pulumi.StringPtrInput
 	// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+	// * type: complex
 	Metas DomainsIdentityProviderMetaArrayInput
 	// (Updatable) Default authentication request name ID format.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	NameIdFormat pulumi.StringPtrInput
 	// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: global
 	Ocid pulumi.StringPtrInput
 	// (Updatable) Unique name of the trusted Identity Provider.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: true
+	// * returned: always
+	// * type: string
+	// * uniqueness: server
 	PartnerName pulumi.StringPtrInput
 	// (Updatable) Provider ID
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: server
 	PartnerProviderId pulumi.StringPtrInput
 	// (Updatable) SAML SP authentication type.
+	//
+	// **Added In:** 2102181953
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	RequestedAuthenticationContexts pulumi.StringArrayInput
 	// (Updatable) This SP requires requests SAML IdP to enforce re-authentication.
+	//
+	// **Added In:** 2102181953
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	RequireForceAuthn pulumi.BoolPtrInput
 	// (Updatable) SAML SP must accept encrypted assertion only.
+	//
+	// **Added In:** 2102181953
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	RequiresEncryptedAssertion pulumi.BoolPtrInput
 	// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrInput
 	// (Updatable) SAML SP HoK Enabled.
+	//
+	// **Added In:** 2102181953
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	SamlHoKrequired pulumi.BoolPtrInput
 	// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Schemas pulumi.StringArrayInput
 	// (Updatable) The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
+	//
+	// **Added In:** 18.2.6
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: never
+	// * type: string
+	// * uniqueness: server
 	ServiceInstanceIdentifier pulumi.StringPtrInput
 	// (Updatable) Set to true to indicate whether to show IdP in login page or not.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	ShownOnLoginPage pulumi.BoolPtrInput
 	// (Updatable) Signature hash algorithm.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	SignatureHashAlgorithm pulumi.StringPtrInput
 	// (Updatable) Signing certificate
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	SigningCertificate pulumi.StringPtrInput
 	// (Updatable) Succinct ID
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: server
 	SuccinctId pulumi.StringPtrInput
 	// (Updatable) A list of tags on this resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [key, value]
+	// * idcsSearchable: true
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
 	Tags DomainsIdentityProviderTagArrayInput
 	// (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	TenancyOcid pulumi.StringPtrInput
 	// (Updatable) The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this IdP.
+	//
+	// **Added In:** 19.2.1
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	TenantProviderId pulumi.StringPtrInput
 	// (Updatable) Identity Provider Type
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: always
+	// * type: string
+	// * uniqueness: none
 	Type pulumi.StringPtrInput
 	// (Updatable) Social Identity Provider Extension Schema
 	UrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderPtrInput
 	// (Updatable) X509 Identity Provider Extension Schema
 	Urnietfparamsscimschemasoracleidcsextensionx509identityProvider DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderPtrInput
 	// (Updatable) User mapping method.
+	//
+	// **Deprecated Since: 20.1.3**
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	// * idcsValuePersistedInOtherAttribute: true
 	UserMappingMethod pulumi.StringPtrInput
 	// (Updatable) This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.<br>You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the <b>Example of a Request Body</b> section of the Examples tab for the <a href='./op-admin-v1-identityproviders-post.html'>POST</a> and <a href='./op-admin-v1-identityproviders-id-put.html'>PUT</a> methods of the /IdentityProviders endpoint.
+	//
+	// **Deprecated Since: 20.1.3**
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	// * idcsValuePersistedInOtherAttribute: true
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserMappingStoreAttribute pulumi.StringPtrInput
 }
 
@@ -453,216 +2238,1212 @@ func (DomainsIdentityProviderState) ElementType() reflect.Type {
 
 type domainsIdentityProviderArgs struct {
 	// (Updatable) Assertion attribute name.
+	//
+	// **Deprecated Since: 20.1.3**
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	// * idcsValuePersistedInOtherAttribute: true
 	AssertionAttribute *string `pulumi:"assertionAttribute"`
 	// (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
 	AttributeSets []string `pulumi:"attributeSets"`
 	// (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
 	Attributes *string `pulumi:"attributes"`
 	// (Updatable) HTTP binding to use for authentication requests.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	AuthnRequestBinding *string `pulumi:"authnRequestBinding"`
 	// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization *string `pulumi:"authorization"`
 	// (Updatable) Correlation policy
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	CorrelationPolicy *DomainsIdentityProviderCorrelationPolicy `pulumi:"correlationPolicy"`
 	// (Updatable) Description
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Description *string `pulumi:"description"`
 	// (Updatable) Set to true to indicate Partner enabled.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	Enabled bool `pulumi:"enabled"`
 	// (Updatable) Encryption certificate
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	EncryptionCertificate *string `pulumi:"encryptionCertificate"`
 	// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	ExternalId *string `pulumi:"externalId"`
 	// (Updatable) Identity Provider Icon URL.
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	IconUrl *string `pulumi:"iconUrl"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint string `pulumi:"idcsEndpoint"`
 	// (Updatable) Identity Provider SSO URL
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	IdpSsoUrl *string `pulumi:"idpSsoUrl"`
 	// (Updatable) Set to true to include the signing certificate in the signature.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	IncludeSigningCertInSignature *bool `pulumi:"includeSigningCertInSignature"`
 	// (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [value]
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	JitUserProvAssignedGroups []DomainsIdentityProviderJitUserProvAssignedGroup `pulumi:"jitUserProvAssignedGroups"`
 	// (Updatable) Set to true to indicate JIT User Creation is enabled
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvAttributeUpdateEnabled *bool `pulumi:"jitUserProvAttributeUpdateEnabled"`
 	// (Updatable) Assertion To User Mapping
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsCompositeKey: [value]
+	// * idcsSearchable: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	JitUserProvAttributes *DomainsIdentityProviderJitUserProvAttributes `pulumi:"jitUserProvAttributes"`
 	// (Updatable) Set to true to indicate JIT User Creation is enabled
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvCreateUserEnabled *bool `pulumi:"jitUserProvCreateUserEnabled"`
 	// (Updatable) Set to true to indicate JIT User Provisioning is enabled
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvEnabled *bool `pulumi:"jitUserProvEnabled"`
 	// (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvGroupAssertionAttributeEnabled *bool `pulumi:"jitUserProvGroupAssertionAttributeEnabled"`
 	// (Updatable) The default value is 'Overwrite', which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify 'Merge' if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	JitUserProvGroupAssignmentMethod *string `pulumi:"jitUserProvGroupAssignmentMethod"`
 	// (Updatable) Property to indicate the mode of group mapping
+	//
+	// **Added In:** 2205120021
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	JitUserProvGroupMappingMode *string `pulumi:"jitUserProvGroupMappingMode"`
 	// (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
+	//
+	// **Added In:** 2205120021
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [idpGroup]
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	JitUserProvGroupMappings []DomainsIdentityProviderJitUserProvGroupMapping `pulumi:"jitUserProvGroupMappings"`
 	// (Updatable) Name of the assertion attribute containing the users groups
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	JitUserProvGroupSamlAttributeName *string `pulumi:"jitUserProvGroupSamlAttributeName"`
 	// (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvGroupStaticListEnabled *bool `pulumi:"jitUserProvGroupStaticListEnabled"`
 	// (Updatable) Set to true to indicate ignoring absence of group while provisioning
+	//
+	// **Added In:** 2111112015
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsAddedSinceVersion: 30
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvIgnoreErrorOnAbsentGroups *bool `pulumi:"jitUserProvIgnoreErrorOnAbsentGroups"`
 	// (Updatable) HTTP binding to use for logout.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	LogoutBinding *string `pulumi:"logoutBinding"`
 	// (Updatable) Set to true to enable logout.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	LogoutEnabled *bool `pulumi:"logoutEnabled"`
 	// (Updatable) Logout request URL
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	LogoutRequestUrl *string `pulumi:"logoutRequestUrl"`
 	// (Updatable) Logout response URL
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	LogoutResponseUrl *string `pulumi:"logoutResponseUrl"`
 	// (Updatable) Metadata
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Metadata *string `pulumi:"metadata"`
 	// (Updatable) Default authentication request name ID format.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	NameIdFormat *string `pulumi:"nameIdFormat"`
 	// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: global
 	Ocid *string `pulumi:"ocid"`
 	// (Updatable) Unique name of the trusted Identity Provider.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: true
+	// * returned: always
+	// * type: string
+	// * uniqueness: server
 	PartnerName string `pulumi:"partnerName"`
 	// (Updatable) Provider ID
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: server
 	PartnerProviderId *string `pulumi:"partnerProviderId"`
 	// (Updatable) SAML SP authentication type.
+	//
+	// **Added In:** 2102181953
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	RequestedAuthenticationContexts []string `pulumi:"requestedAuthenticationContexts"`
 	// (Updatable) This SP requires requests SAML IdP to enforce re-authentication.
+	//
+	// **Added In:** 2102181953
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	RequireForceAuthn *bool `pulumi:"requireForceAuthn"`
 	// (Updatable) SAML SP must accept encrypted assertion only.
+	//
+	// **Added In:** 2102181953
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	RequiresEncryptedAssertion *bool `pulumi:"requiresEncryptedAssertion"`
 	// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// (Updatable) SAML SP HoK Enabled.
+	//
+	// **Added In:** 2102181953
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	SamlHoKrequired *bool `pulumi:"samlHoKrequired"`
 	// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Schemas []string `pulumi:"schemas"`
 	// (Updatable) The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
+	//
+	// **Added In:** 18.2.6
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: never
+	// * type: string
+	// * uniqueness: server
 	ServiceInstanceIdentifier *string `pulumi:"serviceInstanceIdentifier"`
 	// (Updatable) Set to true to indicate whether to show IdP in login page or not.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	ShownOnLoginPage *bool `pulumi:"shownOnLoginPage"`
 	// (Updatable) Signature hash algorithm.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	SignatureHashAlgorithm *string `pulumi:"signatureHashAlgorithm"`
 	// (Updatable) Signing certificate
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	SigningCertificate *string `pulumi:"signingCertificate"`
 	// (Updatable) Succinct ID
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: server
 	SuccinctId *string `pulumi:"succinctId"`
 	// (Updatable) A list of tags on this resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [key, value]
+	// * idcsSearchable: true
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
 	Tags []DomainsIdentityProviderTag `pulumi:"tags"`
 	// (Updatable) Identity Provider Type
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: always
+	// * type: string
+	// * uniqueness: none
 	Type *string `pulumi:"type"`
 	// (Updatable) Social Identity Provider Extension Schema
 	UrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider *DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider `pulumi:"urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider"`
 	// (Updatable) X509 Identity Provider Extension Schema
 	Urnietfparamsscimschemasoracleidcsextensionx509identityProvider *DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider `pulumi:"urnietfparamsscimschemasoracleidcsextensionx509identityProvider"`
 	// (Updatable) User mapping method.
+	//
+	// **Deprecated Since: 20.1.3**
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	// * idcsValuePersistedInOtherAttribute: true
 	UserMappingMethod *string `pulumi:"userMappingMethod"`
 	// (Updatable) This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.<br>You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the <b>Example of a Request Body</b> section of the Examples tab for the <a href='./op-admin-v1-identityproviders-post.html'>POST</a> and <a href='./op-admin-v1-identityproviders-id-put.html'>PUT</a> methods of the /IdentityProviders endpoint.
+	//
+	// **Deprecated Since: 20.1.3**
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	// * idcsValuePersistedInOtherAttribute: true
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserMappingStoreAttribute *string `pulumi:"userMappingStoreAttribute"`
 }
 
 // The set of arguments for constructing a DomainsIdentityProvider resource.
 type DomainsIdentityProviderArgs struct {
 	// (Updatable) Assertion attribute name.
+	//
+	// **Deprecated Since: 20.1.3**
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	// * idcsValuePersistedInOtherAttribute: true
 	AssertionAttribute pulumi.StringPtrInput
 	// (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
 	AttributeSets pulumi.StringArrayInput
 	// (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
 	Attributes pulumi.StringPtrInput
 	// (Updatable) HTTP binding to use for authentication requests.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	AuthnRequestBinding pulumi.StringPtrInput
 	// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization pulumi.StringPtrInput
 	// (Updatable) Correlation policy
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	CorrelationPolicy DomainsIdentityProviderCorrelationPolicyPtrInput
 	// (Updatable) Description
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Description pulumi.StringPtrInput
 	// (Updatable) Set to true to indicate Partner enabled.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	Enabled pulumi.BoolInput
 	// (Updatable) Encryption certificate
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	EncryptionCertificate pulumi.StringPtrInput
 	// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	ExternalId pulumi.StringPtrInput
 	// (Updatable) Identity Provider Icon URL.
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	IconUrl pulumi.StringPtrInput
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringInput
 	// (Updatable) Identity Provider SSO URL
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	IdpSsoUrl pulumi.StringPtrInput
 	// (Updatable) Set to true to include the signing certificate in the signature.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	IncludeSigningCertInSignature pulumi.BoolPtrInput
 	// (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [value]
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	JitUserProvAssignedGroups DomainsIdentityProviderJitUserProvAssignedGroupArrayInput
 	// (Updatable) Set to true to indicate JIT User Creation is enabled
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvAttributeUpdateEnabled pulumi.BoolPtrInput
 	// (Updatable) Assertion To User Mapping
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsCompositeKey: [value]
+	// * idcsSearchable: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	JitUserProvAttributes DomainsIdentityProviderJitUserProvAttributesPtrInput
 	// (Updatable) Set to true to indicate JIT User Creation is enabled
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvCreateUserEnabled pulumi.BoolPtrInput
 	// (Updatable) Set to true to indicate JIT User Provisioning is enabled
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvEnabled pulumi.BoolPtrInput
 	// (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvGroupAssertionAttributeEnabled pulumi.BoolPtrInput
 	// (Updatable) The default value is 'Overwrite', which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify 'Merge' if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	JitUserProvGroupAssignmentMethod pulumi.StringPtrInput
 	// (Updatable) Property to indicate the mode of group mapping
+	//
+	// **Added In:** 2205120021
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	JitUserProvGroupMappingMode pulumi.StringPtrInput
 	// (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
+	//
+	// **Added In:** 2205120021
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [idpGroup]
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	JitUserProvGroupMappings DomainsIdentityProviderJitUserProvGroupMappingArrayInput
 	// (Updatable) Name of the assertion attribute containing the users groups
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	JitUserProvGroupSamlAttributeName pulumi.StringPtrInput
 	// (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvGroupStaticListEnabled pulumi.BoolPtrInput
 	// (Updatable) Set to true to indicate ignoring absence of group while provisioning
+	//
+	// **Added In:** 2111112015
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsAddedSinceVersion: 30
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	JitUserProvIgnoreErrorOnAbsentGroups pulumi.BoolPtrInput
 	// (Updatable) HTTP binding to use for logout.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	LogoutBinding pulumi.StringPtrInput
 	// (Updatable) Set to true to enable logout.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	LogoutEnabled pulumi.BoolPtrInput
 	// (Updatable) Logout request URL
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	LogoutRequestUrl pulumi.StringPtrInput
 	// (Updatable) Logout response URL
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	LogoutResponseUrl pulumi.StringPtrInput
 	// (Updatable) Metadata
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Metadata pulumi.StringPtrInput
 	// (Updatable) Default authentication request name ID format.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	NameIdFormat pulumi.StringPtrInput
 	// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: global
 	Ocid pulumi.StringPtrInput
 	// (Updatable) Unique name of the trusted Identity Provider.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: true
+	// * returned: always
+	// * type: string
+	// * uniqueness: server
 	PartnerName pulumi.StringInput
 	// (Updatable) Provider ID
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: server
 	PartnerProviderId pulumi.StringPtrInput
 	// (Updatable) SAML SP authentication type.
+	//
+	// **Added In:** 2102181953
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	RequestedAuthenticationContexts pulumi.StringArrayInput
 	// (Updatable) This SP requires requests SAML IdP to enforce re-authentication.
+	//
+	// **Added In:** 2102181953
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	RequireForceAuthn pulumi.BoolPtrInput
 	// (Updatable) SAML SP must accept encrypted assertion only.
+	//
+	// **Added In:** 2102181953
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	RequiresEncryptedAssertion pulumi.BoolPtrInput
 	// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrInput
 	// (Updatable) SAML SP HoK Enabled.
+	//
+	// **Added In:** 2102181953
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	SamlHoKrequired pulumi.BoolPtrInput
 	// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Schemas pulumi.StringArrayInput
 	// (Updatable) The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
+	//
+	// **Added In:** 18.2.6
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: never
+	// * type: string
+	// * uniqueness: server
 	ServiceInstanceIdentifier pulumi.StringPtrInput
 	// (Updatable) Set to true to indicate whether to show IdP in login page or not.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	ShownOnLoginPage pulumi.BoolPtrInput
 	// (Updatable) Signature hash algorithm.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	SignatureHashAlgorithm pulumi.StringPtrInput
 	// (Updatable) Signing certificate
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	SigningCertificate pulumi.StringPtrInput
 	// (Updatable) Succinct ID
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: server
 	SuccinctId pulumi.StringPtrInput
 	// (Updatable) A list of tags on this resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [key, value]
+	// * idcsSearchable: true
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
 	Tags DomainsIdentityProviderTagArrayInput
 	// (Updatable) Identity Provider Type
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: always
+	// * type: string
+	// * uniqueness: none
 	Type pulumi.StringPtrInput
 	// (Updatable) Social Identity Provider Extension Schema
 	UrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderPtrInput
 	// (Updatable) X509 Identity Provider Extension Schema
 	Urnietfparamsscimschemasoracleidcsextensionx509identityProvider DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderPtrInput
 	// (Updatable) User mapping method.
+	//
+	// **Deprecated Since: 20.1.3**
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	// * idcsValuePersistedInOtherAttribute: true
 	UserMappingMethod pulumi.StringPtrInput
 	// (Updatable) This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.<br>You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the <b>Example of a Request Body</b> section of the Examples tab for the <a href='./op-admin-v1-identityproviders-post.html'>POST</a> and <a href='./op-admin-v1-identityproviders-id-put.html'>PUT</a> methods of the /IdentityProviders endpoint.
+	//
+	// **Deprecated Since: 20.1.3**
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	// * idcsValuePersistedInOtherAttribute: true
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserMappingStoreAttribute pulumi.StringPtrInput
 }
 
@@ -754,6 +3535,19 @@ func (o DomainsIdentityProviderOutput) ToDomainsIdentityProviderOutputWithContex
 }
 
 // (Updatable) Assertion attribute name.
+//
+// **Deprecated Since: 20.1.3**
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
+// * idcsValuePersistedInOtherAttribute: true
 func (o DomainsIdentityProviderOutput) AssertionAttribute() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.AssertionAttribute }).(pulumi.StringOutput)
 }
@@ -769,6 +3563,16 @@ func (o DomainsIdentityProviderOutput) Attributes() pulumi.StringPtrOutput {
 }
 
 // (Updatable) HTTP binding to use for authentication requests.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) AuthnRequestBinding() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.AuthnRequestBinding }).(pulumi.StringOutput)
 }
@@ -779,11 +3583,33 @@ func (o DomainsIdentityProviderOutput) Authorization() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) CompartmentOcid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.CompartmentOcid }).(pulumi.StringOutput)
 }
 
 // (Updatable) Correlation policy
+//
+// **Added In:** 20.1.3
+//
+// **SCIM++ Properties:**
+// * caseExact: true
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: immutable
+// * required: false
+// * returned: default
+// * type: complex
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) CorrelationPolicy() DomainsIdentityProviderCorrelationPolicyOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) DomainsIdentityProviderCorrelationPolicyOutput {
 		return v.CorrelationPolicy
@@ -791,41 +3617,117 @@ func (o DomainsIdentityProviderOutput) CorrelationPolicy() DomainsIdentityProvid
 }
 
 // (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * type: boolean
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) DeleteInProgress() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.BoolOutput { return v.DeleteInProgress }).(pulumi.BoolOutput)
 }
 
 // (Updatable) Description
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) DomainOcid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
 }
 
 // (Updatable) Set to true to indicate Partner enabled.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readWrite
+// * required: true
+// * returned: default
+// * type: boolean
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
 // (Updatable) Encryption certificate
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) EncryptionCertificate() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.EncryptionCertificate }).(pulumi.StringOutput)
 }
 
 // (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) ExternalId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.ExternalId }).(pulumi.StringOutput)
 }
 
 // (Updatable) Identity Provider Icon URL.
+//
+// **SCIM++ Properties:**
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) IconUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.IconUrl }).(pulumi.StringOutput)
 }
 
 // (Updatable) The User or App who created the Resource
+//
+// **SCIM++ Properties:**
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readOnly
+// * required: true
+// * returned: default
+// * type: complex
 func (o DomainsIdentityProviderOutput) IdcsCreatedBies() DomainsIdentityProviderIdcsCreatedByArrayOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) DomainsIdentityProviderIdcsCreatedByArrayOutput {
 		return v.IdcsCreatedBies
@@ -838,6 +3740,14 @@ func (o DomainsIdentityProviderOutput) IdcsEndpoint() pulumi.StringOutput {
 }
 
 // (Updatable) The User or App who modified the Resource
+//
+// **SCIM++ Properties:**
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * type: complex
 func (o DomainsIdentityProviderOutput) IdcsLastModifiedBies() DomainsIdentityProviderIdcsLastModifiedByArrayOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) DomainsIdentityProviderIdcsLastModifiedByArrayOutput {
 		return v.IdcsLastModifiedBies
@@ -845,26 +3755,77 @@ func (o DomainsIdentityProviderOutput) IdcsLastModifiedBies() DomainsIdentityPro
 }
 
 // (Updatable) The release number when the resource was upgraded.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: request
+// * type: string
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
 }
 
 // (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+//
+// **SCIM++ Properties:**
+// * idcsSearchable: false
+// * multiValued: true
+// * mutability: readOnly
+// * required: false
+// * returned: request
+// * type: string
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) IdcsPreventedOperations() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringArrayOutput { return v.IdcsPreventedOperations }).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) Identity Provider SSO URL
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) IdpSsoUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.IdpSsoUrl }).(pulumi.StringOutput)
 }
 
 // (Updatable) Set to true to include the signing certificate in the signature.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: boolean
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) IncludeSigningCertInSignature() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.BoolOutput { return v.IncludeSigningCertInSignature }).(pulumi.BoolOutput)
 }
 
 // (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
+//
+// **Added In:** 20.1.3
+//
+// **SCIM++ Properties:**
+// * idcsCompositeKey: [value]
+// * idcsSearchable: false
+// * multiValued: true
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: complex
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) JitUserProvAssignedGroups() DomainsIdentityProviderJitUserProvAssignedGroupArrayOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) DomainsIdentityProviderJitUserProvAssignedGroupArrayOutput {
 		return v.JitUserProvAssignedGroups
@@ -872,11 +3833,35 @@ func (o DomainsIdentityProviderOutput) JitUserProvAssignedGroups() DomainsIdenti
 }
 
 // (Updatable) Set to true to indicate JIT User Creation is enabled
+//
+// **Added In:** 20.1.3
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: boolean
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) JitUserProvAttributeUpdateEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.BoolOutput { return v.JitUserProvAttributeUpdateEnabled }).(pulumi.BoolOutput)
 }
 
 // (Updatable) Assertion To User Mapping
+//
+// **Added In:** 20.1.3
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsCompositeKey: [value]
+// * idcsSearchable: false
+// * mutability: immutable
+// * required: false
+// * returned: default
+// * type: complex
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) JitUserProvAttributes() DomainsIdentityProviderJitUserProvAttributesOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) DomainsIdentityProviderJitUserProvAttributesOutput {
 		return v.JitUserProvAttributes
@@ -884,31 +3869,102 @@ func (o DomainsIdentityProviderOutput) JitUserProvAttributes() DomainsIdentityPr
 }
 
 // (Updatable) Set to true to indicate JIT User Creation is enabled
+//
+// **Added In:** 20.1.3
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: boolean
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) JitUserProvCreateUserEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.BoolOutput { return v.JitUserProvCreateUserEnabled }).(pulumi.BoolOutput)
 }
 
 // (Updatable) Set to true to indicate JIT User Provisioning is enabled
+//
+// **Added In:** 20.1.3
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: boolean
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) JitUserProvEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.BoolOutput { return v.JitUserProvEnabled }).(pulumi.BoolOutput)
 }
 
 // (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
+//
+// **Added In:** 20.1.3
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: boolean
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) JitUserProvGroupAssertionAttributeEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.BoolOutput { return v.JitUserProvGroupAssertionAttributeEnabled }).(pulumi.BoolOutput)
 }
 
 // (Updatable) The default value is 'Overwrite', which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify 'Merge' if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
+//
+// **Added In:** 20.1.3
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) JitUserProvGroupAssignmentMethod() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.JitUserProvGroupAssignmentMethod }).(pulumi.StringOutput)
 }
 
 // (Updatable) Property to indicate the mode of group mapping
+//
+// **Added In:** 2205120021
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) JitUserProvGroupMappingMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.JitUserProvGroupMappingMode }).(pulumi.StringOutput)
 }
 
 // (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
+//
+// **Added In:** 2205120021
+//
+// **SCIM++ Properties:**
+// * idcsCompositeKey: [idpGroup]
+// * multiValued: true
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: complex
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) JitUserProvGroupMappings() DomainsIdentityProviderJitUserProvGroupMappingArrayOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) DomainsIdentityProviderJitUserProvGroupMappingArrayOutput {
 		return v.JitUserProvGroupMappings
@@ -916,81 +3972,254 @@ func (o DomainsIdentityProviderOutput) JitUserProvGroupMappings() DomainsIdentit
 }
 
 // (Updatable) Name of the assertion attribute containing the users groups
+//
+// **Added In:** 20.1.3
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) JitUserProvGroupSamlAttributeName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.JitUserProvGroupSamlAttributeName }).(pulumi.StringOutput)
 }
 
 // (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
+//
+// **Added In:** 20.1.3
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: boolean
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) JitUserProvGroupStaticListEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.BoolOutput { return v.JitUserProvGroupStaticListEnabled }).(pulumi.BoolOutput)
 }
 
 // (Updatable) Set to true to indicate ignoring absence of group while provisioning
+//
+// **Added In:** 2111112015
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsAddedSinceVersion: 30
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: boolean
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) JitUserProvIgnoreErrorOnAbsentGroups() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.BoolOutput { return v.JitUserProvIgnoreErrorOnAbsentGroups }).(pulumi.BoolOutput)
 }
 
 // (Updatable) HTTP binding to use for logout.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) LogoutBinding() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.LogoutBinding }).(pulumi.StringOutput)
 }
 
 // (Updatable) Set to true to enable logout.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: boolean
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) LogoutEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.BoolOutput { return v.LogoutEnabled }).(pulumi.BoolOutput)
 }
 
 // (Updatable) Logout request URL
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) LogoutRequestUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.LogoutRequestUrl }).(pulumi.StringOutput)
 }
 
 // (Updatable) Logout response URL
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) LogoutResponseUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.LogoutResponseUrl }).(pulumi.StringOutput)
 }
 
 // (Updatable) Metadata
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) Metadata() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.Metadata }).(pulumi.StringOutput)
 }
 
 // (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+// * type: complex
 func (o DomainsIdentityProviderOutput) Metas() DomainsIdentityProviderMetaArrayOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) DomainsIdentityProviderMetaArrayOutput { return v.Metas }).(DomainsIdentityProviderMetaArrayOutput)
 }
 
 // (Updatable) Default authentication request name ID format.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) NameIdFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.NameIdFormat }).(pulumi.StringOutput)
 }
 
 // (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+//
+// **SCIM++ Properties:**
+// * caseExact: true
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: immutable
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: global
 func (o DomainsIdentityProviderOutput) Ocid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
 }
 
 // (Updatable) Unique name of the trusted Identity Provider.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readWrite
+// * required: true
+// * returned: always
+// * type: string
+// * uniqueness: server
 func (o DomainsIdentityProviderOutput) PartnerName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.PartnerName }).(pulumi.StringOutput)
 }
 
 // (Updatable) Provider ID
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: server
 func (o DomainsIdentityProviderOutput) PartnerProviderId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.PartnerProviderId }).(pulumi.StringOutput)
 }
 
 // (Updatable) SAML SP authentication type.
+//
+// **Added In:** 2102181953
+//
+// **SCIM++ Properties:**
+// * caseExact: true
+// * idcsSearchable: false
+// * multiValued: true
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) RequestedAuthenticationContexts() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringArrayOutput { return v.RequestedAuthenticationContexts }).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) This SP requires requests SAML IdP to enforce re-authentication.
+//
+// **Added In:** 2102181953
+//
+// **SCIM++ Properties:**
+// * caseExact: true
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: boolean
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) RequireForceAuthn() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.BoolOutput { return v.RequireForceAuthn }).(pulumi.BoolOutput)
 }
 
 // (Updatable) SAML SP must accept encrypted assertion only.
+//
+// **Added In:** 2102181953
+//
+// **SCIM++ Properties:**
+// * caseExact: true
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: boolean
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) RequiresEncryptedAssertion() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.BoolOutput { return v.RequiresEncryptedAssertion }).(pulumi.BoolOutput)
 }
@@ -1001,56 +4230,174 @@ func (o DomainsIdentityProviderOutput) ResourceTypeSchemaVersion() pulumi.String
 }
 
 // (Updatable) SAML SP HoK Enabled.
+//
+// **Added In:** 2102181953
+//
+// **SCIM++ Properties:**
+// * caseExact: true
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: boolean
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) SamlHoKrequired() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.BoolOutput { return v.SamlHoKrequired }).(pulumi.BoolOutput)
 }
 
 // (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: true
+// * mutability: readWrite
+// * required: true
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) Schemas() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringArrayOutput { return v.Schemas }).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
+//
+// **Added In:** 18.2.6
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: never
+// * type: string
+// * uniqueness: server
 func (o DomainsIdentityProviderOutput) ServiceInstanceIdentifier() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.ServiceInstanceIdentifier }).(pulumi.StringOutput)
 }
 
 // (Updatable) Set to true to indicate whether to show IdP in login page or not.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: boolean
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) ShownOnLoginPage() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.BoolOutput { return v.ShownOnLoginPage }).(pulumi.BoolOutput)
 }
 
 // (Updatable) Signature hash algorithm.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) SignatureHashAlgorithm() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.SignatureHashAlgorithm }).(pulumi.StringOutput)
 }
 
 // (Updatable) Signing certificate
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) SigningCertificate() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.SigningCertificate }).(pulumi.StringOutput)
 }
 
 // (Updatable) Succinct ID
+//
+// **SCIM++ Properties:**
+// * caseExact: true
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: server
 func (o DomainsIdentityProviderOutput) SuccinctId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.SuccinctId }).(pulumi.StringOutput)
 }
 
 // (Updatable) A list of tags on this resource.
+//
+// **SCIM++ Properties:**
+// * idcsCompositeKey: [key, value]
+// * idcsSearchable: true
+// * multiValued: true
+// * mutability: readWrite
+// * required: false
+// * returned: request
+// * type: complex
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) Tags() DomainsIdentityProviderTagArrayOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) DomainsIdentityProviderTagArrayOutput { return v.Tags }).(DomainsIdentityProviderTagArrayOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) TenancyOcid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
 }
 
 // (Updatable) The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this IdP.
+//
+// **Added In:** 19.2.1
+//
+// **SCIM++ Properties:**
+// * caseExact: true
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) TenantProviderId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.TenantProviderId }).(pulumi.StringOutput)
 }
 
 // (Updatable) Identity Provider Type
+//
+// **Added In:** 20.1.3
+//
+// **SCIM++ Properties:**
+// * caseExact: true
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: immutable
+// * required: false
+// * returned: always
+// * type: string
+// * uniqueness: none
 func (o DomainsIdentityProviderOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }
@@ -1070,11 +4417,40 @@ func (o DomainsIdentityProviderOutput) Urnietfparamsscimschemasoracleidcsextensi
 }
 
 // (Updatable) User mapping method.
+//
+// **Deprecated Since: 20.1.3**
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
+// * idcsValuePersistedInOtherAttribute: true
 func (o DomainsIdentityProviderOutput) UserMappingMethod() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.UserMappingMethod }).(pulumi.StringOutput)
 }
 
 // (Updatable) This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.<br>You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the <b>Example of a Request Body</b> section of the Examples tab for the <a href='./op-admin-v1-identityproviders-post.html'>POST</a> and <a href='./op-admin-v1-identityproviders-id-put.html'>PUT</a> methods of the /IdentityProviders endpoint.
+//
+// **Deprecated Since: 20.1.3**
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
+// * idcsValuePersistedInOtherAttribute: true
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DomainsIdentityProviderOutput) UserMappingStoreAttribute() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsIdentityProvider) pulumi.StringOutput { return v.UserMappingStoreAttribute }).(pulumi.StringOutput)
 }

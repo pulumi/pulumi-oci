@@ -242,6 +242,10 @@ class QueryQueryDefinition(dict):
         :param str display_name: (Updatable) The query display name. Avoid entering confidential information.
         :param 'QueryQueryDefinitionReportQueryArgs' report_query: (Updatable) The request of the generated Cost Analysis report.
         :param float version: (Updatable) The saved query version.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "cost_analysis_ui", cost_analysis_ui)
         pulumi.set(__self__, "display_name", display_name)
@@ -277,6 +281,10 @@ class QueryQueryDefinition(dict):
     def version(self) -> float:
         """
         (Updatable) The saved query version.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "version")
 
@@ -1145,6 +1153,10 @@ class UsageItem(dict):
         :param str tenant_name: The tenancy name.
         :param str time_usage_ended: The usage end time.
         :param str time_usage_started: The usage start time.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str unit: The usage unit.
         :param float unit_price: The price per unit.
         :param float weight: The resource size being metered.
@@ -1413,6 +1425,10 @@ class UsageItem(dict):
     def time_usage_started(self) -> Optional[str]:
         """
         The usage start time.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_usage_started")
 

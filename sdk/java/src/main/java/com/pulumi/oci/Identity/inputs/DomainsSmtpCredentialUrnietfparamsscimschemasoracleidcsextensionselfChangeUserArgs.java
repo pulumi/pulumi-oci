@@ -18,12 +18,34 @@ public final class DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextens
     /**
      * If true, allows requesting user to update themselves. If false, requesting user can&#39;t update themself (default).
      * 
+     * **Added In:** 2205182039
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: writeOnly
+     * * required: false
+     * * returned: never
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="allowSelfChange")
     private @Nullable Output<Boolean> allowSelfChange;
 
     /**
      * @return If true, allows requesting user to update themselves. If false, requesting user can&#39;t update themself (default).
+     * 
+     * **Added In:** 2205182039
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: writeOnly
+     * * required: false
+     * * returned: never
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> allowSelfChange() {
@@ -57,6 +79,17 @@ public final class DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextens
         /**
          * @param allowSelfChange If true, allows requesting user to update themselves. If false, requesting user can&#39;t update themself (default).
          * 
+         * **Added In:** 2205182039
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: writeOnly
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -67,6 +100,17 @@ public final class DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextens
 
         /**
          * @param allowSelfChange If true, allows requesting user to update themselves. If false, requesting user can&#39;t update themself (default).
+         * 
+         * **Added In:** 2205182039
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: writeOnly
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 

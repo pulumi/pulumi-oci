@@ -91,6 +91,8 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// A filter to only return resources that match the given verification state.
+        /// 
+        /// The state value is case-insensitive.
         /// </summary>
         [Input("verificationState")]
         public string? VerificationState { get; set; }
@@ -119,6 +121,8 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// A filter to only return resources that match the given verification state.
+        /// 
+        /// The state value is case-insensitive.
         /// </summary>
         [Input("verificationState")]
         public Input<string>? VerificationState { get; set; }

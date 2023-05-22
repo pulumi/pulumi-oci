@@ -91,6 +91,10 @@ export class EnterpriseManagerBridge extends pulumi.CustomResource {
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
      * Object Storage Bucket Name
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly objectStorageBucketName!: pulumi.Output<string>;
     /**
@@ -204,6 +208,10 @@ export interface EnterpriseManagerBridgeState {
     lifecycleDetails?: pulumi.Input<string>;
     /**
      * Object Storage Bucket Name
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     objectStorageBucketName?: pulumi.Input<string>;
     /**
@@ -258,6 +266,10 @@ export interface EnterpriseManagerBridgeArgs {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * Object Storage Bucket Name
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     objectStorageBucketName: pulumi.Input<string>;
 }

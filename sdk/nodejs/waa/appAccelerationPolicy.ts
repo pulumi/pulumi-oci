@@ -100,6 +100,10 @@ export class AppAccelerationPolicy extends pulumi.CustomResource {
     public readonly responseCachingPolicy!: pulumi.Output<outputs.Waa.AppAccelerationPolicyResponseCachingPolicy>;
     /**
      * (Updatable) An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
+     *
+     * This compression policy can be used to enable support for HTTP response compression algorithms like gzip and configure the conditions of when a compression algorithm will be used.
+     *
+     * HTTP responses will only be compressed if the client indicates support for one of the enabled compression algorithms via the "Accept-Encoding" request header.
      */
     public readonly responseCompressionPolicy!: pulumi.Output<outputs.Waa.AppAccelerationPolicyResponseCompressionPolicy>;
     /**
@@ -107,7 +111,11 @@ export class AppAccelerationPolicy extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
-     * (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     * (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -195,6 +203,10 @@ export interface AppAccelerationPolicyState {
     responseCachingPolicy?: pulumi.Input<inputs.Waa.AppAccelerationPolicyResponseCachingPolicy>;
     /**
      * (Updatable) An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
+     *
+     * This compression policy can be used to enable support for HTTP response compression algorithms like gzip and configure the conditions of when a compression algorithm will be used.
+     *
+     * HTTP responses will only be compressed if the client indicates support for one of the enabled compression algorithms via the "Accept-Encoding" request header.
      */
     responseCompressionPolicy?: pulumi.Input<inputs.Waa.AppAccelerationPolicyResponseCompressionPolicy>;
     /**
@@ -202,7 +214,11 @@ export interface AppAccelerationPolicyState {
      */
     state?: pulumi.Input<string>;
     /**
-     * (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     * (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -241,10 +257,18 @@ export interface AppAccelerationPolicyArgs {
     responseCachingPolicy?: pulumi.Input<inputs.Waa.AppAccelerationPolicyResponseCachingPolicy>;
     /**
      * (Updatable) An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
+     *
+     * This compression policy can be used to enable support for HTTP response compression algorithms like gzip and configure the conditions of when a compression algorithm will be used.
+     *
+     * HTTP responses will only be compressed if the client indicates support for one of the enabled compression algorithms via the "Accept-Encoding" request header.
      */
     responseCompressionPolicy?: pulumi.Input<inputs.Waa.AppAccelerationPolicyResponseCompressionPolicy>;
     /**
-     * (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     * (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
 }

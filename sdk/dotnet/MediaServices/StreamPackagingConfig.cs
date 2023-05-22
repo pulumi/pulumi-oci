@@ -109,6 +109,10 @@ namespace Pulumi.Oci.MediaServices
 
         /// <summary>
         /// The output format for the package.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("streamPackagingFormat")]
         public Output<string> StreamPackagingFormat { get; private set; } = null!;
@@ -227,6 +231,10 @@ namespace Pulumi.Oci.MediaServices
 
         /// <summary>
         /// The output format for the package.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("streamPackagingFormat", required: true)]
         public Input<string> StreamPackagingFormat { get; set; } = null!;
@@ -301,6 +309,10 @@ namespace Pulumi.Oci.MediaServices
 
         /// <summary>
         /// The output format for the package.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("streamPackagingFormat")]
         public Input<string>? StreamPackagingFormat { get; set; }

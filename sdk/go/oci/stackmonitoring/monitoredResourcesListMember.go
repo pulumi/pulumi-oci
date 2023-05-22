@@ -62,6 +62,9 @@ type MonitoredResourcesListMember struct {
 	// The field which determines the depth of hierarchy while searching for members.
 	LimitLevel pulumi.IntPtrOutput `pulumi:"limitLevel"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	MonitoredResourceId pulumi.StringOutput `pulumi:"monitoredResourceId"`
 }
 
@@ -104,6 +107,9 @@ type monitoredResourcesListMemberState struct {
 	// The field which determines the depth of hierarchy while searching for members.
 	LimitLevel *int `pulumi:"limitLevel"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	MonitoredResourceId *string `pulumi:"monitoredResourceId"`
 }
 
@@ -115,6 +121,9 @@ type MonitoredResourcesListMemberState struct {
 	// The field which determines the depth of hierarchy while searching for members.
 	LimitLevel pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	MonitoredResourceId pulumi.StringPtrInput
 }
 
@@ -128,6 +137,9 @@ type monitoredResourcesListMemberArgs struct {
 	// The field which determines the depth of hierarchy while searching for members.
 	LimitLevel *int `pulumi:"limitLevel"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	MonitoredResourceId string `pulumi:"monitoredResourceId"`
 }
 
@@ -138,6 +150,9 @@ type MonitoredResourcesListMemberArgs struct {
 	// The field which determines the depth of hierarchy while searching for members.
 	LimitLevel pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	MonitoredResourceId pulumi.StringInput
 }
 
@@ -244,6 +259,9 @@ func (o MonitoredResourcesListMemberOutput) LimitLevel() pulumi.IntPtrOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MonitoredResourcesListMemberOutput) MonitoredResourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MonitoredResourcesListMember) pulumi.StringOutput { return v.MonitoredResourceId }).(pulumi.StringOutput)
 }

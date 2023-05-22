@@ -18,6 +18,12 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         /// *  **FORCE_LONGEST_PREFIX_MATCH** - Looks for the `path` string with the best, longest match of the beginning portion of the incoming URI path.
         /// *  **PREFIX_MATCH** - Looks for a `path` string that matches the beginning portion of the incoming URI path.
         /// *  **SUFFIX_MATCH** - Looks for a `path` string that matches the ending portion of the incoming URI path.
+        /// 
+        /// For a full description of how the system handles `matchType` in a path route set containing multiple rules, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("matchType", required: true)]
         public Input<string> MatchType { get; set; } = null!;

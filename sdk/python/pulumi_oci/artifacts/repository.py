@@ -26,6 +26,10 @@ class RepositoryArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
         :param pulumi.Input[bool] is_immutable: Whether to make the repository immutable. The artifacts of an immutable repository cannot be overwritten.
         :param pulumi.Input[str] repository_type: (Updatable) The repository's supported artifact type.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A short description of the repository. It can be updated later.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the repository. If not present, will be auto-generated. It can be modified later. Avoid entering confidential information.
@@ -72,6 +76,10 @@ class RepositoryArgs:
     def repository_type(self) -> pulumi.Input[str]:
         """
         (Updatable) The repository's supported artifact type.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "repository_type")
 
@@ -149,6 +157,10 @@ class _RepositoryState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_immutable: Whether to make the repository immutable. The artifacts of an immutable repository cannot be overwritten.
         :param pulumi.Input[str] repository_type: (Updatable) The repository's supported artifact type.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the repository.
         :param pulumi.Input[str] time_created: An RFC 3339 timestamp indicating when the repository was created.
         """
@@ -248,6 +260,10 @@ class _RepositoryState:
     def repository_type(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The repository's supported artifact type.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "repository_type")
 
@@ -335,6 +351,10 @@ class Repository(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_immutable: Whether to make the repository immutable. The artifacts of an immutable repository cannot be overwritten.
         :param pulumi.Input[str] repository_type: (Updatable) The repository's supported artifact type.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -454,6 +474,10 @@ class Repository(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_immutable: Whether to make the repository immutable. The artifacts of an immutable repository cannot be overwritten.
         :param pulumi.Input[str] repository_type: (Updatable) The repository's supported artifact type.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the repository.
         :param pulumi.Input[str] time_created: An RFC 3339 timestamp indicating when the repository was created.
         """
@@ -525,6 +549,10 @@ class Repository(pulumi.CustomResource):
     def repository_type(self) -> pulumi.Output[str]:
         """
         (Updatable) The repository's supported artifact type.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "repository_type")
 

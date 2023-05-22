@@ -46,6 +46,10 @@ namespace Pulumi.Oci.DataSafe
     {
         /// <summary>
         /// The OCID of the user assessment.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("userAssessmentId")]
         public Output<string> UserAssessmentId { get; private set; } = null!;
@@ -98,6 +102,10 @@ namespace Pulumi.Oci.DataSafe
     {
         /// <summary>
         /// The OCID of the user assessment.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("userAssessmentId", required: true)]
         public Input<string> UserAssessmentId { get; set; } = null!;
@@ -112,6 +120,10 @@ namespace Pulumi.Oci.DataSafe
     {
         /// <summary>
         /// The OCID of the user assessment.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("userAssessmentId")]
         public Input<string>? UserAssessmentId { get; set; }

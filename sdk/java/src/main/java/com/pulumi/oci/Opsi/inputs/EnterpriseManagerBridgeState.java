@@ -110,12 +110,18 @@ public final class EnterpriseManagerBridgeState extends com.pulumi.resources.Res
     /**
      * Object Storage Bucket Name
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="objectStorageBucketName")
     private @Nullable Output<String> objectStorageBucketName;
 
     /**
      * @return Object Storage Bucket Name
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> objectStorageBucketName() {
@@ -377,6 +383,9 @@ public final class EnterpriseManagerBridgeState extends com.pulumi.resources.Res
         /**
          * @param objectStorageBucketName Object Storage Bucket Name
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -387,6 +396,9 @@ public final class EnterpriseManagerBridgeState extends com.pulumi.resources.Res
 
         /**
          * @param objectStorageBucketName Object Storage Bucket Name
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

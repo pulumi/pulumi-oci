@@ -197,12 +197,18 @@ public class Log extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="retentionDuration", type=Integer.class, parameters={})
     private Output<Integer> retentionDuration;
 
     /**
      * @return (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Integer> retentionDuration() {

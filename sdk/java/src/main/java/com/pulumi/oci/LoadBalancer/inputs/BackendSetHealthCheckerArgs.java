@@ -35,12 +35,24 @@ public final class BackendSetHealthCheckerArgs extends com.pulumi.resources.Reso
     /**
      * (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
      * 
+     * If &#34;true&#34;, health checks will be done using plain text even if the associated backend set is configured to use SSL.
+     * 
+     * If &#34;false&#34;, health checks will be done using SSL encryption if the associated backend set is configured to use SSL. If the backend set is not so configured the health checks will be done using plain text.
+     * 
+     * Example: `false`
+     * 
      */
     @Import(name="isForcePlainText")
     private @Nullable Output<Boolean> isForcePlainText;
 
     /**
      * @return (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+     * 
+     * If &#34;true&#34;, health checks will be done using plain text even if the associated backend set is configured to use SSL.
+     * 
+     * If &#34;false&#34;, health checks will be done using SSL encryption if the associated backend set is configured to use SSL. If the backend set is not so configured the health checks will be done using plain text.
+     * 
+     * Example: `false`
      * 
      */
     public Optional<Output<Boolean>> isForcePlainText() {
@@ -208,6 +220,12 @@ public final class BackendSetHealthCheckerArgs extends com.pulumi.resources.Reso
         /**
          * @param isForcePlainText (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
          * 
+         * If &#34;true&#34;, health checks will be done using plain text even if the associated backend set is configured to use SSL.
+         * 
+         * If &#34;false&#34;, health checks will be done using SSL encryption if the associated backend set is configured to use SSL. If the backend set is not so configured the health checks will be done using plain text.
+         * 
+         * Example: `false`
+         * 
          * @return builder
          * 
          */
@@ -218,6 +236,12 @@ public final class BackendSetHealthCheckerArgs extends com.pulumi.resources.Reso
 
         /**
          * @param isForcePlainText (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+         * 
+         * If &#34;true&#34;, health checks will be done using plain text even if the associated backend set is configured to use SSL.
+         * 
+         * If &#34;false&#34;, health checks will be done using SSL encryption if the associated backend set is configured to use SSL. If the backend set is not so configured the health checks will be done using plain text.
+         * 
+         * Example: `false`
          * 
          * @return builder
          * 

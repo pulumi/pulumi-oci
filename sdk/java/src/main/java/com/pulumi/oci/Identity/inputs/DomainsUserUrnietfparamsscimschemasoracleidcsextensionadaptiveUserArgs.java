@@ -20,12 +20,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
     /**
      * (Updatable) Risk Level
      * 
+     * **Added In:** 18.1.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="riskLevel")
     private @Nullable Output<String> riskLevel;
 
     /**
      * @return (Updatable) Risk Level
+     * 
+     * **Added In:** 18.1.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> riskLevel() {
@@ -35,12 +57,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
     /**
      * (Updatable) The risk score pertaining to the user.
      * 
+     * **Added In:** 18.1.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="riskScores")
     private @Nullable Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs>> riskScores;
 
     /**
      * @return (Updatable) The risk score pertaining to the user.
+     * 
+     * **Added In:** 18.1.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs>>> riskScores() {
@@ -75,6 +121,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
         /**
          * @param riskLevel (Updatable) Risk Level
          * 
+         * **Added In:** 18.1.6
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -86,6 +143,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
         /**
          * @param riskLevel (Updatable) Risk Level
          * 
+         * **Added In:** 18.1.6
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -95,6 +163,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
 
         /**
          * @param riskScores (Updatable) The risk score pertaining to the user.
+         * 
+         * **Added In:** 18.1.6
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -107,6 +187,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
         /**
          * @param riskScores (Updatable) The risk score pertaining to the user.
          * 
+         * **Added In:** 18.1.6
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -116,6 +208,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
 
         /**
          * @param riskScores (Updatable) The risk score pertaining to the user.
+         * 
+         * **Added In:** 18.1.6
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 

@@ -268,9 +268,15 @@ def get_user_assessment_user_analytics(access_level: Optional[str] = None,
     :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
     :param str target_id: A filter to return only items related to a specific target OCID.
     :param str time_last_login_greater_than_or_equal_to: A filter to return users whose last login time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+           
+           **Example:** 2016-12-19T16:39:57.600Z
     :param str time_last_login_less_than: A filter to return users whose last login time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
     :param str time_password_last_changed_greater_than_or_equal_to: A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+           
+           **Example:** 2016-12-19T16:39:57.600Z
     :param str time_password_last_changed_less_than: A filter to return users whose last password change in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+           
+           **Example:** 2016-12-19T16:39:57.600Z
     :param str time_user_created_greater_than_or_equal_to: A filter to return users whose creation time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
     :param str time_user_created_less_than: A filter to return users whose creation time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
     :param str user_assessment_id: The OCID of the user assessment.
@@ -386,9 +392,15 @@ def get_user_assessment_user_analytics_output(access_level: Optional[pulumi.Inpu
     :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
     :param str target_id: A filter to return only items related to a specific target OCID.
     :param str time_last_login_greater_than_or_equal_to: A filter to return users whose last login time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+           
+           **Example:** 2016-12-19T16:39:57.600Z
     :param str time_last_login_less_than: A filter to return users whose last login time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
     :param str time_password_last_changed_greater_than_or_equal_to: A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+           
+           **Example:** 2016-12-19T16:39:57.600Z
     :param str time_password_last_changed_less_than: A filter to return users whose last password change in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+           
+           **Example:** 2016-12-19T16:39:57.600Z
     :param str time_user_created_greater_than_or_equal_to: A filter to return users whose creation time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
     :param str time_user_created_less_than: A filter to return users whose creation time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
     :param str user_assessment_id: The OCID of the user assessment.

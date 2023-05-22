@@ -28,6 +28,10 @@ class PingProbeArgs:
         :param pulumi.Input[int] port: The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
         :param pulumi.Input[int] timeout_in_seconds: The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_point_names: A list of names of vantage points from which to execute the probe.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "protocol", protocol)
@@ -104,6 +108,10 @@ class PingProbeArgs:
     def vantage_point_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         A list of names of vantage points from which to execute the probe.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vantage_point_names")
 
@@ -135,6 +143,10 @@ class _PingProbeState:
         :param pulumi.Input[str] time_created: The RFC 3339-formatted creation date and time of the probe.
         :param pulumi.Input[int] timeout_in_seconds: The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_point_names: A list of names of vantage points from which to execute the probe.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -256,6 +268,10 @@ class _PingProbeState:
     def vantage_point_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         A list of names of vantage points from which to execute the probe.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vantage_point_names")
 
@@ -315,6 +331,10 @@ class PingProbe(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: A list of targets (hostnames or IP addresses) of the probe.
         :param pulumi.Input[int] timeout_in_seconds: The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_point_names: A list of names of vantage points from which to execute the probe.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -433,6 +453,10 @@ class PingProbe(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The RFC 3339-formatted creation date and time of the probe.
         :param pulumi.Input[int] timeout_in_seconds: The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_point_names: A list of names of vantage points from which to execute the probe.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -518,6 +542,10 @@ class PingProbe(pulumi.CustomResource):
     def vantage_point_names(self) -> pulumi.Output[Sequence[str]]:
         """
         A list of names of vantage points from which to execute the probe.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vantage_point_names")
 

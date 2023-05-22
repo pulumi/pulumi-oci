@@ -35,12 +35,18 @@ public final class LogAnalyticsPreferencesManagementState extends com.pulumi.res
     /**
      * The Logging Analytics namespace used for the request.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
     /**
      * @return The Logging Analytics namespace used for the request.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> namespace() {
@@ -106,6 +112,9 @@ public final class LogAnalyticsPreferencesManagementState extends com.pulumi.res
         /**
          * @param namespace The Logging Analytics namespace used for the request.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -116,6 +125,9 @@ public final class LogAnalyticsPreferencesManagementState extends com.pulumi.res
 
         /**
          * @param namespace The Logging Analytics namespace used for the request.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

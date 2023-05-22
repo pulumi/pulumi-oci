@@ -27,6 +27,13 @@ namespace Pulumi.Oci.Identity
     {
         /// <summary>
         /// (Updatable) Access key
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * type: string
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
         /// </summary>
         [Output("accessKey")]
         public Output<string> AccessKey { get; private set; } = null!;
@@ -39,42 +46,106 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("compartmentOcid")]
         public Output<string> CompartmentOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Output("deleteInProgress")]
         public Output<bool> DeleteInProgress { get; private set; } = null!;
 
         /// <summary>
         /// Description
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * type: string
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
         /// Display Name
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * type: string
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("domainOcid")]
         public Output<string> DomainOcid { get; private set; } = null!;
 
         /// <summary>
         /// User credential expires on
+        /// 
+        /// **Added In:** 2109090424
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: default
+        /// * type: dateTime
+        /// * uniqueness: none
         /// </summary>
         [Output("expiresOn")]
         public Output<string> ExpiresOn { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The User or App who created the Resource
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: true
+        /// * returned: default
+        /// * type: complex
         /// </summary>
         [Output("idcsCreatedBies")]
         public Output<ImmutableArray<Outputs.DomainsMyCustomerSecretKeyIdcsCreatedBy>> IdcsCreatedBies { get; private set; } = null!;
@@ -87,30 +158,77 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) The User or App who modified the Resource
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
         /// </summary>
         [Output("idcsLastModifiedBies")]
         public Output<ImmutableArray<Outputs.DomainsMyCustomerSecretKeyIdcsLastModifiedBy>> IdcsLastModifiedBies { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The release number when the resource was upgraded.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("idcsLastUpgradedInRelease")]
         public Output<string> IdcsLastUpgradedInRelease { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("idcsPreventedOperations")]
         public Output<ImmutableArray<string>> IdcsPreventedOperations { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+        /// * type: complex
         /// </summary>
         [Output("metas")]
         public Output<ImmutableArray<Outputs.DomainsMyCustomerSecretKeyMeta>> Metas { get; private set; } = null!;
 
         /// <summary>
         /// User's ocid
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("ocid")]
         public Output<string> Ocid { get; private set; } = null!;
@@ -123,30 +241,82 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("schemas")]
         public Output<ImmutableArray<string>> Schemas { get; private set; } = null!;
 
         /// <summary>
         /// User credential status
+        /// 
+        /// **Added In:** 2109090424
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: never
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
         /// A list of tags on this resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [key, value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Output("tags")]
         public Output<ImmutableArray<Outputs.DomainsMyCustomerSecretKeyTag>> Tags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("tenancyOcid")]
         public Output<string> TenancyOcid { get; private set; } = null!;
 
         /// <summary>
         /// User linked to customer secret key
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Output("user")]
         public Output<Outputs.DomainsMyCustomerSecretKeyUser> User { get; private set; } = null!;
@@ -205,18 +375,44 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// Description
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * type: string
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
         /// Display Name
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * type: string
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
         /// User credential expires on
+        /// 
+        /// **Added In:** 2109090424
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: default
+        /// * type: dateTime
+        /// * uniqueness: none
         /// </summary>
         [Input("expiresOn")]
         public Input<string>? ExpiresOn { get; set; }
@@ -229,6 +425,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// User's ocid
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }
@@ -244,6 +450,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public InputList<string> Schemas
         {
@@ -253,6 +469,18 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// User credential status
+        /// 
+        /// **Added In:** 2109090424
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: never
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -262,6 +490,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// A list of tags on this resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [key, value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsMyCustomerSecretKeyTagArgs> Tags
         {
@@ -271,6 +509,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// User linked to customer secret key
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Input("user")]
         public Input<Inputs.DomainsMyCustomerSecretKeyUserArgs>? User { get; set; }
@@ -285,6 +533,13 @@ namespace Pulumi.Oci.Identity
     {
         /// <summary>
         /// (Updatable) Access key
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * type: string
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
         /// </summary>
         [Input("accessKey")]
         public Input<string>? AccessKey { get; set; }
@@ -297,36 +552,92 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("compartmentOcid")]
         public Input<string>? CompartmentOcid { get; set; }
 
         /// <summary>
         /// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("deleteInProgress")]
         public Input<bool>? DeleteInProgress { get; set; }
 
         /// <summary>
         /// Description
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * type: string
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
         /// Display Name
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * type: string
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("domainOcid")]
         public Input<string>? DomainOcid { get; set; }
 
         /// <summary>
         /// User credential expires on
+        /// 
+        /// **Added In:** 2109090424
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: default
+        /// * type: dateTime
+        /// * uniqueness: none
         /// </summary>
         [Input("expiresOn")]
         public Input<string>? ExpiresOn { get; set; }
@@ -336,6 +647,14 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) The User or App who created the Resource
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: true
+        /// * returned: default
+        /// * type: complex
         /// </summary>
         public InputList<Inputs.DomainsMyCustomerSecretKeyIdcsCreatedByGetArgs> IdcsCreatedBies
         {
@@ -354,6 +673,14 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) The User or App who modified the Resource
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
         /// </summary>
         public InputList<Inputs.DomainsMyCustomerSecretKeyIdcsLastModifiedByGetArgs> IdcsLastModifiedBies
         {
@@ -363,6 +690,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) The release number when the resource was upgraded.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("idcsLastUpgradedInRelease")]
         public Input<string>? IdcsLastUpgradedInRelease { get; set; }
@@ -372,6 +709,15 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public InputList<string> IdcsPreventedOperations
         {
@@ -384,6 +730,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+        /// * type: complex
         /// </summary>
         public InputList<Inputs.DomainsMyCustomerSecretKeyMetaGetArgs> Metas
         {
@@ -393,6 +749,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// User's ocid
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: always
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }
@@ -408,6 +774,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public InputList<string> Schemas
         {
@@ -417,6 +793,18 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// User credential status
+        /// 
+        /// **Added In:** 2109090424
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: never
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -426,6 +814,16 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// A list of tags on this resource.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [key, value]
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsMyCustomerSecretKeyTagGetArgs> Tags
         {
@@ -435,12 +833,32 @@ namespace Pulumi.Oci.Identity
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("tenancyOcid")]
         public Input<string>? TenancyOcid { get; set; }
 
         /// <summary>
         /// User linked to customer secret key
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Input("user")]
         public Input<Inputs.DomainsMyCustomerSecretKeyUserGetArgs>? User { get; set; }

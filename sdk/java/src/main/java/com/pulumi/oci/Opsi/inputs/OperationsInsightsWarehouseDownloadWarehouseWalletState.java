@@ -33,12 +33,18 @@ public final class OperationsInsightsWarehouseDownloadWarehouseWalletState exten
     /**
      * User provided ADW wallet password for the Operations Insights Warehouse.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="operationsInsightsWarehouseWalletPassword")
     private @Nullable Output<String> operationsInsightsWarehouseWalletPassword;
 
     /**
      * @return User provided ADW wallet password for the Operations Insights Warehouse.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> operationsInsightsWarehouseWalletPassword() {
@@ -94,6 +100,9 @@ public final class OperationsInsightsWarehouseDownloadWarehouseWalletState exten
         /**
          * @param operationsInsightsWarehouseWalletPassword User provided ADW wallet password for the Operations Insights Warehouse.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -104,6 +113,9 @@ public final class OperationsInsightsWarehouseDownloadWarehouseWalletState exten
 
         /**
          * @param operationsInsightsWarehouseWalletPassword User provided ADW wallet password for the Operations Insights Warehouse.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

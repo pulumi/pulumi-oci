@@ -89,6 +89,10 @@ export class EncryptedData extends pulumi.CustomResource {
     public readonly loggingContext!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The plaintext data to encrypt.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly plaintext!: pulumi.Output<string>;
 
@@ -172,6 +176,10 @@ export interface EncryptedDataState {
     loggingContext?: pulumi.Input<{[key: string]: any}>;
     /**
      * The plaintext data to encrypt.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     plaintext?: pulumi.Input<string>;
 }
@@ -206,6 +214,10 @@ export interface EncryptedDataArgs {
     loggingContext?: pulumi.Input<{[key: string]: any}>;
     /**
      * The plaintext data to encrypt.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     plaintext: pulumi.Input<string>;
 }

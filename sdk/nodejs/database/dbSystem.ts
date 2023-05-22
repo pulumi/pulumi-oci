@@ -21,6 +21,8 @@ import * as utilities from "../utilities";
  *
  * Use the [CreateCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/CreateCloudExadataInfrastructure/) and [CreateCloudVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/CreateCloudVmCluster/) APIs to provision a new Exadata Cloud Service instance.
  *
+ * **Important:** When `autoBackupEnabled` is not present in the configuration or set to true, the `autoBackupWindow` and `autoFullBackupWindow` will be ignored
+ *
  * ## Import
  *
  * DbSystems can be imported using the `id`, e.g.
@@ -87,6 +89,8 @@ export class DbSystem extends pulumi.CustomResource {
     public readonly backupNetworkNsgIds!: pulumi.Output<string[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
+     *
+     * **Subnet Restrictions:** See the subnet restrictions information for **subnetId**.
      */
     public readonly backupSubnetId!: pulumi.Output<string>;
     /**
@@ -109,6 +113,8 @@ export class DbSystem extends pulumi.CustomResource {
      * * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
      * * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
      * * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
+     *
+     * This parameter is not used for INTEL virtual machine DB systems because virtual machine DB systems have a set number of cores for each shape. For information about the number of cores for a virtual machine DB system shape, see [Virtual Machine DB Systems](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/overview.htm#virtualmachine)
      */
     public readonly cpuCoreCount!: pulumi.Output<number>;
     /**
@@ -129,6 +135,8 @@ export class DbSystem extends pulumi.CustomResource {
     public readonly databaseEdition!: pulumi.Output<string>;
     /**
      * (Updatable) Details for creating a Database Home if you are creating a database by restoring from a database backup.
+     *
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
     public readonly dbHome!: pulumi.Output<outputs.Database.DbSystemDbHome>;
     /**
@@ -153,6 +161,14 @@ export class DbSystem extends pulumi.CustomResource {
     public readonly domain!: pulumi.Output<string>;
     /**
      * A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+     *
+     * If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
+     *
+     * If the node count is greater than 1, you can specify which Fault Domains these nodes will be distributed into. The system assigns your nodes automatically to the Fault Domains you specify so that no Fault Domain contains more than one node.
+     *
+     * To get a list of Fault Domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+     *
+     * Example: `FAULT-DOMAIN-1`
      */
     public readonly faultDomains!: pulumi.Output<string[]>;
     /**
@@ -161,6 +177,10 @@ export class DbSystem extends pulumi.CustomResource {
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * The hostname for the DB system. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata DB systems.
+     *
+     * The maximum length of the combined hostname and domain is 63 characters.
+     *
+     * **Note:** The hostname must be unique within the subnet. If it is not unique, the DB system will fail to provision.
      */
     public readonly hostname!: pulumi.Output<string>;
     /**
@@ -252,6 +272,8 @@ export class DbSystem extends pulumi.CustomResource {
      * (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
      * * For virtual machine shapes, the number of CPU cores and memory
      * * For bare metal and Exadata shapes, the number of CPU cores, memory, and storage
+     *
+     * To get a list of shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
      */
     public readonly shape!: pulumi.Output<string>;
     /**
@@ -280,6 +302,12 @@ export class DbSystem extends pulumi.CustomResource {
     public readonly storageVolumePerformanceMode!: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
+     *
+     * **Subnet Restrictions:**
+     * * For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
+     * * For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
+     *
+     * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
      */
     public readonly subnetId!: pulumi.Output<string>;
     /**
@@ -288,6 +316,10 @@ export class DbSystem extends pulumi.CustomResource {
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
      * The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly timeZone!: pulumi.Output<string>;
     /**
@@ -465,6 +497,8 @@ export interface DbSystemState {
     backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
+     *
+     * **Subnet Restrictions:** See the subnet restrictions information for **subnetId**.
      */
     backupSubnetId?: pulumi.Input<string>;
     /**
@@ -487,6 +521,8 @@ export interface DbSystemState {
      * * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
      * * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
      * * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
+     *
+     * This parameter is not used for INTEL virtual machine DB systems because virtual machine DB systems have a set number of cores for each shape. For information about the number of cores for a virtual machine DB system shape, see [Virtual Machine DB Systems](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/overview.htm#virtualmachine)
      */
     cpuCoreCount?: pulumi.Input<number>;
     /**
@@ -507,6 +543,8 @@ export interface DbSystemState {
     databaseEdition?: pulumi.Input<string>;
     /**
      * (Updatable) Details for creating a Database Home if you are creating a database by restoring from a database backup.
+     *
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
     dbHome?: pulumi.Input<inputs.Database.DbSystemDbHome>;
     /**
@@ -531,6 +569,14 @@ export interface DbSystemState {
     domain?: pulumi.Input<string>;
     /**
      * A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+     *
+     * If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
+     *
+     * If the node count is greater than 1, you can specify which Fault Domains these nodes will be distributed into. The system assigns your nodes automatically to the Fault Domains you specify so that no Fault Domain contains more than one node.
+     *
+     * To get a list of Fault Domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+     *
+     * Example: `FAULT-DOMAIN-1`
      */
     faultDomains?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -539,6 +585,10 @@ export interface DbSystemState {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The hostname for the DB system. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata DB systems.
+     *
+     * The maximum length of the combined hostname and domain is 63 characters.
+     *
+     * **Note:** The hostname must be unique within the subnet. If it is not unique, the DB system will fail to provision.
      */
     hostname?: pulumi.Input<string>;
     /**
@@ -630,6 +680,8 @@ export interface DbSystemState {
      * (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
      * * For virtual machine shapes, the number of CPU cores and memory
      * * For bare metal and Exadata shapes, the number of CPU cores, memory, and storage
+     *
+     * To get a list of shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
      */
     shape?: pulumi.Input<string>;
     /**
@@ -658,6 +710,12 @@ export interface DbSystemState {
     storageVolumePerformanceMode?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
+     *
+     * **Subnet Restrictions:**
+     * * For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
+     * * For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
+     *
+     * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
      */
     subnetId?: pulumi.Input<string>;
     /**
@@ -666,6 +724,10 @@ export interface DbSystemState {
     timeCreated?: pulumi.Input<string>;
     /**
      * The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     timeZone?: pulumi.Input<string>;
     /**
@@ -696,6 +758,8 @@ export interface DbSystemArgs {
     backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
+     *
+     * **Subnet Restrictions:** See the subnet restrictions information for **subnetId**.
      */
     backupSubnetId?: pulumi.Input<string>;
     /**
@@ -718,6 +782,8 @@ export interface DbSystemArgs {
      * * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
      * * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
      * * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
+     *
+     * This parameter is not used for INTEL virtual machine DB systems because virtual machine DB systems have a set number of cores for each shape. For information about the number of cores for a virtual machine DB system shape, see [Virtual Machine DB Systems](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/overview.htm#virtualmachine)
      */
     cpuCoreCount?: pulumi.Input<number>;
     /**
@@ -738,6 +804,8 @@ export interface DbSystemArgs {
     databaseEdition?: pulumi.Input<string>;
     /**
      * (Updatable) Details for creating a Database Home if you are creating a database by restoring from a database backup.
+     *
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
     dbHome: pulumi.Input<inputs.Database.DbSystemDbHome>;
     /**
@@ -762,6 +830,14 @@ export interface DbSystemArgs {
     domain?: pulumi.Input<string>;
     /**
      * A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+     *
+     * If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
+     *
+     * If the node count is greater than 1, you can specify which Fault Domains these nodes will be distributed into. The system assigns your nodes automatically to the Fault Domains you specify so that no Fault Domain contains more than one node.
+     *
+     * To get a list of Fault Domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+     *
+     * Example: `FAULT-DOMAIN-1`
      */
     faultDomains?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -770,6 +846,10 @@ export interface DbSystemArgs {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The hostname for the DB system. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata DB systems.
+     *
+     * The maximum length of the combined hostname and domain is 63 characters.
+     *
+     * **Note:** The hostname must be unique within the subnet. If it is not unique, the DB system will fail to provision.
      */
     hostname: pulumi.Input<string>;
     /**
@@ -809,6 +889,8 @@ export interface DbSystemArgs {
      * (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
      * * For virtual machine shapes, the number of CPU cores and memory
      * * For bare metal and Exadata shapes, the number of CPU cores, memory, and storage
+     *
+     * To get a list of shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
      */
     shape: pulumi.Input<string>;
     /**
@@ -833,10 +915,20 @@ export interface DbSystemArgs {
     storageVolumePerformanceMode?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
+     *
+     * **Subnet Restrictions:**
+     * * For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
+     * * For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
+     *
+     * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
      */
     subnetId: pulumi.Input<string>;
     /**
      * The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     timeZone?: pulumi.Input<string>;
 }

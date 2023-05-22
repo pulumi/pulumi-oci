@@ -14,6 +14,9 @@ public final class NetworkFirewallPolicyUrlListUrlListValue {
     /**
      * @return (Updatable) URL lists to allow or deny traffic to a group of URLs. You can include a maximum of 25 URLs in each list.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private @Nullable String pattern;
     /**
@@ -25,6 +28,9 @@ public final class NetworkFirewallPolicyUrlListUrlListValue {
     private NetworkFirewallPolicyUrlListUrlListValue() {}
     /**
      * @return (Updatable) URL lists to allow or deny traffic to a group of URLs. You can include a maximum of 25 URLs in each list.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> pattern() {

@@ -30,11 +30,17 @@ class TargetArgs:
         The set of arguments for constructing a Target resource.
         :param pulumi.Input[str] compartment_id: (Updatable) compartment associated with condition
         :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate identifier.
+               
+               Avoid entering confidential information.
         :param pulumi.Input[str] target_resource_id: Resource ID which the target uses to monitor
         :param pulumi.Input[str] target_resource_type: possible type of targets(COMPARTMENT/FACLOUD)
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: The target description.
+               
+               Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+               
+               Avoid entering confidential information.
         :param pulumi.Input[str] state: (Updatable) The current state of the DetectorRule.
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeArgs']]] target_detector_recipes: (Updatable) List of detector recipes to associate with target
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeArgs']]] target_responder_recipes: (Updatable) List of responder recipes to associate with target
@@ -73,6 +79,8 @@ class TargetArgs:
     def display_name(self) -> pulumi.Input[str]:
         """
         (Updatable) DetectorTemplate identifier.
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -121,6 +129,8 @@ class TargetArgs:
     def description(self) -> Optional[pulumi.Input[str]]:
         """
         The target description.
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
@@ -133,6 +143,8 @@ class TargetArgs:
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -202,8 +214,14 @@ class _TargetState:
         :param pulumi.Input[str] compartment_id: (Updatable) compartment associated with condition
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: The target description.
+               
+               Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate identifier.
+               
+               Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+               
+               Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] inherited_by_compartments: List of inherited compartments
         :param pulumi.Input[str] lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[int] recipe_count: Total number of recipes attached to target
@@ -281,6 +299,8 @@ class _TargetState:
     def description(self) -> Optional[pulumi.Input[str]]:
         """
         The target description.
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
@@ -293,6 +313,8 @@ class _TargetState:
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) DetectorTemplate identifier.
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -305,6 +327,8 @@ class _TargetState:
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -539,8 +563,14 @@ class Target(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) compartment associated with condition
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: The target description.
+               
+               Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate identifier.
+               
+               Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+               
+               Avoid entering confidential information.
         :param pulumi.Input[str] state: (Updatable) The current state of the DetectorRule.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetTargetDetectorRecipeArgs']]]] target_detector_recipes: (Updatable) List of detector recipes to associate with target
         :param pulumi.Input[str] target_resource_id: Resource ID which the target uses to monitor
@@ -710,8 +740,14 @@ class Target(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) compartment associated with condition
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: The target description.
+               
+               Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate identifier.
+               
+               Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+               
+               Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] inherited_by_compartments: List of inherited compartments
         :param pulumi.Input[str] lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[int] recipe_count: Total number of recipes attached to target
@@ -769,6 +805,8 @@ class Target(pulumi.CustomResource):
     def description(self) -> pulumi.Output[str]:
         """
         The target description.
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
@@ -777,6 +815,8 @@ class Target(pulumi.CustomResource):
     def display_name(self) -> pulumi.Output[str]:
         """
         (Updatable) DetectorTemplate identifier.
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -785,6 +825,8 @@ class Target(pulumi.CustomResource):
     def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "freeform_tags")
 

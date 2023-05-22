@@ -87,6 +87,9 @@ type AppAcceleration struct {
 	// The time the WebAppAcceleration was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppAccelerationPolicy, which is attached to the resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WebAppAccelerationPolicyId pulumi.StringOutput `pulumi:"webAppAccelerationPolicyId"`
 }
 
@@ -154,6 +157,9 @@ type appAccelerationState struct {
 	// The time the WebAppAcceleration was updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppAccelerationPolicy, which is attached to the resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WebAppAccelerationPolicyId *string `pulumi:"webAppAccelerationPolicyId"`
 }
 
@@ -181,6 +187,9 @@ type AppAccelerationState struct {
 	// The time the WebAppAcceleration was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppAccelerationPolicy, which is attached to the resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WebAppAccelerationPolicyId pulumi.StringPtrInput
 }
 
@@ -204,6 +213,9 @@ type appAccelerationArgs struct {
 	// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppAccelerationPolicy, which is attached to the resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WebAppAccelerationPolicyId string `pulumi:"webAppAccelerationPolicyId"`
 }
 
@@ -224,6 +236,9 @@ type AppAccelerationArgs struct {
 	// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppAccelerationPolicy, which is attached to the resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WebAppAccelerationPolicyId pulumi.StringInput
 }
 
@@ -370,6 +385,9 @@ func (o AppAccelerationOutput) TimeUpdated() pulumi.StringOutput {
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppAccelerationPolicy, which is attached to the resource.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AppAccelerationOutput) WebAppAccelerationPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppAcceleration) pulumi.StringOutput { return v.WebAppAccelerationPolicyId }).(pulumi.StringOutput)
 }

@@ -21,6 +21,8 @@ public final class TargetTargetResponderRecipeEffectiveResponderRule {
     /**
      * @return The target description.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     private @Nullable String description;
     /**
@@ -30,6 +32,8 @@ public final class TargetTargetResponderRecipeEffectiveResponderRule {
     private @Nullable List<TargetTargetResponderRecipeEffectiveResponderRuleDetail> details;
     /**
      * @return (Updatable) DetectorTemplate identifier.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
@@ -45,6 +49,9 @@ public final class TargetTargetResponderRecipeEffectiveResponderRule {
     private @Nullable List<String> policies;
     /**
      * @return (Updatable) Identifier for ResponderRule.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private @Nullable String responderRuleId;
@@ -85,6 +92,8 @@ public final class TargetTargetResponderRecipeEffectiveResponderRule {
     /**
      * @return The target description.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
@@ -98,6 +107,8 @@ public final class TargetTargetResponderRecipeEffectiveResponderRule {
     }
     /**
      * @return (Updatable) DetectorTemplate identifier.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {
@@ -119,6 +130,9 @@ public final class TargetTargetResponderRecipeEffectiveResponderRule {
     }
     /**
      * @return (Updatable) Identifier for ResponderRule.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> responderRuleId() {

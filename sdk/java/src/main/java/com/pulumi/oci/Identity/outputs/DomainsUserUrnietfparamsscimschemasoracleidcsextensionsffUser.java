@@ -14,12 +14,30 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser
     /**
      * @return (Updatable) SFF auth keys clob
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String sffAuthKeys;
 
     private DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser() {}
     /**
      * @return (Updatable) SFF auth keys clob
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> sffAuthKeys() {

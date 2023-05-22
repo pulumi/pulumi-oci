@@ -18,12 +18,18 @@ public final class FunctionTraceConfigArgs extends com.pulumi.resources.Resource
     /**
      * (Updatable) Define if tracing is enabled for the resource.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="isEnabled")
     private @Nullable Output<Boolean> isEnabled;
 
     /**
      * @return (Updatable) Define if tracing is enabled for the resource.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Boolean>> isEnabled() {
@@ -57,6 +63,9 @@ public final class FunctionTraceConfigArgs extends com.pulumi.resources.Resource
         /**
          * @param isEnabled (Updatable) Define if tracing is enabled for the resource.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -67,6 +76,9 @@ public final class FunctionTraceConfigArgs extends com.pulumi.resources.Resource
 
         /**
          * @param isEnabled (Updatable) Define if tracing is enabled for the resource.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -106,6 +106,10 @@ export class Rrset extends pulumi.CustomResource {
     public readonly viewId!: pulumi.Output<string | undefined>;
     /**
      * The name or OCID of the target zone.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly zoneNameOrId!: pulumi.Output<string>;
 
@@ -185,6 +189,10 @@ export interface RrsetState {
     viewId?: pulumi.Input<string>;
     /**
      * The name or OCID of the target zone.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     zoneNameOrId?: pulumi.Input<string>;
 }
@@ -221,6 +229,10 @@ export interface RrsetArgs {
     viewId?: pulumi.Input<string>;
     /**
      * The name or OCID of the target zone.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     zoneNameOrId: pulumi.Input<string>;
 }

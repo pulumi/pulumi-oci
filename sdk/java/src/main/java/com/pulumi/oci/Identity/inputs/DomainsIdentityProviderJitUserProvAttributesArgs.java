@@ -18,12 +18,30 @@ public final class DomainsIdentityProviderJitUserProvAttributesArgs extends com.
     /**
      * (Updatable) Group URI
      * 
+     * **Added In:** 2205120021
+     * 
+     * **SCIM++ Properties:**
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: reference
+     * 
      */
     @Import(name="ref")
     private @Nullable Output<String> ref;
 
     /**
      * @return (Updatable) Group URI
+     * 
+     * **Added In:** 2205120021
+     * 
+     * **SCIM++ Properties:**
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: reference
      * 
      */
     public Optional<Output<String>> ref() {
@@ -33,12 +51,32 @@ public final class DomainsIdentityProviderJitUserProvAttributesArgs extends com.
     /**
      * (Updatable) Value of the tag.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
      * @return (Updatable) Value of the tag.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> value() {
@@ -73,6 +111,15 @@ public final class DomainsIdentityProviderJitUserProvAttributesArgs extends com.
         /**
          * @param ref (Updatable) Group URI
          * 
+         * **Added In:** 2205120021
+         * 
+         * **SCIM++ Properties:**
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: reference
+         * 
          * @return builder
          * 
          */
@@ -84,6 +131,15 @@ public final class DomainsIdentityProviderJitUserProvAttributesArgs extends com.
         /**
          * @param ref (Updatable) Group URI
          * 
+         * **Added In:** 2205120021
+         * 
+         * **SCIM++ Properties:**
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: reference
+         * 
          * @return builder
          * 
          */
@@ -93,6 +149,16 @@ public final class DomainsIdentityProviderJitUserProvAttributesArgs extends com.
 
         /**
          * @param value (Updatable) Value of the tag.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -104,6 +170,16 @@ public final class DomainsIdentityProviderJitUserProvAttributesArgs extends com.
 
         /**
          * @param value (Updatable) Value of the tag.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 

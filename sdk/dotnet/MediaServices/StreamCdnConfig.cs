@@ -106,6 +106,10 @@ namespace Pulumi.Oci.MediaServices
 
         /// <summary>
         /// (Updatable) Whether publishing to CDN is enabled.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("isEnabled")]
         public Output<bool> IsEnabled { get; private set; } = null!;
@@ -230,6 +234,10 @@ namespace Pulumi.Oci.MediaServices
 
         /// <summary>
         /// (Updatable) Whether publishing to CDN is enabled.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }
@@ -292,6 +300,10 @@ namespace Pulumi.Oci.MediaServices
 
         /// <summary>
         /// (Updatable) Whether publishing to CDN is enabled.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }

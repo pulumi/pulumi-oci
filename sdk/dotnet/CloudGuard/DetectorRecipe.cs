@@ -57,6 +57,8 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// (Updatable) Detector recipe display name.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -69,6 +71,8 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
@@ -81,6 +85,10 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// The id of the source detector recipe.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("sourceDetectorRecipeId")]
         public Output<string> SourceDetectorRecipeId { get; private set; } = null!;
@@ -205,6 +213,8 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// (Updatable) Detector recipe display name.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -214,6 +224,8 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -223,6 +235,10 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// The id of the source detector recipe.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("sourceDetectorRecipeId")]
         public Input<string>? SourceDetectorRecipeId { get; set; }
@@ -279,6 +295,8 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// (Updatable) Detector recipe display name.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -300,6 +318,8 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -315,6 +335,10 @@ namespace Pulumi.Oci.CloudGuard
 
         /// <summary>
         /// The id of the source detector recipe.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("sourceDetectorRecipeId")]
         public Input<string>? SourceDetectorRecipeId { get; set; }

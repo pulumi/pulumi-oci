@@ -85,6 +85,9 @@ type AutonomousDatabaseBackup struct {
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Retention period, in days, for long-term backups
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionPeriodInDays pulumi.IntOutput `pulumi:"retentionPeriodInDays"`
 	// The backup size in terrabytes (TB).
 	SizeInTbs pulumi.Float64Output `pulumi:"sizeInTbs"`
@@ -163,6 +166,9 @@ type autonomousDatabaseBackupState struct {
 	// Additional information about the current lifecycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) Retention period, in days, for long-term backups
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionPeriodInDays *int `pulumi:"retentionPeriodInDays"`
 	// The backup size in terrabytes (TB).
 	SizeInTbs *float64 `pulumi:"sizeInTbs"`
@@ -210,6 +216,9 @@ type AutonomousDatabaseBackupState struct {
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) Retention period, in days, for long-term backups
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionPeriodInDays pulumi.IntPtrInput
 	// The backup size in terrabytes (TB).
 	SizeInTbs pulumi.Float64PtrInput
@@ -241,6 +250,9 @@ type autonomousDatabaseBackupArgs struct {
 	// Indicates whether the backup is long-term
 	IsLongTermBackup *bool `pulumi:"isLongTermBackup"`
 	// (Updatable) Retention period, in days, for long-term backups
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionPeriodInDays *int `pulumi:"retentionPeriodInDays"`
 }
 
@@ -255,6 +267,9 @@ type AutonomousDatabaseBackupArgs struct {
 	// Indicates whether the backup is long-term
 	IsLongTermBackup pulumi.BoolPtrInput
 	// (Updatable) Retention period, in days, for long-term backups
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionPeriodInDays pulumi.IntPtrInput
 }
 
@@ -418,6 +433,9 @@ func (o AutonomousDatabaseBackupOutput) LifecycleDetails() pulumi.StringOutput {
 }
 
 // (Updatable) Retention period, in days, for long-term backups
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AutonomousDatabaseBackupOutput) RetentionPeriodInDays() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseBackup) pulumi.IntOutput { return v.RetentionPeriodInDays }).(pulumi.IntOutput)
 }

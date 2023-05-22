@@ -128,6 +128,10 @@ export class DeployEnvironment extends pulumi.CustomResource {
     public readonly networkChannel!: pulumi.Output<outputs.DevOps.DeployEnvironmentNetworkChannel>;
     /**
      * The OCID of a project.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly projectId!: pulumi.Output<string>;
     /**
@@ -256,6 +260,10 @@ export interface DeployEnvironmentState {
     networkChannel?: pulumi.Input<inputs.DevOps.DeployEnvironmentNetworkChannel>;
     /**
      * The OCID of a project.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     projectId?: pulumi.Input<string>;
     /**
@@ -318,6 +326,10 @@ export interface DeployEnvironmentArgs {
     networkChannel?: pulumi.Input<inputs.DevOps.DeployEnvironmentNetworkChannel>;
     /**
      * The OCID of a project.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     projectId: pulumi.Input<string>;
 }

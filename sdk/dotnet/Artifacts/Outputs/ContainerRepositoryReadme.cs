@@ -19,6 +19,10 @@ namespace Pulumi.Oci.Artifacts.Outputs
         public readonly string Content;
         /// <summary>
         /// (Updatable) Readme format. Supported formats are text/plain and text/markdown.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Format;
 

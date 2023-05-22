@@ -19,7 +19,11 @@ class ConfigurationArgs:
         """
         The set of arguments for constructing a Configuration resource.
         :param pulumi.Input[str] compartment_id: ID of the root compartment (tenancy)
-        :param pulumi.Input[int] retention_period_days: (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
+        :param pulumi.Input[int] retention_period_days: (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "retention_period_days", retention_period_days)
@@ -40,7 +44,11 @@ class ConfigurationArgs:
     @pulumi.getter(name="retentionPeriodDays")
     def retention_period_days(self) -> pulumi.Input[int]:
         """
-        (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
+        (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "retention_period_days")
 
@@ -57,7 +65,11 @@ class _ConfigurationState:
         """
         Input properties used for looking up and filtering Configuration resources.
         :param pulumi.Input[str] compartment_id: ID of the root compartment (tenancy)
-        :param pulumi.Input[int] retention_period_days: (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
+        :param pulumi.Input[int] retention_period_days: (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -80,7 +92,11 @@ class _ConfigurationState:
     @pulumi.getter(name="retentionPeriodDays")
     def retention_period_days(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
+        (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "retention_period_days")
 
@@ -118,7 +134,11 @@ class Configuration(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: ID of the root compartment (tenancy)
-        :param pulumi.Input[int] retention_period_days: (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
+        :param pulumi.Input[int] retention_period_days: (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -196,7 +216,11 @@ class Configuration(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: ID of the root compartment (tenancy)
-        :param pulumi.Input[int] retention_period_days: (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
+        :param pulumi.Input[int] retention_period_days: (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -218,7 +242,11 @@ class Configuration(pulumi.CustomResource):
     @pulumi.getter(name="retentionPeriodDays")
     def retention_period_days(self) -> pulumi.Output[int]:
         """
-        (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
+        (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "retention_period_days")
 

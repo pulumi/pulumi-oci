@@ -40,6 +40,10 @@ class ConnectionArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input['ConnectionTlsVerifyConfigArgs'] tls_verify_config: (Updatable) TLS configuration used by build service to verify TLS connection.
         :param pulumi.Input[str] username: (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "connection_type", connection_type)
         pulumi.set(__self__, "project_id", project_id)
@@ -187,6 +191,10 @@ class ConnectionArgs:
     def username(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "username")
 
@@ -234,6 +242,10 @@ class _ConnectionState:
         :param pulumi.Input[str] time_updated: The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input['ConnectionTlsVerifyConfigArgs'] tls_verify_config: (Updatable) TLS configuration used by build service to verify TLS connection.
         :param pulumi.Input[str] username: (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if access_token is not None:
             pulumi.set(__self__, "access_token", access_token)
@@ -467,6 +479,10 @@ class _ConnectionState:
     def username(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "username")
 
@@ -545,6 +561,10 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] project_id: The OCID of the DevOps project.
         :param pulumi.Input[pulumi.InputType['ConnectionTlsVerifyConfigArgs']] tls_verify_config: (Updatable) TLS configuration used by build service to verify TLS connection.
         :param pulumi.Input[str] username: (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -701,6 +721,10 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] time_updated: The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[pulumi.InputType['ConnectionTlsVerifyConfigArgs']] tls_verify_config: (Updatable) TLS configuration used by build service to verify TLS connection.
         :param pulumi.Input[str] username: (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -858,6 +882,10 @@ class Connection(pulumi.CustomResource):
     def username(self) -> pulumi.Output[str]:
         """
         (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "username")
 

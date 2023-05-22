@@ -133,7 +133,11 @@ namespace Pulumi.Oci.Identity
         public Output<string> ProductType { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The protocol used for federation.  Example: `SAML2`
+        /// (Updatable) The protocol used for federation.  Example: `SAML2` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("protocol")]
         public Output<string> Protocol { get; private set; } = null!;
@@ -281,7 +285,11 @@ namespace Pulumi.Oci.Identity
         public Input<string> ProductType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The protocol used for federation.  Example: `SAML2`
+        /// (Updatable) The protocol used for federation.  Example: `SAML2` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("protocol", required: true)]
         public Input<string> Protocol { get; set; } = null!;
@@ -373,7 +381,11 @@ namespace Pulumi.Oci.Identity
         public Input<string>? ProductType { get; set; }
 
         /// <summary>
-        /// (Updatable) The protocol used for federation.  Example: `SAML2`
+        /// (Updatable) The protocol used for federation.  Example: `SAML2` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("protocol")]
         public Input<string>? Protocol { get; set; }

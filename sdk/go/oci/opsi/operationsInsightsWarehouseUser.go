@@ -84,6 +84,9 @@ type OperationsInsightsWarehouseUser struct {
 	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// OPSI Warehouse OCID
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseId pulumi.StringOutput `pulumi:"operationsInsightsWarehouseId"`
 	// Possible lifecycle states
 	State pulumi.StringOutput `pulumi:"state"`
@@ -162,6 +165,9 @@ type operationsInsightsWarehouseUserState struct {
 	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
 	Name *string `pulumi:"name"`
 	// OPSI Warehouse OCID
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseId *string `pulumi:"operationsInsightsWarehouseId"`
 	// Possible lifecycle states
 	State *string `pulumi:"state"`
@@ -193,6 +199,9 @@ type OperationsInsightsWarehouseUserState struct {
 	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
 	Name pulumi.StringPtrInput
 	// OPSI Warehouse OCID
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseId pulumi.StringPtrInput
 	// Possible lifecycle states
 	State pulumi.StringPtrInput
@@ -226,6 +235,9 @@ type operationsInsightsWarehouseUserArgs struct {
 	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
 	Name *string `pulumi:"name"`
 	// OPSI Warehouse OCID
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseId string `pulumi:"operationsInsightsWarehouseId"`
 }
 
@@ -248,6 +260,9 @@ type OperationsInsightsWarehouseUserArgs struct {
 	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
 	Name pulumi.StringPtrInput
 	// OPSI Warehouse OCID
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseId pulumi.StringInput
 }
 
@@ -384,6 +399,9 @@ func (o OperationsInsightsWarehouseUserOutput) Name() pulumi.StringOutput {
 }
 
 // OPSI Warehouse OCID
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o OperationsInsightsWarehouseUserOutput) OperationsInsightsWarehouseId() pulumi.StringOutput {
 	return o.ApplyT(func(v *OperationsInsightsWarehouseUser) pulumi.StringOutput { return v.OperationsInsightsWarehouseId }).(pulumi.StringOutput)
 }

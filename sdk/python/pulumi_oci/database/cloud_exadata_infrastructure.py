@@ -38,6 +38,10 @@ class CloudExadataInfrastructureArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input['CloudExadataInfrastructureMaintenanceWindowArgs'] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[int] storage_count: (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -169,6 +173,10 @@ class CloudExadataInfrastructureArgs:
     def storage_count(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "storage_count")
 
@@ -241,6 +249,10 @@ class _CloudExadataInfrastructureState:
         :param pulumi.Input[str] shape: The shape of the cloud Exadata infrastructure resource.
         :param pulumi.Input[str] state: The current lifecycle state of the cloud Exadata infrastructure resource.
         :param pulumi.Input[int] storage_count: (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] storage_server_version: The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
         :param pulumi.Input[str] time_created: The date and time the cloud Exadata infrastructure resource was created.
         :param pulumi.Input[int] total_storage_size_in_gbs: The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
@@ -637,6 +649,10 @@ class _CloudExadataInfrastructureState:
     def storage_count(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "storage_count")
 
@@ -760,6 +776,10 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['CloudExadataInfrastructureMaintenanceWindowArgs']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[str] shape: The shape of the cloud Exadata infrastructure resource.
         :param pulumi.Input[int] storage_count: (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -967,6 +987,10 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[str] shape: The shape of the cloud Exadata infrastructure resource.
         :param pulumi.Input[str] state: The current lifecycle state of the cloud Exadata infrastructure resource.
         :param pulumi.Input[int] storage_count: (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] storage_server_version: The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
         :param pulumi.Input[str] time_created: The date and time the cloud Exadata infrastructure resource was created.
         :param pulumi.Input[int] total_storage_size_in_gbs: The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
@@ -1229,6 +1253,10 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
     def storage_count(self) -> pulumi.Output[int]:
         """
         (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "storage_count")
 

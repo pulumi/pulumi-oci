@@ -38,6 +38,9 @@ public final class RuleActionsAction {
     /**
      * @return (Updatable) Whether or not this rule is currently enabled.  Example: `true`
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private Boolean isEnabled;
     /**
@@ -95,6 +98,9 @@ public final class RuleActionsAction {
     }
     /**
      * @return (Updatable) Whether or not this rule is currently enabled.  Example: `true`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Boolean isEnabled() {

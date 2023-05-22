@@ -30,6 +30,10 @@ class DeployEnvironmentArgs:
         The set of arguments for constructing a DeployEnvironment resource.
         :param pulumi.Input[str] deploy_environment_type: (Updatable) Deployment environment type.
         :param pulumi.Input[str] project_id: The OCID of a project.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] cluster_id: (Updatable) The OCID of the Kubernetes cluster.
         :param pulumi.Input['DeployEnvironmentComputeInstanceGroupSelectorsArgs'] compute_instance_group_selectors: (Updatable) A collection of selectors. The combination of instances matching the selectors are included in the instance group.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -75,6 +79,10 @@ class DeployEnvironmentArgs:
     def project_id(self) -> pulumi.Input[str]:
         """
         The OCID of a project.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "project_id")
 
@@ -212,6 +220,10 @@ class _DeployEnvironmentState:
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input['DeployEnvironmentNetworkChannelArgs'] network_channel: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         :param pulumi.Input[str] project_id: The OCID of a project.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the deployment environment.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: Time the deployment environment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -387,6 +399,10 @@ class _DeployEnvironmentState:
     def project_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of a project.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "project_id")
 
@@ -518,6 +534,10 @@ class DeployEnvironment(pulumi.CustomResource):
         :param pulumi.Input[str] function_id: (Updatable) The OCID of the Function.
         :param pulumi.Input[pulumi.InputType['DeployEnvironmentNetworkChannelArgs']] network_channel: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         :param pulumi.Input[str] project_id: The OCID of a project.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -671,6 +691,10 @@ class DeployEnvironment(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[pulumi.InputType['DeployEnvironmentNetworkChannelArgs']] network_channel: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         :param pulumi.Input[str] project_id: The OCID of a project.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the deployment environment.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: Time the deployment environment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -791,6 +815,10 @@ class DeployEnvironment(pulumi.CustomResource):
     def project_id(self) -> pulumi.Output[str]:
         """
         The OCID of a project.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "project_id")
 

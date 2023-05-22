@@ -83,6 +83,10 @@ type DrgAttachmentManagement struct {
 	// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
 	RemoveExportDrgRouteDistributionTrigger pulumi.BoolPtrOutput `pulumi:"removeExportDrgRouteDistributionTrigger"`
 	// The OCID of the route table the DRG attachment is using.
+	//
+	// For information about why you would associate a route table with a DRG attachment, see:
+	// * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+	// * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
 	RouteTableId pulumi.StringOutput `pulumi:"routeTableId"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -155,6 +159,10 @@ type drgAttachmentManagementState struct {
 	// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
 	RemoveExportDrgRouteDistributionTrigger *bool `pulumi:"removeExportDrgRouteDistributionTrigger"`
 	// The OCID of the route table the DRG attachment is using.
+	//
+	// For information about why you would associate a route table with a DRG attachment, see:
+	// * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+	// * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
 	RouteTableId *string `pulumi:"routeTableId"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 	State *string `pulumi:"state"`
@@ -190,6 +198,10 @@ type DrgAttachmentManagementState struct {
 	// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
 	RemoveExportDrgRouteDistributionTrigger pulumi.BoolPtrInput
 	// The OCID of the route table the DRG attachment is using.
+	//
+	// For information about why you would associate a route table with a DRG attachment, see:
+	// * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+	// * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
 	RouteTableId pulumi.StringPtrInput
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 	State pulumi.StringPtrInput
@@ -227,6 +239,10 @@ type drgAttachmentManagementArgs struct {
 	// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
 	RemoveExportDrgRouteDistributionTrigger *bool `pulumi:"removeExportDrgRouteDistributionTrigger"`
 	// The OCID of the route table the DRG attachment is using.
+	//
+	// For information about why you would associate a route table with a DRG attachment, see:
+	// * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+	// * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
 	RouteTableId *string `pulumi:"routeTableId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
 	VcnId *string `pulumi:"vcnId"`
@@ -257,6 +273,10 @@ type DrgAttachmentManagementArgs struct {
 	// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
 	RemoveExportDrgRouteDistributionTrigger pulumi.BoolPtrInput
 	// The OCID of the route table the DRG attachment is using.
+	//
+	// For information about why you would associate a route table with a DRG attachment, see:
+	// * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+	// * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
 	RouteTableId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
 	VcnId pulumi.StringPtrInput
@@ -412,6 +432,10 @@ func (o DrgAttachmentManagementOutput) RemoveExportDrgRouteDistributionTrigger()
 }
 
 // The OCID of the route table the DRG attachment is using.
+//
+// For information about why you would associate a route table with a DRG attachment, see:
+// * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+// * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
 func (o DrgAttachmentManagementOutput) RouteTableId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrgAttachmentManagement) pulumi.StringOutput { return v.RouteTableId }).(pulumi.StringOutput)
 }

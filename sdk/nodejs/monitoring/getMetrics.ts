@@ -66,6 +66,8 @@ export interface GetMetricsArgs {
     filters?: inputs.Monitoring.GetMetricsFilter[];
     /**
      * Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup.
+     *
+     * Example - group by namespace: `[ "namespace" ]`
      */
     groupBies?: string[];
     /**
@@ -164,6 +166,8 @@ export interface GetMetricsOutputArgs {
     filters?: pulumi.Input<pulumi.Input<inputs.Monitoring.GetMetricsFilterArgs>[]>;
     /**
      * Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup.
+     *
+     * Example - group by namespace: `[ "namespace" ]`
      */
     groupBies?: pulumi.Input<pulumi.Input<string>[]>;
     /**

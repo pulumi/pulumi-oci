@@ -129,6 +129,10 @@ namespace Pulumi.Oci.DevOps
 
         /// <summary>
         /// The OCID of a project.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("projectId")]
         public Output<string> ProjectId { get; private set; } = null!;
@@ -259,6 +263,10 @@ namespace Pulumi.Oci.DevOps
 
         /// <summary>
         /// The OCID of a project.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("projectId", required: true)]
         public Input<string> ProjectId { get; set; } = null!;
@@ -339,6 +347,10 @@ namespace Pulumi.Oci.DevOps
 
         /// <summary>
         /// The OCID of a project.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("projectId")]
         public Input<string>? ProjectId { get; set; }

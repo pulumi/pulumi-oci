@@ -29,7 +29,11 @@ class ManagedInstanceGroupArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Information specified by the user about the managed instance group
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] os_family: The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
+        :param pulumi.Input[str] os_family: The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -106,7 +110,11 @@ class ManagedInstanceGroupArgs:
     @pulumi.getter(name="osFamily")
     def os_family(self) -> Optional[pulumi.Input[str]]:
         """
-        The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
+        The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "os_family")
 
@@ -135,7 +143,11 @@ class _ManagedInstanceGroupState:
         :param pulumi.Input[str] display_name: (Updatable) Managed Instance Group identifier
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input['ManagedInstanceGroupManagedInstanceArgs']]] managed_instances: list of Managed Instances in the group
-        :param pulumi.Input[str] os_family: The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
+        :param pulumi.Input[str] os_family: The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the Software Source.
         """
         if compartment_id is not None:
@@ -242,7 +254,11 @@ class _ManagedInstanceGroupState:
     @pulumi.getter(name="osFamily")
     def os_family(self) -> Optional[pulumi.Input[str]]:
         """
-        The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
+        The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "os_family")
 
@@ -316,7 +332,11 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) Information specified by the user about the managed instance group
         :param pulumi.Input[str] display_name: (Updatable) Managed Instance Group identifier
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] os_family: The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
+        :param pulumi.Input[str] os_family: The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -433,7 +453,11 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) Managed Instance Group identifier
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManagedInstanceArgs']]]] managed_instances: list of Managed Instances in the group
-        :param pulumi.Input[str] os_family: The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
+        :param pulumi.Input[str] os_family: The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the Software Source.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -508,7 +532,11 @@ class ManagedInstanceGroup(pulumi.CustomResource):
     @pulumi.getter(name="osFamily")
     def os_family(self) -> pulumi.Output[str]:
         """
-        The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
+        The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "os_family")
 

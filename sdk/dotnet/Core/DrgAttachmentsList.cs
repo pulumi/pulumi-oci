@@ -61,6 +61,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// Whether the DRG attachment lives in a different tenancy than the DRG.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("isCrossTenancy")]
         public Output<bool?> IsCrossTenancy { get; private set; } = null!;
@@ -125,6 +129,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// Whether the DRG attachment lives in a different tenancy than the DRG.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("isCrossTenancy")]
         public Input<bool>? IsCrossTenancy { get; set; }
@@ -163,6 +171,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// Whether the DRG attachment lives in a different tenancy than the DRG.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("isCrossTenancy")]
         public Input<bool>? IsCrossTenancy { get; set; }

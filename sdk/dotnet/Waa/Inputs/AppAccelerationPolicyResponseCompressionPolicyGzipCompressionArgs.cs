@@ -14,6 +14,8 @@ namespace Pulumi.Oci.Waa.Inputs
     {
         /// <summary>
         /// (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
+        /// 
+        /// When false, support for gzip compression is disabled and HTTP responses will not be compressed with gzip even if the client indicates support for gzip.
         /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }

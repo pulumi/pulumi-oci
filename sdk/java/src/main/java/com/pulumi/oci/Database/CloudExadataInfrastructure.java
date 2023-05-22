@@ -475,12 +475,18 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
     /**
      * (Updatable) The number of storage servers for the cloud Exadata infrastructure.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="storageCount", type=Integer.class, parameters={})
     private Output<Integer> storageCount;
 
     /**
      * @return (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Integer> storageCount() {

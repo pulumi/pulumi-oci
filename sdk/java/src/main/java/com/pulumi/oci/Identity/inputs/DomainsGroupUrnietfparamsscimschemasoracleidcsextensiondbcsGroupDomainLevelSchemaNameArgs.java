@@ -16,12 +16,36 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGr
     /**
      * (Updatable) DBCS Domain Name
      * 
+     * **Added In:** 18.2.4
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="domainName", required=true)
     private Output<String> domainName;
 
     /**
      * @return (Updatable) DBCS Domain Name
+     * 
+     * **Added In:** 18.2.4
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> domainName() {
@@ -31,12 +55,36 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGr
     /**
      * (Updatable) The DBCS schema-name granted to this Group for the DB instance that &#39;dbInstanceId&#39; specifies.
      * 
+     * **Added In:** 18.2.4
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="schemaName", required=true)
     private Output<String> schemaName;
 
     /**
      * @return (Updatable) The DBCS schema-name granted to this Group for the DB instance that &#39;dbInstanceId&#39; specifies.
+     * 
+     * **Added In:** 18.2.4
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> schemaName() {
@@ -71,6 +119,18 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGr
         /**
          * @param domainName (Updatable) DBCS Domain Name
          * 
+         * **Added In:** 18.2.4
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -82,6 +142,18 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGr
         /**
          * @param domainName (Updatable) DBCS Domain Name
          * 
+         * **Added In:** 18.2.4
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -91,6 +163,18 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGr
 
         /**
          * @param schemaName (Updatable) The DBCS schema-name granted to this Group for the DB instance that &#39;dbInstanceId&#39; specifies.
+         * 
+         * **Added In:** 18.2.4
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -102,6 +186,18 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGr
 
         /**
          * @param schemaName (Updatable) The DBCS schema-name granted to this Group for the DB instance that &#39;dbInstanceId&#39; specifies.
+         * 
+         * **Added In:** 18.2.4
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 

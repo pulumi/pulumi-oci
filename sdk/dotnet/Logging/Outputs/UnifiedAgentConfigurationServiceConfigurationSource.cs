@@ -31,6 +31,10 @@ namespace Pulumi.Oci.Logging.Outputs
         public readonly ImmutableArray<string> Paths;
         /// <summary>
         /// (Updatable) Unified schema logging source type.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string SourceType;
 

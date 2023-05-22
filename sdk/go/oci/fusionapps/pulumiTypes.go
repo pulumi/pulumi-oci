@@ -18,6 +18,9 @@ type FusionEnvironmentAdminUserItem struct {
 	// The administrator's last name.
 	LastName *string `pulumi:"lastName"`
 	// The username for the administrator.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Username *string `pulumi:"username"`
 }
 
@@ -40,6 +43,9 @@ type FusionEnvironmentAdminUserItemArgs struct {
 	// The administrator's last name.
 	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 	// The username for the administrator.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Username pulumi.StringPtrInput `pulumi:"username"`
 }
 
@@ -110,6 +116,9 @@ func (o FusionEnvironmentAdminUserItemOutput) LastName() pulumi.StringPtrOutput 
 }
 
 // The username for the administrator.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o FusionEnvironmentAdminUserItemOutput) Username() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FusionEnvironmentAdminUserItem) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
@@ -1153,6 +1162,9 @@ type FusionEnvironmentRule struct {
 	// (Updatable)
 	Conditions []FusionEnvironmentRuleCondition `pulumi:"conditions"`
 	// (Updatable) A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Description *string `pulumi:"description"`
 }
 
@@ -1173,6 +1185,9 @@ type FusionEnvironmentRuleArgs struct {
 	// (Updatable)
 	Conditions FusionEnvironmentRuleConditionArrayInput `pulumi:"conditions"`
 	// (Updatable) A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Description pulumi.StringPtrInput `pulumi:"description"`
 }
 
@@ -1238,6 +1253,9 @@ func (o FusionEnvironmentRuleOutput) Conditions() FusionEnvironmentRuleCondition
 }
 
 // (Updatable) A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o FusionEnvironmentRuleOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FusionEnvironmentRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }

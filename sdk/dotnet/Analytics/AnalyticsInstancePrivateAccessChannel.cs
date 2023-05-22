@@ -120,7 +120,11 @@ namespace Pulumi.Oci.Analytics
         public Output<string> SubnetId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) OCID of the customer VCN peered with private access channel.
+        /// (Updatable) OCID of the customer VCN peered with private access channel. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("vcnId")]
         public Output<string> VcnId { get; private set; } = null!;
@@ -226,7 +230,11 @@ namespace Pulumi.Oci.Analytics
         public Input<string> SubnetId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) OCID of the customer VCN peered with private access channel.
+        /// (Updatable) OCID of the customer VCN peered with private access channel. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("vcnId", required: true)]
         public Input<string> VcnId { get; set; } = null!;
@@ -318,7 +326,11 @@ namespace Pulumi.Oci.Analytics
         public Input<string>? SubnetId { get; set; }
 
         /// <summary>
-        /// (Updatable) OCID of the customer VCN peered with private access channel.
+        /// (Updatable) OCID of the customer VCN peered with private access channel. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("vcnId")]
         public Input<string>? VcnId { get; set; }

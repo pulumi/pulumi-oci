@@ -61,6 +61,11 @@ type Recommendation struct {
 	// The date and time that the recommendation entered its current status. The format is defined by RFC3339.
 	TimeStatusBegin pulumi.StringOutput `pulumi:"timeStatusBegin"`
 	// (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+	//
+	// For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeStatusEnd pulumi.StringOutput `pulumi:"timeStatusEnd"`
 	// The date and time the recommendation details were last updated, in the format defined by RFC3339.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
@@ -130,6 +135,11 @@ type recommendationState struct {
 	// The date and time that the recommendation entered its current status. The format is defined by RFC3339.
 	TimeStatusBegin *string `pulumi:"timeStatusBegin"`
 	// (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+	//
+	// For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeStatusEnd *string `pulumi:"timeStatusEnd"`
 	// The date and time the recommendation details were last updated, in the format defined by RFC3339.
 	TimeUpdated *string `pulumi:"timeUpdated"`
@@ -165,6 +175,11 @@ type RecommendationState struct {
 	// The date and time that the recommendation entered its current status. The format is defined by RFC3339.
 	TimeStatusBegin pulumi.StringPtrInput
 	// (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+	//
+	// For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeStatusEnd pulumi.StringPtrInput
 	// The date and time the recommendation details were last updated, in the format defined by RFC3339.
 	TimeUpdated pulumi.StringPtrInput
@@ -180,6 +195,11 @@ type recommendationArgs struct {
 	// (Updatable) The status of the recommendation.
 	Status string `pulumi:"status"`
 	// (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+	//
+	// For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeStatusEnd *string `pulumi:"timeStatusEnd"`
 }
 
@@ -190,6 +210,11 @@ type RecommendationArgs struct {
 	// (Updatable) The status of the recommendation.
 	Status pulumi.StringInput
 	// (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+	//
+	// For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeStatusEnd pulumi.StringPtrInput
 }
 
@@ -351,6 +376,11 @@ func (o RecommendationOutput) TimeStatusBegin() pulumi.StringOutput {
 }
 
 // (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+//
+// For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o RecommendationOutput) TimeStatusEnd() pulumi.StringOutput {
 	return o.ApplyT(func(v *Recommendation) pulumi.StringOutput { return v.TimeStatusEnd }).(pulumi.StringOutput)
 }

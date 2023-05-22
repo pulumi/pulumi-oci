@@ -25,6 +25,10 @@ class ArtifactByPathArgs:
         :param pulumi.Input[str] repository_id: The [OCID](https://www.terraform.io/iaas/Content/General/Concepts/identifiers.htm) of the repository.
         :param pulumi.Input[str] version: A user-defined string to describe the artifact version. Example: `1.1.0` or `1.2-beta-2`
         :param pulumi.Input[str] content: Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] source: A path to a file on the local system to be uploaded as the artifact. Cannot be defined if `content` is defined.
         """
         pulumi.set(__self__, "artifact_path", artifact_path)
@@ -76,6 +80,10 @@ class ArtifactByPathArgs:
     def content(self) -> Optional[pulumi.Input[str]]:
         """
         Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "content")
 
@@ -118,6 +126,10 @@ class _ArtifactByPathState:
         :param pulumi.Input[str] artifact_path: A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
         :param pulumi.Input[str] content: Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: The artifact name with the format of `<artifact-path>:<artifact-version>`. The artifact name is truncated to a maximum length of 255.  Example: `project01/my-web-app/artifact-abc:1.0.0`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -196,6 +208,10 @@ class _ArtifactByPathState:
     def content(self) -> Optional[pulumi.Input[str]]:
         """
         Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "content")
 
@@ -360,6 +376,10 @@ class ArtifactByPath(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] artifact_path: A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
         :param pulumi.Input[str] content: Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] repository_id: The [OCID](https://www.terraform.io/iaas/Content/General/Concepts/identifiers.htm) of the repository.
         :param pulumi.Input[str] source: A path to a file on the local system to be uploaded as the artifact. Cannot be defined if `content` is defined.
         :param pulumi.Input[str] version: A user-defined string to describe the artifact version. Example: `1.1.0` or `1.2-beta-2`
@@ -474,6 +494,10 @@ class ArtifactByPath(pulumi.CustomResource):
         :param pulumi.Input[str] artifact_path: A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
         :param pulumi.Input[str] content: Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: The artifact name with the format of `<artifact-path>:<artifact-version>`. The artifact name is truncated to a maximum length of 255.  Example: `project01/my-web-app/artifact-abc:1.0.0`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -531,6 +555,10 @@ class ArtifactByPath(pulumi.CustomResource):
     def content(self) -> pulumi.Output[Optional[str]]:
         """
         Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "content")
 

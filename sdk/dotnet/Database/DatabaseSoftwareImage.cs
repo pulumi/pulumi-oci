@@ -142,6 +142,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("sourceDbHomeId")]
         public Output<string> SourceDbHomeId { get; private set; } = null!;
@@ -284,6 +288,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("sourceDbHomeId")]
         public Input<string>? SourceDbHomeId { get; set; }
@@ -406,6 +414,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("sourceDbHomeId")]
         public Input<string>? SourceDbHomeId { get; set; }

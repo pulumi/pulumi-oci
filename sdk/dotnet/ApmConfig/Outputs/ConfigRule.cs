@@ -38,7 +38,11 @@ namespace Pulumi.Oci.ApmConfig.Outputs
         /// </summary>
         public readonly int? SatisfiedResponseTime;
         /// <summary>
-        /// (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
+        /// (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime". 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly int? ToleratingResponseTime;
 

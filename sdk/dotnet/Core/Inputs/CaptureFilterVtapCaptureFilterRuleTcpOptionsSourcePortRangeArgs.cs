@@ -19,7 +19,11 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<int> Max { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        /// (Updatable) The minimum port number, which must not be greater than the maximum port number. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("min", required: true)]
         public Input<int> Min { get; set; } = null!;

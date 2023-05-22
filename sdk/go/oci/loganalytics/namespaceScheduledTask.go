@@ -53,6 +53,9 @@ type NamespaceScheduledTask struct {
 	// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
 	TaskStatus pulumi.StringOutput `pulumi:"taskStatus"`
 	// Task type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TaskType pulumi.StringOutput `pulumi:"taskType"`
 	// The date and time the scheduled task was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -135,6 +138,9 @@ type namespaceScheduledTaskState struct {
 	// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
 	TaskStatus *string `pulumi:"taskStatus"`
 	// Task type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TaskType *string `pulumi:"taskType"`
 	// The date and time the scheduled task was created, in the format defined by RFC3339.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -171,6 +177,9 @@ type NamespaceScheduledTaskState struct {
 	// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
 	TaskStatus pulumi.StringPtrInput
 	// Task type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TaskType pulumi.StringPtrInput
 	// The date and time the scheduled task was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringPtrInput
@@ -204,6 +213,9 @@ type namespaceScheduledTaskArgs struct {
 	// (Updatable) Schedules, typically a single schedule. Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
 	Schedules NamespaceScheduledTaskSchedules `pulumi:"schedules"`
 	// Task type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TaskType string `pulumi:"taskType"`
 }
 
@@ -228,6 +240,9 @@ type NamespaceScheduledTaskArgs struct {
 	// (Updatable) Schedules, typically a single schedule. Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
 	Schedules NamespaceScheduledTaskSchedulesInput
 	// Task type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TaskType pulumi.StringInput
 }
 
@@ -383,6 +398,9 @@ func (o NamespaceScheduledTaskOutput) TaskStatus() pulumi.StringOutput {
 }
 
 // Task type.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o NamespaceScheduledTaskOutput) TaskType() pulumi.StringOutput {
 	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringOutput { return v.TaskType }).(pulumi.StringOutput)
 }

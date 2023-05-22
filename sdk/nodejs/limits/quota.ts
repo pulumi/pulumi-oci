@@ -104,7 +104,10 @@ export class Quota extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
-     * (Updatable) An array of quota statements written in the declarative quota statement language.
+     * (Updatable) An array of quota statements written in the declarative quota statement language. 
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly statements!: pulumi.Output<string[]>;
     /**
@@ -199,7 +202,10 @@ export interface QuotaState {
      */
     state?: pulumi.Input<string>;
     /**
-     * (Updatable) An array of quota statements written in the declarative quota statement language.
+     * (Updatable) An array of quota statements written in the declarative quota statement language. 
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     statements?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -237,7 +243,10 @@ export interface QuotaArgs {
      */
     name?: pulumi.Input<string>;
     /**
-     * (Updatable) An array of quota statements written in the declarative quota statement language.
+     * (Updatable) An array of quota statements written in the declarative quota statement language. 
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     statements: pulumi.Input<pulumi.Input<string>[]>;
 }

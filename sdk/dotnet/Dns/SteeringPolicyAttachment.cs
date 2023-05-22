@@ -101,6 +101,10 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// The OCID of the attached zone.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("zoneId")]
         public Output<string> ZoneId { get; private set; } = null!;
@@ -171,6 +175,10 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// The OCID of the attached zone.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("zoneId", required: true)]
         public Input<string> ZoneId { get; set; } = null!;
@@ -239,6 +247,10 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// The OCID of the attached zone.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }

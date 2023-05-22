@@ -175,6 +175,10 @@ class ManagedInstanceManagementChildSoftwareSourceArgs:
         """
         :param pulumi.Input[str] id: software source identifier
         :param pulumi.Input[str] name: software source name
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if id is not None:
             pulumi.set(__self__, "id", id)
@@ -198,6 +202,10 @@ class ManagedInstanceManagementChildSoftwareSourceArgs:
     def name(self) -> Optional[pulumi.Input[str]]:
         """
         software source name
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "name")
 
@@ -253,6 +261,10 @@ class ManagedInstanceManagementParentSoftwareSourceArgs:
         """
         :param pulumi.Input[str] id: software source identifier
         :param pulumi.Input[str] name: software source name
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if id is not None:
             pulumi.set(__self__, "id", id)
@@ -276,6 +288,10 @@ class ManagedInstanceManagementParentSoftwareSourceArgs:
     def name(self) -> Optional[pulumi.Input[str]]:
         """
         software source name
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "name")
 

@@ -360,12 +360,18 @@ public final class VolumeAttachmentState extends com.pulumi.resources.ResourceAr
     /**
      * The OCID of the volume.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="volumeId")
     private @Nullable Output<String> volumeId;
 
     /**
      * @return The OCID of the volume.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> volumeId() {
@@ -901,6 +907,9 @@ public final class VolumeAttachmentState extends com.pulumi.resources.ResourceAr
         /**
          * @param volumeId The OCID of the volume.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -911,6 +920,9 @@ public final class VolumeAttachmentState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param volumeId The OCID of the volume.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

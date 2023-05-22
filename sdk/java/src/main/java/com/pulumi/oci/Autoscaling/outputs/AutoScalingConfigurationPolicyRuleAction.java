@@ -17,6 +17,11 @@ public final class AutoScalingConfigurationPolicyRuleAction {
      * 
      */
     private @Nullable String type;
+    /**
+     * @return ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     private @Nullable Integer value;
 
     private AutoScalingConfigurationPolicyRuleAction() {}
@@ -27,6 +32,11 @@ public final class AutoScalingConfigurationPolicyRuleAction {
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
+    /**
+     * @return ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     public Optional<Integer> value() {
         return Optional.ofNullable(this.value);
     }

@@ -57,12 +57,18 @@ public final class ArtifactByPathState extends com.pulumi.resources.ResourceArgs
     /**
      * Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="content")
     private @Nullable Output<String> content;
 
     /**
      * @return Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> content() {
@@ -310,6 +316,9 @@ public final class ArtifactByPathState extends com.pulumi.resources.ResourceArgs
         /**
          * @param content Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -320,6 +329,9 @@ public final class ArtifactByPathState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param content Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

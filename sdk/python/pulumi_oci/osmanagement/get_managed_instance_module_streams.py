@@ -169,6 +169,12 @@ def get_managed_instance_module_streams(compartment_id: Optional[str] = None,
     :param str module_name: The name of a module.  This parameter is required if a streamName is specified.
     :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
     :param str stream_status: The status of the stream
+           
+           A stream with the "ENABLED" status can be used as a source for installing profiles.  Streams with this status are also "ACTIVE".
+           
+           A stream with the "DISABLED" status cannot be the source for installing profiles.  To install profiles and packages from this stream, it must be enabled.
+           
+           A stream with the "ACTIVE" status can be used as a source for installing profiles.  The packages that comprise the stream are also used when a matching package is installed directly.  In general, a stream can have this status if it is the default stream for the module and no stream has been explicitly enabled.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -243,5 +249,11 @@ def get_managed_instance_module_streams_output(compartment_id: Optional[pulumi.I
     :param str module_name: The name of a module.  This parameter is required if a streamName is specified.
     :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
     :param str stream_status: The status of the stream
+           
+           A stream with the "ENABLED" status can be used as a source for installing profiles.  Streams with this status are also "ACTIVE".
+           
+           A stream with the "DISABLED" status cannot be the source for installing profiles.  To install profiles and packages from this stream, it must be enabled.
+           
+           A stream with the "ACTIVE" status can be used as a source for installing profiles.  The packages that comprise the stream are also used when a matching package is installed directly.  In general, a stream can have this status if it is the default stream for the module and no stream has been explicitly enabled.
     """
     ...

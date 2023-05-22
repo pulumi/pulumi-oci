@@ -109,12 +109,18 @@ public final class AnalyticsInstanceVanityUrlArgs extends com.pulumi.resources.R
     /**
      * (Updatable) PEM certificate for HTTPS connections.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="publicCertificate", required=true)
     private Output<String> publicCertificate;
 
     /**
      * @return (Updatable) PEM certificate for HTTPS connections.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> publicCertificate() {
@@ -290,6 +296,9 @@ public final class AnalyticsInstanceVanityUrlArgs extends com.pulumi.resources.R
         /**
          * @param publicCertificate (Updatable) PEM certificate for HTTPS connections.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -300,6 +309,9 @@ public final class AnalyticsInstanceVanityUrlArgs extends com.pulumi.resources.R
 
         /**
          * @param publicCertificate (Updatable) PEM certificate for HTTPS connections.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

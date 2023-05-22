@@ -63,6 +63,12 @@ type GetStacksArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a stack.
 	Id *string `pulumi:"id"`
 	// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
+	//
+	// Allowable values:
+	// * CREATING
+	// * ACTIVE
+	// * DELETING
+	// * DELETED
 	State *string `pulumi:"state"`
 }
 
@@ -104,6 +110,12 @@ type GetStacksOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a stack.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
+	//
+	// Allowable values:
+	// * CREATING
+	// * ACTIVE
+	// * DELETING
+	// * DELETED
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 

@@ -216,6 +216,10 @@ namespace Pulumi.Oci.Oce
 
         /// <summary>
         /// (Updatable) Web Application Firewall(WAF) primary domain
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("wafPrimaryDomain")]
         public Output<string> WafPrimaryDomain { get; private set; } = null!;
@@ -396,6 +400,10 @@ namespace Pulumi.Oci.Oce
 
         /// <summary>
         /// (Updatable) Web Application Firewall(WAF) primary domain
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("wafPrimaryDomain")]
         public Input<string>? WafPrimaryDomain { get; set; }
@@ -600,6 +608,10 @@ namespace Pulumi.Oci.Oce
 
         /// <summary>
         /// (Updatable) Web Application Firewall(WAF) primary domain
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("wafPrimaryDomain")]
         public Input<string>? WafPrimaryDomain { get; set; }

@@ -210,6 +210,10 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
     public readonly serviceLevelAgreementType!: pulumi.Output<string>;
     /**
      * (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly standbyMaintenanceBufferInDays!: pulumi.Output<number>;
     /**
@@ -529,6 +533,10 @@ export interface AutonomousContainerDatabaseState {
     serviceLevelAgreementType?: pulumi.Input<string>;
     /**
      * (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     standbyMaintenanceBufferInDays?: pulumi.Input<number>;
     /**
@@ -662,6 +670,10 @@ export interface AutonomousContainerDatabaseArgs {
     serviceLevelAgreementType?: pulumi.Input<string>;
     /**
      * (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     standbyMaintenanceBufferInDays?: pulumi.Input<number>;
     /**

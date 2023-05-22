@@ -56,6 +56,10 @@ namespace Pulumi.Oci.ObjectStorage.Inputs
 
         /// <summary>
         /// The version id of the object to be restored.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("sourceVersionId")]
         public Input<string>? SourceVersionId { get; set; }

@@ -100,6 +100,9 @@ type OdaInstance struct {
 	// A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
 	RestrictedOperations OdaInstanceRestrictedOperationArrayOutput `pulumi:"restrictedOperations"`
 	// Shape or size of the instance.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShapeName pulumi.StringOutput `pulumi:"shapeName"`
 	// The current state of the Digital Assistant instance.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -181,6 +184,9 @@ type odaInstanceState struct {
 	// A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
 	RestrictedOperations []OdaInstanceRestrictedOperation `pulumi:"restrictedOperations"`
 	// Shape or size of the instance.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShapeName *string `pulumi:"shapeName"`
 	// The current state of the Digital Assistant instance.
 	State *string `pulumi:"state"`
@@ -228,6 +234,9 @@ type OdaInstanceState struct {
 	// A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
 	RestrictedOperations OdaInstanceRestrictedOperationArrayInput
 	// Shape or size of the instance.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShapeName pulumi.StringPtrInput
 	// The current state of the Digital Assistant instance.
 	State pulumi.StringPtrInput
@@ -261,6 +270,9 @@ type odaInstanceArgs struct {
 	// Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
 	IsRoleBasedAccess *bool `pulumi:"isRoleBasedAccess"`
 	// Shape or size of the instance.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShapeName string `pulumi:"shapeName"`
 	// The current state of the Digital Assistant instance.
 	State *string `pulumi:"state"`
@@ -283,6 +295,9 @@ type OdaInstanceArgs struct {
 	// Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
 	IsRoleBasedAccess pulumi.BoolPtrInput
 	// Shape or size of the instance.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShapeName pulumi.StringInput
 	// The current state of the Digital Assistant instance.
 	State pulumi.StringPtrInput
@@ -456,6 +471,9 @@ func (o OdaInstanceOutput) RestrictedOperations() OdaInstanceRestrictedOperation
 }
 
 // Shape or size of the instance.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o OdaInstanceOutput) ShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v *OdaInstance) pulumi.StringOutput { return v.ShapeName }).(pulumi.StringOutput)
 }

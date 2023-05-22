@@ -87,7 +87,11 @@ export class ModelProvenance extends pulumi.CustomResource {
      */
     public readonly trainingId!: pulumi.Output<string>;
     /**
-     * (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained."
+     * (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly trainingScript!: pulumi.Output<string>;
 
@@ -158,7 +162,11 @@ export interface ModelProvenanceState {
      */
     trainingId?: pulumi.Input<string>;
     /**
-     * (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained."
+     * (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     trainingScript?: pulumi.Input<string>;
 }
@@ -192,7 +200,11 @@ export interface ModelProvenanceArgs {
      */
     trainingId?: pulumi.Input<string>;
     /**
-     * (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained."
+     * (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     trainingScript?: pulumi.Input<string>;
 }

@@ -82,12 +82,18 @@ public class ExternalPluggableDatabaseManagement extends com.pulumi.resources.Cu
     /**
      * The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="externalPluggableDatabaseId", type=String.class, parameters={})
     private Output<String> externalPluggableDatabaseId;
 
     /**
      * @return The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> externalPluggableDatabaseId() {

@@ -58,6 +58,9 @@ class ExadataInfrastructureArgs:
         :param pulumi.Input[str] time_zone: (Updatable) The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[str] activation_file: (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
         :param pulumi.Input[int] additional_storage_count: The requested number of additional storage servers for the Exadata infrastructure.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[int] compute_count: The number of compute servers for the Exadata infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureContactArgs']]] contacts: (Updatable) The list of contacts for the Exadata infrastructure.
         :param pulumi.Input[str] corporate_proxy: (Updatable) The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible for enhanced security.
@@ -272,6 +275,9 @@ class ExadataInfrastructureArgs:
     def additional_storage_count(self) -> Optional[pulumi.Input[int]]:
         """
         The requested number of additional storage servers for the Exadata infrastructure.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "additional_storage_count")
 
@@ -476,6 +482,9 @@ class _ExadataInfrastructureState:
         :param pulumi.Input[int] additional_compute_count: The requested number of additional compute servers for the Exadata infrastructure.
         :param pulumi.Input[str] additional_compute_system_model: Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
         :param pulumi.Input[int] additional_storage_count: The requested number of additional storage servers for the Exadata infrastructure.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] admin_network_cidr: (Updatable) The CIDR block for the Exadata administration network.
         :param pulumi.Input[str] cloud_control_plane_server1: (Updatable) The IP address for the first control plane server.
         :param pulumi.Input[str] cloud_control_plane_server2: (Updatable) The IP address for the second control plane server.
@@ -660,6 +669,9 @@ class _ExadataInfrastructureState:
     def additional_storage_count(self) -> Optional[pulumi.Input[int]]:
         """
         The requested number of additional storage servers for the Exadata infrastructure.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "additional_storage_count")
 
@@ -1254,6 +1266,9 @@ class ExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] activation_file: (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
         :param pulumi.Input[int] additional_storage_count: The requested number of additional storage servers for the Exadata infrastructure.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] admin_network_cidr: (Updatable) The CIDR block for the Exadata administration network.
         :param pulumi.Input[str] cloud_control_plane_server1: (Updatable) The IP address for the first control plane server.
         :param pulumi.Input[str] cloud_control_plane_server2: (Updatable) The IP address for the second control plane server.
@@ -1543,6 +1558,9 @@ class ExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[int] additional_compute_count: The requested number of additional compute servers for the Exadata infrastructure.
         :param pulumi.Input[str] additional_compute_system_model: Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
         :param pulumi.Input[int] additional_storage_count: The requested number of additional storage servers for the Exadata infrastructure.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] admin_network_cidr: (Updatable) The CIDR block for the Exadata administration network.
         :param pulumi.Input[str] cloud_control_plane_server1: (Updatable) The IP address for the first control plane server.
         :param pulumi.Input[str] cloud_control_plane_server2: (Updatable) The IP address for the second control plane server.
@@ -1671,6 +1689,9 @@ class ExadataInfrastructure(pulumi.CustomResource):
     def additional_storage_count(self) -> pulumi.Output[int]:
         """
         The requested number of additional storage servers for the Exadata infrastructure.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "additional_storage_count")
 

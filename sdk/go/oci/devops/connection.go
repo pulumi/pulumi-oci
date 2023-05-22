@@ -103,6 +103,9 @@ type Connection struct {
 	// (Updatable) TLS configuration used by build service to verify TLS connection.
 	TlsVerifyConfig ConnectionTlsVerifyConfigOutput `pulumi:"tlsVerifyConfig"`
 	// (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Username pulumi.StringOutput `pulumi:"username"`
 }
 
@@ -181,6 +184,9 @@ type connectionState struct {
 	// (Updatable) TLS configuration used by build service to verify TLS connection.
 	TlsVerifyConfig *ConnectionTlsVerifyConfig `pulumi:"tlsVerifyConfig"`
 	// (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Username *string `pulumi:"username"`
 }
 
@@ -218,6 +224,9 @@ type ConnectionState struct {
 	// (Updatable) TLS configuration used by build service to verify TLS connection.
 	TlsVerifyConfig ConnectionTlsVerifyConfigPtrInput
 	// (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Username pulumi.StringPtrInput
 }
 
@@ -247,6 +256,9 @@ type connectionArgs struct {
 	// (Updatable) TLS configuration used by build service to verify TLS connection.
 	TlsVerifyConfig *ConnectionTlsVerifyConfig `pulumi:"tlsVerifyConfig"`
 	// (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Username *string `pulumi:"username"`
 }
 
@@ -273,6 +285,9 @@ type ConnectionArgs struct {
 	// (Updatable) TLS configuration used by build service to verify TLS connection.
 	TlsVerifyConfig ConnectionTlsVerifyConfigPtrInput
 	// (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Username pulumi.StringPtrInput
 }
 
@@ -446,6 +461,9 @@ func (o ConnectionOutput) TlsVerifyConfig() ConnectionTlsVerifyConfigOutput {
 }
 
 // (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ConnectionOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.Username }).(pulumi.StringOutput)
 }

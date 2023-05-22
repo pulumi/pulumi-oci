@@ -98,12 +98,16 @@ public final class ComputeCapacityReservationState extends com.pulumi.resources.
     /**
      * (Updatable) The capacity configurations for the capacity reservation.
      * 
+     * To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
+     * 
      */
     @Import(name="instanceReservationConfigs")
     private @Nullable Output<List<ComputeCapacityReservationInstanceReservationConfigArgs>> instanceReservationConfigs;
 
     /**
      * @return (Updatable) The capacity configurations for the capacity reservation.
+     * 
+     * To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
      * 
      */
     public Optional<Output<List<ComputeCapacityReservationInstanceReservationConfigArgs>>> instanceReservationConfigs() {
@@ -113,12 +117,18 @@ public final class ComputeCapacityReservationState extends com.pulumi.resources.
     /**
      * (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="isDefaultReservation")
     private @Nullable Output<Boolean> isDefaultReservation;
 
     /**
      * @return (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Boolean>> isDefaultReservation() {
@@ -343,6 +353,8 @@ public final class ComputeCapacityReservationState extends com.pulumi.resources.
         /**
          * @param instanceReservationConfigs (Updatable) The capacity configurations for the capacity reservation.
          * 
+         * To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
+         * 
          * @return builder
          * 
          */
@@ -354,6 +366,8 @@ public final class ComputeCapacityReservationState extends com.pulumi.resources.
         /**
          * @param instanceReservationConfigs (Updatable) The capacity configurations for the capacity reservation.
          * 
+         * To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
+         * 
          * @return builder
          * 
          */
@@ -363,6 +377,8 @@ public final class ComputeCapacityReservationState extends com.pulumi.resources.
 
         /**
          * @param instanceReservationConfigs (Updatable) The capacity configurations for the capacity reservation.
+         * 
+         * To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
          * 
          * @return builder
          * 
@@ -374,6 +390,9 @@ public final class ComputeCapacityReservationState extends com.pulumi.resources.
         /**
          * @param isDefaultReservation (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -384,6 +403,9 @@ public final class ComputeCapacityReservationState extends com.pulumi.resources.
 
         /**
          * @param isDefaultReservation (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -20,6 +20,8 @@ namespace Pulumi.Oci.CloudGuard.Inputs
 
         /// <summary>
         /// (Updatable) Responder recipe description.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -32,6 +34,8 @@ namespace Pulumi.Oci.CloudGuard.Inputs
 
         /// <summary>
         /// (Updatable) Responder recipe display name.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

@@ -87,6 +87,9 @@ type AppFirewall struct {
 	// The time the WebAppFirewall was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppFirewallPolicy, which is attached to the resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WebAppFirewallPolicyId pulumi.StringOutput `pulumi:"webAppFirewallPolicyId"`
 }
 
@@ -154,6 +157,9 @@ type appFirewallState struct {
 	// The time the WebAppFirewall was updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppFirewallPolicy, which is attached to the resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WebAppFirewallPolicyId *string `pulumi:"webAppFirewallPolicyId"`
 }
 
@@ -181,6 +187,9 @@ type AppFirewallState struct {
 	// The time the WebAppFirewall was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppFirewallPolicy, which is attached to the resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WebAppFirewallPolicyId pulumi.StringPtrInput
 }
 
@@ -204,6 +213,9 @@ type appFirewallArgs struct {
 	// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppFirewallPolicy, which is attached to the resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WebAppFirewallPolicyId string `pulumi:"webAppFirewallPolicyId"`
 }
 
@@ -224,6 +236,9 @@ type AppFirewallArgs struct {
 	// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppFirewallPolicy, which is attached to the resource.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WebAppFirewallPolicyId pulumi.StringInput
 }
 
@@ -370,6 +385,9 @@ func (o AppFirewallOutput) TimeUpdated() pulumi.StringOutput {
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppFirewallPolicy, which is attached to the resource.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AppFirewallOutput) WebAppFirewallPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppFirewall) pulumi.StringOutput { return v.WebAppFirewallPolicyId }).(pulumi.StringOutput)
 }

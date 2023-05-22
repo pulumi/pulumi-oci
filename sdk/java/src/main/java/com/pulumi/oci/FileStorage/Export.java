@@ -75,12 +75,28 @@ public class Export extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Export options for the new export. If left unspecified, defaults to:
      * 
+     * []
+     * 
+     * **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
+     * 
+     * **If set to the empty array then the export will not be visible to any clients.**
+     * 
+     * The export&#39;s `exportOptions` can be changed after creation using the `UpdateExport` operation.
+     * 
      */
     @com.pulumi.core.annotations.Export(name="exportOptions", type=List.class, parameters={ExportExportOption.class})
     private Output<List<ExportExportOption>> exportOptions;
 
     /**
      * @return (Updatable) Export options for the new export. If left unspecified, defaults to:
+     * 
+     * []
+     * 
+     * **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
+     * 
+     * **If set to the empty array then the export will not be visible to any clients.**
+     * 
+     * The export&#39;s `exportOptions` can be changed after creation using the `UpdateExport` operation.
      * 
      */
     public Output<List<ExportExportOption>> exportOptions() {
@@ -117,12 +133,26 @@ public class Export extends com.pulumi.resources.CustomResource {
     /**
      * Path used to access the associated file system.
      * 
+     * Avoid entering confidential information.
+     * 
+     * Example: `/mediafiles`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @com.pulumi.core.annotations.Export(name="path", type=String.class, parameters={})
     private Output<String> path;
 
     /**
      * @return Path used to access the associated file system.
+     * 
+     * Avoid entering confidential information.
+     * 
+     * Example: `/mediafiles`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> path() {

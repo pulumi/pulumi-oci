@@ -67,12 +67,27 @@ type Export struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) Export options for the new export. If left unspecified, defaults to:
+	//
+	// []
+	//
+	// **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
+	//
+	// **If set to the empty array then the export will not be visible to any clients.**
+	//
+	// The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
 	ExportOptions ExportExportOptionArrayOutput `pulumi:"exportOptions"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
 	ExportSetId pulumi.StringOutput `pulumi:"exportSetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
 	FileSystemId pulumi.StringOutput `pulumi:"fileSystemId"`
 	// Path used to access the associated file system.
+	//
+	// Avoid entering confidential information.
+	//
+	// Example: `/mediafiles`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Path pulumi.StringOutput `pulumi:"path"`
 	// The current state of this export.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -119,12 +134,27 @@ func GetExport(ctx *pulumi.Context,
 // Input properties used for looking up and filtering Export resources.
 type exportState struct {
 	// (Updatable) Export options for the new export. If left unspecified, defaults to:
+	//
+	// []
+	//
+	// **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
+	//
+	// **If set to the empty array then the export will not be visible to any clients.**
+	//
+	// The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
 	ExportOptions []ExportExportOption `pulumi:"exportOptions"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
 	ExportSetId *string `pulumi:"exportSetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
 	FileSystemId *string `pulumi:"fileSystemId"`
 	// Path used to access the associated file system.
+	//
+	// Avoid entering confidential information.
+	//
+	// Example: `/mediafiles`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Path *string `pulumi:"path"`
 	// The current state of this export.
 	State *string `pulumi:"state"`
@@ -134,12 +164,27 @@ type exportState struct {
 
 type ExportState struct {
 	// (Updatable) Export options for the new export. If left unspecified, defaults to:
+	//
+	// []
+	//
+	// **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
+	//
+	// **If set to the empty array then the export will not be visible to any clients.**
+	//
+	// The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
 	ExportOptions ExportExportOptionArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
 	ExportSetId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
 	FileSystemId pulumi.StringPtrInput
 	// Path used to access the associated file system.
+	//
+	// Avoid entering confidential information.
+	//
+	// Example: `/mediafiles`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Path pulumi.StringPtrInput
 	// The current state of this export.
 	State pulumi.StringPtrInput
@@ -153,24 +198,54 @@ func (ExportState) ElementType() reflect.Type {
 
 type exportArgs struct {
 	// (Updatable) Export options for the new export. If left unspecified, defaults to:
+	//
+	// []
+	//
+	// **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
+	//
+	// **If set to the empty array then the export will not be visible to any clients.**
+	//
+	// The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
 	ExportOptions []ExportExportOption `pulumi:"exportOptions"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
 	ExportSetId string `pulumi:"exportSetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
 	FileSystemId string `pulumi:"fileSystemId"`
 	// Path used to access the associated file system.
+	//
+	// Avoid entering confidential information.
+	//
+	// Example: `/mediafiles`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Path string `pulumi:"path"`
 }
 
 // The set of arguments for constructing a Export resource.
 type ExportArgs struct {
 	// (Updatable) Export options for the new export. If left unspecified, defaults to:
+	//
+	// []
+	//
+	// **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
+	//
+	// **If set to the empty array then the export will not be visible to any clients.**
+	//
+	// The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
 	ExportOptions ExportExportOptionArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
 	ExportSetId pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
 	FileSystemId pulumi.StringInput
 	// Path used to access the associated file system.
+	//
+	// Avoid entering confidential information.
+	//
+	// Example: `/mediafiles`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Path pulumi.StringInput
 }
 
@@ -262,6 +337,14 @@ func (o ExportOutput) ToExportOutputWithContext(ctx context.Context) ExportOutpu
 }
 
 // (Updatable) Export options for the new export. If left unspecified, defaults to:
+//
+// []
+//
+// **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
+//
+// **If set to the empty array then the export will not be visible to any clients.**
+//
+// The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
 func (o ExportOutput) ExportOptions() ExportExportOptionArrayOutput {
 	return o.ApplyT(func(v *Export) ExportExportOptionArrayOutput { return v.ExportOptions }).(ExportExportOptionArrayOutput)
 }
@@ -277,6 +360,13 @@ func (o ExportOutput) FileSystemId() pulumi.StringOutput {
 }
 
 // Path used to access the associated file system.
+//
+// Avoid entering confidential information.
+//
+// Example: `/mediafiles`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ExportOutput) Path() pulumi.StringOutput {
 	return o.ApplyT(func(v *Export) pulumi.StringOutput { return v.Path }).(pulumi.StringOutput)
 }

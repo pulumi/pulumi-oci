@@ -60,7 +60,11 @@ export class Job extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The OCID of the job
+     * The OCID of the job 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly jobId!: pulumi.Output<string>;
     /**
@@ -167,7 +171,11 @@ export interface JobState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The OCID of the job
+     * The OCID of the job 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     jobId?: pulumi.Input<string>;
     /**
@@ -225,7 +233,11 @@ export interface JobArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The OCID of the job
+     * The OCID of the job 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     jobId: pulumi.Input<string>;
 }

@@ -30,6 +30,10 @@ class ContainerImageSignatureArgs:
         :param pulumi.Input[str] message: The base64 encoded signature payload that was signed.
         :param pulumi.Input[str] signature: The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
         :param pulumi.Input[str] signing_algorithm: The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "image_id", image_id)
@@ -116,6 +120,10 @@ class ContainerImageSignatureArgs:
     def signing_algorithm(self) -> pulumi.Input[str]:
         """
         The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "signing_algorithm")
 
@@ -148,6 +156,10 @@ class _ContainerImageSignatureState:
         :param pulumi.Input[str] message: The base64 encoded signature payload that was signed.
         :param pulumi.Input[str] signature: The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
         :param pulumi.Input[str] signing_algorithm: The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: An RFC 3339 timestamp indicating when the image was created.
         """
         if compartment_id is not None:
@@ -272,6 +284,10 @@ class _ContainerImageSignatureState:
     def signing_algorithm(self) -> Optional[pulumi.Input[str]]:
         """
         The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "signing_algorithm")
 
@@ -343,6 +359,10 @@ class ContainerImageSignature(pulumi.CustomResource):
         :param pulumi.Input[str] message: The base64 encoded signature payload that was signed.
         :param pulumi.Input[str] signature: The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
         :param pulumi.Input[str] signing_algorithm: The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -470,6 +490,10 @@ class ContainerImageSignature(pulumi.CustomResource):
         :param pulumi.Input[str] message: The base64 encoded signature payload that was signed.
         :param pulumi.Input[str] signature: The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
         :param pulumi.Input[str] signing_algorithm: The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: An RFC 3339 timestamp indicating when the image was created.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -557,6 +581,10 @@ class ContainerImageSignature(pulumi.CustomResource):
     def signing_algorithm(self) -> pulumi.Output[str]:
         """
         The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "signing_algorithm")
 

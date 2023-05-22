@@ -54,6 +54,8 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// 
+        /// **Example:** `{"Operations": {"CostCenter": "42"}}`
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
@@ -72,6 +74,8 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// 
+        /// **Example:** `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
@@ -95,7 +99,11 @@ namespace Pulumi.Oci.Dns
         public Output<ImmutableArray<Outputs.ResolverRule>> Rules { get; private set; } = null!;
 
         /// <summary>
-        /// If specified, must be `PRIVATE` when creating private name resolvers.
+        /// If specified, must be `PRIVATE` when creating private name resolvers. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("scope")]
         public Output<string?> Scope { get; private set; } = null!;
@@ -193,6 +201,8 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// 
+        /// **Example:** `{"Operations": {"CostCenter": "42"}}`
         /// </summary>
         public InputMap<object> DefinedTags
         {
@@ -211,6 +221,8 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// 
+        /// **Example:** `{"Department": "Finance"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -237,7 +249,11 @@ namespace Pulumi.Oci.Dns
         }
 
         /// <summary>
-        /// If specified, must be `PRIVATE` when creating private name resolvers.
+        /// If specified, must be `PRIVATE` when creating private name resolvers. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
@@ -285,6 +301,8 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// 
+        /// **Example:** `{"Operations": {"CostCenter": "42"}}`
         /// </summary>
         public InputMap<object> DefinedTags
         {
@@ -315,6 +333,8 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// 
+        /// **Example:** `{"Department": "Finance"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -347,7 +367,11 @@ namespace Pulumi.Oci.Dns
         }
 
         /// <summary>
-        /// If specified, must be `PRIVATE` when creating private name resolvers.
+        /// If specified, must be `PRIVATE` when creating private name resolvers. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }

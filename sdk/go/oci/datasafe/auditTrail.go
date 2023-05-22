@@ -48,6 +48,9 @@ type AuditTrail struct {
 	// Details about the current state of the audit trail in Data Safe.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResumeTrigger pulumi.IntPtrOutput `pulumi:"resumeTrigger"`
 	// (Updatable) The target state for the Audit Trail. Could be set to `ACTIVE` or `INACTIVE`.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -122,6 +125,9 @@ type auditTrailState struct {
 	// Details about the current state of the audit trail in Data Safe.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResumeTrigger *int `pulumi:"resumeTrigger"`
 	// (Updatable) The target state for the Audit Trail. Could be set to `ACTIVE` or `INACTIVE`.
 	State *string `pulumi:"state"`
@@ -165,6 +171,9 @@ type AuditTrailState struct {
 	// Details about the current state of the audit trail in Data Safe.
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResumeTrigger pulumi.IntPtrInput
 	// (Updatable) The target state for the Audit Trail. Could be set to `ACTIVE` or `INACTIVE`.
 	State pulumi.StringPtrInput
@@ -204,6 +213,9 @@ type auditTrailArgs struct {
 	// (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
 	IsAutoPurgeEnabled *bool `pulumi:"isAutoPurgeEnabled"`
 	// (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResumeTrigger *int `pulumi:"resumeTrigger"`
 	// (Updatable) The target state for the Audit Trail. Could be set to `ACTIVE` or `INACTIVE`.
 	State *string `pulumi:"state"`
@@ -224,6 +236,9 @@ type AuditTrailArgs struct {
 	// (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
 	IsAutoPurgeEnabled pulumi.BoolPtrInput
 	// (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResumeTrigger pulumi.IntPtrInput
 	// (Updatable) The target state for the Audit Trail. Could be set to `ACTIVE` or `INACTIVE`.
 	State pulumi.StringPtrInput
@@ -367,6 +382,9 @@ func (o AuditTrailOutput) LifecycleDetails() pulumi.StringOutput {
 }
 
 // (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AuditTrailOutput) ResumeTrigger() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AuditTrail) pulumi.IntPtrOutput { return v.ResumeTrigger }).(pulumi.IntPtrOutput)
 }

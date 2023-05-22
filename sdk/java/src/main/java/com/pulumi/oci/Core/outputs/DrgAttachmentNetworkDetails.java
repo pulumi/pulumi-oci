@@ -24,6 +24,11 @@ public final class DrgAttachmentNetworkDetails {
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the DRG attachment.
      * 
+     * If you don&#39;t specify a route table here, the DRG attachment is created without an associated route table. The Networking service does NOT automatically associate the attached VCN&#39;s default route table with the DRG attachment. For information about why you would associate a route table with a DRG attachment, see:
+     * * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+     * * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+     *   This field is deprecated. Instead, use the networkDetails field to specify the VCN route table for this attachment.
+     * 
      */
     private @Nullable String routeTableId;
     /**
@@ -54,6 +59,11 @@ public final class DrgAttachmentNetworkDetails {
     }
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the DRG attachment.
+     * 
+     * If you don&#39;t specify a route table here, the DRG attachment is created without an associated route table. The Networking service does NOT automatically associate the attached VCN&#39;s default route table with the DRG attachment. For information about why you would associate a route table with a DRG attachment, see:
+     * * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+     * * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+     *   This field is deprecated. Instead, use the networkDetails field to specify the VCN route table for this attachment.
      * 
      */
     public Optional<String> routeTableId() {

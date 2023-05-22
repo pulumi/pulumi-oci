@@ -29,7 +29,11 @@ class DrgRouteTableArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] import_drg_route_distribution_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements through referenced attachments are inserted into the DRG route table.
         :param pulumi.Input[bool] is_ecmp_enabled: (Updatable) If you want traffic to be routed using ECMP across your virtual circuits or IPSec tunnels to your on-premises networks, enable ECMP on the DRG route table.
-        :param pulumi.Input[bool] remove_import_trigger: (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null.
+        :param pulumi.Input[bool] remove_import_trigger: (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "drg_id", drg_id)
         if defined_tags is not None:
@@ -121,7 +125,11 @@ class DrgRouteTableArgs:
     @pulumi.getter(name="removeImportTrigger")
     def remove_import_trigger(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null.
+        (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "remove_import_trigger")
 
@@ -152,7 +160,11 @@ class _DrgRouteTableState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] import_drg_route_distribution_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements through referenced attachments are inserted into the DRG route table.
         :param pulumi.Input[bool] is_ecmp_enabled: (Updatable) If you want traffic to be routed using ECMP across your virtual circuits or IPSec tunnels to your on-premises networks, enable ECMP on the DRG route table.
-        :param pulumi.Input[bool] remove_import_trigger: (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null.
+        :param pulumi.Input[bool] remove_import_trigger: (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The DRG route table's current state.
         :param pulumi.Input[str] time_created: The date and time the DRG route table was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -265,7 +277,11 @@ class _DrgRouteTableState:
     @pulumi.getter(name="removeImportTrigger")
     def remove_import_trigger(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null.
+        (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "remove_import_trigger")
 
@@ -352,7 +368,11 @@ class DrgRouteTable(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] import_drg_route_distribution_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements through referenced attachments are inserted into the DRG route table.
         :param pulumi.Input[bool] is_ecmp_enabled: (Updatable) If you want traffic to be routed using ECMP across your virtual circuits or IPSec tunnels to your on-premises networks, enable ECMP on the DRG route table.
-        :param pulumi.Input[bool] remove_import_trigger: (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null.
+        :param pulumi.Input[bool] remove_import_trigger: (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -470,7 +490,11 @@ class DrgRouteTable(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] import_drg_route_distribution_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements through referenced attachments are inserted into the DRG route table.
         :param pulumi.Input[bool] is_ecmp_enabled: (Updatable) If you want traffic to be routed using ECMP across your virtual circuits or IPSec tunnels to your on-premises networks, enable ECMP on the DRG route table.
-        :param pulumi.Input[bool] remove_import_trigger: (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null.
+        :param pulumi.Input[bool] remove_import_trigger: (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The DRG route table's current state.
         :param pulumi.Input[str] time_created: The date and time the DRG route table was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -550,7 +574,11 @@ class DrgRouteTable(pulumi.CustomResource):
     @pulumi.getter(name="removeImportTrigger")
     def remove_import_trigger(self) -> pulumi.Output[Optional[bool]]:
         """
-        (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null.
+        (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "remove_import_trigger")
 

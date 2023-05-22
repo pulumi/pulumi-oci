@@ -25,7 +25,11 @@ class DrPlanArgs:
         The set of arguments for constructing a DrPlan resource.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
         :param pulumi.Input[str] dr_protection_group_id: The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
-        :param pulumi.Input[str] type: The type of DR Plan to be created.
+        :param pulumi.Input[str] type: The type of DR Plan to be created. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         """
@@ -65,7 +69,11 @@ class DrPlanArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        The type of DR Plan to be created.
+        The type of DR Plan to be created. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -130,7 +138,11 @@ class _DrPlanState:
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the DR Plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param pulumi.Input[str] time_updated: The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        :param pulumi.Input[str] type: The type of DR Plan to be created.
+        :param pulumi.Input[str] type: The type of DR Plan to be created. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -321,7 +333,11 @@ class _DrPlanState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        The type of DR Plan to be created.
+        The type of DR Plan to be created. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -378,7 +394,11 @@ class DrPlan(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
         :param pulumi.Input[str] dr_protection_group_id: The OCID of the DR Protection Group to which this DR Plan belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] type: The type of DR Plan to be created.
+        :param pulumi.Input[str] type: The type of DR Plan to be created. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -510,7 +530,11 @@ class DrPlan(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the DR Plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param pulumi.Input[str] time_updated: The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        :param pulumi.Input[str] type: The type of DR Plan to be created.
+        :param pulumi.Input[str] type: The type of DR Plan to be created. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -640,7 +664,11 @@ class DrPlan(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
         """
-        The type of DR Plan to be created.
+        The type of DR Plan to be created. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 

@@ -60,6 +60,9 @@ export class PublicIpPoolCapacity extends pulumi.CustomResource {
     public readonly byoipId!: pulumi.Output<string>;
     /**
      * The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly cidrBlock!: pulumi.Output<string>;
     /**
@@ -113,6 +116,9 @@ export interface PublicIpPoolCapacityState {
     byoipId?: pulumi.Input<string>;
     /**
      * The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     cidrBlock?: pulumi.Input<string>;
     /**
@@ -131,6 +137,9 @@ export interface PublicIpPoolCapacityArgs {
     byoipId: pulumi.Input<string>;
     /**
      * The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     cidrBlock: pulumi.Input<string>;
     /**

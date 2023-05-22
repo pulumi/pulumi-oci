@@ -33,7 +33,11 @@ class NetworkSourceArgs:
         :param pulumi.Input[str] name: The name you assign to the network source during creation. The name must be unique across all groups in the tenancy and cannot be changed.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] public_source_lists: (Updatable) A list of allowed public IP addresses and CIDR ranges.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] services: (Updatable) A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses than those listed in the network source. Currently, only `all` and `none` are supported. The default is `all`.
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkSourceVirtualSourceListArgs']]] virtual_source_lists: (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]`
+        :param pulumi.Input[Sequence[pulumi.Input['NetworkSourceVirtualSourceListArgs']]] virtual_source_lists: (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "description", description)
@@ -138,7 +142,11 @@ class NetworkSourceArgs:
     @pulumi.getter(name="virtualSourceLists")
     def virtual_source_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkSourceVirtualSourceListArgs']]]]:
         """
-        (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]`
+        (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "virtual_source_lists")
 
@@ -173,7 +181,11 @@ class _NetworkSourceState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] services: (Updatable) A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses than those listed in the network source. Currently, only `all` and `none` are supported. The default is `all`.
         :param pulumi.Input[str] state: The network source object's current state. After creating a network source, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
         :param pulumi.Input[str] time_created: Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkSourceVirtualSourceListArgs']]] virtual_source_lists: (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]`
+        :param pulumi.Input[Sequence[pulumi.Input['NetworkSourceVirtualSourceListArgs']]] virtual_source_lists: (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -322,7 +334,11 @@ class _NetworkSourceState:
     @pulumi.getter(name="virtualSourceLists")
     def virtual_source_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkSourceVirtualSourceListArgs']]]]:
         """
-        (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]`
+        (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "virtual_source_lists")
 
@@ -403,7 +419,11 @@ class NetworkSource(pulumi.CustomResource):
         :param pulumi.Input[str] name: The name you assign to the network source during creation. The name must be unique across all groups in the tenancy and cannot be changed.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] public_source_lists: (Updatable) A list of allowed public IP addresses and CIDR ranges.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] services: (Updatable) A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses than those listed in the network source. Currently, only `all` and `none` are supported. The default is `all`.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSourceVirtualSourceListArgs']]]] virtual_source_lists: (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]`
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSourceVirtualSourceListArgs']]]] virtual_source_lists: (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -545,7 +565,11 @@ class NetworkSource(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] services: (Updatable) A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses than those listed in the network source. Currently, only `all` and `none` are supported. The default is `all`.
         :param pulumi.Input[str] state: The network source object's current state. After creating a network source, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
         :param pulumi.Input[str] time_created: Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSourceVirtualSourceListArgs']]]] virtual_source_lists: (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]`
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSourceVirtualSourceListArgs']]]] virtual_source_lists: (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -648,7 +672,11 @@ class NetworkSource(pulumi.CustomResource):
     @pulumi.getter(name="virtualSourceLists")
     def virtual_source_lists(self) -> pulumi.Output[Sequence['outputs.NetworkSourceVirtualSourceList']]:
         """
-        (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]`
+        (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "virtual_source_lists")
 

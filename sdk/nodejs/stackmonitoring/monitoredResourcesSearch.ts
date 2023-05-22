@@ -127,22 +127,34 @@ export class MonitoredResourcesSearch extends pulumi.CustomResource {
     public readonly state!: pulumi.Output<string | undefined>;
     /**
      * Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
      */
     public readonly timeCreatedGreaterThanOrEqualTo!: pulumi.Output<string | undefined>;
     /**
      * Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
      */
     public readonly timeCreatedLessThan!: pulumi.Output<string | undefined>;
     /**
      * Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
      */
     public readonly timeUpdatedGreaterThanOrEqualTo!: pulumi.Output<string | undefined>;
     /**
      * Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
      */
     public readonly timeUpdatedLessThan!: pulumi.Output<string | undefined>;
     /**
-     * A filter to return resources that match resource type.
+     * A filter to return resources that match resource type. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly type!: pulumi.Output<string | undefined>;
 
@@ -264,22 +276,34 @@ export interface MonitoredResourcesSearchState {
     state?: pulumi.Input<string>;
     /**
      * Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
      */
     timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string>;
     /**
      * Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
      */
     timeCreatedLessThan?: pulumi.Input<string>;
     /**
      * Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
      */
     timeUpdatedGreaterThanOrEqualTo?: pulumi.Input<string>;
     /**
      * Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
      */
     timeUpdatedLessThan?: pulumi.Input<string>;
     /**
-     * A filter to return resources that match resource type.
+     * A filter to return resources that match resource type. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     type?: pulumi.Input<string>;
 }
@@ -338,22 +362,34 @@ export interface MonitoredResourcesSearchArgs {
     state?: pulumi.Input<string>;
     /**
      * Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
      */
     timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string>;
     /**
      * Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
      */
     timeCreatedLessThan?: pulumi.Input<string>;
     /**
      * Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
      */
     timeUpdatedGreaterThanOrEqualTo?: pulumi.Input<string>;
     /**
      * Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
      */
     timeUpdatedLessThan?: pulumi.Input<string>;
     /**
-     * A filter to return resources that match resource type.
+     * A filter to return resources that match resource type. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     type?: pulumi.Input<string>;
 }

@@ -172,12 +172,18 @@ public final class AssetVmwareVmArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) VMware tools status.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="vmwareToolsStatus")
     private @Nullable Output<String> vmwareToolsStatus;
 
     /**
      * @return (Updatable) VMware tools status.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> vmwareToolsStatus() {
@@ -451,6 +457,9 @@ public final class AssetVmwareVmArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param vmwareToolsStatus (Updatable) VMware tools status.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -461,6 +470,9 @@ public final class AssetVmwareVmArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vmwareToolsStatus (Updatable) VMware tools status.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

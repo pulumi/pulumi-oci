@@ -14,6 +14,8 @@ public final class DetectorRecipeDetectorRuleDetailsEntitiesMapping {
     /**
      * @return (Updatable) Detector recipe display name.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     private @Nullable String displayName;
     /**
@@ -30,6 +32,8 @@ public final class DetectorRecipeDetectorRuleDetailsEntitiesMapping {
     private DetectorRecipeDetectorRuleDetailsEntitiesMapping() {}
     /**
      * @return (Updatable) Detector recipe display name.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {

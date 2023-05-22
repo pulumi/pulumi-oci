@@ -103,12 +103,16 @@ public final class GetUserAssessmentUsersArgs extends com.pulumi.resources.Invok
     /**
      * A filter to return users whose last login time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
+     * **Example:** 2016-12-19T16:39:57.600Z
+     * 
      */
     @Import(name="timeLastLoginGreaterThanOrEqualTo")
     private @Nullable Output<String> timeLastLoginGreaterThanOrEqualTo;
 
     /**
      * @return A filter to return users whose last login time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     * **Example:** 2016-12-19T16:39:57.600Z
      * 
      */
     public Optional<Output<String>> timeLastLoginGreaterThanOrEqualTo() {
@@ -133,12 +137,16 @@ public final class GetUserAssessmentUsersArgs extends com.pulumi.resources.Invok
     /**
      * A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
+     * **Example:** 2016-12-19T16:39:57.600Z
+     * 
      */
     @Import(name="timePasswordLastChangedGreaterThanOrEqualTo")
     private @Nullable Output<String> timePasswordLastChangedGreaterThanOrEqualTo;
 
     /**
      * @return A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     * **Example:** 2016-12-19T16:39:57.600Z
      * 
      */
     public Optional<Output<String>> timePasswordLastChangedGreaterThanOrEqualTo() {
@@ -148,12 +156,16 @@ public final class GetUserAssessmentUsersArgs extends com.pulumi.resources.Invok
     /**
      * A filter to return users whose last password change in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
+     * **Example:** 2016-12-19T16:39:57.600Z
+     * 
      */
     @Import(name="timePasswordLastChangedLessThan")
     private @Nullable Output<String> timePasswordLastChangedLessThan;
 
     /**
      * @return A filter to return users whose last password change in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     * **Example:** 2016-12-19T16:39:57.600Z
      * 
      */
     public Optional<Output<String>> timePasswordLastChangedLessThan() {
@@ -468,6 +480,8 @@ public final class GetUserAssessmentUsersArgs extends com.pulumi.resources.Invok
         /**
          * @param timeLastLoginGreaterThanOrEqualTo A filter to return users whose last login time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * 
+         * **Example:** 2016-12-19T16:39:57.600Z
+         * 
          * @return builder
          * 
          */
@@ -478,6 +492,8 @@ public final class GetUserAssessmentUsersArgs extends com.pulumi.resources.Invok
 
         /**
          * @param timeLastLoginGreaterThanOrEqualTo A filter to return users whose last login time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * 
+         * **Example:** 2016-12-19T16:39:57.600Z
          * 
          * @return builder
          * 
@@ -510,6 +526,8 @@ public final class GetUserAssessmentUsersArgs extends com.pulumi.resources.Invok
         /**
          * @param timePasswordLastChangedGreaterThanOrEqualTo A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * 
+         * **Example:** 2016-12-19T16:39:57.600Z
+         * 
          * @return builder
          * 
          */
@@ -521,6 +539,8 @@ public final class GetUserAssessmentUsersArgs extends com.pulumi.resources.Invok
         /**
          * @param timePasswordLastChangedGreaterThanOrEqualTo A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * 
+         * **Example:** 2016-12-19T16:39:57.600Z
+         * 
          * @return builder
          * 
          */
@@ -530,6 +550,8 @@ public final class GetUserAssessmentUsersArgs extends com.pulumi.resources.Invok
 
         /**
          * @param timePasswordLastChangedLessThan A filter to return users whose last password change in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * 
+         * **Example:** 2016-12-19T16:39:57.600Z
          * 
          * @return builder
          * 
@@ -541,6 +563,8 @@ public final class GetUserAssessmentUsersArgs extends com.pulumi.resources.Invok
 
         /**
          * @param timePasswordLastChangedLessThan A filter to return users whose last password change in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * 
+         * **Example:** 2016-12-19T16:39:57.600Z
          * 
          * @return builder
          * 

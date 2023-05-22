@@ -64,12 +64,16 @@ public final class GetAuditEventArgs extends com.pulumi.resources.InvokeArgs {
     /**
      * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
      * 
+     * **Example:** query=(operationTime ge &#39;2021-06-04T01-00-26&#39;) and (eventName eq &#39;LOGON&#39;)
+     * 
      */
     @Import(name="scimQuery")
     private @Nullable Output<String> scimQuery;
 
     /**
      * @return The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
+     * 
+     * **Example:** query=(operationTime ge &#39;2021-06-04T01-00-26&#39;) and (eventName eq &#39;LOGON&#39;)
      * 
      */
     public Optional<Output<String>> scimQuery() {
@@ -169,6 +173,8 @@ public final class GetAuditEventArgs extends com.pulumi.resources.InvokeArgs {
         /**
          * @param scimQuery The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
          * 
+         * **Example:** query=(operationTime ge &#39;2021-06-04T01-00-26&#39;) and (eventName eq &#39;LOGON&#39;)
+         * 
          * @return builder
          * 
          */
@@ -179,6 +185,8 @@ public final class GetAuditEventArgs extends com.pulumi.resources.InvokeArgs {
 
         /**
          * @param scimQuery The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
+         * 
+         * **Example:** query=(operationTime ge &#39;2021-06-04T01-00-26&#39;) and (eventName eq &#39;LOGON&#39;)
          * 
          * @return builder
          * 

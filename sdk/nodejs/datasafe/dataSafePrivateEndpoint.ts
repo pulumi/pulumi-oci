@@ -122,6 +122,10 @@ export class DataSafePrivateEndpoint extends pulumi.CustomResource {
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
      * The OCID of the VCN.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly vcnId!: pulumi.Output<string>;
 
@@ -244,6 +248,10 @@ export interface DataSafePrivateEndpointState {
     timeCreated?: pulumi.Input<string>;
     /**
      * The OCID of the VCN.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vcnId?: pulumi.Input<string>;
 }
@@ -286,6 +294,10 @@ export interface DataSafePrivateEndpointArgs {
     subnetId: pulumi.Input<string>;
     /**
      * The OCID of the VCN.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vcnId: pulumi.Input<string>;
 }

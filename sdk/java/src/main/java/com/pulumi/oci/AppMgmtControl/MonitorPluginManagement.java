@@ -78,12 +78,18 @@ public class MonitorPluginManagement extends com.pulumi.resources.CustomResource
     /**
      * OCID of monitored instance.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="monitoredInstanceId", type=String.class, parameters={})
     private Output<String> monitoredInstanceId;
 
     /**
      * @return OCID of monitored instance.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> monitoredInstanceId() {

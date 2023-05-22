@@ -57,6 +57,9 @@ type Configuration struct {
 	// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) List of email IDs associated with the configuration.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EmailIds pulumi.StringArrayOutput `pulumi:"emailIds"`
 	// The time the configuration was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -102,6 +105,9 @@ type configurationState struct {
 	// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) List of email IDs associated with the configuration.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EmailIds []string `pulumi:"emailIds"`
 	// The time the configuration was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -113,6 +119,9 @@ type ConfigurationState struct {
 	// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) List of email IDs associated with the configuration.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EmailIds pulumi.StringArrayInput
 	// The time the configuration was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
@@ -128,6 +137,9 @@ type configurationArgs struct {
 	// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) List of email IDs associated with the configuration.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EmailIds []string `pulumi:"emailIds"`
 }
 
@@ -136,6 +148,9 @@ type ConfigurationArgs struct {
 	// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
 	CompartmentId pulumi.StringInput
 	// (Updatable) List of email IDs associated with the configuration.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EmailIds pulumi.StringArrayInput
 }
 
@@ -232,6 +247,9 @@ func (o ConfigurationOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) List of email IDs associated with the configuration.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ConfigurationOutput) EmailIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Configuration) pulumi.StringArrayOutput { return v.EmailIds }).(pulumi.StringArrayOutput)
 }

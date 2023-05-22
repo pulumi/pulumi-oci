@@ -129,6 +129,9 @@ type IntegrationInstance struct {
 	// Shape
 	Shape pulumi.StringOutput `pulumi:"shape"`
 	// (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringOutput `pulumi:"state"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	StateMessage pulumi.StringOutput `pulumi:"stateMessage"`
@@ -228,6 +231,9 @@ type integrationInstanceState struct {
 	// Shape
 	Shape *string `pulumi:"shape"`
 	// (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	StateMessage *string `pulumi:"stateMessage"`
@@ -277,6 +283,9 @@ type IntegrationInstanceState struct {
 	// Shape
 	Shape pulumi.StringPtrInput
 	// (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	StateMessage pulumi.StringPtrInput
@@ -324,6 +333,9 @@ type integrationInstanceArgs struct {
 	// Shape
 	Shape *string `pulumi:"shape"`
 	// (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
 }
 
@@ -362,6 +374,9 @@ type IntegrationInstanceArgs struct {
 	// Shape
 	Shape pulumi.StringPtrInput
 	// (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput
 }
 
@@ -552,6 +567,9 @@ func (o IntegrationInstanceOutput) Shape() pulumi.StringOutput {
 }
 
 // (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o IntegrationInstanceOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

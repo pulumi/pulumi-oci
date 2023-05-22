@@ -17,75 +17,255 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     /**
      * @return (Updatable) X509 Certificate Matching Attribute
      * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private String certMatchAttribute;
     /**
      * @return (Updatable) Fallback on CRL Validation if OCSP fails.
+     * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     private @Nullable Boolean crlCheckOnOcspFailureEnabled;
     /**
      * @return (Updatable) Set to true to enable CRL Validation
      * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     private @Nullable Boolean crlEnabled;
     /**
      * @return (Updatable) CRL Location URL
+     * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable String crlLocation;
     /**
      * @return (Updatable) Fetch the CRL contents every X minutes
      * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     private @Nullable Integer crlReloadDuration;
     /**
      * @return (Updatable) Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the timeout duration
+     * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     private @Nullable Boolean ocspAllowUnknownResponseStatus;
     /**
      * @return (Updatable) Describes if the OCSP response is signed
      * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     private @Nullable Boolean ocspEnableSignedResponse;
     /**
      * @return (Updatable) Set to true to enable OCSP Validation
+     * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     private @Nullable Boolean ocspEnabled;
     /**
      * @return (Updatable) This property specifies OCSP Responder URL.
      * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String ocspResponderUrl;
     /**
      * @return (Updatable) Revalidate OCSP status for user after X hours
+     * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 24
+     * * idcsMinValue: 0
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     private @Nullable Integer ocspRevalidateTime;
     /**
      * @return (Updatable) This property specifies the OCSP Server alias name
      * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String ocspServerName;
     /**
      * @return (Updatable) OCSP Trusted Certificate Chain
+     * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable List<String> ocspTrustCertChains;
     /**
      * @return (Updatable) Check for specific conditions of other certificate attributes
      * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private @Nullable String otherCertMatchAttribute;
     /**
      * @return (Updatable) Certificate alias list to create a chain for the incoming client certificate
      * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private List<String> signingCertificateChains;
     /**
      * @return (Updatable) This property specifies the userstore attribute value that must match the incoming certificate attribute.
+     * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private String userMatchAttribute;
@@ -94,12 +274,36 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     /**
      * @return (Updatable) X509 Certificate Matching Attribute
      * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public String certMatchAttribute() {
         return this.certMatchAttribute;
     }
     /**
      * @return (Updatable) Fallback on CRL Validation if OCSP fails.
+     * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Boolean> crlCheckOnOcspFailureEnabled() {
@@ -108,12 +312,36 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     /**
      * @return (Updatable) Set to true to enable CRL Validation
      * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     public Optional<Boolean> crlEnabled() {
         return Optional.ofNullable(this.crlEnabled);
     }
     /**
      * @return (Updatable) CRL Location URL
+     * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> crlLocation() {
@@ -122,12 +350,35 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     /**
      * @return (Updatable) Fetch the CRL contents every X minutes
      * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     public Optional<Integer> crlReloadDuration() {
         return Optional.ofNullable(this.crlReloadDuration);
     }
     /**
      * @return (Updatable) Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the timeout duration
+     * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Boolean> ocspAllowUnknownResponseStatus() {
@@ -136,12 +387,36 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     /**
      * @return (Updatable) Describes if the OCSP response is signed
      * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     public Optional<Boolean> ocspEnableSignedResponse() {
         return Optional.ofNullable(this.ocspEnableSignedResponse);
     }
     /**
      * @return (Updatable) Set to true to enable OCSP Validation
+     * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Boolean> ocspEnabled() {
@@ -150,12 +425,37 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     /**
      * @return (Updatable) This property specifies OCSP Responder URL.
      * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> ocspResponderUrl() {
         return Optional.ofNullable(this.ocspResponderUrl);
     }
     /**
      * @return (Updatable) Revalidate OCSP status for user after X hours
+     * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 24
+     * * idcsMinValue: 0
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Integer> ocspRevalidateTime() {
@@ -164,12 +464,36 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     /**
      * @return (Updatable) This property specifies the OCSP Server alias name
      * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> ocspServerName() {
         return Optional.ofNullable(this.ocspServerName);
     }
     /**
      * @return (Updatable) OCSP Trusted Certificate Chain
+     * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public List<String> ocspTrustCertChains() {
@@ -178,6 +502,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     /**
      * @return (Updatable) Check for specific conditions of other certificate attributes
      * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public Optional<String> otherCertMatchAttribute() {
         return Optional.ofNullable(this.otherCertMatchAttribute);
@@ -185,12 +521,36 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     /**
      * @return (Updatable) Certificate alias list to create a chain for the incoming client certificate
      * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public List<String> signingCertificateChains() {
         return this.signingCertificateChains;
     }
     /**
      * @return (Updatable) This property specifies the userstore attribute value that must match the incoming certificate attribute.
+     * 
+     * **Added In:** 2010242156
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public String userMatchAttribute() {

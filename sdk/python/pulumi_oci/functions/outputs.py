@@ -218,7 +218,11 @@ class ApplicationTraceConfig(dict):
                  is_enabled: Optional[bool] = None):
         """
         :param str domain_id: (Updatable) The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
-        :param bool is_enabled: (Updatable) Define if tracing is enabled for the resource.
+        :param bool is_enabled: (Updatable) Define if tracing is enabled for the resource. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if domain_id is not None:
             pulumi.set(__self__, "domain_id", domain_id)
@@ -237,7 +241,11 @@ class ApplicationTraceConfig(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[bool]:
         """
-        (Updatable) Define if tracing is enabled for the resource.
+        (Updatable) Define if tracing is enabled for the resource. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_enabled")
 
@@ -342,7 +350,11 @@ class FunctionTraceConfig(dict):
     def __init__(__self__, *,
                  is_enabled: Optional[bool] = None):
         """
-        :param bool is_enabled: (Updatable) Define if tracing is enabled for the resource.
+        :param bool is_enabled: (Updatable) Define if tracing is enabled for the resource. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
@@ -351,7 +363,11 @@ class FunctionTraceConfig(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[bool]:
         """
-        (Updatable) Define if tracing is enabled for the resource.
+        (Updatable) Define if tracing is enabled for the resource. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_enabled")
 
@@ -2824,11 +2840,11 @@ class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionResult(di
 @pulumi.output_type
 class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemResult(dict):
     def __init__(__self__, *,
-                 action: str,
                  compartment_id: str,
                  defined_tags: Mapping[str, Any],
                  display_name: str,
                  freeform_tags: Mapping[str, Any],
+                 fusion_environment_id: str,
                  id: str,
                  is_sku_based: bool,
                  service_instance_id: str,
@@ -2838,11 +2854,11 @@ class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemResul
                  time_created: str,
                  time_updated: str):
         """
-        :param str action: Action
         :param str compartment_id: Compartment Identifier
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str fusion_environment_id: unique FusionEnvironment identifier
         :param str id: Unique identifier that is immutable on creation
         :param bool is_sku_based: Whether this service is provisioned due to the customer being subscribed to a specific SKU
         :param str service_instance_id: The ID of the service instance created that can be used to identify this on the service control plane
@@ -2852,11 +2868,11 @@ class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemResul
         :param str time_created: The time the the ServiceInstance was created. An RFC3339 formatted datetime string
         :param str time_updated: The time the ServiceInstance was updated. An RFC3339 formatted datetime string
         """
-        pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "fusion_environment_id", fusion_environment_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_sku_based", is_sku_based)
         pulumi.set(__self__, "service_instance_id", service_instance_id)
@@ -2865,14 +2881,6 @@ class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemResul
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
-
-    @property
-    @pulumi.getter
-    def action(self) -> str:
-        """
-        Action
-        """
-        return pulumi.get(self, "action")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2905,6 +2913,14 @@ class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemResul
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="fusionEnvironmentId")
+    def fusion_environment_id(self) -> str:
+        """
+        unique FusionEnvironment identifier
+        """
+        return pulumi.get(self, "fusion_environment_id")
 
     @property
     @pulumi.getter

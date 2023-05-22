@@ -39,6 +39,10 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
         public readonly string Type;
         /// <summary>
         /// (Updatable) The OCID of the virtual service resource.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string? VirtualServiceId;
 

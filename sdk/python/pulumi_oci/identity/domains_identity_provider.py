@@ -71,57 +71,556 @@ class DomainsIdentityProviderArgs:
         """
         The set of arguments for constructing a DomainsIdentityProvider resource.
         :param pulumi.Input[bool] enabled: (Updatable) Set to true to indicate Partner enabled.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[str] partner_name: (Updatable) Unique name of the trusted Identity Provider.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: always
+               * type: string
+               * uniqueness: server
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] assertion_attribute: (Updatable) Assertion attribute name.
+               
+               **Deprecated Since: 20.1.3**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+               * idcsValuePersistedInOtherAttribute: true
         :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         :param pulumi.Input[str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         :param pulumi.Input[str] authn_request_binding: (Updatable) HTTP binding to use for authentication requests.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         :param pulumi.Input['DomainsIdentityProviderCorrelationPolicyArgs'] correlation_policy: (Updatable) Correlation policy
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[str] description: (Updatable) Description
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] encryption_certificate: (Updatable) Encryption certificate
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] external_id: (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] icon_url: (Updatable) Identity Provider Icon URL.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] idp_sso_url: (Updatable) Identity Provider SSO URL
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] include_signing_cert_in_signature: (Updatable) Set to true to include the signing certificate in the signature.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderJitUserProvAssignedGroupArgs']]] jit_user_prov_assigned_groups: (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [value]
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[bool] jit_user_prov_attribute_update_enabled: (Updatable) Set to true to indicate JIT User Creation is enabled
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input['DomainsIdentityProviderJitUserProvAttributesArgs'] jit_user_prov_attributes: (Updatable) Assertion To User Mapping
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsCompositeKey: [value]
+               * idcsSearchable: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[bool] jit_user_prov_create_user_enabled: (Updatable) Set to true to indicate JIT User Creation is enabled
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] jit_user_prov_enabled: (Updatable) Set to true to indicate JIT User Provisioning is enabled
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] jit_user_prov_group_assertion_attribute_enabled: (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] jit_user_prov_group_assignment_method: (Updatable) The default value is 'Overwrite', which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify 'Merge' if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] jit_user_prov_group_mapping_mode: (Updatable) Property to indicate the mode of group mapping
+               
+               **Added In:** 2205120021
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderJitUserProvGroupMappingArgs']]] jit_user_prov_group_mappings: (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
+               
+               **Added In:** 2205120021
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [idpGroup]
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[str] jit_user_prov_group_saml_attribute_name: (Updatable) Name of the assertion attribute containing the users groups
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] jit_user_prov_group_static_list_enabled: (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] jit_user_prov_ignore_error_on_absent_groups: (Updatable) Set to true to indicate ignoring absence of group while provisioning
+               
+               **Added In:** 2111112015
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsAddedSinceVersion: 30
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] logout_binding: (Updatable) HTTP binding to use for logout.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] logout_enabled: (Updatable) Set to true to enable logout.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] logout_request_url: (Updatable) Logout request URL
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] logout_response_url: (Updatable) Logout response URL
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] metadata: (Updatable) Metadata
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] name_id_format: (Updatable) Default authentication request name ID format.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: global
         :param pulumi.Input[str] partner_provider_id: (Updatable) Provider ID
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: server
         :param pulumi.Input[Sequence[pulumi.Input[str]]] requested_authentication_contexts: (Updatable) SAML SP authentication type.
+               
+               **Added In:** 2102181953
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] require_force_authn: (Updatable) This SP requires requests SAML IdP to enforce re-authentication.
+               
+               **Added In:** 2102181953
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] requires_encrypted_assertion: (Updatable) SAML SP must accept encrypted assertion only.
+               
+               **Added In:** 2102181953
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] resource_type_schema_version: (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[bool] saml_ho_krequired: (Updatable) SAML SP HoK Enabled.
+               
+               **Added In:** 2102181953
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] service_instance_identifier: (Updatable) The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
+               
+               **Added In:** 18.2.6
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: never
+               * type: string
+               * uniqueness: server
         :param pulumi.Input[bool] shown_on_login_page: (Updatable) Set to true to indicate whether to show IdP in login page or not.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] signature_hash_algorithm: (Updatable) Signature hash algorithm.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] signing_certificate: (Updatable) Signing certificate
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] succinct_id: (Updatable) Succinct ID
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: server
         :param pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderTagArgs']]] tags: (Updatable) A list of tags on this resource.
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [key, value]
+               * idcsSearchable: true
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: request
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[str] type: (Updatable) Identity Provider Type
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: always
+               * type: string
+               * uniqueness: none
         :param pulumi.Input['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs'] urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider: (Updatable) Social Identity Provider Extension Schema
         :param pulumi.Input['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs'] urnietfparamsscimschemasoracleidcsextensionx509identity_provider: (Updatable) X509 Identity Provider Extension Schema
         :param pulumi.Input[str] user_mapping_method: (Updatable) User mapping method.
+               
+               **Deprecated Since: 20.1.3**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+               * idcsValuePersistedInOtherAttribute: true
         :param pulumi.Input[str] user_mapping_store_attribute: (Updatable) This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.<br>You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the <b>Example of a Request Body</b> section of the Examples tab for the <a href='./op-admin-v1-identityproviders-post.html'>POST</a> and <a href='./op-admin-v1-identityproviders-id-put.html'>PUT</a> methods of the /IdentityProviders endpoint.
+               
+               **Deprecated Since: 20.1.3**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+               * idcsValuePersistedInOtherAttribute: true
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
@@ -229,6 +728,16 @@ class DomainsIdentityProviderArgs:
     def enabled(self) -> pulumi.Input[bool]:
         """
         (Updatable) Set to true to indicate Partner enabled.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "enabled")
 
@@ -253,6 +762,16 @@ class DomainsIdentityProviderArgs:
     def partner_name(self) -> pulumi.Input[str]:
         """
         (Updatable) Unique name of the trusted Identity Provider.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: always
+        * type: string
+        * uniqueness: server
         """
         return pulumi.get(self, "partner_name")
 
@@ -265,6 +784,16 @@ class DomainsIdentityProviderArgs:
     def schemas(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
         (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "schemas")
 
@@ -277,6 +806,19 @@ class DomainsIdentityProviderArgs:
     def assertion_attribute(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Assertion attribute name.
+
+        **Deprecated Since: 20.1.3**
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        * idcsValuePersistedInOtherAttribute: true
         """
         return pulumi.get(self, "assertion_attribute")
 
@@ -313,6 +855,16 @@ class DomainsIdentityProviderArgs:
     def authn_request_binding(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) HTTP binding to use for authentication requests.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "authn_request_binding")
 
@@ -337,6 +889,18 @@ class DomainsIdentityProviderArgs:
     def correlation_policy(self) -> Optional[pulumi.Input['DomainsIdentityProviderCorrelationPolicyArgs']]:
         """
         (Updatable) Correlation policy
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "correlation_policy")
 
@@ -349,6 +913,16 @@ class DomainsIdentityProviderArgs:
     def description(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Description
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "description")
 
@@ -361,6 +935,16 @@ class DomainsIdentityProviderArgs:
     def encryption_certificate(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Encryption certificate
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "encryption_certificate")
 
@@ -373,6 +957,15 @@ class DomainsIdentityProviderArgs:
     def external_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "external_id")
 
@@ -385,6 +978,15 @@ class DomainsIdentityProviderArgs:
     def icon_url(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Identity Provider Icon URL.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "icon_url")
 
@@ -397,6 +999,16 @@ class DomainsIdentityProviderArgs:
     def idp_sso_url(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Identity Provider SSO URL
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "idp_sso_url")
 
@@ -409,6 +1021,16 @@ class DomainsIdentityProviderArgs:
     def include_signing_cert_in_signature(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Set to true to include the signing certificate in the signature.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "include_signing_cert_in_signature")
 
@@ -421,6 +1043,18 @@ class DomainsIdentityProviderArgs:
     def jit_user_prov_assigned_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderJitUserProvAssignedGroupArgs']]]]:
         """
         (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [value]
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_assigned_groups")
 
@@ -433,6 +1067,18 @@ class DomainsIdentityProviderArgs:
     def jit_user_prov_attribute_update_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Set to true to indicate JIT User Creation is enabled
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_attribute_update_enabled")
 
@@ -445,6 +1091,18 @@ class DomainsIdentityProviderArgs:
     def jit_user_prov_attributes(self) -> Optional[pulumi.Input['DomainsIdentityProviderJitUserProvAttributesArgs']]:
         """
         (Updatable) Assertion To User Mapping
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsCompositeKey: [value]
+        * idcsSearchable: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_attributes")
 
@@ -457,6 +1115,18 @@ class DomainsIdentityProviderArgs:
     def jit_user_prov_create_user_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Set to true to indicate JIT User Creation is enabled
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_create_user_enabled")
 
@@ -469,6 +1139,18 @@ class DomainsIdentityProviderArgs:
     def jit_user_prov_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Set to true to indicate JIT User Provisioning is enabled
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_enabled")
 
@@ -481,6 +1163,18 @@ class DomainsIdentityProviderArgs:
     def jit_user_prov_group_assertion_attribute_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_group_assertion_attribute_enabled")
 
@@ -493,6 +1187,18 @@ class DomainsIdentityProviderArgs:
     def jit_user_prov_group_assignment_method(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The default value is 'Overwrite', which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify 'Merge' if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_group_assignment_method")
 
@@ -505,6 +1211,18 @@ class DomainsIdentityProviderArgs:
     def jit_user_prov_group_mapping_mode(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Property to indicate the mode of group mapping
+
+        **Added In:** 2205120021
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_group_mapping_mode")
 
@@ -517,6 +1235,17 @@ class DomainsIdentityProviderArgs:
     def jit_user_prov_group_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderJitUserProvGroupMappingArgs']]]]:
         """
         (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
+
+        **Added In:** 2205120021
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [idpGroup]
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_group_mappings")
 
@@ -529,6 +1258,18 @@ class DomainsIdentityProviderArgs:
     def jit_user_prov_group_saml_attribute_name(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Name of the assertion attribute containing the users groups
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_group_saml_attribute_name")
 
@@ -541,6 +1282,18 @@ class DomainsIdentityProviderArgs:
     def jit_user_prov_group_static_list_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_group_static_list_enabled")
 
@@ -553,6 +1306,19 @@ class DomainsIdentityProviderArgs:
     def jit_user_prov_ignore_error_on_absent_groups(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Set to true to indicate ignoring absence of group while provisioning
+
+        **Added In:** 2111112015
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsAddedSinceVersion: 30
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_ignore_error_on_absent_groups")
 
@@ -565,6 +1331,16 @@ class DomainsIdentityProviderArgs:
     def logout_binding(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) HTTP binding to use for logout.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "logout_binding")
 
@@ -577,6 +1353,16 @@ class DomainsIdentityProviderArgs:
     def logout_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Set to true to enable logout.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "logout_enabled")
 
@@ -589,6 +1375,16 @@ class DomainsIdentityProviderArgs:
     def logout_request_url(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Logout request URL
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "logout_request_url")
 
@@ -601,6 +1397,16 @@ class DomainsIdentityProviderArgs:
     def logout_response_url(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Logout response URL
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "logout_response_url")
 
@@ -613,6 +1419,16 @@ class DomainsIdentityProviderArgs:
     def metadata(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Metadata
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "metadata")
 
@@ -625,6 +1441,16 @@ class DomainsIdentityProviderArgs:
     def name_id_format(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Default authentication request name ID format.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "name_id_format")
 
@@ -637,6 +1463,16 @@ class DomainsIdentityProviderArgs:
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: global
         """
         return pulumi.get(self, "ocid")
 
@@ -649,6 +1485,16 @@ class DomainsIdentityProviderArgs:
     def partner_provider_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Provider ID
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: server
         """
         return pulumi.get(self, "partner_provider_id")
 
@@ -661,6 +1507,18 @@ class DomainsIdentityProviderArgs:
     def requested_authentication_contexts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) SAML SP authentication type.
+
+        **Added In:** 2102181953
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "requested_authentication_contexts")
 
@@ -673,6 +1531,18 @@ class DomainsIdentityProviderArgs:
     def require_force_authn(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) This SP requires requests SAML IdP to enforce re-authentication.
+
+        **Added In:** 2102181953
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "require_force_authn")
 
@@ -685,6 +1555,18 @@ class DomainsIdentityProviderArgs:
     def requires_encrypted_assertion(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) SAML SP must accept encrypted assertion only.
+
+        **Added In:** 2102181953
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "requires_encrypted_assertion")
 
@@ -709,6 +1591,18 @@ class DomainsIdentityProviderArgs:
     def saml_ho_krequired(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) SAML SP HoK Enabled.
+
+        **Added In:** 2102181953
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "saml_ho_krequired")
 
@@ -721,6 +1615,18 @@ class DomainsIdentityProviderArgs:
     def service_instance_identifier(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
+
+        **Added In:** 18.2.6
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: never
+        * type: string
+        * uniqueness: server
         """
         return pulumi.get(self, "service_instance_identifier")
 
@@ -733,6 +1639,16 @@ class DomainsIdentityProviderArgs:
     def shown_on_login_page(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Set to true to indicate whether to show IdP in login page or not.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "shown_on_login_page")
 
@@ -745,6 +1661,16 @@ class DomainsIdentityProviderArgs:
     def signature_hash_algorithm(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Signature hash algorithm.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "signature_hash_algorithm")
 
@@ -757,6 +1683,16 @@ class DomainsIdentityProviderArgs:
     def signing_certificate(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Signing certificate
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "signing_certificate")
 
@@ -769,6 +1705,16 @@ class DomainsIdentityProviderArgs:
     def succinct_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Succinct ID
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: server
         """
         return pulumi.get(self, "succinct_id")
 
@@ -781,6 +1727,16 @@ class DomainsIdentityProviderArgs:
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderTagArgs']]]]:
         """
         (Updatable) A list of tags on this resource.
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [key, value]
+        * idcsSearchable: true
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: request
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "tags")
 
@@ -793,6 +1749,18 @@ class DomainsIdentityProviderArgs:
     def type(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Identity Provider Type
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: always
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "type")
 
@@ -829,6 +1797,19 @@ class DomainsIdentityProviderArgs:
     def user_mapping_method(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) User mapping method.
+
+        **Deprecated Since: 20.1.3**
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        * idcsValuePersistedInOtherAttribute: true
         """
         return pulumi.get(self, "user_mapping_method")
 
@@ -841,6 +1822,23 @@ class DomainsIdentityProviderArgs:
     def user_mapping_store_attribute(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.<br>You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the <b>Example of a Request Body</b> section of the Examples tab for the <a href='./op-admin-v1-identityproviders-post.html'>POST</a> and <a href='./op-admin-v1-identityproviders-id-put.html'>PUT</a> methods of the /IdentityProviders endpoint.
+
+        **Deprecated Since: 20.1.3**
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        * idcsValuePersistedInOtherAttribute: true
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "user_mapping_store_attribute")
 
@@ -917,67 +1915,663 @@ class _DomainsIdentityProviderState:
         """
         Input properties used for looking up and filtering DomainsIdentityProvider resources.
         :param pulumi.Input[str] assertion_attribute: (Updatable) Assertion attribute name.
+               
+               **Deprecated Since: 20.1.3**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+               * idcsValuePersistedInOtherAttribute: true
         :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         :param pulumi.Input[str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         :param pulumi.Input[str] authn_request_binding: (Updatable) HTTP binding to use for authentication requests.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         :param pulumi.Input[str] compartment_ocid: (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input['DomainsIdentityProviderCorrelationPolicyArgs'] correlation_policy: (Updatable) Correlation policy
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[bool] delete_in_progress: (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] description: (Updatable) Description
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] domain_ocid: (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] enabled: (Updatable) Set to true to indicate Partner enabled.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] encryption_certificate: (Updatable) Encryption certificate
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] external_id: (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] icon_url: (Updatable) Identity Provider Icon URL.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderIdcsCreatedByArgs']]] idcs_created_bies: (Updatable) The User or App who created the Resource
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: complex
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderIdcsLastModifiedByArgs']]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: complex
         :param pulumi.Input[str] idcs_last_upgraded_in_release: (Updatable) The release number when the resource was upgraded.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[str]]] idcs_prevented_operations: (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] idp_sso_url: (Updatable) Identity Provider SSO URL
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] include_signing_cert_in_signature: (Updatable) Set to true to include the signing certificate in the signature.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderJitUserProvAssignedGroupArgs']]] jit_user_prov_assigned_groups: (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [value]
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[bool] jit_user_prov_attribute_update_enabled: (Updatable) Set to true to indicate JIT User Creation is enabled
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input['DomainsIdentityProviderJitUserProvAttributesArgs'] jit_user_prov_attributes: (Updatable) Assertion To User Mapping
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsCompositeKey: [value]
+               * idcsSearchable: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[bool] jit_user_prov_create_user_enabled: (Updatable) Set to true to indicate JIT User Creation is enabled
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] jit_user_prov_enabled: (Updatable) Set to true to indicate JIT User Provisioning is enabled
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] jit_user_prov_group_assertion_attribute_enabled: (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] jit_user_prov_group_assignment_method: (Updatable) The default value is 'Overwrite', which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify 'Merge' if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] jit_user_prov_group_mapping_mode: (Updatable) Property to indicate the mode of group mapping
+               
+               **Added In:** 2205120021
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderJitUserProvGroupMappingArgs']]] jit_user_prov_group_mappings: (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
+               
+               **Added In:** 2205120021
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [idpGroup]
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[str] jit_user_prov_group_saml_attribute_name: (Updatable) Name of the assertion attribute containing the users groups
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] jit_user_prov_group_static_list_enabled: (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] jit_user_prov_ignore_error_on_absent_groups: (Updatable) Set to true to indicate ignoring absence of group while provisioning
+               
+               **Added In:** 2111112015
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsAddedSinceVersion: 30
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] logout_binding: (Updatable) HTTP binding to use for logout.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] logout_enabled: (Updatable) Set to true to enable logout.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] logout_request_url: (Updatable) Logout request URL
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] logout_response_url: (Updatable) Logout response URL
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] metadata: (Updatable) Metadata
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderMetaArgs']]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+               * type: complex
         :param pulumi.Input[str] name_id_format: (Updatable) Default authentication request name ID format.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: global
         :param pulumi.Input[str] partner_name: (Updatable) Unique name of the trusted Identity Provider.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: always
+               * type: string
+               * uniqueness: server
         :param pulumi.Input[str] partner_provider_id: (Updatable) Provider ID
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: server
         :param pulumi.Input[Sequence[pulumi.Input[str]]] requested_authentication_contexts: (Updatable) SAML SP authentication type.
+               
+               **Added In:** 2102181953
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] require_force_authn: (Updatable) This SP requires requests SAML IdP to enforce re-authentication.
+               
+               **Added In:** 2102181953
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] requires_encrypted_assertion: (Updatable) SAML SP must accept encrypted assertion only.
+               
+               **Added In:** 2102181953
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] resource_type_schema_version: (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[bool] saml_ho_krequired: (Updatable) SAML SP HoK Enabled.
+               
+               **Added In:** 2102181953
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] service_instance_identifier: (Updatable) The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
+               
+               **Added In:** 18.2.6
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: never
+               * type: string
+               * uniqueness: server
         :param pulumi.Input[bool] shown_on_login_page: (Updatable) Set to true to indicate whether to show IdP in login page or not.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] signature_hash_algorithm: (Updatable) Signature hash algorithm.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] signing_certificate: (Updatable) Signing certificate
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] succinct_id: (Updatable) Succinct ID
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: server
         :param pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderTagArgs']]] tags: (Updatable) A list of tags on this resource.
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [key, value]
+               * idcsSearchable: true
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: request
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[str] tenancy_ocid: (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] tenant_provider_id: (Updatable) The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this IdP.
+               
+               **Added In:** 19.2.1
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] type: (Updatable) Identity Provider Type
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: always
+               * type: string
+               * uniqueness: none
         :param pulumi.Input['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs'] urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider: (Updatable) Social Identity Provider Extension Schema
         :param pulumi.Input['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs'] urnietfparamsscimschemasoracleidcsextensionx509identity_provider: (Updatable) X509 Identity Provider Extension Schema
         :param pulumi.Input[str] user_mapping_method: (Updatable) User mapping method.
+               
+               **Deprecated Since: 20.1.3**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+               * idcsValuePersistedInOtherAttribute: true
         :param pulumi.Input[str] user_mapping_store_attribute: (Updatable) This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.<br>You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the <b>Example of a Request Body</b> section of the Examples tab for the <a href='./op-admin-v1-identityproviders-post.html'>POST</a> and <a href='./op-admin-v1-identityproviders-id-put.html'>PUT</a> methods of the /IdentityProviders endpoint.
+               
+               **Deprecated Since: 20.1.3**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+               * idcsValuePersistedInOtherAttribute: true
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if assertion_attribute is not None:
             pulumi.set(__self__, "assertion_attribute", assertion_attribute)
@@ -1109,6 +2703,19 @@ class _DomainsIdentityProviderState:
     def assertion_attribute(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Assertion attribute name.
+
+        **Deprecated Since: 20.1.3**
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        * idcsValuePersistedInOtherAttribute: true
         """
         return pulumi.get(self, "assertion_attribute")
 
@@ -1145,6 +2752,16 @@ class _DomainsIdentityProviderState:
     def authn_request_binding(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) HTTP binding to use for authentication requests.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "authn_request_binding")
 
@@ -1169,6 +2786,16 @@ class _DomainsIdentityProviderState:
     def compartment_ocid(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "compartment_ocid")
 
@@ -1181,6 +2808,18 @@ class _DomainsIdentityProviderState:
     def correlation_policy(self) -> Optional[pulumi.Input['DomainsIdentityProviderCorrelationPolicyArgs']]:
         """
         (Updatable) Correlation policy
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "correlation_policy")
 
@@ -1193,6 +2832,16 @@ class _DomainsIdentityProviderState:
     def delete_in_progress(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "delete_in_progress")
 
@@ -1205,6 +2854,16 @@ class _DomainsIdentityProviderState:
     def description(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Description
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "description")
 
@@ -1217,6 +2876,16 @@ class _DomainsIdentityProviderState:
     def domain_ocid(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "domain_ocid")
 
@@ -1229,6 +2898,16 @@ class _DomainsIdentityProviderState:
     def enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Set to true to indicate Partner enabled.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "enabled")
 
@@ -1241,6 +2920,16 @@ class _DomainsIdentityProviderState:
     def encryption_certificate(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Encryption certificate
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "encryption_certificate")
 
@@ -1253,6 +2942,15 @@ class _DomainsIdentityProviderState:
     def external_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "external_id")
 
@@ -1265,6 +2963,15 @@ class _DomainsIdentityProviderState:
     def icon_url(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Identity Provider Icon URL.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "icon_url")
 
@@ -1277,6 +2984,14 @@ class _DomainsIdentityProviderState:
     def idcs_created_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderIdcsCreatedByArgs']]]]:
         """
         (Updatable) The User or App who created the Resource
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: complex
         """
         return pulumi.get(self, "idcs_created_bies")
 
@@ -1301,6 +3016,14 @@ class _DomainsIdentityProviderState:
     def idcs_last_modified_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderIdcsLastModifiedByArgs']]]]:
         """
         (Updatable) The User or App who modified the Resource
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: complex
         """
         return pulumi.get(self, "idcs_last_modified_bies")
 
@@ -1313,6 +3036,16 @@ class _DomainsIdentityProviderState:
     def idcs_last_upgraded_in_release(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The release number when the resource was upgraded.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
@@ -1325,6 +3058,15 @@ class _DomainsIdentityProviderState:
     def idcs_prevented_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "idcs_prevented_operations")
 
@@ -1337,6 +3079,16 @@ class _DomainsIdentityProviderState:
     def idp_sso_url(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Identity Provider SSO URL
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "idp_sso_url")
 
@@ -1349,6 +3101,16 @@ class _DomainsIdentityProviderState:
     def include_signing_cert_in_signature(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Set to true to include the signing certificate in the signature.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "include_signing_cert_in_signature")
 
@@ -1361,6 +3123,18 @@ class _DomainsIdentityProviderState:
     def jit_user_prov_assigned_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderJitUserProvAssignedGroupArgs']]]]:
         """
         (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [value]
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_assigned_groups")
 
@@ -1373,6 +3147,18 @@ class _DomainsIdentityProviderState:
     def jit_user_prov_attribute_update_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Set to true to indicate JIT User Creation is enabled
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_attribute_update_enabled")
 
@@ -1385,6 +3171,18 @@ class _DomainsIdentityProviderState:
     def jit_user_prov_attributes(self) -> Optional[pulumi.Input['DomainsIdentityProviderJitUserProvAttributesArgs']]:
         """
         (Updatable) Assertion To User Mapping
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsCompositeKey: [value]
+        * idcsSearchable: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_attributes")
 
@@ -1397,6 +3195,18 @@ class _DomainsIdentityProviderState:
     def jit_user_prov_create_user_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Set to true to indicate JIT User Creation is enabled
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_create_user_enabled")
 
@@ -1409,6 +3219,18 @@ class _DomainsIdentityProviderState:
     def jit_user_prov_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Set to true to indicate JIT User Provisioning is enabled
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_enabled")
 
@@ -1421,6 +3243,18 @@ class _DomainsIdentityProviderState:
     def jit_user_prov_group_assertion_attribute_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_group_assertion_attribute_enabled")
 
@@ -1433,6 +3267,18 @@ class _DomainsIdentityProviderState:
     def jit_user_prov_group_assignment_method(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The default value is 'Overwrite', which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify 'Merge' if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_group_assignment_method")
 
@@ -1445,6 +3291,18 @@ class _DomainsIdentityProviderState:
     def jit_user_prov_group_mapping_mode(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Property to indicate the mode of group mapping
+
+        **Added In:** 2205120021
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_group_mapping_mode")
 
@@ -1457,6 +3315,17 @@ class _DomainsIdentityProviderState:
     def jit_user_prov_group_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderJitUserProvGroupMappingArgs']]]]:
         """
         (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
+
+        **Added In:** 2205120021
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [idpGroup]
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_group_mappings")
 
@@ -1469,6 +3338,18 @@ class _DomainsIdentityProviderState:
     def jit_user_prov_group_saml_attribute_name(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Name of the assertion attribute containing the users groups
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_group_saml_attribute_name")
 
@@ -1481,6 +3362,18 @@ class _DomainsIdentityProviderState:
     def jit_user_prov_group_static_list_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_group_static_list_enabled")
 
@@ -1493,6 +3386,19 @@ class _DomainsIdentityProviderState:
     def jit_user_prov_ignore_error_on_absent_groups(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Set to true to indicate ignoring absence of group while provisioning
+
+        **Added In:** 2111112015
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsAddedSinceVersion: 30
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_ignore_error_on_absent_groups")
 
@@ -1505,6 +3411,16 @@ class _DomainsIdentityProviderState:
     def logout_binding(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) HTTP binding to use for logout.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "logout_binding")
 
@@ -1517,6 +3433,16 @@ class _DomainsIdentityProviderState:
     def logout_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Set to true to enable logout.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "logout_enabled")
 
@@ -1529,6 +3455,16 @@ class _DomainsIdentityProviderState:
     def logout_request_url(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Logout request URL
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "logout_request_url")
 
@@ -1541,6 +3477,16 @@ class _DomainsIdentityProviderState:
     def logout_response_url(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Logout response URL
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "logout_response_url")
 
@@ -1553,6 +3499,16 @@ class _DomainsIdentityProviderState:
     def metadata(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Metadata
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "metadata")
 
@@ -1565,6 +3521,16 @@ class _DomainsIdentityProviderState:
     def metas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderMetaArgs']]]]:
         """
         (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+        * type: complex
         """
         return pulumi.get(self, "metas")
 
@@ -1577,6 +3543,16 @@ class _DomainsIdentityProviderState:
     def name_id_format(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Default authentication request name ID format.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "name_id_format")
 
@@ -1589,6 +3565,16 @@ class _DomainsIdentityProviderState:
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: global
         """
         return pulumi.get(self, "ocid")
 
@@ -1601,6 +3587,16 @@ class _DomainsIdentityProviderState:
     def partner_name(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Unique name of the trusted Identity Provider.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: always
+        * type: string
+        * uniqueness: server
         """
         return pulumi.get(self, "partner_name")
 
@@ -1613,6 +3609,16 @@ class _DomainsIdentityProviderState:
     def partner_provider_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Provider ID
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: server
         """
         return pulumi.get(self, "partner_provider_id")
 
@@ -1625,6 +3631,18 @@ class _DomainsIdentityProviderState:
     def requested_authentication_contexts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) SAML SP authentication type.
+
+        **Added In:** 2102181953
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "requested_authentication_contexts")
 
@@ -1637,6 +3655,18 @@ class _DomainsIdentityProviderState:
     def require_force_authn(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) This SP requires requests SAML IdP to enforce re-authentication.
+
+        **Added In:** 2102181953
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "require_force_authn")
 
@@ -1649,6 +3679,18 @@ class _DomainsIdentityProviderState:
     def requires_encrypted_assertion(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) SAML SP must accept encrypted assertion only.
+
+        **Added In:** 2102181953
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "requires_encrypted_assertion")
 
@@ -1673,6 +3715,18 @@ class _DomainsIdentityProviderState:
     def saml_ho_krequired(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) SAML SP HoK Enabled.
+
+        **Added In:** 2102181953
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "saml_ho_krequired")
 
@@ -1685,6 +3739,16 @@ class _DomainsIdentityProviderState:
     def schemas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "schemas")
 
@@ -1697,6 +3761,18 @@ class _DomainsIdentityProviderState:
     def service_instance_identifier(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
+
+        **Added In:** 18.2.6
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: never
+        * type: string
+        * uniqueness: server
         """
         return pulumi.get(self, "service_instance_identifier")
 
@@ -1709,6 +3785,16 @@ class _DomainsIdentityProviderState:
     def shown_on_login_page(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Set to true to indicate whether to show IdP in login page or not.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "shown_on_login_page")
 
@@ -1721,6 +3807,16 @@ class _DomainsIdentityProviderState:
     def signature_hash_algorithm(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Signature hash algorithm.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "signature_hash_algorithm")
 
@@ -1733,6 +3829,16 @@ class _DomainsIdentityProviderState:
     def signing_certificate(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Signing certificate
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "signing_certificate")
 
@@ -1745,6 +3851,16 @@ class _DomainsIdentityProviderState:
     def succinct_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Succinct ID
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: server
         """
         return pulumi.get(self, "succinct_id")
 
@@ -1757,6 +3873,16 @@ class _DomainsIdentityProviderState:
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderTagArgs']]]]:
         """
         (Updatable) A list of tags on this resource.
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [key, value]
+        * idcsSearchable: true
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: request
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "tags")
 
@@ -1769,6 +3895,16 @@ class _DomainsIdentityProviderState:
     def tenancy_ocid(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "tenancy_ocid")
 
@@ -1781,6 +3917,18 @@ class _DomainsIdentityProviderState:
     def tenant_provider_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this IdP.
+
+        **Added In:** 19.2.1
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "tenant_provider_id")
 
@@ -1793,6 +3941,18 @@ class _DomainsIdentityProviderState:
     def type(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Identity Provider Type
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: always
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "type")
 
@@ -1829,6 +3989,19 @@ class _DomainsIdentityProviderState:
     def user_mapping_method(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) User mapping method.
+
+        **Deprecated Since: 20.1.3**
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        * idcsValuePersistedInOtherAttribute: true
         """
         return pulumi.get(self, "user_mapping_method")
 
@@ -1841,6 +4014,23 @@ class _DomainsIdentityProviderState:
     def user_mapping_store_attribute(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.<br>You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the <b>Example of a Request Body</b> section of the Examples tab for the <a href='./op-admin-v1-identityproviders-post.html'>POST</a> and <a href='./op-admin-v1-identityproviders-id-put.html'>PUT</a> methods of the /IdentityProviders endpoint.
+
+        **Deprecated Since: 20.1.3**
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        * idcsValuePersistedInOtherAttribute: true
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "user_mapping_store_attribute")
 
@@ -1923,57 +4113,556 @@ class DomainsIdentityProvider(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] assertion_attribute: (Updatable) Assertion attribute name.
+               
+               **Deprecated Since: 20.1.3**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+               * idcsValuePersistedInOtherAttribute: true
         :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         :param pulumi.Input[str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         :param pulumi.Input[str] authn_request_binding: (Updatable) HTTP binding to use for authentication requests.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         :param pulumi.Input[pulumi.InputType['DomainsIdentityProviderCorrelationPolicyArgs']] correlation_policy: (Updatable) Correlation policy
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[str] description: (Updatable) Description
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] enabled: (Updatable) Set to true to indicate Partner enabled.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] encryption_certificate: (Updatable) Encryption certificate
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] external_id: (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] icon_url: (Updatable) Identity Provider Icon URL.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[str] idp_sso_url: (Updatable) Identity Provider SSO URL
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] include_signing_cert_in_signature: (Updatable) Set to true to include the signing certificate in the signature.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsIdentityProviderJitUserProvAssignedGroupArgs']]]] jit_user_prov_assigned_groups: (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [value]
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[bool] jit_user_prov_attribute_update_enabled: (Updatable) Set to true to indicate JIT User Creation is enabled
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsIdentityProviderJitUserProvAttributesArgs']] jit_user_prov_attributes: (Updatable) Assertion To User Mapping
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsCompositeKey: [value]
+               * idcsSearchable: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[bool] jit_user_prov_create_user_enabled: (Updatable) Set to true to indicate JIT User Creation is enabled
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] jit_user_prov_enabled: (Updatable) Set to true to indicate JIT User Provisioning is enabled
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] jit_user_prov_group_assertion_attribute_enabled: (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] jit_user_prov_group_assignment_method: (Updatable) The default value is 'Overwrite', which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify 'Merge' if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] jit_user_prov_group_mapping_mode: (Updatable) Property to indicate the mode of group mapping
+               
+               **Added In:** 2205120021
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsIdentityProviderJitUserProvGroupMappingArgs']]]] jit_user_prov_group_mappings: (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
+               
+               **Added In:** 2205120021
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [idpGroup]
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[str] jit_user_prov_group_saml_attribute_name: (Updatable) Name of the assertion attribute containing the users groups
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] jit_user_prov_group_static_list_enabled: (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] jit_user_prov_ignore_error_on_absent_groups: (Updatable) Set to true to indicate ignoring absence of group while provisioning
+               
+               **Added In:** 2111112015
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsAddedSinceVersion: 30
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] logout_binding: (Updatable) HTTP binding to use for logout.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] logout_enabled: (Updatable) Set to true to enable logout.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] logout_request_url: (Updatable) Logout request URL
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] logout_response_url: (Updatable) Logout response URL
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] metadata: (Updatable) Metadata
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] name_id_format: (Updatable) Default authentication request name ID format.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: global
         :param pulumi.Input[str] partner_name: (Updatable) Unique name of the trusted Identity Provider.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: always
+               * type: string
+               * uniqueness: server
         :param pulumi.Input[str] partner_provider_id: (Updatable) Provider ID
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: server
         :param pulumi.Input[Sequence[pulumi.Input[str]]] requested_authentication_contexts: (Updatable) SAML SP authentication type.
+               
+               **Added In:** 2102181953
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] require_force_authn: (Updatable) This SP requires requests SAML IdP to enforce re-authentication.
+               
+               **Added In:** 2102181953
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] requires_encrypted_assertion: (Updatable) SAML SP must accept encrypted assertion only.
+               
+               **Added In:** 2102181953
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] resource_type_schema_version: (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[bool] saml_ho_krequired: (Updatable) SAML SP HoK Enabled.
+               
+               **Added In:** 2102181953
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] service_instance_identifier: (Updatable) The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
+               
+               **Added In:** 18.2.6
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: never
+               * type: string
+               * uniqueness: server
         :param pulumi.Input[bool] shown_on_login_page: (Updatable) Set to true to indicate whether to show IdP in login page or not.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] signature_hash_algorithm: (Updatable) Signature hash algorithm.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] signing_certificate: (Updatable) Signing certificate
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] succinct_id: (Updatable) Succinct ID
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: server
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsIdentityProviderTagArgs']]]] tags: (Updatable) A list of tags on this resource.
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [key, value]
+               * idcsSearchable: true
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: request
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[str] type: (Updatable) Identity Provider Type
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: always
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs']] urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider: (Updatable) Social Identity Provider Extension Schema
         :param pulumi.Input[pulumi.InputType['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs']] urnietfparamsscimschemasoracleidcsextensionx509identity_provider: (Updatable) X509 Identity Provider Extension Schema
         :param pulumi.Input[str] user_mapping_method: (Updatable) User mapping method.
+               
+               **Deprecated Since: 20.1.3**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+               * idcsValuePersistedInOtherAttribute: true
         :param pulumi.Input[str] user_mapping_store_attribute: (Updatable) This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.<br>You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the <b>Example of a Request Body</b> section of the Examples tab for the <a href='./op-admin-v1-identityproviders-post.html'>POST</a> and <a href='./op-admin-v1-identityproviders-id-put.html'>PUT</a> methods of the /IdentityProviders endpoint.
+               
+               **Deprecated Since: 20.1.3**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+               * idcsValuePersistedInOtherAttribute: true
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -2220,67 +4909,663 @@ class DomainsIdentityProvider(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] assertion_attribute: (Updatable) Assertion attribute name.
+               
+               **Deprecated Since: 20.1.3**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+               * idcsValuePersistedInOtherAttribute: true
         :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         :param pulumi.Input[str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         :param pulumi.Input[str] authn_request_binding: (Updatable) HTTP binding to use for authentication requests.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         :param pulumi.Input[str] compartment_ocid: (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsIdentityProviderCorrelationPolicyArgs']] correlation_policy: (Updatable) Correlation policy
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[bool] delete_in_progress: (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] description: (Updatable) Description
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] domain_ocid: (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] enabled: (Updatable) Set to true to indicate Partner enabled.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] encryption_certificate: (Updatable) Encryption certificate
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] external_id: (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] icon_url: (Updatable) Identity Provider Icon URL.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsIdentityProviderIdcsCreatedByArgs']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: complex
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsIdentityProviderIdcsLastModifiedByArgs']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: complex
         :param pulumi.Input[str] idcs_last_upgraded_in_release: (Updatable) The release number when the resource was upgraded.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[str]]] idcs_prevented_operations: (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] idp_sso_url: (Updatable) Identity Provider SSO URL
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] include_signing_cert_in_signature: (Updatable) Set to true to include the signing certificate in the signature.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsIdentityProviderJitUserProvAssignedGroupArgs']]]] jit_user_prov_assigned_groups: (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [value]
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[bool] jit_user_prov_attribute_update_enabled: (Updatable) Set to true to indicate JIT User Creation is enabled
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsIdentityProviderJitUserProvAttributesArgs']] jit_user_prov_attributes: (Updatable) Assertion To User Mapping
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsCompositeKey: [value]
+               * idcsSearchable: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[bool] jit_user_prov_create_user_enabled: (Updatable) Set to true to indicate JIT User Creation is enabled
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] jit_user_prov_enabled: (Updatable) Set to true to indicate JIT User Provisioning is enabled
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] jit_user_prov_group_assertion_attribute_enabled: (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] jit_user_prov_group_assignment_method: (Updatable) The default value is 'Overwrite', which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify 'Merge' if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] jit_user_prov_group_mapping_mode: (Updatable) Property to indicate the mode of group mapping
+               
+               **Added In:** 2205120021
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsIdentityProviderJitUserProvGroupMappingArgs']]]] jit_user_prov_group_mappings: (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
+               
+               **Added In:** 2205120021
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [idpGroup]
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[str] jit_user_prov_group_saml_attribute_name: (Updatable) Name of the assertion attribute containing the users groups
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] jit_user_prov_group_static_list_enabled: (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] jit_user_prov_ignore_error_on_absent_groups: (Updatable) Set to true to indicate ignoring absence of group while provisioning
+               
+               **Added In:** 2111112015
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsAddedSinceVersion: 30
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] logout_binding: (Updatable) HTTP binding to use for logout.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] logout_enabled: (Updatable) Set to true to enable logout.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] logout_request_url: (Updatable) Logout request URL
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] logout_response_url: (Updatable) Logout response URL
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] metadata: (Updatable) Metadata
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsIdentityProviderMetaArgs']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+               * type: complex
         :param pulumi.Input[str] name_id_format: (Updatable) Default authentication request name ID format.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: global
         :param pulumi.Input[str] partner_name: (Updatable) Unique name of the trusted Identity Provider.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: always
+               * type: string
+               * uniqueness: server
         :param pulumi.Input[str] partner_provider_id: (Updatable) Provider ID
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: server
         :param pulumi.Input[Sequence[pulumi.Input[str]]] requested_authentication_contexts: (Updatable) SAML SP authentication type.
+               
+               **Added In:** 2102181953
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] require_force_authn: (Updatable) This SP requires requests SAML IdP to enforce re-authentication.
+               
+               **Added In:** 2102181953
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] requires_encrypted_assertion: (Updatable) SAML SP must accept encrypted assertion only.
+               
+               **Added In:** 2102181953
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] resource_type_schema_version: (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[bool] saml_ho_krequired: (Updatable) SAML SP HoK Enabled.
+               
+               **Added In:** 2102181953
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] service_instance_identifier: (Updatable) The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
+               
+               **Added In:** 18.2.6
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: never
+               * type: string
+               * uniqueness: server
         :param pulumi.Input[bool] shown_on_login_page: (Updatable) Set to true to indicate whether to show IdP in login page or not.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] signature_hash_algorithm: (Updatable) Signature hash algorithm.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] signing_certificate: (Updatable) Signing certificate
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] succinct_id: (Updatable) Succinct ID
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: server
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsIdentityProviderTagArgs']]]] tags: (Updatable) A list of tags on this resource.
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [key, value]
+               * idcsSearchable: true
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: request
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[str] tenancy_ocid: (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] tenant_provider_id: (Updatable) The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this IdP.
+               
+               **Added In:** 19.2.1
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] type: (Updatable) Identity Provider Type
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: always
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs']] urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider: (Updatable) Social Identity Provider Extension Schema
         :param pulumi.Input[pulumi.InputType['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs']] urnietfparamsscimschemasoracleidcsextensionx509identity_provider: (Updatable) X509 Identity Provider Extension Schema
         :param pulumi.Input[str] user_mapping_method: (Updatable) User mapping method.
+               
+               **Deprecated Since: 20.1.3**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+               * idcsValuePersistedInOtherAttribute: true
         :param pulumi.Input[str] user_mapping_store_attribute: (Updatable) This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.<br>You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the <b>Example of a Request Body</b> section of the Examples tab for the <a href='./op-admin-v1-identityproviders-post.html'>POST</a> and <a href='./op-admin-v1-identityproviders-id-put.html'>PUT</a> methods of the /IdentityProviders endpoint.
+               
+               **Deprecated Since: 20.1.3**
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+               * idcsValuePersistedInOtherAttribute: true
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -2355,6 +5640,19 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def assertion_attribute(self) -> pulumi.Output[str]:
         """
         (Updatable) Assertion attribute name.
+
+        **Deprecated Since: 20.1.3**
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        * idcsValuePersistedInOtherAttribute: true
         """
         return pulumi.get(self, "assertion_attribute")
 
@@ -2379,6 +5677,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def authn_request_binding(self) -> pulumi.Output[str]:
         """
         (Updatable) HTTP binding to use for authentication requests.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "authn_request_binding")
 
@@ -2395,6 +5703,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def compartment_ocid(self) -> pulumi.Output[str]:
         """
         (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "compartment_ocid")
 
@@ -2403,6 +5721,18 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def correlation_policy(self) -> pulumi.Output['outputs.DomainsIdentityProviderCorrelationPolicy']:
         """
         (Updatable) Correlation policy
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "correlation_policy")
 
@@ -2411,6 +5741,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def delete_in_progress(self) -> pulumi.Output[bool]:
         """
         (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "delete_in_progress")
 
@@ -2419,6 +5759,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def description(self) -> pulumi.Output[str]:
         """
         (Updatable) Description
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "description")
 
@@ -2427,6 +5777,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def domain_ocid(self) -> pulumi.Output[str]:
         """
         (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "domain_ocid")
 
@@ -2435,6 +5795,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def enabled(self) -> pulumi.Output[bool]:
         """
         (Updatable) Set to true to indicate Partner enabled.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "enabled")
 
@@ -2443,6 +5813,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def encryption_certificate(self) -> pulumi.Output[str]:
         """
         (Updatable) Encryption certificate
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "encryption_certificate")
 
@@ -2451,6 +5831,15 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def external_id(self) -> pulumi.Output[str]:
         """
         (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "external_id")
 
@@ -2459,6 +5848,15 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def icon_url(self) -> pulumi.Output[str]:
         """
         (Updatable) Identity Provider Icon URL.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "icon_url")
 
@@ -2467,6 +5865,14 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def idcs_created_bies(self) -> pulumi.Output[Sequence['outputs.DomainsIdentityProviderIdcsCreatedBy']]:
         """
         (Updatable) The User or App who created the Resource
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: complex
         """
         return pulumi.get(self, "idcs_created_bies")
 
@@ -2483,6 +5889,14 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def idcs_last_modified_bies(self) -> pulumi.Output[Sequence['outputs.DomainsIdentityProviderIdcsLastModifiedBy']]:
         """
         (Updatable) The User or App who modified the Resource
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: complex
         """
         return pulumi.get(self, "idcs_last_modified_bies")
 
@@ -2491,6 +5905,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def idcs_last_upgraded_in_release(self) -> pulumi.Output[str]:
         """
         (Updatable) The release number when the resource was upgraded.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
@@ -2499,6 +5923,15 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def idcs_prevented_operations(self) -> pulumi.Output[Sequence[str]]:
         """
         (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "idcs_prevented_operations")
 
@@ -2507,6 +5940,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def idp_sso_url(self) -> pulumi.Output[str]:
         """
         (Updatable) Identity Provider SSO URL
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "idp_sso_url")
 
@@ -2515,6 +5958,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def include_signing_cert_in_signature(self) -> pulumi.Output[bool]:
         """
         (Updatable) Set to true to include the signing certificate in the signature.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "include_signing_cert_in_signature")
 
@@ -2523,6 +5976,18 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def jit_user_prov_assigned_groups(self) -> pulumi.Output[Sequence['outputs.DomainsIdentityProviderJitUserProvAssignedGroup']]:
         """
         (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [value]
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_assigned_groups")
 
@@ -2531,6 +5996,18 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def jit_user_prov_attribute_update_enabled(self) -> pulumi.Output[bool]:
         """
         (Updatable) Set to true to indicate JIT User Creation is enabled
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_attribute_update_enabled")
 
@@ -2539,6 +6016,18 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def jit_user_prov_attributes(self) -> pulumi.Output['outputs.DomainsIdentityProviderJitUserProvAttributes']:
         """
         (Updatable) Assertion To User Mapping
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsCompositeKey: [value]
+        * idcsSearchable: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_attributes")
 
@@ -2547,6 +6036,18 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def jit_user_prov_create_user_enabled(self) -> pulumi.Output[bool]:
         """
         (Updatable) Set to true to indicate JIT User Creation is enabled
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_create_user_enabled")
 
@@ -2555,6 +6056,18 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def jit_user_prov_enabled(self) -> pulumi.Output[bool]:
         """
         (Updatable) Set to true to indicate JIT User Provisioning is enabled
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_enabled")
 
@@ -2563,6 +6076,18 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def jit_user_prov_group_assertion_attribute_enabled(self) -> pulumi.Output[bool]:
         """
         (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_group_assertion_attribute_enabled")
 
@@ -2571,6 +6096,18 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def jit_user_prov_group_assignment_method(self) -> pulumi.Output[str]:
         """
         (Updatable) The default value is 'Overwrite', which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify 'Merge' if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_group_assignment_method")
 
@@ -2579,6 +6116,18 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def jit_user_prov_group_mapping_mode(self) -> pulumi.Output[str]:
         """
         (Updatable) Property to indicate the mode of group mapping
+
+        **Added In:** 2205120021
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_group_mapping_mode")
 
@@ -2587,6 +6136,17 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def jit_user_prov_group_mappings(self) -> pulumi.Output[Sequence['outputs.DomainsIdentityProviderJitUserProvGroupMapping']]:
         """
         (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
+
+        **Added In:** 2205120021
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [idpGroup]
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_group_mappings")
 
@@ -2595,6 +6155,18 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def jit_user_prov_group_saml_attribute_name(self) -> pulumi.Output[str]:
         """
         (Updatable) Name of the assertion attribute containing the users groups
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_group_saml_attribute_name")
 
@@ -2603,6 +6175,18 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def jit_user_prov_group_static_list_enabled(self) -> pulumi.Output[bool]:
         """
         (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_group_static_list_enabled")
 
@@ -2611,6 +6195,19 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def jit_user_prov_ignore_error_on_absent_groups(self) -> pulumi.Output[bool]:
         """
         (Updatable) Set to true to indicate ignoring absence of group while provisioning
+
+        **Added In:** 2111112015
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsAddedSinceVersion: 30
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "jit_user_prov_ignore_error_on_absent_groups")
 
@@ -2619,6 +6216,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def logout_binding(self) -> pulumi.Output[str]:
         """
         (Updatable) HTTP binding to use for logout.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "logout_binding")
 
@@ -2627,6 +6234,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def logout_enabled(self) -> pulumi.Output[bool]:
         """
         (Updatable) Set to true to enable logout.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "logout_enabled")
 
@@ -2635,6 +6252,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def logout_request_url(self) -> pulumi.Output[str]:
         """
         (Updatable) Logout request URL
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "logout_request_url")
 
@@ -2643,6 +6270,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def logout_response_url(self) -> pulumi.Output[str]:
         """
         (Updatable) Logout response URL
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "logout_response_url")
 
@@ -2651,6 +6288,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def metadata(self) -> pulumi.Output[str]:
         """
         (Updatable) Metadata
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "metadata")
 
@@ -2659,6 +6306,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def metas(self) -> pulumi.Output[Sequence['outputs.DomainsIdentityProviderMeta']]:
         """
         (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+        * type: complex
         """
         return pulumi.get(self, "metas")
 
@@ -2667,6 +6324,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def name_id_format(self) -> pulumi.Output[str]:
         """
         (Updatable) Default authentication request name ID format.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "name_id_format")
 
@@ -2675,6 +6342,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def ocid(self) -> pulumi.Output[str]:
         """
         (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: global
         """
         return pulumi.get(self, "ocid")
 
@@ -2683,6 +6360,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def partner_name(self) -> pulumi.Output[str]:
         """
         (Updatable) Unique name of the trusted Identity Provider.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: always
+        * type: string
+        * uniqueness: server
         """
         return pulumi.get(self, "partner_name")
 
@@ -2691,6 +6378,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def partner_provider_id(self) -> pulumi.Output[str]:
         """
         (Updatable) Provider ID
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: server
         """
         return pulumi.get(self, "partner_provider_id")
 
@@ -2699,6 +6396,18 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def requested_authentication_contexts(self) -> pulumi.Output[Sequence[str]]:
         """
         (Updatable) SAML SP authentication type.
+
+        **Added In:** 2102181953
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "requested_authentication_contexts")
 
@@ -2707,6 +6416,18 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def require_force_authn(self) -> pulumi.Output[bool]:
         """
         (Updatable) This SP requires requests SAML IdP to enforce re-authentication.
+
+        **Added In:** 2102181953
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "require_force_authn")
 
@@ -2715,6 +6436,18 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def requires_encrypted_assertion(self) -> pulumi.Output[bool]:
         """
         (Updatable) SAML SP must accept encrypted assertion only.
+
+        **Added In:** 2102181953
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "requires_encrypted_assertion")
 
@@ -2731,6 +6464,18 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def saml_ho_krequired(self) -> pulumi.Output[bool]:
         """
         (Updatable) SAML SP HoK Enabled.
+
+        **Added In:** 2102181953
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "saml_ho_krequired")
 
@@ -2739,6 +6484,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def schemas(self) -> pulumi.Output[Sequence[str]]:
         """
         (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "schemas")
 
@@ -2747,6 +6502,18 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def service_instance_identifier(self) -> pulumi.Output[str]:
         """
         (Updatable) The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
+
+        **Added In:** 18.2.6
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: never
+        * type: string
+        * uniqueness: server
         """
         return pulumi.get(self, "service_instance_identifier")
 
@@ -2755,6 +6522,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def shown_on_login_page(self) -> pulumi.Output[bool]:
         """
         (Updatable) Set to true to indicate whether to show IdP in login page or not.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "shown_on_login_page")
 
@@ -2763,6 +6540,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def signature_hash_algorithm(self) -> pulumi.Output[str]:
         """
         (Updatable) Signature hash algorithm.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "signature_hash_algorithm")
 
@@ -2771,6 +6558,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def signing_certificate(self) -> pulumi.Output[str]:
         """
         (Updatable) Signing certificate
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "signing_certificate")
 
@@ -2779,6 +6576,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def succinct_id(self) -> pulumi.Output[str]:
         """
         (Updatable) Succinct ID
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: server
         """
         return pulumi.get(self, "succinct_id")
 
@@ -2787,6 +6594,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def tags(self) -> pulumi.Output[Sequence['outputs.DomainsIdentityProviderTag']]:
         """
         (Updatable) A list of tags on this resource.
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [key, value]
+        * idcsSearchable: true
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: request
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "tags")
 
@@ -2795,6 +6612,16 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def tenancy_ocid(self) -> pulumi.Output[str]:
         """
         (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "tenancy_ocid")
 
@@ -2803,6 +6630,18 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def tenant_provider_id(self) -> pulumi.Output[str]:
         """
         (Updatable) The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this IdP.
+
+        **Added In:** 19.2.1
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "tenant_provider_id")
 
@@ -2811,6 +6650,18 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def type(self) -> pulumi.Output[str]:
         """
         (Updatable) Identity Provider Type
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: always
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "type")
 
@@ -2835,6 +6686,19 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def user_mapping_method(self) -> pulumi.Output[str]:
         """
         (Updatable) User mapping method.
+
+        **Deprecated Since: 20.1.3**
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        * idcsValuePersistedInOtherAttribute: true
         """
         return pulumi.get(self, "user_mapping_method")
 
@@ -2843,6 +6707,23 @@ class DomainsIdentityProvider(pulumi.CustomResource):
     def user_mapping_store_attribute(self) -> pulumi.Output[str]:
         """
         (Updatable) This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.<br>You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the <b>Example of a Request Body</b> section of the Examples tab for the <a href='./op-admin-v1-identityproviders-post.html'>POST</a> and <a href='./op-admin-v1-identityproviders-id-put.html'>PUT</a> methods of the /IdentityProviders endpoint.
+
+        **Deprecated Since: 20.1.3**
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        * idcsValuePersistedInOtherAttribute: true
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "user_mapping_store_attribute")
 

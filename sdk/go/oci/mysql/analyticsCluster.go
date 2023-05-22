@@ -67,6 +67,9 @@ type AnalyticsCluster struct {
 	// (Updatable) A change to the shape of the nodes in the Analytics Cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the Analytics Cluster is re-provisioned.
 	ShapeName pulumi.StringOutput `pulumi:"shapeName"`
 	// (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the Analytics Cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -123,6 +126,9 @@ type analyticsClusterState struct {
 	// (Updatable) A change to the shape of the nodes in the Analytics Cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the Analytics Cluster is re-provisioned.
 	ShapeName *string `pulumi:"shapeName"`
 	// (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
 	// The date and time the Analytics Cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -142,6 +148,9 @@ type AnalyticsClusterState struct {
 	// (Updatable) A change to the shape of the nodes in the Analytics Cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the Analytics Cluster is re-provisioned.
 	ShapeName pulumi.StringPtrInput
 	// (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput
 	// The date and time the Analytics Cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated pulumi.StringPtrInput
@@ -161,6 +170,9 @@ type analyticsClusterArgs struct {
 	// (Updatable) A change to the shape of the nodes in the Analytics Cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the Analytics Cluster is re-provisioned.
 	ShapeName string `pulumi:"shapeName"`
 	// (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
 }
 
@@ -173,6 +185,9 @@ type AnalyticsClusterArgs struct {
 	// (Updatable) A change to the shape of the nodes in the Analytics Cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the Analytics Cluster is re-provisioned.
 	ShapeName pulumi.StringInput
 	// (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput
 }
 
@@ -289,6 +304,9 @@ func (o AnalyticsClusterOutput) ShapeName() pulumi.StringOutput {
 }
 
 // (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AnalyticsClusterOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *AnalyticsCluster) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

@@ -30,6 +30,9 @@ class CloudDatabaseManagementArgs:
         The set of arguments for constructing a CloudDatabaseManagement resource.
         :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[bool] enable_management: (Updatable) Use this flag to enable/disable database management
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] management_type: (Updatable) Specifies database management type
                enum:
         :param pulumi.Input[str] private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
@@ -80,6 +83,9 @@ class CloudDatabaseManagementArgs:
     def enable_management(self) -> pulumi.Input[bool]:
         """
         (Updatable) Use this flag to enable/disable database management
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "enable_management")
 
@@ -190,6 +196,9 @@ class _CloudDatabaseManagementState:
         Input properties used for looking up and filtering CloudDatabaseManagement resources.
         :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[bool] enable_management: (Updatable) Use this flag to enable/disable database management
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] management_type: (Updatable) Specifies database management type
                enum:
         :param pulumi.Input[int] port: The port used to connect to the database.
@@ -246,6 +255,9 @@ class _CloudDatabaseManagementState:
     def enable_management(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Use this flag to enable/disable database management
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "enable_management")
 
@@ -393,6 +405,9 @@ class CloudDatabaseManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[bool] enable_management: (Updatable) Use this flag to enable/disable database management
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] management_type: (Updatable) Specifies database management type
                enum:
         :param pulumi.Input[int] port: The port used to connect to the database.
@@ -527,6 +542,9 @@ class CloudDatabaseManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[bool] enable_management: (Updatable) Use this flag to enable/disable database management
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] management_type: (Updatable) Specifies database management type
                enum:
         :param pulumi.Input[int] port: The port used to connect to the database.
@@ -570,6 +588,9 @@ class CloudDatabaseManagement(pulumi.CustomResource):
     def enable_management(self) -> pulumi.Output[bool]:
         """
         (Updatable) Use this flag to enable/disable database management
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "enable_management")
 

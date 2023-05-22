@@ -21,12 +21,20 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The data of the SSL certificate.
      * 
+     * **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status. If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you are unsure if your certificate requires an intermediate certificate chain, see your certificate provider&#39;s documentation.
+     * 
+     * The example below shows an intermediate certificate appended to a leaf certificate.
+     * 
      */
     @Import(name="certificateData", required=true)
     private Output<String> certificateData;
 
     /**
      * @return The data of the SSL certificate.
+     * 
+     * **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status. If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you are unsure if your certificate requires an intermediate certificate chain, see your certificate provider&#39;s documentation.
+     * 
+     * The example below shows an intermediate certificate appended to a leaf certificate.
      * 
      */
     public Output<String> certificateData() {
@@ -111,12 +119,18 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The private key of the SSL certificate.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="privateKeyData", required=true)
     private Output<String> privateKeyData;
 
     /**
      * @return The private key of the SSL certificate.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> privateKeyData() {
@@ -156,6 +170,10 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param certificateData The data of the SSL certificate.
          * 
+         * **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status. If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you are unsure if your certificate requires an intermediate certificate chain, see your certificate provider&#39;s documentation.
+         * 
+         * The example below shows an intermediate certificate appended to a leaf certificate.
+         * 
          * @return builder
          * 
          */
@@ -166,6 +184,10 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateData The data of the SSL certificate.
+         * 
+         * **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status. If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you are unsure if your certificate requires an intermediate certificate chain, see your certificate provider&#39;s documentation.
+         * 
+         * The example below shows an intermediate certificate appended to a leaf certificate.
          * 
          * @return builder
          * 
@@ -282,6 +304,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param privateKeyData The private key of the SSL certificate.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -292,6 +317,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param privateKeyData The private key of the SSL certificate.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

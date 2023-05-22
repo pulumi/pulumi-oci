@@ -15,10 +15,33 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     /**
      * @return (Updatable) The date and time that the current resource was locked
      * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     private @Nullable String lockDate;
     /**
      * @return (Updatable) Indicates that the rev is locked
+     * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     private @Nullable Boolean on;
@@ -27,12 +50,35 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     /**
      * @return (Updatable) The date and time that the current resource was locked
      * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     public Optional<String> lockDate() {
         return Optional.ofNullable(this.lockDate);
     }
     /**
      * @return (Updatable) Indicates that the rev is locked
+     * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Boolean> on() {

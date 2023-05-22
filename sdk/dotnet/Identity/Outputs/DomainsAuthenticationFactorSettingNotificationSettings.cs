@@ -15,6 +15,17 @@ namespace Pulumi.Oci.Identity.Outputs
     {
         /// <summary>
         /// (Updatable) If true, indicates that the Mobile App Pull Notification channel is enabled for authentication
+        /// 
+        /// **Added In:** 17.4.2
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         public readonly bool PullEnabled;
 

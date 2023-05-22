@@ -60,6 +60,10 @@ export class PurgeCache extends pulumi.CustomResource {
     public readonly resources!: pulumi.Output<string[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly waasPolicyId!: pulumi.Output<string>;
 
@@ -101,6 +105,10 @@ export interface PurgeCacheState {
     resources?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     waasPolicyId?: pulumi.Input<string>;
 }
@@ -115,6 +123,10 @@ export interface PurgeCacheArgs {
     resources?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     waasPolicyId: pulumi.Input<string>;
 }

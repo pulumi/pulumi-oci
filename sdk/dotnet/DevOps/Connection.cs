@@ -161,6 +161,10 @@ namespace Pulumi.Oci.DevOps
 
         /// <summary>
         /// (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("username")]
         public Output<string> Username { get; private set; } = null!;
@@ -299,6 +303,10 @@ namespace Pulumi.Oci.DevOps
 
         /// <summary>
         /// (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("username")]
         public Input<string>? Username { get; set; }
@@ -443,6 +451,10 @@ namespace Pulumi.Oci.DevOps
 
         /// <summary>
         /// (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("username")]
         public Input<string>? Username { get; set; }

@@ -608,12 +608,18 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
     /**
      * The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="snapshotRetentionPeriodInDays", type=Integer.class, parameters={})
     private Output<Integer> snapshotRetentionPeriodInDays;
 
     /**
      * @return The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Integer> snapshotRetentionPeriodInDays() {

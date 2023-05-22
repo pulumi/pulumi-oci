@@ -92,6 +92,10 @@ export class Repository extends pulumi.CustomResource {
     public readonly isImmutable!: pulumi.Output<boolean>;
     /**
      * (Updatable) The repository's supported artifact type.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly repositoryType!: pulumi.Output<string>;
     /**
@@ -181,6 +185,10 @@ export interface RepositoryState {
     isImmutable?: pulumi.Input<boolean>;
     /**
      * (Updatable) The repository's supported artifact type.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     repositoryType?: pulumi.Input<string>;
     /**
@@ -223,6 +231,10 @@ export interface RepositoryArgs {
     isImmutable: pulumi.Input<boolean>;
     /**
      * (Updatable) The repository's supported artifact type.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     repositoryType: pulumi.Input<string>;
 }

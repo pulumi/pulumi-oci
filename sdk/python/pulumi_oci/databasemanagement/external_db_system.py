@@ -26,6 +26,10 @@ class ExternalDbSystemArgs:
         :param pulumi.Input[str] db_system_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
         :param pulumi.Input['ExternalDbSystemDatabaseManagementConfigArgs'] database_management_config: The details required to enable Database Management for an external DB system.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "db_system_discovery_id", db_system_discovery_id)
@@ -75,6 +79,10 @@ class ExternalDbSystemArgs:
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "display_name")
 
@@ -104,6 +112,10 @@ class _ExternalDbSystemState:
         :param pulumi.Input[str] db_system_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
         :param pulumi.Input[str] discovery_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] home_directory: The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
         :param pulumi.Input[bool] is_cluster: Indicates whether the DB system is a cluster DB system or not.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
@@ -187,6 +199,10 @@ class _ExternalDbSystemState:
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "display_name")
 
@@ -311,6 +327,10 @@ class ExternalDbSystem(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['ExternalDbSystemDatabaseManagementConfigArgs']] database_management_config: The details required to enable Database Management for an external DB system.
         :param pulumi.Input[str] db_system_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -422,6 +442,10 @@ class ExternalDbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] db_system_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
         :param pulumi.Input[str] discovery_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] home_directory: The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
         :param pulumi.Input[bool] is_cluster: Indicates whether the DB system is a cluster DB system or not.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
@@ -483,6 +507,10 @@ class ExternalDbSystem(pulumi.CustomResource):
     def display_name(self) -> pulumi.Output[str]:
         """
         (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "display_name")
 

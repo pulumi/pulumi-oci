@@ -79,6 +79,9 @@ type CatalogPrivateEndpoint struct {
 	// The current state of the private endpoint resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The OCID of subnet to which the reverse connection is to be created
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -141,6 +144,9 @@ type catalogPrivateEndpointState struct {
 	// The current state of the private endpoint resource.
 	State *string `pulumi:"state"`
 	// The OCID of subnet to which the reverse connection is to be created
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId *string `pulumi:"subnetId"`
 	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -166,6 +172,9 @@ type CatalogPrivateEndpointState struct {
 	// The current state of the private endpoint resource.
 	State pulumi.StringPtrInput
 	// The OCID of subnet to which the reverse connection is to be created
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringPtrInput
 	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
@@ -189,6 +198,9 @@ type catalogPrivateEndpointArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of subnet to which the reverse connection is to be created
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -205,6 +217,9 @@ type CatalogPrivateEndpointArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// The OCID of subnet to which the reverse connection is to be created
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringInput
 }
 
@@ -336,6 +351,9 @@ func (o CatalogPrivateEndpointOutput) State() pulumi.StringOutput {
 }
 
 // The OCID of subnet to which the reverse connection is to be created
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CatalogPrivateEndpointOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CatalogPrivateEndpoint) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
 }

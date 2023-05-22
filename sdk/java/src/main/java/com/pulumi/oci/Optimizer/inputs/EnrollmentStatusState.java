@@ -63,12 +63,18 @@ public final class EnrollmentStatusState extends com.pulumi.resources.ResourceAr
     /**
      * (Updatable) The Cloud Advisor enrollment status.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return (Updatable) The Cloud Advisor enrollment status.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> status() {
@@ -216,6 +222,9 @@ public final class EnrollmentStatusState extends com.pulumi.resources.ResourceAr
         /**
          * @param status (Updatable) The Cloud Advisor enrollment status.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -226,6 +235,9 @@ public final class EnrollmentStatusState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param status (Updatable) The Cloud Advisor enrollment status.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

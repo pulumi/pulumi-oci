@@ -87,6 +87,9 @@ type PrivateApplication struct {
 	// The package's type.
 	PackageType pulumi.StringOutput `pulumi:"packageType"`
 	// (Updatable) A short description of the private application.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShortDescription pulumi.StringOutput `pulumi:"shortDescription"`
 	// The lifecycle state of the private application.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -156,6 +159,9 @@ type privateApplicationState struct {
 	// The package's type.
 	PackageType *string `pulumi:"packageType"`
 	// (Updatable) A short description of the private application.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShortDescription *string `pulumi:"shortDescription"`
 	// The lifecycle state of the private application.
 	State *string `pulumi:"state"`
@@ -185,6 +191,9 @@ type PrivateApplicationState struct {
 	// The package's type.
 	PackageType pulumi.StringPtrInput
 	// (Updatable) A short description of the private application.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShortDescription pulumi.StringPtrInput
 	// The lifecycle state of the private application.
 	State pulumi.StringPtrInput
@@ -214,6 +223,9 @@ type privateApplicationArgs struct {
 	// A base object for creating a private application package.
 	PackageDetails PrivateApplicationPackageDetails `pulumi:"packageDetails"`
 	// (Updatable) A short description of the private application.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShortDescription string `pulumi:"shortDescription"`
 }
 
@@ -234,6 +246,9 @@ type PrivateApplicationArgs struct {
 	// A base object for creating a private application package.
 	PackageDetails PrivateApplicationPackageDetailsInput
 	// (Updatable) A short description of the private application.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShortDescription pulumi.StringInput
 }
 
@@ -370,6 +385,9 @@ func (o PrivateApplicationOutput) PackageType() pulumi.StringOutput {
 }
 
 // (Updatable) A short description of the private application.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PrivateApplicationOutput) ShortDescription() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrivateApplication) pulumi.StringOutput { return v.ShortDescription }).(pulumi.StringOutput)
 }

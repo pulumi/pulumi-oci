@@ -255,12 +255,18 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Number of days to retain this backup.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="retentionInDays", type=Integer.class, parameters={})
     private Output<Integer> retentionInDays;
 
     /**
      * @return (Updatable) Number of days to retain this backup.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Integer> retentionInDays() {

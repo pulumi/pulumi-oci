@@ -162,6 +162,10 @@ export class VmClusterAddVirtualNetwork extends pulumi.CustomResource {
     public /*out*/ readonly timeZone!: pulumi.Output<string>;
     /**
      * The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly vmClusterId!: pulumi.Output<string>;
     /**
@@ -353,6 +357,10 @@ export interface VmClusterAddVirtualNetworkState {
     timeZone?: pulumi.Input<string>;
     /**
      * The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vmClusterId?: pulumi.Input<string>;
     /**
@@ -371,6 +379,10 @@ export interface VmClusterAddVirtualNetworkArgs {
     dbServers: pulumi.Input<pulumi.Input<inputs.Database.VmClusterAddVirtualNetworkDbServer>[]>;
     /**
      * The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vmClusterId: pulumi.Input<string>;
 }

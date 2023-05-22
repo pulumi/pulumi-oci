@@ -20,6 +20,10 @@ class BackupArgs:
         The set of arguments for constructing a Backup resource.
         :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "database_id", database_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -41,6 +45,10 @@ class BackupArgs:
     def display_name(self) -> pulumi.Input[str]:
         """
         The user-friendly name for the backup. The name does not have to be unique.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "display_name")
 
@@ -76,6 +84,10 @@ class _BackupState:
         :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param pulumi.Input[float] database_size_in_gbs: The size of the database in gigabytes at the time the backup was taken.
         :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
@@ -185,6 +197,10 @@ class _BackupState:
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
         The user-friendly name for the backup. The name does not have to be unique.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "display_name")
 
@@ -349,6 +365,10 @@ class Backup(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -465,6 +485,10 @@ class Backup(pulumi.CustomResource):
         :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param pulumi.Input[float] database_size_in_gbs: The size of the database in gigabytes at the time the backup was taken.
         :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
@@ -543,6 +567,10 @@ class Backup(pulumi.CustomResource):
     def display_name(self) -> pulumi.Output[str]:
         """
         The user-friendly name for the backup. The name does not have to be unique.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "display_name")
 

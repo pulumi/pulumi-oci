@@ -116,6 +116,10 @@ namespace Pulumi.Oci.EmWarehouse
 
         /// <summary>
         /// operations Insights Warehouse Identifier
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("operationsInsightsWarehouseId")]
         public Output<string> OperationsInsightsWarehouseId { get; private set; } = null!;
@@ -234,6 +238,10 @@ namespace Pulumi.Oci.EmWarehouse
 
         /// <summary>
         /// operations Insights Warehouse Identifier
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("operationsInsightsWarehouseId", required: true)]
         public Input<string> OperationsInsightsWarehouseId { get; set; } = null!;
@@ -320,6 +328,10 @@ namespace Pulumi.Oci.EmWarehouse
 
         /// <summary>
         /// operations Insights Warehouse Identifier
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("operationsInsightsWarehouseId")]
         public Input<string>? OperationsInsightsWarehouseId { get; set; }

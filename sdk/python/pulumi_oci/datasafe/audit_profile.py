@@ -28,6 +28,10 @@ class AuditProfileArgs:
         The set of arguments for constructing a AuditProfile resource.
         :param pulumi.Input[str] audit_profile_id: The OCID of the audit.
         :param pulumi.Input[int] change_retention_trigger: (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the audit.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the audit profile.
@@ -68,6 +72,10 @@ class AuditProfileArgs:
     def change_retention_trigger(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "change_retention_trigger")
 
@@ -176,6 +184,10 @@ class _AuditProfileState:
         :param pulumi.Input[str] audit_profile_id: The OCID of the audit.
         :param pulumi.Input[Sequence[pulumi.Input['AuditProfileAuditTrailArgs']]] audit_trails: Indicates the list of available audit trails on the target.
         :param pulumi.Input[int] change_retention_trigger: (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the audit.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the audit profile.
@@ -272,6 +284,10 @@ class _AuditProfileState:
     def change_retention_trigger(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "change_retention_trigger")
 
@@ -491,6 +507,10 @@ class AuditProfile(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] audit_profile_id: The OCID of the audit.
         :param pulumi.Input[int] change_retention_trigger: (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the audit.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the audit profile.
@@ -610,6 +630,10 @@ class AuditProfile(pulumi.CustomResource):
         :param pulumi.Input[str] audit_profile_id: The OCID of the audit.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AuditProfileAuditTrailArgs']]]] audit_trails: Indicates the list of available audit trails on the target.
         :param pulumi.Input[int] change_retention_trigger: (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the audit.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the audit profile.
@@ -680,6 +704,10 @@ class AuditProfile(pulumi.CustomResource):
     def change_retention_trigger(self) -> pulumi.Output[Optional[int]]:
         """
         (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "change_retention_trigger")
 

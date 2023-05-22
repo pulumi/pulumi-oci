@@ -65,6 +65,10 @@ export class ArtifactByPath extends pulumi.CustomResource {
     public /*out*/ readonly compartmentId!: pulumi.Output<string>;
     /**
      * Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly content!: pulumi.Output<string | undefined>;
     /**
@@ -181,6 +185,10 @@ export interface ArtifactByPathState {
     compartmentId?: pulumi.Input<string>;
     /**
      * Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     content?: pulumi.Input<string>;
     /**
@@ -235,6 +243,10 @@ export interface ArtifactByPathArgs {
     artifactPath: pulumi.Input<string>;
     /**
      * Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     content?: pulumi.Input<string>;
     /**

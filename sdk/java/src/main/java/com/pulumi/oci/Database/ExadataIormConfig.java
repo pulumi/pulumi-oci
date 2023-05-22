@@ -115,12 +115,18 @@ public class ExadataIormConfig extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Value for the IORM objective Default is &#34;Auto&#34;
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="objective", type=String.class, parameters={})
     private Output<String> objective;
 
     /**
      * @return (Updatable) Value for the IORM objective Default is &#34;Auto&#34;
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> objective() {

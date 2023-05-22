@@ -65,12 +65,18 @@ public final class JobArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The OCID of the job
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="jobId", required=true)
     private Output<String> jobId;
 
     /**
      * @return The OCID of the job
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> jobId() {
@@ -170,6 +176,9 @@ public final class JobArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param jobId The OCID of the job
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -180,6 +189,9 @@ public final class JobArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param jobId The OCID of the job
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -77,6 +77,9 @@ type InstanceConsoleConnection struct {
 	// The OCID of the instance to create the console connection to.
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
 	// The SSH public key used to authenticate the console connection.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PublicKey pulumi.StringOutput `pulumi:"publicKey"`
 	// The SSH public key's fingerprint for the console connection service host.
 	ServiceHostKeyFingerprint pulumi.StringOutput `pulumi:"serviceHostKeyFingerprint"`
@@ -134,6 +137,9 @@ type instanceConsoleConnectionState struct {
 	// The OCID of the instance to create the console connection to.
 	InstanceId *string `pulumi:"instanceId"`
 	// The SSH public key used to authenticate the console connection.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PublicKey *string `pulumi:"publicKey"`
 	// The SSH public key's fingerprint for the console connection service host.
 	ServiceHostKeyFingerprint *string `pulumi:"serviceHostKeyFingerprint"`
@@ -157,6 +163,9 @@ type InstanceConsoleConnectionState struct {
 	// The OCID of the instance to create the console connection to.
 	InstanceId pulumi.StringPtrInput
 	// The SSH public key used to authenticate the console connection.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PublicKey pulumi.StringPtrInput
 	// The SSH public key's fingerprint for the console connection service host.
 	ServiceHostKeyFingerprint pulumi.StringPtrInput
@@ -178,6 +187,9 @@ type instanceConsoleConnectionArgs struct {
 	// The OCID of the instance to create the console connection to.
 	InstanceId string `pulumi:"instanceId"`
 	// The SSH public key used to authenticate the console connection.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PublicKey string `pulumi:"publicKey"`
 }
 
@@ -190,6 +202,9 @@ type InstanceConsoleConnectionArgs struct {
 	// The OCID of the instance to create the console connection to.
 	InstanceId pulumi.StringInput
 	// The SSH public key used to authenticate the console connection.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PublicKey pulumi.StringInput
 }
 
@@ -311,6 +326,9 @@ func (o InstanceConsoleConnectionOutput) InstanceId() pulumi.StringOutput {
 }
 
 // The SSH public key used to authenticate the console connection.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o InstanceConsoleConnectionOutput) PublicKey() pulumi.StringOutput {
 	return o.ApplyT(func(v *InstanceConsoleConnection) pulumi.StringOutput { return v.PublicKey }).(pulumi.StringOutput)
 }

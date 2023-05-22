@@ -84,6 +84,10 @@ export class AgentPlugin extends pulumi.CustomResource {
     public /*out*/ readonly name!: pulumi.Output<string>;
     /**
      * Unique plugin identifier path parameter.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly pluginName!: pulumi.Output<string>;
     /**
@@ -188,6 +192,10 @@ export interface AgentPluginState {
     name?: pulumi.Input<string>;
     /**
      * Unique plugin identifier path parameter.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     pluginName?: pulumi.Input<string>;
     /**
@@ -226,6 +234,10 @@ export interface AgentPluginArgs {
     desiredState?: pulumi.Input<string>;
     /**
      * Unique plugin identifier path parameter.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     pluginName: pulumi.Input<string>;
 }

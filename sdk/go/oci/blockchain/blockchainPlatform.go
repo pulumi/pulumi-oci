@@ -97,6 +97,9 @@ type BlockchainPlatform struct {
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LoadBalancerShape pulumi.StringOutput `pulumi:"loadBalancerShape"`
 	// Role of platform - founder or participant
 	PlatformRole pulumi.StringOutput `pulumi:"platformRole"`
@@ -204,6 +207,9 @@ type blockchainPlatformState struct {
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LoadBalancerShape *string `pulumi:"loadBalancerShape"`
 	// Role of platform - founder or participant
 	PlatformRole *string `pulumi:"platformRole"`
@@ -261,6 +267,9 @@ type BlockchainPlatformState struct {
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LoadBalancerShape pulumi.StringPtrInput
 	// Role of platform - founder or participant
 	PlatformRole pulumi.StringPtrInput
@@ -314,6 +323,9 @@ type blockchainPlatformArgs struct {
 	// Bring your own license
 	IsByol *bool `pulumi:"isByol"`
 	// (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LoadBalancerShape *string `pulumi:"loadBalancerShape"`
 	// Role of platform - founder or participant
 	PlatformRole string `pulumi:"platformRole"`
@@ -350,6 +362,9 @@ type BlockchainPlatformArgs struct {
 	// Bring your own license
 	IsByol pulumi.BoolPtrInput
 	// (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LoadBalancerShape pulumi.StringPtrInput
 	// Role of platform - founder or participant
 	PlatformRole pulumi.StringInput
@@ -523,6 +538,9 @@ func (o BlockchainPlatformOutput) LifecycleDetails() pulumi.StringOutput {
 }
 
 // (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BlockchainPlatformOutput) LoadBalancerShape() pulumi.StringOutput {
 	return o.ApplyT(func(v *BlockchainPlatform) pulumi.StringOutput { return v.LoadBalancerShape }).(pulumi.StringOutput)
 }

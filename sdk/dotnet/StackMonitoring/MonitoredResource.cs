@@ -267,7 +267,11 @@ namespace Pulumi.Oci.StackMonitoring
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// Monitored Resource Type.
+        /// Monitored Resource Type. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -445,7 +449,11 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<string>? ResourceTimeZone { get; set; }
 
         /// <summary>
-        /// Monitored Resource Type.
+        /// Monitored Resource Type. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -621,7 +629,11 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// Monitored Resource Type.
+        /// Monitored Resource Type. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

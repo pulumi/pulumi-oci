@@ -122,6 +122,10 @@ namespace Pulumi.Oci.RecoveryMod
 
         /// <summary>
         /// The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("vcnId")]
         public Output<string> VcnId { get; private set; } = null!;
@@ -216,6 +220,10 @@ namespace Pulumi.Oci.RecoveryMod
 
         /// <summary>
         /// The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("vcnId", required: true)]
         public Input<string> VcnId { get; set; } = null!;
@@ -314,6 +322,10 @@ namespace Pulumi.Oci.RecoveryMod
 
         /// <summary>
         /// The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("vcnId")]
         public Input<string>? VcnId { get; set; }

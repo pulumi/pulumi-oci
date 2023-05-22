@@ -110,6 +110,9 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The name or OCID of the target zone.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      * @deprecated
      * The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
      * 
@@ -120,6 +123,9 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return The name or OCID of the target zone.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      * @deprecated
      * The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
@@ -283,6 +289,9 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param zoneNameOrId The name or OCID of the target zone.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          * @deprecated
@@ -297,6 +306,9 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneNameOrId The name or OCID of the target zone.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

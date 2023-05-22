@@ -38,6 +38,10 @@ namespace Pulumi.Oci.VnMonitoring.Inputs
 
         /// <summary>
         /// The type of the `PathAnalysis` query.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

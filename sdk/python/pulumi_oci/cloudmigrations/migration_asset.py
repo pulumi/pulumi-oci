@@ -29,6 +29,10 @@ class MigrationAssetArgs:
         :param pulumi.Input[str] migration_id: OCID of the associated migration.
         :param pulumi.Input[str] replication_compartment_id: Replication compartment identifier
         :param pulumi.Input[str] snap_shot_bucket_name: Name of snapshot bucket
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] replication_schedule_id: (Updatable) Replication schedule identifier
         """
@@ -97,6 +101,10 @@ class MigrationAssetArgs:
     def snap_shot_bucket_name(self) -> pulumi.Input[str]:
         """
         Name of snapshot bucket
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "snap_shot_bucket_name")
 
@@ -175,6 +183,10 @@ class _MigrationAssetState:
         :param pulumi.Input[str] replication_compartment_id: Replication compartment identifier
         :param pulumi.Input[str] replication_schedule_id: (Updatable) Replication schedule identifier
         :param pulumi.Input[str] snap_shot_bucket_name: Name of snapshot bucket
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] snapshots: Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] source_asset_id: OCID that is referenced to an asset for an inventory.
         :param pulumi.Input[str] state: The current state of the migration asset.
@@ -370,6 +382,10 @@ class _MigrationAssetState:
     def snap_shot_bucket_name(self) -> Optional[pulumi.Input[str]]:
         """
         Name of snapshot bucket
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "snap_shot_bucket_name")
 
@@ -515,6 +531,10 @@ class MigrationAsset(pulumi.CustomResource):
         :param pulumi.Input[str] replication_compartment_id: Replication compartment identifier
         :param pulumi.Input[str] replication_schedule_id: (Updatable) Replication schedule identifier
         :param pulumi.Input[str] snap_shot_bucket_name: Name of snapshot bucket
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -663,6 +683,10 @@ class MigrationAsset(pulumi.CustomResource):
         :param pulumi.Input[str] replication_compartment_id: Replication compartment identifier
         :param pulumi.Input[str] replication_schedule_id: (Updatable) Replication schedule identifier
         :param pulumi.Input[str] snap_shot_bucket_name: Name of snapshot bucket
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] snapshots: Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] source_asset_id: OCID that is referenced to an asset for an inventory.
         :param pulumi.Input[str] state: The current state of the migration asset.
@@ -795,6 +819,10 @@ class MigrationAsset(pulumi.CustomResource):
     def snap_shot_bucket_name(self) -> pulumi.Output[str]:
         """
         Name of snapshot bucket
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "snap_shot_bucket_name")
 

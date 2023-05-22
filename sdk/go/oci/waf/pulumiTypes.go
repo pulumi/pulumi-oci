@@ -14,8 +14,34 @@ type AppFirewallPolicyAction struct {
 	// (Updatable) Type of returned HTTP response body.
 	Body *AppFirewallPolicyActionBody `pulumi:"body"`
 	// (Updatable) Response code.
+	//
+	// The following response codes are valid values for this property:
+	// * 2xx
+	//
+	// 200 OK 201 Created 202 Accepted 206 Partial Content
+	// * 3xx
+	//
+	// 300 Multiple Choices 301 Moved Permanently 302 Found 303 See Other 307 Temporary Redirect
+	// * 4xx
+	//
+	// 400 Bad Request 401 Unauthorized 403 Forbidden 404 Not Found 405 Method Not Allowed 408 Request Timeout 409 Conflict 411 Length Required 412 Precondition Failed 413 Payload Too Large 414 URI Too Long 415 Unsupported Media Type 416 Range Not Satisfiable 422 Unprocessable Entity 494 Request Header Too Large 495 Cert Error 496 No Cert 497 HTTP to HTTPS
+	// * 5xx
+	//
+	// 500 Internal Server Error 501 Not Implemented 502 Bad Gateway 503 Service Unavailable 504 Gateway Timeout 507 Insufficient Storage
+	//
+	// Example: `200`
 	Code *int `pulumi:"code"`
 	// (Updatable) Adds headers defined in this array for HTTP response.
+	//
+	// Hop-by-hop headers are not allowed to be set:
+	// * Connection
+	// * Keep-Alive
+	// * Proxy-Authenticate
+	// * Proxy-Authorization
+	// * TE
+	// * Trailer
+	// * Transfer-Encoding
+	// * Upgrade
 	Headers []AppFirewallPolicyActionHeader `pulumi:"headers"`
 	// (Updatable) Rule name. Must be unique within the module.
 	Name string `pulumi:"name"`
@@ -38,8 +64,34 @@ type AppFirewallPolicyActionArgs struct {
 	// (Updatable) Type of returned HTTP response body.
 	Body AppFirewallPolicyActionBodyPtrInput `pulumi:"body"`
 	// (Updatable) Response code.
+	//
+	// The following response codes are valid values for this property:
+	// * 2xx
+	//
+	// 200 OK 201 Created 202 Accepted 206 Partial Content
+	// * 3xx
+	//
+	// 300 Multiple Choices 301 Moved Permanently 302 Found 303 See Other 307 Temporary Redirect
+	// * 4xx
+	//
+	// 400 Bad Request 401 Unauthorized 403 Forbidden 404 Not Found 405 Method Not Allowed 408 Request Timeout 409 Conflict 411 Length Required 412 Precondition Failed 413 Payload Too Large 414 URI Too Long 415 Unsupported Media Type 416 Range Not Satisfiable 422 Unprocessable Entity 494 Request Header Too Large 495 Cert Error 496 No Cert 497 HTTP to HTTPS
+	// * 5xx
+	//
+	// 500 Internal Server Error 501 Not Implemented 502 Bad Gateway 503 Service Unavailable 504 Gateway Timeout 507 Insufficient Storage
+	//
+	// Example: `200`
 	Code pulumi.IntPtrInput `pulumi:"code"`
 	// (Updatable) Adds headers defined in this array for HTTP response.
+	//
+	// Hop-by-hop headers are not allowed to be set:
+	// * Connection
+	// * Keep-Alive
+	// * Proxy-Authenticate
+	// * Proxy-Authorization
+	// * TE
+	// * Trailer
+	// * Transfer-Encoding
+	// * Upgrade
 	Headers AppFirewallPolicyActionHeaderArrayInput `pulumi:"headers"`
 	// (Updatable) Rule name. Must be unique within the module.
 	Name pulumi.StringInput `pulumi:"name"`
@@ -104,11 +156,37 @@ func (o AppFirewallPolicyActionOutput) Body() AppFirewallPolicyActionBodyPtrOutp
 }
 
 // (Updatable) Response code.
+//
+// The following response codes are valid values for this property:
+// * 2xx
+//
+// 200 OK 201 Created 202 Accepted 206 Partial Content
+// * 3xx
+//
+// 300 Multiple Choices 301 Moved Permanently 302 Found 303 See Other 307 Temporary Redirect
+// * 4xx
+//
+// 400 Bad Request 401 Unauthorized 403 Forbidden 404 Not Found 405 Method Not Allowed 408 Request Timeout 409 Conflict 411 Length Required 412 Precondition Failed 413 Payload Too Large 414 URI Too Long 415 Unsupported Media Type 416 Range Not Satisfiable 422 Unprocessable Entity 494 Request Header Too Large 495 Cert Error 496 No Cert 497 HTTP to HTTPS
+// * 5xx
+//
+// 500 Internal Server Error 501 Not Implemented 502 Bad Gateway 503 Service Unavailable 504 Gateway Timeout 507 Insufficient Storage
+//
+// Example: `200`
 func (o AppFirewallPolicyActionOutput) Code() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AppFirewallPolicyAction) *int { return v.Code }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Adds headers defined in this array for HTTP response.
+//
+// Hop-by-hop headers are not allowed to be set:
+// * Connection
+// * Keep-Alive
+// * Proxy-Authenticate
+// * Proxy-Authorization
+// * TE
+// * Trailer
+// * Transfer-Encoding
+// * Upgrade
 func (o AppFirewallPolicyActionOutput) Headers() AppFirewallPolicyActionHeaderArrayOutput {
 	return o.ApplyT(func(v AppFirewallPolicyAction) []AppFirewallPolicyActionHeader { return v.Headers }).(AppFirewallPolicyActionHeaderArrayOutput)
 }
@@ -709,8 +787,17 @@ func (o AppFirewallPolicyRequestAccessControlRuleArrayOutput) Index(i pulumi.Int
 
 type AppFirewallPolicyRequestProtection struct {
 	// (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+	//
+	// If this field is `null` HTTP message body will inspected up to `bodyInspectionSizeLimitInBytes` and the rest will not be inspected by Protection Capabilities.
+	//
+	// Allowed action types:
+	// * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
 	BodyInspectionSizeLimitExceededActionName *string `pulumi:"bodyInspectionSizeLimitExceededActionName"`
 	// (Updatable) Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+	//
+	// Body inspection maximum size allowed is defined with per-tenancy limit: 8192 bytes.
+	//
+	// For steps to request a limit increase, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
 	BodyInspectionSizeLimitInBytes *int `pulumi:"bodyInspectionSizeLimitInBytes"`
 	// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
 	Rules []AppFirewallPolicyRequestProtectionRule `pulumi:"rules"`
@@ -729,8 +816,17 @@ type AppFirewallPolicyRequestProtectionInput interface {
 
 type AppFirewallPolicyRequestProtectionArgs struct {
 	// (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+	//
+	// If this field is `null` HTTP message body will inspected up to `bodyInspectionSizeLimitInBytes` and the rest will not be inspected by Protection Capabilities.
+	//
+	// Allowed action types:
+	// * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
 	BodyInspectionSizeLimitExceededActionName pulumi.StringPtrInput `pulumi:"bodyInspectionSizeLimitExceededActionName"`
 	// (Updatable) Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+	//
+	// Body inspection maximum size allowed is defined with per-tenancy limit: 8192 bytes.
+	//
+	// For steps to request a limit increase, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
 	BodyInspectionSizeLimitInBytes pulumi.IntPtrInput `pulumi:"bodyInspectionSizeLimitInBytes"`
 	// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
 	Rules AppFirewallPolicyRequestProtectionRuleArrayInput `pulumi:"rules"`
@@ -814,11 +910,20 @@ func (o AppFirewallPolicyRequestProtectionOutput) ToAppFirewallPolicyRequestProt
 }
 
 // (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+//
+// If this field is `null` HTTP message body will inspected up to `bodyInspectionSizeLimitInBytes` and the rest will not be inspected by Protection Capabilities.
+//
+// Allowed action types:
+// * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
 func (o AppFirewallPolicyRequestProtectionOutput) BodyInspectionSizeLimitExceededActionName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AppFirewallPolicyRequestProtection) *string { return v.BodyInspectionSizeLimitExceededActionName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+//
+// Body inspection maximum size allowed is defined with per-tenancy limit: 8192 bytes.
+//
+// For steps to request a limit increase, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
 func (o AppFirewallPolicyRequestProtectionOutput) BodyInspectionSizeLimitInBytes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AppFirewallPolicyRequestProtection) *int { return v.BodyInspectionSizeLimitInBytes }).(pulumi.IntPtrOutput)
 }
@@ -853,6 +958,11 @@ func (o AppFirewallPolicyRequestProtectionPtrOutput) Elem() AppFirewallPolicyReq
 }
 
 // (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+//
+// If this field is `null` HTTP message body will inspected up to `bodyInspectionSizeLimitInBytes` and the rest will not be inspected by Protection Capabilities.
+//
+// Allowed action types:
+// * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
 func (o AppFirewallPolicyRequestProtectionPtrOutput) BodyInspectionSizeLimitExceededActionName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AppFirewallPolicyRequestProtection) *string {
 		if v == nil {
@@ -863,6 +973,10 @@ func (o AppFirewallPolicyRequestProtectionPtrOutput) BodyInspectionSizeLimitExce
 }
 
 // (Updatable) Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+//
+// Body inspection maximum size allowed is defined with per-tenancy limit: 8192 bytes.
+//
+// For steps to request a limit increase, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
 func (o AppFirewallPolicyRequestProtectionPtrOutput) BodyInspectionSizeLimitInBytes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AppFirewallPolicyRequestProtection) *int {
 		if v == nil {
@@ -3353,6 +3467,9 @@ type NetworkAddressListVcnAddress struct {
 	// (Updatable) A private IP address or CIDR IP address range.
 	Addresses *string `pulumi:"addresses"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId *string `pulumi:"vcnId"`
 }
 
@@ -3371,6 +3488,9 @@ type NetworkAddressListVcnAddressArgs struct {
 	// (Updatable) A private IP address or CIDR IP address range.
 	Addresses pulumi.StringPtrInput `pulumi:"addresses"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId pulumi.StringPtrInput `pulumi:"vcnId"`
 }
 
@@ -3431,6 +3551,9 @@ func (o NetworkAddressListVcnAddressOutput) Addresses() pulumi.StringPtrOutput {
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o NetworkAddressListVcnAddressOutput) VcnId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkAddressListVcnAddress) *string { return v.VcnId }).(pulumi.StringPtrOutput)
 }

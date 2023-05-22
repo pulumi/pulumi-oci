@@ -37,12 +37,16 @@ public final class HttpProbeArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * A dictionary of HTTP request headers.
      * 
+     * *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
+     * 
      */
     @Import(name="headers")
     private @Nullable Output<Map<String,Object>> headers;
 
     /**
      * @return A dictionary of HTTP request headers.
+     * 
+     * *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
      * 
      */
     public Optional<Output<Map<String,Object>>> headers() {
@@ -142,12 +146,18 @@ public final class HttpProbeArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * A list of names of vantage points from which to execute the probe.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="vantagePointNames")
     private @Nullable Output<List<String>> vantagePointNames;
 
     /**
      * @return A list of names of vantage points from which to execute the probe.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<List<String>>> vantagePointNames() {
@@ -210,6 +220,8 @@ public final class HttpProbeArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param headers A dictionary of HTTP request headers.
          * 
+         * *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
+         * 
          * @return builder
          * 
          */
@@ -220,6 +232,8 @@ public final class HttpProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param headers A dictionary of HTTP request headers.
+         * 
+         * *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
          * 
          * @return builder
          * 
@@ -367,6 +381,9 @@ public final class HttpProbeArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param vantagePointNames A list of names of vantage points from which to execute the probe.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -378,6 +395,9 @@ public final class HttpProbeArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param vantagePointNames A list of names of vantage points from which to execute the probe.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -387,6 +407,9 @@ public final class HttpProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vantagePointNames A list of names of vantage points from which to execute the probe.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

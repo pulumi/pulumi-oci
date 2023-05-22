@@ -35,12 +35,16 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * If enabled, the server stores all temporary tables on disk rather than in memory.
      * 
+     * bigTables corresponds to the MySQL server variable [big_tables](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_big_tables).
+     * 
      */
     @Import(name="bigTables")
     private @Nullable Output<Boolean> bigTables;
 
     /**
      * @return If enabled, the server stores all temporary tables on disk rather than in memory.
+     * 
+     * bigTables corresponds to the MySQL server variable [big_tables](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_big_tables).
      * 
      */
     public Optional<Output<Boolean>> bigTables() {
@@ -125,12 +129,20 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
      * 
+     * connectTimeout corresponds to the MySQL system variable [connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_connect_timeout)
+     * 
+     * Increasing the connect_timeout value might help if clients frequently encounter errors of the form &#34;Lost connection to MySQL server at &#39;XXX&#39;, system error: errno&#34;.
+     * 
      */
     @Import(name="connectTimeout")
     private @Nullable Output<Integer> connectTimeout;
 
     /**
      * @return The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
+     * 
+     * connectTimeout corresponds to the MySQL system variable [connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_connect_timeout)
+     * 
+     * Increasing the connect_timeout value might help if clients frequently encounter errors of the form &#34;Lost connection to MySQL server at &#39;XXX&#39;, system error: errno&#34;.
      * 
      */
     public Optional<Output<Integer>> connectTimeout() {
@@ -140,12 +152,16 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * Set the chunking size for updates to the global memory usage counter Global_connection_memory.
      * 
+     * connectionMemoryChunkSize corresponds to the MySQL system variable [connection_memory_chunk_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_chunk_size).
+     * 
      */
     @Import(name="connectionMemoryChunkSize")
     private @Nullable Output<Integer> connectionMemoryChunkSize;
 
     /**
      * @return Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+     * 
+     * connectionMemoryChunkSize corresponds to the MySQL system variable [connection_memory_chunk_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_chunk_size).
      * 
      */
     public Optional<Output<Integer>> connectionMemoryChunkSize() {
@@ -155,12 +171,16 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * Set the maximum amount of memory that can be used by a single user connection.
      * 
+     * connectionMemoryLimit corresponds to the MySQL system variable [connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_limit).
+     * 
      */
     @Import(name="connectionMemoryLimit")
     private @Nullable Output<String> connectionMemoryLimit;
 
     /**
      * @return Set the maximum amount of memory that can be used by a single user connection.
+     * 
+     * connectionMemoryLimit corresponds to the MySQL system variable [connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_limit).
      * 
      */
     public Optional<Output<String>> connectionMemoryLimit() {
@@ -238,12 +258,16 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * Set the total amount of memory that can be used by all user connections.
      * 
+     * globalConnectionMemoryLimit corresponds to the MySQL system variable [global_connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_limit).
+     * 
      */
     @Import(name="globalConnectionMemoryLimit")
     private @Nullable Output<String> globalConnectionMemoryLimit;
 
     /**
      * @return Set the total amount of memory that can be used by all user connections.
+     * 
+     * globalConnectionMemoryLimit corresponds to the MySQL system variable [global_connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_limit).
      * 
      */
     public Optional<Output<String>> globalConnectionMemoryLimit() {
@@ -253,12 +277,16 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * Determines whether the MySQL server calculates Global_connection_memory.
      * 
+     * globalConnectionMemoryTracking corresponds to the MySQL system variable [global_connection_memory_tracking](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_tracking).
+     * 
      */
     @Import(name="globalConnectionMemoryTracking")
     private @Nullable Output<Boolean> globalConnectionMemoryTracking;
 
     /**
      * @return Determines whether the MySQL server calculates Global_connection_memory.
+     * 
+     * globalConnectionMemoryTracking corresponds to the MySQL system variable [global_connection_memory_tracking](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_tracking).
      * 
      */
     public Optional<Output<Boolean>> globalConnectionMemoryTracking() {
@@ -306,12 +334,24 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
      * 
+     * innodbBufferPoolDumpPct corresponds to the MySQL InnoDB system variable [innodb_buffer_pool_dump_pct](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_buffer_pool_dump_pct).
+     * 
+     * The range is 1 to 100. The default value is 25.
+     * 
+     * For example, if there are 4 buffer pools with 100 pages each, and innodb_buffer_pool_dump_pct is set to 25, the 25 most recently used pages from each buffer pool are dumped.
+     * 
      */
     @Import(name="innodbBufferPoolDumpPct")
     private @Nullable Output<Integer> innodbBufferPoolDumpPct;
 
     /**
      * @return Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+     * 
+     * innodbBufferPoolDumpPct corresponds to the MySQL InnoDB system variable [innodb_buffer_pool_dump_pct](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_buffer_pool_dump_pct).
+     * 
+     * The range is 1 to 100. The default value is 25.
+     * 
+     * For example, if there are 4 buffer pools with 100 pages each, and innodb_buffer_pool_dump_pct is set to 25, the 25 most recently used pages from each buffer pool are dumped.
      * 
      */
     public Optional<Output<Integer>> innodbBufferPoolDumpPct() {
@@ -336,12 +376,20 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
      * 
+     * innodbBufferPoolSize corresponds to the MySQL server system variable [innodb_buffer_pool_size](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size).
+     * 
+     * The default and maximum values depend on the amount of RAM provisioned by the shape. See [Default User Variables](https://www.terraform.io/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
+     * 
      */
     @Import(name="innodbBufferPoolSize")
     private @Nullable Output<String> innodbBufferPoolSize;
 
     /**
      * @return The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
+     * 
+     * innodbBufferPoolSize corresponds to the MySQL server system variable [innodb_buffer_pool_size](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size).
+     * 
+     * The default and maximum values depend on the amount of RAM provisioned by the shape. See [Default User Variables](https://www.terraform.io/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
      * 
      */
     public Optional<Output<String>> innodbBufferPoolSize() {
@@ -486,12 +534,16 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
      * 
+     * This is the MySQL variable &#34;innodb_log_writer_threads&#34;. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_log_writer_threads)
+     * 
      */
     @Import(name="innodbLogWriterThreads")
     private @Nullable Output<Boolean> innodbLogWriterThreads;
 
     /**
      * @return Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
+     * 
+     * This is the MySQL variable &#34;innodb_log_writer_threads&#34;. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_log_writer_threads)
      * 
      */
     public Optional<Output<Boolean>> innodbLogWriterThreads() {
@@ -501,12 +553,28 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * The desired maximum purge lag in terms of transactions.
      * 
+     * InnoDB maintains a list of transactions that have index records delete-marked by UPDATE or DELETE operations. The length of the list is the purge lag.
+     * 
+     * If this value is exceeded, a delay is imposed on INSERT, UPDATE, and DELETE operations to allow time for purge to catch up.
+     * 
+     * The default value is 0, which means there is no maximum purge lag and no delay.
+     * 
+     * innodbMaxPurgeLag corresponds to the MySQL server system variable [innodb_max_purge_lag](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag).
+     * 
      */
     @Import(name="innodbMaxPurgeLag")
     private @Nullable Output<String> innodbMaxPurgeLag;
 
     /**
      * @return The desired maximum purge lag in terms of transactions.
+     * 
+     * InnoDB maintains a list of transactions that have index records delete-marked by UPDATE or DELETE operations. The length of the list is the purge lag.
+     * 
+     * If this value is exceeded, a delay is imposed on INSERT, UPDATE, and DELETE operations to allow time for purge to catch up.
+     * 
+     * The default value is 0, which means there is no maximum purge lag and no delay.
+     * 
+     * innodbMaxPurgeLag corresponds to the MySQL server system variable [innodb_max_purge_lag](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag).
      * 
      */
     public Optional<Output<String>> innodbMaxPurgeLag() {
@@ -516,12 +584,20 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
      * 
+     * The specified innodb_max_purge_lag_delay value is an upper limit on the delay period.
+     * 
+     * innodbMaxPurgeLagDelay corresponds to the MySQL server system variable [innodb_max_purge_lag_delay](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag_delay).
+     * 
      */
     @Import(name="innodbMaxPurgeLagDelay")
     private @Nullable Output<Integer> innodbMaxPurgeLagDelay;
 
     /**
      * @return The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
+     * 
+     * The specified innodb_max_purge_lag_delay value is an upper limit on the delay period.
+     * 
+     * innodbMaxPurgeLagDelay corresponds to the MySQL server system variable [innodb_max_purge_lag_delay](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag_delay).
      * 
      */
     public Optional<Output<Integer>> innodbMaxPurgeLagDelay() {
@@ -531,12 +607,20 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
      * 
+     * innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable [innodb_stats_persistent_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
+     * 
+     * innodb_stats_persistent_sample_pages only applies when innodb_stats_persistent is enabled for a table; when innodb_stats_persistent is disabled, innodb_stats_transient_sample_pages applies instead.
+     * 
      */
     @Import(name="innodbStatsPersistentSamplePages")
     private @Nullable Output<String> innodbStatsPersistentSamplePages;
 
     /**
      * @return The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+     * 
+     * innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable [innodb_stats_persistent_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
+     * 
+     * innodb_stats_persistent_sample_pages only applies when innodb_stats_persistent is enabled for a table; when innodb_stats_persistent is disabled, innodb_stats_transient_sample_pages applies instead.
      * 
      */
     public Optional<Output<String>> innodbStatsPersistentSamplePages() {
@@ -546,12 +630,24 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
      * 
+     * innodbStatsTransientSamplePages corresponds to the MySQL InnoDB system variable [innodb_stats_transient_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_transient_sample_pages)
+     * 
+     * innodb_stats_transient_sample_pages only applies when innodb_stats_persistent is disabled for a table; when innodb_stats_persistent is enabled, innodb_stats_persistent_sample_pages applies instead.
+     * 
+     * innodb_stats_persistent is ON by default and cannot be changed. It is possible to override it using the STATS_PERSISTENT clause of the [CREATE TABLE](https://dev.mysql.com/doc/refman/8.0/en/create-table.html) and [ALTER TABLE](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html) statements.
+     * 
      */
     @Import(name="innodbStatsTransientSamplePages")
     private @Nullable Output<String> innodbStatsTransientSamplePages;
 
     /**
      * @return The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+     * 
+     * innodbStatsTransientSamplePages corresponds to the MySQL InnoDB system variable [innodb_stats_transient_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_transient_sample_pages)
+     * 
+     * innodb_stats_transient_sample_pages only applies when innodb_stats_persistent is disabled for a table; when innodb_stats_persistent is enabled, innodb_stats_persistent_sample_pages applies instead.
+     * 
+     * innodb_stats_persistent is ON by default and cannot be changed. It is possible to override it using the STATS_PERSISTENT clause of the [CREATE TABLE](https://dev.mysql.com/doc/refman/8.0/en/create-table.html) and [ALTER TABLE](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html) statements.
      * 
      */
     public Optional<Output<String>> innodbStatsTransientSamplePages() {
@@ -561,12 +657,16 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * The number of seconds the server waits for activity on an interactive connection before closing it.
      * 
+     * interactiveTimeout corresponds to the MySQL system variable. [interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
+     * 
      */
     @Import(name="interactiveTimeout")
     private @Nullable Output<Integer> interactiveTimeout;
 
     /**
      * @return The number of seconds the server waits for activity on an interactive connection before closing it.
+     * 
+     * interactiveTimeout corresponds to the MySQL system variable. [interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
      * 
      */
     public Optional<Output<Integer>> interactiveTimeout() {
@@ -606,12 +706,16 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * The maximum size of one packet or any generated/intermediate string.
      * 
+     * This is the mysql variable &#34;max_allowed_packet&#34;.
+     * 
      */
     @Import(name="maxAllowedPacket")
     private @Nullable Output<Integer> maxAllowedPacket;
 
     /**
      * @return The maximum size of one packet or any generated/intermediate string.
+     * 
+     * This is the mysql variable &#34;max_allowed_packet&#34;.
      * 
      */
     public Optional<Output<Integer>> maxAllowedPacket() {
@@ -621,12 +725,16 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * Sets the size of the transaction cache.
      * 
+     * maxBinlogCacheSize corresponds to the MySQL server system variable [max_binlog_cache_size](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_max_binlog_cache_size).
+     * 
      */
     @Import(name="maxBinlogCacheSize")
     private @Nullable Output<String> maxBinlogCacheSize;
 
     /**
      * @return Sets the size of the transaction cache.
+     * 
+     * maxBinlogCacheSize corresponds to the MySQL server system variable [max_binlog_cache_size](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_max_binlog_cache_size).
      * 
      */
     public Optional<Output<String>> maxBinlogCacheSize() {
@@ -681,12 +789,16 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
      * 
+     * maxHeapTableSize corresponds to the MySQL system variable [max_heap_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_heap_table_size)
+     * 
      */
     @Import(name="maxHeapTableSize")
     private @Nullable Output<String> maxHeapTableSize;
 
     /**
      * @return This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+     * 
+     * maxHeapTableSize corresponds to the MySQL system variable [max_heap_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_heap_table_size)
      * 
      */
     public Optional<Output<String>> maxHeapTableSize() {
@@ -749,12 +861,16 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
      * 
+     * mysqlxConnectTimeout corresponds to the MySQL X Plugin system variable [mysqlx_connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_connect_timeout)
+     * 
      */
     @Import(name="mysqlxConnectTimeout")
     private @Nullable Output<Integer> mysqlxConnectTimeout;
 
     /**
      * @return The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
+     * 
+     * mysqlxConnectTimeout corresponds to the MySQL X Plugin system variable [mysqlx_connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_connect_timeout)
      * 
      */
     public Optional<Output<Integer>> mysqlxConnectTimeout() {
@@ -855,12 +971,16 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * The number of seconds to wait for interactive clients to timeout.
      * 
+     * mysqlxInteractiveTimeout corresponds to the MySQL X Plugin system variable. [mysqlx_interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_interactive_timeout)
+     * 
      */
     @Import(name="mysqlxInteractiveTimeout")
     private @Nullable Output<Integer> mysqlxInteractiveTimeout;
 
     /**
      * @return The number of seconds to wait for interactive clients to timeout.
+     * 
+     * mysqlxInteractiveTimeout corresponds to the MySQL X Plugin system variable. [mysqlx_interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_interactive_timeout)
      * 
      */
     public Optional<Output<Integer>> mysqlxInteractiveTimeout() {
@@ -900,12 +1020,16 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * The maximum size of network packets that can be received by X Plugin.
      * 
+     * This is the mysql variable &#34;mysqlx_max_allowed_packet&#34;.
+     * 
      */
     @Import(name="mysqlxMaxAllowedPacket")
     private @Nullable Output<Integer> mysqlxMaxAllowedPacket;
 
     /**
      * @return The maximum size of network packets that can be received by X Plugin.
+     * 
+     * This is the mysql variable &#34;mysqlx_max_allowed_packet&#34;.
      * 
      */
     public Optional<Output<Integer>> mysqlxMaxAllowedPacket() {
@@ -938,12 +1062,16 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
      * 
+     * mysqlxReadTimeout corresponds to the MySQL X Plugin system variable [mysqlx_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_read_timeout)
+     * 
      */
     @Import(name="mysqlxReadTimeout")
     private @Nullable Output<Integer> mysqlxReadTimeout;
 
     /**
      * @return The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
+     * 
+     * mysqlxReadTimeout corresponds to the MySQL X Plugin system variable [mysqlx_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_read_timeout)
      * 
      */
     public Optional<Output<Integer>> mysqlxReadTimeout() {
@@ -953,12 +1081,16 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * The number of seconds that X Plugin waits for activity on a connection.
      * 
+     * mysqlxWaitTimeout corresponds to the MySQL X Plugin system variable. [mysqlx_wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_wait_timeout)
+     * 
      */
     @Import(name="mysqlxWaitTimeout")
     private @Nullable Output<Integer> mysqlxWaitTimeout;
 
     /**
      * @return The number of seconds that X Plugin waits for activity on a connection.
+     * 
+     * mysqlxWaitTimeout corresponds to the MySQL X Plugin system variable. [mysqlx_wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_wait_timeout)
      * 
      */
     public Optional<Output<Integer>> mysqlxWaitTimeout() {
@@ -968,12 +1100,16 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
      * 
+     * mysqlxReadmysqlxWriteTimeoutTimeout corresponds to the MySQL X Plugin system variable [mysqlx_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_write_timeout)
+     * 
      */
     @Import(name="mysqlxWriteTimeout")
     private @Nullable Output<Integer> mysqlxWriteTimeout;
 
     /**
      * @return The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
+     * 
+     * mysqlxReadmysqlxWriteTimeoutTimeout corresponds to the MySQL X Plugin system variable [mysqlx_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_write_timeout)
      * 
      */
     public Optional<Output<Integer>> mysqlxWriteTimeout() {
@@ -1013,12 +1149,16 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * The number of seconds to wait for more data from a connection before aborting the read.
      * 
+     * netReadTimeout corresponds to the MySQL system variable [net_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_read_timeout)
+     * 
      */
     @Import(name="netReadTimeout")
     private @Nullable Output<Integer> netReadTimeout;
 
     /**
      * @return The number of seconds to wait for more data from a connection before aborting the read.
+     * 
+     * netReadTimeout corresponds to the MySQL system variable [net_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_read_timeout)
      * 
      */
     public Optional<Output<Integer>> netReadTimeout() {
@@ -1028,12 +1168,16 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * The number of seconds to wait for a block to be written to a connection before aborting the write.
      * 
+     * netWriteTimeout corresponds to the MySQL system variable [net_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_write_timeout)
+     * 
      */
     @Import(name="netWriteTimeout")
     private @Nullable Output<Integer> netWriteTimeout;
 
     /**
      * @return The number of seconds to wait for a block to be written to a connection before aborting the write.
+     * 
+     * netWriteTimeout corresponds to the MySQL system variable [net_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_write_timeout)
      * 
      */
     public Optional<Output<Integer>> netWriteTimeout() {
@@ -1119,12 +1263,16 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * Each session that must perform a sort allocates a buffer of this size.
      * 
+     * sortBufferSize corresponds to the MySQL system variable [sort_buffer_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
+     * 
      */
     @Import(name="sortBufferSize")
     private @Nullable Output<String> sortBufferSize;
 
     /**
      * @return Each session that must perform a sort allocates a buffer of this size.
+     * 
+     * sortBufferSize corresponds to the MySQL system variable [sort_buffer_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
      * 
      */
     public Optional<Output<String>> sortBufferSize() {
@@ -1209,12 +1357,24 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * Initializes the time zone for each client that connects.
      * 
+     * This corresponds to the MySQL System Variable &#34;time_zone&#34;.
+     * 
+     * The values can be given in one of the following formats, none of which are case-sensitive:
+     * * As a string indicating an offset from UTC of the form [H]H:MM, prefixed with a + or -, such as &#39;+10:00&#39;, &#39;-6:00&#39;, or &#39;+05:30&#39;. The permitted range is &#39;-13:59&#39; to &#39;+14:00&#39;, inclusive.
+     * * As a named time zone, as defined by the &#34;IANA Time Zone database&#34;, such as &#39;Europe/Helsinki&#39;, &#39;US/Eastern&#39;, &#39;MET&#39;, or &#39;UTC&#39;.
+     * 
      */
     @Import(name="timeZone")
     private @Nullable Output<String> timeZone;
 
     /**
      * @return Initializes the time zone for each client that connects.
+     * 
+     * This corresponds to the MySQL System Variable &#34;time_zone&#34;.
+     * 
+     * The values can be given in one of the following formats, none of which are case-sensitive:
+     * * As a string indicating an offset from UTC of the form [H]H:MM, prefixed with a + or -, such as &#39;+10:00&#39;, &#39;-6:00&#39;, or &#39;+05:30&#39;. The permitted range is &#39;-13:59&#39; to &#39;+14:00&#39;, inclusive.
+     * * As a named time zone, as defined by the &#34;IANA Time Zone database&#34;, such as &#39;Europe/Helsinki&#39;, &#39;US/Eastern&#39;, &#39;MET&#39;, or &#39;UTC&#39;.
      * 
      */
     public Optional<Output<String>> timeZone() {
@@ -1224,12 +1384,16 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
      * 
+     * tmp_table_size corresponds to the MySQL system variable [tmp_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_tmp_table_size)
+     * 
      */
     @Import(name="tmpTableSize")
     private @Nullable Output<String> tmpTableSize;
 
     /**
      * @return The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+     * 
+     * tmp_table_size corresponds to the MySQL system variable [tmp_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_tmp_table_size)
      * 
      */
     public Optional<Output<String>> tmpTableSize() {
@@ -1254,12 +1418,22 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * The number of seconds the server waits for activity on a noninteractive connection before closing it.
      * 
+     * waitTimeout corresponds to the MySQL system variable. [wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_wait_timeout)
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="waitTimeout")
     private @Nullable Output<Integer> waitTimeout;
 
     /**
      * @return The number of seconds the server waits for activity on a noninteractive connection before closing it.
+     * 
+     * waitTimeout corresponds to the MySQL system variable. [wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_wait_timeout)
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> waitTimeout() {
@@ -1392,6 +1566,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param bigTables If enabled, the server stores all temporary tables on disk rather than in memory.
          * 
+         * bigTables corresponds to the MySQL server variable [big_tables](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_big_tables).
+         * 
          * @return builder
          * 
          */
@@ -1402,6 +1578,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param bigTables If enabled, the server stores all temporary tables on disk rather than in memory.
+         * 
+         * bigTables corresponds to the MySQL server variable [big_tables](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_big_tables).
          * 
          * @return builder
          * 
@@ -1518,6 +1696,10 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param connectTimeout The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
          * 
+         * connectTimeout corresponds to the MySQL system variable [connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_connect_timeout)
+         * 
+         * Increasing the connect_timeout value might help if clients frequently encounter errors of the form &#34;Lost connection to MySQL server at &#39;XXX&#39;, system error: errno&#34;.
+         * 
          * @return builder
          * 
          */
@@ -1529,6 +1711,10 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param connectTimeout The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
          * 
+         * connectTimeout corresponds to the MySQL system variable [connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_connect_timeout)
+         * 
+         * Increasing the connect_timeout value might help if clients frequently encounter errors of the form &#34;Lost connection to MySQL server at &#39;XXX&#39;, system error: errno&#34;.
+         * 
          * @return builder
          * 
          */
@@ -1538,6 +1724,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param connectionMemoryChunkSize Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+         * 
+         * connectionMemoryChunkSize corresponds to the MySQL system variable [connection_memory_chunk_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_chunk_size).
          * 
          * @return builder
          * 
@@ -1550,6 +1738,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param connectionMemoryChunkSize Set the chunking size for updates to the global memory usage counter Global_connection_memory.
          * 
+         * connectionMemoryChunkSize corresponds to the MySQL system variable [connection_memory_chunk_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_chunk_size).
+         * 
          * @return builder
          * 
          */
@@ -1559,6 +1749,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param connectionMemoryLimit Set the maximum amount of memory that can be used by a single user connection.
+         * 
+         * connectionMemoryLimit corresponds to the MySQL system variable [connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_limit).
          * 
          * @return builder
          * 
@@ -1570,6 +1762,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param connectionMemoryLimit Set the maximum amount of memory that can be used by a single user connection.
+         * 
+         * connectionMemoryLimit corresponds to the MySQL system variable [connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_limit).
          * 
          * @return builder
          * 
@@ -1673,6 +1867,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param globalConnectionMemoryLimit Set the total amount of memory that can be used by all user connections.
          * 
+         * globalConnectionMemoryLimit corresponds to the MySQL system variable [global_connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_limit).
+         * 
          * @return builder
          * 
          */
@@ -1684,6 +1880,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param globalConnectionMemoryLimit Set the total amount of memory that can be used by all user connections.
          * 
+         * globalConnectionMemoryLimit corresponds to the MySQL system variable [global_connection_memory_limit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_limit).
+         * 
          * @return builder
          * 
          */
@@ -1693,6 +1891,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param globalConnectionMemoryTracking Determines whether the MySQL server calculates Global_connection_memory.
+         * 
+         * globalConnectionMemoryTracking corresponds to the MySQL system variable [global_connection_memory_tracking](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_tracking).
          * 
          * @return builder
          * 
@@ -1704,6 +1904,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param globalConnectionMemoryTracking Determines whether the MySQL server calculates Global_connection_memory.
+         * 
+         * globalConnectionMemoryTracking corresponds to the MySQL system variable [global_connection_memory_tracking](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_tracking).
          * 
          * @return builder
          * 
@@ -1765,6 +1967,12 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param innodbBufferPoolDumpPct Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
          * 
+         * innodbBufferPoolDumpPct corresponds to the MySQL InnoDB system variable [innodb_buffer_pool_dump_pct](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_buffer_pool_dump_pct).
+         * 
+         * The range is 1 to 100. The default value is 25.
+         * 
+         * For example, if there are 4 buffer pools with 100 pages each, and innodb_buffer_pool_dump_pct is set to 25, the 25 most recently used pages from each buffer pool are dumped.
+         * 
          * @return builder
          * 
          */
@@ -1775,6 +1983,12 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param innodbBufferPoolDumpPct Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+         * 
+         * innodbBufferPoolDumpPct corresponds to the MySQL InnoDB system variable [innodb_buffer_pool_dump_pct](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_buffer_pool_dump_pct).
+         * 
+         * The range is 1 to 100. The default value is 25.
+         * 
+         * For example, if there are 4 buffer pools with 100 pages each, and innodb_buffer_pool_dump_pct is set to 25, the 25 most recently used pages from each buffer pool are dumped.
          * 
          * @return builder
          * 
@@ -1807,6 +2021,10 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param innodbBufferPoolSize The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
          * 
+         * innodbBufferPoolSize corresponds to the MySQL server system variable [innodb_buffer_pool_size](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size).
+         * 
+         * The default and maximum values depend on the amount of RAM provisioned by the shape. See [Default User Variables](https://www.terraform.io/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
+         * 
          * @return builder
          * 
          */
@@ -1817,6 +2035,10 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param innodbBufferPoolSize The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
+         * 
+         * innodbBufferPoolSize corresponds to the MySQL server system variable [innodb_buffer_pool_size](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size).
+         * 
+         * The default and maximum values depend on the amount of RAM provisioned by the shape. See [Default User Variables](https://www.terraform.io/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
          * 
          * @return builder
          * 
@@ -2017,6 +2239,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param innodbLogWriterThreads Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
          * 
+         * This is the MySQL variable &#34;innodb_log_writer_threads&#34;. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_log_writer_threads)
+         * 
          * @return builder
          * 
          */
@@ -2028,6 +2252,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param innodbLogWriterThreads Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
          * 
+         * This is the MySQL variable &#34;innodb_log_writer_threads&#34;. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_log_writer_threads)
+         * 
          * @return builder
          * 
          */
@@ -2037,6 +2263,14 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param innodbMaxPurgeLag The desired maximum purge lag in terms of transactions.
+         * 
+         * InnoDB maintains a list of transactions that have index records delete-marked by UPDATE or DELETE operations. The length of the list is the purge lag.
+         * 
+         * If this value is exceeded, a delay is imposed on INSERT, UPDATE, and DELETE operations to allow time for purge to catch up.
+         * 
+         * The default value is 0, which means there is no maximum purge lag and no delay.
+         * 
+         * innodbMaxPurgeLag corresponds to the MySQL server system variable [innodb_max_purge_lag](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag).
          * 
          * @return builder
          * 
@@ -2049,6 +2283,14 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param innodbMaxPurgeLag The desired maximum purge lag in terms of transactions.
          * 
+         * InnoDB maintains a list of transactions that have index records delete-marked by UPDATE or DELETE operations. The length of the list is the purge lag.
+         * 
+         * If this value is exceeded, a delay is imposed on INSERT, UPDATE, and DELETE operations to allow time for purge to catch up.
+         * 
+         * The default value is 0, which means there is no maximum purge lag and no delay.
+         * 
+         * innodbMaxPurgeLag corresponds to the MySQL server system variable [innodb_max_purge_lag](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag).
+         * 
          * @return builder
          * 
          */
@@ -2058,6 +2300,10 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param innodbMaxPurgeLagDelay The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
+         * 
+         * The specified innodb_max_purge_lag_delay value is an upper limit on the delay period.
+         * 
+         * innodbMaxPurgeLagDelay corresponds to the MySQL server system variable [innodb_max_purge_lag_delay](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag_delay).
          * 
          * @return builder
          * 
@@ -2070,6 +2316,10 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param innodbMaxPurgeLagDelay The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
          * 
+         * The specified innodb_max_purge_lag_delay value is an upper limit on the delay period.
+         * 
+         * innodbMaxPurgeLagDelay corresponds to the MySQL server system variable [innodb_max_purge_lag_delay](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag_delay).
+         * 
          * @return builder
          * 
          */
@@ -2079,6 +2329,10 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param innodbStatsPersistentSamplePages The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+         * 
+         * innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable [innodb_stats_persistent_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
+         * 
+         * innodb_stats_persistent_sample_pages only applies when innodb_stats_persistent is enabled for a table; when innodb_stats_persistent is disabled, innodb_stats_transient_sample_pages applies instead.
          * 
          * @return builder
          * 
@@ -2091,6 +2345,10 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param innodbStatsPersistentSamplePages The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
          * 
+         * innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable [innodb_stats_persistent_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
+         * 
+         * innodb_stats_persistent_sample_pages only applies when innodb_stats_persistent is enabled for a table; when innodb_stats_persistent is disabled, innodb_stats_transient_sample_pages applies instead.
+         * 
          * @return builder
          * 
          */
@@ -2100,6 +2358,12 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param innodbStatsTransientSamplePages The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+         * 
+         * innodbStatsTransientSamplePages corresponds to the MySQL InnoDB system variable [innodb_stats_transient_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_transient_sample_pages)
+         * 
+         * innodb_stats_transient_sample_pages only applies when innodb_stats_persistent is disabled for a table; when innodb_stats_persistent is enabled, innodb_stats_persistent_sample_pages applies instead.
+         * 
+         * innodb_stats_persistent is ON by default and cannot be changed. It is possible to override it using the STATS_PERSISTENT clause of the [CREATE TABLE](https://dev.mysql.com/doc/refman/8.0/en/create-table.html) and [ALTER TABLE](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html) statements.
          * 
          * @return builder
          * 
@@ -2112,6 +2376,12 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param innodbStatsTransientSamplePages The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
          * 
+         * innodbStatsTransientSamplePages corresponds to the MySQL InnoDB system variable [innodb_stats_transient_sample_pages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_transient_sample_pages)
+         * 
+         * innodb_stats_transient_sample_pages only applies when innodb_stats_persistent is disabled for a table; when innodb_stats_persistent is enabled, innodb_stats_persistent_sample_pages applies instead.
+         * 
+         * innodb_stats_persistent is ON by default and cannot be changed. It is possible to override it using the STATS_PERSISTENT clause of the [CREATE TABLE](https://dev.mysql.com/doc/refman/8.0/en/create-table.html) and [ALTER TABLE](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html) statements.
+         * 
          * @return builder
          * 
          */
@@ -2121,6 +2391,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param interactiveTimeout The number of seconds the server waits for activity on an interactive connection before closing it.
+         * 
+         * interactiveTimeout corresponds to the MySQL system variable. [interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
          * 
          * @return builder
          * 
@@ -2132,6 +2404,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param interactiveTimeout The number of seconds the server waits for activity on an interactive connection before closing it.
+         * 
+         * interactiveTimeout corresponds to the MySQL system variable. [interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
          * 
          * @return builder
          * 
@@ -2185,6 +2459,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param maxAllowedPacket The maximum size of one packet or any generated/intermediate string.
          * 
+         * This is the mysql variable &#34;max_allowed_packet&#34;.
+         * 
          * @return builder
          * 
          */
@@ -2196,6 +2472,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param maxAllowedPacket The maximum size of one packet or any generated/intermediate string.
          * 
+         * This is the mysql variable &#34;max_allowed_packet&#34;.
+         * 
          * @return builder
          * 
          */
@@ -2205,6 +2483,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param maxBinlogCacheSize Sets the size of the transaction cache.
+         * 
+         * maxBinlogCacheSize corresponds to the MySQL server system variable [max_binlog_cache_size](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_max_binlog_cache_size).
          * 
          * @return builder
          * 
@@ -2216,6 +2496,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param maxBinlogCacheSize Sets the size of the transaction cache.
+         * 
+         * maxBinlogCacheSize corresponds to the MySQL server system variable [max_binlog_cache_size](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_max_binlog_cache_size).
          * 
          * @return builder
          * 
@@ -2290,6 +2572,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param maxHeapTableSize This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
          * 
+         * maxHeapTableSize corresponds to the MySQL system variable [max_heap_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_heap_table_size)
+         * 
          * @return builder
          * 
          */
@@ -2300,6 +2584,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param maxHeapTableSize This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+         * 
+         * maxHeapTableSize corresponds to the MySQL system variable [max_heap_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_heap_table_size)
          * 
          * @return builder
          * 
@@ -2382,6 +2668,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param mysqlxConnectTimeout The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
          * 
+         * mysqlxConnectTimeout corresponds to the MySQL X Plugin system variable [mysqlx_connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_connect_timeout)
+         * 
          * @return builder
          * 
          */
@@ -2392,6 +2680,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param mysqlxConnectTimeout The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
+         * 
+         * mysqlxConnectTimeout corresponds to the MySQL X Plugin system variable [mysqlx_connect_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_connect_timeout)
          * 
          * @return builder
          * 
@@ -2524,6 +2814,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param mysqlxInteractiveTimeout The number of seconds to wait for interactive clients to timeout.
          * 
+         * mysqlxInteractiveTimeout corresponds to the MySQL X Plugin system variable. [mysqlx_interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_interactive_timeout)
+         * 
          * @return builder
          * 
          */
@@ -2534,6 +2826,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param mysqlxInteractiveTimeout The number of seconds to wait for interactive clients to timeout.
+         * 
+         * mysqlxInteractiveTimeout corresponds to the MySQL X Plugin system variable. [mysqlx_interactive_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_interactive_timeout)
          * 
          * @return builder
          * 
@@ -2587,6 +2881,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param mysqlxMaxAllowedPacket The maximum size of network packets that can be received by X Plugin.
          * 
+         * This is the mysql variable &#34;mysqlx_max_allowed_packet&#34;.
+         * 
          * @return builder
          * 
          */
@@ -2597,6 +2893,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param mysqlxMaxAllowedPacket The maximum size of network packets that can be received by X Plugin.
+         * 
+         * This is the mysql variable &#34;mysqlx_max_allowed_packet&#34;.
          * 
          * @return builder
          * 
@@ -2637,6 +2935,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param mysqlxReadTimeout The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
          * 
+         * mysqlxReadTimeout corresponds to the MySQL X Plugin system variable [mysqlx_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_read_timeout)
+         * 
          * @return builder
          * 
          */
@@ -2648,6 +2948,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param mysqlxReadTimeout The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
          * 
+         * mysqlxReadTimeout corresponds to the MySQL X Plugin system variable [mysqlx_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_read_timeout)
+         * 
          * @return builder
          * 
          */
@@ -2657,6 +2959,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param mysqlxWaitTimeout The number of seconds that X Plugin waits for activity on a connection.
+         * 
+         * mysqlxWaitTimeout corresponds to the MySQL X Plugin system variable. [mysqlx_wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_wait_timeout)
          * 
          * @return builder
          * 
@@ -2669,6 +2973,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param mysqlxWaitTimeout The number of seconds that X Plugin waits for activity on a connection.
          * 
+         * mysqlxWaitTimeout corresponds to the MySQL X Plugin system variable. [mysqlx_wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_wait_timeout)
+         * 
          * @return builder
          * 
          */
@@ -2678,6 +2984,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param mysqlxWriteTimeout The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
+         * 
+         * mysqlxReadmysqlxWriteTimeoutTimeout corresponds to the MySQL X Plugin system variable [mysqlx_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_write_timeout)
          * 
          * @return builder
          * 
@@ -2689,6 +2997,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param mysqlxWriteTimeout The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
+         * 
+         * mysqlxReadmysqlxWriteTimeoutTimeout corresponds to the MySQL X Plugin system variable [mysqlx_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_write_timeout)
          * 
          * @return builder
          * 
@@ -2742,6 +3052,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param netReadTimeout The number of seconds to wait for more data from a connection before aborting the read.
          * 
+         * netReadTimeout corresponds to the MySQL system variable [net_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_read_timeout)
+         * 
          * @return builder
          * 
          */
@@ -2753,6 +3065,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param netReadTimeout The number of seconds to wait for more data from a connection before aborting the read.
          * 
+         * netReadTimeout corresponds to the MySQL system variable [net_read_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_read_timeout)
+         * 
          * @return builder
          * 
          */
@@ -2762,6 +3076,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param netWriteTimeout The number of seconds to wait for a block to be written to a connection before aborting the write.
+         * 
+         * netWriteTimeout corresponds to the MySQL system variable [net_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_write_timeout)
          * 
          * @return builder
          * 
@@ -2773,6 +3089,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param netWriteTimeout The number of seconds to wait for a block to be written to a connection before aborting the write.
+         * 
+         * netWriteTimeout corresponds to the MySQL system variable [net_write_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_write_timeout)
          * 
          * @return builder
          * 
@@ -2884,6 +3202,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param sortBufferSize Each session that must perform a sort allocates a buffer of this size.
          * 
+         * sortBufferSize corresponds to the MySQL system variable [sort_buffer_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
+         * 
          * @return builder
          * 
          */
@@ -2894,6 +3214,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param sortBufferSize Each session that must perform a sort allocates a buffer of this size.
+         * 
+         * sortBufferSize corresponds to the MySQL system variable [sort_buffer_size](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
          * 
          * @return builder
          * 
@@ -3010,6 +3332,12 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param timeZone Initializes the time zone for each client that connects.
          * 
+         * This corresponds to the MySQL System Variable &#34;time_zone&#34;.
+         * 
+         * The values can be given in one of the following formats, none of which are case-sensitive:
+         * * As a string indicating an offset from UTC of the form [H]H:MM, prefixed with a + or -, such as &#39;+10:00&#39;, &#39;-6:00&#39;, or &#39;+05:30&#39;. The permitted range is &#39;-13:59&#39; to &#39;+14:00&#39;, inclusive.
+         * * As a named time zone, as defined by the &#34;IANA Time Zone database&#34;, such as &#39;Europe/Helsinki&#39;, &#39;US/Eastern&#39;, &#39;MET&#39;, or &#39;UTC&#39;.
+         * 
          * @return builder
          * 
          */
@@ -3021,6 +3349,12 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param timeZone Initializes the time zone for each client that connects.
          * 
+         * This corresponds to the MySQL System Variable &#34;time_zone&#34;.
+         * 
+         * The values can be given in one of the following formats, none of which are case-sensitive:
+         * * As a string indicating an offset from UTC of the form [H]H:MM, prefixed with a + or -, such as &#39;+10:00&#39;, &#39;-6:00&#39;, or &#39;+05:30&#39;. The permitted range is &#39;-13:59&#39; to &#39;+14:00&#39;, inclusive.
+         * * As a named time zone, as defined by the &#34;IANA Time Zone database&#34;, such as &#39;Europe/Helsinki&#39;, &#39;US/Eastern&#39;, &#39;MET&#39;, or &#39;UTC&#39;.
+         * 
          * @return builder
          * 
          */
@@ -3030,6 +3364,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param tmpTableSize The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+         * 
+         * tmp_table_size corresponds to the MySQL system variable [tmp_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_tmp_table_size)
          * 
          * @return builder
          * 
@@ -3041,6 +3377,8 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param tmpTableSize The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+         * 
+         * tmp_table_size corresponds to the MySQL system variable [tmp_table_size](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_tmp_table_size)
          * 
          * @return builder
          * 
@@ -3073,6 +3411,11 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
         /**
          * @param waitTimeout The number of seconds the server waits for activity on a noninteractive connection before closing it.
          * 
+         * waitTimeout corresponds to the MySQL system variable. [wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_wait_timeout)
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -3083,6 +3426,11 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
 
         /**
          * @param waitTimeout The number of seconds the server waits for activity on a noninteractive connection before closing it.
+         * 
+         * waitTimeout corresponds to the MySQL system variable. [wait_timeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_wait_timeout)
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -86,12 +86,24 @@ public final class GetManagedInstanceModuleStreamsPlainArgs extends com.pulumi.r
     /**
      * The status of the stream
      * 
+     * A stream with the &#34;ENABLED&#34; status can be used as a source for installing profiles.  Streams with this status are also &#34;ACTIVE&#34;.
+     * 
+     * A stream with the &#34;DISABLED&#34; status cannot be the source for installing profiles.  To install profiles and packages from this stream, it must be enabled.
+     * 
+     * A stream with the &#34;ACTIVE&#34; status can be used as a source for installing profiles.  The packages that comprise the stream are also used when a matching package is installed directly.  In general, a stream can have this status if it is the default stream for the module and no stream has been explicitly enabled.
+     * 
      */
     @Import(name="streamStatus")
     private @Nullable String streamStatus;
 
     /**
      * @return The status of the stream
+     * 
+     * A stream with the &#34;ENABLED&#34; status can be used as a source for installing profiles.  Streams with this status are also &#34;ACTIVE&#34;.
+     * 
+     * A stream with the &#34;DISABLED&#34; status cannot be the source for installing profiles.  To install profiles and packages from this stream, it must be enabled.
+     * 
+     * A stream with the &#34;ACTIVE&#34; status can be used as a source for installing profiles.  The packages that comprise the stream are also used when a matching package is installed directly.  In general, a stream can have this status if it is the default stream for the module and no stream has been explicitly enabled.
      * 
      */
     public Optional<String> streamStatus() {
@@ -182,6 +194,12 @@ public final class GetManagedInstanceModuleStreamsPlainArgs extends com.pulumi.r
 
         /**
          * @param streamStatus The status of the stream
+         * 
+         * A stream with the &#34;ENABLED&#34; status can be used as a source for installing profiles.  Streams with this status are also &#34;ACTIVE&#34;.
+         * 
+         * A stream with the &#34;DISABLED&#34; status cannot be the source for installing profiles.  To install profiles and packages from this stream, it must be enabled.
+         * 
+         * A stream with the &#34;ACTIVE&#34; status can be used as a source for installing profiles.  The packages that comprise the stream are also used when a matching package is installed directly.  In general, a stream can have this status if it is the default stream for the module and no stream has been explicitly enabled.
          * 
          * @return builder
          * 

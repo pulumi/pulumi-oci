@@ -92,12 +92,18 @@ public class CatalogAssociation extends com.pulumi.resources.CustomResource {
     /**
      * Identifier of the service catalog.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="serviceCatalogId", type=String.class, parameters={})
     private Output<String> serviceCatalogId;
 
     /**
      * @return Identifier of the service catalog.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> serviceCatalogId() {

@@ -21,6 +21,8 @@ public final class PathRouteSetPathRoute {
      * *  Asterisk (*) wildcards are not supported.
      * *  Regular expressions are not supported.
      * 
+     * Example: `/example/video/123`
+     * 
      */
     private String path;
     /**
@@ -42,6 +44,8 @@ public final class PathRouteSetPathRoute {
      * *  Path strings are case-insensitive.
      * *  Asterisk (*) wildcards are not supported.
      * *  Regular expressions are not supported.
+     * 
+     * Example: `/example/video/123`
      * 
      */
     public String path() {

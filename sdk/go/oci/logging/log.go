@@ -90,6 +90,9 @@ type Log struct {
 	// The logType that the log object is for, whether custom or service.
 	LogType pulumi.StringOutput `pulumi:"logType"`
 	// (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionDuration pulumi.IntOutput `pulumi:"retentionDuration"`
 	// The pipeline state.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -156,6 +159,9 @@ type logState struct {
 	// The logType that the log object is for, whether custom or service.
 	LogType *string `pulumi:"logType"`
 	// (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionDuration *int `pulumi:"retentionDuration"`
 	// The pipeline state.
 	State *string `pulumi:"state"`
@@ -185,6 +191,9 @@ type LogState struct {
 	// The logType that the log object is for, whether custom or service.
 	LogType pulumi.StringPtrInput
 	// (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionDuration pulumi.IntPtrInput
 	// The pipeline state.
 	State pulumi.StringPtrInput
@@ -216,6 +225,9 @@ type logArgs struct {
 	// The logType that the log object is for, whether custom or service.
 	LogType string `pulumi:"logType"`
 	// (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionDuration *int `pulumi:"retentionDuration"`
 }
 
@@ -236,6 +248,9 @@ type LogArgs struct {
 	// The logType that the log object is for, whether custom or service.
 	LogType pulumi.StringInput
 	// (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionDuration pulumi.IntPtrInput
 }
 
@@ -367,6 +382,9 @@ func (o LogOutput) LogType() pulumi.StringOutput {
 }
 
 // (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o LogOutput) RetentionDuration() pulumi.IntOutput {
 	return o.ApplyT(func(v *Log) pulumi.IntOutput { return v.RetentionDuration }).(pulumi.IntOutput)
 }

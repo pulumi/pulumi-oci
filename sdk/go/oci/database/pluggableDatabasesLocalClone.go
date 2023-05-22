@@ -82,6 +82,9 @@ type PluggableDatabasesLocalClone struct {
 	// The current state of the pluggable database.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The existing TDE wallet password of the target CDB.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetTdeWalletPassword pulumi.StringOutput `pulumi:"targetTdeWalletPassword"`
 	// The date and time the pluggable database was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -164,6 +167,9 @@ type pluggableDatabasesLocalCloneState struct {
 	// The current state of the pluggable database.
 	State *string `pulumi:"state"`
 	// The existing TDE wallet password of the target CDB.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetTdeWalletPassword *string `pulumi:"targetTdeWalletPassword"`
 	// The date and time the pluggable database was created.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -201,6 +207,9 @@ type PluggableDatabasesLocalCloneState struct {
 	// The current state of the pluggable database.
 	State pulumi.StringPtrInput
 	// The existing TDE wallet password of the target CDB.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetTdeWalletPassword pulumi.StringPtrInput
 	// The date and time the pluggable database was created.
 	TimeCreated pulumi.StringPtrInput
@@ -220,6 +229,9 @@ type pluggableDatabasesLocalCloneArgs struct {
 	// The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
 	ShouldPdbAdminAccountBeLocked *bool `pulumi:"shouldPdbAdminAccountBeLocked"`
 	// The existing TDE wallet password of the target CDB.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetTdeWalletPassword *string `pulumi:"targetTdeWalletPassword"`
 }
 
@@ -234,6 +246,9 @@ type PluggableDatabasesLocalCloneArgs struct {
 	// The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
 	ShouldPdbAdminAccountBeLocked pulumi.BoolPtrInput
 	// The existing TDE wallet password of the target CDB.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetTdeWalletPassword pulumi.StringPtrInput
 }
 
@@ -404,6 +419,9 @@ func (o PluggableDatabasesLocalCloneOutput) State() pulumi.StringOutput {
 }
 
 // The existing TDE wallet password of the target CDB.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PluggableDatabasesLocalCloneOutput) TargetTdeWalletPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.StringOutput { return v.TargetTdeWalletPassword }).(pulumi.StringOutput)
 }

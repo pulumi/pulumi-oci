@@ -120,10 +120,6 @@ namespace Pulumi.Oci.Functions
     public sealed class GetFusionEnvironmentServiceAttachmentResult
     {
         /// <summary>
-        /// Action
-        /// </summary>
-        public readonly string Action;
-        /// <summary>
         /// Compartment Identifier
         /// </summary>
         public readonly string CompartmentId;
@@ -141,7 +137,7 @@ namespace Pulumi.Oci.Functions
         public readonly ImmutableDictionary<string, object> FreeformTags;
         public readonly string FusionEnvironmentId;
         /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
+        /// Unique identifier that is immutable on creation
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -176,8 +172,6 @@ namespace Pulumi.Oci.Functions
 
         [OutputConstructor]
         private GetFusionEnvironmentServiceAttachmentResult(
-            string action,
-
             string compartmentId,
 
             ImmutableDictionary<string, object> definedTags,
@@ -206,7 +200,6 @@ namespace Pulumi.Oci.Functions
 
             string timeUpdated)
         {
-            Action = action;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             DisplayName = displayName;

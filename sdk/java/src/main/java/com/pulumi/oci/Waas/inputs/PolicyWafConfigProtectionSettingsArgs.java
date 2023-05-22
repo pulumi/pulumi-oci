@@ -111,12 +111,16 @@ public final class PolicyWafConfigProtectionSettingsArgs extends com.pulumi.reso
     /**
      * (Updatable) Inspects the response body of origin responses. Can be used to detect leakage of sensitive data. If unspecified, defaults to `false`.
      * 
+     * **Note:** Only origin responses with a Content-Type matching a value in `mediaTypes` will be inspected.
+     * 
      */
     @Import(name="isResponseInspected")
     private @Nullable Output<Boolean> isResponseInspected;
 
     /**
      * @return (Updatable) Inspects the response body of origin responses. Can be used to detect leakage of sensitive data. If unspecified, defaults to `false`.
+     * 
+     * **Note:** Only origin responses with a Content-Type matching a value in `mediaTypes` will be inspected.
      * 
      */
     public Optional<Output<Boolean>> isResponseInspected() {
@@ -186,12 +190,52 @@ public final class PolicyWafConfigProtectionSettingsArgs extends com.pulumi.reso
     /**
      * (Updatable) The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `[&#34;text/html&#34;, &#34;text/plain&#34;, &#34;text/xml&#34;]`.
      * 
+     * Supported MIME types include:
+     * * text/html
+     * * text/plain
+     * * text/asp
+     * * text/css
+     * * text/x-script
+     * * application/json
+     * * text/webviewhtml
+     * * text/x-java-source
+     * * application/x-javascript
+     * * application/javascript
+     * * application/ecmascript
+     * * text/javascript
+     * * text/ecmascript
+     * * text/x-script.perl
+     * * text/x-script.phyton
+     * * application/plain
+     * * application/xml
+     * * text/xml
+     * 
      */
     @Import(name="mediaTypes")
     private @Nullable Output<List<String>> mediaTypes;
 
     /**
      * @return (Updatable) The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `[&#34;text/html&#34;, &#34;text/plain&#34;, &#34;text/xml&#34;]`.
+     * 
+     * Supported MIME types include:
+     * * text/html
+     * * text/plain
+     * * text/asp
+     * * text/css
+     * * text/x-script
+     * * application/json
+     * * text/webviewhtml
+     * * text/x-java-source
+     * * application/x-javascript
+     * * application/javascript
+     * * application/ecmascript
+     * * text/javascript
+     * * text/ecmascript
+     * * text/x-script.perl
+     * * text/x-script.phyton
+     * * application/plain
+     * * application/xml
+     * * text/xml
      * 
      */
     public Optional<Output<List<String>>> mediaTypes() {
@@ -201,12 +245,16 @@ public final class PolicyWafConfigProtectionSettingsArgs extends com.pulumi.reso
     /**
      * (Updatable) The length of time to analyze traffic traffic, in days. After the analysis period, `WafRecommendations` will be populated. If unspecified, defaults to `10`.
      * 
+     * Use `GET /waasPolicies/{waasPolicyId}/wafRecommendations` to view WAF recommendations.
+     * 
      */
     @Import(name="recommendationsPeriodInDays")
     private @Nullable Output<Integer> recommendationsPeriodInDays;
 
     /**
      * @return (Updatable) The length of time to analyze traffic traffic, in days. After the analysis period, `WafRecommendations` will be populated. If unspecified, defaults to `10`.
+     * 
+     * Use `GET /waasPolicies/{waasPolicyId}/wafRecommendations` to view WAF recommendations.
      * 
      */
     public Optional<Output<Integer>> recommendationsPeriodInDays() {
@@ -388,6 +436,8 @@ public final class PolicyWafConfigProtectionSettingsArgs extends com.pulumi.reso
         /**
          * @param isResponseInspected (Updatable) Inspects the response body of origin responses. Can be used to detect leakage of sensitive data. If unspecified, defaults to `false`.
          * 
+         * **Note:** Only origin responses with a Content-Type matching a value in `mediaTypes` will be inspected.
+         * 
          * @return builder
          * 
          */
@@ -398,6 +448,8 @@ public final class PolicyWafConfigProtectionSettingsArgs extends com.pulumi.reso
 
         /**
          * @param isResponseInspected (Updatable) Inspects the response body of origin responses. Can be used to detect leakage of sensitive data. If unspecified, defaults to `false`.
+         * 
+         * **Note:** Only origin responses with a Content-Type matching a value in `mediaTypes` will be inspected.
          * 
          * @return builder
          * 
@@ -493,6 +545,26 @@ public final class PolicyWafConfigProtectionSettingsArgs extends com.pulumi.reso
         /**
          * @param mediaTypes (Updatable) The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `[&#34;text/html&#34;, &#34;text/plain&#34;, &#34;text/xml&#34;]`.
          * 
+         * Supported MIME types include:
+         * * text/html
+         * * text/plain
+         * * text/asp
+         * * text/css
+         * * text/x-script
+         * * application/json
+         * * text/webviewhtml
+         * * text/x-java-source
+         * * application/x-javascript
+         * * application/javascript
+         * * application/ecmascript
+         * * text/javascript
+         * * text/ecmascript
+         * * text/x-script.perl
+         * * text/x-script.phyton
+         * * application/plain
+         * * application/xml
+         * * text/xml
+         * 
          * @return builder
          * 
          */
@@ -504,6 +576,26 @@ public final class PolicyWafConfigProtectionSettingsArgs extends com.pulumi.reso
         /**
          * @param mediaTypes (Updatable) The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `[&#34;text/html&#34;, &#34;text/plain&#34;, &#34;text/xml&#34;]`.
          * 
+         * Supported MIME types include:
+         * * text/html
+         * * text/plain
+         * * text/asp
+         * * text/css
+         * * text/x-script
+         * * application/json
+         * * text/webviewhtml
+         * * text/x-java-source
+         * * application/x-javascript
+         * * application/javascript
+         * * application/ecmascript
+         * * text/javascript
+         * * text/ecmascript
+         * * text/x-script.perl
+         * * text/x-script.phyton
+         * * application/plain
+         * * application/xml
+         * * text/xml
+         * 
          * @return builder
          * 
          */
@@ -513,6 +605,26 @@ public final class PolicyWafConfigProtectionSettingsArgs extends com.pulumi.reso
 
         /**
          * @param mediaTypes (Updatable) The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `[&#34;text/html&#34;, &#34;text/plain&#34;, &#34;text/xml&#34;]`.
+         * 
+         * Supported MIME types include:
+         * * text/html
+         * * text/plain
+         * * text/asp
+         * * text/css
+         * * text/x-script
+         * * application/json
+         * * text/webviewhtml
+         * * text/x-java-source
+         * * application/x-javascript
+         * * application/javascript
+         * * application/ecmascript
+         * * text/javascript
+         * * text/ecmascript
+         * * text/x-script.perl
+         * * text/x-script.phyton
+         * * application/plain
+         * * application/xml
+         * * text/xml
          * 
          * @return builder
          * 
@@ -524,6 +636,8 @@ public final class PolicyWafConfigProtectionSettingsArgs extends com.pulumi.reso
         /**
          * @param recommendationsPeriodInDays (Updatable) The length of time to analyze traffic traffic, in days. After the analysis period, `WafRecommendations` will be populated. If unspecified, defaults to `10`.
          * 
+         * Use `GET /waasPolicies/{waasPolicyId}/wafRecommendations` to view WAF recommendations.
+         * 
          * @return builder
          * 
          */
@@ -534,6 +648,8 @@ public final class PolicyWafConfigProtectionSettingsArgs extends com.pulumi.reso
 
         /**
          * @param recommendationsPeriodInDays (Updatable) The length of time to analyze traffic traffic, in days. After the analysis period, `WafRecommendations` will be populated. If unspecified, defaults to `10`.
+         * 
+         * Use `GET /waasPolicies/{waasPolicyId}/wafRecommendations` to view WAF recommendations.
          * 
          * @return builder
          * 

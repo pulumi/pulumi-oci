@@ -14,12 +14,35 @@ namespace Pulumi.Oci.Identity.Inputs
     {
         /// <summary>
         /// (Updatable) The date and time that the current resource was locked
+        /// 
+        /// **Added In:** 19.1.4
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: dateTime
+        /// * uniqueness: none
         /// </summary>
         [Input("lockDate")]
         public Input<string>? LockDate { get; set; }
 
         /// <summary>
         /// (Updatable) Indicates that the rev is locked
+        /// 
+        /// **Added In:** 19.1.4
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("on")]
         public Input<bool>? On { get; set; }

@@ -40,6 +40,12 @@ namespace Pulumi.Oci.ResourceManager.Outputs
         public readonly string Id;
         /// <summary>
         /// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
+        /// 
+        /// Allowable values:
+        /// * CREATING
+        /// * ACTIVE
+        /// * DELETING
+        /// * DELETED
         /// </summary>
         public readonly string State;
         /// <summary>

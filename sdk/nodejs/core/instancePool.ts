@@ -112,6 +112,8 @@ export class InstancePool extends pulumi.CustomResource {
     public readonly loadBalancers!: pulumi.Output<outputs.Core.InstancePoolLoadBalancer[]>;
     /**
      * (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
+     *
+     * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
      */
     public readonly placementConfigurations!: pulumi.Output<outputs.Core.InstancePoolPlacementConfiguration[]>;
     /**
@@ -120,6 +122,10 @@ export class InstancePool extends pulumi.CustomResource {
     public readonly size!: pulumi.Output<number>;
     /**
      * (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly state!: pulumi.Output<string>;
     /**
@@ -216,6 +222,8 @@ export interface InstancePoolState {
     loadBalancers?: pulumi.Input<pulumi.Input<inputs.Core.InstancePoolLoadBalancer>[]>;
     /**
      * (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
+     *
+     * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
      */
     placementConfigurations?: pulumi.Input<pulumi.Input<inputs.Core.InstancePoolPlacementConfiguration>[]>;
     /**
@@ -224,6 +232,10 @@ export interface InstancePoolState {
     size?: pulumi.Input<number>;
     /**
      * (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     state?: pulumi.Input<string>;
     /**
@@ -262,6 +274,8 @@ export interface InstancePoolArgs {
     loadBalancers?: pulumi.Input<pulumi.Input<inputs.Core.InstancePoolLoadBalancer>[]>;
     /**
      * (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
+     *
+     * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
      */
     placementConfigurations: pulumi.Input<pulumi.Input<inputs.Core.InstancePoolPlacementConfiguration>[]>;
     /**
@@ -270,6 +284,10 @@ export interface InstancePoolArgs {
     size: pulumi.Input<number>;
     /**
      * (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     state?: pulumi.Input<string>;
 }

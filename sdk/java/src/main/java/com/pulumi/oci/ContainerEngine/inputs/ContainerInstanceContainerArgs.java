@@ -41,12 +41,20 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
     /**
      * A list of string arguments for a container&#39;s entrypoint process.
      * 
+     * Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+     * 
+     * All arguments together must be 64KB or smaller.
+     * 
      */
     @Import(name="arguments")
     private @Nullable Output<List<String>> arguments;
 
     /**
      * @return A list of string arguments for a container&#39;s entrypoint process.
+     * 
+     * Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+     * 
+     * All arguments together must be 64KB or smaller.
      * 
      */
     public Optional<Output<List<String>>> arguments() {
@@ -153,12 +161,16 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
     /**
      * A map of additional environment variables to set in the environment of the container&#39;s entrypoint process. These variables are in addition to any variables already defined in the container&#39;s image.
      * 
+     * All environment variables together, name and values, must be 64KB or smaller.
+     * 
      */
     @Import(name="environmentVariables")
     private @Nullable Output<Map<String,Object>> environmentVariables;
 
     /**
      * @return A map of additional environment variables to set in the environment of the container&#39;s entrypoint process. These variables are in addition to any variables already defined in the container&#39;s image.
+     * 
+     * All environment variables together, name and values, must be 64KB or smaller.
      * 
      */
     public Optional<Output<Map<String,Object>>> environmentVariables() {
@@ -280,12 +292,18 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
     /**
      * (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
      * @return (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> state() {
@@ -456,6 +474,10 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         /**
          * @param arguments A list of string arguments for a container&#39;s entrypoint process.
          * 
+         * Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+         * 
+         * All arguments together must be 64KB or smaller.
+         * 
          * @return builder
          * 
          */
@@ -467,6 +489,10 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         /**
          * @param arguments A list of string arguments for a container&#39;s entrypoint process.
          * 
+         * Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+         * 
+         * All arguments together must be 64KB or smaller.
+         * 
          * @return builder
          * 
          */
@@ -476,6 +502,10 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
 
         /**
          * @param arguments A list of string arguments for a container&#39;s entrypoint process.
+         * 
+         * Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+         * 
+         * All arguments together must be 64KB or smaller.
          * 
          * @return builder
          * 
@@ -632,6 +662,8 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         /**
          * @param environmentVariables A map of additional environment variables to set in the environment of the container&#39;s entrypoint process. These variables are in addition to any variables already defined in the container&#39;s image.
          * 
+         * All environment variables together, name and values, must be 64KB or smaller.
+         * 
          * @return builder
          * 
          */
@@ -642,6 +674,8 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
 
         /**
          * @param environmentVariables A map of additional environment variables to set in the environment of the container&#39;s entrypoint process. These variables are in addition to any variables already defined in the container&#39;s image.
+         * 
+         * All environment variables together, name and values, must be 64KB or smaller.
          * 
          * @return builder
          * 
@@ -819,6 +853,9 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         /**
          * @param state (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -829,6 +866,9 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
 
         /**
          * @param state (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

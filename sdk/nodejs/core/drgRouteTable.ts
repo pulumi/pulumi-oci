@@ -95,7 +95,11 @@ export class DrgRouteTable extends pulumi.CustomResource {
      */
     public readonly isEcmpEnabled!: pulumi.Output<boolean>;
     /**
-     * (Updatable) An optional property when flipped disables the import of route Distribution by setting importDrgRouteDistributionId to null.
+     * (Updatable) An optional property when flipped disables the import of route Distribution by setting importDrgRouteDistributionId to null. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly removeImportTrigger!: pulumi.Output<boolean | undefined>;
     /**
@@ -184,7 +188,11 @@ export interface DrgRouteTableState {
      */
     isEcmpEnabled?: pulumi.Input<boolean>;
     /**
-     * (Updatable) An optional property when flipped disables the import of route Distribution by setting importDrgRouteDistributionId to null.
+     * (Updatable) An optional property when flipped disables the import of route Distribution by setting importDrgRouteDistributionId to null. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     removeImportTrigger?: pulumi.Input<boolean>;
     /**
@@ -226,7 +234,11 @@ export interface DrgRouteTableArgs {
      */
     isEcmpEnabled?: pulumi.Input<boolean>;
     /**
-     * (Updatable) An optional property when flipped disables the import of route Distribution by setting importDrgRouteDistributionId to null.
+     * (Updatable) An optional property when flipped disables the import of route Distribution by setting importDrgRouteDistributionId to null. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     removeImportTrigger?: pulumi.Input<boolean>;
 }

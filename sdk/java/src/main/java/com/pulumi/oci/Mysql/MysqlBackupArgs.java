@@ -126,12 +126,18 @@ public final class MysqlBackupArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Number of days to retain this backup.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="retentionInDays")
     private @Nullable Output<Integer> retentionInDays;
 
     /**
      * @return (Updatable) Number of days to retain this backup.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> retentionInDays() {
@@ -319,6 +325,9 @@ public final class MysqlBackupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param retentionInDays (Updatable) Number of days to retain this backup.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -329,6 +338,9 @@ public final class MysqlBackupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param retentionInDays (Updatable) Number of days to retain this backup.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

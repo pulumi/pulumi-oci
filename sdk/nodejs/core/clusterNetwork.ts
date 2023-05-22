@@ -107,6 +107,8 @@ export class ClusterNetwork extends pulumi.CustomResource {
     public /*out*/ readonly hpcIslandId!: pulumi.Output<string>;
     /**
      * (Updatable) The data to create the instance pools in the cluster network.
+     *
+     * Each cluster network can have one instance pool.
      */
     public readonly instancePools!: pulumi.Output<outputs.Core.ClusterNetworkInstancePool[]>;
     /**
@@ -208,6 +210,8 @@ export interface ClusterNetworkState {
     hpcIslandId?: pulumi.Input<string>;
     /**
      * (Updatable) The data to create the instance pools in the cluster network.
+     *
+     * Each cluster network can have one instance pool.
      */
     instancePools?: pulumi.Input<pulumi.Input<inputs.Core.ClusterNetworkInstancePool>[]>;
     /**
@@ -254,6 +258,8 @@ export interface ClusterNetworkArgs {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) The data to create the instance pools in the cluster network.
+     *
+     * Each cluster network can have one instance pool.
      */
     instancePools: pulumi.Input<pulumi.Input<inputs.Core.ClusterNetworkInstancePool>[]>;
     /**

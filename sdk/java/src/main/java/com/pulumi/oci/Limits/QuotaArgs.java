@@ -112,12 +112,18 @@ public final class QuotaArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) An array of quota statements written in the declarative quota statement language.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="statements", required=true)
     private Output<List<String>> statements;
 
     /**
      * @return (Updatable) An array of quota statements written in the declarative quota statement language.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<List<String>> statements() {
@@ -293,6 +299,9 @@ public final class QuotaArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param statements (Updatable) An array of quota statements written in the declarative quota statement language.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -304,6 +313,9 @@ public final class QuotaArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param statements (Updatable) An array of quota statements written in the declarative quota statement language.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -313,6 +325,9 @@ public final class QuotaArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param statements (Updatable) An array of quota statements written in the declarative quota statement language.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

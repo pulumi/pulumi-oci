@@ -22,6 +22,8 @@ type ExportExportOption struct {
 	// (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
 	RequirePrivilegedSourcePort *bool `pulumi:"requirePrivilegedSourcePort"`
 	// (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
+	//
+	// **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
 	Source string `pulumi:"source"`
 }
 
@@ -48,6 +50,8 @@ type ExportExportOptionArgs struct {
 	// (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
 	RequirePrivilegedSourcePort pulumi.BoolPtrInput `pulumi:"requirePrivilegedSourcePort"`
 	// (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
+	//
+	// **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
 	Source pulumi.StringInput `pulumi:"source"`
 }
 
@@ -128,6 +132,8 @@ func (o ExportExportOptionOutput) RequirePrivilegedSourcePort() pulumi.BoolPtrOu
 }
 
 // (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
+//
+// **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
 func (o ExportExportOptionOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v ExportExportOption) string { return v.Source }).(pulumi.StringOutput)
 }
@@ -156,6 +162,9 @@ type FileSystemSourceDetail struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	ParentFileSystemId *string `pulumi:"parentFileSystemId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceSnapshotId *string `pulumi:"sourceSnapshotId"`
 }
 
@@ -174,6 +183,9 @@ type FileSystemSourceDetailArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	ParentFileSystemId pulumi.StringPtrInput `pulumi:"parentFileSystemId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceSnapshotId pulumi.StringPtrInput `pulumi:"sourceSnapshotId"`
 }
 
@@ -234,6 +246,9 @@ func (o FileSystemSourceDetailOutput) ParentFileSystemId() pulumi.StringPtrOutpu
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o FileSystemSourceDetailOutput) SourceSnapshotId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FileSystemSourceDetail) *string { return v.SourceSnapshotId }).(pulumi.StringPtrOutput)
 }

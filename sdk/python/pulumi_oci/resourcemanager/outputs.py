@@ -294,6 +294,12 @@ class GetStacksStackResult(dict):
         :param Mapping[str, Any] freeform_tags: Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a stack.
         :param str state: A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
+               
+               Allowable values:
+               * CREATING
+               * ACTIVE
+               * DELETING
+               * DELETED
         :param str time_created: The date and time at which the stack was created.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -365,6 +371,12 @@ class GetStacksStackResult(dict):
     def state(self) -> str:
         """
         A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
+
+        Allowable values:
+        * CREATING
+        * ACTIVE
+        * DELETING
+        * DELETED
         """
         return pulumi.get(self, "state")
 

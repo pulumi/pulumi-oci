@@ -72,6 +72,9 @@ type MediaWorkflowConfiguration struct {
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecyleDetails pulumi.StringOutput `pulumi:"lifecyleDetails"`
 	// (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Parameters pulumi.StringOutput `pulumi:"parameters"`
 	// The current state of the MediaWorkflowConfiguration.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -132,6 +135,9 @@ type mediaWorkflowConfigurationState struct {
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecyleDetails *string `pulumi:"lifecyleDetails"`
 	// (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Parameters *string `pulumi:"parameters"`
 	// The current state of the MediaWorkflowConfiguration.
 	State *string `pulumi:"state"`
@@ -155,6 +161,9 @@ type MediaWorkflowConfigurationState struct {
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecyleDetails pulumi.StringPtrInput
 	// (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Parameters pulumi.StringPtrInput
 	// The current state of the MediaWorkflowConfiguration.
 	State pulumi.StringPtrInput
@@ -180,6 +189,9 @@ type mediaWorkflowConfigurationArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Parameters string `pulumi:"parameters"`
 }
 
@@ -194,6 +206,9 @@ type MediaWorkflowConfigurationArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Parameters pulumi.StringInput
 }
 
@@ -310,6 +325,9 @@ func (o MediaWorkflowConfigurationOutput) LifecyleDetails() pulumi.StringOutput 
 }
 
 // (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MediaWorkflowConfigurationOutput) Parameters() pulumi.StringOutput {
 	return o.ApplyT(func(v *MediaWorkflowConfiguration) pulumi.StringOutput { return v.Parameters }).(pulumi.StringOutput)
 }

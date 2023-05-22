@@ -12,6 +12,16 @@ import (
 
 type AppAccelerationPolicyResponseCachingPolicy struct {
 	// (Updatable) When false, responses will not be cached by the backend based on response headers.
+	//
+	// When true, responses that contain one of the supported cache control headers will be cached according to the values specified in the cache control headers.
+	//
+	// The "X-Accel-Expires" header field sets caching time of a response in seconds. The zero value disables caching for a response. If the value starts with the @ prefix, it sets an absolute time in seconds since Epoch, up to which the response may be cached.
+	//
+	// If the header does not include the "X-Accel-Expires" field, parameters of caching may be set in the header fields "Expires" or "Cache-Control".
+	//
+	// If the header includes the "Set-Cookie" field, such a response will not be cached.
+	//
+	// If the header includes the "Vary" field with the special value "*", such a response will not be cached. If the header includes the "Vary" field with another value, such a response will be cached taking into account the corresponding request header fields.
 	IsResponseHeaderBasedCachingEnabled *bool `pulumi:"isResponseHeaderBasedCachingEnabled"`
 }
 
@@ -28,6 +38,16 @@ type AppAccelerationPolicyResponseCachingPolicyInput interface {
 
 type AppAccelerationPolicyResponseCachingPolicyArgs struct {
 	// (Updatable) When false, responses will not be cached by the backend based on response headers.
+	//
+	// When true, responses that contain one of the supported cache control headers will be cached according to the values specified in the cache control headers.
+	//
+	// The "X-Accel-Expires" header field sets caching time of a response in seconds. The zero value disables caching for a response. If the value starts with the @ prefix, it sets an absolute time in seconds since Epoch, up to which the response may be cached.
+	//
+	// If the header does not include the "X-Accel-Expires" field, parameters of caching may be set in the header fields "Expires" or "Cache-Control".
+	//
+	// If the header includes the "Set-Cookie" field, such a response will not be cached.
+	//
+	// If the header includes the "Vary" field with the special value "*", such a response will not be cached. If the header includes the "Vary" field with another value, such a response will be cached taking into account the corresponding request header fields.
 	IsResponseHeaderBasedCachingEnabled pulumi.BoolPtrInput `pulumi:"isResponseHeaderBasedCachingEnabled"`
 }
 
@@ -109,6 +129,16 @@ func (o AppAccelerationPolicyResponseCachingPolicyOutput) ToAppAccelerationPolic
 }
 
 // (Updatable) When false, responses will not be cached by the backend based on response headers.
+//
+// When true, responses that contain one of the supported cache control headers will be cached according to the values specified in the cache control headers.
+//
+// The "X-Accel-Expires" header field sets caching time of a response in seconds. The zero value disables caching for a response. If the value starts with the @ prefix, it sets an absolute time in seconds since Epoch, up to which the response may be cached.
+//
+// If the header does not include the "X-Accel-Expires" field, parameters of caching may be set in the header fields "Expires" or "Cache-Control".
+//
+// If the header includes the "Set-Cookie" field, such a response will not be cached.
+//
+// If the header includes the "Vary" field with the special value "*", such a response will not be cached. If the header includes the "Vary" field with another value, such a response will be cached taking into account the corresponding request header fields.
 func (o AppAccelerationPolicyResponseCachingPolicyOutput) IsResponseHeaderBasedCachingEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v AppAccelerationPolicyResponseCachingPolicy) *bool { return v.IsResponseHeaderBasedCachingEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -138,6 +168,16 @@ func (o AppAccelerationPolicyResponseCachingPolicyPtrOutput) Elem() AppAccelerat
 }
 
 // (Updatable) When false, responses will not be cached by the backend based on response headers.
+//
+// When true, responses that contain one of the supported cache control headers will be cached according to the values specified in the cache control headers.
+//
+// The "X-Accel-Expires" header field sets caching time of a response in seconds. The zero value disables caching for a response. If the value starts with the @ prefix, it sets an absolute time in seconds since Epoch, up to which the response may be cached.
+//
+// If the header does not include the "X-Accel-Expires" field, parameters of caching may be set in the header fields "Expires" or "Cache-Control".
+//
+// If the header includes the "Set-Cookie" field, such a response will not be cached.
+//
+// If the header includes the "Vary" field with the special value "*", such a response will not be cached. If the header includes the "Vary" field with another value, such a response will be cached taking into account the corresponding request header fields.
 func (o AppAccelerationPolicyResponseCachingPolicyPtrOutput) IsResponseHeaderBasedCachingEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AppAccelerationPolicyResponseCachingPolicy) *bool {
 		if v == nil {
@@ -288,6 +328,8 @@ func (o AppAccelerationPolicyResponseCompressionPolicyPtrOutput) GzipCompression
 
 type AppAccelerationPolicyResponseCompressionPolicyGzipCompression struct {
 	// (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
+	//
+	// When false, support for gzip compression is disabled and HTTP responses will not be compressed with gzip even if the client indicates support for gzip.
 	IsEnabled *bool `pulumi:"isEnabled"`
 }
 
@@ -304,6 +346,8 @@ type AppAccelerationPolicyResponseCompressionPolicyGzipCompressionInput interfac
 
 type AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs struct {
 	// (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
+	//
+	// When false, support for gzip compression is disabled and HTTP responses will not be compressed with gzip even if the client indicates support for gzip.
 	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 }
 
@@ -385,6 +429,8 @@ func (o AppAccelerationPolicyResponseCompressionPolicyGzipCompressionOutput) ToA
 }
 
 // (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
+//
+// When false, support for gzip compression is disabled and HTTP responses will not be compressed with gzip even if the client indicates support for gzip.
 func (o AppAccelerationPolicyResponseCompressionPolicyGzipCompressionOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v AppAccelerationPolicyResponseCompressionPolicyGzipCompression) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -414,6 +460,8 @@ func (o AppAccelerationPolicyResponseCompressionPolicyGzipCompressionPtrOutput) 
 }
 
 // (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
+//
+// When false, support for gzip compression is disabled and HTTP responses will not be compressed with gzip even if the client indicates support for gzip.
 func (o AppAccelerationPolicyResponseCompressionPolicyGzipCompressionPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AppAccelerationPolicyResponseCompressionPolicyGzipCompression) *bool {
 		if v == nil {

@@ -95,12 +95,18 @@ public final class ReportDefinitionSummaryArgs extends com.pulumi.resources.Reso
     /**
      * (Updatable) Additional scim filters used to get the specific summary.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="scimFilter")
     private @Nullable Output<String> scimFilter;
 
     /**
      * @return (Updatable) Additional scim filters used to get the specific summary.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> scimFilter() {
@@ -244,6 +250,9 @@ public final class ReportDefinitionSummaryArgs extends com.pulumi.resources.Reso
         /**
          * @param scimFilter (Updatable) Additional scim filters used to get the specific summary.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -254,6 +263,9 @@ public final class ReportDefinitionSummaryArgs extends com.pulumi.resources.Reso
 
         /**
          * @param scimFilter (Updatable) Additional scim filters used to get the specific summary.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

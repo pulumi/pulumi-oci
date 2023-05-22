@@ -29,6 +29,10 @@ class WorkspaceProjectArgs:
         The set of arguments for constructing a WorkspaceProject resource.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[str] workspace_id: The workspace ID.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] description: (Updatable) A user defined description for the project.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
@@ -70,6 +74,10 @@ class WorkspaceProjectArgs:
     def workspace_id(self) -> pulumi.Input[str]:
         """
         The workspace ID.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "workspace_id")
 
@@ -191,6 +199,10 @@ class _WorkspaceProjectState:
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceProjectParentRefArgs']]] parent_reves: A reference to the object's parent.
         :param pulumi.Input['WorkspaceProjectRegistryMetadataArgs'] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[str] workspace_id: The workspace ID.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -379,6 +391,10 @@ class _WorkspaceProjectState:
     def workspace_id(self) -> Optional[pulumi.Input[str]]:
         """
         The workspace ID.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "workspace_id")
 
@@ -447,6 +463,10 @@ class WorkspaceProject(pulumi.CustomResource):
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[pulumi.InputType['WorkspaceProjectRegistryMetadataArgs']] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[str] workspace_id: The workspace ID.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -584,6 +604,10 @@ class WorkspaceProject(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceProjectParentRefArgs']]]] parent_reves: A reference to the object's parent.
         :param pulumi.Input[pulumi.InputType['WorkspaceProjectRegistryMetadataArgs']] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[str] workspace_id: The workspace ID.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -711,6 +735,10 @@ class WorkspaceProject(pulumi.CustomResource):
     def workspace_id(self) -> pulumi.Output[str]:
         """
         The workspace ID.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "workspace_id")
 

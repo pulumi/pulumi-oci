@@ -48,10 +48,22 @@ class MonitoredResourcesSearchArgs:
         :param pulumi.Input[str] resource_time_zone: Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         :param pulumi.Input[str] state: A filter to return resources with matching lifecycle state.
         :param pulumi.Input[str] time_created_greater_than_or_equal_to: Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+               
+               **Example:** 2016-12-19T16:39:57.600Z
         :param pulumi.Input[str] time_created_less_than: Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+               
+               **Example:** 2016-12-19T16:39:57.600Z
         :param pulumi.Input[str] time_updated_greater_than_or_equal_to: Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+               
+               **Example:** 2016-12-19T16:39:57.600Z
         :param pulumi.Input[str] time_updated_less_than: Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] type: A filter to return resources that match resource type.
+               
+               **Example:** 2016-12-19T16:39:57.600Z
+        :param pulumi.Input[str] type: A filter to return resources that match resource type. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         if exclude_fields is not None:
@@ -236,6 +248,8 @@ class MonitoredResourcesSearchArgs:
     def time_created_greater_than_or_equal_to(self) -> Optional[pulumi.Input[str]]:
         """
         Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+
+        **Example:** 2016-12-19T16:39:57.600Z
         """
         return pulumi.get(self, "time_created_greater_than_or_equal_to")
 
@@ -248,6 +262,8 @@ class MonitoredResourcesSearchArgs:
     def time_created_less_than(self) -> Optional[pulumi.Input[str]]:
         """
         Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+
+        **Example:** 2016-12-19T16:39:57.600Z
         """
         return pulumi.get(self, "time_created_less_than")
 
@@ -260,6 +276,8 @@ class MonitoredResourcesSearchArgs:
     def time_updated_greater_than_or_equal_to(self) -> Optional[pulumi.Input[str]]:
         """
         Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+
+        **Example:** 2016-12-19T16:39:57.600Z
         """
         return pulumi.get(self, "time_updated_greater_than_or_equal_to")
 
@@ -272,6 +290,8 @@ class MonitoredResourcesSearchArgs:
     def time_updated_less_than(self) -> Optional[pulumi.Input[str]]:
         """
         Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+
+        **Example:** 2016-12-19T16:39:57.600Z
         """
         return pulumi.get(self, "time_updated_less_than")
 
@@ -283,7 +303,11 @@ class MonitoredResourcesSearchArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        A filter to return resources that match resource type.
+        A filter to return resources that match resource type. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -329,10 +353,22 @@ class _MonitoredResourcesSearchState:
         :param pulumi.Input[str] resource_time_zone: Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         :param pulumi.Input[str] state: A filter to return resources with matching lifecycle state.
         :param pulumi.Input[str] time_created_greater_than_or_equal_to: Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+               
+               **Example:** 2016-12-19T16:39:57.600Z
         :param pulumi.Input[str] time_created_less_than: Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+               
+               **Example:** 2016-12-19T16:39:57.600Z
         :param pulumi.Input[str] time_updated_greater_than_or_equal_to: Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+               
+               **Example:** 2016-12-19T16:39:57.600Z
         :param pulumi.Input[str] time_updated_less_than: Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] type: A filter to return resources that match resource type.
+               
+               **Example:** 2016-12-19T16:39:57.600Z
+        :param pulumi.Input[str] type: A filter to return resources that match resource type. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -532,6 +568,8 @@ class _MonitoredResourcesSearchState:
     def time_created_greater_than_or_equal_to(self) -> Optional[pulumi.Input[str]]:
         """
         Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+
+        **Example:** 2016-12-19T16:39:57.600Z
         """
         return pulumi.get(self, "time_created_greater_than_or_equal_to")
 
@@ -544,6 +582,8 @@ class _MonitoredResourcesSearchState:
     def time_created_less_than(self) -> Optional[pulumi.Input[str]]:
         """
         Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+
+        **Example:** 2016-12-19T16:39:57.600Z
         """
         return pulumi.get(self, "time_created_less_than")
 
@@ -556,6 +596,8 @@ class _MonitoredResourcesSearchState:
     def time_updated_greater_than_or_equal_to(self) -> Optional[pulumi.Input[str]]:
         """
         Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+
+        **Example:** 2016-12-19T16:39:57.600Z
         """
         return pulumi.get(self, "time_updated_greater_than_or_equal_to")
 
@@ -568,6 +610,8 @@ class _MonitoredResourcesSearchState:
     def time_updated_less_than(self) -> Optional[pulumi.Input[str]]:
         """
         Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+
+        **Example:** 2016-12-19T16:39:57.600Z
         """
         return pulumi.get(self, "time_updated_less_than")
 
@@ -579,7 +623,11 @@ class _MonitoredResourcesSearchState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        A filter to return resources that match resource type.
+        A filter to return resources that match resource type. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -664,10 +712,22 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         :param pulumi.Input[str] resource_time_zone: Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         :param pulumi.Input[str] state: A filter to return resources with matching lifecycle state.
         :param pulumi.Input[str] time_created_greater_than_or_equal_to: Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+               
+               **Example:** 2016-12-19T16:39:57.600Z
         :param pulumi.Input[str] time_created_less_than: Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+               
+               **Example:** 2016-12-19T16:39:57.600Z
         :param pulumi.Input[str] time_updated_greater_than_or_equal_to: Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+               
+               **Example:** 2016-12-19T16:39:57.600Z
         :param pulumi.Input[str] time_updated_less_than: Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] type: A filter to return resources that match resource type.
+               
+               **Example:** 2016-12-19T16:39:57.600Z
+        :param pulumi.Input[str] type: A filter to return resources that match resource type. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -823,10 +883,22 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         :param pulumi.Input[str] resource_time_zone: Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         :param pulumi.Input[str] state: A filter to return resources with matching lifecycle state.
         :param pulumi.Input[str] time_created_greater_than_or_equal_to: Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+               
+               **Example:** 2016-12-19T16:39:57.600Z
         :param pulumi.Input[str] time_created_less_than: Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+               
+               **Example:** 2016-12-19T16:39:57.600Z
         :param pulumi.Input[str] time_updated_greater_than_or_equal_to: Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+               
+               **Example:** 2016-12-19T16:39:57.600Z
         :param pulumi.Input[str] time_updated_less_than: Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] type: A filter to return resources that match resource type.
+               
+               **Example:** 2016-12-19T16:39:57.600Z
+        :param pulumi.Input[str] type: A filter to return resources that match resource type. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -961,6 +1033,8 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
     def time_created_greater_than_or_equal_to(self) -> pulumi.Output[Optional[str]]:
         """
         Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+
+        **Example:** 2016-12-19T16:39:57.600Z
         """
         return pulumi.get(self, "time_created_greater_than_or_equal_to")
 
@@ -969,6 +1043,8 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
     def time_created_less_than(self) -> pulumi.Output[Optional[str]]:
         """
         Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+
+        **Example:** 2016-12-19T16:39:57.600Z
         """
         return pulumi.get(self, "time_created_less_than")
 
@@ -977,6 +1053,8 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
     def time_updated_greater_than_or_equal_to(self) -> pulumi.Output[Optional[str]]:
         """
         Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+
+        **Example:** 2016-12-19T16:39:57.600Z
         """
         return pulumi.get(self, "time_updated_greater_than_or_equal_to")
 
@@ -985,6 +1063,8 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
     def time_updated_less_than(self) -> pulumi.Output[Optional[str]]:
         """
         Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+
+        **Example:** 2016-12-19T16:39:57.600Z
         """
         return pulumi.get(self, "time_updated_less_than")
 
@@ -992,7 +1072,11 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[Optional[str]]:
         """
-        A filter to return resources that match resource type.
+        A filter to return resources that match resource type. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 

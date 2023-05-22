@@ -85,6 +85,9 @@ type DedicatedVantagePoint struct {
 	// (Updatable) Name of the region.
 	Region pulumi.StringOutput `pulumi:"region"`
 	// (Updatable) Status of the dedicated vantage point.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringOutput `pulumi:"status"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -150,6 +153,9 @@ type dedicatedVantagePointState struct {
 	// (Updatable) Name of the region.
 	Region *string `pulumi:"region"`
 	// (Updatable) Status of the dedicated vantage point.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status *string `pulumi:"status"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -175,6 +181,9 @@ type DedicatedVantagePointState struct {
 	// (Updatable) Name of the region.
 	Region pulumi.StringPtrInput
 	// (Updatable) Status of the dedicated vantage point.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringPtrInput
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeCreated pulumi.StringPtrInput
@@ -200,6 +209,9 @@ type dedicatedVantagePointArgs struct {
 	// (Updatable) Name of the region.
 	Region string `pulumi:"region"`
 	// (Updatable) Status of the dedicated vantage point.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status *string `pulumi:"status"`
 }
 
@@ -218,6 +230,9 @@ type DedicatedVantagePointArgs struct {
 	// (Updatable) Name of the region.
 	Region pulumi.StringInput
 	// (Updatable) Status of the dedicated vantage point.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringPtrInput
 }
 
@@ -351,6 +366,9 @@ func (o DedicatedVantagePointOutput) Region() pulumi.StringOutput {
 }
 
 // (Updatable) Status of the dedicated vantage point.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DedicatedVantagePointOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *DedicatedVantagePoint) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }

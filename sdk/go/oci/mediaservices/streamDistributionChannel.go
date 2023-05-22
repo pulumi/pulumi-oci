@@ -69,6 +69,9 @@ type StreamDistributionChannel struct {
 	// Unique domain name of the Distribution Channel.
 	DomainName pulumi.StringOutput `pulumi:"domainName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The current state of the Stream Distribution Channel.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -124,6 +127,9 @@ type streamDistributionChannelState struct {
 	// Unique domain name of the Distribution Channel.
 	DomainName *string `pulumi:"domainName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The current state of the Stream Distribution Channel.
 	State *string `pulumi:"state"`
@@ -145,6 +151,9 @@ type StreamDistributionChannelState struct {
 	// Unique domain name of the Distribution Channel.
 	DomainName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapInput
 	// The current state of the Stream Distribution Channel.
 	State pulumi.StringPtrInput
@@ -168,6 +177,9 @@ type streamDistributionChannelArgs struct {
 	// (Updatable) Stream Distribution Channel display name. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 }
 
@@ -180,6 +192,9 @@ type StreamDistributionChannelArgs struct {
 	// (Updatable) Stream Distribution Channel display name. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapInput
 }
 
@@ -291,6 +306,9 @@ func (o StreamDistributionChannelOutput) DomainName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o StreamDistributionChannelOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *StreamDistributionChannel) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }

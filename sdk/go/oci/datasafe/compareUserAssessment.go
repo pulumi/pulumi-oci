@@ -58,6 +58,9 @@ type CompareUserAssessment struct {
 	// The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
 	ComparisonUserAssessmentId pulumi.StringOutput `pulumi:"comparisonUserAssessmentId"`
 	// The OCID of the user assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserAssessmentId pulumi.StringOutput `pulumi:"userAssessmentId"`
 }
 
@@ -99,6 +102,9 @@ type compareUserAssessmentState struct {
 	// The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
 	ComparisonUserAssessmentId *string `pulumi:"comparisonUserAssessmentId"`
 	// The OCID of the user assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserAssessmentId *string `pulumi:"userAssessmentId"`
 }
 
@@ -106,6 +112,9 @@ type CompareUserAssessmentState struct {
 	// The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
 	ComparisonUserAssessmentId pulumi.StringPtrInput
 	// The OCID of the user assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserAssessmentId pulumi.StringPtrInput
 }
 
@@ -117,6 +126,9 @@ type compareUserAssessmentArgs struct {
 	// The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
 	ComparisonUserAssessmentId string `pulumi:"comparisonUserAssessmentId"`
 	// The OCID of the user assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserAssessmentId string `pulumi:"userAssessmentId"`
 }
 
@@ -125,6 +137,9 @@ type CompareUserAssessmentArgs struct {
 	// The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
 	ComparisonUserAssessmentId pulumi.StringInput
 	// The OCID of the user assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserAssessmentId pulumi.StringInput
 }
 
@@ -221,6 +236,9 @@ func (o CompareUserAssessmentOutput) ComparisonUserAssessmentId() pulumi.StringO
 }
 
 // The OCID of the user assessment.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CompareUserAssessmentOutput) UserAssessmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CompareUserAssessment) pulumi.StringOutput { return v.UserAssessmentId }).(pulumi.StringOutput)
 }

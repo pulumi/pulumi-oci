@@ -61,7 +61,7 @@ import javax.annotation.Nullable;
  *             .displayName(var_.monitor_display_name())
  *             .monitorType(var_.monitor_monitor_type())
  *             .repeatIntervalInSeconds(var_.monitor_repeat_interval_in_seconds())
- *             .vantagePoints()
+ *             .vantagePoints(var_.vantage_points())
  *             .availabilityConfiguration(ConfigAvailabilityConfigurationArgs.builder()
  *                 .maxAllowedFailuresPerInterval(var_.monitor_availability_configuration_max_allowed_failures_per_interval())
  *                 .minAllowedRunsPerInterval(var_.monitor_availability_configuration_min_allowed_runs_per_interval())
@@ -458,12 +458,18 @@ public class Config extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="vantagePoints", type=List.class, parameters={String.class})
     private Output<List<String>> vantagePoints;
 
     /**
      * @return (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<List<String>> vantagePoints() {

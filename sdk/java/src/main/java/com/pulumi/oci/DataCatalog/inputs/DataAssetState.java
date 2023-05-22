@@ -185,12 +185,18 @@ public final class DataAssetState extends com.pulumi.resources.ResourceArgs {
     /**
      * The key of the data asset type. This can be obtained via the &#39;/types&#39; endpoint.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="typeKey")
     private @Nullable Output<String> typeKey;
 
     /**
      * @return The key of the data asset type. This can be obtained via the &#39;/types&#39; endpoint.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> typeKey() {
@@ -498,6 +504,9 @@ public final class DataAssetState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param typeKey The key of the data asset type. This can be obtained via the &#39;/types&#39; endpoint.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -508,6 +517,9 @@ public final class DataAssetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param typeKey The key of the data asset type. This can be obtained via the &#39;/types&#39; endpoint.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

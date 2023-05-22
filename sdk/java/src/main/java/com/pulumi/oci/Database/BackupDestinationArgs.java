@@ -150,12 +150,18 @@ public final class BackupDestinationArgs extends com.pulumi.resources.ResourceAr
     /**
      * (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="vpcUsers")
     private @Nullable Output<List<String>> vpcUsers;
 
     /**
      * @return (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<List<String>>> vpcUsers() {
@@ -373,6 +379,9 @@ public final class BackupDestinationArgs extends com.pulumi.resources.ResourceAr
         /**
          * @param vpcUsers (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -384,6 +393,9 @@ public final class BackupDestinationArgs extends com.pulumi.resources.ResourceAr
         /**
          * @param vpcUsers (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -393,6 +405,9 @@ public final class BackupDestinationArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param vpcUsers (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

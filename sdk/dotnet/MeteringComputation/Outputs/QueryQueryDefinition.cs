@@ -27,6 +27,10 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         public readonly Outputs.QueryQueryDefinitionReportQuery ReportQuery;
         /// <summary>
         /// (Updatable) The saved query version.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly double Version;
 

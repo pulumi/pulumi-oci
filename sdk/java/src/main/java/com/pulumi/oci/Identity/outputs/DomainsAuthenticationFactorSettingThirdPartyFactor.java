@@ -12,12 +12,34 @@ public final class DomainsAuthenticationFactorSettingThirdPartyFactor {
     /**
      * @return (Updatable) To enable Duo Security factor
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     private Boolean duoSecurity;
 
     private DomainsAuthenticationFactorSettingThirdPartyFactor() {}
     /**
      * @return (Updatable) To enable Duo Security factor
+     * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Boolean duoSecurity() {

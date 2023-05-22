@@ -14,75 +14,230 @@ public final class DomainsAuthenticationFactorSettingClientAppSettings {
     /**
      * @return (Updatable) Indicates what protection policy that the system applies on a device. By default, the value is NONE, which indicates that the system applies no protection policy. A value of APP_PIN indicates that the system requires a Personal Identification Number (PIN). A value of DEVICE_BIOMETRIC_OR_APP_PIN indicates that either a PIN or a biometric authentication factor is required.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCanonicalValueSourceFilter: attrName eq &#34;deviceProtectionPolicy&#34; and attrValues.value eq &#34;$(deviceProtectionPolicy)&#34;
+     * * idcsCanonicalValueSourceResourceType: AllowedValue
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private String deviceProtectionPolicy;
     /**
      * @return (Updatable) The period of time in seconds that the system will lock a user out of the service after that user exceeds the maximum number of login failures
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 86400
+     * * idcsMinValue: 30
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     private Integer initialLockoutPeriodInSecs;
     /**
      * @return (Updatable) The size of the key that the system uses to generate the public-private key pair
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 4000
+     * * idcsMinValue: 32
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     private Integer keyPairLength;
     /**
      * @return (Updatable) The pattern of escalation that the system follows, in locking a particular user out of the service.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCanonicalValueSourceFilter: attrName eq &#34;lockoutEscalationPattern&#34; and attrValues.value eq &#34;$(lockoutEscalationPattern)&#34;
+     * * idcsCanonicalValueSourceResourceType: AllowedValue
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private String lockoutEscalationPattern;
     /**
      * @return (Updatable) The maximum number of times that a particular user can fail to login before the system locks that user out of the service
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 10
+     * * idcsMinValue: 5
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     private Integer maxFailuresBeforeLockout;
     /**
      * @return (Updatable) The maximum number of login failures that the system will allow before raising a warning and sending an alert via email
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 10
+     * * idcsMinValue: 0
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     private Integer maxFailuresBeforeWarning;
     /**
      * @return (Updatable) The maximum period of time that the system will lock a particular user out of the service regardless of what the configured pattern of escalation would otherwise dictate
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 86400
+     * * idcsMinValue: 30
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     private Integer maxLockoutIntervalInSecs;
     /**
      * @return (Updatable) Minimum length of the Personal Identification Number (PIN)
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 10
+     * * idcsMinValue: 6
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     private Integer minPinLength;
     /**
      * @return (Updatable) The period of time in days after which a client should refresh its policy by re-reading that policy from the server
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 999
+     * * idcsMinValue: 1
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     private Integer policyUpdateFreqInDays;
     /**
      * @return (Updatable) Indicates which algorithm the system will use to sign requests
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     private String requestSigningAlgo;
     /**
      * @return (Updatable) Indicates the type of encoding that the system should use to generate a shared secret
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     private String sharedSecretEncoding;
     /**
      * @return (Updatable) If true, indicates that the system should require the user to unlock the client app for each request. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     private Boolean unlockAppForEachRequestEnabled;
     /**
      * @return (Updatable) Specifies the period of time in seconds after which the client App should require the user to unlock the App. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor. A value of zero means that it is disabled.
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 9999999
+     * * idcsMinValue: 0
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     private Integer unlockAppIntervalInSecs;
     /**
      * @return (Updatable) If true, indicates that the system should require the user to unlock the client App, when the client App comes to the foreground in the display of the device. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     private Boolean unlockOnAppForegroundEnabled;
     /**
      * @return (Updatable) If true, indicates that the system should require the user to unlock the client App whenever the App is started. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     private Boolean unlockOnAppStartEnabled;
@@ -91,12 +246,34 @@ public final class DomainsAuthenticationFactorSettingClientAppSettings {
     /**
      * @return (Updatable) Indicates what protection policy that the system applies on a device. By default, the value is NONE, which indicates that the system applies no protection policy. A value of APP_PIN indicates that the system requires a Personal Identification Number (PIN). A value of DEVICE_BIOMETRIC_OR_APP_PIN indicates that either a PIN or a biometric authentication factor is required.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCanonicalValueSourceFilter: attrName eq &#34;deviceProtectionPolicy&#34; and attrValues.value eq &#34;$(deviceProtectionPolicy)&#34;
+     * * idcsCanonicalValueSourceResourceType: AllowedValue
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public String deviceProtectionPolicy() {
         return this.deviceProtectionPolicy;
     }
     /**
      * @return (Updatable) The period of time in seconds that the system will lock a user out of the service after that user exceeds the maximum number of login failures
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 86400
+     * * idcsMinValue: 30
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Integer initialLockoutPeriodInSecs() {
@@ -105,12 +282,34 @@ public final class DomainsAuthenticationFactorSettingClientAppSettings {
     /**
      * @return (Updatable) The size of the key that the system uses to generate the public-private key pair
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 4000
+     * * idcsMinValue: 32
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     public Integer keyPairLength() {
         return this.keyPairLength;
     }
     /**
      * @return (Updatable) The pattern of escalation that the system follows, in locking a particular user out of the service.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCanonicalValueSourceFilter: attrName eq &#34;lockoutEscalationPattern&#34; and attrValues.value eq &#34;$(lockoutEscalationPattern)&#34;
+     * * idcsCanonicalValueSourceResourceType: AllowedValue
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public String lockoutEscalationPattern() {
@@ -119,12 +318,34 @@ public final class DomainsAuthenticationFactorSettingClientAppSettings {
     /**
      * @return (Updatable) The maximum number of times that a particular user can fail to login before the system locks that user out of the service
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 10
+     * * idcsMinValue: 5
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     public Integer maxFailuresBeforeLockout() {
         return this.maxFailuresBeforeLockout;
     }
     /**
      * @return (Updatable) The maximum number of login failures that the system will allow before raising a warning and sending an alert via email
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 10
+     * * idcsMinValue: 0
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Integer maxFailuresBeforeWarning() {
@@ -133,12 +354,34 @@ public final class DomainsAuthenticationFactorSettingClientAppSettings {
     /**
      * @return (Updatable) The maximum period of time that the system will lock a particular user out of the service regardless of what the configured pattern of escalation would otherwise dictate
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 86400
+     * * idcsMinValue: 30
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     public Integer maxLockoutIntervalInSecs() {
         return this.maxLockoutIntervalInSecs;
     }
     /**
      * @return (Updatable) Minimum length of the Personal Identification Number (PIN)
+     * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 10
+     * * idcsMinValue: 6
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Integer minPinLength() {
@@ -147,12 +390,32 @@ public final class DomainsAuthenticationFactorSettingClientAppSettings {
     /**
      * @return (Updatable) The period of time in days after which a client should refresh its policy by re-reading that policy from the server
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 999
+     * * idcsMinValue: 1
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     public Integer policyUpdateFreqInDays() {
         return this.policyUpdateFreqInDays;
     }
     /**
      * @return (Updatable) Indicates which algorithm the system will use to sign requests
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public String requestSigningAlgo() {
@@ -161,12 +424,30 @@ public final class DomainsAuthenticationFactorSettingClientAppSettings {
     /**
      * @return (Updatable) Indicates the type of encoding that the system should use to generate a shared secret
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     public String sharedSecretEncoding() {
         return this.sharedSecretEncoding;
     }
     /**
      * @return (Updatable) If true, indicates that the system should require the user to unlock the client app for each request. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Boolean unlockAppForEachRequestEnabled() {
@@ -175,6 +456,17 @@ public final class DomainsAuthenticationFactorSettingClientAppSettings {
     /**
      * @return (Updatable) Specifies the period of time in seconds after which the client App should require the user to unlock the App. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor. A value of zero means that it is disabled.
      * 
+     * **SCIM++ Properties:**
+     * * idcsMaxValue: 9999999
+     * * idcsMinValue: 0
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     public Integer unlockAppIntervalInSecs() {
         return this.unlockAppIntervalInSecs;
@@ -182,12 +474,30 @@ public final class DomainsAuthenticationFactorSettingClientAppSettings {
     /**
      * @return (Updatable) If true, indicates that the system should require the user to unlock the client App, when the client App comes to the foreground in the display of the device. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     public Boolean unlockOnAppForegroundEnabled() {
         return this.unlockOnAppForegroundEnabled;
     }
     /**
      * @return (Updatable) If true, indicates that the system should require the user to unlock the client App whenever the App is started. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Boolean unlockOnAppStartEnabled() {

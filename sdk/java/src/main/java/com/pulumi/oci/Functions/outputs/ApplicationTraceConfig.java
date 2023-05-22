@@ -20,6 +20,9 @@ public final class ApplicationTraceConfig {
     /**
      * @return (Updatable) Define if tracing is enabled for the resource.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private @Nullable Boolean isEnabled;
 
@@ -33,6 +36,9 @@ public final class ApplicationTraceConfig {
     }
     /**
      * @return (Updatable) Define if tracing is enabled for the resource.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Boolean> isEnabled() {

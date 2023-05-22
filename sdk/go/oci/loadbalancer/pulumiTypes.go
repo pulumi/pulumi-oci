@@ -18,6 +18,10 @@ type BackendSetBackend struct {
 	// The IP address of the backend server.  Example: `10.0.0.3`
 	IpAddress string `pulumi:"ipAddress"`
 	// A friendly name for the backend set. It must be unique and it cannot be changed.
+	//
+	// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+	//
+	// Example: `exampleBackendSet`
 	Name *string `pulumi:"name"`
 	// Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	Offline *bool `pulumi:"offline"`
@@ -46,6 +50,10 @@ type BackendSetBackendArgs struct {
 	// The IP address of the backend server.  Example: `10.0.0.3`
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
 	// A friendly name for the backend set. It must be unique and it cannot be changed.
+	//
+	// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+	//
+	// Example: `exampleBackendSet`
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	Offline pulumi.BoolPtrInput `pulumi:"offline"`
@@ -122,6 +130,10 @@ func (o BackendSetBackendOutput) IpAddress() pulumi.StringOutput {
 }
 
 // A friendly name for the backend set. It must be unique and it cannot be changed.
+//
+// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+//
+// Example: `exampleBackendSet`
 func (o BackendSetBackendOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BackendSetBackend) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -165,6 +177,12 @@ type BackendSetHealthChecker struct {
 	// (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
 	IntervalMs *int `pulumi:"intervalMs"`
 	// (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+	//
+	// If "true", health checks will be done using plain text even if the associated backend set is configured to use SSL.
+	//
+	// If "false", health checks will be done using SSL encryption if the associated backend set is configured to use SSL. If the backend set is not so configured the health checks will be done using plain text.
+	//
+	// Example: `false`
 	IsForcePlainText *bool `pulumi:"isForcePlainText"`
 	// (Updatable) The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
 	Port *int `pulumi:"port"`
@@ -197,6 +215,12 @@ type BackendSetHealthCheckerArgs struct {
 	// (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
 	IntervalMs pulumi.IntPtrInput `pulumi:"intervalMs"`
 	// (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+	//
+	// If "true", health checks will be done using plain text even if the associated backend set is configured to use SSL.
+	//
+	// If "false", health checks will be done using SSL encryption if the associated backend set is configured to use SSL. If the backend set is not so configured the health checks will be done using plain text.
+	//
+	// Example: `false`
 	IsForcePlainText pulumi.BoolPtrInput `pulumi:"isForcePlainText"`
 	// (Updatable) The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
 	Port pulumi.IntPtrInput `pulumi:"port"`
@@ -297,6 +321,12 @@ func (o BackendSetHealthCheckerOutput) IntervalMs() pulumi.IntPtrOutput {
 }
 
 // (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+//
+// If "true", health checks will be done using plain text even if the associated backend set is configured to use SSL.
+//
+// If "false", health checks will be done using SSL encryption if the associated backend set is configured to use SSL. If the backend set is not so configured the health checks will be done using plain text.
+//
+// Example: `false`
 func (o BackendSetHealthCheckerOutput) IsForcePlainText() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v BackendSetHealthChecker) *bool { return v.IsForcePlainText }).(pulumi.BoolPtrOutput)
 }
@@ -371,6 +401,12 @@ func (o BackendSetHealthCheckerPtrOutput) IntervalMs() pulumi.IntPtrOutput {
 }
 
 // (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+//
+// If "true", health checks will be done using plain text even if the associated backend set is configured to use SSL.
+//
+// If "false", health checks will be done using SSL encryption if the associated backend set is configured to use SSL. If the backend set is not so configured the health checks will be done using plain text.
+//
+// Example: `false`
 func (o BackendSetHealthCheckerPtrOutput) IsForcePlainText() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BackendSetHealthChecker) *bool {
 		if v == nil {
@@ -456,14 +492,38 @@ type BackendSetLbCookieSessionPersistenceConfiguration struct {
 	// (Updatable) Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
 	DisableFallback *bool `pulumi:"disableFallback"`
 	// (Updatable) The domain in which the cookie is valid. The `Set-cookie` header inserted by the load balancer contains a domain attribute with the specified value.
+	//
+	// This attribute has no default value. If you do not specify a value, the load balancer does not insert the domain attribute into the `Set-cookie` header.
+	//
+	// **Notes:**
+	// *  [RFC 6265 - HTTP State Management Mechanism](https://www.ietf.org/rfc/rfc6265.txt) describes client and browser behavior when the domain attribute is present or not present in the `Set-cookie` header.
+	//
+	// If the value of the `Domain` attribute is `example.com` in the `Set-cookie` header, the client includes the same cookie in the `Cookie` header when making HTTP requests to `example.com`, `www.example.com`, and `www.abc.example.com`. If the `Domain` attribute is not present, the client returns the cookie only for the domain to which the original request was made.
+	// *  Ensure that this attribute specifies the correct domain value. If the `Domain` attribute in the `Set-cookie` header does not include the domain to which the original request was made, the client or browser might reject the cookie. As specified in RFC 6265, the client accepts a cookie with the `Domain` attribute value `example.com` or `www.example.com` sent from `www.example.com`. It does not accept a cookie with the `Domain` attribute `abc.example.com` or `www.abc.example.com` sent from `www.example.com`.
+	//
+	// Example: `example.com`
 	Domain *string `pulumi:"domain"`
 	// (Updatable) Whether the `Set-cookie` header should contain the `HttpOnly` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `HttpOnly` attribute, which limits the scope of the cookie to HTTP requests. This attribute directs the client or browser to omit the cookie when providing access to cookies through non-HTTP APIs. For example, it restricts the cookie from JavaScript channels.  Example: `true`
 	IsHttpOnly *bool `pulumi:"isHttpOnly"`
 	// (Updatable) Whether the `Set-cookie` header should contain the `Secure` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `Secure` attribute, which directs the client or browser to send the cookie only using a secure protocol.
+	//
+	// **Note:** If you set this field to `true`, you cannot associate the corresponding backend set with an HTTP listener.
+	//
+	// Example: `true`
 	IsSecure *bool `pulumi:"isSecure"`
 	// (Updatable) The amount of time the cookie remains valid. The `Set-cookie` header inserted by the load balancer contains a `Max-Age` attribute with the specified value.
+	//
+	// The specified value must be at least one second. There is no default value for this attribute. If you do not specify a value, the load balancer does not include the `Max-Age` attribute in the `Set-cookie` header. In most cases, the client or browser retains the cookie until the current session ends, as defined by the client.
+	//
+	// Example: `3600`
 	MaxAgeInSeconds *int `pulumi:"maxAgeInSeconds"`
 	// (Updatable) The path in which the cookie is valid. The `Set-cookie header` inserted by the load balancer contains a `Path` attribute with the specified value.
+	//
+	// Clients include the cookie in an HTTP request only if the path portion of the request-uri matches, or is a subdirectory of, the cookie's `Path` attribute.
+	//
+	// The default value is `/`.
+	//
+	// Example: `/example`
 	Path *string `pulumi:"path"`
 }
 
@@ -484,14 +544,38 @@ type BackendSetLbCookieSessionPersistenceConfigurationArgs struct {
 	// (Updatable) Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
 	DisableFallback pulumi.BoolPtrInput `pulumi:"disableFallback"`
 	// (Updatable) The domain in which the cookie is valid. The `Set-cookie` header inserted by the load balancer contains a domain attribute with the specified value.
+	//
+	// This attribute has no default value. If you do not specify a value, the load balancer does not insert the domain attribute into the `Set-cookie` header.
+	//
+	// **Notes:**
+	// *  [RFC 6265 - HTTP State Management Mechanism](https://www.ietf.org/rfc/rfc6265.txt) describes client and browser behavior when the domain attribute is present or not present in the `Set-cookie` header.
+	//
+	// If the value of the `Domain` attribute is `example.com` in the `Set-cookie` header, the client includes the same cookie in the `Cookie` header when making HTTP requests to `example.com`, `www.example.com`, and `www.abc.example.com`. If the `Domain` attribute is not present, the client returns the cookie only for the domain to which the original request was made.
+	// *  Ensure that this attribute specifies the correct domain value. If the `Domain` attribute in the `Set-cookie` header does not include the domain to which the original request was made, the client or browser might reject the cookie. As specified in RFC 6265, the client accepts a cookie with the `Domain` attribute value `example.com` or `www.example.com` sent from `www.example.com`. It does not accept a cookie with the `Domain` attribute `abc.example.com` or `www.abc.example.com` sent from `www.example.com`.
+	//
+	// Example: `example.com`
 	Domain pulumi.StringPtrInput `pulumi:"domain"`
 	// (Updatable) Whether the `Set-cookie` header should contain the `HttpOnly` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `HttpOnly` attribute, which limits the scope of the cookie to HTTP requests. This attribute directs the client or browser to omit the cookie when providing access to cookies through non-HTTP APIs. For example, it restricts the cookie from JavaScript channels.  Example: `true`
 	IsHttpOnly pulumi.BoolPtrInput `pulumi:"isHttpOnly"`
 	// (Updatable) Whether the `Set-cookie` header should contain the `Secure` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `Secure` attribute, which directs the client or browser to send the cookie only using a secure protocol.
+	//
+	// **Note:** If you set this field to `true`, you cannot associate the corresponding backend set with an HTTP listener.
+	//
+	// Example: `true`
 	IsSecure pulumi.BoolPtrInput `pulumi:"isSecure"`
 	// (Updatable) The amount of time the cookie remains valid. The `Set-cookie` header inserted by the load balancer contains a `Max-Age` attribute with the specified value.
+	//
+	// The specified value must be at least one second. There is no default value for this attribute. If you do not specify a value, the load balancer does not include the `Max-Age` attribute in the `Set-cookie` header. In most cases, the client or browser retains the cookie until the current session ends, as defined by the client.
+	//
+	// Example: `3600`
 	MaxAgeInSeconds pulumi.IntPtrInput `pulumi:"maxAgeInSeconds"`
 	// (Updatable) The path in which the cookie is valid. The `Set-cookie header` inserted by the load balancer contains a `Path` attribute with the specified value.
+	//
+	// Clients include the cookie in an HTTP request only if the path portion of the request-uri matches, or is a subdirectory of, the cookie's `Path` attribute.
+	//
+	// The default value is `/`.
+	//
+	// Example: `/example`
 	Path pulumi.StringPtrInput `pulumi:"path"`
 }
 
@@ -583,6 +667,16 @@ func (o BackendSetLbCookieSessionPersistenceConfigurationOutput) DisableFallback
 }
 
 // (Updatable) The domain in which the cookie is valid. The `Set-cookie` header inserted by the load balancer contains a domain attribute with the specified value.
+//
+// This attribute has no default value. If you do not specify a value, the load balancer does not insert the domain attribute into the `Set-cookie` header.
+//
+// **Notes:**
+// *  [RFC 6265 - HTTP State Management Mechanism](https://www.ietf.org/rfc/rfc6265.txt) describes client and browser behavior when the domain attribute is present or not present in the `Set-cookie` header.
+//
+// If the value of the `Domain` attribute is `example.com` in the `Set-cookie` header, the client includes the same cookie in the `Cookie` header when making HTTP requests to `example.com`, `www.example.com`, and `www.abc.example.com`. If the `Domain` attribute is not present, the client returns the cookie only for the domain to which the original request was made.
+// *  Ensure that this attribute specifies the correct domain value. If the `Domain` attribute in the `Set-cookie` header does not include the domain to which the original request was made, the client or browser might reject the cookie. As specified in RFC 6265, the client accepts a cookie with the `Domain` attribute value `example.com` or `www.example.com` sent from `www.example.com`. It does not accept a cookie with the `Domain` attribute `abc.example.com` or `www.abc.example.com` sent from `www.example.com`.
+//
+// Example: `example.com`
 func (o BackendSetLbCookieSessionPersistenceConfigurationOutput) Domain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BackendSetLbCookieSessionPersistenceConfiguration) *string { return v.Domain }).(pulumi.StringPtrOutput)
 }
@@ -593,16 +687,30 @@ func (o BackendSetLbCookieSessionPersistenceConfigurationOutput) IsHttpOnly() pu
 }
 
 // (Updatable) Whether the `Set-cookie` header should contain the `Secure` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `Secure` attribute, which directs the client or browser to send the cookie only using a secure protocol.
+//
+// **Note:** If you set this field to `true`, you cannot associate the corresponding backend set with an HTTP listener.
+//
+// Example: `true`
 func (o BackendSetLbCookieSessionPersistenceConfigurationOutput) IsSecure() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v BackendSetLbCookieSessionPersistenceConfiguration) *bool { return v.IsSecure }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The amount of time the cookie remains valid. The `Set-cookie` header inserted by the load balancer contains a `Max-Age` attribute with the specified value.
+//
+// The specified value must be at least one second. There is no default value for this attribute. If you do not specify a value, the load balancer does not include the `Max-Age` attribute in the `Set-cookie` header. In most cases, the client or browser retains the cookie until the current session ends, as defined by the client.
+//
+// Example: `3600`
 func (o BackendSetLbCookieSessionPersistenceConfigurationOutput) MaxAgeInSeconds() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BackendSetLbCookieSessionPersistenceConfiguration) *int { return v.MaxAgeInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The path in which the cookie is valid. The `Set-cookie header` inserted by the load balancer contains a `Path` attribute with the specified value.
+//
+// Clients include the cookie in an HTTP request only if the path portion of the request-uri matches, or is a subdirectory of, the cookie's `Path` attribute.
+//
+// The default value is `/`.
+//
+// Example: `/example`
 func (o BackendSetLbCookieSessionPersistenceConfigurationOutput) Path() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BackendSetLbCookieSessionPersistenceConfiguration) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
@@ -652,6 +760,16 @@ func (o BackendSetLbCookieSessionPersistenceConfigurationPtrOutput) DisableFallb
 }
 
 // (Updatable) The domain in which the cookie is valid. The `Set-cookie` header inserted by the load balancer contains a domain attribute with the specified value.
+//
+// This attribute has no default value. If you do not specify a value, the load balancer does not insert the domain attribute into the `Set-cookie` header.
+//
+// **Notes:**
+// *  [RFC 6265 - HTTP State Management Mechanism](https://www.ietf.org/rfc/rfc6265.txt) describes client and browser behavior when the domain attribute is present or not present in the `Set-cookie` header.
+//
+// If the value of the `Domain` attribute is `example.com` in the `Set-cookie` header, the client includes the same cookie in the `Cookie` header when making HTTP requests to `example.com`, `www.example.com`, and `www.abc.example.com`. If the `Domain` attribute is not present, the client returns the cookie only for the domain to which the original request was made.
+// *  Ensure that this attribute specifies the correct domain value. If the `Domain` attribute in the `Set-cookie` header does not include the domain to which the original request was made, the client or browser might reject the cookie. As specified in RFC 6265, the client accepts a cookie with the `Domain` attribute value `example.com` or `www.example.com` sent from `www.example.com`. It does not accept a cookie with the `Domain` attribute `abc.example.com` or `www.abc.example.com` sent from `www.example.com`.
+//
+// Example: `example.com`
 func (o BackendSetLbCookieSessionPersistenceConfigurationPtrOutput) Domain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BackendSetLbCookieSessionPersistenceConfiguration) *string {
 		if v == nil {
@@ -672,6 +790,10 @@ func (o BackendSetLbCookieSessionPersistenceConfigurationPtrOutput) IsHttpOnly()
 }
 
 // (Updatable) Whether the `Set-cookie` header should contain the `Secure` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `Secure` attribute, which directs the client or browser to send the cookie only using a secure protocol.
+//
+// **Note:** If you set this field to `true`, you cannot associate the corresponding backend set with an HTTP listener.
+//
+// Example: `true`
 func (o BackendSetLbCookieSessionPersistenceConfigurationPtrOutput) IsSecure() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BackendSetLbCookieSessionPersistenceConfiguration) *bool {
 		if v == nil {
@@ -682,6 +804,10 @@ func (o BackendSetLbCookieSessionPersistenceConfigurationPtrOutput) IsSecure() p
 }
 
 // (Updatable) The amount of time the cookie remains valid. The `Set-cookie` header inserted by the load balancer contains a `Max-Age` attribute with the specified value.
+//
+// The specified value must be at least one second. There is no default value for this attribute. If you do not specify a value, the load balancer does not include the `Max-Age` attribute in the `Set-cookie` header. In most cases, the client or browser retains the cookie until the current session ends, as defined by the client.
+//
+// Example: `3600`
 func (o BackendSetLbCookieSessionPersistenceConfigurationPtrOutput) MaxAgeInSeconds() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BackendSetLbCookieSessionPersistenceConfiguration) *int {
 		if v == nil {
@@ -692,6 +818,12 @@ func (o BackendSetLbCookieSessionPersistenceConfigurationPtrOutput) MaxAgeInSeco
 }
 
 // (Updatable) The path in which the cookie is valid. The `Set-cookie header` inserted by the load balancer contains a `Path` attribute with the specified value.
+//
+// Clients include the cookie in an HTTP request only if the path portion of the request-uri matches, or is a subdirectory of, the cookie's `Path` attribute.
+//
+// The default value is `/`.
+//
+// Example: `/example`
 func (o BackendSetLbCookieSessionPersistenceConfigurationPtrOutput) Path() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BackendSetLbCookieSessionPersistenceConfiguration) *string {
 		if v == nil {
@@ -863,16 +995,52 @@ type BackendSetSslConfiguration struct {
 	// (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
 	CertificateName *string `pulumi:"certificateName"`
 	// (Updatable) The name of the cipher suite to use for HTTPS or SSL connections.
+	//
+	// If this field is not specified, the default is `oci-default-ssl-cipher-suite-v1`.
+	//
+	// **Notes:**
+	// *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
+	// *  You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
+	// *  If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+	// *  If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+	// *  The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
+	// *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
+	// *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
+	//
+	// example: `exampleCipherSuite`
 	CipherSuiteName *string `pulumi:"cipherSuiteName"`
 	// (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
+	//
+	// The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
+	//
+	// The Load Balancing service supports the following protocols:
+	// *  TLSv1
+	// *  TLSv1.1
+	// *  TLSv1.2
+	//
+	// If this field is not specified, TLSv1.2 is the default.
+	//
+	// **Warning:** All SSL listeners created on a given port must use the same set of SSL protocols.
+	//
+	// **Notes:**
+	// *  The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
+	// *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
+	// *  For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
+	//
+	// example: `["TLSv1.1", "TLSv1.2"]`
 	Protocols []string `pulumi:"protocols"`
 	// (Updatable) When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client ciphers.
+	//
+	// **Note:** This configuration is applicable only when the load balancer is acting as an SSL/HTTPS server. This field is ignored when the `SSLConfiguration` object is associated with a backend set.
 	ServerOrderPreference *string `pulumi:"serverOrderPreference"`
 	// (Updatable) Ids for Oracle Cloud Infrastructure certificates service CA or CA bundles for the load balancer to trust.  Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
 	TrustedCertificateAuthorityIds []string `pulumi:"trustedCertificateAuthorityIds"`
 	// (Updatable) The maximum depth for peer certificate chain verification.  Example: `3`
 	VerifyDepth *int `pulumi:"verifyDepth"`
 	// (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VerifyPeerCertificate *bool `pulumi:"verifyPeerCertificate"`
 }
 
@@ -893,16 +1061,52 @@ type BackendSetSslConfigurationArgs struct {
 	// (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
 	CertificateName pulumi.StringPtrInput `pulumi:"certificateName"`
 	// (Updatable) The name of the cipher suite to use for HTTPS or SSL connections.
+	//
+	// If this field is not specified, the default is `oci-default-ssl-cipher-suite-v1`.
+	//
+	// **Notes:**
+	// *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
+	// *  You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
+	// *  If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+	// *  If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+	// *  The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
+	// *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
+	// *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
+	//
+	// example: `exampleCipherSuite`
 	CipherSuiteName pulumi.StringPtrInput `pulumi:"cipherSuiteName"`
 	// (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
+	//
+	// The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
+	//
+	// The Load Balancing service supports the following protocols:
+	// *  TLSv1
+	// *  TLSv1.1
+	// *  TLSv1.2
+	//
+	// If this field is not specified, TLSv1.2 is the default.
+	//
+	// **Warning:** All SSL listeners created on a given port must use the same set of SSL protocols.
+	//
+	// **Notes:**
+	// *  The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
+	// *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
+	// *  For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
+	//
+	// example: `["TLSv1.1", "TLSv1.2"]`
 	Protocols pulumi.StringArrayInput `pulumi:"protocols"`
 	// (Updatable) When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client ciphers.
+	//
+	// **Note:** This configuration is applicable only when the load balancer is acting as an SSL/HTTPS server. This field is ignored when the `SSLConfiguration` object is associated with a backend set.
 	ServerOrderPreference pulumi.StringPtrInput `pulumi:"serverOrderPreference"`
 	// (Updatable) Ids for Oracle Cloud Infrastructure certificates service CA or CA bundles for the load balancer to trust.  Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
 	TrustedCertificateAuthorityIds pulumi.StringArrayInput `pulumi:"trustedCertificateAuthorityIds"`
 	// (Updatable) The maximum depth for peer certificate chain verification.  Example: `3`
 	VerifyDepth pulumi.IntPtrInput `pulumi:"verifyDepth"`
 	// (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VerifyPeerCertificate pulumi.BoolPtrInput `pulumi:"verifyPeerCertificate"`
 }
 
@@ -994,16 +1198,49 @@ func (o BackendSetSslConfigurationOutput) CertificateName() pulumi.StringPtrOutp
 }
 
 // (Updatable) The name of the cipher suite to use for HTTPS or SSL connections.
+//
+// If this field is not specified, the default is `oci-default-ssl-cipher-suite-v1`.
+//
+// **Notes:**
+// *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
+// *  You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
+// *  If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+// *  If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+// *  The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
+// *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
+// *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
+//
+// example: `exampleCipherSuite`
 func (o BackendSetSslConfigurationOutput) CipherSuiteName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BackendSetSslConfiguration) *string { return v.CipherSuiteName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
+//
+// The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
+//
+// The Load Balancing service supports the following protocols:
+// *  TLSv1
+// *  TLSv1.1
+// *  TLSv1.2
+//
+// If this field is not specified, TLSv1.2 is the default.
+//
+// **Warning:** All SSL listeners created on a given port must use the same set of SSL protocols.
+//
+// **Notes:**
+// *  The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
+// *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
+// *  For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
+//
+// example: `["TLSv1.1", "TLSv1.2"]`
 func (o BackendSetSslConfigurationOutput) Protocols() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v BackendSetSslConfiguration) []string { return v.Protocols }).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client ciphers.
+//
+// **Note:** This configuration is applicable only when the load balancer is acting as an SSL/HTTPS server. This field is ignored when the `SSLConfiguration` object is associated with a backend set.
 func (o BackendSetSslConfigurationOutput) ServerOrderPreference() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BackendSetSslConfiguration) *string { return v.ServerOrderPreference }).(pulumi.StringPtrOutput)
 }
@@ -1019,6 +1256,9 @@ func (o BackendSetSslConfigurationOutput) VerifyDepth() pulumi.IntPtrOutput {
 }
 
 // (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BackendSetSslConfigurationOutput) VerifyPeerCertificate() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v BackendSetSslConfiguration) *bool { return v.VerifyPeerCertificate }).(pulumi.BoolPtrOutput)
 }
@@ -1068,6 +1308,19 @@ func (o BackendSetSslConfigurationPtrOutput) CertificateName() pulumi.StringPtrO
 }
 
 // (Updatable) The name of the cipher suite to use for HTTPS or SSL connections.
+//
+// If this field is not specified, the default is `oci-default-ssl-cipher-suite-v1`.
+//
+// **Notes:**
+// *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
+// *  You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
+// *  If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+// *  If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+// *  The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
+// *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
+// *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
+//
+// example: `exampleCipherSuite`
 func (o BackendSetSslConfigurationPtrOutput) CipherSuiteName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BackendSetSslConfiguration) *string {
 		if v == nil {
@@ -1078,6 +1331,24 @@ func (o BackendSetSslConfigurationPtrOutput) CipherSuiteName() pulumi.StringPtrO
 }
 
 // (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
+//
+// The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
+//
+// The Load Balancing service supports the following protocols:
+// *  TLSv1
+// *  TLSv1.1
+// *  TLSv1.2
+//
+// If this field is not specified, TLSv1.2 is the default.
+//
+// **Warning:** All SSL listeners created on a given port must use the same set of SSL protocols.
+//
+// **Notes:**
+// *  The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
+// *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
+// *  For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
+//
+// example: `["TLSv1.1", "TLSv1.2"]`
 func (o BackendSetSslConfigurationPtrOutput) Protocols() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *BackendSetSslConfiguration) []string {
 		if v == nil {
@@ -1088,6 +1359,8 @@ func (o BackendSetSslConfigurationPtrOutput) Protocols() pulumi.StringArrayOutpu
 }
 
 // (Updatable) When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client ciphers.
+//
+// **Note:** This configuration is applicable only when the load balancer is acting as an SSL/HTTPS server. This field is ignored when the `SSLConfiguration` object is associated with a backend set.
 func (o BackendSetSslConfigurationPtrOutput) ServerOrderPreference() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BackendSetSslConfiguration) *string {
 		if v == nil {
@@ -1118,6 +1391,9 @@ func (o BackendSetSslConfigurationPtrOutput) VerifyDepth() pulumi.IntPtrOutput {
 }
 
 // (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BackendSetSslConfigurationPtrOutput) VerifyPeerCertificate() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BackendSetSslConfiguration) *bool {
 		if v == nil {
@@ -1131,6 +1407,10 @@ type ListenerConnectionConfiguration struct {
 	// (Updatable) The backend TCP Proxy Protocol version.  Example: `1`
 	BackendTcpProxyProtocolVersion *int `pulumi:"backendTcpProxyProtocolVersion"`
 	// (Updatable) The maximum idle time, in seconds, allowed between two successive receive or two successive send operations between the client and backend servers. A send operation does not reset the timer for receive operations. A receive operation does not reset the timer for send operations.
+	//
+	// For more information, see [Connection Configuration](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
+	//
+	// Example: `1200`
 	IdleTimeoutInSeconds string `pulumi:"idleTimeoutInSeconds"`
 }
 
@@ -1149,6 +1429,10 @@ type ListenerConnectionConfigurationArgs struct {
 	// (Updatable) The backend TCP Proxy Protocol version.  Example: `1`
 	BackendTcpProxyProtocolVersion pulumi.IntPtrInput `pulumi:"backendTcpProxyProtocolVersion"`
 	// (Updatable) The maximum idle time, in seconds, allowed between two successive receive or two successive send operations between the client and backend servers. A send operation does not reset the timer for receive operations. A receive operation does not reset the timer for send operations.
+	//
+	// For more information, see [Connection Configuration](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
+	//
+	// Example: `1200`
 	IdleTimeoutInSeconds pulumi.StringInput `pulumi:"idleTimeoutInSeconds"`
 }
 
@@ -1235,6 +1519,10 @@ func (o ListenerConnectionConfigurationOutput) BackendTcpProxyProtocolVersion() 
 }
 
 // (Updatable) The maximum idle time, in seconds, allowed between two successive receive or two successive send operations between the client and backend servers. A send operation does not reset the timer for receive operations. A receive operation does not reset the timer for send operations.
+//
+// For more information, see [Connection Configuration](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
+//
+// Example: `1200`
 func (o ListenerConnectionConfigurationOutput) IdleTimeoutInSeconds() pulumi.StringOutput {
 	return o.ApplyT(func(v ListenerConnectionConfiguration) string { return v.IdleTimeoutInSeconds }).(pulumi.StringOutput)
 }
@@ -1274,6 +1562,10 @@ func (o ListenerConnectionConfigurationPtrOutput) BackendTcpProxyProtocolVersion
 }
 
 // (Updatable) The maximum idle time, in seconds, allowed between two successive receive or two successive send operations between the client and backend servers. A send operation does not reset the timer for receive operations. A receive operation does not reset the timer for send operations.
+//
+// For more information, see [Connection Configuration](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
+//
+// Example: `1200`
 func (o ListenerConnectionConfigurationPtrOutput) IdleTimeoutInSeconds() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ListenerConnectionConfiguration) *string {
 		if v == nil {
@@ -1289,16 +1581,52 @@ type ListenerSslConfiguration struct {
 	// (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
 	CertificateName *string `pulumi:"certificateName"`
 	// (Updatable) The name of the cipher suite to use for HTTPS or SSL connections.
+	//
+	// If this field is not specified, the default is `oci-default-ssl-cipher-suite-v1`.
+	//
+	// **Notes:**
+	// *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
+	// *  You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
+	// *  If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+	// *  If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+	// *  The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
+	// *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
+	// *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
+	//
+	// example: `exampleCipherSuite`
 	CipherSuiteName *string `pulumi:"cipherSuiteName"`
 	// (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
+	//
+	// The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
+	//
+	// The Load Balancing service supports the following protocols:
+	// *  TLSv1
+	// *  TLSv1.1
+	// *  TLSv1.2
+	//
+	// If this field is not specified, TLSv1.2 is the default.
+	//
+	// **Warning:** All SSL listeners created on a given port must use the same set of SSL protocols.
+	//
+	// **Notes:**
+	// *  The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
+	// *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
+	// *  For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
+	//
+	// example: `["TLSv1.1", "TLSv1.2"]`
 	Protocols []string `pulumi:"protocols"`
 	// (Updatable) When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client ciphers.
+	//
+	// **Note:** This configuration is applicable only when the load balancer is acting as an SSL/HTTPS server. This field is ignored when the `SSLConfiguration` object is associated with a backend set.
 	ServerOrderPreference *string `pulumi:"serverOrderPreference"`
 	// (Updatable) Ids for Oracle Cloud Infrastructure certificates service CA or CA bundles for the load balancer to trust.  Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
 	TrustedCertificateAuthorityIds []string `pulumi:"trustedCertificateAuthorityIds"`
 	// (Updatable) The maximum depth for peer certificate chain verification.  Example: `3`
 	VerifyDepth *int `pulumi:"verifyDepth"`
 	// (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VerifyPeerCertificate *bool `pulumi:"verifyPeerCertificate"`
 }
 
@@ -1319,16 +1647,52 @@ type ListenerSslConfigurationArgs struct {
 	// (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
 	CertificateName pulumi.StringPtrInput `pulumi:"certificateName"`
 	// (Updatable) The name of the cipher suite to use for HTTPS or SSL connections.
+	//
+	// If this field is not specified, the default is `oci-default-ssl-cipher-suite-v1`.
+	//
+	// **Notes:**
+	// *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
+	// *  You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
+	// *  If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+	// *  If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+	// *  The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
+	// *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
+	// *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
+	//
+	// example: `exampleCipherSuite`
 	CipherSuiteName pulumi.StringPtrInput `pulumi:"cipherSuiteName"`
 	// (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
+	//
+	// The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
+	//
+	// The Load Balancing service supports the following protocols:
+	// *  TLSv1
+	// *  TLSv1.1
+	// *  TLSv1.2
+	//
+	// If this field is not specified, TLSv1.2 is the default.
+	//
+	// **Warning:** All SSL listeners created on a given port must use the same set of SSL protocols.
+	//
+	// **Notes:**
+	// *  The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
+	// *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
+	// *  For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
+	//
+	// example: `["TLSv1.1", "TLSv1.2"]`
 	Protocols pulumi.StringArrayInput `pulumi:"protocols"`
 	// (Updatable) When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client ciphers.
+	//
+	// **Note:** This configuration is applicable only when the load balancer is acting as an SSL/HTTPS server. This field is ignored when the `SSLConfiguration` object is associated with a backend set.
 	ServerOrderPreference pulumi.StringPtrInput `pulumi:"serverOrderPreference"`
 	// (Updatable) Ids for Oracle Cloud Infrastructure certificates service CA or CA bundles for the load balancer to trust.  Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
 	TrustedCertificateAuthorityIds pulumi.StringArrayInput `pulumi:"trustedCertificateAuthorityIds"`
 	// (Updatable) The maximum depth for peer certificate chain verification.  Example: `3`
 	VerifyDepth pulumi.IntPtrInput `pulumi:"verifyDepth"`
 	// (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VerifyPeerCertificate pulumi.BoolPtrInput `pulumi:"verifyPeerCertificate"`
 }
 
@@ -1420,16 +1784,49 @@ func (o ListenerSslConfigurationOutput) CertificateName() pulumi.StringPtrOutput
 }
 
 // (Updatable) The name of the cipher suite to use for HTTPS or SSL connections.
+//
+// If this field is not specified, the default is `oci-default-ssl-cipher-suite-v1`.
+//
+// **Notes:**
+// *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
+// *  You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
+// *  If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+// *  If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+// *  The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
+// *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
+// *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
+//
+// example: `exampleCipherSuite`
 func (o ListenerSslConfigurationOutput) CipherSuiteName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ListenerSslConfiguration) *string { return v.CipherSuiteName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
+//
+// The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
+//
+// The Load Balancing service supports the following protocols:
+// *  TLSv1
+// *  TLSv1.1
+// *  TLSv1.2
+//
+// If this field is not specified, TLSv1.2 is the default.
+//
+// **Warning:** All SSL listeners created on a given port must use the same set of SSL protocols.
+//
+// **Notes:**
+// *  The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
+// *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
+// *  For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
+//
+// example: `["TLSv1.1", "TLSv1.2"]`
 func (o ListenerSslConfigurationOutput) Protocols() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ListenerSslConfiguration) []string { return v.Protocols }).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client ciphers.
+//
+// **Note:** This configuration is applicable only when the load balancer is acting as an SSL/HTTPS server. This field is ignored when the `SSLConfiguration` object is associated with a backend set.
 func (o ListenerSslConfigurationOutput) ServerOrderPreference() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ListenerSslConfiguration) *string { return v.ServerOrderPreference }).(pulumi.StringPtrOutput)
 }
@@ -1445,6 +1842,9 @@ func (o ListenerSslConfigurationOutput) VerifyDepth() pulumi.IntPtrOutput {
 }
 
 // (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ListenerSslConfigurationOutput) VerifyPeerCertificate() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ListenerSslConfiguration) *bool { return v.VerifyPeerCertificate }).(pulumi.BoolPtrOutput)
 }
@@ -1494,6 +1894,19 @@ func (o ListenerSslConfigurationPtrOutput) CertificateName() pulumi.StringPtrOut
 }
 
 // (Updatable) The name of the cipher suite to use for HTTPS or SSL connections.
+//
+// If this field is not specified, the default is `oci-default-ssl-cipher-suite-v1`.
+//
+// **Notes:**
+// *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
+// *  You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
+// *  If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+// *  If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+// *  The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
+// *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
+// *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
+//
+// example: `exampleCipherSuite`
 func (o ListenerSslConfigurationPtrOutput) CipherSuiteName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ListenerSslConfiguration) *string {
 		if v == nil {
@@ -1504,6 +1917,24 @@ func (o ListenerSslConfigurationPtrOutput) CipherSuiteName() pulumi.StringPtrOut
 }
 
 // (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
+//
+// The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
+//
+// The Load Balancing service supports the following protocols:
+// *  TLSv1
+// *  TLSv1.1
+// *  TLSv1.2
+//
+// If this field is not specified, TLSv1.2 is the default.
+//
+// **Warning:** All SSL listeners created on a given port must use the same set of SSL protocols.
+//
+// **Notes:**
+// *  The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
+// *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
+// *  For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
+//
+// example: `["TLSv1.1", "TLSv1.2"]`
 func (o ListenerSslConfigurationPtrOutput) Protocols() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ListenerSslConfiguration) []string {
 		if v == nil {
@@ -1514,6 +1945,8 @@ func (o ListenerSslConfigurationPtrOutput) Protocols() pulumi.StringArrayOutput 
 }
 
 // (Updatable) When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client ciphers.
+//
+// **Note:** This configuration is applicable only when the load balancer is acting as an SSL/HTTPS server. This field is ignored when the `SSLConfiguration` object is associated with a backend set.
 func (o ListenerSslConfigurationPtrOutput) ServerOrderPreference() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ListenerSslConfiguration) *string {
 		if v == nil {
@@ -1544,6 +1977,9 @@ func (o ListenerSslConfigurationPtrOutput) VerifyDepth() pulumi.IntPtrOutput {
 }
 
 // (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ListenerSslConfigurationPtrOutput) VerifyPeerCertificate() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ListenerSslConfiguration) *bool {
 		if v == nil {
@@ -1868,6 +2304,9 @@ type LoadBalancerRoutingPolicyRule struct {
 	// (Updatable) A routing rule to evaluate defined conditions against the incoming HTTP request and perform an action.
 	Condition string `pulumi:"condition"`
 	// (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name string `pulumi:"name"`
 }
 
@@ -1888,6 +2327,9 @@ type LoadBalancerRoutingPolicyRuleArgs struct {
 	// (Updatable) A routing rule to evaluate defined conditions against the incoming HTTP request and perform an action.
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringInput `pulumi:"name"`
 }
 
@@ -1953,6 +2395,9 @@ func (o LoadBalancerRoutingPolicyRuleOutput) Condition() pulumi.StringOutput {
 }
 
 // (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o LoadBalancerRoutingPolicyRuleOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LoadBalancerRoutingPolicyRule) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -1981,6 +2426,9 @@ type LoadBalancerRoutingPolicyRuleAction struct {
 	// (Updatable) Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
 	BackendSetName string `pulumi:"backendSetName"`
 	// (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name string `pulumi:"name"`
 }
 
@@ -1999,6 +2447,9 @@ type LoadBalancerRoutingPolicyRuleActionArgs struct {
 	// (Updatable) Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
 	BackendSetName pulumi.StringInput `pulumi:"backendSetName"`
 	// (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringInput `pulumi:"name"`
 }
 
@@ -2059,6 +2510,9 @@ func (o LoadBalancerRoutingPolicyRuleActionOutput) BackendSetName() pulumi.Strin
 }
 
 // (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o LoadBalancerRoutingPolicyRuleActionOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LoadBalancerRoutingPolicyRuleAction) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -2085,6 +2539,10 @@ func (o LoadBalancerRoutingPolicyRuleActionArrayOutput) Index(i pulumi.IntInput)
 
 type LoadBalancerShapeDetails struct {
 	// (Updatable) Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
+	//
+	// The values must be between minimumBandwidthInMbps and 8000 (8Gbps).
+	//
+	// Example: `1500`
 	MaximumBandwidthInMbps int `pulumi:"maximumBandwidthInMbps"`
 	// (Updatable) Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 10 and the maximumBandwidthInMbps.  Example: `150`
 	MinimumBandwidthInMbps int `pulumi:"minimumBandwidthInMbps"`
@@ -2103,6 +2561,10 @@ type LoadBalancerShapeDetailsInput interface {
 
 type LoadBalancerShapeDetailsArgs struct {
 	// (Updatable) Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
+	//
+	// The values must be between minimumBandwidthInMbps and 8000 (8Gbps).
+	//
+	// Example: `1500`
 	MaximumBandwidthInMbps pulumi.IntInput `pulumi:"maximumBandwidthInMbps"`
 	// (Updatable) Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 10 and the maximumBandwidthInMbps.  Example: `150`
 	MinimumBandwidthInMbps pulumi.IntInput `pulumi:"minimumBandwidthInMbps"`
@@ -2186,6 +2648,10 @@ func (o LoadBalancerShapeDetailsOutput) ToLoadBalancerShapeDetailsPtrOutputWithC
 }
 
 // (Updatable) Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
+//
+// The values must be between minimumBandwidthInMbps and 8000 (8Gbps).
+//
+// Example: `1500`
 func (o LoadBalancerShapeDetailsOutput) MaximumBandwidthInMbps() pulumi.IntOutput {
 	return o.ApplyT(func(v LoadBalancerShapeDetails) int { return v.MaximumBandwidthInMbps }).(pulumi.IntOutput)
 }
@@ -2220,6 +2686,10 @@ func (o LoadBalancerShapeDetailsPtrOutput) Elem() LoadBalancerShapeDetailsOutput
 }
 
 // (Updatable) Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
+//
+// The values must be between minimumBandwidthInMbps and 8000 (8Gbps).
+//
+// Example: `1500`
 func (o LoadBalancerShapeDetailsPtrOutput) MaximumBandwidthInMbps() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *LoadBalancerShapeDetails) *int {
 		if v == nil {
@@ -2246,6 +2716,8 @@ type PathRouteSetPathRoute struct {
 	// *  Path strings are case-insensitive.
 	// *  Asterisk (*) wildcards are not supported.
 	// *  Regular expressions are not supported.
+	//
+	// Example: `/example/video/123`
 	Path string `pulumi:"path"`
 	// (Updatable) The type of matching to apply to incoming URIs.
 	PathMatchType PathRouteSetPathRoutePathMatchType `pulumi:"pathMatchType"`
@@ -2269,6 +2741,8 @@ type PathRouteSetPathRouteArgs struct {
 	// *  Path strings are case-insensitive.
 	// *  Asterisk (*) wildcards are not supported.
 	// *  Regular expressions are not supported.
+	//
+	// Example: `/example/video/123`
 	Path pulumi.StringInput `pulumi:"path"`
 	// (Updatable) The type of matching to apply to incoming URIs.
 	PathMatchType PathRouteSetPathRoutePathMatchTypeInput `pulumi:"pathMatchType"`
@@ -2334,6 +2808,8 @@ func (o PathRouteSetPathRouteOutput) BackendSetName() pulumi.StringOutput {
 // *  Path strings are case-insensitive.
 // *  Asterisk (*) wildcards are not supported.
 // *  Regular expressions are not supported.
+//
+// Example: `/example/video/123`
 func (o PathRouteSetPathRouteOutput) Path() pulumi.StringOutput {
 	return o.ApplyT(func(v PathRouteSetPathRoute) string { return v.Path }).(pulumi.StringOutput)
 }
@@ -2369,6 +2845,11 @@ type PathRouteSetPathRoutePathMatchType struct {
 	// *  **FORCE_LONGEST_PREFIX_MATCH** - Looks for the `path` string with the best, longest match of the beginning portion of the incoming URI path.
 	// *  **PREFIX_MATCH** - Looks for a `path` string that matches the beginning portion of the incoming URI path.
 	// *  **SUFFIX_MATCH** - Looks for a `path` string that matches the ending portion of the incoming URI path.
+	//
+	// For a full description of how the system handles `matchType` in a path route set containing multiple rules, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	MatchType string `pulumi:"matchType"`
 }
 
@@ -2389,6 +2870,11 @@ type PathRouteSetPathRoutePathMatchTypeArgs struct {
 	// *  **FORCE_LONGEST_PREFIX_MATCH** - Looks for the `path` string with the best, longest match of the beginning portion of the incoming URI path.
 	// *  **PREFIX_MATCH** - Looks for a `path` string that matches the beginning portion of the incoming URI path.
 	// *  **SUFFIX_MATCH** - Looks for a `path` string that matches the ending portion of the incoming URI path.
+	//
+	// For a full description of how the system handles `matchType` in a path route set containing multiple rules, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	MatchType pulumi.StringInput `pulumi:"matchType"`
 }
 
@@ -2423,6 +2909,11 @@ func (o PathRouteSetPathRoutePathMatchTypeOutput) ToPathRouteSetPathRoutePathMat
 // *  **FORCE_LONGEST_PREFIX_MATCH** - Looks for the `path` string with the best, longest match of the beginning portion of the incoming URI path.
 // *  **PREFIX_MATCH** - Looks for a `path` string that matches the beginning portion of the incoming URI path.
 // *  **SUFFIX_MATCH** - Looks for a `path` string that matches the ending portion of the incoming URI path.
+//
+// For a full description of how the system handles `matchType` in a path route set containing multiple rules, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PathRouteSetPathRoutePathMatchTypeOutput) MatchType() pulumi.StringOutput {
 	return o.ApplyT(func(v PathRouteSetPathRoutePathMatchType) string { return v.MatchType }).(pulumi.StringOutput)
 }
@@ -2431,12 +2922,22 @@ type RuleSetItem struct {
 	// (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
 	Action string `pulumi:"action"`
 	// (Updatable) The list of HTTP methods allowed for this listener.
+	//
+	// By default, you can specify only the standard HTTP methods defined in the [HTTP Method Registry](http://www.iana.org/assignments/http-methods/http-methods.xhtml). You can also see a list of supported standard HTTP methods in the Load Balancing service documentation at [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
+	//
+	// Your backend application must be able to handle the methods specified in this list.
+	//
+	// The list of HTTP methods is extensible. If you need to configure custom HTTP methods, contact [My Oracle Support](http://support.oracle.com/) to remove the restriction for your tenancy.
+	//
+	// Example: ["GET", "PUT", "POST", "PROPFIND"]
 	AllowedMethods []string `pulumi:"allowedMethods"`
 	// (Updatable) Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
 	AreInvalidCharactersAllowed *bool `pulumi:"areInvalidCharactersAllowed"`
 	// (Updatable)
 	Conditions []RuleSetItemCondition `pulumi:"conditions"`
 	// (Updatable) A brief description of the access control rule. Avoid entering confidential information.
+	//
+	// example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
 	Description *string `pulumi:"description"`
 	// (Updatable) A header name that conforms to RFC 7230.  Example: `exampleHeaderName`
 	Header *string `pulumi:"header"`
@@ -2445,20 +2946,60 @@ type RuleSetItem struct {
 	// (Updatable) A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+	//
+	// Example: `examplePrefixValue`
 	Prefix *string `pulumi:"prefix"`
 	// (Updatable) An object that defines the redirect URI applied to the original request. The object property values compose the redirect URI.
+	//
+	// **NOTE:** The Load Balancing service cannot automatically detect or avoid infinite redirects. Be sure to provide meaningful, complete, and correct field values. If any component field of this object has no value, the system retains the value from the incoming HTTP request URI.
+	//
+	// For example, if you specify only the protocol field `https`, and the incoming request URI is `http://example.com:8080`, the resulting runtime redirect URI is `https://example.com:8080`. The system retains the host and port from the incoming URI and does not automatically change the port setting from `8080` to `443`.
+	//
+	// Be sure to configure valid percent-encoding (URL encoding) when needed.
+	//
+	// In addition to static string values, you can use the following tokens to construct the redirect URI. These tokens extract values from the incoming HTTP request URI.
+	// *  {protocol} : The protocol from the incoming HTTP request URI.
+	// *  {host}     : The domain name from the incoming HTTP request URI.
+	// *  {port}     : The port from the incoming HTTP request URI.
+	// *  {path}     : The path from the incoming HTTP request URI.
+	// *  {query}    : The query string from the incoming HTTP request URI.
+	//
+	// The tokens are case sensitive. For example, `{host}` is a valid token, but `{HOST}` is not.
+	//
+	// You can retain the literal characters of a token when you specify values for the path and query properties of the redirect URI. Use a backslash (\\) as the escape character for the \\, {, and } characters. For example, if the incoming HTTP request URI is `/video`, the path property value:
+	//
+	// `/example{path}123\{path\}`
+	//
+	// appears in the constructed redirect URI as:
+	//
+	// `/example/video123{path}`
 	RedirectUri *RuleSetItemRedirectUri `pulumi:"redirectUri"`
 	// (Updatable) The HTTP status code to return when the incoming request is redirected.
+	//
+	// The status line returned with the code is mapped from the standard HTTP specification. Valid response codes for redirection are:
+	// *  301
+	// *  302
+	// *  303
+	// *  307
+	// *  308
+	//
+	// The default value is `302` (Found).
+	//
+	// Example: `301`
 	ResponseCode *int `pulumi:"responseCode"`
 	// (Updatable) The HTTP status code to return when the requested HTTP method is not in the list of allowed methods. The associated status line returned with the code is mapped from the standard HTTP specification. The default value is `405 (Method Not Allowed)`.  Example: 403
 	StatusCode *int `pulumi:"statusCode"`
 	// (Updatable) A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+	//
+	// Example: `exampleSuffixValue`
 	Suffix *string `pulumi:"suffix"`
 	// (Updatable) A header value that conforms to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+	//
+	// Example: `exampleValue`
 	Value *string `pulumi:"value"`
 }
 
@@ -2477,12 +3018,22 @@ type RuleSetItemArgs struct {
 	// (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
 	Action pulumi.StringInput `pulumi:"action"`
 	// (Updatable) The list of HTTP methods allowed for this listener.
+	//
+	// By default, you can specify only the standard HTTP methods defined in the [HTTP Method Registry](http://www.iana.org/assignments/http-methods/http-methods.xhtml). You can also see a list of supported standard HTTP methods in the Load Balancing service documentation at [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
+	//
+	// Your backend application must be able to handle the methods specified in this list.
+	//
+	// The list of HTTP methods is extensible. If you need to configure custom HTTP methods, contact [My Oracle Support](http://support.oracle.com/) to remove the restriction for your tenancy.
+	//
+	// Example: ["GET", "PUT", "POST", "PROPFIND"]
 	AllowedMethods pulumi.StringArrayInput `pulumi:"allowedMethods"`
 	// (Updatable) Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
 	AreInvalidCharactersAllowed pulumi.BoolPtrInput `pulumi:"areInvalidCharactersAllowed"`
 	// (Updatable)
 	Conditions RuleSetItemConditionArrayInput `pulumi:"conditions"`
 	// (Updatable) A brief description of the access control rule. Avoid entering confidential information.
+	//
+	// example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) A header name that conforms to RFC 7230.  Example: `exampleHeaderName`
 	Header pulumi.StringPtrInput `pulumi:"header"`
@@ -2491,20 +3042,60 @@ type RuleSetItemArgs struct {
 	// (Updatable) A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+	//
+	// Example: `examplePrefixValue`
 	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
 	// (Updatable) An object that defines the redirect URI applied to the original request. The object property values compose the redirect URI.
+	//
+	// **NOTE:** The Load Balancing service cannot automatically detect or avoid infinite redirects. Be sure to provide meaningful, complete, and correct field values. If any component field of this object has no value, the system retains the value from the incoming HTTP request URI.
+	//
+	// For example, if you specify only the protocol field `https`, and the incoming request URI is `http://example.com:8080`, the resulting runtime redirect URI is `https://example.com:8080`. The system retains the host and port from the incoming URI and does not automatically change the port setting from `8080` to `443`.
+	//
+	// Be sure to configure valid percent-encoding (URL encoding) when needed.
+	//
+	// In addition to static string values, you can use the following tokens to construct the redirect URI. These tokens extract values from the incoming HTTP request URI.
+	// *  {protocol} : The protocol from the incoming HTTP request URI.
+	// *  {host}     : The domain name from the incoming HTTP request URI.
+	// *  {port}     : The port from the incoming HTTP request URI.
+	// *  {path}     : The path from the incoming HTTP request URI.
+	// *  {query}    : The query string from the incoming HTTP request URI.
+	//
+	// The tokens are case sensitive. For example, `{host}` is a valid token, but `{HOST}` is not.
+	//
+	// You can retain the literal characters of a token when you specify values for the path and query properties of the redirect URI. Use a backslash (\\) as the escape character for the \\, {, and } characters. For example, if the incoming HTTP request URI is `/video`, the path property value:
+	//
+	// `/example{path}123\{path\}`
+	//
+	// appears in the constructed redirect URI as:
+	//
+	// `/example/video123{path}`
 	RedirectUri RuleSetItemRedirectUriPtrInput `pulumi:"redirectUri"`
 	// (Updatable) The HTTP status code to return when the incoming request is redirected.
+	//
+	// The status line returned with the code is mapped from the standard HTTP specification. Valid response codes for redirection are:
+	// *  301
+	// *  302
+	// *  303
+	// *  307
+	// *  308
+	//
+	// The default value is `302` (Found).
+	//
+	// Example: `301`
 	ResponseCode pulumi.IntPtrInput `pulumi:"responseCode"`
 	// (Updatable) The HTTP status code to return when the requested HTTP method is not in the list of allowed methods. The associated status line returned with the code is mapped from the standard HTTP specification. The default value is `405 (Method Not Allowed)`.  Example: 403
 	StatusCode pulumi.IntPtrInput `pulumi:"statusCode"`
 	// (Updatable) A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+	//
+	// Example: `exampleSuffixValue`
 	Suffix pulumi.StringPtrInput `pulumi:"suffix"`
 	// (Updatable) A header value that conforms to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+	//
+	// Example: `exampleValue`
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -2565,6 +3156,14 @@ func (o RuleSetItemOutput) Action() pulumi.StringOutput {
 }
 
 // (Updatable) The list of HTTP methods allowed for this listener.
+//
+// By default, you can specify only the standard HTTP methods defined in the [HTTP Method Registry](http://www.iana.org/assignments/http-methods/http-methods.xhtml). You can also see a list of supported standard HTTP methods in the Load Balancing service documentation at [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
+//
+// Your backend application must be able to handle the methods specified in this list.
+//
+// The list of HTTP methods is extensible. If you need to configure custom HTTP methods, contact [My Oracle Support](http://support.oracle.com/) to remove the restriction for your tenancy.
+//
+// Example: ["GET", "PUT", "POST", "PROPFIND"]
 func (o RuleSetItemOutput) AllowedMethods() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v RuleSetItem) []string { return v.AllowedMethods }).(pulumi.StringArrayOutput)
 }
@@ -2580,6 +3179,8 @@ func (o RuleSetItemOutput) Conditions() RuleSetItemConditionArrayOutput {
 }
 
 // (Updatable) A brief description of the access control rule. Avoid entering confidential information.
+//
+// example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
 func (o RuleSetItemOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleSetItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -2597,16 +3198,52 @@ func (o RuleSetItemOutput) HttpLargeHeaderSizeInKb() pulumi.IntPtrOutput {
 // (Updatable) A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 // *  value cannot contain `$`
 // *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+//
+// Example: `examplePrefixValue`
 func (o RuleSetItemOutput) Prefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleSetItem) *string { return v.Prefix }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An object that defines the redirect URI applied to the original request. The object property values compose the redirect URI.
+//
+// **NOTE:** The Load Balancing service cannot automatically detect or avoid infinite redirects. Be sure to provide meaningful, complete, and correct field values. If any component field of this object has no value, the system retains the value from the incoming HTTP request URI.
+//
+// For example, if you specify only the protocol field `https`, and the incoming request URI is `http://example.com:8080`, the resulting runtime redirect URI is `https://example.com:8080`. The system retains the host and port from the incoming URI and does not automatically change the port setting from `8080` to `443`.
+//
+// Be sure to configure valid percent-encoding (URL encoding) when needed.
+//
+// In addition to static string values, you can use the following tokens to construct the redirect URI. These tokens extract values from the incoming HTTP request URI.
+// *  {protocol} : The protocol from the incoming HTTP request URI.
+// *  {host}     : The domain name from the incoming HTTP request URI.
+// *  {port}     : The port from the incoming HTTP request URI.
+// *  {path}     : The path from the incoming HTTP request URI.
+// *  {query}    : The query string from the incoming HTTP request URI.
+//
+// The tokens are case sensitive. For example, `{host}` is a valid token, but `{HOST}` is not.
+//
+// You can retain the literal characters of a token when you specify values for the path and query properties of the redirect URI. Use a backslash (\\) as the escape character for the \\, {, and } characters. For example, if the incoming HTTP request URI is `/video`, the path property value:
+//
+// `/example{path}123\{path\}`
+//
+// appears in the constructed redirect URI as:
+//
+// `/example/video123{path}`
 func (o RuleSetItemOutput) RedirectUri() RuleSetItemRedirectUriPtrOutput {
 	return o.ApplyT(func(v RuleSetItem) *RuleSetItemRedirectUri { return v.RedirectUri }).(RuleSetItemRedirectUriPtrOutput)
 }
 
 // (Updatable) The HTTP status code to return when the incoming request is redirected.
+//
+// The status line returned with the code is mapped from the standard HTTP specification. Valid response codes for redirection are:
+// *  301
+// *  302
+// *  303
+// *  307
+// *  308
+//
+// The default value is `302` (Found).
+//
+// Example: `301`
 func (o RuleSetItemOutput) ResponseCode() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v RuleSetItem) *int { return v.ResponseCode }).(pulumi.IntPtrOutput)
 }
@@ -2619,6 +3256,8 @@ func (o RuleSetItemOutput) StatusCode() pulumi.IntPtrOutput {
 // (Updatable) A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 // *  value cannot contain `$`
 // *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+//
+// Example: `exampleSuffixValue`
 func (o RuleSetItemOutput) Suffix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleSetItem) *string { return v.Suffix }).(pulumi.StringPtrOutput)
 }
@@ -2626,6 +3265,8 @@ func (o RuleSetItemOutput) Suffix() pulumi.StringPtrOutput {
 // (Updatable) A header value that conforms to RFC 7230. With the following exceptions:
 // *  value cannot contain `$`
 // *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+//
+// Example: `exampleValue`
 func (o RuleSetItemOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleSetItem) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -2788,14 +3429,72 @@ func (o RuleSetItemConditionArrayOutput) Index(i pulumi.IntInput) RuleSetItemCon
 
 type RuleSetItemRedirectUri struct {
 	// (Updatable) The valid domain name (hostname) or IP address to use in the redirect URI.
+	//
+	// When this value is null, not set, or set to `{host}`, the service preserves the original domain name from the incoming HTTP request URI.
+	//
+	// All RedirectUri tokens are valid for this property. You can use any token more than once.
+	//
+	// Curly braces are valid in this property only to surround tokens, such as `{host}`
+	//
+	// Examples:
+	// *  **example.com** appears as `example.com` in the redirect URI.
+	// *  **in{host}** appears as `inexample.com` in the redirect URI if `example.com` is the hostname in the incoming HTTP request URI.
+	// *  **{port}{host}** appears as `8081example.com` in the redirect URI if `example.com` is the hostname and the port is `8081` in the incoming HTTP request URI.
 	Host *string `pulumi:"host"`
 	// (Updatable) The HTTP URI path to use in the redirect URI.
+	//
+	// When this value is null, not set, or set to `{path}`, the service preserves the original path from the incoming HTTP request URI. To omit the path from the redirect URI, set this value to an empty string, "".
+	//
+	// All RedirectUri tokens are valid for this property. You can use any token more than once.
+	//
+	// The path string must begin with `/` if it does not begin with the `{path}` token.
+	//
+	// Examples:
+	// *  __/example/video/123__ appears as `/example/video/123` in the redirect URI.
+	// *  __/example{path}__ appears as `/example/video/123` in the redirect URI if `/video/123` is the path in the incoming HTTP request URI.
+	// *  __{path}/123__ appears as `/example/video/123` in the redirect URI if `/example/video` is the path in the incoming HTTP request URI.
+	// *  __{path}123__ appears as `/example/video123` in the redirect URI if `/example/video` is the path in the incoming HTTP request URI.
+	// *  __/{host}/123__ appears as `/example.com/123` in the redirect URI if `example.com` is the hostname in the incoming HTTP request URI.
+	// *  __/{host}/{port}__ appears as `/example.com/123` in the redirect URI if `example.com` is the hostname and `123` is the port in the incoming HTTP request URI.
+	// *  __/{query}__ appears as `/lang=en` in the redirect URI if the query is `lang=en` in the incoming HTTP request URI.
 	Path *string `pulumi:"path"`
 	// (Updatable) The communication port to use in the redirect URI.
+	//
+	// Valid values include integers from 1 to 65535.
+	//
+	// When this value is null, the service preserves the original port from the incoming HTTP request URI.
+	//
+	// Example: `8081`
 	Port *int `pulumi:"port"`
 	// (Updatable) The HTTP protocol to use in the redirect URI.
+	//
+	// When this value is null, not set, or set to `{protocol}`, the service preserves the original protocol from the incoming HTTP request URI. Allowed values are:
+	// *  HTTP
+	// *  HTTPS
+	// *  {protocol}
+	//
+	// `{protocol}` is the only valid token for this property. It can appear only once in the value string.
+	//
+	// Example: `HTTPS`
 	Protocol *string `pulumi:"protocol"`
 	// (Updatable) The query string to use in the redirect URI.
+	//
+	// When this value is null, not set, or set to `{query}`, the service preserves the original query parameters from the incoming HTTP request URI.
+	//
+	// All `RedirectUri` tokens are valid for this property. You can use any token more than once.
+	//
+	// If the query string does not begin with the `{query}` token, it must begin with the question mark (?) character.
+	//
+	// You can specify multiple query parameters as a single string. Separate each query parameter with an ampersand (&) character. To omit all incoming query parameters from the redirect URI, set this value to an empty string, "".
+	//
+	// If the specified query string results in a redirect URI ending with `?` or `&`, the last character is truncated. For example, if the incoming URI is `http://host.com:8080/documents` and the query property value is `?lang=en&{query}`, the redirect URI is `http://host.com:8080/documents?lang=en`. The system truncates the final ampersand (&) because the incoming URI included no value to replace the {query} token.
+	//
+	// Examples:
+	// * **lang=en&time_zone=PST** appears as `lang=en&time_zone=PST` in the redirect URI.
+	// * **{query}** appears as `lang=en&time_zone=PST` in the redirect URI if `lang=en&time_zone=PST` is the query string in the incoming HTTP request. If the incoming HTTP request has no query parameters, the `{query}` token renders as an empty string.
+	// * **lang=en&{query}&time_zone=PST** appears as `lang=en&country=us&time_zone=PST` in the redirect URI if `country=us` is the query string in the incoming HTTP request. If the incoming HTTP request has no query parameters, this value renders as `lang=en&time_zone=PST`.
+	// *  **protocol={protocol}&hostname={host}** appears as `protocol=http&hostname=example.com` in the redirect URI if the protocol is `HTTP` and the hostname is `example.com` in the incoming HTTP request.
+	// *  **port={port}&hostname={host}** appears as `port=8080&hostname=example.com` in the redirect URI if the port is `8080` and the hostname is `example.com` in the incoming HTTP request URI.
 	Query *string `pulumi:"query"`
 }
 
@@ -2812,14 +3511,72 @@ type RuleSetItemRedirectUriInput interface {
 
 type RuleSetItemRedirectUriArgs struct {
 	// (Updatable) The valid domain name (hostname) or IP address to use in the redirect URI.
+	//
+	// When this value is null, not set, or set to `{host}`, the service preserves the original domain name from the incoming HTTP request URI.
+	//
+	// All RedirectUri tokens are valid for this property. You can use any token more than once.
+	//
+	// Curly braces are valid in this property only to surround tokens, such as `{host}`
+	//
+	// Examples:
+	// *  **example.com** appears as `example.com` in the redirect URI.
+	// *  **in{host}** appears as `inexample.com` in the redirect URI if `example.com` is the hostname in the incoming HTTP request URI.
+	// *  **{port}{host}** appears as `8081example.com` in the redirect URI if `example.com` is the hostname and the port is `8081` in the incoming HTTP request URI.
 	Host pulumi.StringPtrInput `pulumi:"host"`
 	// (Updatable) The HTTP URI path to use in the redirect URI.
+	//
+	// When this value is null, not set, or set to `{path}`, the service preserves the original path from the incoming HTTP request URI. To omit the path from the redirect URI, set this value to an empty string, "".
+	//
+	// All RedirectUri tokens are valid for this property. You can use any token more than once.
+	//
+	// The path string must begin with `/` if it does not begin with the `{path}` token.
+	//
+	// Examples:
+	// *  __/example/video/123__ appears as `/example/video/123` in the redirect URI.
+	// *  __/example{path}__ appears as `/example/video/123` in the redirect URI if `/video/123` is the path in the incoming HTTP request URI.
+	// *  __{path}/123__ appears as `/example/video/123` in the redirect URI if `/example/video` is the path in the incoming HTTP request URI.
+	// *  __{path}123__ appears as `/example/video123` in the redirect URI if `/example/video` is the path in the incoming HTTP request URI.
+	// *  __/{host}/123__ appears as `/example.com/123` in the redirect URI if `example.com` is the hostname in the incoming HTTP request URI.
+	// *  __/{host}/{port}__ appears as `/example.com/123` in the redirect URI if `example.com` is the hostname and `123` is the port in the incoming HTTP request URI.
+	// *  __/{query}__ appears as `/lang=en` in the redirect URI if the query is `lang=en` in the incoming HTTP request URI.
 	Path pulumi.StringPtrInput `pulumi:"path"`
 	// (Updatable) The communication port to use in the redirect URI.
+	//
+	// Valid values include integers from 1 to 65535.
+	//
+	// When this value is null, the service preserves the original port from the incoming HTTP request URI.
+	//
+	// Example: `8081`
 	Port pulumi.IntPtrInput `pulumi:"port"`
 	// (Updatable) The HTTP protocol to use in the redirect URI.
+	//
+	// When this value is null, not set, or set to `{protocol}`, the service preserves the original protocol from the incoming HTTP request URI. Allowed values are:
+	// *  HTTP
+	// *  HTTPS
+	// *  {protocol}
+	//
+	// `{protocol}` is the only valid token for this property. It can appear only once in the value string.
+	//
+	// Example: `HTTPS`
 	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// (Updatable) The query string to use in the redirect URI.
+	//
+	// When this value is null, not set, or set to `{query}`, the service preserves the original query parameters from the incoming HTTP request URI.
+	//
+	// All `RedirectUri` tokens are valid for this property. You can use any token more than once.
+	//
+	// If the query string does not begin with the `{query}` token, it must begin with the question mark (?) character.
+	//
+	// You can specify multiple query parameters as a single string. Separate each query parameter with an ampersand (&) character. To omit all incoming query parameters from the redirect URI, set this value to an empty string, "".
+	//
+	// If the specified query string results in a redirect URI ending with `?` or `&`, the last character is truncated. For example, if the incoming URI is `http://host.com:8080/documents` and the query property value is `?lang=en&{query}`, the redirect URI is `http://host.com:8080/documents?lang=en`. The system truncates the final ampersand (&) because the incoming URI included no value to replace the {query} token.
+	//
+	// Examples:
+	// * **lang=en&time_zone=PST** appears as `lang=en&time_zone=PST` in the redirect URI.
+	// * **{query}** appears as `lang=en&time_zone=PST` in the redirect URI if `lang=en&time_zone=PST` is the query string in the incoming HTTP request. If the incoming HTTP request has no query parameters, the `{query}` token renders as an empty string.
+	// * **lang=en&{query}&time_zone=PST** appears as `lang=en&country=us&time_zone=PST` in the redirect URI if `country=us` is the query string in the incoming HTTP request. If the incoming HTTP request has no query parameters, this value renders as `lang=en&time_zone=PST`.
+	// *  **protocol={protocol}&hostname={host}** appears as `protocol=http&hostname=example.com` in the redirect URI if the protocol is `HTTP` and the hostname is `example.com` in the incoming HTTP request.
+	// *  **port={port}&hostname={host}** appears as `port=8080&hostname=example.com` in the redirect URI if the port is `8080` and the hostname is `example.com` in the incoming HTTP request URI.
 	Query pulumi.StringPtrInput `pulumi:"query"`
 }
 
@@ -2901,26 +3658,84 @@ func (o RuleSetItemRedirectUriOutput) ToRuleSetItemRedirectUriPtrOutputWithConte
 }
 
 // (Updatable) The valid domain name (hostname) or IP address to use in the redirect URI.
+//
+// When this value is null, not set, or set to `{host}`, the service preserves the original domain name from the incoming HTTP request URI.
+//
+// All RedirectUri tokens are valid for this property. You can use any token more than once.
+//
+// Curly braces are valid in this property only to surround tokens, such as `{host}`
+//
+// Examples:
+// *  **example.com** appears as `example.com` in the redirect URI.
+// *  **in{host}** appears as `inexample.com` in the redirect URI if `example.com` is the hostname in the incoming HTTP request URI.
+// *  **{port}{host}** appears as `8081example.com` in the redirect URI if `example.com` is the hostname and the port is `8081` in the incoming HTTP request URI.
 func (o RuleSetItemRedirectUriOutput) Host() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleSetItemRedirectUri) *string { return v.Host }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The HTTP URI path to use in the redirect URI.
+//
+// When this value is null, not set, or set to `{path}`, the service preserves the original path from the incoming HTTP request URI. To omit the path from the redirect URI, set this value to an empty string, "".
+//
+// All RedirectUri tokens are valid for this property. You can use any token more than once.
+//
+// The path string must begin with `/` if it does not begin with the `{path}` token.
+//
+// Examples:
+// *  __/example/video/123__ appears as `/example/video/123` in the redirect URI.
+// *  __/example{path}__ appears as `/example/video/123` in the redirect URI if `/video/123` is the path in the incoming HTTP request URI.
+// *  __{path}/123__ appears as `/example/video/123` in the redirect URI if `/example/video` is the path in the incoming HTTP request URI.
+// *  __{path}123__ appears as `/example/video123` in the redirect URI if `/example/video` is the path in the incoming HTTP request URI.
+// *  __/{host}/123__ appears as `/example.com/123` in the redirect URI if `example.com` is the hostname in the incoming HTTP request URI.
+// *  __/{host}/{port}__ appears as `/example.com/123` in the redirect URI if `example.com` is the hostname and `123` is the port in the incoming HTTP request URI.
+// *  __/{query}__ appears as `/lang=en` in the redirect URI if the query is `lang=en` in the incoming HTTP request URI.
 func (o RuleSetItemRedirectUriOutput) Path() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleSetItemRedirectUri) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The communication port to use in the redirect URI.
+//
+// Valid values include integers from 1 to 65535.
+//
+// When this value is null, the service preserves the original port from the incoming HTTP request URI.
+//
+// Example: `8081`
 func (o RuleSetItemRedirectUriOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v RuleSetItemRedirectUri) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The HTTP protocol to use in the redirect URI.
+//
+// When this value is null, not set, or set to `{protocol}`, the service preserves the original protocol from the incoming HTTP request URI. Allowed values are:
+// *  HTTP
+// *  HTTPS
+// *  {protocol}
+//
+// `{protocol}` is the only valid token for this property. It can appear only once in the value string.
+//
+// Example: `HTTPS`
 func (o RuleSetItemRedirectUriOutput) Protocol() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleSetItemRedirectUri) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The query string to use in the redirect URI.
+//
+// When this value is null, not set, or set to `{query}`, the service preserves the original query parameters from the incoming HTTP request URI.
+//
+// All `RedirectUri` tokens are valid for this property. You can use any token more than once.
+//
+// If the query string does not begin with the `{query}` token, it must begin with the question mark (?) character.
+//
+// You can specify multiple query parameters as a single string. Separate each query parameter with an ampersand (&) character. To omit all incoming query parameters from the redirect URI, set this value to an empty string, "".
+//
+// If the specified query string results in a redirect URI ending with `?` or `&`, the last character is truncated. For example, if the incoming URI is `http://host.com:8080/documents` and the query property value is `?lang=en&{query}`, the redirect URI is `http://host.com:8080/documents?lang=en`. The system truncates the final ampersand (&) because the incoming URI included no value to replace the {query} token.
+//
+// Examples:
+// * **lang=en&time_zone=PST** appears as `lang=en&time_zone=PST` in the redirect URI.
+// * **{query}** appears as `lang=en&time_zone=PST` in the redirect URI if `lang=en&time_zone=PST` is the query string in the incoming HTTP request. If the incoming HTTP request has no query parameters, the `{query}` token renders as an empty string.
+// * **lang=en&{query}&time_zone=PST** appears as `lang=en&country=us&time_zone=PST` in the redirect URI if `country=us` is the query string in the incoming HTTP request. If the incoming HTTP request has no query parameters, this value renders as `lang=en&time_zone=PST`.
+// *  **protocol={protocol}&hostname={host}** appears as `protocol=http&hostname=example.com` in the redirect URI if the protocol is `HTTP` and the hostname is `example.com` in the incoming HTTP request.
+// *  **port={port}&hostname={host}** appears as `port=8080&hostname=example.com` in the redirect URI if the port is `8080` and the hostname is `example.com` in the incoming HTTP request URI.
 func (o RuleSetItemRedirectUriOutput) Query() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleSetItemRedirectUri) *string { return v.Query }).(pulumi.StringPtrOutput)
 }
@@ -2950,6 +3765,17 @@ func (o RuleSetItemRedirectUriPtrOutput) Elem() RuleSetItemRedirectUriOutput {
 }
 
 // (Updatable) The valid domain name (hostname) or IP address to use in the redirect URI.
+//
+// When this value is null, not set, or set to `{host}`, the service preserves the original domain name from the incoming HTTP request URI.
+//
+// All RedirectUri tokens are valid for this property. You can use any token more than once.
+//
+// Curly braces are valid in this property only to surround tokens, such as `{host}`
+//
+// Examples:
+// *  **example.com** appears as `example.com` in the redirect URI.
+// *  **in{host}** appears as `inexample.com` in the redirect URI if `example.com` is the hostname in the incoming HTTP request URI.
+// *  **{port}{host}** appears as `8081example.com` in the redirect URI if `example.com` is the hostname and the port is `8081` in the incoming HTTP request URI.
 func (o RuleSetItemRedirectUriPtrOutput) Host() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RuleSetItemRedirectUri) *string {
 		if v == nil {
@@ -2960,6 +3786,21 @@ func (o RuleSetItemRedirectUriPtrOutput) Host() pulumi.StringPtrOutput {
 }
 
 // (Updatable) The HTTP URI path to use in the redirect URI.
+//
+// When this value is null, not set, or set to `{path}`, the service preserves the original path from the incoming HTTP request URI. To omit the path from the redirect URI, set this value to an empty string, "".
+//
+// All RedirectUri tokens are valid for this property. You can use any token more than once.
+//
+// The path string must begin with `/` if it does not begin with the `{path}` token.
+//
+// Examples:
+// *  __/example/video/123__ appears as `/example/video/123` in the redirect URI.
+// *  __/example{path}__ appears as `/example/video/123` in the redirect URI if `/video/123` is the path in the incoming HTTP request URI.
+// *  __{path}/123__ appears as `/example/video/123` in the redirect URI if `/example/video` is the path in the incoming HTTP request URI.
+// *  __{path}123__ appears as `/example/video123` in the redirect URI if `/example/video` is the path in the incoming HTTP request URI.
+// *  __/{host}/123__ appears as `/example.com/123` in the redirect URI if `example.com` is the hostname in the incoming HTTP request URI.
+// *  __/{host}/{port}__ appears as `/example.com/123` in the redirect URI if `example.com` is the hostname and `123` is the port in the incoming HTTP request URI.
+// *  __/{query}__ appears as `/lang=en` in the redirect URI if the query is `lang=en` in the incoming HTTP request URI.
 func (o RuleSetItemRedirectUriPtrOutput) Path() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RuleSetItemRedirectUri) *string {
 		if v == nil {
@@ -2970,6 +3811,12 @@ func (o RuleSetItemRedirectUriPtrOutput) Path() pulumi.StringPtrOutput {
 }
 
 // (Updatable) The communication port to use in the redirect URI.
+//
+// Valid values include integers from 1 to 65535.
+//
+// When this value is null, the service preserves the original port from the incoming HTTP request URI.
+//
+// Example: `8081`
 func (o RuleSetItemRedirectUriPtrOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *RuleSetItemRedirectUri) *int {
 		if v == nil {
@@ -2980,6 +3827,15 @@ func (o RuleSetItemRedirectUriPtrOutput) Port() pulumi.IntPtrOutput {
 }
 
 // (Updatable) The HTTP protocol to use in the redirect URI.
+//
+// When this value is null, not set, or set to `{protocol}`, the service preserves the original protocol from the incoming HTTP request URI. Allowed values are:
+// *  HTTP
+// *  HTTPS
+// *  {protocol}
+//
+// `{protocol}` is the only valid token for this property. It can appear only once in the value string.
+//
+// Example: `HTTPS`
 func (o RuleSetItemRedirectUriPtrOutput) Protocol() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RuleSetItemRedirectUri) *string {
 		if v == nil {
@@ -2990,6 +3846,23 @@ func (o RuleSetItemRedirectUriPtrOutput) Protocol() pulumi.StringPtrOutput {
 }
 
 // (Updatable) The query string to use in the redirect URI.
+//
+// When this value is null, not set, or set to `{query}`, the service preserves the original query parameters from the incoming HTTP request URI.
+//
+// All `RedirectUri` tokens are valid for this property. You can use any token more than once.
+//
+// If the query string does not begin with the `{query}` token, it must begin with the question mark (?) character.
+//
+// You can specify multiple query parameters as a single string. Separate each query parameter with an ampersand (&) character. To omit all incoming query parameters from the redirect URI, set this value to an empty string, "".
+//
+// If the specified query string results in a redirect URI ending with `?` or `&`, the last character is truncated. For example, if the incoming URI is `http://host.com:8080/documents` and the query property value is `?lang=en&{query}`, the redirect URI is `http://host.com:8080/documents?lang=en`. The system truncates the final ampersand (&) because the incoming URI included no value to replace the {query} token.
+//
+// Examples:
+// * **lang=en&time_zone=PST** appears as `lang=en&time_zone=PST` in the redirect URI.
+// * **{query}** appears as `lang=en&time_zone=PST` in the redirect URI if `lang=en&time_zone=PST` is the query string in the incoming HTTP request. If the incoming HTTP request has no query parameters, the `{query}` token renders as an empty string.
+// * **lang=en&{query}&time_zone=PST** appears as `lang=en&country=us&time_zone=PST` in the redirect URI if `country=us` is the query string in the incoming HTTP request. If the incoming HTTP request has no query parameters, this value renders as `lang=en&time_zone=PST`.
+// *  **protocol={protocol}&hostname={host}** appears as `protocol=http&hostname=example.com` in the redirect URI if the protocol is `HTTP` and the hostname is `example.com` in the incoming HTTP request.
+// *  **port={port}&hostname={host}** appears as `port=8080&hostname=example.com` in the redirect URI if the port is `8080` and the hostname is `example.com` in the incoming HTTP request URI.
 func (o RuleSetItemRedirectUriPtrOutput) Query() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RuleSetItemRedirectUri) *string {
 		if v == nil {

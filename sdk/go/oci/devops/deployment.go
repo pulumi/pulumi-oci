@@ -68,6 +68,10 @@ type Deployment struct {
 	// Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. Additionally, while `triggerNewDevopsDeployment`
+	// is set true each apply will force the destruction and recreation of the resource with the new property values.
 	TriggerNewDevopsDeployment pulumi.BoolPtrOutput `pulumi:"triggerNewDevopsDeployment"`
 }
 
@@ -147,6 +151,10 @@ type deploymentState struct {
 	// Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. Additionally, while `triggerNewDevopsDeployment`
+	// is set true each apply will force the destruction and recreation of the resource with the new property values.
 	TriggerNewDevopsDeployment *bool `pulumi:"triggerNewDevopsDeployment"`
 }
 
@@ -192,6 +200,10 @@ type DeploymentState struct {
 	// Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringPtrInput
 	// A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. Additionally, while `triggerNewDevopsDeployment`
+	// is set true each apply will force the destruction and recreation of the resource with the new property values.
 	TriggerNewDevopsDeployment pulumi.BoolPtrInput
 }
 
@@ -221,6 +233,10 @@ type deploymentArgs struct {
 	// Specifies the OCID of the previous deployment to be redeployed.
 	PreviousDeploymentId *string `pulumi:"previousDeploymentId"`
 	// A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. Additionally, while `triggerNewDevopsDeployment`
+	// is set true each apply will force the destruction and recreation of the resource with the new property values.
 	TriggerNewDevopsDeployment *bool `pulumi:"triggerNewDevopsDeployment"`
 }
 
@@ -247,6 +263,10 @@ type DeploymentArgs struct {
 	// Specifies the OCID of the previous deployment to be redeployed.
 	PreviousDeploymentId pulumi.StringPtrInput
 	// A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. Additionally, while `triggerNewDevopsDeployment`
+	// is set true each apply will force the destruction and recreation of the resource with the new property values.
 	TriggerNewDevopsDeployment pulumi.BoolPtrInput
 }
 
@@ -446,6 +466,10 @@ func (o DeploymentOutput) TimeUpdated() pulumi.StringOutput {
 }
 
 // A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. Additionally, while `triggerNewDevopsDeployment`
+// is set true each apply will force the destruction and recreation of the resource with the new property values.
 func (o DeploymentOutput) TriggerNewDevopsDeployment() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.BoolPtrOutput { return v.TriggerNewDevopsDeployment }).(pulumi.BoolPtrOutput)
 }

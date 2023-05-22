@@ -109,12 +109,18 @@ public final class SessionTargetResourceDetailsArgs extends com.pulumi.resources
     /**
      * The private IP address of the target resource that the session connects to.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="targetResourcePrivateIpAddress")
     private @Nullable Output<String> targetResourcePrivateIpAddress;
 
     /**
      * @return The private IP address of the target resource that the session connects to.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> targetResourcePrivateIpAddress() {
@@ -280,6 +286,9 @@ public final class SessionTargetResourceDetailsArgs extends com.pulumi.resources
         /**
          * @param targetResourcePrivateIpAddress The private IP address of the target resource that the session connects to.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -290,6 +299,9 @@ public final class SessionTargetResourceDetailsArgs extends com.pulumi.resources
 
         /**
          * @param targetResourcePrivateIpAddress The private IP address of the target resource that the session connects to.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

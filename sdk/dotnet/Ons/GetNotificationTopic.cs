@@ -79,6 +79,8 @@ namespace Pulumi.Oci.Ons
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to retrieve.
+        /// 
+        /// Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
         /// </summary>
         [Input("topicId", required: true)]
         public string TopicId { get; set; } = null!;
@@ -93,6 +95,8 @@ namespace Pulumi.Oci.Ons
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to retrieve.
+        /// 
+        /// Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
         /// </summary>
         [Input("topicId", required: true)]
         public Input<string> TopicId { get; set; } = null!;

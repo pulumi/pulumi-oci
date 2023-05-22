@@ -39,9 +39,15 @@ class MaintenanceRunArgs:
         :param pulumi.Input[bool] is_resume_patching: (Updatable) If true, then the patching is resumed and the next component will be patched immediately.
         :param pulumi.Input[str] patch_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
         :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+               
+               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param pulumi.Input[str] target_db_server_version: (Updatable) The target database server system software version for the patching operation.
         :param pulumi.Input[str] target_storage_server_version: (Updatable) The target storage cell system software version for the patching operation.
         :param pulumi.Input[str] time_scheduled: (Updatable) The scheduled date and time of the maintenance run to update.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "maintenance_run_id", maintenance_run_id)
         if current_custom_action_timeout_in_mins is not None:
@@ -168,6 +174,8 @@ class MaintenanceRunArgs:
     def patching_mode(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+
+        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         """
         return pulumi.get(self, "patching_mode")
 
@@ -204,6 +212,10 @@ class MaintenanceRunArgs:
     def time_scheduled(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The scheduled date and time of the maintenance run to update.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_scheduled")
 
@@ -268,6 +280,8 @@ class _MaintenanceRunState:
         :param pulumi.Input[str] patch_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
         :param pulumi.Input[str] patching_end_time: The time when the patching operation ended.
         :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+               
+               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param pulumi.Input[str] patching_start_time: The time when the patching operation started.
         :param pulumi.Input[str] patching_status: The status of the patching operation.
         :param pulumi.Input[str] peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
@@ -278,6 +292,10 @@ class _MaintenanceRunState:
         :param pulumi.Input[str] target_storage_server_version: (Updatable) The target storage cell system software version for the patching operation.
         :param pulumi.Input[str] time_ended: The date and time the maintenance run was completed.
         :param pulumi.Input[str] time_scheduled: (Updatable) The scheduled date and time of the maintenance run to update.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_started: The date and time the maintenance run starts.
         """
         if compartment_id is not None:
@@ -576,6 +594,8 @@ class _MaintenanceRunState:
     def patching_mode(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+
+        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         """
         return pulumi.get(self, "patching_mode")
 
@@ -696,6 +716,10 @@ class _MaintenanceRunState:
     def time_scheduled(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The scheduled date and time of the maintenance run to update.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_scheduled")
 
@@ -758,9 +782,15 @@ class MaintenanceRun(pulumi.CustomResource):
         :param pulumi.Input[str] maintenance_run_id: The maintenance run OCID.
         :param pulumi.Input[str] patch_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
         :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+               
+               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param pulumi.Input[str] target_db_server_version: (Updatable) The target database server system software version for the patching operation.
         :param pulumi.Input[str] target_storage_server_version: (Updatable) The target storage cell system software version for the patching operation.
         :param pulumi.Input[str] time_scheduled: (Updatable) The scheduled date and time of the maintenance run to update.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -918,6 +948,8 @@ class MaintenanceRun(pulumi.CustomResource):
         :param pulumi.Input[str] patch_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
         :param pulumi.Input[str] patching_end_time: The time when the patching operation ended.
         :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+               
+               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param pulumi.Input[str] patching_start_time: The time when the patching operation started.
         :param pulumi.Input[str] patching_status: The status of the patching operation.
         :param pulumi.Input[str] peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
@@ -928,6 +960,10 @@ class MaintenanceRun(pulumi.CustomResource):
         :param pulumi.Input[str] target_storage_server_version: (Updatable) The target storage cell system software version for the patching operation.
         :param pulumi.Input[str] time_ended: The date and time the maintenance run was completed.
         :param pulumi.Input[str] time_scheduled: (Updatable) The scheduled date and time of the maintenance run to update.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_started: The date and time the maintenance run starts.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -1124,6 +1160,8 @@ class MaintenanceRun(pulumi.CustomResource):
     def patching_mode(self) -> pulumi.Output[str]:
         """
         (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+
+        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         """
         return pulumi.get(self, "patching_mode")
 
@@ -1204,6 +1242,10 @@ class MaintenanceRun(pulumi.CustomResource):
     def time_scheduled(self) -> pulumi.Output[str]:
         """
         (Updatable) The scheduled date and time of the maintenance run to update.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_scheduled")
 

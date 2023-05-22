@@ -30,7 +30,7 @@ namespace Pulumi.Oci.ApmSynthetics
     ///         DisplayName = @var.Monitor_display_name,
     ///         MonitorType = @var.Monitor_monitor_type,
     ///         RepeatIntervalInSeconds = @var.Monitor_repeat_interval_in_seconds,
-    ///         VantagePoints = new[] {},
+    ///         VantagePoints = @var.Vantage_points,
     ///         AvailabilityConfiguration = new Oci.ApmSynthetics.Inputs.ConfigAvailabilityConfigurationArgs
     ///         {
     ///             MaxAllowedFailuresPerInterval = @var.Monitor_availability_configuration_max_allowed_failures_per_interval,
@@ -280,7 +280,11 @@ namespace Pulumi.Oci.ApmSynthetics
         public Output<int> VantagePointCount { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
+        /// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("vantagePoints")]
         public Output<ImmutableArray<string>> VantagePoints { get; private set; } = null!;
@@ -467,7 +471,11 @@ namespace Pulumi.Oci.ApmSynthetics
         private InputList<string>? _vantagePoints;
 
         /// <summary>
-        /// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
+        /// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputList<string> VantagePoints
         {
@@ -637,7 +645,11 @@ namespace Pulumi.Oci.ApmSynthetics
         private InputList<string>? _vantagePoints;
 
         /// <summary>
-        /// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
+        /// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputList<string> VantagePoints
         {

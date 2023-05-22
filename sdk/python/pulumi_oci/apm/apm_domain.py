@@ -28,6 +28,10 @@ class ApmDomainArgs:
         :param pulumi.Input[str] description: (Updatable) Description of the APM domain.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_free_tier: Indicates whether this is an "Always Free" resource. The default value is false.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -105,6 +109,10 @@ class ApmDomainArgs:
     def is_free_tier(self) -> Optional[pulumi.Input[bool]]:
         """
         Indicates whether this is an "Always Free" resource. The default value is false.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_free_tier")
 
@@ -135,6 +143,10 @@ class _ApmDomainState:
         :param pulumi.Input[str] display_name: (Updatable) Display name of the APM domain.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_free_tier: Indicates whether this is an "Always Free" resource. The default value is false.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current lifecycle state of the APM domain.
         :param pulumi.Input[str] time_created: The time the APM domain was created, expressed in RFC 3339 timestamp format.
         :param pulumi.Input[str] time_updated: The time the APM domain was updated, expressed in RFC 3339 timestamp format.
@@ -237,6 +249,10 @@ class _ApmDomainState:
     def is_free_tier(self) -> Optional[pulumi.Input[bool]]:
         """
         Indicates whether this is an "Always Free" resource. The default value is false.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_free_tier")
 
@@ -333,6 +349,10 @@ class ApmDomain(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) Display name of the APM domain.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_free_tier: Indicates whether this is an "Always Free" resource. The default value is false.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -450,6 +470,10 @@ class ApmDomain(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) Display name of the APM domain.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_free_tier: Indicates whether this is an "Always Free" resource. The default value is false.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current lifecycle state of the APM domain.
         :param pulumi.Input[str] time_created: The time the APM domain was created, expressed in RFC 3339 timestamp format.
         :param pulumi.Input[str] time_updated: The time the APM domain was updated, expressed in RFC 3339 timestamp format.
@@ -523,6 +547,10 @@ class ApmDomain(pulumi.CustomResource):
     def is_free_tier(self) -> pulumi.Output[bool]:
         """
         Indicates whether this is an "Always Free" resource. The default value is false.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_free_tier")
 

@@ -366,6 +366,9 @@ type StreamPoolPrivateEndpointSettings struct {
 	// The optional private IP you want to be associated with your private stream pool. That parameter can only be specified when the subnetId parameter is set. It cannot be changed. The private IP needs to be part of the CIDR range of the specified subnetId or the creation will fail. If not specified a random IP inside the subnet will be chosen. After the stream pool is created, a custom FQDN, pointing to this private IP, is created. The FQDN is then used to access the service instead of the private IP.
 	PrivateEndpointIp *string `pulumi:"privateEndpointIp"`
 	// If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId *string `pulumi:"subnetId"`
 }
 
@@ -386,6 +389,9 @@ type StreamPoolPrivateEndpointSettingsArgs struct {
 	// The optional private IP you want to be associated with your private stream pool. That parameter can only be specified when the subnetId parameter is set. It cannot be changed. The private IP needs to be part of the CIDR range of the specified subnetId or the creation will fail. If not specified a random IP inside the subnet will be chosen. After the stream pool is created, a custom FQDN, pointing to this private IP, is created. The FQDN is then used to access the service instead of the private IP.
 	PrivateEndpointIp pulumi.StringPtrInput `pulumi:"privateEndpointIp"`
 	// If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
@@ -477,6 +483,9 @@ func (o StreamPoolPrivateEndpointSettingsOutput) PrivateEndpointIp() pulumi.Stri
 }
 
 // If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o StreamPoolPrivateEndpointSettingsOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v StreamPoolPrivateEndpointSettings) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
@@ -526,6 +535,9 @@ func (o StreamPoolPrivateEndpointSettingsPtrOutput) PrivateEndpointIp() pulumi.S
 }
 
 // If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o StreamPoolPrivateEndpointSettingsPtrOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *StreamPoolPrivateEndpointSettings) *string {
 		if v == nil {

@@ -125,12 +125,18 @@ public final class AwrHubState extends com.pulumi.resources.ResourceArgs {
     /**
      * OPSI Warehouse OCID
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="operationsInsightsWarehouseId")
     private @Nullable Output<String> operationsInsightsWarehouseId;
 
     /**
      * @return OPSI Warehouse OCID
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> operationsInsightsWarehouseId() {
@@ -382,6 +388,9 @@ public final class AwrHubState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param operationsInsightsWarehouseId OPSI Warehouse OCID
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -392,6 +401,9 @@ public final class AwrHubState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param operationsInsightsWarehouseId OPSI Warehouse OCID
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

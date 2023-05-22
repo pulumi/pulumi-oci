@@ -18,12 +18,30 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser
     /**
      * (Updatable) SFF auth keys clob
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="sffAuthKeys")
     private @Nullable Output<String> sffAuthKeys;
 
     /**
      * @return (Updatable) SFF auth keys clob
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> sffAuthKeys() {
@@ -57,6 +75,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser
         /**
          * @param sffAuthKeys (Updatable) SFF auth keys clob
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -67,6 +94,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser
 
         /**
          * @param sffAuthKeys (Updatable) SFF auth keys clob
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 

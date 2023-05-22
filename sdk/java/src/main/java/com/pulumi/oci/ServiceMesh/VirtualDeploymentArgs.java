@@ -144,12 +144,18 @@ public final class VirtualDeploymentArgs extends com.pulumi.resources.ResourceAr
     /**
      * The OCID of the service mesh in which this access policy is created.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="virtualServiceId", required=true)
     private Output<String> virtualServiceId;
 
     /**
      * @return The OCID of the service mesh in which this access policy is created.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> virtualServiceId() {
@@ -369,6 +375,9 @@ public final class VirtualDeploymentArgs extends com.pulumi.resources.ResourceAr
         /**
          * @param virtualServiceId The OCID of the service mesh in which this access policy is created.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -379,6 +388,9 @@ public final class VirtualDeploymentArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param virtualServiceId The OCID of the service mesh in which this access policy is created.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

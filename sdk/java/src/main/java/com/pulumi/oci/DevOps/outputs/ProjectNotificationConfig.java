@@ -12,12 +12,18 @@ public final class ProjectNotificationConfig {
     /**
      * @return (Updatable) The topic ID for notifications.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private String topicId;
 
     private ProjectNotificationConfig() {}
     /**
      * @return (Updatable) The topic ID for notifications.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String topicId() {

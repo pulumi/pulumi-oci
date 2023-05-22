@@ -58,6 +58,9 @@ type Secret struct {
 	// An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	TimeOfDeletion pulumi.StringOutput `pulumi:"timeOfDeletion"`
 	// The OCID of the vault where you want to create the secret.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VaultId pulumi.StringOutput `pulumi:"vaultId"`
 }
 
@@ -136,6 +139,9 @@ type secretState struct {
 	// An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 	// The OCID of the vault where you want to create the secret.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VaultId *string `pulumi:"vaultId"`
 }
 
@@ -171,6 +177,9 @@ type SecretState struct {
 	// An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	TimeOfDeletion pulumi.StringPtrInput
 	// The OCID of the vault where you want to create the secret.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VaultId pulumi.StringPtrInput
 }
 
@@ -198,6 +207,9 @@ type secretArgs struct {
 	// (Updatable) A list of rules to control how the secret is used and managed.
 	SecretRules []SecretSecretRule `pulumi:"secretRules"`
 	// The OCID of the vault where you want to create the secret.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VaultId string `pulumi:"vaultId"`
 }
 
@@ -222,6 +234,9 @@ type SecretArgs struct {
 	// (Updatable) A list of rules to control how the secret is used and managed.
 	SecretRules SecretSecretRuleArrayInput
 	// The OCID of the vault where you want to create the secret.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VaultId pulumi.StringInput
 }
 
@@ -388,6 +403,9 @@ func (o SecretOutput) TimeOfDeletion() pulumi.StringOutput {
 }
 
 // The OCID of the vault where you want to create the secret.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o SecretOutput) VaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Secret) pulumi.StringOutput { return v.VaultId }).(pulumi.StringOutput)
 }

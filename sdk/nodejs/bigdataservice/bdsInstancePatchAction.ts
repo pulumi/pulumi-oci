@@ -64,6 +64,10 @@ export class BdsInstancePatchAction extends pulumi.CustomResource {
     public readonly clusterAdminPassword!: pulumi.Output<string>;
     /**
      * The version of the patch to be installed.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly version!: pulumi.Output<string>;
 
@@ -119,6 +123,10 @@ export interface BdsInstancePatchActionState {
     clusterAdminPassword?: pulumi.Input<string>;
     /**
      * The version of the patch to be installed.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     version?: pulumi.Input<string>;
 }
@@ -137,6 +145,10 @@ export interface BdsInstancePatchActionArgs {
     clusterAdminPassword: pulumi.Input<string>;
     /**
      * The version of the patch to be installed.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     version: pulumi.Input<string>;
 }

@@ -84,7 +84,11 @@ namespace Pulumi.Oci.MediaServices
         public Output<string> LifecyleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey &gt; parameterName &gt; parameterValue
+        /// (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey &gt; parameterName &gt; parameterValue 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("parameters")]
         public Output<string> Parameters { get; private set; } = null!;
@@ -196,7 +200,11 @@ namespace Pulumi.Oci.MediaServices
         }
 
         /// <summary>
-        /// (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey &gt; parameterName &gt; parameterValue
+        /// (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey &gt; parameterName &gt; parameterValue 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("parameters", required: true)]
         public Input<string> Parameters { get; set; } = null!;
@@ -252,7 +260,11 @@ namespace Pulumi.Oci.MediaServices
         public Input<string>? LifecyleDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey &gt; parameterName &gt; parameterValue
+        /// (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey &gt; parameterName &gt; parameterValue 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("parameters")]
         public Input<string>? Parameters { get; set; }

@@ -134,6 +134,10 @@ export class NotebookSession extends pulumi.CustomResource {
     public /*out*/ readonly notebookSessionUrl!: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly projectId!: pulumi.Output<string>;
     /**
@@ -244,6 +248,10 @@ export interface NotebookSessionState {
     notebookSessionUrl?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     projectId?: pulumi.Input<string>;
     /**
@@ -290,6 +298,10 @@ export interface NotebookSessionArgs {
     notebookSessionRuntimeConfigDetails?: pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionRuntimeConfigDetails>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     projectId: pulumi.Input<string>;
     /**

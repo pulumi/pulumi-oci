@@ -148,12 +148,18 @@ public class Addon extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The version of addon to be installed.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="version", type=String.class, parameters={})
     private Output<String> version;
 
     /**
      * @return (Updatable) The version of addon to be installed.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> version() {

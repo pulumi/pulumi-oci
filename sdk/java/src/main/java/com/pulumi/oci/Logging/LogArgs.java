@@ -128,12 +128,18 @@ public final class LogArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="retentionDuration")
     private @Nullable Output<Integer> retentionDuration;
 
     /**
      * @return (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> retentionDuration() {
@@ -321,6 +327,9 @@ public final class LogArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param retentionDuration (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -331,6 +340,9 @@ public final class LogArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param retentionDuration (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

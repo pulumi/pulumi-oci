@@ -107,12 +107,16 @@ public class DetectorRecipe extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Detector recipe display name.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     @Export(name="displayName", type=String.class, parameters={})
     private Output<String> displayName;
 
     /**
      * @return (Updatable) Detector recipe display name.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -135,12 +139,16 @@ public class DetectorRecipe extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
+     * Avoid entering confidential information.
+     * 
      */
     @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
     private Output<Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Output<Map<String,Object>> freeformTags() {
@@ -163,12 +171,18 @@ public class DetectorRecipe extends com.pulumi.resources.CustomResource {
     /**
      * The id of the source detector recipe.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="sourceDetectorRecipeId", type=String.class, parameters={})
     private Output<String> sourceDetectorRecipeId;
 
     /**
      * @return The id of the source detector recipe.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> sourceDetectorRecipeId() {

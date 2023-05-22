@@ -97,12 +97,18 @@ public final class FusionEnvironmentFamilyArgs extends com.pulumi.resources.Reso
     /**
      * (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="subscriptionIds", required=true)
     private Output<List<String>> subscriptionIds;
 
     /**
      * @return (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<List<String>> subscriptionIds() {
@@ -254,6 +260,9 @@ public final class FusionEnvironmentFamilyArgs extends com.pulumi.resources.Reso
         /**
          * @param subscriptionIds (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -265,6 +274,9 @@ public final class FusionEnvironmentFamilyArgs extends com.pulumi.resources.Reso
         /**
          * @param subscriptionIds (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -274,6 +286,9 @@ public final class FusionEnvironmentFamilyArgs extends com.pulumi.resources.Reso
 
         /**
          * @param subscriptionIds (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

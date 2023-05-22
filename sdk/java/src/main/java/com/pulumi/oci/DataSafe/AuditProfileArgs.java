@@ -37,12 +37,18 @@ public final class AuditProfileArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="changeRetentionTrigger")
     private @Nullable Output<Integer> changeRetentionTrigger;
 
     /**
      * @return (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> changeRetentionTrigger() {
@@ -194,6 +200,9 @@ public final class AuditProfileArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param changeRetentionTrigger (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -204,6 +213,9 @@ public final class AuditProfileArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param changeRetentionTrigger (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

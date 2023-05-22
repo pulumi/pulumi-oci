@@ -98,6 +98,10 @@ export class SteeringPolicyAttachment extends pulumi.CustomResource {
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
      * The OCID of the attached zone.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly zoneId!: pulumi.Output<string>;
 
@@ -187,6 +191,10 @@ export interface SteeringPolicyAttachmentState {
     timeCreated?: pulumi.Input<string>;
     /**
      * The OCID of the attached zone.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     zoneId?: pulumi.Input<string>;
 }
@@ -209,6 +217,10 @@ export interface SteeringPolicyAttachmentArgs {
     steeringPolicyId: pulumi.Input<string>;
     /**
      * The OCID of the attached zone.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     zoneId: pulumi.Input<string>;
 }

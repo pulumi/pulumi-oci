@@ -84,6 +84,14 @@ namespace Pulumi.Oci.FileStorage
 
         /// <summary>
         /// Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
+        /// 
+        /// Avoid entering confidential information.
+        /// 
+        /// Example: `Sunday`
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -199,6 +207,14 @@ namespace Pulumi.Oci.FileStorage
 
         /// <summary>
         /// Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
+        /// 
+        /// Avoid entering confidential information.
+        /// 
+        /// Example: `Sunday`
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -255,6 +271,14 @@ namespace Pulumi.Oci.FileStorage
 
         /// <summary>
         /// Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
+        /// 
+        /// Avoid entering confidential information.
+        /// 
+        /// Example: `Sunday`
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

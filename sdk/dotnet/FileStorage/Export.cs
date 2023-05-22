@@ -60,6 +60,14 @@ namespace Pulumi.Oci.FileStorage
     {
         /// <summary>
         /// (Updatable) Export options for the new export. If left unspecified, defaults to:
+        /// 
+        /// []
+        /// 
+        /// **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
+        /// 
+        /// **If set to the empty array then the export will not be visible to any clients.**
+        /// 
+        /// The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
         /// </summary>
         [Output("exportOptions")]
         public Output<ImmutableArray<Outputs.ExportExportOption>> ExportOptions { get; private set; } = null!;
@@ -78,6 +86,14 @@ namespace Pulumi.Oci.FileStorage
 
         /// <summary>
         /// Path used to access the associated file system.
+        /// 
+        /// Avoid entering confidential information.
+        /// 
+        /// Example: `/mediafiles`
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("path")]
         public Output<string> Path { get; private set; } = null!;
@@ -145,6 +161,14 @@ namespace Pulumi.Oci.FileStorage
 
         /// <summary>
         /// (Updatable) Export options for the new export. If left unspecified, defaults to:
+        /// 
+        /// []
+        /// 
+        /// **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
+        /// 
+        /// **If set to the empty array then the export will not be visible to any clients.**
+        /// 
+        /// The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
         /// </summary>
         public InputList<Inputs.ExportExportOptionArgs> ExportOptions
         {
@@ -166,6 +190,14 @@ namespace Pulumi.Oci.FileStorage
 
         /// <summary>
         /// Path used to access the associated file system.
+        /// 
+        /// Avoid entering confidential information.
+        /// 
+        /// Example: `/mediafiles`
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("path", required: true)]
         public Input<string> Path { get; set; } = null!;
@@ -183,6 +215,14 @@ namespace Pulumi.Oci.FileStorage
 
         /// <summary>
         /// (Updatable) Export options for the new export. If left unspecified, defaults to:
+        /// 
+        /// []
+        /// 
+        /// **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
+        /// 
+        /// **If set to the empty array then the export will not be visible to any clients.**
+        /// 
+        /// The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
         /// </summary>
         public InputList<Inputs.ExportExportOptionGetArgs> ExportOptions
         {
@@ -204,6 +244,14 @@ namespace Pulumi.Oci.FileStorage
 
         /// <summary>
         /// Path used to access the associated file system.
+        /// 
+        /// Avoid entering confidential information.
+        /// 
+        /// Example: `/mediafiles`
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("path")]
         public Input<string>? Path { get; set; }

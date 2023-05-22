@@ -21,6 +21,10 @@ class UserGroupMembershipArgs:
         The set of arguments for constructing a UserGroupMembership resource.
         :param pulumi.Input[str] group_id: The OCID of the group.
         :param pulumi.Input[str] user_id: The OCID of the user.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: The OCID of the tenancy containing the user, group, and membership object.
         """
         pulumi.set(__self__, "group_id", group_id)
@@ -45,6 +49,10 @@ class UserGroupMembershipArgs:
     def user_id(self) -> pulumi.Input[str]:
         """
         The OCID of the user.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "user_id")
 
@@ -82,6 +90,10 @@ class _UserGroupMembershipState:
         :param pulumi.Input[str] state: The membership's current state.
         :param pulumi.Input[str] time_created: Date and time the membership was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] user_id: The OCID of the user.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -161,6 +173,10 @@ class _UserGroupMembershipState:
     def user_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the user.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "user_id")
 
@@ -207,6 +223,10 @@ class UserGroupMembership(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: The OCID of the tenancy containing the user, group, and membership object.
         :param pulumi.Input[str] group_id: The OCID of the group.
         :param pulumi.Input[str] user_id: The OCID of the user.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -304,6 +324,10 @@ class UserGroupMembership(pulumi.CustomResource):
         :param pulumi.Input[str] state: The membership's current state.
         :param pulumi.Input[str] time_created: Date and time the membership was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] user_id: The OCID of the user.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -362,6 +386,10 @@ class UserGroupMembership(pulumi.CustomResource):
     def user_id(self) -> pulumi.Output[str]:
         """
         The OCID of the user.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "user_id")
 

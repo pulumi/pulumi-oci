@@ -17,6 +17,11 @@ public final class AutoScalingConfigurationPolicyRuleMetricThreshold {
      * 
      */
     private @Nullable String operator;
+    /**
+     * @return ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     private @Nullable Integer value;
 
     private AutoScalingConfigurationPolicyRuleMetricThreshold() {}
@@ -27,6 +32,11 @@ public final class AutoScalingConfigurationPolicyRuleMetricThreshold {
     public Optional<String> operator() {
         return Optional.ofNullable(this.operator);
     }
+    /**
+     * @return ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     public Optional<Integer> value() {
         return Optional.ofNullable(this.value);
     }

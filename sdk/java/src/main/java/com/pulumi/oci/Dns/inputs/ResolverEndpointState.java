@@ -200,12 +200,18 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
     /**
      * The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
      * @return The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -545,6 +551,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         /**
          * @param subnetId The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -555,6 +564,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param subnetId The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

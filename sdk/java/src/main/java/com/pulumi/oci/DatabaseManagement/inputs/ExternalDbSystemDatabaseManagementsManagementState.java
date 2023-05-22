@@ -19,12 +19,18 @@ public final class ExternalDbSystemDatabaseManagementsManagementState extends co
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="enableDatabaseManagement")
     private @Nullable Output<Boolean> enableDatabaseManagement;
 
     /**
      * @return (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Boolean>> enableDatabaseManagement() {
@@ -90,6 +96,9 @@ public final class ExternalDbSystemDatabaseManagementsManagementState extends co
         /**
          * @param enableDatabaseManagement (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -100,6 +109,9 @@ public final class ExternalDbSystemDatabaseManagementsManagementState extends co
 
         /**
          * @param enableDatabaseManagement (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

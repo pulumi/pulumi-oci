@@ -19,7 +19,11 @@ class ImportStandardTagsManagementArgs:
         """
         The set of arguments for constructing a ImportStandardTagsManagement resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
-        :param pulumi.Input[str] standard_tag_namespace_name: The name of standard tag namespace that will be imported in bulk
+        :param pulumi.Input[str] standard_tag_namespace_name: The name of standard tag namespace that will be imported in bulk 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "standard_tag_namespace_name", standard_tag_namespace_name)
@@ -40,7 +44,11 @@ class ImportStandardTagsManagementArgs:
     @pulumi.getter(name="standardTagNamespaceName")
     def standard_tag_namespace_name(self) -> pulumi.Input[str]:
         """
-        The name of standard tag namespace that will be imported in bulk
+        The name of standard tag namespace that will be imported in bulk 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "standard_tag_namespace_name")
 
@@ -58,7 +66,11 @@ class _ImportStandardTagsManagementState:
         """
         Input properties used for looking up and filtering ImportStandardTagsManagement resources.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
-        :param pulumi.Input[str] standard_tag_namespace_name: The name of standard tag namespace that will be imported in bulk
+        :param pulumi.Input[str] standard_tag_namespace_name: The name of standard tag namespace that will be imported in bulk 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -83,7 +95,11 @@ class _ImportStandardTagsManagementState:
     @pulumi.getter(name="standardTagNamespaceName")
     def standard_tag_namespace_name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of standard tag namespace that will be imported in bulk
+        The name of standard tag namespace that will be imported in bulk 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "standard_tag_namespace_name")
 
@@ -137,7 +153,11 @@ class ImportStandardTagsManagement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
-        :param pulumi.Input[str] standard_tag_namespace_name: The name of standard tag namespace that will be imported in bulk
+        :param pulumi.Input[str] standard_tag_namespace_name: The name of standard tag namespace that will be imported in bulk 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -224,7 +244,11 @@ class ImportStandardTagsManagement(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
-        :param pulumi.Input[str] standard_tag_namespace_name: The name of standard tag namespace that will be imported in bulk
+        :param pulumi.Input[str] standard_tag_namespace_name: The name of standard tag namespace that will be imported in bulk 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -247,7 +271,11 @@ class ImportStandardTagsManagement(pulumi.CustomResource):
     @pulumi.getter(name="standardTagNamespaceName")
     def standard_tag_namespace_name(self) -> pulumi.Output[str]:
         """
-        The name of standard tag namespace that will be imported in bulk
+        The name of standard tag namespace that will be imported in bulk 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "standard_tag_namespace_name")
 

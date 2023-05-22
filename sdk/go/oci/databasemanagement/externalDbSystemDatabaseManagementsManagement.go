@@ -47,6 +47,9 @@ type ExternalDbSystemDatabaseManagementsManagement struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableDatabaseManagement pulumi.BoolOutput `pulumi:"enableDatabaseManagement"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 	ExternalDbSystemId pulumi.StringOutput `pulumi:"externalDbSystemId"`
@@ -90,6 +93,9 @@ func GetExternalDbSystemDatabaseManagementsManagement(ctx *pulumi.Context,
 // Input properties used for looking up and filtering ExternalDbSystemDatabaseManagementsManagement resources.
 type externalDbSystemDatabaseManagementsManagementState struct {
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableDatabaseManagement *bool `pulumi:"enableDatabaseManagement"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 	ExternalDbSystemId *string `pulumi:"externalDbSystemId"`
@@ -99,6 +105,9 @@ type externalDbSystemDatabaseManagementsManagementState struct {
 
 type ExternalDbSystemDatabaseManagementsManagementState struct {
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableDatabaseManagement pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 	ExternalDbSystemId pulumi.StringPtrInput
@@ -112,6 +121,9 @@ func (ExternalDbSystemDatabaseManagementsManagementState) ElementType() reflect.
 
 type externalDbSystemDatabaseManagementsManagementArgs struct {
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableDatabaseManagement bool `pulumi:"enableDatabaseManagement"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
@@ -122,6 +134,9 @@ type externalDbSystemDatabaseManagementsManagementArgs struct {
 // The set of arguments for constructing a ExternalDbSystemDatabaseManagementsManagement resource.
 type ExternalDbSystemDatabaseManagementsManagementArgs struct {
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableDatabaseManagement pulumi.BoolInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 	ExternalDbSystemId pulumi.StringInput
@@ -217,6 +232,9 @@ func (o ExternalDbSystemDatabaseManagementsManagementOutput) ToExternalDbSystemD
 }
 
 // (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ExternalDbSystemDatabaseManagementsManagementOutput) EnableDatabaseManagement() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ExternalDbSystemDatabaseManagementsManagement) pulumi.BoolOutput {
 		return v.EnableDatabaseManagement

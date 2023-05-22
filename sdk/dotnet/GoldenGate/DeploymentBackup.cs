@@ -118,6 +118,10 @@ namespace Pulumi.Oci.GoldenGate
 
         /// <summary>
         /// Name of the object to be uploaded to object storage
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("object")]
         public Output<string> Object { get; private set; } = null!;
@@ -272,6 +276,10 @@ namespace Pulumi.Oci.GoldenGate
 
         /// <summary>
         /// Name of the object to be uploaded to object storage
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("object", required: true)]
         public Input<string> Object { get; set; } = null!;
@@ -358,6 +366,10 @@ namespace Pulumi.Oci.GoldenGate
 
         /// <summary>
         /// Name of the object to be uploaded to object storage
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("object")]
         public Input<string>? Object { get; set; }

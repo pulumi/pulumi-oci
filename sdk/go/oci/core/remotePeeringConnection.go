@@ -78,6 +78,9 @@ type RemotePeeringConnection struct {
 	// The OCID of the RPC you want to peer with.
 	PeerId pulumi.StringOutput `pulumi:"peerId"`
 	// The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PeerRegionName pulumi.StringOutput `pulumi:"peerRegionName"`
 	// If this RPC is peered, this value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the other RPC's tenancy.
 	PeerTenancyId pulumi.StringOutput `pulumi:"peerTenancyId"`
@@ -139,6 +142,9 @@ type remotePeeringConnectionState struct {
 	// The OCID of the RPC you want to peer with.
 	PeerId *string `pulumi:"peerId"`
 	// The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PeerRegionName *string `pulumi:"peerRegionName"`
 	// If this RPC is peered, this value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the other RPC's tenancy.
 	PeerTenancyId *string `pulumi:"peerTenancyId"`
@@ -166,6 +172,9 @@ type RemotePeeringConnectionState struct {
 	// The OCID of the RPC you want to peer with.
 	PeerId pulumi.StringPtrInput
 	// The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PeerRegionName pulumi.StringPtrInput
 	// If this RPC is peered, this value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the other RPC's tenancy.
 	PeerTenancyId pulumi.StringPtrInput
@@ -195,6 +204,9 @@ type remotePeeringConnectionArgs struct {
 	// The OCID of the RPC you want to peer with.
 	PeerId *string `pulumi:"peerId"`
 	// The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PeerRegionName *string `pulumi:"peerRegionName"`
 }
 
@@ -213,6 +225,9 @@ type RemotePeeringConnectionArgs struct {
 	// The OCID of the RPC you want to peer with.
 	PeerId pulumi.StringPtrInput
 	// The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PeerRegionName pulumi.StringPtrInput
 }
 
@@ -339,6 +354,9 @@ func (o RemotePeeringConnectionOutput) PeerId() pulumi.StringOutput {
 }
 
 // The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o RemotePeeringConnectionOutput) PeerRegionName() pulumi.StringOutput {
 	return o.ApplyT(func(v *RemotePeeringConnection) pulumi.StringOutput { return v.PeerRegionName }).(pulumi.StringOutput)
 }

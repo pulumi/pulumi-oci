@@ -118,6 +118,10 @@ namespace Pulumi.Oci.CloudBridge
 
         /// <summary>
         /// OS version.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("osVersion")]
         public Output<string> OsVersion { get; private set; } = null!;
@@ -266,6 +270,10 @@ namespace Pulumi.Oci.CloudBridge
 
         /// <summary>
         /// OS version.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("osVersion", required: true)]
         public Input<string> OsVersion { get; set; } = null!;
@@ -352,6 +360,10 @@ namespace Pulumi.Oci.CloudBridge
 
         /// <summary>
         /// OS version.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("osVersion")]
         public Input<string>? OsVersion { get; set; }

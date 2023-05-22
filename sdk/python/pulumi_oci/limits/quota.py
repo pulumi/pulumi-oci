@@ -27,7 +27,10 @@ class QuotaArgs:
         The set of arguments for constructing a Quota resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the resource this quota applies to.
         :param pulumi.Input[str] description: (Updatable) The description you assign to the quota.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] statements: (Updatable) An array of quota statements written in the declarative quota statement language.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] statements: (Updatable) An array of quota statements written in the declarative quota statement language. 
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['QuotaLockArgs']]] locks: Locks associated with this resource.
@@ -73,7 +76,10 @@ class QuotaArgs:
     @pulumi.getter
     def statements(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
-        (Updatable) An array of quota statements written in the declarative quota statement language.
+        (Updatable) An array of quota statements written in the declarative quota statement language. 
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "statements")
 
@@ -153,7 +159,10 @@ class _QuotaState:
         :param pulumi.Input[Sequence[pulumi.Input['QuotaLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[str] name: The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
         :param pulumi.Input[str] state: The quota's current state.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] statements: (Updatable) An array of quota statements written in the declarative quota statement language.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] statements: (Updatable) An array of quota statements written in the declarative quota statement language. 
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
         """
         if compartment_id is not None:
@@ -277,7 +286,10 @@ class _QuotaState:
     @pulumi.getter
     def statements(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) An array of quota statements written in the declarative quota statement language.
+        (Updatable) An array of quota statements written in the declarative quota statement language. 
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "statements")
 
@@ -355,7 +367,10 @@ class Quota(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['QuotaLockArgs']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] name: The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] statements: (Updatable) An array of quota statements written in the declarative quota statement language.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] statements: (Updatable) An array of quota statements written in the declarative quota statement language. 
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -481,7 +496,10 @@ class Quota(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['QuotaLockArgs']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] name: The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
         :param pulumi.Input[str] state: The quota's current state.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] statements: (Updatable) An array of quota statements written in the declarative quota statement language.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] statements: (Updatable) An array of quota statements written in the declarative quota statement language. 
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -568,7 +586,10 @@ class Quota(pulumi.CustomResource):
     @pulumi.getter
     def statements(self) -> pulumi.Output[Sequence[str]]:
         """
-        (Updatable) An array of quota statements written in the declarative quota statement language.
+        (Updatable) An array of quota statements written in the declarative quota statement language. 
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "statements")
 

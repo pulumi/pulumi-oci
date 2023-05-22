@@ -26,7 +26,11 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly string MetricName;
         /// <summary>
-        /// The Logging Analytics namespace used for the request.
+        /// The Logging Analytics namespace used for the request. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Namespace;
         /// <summary>

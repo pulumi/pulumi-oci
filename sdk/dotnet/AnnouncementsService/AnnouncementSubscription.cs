@@ -125,6 +125,10 @@ namespace Pulumi.Oci.AnnouncementsService
 
         /// <summary>
         /// (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("preferredTimeZone")]
         public Output<string> PreferredTimeZone { get; private set; } = null!;
@@ -261,6 +265,10 @@ namespace Pulumi.Oci.AnnouncementsService
 
         /// <summary>
         /// (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("preferredTimeZone")]
         public Input<string>? PreferredTimeZone { get; set; }
@@ -341,6 +349,10 @@ namespace Pulumi.Oci.AnnouncementsService
 
         /// <summary>
         /// (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("preferredTimeZone")]
         public Input<string>? PreferredTimeZone { get; set; }

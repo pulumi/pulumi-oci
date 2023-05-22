@@ -42,6 +42,10 @@ class SensitiveTypeArgs:
         :param pulumi.Input[str] parent_category_id: (Updatable) The OCID of the parent sensitive category.
         :param pulumi.Input[str] search_type: (Updatable) The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
         :param pulumi.Input[str] short_name: (Updatable) The short name of the sensitive type.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "entity_type", entity_type)
@@ -217,6 +221,10 @@ class SensitiveTypeArgs:
     def short_name(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The short name of the sensitive type.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "short_name")
 
@@ -261,6 +269,10 @@ class _SensitiveTypeState:
         :param pulumi.Input[str] parent_category_id: (Updatable) The OCID of the parent sensitive category.
         :param pulumi.Input[str] search_type: (Updatable) The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
         :param pulumi.Input[str] short_name: (Updatable) The short name of the sensitive type.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] source: Specifies whether the sensitive type is user-defined or predefined.
         :param pulumi.Input[str] state: The current state of the sensitive type.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -453,6 +465,10 @@ class _SensitiveTypeState:
     def short_name(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The short name of the sensitive type.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "short_name")
 
@@ -596,6 +612,10 @@ class SensitiveType(pulumi.CustomResource):
         :param pulumi.Input[str] parent_category_id: (Updatable) The OCID of the parent sensitive category.
         :param pulumi.Input[str] search_type: (Updatable) The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
         :param pulumi.Input[str] short_name: (Updatable) The short name of the sensitive type.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -751,6 +771,10 @@ class SensitiveType(pulumi.CustomResource):
         :param pulumi.Input[str] parent_category_id: (Updatable) The OCID of the parent sensitive category.
         :param pulumi.Input[str] search_type: (Updatable) The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
         :param pulumi.Input[str] short_name: (Updatable) The short name of the sensitive type.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] source: Specifies whether the sensitive type is user-defined or predefined.
         :param pulumi.Input[str] state: The current state of the sensitive type.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -882,6 +906,10 @@ class SensitiveType(pulumi.CustomResource):
     def short_name(self) -> pulumi.Output[str]:
         """
         (Updatable) The short name of the sensitive type.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "short_name")
 

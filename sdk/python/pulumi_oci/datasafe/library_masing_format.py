@@ -31,7 +31,11 @@ class LibraryMasingFormatArgs:
         :param pulumi.Input[str] description: (Updatable) The description of the format entry.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the library masking format. The name does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids: (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids: (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "format_entries", format_entries)
@@ -122,7 +126,11 @@ class LibraryMasingFormatArgs:
     @pulumi.getter(name="sensitiveTypeIds")
     def sensitive_type_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.
+        (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "sensitive_type_ids")
 
@@ -153,7 +161,11 @@ class _LibraryMasingFormatState:
         :param pulumi.Input[str] display_name: (Updatable) The display name of the library masking format. The name does not have to be unique, and it's changeable.
         :param pulumi.Input[Sequence[pulumi.Input['LibraryMasingFormatFormatEntryArgs']]] format_entries: (Updatable) An array of format entries. The combined output of all the format entries is used for masking.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids: (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids: (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] source: Specifies whether the library masking format is user-defined or predefined.
         :param pulumi.Input[str] state: The current state of the library masking format.
         :param pulumi.Input[str] time_created: The date and time the library masking format was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
@@ -258,7 +270,11 @@ class _LibraryMasingFormatState:
     @pulumi.getter(name="sensitiveTypeIds")
     def sensitive_type_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.
+        (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "sensitive_type_ids")
 
@@ -353,7 +369,11 @@ class LibraryMasingFormat(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) The display name of the library masking format. The name does not have to be unique, and it's changeable.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LibraryMasingFormatFormatEntryArgs']]]] format_entries: (Updatable) An array of format entries. The combined output of all the format entries is used for masking.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids: (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids: (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -458,7 +478,11 @@ class LibraryMasingFormat(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) The display name of the library masking format. The name does not have to be unique, and it's changeable.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LibraryMasingFormatFormatEntryArgs']]]] format_entries: (Updatable) An array of format entries. The combined output of all the format entries is used for masking.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids: (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids: (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] source: Specifies whether the library masking format is user-defined or predefined.
         :param pulumi.Input[str] state: The current state of the library masking format.
         :param pulumi.Input[str] time_created: The date and time the library masking format was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
@@ -533,7 +557,11 @@ class LibraryMasingFormat(pulumi.CustomResource):
     @pulumi.getter(name="sensitiveTypeIds")
     def sensitive_type_ids(self) -> pulumi.Output[Sequence[str]]:
         """
-        (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.
+        (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "sensitive_type_ids")
 

@@ -26,6 +26,10 @@ class ManagementAgentInstallKeyArgs:
         :param pulumi.Input[int] allowed_key_install_count: Total number of install for this keys
         :param pulumi.Input[bool] is_unlimited: If set to true, the install key has no expiration date or usage limit. Defaults to false
         :param pulumi.Input[str] time_expires: date after which key would expire after creation
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -89,6 +93,10 @@ class ManagementAgentInstallKeyArgs:
     def time_expires(self) -> Optional[pulumi.Input[str]]:
         """
         date after which key would expire after creation
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_expires")
 
@@ -125,6 +133,10 @@ class _ManagementAgentInstallKeyState:
         :param pulumi.Input[str] state: Status of Key
         :param pulumi.Input[str] time_created: The time when Management Agent install Key was created. An RFC3339 formatted date time string
         :param pulumi.Input[str] time_expires: date after which key would expire after creation
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_updated: The time when Management Agent install Key was updated. An RFC3339 formatted date time string
         """
         if allowed_key_install_count is not None:
@@ -277,6 +289,10 @@ class _ManagementAgentInstallKeyState:
     def time_expires(self) -> Optional[pulumi.Input[str]]:
         """
         date after which key would expire after creation
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_expires")
 
@@ -342,6 +358,10 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) Management Agent install Key Name
         :param pulumi.Input[bool] is_unlimited: If set to true, the install key has no expiration date or usage limit. Defaults to false
         :param pulumi.Input[str] time_expires: date after which key would expire after creation
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -461,6 +481,10 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
         :param pulumi.Input[str] state: Status of Key
         :param pulumi.Input[str] time_created: The time when Management Agent install Key was created. An RFC3339 formatted date time string
         :param pulumi.Input[str] time_expires: date after which key would expire after creation
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_updated: The time when Management Agent install Key was updated. An RFC3339 formatted date time string
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -566,6 +590,10 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
     def time_expires(self) -> pulumi.Output[str]:
         """
         date after which key would expire after creation
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_expires")
 

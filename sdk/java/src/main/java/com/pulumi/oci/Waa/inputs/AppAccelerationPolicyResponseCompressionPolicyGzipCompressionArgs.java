@@ -18,12 +18,16 @@ public final class AppAccelerationPolicyResponseCompressionPolicyGzipCompression
     /**
      * (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the &#34;Accept-Encoding: gzip&#34; request header.
      * 
+     * When false, support for gzip compression is disabled and HTTP responses will not be compressed with gzip even if the client indicates support for gzip.
+     * 
      */
     @Import(name="isEnabled")
     private @Nullable Output<Boolean> isEnabled;
 
     /**
      * @return (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the &#34;Accept-Encoding: gzip&#34; request header.
+     * 
+     * When false, support for gzip compression is disabled and HTTP responses will not be compressed with gzip even if the client indicates support for gzip.
      * 
      */
     public Optional<Output<Boolean>> isEnabled() {
@@ -57,6 +61,8 @@ public final class AppAccelerationPolicyResponseCompressionPolicyGzipCompression
         /**
          * @param isEnabled (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the &#34;Accept-Encoding: gzip&#34; request header.
          * 
+         * When false, support for gzip compression is disabled and HTTP responses will not be compressed with gzip even if the client indicates support for gzip.
+         * 
          * @return builder
          * 
          */
@@ -67,6 +73,8 @@ public final class AppAccelerationPolicyResponseCompressionPolicyGzipCompression
 
         /**
          * @param isEnabled (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the &#34;Accept-Encoding: gzip&#34; request header.
+         * 
+         * When false, support for gzip compression is disabled and HTTP responses will not be compressed with gzip even if the client indicates support for gzip.
          * 
          * @return builder
          * 

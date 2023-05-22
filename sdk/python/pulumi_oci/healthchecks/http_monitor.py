@@ -38,12 +38,18 @@ class HttpMonitorArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[Mapping[str, Any]] headers: (Updatable) A dictionary of HTTP request headers.
+               
+               *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         :param pulumi.Input[bool] is_enabled: (Updatable) Enables or disables the monitor. Set to 'true' to launch monitoring.
         :param pulumi.Input[str] method: (Updatable) The supported HTTP methods available for probes.
         :param pulumi.Input[str] path: (Updatable) The optional URL path to probe, including query parameters.
         :param pulumi.Input[int] port: (Updatable) The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_point_names: (Updatable) A list of names of vantage points from which to execute the probe.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -158,6 +164,8 @@ class HttpMonitorArgs:
     def headers(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
         (Updatable) A dictionary of HTTP request headers.
+
+        *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         """
         return pulumi.get(self, "headers")
 
@@ -230,6 +238,10 @@ class HttpMonitorArgs:
     def vantage_point_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) A list of names of vantage points from which to execute the probe.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vantage_point_names")
 
@@ -265,6 +277,8 @@ class _HttpMonitorState:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly and mutable name suitable for display in a user interface.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[Mapping[str, Any]] headers: (Updatable) A dictionary of HTTP request headers.
+               
+               *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         :param pulumi.Input[str] home_region: The region where updates must be made and where results must be fetched from.
         :param pulumi.Input[int] interval_in_seconds: (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
         :param pulumi.Input[bool] is_enabled: (Updatable) Enables or disables the monitor. Set to 'true' to launch monitoring.
@@ -277,6 +291,10 @@ class _HttpMonitorState:
         :param pulumi.Input[str] time_created: The RFC 3339-formatted creation date and time of the probe.
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_point_names: (Updatable) A list of names of vantage points from which to execute the probe.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -366,6 +384,8 @@ class _HttpMonitorState:
     def headers(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
         (Updatable) A dictionary of HTTP request headers.
+
+        *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         """
         return pulumi.get(self, "headers")
 
@@ -510,6 +530,10 @@ class _HttpMonitorState:
     def vantage_point_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) A list of names of vantage points from which to execute the probe.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vantage_point_names")
 
@@ -587,6 +611,8 @@ class HttpMonitor(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly and mutable name suitable for display in a user interface.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[Mapping[str, Any]] headers: (Updatable) A dictionary of HTTP request headers.
+               
+               *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         :param pulumi.Input[int] interval_in_seconds: (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
         :param pulumi.Input[bool] is_enabled: (Updatable) Enables or disables the monitor. Set to 'true' to launch monitoring.
         :param pulumi.Input[str] method: (Updatable) The supported HTTP methods available for probes.
@@ -596,6 +622,10 @@ class HttpMonitor(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: (Updatable) A list of targets (hostnames or IP addresses) of the probe.
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_point_names: (Updatable) A list of names of vantage points from which to execute the probe.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -749,6 +779,8 @@ class HttpMonitor(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly and mutable name suitable for display in a user interface.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[Mapping[str, Any]] headers: (Updatable) A dictionary of HTTP request headers.
+               
+               *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         :param pulumi.Input[str] home_region: The region where updates must be made and where results must be fetched from.
         :param pulumi.Input[int] interval_in_seconds: (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
         :param pulumi.Input[bool] is_enabled: (Updatable) Enables or disables the monitor. Set to 'true' to launch monitoring.
@@ -761,6 +793,10 @@ class HttpMonitor(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The RFC 3339-formatted creation date and time of the probe.
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_point_names: (Updatable) A list of names of vantage points from which to execute the probe.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -822,6 +858,8 @@ class HttpMonitor(pulumi.CustomResource):
     def headers(self) -> pulumi.Output[Mapping[str, Any]]:
         """
         (Updatable) A dictionary of HTTP request headers.
+
+        *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         """
         return pulumi.get(self, "headers")
 
@@ -918,6 +956,10 @@ class HttpMonitor(pulumi.CustomResource):
     def vantage_point_names(self) -> pulumi.Output[Sequence[str]]:
         """
         (Updatable) A list of names of vantage points from which to execute the probe.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vantage_point_names")
 

@@ -123,6 +123,9 @@ type Instance struct {
 	// Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
 	UpgradeSchedule pulumi.StringOutput `pulumi:"upgradeSchedule"`
 	// (Updatable) Web Application Firewall(WAF) primary domain
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WafPrimaryDomain pulumi.StringOutput `pulumi:"wafPrimaryDomain"`
 }
 
@@ -231,6 +234,9 @@ type instanceState struct {
 	// Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
 	UpgradeSchedule *string `pulumi:"upgradeSchedule"`
 	// (Updatable) Web Application Firewall(WAF) primary domain
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WafPrimaryDomain *string `pulumi:"wafPrimaryDomain"`
 }
 
@@ -286,6 +292,9 @@ type InstanceState struct {
 	// Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
 	UpgradeSchedule pulumi.StringPtrInput
 	// (Updatable) Web Application Firewall(WAF) primary domain
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WafPrimaryDomain pulumi.StringPtrInput
 }
 
@@ -327,6 +336,9 @@ type instanceArgs struct {
 	// Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
 	UpgradeSchedule *string `pulumi:"upgradeSchedule"`
 	// (Updatable) Web Application Firewall(WAF) primary domain
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WafPrimaryDomain *string `pulumi:"wafPrimaryDomain"`
 }
 
@@ -365,6 +377,9 @@ type InstanceArgs struct {
 	// Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
 	UpgradeSchedule pulumi.StringPtrInput
 	// (Updatable) Web Application Firewall(WAF) primary domain
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WafPrimaryDomain pulumi.StringPtrInput
 }
 
@@ -581,6 +596,9 @@ func (o InstanceOutput) UpgradeSchedule() pulumi.StringOutput {
 }
 
 // (Updatable) Web Application Firewall(WAF) primary domain
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o InstanceOutput) WafPrimaryDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.WafPrimaryDomain }).(pulumi.StringOutput)
 }

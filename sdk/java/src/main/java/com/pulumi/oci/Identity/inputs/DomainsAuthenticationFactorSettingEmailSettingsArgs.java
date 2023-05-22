@@ -19,12 +19,34 @@ public final class DomainsAuthenticationFactorSettingEmailSettingsArgs extends c
     /**
      * (Updatable) Custom redirect Url which will be used in email link
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="emailLinkCustomUrl")
     private @Nullable Output<String> emailLinkCustomUrl;
 
     /**
      * @return (Updatable) Custom redirect Url which will be used in email link
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> emailLinkCustomUrl() {
@@ -34,12 +56,34 @@ public final class DomainsAuthenticationFactorSettingEmailSettingsArgs extends c
     /**
      * (Updatable) Specifies whether Email link is enabled or not.
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="emailLinkEnabled", required=true)
     private Output<Boolean> emailLinkEnabled;
 
     /**
      * @return (Updatable) Specifies whether Email link is enabled or not.
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Output<Boolean> emailLinkEnabled() {
@@ -74,6 +118,17 @@ public final class DomainsAuthenticationFactorSettingEmailSettingsArgs extends c
         /**
          * @param emailLinkCustomUrl (Updatable) Custom redirect Url which will be used in email link
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -85,6 +140,17 @@ public final class DomainsAuthenticationFactorSettingEmailSettingsArgs extends c
         /**
          * @param emailLinkCustomUrl (Updatable) Custom redirect Url which will be used in email link
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -94,6 +160,17 @@ public final class DomainsAuthenticationFactorSettingEmailSettingsArgs extends c
 
         /**
          * @param emailLinkEnabled (Updatable) Specifies whether Email link is enabled or not.
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -105,6 +182,17 @@ public final class DomainsAuthenticationFactorSettingEmailSettingsArgs extends c
 
         /**
          * @param emailLinkEnabled (Updatable) Specifies whether Email link is enabled or not.
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 

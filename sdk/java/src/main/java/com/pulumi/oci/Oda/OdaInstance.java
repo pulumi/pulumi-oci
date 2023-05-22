@@ -302,12 +302,18 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
     /**
      * Shape or size of the instance.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="shapeName", type=String.class, parameters={})
     private Output<String> shapeName;
 
     /**
      * @return Shape or size of the instance.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> shapeName() {

@@ -131,12 +131,20 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP to assign the public IP to.
+        /// 
+        /// Required for an ephemeral public IP because it must always be assigned to a private IP (specifically a *primary* private IP).
+        /// 
+        /// Optional for a reserved public IP. If you don't provide it, the public IP is created but not assigned to a private IP. You can later assign the public IP with [UpdatePublicIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/UpdatePublicIp).
         /// </summary>
         [Output("privateIpId")]
         public Output<string?> PrivateIpId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("publicIpPoolId")]
         public Output<string> PublicIpPoolId { get; private set; } = null!;
@@ -249,12 +257,20 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP to assign the public IP to.
+        /// 
+        /// Required for an ephemeral public IP because it must always be assigned to a private IP (specifically a *primary* private IP).
+        /// 
+        /// Optional for a reserved public IP. If you don't provide it, the public IP is created but not assigned to a private IP. You can later assign the public IP with [UpdatePublicIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/UpdatePublicIp).
         /// </summary>
         [Input("privateIpId")]
         public Input<string>? PrivateIpId { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("publicIpPoolId")]
         public Input<string>? PublicIpPoolId { get; set; }
@@ -335,12 +351,20 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP to assign the public IP to.
+        /// 
+        /// Required for an ephemeral public IP because it must always be assigned to a private IP (specifically a *primary* private IP).
+        /// 
+        /// Optional for a reserved public IP. If you don't provide it, the public IP is created but not assigned to a private IP. You can later assign the public IP with [UpdatePublicIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/UpdatePublicIp).
         /// </summary>
         [Input("privateIpId")]
         public Input<string>? PrivateIpId { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("publicIpPoolId")]
         public Input<string>? PublicIpPoolId { get; set; }

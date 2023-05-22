@@ -420,6 +420,9 @@ export class Connection extends pulumi.CustomResource {
     public readonly vaultId!: pulumi.Output<string>;
     /**
      * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly wallet!: pulumi.Output<string>;
 
@@ -892,6 +895,9 @@ export interface ConnectionState {
     vaultId?: pulumi.Input<string>;
     /**
      * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     wallet?: pulumi.Input<string>;
 }
@@ -1162,6 +1168,9 @@ export interface ConnectionArgs {
     vaultId?: pulumi.Input<string>;
     /**
      * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     wallet?: pulumi.Input<string>;
 }

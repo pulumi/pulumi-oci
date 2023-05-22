@@ -16,12 +16,34 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTag
     /**
      * (Updatable) Oracle Cloud Infrastructure Tag key
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * required: true
+     * * mutability: readWrite
+     * * returned: default
+     * * idcsSearchable: true
+     * * uniqueness: none
+     * 
      */
     @Import(name="key", required=true)
     private Output<String> key;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tag key
+     * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * required: true
+     * * mutability: readWrite
+     * * returned: default
+     * * idcsSearchable: true
+     * * uniqueness: none
      * 
      */
     public Output<String> key() {
@@ -31,12 +53,36 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTag
     /**
      * (Updatable) The ID of the App.
      * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
      * @return (Updatable) The ID of the App.
+     * 
+     * **Added In:** 18.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> value() {
@@ -71,6 +117,17 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTag
         /**
          * @param key (Updatable) Oracle Cloud Infrastructure Tag key
          * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * idcsSearchable: true
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -82,6 +139,17 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTag
         /**
          * @param key (Updatable) Oracle Cloud Infrastructure Tag key
          * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * idcsSearchable: true
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -91,6 +159,18 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTag
 
         /**
          * @param value (Updatable) The ID of the App.
+         * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -102,6 +182,18 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTag
 
         /**
          * @param value (Updatable) The ID of the App.
+         * 
+         * **Added In:** 18.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 

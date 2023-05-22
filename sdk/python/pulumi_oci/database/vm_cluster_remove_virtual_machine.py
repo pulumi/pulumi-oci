@@ -22,6 +22,10 @@ class VmClusterRemoveVirtualMachineArgs:
         The set of arguments for constructing a VmClusterRemoveVirtualMachine resource.
         :param pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineDbServerArgs']]] db_servers: The list of Exacc DB servers for the cluster to be removed.
         :param pulumi.Input[str] vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "db_servers", db_servers)
         pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
@@ -43,6 +47,10 @@ class VmClusterRemoveVirtualMachineArgs:
     def vm_cluster_id(self) -> pulumi.Input[str]:
         """
         The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vm_cluster_id")
 
@@ -105,6 +113,10 @@ class _VmClusterRemoveVirtualMachineState:
         :param pulumi.Input[str] time_created: The date and time that the VM cluster was created.
         :param pulumi.Input[str] time_zone: The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[str] vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
         """
         if compartment_id is not None:
@@ -439,6 +451,10 @@ class _VmClusterRemoveVirtualMachineState:
     def vm_cluster_id(self) -> Optional[pulumi.Input[str]]:
         """
         The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vm_cluster_id")
 
@@ -497,6 +513,10 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterRemoveVirtualMachineDbServerArgs']]]] db_servers: The list of Exacc DB servers for the cluster to be removed.
         :param pulumi.Input[str] vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -651,6 +671,10 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The date and time that the VM cluster was created.
         :param pulumi.Input[str] time_zone: The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[str] vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -873,6 +897,10 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
     def vm_cluster_id(self) -> pulumi.Output[str]:
         """
         The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vm_cluster_id")
 

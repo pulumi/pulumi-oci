@@ -53,37 +53,294 @@ class DomainsAuthenticationFactorSettingArgs:
         The set of arguments for constructing a DomainsAuthenticationFactorSetting resource.
         :param pulumi.Input[str] authentication_factor_setting_id: ID of the resource
         :param pulumi.Input[bool] bypass_code_enabled: (Updatable) If true, indicates that Bypass Code is enabled for authentication
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input['DomainsAuthenticationFactorSettingBypassCodeSettingsArgs'] bypass_code_settings: (Updatable) Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input['DomainsAuthenticationFactorSettingClientAppSettingsArgs'] client_app_settings: (Updatable) Settings related to compliance, Personal Identification Number (PIN) policy, and so on
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input['DomainsAuthenticationFactorSettingCompliancePolicyArgs']]] compliance_policies: (Updatable) Compliance Policy that defines actions to be taken when a condition is violated
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [name]
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input['DomainsAuthenticationFactorSettingEndpointRestrictionsArgs'] endpoint_restrictions: (Updatable) Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[str] mfa_enrollment_type: (Updatable) Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
+               
+               **Deprecated Since: 18.1.2**
+               
+               **SCIM++ Properties:**
+               * idcsCanonicalValueSourceFilter: attrName eq "mfaEnrollmentType" and attrValues.value eq "$(mfaEnrollmentType)"
+               * idcsCanonicalValueSourceResourceType: AllowedValue
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input['DomainsAuthenticationFactorSettingNotificationSettingsArgs'] notification_settings: (Updatable) Settings related to the Mobile App Notification channel, such as pull
+               
+               **Added In:** 17.4.2
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[bool] push_enabled: (Updatable) If true, indicates that the Mobile App Push Notification channel is enabled for authentication
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] security_questions_enabled: (Updatable) If true, indicates that Security Questions are enabled for authentication
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] sms_enabled: (Updatable) If true, indicates that the Short Message Service (SMS) channel is enabled for authentication
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] totp_enabled: (Updatable) If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input['DomainsAuthenticationFactorSettingTotpSettingsArgs'] totp_settings: (Updatable) Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         :param pulumi.Input[str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         :param pulumi.Input[str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         :param pulumi.Input[bool] auto_enroll_email_factor_disabled: (Updatable) If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
+               
+               **Added In:** 2011192329
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] email_enabled: (Updatable) If true, indicates that the EMAIL channel is enabled for authentication
+               
+               **Added In:** 18.1.2
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input['DomainsAuthenticationFactorSettingEmailSettingsArgs'] email_settings: (Updatable) Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[bool] fido_authenticator_enabled: (Updatable) If true, indicates that the Fido Authenticator channels are enabled for authentication
+               
+               **Added In:** 2009232244
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] hide_backup_factor_enabled: (Updatable) If true, indicates that 'Show backup factor(s)' button will be hidden during authentication
+               
+               **Added In:** 19.3.3
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input['DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs'] identity_store_settings: (Updatable) Settings related to the use of a user's profile details from the identity store
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: global
         :param pulumi.Input[bool] phone_call_enabled: (Updatable) If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] resource_type_schema_version: (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[Sequence[pulumi.Input['DomainsAuthenticationFactorSettingTagArgs']]] tags: (Updatable) A list of tags on this resource.
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [key, value]
+               * idcsSearchable: true
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: request
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input['DomainsAuthenticationFactorSettingThirdPartyFactorArgs'] third_party_factor: (Updatable) Settings related to third-party factor
+               
+               **Added In:** 19.2.1
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs'] urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings: (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of fido authentication
         :param pulumi.Input['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs'] urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings: (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of third party provider
         :param pulumi.Input[Sequence[pulumi.Input[str]]] user_enrollment_disabled_factors: (Updatable) Factors for which enrollment should be blocked for End User
+               
+               **Added In:** 2012271618
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] yubico_otp_enabled: (Updatable) If true, indicates that the Yubico OTP is enabled for authentication
+               
+               **Added In:** 2109090424
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "authentication_factor_setting_id", authentication_factor_setting_id)
         pulumi.set(__self__, "bypass_code_enabled", bypass_code_enabled)
@@ -154,6 +411,15 @@ class DomainsAuthenticationFactorSettingArgs:
     def bypass_code_enabled(self) -> pulumi.Input[bool]:
         """
         (Updatable) If true, indicates that Bypass Code is enabled for authentication
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "bypass_code_enabled")
 
@@ -166,6 +432,15 @@ class DomainsAuthenticationFactorSettingArgs:
     def bypass_code_settings(self) -> pulumi.Input['DomainsAuthenticationFactorSettingBypassCodeSettingsArgs']:
         """
         (Updatable) Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "bypass_code_settings")
 
@@ -178,6 +453,15 @@ class DomainsAuthenticationFactorSettingArgs:
     def client_app_settings(self) -> pulumi.Input['DomainsAuthenticationFactorSettingClientAppSettingsArgs']:
         """
         (Updatable) Settings related to compliance, Personal Identification Number (PIN) policy, and so on
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "client_app_settings")
 
@@ -190,6 +474,16 @@ class DomainsAuthenticationFactorSettingArgs:
     def compliance_policies(self) -> pulumi.Input[Sequence[pulumi.Input['DomainsAuthenticationFactorSettingCompliancePolicyArgs']]]:
         """
         (Updatable) Compliance Policy that defines actions to be taken when a condition is violated
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [name]
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "compliance_policies")
 
@@ -202,6 +496,15 @@ class DomainsAuthenticationFactorSettingArgs:
     def endpoint_restrictions(self) -> pulumi.Input['DomainsAuthenticationFactorSettingEndpointRestrictionsArgs']:
         """
         (Updatable) Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "endpoint_restrictions")
 
@@ -226,6 +529,19 @@ class DomainsAuthenticationFactorSettingArgs:
     def mfa_enrollment_type(self) -> pulumi.Input[str]:
         """
         (Updatable) Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
+
+        **Deprecated Since: 18.1.2**
+
+        **SCIM++ Properties:**
+        * idcsCanonicalValueSourceFilter: attrName eq "mfaEnrollmentType" and attrValues.value eq "$(mfaEnrollmentType)"
+        * idcsCanonicalValueSourceResourceType: AllowedValue
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "mfa_enrollment_type")
 
@@ -238,6 +554,17 @@ class DomainsAuthenticationFactorSettingArgs:
     def notification_settings(self) -> pulumi.Input['DomainsAuthenticationFactorSettingNotificationSettingsArgs']:
         """
         (Updatable) Settings related to the Mobile App Notification channel, such as pull
+
+        **Added In:** 17.4.2
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "notification_settings")
 
@@ -250,6 +577,15 @@ class DomainsAuthenticationFactorSettingArgs:
     def push_enabled(self) -> pulumi.Input[bool]:
         """
         (Updatable) If true, indicates that the Mobile App Push Notification channel is enabled for authentication
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "push_enabled")
 
@@ -262,6 +598,16 @@ class DomainsAuthenticationFactorSettingArgs:
     def schemas(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
         (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "schemas")
 
@@ -274,6 +620,15 @@ class DomainsAuthenticationFactorSettingArgs:
     def security_questions_enabled(self) -> pulumi.Input[bool]:
         """
         (Updatable) If true, indicates that Security Questions are enabled for authentication
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "security_questions_enabled")
 
@@ -286,6 +641,15 @@ class DomainsAuthenticationFactorSettingArgs:
     def sms_enabled(self) -> pulumi.Input[bool]:
         """
         (Updatable) If true, indicates that the Short Message Service (SMS) channel is enabled for authentication
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "sms_enabled")
 
@@ -298,6 +662,15 @@ class DomainsAuthenticationFactorSettingArgs:
     def totp_enabled(self) -> pulumi.Input[bool]:
         """
         (Updatable) If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "totp_enabled")
 
@@ -310,6 +683,15 @@ class DomainsAuthenticationFactorSettingArgs:
     def totp_settings(self) -> pulumi.Input['DomainsAuthenticationFactorSettingTotpSettingsArgs']:
         """
         (Updatable) Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "totp_settings")
 
@@ -358,6 +740,17 @@ class DomainsAuthenticationFactorSettingArgs:
     def auto_enroll_email_factor_disabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
+
+        **Added In:** 2011192329
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "auto_enroll_email_factor_disabled")
 
@@ -370,6 +763,17 @@ class DomainsAuthenticationFactorSettingArgs:
     def email_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) If true, indicates that the EMAIL channel is enabled for authentication
+
+        **Added In:** 18.1.2
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "email_enabled")
 
@@ -382,6 +786,17 @@ class DomainsAuthenticationFactorSettingArgs:
     def email_settings(self) -> Optional[pulumi.Input['DomainsAuthenticationFactorSettingEmailSettingsArgs']]:
         """
         (Updatable) Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "email_settings")
 
@@ -394,6 +809,17 @@ class DomainsAuthenticationFactorSettingArgs:
     def fido_authenticator_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) If true, indicates that the Fido Authenticator channels are enabled for authentication
+
+        **Added In:** 2009232244
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "fido_authenticator_enabled")
 
@@ -406,6 +832,17 @@ class DomainsAuthenticationFactorSettingArgs:
     def hide_backup_factor_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) If true, indicates that 'Show backup factor(s)' button will be hidden during authentication
+
+        **Added In:** 19.3.3
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "hide_backup_factor_enabled")
 
@@ -418,6 +855,15 @@ class DomainsAuthenticationFactorSettingArgs:
     def identity_store_settings(self) -> Optional[pulumi.Input['DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs']]:
         """
         (Updatable) Settings related to the use of a user's profile details from the identity store
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "identity_store_settings")
 
@@ -430,6 +876,16 @@ class DomainsAuthenticationFactorSettingArgs:
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: global
         """
         return pulumi.get(self, "ocid")
 
@@ -442,6 +898,17 @@ class DomainsAuthenticationFactorSettingArgs:
     def phone_call_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "phone_call_enabled")
 
@@ -466,6 +933,16 @@ class DomainsAuthenticationFactorSettingArgs:
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAuthenticationFactorSettingTagArgs']]]]:
         """
         (Updatable) A list of tags on this resource.
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [key, value]
+        * idcsSearchable: true
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: request
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "tags")
 
@@ -478,6 +955,17 @@ class DomainsAuthenticationFactorSettingArgs:
     def third_party_factor(self) -> Optional[pulumi.Input['DomainsAuthenticationFactorSettingThirdPartyFactorArgs']]:
         """
         (Updatable) Settings related to third-party factor
+
+        **Added In:** 19.2.1
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "third_party_factor")
 
@@ -514,6 +1002,17 @@ class DomainsAuthenticationFactorSettingArgs:
     def user_enrollment_disabled_factors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) Factors for which enrollment should be blocked for End User
+
+        **Added In:** 2012271618
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "user_enrollment_disabled_factors")
 
@@ -526,6 +1025,21 @@ class DomainsAuthenticationFactorSettingArgs:
     def yubico_otp_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) If true, indicates that the Yubico OTP is enabled for authentication
+
+        **Added In:** 2109090424
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "yubico_otp_enabled")
 
@@ -587,44 +1101,397 @@ class _DomainsAuthenticationFactorSettingState:
         :param pulumi.Input[str] authentication_factor_setting_id: ID of the resource
         :param pulumi.Input[str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         :param pulumi.Input[bool] auto_enroll_email_factor_disabled: (Updatable) If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
+               
+               **Added In:** 2011192329
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] bypass_code_enabled: (Updatable) If true, indicates that Bypass Code is enabled for authentication
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input['DomainsAuthenticationFactorSettingBypassCodeSettingsArgs'] bypass_code_settings: (Updatable) Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input['DomainsAuthenticationFactorSettingClientAppSettingsArgs'] client_app_settings: (Updatable) Settings related to compliance, Personal Identification Number (PIN) policy, and so on
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[str] compartment_ocid: (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input['DomainsAuthenticationFactorSettingCompliancePolicyArgs']]] compliance_policies: (Updatable) Compliance Policy that defines actions to be taken when a condition is violated
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [name]
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[bool] delete_in_progress: (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] domain_ocid: (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] email_enabled: (Updatable) If true, indicates that the EMAIL channel is enabled for authentication
+               
+               **Added In:** 18.1.2
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input['DomainsAuthenticationFactorSettingEmailSettingsArgs'] email_settings: (Updatable) Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input['DomainsAuthenticationFactorSettingEndpointRestrictionsArgs'] endpoint_restrictions: (Updatable) Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[bool] fido_authenticator_enabled: (Updatable) If true, indicates that the Fido Authenticator channels are enabled for authentication
+               
+               **Added In:** 2009232244
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] hide_backup_factor_enabled: (Updatable) If true, indicates that 'Show backup factor(s)' button will be hidden during authentication
+               
+               **Added In:** 19.3.3
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input['DomainsAuthenticationFactorSettingIdcsCreatedByArgs']]] idcs_created_bies: (Updatable) The User or App who created the Resource
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: complex
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[Sequence[pulumi.Input['DomainsAuthenticationFactorSettingIdcsLastModifiedByArgs']]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: complex
         :param pulumi.Input[str] idcs_last_upgraded_in_release: (Updatable) The release number when the resource was upgraded.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[str]]] idcs_prevented_operations: (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: string
+               * uniqueness: none
         :param pulumi.Input['DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs'] identity_store_settings: (Updatable) Settings related to the use of a user's profile details from the identity store
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input['DomainsAuthenticationFactorSettingMetaArgs']]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+               * type: complex
         :param pulumi.Input[str] mfa_enabled_category: (Updatable) Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
+               
+               **Deprecated Since: 18.1.2**
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] mfa_enrollment_type: (Updatable) Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
+               
+               **Deprecated Since: 18.1.2**
+               
+               **SCIM++ Properties:**
+               * idcsCanonicalValueSourceFilter: attrName eq "mfaEnrollmentType" and attrValues.value eq "$(mfaEnrollmentType)"
+               * idcsCanonicalValueSourceResourceType: AllowedValue
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input['DomainsAuthenticationFactorSettingNotificationSettingsArgs'] notification_settings: (Updatable) Settings related to the Mobile App Notification channel, such as pull
+               
+               **Added In:** 17.4.2
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: global
         :param pulumi.Input[bool] phone_call_enabled: (Updatable) If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] push_enabled: (Updatable) If true, indicates that the Mobile App Push Notification channel is enabled for authentication
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] resource_type_schema_version: (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] security_questions_enabled: (Updatable) If true, indicates that Security Questions are enabled for authentication
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] sms_enabled: (Updatable) If true, indicates that the Short Message Service (SMS) channel is enabled for authentication
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input['DomainsAuthenticationFactorSettingTagArgs']]] tags: (Updatable) A list of tags on this resource.
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [key, value]
+               * idcsSearchable: true
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: request
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[str] tenancy_ocid: (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input['DomainsAuthenticationFactorSettingThirdPartyFactorArgs'] third_party_factor: (Updatable) Settings related to third-party factor
+               
+               **Added In:** 19.2.1
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[bool] totp_enabled: (Updatable) If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input['DomainsAuthenticationFactorSettingTotpSettingsArgs'] totp_settings: (Updatable) Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs'] urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings: (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of fido authentication
         :param pulumi.Input['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs'] urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings: (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of third party provider
         :param pulumi.Input[Sequence[pulumi.Input[str]]] user_enrollment_disabled_factors: (Updatable) Factors for which enrollment should be blocked for End User
+               
+               **Added In:** 2012271618
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] yubico_otp_enabled: (Updatable) If true, indicates that the Yubico OTP is enabled for authentication
+               
+               **Added In:** 2109090424
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if attribute_sets is not None:
             pulumi.set(__self__, "attribute_sets", attribute_sets)
@@ -766,6 +1633,17 @@ class _DomainsAuthenticationFactorSettingState:
     def auto_enroll_email_factor_disabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
+
+        **Added In:** 2011192329
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "auto_enroll_email_factor_disabled")
 
@@ -778,6 +1656,15 @@ class _DomainsAuthenticationFactorSettingState:
     def bypass_code_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) If true, indicates that Bypass Code is enabled for authentication
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "bypass_code_enabled")
 
@@ -790,6 +1677,15 @@ class _DomainsAuthenticationFactorSettingState:
     def bypass_code_settings(self) -> Optional[pulumi.Input['DomainsAuthenticationFactorSettingBypassCodeSettingsArgs']]:
         """
         (Updatable) Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "bypass_code_settings")
 
@@ -802,6 +1698,15 @@ class _DomainsAuthenticationFactorSettingState:
     def client_app_settings(self) -> Optional[pulumi.Input['DomainsAuthenticationFactorSettingClientAppSettingsArgs']]:
         """
         (Updatable) Settings related to compliance, Personal Identification Number (PIN) policy, and so on
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "client_app_settings")
 
@@ -814,6 +1719,16 @@ class _DomainsAuthenticationFactorSettingState:
     def compartment_ocid(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "compartment_ocid")
 
@@ -826,6 +1741,16 @@ class _DomainsAuthenticationFactorSettingState:
     def compliance_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAuthenticationFactorSettingCompliancePolicyArgs']]]]:
         """
         (Updatable) Compliance Policy that defines actions to be taken when a condition is violated
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [name]
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "compliance_policies")
 
@@ -838,6 +1763,16 @@ class _DomainsAuthenticationFactorSettingState:
     def delete_in_progress(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "delete_in_progress")
 
@@ -850,6 +1785,16 @@ class _DomainsAuthenticationFactorSettingState:
     def domain_ocid(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "domain_ocid")
 
@@ -862,6 +1807,17 @@ class _DomainsAuthenticationFactorSettingState:
     def email_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) If true, indicates that the EMAIL channel is enabled for authentication
+
+        **Added In:** 18.1.2
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "email_enabled")
 
@@ -874,6 +1830,17 @@ class _DomainsAuthenticationFactorSettingState:
     def email_settings(self) -> Optional[pulumi.Input['DomainsAuthenticationFactorSettingEmailSettingsArgs']]:
         """
         (Updatable) Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "email_settings")
 
@@ -886,6 +1853,15 @@ class _DomainsAuthenticationFactorSettingState:
     def endpoint_restrictions(self) -> Optional[pulumi.Input['DomainsAuthenticationFactorSettingEndpointRestrictionsArgs']]:
         """
         (Updatable) Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "endpoint_restrictions")
 
@@ -898,6 +1874,17 @@ class _DomainsAuthenticationFactorSettingState:
     def fido_authenticator_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) If true, indicates that the Fido Authenticator channels are enabled for authentication
+
+        **Added In:** 2009232244
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "fido_authenticator_enabled")
 
@@ -910,6 +1897,17 @@ class _DomainsAuthenticationFactorSettingState:
     def hide_backup_factor_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) If true, indicates that 'Show backup factor(s)' button will be hidden during authentication
+
+        **Added In:** 19.3.3
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "hide_backup_factor_enabled")
 
@@ -922,6 +1920,14 @@ class _DomainsAuthenticationFactorSettingState:
     def idcs_created_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAuthenticationFactorSettingIdcsCreatedByArgs']]]]:
         """
         (Updatable) The User or App who created the Resource
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: complex
         """
         return pulumi.get(self, "idcs_created_bies")
 
@@ -946,6 +1952,14 @@ class _DomainsAuthenticationFactorSettingState:
     def idcs_last_modified_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAuthenticationFactorSettingIdcsLastModifiedByArgs']]]]:
         """
         (Updatable) The User or App who modified the Resource
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: complex
         """
         return pulumi.get(self, "idcs_last_modified_bies")
 
@@ -958,6 +1972,16 @@ class _DomainsAuthenticationFactorSettingState:
     def idcs_last_upgraded_in_release(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The release number when the resource was upgraded.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
@@ -970,6 +1994,15 @@ class _DomainsAuthenticationFactorSettingState:
     def idcs_prevented_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "idcs_prevented_operations")
 
@@ -982,6 +2015,15 @@ class _DomainsAuthenticationFactorSettingState:
     def identity_store_settings(self) -> Optional[pulumi.Input['DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs']]:
         """
         (Updatable) Settings related to the use of a user's profile details from the identity store
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "identity_store_settings")
 
@@ -994,6 +2036,16 @@ class _DomainsAuthenticationFactorSettingState:
     def metas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAuthenticationFactorSettingMetaArgs']]]]:
         """
         (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+        * type: complex
         """
         return pulumi.get(self, "metas")
 
@@ -1006,6 +2058,17 @@ class _DomainsAuthenticationFactorSettingState:
     def mfa_enabled_category(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
+
+        **Deprecated Since: 18.1.2**
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "mfa_enabled_category")
 
@@ -1018,6 +2081,19 @@ class _DomainsAuthenticationFactorSettingState:
     def mfa_enrollment_type(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
+
+        **Deprecated Since: 18.1.2**
+
+        **SCIM++ Properties:**
+        * idcsCanonicalValueSourceFilter: attrName eq "mfaEnrollmentType" and attrValues.value eq "$(mfaEnrollmentType)"
+        * idcsCanonicalValueSourceResourceType: AllowedValue
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "mfa_enrollment_type")
 
@@ -1030,6 +2106,17 @@ class _DomainsAuthenticationFactorSettingState:
     def notification_settings(self) -> Optional[pulumi.Input['DomainsAuthenticationFactorSettingNotificationSettingsArgs']]:
         """
         (Updatable) Settings related to the Mobile App Notification channel, such as pull
+
+        **Added In:** 17.4.2
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "notification_settings")
 
@@ -1042,6 +2129,16 @@ class _DomainsAuthenticationFactorSettingState:
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: global
         """
         return pulumi.get(self, "ocid")
 
@@ -1054,6 +2151,17 @@ class _DomainsAuthenticationFactorSettingState:
     def phone_call_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "phone_call_enabled")
 
@@ -1066,6 +2174,15 @@ class _DomainsAuthenticationFactorSettingState:
     def push_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) If true, indicates that the Mobile App Push Notification channel is enabled for authentication
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "push_enabled")
 
@@ -1090,6 +2207,16 @@ class _DomainsAuthenticationFactorSettingState:
     def schemas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "schemas")
 
@@ -1102,6 +2229,15 @@ class _DomainsAuthenticationFactorSettingState:
     def security_questions_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) If true, indicates that Security Questions are enabled for authentication
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "security_questions_enabled")
 
@@ -1114,6 +2250,15 @@ class _DomainsAuthenticationFactorSettingState:
     def sms_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) If true, indicates that the Short Message Service (SMS) channel is enabled for authentication
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "sms_enabled")
 
@@ -1126,6 +2271,16 @@ class _DomainsAuthenticationFactorSettingState:
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAuthenticationFactorSettingTagArgs']]]]:
         """
         (Updatable) A list of tags on this resource.
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [key, value]
+        * idcsSearchable: true
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: request
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "tags")
 
@@ -1138,6 +2293,16 @@ class _DomainsAuthenticationFactorSettingState:
     def tenancy_ocid(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "tenancy_ocid")
 
@@ -1150,6 +2315,17 @@ class _DomainsAuthenticationFactorSettingState:
     def third_party_factor(self) -> Optional[pulumi.Input['DomainsAuthenticationFactorSettingThirdPartyFactorArgs']]:
         """
         (Updatable) Settings related to third-party factor
+
+        **Added In:** 19.2.1
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "third_party_factor")
 
@@ -1162,6 +2338,15 @@ class _DomainsAuthenticationFactorSettingState:
     def totp_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "totp_enabled")
 
@@ -1174,6 +2359,15 @@ class _DomainsAuthenticationFactorSettingState:
     def totp_settings(self) -> Optional[pulumi.Input['DomainsAuthenticationFactorSettingTotpSettingsArgs']]:
         """
         (Updatable) Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "totp_settings")
 
@@ -1210,6 +2404,17 @@ class _DomainsAuthenticationFactorSettingState:
     def user_enrollment_disabled_factors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) Factors for which enrollment should be blocked for End User
+
+        **Added In:** 2012271618
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "user_enrollment_disabled_factors")
 
@@ -1222,6 +2427,21 @@ class _DomainsAuthenticationFactorSettingState:
     def yubico_otp_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) If true, indicates that the Yubico OTP is enabled for authentication
+
+        **Added In:** 2109090424
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "yubico_otp_enabled")
 
@@ -1289,34 +2509,291 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
         :param pulumi.Input[str] authentication_factor_setting_id: ID of the resource
         :param pulumi.Input[str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         :param pulumi.Input[bool] auto_enroll_email_factor_disabled: (Updatable) If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
+               
+               **Added In:** 2011192329
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] bypass_code_enabled: (Updatable) If true, indicates that Bypass Code is enabled for authentication
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingBypassCodeSettingsArgs']] bypass_code_settings: (Updatable) Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingClientAppSettingsArgs']] client_app_settings: (Updatable) Settings related to compliance, Personal Identification Number (PIN) policy, and so on
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingCompliancePolicyArgs']]]] compliance_policies: (Updatable) Compliance Policy that defines actions to be taken when a condition is violated
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [name]
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[bool] email_enabled: (Updatable) If true, indicates that the EMAIL channel is enabled for authentication
+               
+               **Added In:** 18.1.2
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingEmailSettingsArgs']] email_settings: (Updatable) Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingEndpointRestrictionsArgs']] endpoint_restrictions: (Updatable) Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[bool] fido_authenticator_enabled: (Updatable) If true, indicates that the Fido Authenticator channels are enabled for authentication
+               
+               **Added In:** 2009232244
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] hide_backup_factor_enabled: (Updatable) If true, indicates that 'Show backup factor(s)' button will be hidden during authentication
+               
+               **Added In:** 19.3.3
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs']] identity_store_settings: (Updatable) Settings related to the use of a user's profile details from the identity store
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[str] mfa_enrollment_type: (Updatable) Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
+               
+               **Deprecated Since: 18.1.2**
+               
+               **SCIM++ Properties:**
+               * idcsCanonicalValueSourceFilter: attrName eq "mfaEnrollmentType" and attrValues.value eq "$(mfaEnrollmentType)"
+               * idcsCanonicalValueSourceResourceType: AllowedValue
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingNotificationSettingsArgs']] notification_settings: (Updatable) Settings related to the Mobile App Notification channel, such as pull
+               
+               **Added In:** 17.4.2
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: global
         :param pulumi.Input[bool] phone_call_enabled: (Updatable) If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] push_enabled: (Updatable) If true, indicates that the Mobile App Push Notification channel is enabled for authentication
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] resource_type_schema_version: (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] security_questions_enabled: (Updatable) If true, indicates that Security Questions are enabled for authentication
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] sms_enabled: (Updatable) If true, indicates that the Short Message Service (SMS) channel is enabled for authentication
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingTagArgs']]]] tags: (Updatable) A list of tags on this resource.
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [key, value]
+               * idcsSearchable: true
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: request
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingThirdPartyFactorArgs']] third_party_factor: (Updatable) Settings related to third-party factor
+               
+               **Added In:** 19.2.1
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[bool] totp_enabled: (Updatable) If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingTotpSettingsArgs']] totp_settings: (Updatable) Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs']] urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings: (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of fido authentication
         :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs']] urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings: (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of third party provider
         :param pulumi.Input[Sequence[pulumi.Input[str]]] user_enrollment_disabled_factors: (Updatable) Factors for which enrollment should be blocked for End User
+               
+               **Added In:** 2012271618
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] yubico_otp_enabled: (Updatable) If true, indicates that the Yubico OTP is enabled for authentication
+               
+               **Added In:** 2109090424
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -1532,44 +3009,397 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
         :param pulumi.Input[str] authentication_factor_setting_id: ID of the resource
         :param pulumi.Input[str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         :param pulumi.Input[bool] auto_enroll_email_factor_disabled: (Updatable) If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
+               
+               **Added In:** 2011192329
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] bypass_code_enabled: (Updatable) If true, indicates that Bypass Code is enabled for authentication
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingBypassCodeSettingsArgs']] bypass_code_settings: (Updatable) Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingClientAppSettingsArgs']] client_app_settings: (Updatable) Settings related to compliance, Personal Identification Number (PIN) policy, and so on
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[str] compartment_ocid: (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingCompliancePolicyArgs']]]] compliance_policies: (Updatable) Compliance Policy that defines actions to be taken when a condition is violated
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [name]
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[bool] delete_in_progress: (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] domain_ocid: (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] email_enabled: (Updatable) If true, indicates that the EMAIL channel is enabled for authentication
+               
+               **Added In:** 18.1.2
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingEmailSettingsArgs']] email_settings: (Updatable) Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingEndpointRestrictionsArgs']] endpoint_restrictions: (Updatable) Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[bool] fido_authenticator_enabled: (Updatable) If true, indicates that the Fido Authenticator channels are enabled for authentication
+               
+               **Added In:** 2009232244
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] hide_backup_factor_enabled: (Updatable) If true, indicates that 'Show backup factor(s)' button will be hidden during authentication
+               
+               **Added In:** 19.3.3
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingIdcsCreatedByArgs']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: complex
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingIdcsLastModifiedByArgs']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: complex
         :param pulumi.Input[str] idcs_last_upgraded_in_release: (Updatable) The release number when the resource was upgraded.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[str]]] idcs_prevented_operations: (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readOnly
+               * required: false
+               * returned: request
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs']] identity_store_settings: (Updatable) Settings related to the use of a user's profile details from the identity store
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingMetaArgs']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+               * type: complex
         :param pulumi.Input[str] mfa_enabled_category: (Updatable) Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
+               
+               **Deprecated Since: 18.1.2**
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[str] mfa_enrollment_type: (Updatable) Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
+               
+               **Deprecated Since: 18.1.2**
+               
+               **SCIM++ Properties:**
+               * idcsCanonicalValueSourceFilter: attrName eq "mfaEnrollmentType" and attrValues.value eq "$(mfaEnrollmentType)"
+               * idcsCanonicalValueSourceResourceType: AllowedValue
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingNotificationSettingsArgs']] notification_settings: (Updatable) Settings related to the Mobile App Notification channel, such as pull
+               
+               **Added In:** 17.4.2
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: immutable
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: global
         :param pulumi.Input[bool] phone_call_enabled: (Updatable) If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
+               
+               **Added In:** 20.1.3
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] push_enabled: (Updatable) If true, indicates that the Mobile App Push Notification channel is enabled for authentication
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[str] resource_type_schema_version: (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] security_questions_enabled: (Updatable) If true, indicates that Security Questions are enabled for authentication
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[bool] sms_enabled: (Updatable) If true, indicates that the Short Message Service (SMS) channel is enabled for authentication
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingTagArgs']]]] tags: (Updatable) A list of tags on this resource.
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [key, value]
+               * idcsSearchable: true
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: request
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[str] tenancy_ocid: (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingThirdPartyFactorArgs']] third_party_factor: (Updatable) Settings related to third-party factor
+               
+               **Added In:** 19.2.1
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[bool] totp_enabled: (Updatable) If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: boolean
+               * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingTotpSettingsArgs']] totp_settings: (Updatable) Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs']] urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings: (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of fido authentication
         :param pulumi.Input[pulumi.InputType['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs']] urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings: (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of third party provider
         :param pulumi.Input[Sequence[pulumi.Input[str]]] user_enrollment_disabled_factors: (Updatable) Factors for which enrollment should be blocked for End User
+               
+               **Added In:** 2012271618
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
         :param pulumi.Input[bool] yubico_otp_enabled: (Updatable) If true, indicates that the Yubico OTP is enabled for authentication
+               
+               **Added In:** 2109090424
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1657,6 +3487,17 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def auto_enroll_email_factor_disabled(self) -> pulumi.Output[bool]:
         """
         (Updatable) If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
+
+        **Added In:** 2011192329
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "auto_enroll_email_factor_disabled")
 
@@ -1665,6 +3506,15 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def bypass_code_enabled(self) -> pulumi.Output[bool]:
         """
         (Updatable) If true, indicates that Bypass Code is enabled for authentication
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "bypass_code_enabled")
 
@@ -1673,6 +3523,15 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def bypass_code_settings(self) -> pulumi.Output['outputs.DomainsAuthenticationFactorSettingBypassCodeSettings']:
         """
         (Updatable) Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "bypass_code_settings")
 
@@ -1681,6 +3540,15 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def client_app_settings(self) -> pulumi.Output['outputs.DomainsAuthenticationFactorSettingClientAppSettings']:
         """
         (Updatable) Settings related to compliance, Personal Identification Number (PIN) policy, and so on
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "client_app_settings")
 
@@ -1689,6 +3557,16 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def compartment_ocid(self) -> pulumi.Output[str]:
         """
         (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "compartment_ocid")
 
@@ -1697,6 +3575,16 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def compliance_policies(self) -> pulumi.Output[Sequence['outputs.DomainsAuthenticationFactorSettingCompliancePolicy']]:
         """
         (Updatable) Compliance Policy that defines actions to be taken when a condition is violated
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [name]
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "compliance_policies")
 
@@ -1705,6 +3593,16 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def delete_in_progress(self) -> pulumi.Output[bool]:
         """
         (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "delete_in_progress")
 
@@ -1713,6 +3611,16 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def domain_ocid(self) -> pulumi.Output[str]:
         """
         (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "domain_ocid")
 
@@ -1721,6 +3629,17 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def email_enabled(self) -> pulumi.Output[bool]:
         """
         (Updatable) If true, indicates that the EMAIL channel is enabled for authentication
+
+        **Added In:** 18.1.2
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "email_enabled")
 
@@ -1729,6 +3648,17 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def email_settings(self) -> pulumi.Output['outputs.DomainsAuthenticationFactorSettingEmailSettings']:
         """
         (Updatable) Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "email_settings")
 
@@ -1737,6 +3667,15 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def endpoint_restrictions(self) -> pulumi.Output['outputs.DomainsAuthenticationFactorSettingEndpointRestrictions']:
         """
         (Updatable) Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "endpoint_restrictions")
 
@@ -1745,6 +3684,17 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def fido_authenticator_enabled(self) -> pulumi.Output[bool]:
         """
         (Updatable) If true, indicates that the Fido Authenticator channels are enabled for authentication
+
+        **Added In:** 2009232244
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "fido_authenticator_enabled")
 
@@ -1753,6 +3703,17 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def hide_backup_factor_enabled(self) -> pulumi.Output[bool]:
         """
         (Updatable) If true, indicates that 'Show backup factor(s)' button will be hidden during authentication
+
+        **Added In:** 19.3.3
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "hide_backup_factor_enabled")
 
@@ -1761,6 +3722,14 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def idcs_created_bies(self) -> pulumi.Output[Sequence['outputs.DomainsAuthenticationFactorSettingIdcsCreatedBy']]:
         """
         (Updatable) The User or App who created the Resource
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: complex
         """
         return pulumi.get(self, "idcs_created_bies")
 
@@ -1777,6 +3746,14 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def idcs_last_modified_bies(self) -> pulumi.Output[Sequence['outputs.DomainsAuthenticationFactorSettingIdcsLastModifiedBy']]:
         """
         (Updatable) The User or App who modified the Resource
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: complex
         """
         return pulumi.get(self, "idcs_last_modified_bies")
 
@@ -1785,6 +3762,16 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def idcs_last_upgraded_in_release(self) -> pulumi.Output[str]:
         """
         (Updatable) The release number when the resource was upgraded.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
@@ -1793,6 +3780,15 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def idcs_prevented_operations(self) -> pulumi.Output[Sequence[str]]:
         """
         (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readOnly
+        * required: false
+        * returned: request
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "idcs_prevented_operations")
 
@@ -1801,6 +3797,15 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def identity_store_settings(self) -> pulumi.Output['outputs.DomainsAuthenticationFactorSettingIdentityStoreSettings']:
         """
         (Updatable) Settings related to the use of a user's profile details from the identity store
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "identity_store_settings")
 
@@ -1809,6 +3814,16 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def metas(self) -> pulumi.Output[Sequence['outputs.DomainsAuthenticationFactorSettingMeta']]:
         """
         (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+        * type: complex
         """
         return pulumi.get(self, "metas")
 
@@ -1817,6 +3832,17 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def mfa_enabled_category(self) -> pulumi.Output[str]:
         """
         (Updatable) Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
+
+        **Deprecated Since: 18.1.2**
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "mfa_enabled_category")
 
@@ -1825,6 +3851,19 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def mfa_enrollment_type(self) -> pulumi.Output[str]:
         """
         (Updatable) Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
+
+        **Deprecated Since: 18.1.2**
+
+        **SCIM++ Properties:**
+        * idcsCanonicalValueSourceFilter: attrName eq "mfaEnrollmentType" and attrValues.value eq "$(mfaEnrollmentType)"
+        * idcsCanonicalValueSourceResourceType: AllowedValue
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "mfa_enrollment_type")
 
@@ -1833,6 +3872,17 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def notification_settings(self) -> pulumi.Output['outputs.DomainsAuthenticationFactorSettingNotificationSettings']:
         """
         (Updatable) Settings related to the Mobile App Notification channel, such as pull
+
+        **Added In:** 17.4.2
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "notification_settings")
 
@@ -1841,6 +3891,16 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def ocid(self) -> pulumi.Output[str]:
         """
         (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: immutable
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: global
         """
         return pulumi.get(self, "ocid")
 
@@ -1849,6 +3909,17 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def phone_call_enabled(self) -> pulumi.Output[bool]:
         """
         (Updatable) If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "phone_call_enabled")
 
@@ -1857,6 +3928,15 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def push_enabled(self) -> pulumi.Output[bool]:
         """
         (Updatable) If true, indicates that the Mobile App Push Notification channel is enabled for authentication
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "push_enabled")
 
@@ -1873,6 +3953,16 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def schemas(self) -> pulumi.Output[Sequence[str]]:
         """
         (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "schemas")
 
@@ -1881,6 +3971,15 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def security_questions_enabled(self) -> pulumi.Output[bool]:
         """
         (Updatable) If true, indicates that Security Questions are enabled for authentication
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "security_questions_enabled")
 
@@ -1889,6 +3988,15 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def sms_enabled(self) -> pulumi.Output[bool]:
         """
         (Updatable) If true, indicates that the Short Message Service (SMS) channel is enabled for authentication
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "sms_enabled")
 
@@ -1897,6 +4005,16 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def tags(self) -> pulumi.Output[Sequence['outputs.DomainsAuthenticationFactorSettingTag']]:
         """
         (Updatable) A list of tags on this resource.
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [key, value]
+        * idcsSearchable: true
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: request
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "tags")
 
@@ -1905,6 +4023,16 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def tenancy_ocid(self) -> pulumi.Output[str]:
         """
         (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "tenancy_ocid")
 
@@ -1913,6 +4041,17 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def third_party_factor(self) -> pulumi.Output['outputs.DomainsAuthenticationFactorSettingThirdPartyFactor']:
         """
         (Updatable) Settings related to third-party factor
+
+        **Added In:** 19.2.1
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "third_party_factor")
 
@@ -1921,6 +4060,15 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def totp_enabled(self) -> pulumi.Output[bool]:
         """
         (Updatable) If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: boolean
+        * uniqueness: none
         """
         return pulumi.get(self, "totp_enabled")
 
@@ -1929,6 +4077,15 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def totp_settings(self) -> pulumi.Output['outputs.DomainsAuthenticationFactorSettingTotpSettings']:
         """
         (Updatable) Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: complex
+        * uniqueness: none
         """
         return pulumi.get(self, "totp_settings")
 
@@ -1953,6 +4110,17 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def user_enrollment_disabled_factors(self) -> pulumi.Output[Sequence[str]]:
         """
         (Updatable) Factors for which enrollment should be blocked for End User
+
+        **Added In:** 2012271618
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "user_enrollment_disabled_factors")
 
@@ -1961,6 +4129,21 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
     def yubico_otp_enabled(self) -> pulumi.Output[bool]:
         """
         (Updatable) If true, indicates that the Yubico OTP is enabled for authentication
+
+        **Added In:** 2109090424
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "yubico_otp_enabled")
 

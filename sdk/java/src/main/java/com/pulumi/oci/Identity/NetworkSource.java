@@ -228,12 +228,18 @@ public class NetworkSource extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`&#34;vcnId&#34;: &#34;ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID&#34;, &#34;ipRanges&#34;: [ &#34;129.213.39.0/24&#34; ]`
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="virtualSourceLists", type=List.class, parameters={NetworkSourceVirtualSourceList.class})
     private Output<List<NetworkSourceVirtualSourceList>> virtualSourceLists;
 
     /**
      * @return (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`&#34;vcnId&#34;: &#34;ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID&#34;, &#34;ipRanges&#34;: [ &#34;129.213.39.0/24&#34; ]`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<List<NetworkSourceVirtualSourceList>> virtualSourceLists() {

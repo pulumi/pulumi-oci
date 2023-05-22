@@ -15,62 +15,242 @@ namespace Pulumi.Oci.Identity.Outputs
     {
         /// <summary>
         /// (Updatable) X509 Certificate Matching Attribute
+        /// 
+        /// **Added In:** 2010242156
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string CertMatchAttribute;
         /// <summary>
         /// (Updatable) Fallback on CRL Validation if OCSP fails.
+        /// 
+        /// **Added In:** 2010242156
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         public readonly bool? CrlCheckOnOcspFailureEnabled;
         /// <summary>
         /// (Updatable) Set to true to enable CRL Validation
+        /// 
+        /// **Added In:** 2010242156
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         public readonly bool? CrlEnabled;
         /// <summary>
         /// (Updatable) CRL Location URL
+        /// 
+        /// **Added In:** 2010242156
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? CrlLocation;
         /// <summary>
         /// (Updatable) Fetch the CRL contents every X minutes
+        /// 
+        /// **Added In:** 2010242156
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: integer
+        /// * uniqueness: none
         /// </summary>
         public readonly int? CrlReloadDuration;
         /// <summary>
         /// (Updatable) Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the timeout duration
+        /// 
+        /// **Added In:** 2010242156
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         public readonly bool? OcspAllowUnknownResponseStatus;
         /// <summary>
         /// (Updatable) Describes if the OCSP response is signed
+        /// 
+        /// **Added In:** 2010242156
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         public readonly bool? OcspEnableSignedResponse;
         /// <summary>
         /// (Updatable) Set to true to enable OCSP Validation
+        /// 
+        /// **Added In:** 2010242156
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         public readonly bool? OcspEnabled;
         /// <summary>
         /// (Updatable) This property specifies OCSP Responder URL.
+        /// 
+        /// **Added In:** 2010242156
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? OcspResponderUrl;
         /// <summary>
         /// (Updatable) Revalidate OCSP status for user after X hours
+        /// 
+        /// **Added In:** 2010242156
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsMaxValue: 24
+        /// * idcsMinValue: 0
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: integer
+        /// * uniqueness: none
         /// </summary>
         public readonly int? OcspRevalidateTime;
         /// <summary>
         /// (Updatable) This property specifies the OCSP Server alias name
+        /// 
+        /// **Added In:** 2010242156
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? OcspServerName;
         /// <summary>
         /// (Updatable) OCSP Trusted Certificate Chain
+        /// 
+        /// **Added In:** 2010242156
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly ImmutableArray<string> OcspTrustCertChains;
         /// <summary>
         /// (Updatable) Check for specific conditions of other certificate attributes
+        /// 
+        /// **Added In:** 2010242156
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? OtherCertMatchAttribute;
         /// <summary>
         /// (Updatable) Certificate alias list to create a chain for the incoming client certificate
+        /// 
+        /// **Added In:** 2010242156
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly ImmutableArray<string> SigningCertificateChains;
         /// <summary>
         /// (Updatable) This property specifies the userstore attribute value that must match the incoming certificate attribute.
+        /// 
+        /// **Added In:** 2010242156
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string UserMatchAttribute;
 

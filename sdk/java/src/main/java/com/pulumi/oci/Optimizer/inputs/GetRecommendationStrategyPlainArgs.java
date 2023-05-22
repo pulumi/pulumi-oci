@@ -33,12 +33,16 @@ public final class GetRecommendationStrategyPlainArgs extends com.pulumi.resourc
     /**
      * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
      * 
+     * Can only be set to true when performing ListCompartments on the tenancy (root compartment).
+     * 
      */
     @Import(name="compartmentIdInSubtree", required=true)
     private Boolean compartmentIdInSubtree;
 
     /**
      * @return When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+     * 
+     * Can only be set to true when performing ListCompartments on the tenancy (root compartment).
      * 
      */
     public Boolean compartmentIdInSubtree() {
@@ -115,6 +119,8 @@ public final class GetRecommendationStrategyPlainArgs extends com.pulumi.resourc
 
         /**
          * @param compartmentIdInSubtree When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+         * 
+         * Can only be set to true when performing ListCompartments on the tenancy (root compartment).
          * 
          * @return builder
          * 

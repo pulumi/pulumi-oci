@@ -104,10 +104,14 @@ type AutoScalingConfiguration struct {
 	pulumi.CustomResourceState
 
 	// A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
+	//
+	// Each instance pool can have one autoscaling configuration.
 	AutoScalingResources AutoScalingConfigurationAutoScalingResourcesOutput `pulumi:"autoScalingResources"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
+	//
+	// For schedule-based autoscaling policies, this value is not used.
 	CoolDownInSeconds pulumi.IntOutput `pulumi:"coolDownInSeconds"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
@@ -166,10 +170,14 @@ func GetAutoScalingConfiguration(ctx *pulumi.Context,
 // Input properties used for looking up and filtering AutoScalingConfiguration resources.
 type autoScalingConfigurationState struct {
 	// A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
+	//
+	// Each instance pool can have one autoscaling configuration.
 	AutoScalingResources *AutoScalingConfigurationAutoScalingResources `pulumi:"autoScalingResources"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
+	//
+	// For schedule-based autoscaling policies, this value is not used.
 	CoolDownInSeconds *int `pulumi:"coolDownInSeconds"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -191,10 +199,14 @@ type autoScalingConfigurationState struct {
 
 type AutoScalingConfigurationState struct {
 	// A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
+	//
+	// Each instance pool can have one autoscaling configuration.
 	AutoScalingResources AutoScalingConfigurationAutoScalingResourcesPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
+	//
+	// For schedule-based autoscaling policies, this value is not used.
 	CoolDownInSeconds pulumi.IntPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
@@ -220,10 +232,14 @@ func (AutoScalingConfigurationState) ElementType() reflect.Type {
 
 type autoScalingConfigurationArgs struct {
 	// A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
+	//
+	// Each instance pool can have one autoscaling configuration.
 	AutoScalingResources AutoScalingConfigurationAutoScalingResources `pulumi:"autoScalingResources"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
+	//
+	// For schedule-based autoscaling policies, this value is not used.
 	CoolDownInSeconds *int `pulumi:"coolDownInSeconds"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -240,10 +256,14 @@ type autoScalingConfigurationArgs struct {
 // The set of arguments for constructing a AutoScalingConfiguration resource.
 type AutoScalingConfigurationArgs struct {
 	// A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
+	//
+	// Each instance pool can have one autoscaling configuration.
 	AutoScalingResources AutoScalingConfigurationAutoScalingResourcesInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration.
 	CompartmentId pulumi.StringInput
 	// (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
+	//
+	// For schedule-based autoscaling policies, this value is not used.
 	CoolDownInSeconds pulumi.IntPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
@@ -345,6 +365,8 @@ func (o AutoScalingConfigurationOutput) ToAutoScalingConfigurationOutputWithCont
 }
 
 // A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
+//
+// Each instance pool can have one autoscaling configuration.
 func (o AutoScalingConfigurationOutput) AutoScalingResources() AutoScalingConfigurationAutoScalingResourcesOutput {
 	return o.ApplyT(func(v *AutoScalingConfiguration) AutoScalingConfigurationAutoScalingResourcesOutput {
 		return v.AutoScalingResources
@@ -357,6 +379,8 @@ func (o AutoScalingConfigurationOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
+//
+// For schedule-based autoscaling policies, this value is not used.
 func (o AutoScalingConfigurationOutput) CoolDownInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.IntOutput { return v.CoolDownInSeconds }).(pulumi.IntOutput)
 }

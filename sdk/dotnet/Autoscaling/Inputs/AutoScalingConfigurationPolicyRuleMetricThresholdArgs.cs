@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Autoscaling.Inputs
         [Input("operator")]
         public Input<string>? Operator { get; set; }
 
+        /// <summary>
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
         [Input("value")]
         public Input<int>? Value { get; set; }
 

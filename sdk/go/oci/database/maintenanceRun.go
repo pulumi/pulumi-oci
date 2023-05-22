@@ -66,6 +66,8 @@ type MaintenanceRun struct {
 	// The time when the patching operation ended.
 	PatchingEndTime pulumi.StringOutput `pulumi:"patchingEndTime"`
 	// (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	//
+	// *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
 	PatchingMode pulumi.StringOutput `pulumi:"patchingMode"`
 	// The time when the patching operation started.
 	PatchingStartTime pulumi.StringOutput `pulumi:"patchingStartTime"`
@@ -86,6 +88,9 @@ type MaintenanceRun struct {
 	// The date and time the maintenance run was completed.
 	TimeEnded pulumi.StringOutput `pulumi:"timeEnded"`
 	// (Updatable) The scheduled date and time of the maintenance run to update.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeScheduled pulumi.StringOutput `pulumi:"timeScheduled"`
 	// The date and time the maintenance run starts.
 	TimeStarted pulumi.StringOutput `pulumi:"timeStarted"`
@@ -162,6 +167,8 @@ type maintenanceRunState struct {
 	// The time when the patching operation ended.
 	PatchingEndTime *string `pulumi:"patchingEndTime"`
 	// (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	//
+	// *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
 	PatchingMode *string `pulumi:"patchingMode"`
 	// The time when the patching operation started.
 	PatchingStartTime *string `pulumi:"patchingStartTime"`
@@ -182,6 +189,9 @@ type maintenanceRunState struct {
 	// The date and time the maintenance run was completed.
 	TimeEnded *string `pulumi:"timeEnded"`
 	// (Updatable) The scheduled date and time of the maintenance run to update.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeScheduled *string `pulumi:"timeScheduled"`
 	// The date and time the maintenance run starts.
 	TimeStarted *string `pulumi:"timeStarted"`
@@ -227,6 +237,8 @@ type MaintenanceRunState struct {
 	// The time when the patching operation ended.
 	PatchingEndTime pulumi.StringPtrInput
 	// (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	//
+	// *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
 	PatchingMode pulumi.StringPtrInput
 	// The time when the patching operation started.
 	PatchingStartTime pulumi.StringPtrInput
@@ -247,6 +259,9 @@ type MaintenanceRunState struct {
 	// The date and time the maintenance run was completed.
 	TimeEnded pulumi.StringPtrInput
 	// (Updatable) The scheduled date and time of the maintenance run to update.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeScheduled pulumi.StringPtrInput
 	// The date and time the maintenance run starts.
 	TimeStarted pulumi.StringPtrInput
@@ -274,12 +289,17 @@ type maintenanceRunArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
 	PatchId *string `pulumi:"patchId"`
 	// (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	//
+	// *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
 	PatchingMode *string `pulumi:"patchingMode"`
 	// (Updatable) The target database server system software version for the patching operation.
 	TargetDbServerVersion *string `pulumi:"targetDbServerVersion"`
 	// (Updatable) The target storage cell system software version for the patching operation.
 	TargetStorageServerVersion *string `pulumi:"targetStorageServerVersion"`
 	// (Updatable) The scheduled date and time of the maintenance run to update.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeScheduled *string `pulumi:"timeScheduled"`
 }
 
@@ -302,12 +322,17 @@ type MaintenanceRunArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
 	PatchId pulumi.StringPtrInput
 	// (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	//
+	// *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
 	PatchingMode pulumi.StringPtrInput
 	// (Updatable) The target database server system software version for the patching operation.
 	TargetDbServerVersion pulumi.StringPtrInput
 	// (Updatable) The target storage cell system software version for the patching operation.
 	TargetStorageServerVersion pulumi.StringPtrInput
 	// (Updatable) The scheduled date and time of the maintenance run to update.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeScheduled pulumi.StringPtrInput
 }
 
@@ -496,6 +521,8 @@ func (o MaintenanceRunOutput) PatchingEndTime() pulumi.StringOutput {
 }
 
 // (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+//
+// *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
 func (o MaintenanceRunOutput) PatchingMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.PatchingMode }).(pulumi.StringOutput)
 }
@@ -546,6 +573,9 @@ func (o MaintenanceRunOutput) TimeEnded() pulumi.StringOutput {
 }
 
 // (Updatable) The scheduled date and time of the maintenance run to update.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MaintenanceRunOutput) TimeScheduled() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.TimeScheduled }).(pulumi.StringOutput)
 }

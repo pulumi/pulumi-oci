@@ -165,6 +165,8 @@ def get_compartments(access_level: Optional[str] = None,
 
 
     :param str access_level: Valid values are `ANY` and `ACCESSIBLE`. Default is `ANY`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). For the compartments on which the user indirectly has INSPECT permissions, a restricted set of fields is returned.
+           
+           When set to `ANY` permissions are not checked.
     :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
     :param bool compartment_id_in_subtree: Default is false. Can only be set to true when performing ListCompartments on the tenancy (root compartment). When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
     :param str name: A filter to only return resources that match the given name exactly.
@@ -236,6 +238,8 @@ def get_compartments_output(access_level: Optional[pulumi.Input[Optional[str]]] 
 
 
     :param str access_level: Valid values are `ANY` and `ACCESSIBLE`. Default is `ANY`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). For the compartments on which the user indirectly has INSPECT permissions, a restricted set of fields is returned.
+           
+           When set to `ANY` permissions are not checked.
     :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
     :param bool compartment_id_in_subtree: Default is false. Can only be set to true when performing ListCompartments on the tenancy (root compartment). When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
     :param str name: A filter to only return resources that match the given name exactly.

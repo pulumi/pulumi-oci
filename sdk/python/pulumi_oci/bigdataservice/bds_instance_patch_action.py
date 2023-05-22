@@ -22,6 +22,10 @@ class BdsInstancePatchActionArgs:
         :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
         :param pulumi.Input[str] version: The version of the patch to be installed.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "bds_instance_id", bds_instance_id)
         pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
@@ -56,6 +60,10 @@ class BdsInstancePatchActionArgs:
     def version(self) -> pulumi.Input[str]:
         """
         The version of the patch to be installed.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "version")
 
@@ -75,6 +83,10 @@ class _BdsInstancePatchActionState:
         :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
         :param pulumi.Input[str] version: The version of the patch to be installed.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if bds_instance_id is not None:
             pulumi.set(__self__, "bds_instance_id", bds_instance_id)
@@ -112,6 +124,10 @@ class _BdsInstancePatchActionState:
     def version(self) -> Optional[pulumi.Input[str]]:
         """
         The version of the patch to be installed.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "version")
 
@@ -155,6 +171,10 @@ class BdsInstancePatchAction(pulumi.CustomResource):
         :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
         :param pulumi.Input[str] version: The version of the patch to be installed.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -244,6 +264,10 @@ class BdsInstancePatchAction(pulumi.CustomResource):
         :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
         :param pulumi.Input[str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
         :param pulumi.Input[str] version: The version of the patch to be installed.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -275,6 +299,10 @@ class BdsInstancePatchAction(pulumi.CustomResource):
     def version(self) -> pulumi.Output[str]:
         """
         The version of the patch to be installed.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "version")
 

@@ -56,12 +56,16 @@ public final class AutonomousDatabaseWalletState extends com.pulumi.resources.Re
     /**
      * The type of wallet to generate.
      * 
+     * **Shared Exadata infrastructure usage:**
+     * 
      */
     @Import(name="generateType")
     private @Nullable Output<String> generateType;
 
     /**
      * @return The type of wallet to generate.
+     * 
+     * **Shared Exadata infrastructure usage:**
      * 
      */
     public Optional<Output<String>> generateType() {
@@ -71,12 +75,18 @@ public final class AutonomousDatabaseWalletState extends com.pulumi.resources.Re
     /**
      * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="password")
     private @Nullable Output<String> password;
 
     /**
      * @return The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> password() {
@@ -165,6 +175,8 @@ public final class AutonomousDatabaseWalletState extends com.pulumi.resources.Re
         /**
          * @param generateType The type of wallet to generate.
          * 
+         * **Shared Exadata infrastructure usage:**
+         * 
          * @return builder
          * 
          */
@@ -176,6 +188,8 @@ public final class AutonomousDatabaseWalletState extends com.pulumi.resources.Re
         /**
          * @param generateType The type of wallet to generate.
          * 
+         * **Shared Exadata infrastructure usage:**
+         * 
          * @return builder
          * 
          */
@@ -185,6 +199,9 @@ public final class AutonomousDatabaseWalletState extends com.pulumi.resources.Re
 
         /**
          * @param password The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -196,6 +213,9 @@ public final class AutonomousDatabaseWalletState extends com.pulumi.resources.Re
 
         /**
          * @param password The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

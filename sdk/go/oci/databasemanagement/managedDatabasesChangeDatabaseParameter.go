@@ -80,6 +80,11 @@ type ManagedDatabasesChangeDatabaseParameter struct {
 	// A list of database parameters and their values.
 	Parameters ManagedDatabasesChangeDatabaseParameterParameterArrayOutput `pulumi:"parameters"`
 	// The clause used to specify when the parameter change takes effect.
+	//
+	// Use `MEMORY` to make the change in memory and affect it immediately. Use `SPFILE` to make the change in the server parameter file. The change takes effect when the database is next shut down and started up again. Use `BOTH` to make the change in memory and in the server parameter file. The change takes effect immediately and persists after the database is shut down and started up again.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Scope pulumi.StringOutput `pulumi:"scope"`
 }
 
@@ -131,6 +136,11 @@ type managedDatabasesChangeDatabaseParameterState struct {
 	// A list of database parameters and their values.
 	Parameters []ManagedDatabasesChangeDatabaseParameterParameter `pulumi:"parameters"`
 	// The clause used to specify when the parameter change takes effect.
+	//
+	// Use `MEMORY` to make the change in memory and affect it immediately. Use `SPFILE` to make the change in the server parameter file. The change takes effect when the database is next shut down and started up again. Use `BOTH` to make the change in memory and in the server parameter file. The change takes effect immediately and persists after the database is shut down and started up again.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Scope *string `pulumi:"scope"`
 }
 
@@ -142,6 +152,11 @@ type ManagedDatabasesChangeDatabaseParameterState struct {
 	// A list of database parameters and their values.
 	Parameters ManagedDatabasesChangeDatabaseParameterParameterArrayInput
 	// The clause used to specify when the parameter change takes effect.
+	//
+	// Use `MEMORY` to make the change in memory and affect it immediately. Use `SPFILE` to make the change in the server parameter file. The change takes effect when the database is next shut down and started up again. Use `BOTH` to make the change in memory and in the server parameter file. The change takes effect immediately and persists after the database is shut down and started up again.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Scope pulumi.StringPtrInput
 }
 
@@ -157,6 +172,11 @@ type managedDatabasesChangeDatabaseParameterArgs struct {
 	// A list of database parameters and their values.
 	Parameters []ManagedDatabasesChangeDatabaseParameterParameter `pulumi:"parameters"`
 	// The clause used to specify when the parameter change takes effect.
+	//
+	// Use `MEMORY` to make the change in memory and affect it immediately. Use `SPFILE` to make the change in the server parameter file. The change takes effect when the database is next shut down and started up again. Use `BOTH` to make the change in memory and in the server parameter file. The change takes effect immediately and persists after the database is shut down and started up again.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Scope string `pulumi:"scope"`
 }
 
@@ -169,6 +189,11 @@ type ManagedDatabasesChangeDatabaseParameterArgs struct {
 	// A list of database parameters and their values.
 	Parameters ManagedDatabasesChangeDatabaseParameterParameterArrayInput
 	// The clause used to specify when the parameter change takes effect.
+	//
+	// Use `MEMORY` to make the change in memory and affect it immediately. Use `SPFILE` to make the change in the server parameter file. The change takes effect when the database is next shut down and started up again. Use `BOTH` to make the change in memory and in the server parameter file. The change takes effect immediately and persists after the database is shut down and started up again.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Scope pulumi.StringInput
 }
 
@@ -279,6 +304,11 @@ func (o ManagedDatabasesChangeDatabaseParameterOutput) Parameters() ManagedDatab
 }
 
 // The clause used to specify when the parameter change takes effect.
+//
+// Use `MEMORY` to make the change in memory and affect it immediately. Use `SPFILE` to make the change in the server parameter file. The change takes effect when the database is next shut down and started up again. Use `BOTH` to make the change in memory and in the server parameter file. The change takes effect immediately and persists after the database is shut down and started up again.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ManagedDatabasesChangeDatabaseParameterOutput) Scope() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedDatabasesChangeDatabaseParameter) pulumi.StringOutput { return v.Scope }).(pulumi.StringOutput)
 }

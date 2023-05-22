@@ -35,6 +35,8 @@ public final class PathRouteSetPathRouteArgs extends com.pulumi.resources.Resour
      * *  Asterisk (*) wildcards are not supported.
      * *  Regular expressions are not supported.
      * 
+     * Example: `/example/video/123`
+     * 
      */
     @Import(name="path", required=true)
     private Output<String> path;
@@ -44,6 +46,8 @@ public final class PathRouteSetPathRouteArgs extends com.pulumi.resources.Resour
      * *  Path strings are case-insensitive.
      * *  Asterisk (*) wildcards are not supported.
      * *  Regular expressions are not supported.
+     * 
+     * Example: `/example/video/123`
      * 
      */
     public Output<String> path() {
@@ -118,6 +122,8 @@ public final class PathRouteSetPathRouteArgs extends com.pulumi.resources.Resour
          * *  Asterisk (*) wildcards are not supported.
          * *  Regular expressions are not supported.
          * 
+         * Example: `/example/video/123`
+         * 
          * @return builder
          * 
          */
@@ -131,6 +137,8 @@ public final class PathRouteSetPathRouteArgs extends com.pulumi.resources.Resour
          * *  Path strings are case-insensitive.
          * *  Asterisk (*) wildcards are not supported.
          * *  Regular expressions are not supported.
+         * 
+         * Example: `/example/video/123`
          * 
          * @return builder
          * 

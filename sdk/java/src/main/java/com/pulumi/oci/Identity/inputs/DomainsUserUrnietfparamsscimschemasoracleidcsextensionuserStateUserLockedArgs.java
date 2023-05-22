@@ -20,12 +20,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     /**
      * (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="expired")
     private @Nullable Output<Boolean> expired;
 
     /**
      * @return (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> expired() {
@@ -35,12 +59,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     /**
      * (Updatable) The date and time that the current resource was locked
      * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     @Import(name="lockDate")
     private @Nullable Output<String> lockDate;
 
     /**
      * @return (Updatable) The date and time that the current resource was locked
+     * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> lockDate() {
@@ -50,12 +96,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     /**
      * (Updatable) Indicates that the rev is locked
      * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="on")
     private @Nullable Output<Boolean> on;
 
     /**
      * @return (Updatable) Indicates that the rev is locked
+     * 
+     * **Added In:** 19.1.4
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> on() {
@@ -65,12 +135,30 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     /**
      * (Updatable) Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="reason")
     private @Nullable Output<Integer> reason;
 
     /**
      * @return (Updatable) Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> reason() {
@@ -107,6 +195,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         /**
          * @param expired (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -118,6 +218,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         /**
          * @param expired (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -127,6 +239,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
 
         /**
          * @param lockDate (Updatable) The date and time that the current resource was locked
+         * 
+         * **Added In:** 19.1.4
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -139,6 +262,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         /**
          * @param lockDate (Updatable) The date and time that the current resource was locked
          * 
+         * **Added In:** 19.1.4
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -148,6 +282,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
 
         /**
          * @param on (Updatable) Indicates that the rev is locked
+         * 
+         * **Added In:** 19.1.4
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -160,6 +306,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         /**
          * @param on (Updatable) Indicates that the rev is locked
          * 
+         * **Added In:** 19.1.4
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -169,6 +327,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
 
         /**
          * @param reason (Updatable) Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -180,6 +347,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
 
         /**
          * @param reason (Updatable) Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 

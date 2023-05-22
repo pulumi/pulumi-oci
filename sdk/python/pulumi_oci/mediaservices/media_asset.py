@@ -38,6 +38,10 @@ class MediaAssetArgs:
         The set of arguments for constructing a MediaAsset resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[str] type: (Updatable) The type of the media asset.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] bucket: The name of the object storage bucket where this asset is located.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
@@ -107,6 +111,10 @@ class MediaAssetArgs:
     def type(self) -> pulumi.Input[str]:
         """
         (Updatable) The type of the media asset.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -356,6 +364,10 @@ class _MediaAssetState:
         :param pulumi.Input[str] time_created: The time when the MediaAsset was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] type: (Updatable) The type of the media asset.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
@@ -659,6 +671,10 @@ class _MediaAssetState:
     def type(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The type of the media asset.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -724,6 +740,10 @@ class MediaAsset(pulumi.CustomResource):
         :param pulumi.Input[str] source_media_workflow_id: The ID of the MediaWorkflow used to produce this asset.
         :param pulumi.Input[str] source_media_workflow_version: The version of the MediaWorkflow used to produce this asset.
         :param pulumi.Input[str] type: (Updatable) The type of the media asset.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -873,6 +893,10 @@ class MediaAsset(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The time when the MediaAsset was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] type: (Updatable) The type of the media asset.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1075,6 +1099,10 @@ class MediaAsset(pulumi.CustomResource):
     def type(self) -> pulumi.Output[str]:
         """
         (Updatable) The type of the media asset.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 

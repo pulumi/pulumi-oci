@@ -15,38 +15,135 @@ namespace Pulumi.Oci.Identity.Outputs
     {
         /// <summary>
         /// (Updatable) The last failed login date
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * idcsAllowUpdatesInReadOnlyMode: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: dateTime
+        /// * uniqueness: none
         /// </summary>
         public readonly string? LastFailedLoginDate;
         /// <summary>
         /// (Updatable) The last successful login date
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * idcsAllowUpdatesInReadOnlyMode: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: dateTime
+        /// * uniqueness: none
         /// </summary>
         public readonly string? LastSuccessfulLoginDate;
         /// <summary>
         /// (Updatable) A complex attribute that indicates an account is locked (blocking new sessions)
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Locked, mapsTo:locked.on], [columnHeaderName:Locked Reason, mapsTo:locked.reason], [columnHeaderName:Locked Date, mapsTo:locked.lockDate]]
+        /// * idcsSearchable: false
+        /// * idcsAllowUpdatesInReadOnlyMode: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public readonly Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked? Locked;
         /// <summary>
         /// (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * idcsAllowUpdatesInReadOnlyMode: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: integer
+        /// * uniqueness: none
         /// </summary>
         public readonly int? LoginAttempts;
         /// <summary>
         /// (Updatable) Maximum number of concurrent sessions for a User
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsMaxValue: 999
+        /// * idcsMinValue: 1
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: integer
+        /// * uniqueness: none
         /// </summary>
         public readonly int? MaxConcurrentSessions;
         /// <summary>
         /// (Updatable) The previous successful login date
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: dateTime
+        /// * uniqueness: none
         /// </summary>
         public readonly string? PreviousSuccessfulLoginDate;
         /// <summary>
         /// (Updatable) The number of failed recovery attempts. The value is reset to 0 after a successful login.
+        /// 
+        /// **Added In:** 19.1.4
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: integer
+        /// * uniqueness: none
         /// </summary>
         public readonly int? RecoveryAttempts;
         /// <summary>
         /// (Updatable) The number of failed account recovery enrollment attempts.
+        /// 
+        /// **Added In:** 19.1.4
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: integer
+        /// * uniqueness: none
         /// </summary>
         public readonly int? RecoveryEnrollAttempts;
         /// <summary>
         /// (Updatable) A complex attribute that indicates an password recovery is locked (blocking new sessions)
+        /// 
+        /// **Added In:** 19.1.4
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public readonly Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked? RecoveryLocked;
 

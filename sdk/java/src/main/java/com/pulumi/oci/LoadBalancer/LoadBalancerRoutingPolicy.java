@@ -103,12 +103,18 @@ public class LoadBalancerRoutingPolicy extends com.pulumi.resources.CustomResour
     /**
      * (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
     /**
      * @return (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> name() {

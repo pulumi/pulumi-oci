@@ -57,10 +57,14 @@ export class ResponderRecipe extends pulumi.CustomResource {
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * (Updatable) Responder recipe description.
+     *
+     * Avoid entering confidential information.
      */
     public readonly description!: pulumi.Output<string>;
     /**
      * (Updatable) Responder recipe display name.
+     *
+     * Avoid entering confidential information.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -69,6 +73,8 @@ export class ResponderRecipe extends pulumi.CustomResource {
     public /*out*/ readonly effectiveResponderRules!: pulumi.Output<outputs.CloudGuard.ResponderRecipeEffectiveResponderRule[]>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     *
+     * Avoid entering confidential information.
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -85,6 +91,10 @@ export class ResponderRecipe extends pulumi.CustomResource {
     public readonly responderRules!: pulumi.Output<outputs.CloudGuard.ResponderRecipeResponderRule[]>;
     /**
      * The id of the source responder recipe.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly sourceResponderRecipeId!: pulumi.Output<string>;
     /**
@@ -176,10 +186,14 @@ export interface ResponderRecipeState {
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) Responder recipe description.
+     *
+     * Avoid entering confidential information.
      */
     description?: pulumi.Input<string>;
     /**
      * (Updatable) Responder recipe display name.
+     *
+     * Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -188,6 +202,8 @@ export interface ResponderRecipeState {
     effectiveResponderRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.ResponderRecipeEffectiveResponderRule>[]>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     *
+     * Avoid entering confidential information.
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -204,6 +220,10 @@ export interface ResponderRecipeState {
     responderRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.ResponderRecipeResponderRule>[]>;
     /**
      * The id of the source responder recipe.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     sourceResponderRecipeId?: pulumi.Input<string>;
     /**
@@ -238,14 +258,20 @@ export interface ResponderRecipeArgs {
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) Responder recipe description.
+     *
+     * Avoid entering confidential information.
      */
     description?: pulumi.Input<string>;
     /**
      * (Updatable) Responder recipe display name.
+     *
+     * Avoid entering confidential information.
      */
     displayName: pulumi.Input<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     *
+     * Avoid entering confidential information.
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -254,6 +280,10 @@ export interface ResponderRecipeArgs {
     responderRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.ResponderRecipeResponderRule>[]>;
     /**
      * The id of the source responder recipe.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     sourceResponderRecipeId: pulumi.Input<string>;
 }

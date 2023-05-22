@@ -66,6 +66,10 @@ export class Suppression extends pulumi.CustomResource {
     public readonly compartmentId!: pulumi.Output<string>;
     /**
      * The recipient email address of the suppression.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly emailAddress!: pulumi.Output<string>;
     /**
@@ -146,6 +150,10 @@ export interface SuppressionState {
     compartmentId?: pulumi.Input<string>;
     /**
      * The recipient email address of the suppression.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     emailAddress?: pulumi.Input<string>;
     /**
@@ -184,6 +192,10 @@ export interface SuppressionArgs {
     compartmentId: pulumi.Input<string>;
     /**
      * The recipient email address of the suppression.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     emailAddress: pulumi.Input<string>;
 }

@@ -29,11 +29,17 @@ class HttpProbeArgs:
         :param pulumi.Input[str] protocol: The supported protocols available for HTTP probes.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: A list of targets (hostnames or IP addresses) of the probe.
         :param pulumi.Input[Mapping[str, Any]] headers: A dictionary of HTTP request headers.
+               
+               *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         :param pulumi.Input[str] method: The supported HTTP methods available for probes.
         :param pulumi.Input[str] path: The optional URL path to probe, including query parameters.
         :param pulumi.Input[int] port: The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
         :param pulumi.Input[int] timeout_in_seconds: The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_point_names: A list of names of vantage points from which to execute the probe.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "protocol", protocol)
@@ -92,6 +98,8 @@ class HttpProbeArgs:
     def headers(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
         A dictionary of HTTP request headers.
+
+        *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         """
         return pulumi.get(self, "headers")
 
@@ -152,6 +160,10 @@ class HttpProbeArgs:
     def vantage_point_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         A list of names of vantage points from which to execute the probe.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vantage_point_names")
 
@@ -179,6 +191,8 @@ class _HttpProbeState:
         Input properties used for looking up and filtering HttpProbe resources.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[Mapping[str, Any]] headers: A dictionary of HTTP request headers.
+               
+               *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         :param pulumi.Input[str] home_region: The region where updates must be made and where results must be fetched from.
         :param pulumi.Input[str] method: The supported HTTP methods available for probes.
         :param pulumi.Input[str] path: The optional URL path to probe, including query parameters.
@@ -189,6 +203,10 @@ class _HttpProbeState:
         :param pulumi.Input[str] time_created: The RFC 3339-formatted creation date and time of the probe.
         :param pulumi.Input[int] timeout_in_seconds: The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_point_names: A list of names of vantage points from which to execute the probe.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -232,6 +250,8 @@ class _HttpProbeState:
     def headers(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
         A dictionary of HTTP request headers.
+
+        *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         """
         return pulumi.get(self, "headers")
 
@@ -352,6 +372,10 @@ class _HttpProbeState:
     def vantage_point_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         A list of names of vantage points from which to execute the probe.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vantage_point_names")
 
@@ -413,6 +437,8 @@ class HttpProbe(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[Mapping[str, Any]] headers: A dictionary of HTTP request headers.
+               
+               *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         :param pulumi.Input[str] method: The supported HTTP methods available for probes.
         :param pulumi.Input[str] path: The optional URL path to probe, including query parameters.
         :param pulumi.Input[int] port: The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
@@ -420,6 +446,10 @@ class HttpProbe(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: A list of targets (hostnames or IP addresses) of the probe.
         :param pulumi.Input[int] timeout_in_seconds: The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_point_names: A list of names of vantage points from which to execute the probe.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -543,6 +573,8 @@ class HttpProbe(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[Mapping[str, Any]] headers: A dictionary of HTTP request headers.
+               
+               *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         :param pulumi.Input[str] home_region: The region where updates must be made and where results must be fetched from.
         :param pulumi.Input[str] method: The supported HTTP methods available for probes.
         :param pulumi.Input[str] path: The optional URL path to probe, including query parameters.
@@ -553,6 +585,10 @@ class HttpProbe(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The RFC 3339-formatted creation date and time of the probe.
         :param pulumi.Input[int] timeout_in_seconds: The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_point_names: A list of names of vantage points from which to execute the probe.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -585,6 +621,8 @@ class HttpProbe(pulumi.CustomResource):
     def headers(self) -> pulumi.Output[Mapping[str, Any]]:
         """
         A dictionary of HTTP request headers.
+
+        *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         """
         return pulumi.get(self, "headers")
 
@@ -665,6 +703,10 @@ class HttpProbe(pulumi.CustomResource):
     def vantage_point_names(self) -> pulumi.Output[Sequence[str]]:
         """
         A list of names of vantage points from which to execute the probe.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vantage_point_names")
 

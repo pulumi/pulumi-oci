@@ -21,6 +21,8 @@ namespace Pulumi.Oci.Core.Outputs
         /// (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
         /// * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
         /// * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+        /// 
+        /// If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
         /// </summary>
         public readonly Outputs.SecurityListIngressSecurityRuleIcmpOptions? IcmpOptions;
         /// <summary>
@@ -29,6 +31,10 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly string Protocol;
         /// <summary>
         /// (Updatable) Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
+        /// 
+        /// Allowed values:
+        /// * IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+        /// * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you're setting up a security list rule for traffic coming from a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
         /// </summary>
         public readonly string Source;
         /// <summary>

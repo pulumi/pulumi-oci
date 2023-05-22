@@ -99,6 +99,9 @@ type Repository struct {
 	// Unique project name in a namespace.
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
 	// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RepositoryType pulumi.StringOutput `pulumi:"repositoryType"`
 	// The size of the repository in bytes.
 	SizeInBytes pulumi.StringOutput `pulumi:"sizeInBytes"`
@@ -180,6 +183,9 @@ type repositoryState struct {
 	// Unique project name in a namespace.
 	ProjectName *string `pulumi:"projectName"`
 	// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RepositoryType *string `pulumi:"repositoryType"`
 	// The size of the repository in bytes.
 	SizeInBytes *string `pulumi:"sizeInBytes"`
@@ -227,6 +233,9 @@ type RepositoryState struct {
 	// Unique project name in a namespace.
 	ProjectName pulumi.StringPtrInput
 	// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RepositoryType pulumi.StringPtrInput
 	// The size of the repository in bytes.
 	SizeInBytes pulumi.StringPtrInput
@@ -264,6 +273,9 @@ type repositoryArgs struct {
 	// The OCID of the DevOps project containing the repository.
 	ProjectId string `pulumi:"projectId"`
 	// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RepositoryType string `pulumi:"repositoryType"`
 }
 
@@ -284,6 +296,9 @@ type RepositoryArgs struct {
 	// The OCID of the DevOps project containing the repository.
 	ProjectId pulumi.StringInput
 	// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RepositoryType pulumi.StringInput
 }
 
@@ -445,6 +460,9 @@ func (o RepositoryOutput) ProjectName() pulumi.StringOutput {
 }
 
 // (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o RepositoryOutput) RepositoryType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.RepositoryType }).(pulumi.StringOutput)
 }

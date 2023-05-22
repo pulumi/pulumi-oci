@@ -1380,6 +1380,9 @@ type BuildPipelineStageWaitCriteria struct {
 	// (Updatable) The absolute wait duration. Minimum wait duration must be 5 seconds. Maximum wait duration can be up to 2 days.
 	WaitDuration string `pulumi:"waitDuration"`
 	// (Updatable) Wait criteria type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WaitType string `pulumi:"waitType"`
 }
 
@@ -1398,6 +1401,9 @@ type BuildPipelineStageWaitCriteriaArgs struct {
 	// (Updatable) The absolute wait duration. Minimum wait duration must be 5 seconds. Maximum wait duration can be up to 2 days.
 	WaitDuration pulumi.StringInput `pulumi:"waitDuration"`
 	// (Updatable) Wait criteria type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WaitType pulumi.StringInput `pulumi:"waitType"`
 }
 
@@ -1484,6 +1490,9 @@ func (o BuildPipelineStageWaitCriteriaOutput) WaitDuration() pulumi.StringOutput
 }
 
 // (Updatable) Wait criteria type.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BuildPipelineStageWaitCriteriaOutput) WaitType() pulumi.StringOutput {
 	return o.ApplyT(func(v BuildPipelineStageWaitCriteria) string { return v.WaitType }).(pulumi.StringOutput)
 }
@@ -1523,6 +1532,9 @@ func (o BuildPipelineStageWaitCriteriaPtrOutput) WaitDuration() pulumi.StringPtr
 }
 
 // (Updatable) Wait criteria type.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BuildPipelineStageWaitCriteriaPtrOutput) WaitType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BuildPipelineStageWaitCriteria) *string {
 		if v == nil {
@@ -9468,6 +9480,9 @@ type DeployStageWaitCriteria struct {
 	// (Updatable) The absolute wait duration. An ISO 8601 formatted duration string. Minimum waitDuration should be 5 seconds. Maximum waitDuration can be up to 2 days.
 	WaitDuration string `pulumi:"waitDuration"`
 	// (Updatable) Wait criteria type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WaitType string `pulumi:"waitType"`
 }
 
@@ -9486,6 +9501,9 @@ type DeployStageWaitCriteriaArgs struct {
 	// (Updatable) The absolute wait duration. An ISO 8601 formatted duration string. Minimum waitDuration should be 5 seconds. Maximum waitDuration can be up to 2 days.
 	WaitDuration pulumi.StringInput `pulumi:"waitDuration"`
 	// (Updatable) Wait criteria type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WaitType pulumi.StringInput `pulumi:"waitType"`
 }
 
@@ -9572,6 +9590,9 @@ func (o DeployStageWaitCriteriaOutput) WaitDuration() pulumi.StringOutput {
 }
 
 // (Updatable) Wait criteria type.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DeployStageWaitCriteriaOutput) WaitType() pulumi.StringOutput {
 	return o.ApplyT(func(v DeployStageWaitCriteria) string { return v.WaitType }).(pulumi.StringOutput)
 }
@@ -9611,6 +9632,9 @@ func (o DeployStageWaitCriteriaPtrOutput) WaitDuration() pulumi.StringPtrOutput 
 }
 
 // (Updatable) Wait criteria type.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DeployStageWaitCriteriaPtrOutput) WaitType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DeployStageWaitCriteria) *string {
 		if v == nil {
@@ -11337,6 +11361,9 @@ func (o DeploymentDeploymentExecutionProgressArrayOutput) Index(i pulumi.IntInpu
 
 type ProjectNotificationConfig struct {
 	// (Updatable) The topic ID for notifications.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TopicId string `pulumi:"topicId"`
 }
 
@@ -11353,6 +11380,9 @@ type ProjectNotificationConfigInput interface {
 
 type ProjectNotificationConfigArgs struct {
 	// (Updatable) The topic ID for notifications.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TopicId pulumi.StringInput `pulumi:"topicId"`
 }
 
@@ -11434,6 +11464,9 @@ func (o ProjectNotificationConfigOutput) ToProjectNotificationConfigPtrOutputWit
 }
 
 // (Updatable) The topic ID for notifications.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ProjectNotificationConfigOutput) TopicId() pulumi.StringOutput {
 	return o.ApplyT(func(v ProjectNotificationConfig) string { return v.TopicId }).(pulumi.StringOutput)
 }
@@ -11463,6 +11496,9 @@ func (o ProjectNotificationConfigPtrOutput) Elem() ProjectNotificationConfigOutp
 }
 
 // (Updatable) The topic ID for notifications.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ProjectNotificationConfigPtrOutput) TopicId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ProjectNotificationConfig) *string {
 		if v == nil {
@@ -11928,6 +11964,9 @@ type TriggerActionFilter struct {
 	// (Updatable) Attributes to filter GitLab self-hosted server events.
 	Include *TriggerActionFilterInclude `pulumi:"include"`
 	// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TriggerSource string `pulumi:"triggerSource"`
 }
 
@@ -11950,6 +11989,9 @@ type TriggerActionFilterArgs struct {
 	// (Updatable) Attributes to filter GitLab self-hosted server events.
 	Include TriggerActionFilterIncludePtrInput `pulumi:"include"`
 	// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TriggerSource pulumi.StringInput `pulumi:"triggerSource"`
 }
 
@@ -12046,6 +12088,9 @@ func (o TriggerActionFilterOutput) Include() TriggerActionFilterIncludePtrOutput
 }
 
 // (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o TriggerActionFilterOutput) TriggerSource() pulumi.StringOutput {
 	return o.ApplyT(func(v TriggerActionFilter) string { return v.TriggerSource }).(pulumi.StringOutput)
 }
@@ -12105,6 +12150,9 @@ func (o TriggerActionFilterPtrOutput) Include() TriggerActionFilterIncludePtrOut
 }
 
 // (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o TriggerActionFilterPtrOutput) TriggerSource() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TriggerActionFilter) *string {
 		if v == nil {

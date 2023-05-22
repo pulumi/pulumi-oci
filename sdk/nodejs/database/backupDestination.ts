@@ -137,6 +137,10 @@ export class BackupDestination extends pulumi.CustomResource {
     public readonly type!: pulumi.Output<string>;
     /**
      * (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly vpcUsers!: pulumi.Output<string[] | undefined>;
 
@@ -270,6 +274,10 @@ export interface BackupDestinationState {
     type?: pulumi.Input<string>;
     /**
      * (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vpcUsers?: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -314,6 +322,10 @@ export interface BackupDestinationArgs {
     type: pulumi.Input<string>;
     /**
      * (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vpcUsers?: pulumi.Input<pulumi.Input<string>[]>;
 }

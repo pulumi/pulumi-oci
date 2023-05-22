@@ -36,12 +36,16 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
     /**
      * The target description.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return The target description.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -96,12 +100,16 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
     /**
      * (Updatable) DetectorTemplate identifier.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
      * @return (Updatable) DetectorTemplate identifier.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -305,6 +313,8 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         /**
          * @param description The target description.
          * 
+         * Avoid entering confidential information.
+         * 
          * @return builder
          * 
          */
@@ -315,6 +325,8 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
 
         /**
          * @param description The target description.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -399,6 +411,8 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         /**
          * @param displayName (Updatable) DetectorTemplate identifier.
          * 
+         * Avoid entering confidential information.
+         * 
          * @return builder
          * 
          */
@@ -409,6 +423,8 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
 
         /**
          * @param displayName (Updatable) DetectorTemplate identifier.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 

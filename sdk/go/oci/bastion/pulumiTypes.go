@@ -161,6 +161,9 @@ type SessionTargetResourceDetails struct {
 	// The port number to connect to on the target resource.
 	TargetResourcePort *int `pulumi:"targetResourcePort"`
 	// The private IP address of the target resource that the session connects to.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetResourcePrivateIpAddress *string `pulumi:"targetResourcePrivateIpAddress"`
 }
 
@@ -189,6 +192,9 @@ type SessionTargetResourceDetailsArgs struct {
 	// The port number to connect to on the target resource.
 	TargetResourcePort pulumi.IntPtrInput `pulumi:"targetResourcePort"`
 	// The private IP address of the target resource that the session connects to.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetResourcePrivateIpAddress pulumi.StringPtrInput `pulumi:"targetResourcePrivateIpAddress"`
 }
 
@@ -300,6 +306,9 @@ func (o SessionTargetResourceDetailsOutput) TargetResourcePort() pulumi.IntPtrOu
 }
 
 // The private IP address of the target resource that the session connects to.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o SessionTargetResourceDetailsOutput) TargetResourcePrivateIpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SessionTargetResourceDetails) *string { return v.TargetResourcePrivateIpAddress }).(pulumi.StringPtrOutput)
 }
@@ -389,6 +398,9 @@ func (o SessionTargetResourceDetailsPtrOutput) TargetResourcePort() pulumi.IntPt
 }
 
 // The private IP address of the target resource that the session connects to.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o SessionTargetResourceDetailsPtrOutput) TargetResourcePrivateIpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SessionTargetResourceDetails) *string {
 		if v == nil {

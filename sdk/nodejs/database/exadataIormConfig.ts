@@ -79,7 +79,11 @@ export class ExadataIormConfig extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
-     * (Updatable) Value for the IORM objective Default is "Auto"
+     * (Updatable) Value for the IORM objective Default is "Auto" 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly objective!: pulumi.Output<string>;
     /**
@@ -141,7 +145,11 @@ export interface ExadataIormConfigState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * (Updatable) Value for the IORM objective Default is "Auto"
+     * (Updatable) Value for the IORM objective Default is "Auto" 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     objective?: pulumi.Input<string>;
     /**
@@ -163,7 +171,11 @@ export interface ExadataIormConfigArgs {
      */
     dbSystemId: pulumi.Input<string>;
     /**
-     * (Updatable) Value for the IORM objective Default is "Auto"
+     * (Updatable) Value for the IORM objective Default is "Auto" 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     objective?: pulumi.Input<string>;
 }

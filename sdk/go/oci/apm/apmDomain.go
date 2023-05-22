@@ -75,6 +75,9 @@ type ApmDomain struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Indicates whether this is an "Always Free" resource. The default value is false.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsFreeTier pulumi.BoolOutput `pulumi:"isFreeTier"`
 	// The current lifecycle state of the APM domain.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -132,6 +135,9 @@ type apmDomainState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Indicates whether this is an "Always Free" resource. The default value is false.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsFreeTier *bool `pulumi:"isFreeTier"`
 	// The current lifecycle state of the APM domain.
 	State *string `pulumi:"state"`
@@ -155,6 +161,9 @@ type ApmDomainState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// Indicates whether this is an "Always Free" resource. The default value is false.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsFreeTier pulumi.BoolPtrInput
 	// The current lifecycle state of the APM domain.
 	State pulumi.StringPtrInput
@@ -180,6 +189,9 @@ type apmDomainArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Indicates whether this is an "Always Free" resource. The default value is false.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsFreeTier *bool `pulumi:"isFreeTier"`
 }
 
@@ -196,6 +208,9 @@ type ApmDomainArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// Indicates whether this is an "Always Free" resource. The default value is false.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsFreeTier pulumi.BoolPtrInput
 }
 
@@ -317,6 +332,9 @@ func (o ApmDomainOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Indicates whether this is an "Always Free" resource. The default value is false.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ApmDomainOutput) IsFreeTier() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ApmDomain) pulumi.BoolOutput { return v.IsFreeTier }).(pulumi.BoolOutput)
 }

@@ -18,6 +18,10 @@ class MonitorPluginManagementArgs:
         """
         The set of arguments for constructing a MonitorPluginManagement resource.
         :param pulumi.Input[str] monitored_instance_id: OCID of monitored instance.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "monitored_instance_id", monitored_instance_id)
 
@@ -26,6 +30,10 @@ class MonitorPluginManagementArgs:
     def monitored_instance_id(self) -> pulumi.Input[str]:
         """
         OCID of monitored instance.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "monitored_instance_id")
 
@@ -46,6 +54,10 @@ class _MonitorPluginManagementState:
         """
         Input properties used for looking up and filtering MonitorPluginManagement resources.
         :param pulumi.Input[str] monitored_instance_id: OCID of monitored instance.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -92,6 +104,10 @@ class _MonitorPluginManagementState:
     def monitored_instance_id(self) -> Optional[pulumi.Input[str]]:
         """
         OCID of monitored instance.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "monitored_instance_id")
 
@@ -148,6 +164,10 @@ class MonitorPluginManagement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] monitored_instance_id: OCID of monitored instance.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -232,6 +252,10 @@ class MonitorPluginManagement(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] monitored_instance_id: OCID of monitored instance.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -265,6 +289,10 @@ class MonitorPluginManagement(pulumi.CustomResource):
     def monitored_instance_id(self) -> pulumi.Output[str]:
         """
         OCID of monitored instance.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "monitored_instance_id")
 

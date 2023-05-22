@@ -86,6 +86,10 @@ namespace Pulumi.Oci.FusionApps
 
         /// <summary>
         /// The username for the administrator.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("username")]
         public Output<string> Username { get; private set; } = null!;
@@ -182,6 +186,10 @@ namespace Pulumi.Oci.FusionApps
 
         /// <summary>
         /// The username for the administrator.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("username", required: true)]
         public Input<string> Username { get; set; } = null!;
@@ -248,6 +256,10 @@ namespace Pulumi.Oci.FusionApps
 
         /// <summary>
         /// The username for the administrator.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("username")]
         public Input<string>? Username { get; set; }

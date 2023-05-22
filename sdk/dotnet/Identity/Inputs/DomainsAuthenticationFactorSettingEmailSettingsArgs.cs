@@ -14,12 +14,34 @@ namespace Pulumi.Oci.Identity.Inputs
     {
         /// <summary>
         /// (Updatable) Custom redirect Url which will be used in email link
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("emailLinkCustomUrl")]
         public Input<string>? EmailLinkCustomUrl { get; set; }
 
         /// <summary>
         /// (Updatable) Specifies whether Email link is enabled or not.
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
         /// </summary>
         [Input("emailLinkEnabled", required: true)]
         public Input<bool> EmailLinkEnabled { get; set; } = null!;

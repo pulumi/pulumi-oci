@@ -15,14 +15,47 @@ namespace Pulumi.Oci.Identity.Outputs
     {
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Tag key
+        /// 
+        /// **Added In:** 2011192329
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * type: string
+        /// * required: true
+        /// * mutability: readWrite
+        /// * returned: default
+        /// * idcsSearchable: true
+        /// * uniqueness: none
         /// </summary>
         public readonly string Key;
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Tag namespace
+        /// 
+        /// **Added In:** 2011192329
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * type: string
+        /// * required: true
+        /// * mutability: readWrite
+        /// * returned: default
+        /// * idcsSearchable: true
+        /// * uniqueness: none
         /// </summary>
         public readonly string Namespace;
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Tag value
+        /// 
+        /// **Added In:** 2011192329
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * required: true
+        /// * mutability: readWrite
+        /// * returned: default
+        /// * type: string
+        /// * idcsSearchable: true
+        /// * uniqueness: none
         /// </summary>
         public readonly string Value;
 

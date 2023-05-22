@@ -20,6 +20,10 @@ class SwiftPasswordArgs:
         The set of arguments for constructing a SwiftPassword resource.
         :param pulumi.Input[str] description: (Updatable) The description you assign to the Swift password during creation. Does not have to be unique, and it's changeable.
         :param pulumi.Input[str] user_id: The OCID of the user.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "user_id", user_id)
@@ -41,6 +45,10 @@ class SwiftPasswordArgs:
     def user_id(self) -> pulumi.Input[str]:
         """
         The OCID of the user.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "user_id")
 
@@ -68,6 +76,10 @@ class _SwiftPasswordState:
         :param pulumi.Input[str] state: The password's current state.
         :param pulumi.Input[str] time_created: Date and time the `SwiftPassword` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] user_id: The OCID of the user.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -161,6 +173,10 @@ class _SwiftPasswordState:
     def user_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the user.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "user_id")
 
@@ -216,6 +232,10 @@ class SwiftPassword(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] description: (Updatable) The description you assign to the Swift password during creation. Does not have to be unique, and it's changeable.
         :param pulumi.Input[str] user_id: The OCID of the user.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -326,6 +346,10 @@ class SwiftPassword(pulumi.CustomResource):
         :param pulumi.Input[str] state: The password's current state.
         :param pulumi.Input[str] time_created: Date and time the `SwiftPassword` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] user_id: The OCID of the user.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -393,6 +417,10 @@ class SwiftPassword(pulumi.CustomResource):
     def user_id(self) -> pulumi.Output[str]:
         """
         The OCID of the user.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "user_id")
 

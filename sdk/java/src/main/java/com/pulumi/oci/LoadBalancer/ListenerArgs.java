@@ -97,12 +97,20 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Deprecated. Please use `routingPolicies` instead.
      * 
+     * The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener&#39;s traffic.
+     * 
+     * Example: `example_path_route_set`
+     * 
      */
     @Import(name="pathRouteSetName")
     private @Nullable Output<String> pathRouteSetName;
 
     /**
      * @return (Updatable) Deprecated. Please use `routingPolicies` instead.
+     * 
+     * The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener&#39;s traffic.
+     * 
+     * Example: `example_path_route_set`
      * 
      */
     public Optional<Output<String>> pathRouteSetName() {
@@ -172,12 +180,16 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The load balancer&#39;s SSL handling configuration details.
      * 
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+     * 
      */
     @Import(name="sslConfiguration")
     private @Nullable Output<ListenerSslConfigurationArgs> sslConfiguration;
 
     /**
      * @return (Updatable) The load balancer&#39;s SSL handling configuration details.
+     * 
+     * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      * 
      */
     public Optional<Output<ListenerSslConfigurationArgs>> sslConfiguration() {
@@ -336,6 +348,10 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param pathRouteSetName (Updatable) Deprecated. Please use `routingPolicies` instead.
          * 
+         * The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener&#39;s traffic.
+         * 
+         * Example: `example_path_route_set`
+         * 
          * @return builder
          * 
          */
@@ -346,6 +362,10 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param pathRouteSetName (Updatable) Deprecated. Please use `routingPolicies` instead.
+         * 
+         * The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener&#39;s traffic.
+         * 
+         * Example: `example_path_route_set`
          * 
          * @return builder
          * 
@@ -451,6 +471,8 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param sslConfiguration (Updatable) The load balancer&#39;s SSL handling configuration details.
          * 
+         * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+         * 
          * @return builder
          * 
          */
@@ -461,6 +483,8 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sslConfiguration (Updatable) The load balancer&#39;s SSL handling configuration details.
+         * 
+         * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
          * 
          * @return builder
          * 

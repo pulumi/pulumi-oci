@@ -232,12 +232,18 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
     /**
      * The date and time of the first time job execution.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="timeScheduled")
     private @Nullable Output<String> timeScheduled;
 
     /**
      * @return The date and time of the first time job execution.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> timeScheduled() {
@@ -579,6 +585,9 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param timeScheduled The date and time of the first time job execution.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -589,6 +598,9 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param timeScheduled The date and time of the first time job execution.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

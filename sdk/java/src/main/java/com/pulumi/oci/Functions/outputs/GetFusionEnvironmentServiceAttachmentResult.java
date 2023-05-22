@@ -13,11 +13,6 @@ import java.util.Objects;
 @CustomType
 public final class GetFusionEnvironmentServiceAttachmentResult {
     /**
-     * @return Action
-     * 
-     */
-    private String action;
-    /**
      * @return Compartment Identifier
      * 
      */
@@ -39,7 +34,7 @@ public final class GetFusionEnvironmentServiceAttachmentResult {
     private Map<String,Object> freeformTags;
     private String fusionEnvironmentId;
     /**
-     * @return The provider-assigned unique ID for this managed resource.
+     * @return Unique identifier that is immutable on creation
      * 
      */
     private String id;
@@ -82,13 +77,6 @@ public final class GetFusionEnvironmentServiceAttachmentResult {
 
     private GetFusionEnvironmentServiceAttachmentResult() {}
     /**
-     * @return Action
-     * 
-     */
-    public String action() {
-        return this.action;
-    }
-    /**
      * @return Compartment Identifier
      * 
      */
@@ -120,7 +108,7 @@ public final class GetFusionEnvironmentServiceAttachmentResult {
         return this.fusionEnvironmentId;
     }
     /**
-     * @return The provider-assigned unique ID for this managed resource.
+     * @return Unique identifier that is immutable on creation
      * 
      */
     public String id() {
@@ -188,7 +176,6 @@ public final class GetFusionEnvironmentServiceAttachmentResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
         private String compartmentId;
         private Map<String,Object> definedTags;
         private String displayName;
@@ -206,7 +193,6 @@ public final class GetFusionEnvironmentServiceAttachmentResult {
         public Builder() {}
         public Builder(GetFusionEnvironmentServiceAttachmentResult defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.action = defaults.action;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
@@ -223,11 +209,6 @@ public final class GetFusionEnvironmentServiceAttachmentResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
-        @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
-            return this;
-        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
@@ -300,7 +281,6 @@ public final class GetFusionEnvironmentServiceAttachmentResult {
         }
         public GetFusionEnvironmentServiceAttachmentResult build() {
             final var o = new GetFusionEnvironmentServiceAttachmentResult();
-            o.action = action;
             o.compartmentId = compartmentId;
             o.definedTags = definedTags;
             o.displayName = displayName;

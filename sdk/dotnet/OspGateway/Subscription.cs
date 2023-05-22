@@ -123,6 +123,10 @@ namespace Pulumi.Oci.OspGateway
 
         /// <summary>
         /// Subscription id(OCID).
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("subscriptionId")]
         public Output<string> SubscriptionId { get; private set; } = null!;
@@ -235,6 +239,10 @@ namespace Pulumi.Oci.OspGateway
 
         /// <summary>
         /// Subscription id(OCID).
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("subscriptionId", required: true)]
         public Input<string> SubscriptionId { get; set; } = null!;
@@ -363,6 +371,10 @@ namespace Pulumi.Oci.OspGateway
 
         /// <summary>
         /// Subscription id(OCID).
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("subscriptionId")]
         public Input<string>? SubscriptionId { get; set; }

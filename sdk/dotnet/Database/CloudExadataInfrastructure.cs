@@ -249,6 +249,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("storageCount")]
         public Output<int> StorageCount { get; private set; } = null!;
@@ -391,6 +395,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("storageCount")]
         public Input<int>? StorageCount { get; set; }
@@ -585,6 +593,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("storageCount")]
         public Input<int>? StorageCount { get; set; }

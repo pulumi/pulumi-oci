@@ -69,6 +69,9 @@ type GeneratedKey struct {
 	// The cryptographic properties of a key.
 	KeyShape GeneratedKeyKeyShapeOutput `pulumi:"keyShape"`
 	// Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LoggingContext pulumi.MapOutput `pulumi:"loggingContext"`
 	// The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
 	Plaintext pulumi.StringOutput `pulumi:"plaintext"`
@@ -130,6 +133,9 @@ type generatedKeyState struct {
 	// The cryptographic properties of a key.
 	KeyShape *GeneratedKeyKeyShape `pulumi:"keyShape"`
 	// Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LoggingContext map[string]interface{} `pulumi:"loggingContext"`
 	// The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
 	Plaintext *string `pulumi:"plaintext"`
@@ -151,6 +157,9 @@ type GeneratedKeyState struct {
 	// The cryptographic properties of a key.
 	KeyShape GeneratedKeyKeyShapePtrInput
 	// Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LoggingContext pulumi.MapInput
 	// The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
 	Plaintext pulumi.StringPtrInput
@@ -174,6 +183,9 @@ type generatedKeyArgs struct {
 	// The cryptographic properties of a key.
 	KeyShape GeneratedKeyKeyShape `pulumi:"keyShape"`
 	// Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LoggingContext map[string]interface{} `pulumi:"loggingContext"`
 }
 
@@ -190,6 +202,9 @@ type GeneratedKeyArgs struct {
 	// The cryptographic properties of a key.
 	KeyShape GeneratedKeyKeyShapeInput
 	// Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LoggingContext pulumi.MapInput
 }
 
@@ -311,6 +326,9 @@ func (o GeneratedKeyOutput) KeyShape() GeneratedKeyKeyShapeOutput {
 }
 
 // Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o GeneratedKeyOutput) LoggingContext() pulumi.MapOutput {
 	return o.ApplyT(func(v *GeneratedKey) pulumi.MapOutput { return v.LoggingContext }).(pulumi.MapOutput)
 }

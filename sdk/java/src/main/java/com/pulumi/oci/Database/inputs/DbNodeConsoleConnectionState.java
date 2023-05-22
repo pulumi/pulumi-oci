@@ -78,12 +78,18 @@ public final class DbNodeConsoleConnectionState extends com.pulumi.resources.Res
     /**
      * The SSH public key used to authenticate the console connection.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="publicKey")
     private @Nullable Output<String> publicKey;
 
     /**
      * @return The SSH public key used to authenticate the console connection.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> publicKey() {
@@ -221,6 +227,9 @@ public final class DbNodeConsoleConnectionState extends com.pulumi.resources.Res
         /**
          * @param publicKey The SSH public key used to authenticate the console connection.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -231,6 +240,9 @@ public final class DbNodeConsoleConnectionState extends com.pulumi.resources.Res
 
         /**
          * @param publicKey The SSH public key used to authenticate the console connection.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

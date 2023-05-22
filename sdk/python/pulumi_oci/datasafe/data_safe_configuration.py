@@ -21,6 +21,10 @@ class DataSafeConfigurationArgs:
         """
         The set of arguments for constructing a DataSafeConfiguration resource.
         :param pulumi.Input[bool] is_enabled: (Updatable) Indicates if Data Safe is enabled.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) A filter to return only resources that match the specified compartment OCID.
         """
         pulumi.set(__self__, "is_enabled", is_enabled)
@@ -32,6 +36,10 @@ class DataSafeConfigurationArgs:
     def is_enabled(self) -> pulumi.Input[bool]:
         """
         (Updatable) Indicates if Data Safe is enabled.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_enabled")
 
@@ -72,6 +80,10 @@ class _DataSafeConfigurationState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['DataSafeConfigurationGlobalSettingArgs']]] global_settings: Details of the tenancy level global settings in Data Safe.
         :param pulumi.Input[bool] is_enabled: (Updatable) Indicates if Data Safe is enabled.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of Data Safe.
         :param pulumi.Input[str] time_enabled: The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] url: The URL of the Data Safe service.
@@ -160,6 +172,10 @@ class _DataSafeConfigurationState:
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Indicates if Data Safe is enabled.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_enabled")
 
@@ -236,6 +252,10 @@ class DataSafeConfiguration(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) A filter to return only resources that match the specified compartment OCID.
         :param pulumi.Input[bool] is_enabled: (Updatable) Indicates if Data Safe is enabled.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -332,6 +352,10 @@ class DataSafeConfiguration(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DataSafeConfigurationGlobalSettingArgs']]]] global_settings: Details of the tenancy level global settings in Data Safe.
         :param pulumi.Input[bool] is_enabled: (Updatable) Indicates if Data Safe is enabled.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of Data Safe.
         :param pulumi.Input[str] time_enabled: The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] url: The URL of the Data Safe service.
@@ -396,6 +420,10 @@ class DataSafeConfiguration(pulumi.CustomResource):
     def is_enabled(self) -> pulumi.Output[bool]:
         """
         (Updatable) Indicates if Data Safe is enabled.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_enabled")
 

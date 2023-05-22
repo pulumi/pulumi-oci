@@ -114,6 +114,9 @@ type AssetSource struct {
 	// (Updatable) Asset source type.
 	Type pulumi.StringOutput `pulumi:"type"`
 	// (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcenterEndpoint pulumi.StringOutput `pulumi:"vcenterEndpoint"`
 }
 
@@ -204,6 +207,9 @@ type assetSourceState struct {
 	// (Updatable) Asset source type.
 	Type *string `pulumi:"type"`
 	// (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcenterEndpoint *string `pulumi:"vcenterEndpoint"`
 }
 
@@ -245,6 +251,9 @@ type AssetSourceState struct {
 	// (Updatable) Asset source type.
 	Type pulumi.StringPtrInput
 	// (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcenterEndpoint pulumi.StringPtrInput
 }
 
@@ -282,6 +291,9 @@ type assetSourceArgs struct {
 	// (Updatable) Asset source type.
 	Type string `pulumi:"type"`
 	// (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcenterEndpoint string `pulumi:"vcenterEndpoint"`
 }
 
@@ -316,6 +328,9 @@ type AssetSourceArgs struct {
 	// (Updatable) Asset source type.
 	Type pulumi.StringInput
 	// (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcenterEndpoint pulumi.StringInput
 }
 
@@ -497,6 +512,9 @@ func (o AssetSourceOutput) Type() pulumi.StringOutput {
 }
 
 // (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AssetSourceOutput) VcenterEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v *AssetSource) pulumi.StringOutput { return v.VcenterEndpoint }).(pulumi.StringOutput)
 }

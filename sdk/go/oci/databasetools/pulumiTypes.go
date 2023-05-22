@@ -133,6 +133,9 @@ type DatabaseToolsConnectionKeyStoreKeyStoreContent struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
 	SecretId *string `pulumi:"secretId"`
 	// (Updatable) The value type of the user password.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ValueType string `pulumi:"valueType"`
 }
 
@@ -151,6 +154,9 @@ type DatabaseToolsConnectionKeyStoreKeyStoreContentArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
 	SecretId pulumi.StringPtrInput `pulumi:"secretId"`
 	// (Updatable) The value type of the user password.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ValueType pulumi.StringInput `pulumi:"valueType"`
 }
 
@@ -237,6 +243,9 @@ func (o DatabaseToolsConnectionKeyStoreKeyStoreContentOutput) SecretId() pulumi.
 }
 
 // (Updatable) The value type of the user password.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DatabaseToolsConnectionKeyStoreKeyStoreContentOutput) ValueType() pulumi.StringOutput {
 	return o.ApplyT(func(v DatabaseToolsConnectionKeyStoreKeyStoreContent) string { return v.ValueType }).(pulumi.StringOutput)
 }
@@ -276,6 +285,9 @@ func (o DatabaseToolsConnectionKeyStoreKeyStoreContentPtrOutput) SecretId() pulu
 }
 
 // (Updatable) The value type of the user password.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DatabaseToolsConnectionKeyStoreKeyStoreContentPtrOutput) ValueType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnectionKeyStoreKeyStoreContent) *string {
 		if v == nil {
@@ -289,6 +301,9 @@ type DatabaseToolsConnectionKeyStoreKeyStorePassword struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
 	SecretId *string `pulumi:"secretId"`
 	// (Updatable) The value type of the user password.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ValueType string `pulumi:"valueType"`
 }
 
@@ -307,6 +322,9 @@ type DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
 	SecretId pulumi.StringPtrInput `pulumi:"secretId"`
 	// (Updatable) The value type of the user password.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ValueType pulumi.StringInput `pulumi:"valueType"`
 }
 
@@ -393,6 +411,9 @@ func (o DatabaseToolsConnectionKeyStoreKeyStorePasswordOutput) SecretId() pulumi
 }
 
 // (Updatable) The value type of the user password.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DatabaseToolsConnectionKeyStoreKeyStorePasswordOutput) ValueType() pulumi.StringOutput {
 	return o.ApplyT(func(v DatabaseToolsConnectionKeyStoreKeyStorePassword) string { return v.ValueType }).(pulumi.StringOutput)
 }
@@ -432,6 +453,9 @@ func (o DatabaseToolsConnectionKeyStoreKeyStorePasswordPtrOutput) SecretId() pul
 }
 
 // (Updatable) The value type of the user password.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DatabaseToolsConnectionKeyStoreKeyStorePasswordPtrOutput) ValueType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnectionKeyStoreKeyStorePassword) *string {
 		if v == nil {
@@ -601,6 +625,9 @@ type DatabaseToolsConnectionUserPassword struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
 	SecretId string `pulumi:"secretId"`
 	// (Updatable) The value type of the user password.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ValueType string `pulumi:"valueType"`
 }
 
@@ -619,6 +646,9 @@ type DatabaseToolsConnectionUserPasswordArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
 	SecretId pulumi.StringInput `pulumi:"secretId"`
 	// (Updatable) The value type of the user password.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ValueType pulumi.StringInput `pulumi:"valueType"`
 }
 
@@ -705,6 +735,9 @@ func (o DatabaseToolsConnectionUserPasswordOutput) SecretId() pulumi.StringOutpu
 }
 
 // (Updatable) The value type of the user password.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DatabaseToolsConnectionUserPasswordOutput) ValueType() pulumi.StringOutput {
 	return o.ApplyT(func(v DatabaseToolsConnectionUserPassword) string { return v.ValueType }).(pulumi.StringOutput)
 }
@@ -744,6 +777,9 @@ func (o DatabaseToolsConnectionUserPasswordPtrOutput) SecretId() pulumi.StringPt
 }
 
 // (Updatable) The value type of the user password.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DatabaseToolsConnectionUserPasswordPtrOutput) ValueType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnectionUserPassword) *string {
 		if v == nil {

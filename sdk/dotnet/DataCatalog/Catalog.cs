@@ -55,6 +55,10 @@ namespace Pulumi.Oci.DataCatalog
     {
         /// <summary>
         /// (Updatable) The list of private reverse connection endpoints attached to the catalog
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("attachedCatalogPrivateEndpoints")]
         public Output<ImmutableArray<string>> AttachedCatalogPrivateEndpoints { get; private set; } = null!;
@@ -176,6 +180,10 @@ namespace Pulumi.Oci.DataCatalog
 
         /// <summary>
         /// (Updatable) The list of private reverse connection endpoints attached to the catalog
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputList<string> AttachedCatalogPrivateEndpoints
         {
@@ -232,6 +240,10 @@ namespace Pulumi.Oci.DataCatalog
 
         /// <summary>
         /// (Updatable) The list of private reverse connection endpoints attached to the catalog
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputList<string> AttachedCatalogPrivateEndpoints
         {

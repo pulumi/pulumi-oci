@@ -111,6 +111,10 @@ export class Agent extends pulumi.CustomResource {
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
      * OS version.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly osVersion!: pulumi.Output<string>;
     /**
@@ -263,6 +267,10 @@ export interface AgentState {
     lifecycleDetails?: pulumi.Input<string>;
     /**
      * OS version.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     osVersion?: pulumi.Input<string>;
     /**
@@ -329,6 +337,10 @@ export interface AgentArgs {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * OS version.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     osVersion: pulumi.Input<string>;
 }

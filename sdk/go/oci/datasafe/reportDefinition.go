@@ -138,6 +138,9 @@ type ReportDefinition struct {
 	// Specifies the limit on the number of rows in the report.
 	ScheduledReportRowLimit pulumi.IntOutput `pulumi:"scheduledReportRowLimit"`
 	// (Updatable) Additional scim filters used to get the specific summary.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ScimFilter pulumi.StringOutput `pulumi:"scimFilter"`
 	// The current state of the report.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -242,6 +245,9 @@ type reportDefinitionState struct {
 	// Specifies the limit on the number of rows in the report.
 	ScheduledReportRowLimit *int `pulumi:"scheduledReportRowLimit"`
 	// (Updatable) Additional scim filters used to get the specific summary.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ScimFilter *string `pulumi:"scimFilter"`
 	// The current state of the report.
 	State *string `pulumi:"state"`
@@ -297,6 +303,9 @@ type ReportDefinitionState struct {
 	// Specifies the limit on the number of rows in the report.
 	ScheduledReportRowLimit pulumi.IntPtrInput
 	// (Updatable) Additional scim filters used to get the specific summary.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ScimFilter pulumi.StringPtrInput
 	// The current state of the report.
 	State pulumi.StringPtrInput
@@ -549,6 +558,9 @@ func (o ReportDefinitionOutput) ScheduledReportRowLimit() pulumi.IntOutput {
 }
 
 // (Updatable) Additional scim filters used to get the specific summary.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ReportDefinitionOutput) ScimFilter() pulumi.StringOutput {
 	return o.ApplyT(func(v *ReportDefinition) pulumi.StringOutput { return v.ScimFilter }).(pulumi.StringOutput)
 }

@@ -95,12 +95,34 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="autoEnrollEmailFactorDisabled")
     private @Nullable Output<Boolean> autoEnrollEmailFactorDisabled;
 
     /**
      * @return (Updatable) If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
+     * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> autoEnrollEmailFactorDisabled() {
@@ -110,12 +132,30 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) If true, indicates that Bypass Code is enabled for authentication
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="bypassCodeEnabled")
     private @Nullable Output<Boolean> bypassCodeEnabled;
 
     /**
      * @return (Updatable) If true, indicates that Bypass Code is enabled for authentication
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> bypassCodeEnabled() {
@@ -125,12 +165,30 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="bypassCodeSettings")
     private @Nullable Output<DomainsAuthenticationFactorSettingBypassCodeSettingsArgs> bypassCodeSettings;
 
     /**
      * @return (Updatable) Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<DomainsAuthenticationFactorSettingBypassCodeSettingsArgs>> bypassCodeSettings() {
@@ -140,12 +198,30 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) Settings related to compliance, Personal Identification Number (PIN) policy, and so on
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="clientAppSettings")
     private @Nullable Output<DomainsAuthenticationFactorSettingClientAppSettingsArgs> clientAppSettings;
 
     /**
      * @return (Updatable) Settings related to compliance, Personal Identification Number (PIN) policy, and so on
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<DomainsAuthenticationFactorSettingClientAppSettingsArgs>> clientAppSettings() {
@@ -155,12 +231,32 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="compartmentOcid")
     private @Nullable Output<String> compartmentOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> compartmentOcid() {
@@ -170,12 +266,32 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) Compliance Policy that defines actions to be taken when a condition is violated
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [name]
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="compliancePolicies")
     private @Nullable Output<List<DomainsAuthenticationFactorSettingCompliancePolicyArgs>> compliancePolicies;
 
     /**
      * @return (Updatable) Compliance Policy that defines actions to be taken when a condition is violated
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [name]
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsAuthenticationFactorSettingCompliancePolicyArgs>>> compliancePolicies() {
@@ -185,12 +301,32 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="deleteInProgress")
     private @Nullable Output<Boolean> deleteInProgress;
 
     /**
      * @return (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> deleteInProgress() {
@@ -200,12 +336,32 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="domainOcid")
     private @Nullable Output<String> domainOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> domainOcid() {
@@ -215,12 +371,34 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) If true, indicates that the EMAIL channel is enabled for authentication
      * 
+     * **Added In:** 18.1.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="emailEnabled")
     private @Nullable Output<Boolean> emailEnabled;
 
     /**
      * @return (Updatable) If true, indicates that the EMAIL channel is enabled for authentication
+     * 
+     * **Added In:** 18.1.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> emailEnabled() {
@@ -230,12 +408,34 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="emailSettings")
     private @Nullable Output<DomainsAuthenticationFactorSettingEmailSettingsArgs> emailSettings;
 
     /**
      * @return (Updatable) Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<DomainsAuthenticationFactorSettingEmailSettingsArgs>> emailSettings() {
@@ -245,12 +445,30 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="endpointRestrictions")
     private @Nullable Output<DomainsAuthenticationFactorSettingEndpointRestrictionsArgs> endpointRestrictions;
 
     /**
      * @return (Updatable) Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<DomainsAuthenticationFactorSettingEndpointRestrictionsArgs>> endpointRestrictions() {
@@ -260,12 +478,34 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) If true, indicates that the Fido Authenticator channels are enabled for authentication
      * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="fidoAuthenticatorEnabled")
     private @Nullable Output<Boolean> fidoAuthenticatorEnabled;
 
     /**
      * @return (Updatable) If true, indicates that the Fido Authenticator channels are enabled for authentication
+     * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> fidoAuthenticatorEnabled() {
@@ -275,12 +515,34 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) If true, indicates that &#39;Show backup factor(s)&#39; button will be hidden during authentication
      * 
+     * **Added In:** 19.3.3
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="hideBackupFactorEnabled")
     private @Nullable Output<Boolean> hideBackupFactorEnabled;
 
     /**
      * @return (Updatable) If true, indicates that &#39;Show backup factor(s)&#39; button will be hidden during authentication
+     * 
+     * **Added In:** 19.3.3
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> hideBackupFactorEnabled() {
@@ -290,12 +552,28 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) The User or App who created the Resource
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: complex
+     * 
      */
     @Import(name="idcsCreatedBies")
     private @Nullable Output<List<DomainsAuthenticationFactorSettingIdcsCreatedByArgs>> idcsCreatedBies;
 
     /**
      * @return (Updatable) The User or App who created the Resource
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: complex
      * 
      */
     public Optional<Output<List<DomainsAuthenticationFactorSettingIdcsCreatedByArgs>>> idcsCreatedBies() {
@@ -320,12 +598,28 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) The User or App who modified the Resource
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * 
      */
     @Import(name="idcsLastModifiedBies")
     private @Nullable Output<List<DomainsAuthenticationFactorSettingIdcsLastModifiedByArgs>> idcsLastModifiedBies;
 
     /**
      * @return (Updatable) The User or App who modified the Resource
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: complex
      * 
      */
     public Optional<Output<List<DomainsAuthenticationFactorSettingIdcsLastModifiedByArgs>>> idcsLastModifiedBies() {
@@ -335,12 +629,32 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) The release number when the resource was upgraded.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="idcsLastUpgradedInRelease")
     private @Nullable Output<String> idcsLastUpgradedInRelease;
 
     /**
      * @return (Updatable) The release number when the resource was upgraded.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> idcsLastUpgradedInRelease() {
@@ -350,12 +664,30 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="idcsPreventedOperations")
     private @Nullable Output<List<String>> idcsPreventedOperations;
 
     /**
      * @return (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<String>>> idcsPreventedOperations() {
@@ -365,12 +697,30 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) Settings related to the use of a user&#39;s profile details from the identity store
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="identityStoreSettings")
     private @Nullable Output<DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs> identityStoreSettings;
 
     /**
      * @return (Updatable) Settings related to the use of a user&#39;s profile details from the identity store
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs>> identityStoreSettings() {
@@ -380,12 +730,32 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+     * * type: complex
+     * 
      */
     @Import(name="metas")
     private @Nullable Output<List<DomainsAuthenticationFactorSettingMetaArgs>> metas;
 
     /**
      * @return (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+     * * type: complex
      * 
      */
     public Optional<Output<List<DomainsAuthenticationFactorSettingMetaArgs>>> metas() {
@@ -395,12 +765,34 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
      * 
+     * **Deprecated Since: 18.1.2**
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="mfaEnabledCategory")
     private @Nullable Output<String> mfaEnabledCategory;
 
     /**
      * @return (Updatable) Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
+     * 
+     * **Deprecated Since: 18.1.2**
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> mfaEnabledCategory() {
@@ -410,12 +802,38 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
      * 
+     * **Deprecated Since: 18.1.2**
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCanonicalValueSourceFilter: attrName eq &#34;mfaEnrollmentType&#34; and attrValues.value eq &#34;$(mfaEnrollmentType)&#34;
+     * * idcsCanonicalValueSourceResourceType: AllowedValue
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="mfaEnrollmentType")
     private @Nullable Output<String> mfaEnrollmentType;
 
     /**
      * @return (Updatable) Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
+     * 
+     * **Deprecated Since: 18.1.2**
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCanonicalValueSourceFilter: attrName eq &#34;mfaEnrollmentType&#34; and attrValues.value eq &#34;$(mfaEnrollmentType)&#34;
+     * * idcsCanonicalValueSourceResourceType: AllowedValue
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> mfaEnrollmentType() {
@@ -425,12 +843,34 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) Settings related to the Mobile App Notification channel, such as pull
      * 
+     * **Added In:** 17.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="notificationSettings")
     private @Nullable Output<DomainsAuthenticationFactorSettingNotificationSettingsArgs> notificationSettings;
 
     /**
      * @return (Updatable) Settings related to the Mobile App Notification channel, such as pull
+     * 
+     * **Added In:** 17.4.2
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<DomainsAuthenticationFactorSettingNotificationSettingsArgs>> notificationSettings() {
@@ -440,12 +880,32 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: global
+     * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
      * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: global
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -455,12 +915,34 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
      * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="phoneCallEnabled")
     private @Nullable Output<Boolean> phoneCallEnabled;
 
     /**
      * @return (Updatable) If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> phoneCallEnabled() {
@@ -470,12 +952,30 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) If true, indicates that the Mobile App Push Notification channel is enabled for authentication
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="pushEnabled")
     private @Nullable Output<Boolean> pushEnabled;
 
     /**
      * @return (Updatable) If true, indicates that the Mobile App Push Notification channel is enabled for authentication
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> pushEnabled() {
@@ -500,12 +1000,32 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="schemas")
     private @Nullable Output<List<String>> schemas;
 
     /**
      * @return (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<String>>> schemas() {
@@ -515,12 +1035,30 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) If true, indicates that Security Questions are enabled for authentication
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="securityQuestionsEnabled")
     private @Nullable Output<Boolean> securityQuestionsEnabled;
 
     /**
      * @return (Updatable) If true, indicates that Security Questions are enabled for authentication
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> securityQuestionsEnabled() {
@@ -530,12 +1068,30 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) If true, indicates that the Short Message Service (SMS) channel is enabled for authentication
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="smsEnabled")
     private @Nullable Output<Boolean> smsEnabled;
 
     /**
      * @return (Updatable) If true, indicates that the Short Message Service (SMS) channel is enabled for authentication
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> smsEnabled() {
@@ -545,12 +1101,32 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) A list of tags on this resource.
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<DomainsAuthenticationFactorSettingTagArgs>> tags;
 
     /**
      * @return (Updatable) A list of tags on this resource.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [key, value]
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsAuthenticationFactorSettingTagArgs>>> tags() {
@@ -560,12 +1136,32 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="tenancyOcid")
     private @Nullable Output<String> tenancyOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> tenancyOcid() {
@@ -575,12 +1171,34 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) Settings related to third-party factor
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="thirdPartyFactor")
     private @Nullable Output<DomainsAuthenticationFactorSettingThirdPartyFactorArgs> thirdPartyFactor;
 
     /**
      * @return (Updatable) Settings related to third-party factor
+     * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<DomainsAuthenticationFactorSettingThirdPartyFactorArgs>> thirdPartyFactor() {
@@ -590,12 +1208,30 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="totpEnabled")
     private @Nullable Output<Boolean> totpEnabled;
 
     /**
      * @return (Updatable) If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> totpEnabled() {
@@ -605,12 +1241,30 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="totpSettings")
     private @Nullable Output<DomainsAuthenticationFactorSettingTotpSettingsArgs> totpSettings;
 
     /**
      * @return (Updatable) Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<DomainsAuthenticationFactorSettingTotpSettingsArgs>> totpSettings() {
@@ -650,12 +1304,34 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) Factors for which enrollment should be blocked for End User
      * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="userEnrollmentDisabledFactors")
     private @Nullable Output<List<String>> userEnrollmentDisabledFactors;
 
     /**
      * @return (Updatable) Factors for which enrollment should be blocked for End User
+     * 
+     * **Added In:** 2012271618
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<String>>> userEnrollmentDisabledFactors() {
@@ -665,12 +1341,40 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
     /**
      * (Updatable) If true, indicates that the Yubico OTP is enabled for authentication
      * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="yubicoOtpEnabled")
     private @Nullable Output<Boolean> yubicoOtpEnabled;
 
     /**
      * @return (Updatable) If true, indicates that the Yubico OTP is enabled for authentication
+     * 
+     * **Added In:** 2109090424
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Boolean>> yubicoOtpEnabled() {
@@ -840,6 +1544,17 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param autoEnrollEmailFactorDisabled (Updatable) If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
          * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -851,6 +1566,17 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param autoEnrollEmailFactorDisabled (Updatable) If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
          * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -860,6 +1586,15 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param bypassCodeEnabled (Updatable) If true, indicates that Bypass Code is enabled for authentication
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -872,6 +1607,15 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param bypassCodeEnabled (Updatable) If true, indicates that Bypass Code is enabled for authentication
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -881,6 +1625,15 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param bypassCodeSettings (Updatable) Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -893,6 +1646,15 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param bypassCodeSettings (Updatable) Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -902,6 +1664,15 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param clientAppSettings (Updatable) Settings related to compliance, Personal Identification Number (PIN) policy, and so on
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -914,6 +1685,15 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param clientAppSettings (Updatable) Settings related to compliance, Personal Identification Number (PIN) policy, and so on
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -923,6 +1703,16 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param compartmentOcid (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -935,6 +1725,16 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param compartmentOcid (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -944,6 +1744,16 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param compliancePolicies (Updatable) Compliance Policy that defines actions to be taken when a condition is violated
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [name]
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -956,6 +1766,16 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param compliancePolicies (Updatable) Compliance Policy that defines actions to be taken when a condition is violated
          * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [name]
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -966,6 +1786,16 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param compliancePolicies (Updatable) Compliance Policy that defines actions to be taken when a condition is violated
          * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [name]
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -975,6 +1805,16 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param deleteInProgress (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -987,6 +1827,16 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param deleteInProgress (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -996,6 +1846,16 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param domainOcid (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1008,6 +1868,16 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param domainOcid (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1017,6 +1887,17 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param emailEnabled (Updatable) If true, indicates that the EMAIL channel is enabled for authentication
+         * 
+         * **Added In:** 18.1.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1029,6 +1910,17 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param emailEnabled (Updatable) If true, indicates that the EMAIL channel is enabled for authentication
          * 
+         * **Added In:** 18.1.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1038,6 +1930,17 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param emailSettings (Updatable) Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1050,6 +1953,17 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param emailSettings (Updatable) Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1059,6 +1973,15 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param endpointRestrictions (Updatable) Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1071,6 +1994,15 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param endpointRestrictions (Updatable) Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1080,6 +2012,17 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param fidoAuthenticatorEnabled (Updatable) If true, indicates that the Fido Authenticator channels are enabled for authentication
+         * 
+         * **Added In:** 2009232244
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1092,6 +2035,17 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param fidoAuthenticatorEnabled (Updatable) If true, indicates that the Fido Authenticator channels are enabled for authentication
          * 
+         * **Added In:** 2009232244
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1101,6 +2055,17 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param hideBackupFactorEnabled (Updatable) If true, indicates that &#39;Show backup factor(s)&#39; button will be hidden during authentication
+         * 
+         * **Added In:** 19.3.3
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1113,6 +2078,17 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param hideBackupFactorEnabled (Updatable) If true, indicates that &#39;Show backup factor(s)&#39; button will be hidden during authentication
          * 
+         * **Added In:** 19.3.3
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1122,6 +2098,14 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param idcsCreatedBies (Updatable) The User or App who created the Resource
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: complex
          * 
          * @return builder
          * 
@@ -1134,6 +2118,14 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param idcsCreatedBies (Updatable) The User or App who created the Resource
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: complex
+         * 
          * @return builder
          * 
          */
@@ -1143,6 +2135,14 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param idcsCreatedBies (Updatable) The User or App who created the Resource
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: complex
          * 
          * @return builder
          * 
@@ -1175,6 +2175,14 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param idcsLastModifiedBies (Updatable) The User or App who modified the Resource
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * 
          * @return builder
          * 
          */
@@ -1186,6 +2194,14 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param idcsLastModifiedBies (Updatable) The User or App who modified the Resource
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * 
          * @return builder
          * 
          */
@@ -1196,6 +2212,14 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param idcsLastModifiedBies (Updatable) The User or App who modified the Resource
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * 
          * @return builder
          * 
          */
@@ -1205,6 +2229,16 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param idcsLastUpgradedInRelease (Updatable) The release number when the resource was upgraded.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1217,6 +2251,16 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param idcsLastUpgradedInRelease (Updatable) The release number when the resource was upgraded.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1226,6 +2270,15 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param idcsPreventedOperations (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1238,6 +2291,15 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param idcsPreventedOperations (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1248,6 +2310,15 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param idcsPreventedOperations (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1257,6 +2328,15 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param identityStoreSettings (Updatable) Settings related to the use of a user&#39;s profile details from the identity store
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1269,6 +2349,15 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param identityStoreSettings (Updatable) Settings related to the use of a user&#39;s profile details from the identity store
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1278,6 +2367,16 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param metas (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+         * * type: complex
          * 
          * @return builder
          * 
@@ -1290,6 +2389,16 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param metas (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+         * * type: complex
+         * 
          * @return builder
          * 
          */
@@ -1300,6 +2409,16 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param metas (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+         * * type: complex
+         * 
          * @return builder
          * 
          */
@@ -1309,6 +2428,17 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param mfaEnabledCategory (Updatable) Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
+         * 
+         * **Deprecated Since: 18.1.2**
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1321,6 +2451,17 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param mfaEnabledCategory (Updatable) Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
          * 
+         * **Deprecated Since: 18.1.2**
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1330,6 +2471,19 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param mfaEnrollmentType (Updatable) Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
+         * 
+         * **Deprecated Since: 18.1.2**
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCanonicalValueSourceFilter: attrName eq &#34;mfaEnrollmentType&#34; and attrValues.value eq &#34;$(mfaEnrollmentType)&#34;
+         * * idcsCanonicalValueSourceResourceType: AllowedValue
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1342,6 +2496,19 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param mfaEnrollmentType (Updatable) Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
          * 
+         * **Deprecated Since: 18.1.2**
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCanonicalValueSourceFilter: attrName eq &#34;mfaEnrollmentType&#34; and attrValues.value eq &#34;$(mfaEnrollmentType)&#34;
+         * * idcsCanonicalValueSourceResourceType: AllowedValue
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1351,6 +2518,17 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param notificationSettings (Updatable) Settings related to the Mobile App Notification channel, such as pull
+         * 
+         * **Added In:** 17.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1363,6 +2541,17 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param notificationSettings (Updatable) Settings related to the Mobile App Notification channel, such as pull
          * 
+         * **Added In:** 17.4.2
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1372,6 +2561,16 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
          * 
          * @return builder
          * 
@@ -1384,6 +2583,16 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
+         * 
          * @return builder
          * 
          */
@@ -1393,6 +2602,17 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param phoneCallEnabled (Updatable) If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
+         * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1405,6 +2625,17 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param phoneCallEnabled (Updatable) If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
          * 
+         * **Added In:** 20.1.3
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1414,6 +2645,15 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param pushEnabled (Updatable) If true, indicates that the Mobile App Push Notification channel is enabled for authentication
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1425,6 +2665,15 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param pushEnabled (Updatable) If true, indicates that the Mobile App Push Notification channel is enabled for authentication
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1457,6 +2706,16 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1468,6 +2727,16 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1478,6 +2747,16 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1487,6 +2766,15 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param securityQuestionsEnabled (Updatable) If true, indicates that Security Questions are enabled for authentication
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1499,6 +2787,15 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param securityQuestionsEnabled (Updatable) If true, indicates that Security Questions are enabled for authentication
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1508,6 +2805,15 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param smsEnabled (Updatable) If true, indicates that the Short Message Service (SMS) channel is enabled for authentication
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1520,6 +2826,15 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param smsEnabled (Updatable) If true, indicates that the Short Message Service (SMS) channel is enabled for authentication
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1529,6 +2844,16 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param tags (Updatable) A list of tags on this resource.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1541,6 +2866,16 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param tags (Updatable) A list of tags on this resource.
          * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1551,6 +2886,16 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param tags (Updatable) A list of tags on this resource.
          * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1560,6 +2905,16 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param tenancyOcid (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1572,6 +2927,16 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param tenancyOcid (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1581,6 +2946,17 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param thirdPartyFactor (Updatable) Settings related to third-party factor
+         * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1593,6 +2969,17 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param thirdPartyFactor (Updatable) Settings related to third-party factor
          * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1602,6 +2989,15 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param totpEnabled (Updatable) If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1614,6 +3010,15 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param totpEnabled (Updatable) If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1623,6 +3028,15 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param totpSettings (Updatable) Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1634,6 +3048,15 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param totpSettings (Updatable) Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1687,6 +3110,17 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param userEnrollmentDisabledFactors (Updatable) Factors for which enrollment should be blocked for End User
          * 
+         * **Added In:** 2012271618
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1698,6 +3132,17 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param userEnrollmentDisabledFactors (Updatable) Factors for which enrollment should be blocked for End User
          * 
+         * **Added In:** 2012271618
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -1707,6 +3152,17 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param userEnrollmentDisabledFactors (Updatable) Factors for which enrollment should be blocked for End User
+         * 
+         * **Added In:** 2012271618
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1718,6 +3174,20 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
         /**
          * @param yubicoOtpEnabled (Updatable) If true, indicates that the Yubico OTP is enabled for authentication
          * 
+         * **Added In:** 2109090424
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -1728,6 +3198,20 @@ public final class DomainsAuthenticationFactorSettingState extends com.pulumi.re
 
         /**
          * @param yubicoOtpEnabled (Updatable) If true, indicates that the Yubico OTP is enabled for authentication
+         * 
+         * **Added In:** 2109090424
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

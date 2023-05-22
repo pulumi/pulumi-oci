@@ -50,12 +50,20 @@ public final class DeploymentSpecificationRouteRequestPoliciesResponseCacheLooku
     /**
      * (Updatable) Set true to allow caching responses where the request has an Authorization header. Ensure you have configured your  cache key additions to get the level of isolation across authenticated requests that you require.
      * 
+     * When false, any request with an Authorization header will not be stored in the Response Cache.
+     * 
+     * If using the CustomAuthenticationPolicy then the tokenHeader/tokenQueryParam are also subject to this check.
+     * 
      */
     @Import(name="isPrivateCachingEnabled")
     private @Nullable Output<Boolean> isPrivateCachingEnabled;
 
     /**
      * @return (Updatable) Set true to allow caching responses where the request has an Authorization header. Ensure you have configured your  cache key additions to get the level of isolation across authenticated requests that you require.
+     * 
+     * When false, any request with an Authorization header will not be stored in the Response Cache.
+     * 
+     * If using the CustomAuthenticationPolicy then the tokenHeader/tokenQueryParam are also subject to this check.
      * 
      */
     public Optional<Output<Boolean>> isPrivateCachingEnabled() {
@@ -65,12 +73,18 @@ public final class DeploymentSpecificationRouteRequestPoliciesResponseCacheLooku
     /**
      * (Updatable) Type of the Response Cache Store Policy.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
      * @return (Updatable) Type of the Response Cache Store Policy.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> type() {
@@ -159,6 +173,10 @@ public final class DeploymentSpecificationRouteRequestPoliciesResponseCacheLooku
         /**
          * @param isPrivateCachingEnabled (Updatable) Set true to allow caching responses where the request has an Authorization header. Ensure you have configured your  cache key additions to get the level of isolation across authenticated requests that you require.
          * 
+         * When false, any request with an Authorization header will not be stored in the Response Cache.
+         * 
+         * If using the CustomAuthenticationPolicy then the tokenHeader/tokenQueryParam are also subject to this check.
+         * 
          * @return builder
          * 
          */
@@ -170,6 +188,10 @@ public final class DeploymentSpecificationRouteRequestPoliciesResponseCacheLooku
         /**
          * @param isPrivateCachingEnabled (Updatable) Set true to allow caching responses where the request has an Authorization header. Ensure you have configured your  cache key additions to get the level of isolation across authenticated requests that you require.
          * 
+         * When false, any request with an Authorization header will not be stored in the Response Cache.
+         * 
+         * If using the CustomAuthenticationPolicy then the tokenHeader/tokenQueryParam are also subject to this check.
+         * 
          * @return builder
          * 
          */
@@ -179,6 +201,9 @@ public final class DeploymentSpecificationRouteRequestPoliciesResponseCacheLooku
 
         /**
          * @param type (Updatable) Type of the Response Cache Store Policy.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -190,6 +215,9 @@ public final class DeploymentSpecificationRouteRequestPoliciesResponseCacheLooku
 
         /**
          * @param type (Updatable) Type of the Response Cache Store Policy.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

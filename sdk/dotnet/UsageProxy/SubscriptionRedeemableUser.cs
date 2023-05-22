@@ -74,6 +74,10 @@ namespace Pulumi.Oci.UsageProxy
 
         /// <summary>
         /// The user ID of the person to send a copy of an email.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("userId")]
         public Output<string> UserId { get; private set; } = null!;
@@ -150,6 +154,10 @@ namespace Pulumi.Oci.UsageProxy
 
         /// <summary>
         /// The user ID of the person to send a copy of an email.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("userId")]
         public Input<string>? UserId { get; set; }
@@ -188,6 +196,10 @@ namespace Pulumi.Oci.UsageProxy
 
         /// <summary>
         /// The user ID of the person to send a copy of an email.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("userId")]
         public Input<string>? UserId { get; set; }

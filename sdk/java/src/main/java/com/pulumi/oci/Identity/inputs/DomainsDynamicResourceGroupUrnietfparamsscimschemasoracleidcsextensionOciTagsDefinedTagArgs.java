@@ -16,12 +16,34 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
     /**
      * (Updatable) Oracle Cloud Infrastructure Tag key
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * required: true
+     * * mutability: readWrite
+     * * returned: default
+     * * idcsSearchable: true
+     * * uniqueness: none
+     * 
      */
     @Import(name="key", required=true)
     private Output<String> key;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tag key
+     * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * required: true
+     * * mutability: readWrite
+     * * returned: default
+     * * idcsSearchable: true
+     * * uniqueness: none
      * 
      */
     public Output<String> key() {
@@ -31,12 +53,34 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
     /**
      * (Updatable) Oracle Cloud Infrastructure Tag namespace
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * required: true
+     * * mutability: readWrite
+     * * returned: default
+     * * idcsSearchable: true
+     * * uniqueness: none
+     * 
      */
     @Import(name="namespace", required=true)
     private Output<String> namespace;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tag namespace
+     * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * required: true
+     * * mutability: readWrite
+     * * returned: default
+     * * idcsSearchable: true
+     * * uniqueness: none
      * 
      */
     public Output<String> namespace() {
@@ -46,12 +90,34 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
     /**
      * (Updatable) Oracle Cloud Infrastructure Tag value
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * required: true
+     * * mutability: readWrite
+     * * returned: default
+     * * type: string
+     * * idcsSearchable: true
+     * * uniqueness: none
+     * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tag value
+     * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * required: true
+     * * mutability: readWrite
+     * * returned: default
+     * * type: string
+     * * idcsSearchable: true
+     * * uniqueness: none
      * 
      */
     public Output<String> value() {
@@ -87,6 +153,17 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
         /**
          * @param key (Updatable) Oracle Cloud Infrastructure Tag key
          * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * idcsSearchable: true
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -98,6 +175,17 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
         /**
          * @param key (Updatable) Oracle Cloud Infrastructure Tag key
          * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * idcsSearchable: true
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -107,6 +195,17 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
 
         /**
          * @param namespace (Updatable) Oracle Cloud Infrastructure Tag namespace
+         * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * idcsSearchable: true
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -119,6 +218,17 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
         /**
          * @param namespace (Updatable) Oracle Cloud Infrastructure Tag namespace
          * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * idcsSearchable: true
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -128,6 +238,17 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
 
         /**
          * @param value (Updatable) Oracle Cloud Infrastructure Tag value
+         * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * type: string
+         * * idcsSearchable: true
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -139,6 +260,17 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
 
         /**
          * @param value (Updatable) Oracle Cloud Infrastructure Tag value
+         * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * type: string
+         * * idcsSearchable: true
+         * * uniqueness: none
          * 
          * @return builder
          * 

@@ -78,6 +78,9 @@ type Certificate struct {
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The private key associated with the certificate in pem format.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PrivateKey pulumi.StringOutput `pulumi:"privateKey"`
 	// The current state of the certificate.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -151,6 +154,9 @@ type certificateState struct {
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The private key associated with the certificate in pem format.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PrivateKey *string `pulumi:"privateKey"`
 	// The current state of the certificate.
 	State *string `pulumi:"state"`
@@ -180,6 +186,9 @@ type CertificateState struct {
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// The private key associated with the certificate in pem format.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PrivateKey pulumi.StringPtrInput
 	// The current state of the certificate.
 	State pulumi.StringPtrInput
@@ -211,6 +220,9 @@ type certificateArgs struct {
 	// The intermediate certificate data associated with the certificate in pem format.
 	IntermediateCertificates *string `pulumi:"intermediateCertificates"`
 	// The private key associated with the certificate in pem format.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PrivateKey string `pulumi:"privateKey"`
 }
 
@@ -229,6 +241,9 @@ type CertificateArgs struct {
 	// The intermediate certificate data associated with the certificate in pem format.
 	IntermediateCertificates pulumi.StringPtrInput
 	// The private key associated with the certificate in pem format.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PrivateKey pulumi.StringInput
 }
 
@@ -355,6 +370,9 @@ func (o CertificateOutput) LifecycleDetails() pulumi.StringOutput {
 }
 
 // The private key associated with the certificate in pem format.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CertificateOutput) PrivateKey() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.PrivateKey }).(pulumi.StringOutput)
 }

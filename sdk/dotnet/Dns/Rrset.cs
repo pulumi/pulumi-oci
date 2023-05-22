@@ -107,6 +107,10 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// The name or OCID of the target zone.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("zoneNameOrId")]
         public Output<string> ZoneNameOrId { get; private set; } = null!;
@@ -203,6 +207,10 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// The name or OCID of the target zone.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("zoneNameOrId", required: true)]
         public Input<string> ZoneNameOrId { get; set; } = null!;
@@ -261,6 +269,10 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// The name or OCID of the target zone.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("zoneNameOrId")]
         public Input<string>? ZoneNameOrId { get; set; }

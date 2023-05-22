@@ -187,6 +187,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The OCID of the volume.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("volumeId")]
         public Output<string> VolumeId { get; private set; } = null!;
@@ -305,6 +309,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The OCID of the volume.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("volumeId", required: true)]
         public Input<string> VolumeId { get; set; } = null!;
@@ -457,6 +465,10 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// The OCID of the volume.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("volumeId")]
         public Input<string>? VolumeId { get; set; }

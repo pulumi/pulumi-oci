@@ -73,6 +73,9 @@ type LogAnalyticsLogGroup struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The Logging Analytics namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// The date and time the resource was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -129,6 +132,9 @@ type logAnalyticsLogGroupState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The Logging Analytics namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace *string `pulumi:"namespace"`
 	// The date and time the resource was created, in the format defined by RFC3339.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -148,6 +154,9 @@ type LogAnalyticsLogGroupState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// The Logging Analytics namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace pulumi.StringPtrInput
 	// The date and time the resource was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringPtrInput
@@ -171,6 +180,9 @@ type logAnalyticsLogGroupArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The Logging Analytics namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace string `pulumi:"namespace"`
 }
 
@@ -187,6 +199,9 @@ type LogAnalyticsLogGroupArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// The Logging Analytics namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace pulumi.StringInput
 }
 
@@ -303,6 +318,9 @@ func (o LogAnalyticsLogGroupOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The Logging Analytics namespace used for the request.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o LogAnalyticsLogGroupOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsLogGroup) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
 }

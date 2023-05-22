@@ -94,7 +94,11 @@ export class Agent extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * (Updatable) ODMS Agent version
+     * (Updatable) ODMS Agent version 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly version!: pulumi.Output<string>;
 
@@ -201,7 +205,11 @@ export interface AgentState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * (Updatable) ODMS Agent version
+     * (Updatable) ODMS Agent version 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     version?: pulumi.Input<string>;
 }
@@ -239,7 +247,11 @@ export interface AgentArgs {
      */
     streamId?: pulumi.Input<string>;
     /**
-     * (Updatable) ODMS Agent version
+     * (Updatable) ODMS Agent version 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     version?: pulumi.Input<string>;
 }

@@ -48,12 +48,18 @@ public final class BdsInstanceEdgeNodeShapeConfigArgs extends com.pulumi.resourc
     /**
      * The total number of OCPUs available to the node.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="ocpus")
     private @Nullable Output<Integer> ocpus;
 
     /**
      * @return The total number of OCPUs available to the node.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> ocpus() {
@@ -131,6 +137,9 @@ public final class BdsInstanceEdgeNodeShapeConfigArgs extends com.pulumi.resourc
         /**
          * @param ocpus The total number of OCPUs available to the node.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -141,6 +150,9 @@ public final class BdsInstanceEdgeNodeShapeConfigArgs extends com.pulumi.resourc
 
         /**
          * @param ocpus The total number of OCPUs available to the node.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

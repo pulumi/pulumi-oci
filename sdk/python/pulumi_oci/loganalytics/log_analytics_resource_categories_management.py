@@ -23,7 +23,11 @@ class LogAnalyticsResourceCategoriesManagementArgs:
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] resource_categories: The list of categories to be assigned to the resource.
         :param pulumi.Input[str] resource_id: The resource unique identifier for which catagories are managed.
-        :param pulumi.Input[str] resource_type: The resource type of the resource for which categories are managed.
+        :param pulumi.Input[str] resource_type: The resource type of the resource for which categories are managed. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "resource_categories", resource_categories)
@@ -70,7 +74,11 @@ class LogAnalyticsResourceCategoriesManagementArgs:
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> pulumi.Input[str]:
         """
-        The resource type of the resource for which categories are managed.
+        The resource type of the resource for which categories are managed. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "resource_type")
 
@@ -91,7 +99,11 @@ class _LogAnalyticsResourceCategoriesManagementState:
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] resource_categories: The list of categories to be assigned to the resource.
         :param pulumi.Input[str] resource_id: The resource unique identifier for which catagories are managed.
-        :param pulumi.Input[str] resource_type: The resource type of the resource for which categories are managed.
+        :param pulumi.Input[str] resource_type: The resource type of the resource for which categories are managed. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if namespace is not None:
             pulumi.set(__self__, "namespace", namespace)
@@ -142,7 +154,11 @@ class _LogAnalyticsResourceCategoriesManagementState:
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[pulumi.Input[str]]:
         """
-        The resource type of the resource for which categories are managed.
+        The resource type of the resource for which categories are managed. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "resource_type")
 
@@ -188,7 +204,11 @@ class LogAnalyticsResourceCategoriesManagement(pulumi.CustomResource):
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] resource_categories: The list of categories to be assigned to the resource.
         :param pulumi.Input[str] resource_id: The resource unique identifier for which catagories are managed.
-        :param pulumi.Input[str] resource_type: The resource type of the resource for which categories are managed.
+        :param pulumi.Input[str] resource_type: The resource type of the resource for which categories are managed. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -282,7 +302,11 @@ class LogAnalyticsResourceCategoriesManagement(pulumi.CustomResource):
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] resource_categories: The list of categories to be assigned to the resource.
         :param pulumi.Input[str] resource_id: The resource unique identifier for which catagories are managed.
-        :param pulumi.Input[str] resource_type: The resource type of the resource for which categories are managed.
+        :param pulumi.Input[str] resource_type: The resource type of the resource for which categories are managed. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -322,7 +346,11 @@ class LogAnalyticsResourceCategoriesManagement(pulumi.CustomResource):
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> pulumi.Output[str]:
         """
-        The resource type of the resource for which categories are managed.
+        The resource type of the resource for which categories are managed. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "resource_type")
 

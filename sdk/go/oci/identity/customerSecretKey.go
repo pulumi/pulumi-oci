@@ -77,6 +77,9 @@ type CustomerSecretKey struct {
 	// Date and time when this password will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
 	TimeExpires pulumi.StringOutput `pulumi:"timeExpires"`
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringOutput `pulumi:"userId"`
 }
 
@@ -128,6 +131,9 @@ type customerSecretKeyState struct {
 	// Date and time when this password will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
 	TimeExpires *string `pulumi:"timeExpires"`
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId *string `pulumi:"userId"`
 }
 
@@ -145,6 +151,9 @@ type CustomerSecretKeyState struct {
 	// Date and time when this password will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
 	TimeExpires pulumi.StringPtrInput
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringPtrInput
 }
 
@@ -156,6 +165,9 @@ type customerSecretKeyArgs struct {
 	// (Updatable) The name you assign to the secret key during creation. Does not have to be unique, and it's changeable.
 	DisplayName string `pulumi:"displayName"`
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId string `pulumi:"userId"`
 }
 
@@ -164,6 +176,9 @@ type CustomerSecretKeyArgs struct {
 	// (Updatable) The name you assign to the secret key during creation. Does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringInput
 	// The OCID of the user.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringInput
 }
 
@@ -285,6 +300,9 @@ func (o CustomerSecretKeyOutput) TimeExpires() pulumi.StringOutput {
 }
 
 // The OCID of the user.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CustomerSecretKeyOutput) UserId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CustomerSecretKey) pulumi.StringOutput { return v.UserId }).(pulumi.StringOutput)
 }

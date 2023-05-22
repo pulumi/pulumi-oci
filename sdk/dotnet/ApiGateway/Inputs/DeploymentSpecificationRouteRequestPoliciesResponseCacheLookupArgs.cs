@@ -32,12 +32,20 @@ namespace Pulumi.Oci.ApiGateway.Inputs
 
         /// <summary>
         /// (Updatable) Set true to allow caching responses where the request has an Authorization header. Ensure you have configured your  cache key additions to get the level of isolation across authenticated requests that you require.
+        /// 
+        /// When false, any request with an Authorization header will not be stored in the Response Cache.
+        /// 
+        /// If using the CustomAuthenticationPolicy then the tokenHeader/tokenQueryParam are also subject to this check.
         /// </summary>
         [Input("isPrivateCachingEnabled")]
         public Input<bool>? IsPrivateCachingEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) Type of the Response Cache Store Policy.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

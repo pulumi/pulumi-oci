@@ -81,12 +81,16 @@ public final class SecurityRecipeArgs extends com.pulumi.resources.ResourceArgs 
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
+     * Avoid entering confidential information.
+     * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
@@ -96,12 +100,18 @@ public final class SecurityRecipeArgs extends com.pulumi.resources.ResourceArgs 
     /**
      * (Updatable) The list of `SecurityPolicy` ids to include in the recipe
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="securityPolicies", required=true)
     private Output<List<String>> securityPolicies;
 
     /**
      * @return (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<List<String>> securityPolicies() {
@@ -224,6 +234,8 @@ public final class SecurityRecipeArgs extends com.pulumi.resources.ResourceArgs 
         /**
          * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
+         * Avoid entering confidential information.
+         * 
          * @return builder
          * 
          */
@@ -235,6 +247,8 @@ public final class SecurityRecipeArgs extends com.pulumi.resources.ResourceArgs 
         /**
          * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
+         * Avoid entering confidential information.
+         * 
          * @return builder
          * 
          */
@@ -244,6 +258,9 @@ public final class SecurityRecipeArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param securityPolicies (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -256,6 +273,9 @@ public final class SecurityRecipeArgs extends com.pulumi.resources.ResourceArgs 
         /**
          * @param securityPolicies (Updatable) The list of `SecurityPolicy` ids to include in the recipe
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -265,6 +285,9 @@ public final class SecurityRecipeArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param securityPolicies (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

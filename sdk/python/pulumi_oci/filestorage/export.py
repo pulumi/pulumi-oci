@@ -25,7 +25,23 @@ class ExportArgs:
         :param pulumi.Input[str] export_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
         :param pulumi.Input[str] file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
         :param pulumi.Input[str] path: Path used to access the associated file system.
+               
+               Avoid entering confidential information.
+               
+               Example: `/mediafiles`
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['ExportExportOptionArgs']]] export_options: (Updatable) Export options for the new export. If left unspecified, defaults to:
+               
+               []
+               
+               **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
+               
+               **If set to the empty array then the export will not be visible to any clients.**
+               
+               The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
         """
         pulumi.set(__self__, "export_set_id", export_set_id)
         pulumi.set(__self__, "file_system_id", file_system_id)
@@ -62,6 +78,14 @@ class ExportArgs:
     def path(self) -> pulumi.Input[str]:
         """
         Path used to access the associated file system.
+
+        Avoid entering confidential information.
+
+        Example: `/mediafiles`
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "path")
 
@@ -74,6 +98,14 @@ class ExportArgs:
     def export_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExportExportOptionArgs']]]]:
         """
         (Updatable) Export options for the new export. If left unspecified, defaults to:
+
+        []
+
+        **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
+
+        **If set to the empty array then the export will not be visible to any clients.**
+
+        The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
         """
         return pulumi.get(self, "export_options")
 
@@ -94,9 +126,25 @@ class _ExportState:
         """
         Input properties used for looking up and filtering Export resources.
         :param pulumi.Input[Sequence[pulumi.Input['ExportExportOptionArgs']]] export_options: (Updatable) Export options for the new export. If left unspecified, defaults to:
+               
+               []
+               
+               **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
+               
+               **If set to the empty array then the export will not be visible to any clients.**
+               
+               The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
         :param pulumi.Input[str] export_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
         :param pulumi.Input[str] file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
         :param pulumi.Input[str] path: Path used to access the associated file system.
+               
+               Avoid entering confidential information.
+               
+               Example: `/mediafiles`
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of this export.
         :param pulumi.Input[str] time_created: The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -118,6 +166,14 @@ class _ExportState:
     def export_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExportExportOptionArgs']]]]:
         """
         (Updatable) Export options for the new export. If left unspecified, defaults to:
+
+        []
+
+        **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
+
+        **If set to the empty array then the export will not be visible to any clients.**
+
+        The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
         """
         return pulumi.get(self, "export_options")
 
@@ -154,6 +210,14 @@ class _ExportState:
     def path(self) -> Optional[pulumi.Input[str]]:
         """
         Path used to access the associated file system.
+
+        Avoid entering confidential information.
+
+        Example: `/mediafiles`
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "path")
 
@@ -233,9 +297,25 @@ class Export(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExportExportOptionArgs']]]] export_options: (Updatable) Export options for the new export. If left unspecified, defaults to:
+               
+               []
+               
+               **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
+               
+               **If set to the empty array then the export will not be visible to any clients.**
+               
+               The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
         :param pulumi.Input[str] export_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
         :param pulumi.Input[str] file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
         :param pulumi.Input[str] path: Path used to access the associated file system.
+               
+               Avoid entering confidential information.
+               
+               Example: `/mediafiles`
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -341,9 +421,25 @@ class Export(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExportExportOptionArgs']]]] export_options: (Updatable) Export options for the new export. If left unspecified, defaults to:
+               
+               []
+               
+               **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
+               
+               **If set to the empty array then the export will not be visible to any clients.**
+               
+               The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
         :param pulumi.Input[str] export_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
         :param pulumi.Input[str] file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
         :param pulumi.Input[str] path: Path used to access the associated file system.
+               
+               Avoid entering confidential information.
+               
+               Example: `/mediafiles`
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of this export.
         :param pulumi.Input[str] time_created: The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -364,6 +460,14 @@ class Export(pulumi.CustomResource):
     def export_options(self) -> pulumi.Output[Sequence['outputs.ExportExportOption']]:
         """
         (Updatable) Export options for the new export. If left unspecified, defaults to:
+
+        []
+
+        **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
+
+        **If set to the empty array then the export will not be visible to any clients.**
+
+        The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
         """
         return pulumi.get(self, "export_options")
 
@@ -388,6 +492,14 @@ class Export(pulumi.CustomResource):
     def path(self) -> pulumi.Output[str]:
         """
         Path used to access the associated file system.
+
+        Avoid entering confidential information.
+
+        Example: `/mediafiles`
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "path")
 

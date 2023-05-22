@@ -98,12 +98,16 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
     /**
      * (Updatable) The data to create the instance pools in the cluster network.
      * 
+     * Each cluster network can have one instance pool.
+     * 
      */
     @Import(name="instancePools")
     private @Nullable Output<List<ClusterNetworkInstancePoolArgs>> instancePools;
 
     /**
      * @return (Updatable) The data to create the instance pools in the cluster network.
+     * 
+     * Each cluster network can have one instance pool.
      * 
      */
     public Optional<Output<List<ClusterNetworkInstancePoolArgs>>> instancePools() {
@@ -327,6 +331,8 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
         /**
          * @param instancePools (Updatable) The data to create the instance pools in the cluster network.
          * 
+         * Each cluster network can have one instance pool.
+         * 
          * @return builder
          * 
          */
@@ -338,6 +344,8 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
         /**
          * @param instancePools (Updatable) The data to create the instance pools in the cluster network.
          * 
+         * Each cluster network can have one instance pool.
+         * 
          * @return builder
          * 
          */
@@ -347,6 +355,8 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param instancePools (Updatable) The data to create the instance pools in the cluster network.
+         * 
+         * Each cluster network can have one instance pool.
          * 
          * @return builder
          * 

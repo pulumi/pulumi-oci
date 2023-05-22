@@ -117,6 +117,9 @@ type PipelineRun struct {
 	// Array of StepRun object for each step.
 	StepRuns PipelineRunStepRunArrayOutput `pulumi:"stepRuns"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeAccepted pulumi.StringOutput `pulumi:"timeAccepted"`
@@ -198,6 +201,9 @@ type pipelineRunState struct {
 	// Array of StepRun object for each step.
 	StepRuns []PipelineRunStepRun `pulumi:"stepRuns"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeAccepted *string `pulumi:"timeAccepted"`
@@ -242,6 +248,9 @@ type PipelineRunState struct {
 	// Array of StepRun object for each step.
 	StepRuns PipelineRunStepRunArrayInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags pulumi.MapInput
 	// The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeAccepted pulumi.StringPtrInput
@@ -278,6 +287,9 @@ type pipelineRunArgs struct {
 	// Array of step override details. Only Step Configuration is allowed to be overridden.
 	StepOverrideDetails []PipelineRunStepOverrideDetail `pulumi:"stepOverrideDetails"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 }
 
@@ -303,6 +315,9 @@ type PipelineRunArgs struct {
 	// Array of step override details. Only Step Configuration is allowed to be overridden.
 	StepOverrideDetails PipelineRunStepOverrideDetailArrayInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags pulumi.MapInput
 }
 
@@ -477,6 +492,9 @@ func (o PipelineRunOutput) StepRuns() PipelineRunStepRunArrayOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PipelineRunOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *PipelineRun) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }

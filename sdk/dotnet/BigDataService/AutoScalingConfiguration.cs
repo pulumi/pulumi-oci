@@ -123,6 +123,16 @@ namespace Pulumi.Oci.BigDataService
 
         /// <summary>
         /// (Updatable) Policy definition for the autoscale configuration.
+        /// 
+        /// An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
+        /// 
+        /// You can create following type of autoscaling policies:
+        /// * **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
+        /// * **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
+        /// * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
+        /// * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
+        /// 
+        /// An autoscaling configuration can have one of above supported policies.
         /// </summary>
         [Output("policyDetails")]
         public Output<Outputs.AutoScalingConfigurationPolicyDetails> PolicyDetails { get; private set; } = null!;
@@ -243,6 +253,16 @@ namespace Pulumi.Oci.BigDataService
 
         /// <summary>
         /// (Updatable) Policy definition for the autoscale configuration.
+        /// 
+        /// An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
+        /// 
+        /// You can create following type of autoscaling policies:
+        /// * **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
+        /// * **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
+        /// * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
+        /// * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
+        /// 
+        /// An autoscaling configuration can have one of above supported policies.
         /// </summary>
         [Input("policyDetails")]
         public Input<Inputs.AutoScalingConfigurationPolicyDetailsArgs>? PolicyDetails { get; set; }
@@ -303,6 +323,16 @@ namespace Pulumi.Oci.BigDataService
 
         /// <summary>
         /// (Updatable) Policy definition for the autoscale configuration.
+        /// 
+        /// An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
+        /// 
+        /// You can create following type of autoscaling policies:
+        /// * **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
+        /// * **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
+        /// * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
+        /// * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
+        /// 
+        /// An autoscaling configuration can have one of above supported policies.
         /// </summary>
         [Input("policyDetails")]
         public Input<Inputs.AutoScalingConfigurationPolicyDetailsGetArgs>? PolicyDetails { get; set; }

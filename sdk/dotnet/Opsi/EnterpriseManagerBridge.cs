@@ -92,6 +92,10 @@ namespace Pulumi.Oci.Opsi
 
         /// <summary>
         /// Object Storage Bucket Name
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("objectStorageBucketName")]
         public Output<string> ObjectStorageBucketName { get; private set; } = null!;
@@ -222,6 +226,10 @@ namespace Pulumi.Oci.Opsi
 
         /// <summary>
         /// Object Storage Bucket Name
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("objectStorageBucketName", required: true)]
         public Input<string> ObjectStorageBucketName { get; set; } = null!;
@@ -284,6 +292,10 @@ namespace Pulumi.Oci.Opsi
 
         /// <summary>
         /// Object Storage Bucket Name
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("objectStorageBucketName")]
         public Input<string>? ObjectStorageBucketName { get; set; }

@@ -216,12 +216,18 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The License type of Domain
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="licenseType", required=true)
     private Output<String> licenseType;
 
     /**
      * @return The License type of Domain
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> licenseType() {
@@ -557,6 +563,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param licenseType The License type of Domain
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -567,6 +576,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param licenseType The License type of Domain
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

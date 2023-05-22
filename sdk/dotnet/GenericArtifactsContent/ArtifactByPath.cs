@@ -58,6 +58,10 @@ namespace Pulumi.Oci.GenericArtifactsContent
 
         /// <summary>
         /// Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("content")]
         public Output<string?> Content { get; private set; } = null!;
@@ -176,6 +180,10 @@ namespace Pulumi.Oci.GenericArtifactsContent
 
         /// <summary>
         /// Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("content")]
         public Input<string>? Content { get; set; }
@@ -223,6 +231,10 @@ namespace Pulumi.Oci.GenericArtifactsContent
 
         /// <summary>
         /// Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("content")]
         public Input<string>? Content { get; set; }

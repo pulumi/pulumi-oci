@@ -15,6 +15,8 @@ namespace Pulumi.Oci.Mysql.Outputs
     {
         /// <summary>
         /// (Updatable) The type of the filter rule.
+        /// 
+        /// For details on each type, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html)
         /// </summary>
         public readonly string Type;
         /// <summary>

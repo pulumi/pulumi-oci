@@ -25,6 +25,9 @@ public final class ScriptParameterScriptParameter {
     /**
      * @return (Updatable) Value of the parameter.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private @Nullable String paramValue;
 
@@ -45,6 +48,9 @@ public final class ScriptParameterScriptParameter {
     }
     /**
      * @return (Updatable) Value of the parameter.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> paramValue() {

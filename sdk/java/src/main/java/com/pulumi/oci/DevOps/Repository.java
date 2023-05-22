@@ -278,12 +278,18 @@ public class Repository extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="repositoryType", type=String.class, parameters={})
     private Output<String> repositoryType;
 
     /**
      * @return (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> repositoryType() {

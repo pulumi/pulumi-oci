@@ -202,12 +202,18 @@ public class Agent extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) ODMS Agent version
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="version", type=String.class, parameters={})
     private Output<String> version;
 
     /**
      * @return (Updatable) ODMS Agent version
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> version() {

@@ -113,6 +113,8 @@ type Sddc struct {
 	// (Updatable) A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
+	//
+	// **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
 	EsxiHostsCount pulumi.IntOutput `pulumi:"esxiHostsCount"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
@@ -137,6 +139,8 @@ type Sddc struct {
 	// The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	InitialSku pulumi.StringOutput `pulumi:"initialSku"`
 	// A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
+	//
+	// For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
 	InstanceDisplayNamePrefix pulumi.StringOutput `pulumi:"instanceDisplayNamePrefix"`
 	// For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
 	IsHcxEnabled pulumi.BoolOutput `pulumi:"isHcxEnabled"`
@@ -151,6 +155,8 @@ type Sddc struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
 	NsxEdgeUplink1vlanId pulumi.StringOutput `pulumi:"nsxEdgeUplink1vlanId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
+	//
+	// **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
 	NsxEdgeUplink2vlanId pulumi.StringOutput `pulumi:"nsxEdgeUplink2vlanId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
 	NsxEdgeUplinkIpId pulumi.StringOutput `pulumi:"nsxEdgeUplinkIpId"`
@@ -213,6 +219,9 @@ type Sddc struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
 	VsphereVlanId pulumi.StringOutput `pulumi:"vsphereVlanId"`
 	// The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WorkloadNetworkCidr pulumi.StringOutput `pulumi:"workloadNetworkCidr"`
 }
 
@@ -299,6 +308,8 @@ type sddcState struct {
 	// (Updatable) A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
+	//
+	// **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
 	EsxiHostsCount *int `pulumi:"esxiHostsCount"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -323,6 +334,8 @@ type sddcState struct {
 	// The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	InitialSku *string `pulumi:"initialSku"`
 	// A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
+	//
+	// For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
 	InstanceDisplayNamePrefix *string `pulumi:"instanceDisplayNamePrefix"`
 	// For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
 	IsHcxEnabled *bool `pulumi:"isHcxEnabled"`
@@ -337,6 +350,8 @@ type sddcState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
 	NsxEdgeUplink1vlanId *string `pulumi:"nsxEdgeUplink1vlanId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
+	//
+	// **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
 	NsxEdgeUplink2vlanId *string `pulumi:"nsxEdgeUplink2vlanId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
 	NsxEdgeUplinkIpId *string `pulumi:"nsxEdgeUplinkIpId"`
@@ -399,6 +414,9 @@ type sddcState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
 	VsphereVlanId *string `pulumi:"vsphereVlanId"`
 	// The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WorkloadNetworkCidr *string `pulumi:"workloadNetworkCidr"`
 }
 
@@ -418,6 +436,8 @@ type SddcState struct {
 	// (Updatable) A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
+	//
+	// **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
 	EsxiHostsCount pulumi.IntPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
@@ -442,6 +462,8 @@ type SddcState struct {
 	// The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	InitialSku pulumi.StringPtrInput
 	// A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
+	//
+	// For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
 	InstanceDisplayNamePrefix pulumi.StringPtrInput
 	// For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
 	IsHcxEnabled pulumi.BoolPtrInput
@@ -456,6 +478,8 @@ type SddcState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
 	NsxEdgeUplink1vlanId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
+	//
+	// **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
 	NsxEdgeUplink2vlanId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
 	NsxEdgeUplinkIpId pulumi.StringPtrInput
@@ -518,6 +542,9 @@ type SddcState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
 	VsphereVlanId pulumi.StringPtrInput
 	// The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WorkloadNetworkCidr pulumi.StringPtrInput
 }
 
@@ -539,6 +566,8 @@ type sddcArgs struct {
 	// (Updatable) A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
+	//
+	// **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
 	EsxiHostsCount int `pulumi:"esxiHostsCount"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -553,6 +582,8 @@ type sddcArgs struct {
 	// The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	InitialSku *string `pulumi:"initialSku"`
 	// A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
+	//
+	// For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
 	InstanceDisplayNamePrefix *string `pulumi:"instanceDisplayNamePrefix"`
 	// For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
 	IsHcxEnabled *bool `pulumi:"isHcxEnabled"`
@@ -563,6 +594,8 @@ type sddcArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
 	NsxEdgeUplink1vlanId string `pulumi:"nsxEdgeUplink1vlanId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
+	//
+	// **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
 	NsxEdgeUplink2vlanId string `pulumi:"nsxEdgeUplink2vlanId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
 	NsxEdgeVtepVlanId string `pulumi:"nsxEdgeVtepVlanId"`
@@ -589,6 +622,9 @@ type sddcArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
 	VsphereVlanId string `pulumi:"vsphereVlanId"`
 	// The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WorkloadNetworkCidr *string `pulumi:"workloadNetworkCidr"`
 }
 
@@ -607,6 +643,8 @@ type SddcArgs struct {
 	// (Updatable) A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
+	//
+	// **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
 	EsxiHostsCount pulumi.IntInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
@@ -621,6 +659,8 @@ type SddcArgs struct {
 	// The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	InitialSku pulumi.StringPtrInput
 	// A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
+	//
+	// For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
 	InstanceDisplayNamePrefix pulumi.StringPtrInput
 	// For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
 	IsHcxEnabled pulumi.BoolPtrInput
@@ -631,6 +671,8 @@ type SddcArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
 	NsxEdgeUplink1vlanId pulumi.StringInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
+	//
+	// **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
 	NsxEdgeUplink2vlanId pulumi.StringInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
 	NsxEdgeVtepVlanId pulumi.StringInput
@@ -657,6 +699,9 @@ type SddcArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
 	VsphereVlanId pulumi.StringInput
 	// The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WorkloadNetworkCidr pulumi.StringPtrInput
 }
 
@@ -783,6 +828,8 @@ func (o SddcOutput) DisplayName() pulumi.StringOutput {
 }
 
 // The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
+//
+// **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
 func (o SddcOutput) EsxiHostsCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *Sddc) pulumi.IntOutput { return v.EsxiHostsCount }).(pulumi.IntOutput)
 }
@@ -843,6 +890,8 @@ func (o SddcOutput) InitialSku() pulumi.StringOutput {
 }
 
 // A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
+//
+// For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
 func (o SddcOutput) InstanceDisplayNamePrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sddc) pulumi.StringOutput { return v.InstanceDisplayNamePrefix }).(pulumi.StringOutput)
 }
@@ -878,6 +927,8 @@ func (o SddcOutput) NsxEdgeUplink1vlanId() pulumi.StringOutput {
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment.
+//
+// **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
 func (o SddcOutput) NsxEdgeUplink2vlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sddc) pulumi.StringOutput { return v.NsxEdgeUplink2vlanId }).(pulumi.StringOutput)
 }
@@ -1033,6 +1084,9 @@ func (o SddcOutput) VsphereVlanId() pulumi.StringOutput {
 }
 
 // The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o SddcOutput) WorkloadNetworkCidr() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sddc) pulumi.StringOutput { return v.WorkloadNetworkCidr }).(pulumi.StringOutput)
 }

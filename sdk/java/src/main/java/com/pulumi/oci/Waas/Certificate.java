@@ -75,12 +75,20 @@ public class Certificate extends com.pulumi.resources.CustomResource {
     /**
      * The data of the SSL certificate.
      * 
+     * **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status. If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you are unsure if your certificate requires an intermediate certificate chain, see your certificate provider&#39;s documentation.
+     * 
+     * The example below shows an intermediate certificate appended to a leaf certificate.
+     * 
      */
     @Export(name="certificateData", type=String.class, parameters={})
     private Output<String> certificateData;
 
     /**
      * @return The data of the SSL certificate.
+     * 
+     * **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status. If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you are unsure if your certificate requires an intermediate certificate chain, see your certificate provider&#39;s documentation.
+     * 
+     * The example below shows an intermediate certificate appended to a leaf certificate.
      * 
      */
     public Output<String> certificateData() {
@@ -193,12 +201,18 @@ public class Certificate extends com.pulumi.resources.CustomResource {
     /**
      * The private key of the SSL certificate.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="privateKeyData", type=String.class, parameters={})
     private Output<String> privateKeyData;
 
     /**
      * @return The private key of the SSL certificate.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> privateKeyData() {

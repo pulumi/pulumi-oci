@@ -20,6 +20,10 @@ type BackendSetBackend struct {
 	// Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline *bool `pulumi:"isOffline"`
 	// A user-friendly name for the backend set that must be unique and cannot be changed.
+	//
+	// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+	//
+	// Example: `exampleBackendSet`
 	Name *string `pulumi:"name"`
 	// (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
 	Port int `pulumi:"port"`
@@ -50,6 +54,10 @@ type BackendSetBackendArgs struct {
 	// Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline pulumi.BoolPtrInput `pulumi:"isOffline"`
 	// A user-friendly name for the backend set that must be unique and cannot be changed.
+	//
+	// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+	//
+	// Example: `exampleBackendSet`
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
 	Port pulumi.IntInput `pulumi:"port"`
@@ -131,6 +139,10 @@ func (o BackendSetBackendOutput) IsOffline() pulumi.BoolPtrOutput {
 }
 
 // A user-friendly name for the backend set that must be unique and cannot be changed.
+//
+// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+//
+// Example: `exampleBackendSet`
 func (o BackendSetBackendOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BackendSetBackend) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -604,6 +616,14 @@ func (o NetworkLoadBalancerIpAddressArrayOutput) Index(i pulumi.IntInput) Networ
 
 type NetworkLoadBalancerIpAddressReservedIp struct {
 	// OCID of the reserved public IP address created with the virtual cloud network.
+	//
+	// Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+	//
+	// Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+	//
+	// Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+	//
+	// Example: "ocid1.publicip.oc1.phx.unique_ID"
 	Id *string `pulumi:"id"`
 }
 
@@ -620,6 +640,14 @@ type NetworkLoadBalancerIpAddressReservedIpInput interface {
 
 type NetworkLoadBalancerIpAddressReservedIpArgs struct {
 	// OCID of the reserved public IP address created with the virtual cloud network.
+	//
+	// Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+	//
+	// Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+	//
+	// Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+	//
+	// Example: "ocid1.publicip.oc1.phx.unique_ID"
 	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
@@ -675,6 +703,14 @@ func (o NetworkLoadBalancerIpAddressReservedIpOutput) ToNetworkLoadBalancerIpAdd
 }
 
 // OCID of the reserved public IP address created with the virtual cloud network.
+//
+// Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+//
+// Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+//
+// Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+//
+// Example: "ocid1.publicip.oc1.phx.unique_ID"
 func (o NetworkLoadBalancerIpAddressReservedIpOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkLoadBalancerIpAddressReservedIp) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -701,6 +737,14 @@ func (o NetworkLoadBalancerIpAddressReservedIpArrayOutput) Index(i pulumi.IntInp
 
 type NetworkLoadBalancerReservedIp struct {
 	// OCID of the reserved public IP address created with the virtual cloud network.
+	//
+	// Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+	//
+	// Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+	//
+	// Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+	//
+	// Example: "ocid1.publicip.oc1.phx.unique_ID"
 	Id *string `pulumi:"id"`
 }
 
@@ -717,6 +761,14 @@ type NetworkLoadBalancerReservedIpInput interface {
 
 type NetworkLoadBalancerReservedIpArgs struct {
 	// OCID of the reserved public IP address created with the virtual cloud network.
+	//
+	// Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+	//
+	// Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+	//
+	// Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+	//
+	// Example: "ocid1.publicip.oc1.phx.unique_ID"
 	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
@@ -772,6 +824,14 @@ func (o NetworkLoadBalancerReservedIpOutput) ToNetworkLoadBalancerReservedIpOutp
 }
 
 // OCID of the reserved public IP address created with the virtual cloud network.
+//
+// Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+//
+// Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+//
+// Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+//
+// Example: "ocid1.publicip.oc1.phx.unique_ID"
 func (o NetworkLoadBalancerReservedIpOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkLoadBalancerReservedIp) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -806,6 +866,10 @@ type NetworkLoadBalancersBackendSetsUnifiedBackend struct {
 	// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline *bool `pulumi:"isOffline"`
 	// A user-friendly name for the backend set that must be unique and cannot be changed.
+	//
+	// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+	//
+	// Example: `exampleBackendSet`
 	Name *string `pulumi:"name"`
 	// (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
 	Port int `pulumi:"port"`
@@ -836,6 +900,10 @@ type NetworkLoadBalancersBackendSetsUnifiedBackendArgs struct {
 	// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline pulumi.BoolPtrInput `pulumi:"isOffline"`
 	// A user-friendly name for the backend set that must be unique and cannot be changed.
+	//
+	// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+	//
+	// Example: `exampleBackendSet`
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
 	Port pulumi.IntInput `pulumi:"port"`
@@ -917,6 +985,10 @@ func (o NetworkLoadBalancersBackendSetsUnifiedBackendOutput) IsOffline() pulumi.
 }
 
 // A user-friendly name for the backend set that must be unique and cannot be changed.
+//
+// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+//
+// Example: `exampleBackendSet`
 func (o NetworkLoadBalancersBackendSetsUnifiedBackendOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedBackend) *string { return v.Name }).(pulumi.StringPtrOutput)
 }

@@ -18,12 +18,30 @@ public final class DomainsIdentityProviderJitUserProvGroupMappingArgs extends co
     /**
      * (Updatable) IDP Group Name
      * 
+     * **Added In:** 2205120021
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * type: string
+     * 
      */
     @Import(name="idpGroup", required=true)
     private Output<String> idpGroup;
 
     /**
      * @return (Updatable) IDP Group Name
+     * 
+     * **Added In:** 2205120021
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * type: string
      * 
      */
     public Output<String> idpGroup() {
@@ -33,12 +51,30 @@ public final class DomainsIdentityProviderJitUserProvGroupMappingArgs extends co
     /**
      * (Updatable) Group URI
      * 
+     * **Added In:** 2205120021
+     * 
+     * **SCIM++ Properties:**
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: reference
+     * 
      */
     @Import(name="ref")
     private @Nullable Output<String> ref;
 
     /**
      * @return (Updatable) Group URI
+     * 
+     * **Added In:** 2205120021
+     * 
+     * **SCIM++ Properties:**
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
+     * * type: reference
      * 
      */
     public Optional<Output<String>> ref() {
@@ -48,12 +84,32 @@ public final class DomainsIdentityProviderJitUserProvGroupMappingArgs extends co
     /**
      * (Updatable) Value of the tag.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
      * @return (Updatable) Value of the tag.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> value() {
@@ -89,6 +145,15 @@ public final class DomainsIdentityProviderJitUserProvGroupMappingArgs extends co
         /**
          * @param idpGroup (Updatable) IDP Group Name
          * 
+         * **Added In:** 2205120021
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * type: string
+         * 
          * @return builder
          * 
          */
@@ -100,6 +165,15 @@ public final class DomainsIdentityProviderJitUserProvGroupMappingArgs extends co
         /**
          * @param idpGroup (Updatable) IDP Group Name
          * 
+         * **Added In:** 2205120021
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * type: string
+         * 
          * @return builder
          * 
          */
@@ -109,6 +183,15 @@ public final class DomainsIdentityProviderJitUserProvGroupMappingArgs extends co
 
         /**
          * @param ref (Updatable) Group URI
+         * 
+         * **Added In:** 2205120021
+         * 
+         * **SCIM++ Properties:**
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: reference
          * 
          * @return builder
          * 
@@ -121,6 +204,15 @@ public final class DomainsIdentityProviderJitUserProvGroupMappingArgs extends co
         /**
          * @param ref (Updatable) Group URI
          * 
+         * **Added In:** 2205120021
+         * 
+         * **SCIM++ Properties:**
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: reference
+         * 
          * @return builder
          * 
          */
@@ -130,6 +222,16 @@ public final class DomainsIdentityProviderJitUserProvGroupMappingArgs extends co
 
         /**
          * @param value (Updatable) Value of the tag.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -141,6 +243,16 @@ public final class DomainsIdentityProviderJitUserProvGroupMappingArgs extends co
 
         /**
          * @param value (Updatable) Value of the tag.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 

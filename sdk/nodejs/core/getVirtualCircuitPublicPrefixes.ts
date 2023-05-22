@@ -41,6 +41,8 @@ export interface GetVirtualCircuitPublicPrefixesArgs {
     filters?: inputs.Core.GetVirtualCircuitPublicPrefixesFilter[];
     /**
      * A filter to only return resources that match the given verification state.
+     *
+     * The state value is case-insensitive.
      */
     verificationState?: string;
     /**
@@ -97,6 +99,8 @@ export interface GetVirtualCircuitPublicPrefixesOutputArgs {
     filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVirtualCircuitPublicPrefixesFilterArgs>[]>;
     /**
      * A filter to only return resources that match the given verification state.
+     *
+     * The state value is case-insensitive.
      */
     verificationState?: pulumi.Input<string>;
     /**

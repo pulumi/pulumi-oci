@@ -66,6 +66,9 @@ type AnnouncementSubscriptionsFilterGroup struct {
 	// (Updatable) A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
 	Filters AnnouncementSubscriptionsFilterGroupFilterArrayOutput `pulumi:"filters"`
 	// The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringOutput `pulumi:"name"`
 }
 
@@ -109,6 +112,9 @@ type announcementSubscriptionsFilterGroupState struct {
 	// (Updatable) A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
 	Filters []AnnouncementSubscriptionsFilterGroupFilter `pulumi:"filters"`
 	// The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 }
 
@@ -118,6 +124,9 @@ type AnnouncementSubscriptionsFilterGroupState struct {
 	// (Updatable) A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
 	Filters AnnouncementSubscriptionsFilterGroupFilterArrayInput
 	// The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput
 }
 
@@ -131,6 +140,9 @@ type announcementSubscriptionsFilterGroupArgs struct {
 	// (Updatable) A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
 	Filters []AnnouncementSubscriptionsFilterGroupFilter `pulumi:"filters"`
 	// The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 }
 
@@ -141,6 +153,9 @@ type AnnouncementSubscriptionsFilterGroupArgs struct {
 	// (Updatable) A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
 	Filters AnnouncementSubscriptionsFilterGroupFilterArrayInput
 	// The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput
 }
 
@@ -244,6 +259,9 @@ func (o AnnouncementSubscriptionsFilterGroupOutput) Filters() AnnouncementSubscr
 }
 
 // The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AnnouncementSubscriptionsFilterGroupOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *AnnouncementSubscriptionsFilterGroup) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

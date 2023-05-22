@@ -55,6 +55,10 @@ namespace Pulumi.Oci.Waas
     {
         /// <summary>
         /// The data of the SSL certificate.
+        /// 
+        /// **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status. If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you are unsure if your certificate requires an intermediate certificate chain, see your certificate provider's documentation.
+        /// 
+        /// The example below shows an intermediate certificate appended to a leaf certificate.
         /// </summary>
         [Output("certificateData")]
         public Output<string> CertificateData { get; private set; } = null!;
@@ -106,6 +110,10 @@ namespace Pulumi.Oci.Waas
 
         /// <summary>
         /// The private key of the SSL certificate.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("privateKeyData")]
         public Output<string> PrivateKeyData { get; private set; } = null!;
@@ -216,6 +224,10 @@ namespace Pulumi.Oci.Waas
     {
         /// <summary>
         /// The data of the SSL certificate.
+        /// 
+        /// **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status. If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you are unsure if your certificate requires an intermediate certificate chain, see your certificate provider's documentation.
+        /// 
+        /// The example below shows an intermediate certificate appended to a leaf certificate.
         /// </summary>
         [Input("certificateData", required: true)]
         public Input<string> CertificateData { get; set; } = null!;
@@ -267,6 +279,10 @@ namespace Pulumi.Oci.Waas
 
         /// <summary>
         /// The private key of the SSL certificate.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public Input<string>? PrivateKeyData
         {
@@ -288,6 +304,10 @@ namespace Pulumi.Oci.Waas
     {
         /// <summary>
         /// The data of the SSL certificate.
+        /// 
+        /// **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status. If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you are unsure if your certificate requires an intermediate certificate chain, see your certificate provider's documentation.
+        /// 
+        /// The example below shows an intermediate certificate appended to a leaf certificate.
         /// </summary>
         [Input("certificateData")]
         public Input<string>? CertificateData { get; set; }
@@ -366,6 +386,10 @@ namespace Pulumi.Oci.Waas
 
         /// <summary>
         /// The private key of the SSL certificate.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public Input<string>? PrivateKeyData
         {

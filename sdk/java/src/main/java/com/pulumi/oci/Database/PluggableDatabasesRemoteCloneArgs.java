@@ -109,12 +109,18 @@ public final class PluggableDatabasesRemoteCloneArgs extends com.pulumi.resource
     /**
      * The existing TDE wallet password of the target CDB.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="targetTdeWalletPassword")
     private @Nullable Output<String> targetTdeWalletPassword;
 
     /**
      * @return The existing TDE wallet password of the target CDB.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> targetTdeWalletPassword() {
@@ -280,6 +286,9 @@ public final class PluggableDatabasesRemoteCloneArgs extends com.pulumi.resource
         /**
          * @param targetTdeWalletPassword The existing TDE wallet password of the target CDB.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -290,6 +299,9 @@ public final class PluggableDatabasesRemoteCloneArgs extends com.pulumi.resource
 
         /**
          * @param targetTdeWalletPassword The existing TDE wallet password of the target CDB.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -19,12 +19,30 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
     /**
      * (Updatable) A list of kerberos realm users for an Oracle Cloud Infrastructure IAM User
      * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="realmUsers")
     private @Nullable Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs>> realmUsers;
 
     /**
      * @return (Updatable) A list of kerberos realm users for an Oracle Cloud Infrastructure IAM User
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs>>> realmUsers() {
@@ -58,6 +76,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
         /**
          * @param realmUsers (Updatable) A list of kerberos realm users for an Oracle Cloud Infrastructure IAM User
          * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -69,6 +96,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
         /**
          * @param realmUsers (Updatable) A list of kerberos realm users for an Oracle Cloud Infrastructure IAM User
          * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -78,6 +114,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
 
         /**
          * @param realmUsers (Updatable) A list of kerberos realm users for an Oracle Cloud Infrastructure IAM User
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 

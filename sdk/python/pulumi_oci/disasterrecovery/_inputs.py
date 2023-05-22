@@ -521,7 +521,11 @@ class DrPlanPlanGroupArgs:
         :param pulumi.Input[str] display_name: (Updatable) The display name of the DR Plan being created.  Example: `EBS Switchover PHX to IAD`
         :param pulumi.Input[str] id: The unique id of this step. Must not be modified by the user.  Example: `sgid1.step..examplestepsgid`
         :param pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepArgs']]] steps: The list of steps in this plan group.
-        :param pulumi.Input[str] type: The type of DR Plan to be created.
+        :param pulumi.Input[str] type: The type of DR Plan to be created. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
@@ -572,7 +576,11 @@ class DrPlanPlanGroupArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        The type of DR Plan to be created.
+        The type of DR Plan to be created. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -601,7 +609,11 @@ class DrPlanPlanGroupStepArgs:
         :param pulumi.Input[bool] is_enabled: A flag indicating whether this step should be enabled for execution.  Example: `true`
         :param pulumi.Input[str] member_id: The OCID of the member associated with this step.  Example: `ocid1.database.oc1.phx.exampleocid1`
         :param pulumi.Input[int] timeout: The timeout in seconds for executing this step.  Example: `600`
-        :param pulumi.Input[str] type: The type of DR Plan to be created.
+        :param pulumi.Input[str] type: The type of DR Plan to be created. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepArgs']]] user_defined_steps: The details for a user-defined step in a DR Plan.
         """
         if display_name is not None:
@@ -711,7 +723,11 @@ class DrPlanPlanGroupStepArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        The type of DR Plan to be created.
+        The type of DR Plan to be created. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 

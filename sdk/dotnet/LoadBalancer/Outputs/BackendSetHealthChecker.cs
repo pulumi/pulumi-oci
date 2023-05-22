@@ -19,6 +19,12 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         public readonly int? IntervalMs;
         /// <summary>
         /// (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+        /// 
+        /// If "true", health checks will be done using plain text even if the associated backend set is configured to use SSL.
+        /// 
+        /// If "false", health checks will be done using SSL encryption if the associated backend set is configured to use SSL. If the backend set is not so configured the health checks will be done using plain text.
+        /// 
+        /// Example: `false`
         /// </summary>
         public readonly bool? IsForcePlainText;
         /// <summary>

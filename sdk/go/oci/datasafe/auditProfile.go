@@ -34,6 +34,9 @@ type AuditProfile struct {
 	// Indicates the list of available audit trails on the target.
 	AuditTrails AuditProfileAuditTrailArrayOutput `pulumi:"auditTrails"`
 	// (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ChangeRetentionTrigger pulumi.IntPtrOutput `pulumi:"changeRetentionTrigger"`
 	// (Updatable) The OCID of the compartment that contains the audit.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
@@ -106,6 +109,9 @@ type auditProfileState struct {
 	// Indicates the list of available audit trails on the target.
 	AuditTrails []AuditProfileAuditTrail `pulumi:"auditTrails"`
 	// (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ChangeRetentionTrigger *int `pulumi:"changeRetentionTrigger"`
 	// (Updatable) The OCID of the compartment that contains the audit.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -147,6 +153,9 @@ type AuditProfileState struct {
 	// Indicates the list of available audit trails on the target.
 	AuditTrails AuditProfileAuditTrailArrayInput
 	// (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ChangeRetentionTrigger pulumi.IntPtrInput
 	// (Updatable) The OCID of the compartment that contains the audit.
 	CompartmentId pulumi.StringPtrInput
@@ -188,6 +197,9 @@ type auditProfileArgs struct {
 	// The OCID of the audit.
 	AuditProfileId string `pulumi:"auditProfileId"`
 	// (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ChangeRetentionTrigger *int `pulumi:"changeRetentionTrigger"`
 	// (Updatable) The OCID of the compartment that contains the audit.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -208,6 +220,9 @@ type AuditProfileArgs struct {
 	// The OCID of the audit.
 	AuditProfileId pulumi.StringInput
 	// (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ChangeRetentionTrigger pulumi.IntPtrInput
 	// (Updatable) The OCID of the compartment that contains the audit.
 	CompartmentId pulumi.StringPtrInput
@@ -326,6 +341,9 @@ func (o AuditProfileOutput) AuditTrails() AuditProfileAuditTrailArrayOutput {
 }
 
 // (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AuditProfileOutput) ChangeRetentionTrigger() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AuditProfile) pulumi.IntPtrOutput { return v.ChangeRetentionTrigger }).(pulumi.IntPtrOutput)
 }

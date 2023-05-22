@@ -23,12 +23,24 @@ namespace Pulumi.Oci.Core.Inputs
 
         /// <summary>
         /// If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this ASN is required and used for the tunnel's BGP session. This is the ASN of the network on the CPE end of the BGP session. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.
+        /// 
+        /// If the tunnel's `routing` attribute is set to `STATIC`, the `customerBgpAsn` must be null.
+        /// 
+        /// Example: `12345` (2-byte) or `1587232876` (4-byte)
         /// </summary>
         [Input("customerBgpAsn")]
         public Input<string>? CustomerBgpAsn { get; set; }
 
         /// <summary>
         /// The IP address for the CPE end of the inside tunnel interface.
+        /// 
+        /// If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this IP address is required and used for the tunnel's BGP session.
+        /// 
+        /// If `routing` is instead set to `STATIC`, this IP address is optional. You can set this IP address to troubleshoot or monitor the tunnel.
+        /// 
+        /// The value must be a /30 or /31.
+        /// 
+        /// Example: `10.0.0.5/31`
         /// </summary>
         [Input("customerInterfaceIp")]
         public Input<string>? CustomerInterfaceIp { get; set; }
@@ -41,6 +53,14 @@ namespace Pulumi.Oci.Core.Inputs
 
         /// <summary>
         /// The IP address for the Oracle end of the inside tunnel interface.
+        /// 
+        /// If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this IP address is required and used for the tunnel's BGP session.
+        /// 
+        /// If `routing` is instead set to `STATIC`, this IP address is optional. You can set this IP address to troubleshoot or monitor the tunnel.
+        /// 
+        /// The value must be a /30 or /31.
+        /// 
+        /// Example: `10.0.0.4/31`
         /// </summary>
         [Input("oracleInterfaceIp")]
         public Input<string>? OracleInterfaceIp { get; set; }

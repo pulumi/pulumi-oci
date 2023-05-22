@@ -16,6 +16,8 @@ public final class InstanceShapeConfig {
     /**
      * @return (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
      * 
+     * The following values are supported:
+     * 
      */
     private @Nullable String baselineOcpuUtilization;
     /**
@@ -77,6 +79,8 @@ public final class InstanceShapeConfig {
     private InstanceShapeConfig() {}
     /**
      * @return (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+     * 
+     * The following values are supported:
      * 
      */
     public Optional<String> baselineOcpuUtilization() {

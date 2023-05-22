@@ -115,6 +115,10 @@ export class AnnouncementSubscription extends pulumi.CustomResource {
     public readonly preferredLanguage!: pulumi.Output<string>;
     /**
      * (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly preferredTimeZone!: pulumi.Output<string>;
     /**
@@ -234,6 +238,10 @@ export interface AnnouncementSubscriptionState {
     preferredLanguage?: pulumi.Input<string>;
     /**
      * (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     preferredTimeZone?: pulumi.Input<string>;
     /**
@@ -292,6 +300,10 @@ export interface AnnouncementSubscriptionArgs {
     preferredLanguage?: pulumi.Input<string>;
     /**
      * (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     preferredTimeZone?: pulumi.Input<string>;
 }

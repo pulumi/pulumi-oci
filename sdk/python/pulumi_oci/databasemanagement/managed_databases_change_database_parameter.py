@@ -26,6 +26,12 @@ class ManagedDatabasesChangeDatabaseParameterArgs:
         :param pulumi.Input[str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
         :param pulumi.Input[Sequence[pulumi.Input['ManagedDatabasesChangeDatabaseParameterParameterArgs']]] parameters: A list of database parameters and their values.
         :param pulumi.Input[str] scope: The clause used to specify when the parameter change takes effect.
+               
+               Use `MEMORY` to make the change in memory and affect it immediately. Use `SPFILE` to make the change in the server parameter file. The change takes effect when the database is next shut down and started up again. Use `BOTH` to make the change in memory and in the server parameter file. The change takes effect immediately and persists after the database is shut down and started up again.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "credentials", credentials)
         pulumi.set(__self__, "managed_database_id", managed_database_id)
@@ -73,6 +79,12 @@ class ManagedDatabasesChangeDatabaseParameterArgs:
     def scope(self) -> pulumi.Input[str]:
         """
         The clause used to specify when the parameter change takes effect.
+
+        Use `MEMORY` to make the change in memory and affect it immediately. Use `SPFILE` to make the change in the server parameter file. The change takes effect when the database is next shut down and started up again. Use `BOTH` to make the change in memory and in the server parameter file. The change takes effect immediately and persists after the database is shut down and started up again.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "scope")
 
@@ -94,6 +106,12 @@ class _ManagedDatabasesChangeDatabaseParameterState:
         :param pulumi.Input[str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
         :param pulumi.Input[Sequence[pulumi.Input['ManagedDatabasesChangeDatabaseParameterParameterArgs']]] parameters: A list of database parameters and their values.
         :param pulumi.Input[str] scope: The clause used to specify when the parameter change takes effect.
+               
+               Use `MEMORY` to make the change in memory and affect it immediately. Use `SPFILE` to make the change in the server parameter file. The change takes effect when the database is next shut down and started up again. Use `BOTH` to make the change in memory and in the server parameter file. The change takes effect immediately and persists after the database is shut down and started up again.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if credentials is not None:
             pulumi.set(__self__, "credentials", credentials)
@@ -145,6 +163,12 @@ class _ManagedDatabasesChangeDatabaseParameterState:
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
         The clause used to specify when the parameter change takes effect.
+
+        Use `MEMORY` to make the change in memory and affect it immediately. Use `SPFILE` to make the change in the server parameter file. The change takes effect when the database is next shut down and started up again. Use `BOTH` to make the change in memory and in the server parameter file. The change takes effect immediately and persists after the database is shut down and started up again.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "scope")
 
@@ -212,6 +236,12 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
         :param pulumi.Input[str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedDatabasesChangeDatabaseParameterParameterArgs']]]] parameters: A list of database parameters and their values.
         :param pulumi.Input[str] scope: The clause used to specify when the parameter change takes effect.
+               
+               Use `MEMORY` to make the change in memory and affect it immediately. Use `SPFILE` to make the change in the server parameter file. The change takes effect when the database is next shut down and started up again. Use `BOTH` to make the change in memory and in the server parameter file. The change takes effect immediately and persists after the database is shut down and started up again.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -327,6 +357,12 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
         :param pulumi.Input[str] managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedDatabasesChangeDatabaseParameterParameterArgs']]]] parameters: A list of database parameters and their values.
         :param pulumi.Input[str] scope: The clause used to specify when the parameter change takes effect.
+               
+               Use `MEMORY` to make the change in memory and affect it immediately. Use `SPFILE` to make the change in the server parameter file. The change takes effect when the database is next shut down and started up again. Use `BOTH` to make the change in memory and in the server parameter file. The change takes effect immediately and persists after the database is shut down and started up again.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -367,6 +403,12 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
     def scope(self) -> pulumi.Output[str]:
         """
         The clause used to specify when the parameter change takes effect.
+
+        Use `MEMORY` to make the change in memory and affect it immediately. Use `SPFILE` to make the change in the server parameter file. The change takes effect when the database is next shut down and started up again. Use `BOTH` to make the change in memory and in the server parameter file. The change takes effect immediately and persists after the database is shut down and started up again.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "scope")
 

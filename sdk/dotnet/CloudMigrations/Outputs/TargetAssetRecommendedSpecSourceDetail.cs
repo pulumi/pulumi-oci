@@ -23,6 +23,8 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         public readonly string? BootVolumeSizeInGbs;
         /// <summary>
         /// (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+        /// 
+        /// Allowed values:
         /// </summary>
         public readonly string? BootVolumeVpusPerGb;
         /// <summary>
@@ -34,7 +36,11 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// </summary>
         public readonly string? KmsKeyId;
         /// <summary>
-        /// (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+        /// (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string? SourceType;
 

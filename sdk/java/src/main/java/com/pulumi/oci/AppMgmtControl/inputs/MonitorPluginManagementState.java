@@ -39,12 +39,18 @@ public final class MonitorPluginManagementState extends com.pulumi.resources.Res
     /**
      * OCID of monitored instance.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="monitoredInstanceId")
     private @Nullable Output<String> monitoredInstanceId;
 
     /**
      * @return OCID of monitored instance.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> monitoredInstanceId() {
@@ -124,6 +130,9 @@ public final class MonitorPluginManagementState extends com.pulumi.resources.Res
         /**
          * @param monitoredInstanceId OCID of monitored instance.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -134,6 +143,9 @@ public final class MonitorPluginManagementState extends com.pulumi.resources.Res
 
         /**
          * @param monitoredInstanceId OCID of monitored instance.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -90,6 +90,9 @@ type MysqlBackup struct {
 	// The MySQL server version of the DB System used for backup.
 	MysqlVersion pulumi.StringOutput `pulumi:"mysqlVersion"`
 	// (Updatable) Number of days to retain this backup.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionInDays pulumi.IntOutput `pulumi:"retentionInDays"`
 	// The shape of the DB System instance used for backup.
 	ShapeName pulumi.StringOutput `pulumi:"shapeName"`
@@ -160,6 +163,9 @@ type mysqlBackupState struct {
 	// The MySQL server version of the DB System used for backup.
 	MysqlVersion *string `pulumi:"mysqlVersion"`
 	// (Updatable) Number of days to retain this backup.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionInDays *int `pulumi:"retentionInDays"`
 	// The shape of the DB System instance used for backup.
 	ShapeName *string `pulumi:"shapeName"`
@@ -199,6 +205,9 @@ type MysqlBackupState struct {
 	// The MySQL server version of the DB System used for backup.
 	MysqlVersion pulumi.StringPtrInput
 	// (Updatable) Number of days to retain this backup.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionInDays pulumi.IntPtrInput
 	// The shape of the DB System instance used for backup.
 	ShapeName pulumi.StringPtrInput
@@ -230,6 +239,9 @@ type mysqlBackupArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Number of days to retain this backup.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionInDays *int `pulumi:"retentionInDays"`
 }
 
@@ -250,6 +262,9 @@ type MysqlBackupArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) Number of days to retain this backup.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionInDays pulumi.IntPtrInput
 }
 
@@ -406,6 +421,9 @@ func (o MysqlBackupOutput) MysqlVersion() pulumi.StringOutput {
 }
 
 // (Updatable) Number of days to retain this backup.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MysqlBackupOutput) RetentionInDays() pulumi.IntOutput {
 	return o.ApplyT(func(v *MysqlBackup) pulumi.IntOutput { return v.RetentionInDays }).(pulumi.IntOutput)
 }

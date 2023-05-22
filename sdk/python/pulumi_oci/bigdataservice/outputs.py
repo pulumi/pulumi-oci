@@ -231,6 +231,10 @@ class AutoScalingConfigurationPolicyDetails(dict):
         :param 'AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs' scale_up_config: (Updatable) Configration for a metric based vertical scale-up policy.
         :param Sequence['AutoScalingConfigurationPolicyDetailsScheduleDetailArgs'] schedule_details: (Updatable)
         :param str timezone: (Updatable) The time zone of the execution schedule, in IANA time zone database name format
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str trigger_type: The type of autoscaling trigger.
         """
         pulumi.set(__self__, "policy_type", policy_type)
@@ -312,6 +316,10 @@ class AutoScalingConfigurationPolicyDetails(dict):
     def timezone(self) -> Optional[str]:
         """
         (Updatable) The time zone of the execution schedule, in IANA time zone database name format
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "timezone")
 
@@ -1429,6 +1437,10 @@ class BdsInstanceCloudSqlDetail(dict):
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "shape", shape)
         if block_volume_size_in_gbs is not None:
@@ -1507,6 +1519,10 @@ class BdsInstanceCloudSqlDetail(dict):
     def ocpus(self) -> Optional[int]:
         """
         The total number of OCPUs available to the node.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "ocpus")
 
@@ -1907,6 +1923,10 @@ class BdsInstanceComputeOnlyWorkerNodeShapeConfig(dict):
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
@@ -1936,6 +1956,10 @@ class BdsInstanceComputeOnlyWorkerNodeShapeConfig(dict):
     def ocpus(self) -> Optional[int]:
         """
         The total number of OCPUs available to the node.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "ocpus")
 
@@ -2054,6 +2078,10 @@ class BdsInstanceEdgeNodeShapeConfig(dict):
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
@@ -2083,6 +2111,10 @@ class BdsInstanceEdgeNodeShapeConfig(dict):
     def ocpus(self) -> Optional[int]:
         """
         The total number of OCPUs available to the node.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "ocpus")
 
@@ -2201,6 +2233,10 @@ class BdsInstanceMasterNodeShapeConfig(dict):
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
@@ -2230,6 +2266,10 @@ class BdsInstanceMasterNodeShapeConfig(dict):
     def ocpus(self) -> Optional[int]:
         """
         The total number of OCPUs available to the node.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "ocpus")
 
@@ -2354,6 +2394,10 @@ class BdsInstanceNode(dict):
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param str node_type: BDS instance node type
         :param int ocpus: The total number of OCPUs available to the node.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str shape: Shape of the node
         :param str ssh_fingerprint: The fingerprint of the SSH key used for node access
         :param str state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
@@ -2478,6 +2522,10 @@ class BdsInstanceNode(dict):
     def ocpus(self) -> Optional[int]:
         """
         The total number of OCPUs available to the node.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "ocpus")
 
@@ -2686,6 +2734,10 @@ class BdsInstanceUtilNodeShapeConfig(dict):
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
@@ -2715,6 +2767,10 @@ class BdsInstanceUtilNodeShapeConfig(dict):
     def ocpus(self) -> Optional[int]:
         """
         The total number of OCPUs available to the node.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "ocpus")
 
@@ -2833,6 +2889,10 @@ class BdsInstanceWorkerNodeShapeConfig(dict):
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
@@ -2862,6 +2922,10 @@ class BdsInstanceWorkerNodeShapeConfig(dict):
     def ocpus(self) -> Optional[int]:
         """
         The total number of OCPUs available to the node.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "ocpus")
 

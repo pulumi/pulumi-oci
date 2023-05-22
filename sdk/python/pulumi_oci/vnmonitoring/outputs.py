@@ -904,6 +904,10 @@ class PathAnalysiDestinationEndpoint(dict):
                  vnic_id: Optional[str] = None):
         """
         :param str type: The type of the `PathAnalysis` query.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str address: The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
         :param str instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
         :param str listener_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
@@ -938,6 +942,10 @@ class PathAnalysiDestinationEndpoint(dict):
     def type(self) -> str:
         """
         The type of the `PathAnalysis` query.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -1044,6 +1052,10 @@ class PathAnalysiProtocolParameters(dict):
                  source_port: Optional[int] = None):
         """
         :param str type: The type of the `PathAnalysis` query.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param int destination_port: The destination port to use in a `PathAnalyzerTest` resource.
         :param int icmp_code: The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) code.
         :param int icmp_type: The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) type.
@@ -1064,6 +1076,10 @@ class PathAnalysiProtocolParameters(dict):
     def type(self) -> str:
         """
         The type of the `PathAnalysis` query.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -1180,6 +1196,10 @@ class PathAnalysiSourceEndpoint(dict):
                  vnic_id: Optional[str] = None):
         """
         :param str type: The type of the `PathAnalysis` query.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str address: The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
         :param str instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
         :param str listener_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
@@ -1214,6 +1234,10 @@ class PathAnalysiSourceEndpoint(dict):
     def type(self) -> str:
         """
         The type of the `PathAnalysis` query.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -1339,7 +1363,11 @@ class PathAnalyzerTestDestinationEndpoint(dict):
         :param str state: The current state of the `PathAnalyzerTest` resource.
         :param str subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
         :param str vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
-        :param str vnic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+        :param str vnic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "type", type)
         if address is not None:
@@ -1437,7 +1465,11 @@ class PathAnalyzerTestDestinationEndpoint(dict):
     @pulumi.getter(name="vnicId")
     def vnic_id(self) -> Optional[str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vnic_id")
 
@@ -1619,7 +1651,11 @@ class PathAnalyzerTestSourceEndpoint(dict):
         :param str state: The current state of the `PathAnalyzerTest` resource.
         :param str subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
         :param str vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
-        :param str vnic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+        :param str vnic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "type", type)
         if address is not None:
@@ -1717,7 +1753,11 @@ class PathAnalyzerTestSourceEndpoint(dict):
     @pulumi.getter(name="vnicId")
     def vnic_id(self) -> Optional[str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vnic_id")
 

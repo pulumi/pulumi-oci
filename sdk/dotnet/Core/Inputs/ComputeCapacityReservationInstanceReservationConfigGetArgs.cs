@@ -14,12 +14,18 @@ namespace Pulumi.Oci.Core.Inputs
     {
         /// <summary>
         /// (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
+        /// 
+        /// If the parameter is provided, the reservation is created with the HPC island and a list of HPC blocks that you specify. If a list of HPC blocks are missing or not provided, the reservation is created with any HPC blocks in the HPC island that you specify. If the values of HPC island or HPC block that you provide are not valid, an error is returned.
         /// </summary>
         [Input("clusterConfig")]
         public Input<Inputs.ComputeCapacityReservationInstanceReservationConfigClusterConfigGetArgs>? ClusterConfig { get; set; }
 
         /// <summary>
         /// (Updatable) The fault domain to use for instances created using this capacity configuration. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the capacity is available for an instance that does not specify a fault domain. To change the fault domain for a reservation, delete the reservation and create a new one in the preferred fault domain.
+        /// 
+        /// To retrieve a list of fault domains, use the `ListFaultDomains` operation in the [Identity and Access Management Service API](https://www.terraform.io/iaas/api/#/en/identity/20160918/).
+        /// 
+        /// Example: `FAULT-DOMAIN-1`
         /// </summary>
         [Input("faultDomain")]
         public Input<string>? FaultDomain { get; set; }
@@ -32,6 +38,12 @@ namespace Pulumi.Oci.Core.Inputs
 
         /// <summary>
         /// (Updatable) The shape configuration requested when launching instances in a compute capacity reservation.
+        /// 
+        /// If the parameter is provided, the reservation is created with the resources that you specify. If some properties are missing or the parameter is not provided, the reservation is created with the default configuration values for the `shape` that you specify.
+        /// 
+        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+        /// 
+        /// For more information about customizing the resources that are allocated to flexible shapes, see [Flexible Shapes](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible).
         /// </summary>
         [Input("instanceShapeConfig")]
         public Input<Inputs.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigGetArgs>? InstanceShapeConfig { get; set; }

@@ -53,12 +53,16 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) Responder recipe description.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return (Updatable) Responder recipe description.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -68,12 +72,16 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) Responder recipe display name.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
      * @return (Updatable) Responder recipe display name.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -98,12 +106,16 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
+     * Avoid entering confidential information.
+     * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
@@ -158,12 +170,18 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
     /**
      * The id of the source responder recipe.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="sourceResponderRecipeId")
     private @Nullable Output<String> sourceResponderRecipeId;
 
     /**
      * @return The id of the source responder recipe.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> sourceResponderRecipeId() {
@@ -312,6 +330,8 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
         /**
          * @param description (Updatable) Responder recipe description.
          * 
+         * Avoid entering confidential information.
+         * 
          * @return builder
          * 
          */
@@ -323,6 +343,8 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
         /**
          * @param description (Updatable) Responder recipe description.
          * 
+         * Avoid entering confidential information.
+         * 
          * @return builder
          * 
          */
@@ -332,6 +354,8 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param displayName (Updatable) Responder recipe display name.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -343,6 +367,8 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param displayName (Updatable) Responder recipe display name.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -385,6 +411,8 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
         /**
          * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
+         * Avoid entering confidential information.
+         * 
          * @return builder
          * 
          */
@@ -395,6 +423,8 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -479,6 +509,9 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
         /**
          * @param sourceResponderRecipeId The id of the source responder recipe.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -489,6 +522,9 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param sourceResponderRecipeId The id of the source responder recipe.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

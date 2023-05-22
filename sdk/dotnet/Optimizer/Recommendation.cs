@@ -116,6 +116,12 @@ namespace Pulumi.Oci.Optimizer
 
         /// <summary>
         /// (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+        /// 
+        /// For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("timeStatusEnd")]
         public Output<string> TimeStatusEnd { get; private set; } = null!;
@@ -186,6 +192,12 @@ namespace Pulumi.Oci.Optimizer
 
         /// <summary>
         /// (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+        /// 
+        /// For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("timeStatusEnd")]
         public Input<string>? TimeStatusEnd { get; set; }
@@ -302,6 +314,12 @@ namespace Pulumi.Oci.Optimizer
 
         /// <summary>
         /// (Updatable) The date and time the current status will change. The format is defined by RFC3339.
+        /// 
+        /// For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("timeStatusEnd")]
         public Input<string>? TimeStatusEnd { get; set; }

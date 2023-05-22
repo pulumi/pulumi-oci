@@ -136,12 +136,28 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
     /**
      * (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
      * 
+     * The password must contain no fewer than nine characters and include:
+     * * At least two uppercase characters.
+     * * At least two lowercase characters.
+     * * At least two numeric characters.
+     * * At least two special characters. Valid special characters include &#34;_&#34;, &#34;#&#34;, and &#34;-&#34; only.
+     * 
+     * **The password MUST be the same as the primary admin password.**
+     * 
      */
     @Import(name="databaseAdminPassword")
     private @Nullable Output<String> databaseAdminPassword;
 
     /**
      * @return (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
+     * 
+     * The password must contain no fewer than nine characters and include:
+     * * At least two uppercase characters.
+     * * At least two lowercase characters.
+     * * At least two numeric characters.
+     * * At least two special characters. Valid special characters include &#34;_&#34;, &#34;#&#34;, and &#34;-&#34; only.
+     * 
+     * **The password MUST be the same as the primary admin password.**
      * 
      */
     public Optional<Output<String>> databaseAdminPassword() {
@@ -263,12 +279,28 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
     /**
      * A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
      * 
+     * If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
+     * 
+     * If the node count is greater than 1, you can specify which Fault Domains these nodes will be distributed into. The system assigns your nodes automatically to the Fault Domains you specify so that no Fault Domain contains more than one node.
+     * 
+     * To get a list of Fault Domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+     * 
+     * Example: `FAULT-DOMAIN-1`
+     * 
      */
     @Import(name="faultDomains")
     private @Nullable Output<List<String>> faultDomains;
 
     /**
      * @return A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+     * 
+     * If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
+     * 
+     * If the node count is greater than 1, you can specify which Fault Domains these nodes will be distributed into. The system assigns your nodes automatically to the Fault Domains you specify so that no Fault Domain contains more than one node.
+     * 
+     * To get a list of Fault Domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+     * 
+     * Example: `FAULT-DOMAIN-1`
      * 
      */
     public Optional<Output<List<String>>> faultDomains() {
@@ -505,12 +537,16 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
     /**
      * (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      * 
+     * **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
+     * 
      */
     @Import(name="protectionMode")
     private @Nullable Output<String> protectionMode;
 
     /**
      * @return (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+     * 
+     * **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
      * 
      */
     public Optional<Output<String>> protectionMode() {
@@ -535,12 +571,16 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
     /**
      * The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system. Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
      * 
+     * To get a list of all shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
+     * 
      */
     @Import(name="shape")
     private @Nullable Output<String> shape;
 
     /**
      * @return The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system. Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
+     * 
+     * To get a list of all shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
      * 
      */
     public Optional<Output<String>> shape() {
@@ -581,6 +621,8 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
      * The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
      * * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
      * 
+     * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
+     * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
@@ -588,6 +630,8 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
     /**
      * @return The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
      * * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
+     * 
+     * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -630,6 +674,13 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
      * * MAXIMUM_PERFORMANCE - ASYNC
      * * MAXIMUM_PROTECTION - SYNC
      * 
+     * For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+     * 
+     * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="transportType")
     private @Nullable Output<String> transportType;
@@ -639,6 +690,13 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
      * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
      * * MAXIMUM_PERFORMANCE - ASYNC
      * * MAXIMUM_PROTECTION - SYNC
+     * 
+     * For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+     * 
+     * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> transportType() {
@@ -879,6 +937,14 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
         /**
          * @param databaseAdminPassword (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
          * 
+         * The password must contain no fewer than nine characters and include:
+         * * At least two uppercase characters.
+         * * At least two lowercase characters.
+         * * At least two numeric characters.
+         * * At least two special characters. Valid special characters include &#34;_&#34;, &#34;#&#34;, and &#34;-&#34; only.
+         * 
+         * **The password MUST be the same as the primary admin password.**
+         * 
          * @return builder
          * 
          */
@@ -889,6 +955,14 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
 
         /**
          * @param databaseAdminPassword (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
+         * 
+         * The password must contain no fewer than nine characters and include:
+         * * At least two uppercase characters.
+         * * At least two lowercase characters.
+         * * At least two numeric characters.
+         * * At least two special characters. Valid special characters include &#34;_&#34;, &#34;#&#34;, and &#34;-&#34; only.
+         * 
+         * **The password MUST be the same as the primary admin password.**
          * 
          * @return builder
          * 
@@ -1056,6 +1130,14 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
         /**
          * @param faultDomains A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
          * 
+         * If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
+         * 
+         * If the node count is greater than 1, you can specify which Fault Domains these nodes will be distributed into. The system assigns your nodes automatically to the Fault Domains you specify so that no Fault Domain contains more than one node.
+         * 
+         * To get a list of Fault Domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+         * 
+         * Example: `FAULT-DOMAIN-1`
+         * 
          * @return builder
          * 
          */
@@ -1067,6 +1149,14 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
         /**
          * @param faultDomains A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
          * 
+         * If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
+         * 
+         * If the node count is greater than 1, you can specify which Fault Domains these nodes will be distributed into. The system assigns your nodes automatically to the Fault Domains you specify so that no Fault Domain contains more than one node.
+         * 
+         * To get a list of Fault Domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+         * 
+         * Example: `FAULT-DOMAIN-1`
+         * 
          * @return builder
          * 
          */
@@ -1076,6 +1166,14 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
 
         /**
          * @param faultDomains A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
+         * 
+         * If you do not specify the Fault Domain, the system selects one for you. To change the Fault Domain for a DB system, terminate it and launch a new DB system in the preferred Fault Domain.
+         * 
+         * If the node count is greater than 1, you can specify which Fault Domains these nodes will be distributed into. The system assigns your nodes automatically to the Fault Domains you specify so that no Fault Domain contains more than one node.
+         * 
+         * To get a list of Fault Domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+         * 
+         * Example: `FAULT-DOMAIN-1`
          * 
          * @return builder
          * 
@@ -1415,6 +1513,8 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
         /**
          * @param protectionMode (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
          * 
+         * **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
+         * 
          * @return builder
          * 
          */
@@ -1425,6 +1525,8 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
 
         /**
          * @param protectionMode (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+         * 
+         * **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
          * 
          * @return builder
          * 
@@ -1457,6 +1559,8 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
         /**
          * @param shape The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system. Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
          * 
+         * To get a list of all shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
+         * 
          * @return builder
          * 
          */
@@ -1467,6 +1571,8 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
 
         /**
          * @param shape The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system. Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
+         * 
+         * To get a list of all shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
          * 
          * @return builder
          * 
@@ -1521,6 +1627,8 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
          * @param subnetId The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
          * * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
          * 
+         * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
+         * 
          * @return builder
          * 
          */
@@ -1532,6 +1640,8 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
         /**
          * @param subnetId The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
          * * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
+         * 
+         * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
          * 
          * @return builder
          * 
@@ -1588,6 +1698,13 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
          * * MAXIMUM_PERFORMANCE - ASYNC
          * * MAXIMUM_PROTECTION - SYNC
          * 
+         * For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+         * 
+         * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -1601,6 +1718,13 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
          * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
          * * MAXIMUM_PERFORMANCE - ASYNC
          * * MAXIMUM_PROTECTION - SYNC
+         * 
+         * For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+         * 
+         * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

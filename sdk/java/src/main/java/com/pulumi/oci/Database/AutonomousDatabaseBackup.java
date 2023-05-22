@@ -265,12 +265,18 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
     /**
      * (Updatable) Retention period, in days, for long-term backups
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="retentionPeriodInDays", type=Integer.class, parameters={})
     private Output<Integer> retentionPeriodInDays;
 
     /**
      * @return (Updatable) Retention period, in days, for long-term backups
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Integer> retentionPeriodInDays() {

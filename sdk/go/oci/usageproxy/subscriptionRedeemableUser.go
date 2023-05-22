@@ -69,6 +69,9 @@ type SubscriptionRedeemableUser struct {
 	// The OCID of the tenancy.
 	TenancyId pulumi.StringOutput `pulumi:"tenancyId"`
 	// The user ID of the person to send a copy of an email.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringOutput `pulumi:"userId"`
 }
 
@@ -117,6 +120,9 @@ type subscriptionRedeemableUserState struct {
 	// The OCID of the tenancy.
 	TenancyId *string `pulumi:"tenancyId"`
 	// The user ID of the person to send a copy of an email.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId *string `pulumi:"userId"`
 }
 
@@ -128,6 +134,9 @@ type SubscriptionRedeemableUserState struct {
 	// The OCID of the tenancy.
 	TenancyId pulumi.StringPtrInput
 	// The user ID of the person to send a copy of an email.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringPtrInput
 }
 
@@ -143,6 +152,9 @@ type subscriptionRedeemableUserArgs struct {
 	// The OCID of the tenancy.
 	TenancyId string `pulumi:"tenancyId"`
 	// The user ID of the person to send a copy of an email.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId *string `pulumi:"userId"`
 }
 
@@ -155,6 +167,9 @@ type SubscriptionRedeemableUserArgs struct {
 	// The OCID of the tenancy.
 	TenancyId pulumi.StringInput
 	// The user ID of the person to send a copy of an email.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringPtrInput
 }
 
@@ -261,6 +276,9 @@ func (o SubscriptionRedeemableUserOutput) TenancyId() pulumi.StringOutput {
 }
 
 // The user ID of the person to send a copy of an email.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o SubscriptionRedeemableUserOutput) UserId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SubscriptionRedeemableUser) pulumi.StringOutput { return v.UserId }).(pulumi.StringOutput)
 }

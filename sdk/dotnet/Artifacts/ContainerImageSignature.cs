@@ -99,6 +99,10 @@ namespace Pulumi.Oci.Artifacts
 
         /// <summary>
         /// The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("signingAlgorithm")]
         public Output<string> SigningAlgorithm { get; private set; } = null!;
@@ -193,6 +197,10 @@ namespace Pulumi.Oci.Artifacts
 
         /// <summary>
         /// The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("signingAlgorithm", required: true)]
         public Input<string> SigningAlgorithm { get; set; } = null!;
@@ -255,6 +263,10 @@ namespace Pulumi.Oci.Artifacts
 
         /// <summary>
         /// The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("signingAlgorithm")]
         public Input<string>? SigningAlgorithm { get; set; }

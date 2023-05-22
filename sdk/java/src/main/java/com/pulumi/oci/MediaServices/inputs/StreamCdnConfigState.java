@@ -112,12 +112,18 @@ public final class StreamCdnConfigState extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) Whether publishing to CDN is enabled.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="isEnabled")
     private @Nullable Output<Boolean> isEnabled;
 
     /**
      * @return (Updatable) Whether publishing to CDN is enabled.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Boolean>> isEnabled() {
@@ -363,6 +369,9 @@ public final class StreamCdnConfigState extends com.pulumi.resources.ResourceArg
         /**
          * @param isEnabled (Updatable) Whether publishing to CDN is enabled.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -373,6 +382,9 @@ public final class StreamCdnConfigState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param isEnabled (Updatable) Whether publishing to CDN is enabled.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -20,6 +20,10 @@ namespace Pulumi.Oci.Artifacts.Inputs
 
         /// <summary>
         /// (Updatable) Readme format. Supported formats are text/plain and text/markdown.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("format", required: true)]
         public Input<string> Format { get; set; } = null!;

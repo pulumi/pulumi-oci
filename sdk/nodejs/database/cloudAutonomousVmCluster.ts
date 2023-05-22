@@ -267,6 +267,9 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
     public readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * The total number of Autonomous Container Databases that can be created.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly totalContainerDatabases!: pulumi.Output<number>;
 
@@ -566,6 +569,9 @@ export interface CloudAutonomousVmClusterState {
     timeUpdated?: pulumi.Input<string>;
     /**
      * The total number of Autonomous Container Databases that can be created.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     totalContainerDatabases?: pulumi.Input<number>;
 }
@@ -657,6 +663,9 @@ export interface CloudAutonomousVmClusterArgs {
     timeUpdated?: pulumi.Input<string>;
     /**
      * The total number of Autonomous Container Databases that can be created.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     totalContainerDatabases?: pulumi.Input<number>;
 }

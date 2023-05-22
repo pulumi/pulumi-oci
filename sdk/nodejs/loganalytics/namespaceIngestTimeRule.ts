@@ -120,7 +120,11 @@ export class NamespaceIngestTimeRule extends pulumi.CustomResource {
      */
     public /*out*/ readonly isEnabled!: pulumi.Output<boolean>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly namespace!: pulumi.Output<string>;
     /**
@@ -236,7 +240,11 @@ export interface NamespaceIngestTimeRuleState {
      */
     isEnabled?: pulumi.Input<boolean>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     namespace?: pulumi.Input<string>;
     /**
@@ -286,7 +294,11 @@ export interface NamespaceIngestTimeRuleArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The Logging Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     namespace: pulumi.Input<string>;
 }

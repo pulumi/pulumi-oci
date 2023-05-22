@@ -19,6 +19,10 @@ class SetUserAssessmentBaselineArgs:
         """
         The set of arguments for constructing a SetUserAssessmentBaseline resource.
         :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: The list of user assessment OCIDs that need to be updated while setting the baseline.
         """
         pulumi.set(__self__, "user_assessment_id", user_assessment_id)
@@ -30,6 +34,10 @@ class SetUserAssessmentBaselineArgs:
     def user_assessment_id(self) -> pulumi.Input[str]:
         """
         The OCID of the user assessment.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "user_assessment_id")
 
@@ -59,6 +67,10 @@ class _SetUserAssessmentBaselineState:
         Input properties used for looking up and filtering SetUserAssessmentBaseline resources.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: The list of user assessment OCIDs that need to be updated while setting the baseline.
         :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if assessment_ids is not None:
             pulumi.set(__self__, "assessment_ids", assessment_ids)
@@ -82,6 +94,10 @@ class _SetUserAssessmentBaselineState:
     def user_assessment_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the user assessment.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "user_assessment_id")
 
@@ -126,6 +142,10 @@ class SetUserAssessmentBaseline(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: The list of user assessment OCIDs that need to be updated while setting the baseline.
         :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -208,6 +228,10 @@ class SetUserAssessmentBaseline(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: The list of user assessment OCIDs that need to be updated while setting the baseline.
         :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -230,6 +254,10 @@ class SetUserAssessmentBaseline(pulumi.CustomResource):
     def user_assessment_id(self) -> pulumi.Output[str]:
         """
         The OCID of the user assessment.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "user_assessment_id")
 

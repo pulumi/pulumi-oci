@@ -254,6 +254,10 @@ class PublicationSupportContactArgs:
         :param pulumi.Input[str] name: (Updatable) The name of the contact.
         :param pulumi.Input[str] phone: (Updatable) The phone number of the contact.
         :param pulumi.Input[str] subject: (Updatable) The email subject line to use when contacting support.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if email is not None:
             pulumi.set(__self__, "email", email)
@@ -305,6 +309,10 @@ class PublicationSupportContactArgs:
     def subject(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The email subject line to use when contacting support.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subject")
 

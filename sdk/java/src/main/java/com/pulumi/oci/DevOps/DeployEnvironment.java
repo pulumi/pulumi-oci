@@ -242,12 +242,18 @@ public class DeployEnvironment extends com.pulumi.resources.CustomResource {
     /**
      * The OCID of a project.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="projectId", type=String.class, parameters={})
     private Output<String> projectId;
 
     /**
      * @return The OCID of a project.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> projectId() {

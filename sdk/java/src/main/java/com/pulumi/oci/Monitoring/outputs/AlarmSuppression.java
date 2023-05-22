@@ -14,6 +14,10 @@ public final class AlarmSuppression {
     /**
      * @return (Updatable) Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
+     * Oracle recommends including tracking information for the event or associated work, such as a ticket number.
+     * 
+     * Example: `Planned outage due to change IT-1234.`
+     * 
      */
     private @Nullable String description;
     /**
@@ -24,12 +28,19 @@ public final class AlarmSuppression {
     /**
      * @return (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private String timeSuppressUntil;
 
     private AlarmSuppression() {}
     /**
      * @return (Updatable) Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * 
+     * Oracle recommends including tracking information for the event or associated work, such as a ticket number.
+     * 
+     * Example: `Planned outage due to change IT-1234.`
      * 
      */
     public Optional<String> description() {
@@ -44,6 +55,9 @@ public final class AlarmSuppression {
     }
     /**
      * @return (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String timeSuppressUntil() {

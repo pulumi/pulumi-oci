@@ -827,6 +827,9 @@ type UnifiedAgentConfigurationServiceConfigurationSource struct {
 	// (Updatable)
 	Paths []string `pulumi:"paths"`
 	// (Updatable) Unified schema logging source type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceType string `pulumi:"sourceType"`
 }
 
@@ -851,6 +854,9 @@ type UnifiedAgentConfigurationServiceConfigurationSourceArgs struct {
 	// (Updatable)
 	Paths pulumi.StringArrayInput `pulumi:"paths"`
 	// (Updatable) Unified schema logging source type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 }
 
@@ -928,6 +934,9 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceOutput) Paths() pulum
 }
 
 // (Updatable) Unified schema logging source type.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o UnifiedAgentConfigurationServiceConfigurationSourceOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSource) string { return v.SourceType }).(pulumi.StringOutput)
 }

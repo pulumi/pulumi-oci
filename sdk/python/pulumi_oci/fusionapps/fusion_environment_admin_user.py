@@ -30,6 +30,10 @@ class FusionEnvironmentAdminUserArgs:
         :param pulumi.Input[str] last_name: The administrator's last name.
         :param pulumi.Input[str] password: The password for the administrator.
         :param pulumi.Input[str] username: The username for the administrator.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "email_address", email_address)
         pulumi.set(__self__, "first_name", first_name)
@@ -103,6 +107,10 @@ class FusionEnvironmentAdminUserArgs:
     def username(self) -> pulumi.Input[str]:
         """
         The username for the administrator.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "username")
 
@@ -130,6 +138,10 @@ class _FusionEnvironmentAdminUserState:
         :param pulumi.Input[str] last_name: The administrator's last name.
         :param pulumi.Input[str] password: The password for the administrator.
         :param pulumi.Input[str] username: The username for the administrator.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if email_address is not None:
             pulumi.set(__self__, "email_address", email_address)
@@ -223,6 +235,10 @@ class _FusionEnvironmentAdminUserState:
     def username(self) -> Optional[pulumi.Input[str]]:
         """
         The username for the administrator.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "username")
 
@@ -279,6 +295,10 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
         :param pulumi.Input[str] last_name: The administrator's last name.
         :param pulumi.Input[str] password: The password for the administrator.
         :param pulumi.Input[str] username: The username for the administrator.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -396,6 +416,10 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
         :param pulumi.Input[str] last_name: The administrator's last name.
         :param pulumi.Input[str] password: The password for the administrator.
         :param pulumi.Input[str] username: The username for the administrator.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -463,6 +487,10 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
     def username(self) -> pulumi.Output[str]:
         """
         The username for the administrator.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "username")
 

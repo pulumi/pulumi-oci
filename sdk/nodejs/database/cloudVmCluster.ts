@@ -174,6 +174,10 @@ export class CloudVmCluster extends pulumi.CustomResource {
     public readonly giVersion!: pulumi.Output<string>;
     /**
      * The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
+     *
+     * The maximum length of the combined hostname and domain is 63 characters.
+     *
+     * **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
      */
     public readonly hostname!: pulumi.Output<string>;
     /**
@@ -274,7 +278,11 @@ export class CloudVmCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly timeZone!: pulumi.Output<string>;
     /**
@@ -514,6 +522,10 @@ export interface CloudVmClusterState {
     giVersion?: pulumi.Input<string>;
     /**
      * The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
+     *
+     * The maximum length of the combined hostname and domain is 63 characters.
+     *
+     * **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
      */
     hostname?: pulumi.Input<string>;
     /**
@@ -614,7 +626,11 @@ export interface CloudVmClusterState {
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     timeZone?: pulumi.Input<string>;
     /**
@@ -705,6 +721,10 @@ export interface CloudVmClusterArgs {
     giVersion: pulumi.Input<string>;
     /**
      * The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
+     *
+     * The maximum length of the combined hostname and domain is 63 characters.
+     *
+     * **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
      */
     hostname: pulumi.Input<string>;
     /**
@@ -753,7 +773,11 @@ export interface CloudVmClusterArgs {
      */
     subnetId: pulumi.Input<string>;
     /**
-     * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     timeZone?: pulumi.Input<string>;
 }

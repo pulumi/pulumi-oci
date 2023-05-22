@@ -108,12 +108,18 @@ public final class ModelProvenanceArgs extends com.pulumi.resources.ResourceArgs
     /**
      * (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained.&#34;
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="trainingScript")
     private @Nullable Output<String> trainingScript;
 
     /**
      * @return (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained.&#34;
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> trainingScript() {
@@ -279,6 +285,9 @@ public final class ModelProvenanceArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param trainingScript (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained.&#34;
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -289,6 +298,9 @@ public final class ModelProvenanceArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param trainingScript (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained.&#34;
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

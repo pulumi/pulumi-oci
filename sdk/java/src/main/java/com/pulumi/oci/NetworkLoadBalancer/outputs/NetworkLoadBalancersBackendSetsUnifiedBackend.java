@@ -36,6 +36,10 @@ public final class NetworkLoadBalancersBackendSetsUnifiedBackend {
     /**
      * @return A user-friendly name for the backend set that must be unique and cannot be changed.
      * 
+     * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+     * 
+     * Example: `example_backend_set`
+     * 
      */
     private @Nullable String name;
     /**
@@ -85,6 +89,10 @@ public final class NetworkLoadBalancersBackendSetsUnifiedBackend {
     }
     /**
      * @return A user-friendly name for the backend set that must be unique and cannot be changed.
+     * 
+     * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+     * 
+     * Example: `example_backend_set`
      * 
      */
     public Optional<String> name() {

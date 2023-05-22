@@ -100,6 +100,10 @@ export class InstVbsInstance extends pulumi.CustomResource {
     public readonly name!: pulumi.Output<string>;
     /**
      * (Updatable) Compartment where VBS may create additional resources for the service instance
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly resourceCompartmentId!: pulumi.Output<string>;
     /**
@@ -216,6 +220,10 @@ export interface InstVbsInstanceState {
     name?: pulumi.Input<string>;
     /**
      * (Updatable) Compartment where VBS may create additional resources for the service instance
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     resourceCompartmentId?: pulumi.Input<string>;
     /**
@@ -274,6 +282,10 @@ export interface InstVbsInstanceArgs {
     name?: pulumi.Input<string>;
     /**
      * (Updatable) Compartment where VBS may create additional resources for the service instance
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     resourceCompartmentId?: pulumi.Input<string>;
 }

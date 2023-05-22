@@ -12,6 +12,10 @@ public final class LoadBalancerShapeDetails {
     /**
      * @return (Updatable) Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
      * 
+     * The values must be between minimumBandwidthInMbps and 8000 (8Gbps).
+     * 
+     * Example: `1500`
+     * 
      */
     private Integer maximumBandwidthInMbps;
     /**
@@ -23,6 +27,10 @@ public final class LoadBalancerShapeDetails {
     private LoadBalancerShapeDetails() {}
     /**
      * @return (Updatable) Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
+     * 
+     * The values must be between minimumBandwidthInMbps and 8000 (8Gbps).
+     * 
+     * Example: `1500`
      * 
      */
     public Integer maximumBandwidthInMbps() {

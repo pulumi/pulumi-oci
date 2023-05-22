@@ -149,7 +149,11 @@ namespace Pulumi.Oci.DevOps
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+        /// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("repositoryType")]
         public Output<string> RepositoryType { get; private set; } = null!;
@@ -297,7 +301,11 @@ namespace Pulumi.Oci.DevOps
         public Input<string> ProjectId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+        /// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("repositoryType", required: true)]
         public Input<string> RepositoryType { get; set; } = null!;
@@ -407,7 +415,11 @@ namespace Pulumi.Oci.DevOps
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+        /// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("repositoryType")]
         public Input<string>? RepositoryType { get; set; }

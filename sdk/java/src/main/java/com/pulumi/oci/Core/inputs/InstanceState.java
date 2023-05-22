@@ -200,14 +200,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+     * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
     @Import(name="extendedMetadata")
     private @Nullable Output<Map<String,Object>> extendedMetadata;
 
     /**
-     * @return (Updatable) Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+     * @return Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
     public Optional<Output<Map<String,Object>>> extendedMetadata() {
@@ -217,12 +217,24 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
      * 
+     * If you do not specify the fault domain, the system selects one for you.
+     * 
+     * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+     * 
+     * Example: `FAULT-DOMAIN-1`
+     * 
      */
     @Import(name="faultDomain")
     private @Nullable Output<String> faultDomain;
 
     /**
      * @return (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+     * 
+     * If you do not specify the fault domain, the system selects one for you.
+     * 
+     * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+     * 
+     * Example: `FAULT-DOMAIN-1`
      * 
      */
     public Optional<Output<String>> faultDomain() {
@@ -308,12 +320,36 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * This is an advanced option.
      * 
+     * When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+     * 
+     * If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots. Be aware that the same iPXE script will run every time an instance boots, not only after the initial LaunchInstance call.
+     * 
+     * The default iPXE script connects to the instance&#39;s local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance&#39;s local boot volume over iSCSI the same way as the default iPXE script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+     * 
+     * If your instance boot volume type is paravirtualized, the boot volume is attached to the instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is paravirtualized and you use custom iPXE to network boot into your instance, the primary boot volume is attached as a data volume through virtio-scsi drive.
+     * 
+     * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+     * 
+     * For more information about iPXE, see http://ipxe.org.
+     * 
      */
     @Import(name="ipxeScript")
     private @Nullable Output<String> ipxeScript;
 
     /**
      * @return This is an advanced option.
+     * 
+     * When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+     * 
+     * If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots. Be aware that the same iPXE script will run every time an instance boots, not only after the initial LaunchInstance call.
+     * 
+     * The default iPXE script connects to the instance&#39;s local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance&#39;s local boot volume over iSCSI the same way as the default iPXE script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+     * 
+     * If your instance boot volume type is paravirtualized, the boot volume is attached to the instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is paravirtualized and you use custom iPXE to network boot into your instance, the primary boot volume is attached as a data volume through virtio-scsi drive.
+     * 
+     * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+     * 
+     * For more information about iPXE, see http://ipxe.org.
      * 
      */
     public Optional<Output<String>> ipxeScript() {
@@ -383,12 +419,104 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      * 
+     * A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
+     * * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
+     * * Get information about the instance, including the custom metadata that you provide when you launch the instance.
+     * 
+     * **Providing Cloud-Init Metadata**
+     * 
+     * You can use the following metadata key names to provide information to Cloud-Init:
+     * 
+     * **&#34;ssh_authorized_keys&#34;** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+     * 
+     * **&#34;user_data&#34;** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+     * 
+     * **Metadata Example**
+     * 
+     * **Getting Metadata on the Instance**
+     * 
+     * To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *     }
+     * }
+     * ```
+     * 
+     * You&#39;ll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+     * 
+     * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+     * 
+     * **Note:** Both the &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; that already exist on the instance.
+     * 
      */
     @Import(name="metadata")
     private @Nullable Output<Map<String,Object>> metadata;
 
     /**
      * @return (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+     * 
+     * A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
+     * * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
+     * * Get information about the instance, including the custom metadata that you provide when you launch the instance.
+     * 
+     * **Providing Cloud-Init Metadata**
+     * 
+     * You can use the following metadata key names to provide information to Cloud-Init:
+     * 
+     * **&#34;ssh_authorized_keys&#34;** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+     * 
+     * **&#34;user_data&#34;** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+     * 
+     * **Metadata Example**
+     * 
+     * **Getting Metadata on the Instance**
+     * 
+     * To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *     }
+     * }
+     * ```
+     * 
+     * You&#39;ll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+     * 
+     * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+     * 
+     * **Note:** Both the &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; that already exist on the instance.
      * 
      */
     public Optional<Output<Map<String,Object>>> metadata() {
@@ -398,12 +526,28 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * The platform configuration requested for the instance.
      * 
+     * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don&#39;t provide the parameter, the default values for the `shape` are used.
+     * 
+     * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+     * 
+     * For more information about shielded instances, see [Shielded Instances](https://docs.cloud.oracle. com/iaas/Content/Compute/References/shielded-instances.htm).
+     * 
+     * For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
+     * 
      */
     @Import(name="platformConfig")
     private @Nullable Output<InstancePlatformConfigArgs> platformConfig;
 
     /**
      * @return The platform configuration requested for the instance.
+     * 
+     * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don&#39;t provide the parameter, the default values for the `shape` are used.
+     * 
+     * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+     * 
+     * For more information about shielded instances, see [Shielded Instances](https://docs.cloud.oracle. com/iaas/Content/Compute/References/shielded-instances.htm).
+     * 
+     * For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
      * 
      */
     public Optional<Output<InstancePlatformConfigArgs>> platformConfig() {
@@ -443,12 +587,20 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC&#39;s *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
      * 
+     * If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+     * 
+     * Example: `10.0.3.3`
+     * 
      */
     @Import(name="privateIp")
     private @Nullable Output<String> privateIp;
 
     /**
      * @return A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC&#39;s *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+     * 
+     * If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+     * 
+     * Example: `10.0.3.3`
      * 
      */
     public Optional<Output<String>> privateIp() {
@@ -488,12 +640,16 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      * 
+     * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+     * 
      */
     @Import(name="shape")
     private @Nullable Output<String> shape;
 
     /**
      * @return (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+     * 
+     * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
      * 
      */
     public Optional<Output<String>> shape() {
@@ -503,12 +659,20 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The shape configuration requested for the instance.
      * 
+     * If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+     * 
+     * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+     * 
      */
     @Import(name="shapeConfig")
     private @Nullable Output<InstanceShapeConfigArgs> shapeConfig;
 
     /**
      * @return (Updatable) The shape configuration requested for the instance.
+     * 
+     * If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+     * 
+     * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
      * 
      */
     public Optional<Output<InstanceShapeConfigArgs>> shapeConfig() {
@@ -533,12 +697,18 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The target state for the instance. Could be set to RUNNING or STOPPED.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
      * @return (Updatable) The target state for the instance. Could be set to RUNNING or STOPPED.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> state() {
@@ -923,7 +1093,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param extendedMetadata (Updatable) Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+         * @param extendedMetadata Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
          * 
          * @return builder
          * 
@@ -934,7 +1104,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param extendedMetadata (Updatable) Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+         * @param extendedMetadata Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
          * 
          * @return builder
          * 
@@ -946,6 +1116,12 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param faultDomain (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
          * 
+         * If you do not specify the fault domain, the system selects one for you.
+         * 
+         * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+         * 
+         * Example: `FAULT-DOMAIN-1`
+         * 
          * @return builder
          * 
          */
@@ -956,6 +1132,12 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param faultDomain (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+         * 
+         * If you do not specify the fault domain, the system selects one for you.
+         * 
+         * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+         * 
+         * Example: `FAULT-DOMAIN-1`
          * 
          * @return builder
          * 
@@ -1067,6 +1249,18 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param ipxeScript This is an advanced option.
          * 
+         * When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+         * 
+         * If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots. Be aware that the same iPXE script will run every time an instance boots, not only after the initial LaunchInstance call.
+         * 
+         * The default iPXE script connects to the instance&#39;s local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance&#39;s local boot volume over iSCSI the same way as the default iPXE script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+         * 
+         * If your instance boot volume type is paravirtualized, the boot volume is attached to the instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is paravirtualized and you use custom iPXE to network boot into your instance, the primary boot volume is attached as a data volume through virtio-scsi drive.
+         * 
+         * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+         * 
+         * For more information about iPXE, see http://ipxe.org.
+         * 
          * @return builder
          * 
          */
@@ -1077,6 +1271,18 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipxeScript This is an advanced option.
+         * 
+         * When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+         * 
+         * If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots. Be aware that the same iPXE script will run every time an instance boots, not only after the initial LaunchInstance call.
+         * 
+         * The default iPXE script connects to the instance&#39;s local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance&#39;s local boot volume over iSCSI the same way as the default iPXE script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+         * 
+         * If your instance boot volume type is paravirtualized, the boot volume is attached to the instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is paravirtualized and you use custom iPXE to network boot into your instance, the primary boot volume is attached as a data volume through virtio-scsi drive.
+         * 
+         * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+         * 
+         * For more information about iPXE, see http://ipxe.org.
          * 
          * @return builder
          * 
@@ -1172,6 +1378,52 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param metadata (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
          * 
+         * A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
+         * * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
+         * * Get information about the instance, including the custom metadata that you provide when you launch the instance.
+         * 
+         * **Providing Cloud-Init Metadata**
+         * 
+         * You can use the following metadata key names to provide information to Cloud-Init:
+         * 
+         * **&#34;ssh_authorized_keys&#34;** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+         * 
+         * **&#34;user_data&#34;** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+         * 
+         * **Metadata Example**
+         * 
+         * **Getting Metadata on the Instance**
+         * 
+         * To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+         * ```java
+         * package generated_program;
+         * 
+         * import com.pulumi.Context;
+         * import com.pulumi.Pulumi;
+         * import com.pulumi.core.Output;
+         * import java.util.List;
+         * import java.util.ArrayList;
+         * import java.util.Map;
+         * import java.io.File;
+         * import java.nio.file.Files;
+         * import java.nio.file.Paths;
+         * 
+         * public class App {
+         *     public static void main(String[] args) {
+         *         Pulumi.run(App::stack);
+         *     }
+         * 
+         *     public static void stack(Context ctx) {
+         *     }
+         * }
+         * ```
+         * 
+         * You&#39;ll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+         * 
+         * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+         * 
+         * **Note:** Both the &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; that already exist on the instance.
+         * 
          * @return builder
          * 
          */
@@ -1183,6 +1435,52 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param metadata (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
          * 
+         * A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
+         * * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
+         * * Get information about the instance, including the custom metadata that you provide when you launch the instance.
+         * 
+         * **Providing Cloud-Init Metadata**
+         * 
+         * You can use the following metadata key names to provide information to Cloud-Init:
+         * 
+         * **&#34;ssh_authorized_keys&#34;** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+         * 
+         * **&#34;user_data&#34;** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+         * 
+         * **Metadata Example**
+         * 
+         * **Getting Metadata on the Instance**
+         * 
+         * To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+         * ```java
+         * package generated_program;
+         * 
+         * import com.pulumi.Context;
+         * import com.pulumi.Pulumi;
+         * import com.pulumi.core.Output;
+         * import java.util.List;
+         * import java.util.ArrayList;
+         * import java.util.Map;
+         * import java.io.File;
+         * import java.nio.file.Files;
+         * import java.nio.file.Paths;
+         * 
+         * public class App {
+         *     public static void main(String[] args) {
+         *         Pulumi.run(App::stack);
+         *     }
+         * 
+         *     public static void stack(Context ctx) {
+         *     }
+         * }
+         * ```
+         * 
+         * You&#39;ll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+         * 
+         * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+         * 
+         * **Note:** Both the &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; that already exist on the instance.
+         * 
          * @return builder
          * 
          */
@@ -1192,6 +1490,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param platformConfig The platform configuration requested for the instance.
+         * 
+         * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don&#39;t provide the parameter, the default values for the `shape` are used.
+         * 
+         * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+         * 
+         * For more information about shielded instances, see [Shielded Instances](https://docs.cloud.oracle. com/iaas/Content/Compute/References/shielded-instances.htm).
+         * 
+         * For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
          * 
          * @return builder
          * 
@@ -1203,6 +1509,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param platformConfig The platform configuration requested for the instance.
+         * 
+         * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don&#39;t provide the parameter, the default values for the `shape` are used.
+         * 
+         * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+         * 
+         * For more information about shielded instances, see [Shielded Instances](https://docs.cloud.oracle. com/iaas/Content/Compute/References/shielded-instances.htm).
+         * 
+         * For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
          * 
          * @return builder
          * 
@@ -1256,6 +1570,10 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param privateIp A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC&#39;s *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
          * 
+         * If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+         * 
+         * Example: `10.0.3.3`
+         * 
          * @return builder
          * 
          */
@@ -1266,6 +1584,10 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param privateIp A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC&#39;s *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+         * 
+         * If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+         * 
+         * Example: `10.0.3.3`
          * 
          * @return builder
          * 
@@ -1319,6 +1641,8 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param shape (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
          * 
+         * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+         * 
          * @return builder
          * 
          */
@@ -1330,6 +1654,8 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param shape (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
          * 
+         * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+         * 
          * @return builder
          * 
          */
@@ -1339,6 +1665,10 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param shapeConfig (Updatable) The shape configuration requested for the instance.
+         * 
+         * If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+         * 
+         * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
          * 
          * @return builder
          * 
@@ -1350,6 +1680,10 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param shapeConfig (Updatable) The shape configuration requested for the instance.
+         * 
+         * If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+         * 
+         * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
          * 
          * @return builder
          * 
@@ -1382,6 +1716,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param state (Updatable) The target state for the instance. Could be set to RUNNING or STOPPED.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -1392,6 +1729,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param state (Updatable) The target state for the instance. Could be set to RUNNING or STOPPED.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

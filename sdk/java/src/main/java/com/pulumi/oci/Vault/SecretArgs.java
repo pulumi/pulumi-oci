@@ -158,12 +158,18 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The OCID of the vault where you want to create the secret.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="vaultId", required=true)
     private Output<String> vaultId;
 
     /**
      * @return The OCID of the vault where you want to create the secret.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> vaultId() {
@@ -405,6 +411,9 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param vaultId The OCID of the vault where you want to create the secret.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -415,6 +424,9 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vaultId The OCID of the vault where you want to create the secret.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

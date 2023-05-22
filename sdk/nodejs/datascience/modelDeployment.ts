@@ -150,7 +150,11 @@ export class ModelDeployment extends pulumi.CustomResource {
      */
     public readonly projectId!: pulumi.Output<string>;
     /**
-     * (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
+     * (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly state!: pulumi.Output<string>;
     /**
@@ -263,7 +267,11 @@ export interface ModelDeploymentState {
      */
     projectId?: pulumi.Input<string>;
     /**
-     * (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
+     * (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     state?: pulumi.Input<string>;
     /**
@@ -309,7 +317,11 @@ export interface ModelDeploymentArgs {
      */
     projectId: pulumi.Input<string>;
     /**
-     * (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
+     * (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     state?: pulumi.Input<string>;
 }

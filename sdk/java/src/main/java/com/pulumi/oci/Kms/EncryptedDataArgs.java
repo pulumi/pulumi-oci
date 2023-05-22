@@ -110,12 +110,18 @@ public final class EncryptedDataArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The plaintext data to encrypt.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="plaintext", required=true)
     private Output<String> plaintext;
 
     /**
      * @return The plaintext data to encrypt.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> plaintext() {
@@ -281,6 +287,9 @@ public final class EncryptedDataArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param plaintext The plaintext data to encrypt.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -291,6 +300,9 @@ public final class EncryptedDataArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param plaintext The plaintext data to encrypt.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

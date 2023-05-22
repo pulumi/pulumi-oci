@@ -32,6 +32,10 @@ class DrProtectionGroupArgs:
         :param pulumi.Input['DrProtectionGroupAssociationArgs'] association: The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[int] disassociate_trigger: (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberArgs']]] members: (Updatable) A list of DR Protection Group members.
         """
@@ -114,6 +118,10 @@ class DrProtectionGroupArgs:
     def disassociate_trigger(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "disassociate_trigger")
 
@@ -171,6 +179,10 @@ class _DrProtectionGroupState:
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[int] disassociate_trigger: (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] display_name: (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] life_cycle_details: A message describing the DR Protection Group's current state in more detail.
@@ -258,6 +270,10 @@ class _DrProtectionGroupState:
     def disassociate_trigger(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "disassociate_trigger")
 
@@ -482,6 +498,10 @@ class DrProtectionGroup(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[int] disassociate_trigger: (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] display_name: (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         :param pulumi.Input[pulumi.InputType['DrProtectionGroupLogLocationArgs']] log_location: (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
@@ -636,6 +656,10 @@ class DrProtectionGroup(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..exampleocid1`
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[int] disassociate_trigger: (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] display_name: (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] life_cycle_details: A message describing the DR Protection Group's current state in more detail.
@@ -700,6 +724,10 @@ class DrProtectionGroup(pulumi.CustomResource):
     def disassociate_trigger(self) -> pulumi.Output[Optional[int]]:
         """
         (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "disassociate_trigger")
 

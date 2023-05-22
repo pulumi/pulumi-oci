@@ -112,12 +112,16 @@ public final class DetectorRecipeDetectorRuleArgs extends com.pulumi.resources.R
     /**
      * (Updatable) Detector recipe display name.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
      * @return (Updatable) Detector recipe display name.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -437,6 +441,8 @@ public final class DetectorRecipeDetectorRuleArgs extends com.pulumi.resources.R
         /**
          * @param displayName (Updatable) Detector recipe display name.
          * 
+         * Avoid entering confidential information.
+         * 
          * @return builder
          * 
          */
@@ -447,6 +453,8 @@ public final class DetectorRecipeDetectorRuleArgs extends com.pulumi.resources.R
 
         /**
          * @param displayName (Updatable) Detector recipe display name.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 

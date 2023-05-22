@@ -30,6 +30,10 @@ class DeploymentBackupArgs:
         :param pulumi.Input[str] display_name: An object's Display Name.
         :param pulumi.Input[str] namespace: Name of namespace that serves as a container for all of your buckets
         :param pulumi.Input[str] object: Name of the object to be uploaded to object storage
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         """
@@ -109,6 +113,10 @@ class DeploymentBackupArgs:
     def object(self) -> pulumi.Input[str]:
         """
         Name of the object to be uploaded to object storage
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "object")
 
@@ -176,6 +184,10 @@ class _DeploymentBackupState:
         :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[str] namespace: Name of namespace that serves as a container for all of your buckets
         :param pulumi.Input[str] object: Name of the object to be uploaded to object storage
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] ogg_version: Version of OGG
         :param pulumi.Input[float] size_in_bytes: The size of the backup stored in object storage (in bytes)
         :param pulumi.Input[str] state: Possible lifecycle states.
@@ -349,6 +361,10 @@ class _DeploymentBackupState:
     def object(self) -> Optional[pulumi.Input[str]]:
         """
         Name of the object to be uploaded to object storage
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "object")
 
@@ -511,6 +527,10 @@ class DeploymentBackup(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] namespace: Name of namespace that serves as a container for all of your buckets
         :param pulumi.Input[str] object: Name of the object to be uploaded to object storage
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -662,6 +682,10 @@ class DeploymentBackup(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[str] namespace: Name of namespace that serves as a container for all of your buckets
         :param pulumi.Input[str] object: Name of the object to be uploaded to object storage
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] ogg_version: Version of OGG
         :param pulumi.Input[float] size_in_bytes: The size of the backup stored in object storage (in bytes)
         :param pulumi.Input[str] state: Possible lifecycle states.
@@ -781,6 +805,10 @@ class DeploymentBackup(pulumi.CustomResource):
     def object(self) -> pulumi.Output[str]:
         """
         Name of the object to be uploaded to object storage
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "object")
 

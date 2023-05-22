@@ -36,6 +36,8 @@ public final class GetMetricsMetric {
     /**
      * @return Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the &#34;namespace&#34; field. Supported fields: namespace, name, resourceGroup.
      * 
+     * Example - group by namespace: `[ &#34;namespace&#34; ]`
+     * 
      */
     private List<String> groupBies;
     /**
@@ -85,6 +87,8 @@ public final class GetMetricsMetric {
     }
     /**
      * @return Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the &#34;namespace&#34; field. Supported fields: namespace, name, resourceGroup.
+     * 
+     * Example - group by namespace: `[ &#34;namespace&#34; ]`
      * 
      */
     public List<String> groupBies() {

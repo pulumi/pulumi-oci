@@ -134,12 +134,18 @@ public class Backup extends com.pulumi.resources.CustomResource {
     /**
      * The user-friendly name for the backup. The name does not have to be unique.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="displayName", type=String.class, parameters={})
     private Output<String> displayName;
 
     /**
      * @return The user-friendly name for the backup. The name does not have to be unique.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> displayName() {

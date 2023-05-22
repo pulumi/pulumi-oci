@@ -62,6 +62,8 @@ export function getCompartments(args: GetCompartmentsArgs, opts?: pulumi.InvokeO
 export interface GetCompartmentsArgs {
     /**
      * Valid values are `ANY` and `ACCESSIBLE`. Default is `ANY`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). For the compartments on which the user indirectly has INSPECT permissions, a restricted set of fields is returned.
+     *
+     * When set to `ANY` permissions are not checked.
      */
     accessLevel?: string;
     /**
@@ -158,6 +160,8 @@ export function getCompartmentsOutput(args: GetCompartmentsOutputArgs, opts?: pu
 export interface GetCompartmentsOutputArgs {
     /**
      * Valid values are `ANY` and `ACCESSIBLE`. Default is `ANY`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). For the compartments on which the user indirectly has INSPECT permissions, a restricted set of fields is returned.
+     *
+     * When set to `ANY` permissions are not checked.
      */
     accessLevel?: pulumi.Input<string>;
     /**

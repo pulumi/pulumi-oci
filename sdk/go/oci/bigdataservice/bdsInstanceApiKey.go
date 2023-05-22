@@ -76,6 +76,9 @@ type BdsInstanceApiKey struct {
 	// The time the API key was created, shown as an RFC 3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The OCID of the user for whom this new generated API key pair will be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringOutput `pulumi:"userId"`
 }
 
@@ -146,6 +149,9 @@ type bdsInstanceApiKeyState struct {
 	// The time the API key was created, shown as an RFC 3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The OCID of the user for whom this new generated API key pair will be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId *string `pulumi:"userId"`
 }
 
@@ -169,6 +175,9 @@ type BdsInstanceApiKeyState struct {
 	// The time the API key was created, shown as an RFC 3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The OCID of the user for whom this new generated API key pair will be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringPtrInput
 }
 
@@ -186,6 +195,9 @@ type bdsInstanceApiKeyArgs struct {
 	// Base64 passphrase used to secure the private key which will be created on user behalf.
 	Passphrase string `pulumi:"passphrase"`
 	// The OCID of the user for whom this new generated API key pair will be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId string `pulumi:"userId"`
 }
 
@@ -200,6 +212,9 @@ type BdsInstanceApiKeyArgs struct {
 	// Base64 passphrase used to secure the private key which will be created on user behalf.
 	Passphrase pulumi.StringInput
 	// The OCID of the user for whom this new generated API key pair will be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringInput
 }
 
@@ -336,6 +351,9 @@ func (o BdsInstanceApiKeyOutput) TimeCreated() pulumi.StringOutput {
 }
 
 // The OCID of the user for whom this new generated API key pair will be created.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceApiKeyOutput) UserId() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstanceApiKey) pulumi.StringOutput { return v.UserId }).(pulumi.StringOutput)
 }

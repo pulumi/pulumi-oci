@@ -92,6 +92,9 @@ type DataSafePrivateEndpoint struct {
 	// The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The OCID of the VCN.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId pulumi.StringOutput `pulumi:"vcnId"`
 }
 
@@ -163,6 +166,9 @@ type dataSafePrivateEndpointState struct {
 	// The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The OCID of the VCN.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId *string `pulumi:"vcnId"`
 }
 
@@ -194,6 +200,9 @@ type DataSafePrivateEndpointState struct {
 	// The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringPtrInput
 	// The OCID of the VCN.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId pulumi.StringPtrInput
 }
 
@@ -219,6 +228,9 @@ type dataSafePrivateEndpointArgs struct {
 	// The OCID of the subnet.
 	SubnetId string `pulumi:"subnetId"`
 	// The OCID of the VCN.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId string `pulumi:"vcnId"`
 }
 
@@ -241,6 +253,9 @@ type DataSafePrivateEndpointArgs struct {
 	// The OCID of the subnet.
 	SubnetId pulumi.StringInput
 	// The OCID of the VCN.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId pulumi.StringInput
 }
 
@@ -397,6 +412,9 @@ func (o DataSafePrivateEndpointOutput) TimeCreated() pulumi.StringOutput {
 }
 
 // The OCID of the VCN.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DataSafePrivateEndpointOutput) VcnId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataSafePrivateEndpoint) pulumi.StringOutput { return v.VcnId }).(pulumi.StringOutput)
 }

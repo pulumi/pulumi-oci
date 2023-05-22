@@ -138,12 +138,18 @@ public final class ContainerImageSignatureState extends com.pulumi.resources.Res
     /**
      * The algorithm to be used for signing. These are the only supported signing algorithms for container images.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="signingAlgorithm")
     private @Nullable Output<String> signingAlgorithm;
 
     /**
      * @return The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> signingAlgorithm() {
@@ -369,6 +375,9 @@ public final class ContainerImageSignatureState extends com.pulumi.resources.Res
         /**
          * @param signingAlgorithm The algorithm to be used for signing. These are the only supported signing algorithms for container images.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -379,6 +388,9 @@ public final class ContainerImageSignatureState extends com.pulumi.resources.Res
 
         /**
          * @param signingAlgorithm The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

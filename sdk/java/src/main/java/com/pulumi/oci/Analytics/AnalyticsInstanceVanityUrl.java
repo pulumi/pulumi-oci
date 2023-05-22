@@ -155,12 +155,18 @@ public class AnalyticsInstanceVanityUrl extends com.pulumi.resources.CustomResou
     /**
      * (Updatable) PEM certificate for HTTPS connections.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="publicCertificate", type=String.class, parameters={})
     private Output<String> publicCertificate;
 
     /**
      * @return (Updatable) PEM certificate for HTTPS connections.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> publicCertificate() {

@@ -81,6 +81,9 @@ type Replica struct {
 	// The IP address the read replica is configured to listen on.
 	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
 	// (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsDeleteProtected pulumi.BoolOutput `pulumi:"isDeleteProtected"`
 	// A message describing the state of the read replica.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
@@ -149,6 +152,9 @@ type replicaState struct {
 	// The IP address the read replica is configured to listen on.
 	IpAddress *string `pulumi:"ipAddress"`
 	// (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsDeleteProtected *bool `pulumi:"isDeleteProtected"`
 	// A message describing the state of the read replica.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -186,6 +192,9 @@ type ReplicaState struct {
 	// The IP address the read replica is configured to listen on.
 	IpAddress pulumi.StringPtrInput
 	// (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsDeleteProtected pulumi.BoolPtrInput
 	// A message describing the state of the read replica.
 	LifecycleDetails pulumi.StringPtrInput
@@ -219,6 +228,9 @@ type replicaArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsDeleteProtected *bool `pulumi:"isDeleteProtected"`
 }
 
@@ -235,6 +247,9 @@ type ReplicaArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsDeleteProtected pulumi.BoolPtrInput
 }
 
@@ -371,6 +386,9 @@ func (o ReplicaOutput) IpAddress() pulumi.StringOutput {
 }
 
 // (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ReplicaOutput) IsDeleteProtected() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Replica) pulumi.BoolOutput { return v.IsDeleteProtected }).(pulumi.BoolOutput)
 }

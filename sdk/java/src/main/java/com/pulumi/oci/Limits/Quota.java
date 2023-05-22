@@ -189,12 +189,18 @@ public class Quota extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) An array of quota statements written in the declarative quota statement language.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="statements", type=List.class, parameters={String.class})
     private Output<List<String>> statements;
 
     /**
      * @return (Updatable) An array of quota statements written in the declarative quota statement language.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<List<String>> statements() {

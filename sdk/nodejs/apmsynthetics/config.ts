@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *     displayName: _var.monitor_display_name,
  *     monitorType: _var.monitor_monitor_type,
  *     repeatIntervalInSeconds: _var.monitor_repeat_interval_in_seconds,
- *     vantagePoints: [],
+ *     vantagePoints: _var.vantage_points,
  *     availabilityConfiguration: {
  *         maxAllowedFailuresPerInterval: _var.monitor_availability_configuration_max_allowed_failures_per_interval,
  *         minAllowedRunsPerInterval: _var.monitor_availability_configuration_min_allowed_runs_per_interval,
@@ -223,7 +223,11 @@ export class Config extends pulumi.CustomResource {
      */
     public /*out*/ readonly vantagePointCount!: pulumi.Output<number>;
     /**
-     * (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
+     * (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly vantagePoints!: pulumi.Output<string[]>;
 
@@ -402,7 +406,11 @@ export interface ConfigState {
      */
     vantagePointCount?: pulumi.Input<number>;
     /**
-     * (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
+     * (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vantagePoints?: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -488,7 +496,11 @@ export interface ConfigArgs {
      */
     timeoutInSeconds?: pulumi.Input<number>;
     /**
-     * (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
+     * (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vantagePoints: pulumi.Input<pulumi.Input<string>[]>;
 }

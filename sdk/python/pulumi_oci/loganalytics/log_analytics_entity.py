@@ -39,7 +39,11 @@ class LogAnalyticsEntityArgs:
         :param pulumi.Input[str] name: (Updatable) Log analytics entity name.
         :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
         :param pulumi.Input[str] source_id: This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
-        :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity.
+        :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "entity_type_name", entity_type_name)
@@ -199,7 +203,11 @@ class LogAnalyticsEntityArgs:
     @pulumi.getter(name="timezoneRegion")
     def timezone_region(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The timezone region of the log analytics entity.
+        (Updatable) The timezone region of the log analytics entity. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "timezone_region")
 
@@ -252,7 +260,11 @@ class _LogAnalyticsEntityState:
         :param pulumi.Input[str] state: The current state of the log analytics entity.
         :param pulumi.Input[str] time_created: The date and time the resource was created, in the format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
-        :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity.
+        :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if are_logs_collected is not None:
             pulumi.set(__self__, "are_logs_collected", are_logs_collected)
@@ -527,7 +539,11 @@ class _LogAnalyticsEntityState:
     @pulumi.getter(name="timezoneRegion")
     def timezone_region(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The timezone region of the log analytics entity.
+        (Updatable) The timezone region of the log analytics entity. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "timezone_region")
 
@@ -604,7 +620,11 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
         :param pulumi.Input[str] source_id: This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
-        :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity.
+        :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -767,7 +787,11 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         :param pulumi.Input[str] state: The current state of the log analytics entity.
         :param pulumi.Input[str] time_created: The date and time the resource was created, in the format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
-        :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity.
+        :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -951,7 +975,11 @@ class LogAnalyticsEntity(pulumi.CustomResource):
     @pulumi.getter(name="timezoneRegion")
     def timezone_region(self) -> pulumi.Output[str]:
         """
-        (Updatable) The timezone region of the log analytics entity.
+        (Updatable) The timezone region of the log analytics entity. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "timezone_region")
 

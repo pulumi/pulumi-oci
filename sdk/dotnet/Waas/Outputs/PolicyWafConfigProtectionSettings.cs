@@ -39,6 +39,8 @@ namespace Pulumi.Oci.Waas.Outputs
         public readonly int? BlockResponseCode;
         /// <summary>
         /// (Updatable) Inspects the response body of origin responses. Can be used to detect leakage of sensitive data. If unspecified, defaults to `false`.
+        /// 
+        /// **Note:** Only origin responses with a Content-Type matching a value in `mediaTypes` will be inspected.
         /// </summary>
         public readonly bool? IsResponseInspected;
         /// <summary>
@@ -59,10 +61,32 @@ namespace Pulumi.Oci.Waas.Outputs
         public readonly int? MaxTotalNameLengthOfArguments;
         /// <summary>
         /// (Updatable) The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `["text/html", "text/plain", "text/xml"]`.
+        /// 
+        /// Supported MIME types include:
+        /// * text/html
+        /// * text/plain
+        /// * text/asp
+        /// * text/css
+        /// * text/x-script
+        /// * application/json
+        /// * text/webviewhtml
+        /// * text/x-java-source
+        /// * application/x-javascript
+        /// * application/javascript
+        /// * application/ecmascript
+        /// * text/javascript
+        /// * text/ecmascript
+        /// * text/x-script.perl
+        /// * text/x-script.phyton
+        /// * application/plain
+        /// * application/xml
+        /// * text/xml
         /// </summary>
         public readonly ImmutableArray<string> MediaTypes;
         /// <summary>
         /// (Updatable) The length of time to analyze traffic traffic, in days. After the analysis period, `WafRecommendations` will be populated. If unspecified, defaults to `10`.
+        /// 
+        /// Use `GET /waasPolicies/{waasPolicyId}/wafRecommendations` to view WAF recommendations.
         /// </summary>
         public readonly int? RecommendationsPeriodInDays;
 

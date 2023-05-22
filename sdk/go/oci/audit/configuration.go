@@ -49,6 +49,9 @@ type Configuration struct {
 	// ID of the root compartment (tenancy)
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionPeriodDays pulumi.IntOutput `pulumi:"retentionPeriodDays"`
 }
 
@@ -90,6 +93,9 @@ type configurationState struct {
 	// ID of the root compartment (tenancy)
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionPeriodDays *int `pulumi:"retentionPeriodDays"`
 }
 
@@ -97,6 +103,9 @@ type ConfigurationState struct {
 	// ID of the root compartment (tenancy)
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionPeriodDays pulumi.IntPtrInput
 }
 
@@ -108,6 +117,9 @@ type configurationArgs struct {
 	// ID of the root compartment (tenancy)
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionPeriodDays int `pulumi:"retentionPeriodDays"`
 }
 
@@ -116,6 +128,9 @@ type ConfigurationArgs struct {
 	// ID of the root compartment (tenancy)
 	CompartmentId pulumi.StringInput
 	// (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionPeriodDays pulumi.IntInput
 }
 
@@ -212,6 +227,9 @@ func (o ConfigurationOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ConfigurationOutput) RetentionPeriodDays() pulumi.IntOutput {
 	return o.ApplyT(func(v *Configuration) pulumi.IntOutput { return v.RetentionPeriodDays }).(pulumi.IntOutput)
 }

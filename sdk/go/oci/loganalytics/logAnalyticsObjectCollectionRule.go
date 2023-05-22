@@ -128,6 +128,9 @@ type LogAnalyticsObjectCollectionRule struct {
 	// The time when this rule was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Timezone pulumi.StringOutput `pulumi:"timezone"`
 }
 
@@ -229,6 +232,9 @@ type logAnalyticsObjectCollectionRuleState struct {
 	// The time when this rule was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Timezone *string `pulumi:"timezone"`
 }
 
@@ -284,6 +290,9 @@ type LogAnalyticsObjectCollectionRuleState struct {
 	// The time when this rule was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
 	// (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Timezone pulumi.StringPtrInput
 }
 
@@ -335,6 +344,9 @@ type logAnalyticsObjectCollectionRuleArgs struct {
 	// The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
 	PollTill *string `pulumi:"pollTill"`
 	// (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Timezone *string `pulumi:"timezone"`
 }
 
@@ -383,6 +395,9 @@ type LogAnalyticsObjectCollectionRuleArgs struct {
 	// The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
 	PollTill pulumi.StringPtrInput
 	// (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Timezone pulumi.StringPtrInput
 }
 
@@ -601,6 +616,9 @@ func (o LogAnalyticsObjectCollectionRuleOutput) TimeUpdated() pulumi.StringOutpu
 }
 
 // (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o LogAnalyticsObjectCollectionRuleOutput) Timezone() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringOutput { return v.Timezone }).(pulumi.StringOutput)
 }

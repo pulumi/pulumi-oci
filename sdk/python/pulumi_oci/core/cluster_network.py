@@ -26,6 +26,8 @@ class ClusterNetworkArgs:
         The set of arguments for constructing a ClusterNetwork resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolArgs']]] instance_pools: (Updatable) The data to create the instance pools in the cluster network.
+               
+               Each cluster network can have one instance pool.
         :param pulumi.Input['ClusterNetworkPlacementConfigurationArgs'] placement_configuration: The location for where the instance pools in a cluster network will place instances.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
@@ -58,6 +60,8 @@ class ClusterNetworkArgs:
     def instance_pools(self) -> pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolArgs']]]:
         """
         (Updatable) The data to create the instance pools in the cluster network.
+
+        Each cluster network can have one instance pool.
         """
         return pulumi.get(self, "instance_pools")
 
@@ -136,6 +140,8 @@ class _ClusterNetworkState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolArgs']]] instance_pools: (Updatable) The data to create the instance pools in the cluster network.
+               
+               Each cluster network can have one instance pool.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_block_ids: The list of network block OCIDs of the HPC island.
         :param pulumi.Input['ClusterNetworkPlacementConfigurationArgs'] placement_configuration: The location for where the instance pools in a cluster network will place instances.
         :param pulumi.Input[str] state: The current state of the cluster network.
@@ -230,6 +236,8 @@ class _ClusterNetworkState:
     def instance_pools(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolArgs']]]]:
         """
         (Updatable) The data to create the instance pools in the cluster network.
+
+        Each cluster network can have one instance pool.
         """
         return pulumi.get(self, "instance_pools")
 
@@ -367,6 +375,8 @@ class ClusterNetwork(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterNetworkInstancePoolArgs']]]] instance_pools: (Updatable) The data to create the instance pools in the cluster network.
+               
+               Each cluster network can have one instance pool.
         :param pulumi.Input[pulumi.InputType['ClusterNetworkPlacementConfigurationArgs']] placement_configuration: The location for where the instance pools in a cluster network will place instances.
         """
         ...
@@ -506,6 +516,8 @@ class ClusterNetwork(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hpc island used by the cluster network.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterNetworkInstancePoolArgs']]]] instance_pools: (Updatable) The data to create the instance pools in the cluster network.
+               
+               Each cluster network can have one instance pool.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_block_ids: The list of network block OCIDs of the HPC island.
         :param pulumi.Input[pulumi.InputType['ClusterNetworkPlacementConfigurationArgs']] placement_configuration: The location for where the instance pools in a cluster network will place instances.
         :param pulumi.Input[str] state: The current state of the cluster network.
@@ -574,6 +586,8 @@ class ClusterNetwork(pulumi.CustomResource):
     def instance_pools(self) -> pulumi.Output[Sequence['outputs.ClusterNetworkInstancePool']]:
         """
         (Updatable) The data to create the instance pools in the cluster network.
+
+        Each cluster network can have one instance pool.
         """
         return pulumi.get(self, "instance_pools")
 

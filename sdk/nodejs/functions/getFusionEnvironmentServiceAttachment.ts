@@ -49,10 +49,6 @@ export interface GetFusionEnvironmentServiceAttachmentArgs {
  */
 export interface GetFusionEnvironmentServiceAttachmentResult {
     /**
-     * Action
-     */
-    readonly action: string;
-    /**
      * Compartment Identifier
      */
     readonly compartmentId: string;
@@ -70,7 +66,7 @@ export interface GetFusionEnvironmentServiceAttachmentResult {
     readonly freeformTags: {[key: string]: any};
     readonly fusionEnvironmentId: string;
     /**
-     * The provider-assigned unique ID for this managed resource.
+     * Unique identifier that is immutable on creation
      */
     readonly id: string;
     /**

@@ -96,7 +96,11 @@ namespace Pulumi.Oci.OsManagement
         public Output<ImmutableArray<Outputs.ManagedInstanceGroupManagedInstance>> ManagedInstances { get; private set; } = null!;
 
         /// <summary>
-        /// The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
+        /// The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("osFamily")]
         public Output<string> OsFamily { get; private set; } = null!;
@@ -196,7 +200,11 @@ namespace Pulumi.Oci.OsManagement
         }
 
         /// <summary>
-        /// The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
+        /// The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("osFamily")]
         public Input<string>? OsFamily { get; set; }
@@ -267,7 +275,11 @@ namespace Pulumi.Oci.OsManagement
         }
 
         /// <summary>
-        /// The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
+        /// The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("osFamily")]
         public Input<string>? OsFamily { get; set; }

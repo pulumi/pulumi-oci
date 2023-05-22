@@ -95,6 +95,10 @@ export class Job extends pulumi.CustomResource {
     public readonly artifactContentDisposition!: pulumi.Output<string | undefined>;
     /**
      * The content length of the body.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly artifactContentLength!: pulumi.Output<string | undefined>;
     public /*out*/ readonly artifactContentMd5!: pulumi.Output<string>;
@@ -244,6 +248,10 @@ export interface JobState {
     artifactContentDisposition?: pulumi.Input<string>;
     /**
      * The content length of the body.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     artifactContentLength?: pulumi.Input<string>;
     artifactContentMd5?: pulumi.Input<string>;
@@ -321,6 +329,10 @@ export interface JobArgs {
     artifactContentDisposition?: pulumi.Input<string>;
     /**
      * The content length of the body.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     artifactContentLength?: pulumi.Input<string>;
     /**

@@ -79,7 +79,11 @@ export class ConnectHarness extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleStateDetails!: pulumi.Output<string>;
     /**
-     * The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
+     * The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly name!: pulumi.Output<string>;
     /**
@@ -150,7 +154,11 @@ export interface ConnectHarnessState {
      */
     lifecycleStateDetails?: pulumi.Input<string>;
     /**
-     * The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
+     * The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     name?: pulumi.Input<string>;
     /**
@@ -180,7 +188,11 @@ export interface ConnectHarnessArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
+     * The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     name?: pulumi.Input<string>;
 }

@@ -120,12 +120,18 @@ public final class ManagedInstanceGroupState extends com.pulumi.resources.Resour
     /**
      * The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="osFamily")
     private @Nullable Output<String> osFamily;
 
     /**
      * @return The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> osFamily() {
@@ -327,6 +333,9 @@ public final class ManagedInstanceGroupState extends com.pulumi.resources.Resour
         /**
          * @param osFamily The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -337,6 +346,9 @@ public final class ManagedInstanceGroupState extends com.pulumi.resources.Resour
 
         /**
          * @param osFamily The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

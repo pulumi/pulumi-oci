@@ -78,12 +78,18 @@ public class CompareUserAssessment extends com.pulumi.resources.CustomResource {
     /**
      * The OCID of the user assessment.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="userAssessmentId", type=String.class, parameters={})
     private Output<String> userAssessmentId;
 
     /**
      * @return The OCID of the user assessment.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> userAssessmentId() {

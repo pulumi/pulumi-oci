@@ -72,6 +72,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The SSH public key used to authenticate the console connection.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("publicKey")]
         public Output<string> PublicKey { get; private set; } = null!;
@@ -136,6 +140,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The SSH public key used to authenticate the console connection.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("publicKey", required: true)]
         public Input<string> PublicKey { get; set; } = null!;
@@ -174,6 +182,10 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The SSH public key used to authenticate the console connection.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("publicKey")]
         public Input<string>? PublicKey { get; set; }

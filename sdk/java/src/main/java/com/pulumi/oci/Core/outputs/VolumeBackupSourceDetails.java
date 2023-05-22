@@ -24,6 +24,9 @@ public final class VolumeBackupSourceDetails {
     /**
      * @return The OCID of the source volume backup.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     private String volumeBackupId;
 
@@ -44,6 +47,9 @@ public final class VolumeBackupSourceDetails {
     }
     /**
      * @return The OCID of the source volume backup.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String volumeBackupId() {

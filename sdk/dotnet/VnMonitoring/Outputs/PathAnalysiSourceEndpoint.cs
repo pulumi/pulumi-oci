@@ -40,6 +40,10 @@ namespace Pulumi.Oci.VnMonitoring.Outputs
         public readonly string? SubnetId;
         /// <summary>
         /// The type of the `PathAnalysis` query.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Type;
         /// <summary>

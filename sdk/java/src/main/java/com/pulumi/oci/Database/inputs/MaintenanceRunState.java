@@ -307,12 +307,16 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
     /**
      * (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
      * 
+     * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+     * 
      */
     @Import(name="patchingMode")
     private @Nullable Output<String> patchingMode;
 
     /**
      * @return (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
+     * 
+     * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
      * 
      */
     public Optional<Output<String>> patchingMode() {
@@ -457,12 +461,18 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
     /**
      * (Updatable) The scheduled date and time of the maintenance run to update.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="timeScheduled")
     private @Nullable Output<String> timeScheduled;
 
     /**
      * @return (Updatable) The scheduled date and time of the maintenance run to update.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> timeScheduled() {
@@ -950,6 +960,8 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
         /**
          * @param patchingMode (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
          * 
+         * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+         * 
          * @return builder
          * 
          */
@@ -960,6 +972,8 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param patchingMode (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
+         * 
+         * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
          * 
          * @return builder
          * 
@@ -1160,6 +1174,9 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
         /**
          * @param timeScheduled (Updatable) The scheduled date and time of the maintenance run to update.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -1170,6 +1187,9 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param timeScheduled (Updatable) The scheduled date and time of the maintenance run to update.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

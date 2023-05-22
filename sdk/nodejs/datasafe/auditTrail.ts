@@ -87,6 +87,10 @@ export class AuditTrail extends pulumi.CustomResource {
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly resumeTrigger!: pulumi.Output<number | undefined>;
     /**
@@ -236,6 +240,10 @@ export interface AuditTrailState {
     lifecycleDetails?: pulumi.Input<string>;
     /**
      * (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     resumeTrigger?: pulumi.Input<number>;
     /**
@@ -306,6 +314,10 @@ export interface AuditTrailArgs {
     isAutoPurgeEnabled?: pulumi.Input<boolean>;
     /**
      * (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     resumeTrigger?: pulumi.Input<number>;
     /**

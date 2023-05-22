@@ -78,12 +78,18 @@ public class CompareSecurityAssessment extends com.pulumi.resources.CustomResour
     /**
      * The OCID of the security assessment.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="securityAssessmentId", type=String.class, parameters={})
     private Output<String> securityAssessmentId;
 
     /**
      * @return The OCID of the security assessment.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> securityAssessmentId() {

@@ -51,12 +51,18 @@ public final class LogAnalyticsImportCustomContentState extends com.pulumi.resou
     /**
      * A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is &#34;100-Continue&#34; (case-insensitive).
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="expect")
     private @Nullable Output<String> expect;
 
     /**
      * @return A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is &#34;100-Continue&#34; (case-insensitive).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> expect() {
@@ -240,6 +246,9 @@ public final class LogAnalyticsImportCustomContentState extends com.pulumi.resou
         /**
          * @param expect A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is &#34;100-Continue&#34; (case-insensitive).
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -250,6 +259,9 @@ public final class LogAnalyticsImportCustomContentState extends com.pulumi.resou
 
         /**
          * @param expect A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is &#34;100-Continue&#34; (case-insensitive).
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

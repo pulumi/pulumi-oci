@@ -180,12 +180,18 @@ public class DiscoveryJob extends com.pulumi.resources.CustomResource {
     /**
      * If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="shouldPropagateTagsToDiscoveredResources", type=Boolean.class, parameters={})
     private Output<Boolean> shouldPropagateTagsToDiscoveredResources;
 
     /**
      * @return If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Boolean> shouldPropagateTagsToDiscoveredResources() {

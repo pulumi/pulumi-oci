@@ -111,6 +111,10 @@ export class DeployPipeline extends pulumi.CustomResource {
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
      * The OCID of a project.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly projectId!: pulumi.Output<string>;
     /**
@@ -224,6 +228,10 @@ export interface DeployPipelineState {
     lifecycleDetails?: pulumi.Input<string>;
     /**
      * The OCID of a project.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     projectId?: pulumi.Input<string>;
     /**
@@ -270,6 +278,10 @@ export interface DeployPipelineArgs {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The OCID of a project.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     projectId: pulumi.Input<string>;
 }

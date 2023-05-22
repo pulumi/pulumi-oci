@@ -167,6 +167,10 @@ namespace Pulumi.Oci.OsManagement
 
         /// <summary>
         /// The status of the profile.
+        /// 
+        /// A profile with the "INSTALLED" status indicates that the profile has been installed.
+        /// 
+        /// A profile with the "AVAILABLE" status indicates that the profile is not installed, but can be.
         /// </summary>
         [Input("profileStatus")]
         public string? ProfileStatus { get; set; }
@@ -219,6 +223,10 @@ namespace Pulumi.Oci.OsManagement
 
         /// <summary>
         /// The status of the profile.
+        /// 
+        /// A profile with the "INSTALLED" status indicates that the profile has been installed.
+        /// 
+        /// A profile with the "AVAILABLE" status indicates that the profile is not installed, but can be.
         /// </summary>
         [Input("profileStatus")]
         public Input<string>? ProfileStatus { get; set; }

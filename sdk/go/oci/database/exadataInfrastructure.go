@@ -118,6 +118,9 @@ type ExadataInfrastructure struct {
 	// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
 	AdditionalComputeSystemModel pulumi.StringOutput `pulumi:"additionalComputeSystemModel"`
 	// The requested number of additional storage servers for the Exadata infrastructure.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	AdditionalStorageCount pulumi.IntOutput `pulumi:"additionalStorageCount"`
 	// (Updatable) The CIDR block for the Exadata administration network.
 	AdminNetworkCidr pulumi.StringOutput `pulumi:"adminNetworkCidr"`
@@ -274,6 +277,9 @@ type exadataInfrastructureState struct {
 	// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
 	AdditionalComputeSystemModel *string `pulumi:"additionalComputeSystemModel"`
 	// The requested number of additional storage servers for the Exadata infrastructure.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	AdditionalStorageCount *int `pulumi:"additionalStorageCount"`
 	// (Updatable) The CIDR block for the Exadata administration network.
 	AdminNetworkCidr *string `pulumi:"adminNetworkCidr"`
@@ -366,6 +372,9 @@ type ExadataInfrastructureState struct {
 	// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
 	AdditionalComputeSystemModel pulumi.StringPtrInput
 	// The requested number of additional storage servers for the Exadata infrastructure.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	AdditionalStorageCount pulumi.IntPtrInput
 	// (Updatable) The CIDR block for the Exadata administration network.
 	AdminNetworkCidr pulumi.StringPtrInput
@@ -456,6 +465,9 @@ type exadataInfrastructureArgs struct {
 	// (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
 	ActivationFile *string `pulumi:"activationFile"`
 	// The requested number of additional storage servers for the Exadata infrastructure.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	AdditionalStorageCount *int `pulumi:"additionalStorageCount"`
 	// (Updatable) The CIDR block for the Exadata administration network.
 	AdminNetworkCidr string `pulumi:"adminNetworkCidr"`
@@ -511,6 +523,9 @@ type ExadataInfrastructureArgs struct {
 	// (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
 	ActivationFile pulumi.StringPtrInput
 	// The requested number of additional storage servers for the Exadata infrastructure.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	AdditionalStorageCount pulumi.IntPtrInput
 	// (Updatable) The CIDR block for the Exadata administration network.
 	AdminNetworkCidr pulumi.StringInput
@@ -669,6 +684,9 @@ func (o ExadataInfrastructureOutput) AdditionalComputeSystemModel() pulumi.Strin
 }
 
 // The requested number of additional storage servers for the Exadata infrastructure.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ExadataInfrastructureOutput) AdditionalStorageCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.IntOutput { return v.AdditionalStorageCount }).(pulumi.IntOutput)
 }

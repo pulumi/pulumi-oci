@@ -17,6 +17,17 @@ namespace Pulumi.Oci.Identity.Inputs
 
         /// <summary>
         /// (Updatable) A list of bypass codes belongs to user
+        /// 
+        /// **Added In:** 18.3.6
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeGetArgs> BypassCodes
         {
@@ -29,6 +40,17 @@ namespace Pulumi.Oci.Identity.Inputs
 
         /// <summary>
         /// (Updatable) A list of devices enrolled by the user.
+        /// 
+        /// **Added In:** 18.3.6
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceGetArgs> Devices
         {
@@ -38,12 +60,33 @@ namespace Pulumi.Oci.Identity.Inputs
 
         /// <summary>
         /// (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * idcsAllowUpdatesInReadOnlyMode: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
+        /// * type: integer
+        /// * uniqueness: none
         /// </summary>
         [Input("loginAttempts")]
         public Input<int>? LoginAttempts { get; set; }
 
         /// <summary>
         /// (Updatable) This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+        /// 
+        /// **Added In:** 18.3.6
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: dateTime
+        /// * uniqueness: none
         /// </summary>
         [Input("mfaEnabledOn")]
         public Input<string>? MfaEnabledOn { get; set; }
@@ -53,6 +96,18 @@ namespace Pulumi.Oci.Identity.Inputs
 
         /// <summary>
         /// (Updatable) User MFA Ignored Apps Identifiers
+        /// 
+        /// **Added In:** 19.2.1
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public InputList<string> MfaIgnoredApps
         {
@@ -62,30 +117,90 @@ namespace Pulumi.Oci.Identity.Inputs
 
         /// <summary>
         /// (Updatable) User Opted for MFA
+        /// 
+        /// **Added In:** 18.3.6
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("mfaStatus")]
         public Input<string>? MfaStatus { get; set; }
 
         /// <summary>
         /// (Updatable) Preferred Authentication Factor Type
+        /// 
+        /// **Added In:** 18.3.6
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("preferredAuthenticationFactor")]
         public Input<string>? PreferredAuthenticationFactor { get; set; }
 
         /// <summary>
         /// (Updatable) Preferred Authentication method
+        /// 
+        /// **Added In:** 2009232244
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("preferredAuthenticationMethod")]
         public Input<string>? PreferredAuthenticationMethod { get; set; }
 
         /// <summary>
         /// (Updatable) User preferred device
+        /// 
+        /// **Added In:** 18.3.6
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         [Input("preferredDevice")]
         public Input<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceGetArgs>? PreferredDevice { get; set; }
 
         /// <summary>
         /// (Updatable) Preferred Third party vendor name
+        /// 
+        /// **Added In:** 19.2.1
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("preferredThirdPartyVendor")]
         public Input<string>? PreferredThirdPartyVendor { get; set; }
@@ -95,6 +210,17 @@ namespace Pulumi.Oci.Identity.Inputs
 
         /// <summary>
         /// (Updatable) A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted User Agents to authenticate users.  A User Agent is software application that a user uses to issue requests. For example, a User Agent could be a particular browser (possibly one of several executing on a desktop or laptop) or a particular mobile application (again, oneof several executing on a particular mobile device). A User Agent is trusted once the Multi-Factor Authentication has verified it in some way.
+        /// 
+        /// **Added In:** 18.3.6
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [value]
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
         /// </summary>
         public InputList<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentGetArgs> TrustedUserAgents
         {

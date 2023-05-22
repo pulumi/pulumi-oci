@@ -54,6 +54,9 @@ type PublicIpPoolCapacity struct {
 	// The OCID of the Byoip Range Id object to which the cidr block belongs.
 	ByoipId pulumi.StringOutput `pulumi:"byoipId"`
 	// The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CidrBlock pulumi.StringOutput `pulumi:"cidrBlock"`
 	// The OCID of the pool object created by the current tenancy
 	PublicIpPoolId pulumi.StringOutput `pulumi:"publicIpPoolId"`
@@ -100,6 +103,9 @@ type publicIpPoolCapacityState struct {
 	// The OCID of the Byoip Range Id object to which the cidr block belongs.
 	ByoipId *string `pulumi:"byoipId"`
 	// The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CidrBlock *string `pulumi:"cidrBlock"`
 	// The OCID of the pool object created by the current tenancy
 	PublicIpPoolId *string `pulumi:"publicIpPoolId"`
@@ -109,6 +115,9 @@ type PublicIpPoolCapacityState struct {
 	// The OCID of the Byoip Range Id object to which the cidr block belongs.
 	ByoipId pulumi.StringPtrInput
 	// The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CidrBlock pulumi.StringPtrInput
 	// The OCID of the pool object created by the current tenancy
 	PublicIpPoolId pulumi.StringPtrInput
@@ -122,6 +131,9 @@ type publicIpPoolCapacityArgs struct {
 	// The OCID of the Byoip Range Id object to which the cidr block belongs.
 	ByoipId string `pulumi:"byoipId"`
 	// The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CidrBlock string `pulumi:"cidrBlock"`
 	// The OCID of the pool object created by the current tenancy
 	PublicIpPoolId string `pulumi:"publicIpPoolId"`
@@ -132,6 +144,9 @@ type PublicIpPoolCapacityArgs struct {
 	// The OCID of the Byoip Range Id object to which the cidr block belongs.
 	ByoipId pulumi.StringInput
 	// The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CidrBlock pulumi.StringInput
 	// The OCID of the pool object created by the current tenancy
 	PublicIpPoolId pulumi.StringInput
@@ -230,6 +245,9 @@ func (o PublicIpPoolCapacityOutput) ByoipId() pulumi.StringOutput {
 }
 
 // The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PublicIpPoolCapacityOutput) CidrBlock() pulumi.StringOutput {
 	return o.ApplyT(func(v *PublicIpPoolCapacity) pulumi.StringOutput { return v.CidrBlock }).(pulumi.StringOutput)
 }

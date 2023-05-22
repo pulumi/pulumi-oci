@@ -172,12 +172,18 @@ public final class DeploymentBackupState extends com.pulumi.resources.ResourceAr
     /**
      * Name of the object to be uploaded to object storage
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="object")
     private @Nullable Output<String> object;
 
     /**
      * @return Name of the object to be uploaded to object storage
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> object() {
@@ -559,6 +565,9 @@ public final class DeploymentBackupState extends com.pulumi.resources.ResourceAr
         /**
          * @param object Name of the object to be uploaded to object storage
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -569,6 +578,9 @@ public final class DeploymentBackupState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param object Name of the object to be uploaded to object storage
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

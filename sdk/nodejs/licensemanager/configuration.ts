@@ -63,6 +63,10 @@ export class Configuration extends pulumi.CustomResource {
     public readonly compartmentId!: pulumi.Output<string>;
     /**
      * (Updatable) List of email IDs associated with the configuration.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly emailIds!: pulumi.Output<string[]>;
     /**
@@ -119,6 +123,10 @@ export interface ConfigurationState {
     compartmentId?: pulumi.Input<string>;
     /**
      * (Updatable) List of email IDs associated with the configuration.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     emailIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -141,6 +149,10 @@ export interface ConfigurationArgs {
     compartmentId: pulumi.Input<string>;
     /**
      * (Updatable) List of email IDs associated with the configuration.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     emailIds: pulumi.Input<pulumi.Input<string>[]>;
 }

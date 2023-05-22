@@ -177,6 +177,10 @@ export class Instance extends pulumi.CustomResource {
     public readonly upgradeSchedule!: pulumi.Output<string>;
     /**
      * (Updatable) Web Application Firewall(WAF) primary domain
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly wafPrimaryDomain!: pulumi.Output<string>;
 
@@ -379,6 +383,10 @@ export interface InstanceState {
     upgradeSchedule?: pulumi.Input<string>;
     /**
      * (Updatable) Web Application Firewall(WAF) primary domain
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     wafPrimaryDomain?: pulumi.Input<string>;
 }
@@ -453,6 +461,10 @@ export interface InstanceArgs {
     upgradeSchedule?: pulumi.Input<string>;
     /**
      * (Updatable) Web Application Firewall(WAF) primary domain
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     wafPrimaryDomain?: pulumi.Input<string>;
 }

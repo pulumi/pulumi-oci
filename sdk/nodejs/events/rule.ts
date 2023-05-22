@@ -89,6 +89,17 @@ export class Rule extends pulumi.CustomResource {
     /**
      * (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
      * * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
+     *
+     * For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
+     * * For a condition with fields to match an event, the event must contain all the field names  listed in the condition. Field names must appear in the condition with the same nesting  structure used in the event.
+     *
+     * For a list of reference events, see  [Services that Produce Events](https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm).
+     * * Rules apply to events in the compartment in which you create them and any child compartments.  This means that a condition specified by a rule only matches events emitted from resources in  the compartment or any of its child compartments.
+     * * Wildcard matching is supported with the asterisk (*) character.
+     *
+     * For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
+     *
+     * Example: `\"eventType\": \"com.oraclecloud.databaseservice.autonomous.database.backup.end\"`
      */
     public readonly condition!: pulumi.Output<string>;
     /**
@@ -108,7 +119,11 @@ export class Rule extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) Whether or not this rule is currently enabled.  Example: `true`
+     * (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly isEnabled!: pulumi.Output<boolean>;
     /**
@@ -197,6 +212,17 @@ export interface RuleState {
     /**
      * (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
      * * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
+     *
+     * For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
+     * * For a condition with fields to match an event, the event must contain all the field names  listed in the condition. Field names must appear in the condition with the same nesting  structure used in the event.
+     *
+     * For a list of reference events, see  [Services that Produce Events](https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm).
+     * * Rules apply to events in the compartment in which you create them and any child compartments.  This means that a condition specified by a rule only matches events emitted from resources in  the compartment or any of its child compartments.
+     * * Wildcard matching is supported with the asterisk (*) character.
+     *
+     * For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
+     *
+     * Example: `\"eventType\": \"com.oraclecloud.databaseservice.autonomous.database.backup.end\"`
      */
     condition?: pulumi.Input<string>;
     /**
@@ -216,7 +242,11 @@ export interface RuleState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Whether or not this rule is currently enabled.  Example: `true`
+     * (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     isEnabled?: pulumi.Input<boolean>;
     /**
@@ -248,6 +278,17 @@ export interface RuleArgs {
     /**
      * (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
      * * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
+     *
+     * For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
+     * * For a condition with fields to match an event, the event must contain all the field names  listed in the condition. Field names must appear in the condition with the same nesting  structure used in the event.
+     *
+     * For a list of reference events, see  [Services that Produce Events](https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm).
+     * * Rules apply to events in the compartment in which you create them and any child compartments.  This means that a condition specified by a rule only matches events emitted from resources in  the compartment or any of its child compartments.
+     * * Wildcard matching is supported with the asterisk (*) character.
+     *
+     * For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
+     *
+     * Example: `\"eventType\": \"com.oraclecloud.databaseservice.autonomous.database.backup.end\"`
      */
     condition: pulumi.Input<string>;
     /**
@@ -267,7 +308,11 @@ export interface RuleArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Whether or not this rule is currently enabled.  Example: `true`
+     * (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     isEnabled: pulumi.Input<boolean>;
 }

@@ -78,12 +78,18 @@ public class Configuration extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) List of email IDs associated with the configuration.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="emailIds", type=List.class, parameters={String.class})
     private Output<List<String>> emailIds;
 
     /**
      * @return (Updatable) List of email IDs associated with the configuration.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<List<String>> emailIds() {

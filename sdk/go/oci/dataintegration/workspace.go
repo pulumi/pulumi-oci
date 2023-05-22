@@ -113,6 +113,9 @@ type Workspace struct {
 	// The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// The OCID of the VCN the subnet is in.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId pulumi.StringOutput `pulumi:"vcnId"`
 }
 
@@ -192,6 +195,9 @@ type workspaceState struct {
 	// The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The OCID of the VCN the subnet is in.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId *string `pulumi:"vcnId"`
 }
 
@@ -237,6 +243,9 @@ type WorkspaceState struct {
 	// The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated pulumi.StringPtrInput
 	// The OCID of the VCN the subnet is in.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId pulumi.StringPtrInput
 }
 
@@ -278,6 +287,9 @@ type workspaceArgs struct {
 	// The OCID of the subnet for customer connected databases.
 	SubnetId *string `pulumi:"subnetId"`
 	// The OCID of the VCN the subnet is in.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId *string `pulumi:"vcnId"`
 }
 
@@ -316,6 +328,9 @@ type WorkspaceArgs struct {
 	// The OCID of the subnet for customer connected databases.
 	SubnetId pulumi.StringPtrInput
 	// The OCID of the VCN the subnet is in.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VcnId pulumi.StringPtrInput
 }
 
@@ -510,6 +525,9 @@ func (o WorkspaceOutput) TimeUpdated() pulumi.StringOutput {
 }
 
 // The OCID of the VCN the subnet is in.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o WorkspaceOutput) VcnId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Workspace) pulumi.StringOutput { return v.VcnId }).(pulumi.StringOutput)
 }

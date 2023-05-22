@@ -28,6 +28,15 @@ type DomainsPasswordPolicy struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) A String value whose contents indicate a set of characters that can appear, in any sequence, in a password value
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	AllowedChars pulumi.StringOutput `pulumi:"allowedChars"`
 	// (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
 	AttributeSets pulumi.StringArrayOutput `pulumi:"attributeSets"`
@@ -36,102 +45,545 @@ type DomainsPasswordPolicy struct {
 	// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization pulumi.StringPtrOutput `pulumi:"authorization"`
 	// (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	CompartmentOcid pulumi.StringOutput `pulumi:"compartmentOcid"`
 	// (Updatable) List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsCompositeKey: [key]
+	// * multiValued: true
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
 	ConfiguredPasswordPolicyRules DomainsPasswordPolicyConfiguredPasswordPolicyRuleArrayOutput `pulumi:"configuredPasswordPolicyRules"`
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	DeleteInProgress pulumi.BoolOutput `pulumi:"deleteInProgress"`
 	// (Updatable) A String that describes the password policy
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A delimiter used to separate characters in the dictionary file
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DictionaryDelimiter pulumi.StringOutput `pulumi:"dictionaryDelimiter"`
 	// (Updatable) A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DictionaryLocation pulumi.StringOutput `pulumi:"dictionaryLocation"`
 	// (Updatable) Indicates whether the password can match a dictionary word
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	DictionaryWordDisallowed pulumi.BoolOutput `pulumi:"dictionaryWordDisallowed"`
 	// (Updatable) A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DisallowedChars pulumi.StringOutput `pulumi:"disallowedChars"`
 	// (Updatable) A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DisallowedSubstrings pulumi.StringArrayOutput `pulumi:"disallowedSubstrings"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
 	// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	ExternalId pulumi.StringOutput `pulumi:"externalId"`
 	// (Updatable) Indicates a sequence of characters that match the user's first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	FirstNameDisallowed pulumi.BoolOutput `pulumi:"firstNameDisallowed"`
 	// (Updatable) Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: writeOnly
+	// * required: false
+	// * returned: never
+	// * type: boolean
+	// * uniqueness: none
 	ForcePasswordReset pulumi.BoolOutput `pulumi:"forcePasswordReset"`
 	// (Updatable) A list of groups that the password policy belongs to.
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsCompositeKey: [value]
+	// * idcsSearchable: true
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	Groups DomainsPasswordPolicyGroupArrayOutput `pulumi:"groups"`
 	// (Updatable) The User or App who created the Resource
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: true
+	// * returned: default
+	// * type: complex
 	IdcsCreatedBies DomainsPasswordPolicyIdcsCreatedByArrayOutput `pulumi:"idcsCreatedBies"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringOutput `pulumi:"idcsEndpoint"`
 	// (Updatable) The User or App who modified the Resource
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: complex
 	IdcsLastModifiedBies DomainsPasswordPolicyIdcsLastModifiedByArrayOutput `pulumi:"idcsLastModifiedBies"`
 	// (Updatable) The release number when the resource was upgraded.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: string
+	// * uniqueness: none
 	IdcsLastUpgradedInRelease pulumi.StringOutput `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: string
+	// * uniqueness: none
 	IdcsPreventedOperations pulumi.StringArrayOutput `pulumi:"idcsPreventedOperations"`
 	// (Updatable) Indicates a sequence of characters that match the user's last name of given name cannot be the password. Password validation against policy will be ignored if length of last name is less than or equal to 3 characters.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	LastNameDisallowed pulumi.BoolOutput `pulumi:"lastNameDisallowed"`
 	// (Updatable) The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	LockoutDuration pulumi.IntOutput `pulumi:"lockoutDuration"`
 	// (Updatable) An integer that represents the maximum number of failed logins before an account is locked
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MaxIncorrectAttempts pulumi.IntOutput `pulumi:"maxIncorrectAttempts"`
 	// (Updatable) The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MaxLength pulumi.IntOutput `pulumi:"maxLength"`
 	// (Updatable) The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MaxRepeatedChars pulumi.IntOutput `pulumi:"maxRepeatedChars"`
 	// (Updatable) The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MaxSpecialChars pulumi.IntOutput `pulumi:"maxSpecialChars"`
 	// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+	// * type: complex
 	Metas DomainsPasswordPolicyMetaArrayOutput `pulumi:"metas"`
 	// (Updatable) The minimum number of a combination of alphabetic and numeric characters in a password.  A value of 0 or no value indicates no minimum alphanumeric character restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinAlphaNumerals pulumi.IntOutput `pulumi:"minAlphaNumerals"`
 	// (Updatable) The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinAlphas pulumi.IntOutput `pulumi:"minAlphas"`
 	// (Updatable) The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinLength pulumi.IntOutput `pulumi:"minLength"`
 	// (Updatable) The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinLowerCase pulumi.IntOutput `pulumi:"minLowerCase"`
 	// (Updatable) The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinNumerals pulumi.IntOutput `pulumi:"minNumerals"`
 	// (Updatable) Minimum time after which the user can resubmit the reset password request
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinPasswordAge pulumi.IntOutput `pulumi:"minPasswordAge"`
 	// (Updatable) The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinSpecialChars pulumi.IntOutput `pulumi:"minSpecialChars"`
 	// (Updatable) The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinUniqueChars pulumi.IntOutput `pulumi:"minUniqueChars"`
 	// (Updatable) The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinUpperCase pulumi.IntOutput `pulumi:"minUpperCase"`
 	// (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: true
+	// * returned: always
+	// * type: string
+	// * uniqueness: server
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) The number of passwords that will be kept in history that may not be used as a password
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	NumPasswordsInHistory pulumi.IntOutput `pulumi:"numPasswordsInHistory"`
 	// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: global
 	Ocid pulumi.StringOutput `pulumi:"ocid"`
 	// (Updatable) An integer indicating the number of days before which the user should be warned about password expiry.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	PasswordExpireWarning pulumi.IntOutput `pulumi:"passwordExpireWarning"`
 	// (Updatable) The number of days after which the password expires automatically
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	PasswordExpiresAfter pulumi.IntOutput `pulumi:"passwordExpiresAfter"`
 	// (Updatable) Indicates whether the password policy is configured as Simple, Standard, or Custom.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	PasswordStrength pulumi.StringOutput `pulumi:"passwordStrength"`
 	// (Updatable) Password policy priority
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * idcsMinValue: 1
+	// * uniqueness: server
 	Priority pulumi.IntOutput `pulumi:"priority"`
 	// (Updatable) A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	RequiredChars pulumi.StringOutput `pulumi:"requiredChars"`
 	// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
 	// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Schemas pulumi.StringArrayOutput `pulumi:"schemas"`
 	// (Updatable) Indicates that the password must begin with an alphabetic character
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	StartsWithAlphabet pulumi.BoolOutput `pulumi:"startsWithAlphabet"`
 	// (Updatable) A list of tags on this resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [key, value]
+	// * idcsSearchable: true
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
 	Tags DomainsPasswordPolicyTagArrayOutput `pulumi:"tags"`
 	// (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
 	// (Updatable) Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserNameDisallowed pulumi.BoolOutput `pulumi:"userNameDisallowed"`
 }
 
@@ -178,6 +630,15 @@ func GetDomainsPasswordPolicy(ctx *pulumi.Context,
 // Input properties used for looking up and filtering DomainsPasswordPolicy resources.
 type domainsPasswordPolicyState struct {
 	// (Updatable) A String value whose contents indicate a set of characters that can appear, in any sequence, in a password value
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	AllowedChars *string `pulumi:"allowedChars"`
 	// (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
 	AttributeSets []string `pulumi:"attributeSets"`
@@ -186,107 +647,559 @@ type domainsPasswordPolicyState struct {
 	// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization *string `pulumi:"authorization"`
 	// (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	CompartmentOcid *string `pulumi:"compartmentOcid"`
 	// (Updatable) List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsCompositeKey: [key]
+	// * multiValued: true
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
 	ConfiguredPasswordPolicyRules []DomainsPasswordPolicyConfiguredPasswordPolicyRule `pulumi:"configuredPasswordPolicyRules"`
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	DeleteInProgress *bool `pulumi:"deleteInProgress"`
 	// (Updatable) A String that describes the password policy
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Description *string `pulumi:"description"`
 	// (Updatable) A delimiter used to separate characters in the dictionary file
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DictionaryDelimiter *string `pulumi:"dictionaryDelimiter"`
 	// (Updatable) A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DictionaryLocation *string `pulumi:"dictionaryLocation"`
 	// (Updatable) Indicates whether the password can match a dictionary word
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	DictionaryWordDisallowed *bool `pulumi:"dictionaryWordDisallowed"`
 	// (Updatable) A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DisallowedChars *string `pulumi:"disallowedChars"`
 	// (Updatable) A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DisallowedSubstrings []string `pulumi:"disallowedSubstrings"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DomainOcid *string `pulumi:"domainOcid"`
 	// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	ExternalId *string `pulumi:"externalId"`
 	// (Updatable) Indicates a sequence of characters that match the user's first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	FirstNameDisallowed *bool `pulumi:"firstNameDisallowed"`
 	// (Updatable) Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: writeOnly
+	// * required: false
+	// * returned: never
+	// * type: boolean
+	// * uniqueness: none
 	ForcePasswordReset *bool `pulumi:"forcePasswordReset"`
 	// (Updatable) A list of groups that the password policy belongs to.
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsCompositeKey: [value]
+	// * idcsSearchable: true
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	Groups []DomainsPasswordPolicyGroup `pulumi:"groups"`
 	// (Updatable) The User or App who created the Resource
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: true
+	// * returned: default
+	// * type: complex
 	IdcsCreatedBies []DomainsPasswordPolicyIdcsCreatedBy `pulumi:"idcsCreatedBies"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint *string `pulumi:"idcsEndpoint"`
 	// (Updatable) The User or App who modified the Resource
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: complex
 	IdcsLastModifiedBies []DomainsPasswordPolicyIdcsLastModifiedBy `pulumi:"idcsLastModifiedBies"`
 	// (Updatable) The release number when the resource was upgraded.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: string
+	// * uniqueness: none
 	IdcsLastUpgradedInRelease *string `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: string
+	// * uniqueness: none
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
 	// (Updatable) Indicates a sequence of characters that match the user's last name of given name cannot be the password. Password validation against policy will be ignored if length of last name is less than or equal to 3 characters.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	LastNameDisallowed *bool `pulumi:"lastNameDisallowed"`
 	// (Updatable) The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	LockoutDuration *int `pulumi:"lockoutDuration"`
 	// (Updatable) An integer that represents the maximum number of failed logins before an account is locked
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MaxIncorrectAttempts *int `pulumi:"maxIncorrectAttempts"`
 	// (Updatable) The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MaxLength *int `pulumi:"maxLength"`
 	// (Updatable) The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MaxRepeatedChars *int `pulumi:"maxRepeatedChars"`
 	// (Updatable) The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MaxSpecialChars *int `pulumi:"maxSpecialChars"`
 	// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+	// * type: complex
 	Metas []DomainsPasswordPolicyMeta `pulumi:"metas"`
 	// (Updatable) The minimum number of a combination of alphabetic and numeric characters in a password.  A value of 0 or no value indicates no minimum alphanumeric character restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinAlphaNumerals *int `pulumi:"minAlphaNumerals"`
 	// (Updatable) The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinAlphas *int `pulumi:"minAlphas"`
 	// (Updatable) The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinLength *int `pulumi:"minLength"`
 	// (Updatable) The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinLowerCase *int `pulumi:"minLowerCase"`
 	// (Updatable) The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinNumerals *int `pulumi:"minNumerals"`
 	// (Updatable) Minimum time after which the user can resubmit the reset password request
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinPasswordAge *int `pulumi:"minPasswordAge"`
 	// (Updatable) The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinSpecialChars *int `pulumi:"minSpecialChars"`
 	// (Updatable) The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinUniqueChars *int `pulumi:"minUniqueChars"`
 	// (Updatable) The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinUpperCase *int `pulumi:"minUpperCase"`
 	// (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: true
+	// * returned: always
+	// * type: string
+	// * uniqueness: server
 	Name *string `pulumi:"name"`
 	// (Updatable) The number of passwords that will be kept in history that may not be used as a password
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	NumPasswordsInHistory *int `pulumi:"numPasswordsInHistory"`
 	// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: global
 	Ocid *string `pulumi:"ocid"`
 	// (Updatable) An integer indicating the number of days before which the user should be warned about password expiry.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	PasswordExpireWarning *int `pulumi:"passwordExpireWarning"`
 	// (Updatable) The number of days after which the password expires automatically
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	PasswordExpiresAfter *int `pulumi:"passwordExpiresAfter"`
 	// (Updatable) Indicates whether the password policy is configured as Simple, Standard, or Custom.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	PasswordStrength *string `pulumi:"passwordStrength"`
 	// (Updatable) Password policy priority
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * idcsMinValue: 1
+	// * uniqueness: server
 	Priority *int `pulumi:"priority"`
 	// (Updatable) A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	RequiredChars *string `pulumi:"requiredChars"`
 	// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Schemas []string `pulumi:"schemas"`
 	// (Updatable) Indicates that the password must begin with an alphabetic character
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	StartsWithAlphabet *bool `pulumi:"startsWithAlphabet"`
 	// (Updatable) A list of tags on this resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [key, value]
+	// * idcsSearchable: true
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
 	Tags []DomainsPasswordPolicyTag `pulumi:"tags"`
 	// (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	TenancyOcid *string `pulumi:"tenancyOcid"`
 	// (Updatable) Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserNameDisallowed *bool `pulumi:"userNameDisallowed"`
 }
 
 type DomainsPasswordPolicyState struct {
 	// (Updatable) A String value whose contents indicate a set of characters that can appear, in any sequence, in a password value
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	AllowedChars pulumi.StringPtrInput
 	// (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
 	AttributeSets pulumi.StringArrayInput
@@ -295,102 +1208,545 @@ type DomainsPasswordPolicyState struct {
 	// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization pulumi.StringPtrInput
 	// (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	CompartmentOcid pulumi.StringPtrInput
 	// (Updatable) List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsCompositeKey: [key]
+	// * multiValued: true
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
 	ConfiguredPasswordPolicyRules DomainsPasswordPolicyConfiguredPasswordPolicyRuleArrayInput
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	DeleteInProgress pulumi.BoolPtrInput
 	// (Updatable) A String that describes the password policy
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Description pulumi.StringPtrInput
 	// (Updatable) A delimiter used to separate characters in the dictionary file
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DictionaryDelimiter pulumi.StringPtrInput
 	// (Updatable) A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DictionaryLocation pulumi.StringPtrInput
 	// (Updatable) Indicates whether the password can match a dictionary word
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	DictionaryWordDisallowed pulumi.BoolPtrInput
 	// (Updatable) A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DisallowedChars pulumi.StringPtrInput
 	// (Updatable) A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DisallowedSubstrings pulumi.StringArrayInput
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DomainOcid pulumi.StringPtrInput
 	// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	ExternalId pulumi.StringPtrInput
 	// (Updatable) Indicates a sequence of characters that match the user's first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	FirstNameDisallowed pulumi.BoolPtrInput
 	// (Updatable) Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: writeOnly
+	// * required: false
+	// * returned: never
+	// * type: boolean
+	// * uniqueness: none
 	ForcePasswordReset pulumi.BoolPtrInput
 	// (Updatable) A list of groups that the password policy belongs to.
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsCompositeKey: [value]
+	// * idcsSearchable: true
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	Groups DomainsPasswordPolicyGroupArrayInput
 	// (Updatable) The User or App who created the Resource
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: true
+	// * returned: default
+	// * type: complex
 	IdcsCreatedBies DomainsPasswordPolicyIdcsCreatedByArrayInput
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringPtrInput
 	// (Updatable) The User or App who modified the Resource
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: complex
 	IdcsLastModifiedBies DomainsPasswordPolicyIdcsLastModifiedByArrayInput
 	// (Updatable) The release number when the resource was upgraded.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: string
+	// * uniqueness: none
 	IdcsLastUpgradedInRelease pulumi.StringPtrInput
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readOnly
+	// * required: false
+	// * returned: request
+	// * type: string
+	// * uniqueness: none
 	IdcsPreventedOperations pulumi.StringArrayInput
 	// (Updatable) Indicates a sequence of characters that match the user's last name of given name cannot be the password. Password validation against policy will be ignored if length of last name is less than or equal to 3 characters.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	LastNameDisallowed pulumi.BoolPtrInput
 	// (Updatable) The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	LockoutDuration pulumi.IntPtrInput
 	// (Updatable) An integer that represents the maximum number of failed logins before an account is locked
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MaxIncorrectAttempts pulumi.IntPtrInput
 	// (Updatable) The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MaxLength pulumi.IntPtrInput
 	// (Updatable) The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MaxRepeatedChars pulumi.IntPtrInput
 	// (Updatable) The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MaxSpecialChars pulumi.IntPtrInput
 	// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+	// * type: complex
 	Metas DomainsPasswordPolicyMetaArrayInput
 	// (Updatable) The minimum number of a combination of alphabetic and numeric characters in a password.  A value of 0 or no value indicates no minimum alphanumeric character restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinAlphaNumerals pulumi.IntPtrInput
 	// (Updatable) The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinAlphas pulumi.IntPtrInput
 	// (Updatable) The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinLength pulumi.IntPtrInput
 	// (Updatable) The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinLowerCase pulumi.IntPtrInput
 	// (Updatable) The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinNumerals pulumi.IntPtrInput
 	// (Updatable) Minimum time after which the user can resubmit the reset password request
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinPasswordAge pulumi.IntPtrInput
 	// (Updatable) The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinSpecialChars pulumi.IntPtrInput
 	// (Updatable) The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinUniqueChars pulumi.IntPtrInput
 	// (Updatable) The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinUpperCase pulumi.IntPtrInput
 	// (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: true
+	// * returned: always
+	// * type: string
+	// * uniqueness: server
 	Name pulumi.StringPtrInput
 	// (Updatable) The number of passwords that will be kept in history that may not be used as a password
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	NumPasswordsInHistory pulumi.IntPtrInput
 	// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: global
 	Ocid pulumi.StringPtrInput
 	// (Updatable) An integer indicating the number of days before which the user should be warned about password expiry.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	PasswordExpireWarning pulumi.IntPtrInput
 	// (Updatable) The number of days after which the password expires automatically
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	PasswordExpiresAfter pulumi.IntPtrInput
 	// (Updatable) Indicates whether the password policy is configured as Simple, Standard, or Custom.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	PasswordStrength pulumi.StringPtrInput
 	// (Updatable) Password policy priority
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * idcsMinValue: 1
+	// * uniqueness: server
 	Priority pulumi.IntPtrInput
 	// (Updatable) A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	RequiredChars pulumi.StringPtrInput
 	// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrInput
 	// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Schemas pulumi.StringArrayInput
 	// (Updatable) Indicates that the password must begin with an alphabetic character
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	StartsWithAlphabet pulumi.BoolPtrInput
 	// (Updatable) A list of tags on this resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [key, value]
+	// * idcsSearchable: true
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
 	Tags DomainsPasswordPolicyTagArrayInput
 	// (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	TenancyOcid pulumi.StringPtrInput
 	// (Updatable) Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserNameDisallowed pulumi.BoolPtrInput
 }
 
@@ -400,6 +1756,15 @@ func (DomainsPasswordPolicyState) ElementType() reflect.Type {
 
 type domainsPasswordPolicyArgs struct {
 	// (Updatable) A String value whose contents indicate a set of characters that can appear, in any sequence, in a password value
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	AllowedChars *string `pulumi:"allowedChars"`
 	// (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
 	AttributeSets []string `pulumi:"attributeSets"`
@@ -408,88 +1773,445 @@ type domainsPasswordPolicyArgs struct {
 	// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization *string `pulumi:"authorization"`
 	// (Updatable) A String that describes the password policy
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Description *string `pulumi:"description"`
 	// (Updatable) A delimiter used to separate characters in the dictionary file
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DictionaryDelimiter *string `pulumi:"dictionaryDelimiter"`
 	// (Updatable) A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DictionaryLocation *string `pulumi:"dictionaryLocation"`
 	// (Updatable) Indicates whether the password can match a dictionary word
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	DictionaryWordDisallowed *bool `pulumi:"dictionaryWordDisallowed"`
 	// (Updatable) A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DisallowedChars *string `pulumi:"disallowedChars"`
 	// (Updatable) A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DisallowedSubstrings []string `pulumi:"disallowedSubstrings"`
 	// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	ExternalId *string `pulumi:"externalId"`
 	// (Updatable) Indicates a sequence of characters that match the user's first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	FirstNameDisallowed *bool `pulumi:"firstNameDisallowed"`
 	// (Updatable) Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: writeOnly
+	// * required: false
+	// * returned: never
+	// * type: boolean
+	// * uniqueness: none
 	ForcePasswordReset *bool `pulumi:"forcePasswordReset"`
 	// (Updatable) A list of groups that the password policy belongs to.
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsCompositeKey: [value]
+	// * idcsSearchable: true
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	Groups []DomainsPasswordPolicyGroup `pulumi:"groups"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint string `pulumi:"idcsEndpoint"`
 	// (Updatable) Indicates a sequence of characters that match the user's last name of given name cannot be the password. Password validation against policy will be ignored if length of last name is less than or equal to 3 characters.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	LastNameDisallowed *bool `pulumi:"lastNameDisallowed"`
 	// (Updatable) The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	LockoutDuration *int `pulumi:"lockoutDuration"`
 	// (Updatable) An integer that represents the maximum number of failed logins before an account is locked
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MaxIncorrectAttempts *int `pulumi:"maxIncorrectAttempts"`
 	// (Updatable) The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MaxLength *int `pulumi:"maxLength"`
 	// (Updatable) The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MaxRepeatedChars *int `pulumi:"maxRepeatedChars"`
 	// (Updatable) The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MaxSpecialChars *int `pulumi:"maxSpecialChars"`
 	// (Updatable) The minimum number of a combination of alphabetic and numeric characters in a password.  A value of 0 or no value indicates no minimum alphanumeric character restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinAlphaNumerals *int `pulumi:"minAlphaNumerals"`
 	// (Updatable) The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinAlphas *int `pulumi:"minAlphas"`
 	// (Updatable) The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinLength *int `pulumi:"minLength"`
 	// (Updatable) The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinLowerCase *int `pulumi:"minLowerCase"`
 	// (Updatable) The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinNumerals *int `pulumi:"minNumerals"`
 	// (Updatable) Minimum time after which the user can resubmit the reset password request
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinPasswordAge *int `pulumi:"minPasswordAge"`
 	// (Updatable) The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinSpecialChars *int `pulumi:"minSpecialChars"`
 	// (Updatable) The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinUniqueChars *int `pulumi:"minUniqueChars"`
 	// (Updatable) The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinUpperCase *int `pulumi:"minUpperCase"`
 	// (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: true
+	// * returned: always
+	// * type: string
+	// * uniqueness: server
 	Name *string `pulumi:"name"`
 	// (Updatable) The number of passwords that will be kept in history that may not be used as a password
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	NumPasswordsInHistory *int `pulumi:"numPasswordsInHistory"`
 	// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: global
 	Ocid *string `pulumi:"ocid"`
 	// (Updatable) An integer indicating the number of days before which the user should be warned about password expiry.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	PasswordExpireWarning *int `pulumi:"passwordExpireWarning"`
 	// (Updatable) The number of days after which the password expires automatically
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	PasswordExpiresAfter *int `pulumi:"passwordExpiresAfter"`
 	// (Updatable) Indicates whether the password policy is configured as Simple, Standard, or Custom.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	PasswordStrength *string `pulumi:"passwordStrength"`
 	// (Updatable) Password policy priority
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * idcsMinValue: 1
+	// * uniqueness: server
 	Priority *int `pulumi:"priority"`
 	// (Updatable) A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	RequiredChars *string `pulumi:"requiredChars"`
 	// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Schemas []string `pulumi:"schemas"`
 	// (Updatable) Indicates that the password must begin with an alphabetic character
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	StartsWithAlphabet *bool `pulumi:"startsWithAlphabet"`
 	// (Updatable) A list of tags on this resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [key, value]
+	// * idcsSearchable: true
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
 	Tags []DomainsPasswordPolicyTag `pulumi:"tags"`
 	// (Updatable) Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserNameDisallowed *bool `pulumi:"userNameDisallowed"`
 }
 
 // The set of arguments for constructing a DomainsPasswordPolicy resource.
 type DomainsPasswordPolicyArgs struct {
 	// (Updatable) A String value whose contents indicate a set of characters that can appear, in any sequence, in a password value
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	AllowedChars pulumi.StringPtrInput
 	// (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
 	AttributeSets pulumi.StringArrayInput
@@ -498,82 +2220,430 @@ type DomainsPasswordPolicyArgs struct {
 	// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization pulumi.StringPtrInput
 	// (Updatable) A String that describes the password policy
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Description pulumi.StringPtrInput
 	// (Updatable) A delimiter used to separate characters in the dictionary file
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DictionaryDelimiter pulumi.StringPtrInput
 	// (Updatable) A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DictionaryLocation pulumi.StringPtrInput
 	// (Updatable) Indicates whether the password can match a dictionary word
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	DictionaryWordDisallowed pulumi.BoolPtrInput
 	// (Updatable) A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DisallowedChars pulumi.StringPtrInput
 	// (Updatable) A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	DisallowedSubstrings pulumi.StringArrayInput
 	// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	ExternalId pulumi.StringPtrInput
 	// (Updatable) Indicates a sequence of characters that match the user's first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	FirstNameDisallowed pulumi.BoolPtrInput
 	// (Updatable) Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: writeOnly
+	// * required: false
+	// * returned: never
+	// * type: boolean
+	// * uniqueness: none
 	ForcePasswordReset pulumi.BoolPtrInput
 	// (Updatable) A list of groups that the password policy belongs to.
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsCompositeKey: [value]
+	// * idcsSearchable: true
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
 	Groups DomainsPasswordPolicyGroupArrayInput
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringInput
 	// (Updatable) Indicates a sequence of characters that match the user's last name of given name cannot be the password. Password validation against policy will be ignored if length of last name is less than or equal to 3 characters.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	LastNameDisallowed pulumi.BoolPtrInput
 	// (Updatable) The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	LockoutDuration pulumi.IntPtrInput
 	// (Updatable) An integer that represents the maximum number of failed logins before an account is locked
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MaxIncorrectAttempts pulumi.IntPtrInput
 	// (Updatable) The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MaxLength pulumi.IntPtrInput
 	// (Updatable) The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MaxRepeatedChars pulumi.IntPtrInput
 	// (Updatable) The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MaxSpecialChars pulumi.IntPtrInput
 	// (Updatable) The minimum number of a combination of alphabetic and numeric characters in a password.  A value of 0 or no value indicates no minimum alphanumeric character restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinAlphaNumerals pulumi.IntPtrInput
 	// (Updatable) The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinAlphas pulumi.IntPtrInput
 	// (Updatable) The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinLength pulumi.IntPtrInput
 	// (Updatable) The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinLowerCase pulumi.IntPtrInput
 	// (Updatable) The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinNumerals pulumi.IntPtrInput
 	// (Updatable) Minimum time after which the user can resubmit the reset password request
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinPasswordAge pulumi.IntPtrInput
 	// (Updatable) The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinSpecialChars pulumi.IntPtrInput
 	// (Updatable) The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinUniqueChars pulumi.IntPtrInput
 	// (Updatable) The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	MinUpperCase pulumi.IntPtrInput
 	// (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: true
+	// * returned: always
+	// * type: string
+	// * uniqueness: server
 	Name pulumi.StringPtrInput
 	// (Updatable) The number of passwords that will be kept in history that may not be used as a password
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	NumPasswordsInHistory pulumi.IntPtrInput
 	// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: immutable
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: global
 	Ocid pulumi.StringPtrInput
 	// (Updatable) An integer indicating the number of days before which the user should be warned about password expiry.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	PasswordExpireWarning pulumi.IntPtrInput
 	// (Updatable) The number of days after which the password expires automatically
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * uniqueness: none
 	PasswordExpiresAfter pulumi.IntPtrInput
 	// (Updatable) Indicates whether the password policy is configured as Simple, Standard, or Custom.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	PasswordStrength pulumi.StringPtrInput
 	// (Updatable) Password policy priority
+	//
+	// **Added In:** 20.1.3
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: integer
+	// * idcsMinValue: 1
+	// * uniqueness: server
 	Priority pulumi.IntPtrInput
 	// (Updatable) A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	RequiredChars pulumi.StringPtrInput
 	// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrInput
 	// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
 	Schemas pulumi.StringArrayInput
 	// (Updatable) Indicates that the password must begin with an alphabetic character
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
 	StartsWithAlphabet pulumi.BoolPtrInput
 	// (Updatable) A list of tags on this resource.
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [key, value]
+	// * idcsSearchable: true
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
 	Tags DomainsPasswordPolicyTagArrayInput
 	// (Updatable) Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: false
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: boolean
+	// * uniqueness: none
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserNameDisallowed pulumi.BoolPtrInput
 }
 
@@ -665,6 +2735,15 @@ func (o DomainsPasswordPolicyOutput) ToDomainsPasswordPolicyOutputWithContext(ct
 }
 
 // (Updatable) A String value whose contents indicate a set of characters that can appear, in any sequence, in a password value
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) AllowedChars() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.AllowedChars }).(pulumi.StringOutput)
 }
@@ -685,11 +2764,31 @@ func (o DomainsPasswordPolicyOutput) Authorization() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) CompartmentOcid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.CompartmentOcid }).(pulumi.StringOutput)
 }
 
 // (Updatable) List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsCompositeKey: [key]
+// * multiValued: true
+// * mutability: readOnly
+// * required: false
+// * returned: request
+// * type: complex
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) ConfiguredPasswordPolicyRules() DomainsPasswordPolicyConfiguredPasswordPolicyRuleArrayOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) DomainsPasswordPolicyConfiguredPasswordPolicyRuleArrayOutput {
 		return v.ConfiguredPasswordPolicyRules
@@ -697,66 +2796,188 @@ func (o DomainsPasswordPolicyOutput) ConfiguredPasswordPolicyRules() DomainsPass
 }
 
 // (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * type: boolean
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) DeleteInProgress() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.BoolOutput { return v.DeleteInProgress }).(pulumi.BoolOutput)
 }
 
 // (Updatable) A String that describes the password policy
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
 // (Updatable) A delimiter used to separate characters in the dictionary file
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) DictionaryDelimiter() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.DictionaryDelimiter }).(pulumi.StringOutput)
 }
 
 // (Updatable) A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) DictionaryLocation() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.DictionaryLocation }).(pulumi.StringOutput)
 }
 
 // (Updatable) Indicates whether the password can match a dictionary word
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: boolean
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) DictionaryWordDisallowed() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.BoolOutput { return v.DictionaryWordDisallowed }).(pulumi.BoolOutput)
 }
 
 // (Updatable) A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) DisallowedChars() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.DisallowedChars }).(pulumi.StringOutput)
 }
 
 // (Updatable) A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: true
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) DisallowedSubstrings() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringArrayOutput { return v.DisallowedSubstrings }).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) DomainOcid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
 }
 
 // (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) ExternalId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.ExternalId }).(pulumi.StringOutput)
 }
 
 // (Updatable) Indicates a sequence of characters that match the user's first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: boolean
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) FirstNameDisallowed() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.BoolOutput { return v.FirstNameDisallowed }).(pulumi.BoolOutput)
 }
 
 // (Updatable) Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: writeOnly
+// * required: false
+// * returned: never
+// * type: boolean
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) ForcePasswordReset() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.BoolOutput { return v.ForcePasswordReset }).(pulumi.BoolOutput)
 }
 
 // (Updatable) A list of groups that the password policy belongs to.
+//
+// **Added In:** 20.1.3
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsCompositeKey: [value]
+// * idcsSearchable: true
+// * multiValued: true
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: complex
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) Groups() DomainsPasswordPolicyGroupArrayOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) DomainsPasswordPolicyGroupArrayOutput { return v.Groups }).(DomainsPasswordPolicyGroupArrayOutput)
 }
 
 // (Updatable) The User or App who created the Resource
+//
+// **SCIM++ Properties:**
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readOnly
+// * required: true
+// * returned: default
+// * type: complex
 func (o DomainsPasswordPolicyOutput) IdcsCreatedBies() DomainsPasswordPolicyIdcsCreatedByArrayOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) DomainsPasswordPolicyIdcsCreatedByArrayOutput { return v.IdcsCreatedBies }).(DomainsPasswordPolicyIdcsCreatedByArrayOutput)
 }
@@ -767,6 +2988,14 @@ func (o DomainsPasswordPolicyOutput) IdcsEndpoint() pulumi.StringOutput {
 }
 
 // (Updatable) The User or App who modified the Resource
+//
+// **SCIM++ Properties:**
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * type: complex
 func (o DomainsPasswordPolicyOutput) IdcsLastModifiedBies() DomainsPasswordPolicyIdcsLastModifiedByArrayOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) DomainsPasswordPolicyIdcsLastModifiedByArrayOutput {
 		return v.IdcsLastModifiedBies
@@ -774,131 +3003,373 @@ func (o DomainsPasswordPolicyOutput) IdcsLastModifiedBies() DomainsPasswordPolic
 }
 
 // (Updatable) The release number when the resource was upgraded.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: request
+// * type: string
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
 }
 
 // (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+//
+// **SCIM++ Properties:**
+// * idcsSearchable: false
+// * multiValued: true
+// * mutability: readOnly
+// * required: false
+// * returned: request
+// * type: string
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) IdcsPreventedOperations() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringArrayOutput { return v.IdcsPreventedOperations }).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) Indicates a sequence of characters that match the user's last name of given name cannot be the password. Password validation against policy will be ignored if length of last name is less than or equal to 3 characters.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: boolean
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) LastNameDisallowed() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.BoolOutput { return v.LastNameDisallowed }).(pulumi.BoolOutput)
 }
 
 // (Updatable) The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: integer
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) LockoutDuration() pulumi.IntOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.LockoutDuration }).(pulumi.IntOutput)
 }
 
 // (Updatable) An integer that represents the maximum number of failed logins before an account is locked
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: integer
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) MaxIncorrectAttempts() pulumi.IntOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MaxIncorrectAttempts }).(pulumi.IntOutput)
 }
 
 // (Updatable) The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: integer
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) MaxLength() pulumi.IntOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MaxLength }).(pulumi.IntOutput)
 }
 
 // (Updatable) The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: integer
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) MaxRepeatedChars() pulumi.IntOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MaxRepeatedChars }).(pulumi.IntOutput)
 }
 
 // (Updatable) The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: integer
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) MaxSpecialChars() pulumi.IntOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MaxSpecialChars }).(pulumi.IntOutput)
 }
 
 // (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
+// * type: complex
 func (o DomainsPasswordPolicyOutput) Metas() DomainsPasswordPolicyMetaArrayOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) DomainsPasswordPolicyMetaArrayOutput { return v.Metas }).(DomainsPasswordPolicyMetaArrayOutput)
 }
 
 // (Updatable) The minimum number of a combination of alphabetic and numeric characters in a password.  A value of 0 or no value indicates no minimum alphanumeric character restriction.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: integer
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) MinAlphaNumerals() pulumi.IntOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MinAlphaNumerals }).(pulumi.IntOutput)
 }
 
 // (Updatable) The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: integer
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) MinAlphas() pulumi.IntOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MinAlphas }).(pulumi.IntOutput)
 }
 
 // (Updatable) The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: integer
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) MinLength() pulumi.IntOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MinLength }).(pulumi.IntOutput)
 }
 
 // (Updatable) The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: integer
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) MinLowerCase() pulumi.IntOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MinLowerCase }).(pulumi.IntOutput)
 }
 
 // (Updatable) The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: integer
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) MinNumerals() pulumi.IntOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MinNumerals }).(pulumi.IntOutput)
 }
 
 // (Updatable) Minimum time after which the user can resubmit the reset password request
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: integer
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) MinPasswordAge() pulumi.IntOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MinPasswordAge }).(pulumi.IntOutput)
 }
 
 // (Updatable) The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: integer
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) MinSpecialChars() pulumi.IntOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MinSpecialChars }).(pulumi.IntOutput)
 }
 
 // (Updatable) The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: integer
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) MinUniqueChars() pulumi.IntOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MinUniqueChars }).(pulumi.IntOutput)
 }
 
 // (Updatable) The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: integer
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) MinUpperCase() pulumi.IntOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MinUpperCase }).(pulumi.IntOutput)
 }
 
 // (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: immutable
+// * required: true
+// * returned: always
+// * type: string
+// * uniqueness: server
 func (o DomainsPasswordPolicyOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
 // (Updatable) The number of passwords that will be kept in history that may not be used as a password
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: integer
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) NumPasswordsInHistory() pulumi.IntOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.NumPasswordsInHistory }).(pulumi.IntOutput)
 }
 
 // (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+//
+// **SCIM++ Properties:**
+// * caseExact: true
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: immutable
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: global
 func (o DomainsPasswordPolicyOutput) Ocid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
 }
 
 // (Updatable) An integer indicating the number of days before which the user should be warned about password expiry.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: integer
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) PasswordExpireWarning() pulumi.IntOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.PasswordExpireWarning }).(pulumi.IntOutput)
 }
 
 // (Updatable) The number of days after which the password expires automatically
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: integer
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) PasswordExpiresAfter() pulumi.IntOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.PasswordExpiresAfter }).(pulumi.IntOutput)
 }
 
 // (Updatable) Indicates whether the password policy is configured as Simple, Standard, or Custom.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) PasswordStrength() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.PasswordStrength }).(pulumi.StringOutput)
 }
 
 // (Updatable) Password policy priority
+//
+// **Added In:** 20.1.3
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: integer
+// * idcsMinValue: 1
+// * uniqueness: server
 func (o DomainsPasswordPolicyOutput) Priority() pulumi.IntOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.Priority }).(pulumi.IntOutput)
 }
 
 // (Updatable) A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) RequiredChars() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.RequiredChars }).(pulumi.StringOutput)
 }
@@ -909,26 +3380,77 @@ func (o DomainsPasswordPolicyOutput) ResourceTypeSchemaVersion() pulumi.StringPt
 }
 
 // (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: true
+// * mutability: readWrite
+// * required: true
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) Schemas() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringArrayOutput { return v.Schemas }).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) Indicates that the password must begin with an alphabetic character
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: boolean
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) StartsWithAlphabet() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.BoolOutput { return v.StartsWithAlphabet }).(pulumi.BoolOutput)
 }
 
 // (Updatable) A list of tags on this resource.
+//
+// **SCIM++ Properties:**
+// * idcsCompositeKey: [key, value]
+// * idcsSearchable: true
+// * multiValued: true
+// * mutability: readWrite
+// * required: false
+// * returned: request
+// * type: complex
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) Tags() DomainsPasswordPolicyTagArrayOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) DomainsPasswordPolicyTagArrayOutput { return v.Tags }).(DomainsPasswordPolicyTagArrayOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * idcsSearchable: false
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
 func (o DomainsPasswordPolicyOutput) TenancyOcid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
 }
 
 // (Updatable) Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
+//
+// **SCIM++ Properties:**
+// * caseExact: false
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: boolean
+// * uniqueness: none
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DomainsPasswordPolicyOutput) UserNameDisallowed() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.BoolOutput { return v.UserNameDisallowed }).(pulumi.BoolOutput)
 }

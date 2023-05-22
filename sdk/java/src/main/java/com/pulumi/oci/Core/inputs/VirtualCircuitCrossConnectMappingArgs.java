@@ -49,12 +49,20 @@ public final class VirtualCircuitCrossConnectMappingArgs extends com.pulumi.reso
     /**
      * (Updatable) The BGP IPv4 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv4 address of the customer&#39;s edge router. If the session goes from Oracle to a provider, this is the BGP IPv4 address of the provider&#39;s edge router. Must use a subnet mask from /28 to /31.
      * 
+     * There&#39;s one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
+     * 
+     * Example: `10.0.0.18/31`
+     * 
      */
     @Import(name="customerBgpPeeringIp")
     private @Nullable Output<String> customerBgpPeeringIp;
 
     /**
      * @return (Updatable) The BGP IPv4 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv4 address of the customer&#39;s edge router. If the session goes from Oracle to a provider, this is the BGP IPv4 address of the provider&#39;s edge router. Must use a subnet mask from /28 to /31.
+     * 
+     * There&#39;s one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
+     * 
+     * Example: `10.0.0.18/31`
      * 
      */
     public Optional<Output<String>> customerBgpPeeringIp() {
@@ -64,12 +72,24 @@ public final class VirtualCircuitCrossConnectMappingArgs extends com.pulumi.reso
     /**
      * (Updatable) IPv6 is currently supported only in the Government Cloud. The BGP IPv6 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv6 address of the customer&#39;s edge router. If the session goes from Oracle to a provider, this is the BGP IPv6 address of the provider&#39;s edge router. Only subnet masks from /64 up to /127 are allowed.
      * 
+     * There&#39;s one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
+     * 
+     * IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * 
+     * Example: `2001:db8::1/64`
+     * 
      */
     @Import(name="customerBgpPeeringIpv6")
     private @Nullable Output<String> customerBgpPeeringIpv6;
 
     /**
      * @return (Updatable) IPv6 is currently supported only in the Government Cloud. The BGP IPv6 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv6 address of the customer&#39;s edge router. If the session goes from Oracle to a provider, this is the BGP IPv6 address of the provider&#39;s edge router. Only subnet masks from /64 up to /127 are allowed.
+     * 
+     * There&#39;s one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
+     * 
+     * IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * 
+     * Example: `2001:db8::1/64`
      * 
      */
     public Optional<Output<String>> customerBgpPeeringIpv6() {
@@ -79,12 +99,20 @@ public final class VirtualCircuitCrossConnectMappingArgs extends com.pulumi.reso
     /**
      * (Updatable) The IPv4 address for Oracle&#39;s end of the BGP session. Must use a subnet mask from /28 to /31. If the session goes from Oracle to a customer&#39;s edge router, the customer specifies this information. If the session goes from Oracle to a provider&#39;s edge router, the provider specifies this.
      * 
+     * There&#39;s one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
+     * 
+     * Example: `10.0.0.19/31`
+     * 
      */
     @Import(name="oracleBgpPeeringIp")
     private @Nullable Output<String> oracleBgpPeeringIp;
 
     /**
      * @return (Updatable) The IPv4 address for Oracle&#39;s end of the BGP session. Must use a subnet mask from /28 to /31. If the session goes from Oracle to a customer&#39;s edge router, the customer specifies this information. If the session goes from Oracle to a provider&#39;s edge router, the provider specifies this.
+     * 
+     * There&#39;s one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
+     * 
+     * Example: `10.0.0.19/31`
      * 
      */
     public Optional<Output<String>> oracleBgpPeeringIp() {
@@ -94,12 +122,24 @@ public final class VirtualCircuitCrossConnectMappingArgs extends com.pulumi.reso
     /**
      * (Updatable) IPv6 is currently supported only in the Government Cloud. The IPv6 address for Oracle&#39;s end of the BGP session.  Only subnet masks from /64 up to /127 are allowed. If the session goes from Oracle to a customer&#39;s edge router, the customer specifies this information. If the session goes from Oracle to a provider&#39;s edge router, the provider specifies this.
      * 
+     * There&#39;s one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
+     * 
+     * Note that IPv6 addressing is currently supported only in certain regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * 
+     * Example: `2001:db8::2/64`
+     * 
      */
     @Import(name="oracleBgpPeeringIpv6")
     private @Nullable Output<String> oracleBgpPeeringIpv6;
 
     /**
      * @return (Updatable) IPv6 is currently supported only in the Government Cloud. The IPv6 address for Oracle&#39;s end of the BGP session.  Only subnet masks from /64 up to /127 are allowed. If the session goes from Oracle to a customer&#39;s edge router, the customer specifies this information. If the session goes from Oracle to a provider&#39;s edge router, the provider specifies this.
+     * 
+     * There&#39;s one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
+     * 
+     * Note that IPv6 addressing is currently supported only in certain regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * 
+     * Example: `2001:db8::2/64`
      * 
      */
     public Optional<Output<String>> oracleBgpPeeringIpv6() {
@@ -196,6 +236,10 @@ public final class VirtualCircuitCrossConnectMappingArgs extends com.pulumi.reso
         /**
          * @param customerBgpPeeringIp (Updatable) The BGP IPv4 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv4 address of the customer&#39;s edge router. If the session goes from Oracle to a provider, this is the BGP IPv4 address of the provider&#39;s edge router. Must use a subnet mask from /28 to /31.
          * 
+         * There&#39;s one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
+         * 
+         * Example: `10.0.0.18/31`
+         * 
          * @return builder
          * 
          */
@@ -207,6 +251,10 @@ public final class VirtualCircuitCrossConnectMappingArgs extends com.pulumi.reso
         /**
          * @param customerBgpPeeringIp (Updatable) The BGP IPv4 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv4 address of the customer&#39;s edge router. If the session goes from Oracle to a provider, this is the BGP IPv4 address of the provider&#39;s edge router. Must use a subnet mask from /28 to /31.
          * 
+         * There&#39;s one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
+         * 
+         * Example: `10.0.0.18/31`
+         * 
          * @return builder
          * 
          */
@@ -216,6 +264,12 @@ public final class VirtualCircuitCrossConnectMappingArgs extends com.pulumi.reso
 
         /**
          * @param customerBgpPeeringIpv6 (Updatable) IPv6 is currently supported only in the Government Cloud. The BGP IPv6 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv6 address of the customer&#39;s edge router. If the session goes from Oracle to a provider, this is the BGP IPv6 address of the provider&#39;s edge router. Only subnet masks from /64 up to /127 are allowed.
+         * 
+         * There&#39;s one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
+         * 
+         * IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * 
+         * Example: `2001:db8::1/64`
          * 
          * @return builder
          * 
@@ -228,6 +282,12 @@ public final class VirtualCircuitCrossConnectMappingArgs extends com.pulumi.reso
         /**
          * @param customerBgpPeeringIpv6 (Updatable) IPv6 is currently supported only in the Government Cloud. The BGP IPv6 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv6 address of the customer&#39;s edge router. If the session goes from Oracle to a provider, this is the BGP IPv6 address of the provider&#39;s edge router. Only subnet masks from /64 up to /127 are allowed.
          * 
+         * There&#39;s one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
+         * 
+         * IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * 
+         * Example: `2001:db8::1/64`
+         * 
          * @return builder
          * 
          */
@@ -237,6 +297,10 @@ public final class VirtualCircuitCrossConnectMappingArgs extends com.pulumi.reso
 
         /**
          * @param oracleBgpPeeringIp (Updatable) The IPv4 address for Oracle&#39;s end of the BGP session. Must use a subnet mask from /28 to /31. If the session goes from Oracle to a customer&#39;s edge router, the customer specifies this information. If the session goes from Oracle to a provider&#39;s edge router, the provider specifies this.
+         * 
+         * There&#39;s one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
+         * 
+         * Example: `10.0.0.19/31`
          * 
          * @return builder
          * 
@@ -249,6 +313,10 @@ public final class VirtualCircuitCrossConnectMappingArgs extends com.pulumi.reso
         /**
          * @param oracleBgpPeeringIp (Updatable) The IPv4 address for Oracle&#39;s end of the BGP session. Must use a subnet mask from /28 to /31. If the session goes from Oracle to a customer&#39;s edge router, the customer specifies this information. If the session goes from Oracle to a provider&#39;s edge router, the provider specifies this.
          * 
+         * There&#39;s one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
+         * 
+         * Example: `10.0.0.19/31`
+         * 
          * @return builder
          * 
          */
@@ -258,6 +326,12 @@ public final class VirtualCircuitCrossConnectMappingArgs extends com.pulumi.reso
 
         /**
          * @param oracleBgpPeeringIpv6 (Updatable) IPv6 is currently supported only in the Government Cloud. The IPv6 address for Oracle&#39;s end of the BGP session.  Only subnet masks from /64 up to /127 are allowed. If the session goes from Oracle to a customer&#39;s edge router, the customer specifies this information. If the session goes from Oracle to a provider&#39;s edge router, the provider specifies this.
+         * 
+         * There&#39;s one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
+         * 
+         * Note that IPv6 addressing is currently supported only in certain regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * 
+         * Example: `2001:db8::2/64`
          * 
          * @return builder
          * 
@@ -269,6 +343,12 @@ public final class VirtualCircuitCrossConnectMappingArgs extends com.pulumi.reso
 
         /**
          * @param oracleBgpPeeringIpv6 (Updatable) IPv6 is currently supported only in the Government Cloud. The IPv6 address for Oracle&#39;s end of the BGP session.  Only subnet masks from /64 up to /127 are allowed. If the session goes from Oracle to a customer&#39;s edge router, the customer specifies this information. If the session goes from Oracle to a provider&#39;s edge router, the provider specifies this.
+         * 
+         * There&#39;s one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
+         * 
+         * Note that IPv6 addressing is currently supported only in certain regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * 
+         * Example: `2001:db8::2/64`
          * 
          * @return builder
          * 

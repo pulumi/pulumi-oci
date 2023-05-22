@@ -187,12 +187,18 @@ public final class OperatorControlArgs extends com.pulumi.resources.ResourceArgs
     /**
      * (Updatable) This is the message that will be displayed to the operator users while accessing the system.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="systemMessage")
     private @Nullable Output<String> systemMessage;
 
     /**
      * @return (Updatable) This is the message that will be displayed to the operator users while accessing the system.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> systemMessage() {
@@ -508,6 +514,9 @@ public final class OperatorControlArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param systemMessage (Updatable) This is the message that will be displayed to the operator users while accessing the system.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -518,6 +527,9 @@ public final class OperatorControlArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param systemMessage (Updatable) This is the message that will be displayed to the operator users while accessing the system.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

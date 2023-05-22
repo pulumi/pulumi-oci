@@ -191,6 +191,8 @@ def get_notification_topic(topic_id: Optional[str] = None,
 
 
     :param str topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to retrieve.
+           
+           Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
     """
     __args__ = dict()
     __args__['topicId'] = topic_id
@@ -231,5 +233,7 @@ def get_notification_topic_output(topic_id: Optional[pulumi.Input[str]] = None,
 
 
     :param str topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to retrieve.
+           
+           Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
     """
     ...

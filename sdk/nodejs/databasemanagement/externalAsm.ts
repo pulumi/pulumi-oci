@@ -69,6 +69,10 @@ export class ExternalAsm extends pulumi.CustomResource {
     public readonly externalAsmId!: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly externalConnectorId!: pulumi.Output<string>;
     /**
@@ -194,6 +198,10 @@ export interface ExternalAsmState {
     externalAsmId?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     externalConnectorId?: pulumi.Input<string>;
     /**
@@ -248,6 +256,10 @@ export interface ExternalAsmArgs {
     externalAsmId: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     externalConnectorId?: pulumi.Input<string>;
 }

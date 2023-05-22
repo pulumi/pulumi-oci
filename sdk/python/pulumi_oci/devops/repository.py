@@ -27,7 +27,11 @@ class RepositoryArgs:
         """
         The set of arguments for constructing a Repository resource.
         :param pulumi.Input[str] project_id: The OCID of the DevOps project containing the repository.
-        :param pulumi.Input[str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+        :param pulumi.Input[str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] default_branch: (Updatable) The default branch of the repository.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Details of the repository. Avoid entering confidential information.
@@ -66,7 +70,11 @@ class RepositoryArgs:
     @pulumi.getter(name="repositoryType")
     def repository_type(self) -> pulumi.Input[str]:
         """
-        (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+        (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "repository_type")
 
@@ -188,7 +196,11 @@ class _RepositoryState:
         :param pulumi.Input[str] namespace: Tenancy unique namespace.
         :param pulumi.Input[str] project_id: The OCID of the DevOps project containing the repository.
         :param pulumi.Input[str] project_name: Unique project name in a namespace.
-        :param pulumi.Input[str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+        :param pulumi.Input[str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] size_in_bytes: The size of the repository in bytes.
         :param pulumi.Input[str] ssh_url: SSH URL that you use to git clone, pull and push.
         :param pulumi.Input[str] state: The current state of the repository.
@@ -414,7 +426,11 @@ class _RepositoryState:
     @pulumi.getter(name="repositoryType")
     def repository_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+        (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "repository_type")
 
@@ -570,7 +586,11 @@ class Repository(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['RepositoryMirrorRepositoryConfigArgs']] mirror_repository_config: (Updatable) Configuration information for mirroring the repository.
         :param pulumi.Input[str] name: (Updatable) Unique name of a repository.
         :param pulumi.Input[str] project_id: The OCID of the DevOps project containing the repository.
-        :param pulumi.Input[str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+        :param pulumi.Input[str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -729,7 +749,11 @@ class Repository(pulumi.CustomResource):
         :param pulumi.Input[str] namespace: Tenancy unique namespace.
         :param pulumi.Input[str] project_id: The OCID of the DevOps project containing the repository.
         :param pulumi.Input[str] project_name: Unique project name in a namespace.
-        :param pulumi.Input[str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+        :param pulumi.Input[str] repository_type: (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] size_in_bytes: The size of the repository in bytes.
         :param pulumi.Input[str] ssh_url: SSH URL that you use to git clone, pull and push.
         :param pulumi.Input[str] state: The current state of the repository.
@@ -882,7 +906,11 @@ class Repository(pulumi.CustomResource):
     @pulumi.getter(name="repositoryType")
     def repository_type(self) -> pulumi.Output[str]:
         """
-        (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
+        (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "repository_type")
 

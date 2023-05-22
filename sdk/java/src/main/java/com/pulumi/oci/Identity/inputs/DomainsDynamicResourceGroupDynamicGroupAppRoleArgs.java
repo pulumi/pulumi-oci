@@ -19,12 +19,32 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRoleArgs extends co
     /**
      * (Updatable) If true, then the role provides administrative access privileges. READ-ONLY.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: boolean
+     * * uniqueness: none
+     * 
      */
     @Import(name="adminRole")
     private @Nullable Output<Boolean> adminRole;
 
     /**
      * @return (Updatable) If true, then the role provides administrative access privileges. READ-ONLY.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: boolean
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Boolean>> adminRole() {
@@ -34,12 +54,34 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRoleArgs extends co
     /**
      * (Updatable) App identifier
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsAddedSinceVersion: 3
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="appId")
     private @Nullable Output<String> appId;
 
     /**
      * @return (Updatable) App identifier
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsAddedSinceVersion: 3
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> appId() {
@@ -49,12 +91,32 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRoleArgs extends co
     /**
      * (Updatable) Name of parent App. READ-ONLY.
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="appName")
     private @Nullable Output<String> appName;
 
     /**
      * @return (Updatable) Name of parent App. READ-ONLY.
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> appName() {
@@ -64,12 +126,32 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRoleArgs extends co
     /**
      * (Updatable) The displayName of the User or App who modified this Resource
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="display")
     private @Nullable Output<String> display;
 
     /**
      * @return (Updatable) The displayName of the User or App who modified this Resource
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> display() {
@@ -79,12 +161,30 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRoleArgs extends co
     /**
      * (Updatable) The name of the legacy group associated with this AppRole.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="legacyGroupName")
     private @Nullable Output<String> legacyGroupName;
 
     /**
      * @return (Updatable) The name of the legacy group associated with this AppRole.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> legacyGroupName() {
@@ -94,12 +194,32 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRoleArgs extends co
     /**
      * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
+     * 
      */
     @Import(name="ref")
     private @Nullable Output<String> ref;
 
     /**
      * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ref() {
@@ -109,12 +229,34 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRoleArgs extends co
     /**
      * (Updatable) Oracle Cloud Infrastructure Tag value
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * required: true
+     * * mutability: readWrite
+     * * returned: default
+     * * type: string
+     * * idcsSearchable: true
+     * * uniqueness: none
+     * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tag value
+     * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * required: true
+     * * mutability: readWrite
+     * * returned: default
+     * * type: string
+     * * idcsSearchable: true
+     * * uniqueness: none
      * 
      */
     public Output<String> value() {
@@ -154,6 +296,16 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRoleArgs extends co
         /**
          * @param adminRole (Updatable) If true, then the role provides administrative access privileges. READ-ONLY.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -165,6 +317,16 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRoleArgs extends co
         /**
          * @param adminRole (Updatable) If true, then the role provides administrative access privileges. READ-ONLY.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -174,6 +336,17 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRoleArgs extends co
 
         /**
          * @param appId (Updatable) App identifier
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsAddedSinceVersion: 3
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -186,6 +359,17 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRoleArgs extends co
         /**
          * @param appId (Updatable) App identifier
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsAddedSinceVersion: 3
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -195,6 +379,16 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRoleArgs extends co
 
         /**
          * @param appName (Updatable) Name of parent App. READ-ONLY.
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -207,6 +401,16 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRoleArgs extends co
         /**
          * @param appName (Updatable) Name of parent App. READ-ONLY.
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -216,6 +420,16 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRoleArgs extends co
 
         /**
          * @param display (Updatable) The displayName of the User or App who modified this Resource
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -228,6 +442,16 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRoleArgs extends co
         /**
          * @param display (Updatable) The displayName of the User or App who modified this Resource
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -237,6 +461,15 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRoleArgs extends co
 
         /**
          * @param legacyGroupName (Updatable) The name of the legacy group associated with this AppRole.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -249,6 +482,15 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRoleArgs extends co
         /**
          * @param legacyGroupName (Updatable) The name of the legacy group associated with this AppRole.
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -258,6 +500,16 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRoleArgs extends co
 
         /**
          * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -270,6 +522,16 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRoleArgs extends co
         /**
          * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
          * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -279,6 +541,17 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRoleArgs extends co
 
         /**
          * @param value (Updatable) Oracle Cloud Infrastructure Tag value
+         * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * type: string
+         * * idcsSearchable: true
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -290,6 +563,17 @@ public final class DomainsDynamicResourceGroupDynamicGroupAppRoleArgs extends co
 
         /**
          * @param value (Updatable) Oracle Cloud Infrastructure Tag value
+         * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * type: string
+         * * idcsSearchable: true
+         * * uniqueness: none
          * 
          * @return builder
          * 

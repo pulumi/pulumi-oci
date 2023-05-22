@@ -79,6 +79,9 @@ type Index struct {
 	// The name of the table to which this index belongs.
 	TableName pulumi.StringOutput `pulumi:"tableName"`
 	// A table name within the compartment, or a table OCID.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TableNameOrId pulumi.StringOutput `pulumi:"tableNameOrId"`
 }
 
@@ -134,6 +137,9 @@ type indexState struct {
 	// The name of the table to which this index belongs.
 	TableName *string `pulumi:"tableName"`
 	// A table name within the compartment, or a table OCID.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TableNameOrId *string `pulumi:"tableNameOrId"`
 }
 
@@ -155,6 +161,9 @@ type IndexState struct {
 	// The name of the table to which this index belongs.
 	TableName pulumi.StringPtrInput
 	// A table name within the compartment, or a table OCID.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TableNameOrId pulumi.StringPtrInput
 }
 
@@ -172,6 +181,9 @@ type indexArgs struct {
 	// Index name.
 	Name *string `pulumi:"name"`
 	// A table name within the compartment, or a table OCID.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TableNameOrId string `pulumi:"tableNameOrId"`
 }
 
@@ -186,6 +198,9 @@ type IndexArgs struct {
 	// Index name.
 	Name pulumi.StringPtrInput
 	// A table name within the compartment, or a table OCID.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TableNameOrId pulumi.StringInput
 }
 
@@ -317,6 +332,9 @@ func (o IndexOutput) TableName() pulumi.StringOutput {
 }
 
 // A table name within the compartment, or a table OCID.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o IndexOutput) TableNameOrId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Index) pulumi.StringOutput { return v.TableNameOrId }).(pulumi.StringOutput)
 }

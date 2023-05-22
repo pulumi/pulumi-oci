@@ -46,6 +46,9 @@ type NamespaceIngestTimeRulesManagement struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableIngestTimeRule pulumi.BoolOutput `pulumi:"enableIngestTimeRule"`
 	// Unique ocid of the ingest time rule.
 	IngestTimeRuleId pulumi.StringOutput `pulumi:"ingestTimeRuleId"`
@@ -92,6 +95,9 @@ func GetNamespaceIngestTimeRulesManagement(ctx *pulumi.Context,
 // Input properties used for looking up and filtering NamespaceIngestTimeRulesManagement resources.
 type namespaceIngestTimeRulesManagementState struct {
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableIngestTimeRule *bool `pulumi:"enableIngestTimeRule"`
 	// Unique ocid of the ingest time rule.
 	IngestTimeRuleId *string `pulumi:"ingestTimeRuleId"`
@@ -101,6 +107,9 @@ type namespaceIngestTimeRulesManagementState struct {
 
 type NamespaceIngestTimeRulesManagementState struct {
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableIngestTimeRule pulumi.BoolPtrInput
 	// Unique ocid of the ingest time rule.
 	IngestTimeRuleId pulumi.StringPtrInput
@@ -114,6 +123,9 @@ func (NamespaceIngestTimeRulesManagementState) ElementType() reflect.Type {
 
 type namespaceIngestTimeRulesManagementArgs struct {
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableIngestTimeRule bool `pulumi:"enableIngestTimeRule"`
 	// Unique ocid of the ingest time rule.
 	IngestTimeRuleId string `pulumi:"ingestTimeRuleId"`
@@ -124,6 +136,9 @@ type namespaceIngestTimeRulesManagementArgs struct {
 // The set of arguments for constructing a NamespaceIngestTimeRulesManagement resource.
 type NamespaceIngestTimeRulesManagementArgs struct {
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableIngestTimeRule pulumi.BoolInput
 	// Unique ocid of the ingest time rule.
 	IngestTimeRuleId pulumi.StringInput
@@ -219,6 +234,9 @@ func (o NamespaceIngestTimeRulesManagementOutput) ToNamespaceIngestTimeRulesMana
 }
 
 // (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o NamespaceIngestTimeRulesManagementOutput) EnableIngestTimeRule() pulumi.BoolOutput {
 	return o.ApplyT(func(v *NamespaceIngestTimeRulesManagement) pulumi.BoolOutput { return v.EnableIngestTimeRule }).(pulumi.BoolOutput)
 }

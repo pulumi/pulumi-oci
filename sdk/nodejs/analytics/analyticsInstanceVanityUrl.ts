@@ -88,7 +88,11 @@ export class AnalyticsInstanceVanityUrl extends pulumi.CustomResource {
      */
     public readonly privateKey!: pulumi.Output<string>;
     /**
-     * (Updatable) PEM certificate for HTTPS connections.
+     * (Updatable) PEM certificate for HTTPS connections. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly publicCertificate!: pulumi.Output<string>;
 
@@ -173,7 +177,11 @@ export interface AnalyticsInstanceVanityUrlState {
      */
     privateKey?: pulumi.Input<string>;
     /**
-     * (Updatable) PEM certificate for HTTPS connections.
+     * (Updatable) PEM certificate for HTTPS connections. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     publicCertificate?: pulumi.Input<string>;
 }
@@ -207,7 +215,11 @@ export interface AnalyticsInstanceVanityUrlArgs {
      */
     privateKey: pulumi.Input<string>;
     /**
-     * (Updatable) PEM certificate for HTTPS connections.
+     * (Updatable) PEM certificate for HTTPS connections. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     publicCertificate: pulumi.Input<string>;
 }

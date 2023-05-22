@@ -85,6 +85,9 @@ type Agent struct {
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// OS version.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OsVersion pulumi.StringOutput `pulumi:"osVersion"`
 	// List of plugins associated with the agent.
 	PluginLists AgentPluginListArrayOutput `pulumi:"pluginLists"`
@@ -170,6 +173,9 @@ type agentState struct {
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// OS version.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OsVersion *string `pulumi:"osVersion"`
 	// List of plugins associated with the agent.
 	PluginLists []AgentPluginList `pulumi:"pluginLists"`
@@ -209,6 +215,9 @@ type AgentState struct {
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// OS version.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OsVersion pulumi.StringPtrInput
 	// List of plugins associated with the agent.
 	PluginLists AgentPluginListArrayInput
@@ -246,6 +255,9 @@ type agentArgs struct {
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// OS version.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OsVersion string `pulumi:"osVersion"`
 }
 
@@ -266,6 +278,9 @@ type AgentArgs struct {
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// OS version.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OsVersion pulumi.StringInput
 }
 
@@ -407,6 +422,9 @@ func (o AgentOutput) LifecycleDetails() pulumi.StringOutput {
 }
 
 // OS version.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AgentOutput) OsVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Agent) pulumi.StringOutput { return v.OsVersion }).(pulumi.StringOutput)
 }

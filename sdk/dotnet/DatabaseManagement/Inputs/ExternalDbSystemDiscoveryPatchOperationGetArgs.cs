@@ -25,7 +25,11 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         public Input<string> Selection { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value")]
         public Input<Inputs.ExternalDbSystemDiscoveryPatchOperationValueGetArgs>? Value { get; set; }

@@ -20,6 +20,10 @@ class SuppressionArgs:
         The set of arguments for constructing a Suppression resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
         :param pulumi.Input[str] email_address: The recipient email address of the suppression.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "email_address", email_address)
@@ -41,6 +45,10 @@ class SuppressionArgs:
     def email_address(self) -> pulumi.Input[str]:
         """
         The recipient email address of the suppression.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "email_address")
 
@@ -64,6 +72,10 @@ class _SuppressionState:
         Input properties used for looking up and filtering Suppression resources.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
         :param pulumi.Input[str] email_address: The recipient email address of the suppression.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] error_detail: The specific error message returned by a system that resulted in the suppression. This message is usually an SMTP error code with additional descriptive text. Not provided for all types of suppressions.
         :param pulumi.Input[str] error_source: DNS name of the source of the error that caused the suppression. Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available. Not provided for all types of suppressions, and not always known.
         :param pulumi.Input[str] message_id: The value of the Message-ID header from the email that triggered a suppression. This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets. Not provided for all types of suppressions.
@@ -105,6 +117,10 @@ class _SuppressionState:
     def email_address(self) -> Optional[pulumi.Input[str]]:
         """
         The recipient email address of the suppression.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "email_address")
 
@@ -224,6 +240,10 @@ class Suppression(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
         :param pulumi.Input[str] email_address: The recipient email address of the suppression.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -323,6 +343,10 @@ class Suppression(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
         :param pulumi.Input[str] email_address: The recipient email address of the suppression.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] error_detail: The specific error message returned by a system that resulted in the suppression. This message is usually an SMTP error code with additional descriptive text. Not provided for all types of suppressions.
         :param pulumi.Input[str] error_source: DNS name of the source of the error that caused the suppression. Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available. Not provided for all types of suppressions, and not always known.
         :param pulumi.Input[str] message_id: The value of the Message-ID header from the email that triggered a suppression. This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets. Not provided for all types of suppressions.
@@ -357,6 +381,10 @@ class Suppression(pulumi.CustomResource):
     def email_address(self) -> pulumi.Output[str]:
         """
         The recipient email address of the suppression.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "email_address")
 

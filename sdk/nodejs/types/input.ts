@@ -83,6 +83,10 @@ export namespace Adm {
         ociResourceId?: pulumi.Input<string>;
         /**
          * Source type of the Vulnerability Audit.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
     }
@@ -505,6 +509,10 @@ export namespace AiVision {
         namespaceName?: pulumi.Input<string>;
         /**
          * The object name of the input data file.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         object?: pulumi.Input<string>;
     }
@@ -528,6 +536,10 @@ export namespace AiVision {
         namespaceName?: pulumi.Input<string>;
         /**
          * The object name of the input data file.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         object?: pulumi.Input<string>;
     }
@@ -551,6 +563,10 @@ export namespace AiVision {
         namespaceName?: pulumi.Input<string>;
         /**
          * The object name of the input data file.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         object?: pulumi.Input<string>;
     }
@@ -838,6 +854,10 @@ export namespace ApiGateway {
         tokenQueryParam?: pulumi.Input<string>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
         /**
@@ -869,6 +889,10 @@ export namespace ApiGateway {
         maxCacheDurationInHours?: pulumi.Input<number>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
         /**
@@ -959,6 +983,10 @@ export namespace ApiGateway {
         sourceUriDetails?: pulumi.Input<inputs.ApiGateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetails>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
         /**
@@ -990,6 +1018,10 @@ export namespace ApiGateway {
         clientSecretVersionNumber?: pulumi.Input<string>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
     }
@@ -1016,6 +1048,10 @@ export namespace ApiGateway {
         items?: pulumi.Input<pulumi.Input<inputs.ApiGateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItem>[]>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type?: pulumi.Input<string>;
     }
@@ -1070,6 +1106,10 @@ export namespace ApiGateway {
     export interface DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetails {
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
         /**
@@ -1105,6 +1145,10 @@ export namespace ApiGateway {
         sourceUriDetails?: pulumi.Input<inputs.ApiGateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetails>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
         /**
@@ -1158,6 +1202,10 @@ export namespace ApiGateway {
         clientSecretVersionNumber?: pulumi.Input<string>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
     }
@@ -1204,6 +1252,10 @@ export namespace ApiGateway {
     export interface DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetails {
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
         /**
@@ -1323,6 +1375,10 @@ export namespace ApiGateway {
         tokenQueryParam?: pulumi.Input<string>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
         /**
@@ -1354,6 +1410,10 @@ export namespace ApiGateway {
         maxCacheDurationInHours?: pulumi.Input<number>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
         /**
@@ -1444,6 +1504,10 @@ export namespace ApiGateway {
         sourceUriDetails?: pulumi.Input<inputs.ApiGateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetails>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
         /**
@@ -1475,6 +1539,10 @@ export namespace ApiGateway {
         clientSecretVersionNumber?: pulumi.Input<string>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
     }
@@ -1501,6 +1569,10 @@ export namespace ApiGateway {
         items?: pulumi.Input<pulumi.Input<inputs.ApiGateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItem>[]>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type?: pulumi.Input<string>;
     }
@@ -1555,6 +1627,10 @@ export namespace ApiGateway {
     export interface DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetails {
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
         /**
@@ -1590,6 +1666,10 @@ export namespace ApiGateway {
         sourceUriDetails?: pulumi.Input<inputs.ApiGateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetails>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
         /**
@@ -1643,6 +1723,10 @@ export namespace ApiGateway {
         clientSecretVersionNumber?: pulumi.Input<string>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
     }
@@ -1689,6 +1773,10 @@ export namespace ApiGateway {
     export interface DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetails {
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
         /**
@@ -1727,6 +1815,10 @@ export namespace ApiGateway {
         name: pulumi.Input<string>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type?: pulumi.Input<string>;
         /**
@@ -1742,6 +1834,10 @@ export namespace ApiGateway {
         selector: pulumi.Input<string>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
     }
@@ -1857,6 +1953,10 @@ export namespace ApiGateway {
         status?: pulumi.Input<number>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
         /**
@@ -1922,6 +2022,10 @@ export namespace ApiGateway {
         status?: pulumi.Input<number>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
         /**
@@ -1956,6 +2060,10 @@ export namespace ApiGateway {
         name: pulumi.Input<string>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
         /**
@@ -1971,6 +2079,10 @@ export namespace ApiGateway {
         selector: pulumi.Input<string>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
     }
@@ -2046,6 +2158,10 @@ export namespace ApiGateway {
         allowedScopes?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type?: pulumi.Input<string>;
     }
@@ -2061,6 +2177,12 @@ export namespace ApiGateway {
         required?: pulumi.Input<boolean>;
         /**
          * (Updatable) Validation behavior mode.
+         *
+         * In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
+         *
+         * In `PERMISSIVE` mode, the result of the validation will be exposed as metrics while the request will follow the normal path.
+         *
+         * `DISABLED` type turns the validation off.
          */
         validationMode?: pulumi.Input<string>;
     }
@@ -2068,10 +2190,16 @@ export namespace ApiGateway {
     export interface DeploymentSpecificationRouteRequestPoliciesBodyValidationContent {
         /**
          * (Updatable) The mediaType is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
+         *
+         * mediaType ::= ( / (  "*" "/" "*" ) / ( type "/" "*" ) / ( type "/" subtype ) )
+         *
+         * For requests that match multiple media types, only the most specific media type is applicable. e.g. `text/plain` overrides `text/*`
          */
         mediaType: pulumi.Input<string>;
         /**
          * (Updatable) Validation type defines the content validation method.
+         *
+         * Make the validation to first parse the body as the respective format.
          */
         validationType: pulumi.Input<string>;
     }
@@ -2125,6 +2253,10 @@ export namespace ApiGateway {
         items: pulumi.Input<pulumi.Input<inputs.ApiGateway.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersItem>[]>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
     }
@@ -2183,6 +2315,12 @@ export namespace ApiGateway {
         headers?: pulumi.Input<pulumi.Input<inputs.ApiGateway.DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeader>[]>;
         /**
          * (Updatable) Validation behavior mode.
+         *
+         * In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
+         *
+         * In `PERMISSIVE` mode, the result of the validation will be exposed as metrics while the request will follow the normal path.
+         *
+         * `DISABLED` type turns the validation off.
          */
         validationMode?: pulumi.Input<string>;
     }
@@ -2220,6 +2358,10 @@ export namespace ApiGateway {
         items: pulumi.Input<pulumi.Input<inputs.ApiGateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItem>[]>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
     }
@@ -2278,6 +2420,12 @@ export namespace ApiGateway {
         parameters?: pulumi.Input<pulumi.Input<inputs.ApiGateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameter>[]>;
         /**
          * (Updatable) Validation behavior mode.
+         *
+         * In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
+         *
+         * In `PERMISSIVE` mode, the result of the validation will be exposed as metrics while the request will follow the normal path.
+         *
+         * `DISABLED` type turns the validation off.
          */
         validationMode?: pulumi.Input<string>;
     }
@@ -2304,10 +2452,18 @@ export namespace ApiGateway {
         isEnabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) Set true to allow caching responses where the request has an Authorization header. Ensure you have configured your  cache key additions to get the level of isolation across authenticated requests that you require.
+         *
+         * When false, any request with an Authorization header will not be stored in the Response Cache.
+         *
+         * If using the CustomAuthenticationPolicy then the tokenHeader/tokenQueryParam are also subject to this check.
          */
         isPrivateCachingEnabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
     }
@@ -2345,6 +2501,10 @@ export namespace ApiGateway {
         items: pulumi.Input<pulumi.Input<inputs.ApiGateway.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersItem>[]>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
     }
@@ -2403,6 +2563,10 @@ export namespace ApiGateway {
         timeToLiveInSeconds: pulumi.Input<number>;
         /**
          * (Updatable) Type of the Response Cache Store Policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
     }
@@ -2761,7 +2925,11 @@ export namespace ApmConfig {
          */
         satisfiedResponseTime?: pulumi.Input<number>;
         /**
-         * (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
+         * (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime". 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         toleratingResponseTime?: pulumi.Input<number>;
     }
@@ -3152,6 +3320,10 @@ export namespace ApmSynthetics {
         paramName: pulumi.Input<string>;
         /**
          * (Updatable) Value of the parameter.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         paramValue?: pulumi.Input<string>;
         /**
@@ -3171,6 +3343,10 @@ export namespace ApmSynthetics {
         paramName?: pulumi.Input<string>;
         /**
          * (Updatable) Value of the parameter.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         paramValue?: pulumi.Input<string>;
     }
@@ -3214,6 +3390,10 @@ export namespace Artifacts {
         content: pulumi.Input<string>;
         /**
          * (Updatable) Readme format. Supported formats are text/plain and text/markdown.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         format: pulumi.Input<string>;
     }
@@ -3345,14 +3525,20 @@ export namespace Autoscaling {
     export interface AutoScalingConfigurationPolicyCapacity {
         /**
          * For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+         *
+         * For a schedule-based autoscaling policy, this value is the target pool size to scale to when executing the schedule that's defined in the autoscaling policy.
          */
         initial?: pulumi.Input<number>;
         /**
          * For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
+         *
+         * For a schedule-based autoscaling policy, this value is not used.
          */
         max?: pulumi.Input<number>;
         /**
          * For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
+         *
+         * For a schedule-based autoscaling policy, this value is not used.
          */
         min?: pulumi.Input<number>;
     }
@@ -3360,6 +3546,14 @@ export namespace Autoscaling {
     export interface AutoScalingConfigurationPolicyExecutionSchedule {
         /**
          * A cron expression that represents the time at which to execute the autoscaling policy.
+         *
+         * Cron expressions have this format: `<second> <minute> <hour> <day of month> <month> <day of week> <year>`
+         *
+         * You can use special characters that are supported with the Quartz cron implementation.
+         *
+         * You must specify `0` as the value for seconds.
+         *
+         * Example: `0 15 10 ? * *`
          */
         expression: pulumi.Input<string>;
         /**
@@ -3407,6 +3601,10 @@ export namespace Autoscaling {
          * The type of action to take.
          */
         type?: pulumi.Input<string>;
+        /**
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
         value?: pulumi.Input<number>;
     }
 
@@ -3420,6 +3618,10 @@ export namespace Autoscaling {
          * The comparison operator to use. Options are greater than (`GT`), greater than or equal to (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
          */
         operator?: pulumi.Input<string>;
+        /**
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
         value?: pulumi.Input<number>;
     }
 
@@ -3501,6 +3703,10 @@ export namespace Bastion {
         targetResourcePort?: pulumi.Input<number>;
         /**
          * The private IP address of the target resource that the session connects to.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         targetResourcePrivateIpAddress?: pulumi.Input<string>;
     }
@@ -3549,6 +3755,10 @@ export namespace BigDataService {
         scheduleDetails?: pulumi.Input<pulumi.Input<inputs.BigDataService.AutoScalingConfigurationPolicyDetailsScheduleDetail>[]>;
         /**
          * (Updatable) The time zone of the execution schedule, in IANA time zone database name format
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         timezone?: pulumi.Input<string>;
         /**
@@ -3846,6 +4056,10 @@ export namespace BigDataService {
         nvmes?: pulumi.Input<number>;
         /**
          * The total number of OCPUs available to the node.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         ocpus?: pulumi.Input<number>;
         /**
@@ -3962,6 +4176,10 @@ export namespace BigDataService {
         nvmes?: pulumi.Input<number>;
         /**
          * The total number of OCPUs available to the node.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         ocpus?: pulumi.Input<number>;
     }
@@ -4000,6 +4218,10 @@ export namespace BigDataService {
         nvmes?: pulumi.Input<number>;
         /**
          * The total number of OCPUs available to the node.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         ocpus?: pulumi.Input<number>;
     }
@@ -4038,6 +4260,10 @@ export namespace BigDataService {
         nvmes?: pulumi.Input<number>;
         /**
          * The total number of OCPUs available to the node.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         ocpus?: pulumi.Input<number>;
     }
@@ -4096,6 +4322,10 @@ export namespace BigDataService {
         nodeType?: pulumi.Input<string>;
         /**
          * The total number of OCPUs available to the node.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         ocpus?: pulumi.Input<number>;
         /**
@@ -4165,6 +4395,10 @@ export namespace BigDataService {
         nvmes?: pulumi.Input<number>;
         /**
          * The total number of OCPUs available to the node.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         ocpus?: pulumi.Input<number>;
     }
@@ -4203,6 +4437,10 @@ export namespace BigDataService {
         nvmes?: pulumi.Input<number>;
         /**
          * The total number of OCPUs available to the node.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         ocpus?: pulumi.Input<number>;
     }
@@ -4437,6 +4675,10 @@ export namespace Blockchain {
     export interface OsnOcpuAllocationParam {
         /**
          * (Updatable) Number of OCPU allocation
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         ocpuAllocationNumber: pulumi.Input<number>;
     }
@@ -5563,6 +5805,10 @@ export namespace CloudBridge {
         path?: pulumi.Input<string>;
         /**
          * (Updatable) VMware tools status.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         vmwareToolsStatus?: pulumi.Input<string>;
     }
@@ -5783,6 +6029,10 @@ export namespace CloudGuard {
         kind: pulumi.Input<string>;
         /**
          * (Updatable) Types of Targets
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         values?: pulumi.Input<pulumi.Input<string>[]>;
     }
@@ -5814,6 +6064,8 @@ export namespace CloudGuard {
         detectorRuleId: pulumi.Input<string>;
         /**
          * (Updatable) Detector recipe display name.
+         *
+         * Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -5857,6 +6109,8 @@ export namespace CloudGuard {
     export interface DetectorRecipeDetectorRuleCandidateResponderRule {
         /**
          * (Updatable) Detector recipe display name.
+         *
+         * Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -5953,6 +6207,8 @@ export namespace CloudGuard {
     export interface DetectorRecipeDetectorRuleDetailsEntitiesMapping {
         /**
          * (Updatable) Detector recipe display name.
+         *
+         * Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -5968,6 +6224,8 @@ export namespace CloudGuard {
     export interface DetectorRecipeDetectorRuleEntitiesMapping {
         /**
          * (Updatable) Detector recipe display name.
+         *
+         * Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -6007,6 +6265,8 @@ export namespace CloudGuard {
         detectorRuleId?: pulumi.Input<string>;
         /**
          * (Updatable) Detector recipe display name.
+         *
+         * Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -6050,6 +6310,8 @@ export namespace CloudGuard {
     export interface DetectorRecipeEffectiveDetectorRuleCandidateResponderRule {
         /**
          * (Updatable) Detector recipe display name.
+         *
+         * Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -6130,6 +6392,8 @@ export namespace CloudGuard {
     export interface DetectorRecipeEffectiveDetectorRuleEntitiesMapping {
         /**
          * (Updatable) Detector recipe display name.
+         *
+         * Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -6317,6 +6581,8 @@ export namespace CloudGuard {
         compartmentId?: pulumi.Input<string>;
         /**
          * (Updatable) Responder recipe description.
+         *
+         * Avoid entering confidential information.
          */
         description?: pulumi.Input<string>;
         /**
@@ -6325,6 +6591,8 @@ export namespace CloudGuard {
         details?: pulumi.Input<pulumi.Input<inputs.CloudGuard.ResponderRecipeEffectiveResponderRuleDetail>[]>;
         /**
          * (Updatable) Responder recipe display name.
+         *
+         * Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -6402,6 +6670,8 @@ export namespace CloudGuard {
         compartmentId?: pulumi.Input<string>;
         /**
          * (Updatable) Responder recipe description.
+         *
+         * Avoid entering confidential information.
          */
         description?: pulumi.Input<string>;
         /**
@@ -6410,6 +6680,8 @@ export namespace CloudGuard {
         details: pulumi.Input<inputs.CloudGuard.ResponderRecipeResponderRuleDetails>;
         /**
          * (Updatable) Responder recipe display name.
+         *
+         * Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -6510,14 +6782,20 @@ export namespace CloudGuard {
         definedTags?: pulumi.Input<{[key: string]: any}>;
         /**
          * The target description.
+         *
+         * Avoid entering confidential information.
          */
         description?: pulumi.Input<string>;
         /**
          * (Updatable) DetectorTemplate identifier.
+         *
+         * Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
          * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         *
+         * Avoid entering confidential information.
          */
         freeformTags?: pulumi.Input<{[key: string]: any}>;
         /**
@@ -6561,6 +6839,8 @@ export namespace CloudGuard {
         compartmentId?: pulumi.Input<string>;
         /**
          * The target description.
+         *
+         * Avoid entering confidential information.
          */
         description?: pulumi.Input<string>;
         /**
@@ -6577,6 +6857,8 @@ export namespace CloudGuard {
         detectorRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipeDetectorRule>[]>;
         /**
          * (Updatable) DetectorTemplate identifier.
+         *
+         * Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -6612,6 +6894,8 @@ export namespace CloudGuard {
         dataSourceId?: pulumi.Input<string>;
         /**
          * The target description.
+         *
+         * Avoid entering confidential information.
          */
         description?: pulumi.Input<string>;
         /**
@@ -6628,6 +6912,8 @@ export namespace CloudGuard {
         detectorRuleId: pulumi.Input<string>;
         /**
          * (Updatable) DetectorTemplate identifier.
+         *
+         * Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -6747,6 +7033,8 @@ export namespace CloudGuard {
     export interface TargetTargetDetectorRecipeDetectorRuleEntitiesMapping {
         /**
          * (Updatable) DetectorTemplate identifier.
+         *
+         * Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -6766,6 +7054,8 @@ export namespace CloudGuard {
         dataSourceId?: pulumi.Input<string>;
         /**
          * The target description.
+         *
+         * Avoid entering confidential information.
          */
         description?: pulumi.Input<string>;
         /**
@@ -6782,6 +7072,8 @@ export namespace CloudGuard {
         detectorRuleId?: pulumi.Input<string>;
         /**
          * (Updatable) DetectorTemplate identifier.
+         *
+         * Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -6901,6 +7193,8 @@ export namespace CloudGuard {
     export interface TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping {
         /**
          * (Updatable) DetectorTemplate identifier.
+         *
+         * Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -6920,10 +7214,14 @@ export namespace CloudGuard {
         compartmentId?: pulumi.Input<string>;
         /**
          * The target description.
+         *
+         * Avoid entering confidential information.
          */
         description?: pulumi.Input<string>;
         /**
          * (Updatable) DetectorTemplate identifier.
+         *
+         * Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -6963,6 +7261,8 @@ export namespace CloudGuard {
         compartmentId?: pulumi.Input<string>;
         /**
          * The target description.
+         *
+         * Avoid entering confidential information.
          */
         description?: pulumi.Input<string>;
         /**
@@ -6971,6 +7271,8 @@ export namespace CloudGuard {
         details?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetResponderRecipeEffectiveResponderRuleDetail>[]>;
         /**
          * (Updatable) DetectorTemplate identifier.
+         *
+         * Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -6983,6 +7285,10 @@ export namespace CloudGuard {
         policies?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) Identifier for ResponderRule.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         responderRuleId?: pulumi.Input<string>;
         /**
@@ -7048,6 +7354,8 @@ export namespace CloudGuard {
         compartmentId?: pulumi.Input<string>;
         /**
          * The target description.
+         *
+         * Avoid entering confidential information.
          */
         description?: pulumi.Input<string>;
         /**
@@ -7056,6 +7364,8 @@ export namespace CloudGuard {
         details: pulumi.Input<inputs.CloudGuard.TargetTargetResponderRecipeResponderRuleDetails>;
         /**
          * (Updatable) DetectorTemplate identifier.
+         *
+         * Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -7068,6 +7378,10 @@ export namespace CloudGuard {
         policies?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) Identifier for ResponderRule.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         responderRuleId: pulumi.Input<string>;
         /**
@@ -7406,6 +7720,10 @@ export namespace CloudMigrations {
         targetEnvironmentType: pulumi.Input<string>;
         /**
          * (Updatable) OCID of the VM configuration VCN.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         vcn: pulumi.Input<string>;
     }
@@ -7670,6 +7988,12 @@ export namespace CloudMigrations {
         displayName?: pulumi.Input<string>;
         /**
          * (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+         *
+         * If you do not specify the fault domain, the system selects one for you.
+         *
+         * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+         *
+         * Example: `FAULT-DOMAIN-1`
          */
         faultDomain?: pulumi.Input<string>;
         /**
@@ -7686,6 +8010,18 @@ export namespace CloudMigrations {
         instanceOptions?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetRecommendedSpecInstanceOption>[]>;
         /**
          * (Updatable) This is an advanced option.
+         *
+         * When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+         *
+         * If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots. Be aware that the same iPXE script will run every time an instance boots, not only after the initial LaunchInstance call.
+         *
+         * By default, the iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI in the same way as the default iPXE script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+         *
+         * If your instance boot volume type is paravirtualized, the boot volume is attached to the instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is paravirtualized and you use custom iPXE to perform network-boot into your instance, the primary boot volume is attached as a data volume through the virtio-scsi drive.
+         *
+         * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+         *
+         * For more information about iPXE, see http://ipxe.org.
          */
         ipxeScript?: pulumi.Input<string>;
         /**
@@ -7698,10 +8034,16 @@ export namespace CloudMigrations {
         preemptibleInstanceConfigs?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetRecommendedSpecPreemptibleInstanceConfig>[]>;
         /**
          * (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+         *
+         * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
          */
         shape?: pulumi.Input<string>;
         /**
          * (Updatable) The shape configuration requested for the instance.
+         *
+         * If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+         *
+         * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
          */
         shapeConfigs?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetRecommendedSpecShapeConfig>[]>;
         /**
@@ -7713,14 +8055,28 @@ export namespace CloudMigrations {
     export interface TargetAssetRecommendedSpecAgentConfig {
         /**
          * (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+         *
+         * To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
          */
         areAllPluginsDisabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
+         *
+         * These are the management plugins: OS Management Service Agent and Compute instance run command.
+         *
+         * The management plugins are controlled by this parameter and the per-plugin configuration in the `pluginsConfig` object.
+         * * If `isManagementDisabled` is true, all the management plugins are disabled, regardless of the per-plugin configuration.
+         * * If `isManagementDisabled` is false, all the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
          */
         isManagementDisabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
+         *
+         * These are the monitoring plugins: Compute instance monitoring and Custom logs monitoring.
+         *
+         * The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+         * * If `isMonitoringDisabled` is true, all the monitoring plugins are disabled, regardless of the per-plugin configuration.
+         * * If `isMonitoringDisabled` is false, all the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
          */
         isMonitoringDisabled?: pulumi.Input<boolean>;
         /**
@@ -7732,6 +8088,8 @@ export namespace CloudMigrations {
     export interface TargetAssetRecommendedSpecAgentConfigPluginsConfig {
         /**
          * (Updatable) Whether the plugin should be enabled or disabled.
+         *
+         * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
          */
         desiredState?: pulumi.Input<string>;
         /**
@@ -7743,10 +8101,20 @@ export namespace CloudMigrations {
     export interface TargetAssetRecommendedSpecCreateVnicDetail {
         /**
          * (Updatable) Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
+         *
+         * If you specify a `hostnameLabel`, then `assignPrivateDnsRecord` must be set to true.
          */
         assignPrivateDnsRecord?: pulumi.Input<boolean>;
         /**
          * (Updatable) Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
+         *
+         * **Note:** This public IP address is associated with the primary private IP on the VNIC. For more information, see [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+         *
+         * **Note:** There's a limit to the number of [public IPs](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/) a VNIC or instance can have. If you try to create a secondary VNIC with an assigned public IP for an instance that has already reached its public IP limit, an error is returned. For information about the public IP limits, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+         *
+         * Example: `false`
+         *
+         * If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
          */
         assignPublicIp?: pulumi.Input<boolean>;
         /**
@@ -7767,22 +8135,36 @@ export namespace CloudMigrations {
         hostnameLabel?: pulumi.Input<string>;
         /**
          * (Updatable) List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+         *
+         * If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
          */
         nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+         *
+         * If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+         *
+         * Example: `10.0.3.3`
          */
         privateIp?: pulumi.Input<string>;
         /**
          * (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you should skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+         *
+         * If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+         *
+         * Example: `true`
          */
         skipSourceDestCheck?: pulumi.Input<boolean>;
         /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
+         *
+         * If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both `vlanId` and `subnetId`, the request fails.
          */
         subnetId?: pulumi.Input<string>;
         /**
          * (Updatable) Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+         *
+         * Provide a `vlanId` instead of a `subnetId`. If you provide both `vlanId` and `subnetId`, the request fails.
          */
         vlanId?: pulumi.Input<string>;
     }
@@ -7815,6 +8197,8 @@ export namespace CloudMigrations {
     export interface TargetAssetRecommendedSpecShapeConfig {
         /**
          * (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+         *
+         * The following values are supported:
          */
         baselineOcpuUtilization?: pulumi.Input<string>;
         /**
@@ -7838,6 +8222,8 @@ export namespace CloudMigrations {
         bootVolumeSizeInGbs?: pulumi.Input<string>;
         /**
          * (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         *
+         * Allowed values:
          */
         bootVolumeVpusPerGb?: pulumi.Input<string>;
         /**
@@ -7849,7 +8235,11 @@ export namespace CloudMigrations {
          */
         kmsKeyId?: pulumi.Input<string>;
         /**
-         * (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+         * (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         sourceType?: pulumi.Input<string>;
     }
@@ -7889,6 +8279,12 @@ export namespace CloudMigrations {
         displayName?: pulumi.Input<string>;
         /**
          * (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+         *
+         * If you do not specify the fault domain, the system selects one for you.
+         *
+         * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+         *
+         * Example: `FAULT-DOMAIN-1`
          */
         faultDomain?: pulumi.Input<string>;
         /**
@@ -7905,6 +8301,18 @@ export namespace CloudMigrations {
         instanceOptions?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetTestSpecInstanceOption>[]>;
         /**
          * (Updatable) This is an advanced option.
+         *
+         * When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+         *
+         * If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots. Be aware that the same iPXE script will run every time an instance boots, not only after the initial LaunchInstance call.
+         *
+         * By default, the iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI in the same way as the default iPXE script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+         *
+         * If your instance boot volume type is paravirtualized, the boot volume is attached to the instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is paravirtualized and you use custom iPXE to perform network-boot into your instance, the primary boot volume is attached as a data volume through the virtio-scsi drive.
+         *
+         * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+         *
+         * For more information about iPXE, see http://ipxe.org.
          */
         ipxeScript?: pulumi.Input<string>;
         /**
@@ -7917,10 +8325,16 @@ export namespace CloudMigrations {
         preemptibleInstanceConfigs?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetTestSpecPreemptibleInstanceConfig>[]>;
         /**
          * (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+         *
+         * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
          */
         shape?: pulumi.Input<string>;
         /**
          * (Updatable) The shape configuration requested for the instance.
+         *
+         * If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+         *
+         * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
          */
         shapeConfigs?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetTestSpecShapeConfig>[]>;
         /**
@@ -7932,14 +8346,28 @@ export namespace CloudMigrations {
     export interface TargetAssetTestSpecAgentConfig {
         /**
          * (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+         *
+         * To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
          */
         areAllPluginsDisabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
+         *
+         * These are the management plugins: OS Management Service Agent and Compute instance run command.
+         *
+         * The management plugins are controlled by this parameter and the per-plugin configuration in the `pluginsConfig` object.
+         * * If `isManagementDisabled` is true, all the management plugins are disabled, regardless of the per-plugin configuration.
+         * * If `isManagementDisabled` is false, all the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
          */
         isManagementDisabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
+         *
+         * These are the monitoring plugins: Compute instance monitoring and Custom logs monitoring.
+         *
+         * The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+         * * If `isMonitoringDisabled` is true, all the monitoring plugins are disabled, regardless of the per-plugin configuration.
+         * * If `isMonitoringDisabled` is false, all the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
          */
         isMonitoringDisabled?: pulumi.Input<boolean>;
         /**
@@ -7951,6 +8379,8 @@ export namespace CloudMigrations {
     export interface TargetAssetTestSpecAgentConfigPluginsConfig {
         /**
          * (Updatable) Whether the plugin should be enabled or disabled.
+         *
+         * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
          */
         desiredState?: pulumi.Input<string>;
         /**
@@ -7962,10 +8392,20 @@ export namespace CloudMigrations {
     export interface TargetAssetTestSpecCreateVnicDetail {
         /**
          * (Updatable) Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
+         *
+         * If you specify a `hostnameLabel`, then `assignPrivateDnsRecord` must be set to true.
          */
         assignPrivateDnsRecord?: pulumi.Input<boolean>;
         /**
          * (Updatable) Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
+         *
+         * **Note:** This public IP address is associated with the primary private IP on the VNIC. For more information, see [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+         *
+         * **Note:** There's a limit to the number of [public IPs](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/) a VNIC or instance can have. If you try to create a secondary VNIC with an assigned public IP for an instance that has already reached its public IP limit, an error is returned. For information about the public IP limits, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+         *
+         * Example: `false`
+         *
+         * If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
          */
         assignPublicIp?: pulumi.Input<boolean>;
         /**
@@ -7986,22 +8426,36 @@ export namespace CloudMigrations {
         hostnameLabel?: pulumi.Input<string>;
         /**
          * (Updatable) List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+         *
+         * If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
          */
         nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+         *
+         * If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+         *
+         * Example: `10.0.3.3`
          */
         privateIp?: pulumi.Input<string>;
         /**
          * (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you should skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+         *
+         * If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+         *
+         * Example: `true`
          */
         skipSourceDestCheck?: pulumi.Input<boolean>;
         /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
+         *
+         * If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both `vlanId` and `subnetId`, the request fails.
          */
         subnetId?: pulumi.Input<string>;
         /**
          * (Updatable) Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+         *
+         * Provide a `vlanId` instead of a `subnetId`. If you provide both `vlanId` and `subnetId`, the request fails.
          */
         vlanId?: pulumi.Input<string>;
     }
@@ -8034,6 +8488,8 @@ export namespace CloudMigrations {
     export interface TargetAssetTestSpecShapeConfig {
         /**
          * (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+         *
+         * The following values are supported:
          */
         baselineOcpuUtilization?: pulumi.Input<string>;
         /**
@@ -8057,6 +8513,8 @@ export namespace CloudMigrations {
         bootVolumeSizeInGbs?: pulumi.Input<string>;
         /**
          * (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         *
+         * Allowed values:
          */
         bootVolumeVpusPerGb?: pulumi.Input<string>;
         /**
@@ -8068,7 +8526,11 @@ export namespace CloudMigrations {
          */
         kmsKeyId?: pulumi.Input<string>;
         /**
-         * (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+         * (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         sourceType?: pulumi.Input<string>;
     }
@@ -8108,6 +8570,12 @@ export namespace CloudMigrations {
         displayName?: pulumi.Input<string>;
         /**
          * (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+         *
+         * If you do not specify the fault domain, the system selects one for you.
+         *
+         * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+         *
+         * Example: `FAULT-DOMAIN-1`
          */
         faultDomain?: pulumi.Input<string>;
         /**
@@ -8124,6 +8592,18 @@ export namespace CloudMigrations {
         instanceOptions?: pulumi.Input<inputs.CloudMigrations.TargetAssetUserSpecInstanceOptions>;
         /**
          * (Updatable) This is an advanced option.
+         *
+         * When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+         *
+         * If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots. Be aware that the same iPXE script will run every time an instance boots, not only after the initial LaunchInstance call.
+         *
+         * By default, the iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI in the same way as the default iPXE script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+         *
+         * If your instance boot volume type is paravirtualized, the boot volume is attached to the instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is paravirtualized and you use custom iPXE to perform network-boot into your instance, the primary boot volume is attached as a data volume through the virtio-scsi drive.
+         *
+         * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+         *
+         * For more information about iPXE, see http://ipxe.org.
          */
         ipxeScript?: pulumi.Input<string>;
         /**
@@ -8136,10 +8616,16 @@ export namespace CloudMigrations {
         preemptibleInstanceConfig?: pulumi.Input<inputs.CloudMigrations.TargetAssetUserSpecPreemptibleInstanceConfig>;
         /**
          * (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+         *
+         * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
          */
         shape?: pulumi.Input<string>;
         /**
          * (Updatable) The shape configuration requested for the instance.
+         *
+         * If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+         *
+         * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
          */
         shapeConfig?: pulumi.Input<inputs.CloudMigrations.TargetAssetUserSpecShapeConfig>;
         /**
@@ -8151,14 +8637,28 @@ export namespace CloudMigrations {
     export interface TargetAssetUserSpecAgentConfig {
         /**
          * (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+         *
+         * To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
          */
         areAllPluginsDisabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
+         *
+         * These are the management plugins: OS Management Service Agent and Compute instance run command.
+         *
+         * The management plugins are controlled by this parameter and the per-plugin configuration in the `pluginsConfig` object.
+         * * If `isManagementDisabled` is true, all the management plugins are disabled, regardless of the per-plugin configuration.
+         * * If `isManagementDisabled` is false, all the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
          */
         isManagementDisabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
+         *
+         * These are the monitoring plugins: Compute instance monitoring and Custom logs monitoring.
+         *
+         * The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+         * * If `isMonitoringDisabled` is true, all the monitoring plugins are disabled, regardless of the per-plugin configuration.
+         * * If `isMonitoringDisabled` is false, all the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
          */
         isMonitoringDisabled?: pulumi.Input<boolean>;
         /**
@@ -8170,6 +8670,8 @@ export namespace CloudMigrations {
     export interface TargetAssetUserSpecAgentConfigPluginsConfig {
         /**
          * (Updatable) Whether the plugin should be enabled or disabled.
+         *
+         * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
          */
         desiredState: pulumi.Input<string>;
         /**
@@ -8181,10 +8683,20 @@ export namespace CloudMigrations {
     export interface TargetAssetUserSpecCreateVnicDetails {
         /**
          * (Updatable) Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
+         *
+         * If you specify a `hostnameLabel`, then `assignPrivateDnsRecord` must be set to true.
          */
         assignPrivateDnsRecord?: pulumi.Input<boolean>;
         /**
          * (Updatable) Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
+         *
+         * **Note:** This public IP address is associated with the primary private IP on the VNIC. For more information, see [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+         *
+         * **Note:** There's a limit to the number of [public IPs](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/) a VNIC or instance can have. If you try to create a secondary VNIC with an assigned public IP for an instance that has already reached its public IP limit, an error is returned. For information about the public IP limits, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+         *
+         * Example: `false`
+         *
+         * If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
          */
         assignPublicIp?: pulumi.Input<boolean>;
         /**
@@ -8205,22 +8717,36 @@ export namespace CloudMigrations {
         hostnameLabel?: pulumi.Input<string>;
         /**
          * (Updatable) List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+         *
+         * If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
          */
         nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+         *
+         * If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+         *
+         * Example: `10.0.3.3`
          */
         privateIp?: pulumi.Input<string>;
         /**
          * (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you should skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+         *
+         * If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+         *
+         * Example: `true`
          */
         skipSourceDestCheck?: pulumi.Input<boolean>;
         /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
+         *
+         * If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both `vlanId` and `subnetId`, the request fails.
          */
         subnetId?: pulumi.Input<string>;
         /**
          * (Updatable) Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+         *
+         * Provide a `vlanId` instead of a `subnetId`. If you provide both `vlanId` and `subnetId`, the request fails.
          */
         vlanId?: pulumi.Input<string>;
     }
@@ -8253,6 +8779,8 @@ export namespace CloudMigrations {
     export interface TargetAssetUserSpecShapeConfig {
         /**
          * (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+         *
+         * The following values are supported:
          */
         baselineOcpuUtilization?: pulumi.Input<string>;
         /**
@@ -8276,6 +8804,8 @@ export namespace CloudMigrations {
         bootVolumeSizeInGbs?: pulumi.Input<string>;
         /**
          * (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         *
+         * Allowed values:
          */
         bootVolumeVpusPerGb?: pulumi.Input<string>;
         /**
@@ -8287,7 +8817,11 @@ export namespace CloudMigrations {
          */
         kmsKeyId?: pulumi.Input<string>;
         /**
-         * (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+         * (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         sourceType: pulumi.Input<string>;
     }
@@ -8541,6 +9075,10 @@ export namespace ContainerEngine {
         additionalCapabilities?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * A list of string arguments for a container's entrypoint process.
+         *
+         * Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For such containers, this argument list can also be used to specify the main command in the container process.
+         *
+         * All arguments together must be 64KB or smaller.
          */
         arguments?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -8570,6 +9108,8 @@ export namespace ContainerEngine {
         displayName?: pulumi.Input<string>;
         /**
          * A map of additional environment variables to set in the environment of the container's entrypoint process. These variables are in addition to any variables already defined in the container's image.
+         *
+         * All environment variables together, name and values, must be 64KB or smaller.
          */
         environmentVariables?: pulumi.Input<{[key: string]: any}>;
         exitCode?: pulumi.Input<number>;
@@ -8602,7 +9142,11 @@ export namespace ContainerEngine {
          */
         resourceConfig?: pulumi.Input<inputs.ContainerEngine.ContainerInstanceContainerResourceConfig>;
         /**
-         * (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
+         * (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         state?: pulumi.Input<string>;
         /**
@@ -9095,6 +9639,8 @@ export namespace ContainerEngine {
         nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
+         *
+         * To use the node pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
          */
         placementConfigs: pulumi.Input<pulumi.Input<inputs.ContainerEngine.NodePoolNodeConfigDetailsPlacementConfig>[]>;
         /**
@@ -9308,6 +9854,10 @@ export namespace ContainerEngine {
         definedTags?: pulumi.Input<{[key: string]: any}>;
         /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         freeformTags?: pulumi.Input<{[key: string]: any}>;
     }
@@ -9410,6 +9960,8 @@ export namespace Core {
          * (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
          * * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
          * * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+         *
+         * If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
          */
         icmpOptions?: pulumi.Input<inputs.Core.CaptureFilterVtapCaptureFilterRuleIcmpOptions>;
         /**
@@ -9469,7 +10021,11 @@ export namespace Core {
          */
         max: pulumi.Input<number>;
         /**
-         * (Updatable) The minimum port number, which must not be greater than the maximum port number.
+         * (Updatable) The minimum port number, which must not be greater than the maximum port number. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         min: pulumi.Input<number>;
     }
@@ -9480,7 +10036,11 @@ export namespace Core {
          */
         max: pulumi.Input<number>;
         /**
-         * (Updatable) The minimum port number, which must not be greater than the maximum port number.
+         * (Updatable) The minimum port number, which must not be greater than the maximum port number. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         min: pulumi.Input<number>;
     }
@@ -9502,7 +10062,11 @@ export namespace Core {
          */
         max: pulumi.Input<number>;
         /**
-         * (Updatable) The minimum port number, which must not be greater than the maximum port number.
+         * (Updatable) The minimum port number, which must not be greater than the maximum port number. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         min: pulumi.Input<number>;
     }
@@ -9513,7 +10077,11 @@ export namespace Core {
          */
         max: pulumi.Input<number>;
         /**
-         * (Updatable) The minimum port number, which must not be greater than the maximum port number.
+         * (Updatable) The minimum port number, which must not be greater than the maximum port number. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         min: pulumi.Input<number>;
     }
@@ -9622,6 +10190,10 @@ export namespace Core {
         displayName?: pulumi.Input<string>;
         /**
          * The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         subnetId?: pulumi.Input<string>;
     }
@@ -9648,6 +10220,10 @@ export namespace Core {
         displayName?: pulumi.Input<string>;
         /**
          * The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         subnetId: pulumi.Input<string>;
     }
@@ -9655,10 +10231,16 @@ export namespace Core {
     export interface ComputeCapacityReservationInstanceReservationConfig {
         /**
          * (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
+         *
+         * If the parameter is provided, the reservation is created with the HPC island and a list of HPC blocks that you specify. If a list of HPC blocks are missing or not provided, the reservation is created with any HPC blocks in the HPC island that you specify. If the values of HPC island or HPC block that you provide are not valid, an error is returned.
          */
         clusterConfig?: pulumi.Input<inputs.Core.ComputeCapacityReservationInstanceReservationConfigClusterConfig>;
         /**
          * (Updatable) The fault domain to use for instances created using this capacity configuration. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the capacity is available for an instance that does not specify a fault domain. To change the fault domain for a reservation, delete the reservation and create a new one in the preferred fault domain.
+         *
+         * To retrieve a list of fault domains, use the `ListFaultDomains` operation in the [Identity and Access Management Service API](https://www.terraform.io/iaas/api/#/en/identity/20160918/).
+         *
+         * Example: `FAULT-DOMAIN-1`
          */
         faultDomain?: pulumi.Input<string>;
         /**
@@ -9667,6 +10249,12 @@ export namespace Core {
         instanceShape: pulumi.Input<string>;
         /**
          * (Updatable) The shape configuration requested when launching instances in a compute capacity reservation.
+         *
+         * If the parameter is provided, the reservation is created with the resources that you specify. If some properties are missing or the parameter is not provided, the reservation is created with the default configuration values for the `shape` that you specify.
+         *
+         * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+         *
+         * For more information about customizing the resources that are allocated to flexible shapes, see [Flexible Shapes](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible).
          */
         instanceShapeConfig?: pulumi.Input<inputs.Core.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig>;
         /**
@@ -9871,6 +10459,10 @@ export namespace Core {
         customDnsServers?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) A single search domain name according to [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). During a DNS query, the OS will append this search domain name to the value being queried.
+         *
+         * If you set [DhcpDnsOption](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DhcpDnsOption/) to `VcnLocalPlusInternet`, and you assign a DNS label to the VCN during creation, the search domain name in the VCN's default set of DHCP options is automatically set to the VCN domain (for example, `vcn1.oraclevcn.com`).
+         *
+         * If you don't want to use a search domain name, omit this option from the set of DHCP options. Do not include this option with an empty list of search domain names, or with an empty string as the value for any search domain name.
          */
         searchDomainNames?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -9897,6 +10489,10 @@ export namespace Core {
         ipsecConnectionId?: pulumi.Input<string>;
         /**
          * The OCID of the route table the DRG attachment is using.
+         *
+         * For information about why you would associate a route table with a DRG attachment, see:
+         * * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+         * * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
          */
         routeTableId?: pulumi.Input<string>;
         /**
@@ -9916,6 +10512,11 @@ export namespace Core {
         ipsecConnectionId?: pulumi.Input<string>;
         /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the DRG attachment.
+         *
+         * If you don't specify a route table here, the DRG attachment is created without an associated route table. The Networking service does NOT automatically associate the attached VCN's default route table with the DRG attachment. For information about why you would associate a route table with a DRG attachment, see:
+         * * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
+         * * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+         * This field is deprecated. Instead, use the networkDetails field to specify the VCN route table for this attachment.
          */
         routeTableId?: pulumi.Input<string>;
         /**
@@ -11185,14 +11786,28 @@ export namespace Core {
     export interface InstanceAgentConfig {
         /**
          * (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+         *
+         * To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
          */
         areAllPluginsDisabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
+         *
+         * These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
+         *
+         * The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+         * * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
+         * * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
          */
         isManagementDisabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
+         *
+         * These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
+         *
+         * The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+         * * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
+         * * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
          */
         isMonitoringDisabled?: pulumi.Input<boolean>;
         /**
@@ -11204,6 +11819,8 @@ export namespace Core {
     export interface InstanceAgentConfigPluginsConfig {
         /**
          * (Updatable) Whether the plugin should be enabled or disabled.
+         *
+         * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
          */
         desiredState: pulumi.Input<string>;
         /**
@@ -11234,6 +11851,8 @@ export namespace Core {
         instanceType: pulumi.Input<string>;
         /**
          * Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+         *
+         * See [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) for more information.
          */
         launchDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetails>;
         /**
@@ -11328,6 +11947,8 @@ export namespace Core {
         sourceDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetails>;
         /**
          * The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         *
+         * Allowed values:
          */
         vpusPerGb?: pulumi.Input<string>;
     }
@@ -11381,6 +12002,8 @@ export namespace Core {
         createVnicDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails>;
         /**
          * The OCID of the dedicated virtual machine host to place the instance on.
+         *
+         * Dedicated VM hosts can be used when launching individual instances from an instance configuration. They cannot be used to launch instance pools.
          */
         dedicatedVmHostId?: pulumi.Input<string>;
         /**
@@ -11393,10 +12016,20 @@ export namespace Core {
         displayName?: pulumi.Input<string>;
         /**
          * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+         *
+         * They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+         *
+         * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
          */
         extendedMetadata?: pulumi.Input<{[key: string]: any}>;
         /**
          * A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+         *
+         * If you do not specify the fault domain, the system selects one for you.
+         *
+         * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+         *
+         * Example: `FAULT-DOMAIN-1`
          */
         faultDomain?: pulumi.Input<string>;
         /**
@@ -11409,6 +12042,16 @@ export namespace Core {
         instanceOptions?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptions>;
         /**
          * This is an advanced option.
+         *
+         * When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+         *
+         * If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots; however, you should be aware that the same iPXE script will run every time an instance boots; not only after the initial LaunchInstance call.
+         *
+         * The default iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI the same way as the default iPXE script, you should use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
+         *
+         * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+         *
+         * For more information about iPXE, see http://ipxe.org.
          */
         ipxeScript?: pulumi.Input<string>;
         /**
@@ -11425,10 +12068,38 @@ export namespace Core {
         launchOptions?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions>;
         /**
          * Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+         *
+         * A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
+         * * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
+         * * Get information about the instance, including the custom metadata that you provide when you launch the instance.
+         *
+         * **Providing Cloud-Init Metadata**
+         *
+         * You can use the following metadata key names to provide information to Cloud-Init:
+         *
+         * **"sshAuthorizedKeys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorizedKeys` file, as shown in the example below.
+         *
+         * **"userData"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+         *
+         * **Metadata Example**
+         *
+         * "metadata" : { "quakeBotLevel" : "Severe", "sshAuthorizedKeys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "userData" : "<your_public_SSH_key>==" } **Getting Metadata on the Instance**
+         *
+         * To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+         *
+         * curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+         *
+         * You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+         *
+         * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
          */
         metadata?: pulumi.Input<{[key: string]: any}>;
         /**
          * The platform configuration requested for the instance.
+         *
+         * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
+         *
+         * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
          */
         platformConfig?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig>;
         /**
@@ -11441,10 +12112,16 @@ export namespace Core {
         preferredMaintenanceAction?: pulumi.Input<string>;
         /**
          * The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+         *
+         * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
          */
         shape?: pulumi.Input<string>;
         /**
          * The shape configuration requested for the instance.
+         *
+         * If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+         *
+         * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
          */
         shapeConfig?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig>;
         sourceDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetails>;
@@ -11453,14 +12130,28 @@ export namespace Core {
     export interface InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfig {
         /**
          * Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+         *
+         * To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
          */
         areAllPluginsDisabled?: pulumi.Input<boolean>;
         /**
          * Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
+         *
+         * These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
+         *
+         * The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+         * * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
+         * * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
          */
         isManagementDisabled?: pulumi.Input<boolean>;
         /**
          * Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
+         *
+         * These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
+         *
+         * The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
+         * * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
+         * * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
          */
         isMonitoringDisabled?: pulumi.Input<boolean>;
         /**
@@ -11472,6 +12163,8 @@ export namespace Core {
     export interface InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig {
         /**
          * Whether the plugin should be enabled or disabled. Accepted values are `ENABLED` and `DISABLED`
+         *
+         * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
          */
         desiredState: pulumi.Input<string>;
         /**
@@ -11591,6 +12284,8 @@ export namespace Core {
         isSecureBootEnabled?: pulumi.Input<boolean>;
         /**
          * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+         *
+         * Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
          */
         isSymmetricMultiThreadingEnabled?: pulumi.Input<boolean>;
         /**
@@ -11603,6 +12298,8 @@ export namespace Core {
         numaNodesPerSocket?: pulumi.Input<string>;
         /**
          * The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+         *
+         * If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
          */
         percentageOfCoresEnabled?: pulumi.Input<number>;
         /**
@@ -11632,6 +12329,8 @@ export namespace Core {
     export interface InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig {
         /**
          * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+         *
+         * The following values are supported:
          */
         baselineOcpuUtilization?: pulumi.Input<string>;
         /**
@@ -11659,6 +12358,8 @@ export namespace Core {
         bootVolumeSizeInGbs?: pulumi.Input<string>;
         /**
          * The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         *
+         * Allowed values:
          */
         bootVolumeVpusPerGb?: pulumi.Input<string>;
         /**
@@ -11732,10 +12433,20 @@ export namespace Core {
     export interface InstanceCreateVnicDetails {
         /**
          * Whether the VNIC should be assigned a DNS record. If set to false, no DNS record registion for the VNIC; if set to true, DNS record will be registered. The default value is true.  Example: `true`
+         *
+         * If you specify a `hostnameLabel`, the `assignPrivateDnsRecord` is require to be set to true.
          */
         assignPrivateDnsRecord?: pulumi.Input<boolean>;
         /**
          * (Updatable) Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
+         *
+         * **Note:** This public IP address is associated with the primary private IP on the VNIC. For more information, see [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+         *
+         * **Note:** There's a limit to the number of [public IPs](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/) a VNIC or instance can have. If you try to create a secondary VNIC with an assigned public IP for an instance that has already reached its public IP limit, an error is returned. For information about the public IP limits, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+         *
+         * Example: `false`
+         *
+         * If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
          */
         assignPublicIp?: pulumi.Input<string>;
         /**
@@ -11756,14 +12467,24 @@ export namespace Core {
         hostnameLabel?: pulumi.Input<string>;
         /**
          * (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+         *
+         * If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
          */
         nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+         *
+         * If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+         *
+         * Example: `10.0.3.3`
          */
         privateIp?: pulumi.Input<string>;
         /**
          * (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+         *
+         * If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+         *
+         * Example: `true`
          */
         skipSourceDestCheck?: pulumi.Input<boolean>;
         /**
@@ -11772,6 +12493,8 @@ export namespace Core {
         subnetId?: pulumi.Input<string>;
         /**
          * Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+         *
+         * Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
          */
         vlanId?: pulumi.Input<string>;
     }
@@ -11837,6 +12560,8 @@ export namespace Core {
         isSecureBootEnabled?: pulumi.Input<boolean>;
         /**
          * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+         *
+         * Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
          */
         isSymmetricMultiThreadingEnabled?: pulumi.Input<boolean>;
         /**
@@ -11849,6 +12574,8 @@ export namespace Core {
         numaNodesPerSocket?: pulumi.Input<string>;
         /**
          * The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+         *
+         * If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
          */
         percentageOfCoresEnabled?: pulumi.Input<number>;
         /**
@@ -11903,6 +12630,10 @@ export namespace Core {
         port: pulumi.Input<number>;
         /**
          * (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         state?: pulumi.Input<string>;
         /**
@@ -11918,6 +12649,14 @@ export namespace Core {
         availabilityDomain: pulumi.Input<string>;
         /**
          * (Updatable) The fault domains to place instances.
+         *
+         * If you don't provide any values, the system makes a best effort to distribute instances across all fault domains based on capacity.
+         *
+         * To distribute the instances evenly across selected fault domains, provide a set of fault domains. For example, you might want instances to be evenly distributed if your applications require high availability.
+         *
+         * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
+         *
+         * Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
          */
         faultDomains?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -11962,6 +12701,8 @@ export namespace Core {
     export interface InstanceShapeConfig {
         /**
          * (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+         *
+         * The following values are supported:
          */
         baselineOcpuUtilization?: pulumi.Input<string>;
         /**
@@ -12017,6 +12758,8 @@ export namespace Core {
         bootVolumeSizeInGbs?: pulumi.Input<string>;
         /**
          * The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+         *
+         * Allowed values:
          */
         bootVolumeVpusPerGb?: pulumi.Input<string>;
         /**
@@ -12041,10 +12784,22 @@ export namespace Core {
         bgpState?: pulumi.Input<string>;
         /**
          * If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this ASN is required and used for the tunnel's BGP session. This is the ASN of the network on the CPE end of the BGP session. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.
+         *
+         * If the tunnel's `routing` attribute is set to `STATIC`, the `customerBgpAsn` must be null.
+         *
+         * Example: `12345` (2-byte) or `1587232876` (4-byte)
          */
         customerBgpAsn?: pulumi.Input<string>;
         /**
          * The IP address for the CPE end of the inside tunnel interface.
+         *
+         * If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this IP address is required and used for the tunnel's BGP session.
+         *
+         * If `routing` is instead set to `STATIC`, this IP address is optional. You can set this IP address to troubleshoot or monitor the tunnel.
+         *
+         * The value must be a /30 or /31.
+         *
+         * Example: `10.0.0.5/31`
          */
         customerInterfaceIp?: pulumi.Input<string>;
         /**
@@ -12053,6 +12808,14 @@ export namespace Core {
         oracleBgpAsn?: pulumi.Input<string>;
         /**
          * The IP address for the Oracle end of the inside tunnel interface.
+         *
+         * If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this IP address is required and used for the tunnel's BGP session.
+         *
+         * If `routing` is instead set to `STATIC`, this IP address is optional. You can set this IP address to troubleshoot or monitor the tunnel.
+         *
+         * The value must be a /30 or /31.
+         *
+         * Example: `10.0.0.4/31`
          */
         oracleInterfaceIp?: pulumi.Input<string>;
     }
@@ -12124,7 +12887,11 @@ export namespace Core {
          */
         max: pulumi.Input<number>;
         /**
-         * The minimum port number, which must not be greater than the maximum port number.
+         * The minimum port number, which must not be greater than the maximum port number. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         min: pulumi.Input<number>;
     }
@@ -12135,7 +12902,11 @@ export namespace Core {
          */
         max: pulumi.Input<number>;
         /**
-         * The minimum port number, which must not be greater than the maximum port number.
+         * The minimum port number, which must not be greater than the maximum port number. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         min: pulumi.Input<number>;
     }
@@ -12151,7 +12922,11 @@ export namespace Core {
          */
         max: pulumi.Input<number>;
         /**
-         * The minimum port number, which must not be greater than the maximum port number.
+         * The minimum port number, which must not be greater than the maximum port number. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         min: pulumi.Input<number>;
     }
@@ -12162,7 +12937,11 @@ export namespace Core {
          */
         max: pulumi.Input<number>;
         /**
-         * The minimum port number, which must not be greater than the maximum port number.
+         * The minimum port number, which must not be greater than the maximum port number. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         min: pulumi.Input<number>;
     }
@@ -12170,6 +12949,12 @@ export namespace Core {
     export interface RouteTableRouteRule {
         /**
          * (Updatable) Deprecated. Instead use `destination` and `destinationType`. Requests that include both `cidrBlock` and `destination` will be rejected.
+         *
+         * A destination IP address range in CIDR notation. Matching packets will be routed to the indicated network entity (the target).
+         *
+         * Cannot be an IPv6 CIDR.
+         *
+         * Example: `0.0.0.0/0`
          *
          * @deprecated The 'cidr_block' field has been deprecated. Please use 'destination' instead.
          */
@@ -12180,6 +12965,10 @@ export namespace Core {
         description?: pulumi.Input<string>;
         /**
          * (Updatable) Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
+         *
+         * Allowed values:
+         * * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. If you set this to an IPv6 CIDR, the route rule's target can only be a DRG or internet gateway. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you're setting up a route rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
          */
         destination?: pulumi.Input<string>;
         /**
@@ -12203,16 +12992,24 @@ export namespace Core {
         description?: pulumi.Input<string>;
         /**
          * (Updatable) Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
+         *
+         * Allowed values:
+         * * IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56` Note that IPv6 addressing is currently supported only in certain regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you're setting up a security list rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
          */
         destination: pulumi.Input<string>;
         /**
          * (Updatable) Type of destination for the rule. The default is `CIDR_BLOCK`.
+         *
+         * Allowed values:
          */
         destinationType?: pulumi.Input<string>;
         /**
          * (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
          * * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
          * * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+         *
+         * If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
          */
         icmpOptions?: pulumi.Input<inputs.Core.SecurityListEgressSecurityRuleIcmpOptions>;
         /**
@@ -12305,6 +13102,8 @@ export namespace Core {
          * (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
          * * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
          * * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+         *
+         * If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
          */
         icmpOptions?: pulumi.Input<inputs.Core.SecurityListIngressSecurityRuleIcmpOptions>;
         /**
@@ -12313,6 +13112,10 @@ export namespace Core {
         protocol: pulumi.Input<string>;
         /**
          * (Updatable) Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
+         *
+         * Allowed values:
+         * * IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you're setting up a security list rule for traffic coming from a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
          */
         source: pulumi.Input<string>;
         /**
@@ -12429,18 +13232,38 @@ export namespace Core {
         crossConnectOrCrossConnectGroupId?: pulumi.Input<string>;
         /**
          * (Updatable) The BGP IPv4 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv4 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv4 address of the provider's edge router. Must use a subnet mask from /28 to /31.
+         *
+         * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
+         *
+         * Example: `10.0.0.18/31`
          */
         customerBgpPeeringIp?: pulumi.Input<string>;
         /**
          * (Updatable) IPv6 is currently supported only in the Government Cloud. The BGP IPv6 address for the router on the other end of the BGP session from Oracle. Specified by the owner of that router. If the session goes from Oracle to a customer, this is the BGP IPv6 address of the customer's edge router. If the session goes from Oracle to a provider, this is the BGP IPv6 address of the provider's edge router. Only subnet masks from /64 up to /127 are allowed.
+         *
+         * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
+         *
+         * IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         *
+         * Example: `2001:db8::1/64`
          */
         customerBgpPeeringIpv6?: pulumi.Input<string>;
         /**
          * (Updatable) The IPv4 address for Oracle's end of the BGP session. Must use a subnet mask from /28 to /31. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
+         *
+         * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
+         *
+         * Example: `10.0.0.19/31`
          */
         oracleBgpPeeringIp?: pulumi.Input<string>;
         /**
          * (Updatable) IPv6 is currently supported only in the Government Cloud. The IPv6 address for Oracle's end of the BGP session.  Only subnet masks from /64 up to /127 are allowed. If the session goes from Oracle to a customer's edge router, the customer specifies this information. If the session goes from Oracle to a provider's edge router, the provider specifies this.
+         *
+         * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
+         *
+         * Note that IPv6 addressing is currently supported only in certain regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         *
+         * Example: `2001:db8::2/64`
          */
         oracleBgpPeeringIpv6?: pulumi.Input<string>;
         /**
@@ -12464,10 +13287,20 @@ export namespace Core {
     export interface VnicAttachmentCreateVnicDetails {
         /**
          * Whether the VNIC should be assigned a DNS record. If set to false, no DNS record registion for the VNIC; if set to true, DNS record will be registered. Example: `true`
+         *
+         * If you specify a `hostnameLabel`, the `assignPrivateDnsRecord` is require to be set to true.
          */
         assignPrivateDnsRecord?: pulumi.Input<boolean>;
         /**
          * Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
+         *
+         * **Note:** This public IP address is associated with the primary private IP on the VNIC. For more information, see [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+         *
+         * **Note:** There's a limit to the number of [public IPs](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/) a VNIC or instance can have. If you try to create a secondary VNIC with an assigned public IP for an instance that has already reached its public IP limit, an error is returned. For information about the public IP limits, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+         *
+         * Example: `false`
+         *
+         * If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
          */
         assignPublicIp?: pulumi.Input<string>;
         /**
@@ -12484,26 +13317,48 @@ export namespace Core {
         freeformTags?: pulumi.Input<{[key: string]: any}>;
         /**
          * (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+         *
+         * For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         *
+         * When launching an instance, use this `hostnameLabel` instead of the deprecated `hostnameLabel` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). If you provide both, the values must match.
+         *
+         * Example: `bminstance1`
+         *
+         * If you specify a `vlanId`, the `hostnameLabel` cannot be specified. VNICs on a VLAN can not be assigned a hostname. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
          */
         hostnameLabel?: pulumi.Input<string>;
         /**
          * (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+         *
+         * If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId` indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs, all VNICs in the VLAN belong to the NSGs that are associated with the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
          */
         nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+         *
+         * If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+         *
+         * Example: `10.0.3.3`
          */
         privateIp?: pulumi.Input<string>;
         /**
          * (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+         *
+         * If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+         *
+         * Example: `true`
          */
         skipSourceDestCheck?: pulumi.Input<boolean>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
+         *
+         * If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
          */
         subnetId?: pulumi.Input<string>;
         /**
          * Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+         *
+         * Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
          */
         vlanId?: pulumi.Input<string>;
     }
@@ -12561,6 +13416,20 @@ export namespace Core {
         offsetSeconds?: pulumi.Input<number>;
         /**
          * (Updatable) Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
+         *
+         * `hourOfDay` is applicable for periods `ONE_DAY`, `ONE_WEEK`, `ONE_MONTH` and `ONE_YEAR`.
+         *
+         * `dayOfWeek` is applicable for period `ONE_WEEK`.
+         *
+         * `dayOfMonth` is applicable for periods `ONE_MONTH` and `ONE_YEAR`.
+         *
+         * 'month' is applicable for period 'ONE_YEAR'.
+         *
+         * They will be ignored in the requests for inapplicable periods.
+         *
+         * If value is `NUMERIC_SECONDS`, then `offsetSeconds` will be used for both requests and responses and the structured fields will be ignored in the requests and users should ignore their values from the responses.
+         *
+         * For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
          */
         offsetType?: pulumi.Input<string>;
         /**
@@ -12589,6 +13458,10 @@ export namespace Core {
         region: pulumi.Input<string>;
         /**
          * The OCID of the source volume backup.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         volumeBackupId: pulumi.Input<string>;
     }
@@ -12619,6 +13492,11 @@ export namespace Core {
         region: pulumi.Input<string>;
         /**
          * The OCID of the source volume group backup.
+         *
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         volumeGroupBackupId: pulumi.Input<string>;
     }
@@ -12652,7 +13530,11 @@ export namespace Core {
          */
         availabilityDomain: pulumi.Input<string>;
         /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -14209,6 +15091,10 @@ export namespace DataSafe {
         randomLists?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
+         *
+         * In the case of ASCII characters, if a regular expression is not provided,  Deterministic Encryption can encrypt variable-length column values while  preserving their original format.
+         *
+         * If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
          */
         regularExpression?: pulumi.Input<string>;
         /**
@@ -14319,6 +15205,10 @@ export namespace DataSafe {
         randomLists?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
+         *
+         * In the case of ASCII characters, if a regular expression is not provided,  Deterministic Encryption can encrypt variable-length column values while  preserving their original format.
+         *
+         * If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
          */
         regularExpression?: pulumi.Input<string>;
         /**
@@ -14462,6 +15352,10 @@ export namespace DataSafe {
         name: pulumi.Input<string>;
         /**
          * (Updatable) Additional scim filters used to get the specific summary.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         scimFilter?: pulumi.Input<string>;
     }
@@ -14793,6 +15687,10 @@ export namespace DataSafe {
         storePassword?: pulumi.Input<string>;
         /**
          * (Updatable) Base64 encoded string of trust store file content.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         trustStoreContent?: pulumi.Input<string>;
     }
@@ -14801,6 +15699,10 @@ export namespace DataSafe {
         lifecycleState?: pulumi.Input<string>;
         /**
          * The OCID of the target database on which the user assessment is to be run.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         targetId?: pulumi.Input<string>;
         userAssessmentId?: pulumi.Input<string>;
@@ -15170,6 +16072,8 @@ export namespace DataScience {
         key?: pulumi.Input<string>;
         /**
          * (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
+         *
+         * Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
          */
         value?: pulumi.Input<string>;
     }
@@ -15195,6 +16099,8 @@ export namespace DataScience {
         key?: pulumi.Input<string>;
         /**
          * (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
+         *
+         * Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
          */
         value?: pulumi.Input<string>;
     }
@@ -15651,6 +16557,10 @@ export namespace DataScience {
         stepName: pulumi.Input<string>;
         /**
          * (Updatable) The type of step.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         stepType: pulumi.Input<string>;
     }
@@ -15783,6 +16693,8 @@ export namespace Database {
         months?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseMaintenanceWindowMonth>[]>;
         /**
          * (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         *
+         * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
          */
         patchingMode?: pulumi.Input<string>;
         /**
@@ -15834,6 +16746,8 @@ export namespace Database {
         months?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseMaintenanceWindowDetailsMonth>[]>;
         /**
          * (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         *
+         * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
          */
         patchingMode?: pulumi.Input<string>;
         /**
@@ -16179,6 +17093,8 @@ export namespace Database {
         months?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousExadataInfrastructureMaintenanceWindowMonth>[]>;
         /**
          * (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         *
+         * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
          */
         patchingMode?: pulumi.Input<string>;
         /**
@@ -16230,6 +17146,8 @@ export namespace Database {
         months?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousExadataInfrastructureMaintenanceWindowDetailsMonth>[]>;
         /**
          * (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         *
+         * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
          */
         patchingMode?: pulumi.Input<string>;
         /**
@@ -16286,6 +17204,8 @@ export namespace Database {
         months?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousVmClusterMaintenanceWindowMonth>[]>;
         /**
          * (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         *
+         * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
          */
         patchingMode?: pulumi.Input<string>;
         /**
@@ -16328,6 +17248,8 @@ export namespace Database {
         months?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousVmClusterMaintenanceWindowDetailMonth>[]>;
         /**
          * (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         *
+         * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
          */
         patchingMode?: pulumi.Input<string>;
         /**
@@ -16423,6 +17345,8 @@ export namespace Database {
         months?: pulumi.Input<pulumi.Input<inputs.Database.CloudAutonomousVmClusterMaintenanceWindowMonth>[]>;
         /**
          * (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         *
+         * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
          */
         patchingMode?: pulumi.Input<string>;
         /**
@@ -16474,6 +17398,8 @@ export namespace Database {
         months?: pulumi.Input<pulumi.Input<inputs.Database.CloudAutonomousVmClusterMaintenanceWindowDetailsMonth>[]>;
         /**
          * (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         *
+         * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
          */
         patchingMode?: pulumi.Input<string>;
         /**
@@ -16557,6 +17483,8 @@ export namespace Database {
         months?: pulumi.Input<pulumi.Input<inputs.Database.CloudExadataInfrastructureMaintenanceWindowMonth>[]>;
         /**
          * (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         *
+         * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
          */
         patchingMode?: pulumi.Input<string>;
         /**
@@ -16692,6 +17620,8 @@ export namespace Database {
         backupTdePassword?: pulumi.Input<string>;
         /**
          * The character set for the database.  The default is AL32UTF8. Allowed values are:
+         *
+         * AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
          */
         characterSet?: pulumi.Input<string>;
         /**
@@ -16712,6 +17642,8 @@ export namespace Database {
         dbUniqueName?: pulumi.Input<string>;
         /**
          * **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+         *
+         * The database workload type.
          */
         dbWorkload?: pulumi.Input<string>;
         /**
@@ -16762,6 +17694,14 @@ export namespace Database {
          */
         autoBackupWindow?: pulumi.Input<string>;
         /**
+         * Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+         */
+        autoFullBackupDay?: pulumi.Input<string>;
+        /**
+         * Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+         */
+        autoFullBackupWindow?: pulumi.Input<string>;
+        /**
          * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
          */
         backupDeletionPolicy?: pulumi.Input<string>;
@@ -16773,6 +17713,10 @@ export namespace Database {
          * (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
          */
         recoveryWindowInDays?: pulumi.Input<number>;
+        /**
+         * If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+         */
+        runImmediateFullBackup?: pulumi.Input<boolean>;
     }
 
     export interface DatabaseDatabaseDbBackupConfigBackupDestinationDetail {
@@ -16812,6 +17756,14 @@ export namespace Database {
          */
         autoBackupWindow?: pulumi.Input<string>;
         /**
+         * Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+         */
+        autoFullBackupDay?: pulumi.Input<string>;
+        /**
+         * Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+         */
+        autoFullBackupWindow?: pulumi.Input<string>;
+        /**
          * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
          */
         backupDeletionPolicy?: pulumi.Input<string>;
@@ -16823,6 +17775,10 @@ export namespace Database {
          * (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
          */
         recoveryWindowInDays?: pulumi.Input<number>;
+        /**
+         * If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+         */
+        runImmediateFullBackup?: pulumi.Input<boolean>;
     }
 
     export interface DatabaseDbBackupConfigBackupDestinationDetail {
@@ -16873,6 +17829,10 @@ export namespace Database {
          * The source of the Oracle Database software to be used for the upgrade.
          * * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
          * * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         source?: pulumi.Input<string>;
     }
@@ -16887,6 +17847,14 @@ export namespace Database {
          */
         autoBackupWindow?: pulumi.Input<string>;
         /**
+         * Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+         */
+        autoFullBackupDay?: pulumi.Input<string>;
+        /**
+         * Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+         */
+        autoFullBackupWindow?: pulumi.Input<string>;
+        /**
          * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
          */
         backupDeletionPolicy?: pulumi.Input<string>;
@@ -16898,6 +17866,10 @@ export namespace Database {
          * Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
          */
         recoveryWindowInDays?: pulumi.Input<number>;
+        /**
+         * If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+         */
+        runImmediateFullBackup?: pulumi.Input<boolean>;
     }
 
     export interface DatabaseUpgradeDbBackupConfigBackupDestinationDetail {
@@ -16942,6 +17914,8 @@ export namespace Database {
         backupTdePassword?: pulumi.Input<string>;
         /**
          * The character set for the database.  The default is AL32UTF8. Allowed values are:
+         *
+         * AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
          */
         characterSet?: pulumi.Input<string>;
         connectionStrings?: pulumi.Input<pulumi.Input<inputs.Database.DbHomeDatabaseConnectionString>[]>;
@@ -16964,6 +17938,8 @@ export namespace Database {
         dbUniqueName?: pulumi.Input<string>;
         /**
          * **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+         *
+         * The database workload type.
          */
         dbWorkload?: pulumi.Input<string>;
         /**
@@ -17044,6 +18020,14 @@ export namespace Database {
          */
         autoBackupWindow?: pulumi.Input<string>;
         /**
+         * Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+         */
+        autoFullBackupDay?: pulumi.Input<string>;
+        /**
+         * Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+         */
+        autoFullBackupWindow?: pulumi.Input<string>;
+        /**
          * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
          */
         backupDeletionPolicy?: pulumi.Input<string>;
@@ -17055,6 +18039,10 @@ export namespace Database {
          * (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
          */
         recoveryWindowInDays?: pulumi.Input<number>;
+        /**
+         * If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+         */
+        runImmediateFullBackup?: pulumi.Input<boolean>;
     }
 
     export interface DbHomeDatabaseDbBackupConfigBackupDestinationDetail {
@@ -17091,6 +18079,8 @@ export namespace Database {
         createAsync?: pulumi.Input<boolean>;
         /**
          * (Updatable) Details for creating a database by restoring from a source database system.
+         *
+         * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
          */
         database: pulumi.Input<inputs.Database.DbSystemDbHomeDatabase>;
         /**
@@ -17151,6 +18141,8 @@ export namespace Database {
         backupTdePassword?: pulumi.Input<string>;
         /**
          * The character set for the database.  The default is AL32UTF8. Allowed values are:
+         *
+         * AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
          */
         characterSet?: pulumi.Input<string>;
         connectionStrings?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemDbHomeDatabaseConnectionString>[]>;
@@ -17177,6 +18169,8 @@ export namespace Database {
         dbUniqueName?: pulumi.Input<string>;
         /**
          * **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+         *
+         * The database workload type.
          */
         dbWorkload?: pulumi.Input<string>;
         /**
@@ -17249,6 +18243,14 @@ export namespace Database {
          */
         autoBackupWindow?: pulumi.Input<string>;
         /**
+         * Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+         */
+        autoFullBackupDay?: pulumi.Input<string>;
+        /**
+         * Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+         */
+        autoFullBackupWindow?: pulumi.Input<string>;
+        /**
          * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
          */
         backupDeletionPolicy?: pulumi.Input<string>;
@@ -17260,6 +18262,10 @@ export namespace Database {
          * (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
          */
         recoveryWindowInDays?: pulumi.Input<number>;
+        /**
+         * If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+         */
+        runImmediateFullBackup?: pulumi.Input<boolean>;
     }
 
     export interface DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
@@ -17351,6 +18357,8 @@ export namespace Database {
         months?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemMaintenanceWindowMonth>[]>;
         /**
          * (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         *
+         * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
          */
         patchingMode?: pulumi.Input<string>;
         /**
@@ -17402,6 +18410,8 @@ export namespace Database {
         months?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemMaintenanceWindowDetailsMonth>[]>;
         /**
          * (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         *
+         * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
          */
         patchingMode?: pulumi.Input<string>;
         /**
@@ -17654,6 +18664,8 @@ export namespace Database {
         months?: pulumi.Input<pulumi.Input<inputs.Database.ExadataInfrastructureMaintenanceWindowMonth>[]>;
         /**
          * (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         *
+         * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
          */
         patchingMode?: pulumi.Input<string>;
         /**
@@ -17760,6 +18772,8 @@ export namespace Database {
     export interface ExternalDatabaseConnectorConnectionCredentials {
         /**
          * (Updatable) The name of the credential information that used to connect to the database. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+         *
+         * For example: inventorydb.abc112233445566778899
          */
         credentialName?: pulumi.Input<string>;
         /**
@@ -18755,6 +19769,10 @@ export namespace Database {
         type: pulumi.Input<string>;
         /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         vaultId: pulumi.Input<string>;
     }
@@ -18800,6 +19818,10 @@ export namespace Database {
         allConnectionStrings?: pulumi.Input<{[key: string]: any}>;
         /**
          * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         enablePluggabledatabasemanagement: pulumi.Input<boolean>;
         /**
@@ -18826,6 +19848,10 @@ export namespace Database {
     export interface PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig {
         /**
          * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         enablePluggabledatabasemanagement: pulumi.Input<boolean>;
         /**
@@ -18968,6 +19994,10 @@ export namespace Database {
         nodes: pulumi.Input<pulumi.Input<inputs.Database.VmClusterNetworkVmNetworkNode>[]>;
         /**
          * (Updatable) The network VLAN ID.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         vlanId?: pulumi.Input<string>;
     }
@@ -19810,7 +20840,11 @@ export namespace DatabaseManagement {
          */
         selection: pulumi.Input<string>;
         /**
-         * (Updatable)
+         * (Updatable) 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value?: pulumi.Input<inputs.DatabaseManagement.ExternalDbSystemDiscoveryPatchOperationValue>;
     }
@@ -20617,7 +21651,11 @@ export namespace DatabaseManagement {
          */
         deploymentType?: pulumi.Input<string>;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         id?: pulumi.Input<string>;
         /**
@@ -20767,7 +21805,11 @@ export namespace DatabaseMigration {
          */
         keyId: pulumi.Input<string>;
         /**
-         * (Updatable) OCID of the vault
+         * (Updatable) OCID of the vault 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         vaultId: pulumi.Input<string>;
     }
@@ -21285,7 +22327,11 @@ export namespace DatabaseMigration {
          */
         keyId: pulumi.Input<string>;
         /**
-         * (Updatable) OCID of the vault
+         * (Updatable) OCID of the vault 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         vaultId: pulumi.Input<string>;
     }
@@ -21314,6 +22360,10 @@ export namespace DatabaseTools {
         secretId?: pulumi.Input<string>;
         /**
          * (Updatable) The value type of the user password.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         valueType: pulumi.Input<string>;
     }
@@ -21325,6 +22375,10 @@ export namespace DatabaseTools {
         secretId?: pulumi.Input<string>;
         /**
          * (Updatable) The value type of the user password.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         valueType: pulumi.Input<string>;
     }
@@ -21347,6 +22401,10 @@ export namespace DatabaseTools {
         secretId: pulumi.Input<string>;
         /**
          * (Updatable) The value type of the user password.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         valueType: pulumi.Input<string>;
     }
@@ -21534,6 +22592,10 @@ export namespace DevOps {
         waitDuration: pulumi.Input<string>;
         /**
          * (Updatable) Wait criteria type.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         waitType: pulumi.Input<string>;
     }
@@ -22300,6 +23362,10 @@ export namespace DevOps {
         waitDuration: pulumi.Input<string>;
         /**
          * (Updatable) Wait criteria type.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         waitType: pulumi.Input<string>;
     }
@@ -22737,6 +23803,10 @@ export namespace DevOps {
     export interface ProjectNotificationConfig {
         /**
          * (Updatable) The topic ID for notifications.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         topicId: pulumi.Input<string>;
     }
@@ -22797,6 +23867,10 @@ export namespace DevOps {
         include?: pulumi.Input<inputs.DevOps.TriggerActionFilterInclude>;
         /**
          * (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         triggerSource: pulumi.Input<string>;
     }
@@ -22984,7 +24058,11 @@ export namespace DisasterRecovery {
          */
         steps?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrPlanPlanGroupStep>[]>;
         /**
-         * The type of DR Plan to be created.
+         * The type of DR Plan to be created. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type?: pulumi.Input<string>;
     }
@@ -23019,7 +24097,11 @@ export namespace DisasterRecovery {
          */
         timeout?: pulumi.Input<number>;
         /**
-         * The type of DR Plan to be created.
+         * The type of DR Plan to be created. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type?: pulumi.Input<string>;
         /**
@@ -23673,7 +24755,11 @@ export namespace Events {
          */
         id?: pulumi.Input<string>;
         /**
-         * (Updatable) Whether or not this rule is currently enabled.  Example: `true`
+         * (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         isEnabled: pulumi.Input<boolean>;
         /**
@@ -23719,6 +24805,8 @@ export namespace FileStorage {
         requirePrivilegedSourcePort?: pulumi.Input<boolean>;
         /**
          * (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
+         *
+         * **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
          */
         source: pulumi.Input<string>;
     }
@@ -23729,7 +24817,11 @@ export namespace FileStorage {
          */
         parentFileSystemId?: pulumi.Input<string>;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm). 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         sourceSnapshotId?: pulumi.Input<string>;
     }
@@ -23851,7 +24943,11 @@ export namespace Functions {
          */
         domainId?: pulumi.Input<string>;
         /**
-         * (Updatable) Define if tracing is enabled for the resource.
+         * (Updatable) Define if tracing is enabled for the resource. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         isEnabled?: pulumi.Input<boolean>;
     }
@@ -23880,7 +24976,11 @@ export namespace Functions {
 
     export interface FunctionTraceConfig {
         /**
-         * (Updatable) Define if tracing is enabled for the resource.
+         * (Updatable) Define if tracing is enabled for the resource. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         isEnabled?: pulumi.Input<boolean>;
     }
@@ -24077,6 +25177,10 @@ export namespace FusionApps {
         lastName?: pulumi.Input<string>;
         /**
          * The username for the administrator.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         username?: pulumi.Input<string>;
     }
@@ -24187,7 +25291,11 @@ export namespace FusionApps {
          */
         conditions: pulumi.Input<pulumi.Input<inputs.FusionApps.FusionEnvironmentRuleCondition>[]>;
         /**
-         * (Updatable) A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+         * (Updatable) A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.` 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         description?: pulumi.Input<string>;
     }
@@ -24549,6 +25657,10 @@ export namespace Identity {
         isUsernameContainmentAllowed?: pulumi.Input<boolean>;
         /**
          * (Updatable) Minimum password length required.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         minimumPasswordLength?: pulumi.Input<number>;
     }
@@ -24571,22 +25683,76 @@ export namespace Identity {
     export interface DomainsApiKeyIdcsCreatedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -24594,22 +25760,76 @@ export namespace Identity {
     export interface DomainsApiKeyIdcsLastModifiedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -24617,22 +25837,72 @@ export namespace Identity {
     export interface DomainsApiKeyMeta {
         /**
          * The DateTime the Resource was added to the Service Provider
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         created?: pulumi.Input<string>;
         /**
          * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastModified?: pulumi.Input<string>;
         /**
          * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         location?: pulumi.Input<string>;
         /**
          * Name of the resource type of the resource--for example, Users or Groups
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         resourceType?: pulumi.Input<string>;
         /**
          * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         version?: pulumi.Input<string>;
     }
@@ -24640,10 +25910,34 @@ export namespace Identity {
     export interface DomainsApiKeyTag {
         /**
          * Key or name of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -24651,6 +25945,17 @@ export namespace Identity {
     export interface DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser {
         /**
          * If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+         *
+         * **Added In:** 2205182039
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: writeOnly
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
          */
         allowSelfChange?: pulumi.Input<boolean>;
     }
@@ -24658,22 +25963,76 @@ export namespace Identity {
     export interface DomainsApiKeyUser {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) User name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         name?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value?: pulumi.Input<string>;
     }
@@ -24681,22 +26040,76 @@ export namespace Identity {
     export interface DomainsAuthTokenIdcsCreatedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -24704,22 +26117,76 @@ export namespace Identity {
     export interface DomainsAuthTokenIdcsLastModifiedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -24727,22 +26194,72 @@ export namespace Identity {
     export interface DomainsAuthTokenMeta {
         /**
          * The DateTime the Resource was added to the Service Provider
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         created?: pulumi.Input<string>;
         /**
          * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastModified?: pulumi.Input<string>;
         /**
          * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         location?: pulumi.Input<string>;
         /**
          * Name of the resource type of the resource--for example, Users or Groups
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         resourceType?: pulumi.Input<string>;
         /**
          * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         version?: pulumi.Input<string>;
     }
@@ -24750,10 +26267,34 @@ export namespace Identity {
     export interface DomainsAuthTokenTag {
         /**
          * Key or name of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -24761,6 +26302,17 @@ export namespace Identity {
     export interface DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUser {
         /**
          * If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+         *
+         * **Added In:** 2205182039
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: writeOnly
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
          */
         allowSelfChange?: pulumi.Input<boolean>;
     }
@@ -24768,22 +26320,76 @@ export namespace Identity {
     export interface DomainsAuthTokenUser {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) User name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         name?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value?: pulumi.Input<string>;
     }
@@ -24791,26 +26397,88 @@ export namespace Identity {
     export interface DomainsAuthenticationFactorSettingBypassCodeSettings {
         /**
          * (Updatable) Expiry (in minutes) of any bypass code that is generated by the help desk
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 9999999
+         * * idcsMinValue: 1
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         helpDeskCodeExpiryInMins: pulumi.Input<number>;
         /**
          * (Updatable) If true, indicates that help desk bypass code generation is enabled
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         helpDeskGenerationEnabled: pulumi.Input<boolean>;
         /**
          * (Updatable) The maximum number of times that any bypass code that is generated by the help desk can be used
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 999
+         * * idcsMinValue: 1
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         helpDeskMaxUsage: pulumi.Input<number>;
         /**
          * (Updatable) Exact length of the bypass code to be generated
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 20
+         * * idcsMinValue: 8
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         length: pulumi.Input<number>;
         /**
          * (Updatable) The maximum number of bypass codes that can be issued to any user
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 6
+         * * idcsMinValue: 1
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         maxActive: pulumi.Input<number>;
         /**
          * (Updatable) If true, indicates that self-service bypass code generation is enabled
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         selfServiceGenerationEnabled: pulumi.Input<boolean>;
     }
@@ -24818,62 +26486,217 @@ export namespace Identity {
     export interface DomainsAuthenticationFactorSettingClientAppSettings {
         /**
          * (Updatable) Indicates what protection policy that the system applies on a device. By default, the value is NONE, which indicates that the system applies no protection policy. A value of APP_PIN indicates that the system requires a Personal Identification Number (PIN). A value of DEVICE_BIOMETRIC_OR_APP_PIN indicates that either a PIN or a biometric authentication factor is required.
+         *
+         * **SCIM++ Properties:**
+         * * idcsCanonicalValueSourceFilter: attrName eq "deviceProtectionPolicy" and attrValues.value eq "$(deviceProtectionPolicy)"
+         * * idcsCanonicalValueSourceResourceType: AllowedValue
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         deviceProtectionPolicy: pulumi.Input<string>;
         /**
          * (Updatable) The period of time in seconds that the system will lock a user out of the service after that user exceeds the maximum number of login failures
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 86400
+         * * idcsMinValue: 30
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         initialLockoutPeriodInSecs: pulumi.Input<number>;
         /**
          * (Updatable) The size of the key that the system uses to generate the public-private key pair
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 4000
+         * * idcsMinValue: 32
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         keyPairLength: pulumi.Input<number>;
         /**
          * (Updatable) The pattern of escalation that the system follows, in locking a particular user out of the service.
+         *
+         * **SCIM++ Properties:**
+         * * idcsCanonicalValueSourceFilter: attrName eq "lockoutEscalationPattern" and attrValues.value eq "$(lockoutEscalationPattern)"
+         * * idcsCanonicalValueSourceResourceType: AllowedValue
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         lockoutEscalationPattern: pulumi.Input<string>;
         /**
          * (Updatable) The maximum number of times that a particular user can fail to login before the system locks that user out of the service
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 10
+         * * idcsMinValue: 5
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         maxFailuresBeforeLockout: pulumi.Input<number>;
         /**
          * (Updatable) The maximum number of login failures that the system will allow before raising a warning and sending an alert via email
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 10
+         * * idcsMinValue: 0
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         maxFailuresBeforeWarning: pulumi.Input<number>;
         /**
          * (Updatable) The maximum period of time that the system will lock a particular user out of the service regardless of what the configured pattern of escalation would otherwise dictate
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 86400
+         * * idcsMinValue: 30
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         maxLockoutIntervalInSecs: pulumi.Input<number>;
         /**
          * (Updatable) Minimum length of the Personal Identification Number (PIN)
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 10
+         * * idcsMinValue: 6
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         minPinLength: pulumi.Input<number>;
         /**
          * (Updatable) The period of time in days after which a client should refresh its policy by re-reading that policy from the server
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 999
+         * * idcsMinValue: 1
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         policyUpdateFreqInDays: pulumi.Input<number>;
         /**
          * (Updatable) Indicates which algorithm the system will use to sign requests
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         requestSigningAlgo: pulumi.Input<string>;
         /**
          * (Updatable) Indicates the type of encoding that the system should use to generate a shared secret
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         sharedSecretEncoding: pulumi.Input<string>;
         /**
          * (Updatable) If true, indicates that the system should require the user to unlock the client app for each request. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         unlockAppForEachRequestEnabled: pulumi.Input<boolean>;
         /**
          * (Updatable) Specifies the period of time in seconds after which the client App should require the user to unlock the App. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor. A value of zero means that it is disabled.
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 9999999
+         * * idcsMinValue: 0
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         unlockAppIntervalInSecs: pulumi.Input<number>;
         /**
          * (Updatable) If true, indicates that the system should require the user to unlock the client App, when the client App comes to the foreground in the display of the device. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         unlockOnAppForegroundEnabled: pulumi.Input<boolean>;
         /**
          * (Updatable) If true, indicates that the system should require the user to unlock the client App whenever the App is started. In order to unlock the App, the user must supply a Personal Identification Number (PIN) or a biometric authentication-factor.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         unlockOnAppStartEnabled: pulumi.Input<boolean>;
     }
@@ -24881,14 +26704,42 @@ export namespace Identity {
     export interface DomainsAuthenticationFactorSettingCompliancePolicy {
         /**
          * (Updatable) The action to be taken if the value of the attribute is not as expected
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         action: pulumi.Input<string>;
         /**
          * (Updatable) The name of the attribute being evaluated
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         name: pulumi.Input<string>;
         /**
          * (Updatable) Value of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -24896,10 +26747,32 @@ export namespace Identity {
     export interface DomainsAuthenticationFactorSettingEmailSettings {
         /**
          * (Updatable) Custom redirect Url which will be used in email link
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         emailLinkCustomUrl?: pulumi.Input<string>;
         /**
          * (Updatable) Specifies whether Email link is enabled or not.
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         emailLinkEnabled: pulumi.Input<boolean>;
     }
@@ -24907,22 +26780,75 @@ export namespace Identity {
     export interface DomainsAuthenticationFactorSettingEndpointRestrictions {
         /**
          * (Updatable) Maximum number of days until an endpoint can be trusted
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 180
+         * * idcsMinValue: 1
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         maxEndpointTrustDurationInDays: pulumi.Input<number>;
         /**
          * (Updatable) Maximum number of enrolled devices per user
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 20
+         * * idcsMinValue: 1
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         maxEnrolledDevices: pulumi.Input<number>;
         /**
          * (Updatable) An integer that represents the maximum number of failed MFA logins before an account is locked
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 20
+         * * idcsMinValue: 5
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         maxIncorrectAttempts: pulumi.Input<number>;
         /**
          * (Updatable) Max number of trusted endpoints per user
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 20
+         * * idcsMinValue: 1
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         maxTrustedEndpoints: pulumi.Input<number>;
         /**
          * (Updatable) Specify if trusted endpoints are enabled
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         trustedEndpointsEnabled: pulumi.Input<boolean>;
     }
@@ -24930,22 +26856,72 @@ export namespace Identity {
     export interface DomainsAuthenticationFactorSettingIdcsCreatedBy {
         /**
          * (Updatable) The displayName of the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * (Updatable) Value of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -24953,22 +26929,72 @@ export namespace Identity {
     export interface DomainsAuthenticationFactorSettingIdcsLastModifiedBy {
         /**
          * (Updatable) The displayName of the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * (Updatable) Value of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -24976,10 +27002,28 @@ export namespace Identity {
     export interface DomainsAuthenticationFactorSettingIdentityStoreSettings {
         /**
          * (Updatable) If true, indicates that Multi-Factor Authentication should use the mobile number in the identity store
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         mobileNumberEnabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) If true, indicates that the user can update the mobile number in the user's Multi-Factor Authentication profile
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         mobileNumberUpdateEnabled?: pulumi.Input<boolean>;
     }
@@ -24987,22 +27031,72 @@ export namespace Identity {
     export interface DomainsAuthenticationFactorSettingMeta {
         /**
          * (Updatable) The DateTime the Resource was added to the Service Provider
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         created?: pulumi.Input<string>;
         /**
          * (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastModified?: pulumi.Input<string>;
         /**
          * (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         location?: pulumi.Input<string>;
         /**
          * (Updatable) Name of the resource type of the resource--for example, Users or Groups
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         resourceType?: pulumi.Input<string>;
         /**
          * (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         version?: pulumi.Input<string>;
     }
@@ -25010,6 +27104,17 @@ export namespace Identity {
     export interface DomainsAuthenticationFactorSettingNotificationSettings {
         /**
          * (Updatable) If true, indicates that the Mobile App Pull Notification channel is enabled for authentication
+         *
+         * **Added In:** 17.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         pullEnabled: pulumi.Input<boolean>;
     }
@@ -25017,10 +27122,30 @@ export namespace Identity {
     export interface DomainsAuthenticationFactorSettingTag {
         /**
          * (Updatable) Key or name of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * (Updatable) Value of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -25028,6 +27153,17 @@ export namespace Identity {
     export interface DomainsAuthenticationFactorSettingThirdPartyFactor {
         /**
          * (Updatable) To enable Duo Security factor
+         *
+         * **Added In:** 19.2.1
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         duoSecurity: pulumi.Input<boolean>;
     }
@@ -25035,42 +27171,154 @@ export namespace Identity {
     export interface DomainsAuthenticationFactorSettingTotpSettings {
         /**
          * (Updatable) The period of time (in minutes) that a one-time passcode remains valid that the system sends by email.
+         *
+         * **Added In:** 18.1.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 60
+         * * idcsMinValue: 2
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         emailOtpValidityDurationInMins: pulumi.Input<number>;
         /**
          * (Updatable) Exact length of the email one-time passcode.
+         *
+         * **Added In:** 18.1.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 10
+         * * idcsMinValue: 4
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         emailPasscodeLength: pulumi.Input<number>;
         /**
          * (Updatable) The hashing algorithm to be used to calculate a One-Time Passcode. By default, the system uses SHA1.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         hashingAlgorithm: pulumi.Input<string>;
         /**
          * (Updatable) The period of time (in seconds) that a JSON Web Token (JWT) is valid
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 99999
+         * * idcsMinValue: 30
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         jwtValidityDurationInSecs: pulumi.Input<number>;
         /**
          * (Updatable) The duration of time (in days) after which the shared secret has to be refreshed
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 999
+         * * idcsMinValue: 30
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         keyRefreshIntervalInDays: pulumi.Input<number>;
         /**
          * (Updatable) Exact length of the One-Time Passcode that the system should generate
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 10
+         * * idcsMinValue: 4
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         passcodeLength: pulumi.Input<number>;
         /**
          * (Updatable) The period of time (in minutes) for which a One-Time Passcode that the system sends by Short Message Service (SMS) or by voice remains valid
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 60
+         * * idcsMinValue: 2
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         smsOtpValidityDurationInMins: pulumi.Input<number>;
         /**
          * (Updatable) Exact length of the Short Message Service (SMS) One-Time Passcode
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 10
+         * * idcsMinValue: 4
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         smsPasscodeLength: pulumi.Input<number>;
         /**
          * (Updatable) Time (in secs) to be used as the time step
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 300
+         * * idcsMinValue: 30
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         timeStepInSecs: pulumi.Input<number>;
         /**
          * (Updatable) The tolerance/step-size that the system should use when validating a One-Time Passcode
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 3
+         * * idcsMinValue: 2
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         timeStepTolerance: pulumi.Input<number>;
     }
@@ -25078,38 +27326,141 @@ export namespace Identity {
     export interface DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings {
         /**
          * (Updatable) Attribute used to define the type of attestation required.
+         *
+         * **Added In:** 2009232244
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         attestation: pulumi.Input<string>;
         /**
          * (Updatable) Attribute used to define authenticator selection attachment.
+         *
+         * **Added In:** 2009232244
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         authenticatorSelectionAttachment: pulumi.Input<string>;
         /**
          * (Updatable) Flag used to indicate authenticator selection is required or not
+         *
+         * **Added In:** 2009232244
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         authenticatorSelectionRequireResidentKey: pulumi.Input<boolean>;
         /**
          * (Updatable) Attribute used to define authenticator selection resident key requirement.
+         *
+         * **Added In:** 2009232244
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         authenticatorSelectionResidentKey: pulumi.Input<string>;
         /**
          * (Updatable) Attribute used to define authenticator selection verification.
+         *
+         * **Added In:** 2009232244
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         authenticatorSelectionUserVerification: pulumi.Input<string>;
         /**
          * (Updatable) Number of domain levels IDCS should use for origin comparision
+         *
+         * **Added In:** 2109020413
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * idcsMaxValue: 2
+         * * idcsMinValue: 0
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         domainValidationLevel?: pulumi.Input<number>;
         /**
          * (Updatable) Flag used to indicate whether we need to restrict creation of multiple credentials in same authenticator
+         *
+         * **Added In:** 2009232244
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         excludeCredentials: pulumi.Input<boolean>;
         /**
          * (Updatable) List of server supported public key algorithms
+         *
+         * **Added In:** 2009232244
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         publicKeyTypes: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) Timeout for the fido authentication to complete
+         *
+         * **Added In:** 2009232244
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * idcsMaxValue: 600000
+         * * idcsMinValue: 10000
+         * * required: true
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         timeout: pulumi.Input<number>;
     }
@@ -25117,6 +27468,17 @@ export namespace Identity {
     export interface DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings {
         /**
          * (Updatable) Settings related to Duo Security
+         *
+         * **Added In:** 19.2.1
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          */
         duoSecuritySettings?: pulumi.Input<inputs.Identity.DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettings>;
     }
@@ -25124,22 +27486,77 @@ export namespace Identity {
     export interface DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettings {
         /**
          * (Updatable) Hostname to access the Duo security account
+         *
+         * **Added In:** 19.2.1
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         apiHostname: pulumi.Input<string>;
         /**
          * (Updatable) Attestation key to attest the request and response between Duo Security
+         *
+         * **Added In:** 19.2.1
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: never
+         * * type: string
+         * * uniqueness: none
          */
         attestationKey?: pulumi.Input<string>;
         /**
          * (Updatable) Integration key from Duo Security authenticator
+         *
+         * **Added In:** 19.2.1
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         integrationKey: pulumi.Input<string>;
         /**
          * (Updatable) Secret key from Duo Security authenticator
+         *
+         * **Added In:** 19.2.1
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         secretKey: pulumi.Input<string>;
         /**
          * (Updatable) User attribute mapping value
+         *
+         * **Added In:** 19.2.1
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         userMappingAttribute: pulumi.Input<string>;
     }
@@ -25147,22 +27564,76 @@ export namespace Identity {
     export interface DomainsCustomerSecretKeyIdcsCreatedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -25170,22 +27641,76 @@ export namespace Identity {
     export interface DomainsCustomerSecretKeyIdcsLastModifiedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -25193,22 +27718,72 @@ export namespace Identity {
     export interface DomainsCustomerSecretKeyMeta {
         /**
          * The DateTime the Resource was added to the Service Provider
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         created?: pulumi.Input<string>;
         /**
          * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastModified?: pulumi.Input<string>;
         /**
          * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         location?: pulumi.Input<string>;
         /**
          * Name of the resource type of the resource--for example, Users or Groups
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         resourceType?: pulumi.Input<string>;
         /**
          * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         version?: pulumi.Input<string>;
     }
@@ -25216,10 +27791,34 @@ export namespace Identity {
     export interface DomainsCustomerSecretKeyTag {
         /**
          * Key or name of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -25227,6 +27826,17 @@ export namespace Identity {
     export interface DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser {
         /**
          * If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+         *
+         * **Added In:** 2205182039
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: writeOnly
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
          */
         allowSelfChange?: pulumi.Input<boolean>;
     }
@@ -25234,22 +27844,76 @@ export namespace Identity {
     export interface DomainsCustomerSecretKeyUser {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) User name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         name?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value?: pulumi.Input<string>;
     }
@@ -25257,30 +27921,101 @@ export namespace Identity {
     export interface DomainsDynamicResourceGroupDynamicGroupAppRole {
         /**
          * (Updatable) If true, then the role provides administrative access privileges. READ-ONLY.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
          */
         adminRole?: pulumi.Input<boolean>;
         /**
          * (Updatable) App identifier
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsAddedSinceVersion: 3
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         appId?: pulumi.Input<string>;
         /**
          * (Updatable) Name of parent App. READ-ONLY.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          */
         appName?: pulumi.Input<string>;
         /**
          * (Updatable) The displayName of the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) The name of the legacy group associated with this AppRole.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          */
         legacyGroupName?: pulumi.Input<string>;
         /**
          * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) Oracle Cloud Infrastructure Tag value
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * type: string
+         * * idcsSearchable: true
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -25288,18 +28023,61 @@ export namespace Identity {
     export interface DomainsDynamicResourceGroupGrant {
         /**
          * (Updatable) App identifier
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsAddedSinceVersion: 3
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         appId?: pulumi.Input<string>;
         /**
          * (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\nA customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':\n - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.\n - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\n - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsAddedSinceVersion: 3
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         grantMechanism?: pulumi.Input<string>;
         /**
          * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) Oracle Cloud Infrastructure Tag value
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * type: string
+         * * idcsSearchable: true
+         * * uniqueness: none
          */
         value?: pulumi.Input<string>;
     }
@@ -25307,22 +28085,73 @@ export namespace Identity {
     export interface DomainsDynamicResourceGroupIdcsCreatedBy {
         /**
          * (Updatable) The displayName of the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * (Updatable) Oracle Cloud Infrastructure Tag value
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * type: string
+         * * idcsSearchable: true
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -25330,22 +28159,73 @@ export namespace Identity {
     export interface DomainsDynamicResourceGroupIdcsLastModifiedBy {
         /**
          * (Updatable) The displayName of the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * (Updatable) Oracle Cloud Infrastructure Tag value
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * type: string
+         * * idcsSearchable: true
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -25353,22 +28233,72 @@ export namespace Identity {
     export interface DomainsDynamicResourceGroupMeta {
         /**
          * (Updatable) The DateTime the Resource was added to the Service Provider
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         created?: pulumi.Input<string>;
         /**
          * (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastModified?: pulumi.Input<string>;
         /**
          * (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         location?: pulumi.Input<string>;
         /**
          * (Updatable) Name of the resource type of the resource--for example, Users or Groups
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         resourceType?: pulumi.Input<string>;
         /**
          * (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         version?: pulumi.Input<string>;
     }
@@ -25376,10 +28306,32 @@ export namespace Identity {
     export interface DomainsDynamicResourceGroupTag {
         /**
          * (Updatable) Oracle Cloud Infrastructure Tag key
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * idcsSearchable: true
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * (Updatable) Oracle Cloud Infrastructure Tag value
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * type: string
+         * * idcsSearchable: true
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -25387,14 +28339,47 @@ export namespace Identity {
     export interface DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTags {
         /**
          * (Updatable) Oracle Cloud Infrastructure Defined Tags
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [namespace, key, value]
+         * * type: complex
+         * * idcsSearchable: true
+         * * required: false
+         * * mutability: readWrite
+         * * multiValued: true
+         * * returned: default
          */
         definedTags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTag>[]>;
         /**
          * (Updatable) Oracle Cloud Infrastructure Freeform Tags
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * type: complex
+         * * required: false
+         * * mutability: readWrite
+         * * returned: default
+         * * multiValued: true
          */
         freeformTags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTag>[]>;
         /**
          * (Updatable) Oracle Cloud Infrastructure Tag slug
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * type: binary
+         * * mutability: readOnly
+         * * returned: request
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         tagSlug?: pulumi.Input<string>;
     }
@@ -25402,14 +28387,47 @@ export namespace Identity {
     export interface DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTag {
         /**
          * (Updatable) Oracle Cloud Infrastructure Tag key
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * idcsSearchable: true
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * (Updatable) Oracle Cloud Infrastructure Tag namespace
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * idcsSearchable: true
+         * * uniqueness: none
          */
         namespace: pulumi.Input<string>;
         /**
          * (Updatable) Oracle Cloud Infrastructure Tag value
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * type: string
+         * * idcsSearchable: true
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -25417,10 +28435,32 @@ export namespace Identity {
     export interface DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTag {
         /**
          * (Updatable) Oracle Cloud Infrastructure Tag key
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * idcsSearchable: true
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * (Updatable) Oracle Cloud Infrastructure Tag value
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * type: string
+         * * idcsSearchable: true
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -25428,22 +28468,78 @@ export namespace Identity {
     export interface DomainsGroupIdcsCreatedBy {
         /**
          * (Updatable) App Display Name
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) App URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The type of the entity that created this Group.
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsDefaultValue: App
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * (Updatable) The ID of the App.
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -25451,22 +28547,78 @@ export namespace Identity {
     export interface DomainsGroupIdcsLastModifiedBy {
         /**
          * (Updatable) App Display Name
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) App URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The type of the entity that created this Group.
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsDefaultValue: App
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * (Updatable) The ID of the App.
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -25474,34 +28626,123 @@ export namespace Identity {
     export interface DomainsGroupMember {
         /**
          * (Updatable) The DateTime the member was added to the Group.
+         *
+         * **Added In:** 2012271618
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         dateAdded?: pulumi.Input<string>;
         /**
          * (Updatable) App Display Name
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) Membership Ocid
+         *
+         * **Added In:** 2102181953
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         membershipOcid?: pulumi.Input<string>;
         /**
          * (Updatable) PasswordPolicy Name
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         name?: pulumi.Input<string>;
         /**
          * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) App URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The type of the entity that created this Group.
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsDefaultValue: App
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type: pulumi.Input<string>;
         /**
          * (Updatable) The ID of the App.
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -25509,22 +28750,72 @@ export namespace Identity {
     export interface DomainsGroupMeta {
         /**
          * (Updatable) The DateTime the Resource was added to the Service Provider
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         created?: pulumi.Input<string>;
         /**
          * (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastModified?: pulumi.Input<string>;
         /**
          * (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         location?: pulumi.Input<string>;
         /**
          * (Updatable) Name of the resource type of the resource--for example, Users or Groups
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         resourceType?: pulumi.Input<string>;
         /**
          * (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         version?: pulumi.Input<string>;
     }
@@ -25532,10 +28823,33 @@ export namespace Identity {
     export interface DomainsGroupTag {
         /**
          * (Updatable) Oracle Cloud Infrastructure Tag key
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * idcsSearchable: true
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * (Updatable) The ID of the App.
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -25543,14 +28857,43 @@ export namespace Identity {
     export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTags {
         /**
          * (Updatable) Oracle Cloud Infrastructure Defined Tags
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [namespace, key, value]
+         * * type: complex
+         * * idcsSearchable: true
+         * * required: false
+         * * mutability: readWrite
+         * * multiValued: true
+         * * returned: default
          */
         definedTags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTag>[]>;
         /**
          * (Updatable) Oracle Cloud Infrastructure Freeform Tags
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * type: complex
+         * * required: false
+         * * mutability: readWrite
+         * * returned: default
+         * * multiValued: true
          */
         freeformTags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTag>[]>;
         /**
          * (Updatable) Oracle Cloud Infrastructure Tag slug
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * type: binary
+         * * mutability: readOnly
+         * * returned: request
          */
         tagSlug?: pulumi.Input<string>;
     }
@@ -25558,14 +28901,48 @@ export namespace Identity {
     export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTag {
         /**
          * (Updatable) Oracle Cloud Infrastructure Tag key
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * idcsSearchable: true
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * (Updatable) Oracle Cloud Infrastructure Tag namespace
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * idcsSearchable: true
+         * * uniqueness: none
          */
         namespace: pulumi.Input<string>;
         /**
          * (Updatable) The ID of the App.
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -25573,10 +28950,33 @@ export namespace Identity {
     export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTag {
         /**
          * (Updatable) Oracle Cloud Infrastructure Tag key
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * idcsSearchable: true
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * (Updatable) The ID of the App.
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -25584,18 +28984,64 @@ export namespace Identity {
     export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroup {
         /**
          * (Updatable) DBCS Domain-level schema-name.  This attribute refers implicitly to a value of 'domainLevelSchemaNames' for a particular DB Domain.
+         *
+         * **Added In:** 18.2.4
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * idcsSensitive: none
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          */
         domainLevelSchema?: pulumi.Input<string>;
         /**
          * (Updatable) DBCS Domain-level schema-names. Each value is specific to a DB Domain.
+         *
+         * **Added In:** 18.2.4
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [domainName, schemaName]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
          */
         domainLevelSchemaNames?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaName>[]>;
         /**
          * (Updatable) DBCS instance-level schema-name. This attribute refers implicitly to a value of 'instanceLevelSchemaNames' for a particular DB Instance.
+         *
+         * **Added In:** 18.2.4
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * idcsSensitive: none
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          */
         instanceLevelSchema?: pulumi.Input<string>;
         /**
          * (Updatable) DBCS instance-level schema-names. Each schema-name is specific to a DB Instance.
+         *
+         * **Added In:** 18.2.4
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [dbInstanceId, schemaName]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
          */
         instanceLevelSchemaNames?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaName>[]>;
     }
@@ -25603,10 +29049,34 @@ export namespace Identity {
     export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaName {
         /**
          * (Updatable) DBCS Domain Name
+         *
+         * **Added In:** 18.2.4
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         domainName: pulumi.Input<string>;
         /**
          * (Updatable) The DBCS schema-name granted to this Group for the DB instance that 'dbInstanceId' specifies.
+         *
+         * **Added In:** 18.2.4
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         schemaName: pulumi.Input<string>;
     }
@@ -25614,10 +29084,34 @@ export namespace Identity {
     export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaName {
         /**
          * (Updatable) App Id of DBCS App instance
+         *
+         * **Added In:** 18.2.4
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         dbInstanceId: pulumi.Input<string>;
         /**
          * (Updatable) The DBCS schema-name granted to this Group for the DB instance that 'dbInstanceId' specifies.
+         *
+         * **Added In:** 18.2.4
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         schemaName: pulumi.Input<string>;
     }
@@ -25625,10 +29119,34 @@ export namespace Identity {
     export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup {
         /**
          * (Updatable) Membership rule
+         *
+         * **Added In:** 19.2.1
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         membershipRule?: pulumi.Input<string>;
         /**
          * (Updatable) Membership type
+         *
+         * **Added In:** 19.2.1
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         membershipType?: pulumi.Input<string>;
     }
@@ -25636,30 +29154,109 @@ export namespace Identity {
     export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup {
         /**
          * (Updatable) A list of appRoles that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         appRoles?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole>[]>;
         /**
          * (Updatable) Source from which this group got created.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeNameMappings: [[defaultValue:import]]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          */
         creationMechanism?: pulumi.Input<string>;
         /**
          * (Updatable) Group description
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Description
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Description]]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         description?: pulumi.Input<string>;
         /**
          * (Updatable) Grants assigned to group
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         grants?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant>[]>;
         /**
          * (Updatable) Group owners
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value, type]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         owners?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwner>[]>;
         /**
          * (Updatable) Password Policy associated with this Group.
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         passwordPolicies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy>[]>;
         /**
          * (Updatable) The entity that created this Group.
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         syncedFromApps?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromApp>[]>;
     }
@@ -25667,34 +29264,119 @@ export namespace Identity {
     export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole {
         /**
          * (Updatable) If true, then the role provides administrative access privileges. READ-ONLY.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
          */
         adminRole?: pulumi.Input<boolean>;
         /**
          * (Updatable) App identifier
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         appId?: pulumi.Input<string>;
         /**
          * (Updatable) Name of parent App. READ-ONLY.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          */
         appName?: pulumi.Input<string>;
         /**
          * (Updatable) App Display Name
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) The name of the legacy group associated with this AppRole.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         legacyGroupName?: pulumi.Input<string>;
         /**
          * (Updatable) App URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The type of the entity that created this Group.
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsDefaultValue: App
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * (Updatable) The ID of the App.
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -25702,18 +29384,61 @@ export namespace Identity {
     export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant {
         /**
          * (Updatable) App identifier
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         appId?: pulumi.Input<string>;
         /**
          * (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\nA customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':\n - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.\n - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\n - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         grantMechanism?: pulumi.Input<string>;
         /**
          * (Updatable) App URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The ID of the App.
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value?: pulumi.Input<string>;
     }
@@ -25721,18 +29446,64 @@ export namespace Identity {
     export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwner {
         /**
          * (Updatable) App Display Name
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) App URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The type of the entity that created this Group.
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsDefaultValue: App
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type: pulumi.Input<string>;
         /**
          * (Updatable) The ID of the App.
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -25740,18 +29511,63 @@ export namespace Identity {
     export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy {
         /**
          * (Updatable) PasswordPolicy Name
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         name?: pulumi.Input<string>;
         /**
          * (Updatable) PasswordPolicy priority
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         priority?: pulumi.Input<number>;
         /**
          * (Updatable) App URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The ID of the App.
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -25759,18 +29575,64 @@ export namespace Identity {
     export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromApp {
         /**
          * (Updatable) App Display Name
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) App URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The type of the entity that created this Group.
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsDefaultValue: App
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type: pulumi.Input<string>;
         /**
          * (Updatable) The ID of the App.
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -25778,6 +29640,15 @@ export namespace Identity {
     export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup {
         /**
          * (Updatable) Integer uniquely identifying a group in a POSIX administrative domain
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: integer
+         * * uniqueness: server
          */
         gidNumber?: pulumi.Input<number>;
     }
@@ -25785,6 +29656,23 @@ export namespace Identity {
     export interface DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup {
         /**
          * (Updatable) Flag controlling whether group membership can be request by user through self service console.
+         *
+         * **Added In:** 17.3.4
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Requestable, mapsTo:requestable]]
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         requestable?: pulumi.Input<boolean>;
     }
@@ -25792,18 +29680,60 @@ export namespace Identity {
     export interface DomainsIdentityProviderCorrelationPolicy {
         /**
          * (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) Group URI
+         *
+         * **Added In:** 2205120021
+         *
+         * **SCIM++ Properties:**
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: reference
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) Identity Provider Type
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         type: pulumi.Input<string>;
         /**
          * (Updatable) Value of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -25811,22 +29741,74 @@ export namespace Identity {
     export interface DomainsIdentityProviderIdcsCreatedBy {
         /**
          * (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) Group URI
+         *
+         * **Added In:** 2205120021
+         *
+         * **SCIM++ Properties:**
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: reference
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) Identity Provider Type
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * (Updatable) Value of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -25834,22 +29816,74 @@ export namespace Identity {
     export interface DomainsIdentityProviderIdcsLastModifiedBy {
         /**
          * (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) Group URI
+         *
+         * **Added In:** 2205120021
+         *
+         * **SCIM++ Properties:**
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: reference
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) Identity Provider Type
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * (Updatable) Value of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -25857,14 +29891,44 @@ export namespace Identity {
     export interface DomainsIdentityProviderJitUserProvAssignedGroup {
         /**
          * (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) Group URI
+         *
+         * **Added In:** 2205120021
+         *
+         * **SCIM++ Properties:**
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: reference
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) Value of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -25872,10 +29936,29 @@ export namespace Identity {
     export interface DomainsIdentityProviderJitUserProvAttributes {
         /**
          * (Updatable) Group URI
+         *
+         * **Added In:** 2205120021
+         *
+         * **SCIM++ Properties:**
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: reference
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) Value of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -25883,14 +29966,42 @@ export namespace Identity {
     export interface DomainsIdentityProviderJitUserProvGroupMapping {
         /**
          * (Updatable) IDP Group Name
+         *
+         * **Added In:** 2205120021
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * type: string
          */
         idpGroup: pulumi.Input<string>;
         /**
          * (Updatable) Group URI
+         *
+         * **Added In:** 2205120021
+         *
+         * **SCIM++ Properties:**
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: reference
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) Value of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -25898,22 +30009,72 @@ export namespace Identity {
     export interface DomainsIdentityProviderMeta {
         /**
          * (Updatable) The DateTime the Resource was added to the Service Provider
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         created?: pulumi.Input<string>;
         /**
          * (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastModified?: pulumi.Input<string>;
         /**
          * (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         location?: pulumi.Input<string>;
         /**
          * (Updatable) Name of the resource type of the resource--for example, Users or Groups
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         resourceType?: pulumi.Input<string>;
         /**
          * (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         version?: pulumi.Input<string>;
     }
@@ -25921,10 +30082,30 @@ export namespace Identity {
     export interface DomainsIdentityProviderTag {
         /**
          * (Updatable) Key or name of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * (Updatable) Value of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -25932,66 +30113,258 @@ export namespace Identity {
     export interface DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider {
         /**
          * (Updatable) Social IDP Access token URL
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         accessTokenUrl?: pulumi.Input<string>;
         /**
          * (Updatable) Whether account linking is enabled
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         accountLinkingEnabled: pulumi.Input<boolean>;
         /**
          * (Updatable) Admin scope to request
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         adminScopes?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) Social IDP Authorization URL
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         authzUrl?: pulumi.Input<string>;
         /**
          * (Updatable) Whether the client credential is contained in payload
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         clientCredentialInPayload?: pulumi.Input<boolean>;
         /**
          * (Updatable) Social IDP allowed clock skew time
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         clockSkewInSeconds?: pulumi.Input<number>;
         /**
          * (Updatable) Social IDP Client Application Client ID
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         consumerKey: pulumi.Input<string>;
         /**
          * (Updatable) Social IDP Client Application Client Secret
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * idcsSensitive: encrypt
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         consumerSecret: pulumi.Input<string>;
         /**
          * (Updatable) Discovery URL
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         discoveryUrl?: pulumi.Input<string>;
         /**
          * (Updatable) Id attribute used for account linking
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         idAttribute?: pulumi.Input<string>;
         /**
          * (Updatable) Social IDP User profile URL
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         profileUrl?: pulumi.Input<string>;
         /**
          * (Updatable) redirect URL for social idp
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         redirectUrl?: pulumi.Input<string>;
         /**
          * (Updatable) Whether registration is enabled
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         registrationEnabled: pulumi.Input<boolean>;
         /**
          * (Updatable) Scope to request
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         scopes?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) Service Provider Name
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         serviceProviderName: pulumi.Input<string>;
         /**
          * (Updatable) Status
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         status?: pulumi.Input<string>;
     }
@@ -25999,62 +30372,242 @@ export namespace Identity {
     export interface DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider {
         /**
          * (Updatable) X509 Certificate Matching Attribute
+         *
+         * **Added In:** 2010242156
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         certMatchAttribute: pulumi.Input<string>;
         /**
          * (Updatable) Fallback on CRL Validation if OCSP fails.
+         *
+         * **Added In:** 2010242156
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         crlCheckOnOcspFailureEnabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) Set to true to enable CRL Validation
+         *
+         * **Added In:** 2010242156
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         crlEnabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) CRL Location URL
+         *
+         * **Added In:** 2010242156
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         crlLocation?: pulumi.Input<string>;
         /**
          * (Updatable) Fetch the CRL contents every X minutes
+         *
+         * **Added In:** 2010242156
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         crlReloadDuration?: pulumi.Input<number>;
         /**
          * (Updatable) Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the timeout duration
+         *
+         * **Added In:** 2010242156
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         ocspAllowUnknownResponseStatus?: pulumi.Input<boolean>;
         /**
          * (Updatable) Describes if the OCSP response is signed
+         *
+         * **Added In:** 2010242156
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         ocspEnableSignedResponse?: pulumi.Input<boolean>;
         /**
          * (Updatable) Set to true to enable OCSP Validation
+         *
+         * **Added In:** 2010242156
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         ocspEnabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) This property specifies OCSP Responder URL.
+         *
+         * **Added In:** 2010242156
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         ocspResponderUrl?: pulumi.Input<string>;
         /**
          * (Updatable) Revalidate OCSP status for user after X hours
+         *
+         * **Added In:** 2010242156
+         *
+         * **SCIM++ Properties:**
+         * * idcsMaxValue: 24
+         * * idcsMinValue: 0
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         ocspRevalidateTime?: pulumi.Input<number>;
         /**
          * (Updatable) This property specifies the OCSP Server alias name
+         *
+         * **Added In:** 2010242156
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         ocspServerName?: pulumi.Input<string>;
         /**
          * (Updatable) OCSP Trusted Certificate Chain
+         *
+         * **Added In:** 2010242156
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         ocspTrustCertChains?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) Check for specific conditions of other certificate attributes
+         *
+         * **Added In:** 2010242156
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         otherCertMatchAttribute?: pulumi.Input<string>;
         /**
          * (Updatable) Certificate alias list to create a chain for the incoming client certificate
+         *
+         * **Added In:** 2010242156
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         signingCertificateChains: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) This property specifies the userstore attribute value that must match the incoming certificate attribute.
+         *
+         * **Added In:** 2010242156
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         userMatchAttribute: pulumi.Input<string>;
     }
@@ -26062,22 +30615,72 @@ export namespace Identity {
     export interface DomainsKmsiSettingIdcsCreatedBy {
         /**
          * (Updatable) The displayName of the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * (Updatable) Value of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -26085,22 +30688,72 @@ export namespace Identity {
     export interface DomainsKmsiSettingIdcsLastModifiedBy {
         /**
          * (Updatable) The displayName of the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * (Updatable) Value of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -26108,22 +30761,72 @@ export namespace Identity {
     export interface DomainsKmsiSettingMeta {
         /**
          * (Updatable) The DateTime the Resource was added to the Service Provider
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         created?: pulumi.Input<string>;
         /**
          * (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastModified?: pulumi.Input<string>;
         /**
          * (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         location?: pulumi.Input<string>;
         /**
          * (Updatable) Name of the resource type of the resource--for example, Users or Groups
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         resourceType?: pulumi.Input<string>;
         /**
          * (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         version?: pulumi.Input<string>;
     }
@@ -26131,10 +30834,30 @@ export namespace Identity {
     export interface DomainsKmsiSettingTag {
         /**
          * (Updatable) Key or name of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * (Updatable) Value of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -26142,22 +30865,76 @@ export namespace Identity {
     export interface DomainsMyApiKeyIdcsCreatedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -26165,22 +30942,76 @@ export namespace Identity {
     export interface DomainsMyApiKeyIdcsLastModifiedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -26188,22 +31019,72 @@ export namespace Identity {
     export interface DomainsMyApiKeyMeta {
         /**
          * The DateTime the Resource was added to the Service Provider
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         created?: pulumi.Input<string>;
         /**
          * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastModified?: pulumi.Input<string>;
         /**
          * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         location?: pulumi.Input<string>;
         /**
          * Name of the resource type of the resource--for example, Users or Groups
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         resourceType?: pulumi.Input<string>;
         /**
          * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         version?: pulumi.Input<string>;
     }
@@ -26211,10 +31092,34 @@ export namespace Identity {
     export interface DomainsMyApiKeyTag {
         /**
          * Key or name of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -26222,22 +31127,76 @@ export namespace Identity {
     export interface DomainsMyApiKeyUser {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) User name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         name?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value?: pulumi.Input<string>;
     }
@@ -26245,22 +31204,76 @@ export namespace Identity {
     export interface DomainsMyAuthTokenIdcsCreatedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -26268,22 +31281,76 @@ export namespace Identity {
     export interface DomainsMyAuthTokenIdcsLastModifiedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -26291,22 +31358,72 @@ export namespace Identity {
     export interface DomainsMyAuthTokenMeta {
         /**
          * The DateTime the Resource was added to the Service Provider
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         created?: pulumi.Input<string>;
         /**
          * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastModified?: pulumi.Input<string>;
         /**
          * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         location?: pulumi.Input<string>;
         /**
          * Name of the resource type of the resource--for example, Users or Groups
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         resourceType?: pulumi.Input<string>;
         /**
          * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         version?: pulumi.Input<string>;
     }
@@ -26314,10 +31431,34 @@ export namespace Identity {
     export interface DomainsMyAuthTokenTag {
         /**
          * Key or name of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -26325,22 +31466,76 @@ export namespace Identity {
     export interface DomainsMyAuthTokenUser {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) User name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         name?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value?: pulumi.Input<string>;
     }
@@ -26348,22 +31543,76 @@ export namespace Identity {
     export interface DomainsMyCustomerSecretKeyIdcsCreatedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -26371,22 +31620,76 @@ export namespace Identity {
     export interface DomainsMyCustomerSecretKeyIdcsLastModifiedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -26394,22 +31697,72 @@ export namespace Identity {
     export interface DomainsMyCustomerSecretKeyMeta {
         /**
          * The DateTime the Resource was added to the Service Provider
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         created?: pulumi.Input<string>;
         /**
          * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastModified?: pulumi.Input<string>;
         /**
          * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         location?: pulumi.Input<string>;
         /**
          * Name of the resource type of the resource--for example, Users or Groups
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         resourceType?: pulumi.Input<string>;
         /**
          * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         version?: pulumi.Input<string>;
     }
@@ -26417,10 +31770,34 @@ export namespace Identity {
     export interface DomainsMyCustomerSecretKeyTag {
         /**
          * Key or name of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -26428,22 +31805,76 @@ export namespace Identity {
     export interface DomainsMyCustomerSecretKeyUser {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) User name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         name?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value?: pulumi.Input<string>;
     }
@@ -26451,22 +31882,76 @@ export namespace Identity {
     export interface DomainsMyOauth2clientCredentialIdcsCreatedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -26474,22 +31959,76 @@ export namespace Identity {
     export interface DomainsMyOauth2clientCredentialIdcsLastModifiedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -26497,22 +32036,72 @@ export namespace Identity {
     export interface DomainsMyOauth2clientCredentialMeta {
         /**
          * The DateTime the Resource was added to the Service Provider
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         created?: pulumi.Input<string>;
         /**
          * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastModified?: pulumi.Input<string>;
         /**
          * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         location?: pulumi.Input<string>;
         /**
          * Name of the resource type of the resource--for example, Users or Groups
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         resourceType?: pulumi.Input<string>;
         /**
          * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         version?: pulumi.Input<string>;
     }
@@ -26520,10 +32109,26 @@ export namespace Identity {
     export interface DomainsMyOauth2clientCredentialScope {
         /**
          * Audience
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
          */
         audience: pulumi.Input<string>;
         /**
          * Scope
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsScimCompliant: false
+         * * type: string
+         * * mutability: readWrite
+         * * multiValued: false
+         * * required: true
+         * * returned: default
          */
         scope: pulumi.Input<string>;
     }
@@ -26531,10 +32136,34 @@ export namespace Identity {
     export interface DomainsMyOauth2clientCredentialTag {
         /**
          * Key or name of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -26542,22 +32171,76 @@ export namespace Identity {
     export interface DomainsMyOauth2clientCredentialUser {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) User name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         name?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value?: pulumi.Input<string>;
     }
@@ -26565,22 +32248,72 @@ export namespace Identity {
     export interface DomainsMySmtpCredentialIdcsCreatedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -26588,22 +32321,72 @@ export namespace Identity {
     export interface DomainsMySmtpCredentialIdcsLastModifiedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -26611,22 +32394,72 @@ export namespace Identity {
     export interface DomainsMySmtpCredentialMeta {
         /**
          * The DateTime the Resource was added to the Service Provider
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         created?: pulumi.Input<string>;
         /**
          * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastModified?: pulumi.Input<string>;
         /**
          * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         location?: pulumi.Input<string>;
         /**
          * Name of the resource type of the resource--for example, Users or Groups
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         resourceType?: pulumi.Input<string>;
         /**
          * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         version?: pulumi.Input<string>;
     }
@@ -26634,10 +32467,30 @@ export namespace Identity {
     export interface DomainsMySmtpCredentialTag {
         /**
          * Key or name of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -26645,22 +32498,72 @@ export namespace Identity {
     export interface DomainsMySmtpCredentialUser {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) User name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         name?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         value?: pulumi.Input<string>;
     }
@@ -26668,22 +32571,72 @@ export namespace Identity {
     export interface DomainsMySupportAccountIdcsCreatedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this Support Account
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -26691,22 +32644,72 @@ export namespace Identity {
     export interface DomainsMySupportAccountIdcsLastModifiedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this Support Account
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -26714,22 +32717,72 @@ export namespace Identity {
     export interface DomainsMySupportAccountMeta {
         /**
          * The DateTime the Resource was added to the Service Provider
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         created?: pulumi.Input<string>;
         /**
          * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastModified?: pulumi.Input<string>;
         /**
          * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         location?: pulumi.Input<string>;
         /**
          * Name of the resource type of the resource--for example, Users or Groups
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         resourceType?: pulumi.Input<string>;
         /**
          * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         version?: pulumi.Input<string>;
     }
@@ -26737,10 +32790,30 @@ export namespace Identity {
     export interface DomainsMySupportAccountTag {
         /**
          * Key or name of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -26748,22 +32821,72 @@ export namespace Identity {
     export interface DomainsMySupportAccountUser {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) User name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         name?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this Support Account
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         value?: pulumi.Input<string>;
     }
@@ -26771,22 +32894,76 @@ export namespace Identity {
     export interface DomainsMyUserDbCredentialIdcsCreatedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: true
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -26794,22 +32971,76 @@ export namespace Identity {
     export interface DomainsMyUserDbCredentialIdcsLastModifiedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: true
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -26817,22 +33048,72 @@ export namespace Identity {
     export interface DomainsMyUserDbCredentialMeta {
         /**
          * The DateTime the Resource was added to the Service Provider
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         created?: pulumi.Input<string>;
         /**
          * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastModified?: pulumi.Input<string>;
         /**
          * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         location?: pulumi.Input<string>;
         /**
          * Name of the resource type of the resource--for example, Users or Groups
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         resourceType?: pulumi.Input<string>;
         /**
          * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         version?: pulumi.Input<string>;
     }
@@ -26840,10 +33121,34 @@ export namespace Identity {
     export interface DomainsMyUserDbCredentialTag {
         /**
          * Key or name of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: true
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -26851,22 +33156,76 @@ export namespace Identity {
     export interface DomainsMyUserDbCredentialUser {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) User name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         name?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: true
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -26874,22 +33233,76 @@ export namespace Identity {
     export interface DomainsOauth2clientCredentialIdcsCreatedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -26897,22 +33310,76 @@ export namespace Identity {
     export interface DomainsOauth2clientCredentialIdcsLastModifiedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -26920,22 +33387,72 @@ export namespace Identity {
     export interface DomainsOauth2clientCredentialMeta {
         /**
          * The DateTime the Resource was added to the Service Provider
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         created?: pulumi.Input<string>;
         /**
          * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastModified?: pulumi.Input<string>;
         /**
          * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         location?: pulumi.Input<string>;
         /**
          * Name of the resource type of the resource--for example, Users or Groups
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         resourceType?: pulumi.Input<string>;
         /**
          * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         version?: pulumi.Input<string>;
     }
@@ -26943,10 +33460,26 @@ export namespace Identity {
     export interface DomainsOauth2clientCredentialScope {
         /**
          * Audience
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
          */
         audience: pulumi.Input<string>;
         /**
          * Scope
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsScimCompliant: false
+         * * type: string
+         * * mutability: readWrite
+         * * multiValued: false
+         * * required: true
+         * * returned: default
          */
         scope: pulumi.Input<string>;
     }
@@ -26954,10 +33487,34 @@ export namespace Identity {
     export interface DomainsOauth2clientCredentialTag {
         /**
          * Key or name of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -26965,6 +33522,17 @@ export namespace Identity {
     export interface DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser {
         /**
          * If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+         *
+         * **Added In:** 2205182039
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: writeOnly
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
          */
         allowSelfChange?: pulumi.Input<boolean>;
     }
@@ -26972,22 +33540,76 @@ export namespace Identity {
     export interface DomainsOauth2clientCredentialUser {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) User name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         name?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value?: pulumi.Input<string>;
     }
@@ -26995,10 +33617,30 @@ export namespace Identity {
     export interface DomainsPasswordPolicyConfiguredPasswordPolicyRule {
         /**
          * (Updatable) Key or name of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * (Updatable) Value of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -27006,14 +33648,44 @@ export namespace Identity {
     export interface DomainsPasswordPolicyGroup {
         /**
          * (Updatable) The displayName of the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) Value of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -27021,22 +33693,72 @@ export namespace Identity {
     export interface DomainsPasswordPolicyIdcsCreatedBy {
         /**
          * (Updatable) The displayName of the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * (Updatable) Value of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -27044,22 +33766,72 @@ export namespace Identity {
     export interface DomainsPasswordPolicyIdcsLastModifiedBy {
         /**
          * (Updatable) The displayName of the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * (Updatable) Value of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -27067,22 +33839,72 @@ export namespace Identity {
     export interface DomainsPasswordPolicyMeta {
         /**
          * (Updatable) The DateTime the Resource was added to the Service Provider
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         created?: pulumi.Input<string>;
         /**
          * (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastModified?: pulumi.Input<string>;
         /**
          * (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         location?: pulumi.Input<string>;
         /**
          * (Updatable) Name of the resource type of the resource--for example, Users or Groups
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         resourceType?: pulumi.Input<string>;
         /**
          * (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         version?: pulumi.Input<string>;
     }
@@ -27090,10 +33912,30 @@ export namespace Identity {
     export interface DomainsPasswordPolicyTag {
         /**
          * (Updatable) Key or name of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * (Updatable) Value of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -27101,22 +33943,72 @@ export namespace Identity {
     export interface DomainsSmtpCredentialIdcsCreatedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -27124,22 +34016,72 @@ export namespace Identity {
     export interface DomainsSmtpCredentialIdcsLastModifiedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -27147,22 +34089,72 @@ export namespace Identity {
     export interface DomainsSmtpCredentialMeta {
         /**
          * The DateTime the Resource was added to the Service Provider
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         created?: pulumi.Input<string>;
         /**
          * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastModified?: pulumi.Input<string>;
         /**
          * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         location?: pulumi.Input<string>;
         /**
          * Name of the resource type of the resource--for example, Users or Groups
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         resourceType?: pulumi.Input<string>;
         /**
          * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         version?: pulumi.Input<string>;
     }
@@ -27170,10 +34162,30 @@ export namespace Identity {
     export interface DomainsSmtpCredentialTag {
         /**
          * Key or name of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         value: pulumi.Input<string>;
     }
@@ -27181,6 +34193,17 @@ export namespace Identity {
     export interface DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser {
         /**
          * If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+         *
+         * **Added In:** 2205182039
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: writeOnly
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
          */
         allowSelfChange?: pulumi.Input<boolean>;
     }
@@ -27188,22 +34211,72 @@ export namespace Identity {
     export interface DomainsSmtpCredentialUser {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) User name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         name?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         value?: pulumi.Input<string>;
     }
@@ -27211,34 +34284,114 @@ export namespace Identity {
     export interface DomainsUserAddress {
         /**
          * (Updatable) The country name component.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCanonicalValueSourceFilter: attrName eq "countries" and attrValues.value eq "upper($(country))"
+         * * idcsCanonicalValueSourceResourceType: AllowedValue
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         country?: pulumi.Input<string>;
         /**
          * (Updatable) Full name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         formatted?: pulumi.Input<string>;
         /**
          * (Updatable) The city or locality component.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         locality?: pulumi.Input<string>;
         /**
          * (Updatable) The zipcode or postal code component.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         postalCode?: pulumi.Input<string>;
         /**
          * (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         primary?: pulumi.Input<boolean>;
         /**
          * (Updatable) The state or region component.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         region?: pulumi.Input<string>;
         /**
          * (Updatable) The full street address component, which may include house number, street name, PO BOX, and multi-line extended street address information. This attribute MAY contain newlines.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         streetAddress?: pulumi.Input<string>;
         /**
          * (Updatable) A label indicating the attribute's function.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type: pulumi.Input<string>;
     }
@@ -27246,22 +34399,76 @@ export namespace Identity {
     export interface DomainsUserDbCredentialIdcsCreatedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: true
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -27269,22 +34476,76 @@ export namespace Identity {
     export interface DomainsUserDbCredentialIdcsLastModifiedBy {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: true
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -27292,22 +34553,72 @@ export namespace Identity {
     export interface DomainsUserDbCredentialMeta {
         /**
          * The DateTime the Resource was added to the Service Provider
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         created?: pulumi.Input<string>;
         /**
          * The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastModified?: pulumi.Input<string>;
         /**
          * The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         location?: pulumi.Input<string>;
         /**
          * Name of the resource type of the resource--for example, Users or Groups
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         resourceType?: pulumi.Input<string>;
         /**
          * The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         version?: pulumi.Input<string>;
     }
@@ -27315,10 +34626,34 @@ export namespace Identity {
     export interface DomainsUserDbCredentialTag {
         /**
          * Key or name of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: true
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -27326,6 +34661,17 @@ export namespace Identity {
     export interface DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser {
         /**
          * If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+         *
+         * **Added In:** 2205182039
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: writeOnly
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
          */
         allowSelfChange?: pulumi.Input<boolean>;
     }
@@ -27333,22 +34679,76 @@ export namespace Identity {
     export interface DomainsUserDbCredentialUser {
         /**
          * (Updatable) User display name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) User name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         name?: pulumi.Input<string>;
         /**
          * User's ocid
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) The URI that corresponds to the user linked to this credential
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * User's id
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: true
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -27356,26 +34756,90 @@ export namespace Identity {
     export interface DomainsUserEmail {
         /**
          * (Updatable) Pending e-mail address verification
+         *
+         * **Added In:** 19.1.4
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         pendingVerificationData?: pulumi.Input<string>;
         /**
          * (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         primary?: pulumi.Input<boolean>;
         /**
          * (Updatable) A Boolean value that indicates whether the email address is the secondary email address. The secondary attribute value 'true' MUST appear no more than once.
+         *
+         * **Added In:** 18.2.6
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         secondary?: pulumi.Input<boolean>;
         /**
          * (Updatable) A label indicating the attribute's function.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
         /**
          * (Updatable) A Boolean value that indicates if the phone number is verified.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         verified?: pulumi.Input<boolean>;
     }
@@ -27383,18 +34847,58 @@ export namespace Identity {
     export interface DomainsUserEntitlement {
         /**
          * (Updatable) A human readable name, primarily used for display purposes.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         primary?: pulumi.Input<boolean>;
         /**
          * (Updatable) A label indicating the attribute's function.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -27402,38 +34906,135 @@ export namespace Identity {
     export interface DomainsUserGroup {
         /**
          * (Updatable) Date when the member is Added to the group
+         *
+         * **Added In:** 2105200541
+         *
+         * **SCIM++ Properties:**
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         dateAdded?: pulumi.Input<string>;
         /**
          * (Updatable) A human readable name, primarily used for display purposes.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         externalId?: pulumi.Input<string>;
         /**
          * (Updatable) Membership Ocid
+         *
+         * **Added In:** 2103141444
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         membershipOcid?: pulumi.Input<string>;
         /**
          * (Updatable) A human readable name for Group as defined by the Service Consumer. READ-ONLY.
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         nonUniqueDisplay?: pulumi.Input<string>;
         /**
          * (Updatable) Ocid of the User's Support Account.
+         *
+         * **Added In:** 2103141444
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) A label indicating the attribute's function.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -27441,22 +35042,76 @@ export namespace Identity {
     export interface DomainsUserIdcsCreatedBy {
         /**
          * (Updatable) A human readable name, primarily used for display purposes.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) Ocid of the User's Support Account.
+         *
+         * **Added In:** 2103141444
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) A label indicating the attribute's function.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -27464,22 +35119,76 @@ export namespace Identity {
     export interface DomainsUserIdcsLastModifiedBy {
         /**
          * (Updatable) A human readable name, primarily used for display purposes.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) Ocid of the User's Support Account.
+         *
+         * **Added In:** 2103141444
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) A label indicating the attribute's function.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -27487,18 +35196,58 @@ export namespace Identity {
     export interface DomainsUserIm {
         /**
          * (Updatable) A human readable name, primarily used for display purposes.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         primary?: pulumi.Input<boolean>;
         /**
          * (Updatable) A label indicating the attribute's function.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -27506,22 +35255,72 @@ export namespace Identity {
     export interface DomainsUserMeta {
         /**
          * (Updatable) The DateTime the Resource was added to the Service Provider
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         created?: pulumi.Input<string>;
         /**
          * (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastModified?: pulumi.Input<string>;
         /**
          * (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         location?: pulumi.Input<string>;
         /**
          * (Updatable) Name of the resource type of the resource--for example, Users or Groups
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         resourceType?: pulumi.Input<string>;
         /**
          * (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         version?: pulumi.Input<string>;
     }
@@ -27529,26 +35328,89 @@ export namespace Identity {
     export interface DomainsUserName {
         /**
          * (Updatable) Last name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Last Name
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         familyName: pulumi.Input<string>;
         /**
          * (Updatable) Full name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         formatted?: pulumi.Input<string>;
         /**
          * (Updatable) First name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: First Name
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         givenName?: pulumi.Input<string>;
         /**
          * (Updatable) Prefix
+         *
+         * **SCIM++ Properties:**
+         * * idcsCsvAttributeName: Honorific Prefix
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         honorificPrefix?: pulumi.Input<string>;
         /**
          * (Updatable) Suffix
+         *
+         * **SCIM++ Properties:**
+         * * idcsCsvAttributeName: Honorific Suffix
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         honorificSuffix?: pulumi.Input<string>;
         /**
          * (Updatable) Middle name
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Middle Name
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         middleName?: pulumi.Input<string>;
     }
@@ -27556,22 +35418,72 @@ export namespace Identity {
     export interface DomainsUserPhoneNumber {
         /**
          * (Updatable) A human readable name, primarily used for display purposes.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         primary?: pulumi.Input<boolean>;
         /**
          * (Updatable) A label indicating the attribute's function.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
         /**
          * (Updatable) A Boolean value that indicates if the phone number is verified.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         verified?: pulumi.Input<boolean>;
     }
@@ -27579,18 +35491,58 @@ export namespace Identity {
     export interface DomainsUserPhoto {
         /**
          * (Updatable) A human readable name, primarily used for display purposes.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         primary?: pulumi.Input<boolean>;
         /**
          * (Updatable) A label indicating the attribute's function.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -27598,18 +35550,58 @@ export namespace Identity {
     export interface DomainsUserRole {
         /**
          * (Updatable) A human readable name, primarily used for display purposes.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         primary?: pulumi.Input<boolean>;
         /**
          * (Updatable) A label indicating the attribute's function.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -27617,10 +35609,35 @@ export namespace Identity {
     export interface DomainsUserTag {
         /**
          * (Updatable) The value of of the User's api key.
+         *
+         * **Added In:** 2106240046
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -27628,26 +35645,101 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasextensionenterprise20user {
         /**
          * (Updatable) Identifies the name of a cost center.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Cost Center
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Cost Center]]
+         * * idcsPii: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         costCenter?: pulumi.Input<string>;
         /**
          * (Updatable) Identifies the name of a department.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Department
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Department]]
+         * * idcsPii: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         department?: pulumi.Input<string>;
         /**
          * (Updatable) Identifies the name of a division.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Division
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Division]]
+         * * idcsPii: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         division?: pulumi.Input<string>;
         /**
          * (Updatable) Numeric or alphanumeric identifier assigned to  a person, typically based on order of hire or association with an organization.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Employee Number
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Employee Number]]
+         * * idcsPii: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         employeeNumber?: pulumi.Input<string>;
         /**
          * (Updatable) The User's manager. A complex type that optionally allows Service Providers to represent organizational hierarchy by referencing the 'id' attribute of another User.
+         *
+         * **SCIM++ Properties:**
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Manager, deprecatedColumnHeaderName:Manager Name, mapsTo:manager.value]]
+         * * idcsPii: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          */
         manager?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasextensionenterprise20userManager>;
         /**
          * (Updatable) Identifies the name of an organization.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Organization
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Organization Name, deprecatedColumnHeaderName:Organization]]
+         * * idcsPii: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         organization?: pulumi.Input<string>;
     }
@@ -27655,14 +35747,47 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasextensionenterprise20userManager {
         /**
          * (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         displayName?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value?: pulumi.Input<string>;
     }
@@ -27670,14 +35795,43 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags {
         /**
          * (Updatable) Oracle Cloud Infrastructure Defined Tags
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [namespace, key, value]
+         * * type: complex
+         * * idcsSearchable: true
+         * * required: false
+         * * mutability: readWrite
+         * * multiValued: true
+         * * returned: default
          */
         definedTags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTag>[]>;
         /**
          * (Updatable) Oracle Cloud Infrastructure Freeform Tags
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [key, value]
+         * * idcsSearchable: true
+         * * type: complex
+         * * required: false
+         * * mutability: readWrite
+         * * returned: default
+         * * multiValued: true
          */
         freeformTags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTag>[]>;
         /**
          * (Updatable) Oracle Cloud Infrastructure Tag slug
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * type: binary
+         * * mutability: readOnly
+         * * returned: request
          */
         tagSlug?: pulumi.Input<string>;
     }
@@ -27685,14 +35839,50 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTag {
         /**
          * (Updatable) The value of of the User's api key.
+         *
+         * **Added In:** 2106240046
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * (Updatable) Oracle Cloud Infrastructure Tag namespace
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * idcsSearchable: true
+         * * uniqueness: none
          */
         namespace: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -27700,10 +35890,35 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTag {
         /**
          * (Updatable) The value of of the User's api key.
+         *
+         * **Added In:** 2106240046
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         key: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -27711,10 +35926,33 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser {
         /**
          * (Updatable) Risk Level
+         *
+         * **Added In:** 18.1.6
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         riskLevel?: pulumi.Input<string>;
         /**
          * (Updatable) The risk score pertaining to the user.
+         *
+         * **Added In:** 18.1.6
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         riskScores?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore>[]>;
     }
@@ -27722,30 +35960,111 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore {
         /**
          * (Updatable) Last update timestamp for the risk score
+         *
+         * **Added In:** 18.1.6
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: always
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastUpdateTimestamp: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) Risk Level
+         *
+         * **Added In:** 18.1.6
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         riskLevel: pulumi.Input<string>;
         /**
          * (Updatable) Risk Score value
+         *
+         * **Added In:** 18.1.6
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: always
+         * * type: integer
+         * * uniqueness: none
          */
         score: pulumi.Input<number>;
         /**
          * (Updatable) Risk Provider Profile Source
+         *
+         * **Added In:** 18.1.6
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         source?: pulumi.Input<string>;
         /**
          * (Updatable) A supplemental status indicating the reason why a user is disabled
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          */
         status?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -27753,30 +36072,114 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser {
         /**
          * (Updatable) Indicates weather a user can use api keys
+         *
+         * **Added In:** 2012271618
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         canUseApiKeys?: pulumi.Input<boolean>;
         /**
          * (Updatable) Indicates weather a user can use auth tokens
+         *
+         * **Added In:** 2012271618
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         canUseAuthTokens?: pulumi.Input<boolean>;
         /**
          * (Updatable) Indicates weather a user can use console password
+         *
+         * **Added In:** 2012271618
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         canUseConsolePassword?: pulumi.Input<boolean>;
         /**
          * (Updatable) Indicates weather a user can use customer secret keys
+         *
+         * **Added In:** 2012271618
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         canUseCustomerSecretKeys?: pulumi.Input<boolean>;
         /**
          * (Updatable) Indicates weather a user can use db credentials
+         *
+         * **Added In:** 2012271618
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         canUseDbCredentials?: pulumi.Input<boolean>;
         /**
          * (Updatable) Indicates weather a user can use oauth2 client credentials
+         *
+         * **Added In:** 2012271618
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         canUseOauth2clientCredentials?: pulumi.Input<boolean>;
         /**
          * (Updatable) Indicates weather a user can use smtp credentials
+         *
+         * **Added In:** 2012271618
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         canUseSmtpCredentials?: pulumi.Input<boolean>;
     }
@@ -27784,10 +36187,33 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser {
         /**
          * (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
+         *
+         * **Added In:** 2102181953
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: integer
+         * * uniqueness: none
          */
         dbLoginAttempts?: pulumi.Input<number>;
         /**
          * (Updatable) The Database User Name
+         *
+         * **Added In:** 2102181953
+         *
+         * **SCIM++ Properties:**
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * type: string
+         * * returned: request
+         * * caseExact: false
+         * * uniqueness: none
+         * * idcsSearchable: true
          */
         dbUserName?: pulumi.Input<string>;
     }
@@ -27795,22 +36221,82 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser {
         /**
          * (Updatable) DB global roles to which the user is granted access.
+         *
+         * **Added In:** 18.2.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * idcsSensitive: none
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          */
         dbGlobalRoles?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) DB domain level schema to which the user is granted access.
+         *
+         * **Added In:** 18.2.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * idcsSensitive: none
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          */
         domainLevelSchema?: pulumi.Input<string>;
         /**
          * (Updatable) DB instance level schema to which the user is granted access.
+         *
+         * **Added In:** 18.2.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * idcsSensitive: none
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          */
         instanceLevelSchema?: pulumi.Input<string>;
         /**
          * (Updatable) If true, indicates this is a database user.
+         *
+         * **Added In:** 18.2.2
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
          */
         isDbUser?: pulumi.Input<boolean>;
         /**
          * (Updatable) Password Verifiers for DB User.
+         *
+         * **Added In:** 18.2.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [type]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         passwordVerifiers?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier>[]>;
     }
@@ -27818,10 +36304,32 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier {
         /**
          * (Updatable) A label indicating the attribute's function.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -27829,6 +36337,15 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser {
         /**
          * (Updatable) A list of kerberos realm users for an Oracle Cloud Infrastructure IAM User
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         realmUsers?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser>[]>;
     }
@@ -27836,18 +36353,61 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser {
         /**
          * (Updatable) Principal Name of the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+         *
+         * **SCIM++ Properties:**
+         * * idcsPii: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         principalName?: pulumi.Input<string>;
         /**
          * (Updatable) Realm Name for the KerberosRealmUser associated with the Oracle Cloud Infrastructure IAM User.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         realmName?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -27855,46 +36415,172 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser {
         /**
          * (Updatable) A list of bypass codes belongs to user
+         *
+         * **Added In:** 18.3.6
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         bypassCodes?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode>[]>;
         /**
          * (Updatable) A list of devices enrolled by the user.
+         *
+         * **Added In:** 18.3.6
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         devices?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice>[]>;
         /**
          * (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * idcsAllowUpdatesInReadOnlyMode: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: integer
+         * * uniqueness: none
          */
         loginAttempts?: pulumi.Input<number>;
         /**
          * (Updatable) This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+         *
+         * **Added In:** 18.3.6
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: dateTime
+         * * uniqueness: none
          */
         mfaEnabledOn?: pulumi.Input<string>;
         /**
          * (Updatable) User MFA Ignored Apps Identifiers
+         *
+         * **Added In:** 19.2.1
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         mfaIgnoredApps?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) User Opted for MFA
+         *
+         * **Added In:** 18.3.6
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         mfaStatus?: pulumi.Input<string>;
         /**
          * (Updatable) Preferred Authentication Factor Type
+         *
+         * **Added In:** 18.3.6
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         preferredAuthenticationFactor?: pulumi.Input<string>;
         /**
          * (Updatable) Preferred Authentication method
+         *
+         * **Added In:** 2009232244
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         preferredAuthenticationMethod?: pulumi.Input<string>;
         /**
          * (Updatable) User preferred device
+         *
+         * **Added In:** 18.3.6
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          */
         preferredDevice?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice>;
         /**
          * (Updatable) Preferred Third party vendor name
+         *
+         * **Added In:** 19.2.1
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         preferredThirdPartyVendor?: pulumi.Input<string>;
         /**
          * (Updatable) A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted User Agents to authenticate users.  A User Agent is software application that a user uses to issue requests. For example, a User Agent could be a particular browser (possibly one of several executing on a desktop or laptop) or a particular mobile application (again, oneof several executing on a particular mobile device). A User Agent is trusted once the Multi-Factor Authentication has verified it in some way.
+         *
+         * **Added In:** 18.3.6
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         trustedUserAgents?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent>[]>;
     }
@@ -27902,10 +36588,34 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode {
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -27913,38 +36623,137 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice {
         /**
          * (Updatable) Authentication method.
+         *
+         * **Added In:** 2009232244
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         authenticationMethod?: pulumi.Input<string>;
         /**
          * (Updatable) A human readable name, primarily used for display purposes.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) Device authentication factor status.
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         factorStatus?: pulumi.Input<string>;
         /**
          * (Updatable) Authentication Factor Type
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         factorType?: pulumi.Input<string>;
         /**
          * (Updatable) Last Sync time for device.
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastSyncTime?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) A supplemental status indicating the reason why a user is disabled
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          */
         status?: pulumi.Input<string>;
         /**
          * (Updatable) Third party factor vendor name.
+         *
+         * **Added In:** 2009232244
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         thirdPartyVendorName?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -27952,14 +36761,47 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice {
         /**
          * (Updatable) A human readable name, primarily used for display purposes.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -27967,14 +36809,47 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent {
         /**
          * (Updatable) A human readable name, primarily used for display purposes.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -27982,34 +36857,117 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser {
         /**
          * (Updatable) Applicable Password Policy
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         applicablePasswordPolicy?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy>;
         /**
          * (Updatable) Indicates that the current password MAY NOT be changed and all other password expiry settings SHALL be ignored
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
          */
         cantChange?: pulumi.Input<boolean>;
         /**
          * (Updatable) Indicates that the password expiry policy will not be applied for the current Resource
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
          */
         cantExpire?: pulumi.Input<boolean>;
         /**
          * (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
          */
         expired?: pulumi.Input<boolean>;
         /**
          * (Updatable) A DateTime that specifies the date and time when last failed password validation was set
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastFailedValidationDate?: pulumi.Input<string>;
         /**
          * (Updatable) A DateTime that specifies the date and time when the current password was set
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastSuccessfulSetDate?: pulumi.Input<string>;
         /**
          * (Updatable) A DateTime that specifies the date and time when last successful password validation was set
+         *
+         * **Added In:** 2011192329
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastSuccessfulValidationDate?: pulumi.Input<string>;
         /**
          * (Updatable) Indicates that the subject password value MUST change on next login. If not changed, typically the account is locked. The value may be set indirectly when the subject's current password expires or directly set by an administrator.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
          */
         mustChange?: pulumi.Input<boolean>;
     }
@@ -28017,18 +36975,62 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy {
         /**
          * (Updatable) A human readable name, primarily used for display purposes.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) PasswordPolicy priority
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         priority?: pulumi.Input<number>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -28036,14 +37038,50 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser {
         /**
          * (Updatable) Factor Identifier ID
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          */
         factorIdentifier?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier>;
         /**
          * (Updatable) Authentication Factor Method
+         *
+         * **Added In:** 2009232244
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         factorMethod?: pulumi.Input<string>;
         /**
          * (Updatable) Authentication Factor Type
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         factorType?: pulumi.Input<string>;
     }
@@ -28051,14 +37089,47 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier {
         /**
          * (Updatable) A human readable name, primarily used for display purposes.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -28066,22 +37137,67 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser {
         /**
          * (Updatable) General information about the POSIX account such as their real name and phone number
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          */
         gecos?: pulumi.Input<string>;
         /**
          * (Updatable) Primary Group identifier of the POSIX user
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: integer
+         * * uniqueness: none
          */
         gidNumber?: pulumi.Input<number>;
         /**
          * (Updatable) The absolute path to the home directory of the POSIX account
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          */
         homeDirectory?: pulumi.Input<string>;
         /**
          * (Updatable) The path to the login shell of the POSIX account
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          */
         loginShell?: pulumi.Input<string>;
         /**
          * (Updatable) Integer uniquely identifying a user in a POSIX administrative domain
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: integer
+         * * uniqueness: server
          */
         uidNumber?: pulumi.Input<number>;
     }
@@ -28089,6 +37205,15 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser {
         /**
          * (Updatable) Security question and answers provided by end-user for Account recovery and/or MFA. While setting up security questions, end-user can also provide hint along with answer.
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         secQuestions?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion>[]>;
     }
@@ -28096,18 +37221,63 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion {
         /**
          * (Updatable) Answer provided by an user for a security question.
+         *
+         * **SCIM++ Properties:**
+         * * idcsCsvAttributeName: Answer
+         * * idcsSearchable: false
+         * * idcsSensitive: hash
+         * * multiValued: false
+         * * mutability: writeOnly
+         * * required: true
+         * * returned: never
+         * * type: string
+         * * uniqueness: none
+         * * idcsPii: true
          */
         answer: pulumi.Input<string>;
         /**
          * (Updatable) Hint for an answer given by user while setting up Security Question.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         hintText?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -28115,6 +37285,17 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser {
         /**
          * (Updatable) If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
+         *
+         * **Added In:** 2205182039
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: writeOnly
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
          */
         allowSelfChange?: pulumi.Input<boolean>;
     }
@@ -28122,14 +37303,44 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser {
         /**
          * (Updatable) A boolean value that indicates whether the consent is granted.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         consentGranted?: pulumi.Input<boolean>;
         /**
          * (Updatable) Self registration profile used when user is self registered.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: true
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         selfRegistrationProfile: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile>;
         /**
          * (Updatable) User token returned if userFlowControlledByExternalClient is true
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          */
         userToken?: pulumi.Input<string>;
     }
@@ -28137,14 +37348,47 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile {
         /**
          * (Updatable) A human readable name, primarily used for display purposes.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -28152,6 +37396,15 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser {
         /**
          * (Updatable) SFF auth keys clob
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          */
         sffAuthKeys?: pulumi.Input<string>;
     }
@@ -28159,6 +37412,17 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser {
         /**
          * (Updatable) Description:
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * idcsPii: true
+         * * type: complex
+         * * uniqueness: none
          */
         socialAccounts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount>[]>;
     }
@@ -28166,14 +37430,47 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount {
         /**
          * (Updatable) A human readable name, primarily used for display purposes.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -28181,6 +37478,18 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser {
         /**
          * (Updatable) Description:
+         *
+         * **Added In:** 18.2.6
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         termsOfUseConsents?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent>[]>;
     }
@@ -28188,10 +37497,34 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent {
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -28199,26 +37532,98 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser {
         /**
          * (Updatable) A list of api keys corresponding to user.
+         *
+         * **Added In:** 2012271618
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         apiKeys?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey>[]>;
         /**
          * (Updatable) A list of auth tokens corresponding to user.
+         *
+         * **Added In:** 2012271618
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         authTokens?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken>[]>;
         /**
          * (Updatable) A list of customer secret keys corresponding to user.
+         *
+         * **Added In:** 2102181953
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         customerSecretKeys?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey>[]>;
         /**
          * (Updatable) A list of db credentials corresponding to user.
+         *
+         * **Added In:** 2102181953
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         dbCredentials?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential>[]>;
         /**
          * (Updatable) A list of oauth2 client credentials corresponding to user.
+         *
+         * **Added In:** 2012271618
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         oAuth2clientCredentials?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential>[]>;
         /**
          * (Updatable) A list of smtp credentials corresponding to user.
+         *
+         * **Added In:** 2012271618
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         smtpCredentials?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential>[]>;
     }
@@ -28226,18 +37631,66 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey {
         /**
          * (Updatable) The value of of the User's api key.
+         *
+         * **Added In:** 2106240046
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         key?: pulumi.Input<string>;
         /**
          * (Updatable) Ocid of the User's Support Account.
+         *
+         * **Added In:** 2103141444
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value?: pulumi.Input<string>;
     }
@@ -28245,14 +37698,50 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken {
         /**
          * (Updatable) Ocid of the User's Support Account.
+         *
+         * **Added In:** 2103141444
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value?: pulumi.Input<string>;
     }
@@ -28260,14 +37749,50 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey {
         /**
          * (Updatable) Ocid of the User's Support Account.
+         *
+         * **Added In:** 2103141444
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value?: pulumi.Input<string>;
     }
@@ -28275,14 +37800,50 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential {
         /**
          * (Updatable) Ocid of the User's Support Account.
+         *
+         * **Added In:** 2103141444
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value?: pulumi.Input<string>;
     }
@@ -28290,14 +37851,50 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential {
         /**
          * (Updatable) Ocid of the User's Support Account.
+         *
+         * **Added In:** 2103141444
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value?: pulumi.Input<string>;
     }
@@ -28305,14 +37902,50 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential {
         /**
          * (Updatable) Ocid of the User's Support Account.
+         *
+         * **Added In:** 2103141444
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value?: pulumi.Input<string>;
     }
@@ -28320,38 +37953,135 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser {
         /**
          * (Updatable) The last failed login date
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * idcsAllowUpdatesInReadOnlyMode: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastFailedLoginDate?: pulumi.Input<string>;
         /**
          * (Updatable) The last successful login date
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * idcsAllowUpdatesInReadOnlyMode: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: dateTime
+         * * uniqueness: none
          */
         lastSuccessfulLoginDate?: pulumi.Input<string>;
         /**
          * (Updatable) A complex attribute that indicates an account is locked (blocking new sessions)
+         *
+         * **SCIM++ Properties:**
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Locked, mapsTo:locked.on], [columnHeaderName:Locked Reason, mapsTo:locked.reason], [columnHeaderName:Locked Date, mapsTo:locked.lockDate]]
+         * * idcsSearchable: false
+         * * idcsAllowUpdatesInReadOnlyMode: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          */
         locked?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked>;
         /**
          * (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * idcsAllowUpdatesInReadOnlyMode: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: integer
+         * * uniqueness: none
          */
         loginAttempts?: pulumi.Input<number>;
         /**
          * (Updatable) Maximum number of concurrent sessions for a User
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsMaxValue: 999
+         * * idcsMinValue: 1
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         maxConcurrentSessions?: pulumi.Input<number>;
         /**
          * (Updatable) The previous successful login date
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: dateTime
+         * * uniqueness: none
          */
         previousSuccessfulLoginDate?: pulumi.Input<string>;
         /**
          * (Updatable) The number of failed recovery attempts. The value is reset to 0 after a successful login.
+         *
+         * **Added In:** 19.1.4
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: integer
+         * * uniqueness: none
          */
         recoveryAttempts?: pulumi.Input<number>;
         /**
          * (Updatable) The number of failed account recovery enrollment attempts.
+         *
+         * **Added In:** 19.1.4
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: integer
+         * * uniqueness: none
          */
         recoveryEnrollAttempts?: pulumi.Input<number>;
         /**
          * (Updatable) A complex attribute that indicates an password recovery is locked (blocking new sessions)
+         *
+         * **Added In:** 19.1.4
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          */
         recoveryLocked?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked>;
     }
@@ -28359,18 +38089,62 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked {
         /**
          * (Updatable) Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
          */
         expired?: pulumi.Input<boolean>;
         /**
          * (Updatable) The date and time that the current resource was locked
+         *
+         * **Added In:** 19.1.4
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         lockDate?: pulumi.Input<string>;
         /**
          * (Updatable) Indicates that the rev is locked
+         *
+         * **Added In:** 19.1.4
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         on?: pulumi.Input<boolean>;
         /**
          * (Updatable) Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         reason?: pulumi.Input<number>;
     }
@@ -28378,10 +38152,33 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked {
         /**
          * (Updatable) The date and time that the current resource was locked
+         *
+         * **Added In:** 19.1.4
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
          */
         lockDate?: pulumi.Input<string>;
         /**
          * (Updatable) Indicates that the rev is locked
+         *
+         * **Added In:** 19.1.4
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         on?: pulumi.Input<boolean>;
     }
@@ -28389,90 +38186,334 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser {
         /**
          * (Updatable) Boolean value to prompt user to setup account recovery during login.
+         *
+         * **Added In:** 19.1.4
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
          */
         accountRecoveryRequired?: pulumi.Input<boolean>;
         /**
          * (Updatable) Accounts assigned to this User. Each value of this attribute refers to an app-specific identity that is owned by this User. Therefore, this attribute is a convenience that allows one to see on each User the Apps to which that User has access.
+         *
+         * **SCIM++ Properties:**
+         * * idcsPii: true
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         accounts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount>[]>;
         /**
          * (Updatable) A list of all AppRoles to which this User belongs directly, indirectly or implicitly. The User could belong directly because the User is a member of the AppRole, could belong indirectly because the User is a member of a Group that is a member of the AppRole, or could belong implicitly because the AppRole is public.
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         appRoles?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole>[]>;
         /**
          * (Updatable) The app against which the user will authenticate. The value is not persisted but rather calculated. If the user's delegatedAuthenticationTargetApp is set, that value is returned. Otherwise, the app returned by evaluating the user's applicable Delegated Authentication Policy is returned.
+         *
+         * **Added In:** 18.1.6
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         applicableAuthenticationTargetApps?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp>[]>;
         /**
          * (Updatable) A Boolean value indicating whether or not to send email notification after creating the user. This attribute is not used in update/replace operations.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:ByPass Notification]]
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
          */
         bypassNotification?: pulumi.Input<boolean>;
         /**
          * (Updatable) User creation mechanism
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeNameMappings: [[defaultValue:import]]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          */
         creationMechanism?: pulumi.Input<string>;
         /**
          * (Updatable) If set, indicates the user's preferred authentication target app. If not set and the user's \"syncedFromApp\" is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Cloud Infrastructure IAM.
+         *
+         * **Added In:** 17.4.6
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          */
         delegatedAuthenticationTargetApp?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp>;
         /**
          * (Updatable) A Boolean value indicating whether or not to hide the getting started page
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         doNotShowGettingStarted?: pulumi.Input<boolean>;
         /**
          * (Updatable) Grants to this User. Each value of this attribute refers to a Grant to this User of some App (and optionally of some entitlement). Therefore, this attribute is a convenience that allows one to see on each User all of the Grants to that User.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         grants?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant>[]>;
         /**
          * (Updatable) Description:
+         *
+         * **Added In:** 19.2.1
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value, idcsAppRoleId]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
          */
         idcsAppRolesLimitedToGroups?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup>[]>;
         /**
          * (Updatable) A Boolean value indicating whether or not a user is enrolled for account recovery
+         *
+         * **Added In:** 19.1.4
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: boolean
+         * * uniqueness: none
          */
         isAccountRecoveryEnrolled?: pulumi.Input<boolean>;
         /**
          * (Updatable) A Boolean value indicating whether or not authentication request by this user should be delegated to a remote app. This value should be true only when the User was originally synced from an app which is enabled for delegated authentication
+         *
+         * **Added In:** 17.4.6
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
          */
         isAuthenticationDelegated?: pulumi.Input<boolean>;
         /**
          * (Updatable) A Boolean value indicating whether or not the user is federated.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Federated
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Federated]]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         isFederatedUser?: pulumi.Input<boolean>;
         /**
          * (Updatable) A Boolean value indicating whether or not group membership is normalized for this user.
+         *
+         * **Deprecated Since: 19.3.3**
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
          */
         isGroupMembershipNormalized?: pulumi.Input<boolean>;
         /**
          * (Updatable) A Boolean value Indicates whether this User's group membership has been sync'ed from Group.members to UsersGroups.
+         *
+         * **Added In:** 19.3.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
          */
         isGroupMembershipSyncedToUsersGroups?: pulumi.Input<boolean>;
         /**
          * (Updatable) Specifies the EmailTemplate to be used when sending notification to the user this request is for. If specified, it overrides the default EmailTemplate for this event.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: writeOnly
+         * * required: false
+         * * returned: never
+         * * type: string
+         * * uniqueness: none
          */
         notificationEmailTemplateId?: pulumi.Input<string>;
         /**
          * (Updatable) A supplemental status indicating the reason why a user is disabled
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: string
+         * * uniqueness: none
          */
         status?: pulumi.Input<string>;
         /**
          * (Updatable) A list of Support Accounts corresponding to user.
+         *
+         * **Added In:** 2103141444
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          */
         supportAccounts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount>[]>;
         /**
          * (Updatable) Managed App or an Identity Source from where the user is synced. If enabled, this Managed App or Identity Source can be used for performing delegated authentication.
+         *
+         * **Added In:** 18.2.6
+         *
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          */
         syncedFromApp?: pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp>;
         /**
          * (Updatable) A Boolean value indicating whether to bypass notification and return user token to be used by an external client to control the user flow.
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: never
+         * * type: boolean
+         * * uniqueness: none
          */
         userFlowControlledByExternalClient?: pulumi.Input<boolean>;
         /**
          * (Updatable) User Support Account Provider
+         *
+         * **Added In:** 2103141444
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         userProvider?: pulumi.Input<string>;
         /**
          * (Updatable) User token returned if userFlowControlledByExternalClient is true
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          */
         userTokens?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken>[]>;
     }
@@ -28480,22 +38521,79 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount {
         /**
          * (Updatable) Status of the account
+         *
+         * **Added In:** 17.4.6
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         active?: pulumi.Input<boolean>;
         /**
          * (Updatable) The ID of the App in this Grant.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         appId?: pulumi.Input<string>;
         /**
          * (Updatable) Name of the account assigned to the User.
+         *
+         * **Added In:** 17.4.6
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         name?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value?: pulumi.Input<string>;
     }
@@ -28503,34 +38601,113 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole {
         /**
          * (Updatable) If true, then the role provides administrative access privileges. READ-ONLY.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         adminRole?: pulumi.Input<boolean>;
         /**
          * (Updatable) The ID of the App in this Grant.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         appId?: pulumi.Input<string>;
         /**
          * (Updatable) The name (Client ID) of the App that defines this AppRole.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         appName?: pulumi.Input<string>;
         /**
          * (Updatable) A human readable name, primarily used for display purposes.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) The name (if any) under which this AppRole should appear in this User's group-memberships for reasons of backward compatibility. Oracle Cloud Infrastructure IAM distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         legacyGroupName?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) A label indicating the attribute's function.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -28538,22 +38715,76 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp {
         /**
          * (Updatable) A human readable name, primarily used for display purposes.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) Timeout interval for Synchronization TargetAction in milliseconds
+         *
+         * **Added In:** 18.2.6
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
          */
         targetRequestTimeout?: pulumi.Input<number>;
         /**
          * (Updatable) A label indicating the attribute's function.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value?: pulumi.Input<string>;
     }
@@ -28561,18 +38792,60 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp {
         /**
          * (Updatable) A human readable name, primarily used for display purposes.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) A label indicating the attribute's function.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -28580,22 +38853,78 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant {
         /**
          * (Updatable) The ID of the App in this Grant.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         appId?: pulumi.Input<string>;
         /**
          * (Updatable) Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\nA customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':\n - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.\n - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\n - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         grantMechanism?: pulumi.Input<string>;
         /**
          * (Updatable) Grantor identifier
+         *
+         * **Added In:** 20.1.3
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         grantorId?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value?: pulumi.Input<string>;
     }
@@ -28603,22 +38932,79 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup {
         /**
          * (Updatable) A human readable name, primarily used for display purposes.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) The id of the Oracle Cloud Infrastructure IAM AppRole grant limited to one or more Groups.
+         *
+         * **Added In:** 19.2.1
+         *
+         * **SCIM++ Properties:**
+         * * idcsCsvAttributeName: IDCS AppRole Name
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         idcsAppRoleId: pulumi.Input<string>;
         /**
          * (Updatable) Ocid of the User's Support Account.
+         *
+         * **Added In:** 2103141444
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -28626,22 +39012,82 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount {
         /**
          * (Updatable) Ocid of the User's Support Account.
+         *
+         * **Added In:** 2103141444
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) User Support User Id
+         *
+         * **Added In:** 2103141444
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         userId?: pulumi.Input<string>;
         /**
          * (Updatable) User Support Account Provider
+         *
+         * **Added In:** 2103141444
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
          */
         userProvider?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value?: pulumi.Input<string>;
     }
@@ -28649,18 +39095,60 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp {
         /**
          * (Updatable) A human readable name, primarily used for display purposes.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) A label indicating the attribute's function.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -28668,10 +39156,34 @@ export namespace Identity {
     export interface DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken {
         /**
          * (Updatable) User Token URI
+         *
+         * **Added In:** 18.4.2
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: reference
+         * * uniqueness: none
          */
         ref?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value?: pulumi.Input<string>;
     }
@@ -28679,18 +39191,58 @@ export namespace Identity {
     export interface DomainsUserX509certificate {
         /**
          * (Updatable) A human readable name, primarily used for display purposes.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         display?: pulumi.Input<string>;
         /**
          * (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
          */
         primary?: pulumi.Input<boolean>;
         /**
          * (Updatable) A label indicating the attribute's function.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
          * (Updatable) The value of a X509 certificate.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         value: pulumi.Input<string>;
     }
@@ -29354,6 +39906,10 @@ export namespace Jms {
         logGroupId: pulumi.Input<string>;
         /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         logId: pulumi.Input<string>;
     }
@@ -29365,6 +39921,10 @@ export namespace Jms {
         logGroupId: pulumi.Input<string>;
         /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         logId: pulumi.Input<string>;
     }
@@ -29790,6 +40350,10 @@ export namespace LoadBalancer {
         ipAddress: pulumi.Input<string>;
         /**
          * A friendly name for the backend set. It must be unique and it cannot be changed.
+         *
+         * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+         *
+         * Example: `exampleBackendSet`
          */
         name?: pulumi.Input<string>;
         /**
@@ -29813,6 +40377,12 @@ export namespace LoadBalancer {
         intervalMs?: pulumi.Input<number>;
         /**
          * (Updatable) Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
+         *
+         * If "true", health checks will be done using plain text even if the associated backend set is configured to use SSL.
+         *
+         * If "false", health checks will be done using SSL encryption if the associated backend set is configured to use SSL. If the backend set is not so configured the health checks will be done using plain text.
+         *
+         * Example: `false`
          */
         isForcePlainText?: pulumi.Input<boolean>;
         /**
@@ -29856,6 +40426,16 @@ export namespace LoadBalancer {
         disableFallback?: pulumi.Input<boolean>;
         /**
          * (Updatable) The domain in which the cookie is valid. The `Set-cookie` header inserted by the load balancer contains a domain attribute with the specified value.
+         *
+         * This attribute has no default value. If you do not specify a value, the load balancer does not insert the domain attribute into the `Set-cookie` header.
+         *
+         * **Notes:**
+         * *  [RFC 6265 - HTTP State Management Mechanism](https://www.ietf.org/rfc/rfc6265.txt) describes client and browser behavior when the domain attribute is present or not present in the `Set-cookie` header.
+         *
+         * If the value of the `Domain` attribute is `example.com` in the `Set-cookie` header, the client includes the same cookie in the `Cookie` header when making HTTP requests to `example.com`, `www.example.com`, and `www.abc.example.com`. If the `Domain` attribute is not present, the client returns the cookie only for the domain to which the original request was made.
+         * *  Ensure that this attribute specifies the correct domain value. If the `Domain` attribute in the `Set-cookie` header does not include the domain to which the original request was made, the client or browser might reject the cookie. As specified in RFC 6265, the client accepts a cookie with the `Domain` attribute value `example.com` or `www.example.com` sent from `www.example.com`. It does not accept a cookie with the `Domain` attribute `abc.example.com` or `www.abc.example.com` sent from `www.example.com`.
+         *
+         * Example: `example.com`
          */
         domain?: pulumi.Input<string>;
         /**
@@ -29864,14 +40444,28 @@ export namespace LoadBalancer {
         isHttpOnly?: pulumi.Input<boolean>;
         /**
          * (Updatable) Whether the `Set-cookie` header should contain the `Secure` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `Secure` attribute, which directs the client or browser to send the cookie only using a secure protocol.
+         *
+         * **Note:** If you set this field to `true`, you cannot associate the corresponding backend set with an HTTP listener.
+         *
+         * Example: `true`
          */
         isSecure?: pulumi.Input<boolean>;
         /**
          * (Updatable) The amount of time the cookie remains valid. The `Set-cookie` header inserted by the load balancer contains a `Max-Age` attribute with the specified value.
+         *
+         * The specified value must be at least one second. There is no default value for this attribute. If you do not specify a value, the load balancer does not include the `Max-Age` attribute in the `Set-cookie` header. In most cases, the client or browser retains the cookie until the current session ends, as defined by the client.
+         *
+         * Example: `3600`
          */
         maxAgeInSeconds?: pulumi.Input<number>;
         /**
          * (Updatable) The path in which the cookie is valid. The `Set-cookie header` inserted by the load balancer contains a `Path` attribute with the specified value.
+         *
+         * Clients include the cookie in an HTTP request only if the path portion of the request-uri matches, or is a subdirectory of, the cookie's `Path` attribute.
+         *
+         * The default value is `/`.
+         *
+         * Example: `/example`
          */
         path?: pulumi.Input<string>;
     }
@@ -29898,14 +40492,47 @@ export namespace LoadBalancer {
         certificateName?: pulumi.Input<string>;
         /**
          * (Updatable) The name of the cipher suite to use for HTTPS or SSL connections.
+         *
+         * If this field is not specified, the default is `oci-default-ssl-cipher-suite-v1`.
+         *
+         * **Notes:**
+         * *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
+         * *  You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
+         * *  If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+         * *  If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+         * *  The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
+         * *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
+         * *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
+         *
+         * example: `exampleCipherSuite`
          */
         cipherSuiteName?: pulumi.Input<string>;
         /**
          * (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
+         *
+         * The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
+         *
+         * The Load Balancing service supports the following protocols:
+         * *  TLSv1
+         * *  TLSv1.1
+         * *  TLSv1.2
+         *
+         * If this field is not specified, TLSv1.2 is the default.
+         *
+         * **Warning:** All SSL listeners created on a given port must use the same set of SSL protocols.
+         *
+         * **Notes:**
+         * *  The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
+         * *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
+         * *  For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
+         *
+         * example: `["TLSv1.1", "TLSv1.2"]`
          */
         protocols?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client ciphers.
+         *
+         * **Note:** This configuration is applicable only when the load balancer is acting as an SSL/HTTPS server. This field is ignored when the `SSLConfiguration` object is associated with a backend set.
          */
         serverOrderPreference?: pulumi.Input<string>;
         /**
@@ -29917,7 +40544,10 @@ export namespace LoadBalancer {
          */
         verifyDepth?: pulumi.Input<number>;
         /**
-         * (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true`
+         * (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true` 
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         verifyPeerCertificate?: pulumi.Input<boolean>;
     }
@@ -30157,6 +40787,10 @@ export namespace LoadBalancer {
         backendTcpProxyProtocolVersion?: pulumi.Input<number>;
         /**
          * (Updatable) The maximum idle time, in seconds, allowed between two successive receive or two successive send operations between the client and backend servers. A send operation does not reset the timer for receive operations. A receive operation does not reset the timer for send operations.
+         *
+         * For more information, see [Connection Configuration](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
+         *
+         * Example: `1200`
          */
         idleTimeoutInSeconds: pulumi.Input<string>;
     }
@@ -30172,14 +40806,47 @@ export namespace LoadBalancer {
         certificateName?: pulumi.Input<string>;
         /**
          * (Updatable) The name of the cipher suite to use for HTTPS or SSL connections.
+         *
+         * If this field is not specified, the default is `oci-default-ssl-cipher-suite-v1`.
+         *
+         * **Notes:**
+         * *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite. Clients cannot perform an SSL handshake if there is an incompatible configuration.
+         * *  You must ensure compatibility between the ciphers configured in the cipher suite and the configured certificates. For example, RSA-based ciphers require RSA certificates and ECDSA-based ciphers require ECDSA certificates.
+         * *  If the cipher configuration is not modified after load balancer creation, the `GET` operation returns `oci-default-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+         * *  If the cipher configuration was modified using Oracle operations after load balancer creation, the `GET` operation returns `oci-customized-ssl-cipher-suite` as the value of this field in the SSL configuration for existing listeners that predate this feature.
+         * *  The `GET` operation returns `oci-wider-compatible-ssl-cipher-suite-v1` as the value of this field in the SSL configuration for existing backend sets that predate this feature.
+         * *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
+         * *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
+         *
+         * example: `exampleCipherSuite`
          */
         cipherSuiteName?: pulumi.Input<string>;
         /**
          * (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
+         *
+         * The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
+         *
+         * The Load Balancing service supports the following protocols:
+         * *  TLSv1
+         * *  TLSv1.1
+         * *  TLSv1.2
+         *
+         * If this field is not specified, TLSv1.2 is the default.
+         *
+         * **Warning:** All SSL listeners created on a given port must use the same set of SSL protocols.
+         *
+         * **Notes:**
+         * *  The handshake to establish an SSL connection fails if the client supports none of the specified protocols.
+         * *  You must ensure compatibility between the specified SSL protocols and the ciphers configured in the cipher suite.
+         * *  For all existing load balancer listeners and backend sets that predate this feature, the `GET` operation displays a list of SSL protocols currently used by those resources.
+         *
+         * example: `["TLSv1.1", "TLSv1.2"]`
          */
         protocols?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client ciphers.
+         *
+         * **Note:** This configuration is applicable only when the load balancer is acting as an SSL/HTTPS server. This field is ignored when the `SSLConfiguration` object is associated with a backend set.
          */
         serverOrderPreference?: pulumi.Input<string>;
         /**
@@ -30191,7 +40858,11 @@ export namespace LoadBalancer {
          */
         verifyDepth?: pulumi.Input<number>;
         /**
-         * (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true`
+         * (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true` 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         verifyPeerCertificate?: pulumi.Input<boolean>;
     }
@@ -30235,7 +40906,11 @@ export namespace LoadBalancer {
          */
         condition: pulumi.Input<string>;
         /**
-         * (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
+         * (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         name: pulumi.Input<string>;
     }
@@ -30246,7 +40921,11 @@ export namespace LoadBalancer {
          */
         backendSetName: pulumi.Input<string>;
         /**
-         * (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
+         * (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         name: pulumi.Input<string>;
     }
@@ -30254,6 +40933,10 @@ export namespace LoadBalancer {
     export interface LoadBalancerShapeDetails {
         /**
          * (Updatable) Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
+         *
+         * The values must be between minimumBandwidthInMbps and 8000 (8Gbps).
+         *
+         * Example: `1500`
          */
         maximumBandwidthInMbps: pulumi.Input<number>;
         /**
@@ -30272,6 +40955,8 @@ export namespace LoadBalancer {
          * *  Path strings are case-insensitive.
          * *  Asterisk (*) wildcards are not supported.
          * *  Regular expressions are not supported.
+         *
+         * Example: `/example/video/123`
          */
         path: pulumi.Input<string>;
         /**
@@ -30287,6 +40972,12 @@ export namespace LoadBalancer {
          * *  **FORCE_LONGEST_PREFIX_MATCH** - Looks for the `path` string with the best, longest match of the beginning portion of the incoming URI path.
          * *  **PREFIX_MATCH** - Looks for a `path` string that matches the beginning portion of the incoming URI path.
          * *  **SUFFIX_MATCH** - Looks for a `path` string that matches the ending portion of the incoming URI path.
+         *
+         * For a full description of how the system handles `matchType` in a path route set containing multiple rules, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         matchType: pulumi.Input<string>;
     }
@@ -30298,6 +40989,14 @@ export namespace LoadBalancer {
         action: pulumi.Input<string>;
         /**
          * (Updatable) The list of HTTP methods allowed for this listener.
+         *
+         * By default, you can specify only the standard HTTP methods defined in the [HTTP Method Registry](http://www.iana.org/assignments/http-methods/http-methods.xhtml). You can also see a list of supported standard HTTP methods in the Load Balancing service documentation at [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
+         *
+         * Your backend application must be able to handle the methods specified in this list.
+         *
+         * The list of HTTP methods is extensible. If you need to configure custom HTTP methods, contact [My Oracle Support](http://support.oracle.com/) to remove the restriction for your tenancy.
+         *
+         * Example: ["GET", "PUT", "POST", "PROPFIND"]
          */
         allowedMethods?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -30310,6 +41009,8 @@ export namespace LoadBalancer {
         conditions?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.RuleSetItemCondition>[]>;
         /**
          * (Updatable) A brief description of the access control rule. Avoid entering confidential information.
+         *
+         * example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
          */
         description?: pulumi.Input<string>;
         /**
@@ -30324,14 +41025,50 @@ export namespace LoadBalancer {
          * (Updatable) A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
          * *  value cannot contain `$`
          * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+         *
+         * Example: `examplePrefixValue`
          */
         prefix?: pulumi.Input<string>;
         /**
          * (Updatable) An object that defines the redirect URI applied to the original request. The object property values compose the redirect URI.
+         *
+         * **NOTE:** The Load Balancing service cannot automatically detect or avoid infinite redirects. Be sure to provide meaningful, complete, and correct field values. If any component field of this object has no value, the system retains the value from the incoming HTTP request URI.
+         *
+         * For example, if you specify only the protocol field `https`, and the incoming request URI is `http://example.com:8080`, the resulting runtime redirect URI is `https://example.com:8080`. The system retains the host and port from the incoming URI and does not automatically change the port setting from `8080` to `443`.
+         *
+         * Be sure to configure valid percent-encoding (URL encoding) when needed.
+         *
+         * In addition to static string values, you can use the following tokens to construct the redirect URI. These tokens extract values from the incoming HTTP request URI.
+         * *  {protocol} : The protocol from the incoming HTTP request URI.
+         * *  {host}     : The domain name from the incoming HTTP request URI.
+         * *  {port}     : The port from the incoming HTTP request URI.
+         * *  {path}     : The path from the incoming HTTP request URI.
+         * *  {query}    : The query string from the incoming HTTP request URI.
+         *
+         * The tokens are case sensitive. For example, `{host}` is a valid token, but `{HOST}` is not.
+         *
+         * You can retain the literal characters of a token when you specify values for the path and query properties of the redirect URI. Use a backslash (\\) as the escape character for the \\, {, and } characters. For example, if the incoming HTTP request URI is `/video`, the path property value:
+         *
+         * `/example{path}123\{path\}`
+         *
+         * appears in the constructed redirect URI as:
+         *
+         * `/example/video123{path}`
          */
         redirectUri?: pulumi.Input<inputs.LoadBalancer.RuleSetItemRedirectUri>;
         /**
          * (Updatable) The HTTP status code to return when the incoming request is redirected.
+         *
+         * The status line returned with the code is mapped from the standard HTTP specification. Valid response codes for redirection are:
+         * *  301
+         * *  302
+         * *  303
+         * *  307
+         * *  308
+         *
+         * The default value is `302` (Found).
+         *
+         * Example: `301`
          */
         responseCode?: pulumi.Input<number>;
         /**
@@ -30342,12 +41079,16 @@ export namespace LoadBalancer {
          * (Updatable) A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
          * *  value cannot contain `$`
          * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+         *
+         * Example: `exampleSuffixValue`
          */
         suffix?: pulumi.Input<string>;
         /**
          * (Updatable) A header value that conforms to RFC 7230. With the following exceptions:
          * *  value cannot contain `$`
          * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+         *
+         * Example: `exampleValue`
          */
         value?: pulumi.Input<string>;
     }
@@ -30377,22 +41118,80 @@ export namespace LoadBalancer {
     export interface RuleSetItemRedirectUri {
         /**
          * (Updatable) The valid domain name (hostname) or IP address to use in the redirect URI.
+         *
+         * When this value is null, not set, or set to `{host}`, the service preserves the original domain name from the incoming HTTP request URI.
+         *
+         * All RedirectUri tokens are valid for this property. You can use any token more than once.
+         *
+         * Curly braces are valid in this property only to surround tokens, such as `{host}`
+         *
+         * Examples:
+         * *  **example.com** appears as `example.com` in the redirect URI.
+         * *  **in{host}** appears as `inexample.com` in the redirect URI if `example.com` is the hostname in the incoming HTTP request URI.
+         * *  **{port}{host}** appears as `8081example.com` in the redirect URI if `example.com` is the hostname and the port is `8081` in the incoming HTTP request URI.
          */
         host?: pulumi.Input<string>;
         /**
          * (Updatable) The HTTP URI path to use in the redirect URI.
+         *
+         * When this value is null, not set, or set to `{path}`, the service preserves the original path from the incoming HTTP request URI. To omit the path from the redirect URI, set this value to an empty string, "".
+         *
+         * All RedirectUri tokens are valid for this property. You can use any token more than once.
+         *
+         * The path string must begin with `/` if it does not begin with the `{path}` token.
+         *
+         * Examples:
+         * *  __/example/video/123__ appears as `/example/video/123` in the redirect URI.
+         * *  __/example{path}__ appears as `/example/video/123` in the redirect URI if `/video/123` is the path in the incoming HTTP request URI.
+         * *  __{path}/123__ appears as `/example/video/123` in the redirect URI if `/example/video` is the path in the incoming HTTP request URI.
+         * *  __{path}123__ appears as `/example/video123` in the redirect URI if `/example/video` is the path in the incoming HTTP request URI.
+         * *  __/{host}/123__ appears as `/example.com/123` in the redirect URI if `example.com` is the hostname in the incoming HTTP request URI.
+         * *  __/{host}/{port}__ appears as `/example.com/123` in the redirect URI if `example.com` is the hostname and `123` is the port in the incoming HTTP request URI.
+         * *  __/{query}__ appears as `/lang=en` in the redirect URI if the query is `lang=en` in the incoming HTTP request URI.
          */
         path?: pulumi.Input<string>;
         /**
          * (Updatable) The communication port to use in the redirect URI.
+         *
+         * Valid values include integers from 1 to 65535.
+         *
+         * When this value is null, the service preserves the original port from the incoming HTTP request URI.
+         *
+         * Example: `8081`
          */
         port?: pulumi.Input<number>;
         /**
          * (Updatable) The HTTP protocol to use in the redirect URI.
+         *
+         * When this value is null, not set, or set to `{protocol}`, the service preserves the original protocol from the incoming HTTP request URI. Allowed values are:
+         * *  HTTP
+         * *  HTTPS
+         * *  {protocol}
+         *
+         * `{protocol}` is the only valid token for this property. It can appear only once in the value string.
+         *
+         * Example: `HTTPS`
          */
         protocol?: pulumi.Input<string>;
         /**
          * (Updatable) The query string to use in the redirect URI.
+         *
+         * When this value is null, not set, or set to `{query}`, the service preserves the original query parameters from the incoming HTTP request URI.
+         *
+         * All `RedirectUri` tokens are valid for this property. You can use any token more than once.
+         *
+         * If the query string does not begin with the `{query}` token, it must begin with the question mark (?) character.
+         *
+         * You can specify multiple query parameters as a single string. Separate each query parameter with an ampersand (&) character. To omit all incoming query parameters from the redirect URI, set this value to an empty string, "".
+         *
+         * If the specified query string results in a redirect URI ending with `?` or `&`, the last character is truncated. For example, if the incoming URI is `http://host.com:8080/documents` and the query property value is `?lang=en&{query}`, the redirect URI is `http://host.com:8080/documents?lang=en`. The system truncates the final ampersand (&) because the incoming URI included no value to replace the {query} token.
+         *
+         * Examples:
+         * * **lang=en&time_zone=PST** appears as `lang=en&time_zone=PST` in the redirect URI.
+         * * **{query}** appears as `lang=en&time_zone=PST` in the redirect URI if `lang=en&time_zone=PST` is the query string in the incoming HTTP request. If the incoming HTTP request has no query parameters, the `{query}` token renders as an empty string.
+         * * **lang=en&{query}&time_zone=PST** appears as `lang=en&country=us&time_zone=PST` in the redirect URI if `country=us` is the query string in the incoming HTTP request. If the incoming HTTP request has no query parameters, this value renders as `lang=en&time_zone=PST`.
+         * *  **protocol={protocol}&hostname={host}** appears as `protocol=http&hostname=example.com` in the redirect URI if the protocol is `HTTP` and the hostname is `example.com` in the incoming HTTP request.
+         * *  **port={port}&hostname={host}** appears as `port=8080&hostname=example.com` in the redirect URI if the port is `8080` and the hostname is `example.com` in the incoming HTTP request URI.
          */
         query?: pulumi.Input<string>;
     }
@@ -30566,7 +41365,11 @@ export namespace LogAnalytics {
          */
         metricName: pulumi.Input<string>;
         /**
-         * The Logging Analytics namespace used for the request.
+         * The Logging Analytics namespace used for the request. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         namespace: pulumi.Input<string>;
         /**
@@ -30843,6 +41646,10 @@ export namespace Logging {
         paths?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) Unified schema logging source type.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         sourceType: pulumi.Input<string>;
     }
@@ -31332,6 +42139,10 @@ export namespace Marketplace {
         phone?: pulumi.Input<string>;
         /**
          * (Updatable) The email subject line to use when contacting support.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         subject?: pulumi.Input<string>;
     }
@@ -31450,6 +42261,10 @@ export namespace MediaServices {
     export interface MediaAssetMediaAssetTag {
         /**
          * (Updatable) The type of the media asset.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type?: pulumi.Input<string>;
         /**
@@ -31530,6 +42345,10 @@ export namespace MediaServices {
         type: pulumi.Input<string>;
         /**
          * (Updatable) The version of the MediaWorkflowTaskDeclaration.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         version: pulumi.Input<string>;
     }
@@ -31709,6 +42528,10 @@ export namespace MeteringComputation {
         reportQuery: pulumi.Input<inputs.MeteringComputation.QueryQueryDefinitionReportQuery>;
         /**
          * (Updatable) The saved query version.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         version: pulumi.Input<number>;
     }
@@ -32023,6 +42846,10 @@ export namespace MeteringComputation {
         timeUsageEnded?: pulumi.Input<string>;
         /**
          * The usage start time.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         timeUsageStarted?: pulumi.Input<string>;
         /**
@@ -32059,6 +42886,10 @@ export namespace Monitoring {
     export interface AlarmSuppression {
         /**
          * (Updatable) Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+         *
+         * Oracle recommends including tracking information for the event or associated work, such as a ticket number.
+         *
+         * Example: `Planned outage due to change IT-1234.`
          */
         description?: pulumi.Input<string>;
         /**
@@ -32066,7 +42897,11 @@ export namespace Monitoring {
          */
         timeSuppressFrom: pulumi.Input<string>;
         /**
-         * (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
+         * (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z` 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         timeSuppressUntil: pulumi.Input<string>;
     }
@@ -32140,7 +42975,10 @@ export namespace Mysql {
          */
         nodeId?: pulumi.Input<string>;
         /**
-         * (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`.
+         * (Updatable) The target state for the Analytics Cluster. Could be set to `ACTIVE` or `INACTIVE`. 
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         state?: pulumi.Input<string>;
         /**
@@ -32237,6 +43075,10 @@ export namespace Mysql {
         filters?: pulumi.Input<pulumi.Input<inputs.Mysql.ChannelTargetFilter>[]>;
         /**
          * (Updatable) The specific target identifier.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         targetType: pulumi.Input<string>;
     }
@@ -32244,6 +43086,8 @@ export namespace Mysql {
     export interface ChannelTargetFilter {
         /**
          * (Updatable) The type of the filter rule.
+         *
+         * For details on each type, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html)
          */
         type: pulumi.Input<string>;
         /**
@@ -32349,6 +43193,9 @@ export namespace Mysql {
         nodeId?: pulumi.Input<string>;
         /**
          * (Updatable) The target state for the HeatWave cluster. Could be set to `ACTIVE` or `INACTIVE`.
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         state?: pulumi.Input<string>;
         /**
@@ -32479,6 +43326,10 @@ export namespace Mysql {
         pitrPolicies?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy>[]>;
         /**
          * (Updatable) Number of days to retain this backup.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         retentionInDays?: pulumi.Input<number>;
         /**
@@ -32558,6 +43409,12 @@ export namespace Mysql {
     export interface MysqlConfigurationInitVariables {
         /**
          * Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+         *
+         * lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
+         *
+         * Valid values are:
+         * * CASE_SENSITIVE - (default) Table and schema name comparisons are case-sensitive and stored as specified. (lower_case_table_names=0)
+         * * CASE_INSENSITIVE_LOWERCASE - Table and schema name comparisons are not case-sensitive and stored in lowercase. (lower_case_table_names=1)
          */
         lowerCaseTableNames?: pulumi.Input<string>;
     }
@@ -32569,6 +43426,8 @@ export namespace Mysql {
         autocommit?: pulumi.Input<boolean>;
         /**
          * If enabled, the server stores all temporary tables on disk rather than in memory.
+         *
+         * bigTables corresponds to the MySQL server variable [bigTables](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_big_tables).
          */
         bigTables?: pulumi.Input<boolean>;
         /**
@@ -32593,14 +43452,22 @@ export namespace Mysql {
         completionType?: pulumi.Input<string>;
         /**
          * The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
+         *
+         * connectTimeout corresponds to the MySQL system variable [connectTimeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_connect_timeout)
+         *
+         * Increasing the connectTimeout value might help if clients frequently encounter errors of the form "Lost connection to MySQL server at 'XXX', system error: errno".
          */
         connectTimeout?: pulumi.Input<number>;
         /**
          * Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+         *
+         * connectionMemoryChunkSize corresponds to the MySQL system variable [connectionMemoryChunkSize](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_chunk_size).
          */
         connectionMemoryChunkSize?: pulumi.Input<number>;
         /**
          * Set the maximum amount of memory that can be used by a single user connection.
+         *
+         * connectionMemoryLimit corresponds to the MySQL system variable [connectionMemoryLimit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_connection_memory_limit).
          */
         connectionMemoryLimit?: pulumi.Input<string>;
         /**
@@ -32623,10 +43490,14 @@ export namespace Mysql {
         generatedRandomPasswordLength?: pulumi.Input<number>;
         /**
          * Set the total amount of memory that can be used by all user connections.
+         *
+         * globalConnectionMemoryLimit corresponds to the MySQL system variable [globalConnectionMemoryLimit](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_limit).
          */
         globalConnectionMemoryLimit?: pulumi.Input<string>;
         /**
          * Determines whether the MySQL server calculates Global_connection_memory.
+         *
+         * globalConnectionMemoryTracking corresponds to the MySQL system variable [globalConnectionMemoryTracking](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_global_connection_memory_tracking).
          */
         globalConnectionMemoryTracking?: pulumi.Input<boolean>;
         /**
@@ -32643,6 +43514,12 @@ export namespace Mysql {
         informationSchemaStatsExpiry?: pulumi.Input<number>;
         /**
          * Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+         *
+         * innodbBufferPoolDumpPct corresponds to the MySQL InnoDB system variable [innodbBufferPoolDumpPct](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_buffer_pool_dump_pct).
+         *
+         * The range is 1 to 100. The default value is 25.
+         *
+         * For example, if there are 4 buffer pools with 100 pages each, and innodbBufferPoolDumpPct is set to 25, the 25 most recently used pages from each buffer pool are dumped.
          */
         innodbBufferPoolDumpPct?: pulumi.Input<number>;
         /**
@@ -32651,6 +43528,10 @@ export namespace Mysql {
         innodbBufferPoolInstances?: pulumi.Input<number>;
         /**
          * The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
+         *
+         * innodbBufferPoolSize corresponds to the MySQL server system variable [innodbBufferPoolSize](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size).
+         *
+         * The default and maximum values depend on the amount of RAM provisioned by the shape. See [Default User Variables](https://www.terraform.io/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
          */
         innodbBufferPoolSize?: pulumi.Input<string>;
         /**
@@ -32691,26 +43572,52 @@ export namespace Mysql {
         innodbLockWaitTimeout?: pulumi.Input<number>;
         /**
          * Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
+         *
+         * This is the MySQL variable "innodbLogWriterThreads". For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_log_writer_threads)
          */
         innodbLogWriterThreads?: pulumi.Input<boolean>;
         /**
          * The desired maximum purge lag in terms of transactions.
+         *
+         * InnoDB maintains a list of transactions that have index records delete-marked by UPDATE or DELETE operations. The length of the list is the purge lag.
+         *
+         * If this value is exceeded, a delay is imposed on INSERT, UPDATE, and DELETE operations to allow time for purge to catch up.
+         *
+         * The default value is 0, which means there is no maximum purge lag and no delay.
+         *
+         * innodbMaxPurgeLag corresponds to the MySQL server system variable [innodbMaxPurgeLag](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag).
          */
         innodbMaxPurgeLag?: pulumi.Input<string>;
         /**
          * The maximum delay in microseconds for the delay imposed when the innodbMaxPurgeLag threshold is exceeded.
+         *
+         * The specified innodbMaxPurgeLagDelay value is an upper limit on the delay period.
+         *
+         * innodbMaxPurgeLagDelay corresponds to the MySQL server system variable [innodbMaxPurgeLagDelay](https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_max_purge_lag_delay).
          */
         innodbMaxPurgeLagDelay?: pulumi.Input<number>;
         /**
          * The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+         *
+         * innodbStatsPersistentSamplePages corresponds to the MySQL InnoDB system variable [innodbStatsPersistentSamplePages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_persistent_sample_pages)
+         *
+         * innodbStatsPersistentSamplePages only applies when innodbStatsPersistent is enabled for a table; when innodbStatsPersistent is disabled, innodbStatsTransientSamplePages applies instead.
          */
         innodbStatsPersistentSamplePages?: pulumi.Input<string>;
         /**
          * The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+         *
+         * innodbStatsTransientSamplePages corresponds to the MySQL InnoDB system variable [innodbStatsTransientSamplePages](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_stats_transient_sample_pages)
+         *
+         * innodbStatsTransientSamplePages only applies when innodbStatsPersistent is disabled for a table; when innodbStatsPersistent is enabled, innodbStatsPersistentSamplePages applies instead.
+         *
+         * innodbStatsPersistent is ON by default and cannot be changed. It is possible to override it using the STATS_PERSISTENT clause of the [CREATE TABLE](https://dev.mysql.com/doc/refman/8.0/en/create-table.html) and [ALTER TABLE](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html) statements.
          */
         innodbStatsTransientSamplePages?: pulumi.Input<string>;
         /**
          * The number of seconds the server waits for activity on an interactive connection before closing it.
+         *
+         * interactiveTimeout corresponds to the MySQL system variable. [interactiveTimeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_interactive_timeout)
          */
         interactiveTimeout?: pulumi.Input<number>;
         /**
@@ -32723,10 +43630,14 @@ export namespace Mysql {
         mandatoryRoles?: pulumi.Input<string>;
         /**
          * The maximum size of one packet or any generated/intermediate string.
+         *
+         * This is the mysql variable "maxAllowedPacket".
          */
         maxAllowedPacket?: pulumi.Input<number>;
         /**
          * Sets the size of the transaction cache.
+         *
+         * maxBinlogCacheSize corresponds to the MySQL server system variable [maxBinlogCacheSize](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_max_binlog_cache_size).
          */
         maxBinlogCacheSize?: pulumi.Input<string>;
         /**
@@ -32743,6 +43654,8 @@ export namespace Mysql {
         maxExecutionTime?: pulumi.Input<string>;
         /**
          * This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+         *
+         * maxHeapTableSize corresponds to the MySQL system variable [maxHeapTableSize](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_heap_table_size)
          */
         maxHeapTableSize?: pulumi.Input<string>;
         /**
@@ -32761,6 +43674,8 @@ export namespace Mysql {
         mysqlZstdDefaultCompressionLevel?: pulumi.Input<number>;
         /**
          * The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
+         *
+         * mysqlxConnectTimeout corresponds to the MySQL X Plugin system variable [mysqlxConnectTimeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_connect_timeout)
          */
         mysqlxConnectTimeout?: pulumi.Input<number>;
         /**
@@ -32789,6 +43704,8 @@ export namespace Mysql {
         mysqlxIdleWorkerThreadTimeout?: pulumi.Input<number>;
         /**
          * The number of seconds to wait for interactive clients to timeout.
+         *
+         * mysqlxInteractiveTimeout corresponds to the MySQL X Plugin system variable. [mysqlxInteractiveTimeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_interactive_timeout)
          */
         mysqlxInteractiveTimeout?: pulumi.Input<number>;
         /**
@@ -32801,6 +43718,8 @@ export namespace Mysql {
         mysqlxLz4maxClientCompressionLevel?: pulumi.Input<number>;
         /**
          * The maximum size of network packets that can be received by X Plugin.
+         *
+         * This is the mysql variable "mysqlxMaxAllowedPacket".
          */
         mysqlxMaxAllowedPacket?: pulumi.Input<number>;
         /**
@@ -32811,14 +43730,20 @@ export namespace Mysql {
         mysqlxMinWorkerThreads?: pulumi.Input<number>;
         /**
          * The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
+         *
+         * mysqlxReadTimeout corresponds to the MySQL X Plugin system variable [mysqlxReadTimeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_read_timeout)
          */
         mysqlxReadTimeout?: pulumi.Input<number>;
         /**
          * The number of seconds that X Plugin waits for activity on a connection.
+         *
+         * mysqlxWaitTimeout corresponds to the MySQL X Plugin system variable. [mysqlxWaitTimeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_wait_timeout)
          */
         mysqlxWaitTimeout?: pulumi.Input<number>;
         /**
          * The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
+         *
+         * mysqlxReadmysqlxWriteTimeoutTimeout corresponds to the MySQL X Plugin system variable [mysqlxWriteTimeout](https://dev.mysql.com/doc/refman/8.0/en/x-plugin-options-system-variables.html#sysvar_mysqlx_write_timeout)
          */
         mysqlxWriteTimeout?: pulumi.Input<number>;
         /**
@@ -32831,10 +43756,14 @@ export namespace Mysql {
         mysqlxZstdMaxClientCompressionLevel?: pulumi.Input<number>;
         /**
          * The number of seconds to wait for more data from a connection before aborting the read.
+         *
+         * netReadTimeout corresponds to the MySQL system variable [netReadTimeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_read_timeout)
          */
         netReadTimeout?: pulumi.Input<number>;
         /**
          * The number of seconds to wait for a block to be written to a connection before aborting the write.
+         *
+         * netWriteTimeout corresponds to the MySQL system variable [netWriteTimeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_net_write_timeout)
          */
         netWriteTimeout?: pulumi.Input<number>;
         /**
@@ -32859,6 +43788,8 @@ export namespace Mysql {
         regexpTimeLimit?: pulumi.Input<number>;
         /**
          * Each session that must perform a sort allocates a buffer of this size.
+         *
+         * sortBufferSize corresponds to the MySQL system variable [sortBufferSize](https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_sort_buffer_size)
          */
         sortBufferSize?: pulumi.Input<string>;
         /**
@@ -32883,10 +43814,18 @@ export namespace Mysql {
         threadPoolMaxTransactionsLimit?: pulumi.Input<number>;
         /**
          * Initializes the time zone for each client that connects.
+         *
+         * This corresponds to the MySQL System Variable "timeZone".
+         *
+         * The values can be given in one of the following formats, none of which are case-sensitive:
+         * * As a string indicating an offset from UTC of the form [H]H:MM, prefixed with a + or -, such as '+10:00', '-6:00', or '+05:30'. The permitted range is '-13:59' to '+14:00', inclusive.
+         * * As a named time zone, as defined by the "IANA Time Zone database", such as 'Europe/Helsinki', 'US/Eastern', 'MET', or 'UTC'.
          */
         timeZone?: pulumi.Input<string>;
         /**
          * The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+         *
+         * tmpTableSize corresponds to the MySQL system variable [tmpTableSize](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_tmp_table_size)
          */
         tmpTableSize?: pulumi.Input<string>;
         /**
@@ -32895,6 +43834,12 @@ export namespace Mysql {
         transactionIsolation?: pulumi.Input<string>;
         /**
          * The number of seconds the server waits for activity on a noninteractive connection before closing it.
+         *
+         * waitTimeout corresponds to the MySQL system variable. [waitTimeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_wait_timeout)
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         waitTimeout?: pulumi.Input<number>;
     }
@@ -32946,6 +43891,14 @@ export namespace Mysql {
         retentionInDays?: pulumi.Input<number>;
         /**
          * (Updatable) The start of the 2 hour maintenance window.
+         *
+         * This string is of the format: "{day-of-week} {time-of-day}".
+         *
+         * "{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
+         *
+         * "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+         *
+         * If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
          */
         windowStartTime?: pulumi.Input<string>;
     }
@@ -33106,10 +44059,18 @@ export namespace Mysql {
     export interface MysqlDbSystemCurrentPlacement {
         /**
          * The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+         *
+         * In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+         *
+         * For a standalone DB System, this defines the availability domain in which the DB System is placed.
          */
         availabilityDomain?: pulumi.Input<string>;
         /**
          * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+         *
+         * In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
+         *
+         * For a standalone DB System, this defines the fault domain in which the DB System is placed.
          */
         faultDomain?: pulumi.Input<string>;
     }
@@ -33195,6 +44156,14 @@ export namespace Mysql {
     export interface MysqlDbSystemMaintenance {
         /**
          * (Updatable) The start of the 2 hour maintenance window.
+         *
+         * This string is of the format: "{day-of-week} {time-of-day}".
+         *
+         * "{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
+         *
+         * "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+         *
+         * If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
          */
         windowStartTime: pulumi.Input<string>;
     }
@@ -33472,6 +44441,10 @@ export namespace NetworkFirewall {
     export interface NetworkFirewallPolicyUrlListUrlListValue {
         /**
          * (Updatable) URL lists to allow or deny traffic to a group of URLs. You can include a maximum of 25 URLs in each list.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         pattern?: pulumi.Input<string>;
         /**
@@ -33501,6 +44474,10 @@ export namespace NetworkLoadBalancer {
         isOffline?: pulumi.Input<boolean>;
         /**
          * A user-friendly name for the backend set that must be unique and cannot be changed.
+         *
+         * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+         *
+         * Example: `exampleBackendSet`
          */
         name?: pulumi.Input<string>;
         /**
@@ -33672,6 +44649,14 @@ export namespace NetworkLoadBalancer {
     export interface NetworkLoadBalancerIpAddressReservedIp {
         /**
          * OCID of the reserved public IP address created with the virtual cloud network.
+         *
+         * Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+         *
+         * Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+         *
+         * Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+         *
+         * Example: "ocid1.publicip.oc1.phx.unique_ID"
          */
         id?: pulumi.Input<string>;
     }
@@ -33679,6 +44664,14 @@ export namespace NetworkLoadBalancer {
     export interface NetworkLoadBalancerReservedIp {
         /**
          * OCID of the reserved public IP address created with the virtual cloud network.
+         *
+         * Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
+         *
+         * Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
+         *
+         * Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
+         *
+         * Example: "ocid1.publicip.oc1.phx.unique_ID"
          */
         id?: pulumi.Input<string>;
     }
@@ -33702,6 +44695,10 @@ export namespace NetworkLoadBalancer {
         isOffline?: pulumi.Input<boolean>;
         /**
          * A user-friendly name for the backend set that must be unique and cannot be changed.
+         *
+         * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
+         *
+         * Example: `exampleBackendSet`
          */
         name?: pulumi.Input<string>;
         /**
@@ -33894,6 +44891,10 @@ export namespace Nosql {
         maxStorageInGbs: pulumi.Input<number>;
         /**
          * (Updatable) Maximum sustained write throughput limit for the table.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         maxWriteUnits: pulumi.Input<number>;
     }
@@ -34066,7 +45067,11 @@ export namespace ObjectStorage {
          */
         timeAmount: pulumi.Input<string>;
         /**
-         * (Updatable) The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
+         * (Updatable) The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         timeUnit: pulumi.Input<string>;
     }
@@ -34074,10 +45079,20 @@ export namespace ObjectStorage {
     export interface ObjectLifecyclePolicyRuleObjectNameFilter {
         /**
          * (Updatable) An array of glob patterns to match the object names to exclude. An empty array is ignored. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
+         *
+         * The special pattern characters have the following meanings:
+         *
+         * \           Escapes the following character
+         * *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a '-' in the range, make it the first or last character.
          */
         exclusionPatterns?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) An array of glob patterns to match the object names to include. An empty array includes all objects in the bucket. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
+         *
+         * The special pattern characters have the following meanings:
+         *
+         * \           Escapes the following character
+         * *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a '-' in the range, make it the first or last character.
          */
         inclusionPatterns?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -34117,6 +45132,10 @@ export namespace ObjectStorage {
         sourceObjectIfMatchEtag?: pulumi.Input<string>;
         /**
          * The version id of the object to be restored.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         sourceVersionId?: pulumi.Input<string>;
     }
@@ -35205,10 +46224,18 @@ export namespace Optimizer {
         tagNamespaceName: pulumi.Input<string>;
         /**
          * (Updatable) Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
+         *
+         * When the value for this field is `ANY`, the `tagValues` field should be empty, which enforces overrides to the recommendation for resources with any tag values attached to them.
+         *
+         * When the value for this field value is `VALUE`, the `tagValues` field must include a specific value or list of values. Overrides to the recommendation criteria only occur for resources that match the values in the `tagValues` fields.
          */
         tagValueType: pulumi.Input<string>;
         /**
          * (Updatable) The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         tagValues?: pulumi.Input<pulumi.Input<string>[]>;
     }
@@ -35380,6 +46407,10 @@ export namespace OsManagement {
         id?: pulumi.Input<string>;
         /**
          * software source name
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         name?: pulumi.Input<string>;
     }
@@ -35402,6 +46433,10 @@ export namespace OsManagement {
         id?: pulumi.Input<string>;
         /**
          * software source name
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         name?: pulumi.Input<string>;
     }
@@ -36044,6 +47079,10 @@ export namespace RecoveryMod {
     export interface ProtectedDatabaseRecoveryServiceSubnet {
         /**
          * (Updatable) The recovery service subnet OCID.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         recoveryServiceSubnetId: pulumi.Input<string>;
         /**
@@ -36452,6 +47491,10 @@ export namespace ServiceMesh {
         type: pulumi.Input<string>;
         /**
          * (Updatable) The OCID of the virtual service resource.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         virtualServiceId?: pulumi.Input<string>;
     }
@@ -36483,6 +47526,10 @@ export namespace ServiceMesh {
         type: pulumi.Input<string>;
         /**
          * (Updatable) The OCID of the virtual service resource.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         virtualServiceId?: pulumi.Input<string>;
     }
@@ -36624,7 +47671,11 @@ export namespace ServiceMesh {
          */
         listeners: pulumi.Input<pulumi.Input<inputs.ServiceMesh.IngressGatewayHostListener>[]>;
         /**
-         * A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
+         * A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name` 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         name: pulumi.Input<string>;
     }
@@ -36746,6 +47797,10 @@ export namespace ServiceMesh {
         requestTimeoutInMs?: pulumi.Input<string>;
         /**
          * (Updatable) Type of protocol.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
     }
@@ -36785,7 +47840,11 @@ export namespace ServiceMesh {
 
     export interface MeshMtls {
         /**
-         * (Updatable) DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
+         * (Updatable) DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         minimum: pulumi.Input<string>;
     }
@@ -37052,7 +48111,11 @@ export namespace StackMonitoring {
          */
         source?: pulumi.Input<string>;
         /**
-         * Monitored Resource Type.
+         * Monitored Resource Type. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type?: pulumi.Input<string>;
     }
@@ -37127,7 +48190,11 @@ export namespace StackMonitoring {
          */
         source?: pulumi.Input<string>;
         /**
-         * Monitored Resource Type.
+         * Monitored Resource Type. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type?: pulumi.Input<string>;
     }
@@ -37377,7 +48444,11 @@ export namespace StackMonitoring {
          */
         timeUpdated?: pulumi.Input<string>;
         /**
-         * A filter to return resources that match resource type.
+         * A filter to return resources that match resource type. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type?: pulumi.Input<string>;
     }
@@ -37489,7 +48560,11 @@ export namespace Streaming {
          */
         privateEndpointIp?: pulumi.Input<string>;
         /**
-         * If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed.
+         * If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         subnetId?: pulumi.Input<string>;
     }
@@ -37775,6 +48850,10 @@ export namespace VnMonitoring {
         subnetId?: pulumi.Input<string>;
         /**
          * The type of the `PathAnalysis` query.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
         /**
@@ -37806,6 +48885,10 @@ export namespace VnMonitoring {
         sourcePort?: pulumi.Input<number>;
         /**
          * The type of the `PathAnalysis` query.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
     }
@@ -37845,6 +48928,10 @@ export namespace VnMonitoring {
         subnetId?: pulumi.Input<string>;
         /**
          * The type of the `PathAnalysis` query.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
         /**
@@ -37895,7 +48982,11 @@ export namespace VnMonitoring {
          */
         vlanId?: pulumi.Input<string>;
         /**
-         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         vnicId?: pulumi.Input<string>;
     }
@@ -37968,7 +49059,11 @@ export namespace VnMonitoring {
          */
         vlanId?: pulumi.Input<string>;
         /**
-         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         vnicId?: pulumi.Input<string>;
     }
@@ -37978,6 +49073,10 @@ export namespace VulnerabilityScanning {
     export interface ContainerScanRecipeScanSettings {
         /**
          * (Updatable) The scan level
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         scanLevel: pulumi.Input<string>;
     }
@@ -37997,6 +49096,10 @@ export namespace VulnerabilityScanning {
         type: pulumi.Input<string>;
         /**
          * (Updatable) URL of the registry. Required for non-OCIR registry types (for OCIR registry types, it can be inferred from the tenancy).
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         url?: pulumi.Input<string>;
     }
@@ -38153,6 +49256,10 @@ export namespace VulnerabilityScanning {
         dayOfWeek?: pulumi.Input<string>;
         /**
          * (Updatable) How often the scan occurs
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         type: pulumi.Input<string>;
     }
@@ -38162,6 +49269,16 @@ export namespace Waa {
     export interface AppAccelerationPolicyResponseCachingPolicy {
         /**
          * (Updatable) When false, responses will not be cached by the backend based on response headers.
+         *
+         * When true, responses that contain one of the supported cache control headers will be cached according to the values specified in the cache control headers.
+         *
+         * The "X-Accel-Expires" header field sets caching time of a response in seconds. The zero value disables caching for a response. If the value starts with the @ prefix, it sets an absolute time in seconds since Epoch, up to which the response may be cached.
+         *
+         * If the header does not include the "X-Accel-Expires" field, parameters of caching may be set in the header fields "Expires" or "Cache-Control".
+         *
+         * If the header includes the "Set-Cookie" field, such a response will not be cached.
+         *
+         * If the header includes the "Vary" field with the special value "*", such a response will not be cached. If the header includes the "Vary" field with another value, such a response will be cached taking into account the corresponding request header fields.
          */
         isResponseHeaderBasedCachingEnabled?: pulumi.Input<boolean>;
     }
@@ -38176,6 +49293,8 @@ export namespace Waa {
     export interface AppAccelerationPolicyResponseCompressionPolicyGzipCompression {
         /**
          * (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
+         *
+         * When false, support for gzip compression is disabled and HTTP responses will not be compressed with gzip even if the client indicates support for gzip.
          */
         isEnabled?: pulumi.Input<boolean>;
     }
@@ -38420,6 +49539,10 @@ export namespace Waas {
         protocol: pulumi.Input<string>;
         /**
          * (Updatable) The query component of the target URL (e.g., "?redirected" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying. Use of \ is not permitted except to escape a following \, {, or }. An empty value results in a redirection target URL with no query component. A static value must begin with a leading "?", optionally followed by other query characters. A request-copying value must exactly match "{query}", and will be replaced with the query component of the request URL (including a leading "?" if and only if the request URL includes a query component).
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         query: pulumi.Input<string>;
     }
@@ -38447,6 +49570,10 @@ export namespace Waas {
     export interface PolicyOriginCustomHeader {
         /**
          * (Updatable) The unique name of the whitelist.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         name: pulumi.Input<string>;
         /**
@@ -38480,6 +49607,17 @@ export namespace Waas {
         cipherGroup?: pulumi.Input<string>;
         /**
          * (Updatable) Specifies an HTTP header name which is treated as the connecting client's IP address. Applicable only if `isBehindCdn` is enabled.
+         *
+         * The edge node reads this header and its value and sets the client IP address as specified. It does not create the header if the header is not present in the request. If the header is not present, the connecting IP address will be used as the client's true IP address. It uses the last IP address in the header's value as the true IP address.
+         *
+         * Example: `X-Client-Ip: 11.1.1.1, 13.3.3.3`
+         *
+         * In the case of multiple headers with the same name, only the first header will be used. It is assumed that CDN sets the correct client IP address to prevent spoofing.
+         * * **X_FORWARDED_FOR:** Corresponds to `X-Forwarded-For` header name.
+         * * **X_CLIENT_IP:** Corresponds to `X-Client-Ip` header name.
+         * * **X_REAL_IP:** Corresponds to `X-Real-Ip` header name.
+         * * **CLIENT_IP:** Corresponds to `Client-Ip` header name.
+         * * **TRUE_CLIENT_IP:** Corresponds to `True-Client-Ip` header name.
          */
         clientAddressHeader?: pulumi.Input<string>;
         /**
@@ -38524,6 +49662,8 @@ export namespace Waas {
          * * **TLS_V1_1:** corresponds to TLS 1.1 specification.
          * * **TLS_V1_2:** corresponds to TLS 1.2 specification.
          * * **TLS_V1_3:** corresponds to TLS 1.3 specification.
+         *
+         * Enabled TLS protocols must go in a row. For example if `TLS_v1_1` and `TLS_V1_3` are enabled, `TLS_V1_2` must be enabled too.
          */
         tlsProtocols?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -38547,6 +49687,8 @@ export namespace Waas {
         expectedResponseText?: pulumi.Input<string>;
         /**
          * (Updatable) HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
+         *
+         * **Note:** The only currently-supported header fields are Host and User-Agent.
          */
         headers?: pulumi.Input<{[key: string]: any}>;
         /**
@@ -38604,6 +49746,10 @@ export namespace Waas {
         method: pulumi.Input<string>;
         /**
          * (Updatable) The unique name of the whitelist.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         name?: pulumi.Input<string>;
     }
@@ -38714,6 +49860,10 @@ export namespace Waas {
         criterias: pulumi.Input<pulumi.Input<inputs.Waas.PolicyWafConfigAccessRuleCriteria>[]>;
         /**
          * (Updatable) The unique name of the whitelist.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         name: pulumi.Input<string>;
         /**
@@ -38751,6 +49901,15 @@ export namespace Waas {
          * * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
          * * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
          * * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
+         *
+         * *Example:* "GET\nPOST"
+         * * **HTTP_METHOD_IS_NOT:** Matches if the request is not identical to any of the contents of the `value` field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
+         *
+         * *Example:* "GET\nPOST"
+         * * **COUNTRY_IS:** Matches if the request originates from one of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\nDZ\nAM"
+         * * **COUNTRY_IS_NOT:** Matches if the request does not originate from any of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\nDZ\nAM"
+         * * **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
+         * * **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
          */
         condition: pulumi.Input<string>;
         /**
@@ -38824,6 +49983,10 @@ export namespace Waas {
         key?: pulumi.Input<string>;
         /**
          * (Updatable) The unique name of the whitelist.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         name: pulumi.Input<string>;
     }
@@ -38847,6 +50010,15 @@ export namespace Waas {
          * * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
          * * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
          * * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
+         *
+         * *Example:* "GET\nPOST"
+         * * **HTTP_METHOD_IS_NOT:** Matches if the request is not identical to any of the contents of the `value` field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
+         *
+         * *Example:* "GET\nPOST"
+         * * **COUNTRY_IS:** Matches if the request originates from one of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\nDZ\nAM"
+         * * **COUNTRY_IS_NOT:** Matches if the request does not originate from any of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\nDZ\nAM"
+         * * **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
+         * * **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
          */
         condition: pulumi.Input<string>;
         /**
@@ -39071,6 +50243,10 @@ export namespace Waas {
     export interface PolicyWafConfigHumanInteractionChallengeSetHttpHeader {
         /**
          * (Updatable) The unique name of the whitelist.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         name: pulumi.Input<string>;
         /**
@@ -39176,6 +50352,15 @@ export namespace Waas {
          * * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
          * * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
          * * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
+         *
+         * *Example:* "GET\nPOST"
+         * * **HTTP_METHOD_IS_NOT:** Matches if the request is not identical to any of the contents of the `value` field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
+         *
+         * *Example:* "GET\nPOST"
+         * * **COUNTRY_IS:** Matches if the request originates from one of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\nDZ\nAM"
+         * * **COUNTRY_IS_NOT:** Matches if the request does not originate from any of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\nDZ\nAM"
+         * * **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
+         * * **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
          */
         condition: pulumi.Input<string>;
         /**
@@ -39191,6 +50376,10 @@ export namespace Waas {
     export interface PolicyWafConfigJsChallengeSetHttpHeader {
         /**
          * (Updatable) The unique name of the whitelist.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         name: pulumi.Input<string>;
         /**
@@ -39226,6 +50415,8 @@ export namespace Waas {
         blockResponseCode?: pulumi.Input<number>;
         /**
          * (Updatable) Inspects the response body of origin responses. Can be used to detect leakage of sensitive data. If unspecified, defaults to `false`.
+         *
+         * **Note:** Only origin responses with a Content-Type matching a value in `mediaTypes` will be inspected.
          */
         isResponseInspected?: pulumi.Input<boolean>;
         /**
@@ -39246,10 +50437,32 @@ export namespace Waas {
         maxTotalNameLengthOfArguments?: pulumi.Input<number>;
         /**
          * (Updatable) The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `["text/html", "text/plain", "text/xml"]`.
+         *
+         * Supported MIME types include:
+         * * text/html
+         * * text/plain
+         * * text/asp
+         * * text/css
+         * * text/x-script
+         * * application/json
+         * * text/webviewhtml
+         * * text/x-java-source
+         * * application/x-javascript
+         * * application/javascript
+         * * application/ecmascript
+         * * text/javascript
+         * * text/ecmascript
+         * * text/x-script.perl
+         * * text/x-script.phyton
+         * * application/plain
+         * * application/xml
+         * * text/xml
          */
         mediaTypes?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) The length of time to analyze traffic traffic, in days. After the analysis period, `WafRecommendations` will be populated. If unspecified, defaults to `10`.
+         *
+         * Use `GET /waasPolicies/{waasPolicyId}/wafRecommendations` to view WAF recommendations.
          */
         recommendationsPeriodInDays?: pulumi.Input<number>;
     }
@@ -39265,6 +50478,10 @@ export namespace Waas {
         addresses?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) The unique name of the whitelist.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         name: pulumi.Input<string>;
     }
@@ -39276,6 +50493,9 @@ export namespace Waas {
         exclusions?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * The target of the exclusion.
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         target?: pulumi.Input<string>;
     }
@@ -39289,10 +50509,36 @@ export namespace Waf {
         body?: pulumi.Input<inputs.Waf.AppFirewallPolicyActionBody>;
         /**
          * (Updatable) Response code.
+         *
+         * The following response codes are valid values for this property:
+         * * 2xx
+         *
+         * 200 OK 201 Created 202 Accepted 206 Partial Content
+         * * 3xx
+         *
+         * 300 Multiple Choices 301 Moved Permanently 302 Found 303 See Other 307 Temporary Redirect
+         * * 4xx
+         *
+         * 400 Bad Request 401 Unauthorized 403 Forbidden 404 Not Found 405 Method Not Allowed 408 Request Timeout 409 Conflict 411 Length Required 412 Precondition Failed 413 Payload Too Large 414 URI Too Long 415 Unsupported Media Type 416 Range Not Satisfiable 422 Unprocessable Entity 494 Request Header Too Large 495 Cert Error 496 No Cert 497 HTTP to HTTPS
+         * * 5xx
+         *
+         * 500 Internal Server Error 501 Not Implemented 502 Bad Gateway 503 Service Unavailable 504 Gateway Timeout 507 Insufficient Storage
+         *
+         * Example: `200`
          */
         code?: pulumi.Input<number>;
         /**
          * (Updatable) Adds headers defined in this array for HTTP response.
+         *
+         * Hop-by-hop headers are not allowed to be set:
+         * * Connection
+         * * Keep-Alive
+         * * Proxy-Authenticate
+         * * Proxy-Authorization
+         * * TE
+         * * Trailer
+         * * Transfer-Encoding
+         * * Upgrade
          */
         headers?: pulumi.Input<pulumi.Input<inputs.Waf.AppFirewallPolicyActionHeader>[]>;
         /**
@@ -39367,10 +50613,19 @@ export namespace Waf {
     export interface AppFirewallPolicyRequestProtection {
         /**
          * (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
+         *
+         * If this field is `null` HTTP message body will inspected up to `bodyInspectionSizeLimitInBytes` and the rest will not be inspected by Protection Capabilities.
+         *
+         * Allowed action types:
+         * * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
          */
         bodyInspectionSizeLimitExceededActionName?: pulumi.Input<string>;
         /**
          * (Updatable) Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
+         *
+         * Body inspection maximum size allowed is defined with per-tenancy limit: 8192 bytes.
+         *
+         * For steps to request a limit increase, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
          */
         bodyInspectionSizeLimitInBytes?: pulumi.Input<number>;
         /**
@@ -39770,6 +51025,10 @@ export namespace Waf {
         addresses?: pulumi.Input<string>;
         /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         vcnId?: pulumi.Input<string>;
     }

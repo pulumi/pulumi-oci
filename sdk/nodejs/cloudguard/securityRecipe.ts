@@ -83,6 +83,8 @@ export class SecurityRecipe extends pulumi.CustomResource {
     public readonly displayName!: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     *
+     * Avoid entering confidential information.
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -95,6 +97,10 @@ export class SecurityRecipe extends pulumi.CustomResource {
     public /*out*/ readonly owner!: pulumi.Output<string>;
     /**
      * (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly securityPolicies!: pulumi.Output<string[]>;
     /**
@@ -190,6 +196,8 @@ export interface SecurityRecipeState {
     displayName?: pulumi.Input<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     *
+     * Avoid entering confidential information.
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -202,6 +210,10 @@ export interface SecurityRecipeState {
     owner?: pulumi.Input<string>;
     /**
      * (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     securityPolicies?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -244,10 +256,16 @@ export interface SecurityRecipeArgs {
     displayName: pulumi.Input<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     *
+     * Avoid entering confidential information.
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     securityPolicies: pulumi.Input<pulumi.Input<string>[]>;
 }

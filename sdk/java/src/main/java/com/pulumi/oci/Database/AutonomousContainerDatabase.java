@@ -708,12 +708,18 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
     /**
      * (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="standbyMaintenanceBufferInDays", type=Integer.class, parameters={})
     private Output<Integer> standbyMaintenanceBufferInDays;
 
     /**
      * @return (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Integer> standbyMaintenanceBufferInDays() {

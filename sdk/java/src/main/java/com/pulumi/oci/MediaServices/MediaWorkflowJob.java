@@ -327,12 +327,18 @@ public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
     /**
      * Discriminate identification of a workflow by name versus a workflow by ID.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="workflowIdentifierType", type=String.class, parameters={})
     private Output<String> workflowIdentifierType;
 
     /**
      * @return Discriminate identification of a workflow by name versus a workflow by ID.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> workflowIdentifierType() {

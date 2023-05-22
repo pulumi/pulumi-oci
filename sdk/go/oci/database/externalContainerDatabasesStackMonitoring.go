@@ -50,6 +50,9 @@ type ExternalContainerDatabasesStackMonitoring struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableStackMonitoring pulumi.BoolOutput `pulumi:"enableStackMonitoring"`
 	// The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExternalContainerDatabaseId pulumi.StringOutput `pulumi:"externalContainerDatabaseId"`
@@ -96,6 +99,9 @@ func GetExternalContainerDatabasesStackMonitoring(ctx *pulumi.Context,
 // Input properties used for looking up and filtering ExternalContainerDatabasesStackMonitoring resources.
 type externalContainerDatabasesStackMonitoringState struct {
 	// (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableStackMonitoring *bool `pulumi:"enableStackMonitoring"`
 	// The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExternalContainerDatabaseId *string `pulumi:"externalContainerDatabaseId"`
@@ -105,6 +111,9 @@ type externalContainerDatabasesStackMonitoringState struct {
 
 type ExternalContainerDatabasesStackMonitoringState struct {
 	// (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableStackMonitoring pulumi.BoolPtrInput
 	// The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExternalContainerDatabaseId pulumi.StringPtrInput
@@ -118,6 +127,9 @@ func (ExternalContainerDatabasesStackMonitoringState) ElementType() reflect.Type
 
 type externalContainerDatabasesStackMonitoringArgs struct {
 	// (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableStackMonitoring bool `pulumi:"enableStackMonitoring"`
 	// The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExternalContainerDatabaseId string `pulumi:"externalContainerDatabaseId"`
@@ -128,6 +140,9 @@ type externalContainerDatabasesStackMonitoringArgs struct {
 // The set of arguments for constructing a ExternalContainerDatabasesStackMonitoring resource.
 type ExternalContainerDatabasesStackMonitoringArgs struct {
 	// (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableStackMonitoring pulumi.BoolInput
 	// The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExternalContainerDatabaseId pulumi.StringInput
@@ -223,6 +238,9 @@ func (o ExternalContainerDatabasesStackMonitoringOutput) ToExternalContainerData
 }
 
 // (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ExternalContainerDatabasesStackMonitoringOutput) EnableStackMonitoring() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ExternalContainerDatabasesStackMonitoring) pulumi.BoolOutput { return v.EnableStackMonitoring }).(pulumi.BoolOutput)
 }

@@ -61,6 +61,9 @@ type RunStatement struct {
 	// The execution progress.
 	Progress pulumi.Float64Output `pulumi:"progress"`
 	// The unique ID for the run
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RunId pulumi.StringOutput `pulumi:"runId"`
 	// The current state of this statement.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -112,6 +115,9 @@ type runStatementState struct {
 	// The execution progress.
 	Progress *float64 `pulumi:"progress"`
 	// The unique ID for the run
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RunId *string `pulumi:"runId"`
 	// The current state of this statement.
 	State *string `pulumi:"state"`
@@ -129,6 +135,9 @@ type RunStatementState struct {
 	// The execution progress.
 	Progress pulumi.Float64PtrInput
 	// The unique ID for the run
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RunId pulumi.StringPtrInput
 	// The current state of this statement.
 	State pulumi.StringPtrInput
@@ -146,6 +155,9 @@ type runStatementArgs struct {
 	// The statement code to execute. Example: `println(sc.version)`
 	Code string `pulumi:"code"`
 	// The unique ID for the run
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RunId string `pulumi:"runId"`
 }
 
@@ -154,6 +166,9 @@ type RunStatementArgs struct {
 	// The statement code to execute. Example: `println(sc.version)`
 	Code pulumi.StringInput
 	// The unique ID for the run
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RunId pulumi.StringInput
 }
 
@@ -260,6 +275,9 @@ func (o RunStatementOutput) Progress() pulumi.Float64Output {
 }
 
 // The unique ID for the run
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o RunStatementOutput) RunId() pulumi.StringOutput {
 	return o.ApplyT(func(v *RunStatement) pulumi.StringOutput { return v.RunId }).(pulumi.StringOutput)
 }

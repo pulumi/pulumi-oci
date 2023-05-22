@@ -104,12 +104,18 @@ public class CloudGuardConfiguration extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) Status of Cloud Guard Tenant
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="status", type=String.class, parameters={})
     private Output<String> status;
 
     /**
      * @return (Updatable) Status of Cloud Guard Tenant
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> status() {

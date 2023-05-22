@@ -106,6 +106,8 @@ namespace Pulumi.Oci.ObjectStorage
 
         /// <summary>
         /// (Updatable) The optional base-64 header that defines the encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
+        /// 
+        /// "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
         /// </summary>
         [Output("contentMd5")]
         public Output<string> ContentMd5 { get; private set; } = null!;
@@ -259,6 +261,8 @@ namespace Pulumi.Oci.ObjectStorage
 
         /// <summary>
         /// (Updatable) The optional base-64 header that defines the encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
+        /// 
+        /// "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
         /// </summary>
         [Input("contentMd5")]
         public Input<string>? ContentMd5 { get; set; }
@@ -377,6 +381,8 @@ namespace Pulumi.Oci.ObjectStorage
 
         /// <summary>
         /// (Updatable) The optional base-64 header that defines the encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
+        /// 
+        /// "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
         /// </summary>
         [Input("contentMd5")]
         public Input<string>? ContentMd5 { get; set; }

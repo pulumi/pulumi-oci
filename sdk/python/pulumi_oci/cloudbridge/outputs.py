@@ -1397,6 +1397,10 @@ class AssetVmwareVm(dict):
         :param bool is_disks_uuid_enabled: (Updatable) Whether changed block tracking for this VM's disk is active.
         :param str path: (Updatable) Path directory of the asset.
         :param str vmware_tools_status: (Updatable) VMware tools status.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if cluster is not None:
             pulumi.set(__self__, "cluster", cluster)
@@ -1506,6 +1510,10 @@ class AssetVmwareVm(dict):
     def vmware_tools_status(self) -> Optional[str]:
         """
         (Updatable) VMware tools status.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vmware_tools_status")
 

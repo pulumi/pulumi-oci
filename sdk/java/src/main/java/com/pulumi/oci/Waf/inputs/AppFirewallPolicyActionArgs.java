@@ -37,12 +37,44 @@ public final class AppFirewallPolicyActionArgs extends com.pulumi.resources.Reso
     /**
      * (Updatable) Response code.
      * 
+     * The following response codes are valid values for this property:
+     * * 2xx
+     * 
+     * 200 OK 201 Created 202 Accepted 206 Partial Content
+     * * 3xx
+     * 
+     * 300 Multiple Choices 301 Moved Permanently 302 Found 303 See Other 307 Temporary Redirect
+     * * 4xx
+     * 
+     * 400 Bad Request 401 Unauthorized 403 Forbidden 404 Not Found 405 Method Not Allowed 408 Request Timeout 409 Conflict 411 Length Required 412 Precondition Failed 413 Payload Too Large 414 URI Too Long 415 Unsupported Media Type 416 Range Not Satisfiable 422 Unprocessable Entity 494 Request Header Too Large 495 Cert Error 496 No Cert 497 HTTP to HTTPS
+     * * 5xx
+     * 
+     * 500 Internal Server Error 501 Not Implemented 502 Bad Gateway 503 Service Unavailable 504 Gateway Timeout 507 Insufficient Storage
+     * 
+     * Example: `200`
+     * 
      */
     @Import(name="code")
     private @Nullable Output<Integer> code;
 
     /**
      * @return (Updatable) Response code.
+     * 
+     * The following response codes are valid values for this property:
+     * * 2xx
+     * 
+     * 200 OK 201 Created 202 Accepted 206 Partial Content
+     * * 3xx
+     * 
+     * 300 Multiple Choices 301 Moved Permanently 302 Found 303 See Other 307 Temporary Redirect
+     * * 4xx
+     * 
+     * 400 Bad Request 401 Unauthorized 403 Forbidden 404 Not Found 405 Method Not Allowed 408 Request Timeout 409 Conflict 411 Length Required 412 Precondition Failed 413 Payload Too Large 414 URI Too Long 415 Unsupported Media Type 416 Range Not Satisfiable 422 Unprocessable Entity 494 Request Header Too Large 495 Cert Error 496 No Cert 497 HTTP to HTTPS
+     * * 5xx
+     * 
+     * 500 Internal Server Error 501 Not Implemented 502 Bad Gateway 503 Service Unavailable 504 Gateway Timeout 507 Insufficient Storage
+     * 
+     * Example: `200`
      * 
      */
     public Optional<Output<Integer>> code() {
@@ -52,12 +84,32 @@ public final class AppFirewallPolicyActionArgs extends com.pulumi.resources.Reso
     /**
      * (Updatable) Adds headers defined in this array for HTTP response.
      * 
+     * Hop-by-hop headers are not allowed to be set:
+     * * Connection
+     * * Keep-Alive
+     * * Proxy-Authenticate
+     * * Proxy-Authorization
+     * * TE
+     * * Trailer
+     * * Transfer-Encoding
+     * * Upgrade
+     * 
      */
     @Import(name="headers")
     private @Nullable Output<List<AppFirewallPolicyActionHeaderArgs>> headers;
 
     /**
      * @return (Updatable) Adds headers defined in this array for HTTP response.
+     * 
+     * Hop-by-hop headers are not allowed to be set:
+     * * Connection
+     * * Keep-Alive
+     * * Proxy-Authenticate
+     * * Proxy-Authorization
+     * * TE
+     * * Trailer
+     * * Transfer-Encoding
+     * * Upgrade
      * 
      */
     public Optional<Output<List<AppFirewallPolicyActionHeaderArgs>>> headers() {
@@ -146,6 +198,22 @@ public final class AppFirewallPolicyActionArgs extends com.pulumi.resources.Reso
         /**
          * @param code (Updatable) Response code.
          * 
+         * The following response codes are valid values for this property:
+         * * 2xx
+         * 
+         * 200 OK 201 Created 202 Accepted 206 Partial Content
+         * * 3xx
+         * 
+         * 300 Multiple Choices 301 Moved Permanently 302 Found 303 See Other 307 Temporary Redirect
+         * * 4xx
+         * 
+         * 400 Bad Request 401 Unauthorized 403 Forbidden 404 Not Found 405 Method Not Allowed 408 Request Timeout 409 Conflict 411 Length Required 412 Precondition Failed 413 Payload Too Large 414 URI Too Long 415 Unsupported Media Type 416 Range Not Satisfiable 422 Unprocessable Entity 494 Request Header Too Large 495 Cert Error 496 No Cert 497 HTTP to HTTPS
+         * * 5xx
+         * 
+         * 500 Internal Server Error 501 Not Implemented 502 Bad Gateway 503 Service Unavailable 504 Gateway Timeout 507 Insufficient Storage
+         * 
+         * Example: `200`
+         * 
          * @return builder
          * 
          */
@@ -157,6 +225,22 @@ public final class AppFirewallPolicyActionArgs extends com.pulumi.resources.Reso
         /**
          * @param code (Updatable) Response code.
          * 
+         * The following response codes are valid values for this property:
+         * * 2xx
+         * 
+         * 200 OK 201 Created 202 Accepted 206 Partial Content
+         * * 3xx
+         * 
+         * 300 Multiple Choices 301 Moved Permanently 302 Found 303 See Other 307 Temporary Redirect
+         * * 4xx
+         * 
+         * 400 Bad Request 401 Unauthorized 403 Forbidden 404 Not Found 405 Method Not Allowed 408 Request Timeout 409 Conflict 411 Length Required 412 Precondition Failed 413 Payload Too Large 414 URI Too Long 415 Unsupported Media Type 416 Range Not Satisfiable 422 Unprocessable Entity 494 Request Header Too Large 495 Cert Error 496 No Cert 497 HTTP to HTTPS
+         * * 5xx
+         * 
+         * 500 Internal Server Error 501 Not Implemented 502 Bad Gateway 503 Service Unavailable 504 Gateway Timeout 507 Insufficient Storage
+         * 
+         * Example: `200`
+         * 
          * @return builder
          * 
          */
@@ -166,6 +250,16 @@ public final class AppFirewallPolicyActionArgs extends com.pulumi.resources.Reso
 
         /**
          * @param headers (Updatable) Adds headers defined in this array for HTTP response.
+         * 
+         * Hop-by-hop headers are not allowed to be set:
+         * * Connection
+         * * Keep-Alive
+         * * Proxy-Authenticate
+         * * Proxy-Authorization
+         * * TE
+         * * Trailer
+         * * Transfer-Encoding
+         * * Upgrade
          * 
          * @return builder
          * 
@@ -178,6 +272,16 @@ public final class AppFirewallPolicyActionArgs extends com.pulumi.resources.Reso
         /**
          * @param headers (Updatable) Adds headers defined in this array for HTTP response.
          * 
+         * Hop-by-hop headers are not allowed to be set:
+         * * Connection
+         * * Keep-Alive
+         * * Proxy-Authenticate
+         * * Proxy-Authorization
+         * * TE
+         * * Trailer
+         * * Transfer-Encoding
+         * * Upgrade
+         * 
          * @return builder
          * 
          */
@@ -187,6 +291,16 @@ public final class AppFirewallPolicyActionArgs extends com.pulumi.resources.Reso
 
         /**
          * @param headers (Updatable) Adds headers defined in this array for HTTP response.
+         * 
+         * Hop-by-hop headers are not allowed to be set:
+         * * Connection
+         * * Keep-Alive
+         * * Proxy-Authenticate
+         * * Proxy-Authorization
+         * * TE
+         * * Trailer
+         * * Transfer-Encoding
+         * * Upgrade
          * 
          * @return builder
          * 

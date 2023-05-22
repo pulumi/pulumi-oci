@@ -35,12 +35,20 @@ public final class BackendState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;backup&#34; fail the health check policy.
      * 
+     * **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+     * 
+     * Example: `false`
+     * 
      */
     @Import(name="backup")
     private @Nullable Output<Boolean> backup;
 
     /**
      * @return (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;backup&#34; fail the health check policy.
+     * 
+     * **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+     * 
+     * Example: `false`
      * 
      */
     public Optional<Output<Boolean>> backup() {
@@ -147,12 +155,18 @@ public final class BackendState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives 3 times the number of new connections as a server weighted &#39;1&#39;. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="weight")
     private @Nullable Output<Integer> weight;
 
     /**
      * @return (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives 3 times the number of new connections as a server weighted &#39;1&#39;. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> weight() {
@@ -216,6 +230,10 @@ public final class BackendState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param backup (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;backup&#34; fail the health check policy.
          * 
+         * **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+         * 
+         * Example: `false`
+         * 
          * @return builder
          * 
          */
@@ -226,6 +244,10 @@ public final class BackendState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backup (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;backup&#34; fail the health check policy.
+         * 
+         * **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+         * 
+         * Example: `false`
          * 
          * @return builder
          * 
@@ -372,6 +394,9 @@ public final class BackendState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param weight (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives 3 times the number of new connections as a server weighted &#39;1&#39;. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -382,6 +407,9 @@ public final class BackendState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param weight (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives 3 times the number of new connections as a server weighted &#39;1&#39;. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

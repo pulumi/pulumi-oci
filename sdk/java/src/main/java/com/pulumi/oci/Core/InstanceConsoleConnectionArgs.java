@@ -65,12 +65,18 @@ public final class InstanceConsoleConnectionArgs extends com.pulumi.resources.Re
     /**
      * The SSH public key used to authenticate the console connection.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="publicKey", required=true)
     private Output<String> publicKey;
 
     /**
      * @return The SSH public key used to authenticate the console connection.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> publicKey() {
@@ -170,6 +176,9 @@ public final class InstanceConsoleConnectionArgs extends com.pulumi.resources.Re
         /**
          * @param publicKey The SSH public key used to authenticate the console connection.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -180,6 +189,9 @@ public final class InstanceConsoleConnectionArgs extends com.pulumi.resources.Re
 
         /**
          * @param publicKey The SSH public key used to authenticate the console connection.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

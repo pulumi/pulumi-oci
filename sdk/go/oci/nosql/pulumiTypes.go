@@ -523,6 +523,9 @@ type TableTableLimits struct {
 	// (Updatable) Maximum size of storage used by the table.
 	MaxStorageInGbs int `pulumi:"maxStorageInGbs"`
 	// (Updatable) Maximum sustained write throughput limit for the table.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	MaxWriteUnits int `pulumi:"maxWriteUnits"`
 }
 
@@ -545,6 +548,9 @@ type TableTableLimitsArgs struct {
 	// (Updatable) Maximum size of storage used by the table.
 	MaxStorageInGbs pulumi.IntInput `pulumi:"maxStorageInGbs"`
 	// (Updatable) Maximum sustained write throughput limit for the table.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	MaxWriteUnits pulumi.IntInput `pulumi:"maxWriteUnits"`
 }
 
@@ -641,6 +647,9 @@ func (o TableTableLimitsOutput) MaxStorageInGbs() pulumi.IntOutput {
 }
 
 // (Updatable) Maximum sustained write throughput limit for the table.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o TableTableLimitsOutput) MaxWriteUnits() pulumi.IntOutput {
 	return o.ApplyT(func(v TableTableLimits) int { return v.MaxWriteUnits }).(pulumi.IntOutput)
 }
@@ -700,6 +709,9 @@ func (o TableTableLimitsPtrOutput) MaxStorageInGbs() pulumi.IntPtrOutput {
 }
 
 // (Updatable) Maximum sustained write throughput limit for the table.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o TableTableLimitsPtrOutput) MaxWriteUnits() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *TableTableLimits) *int {
 		if v == nil {

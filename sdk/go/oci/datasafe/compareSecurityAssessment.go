@@ -58,6 +58,9 @@ type CompareSecurityAssessment struct {
 	// The OCID of the security assessment. In this case a security assessment can be another security assessment, a latest assessment or a baseline.
 	ComparisonSecurityAssessmentId pulumi.StringOutput `pulumi:"comparisonSecurityAssessmentId"`
 	// The OCID of the security assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityAssessmentId pulumi.StringOutput `pulumi:"securityAssessmentId"`
 }
 
@@ -99,6 +102,9 @@ type compareSecurityAssessmentState struct {
 	// The OCID of the security assessment. In this case a security assessment can be another security assessment, a latest assessment or a baseline.
 	ComparisonSecurityAssessmentId *string `pulumi:"comparisonSecurityAssessmentId"`
 	// The OCID of the security assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityAssessmentId *string `pulumi:"securityAssessmentId"`
 }
 
@@ -106,6 +112,9 @@ type CompareSecurityAssessmentState struct {
 	// The OCID of the security assessment. In this case a security assessment can be another security assessment, a latest assessment or a baseline.
 	ComparisonSecurityAssessmentId pulumi.StringPtrInput
 	// The OCID of the security assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityAssessmentId pulumi.StringPtrInput
 }
 
@@ -117,6 +126,9 @@ type compareSecurityAssessmentArgs struct {
 	// The OCID of the security assessment. In this case a security assessment can be another security assessment, a latest assessment or a baseline.
 	ComparisonSecurityAssessmentId string `pulumi:"comparisonSecurityAssessmentId"`
 	// The OCID of the security assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityAssessmentId string `pulumi:"securityAssessmentId"`
 }
 
@@ -125,6 +137,9 @@ type CompareSecurityAssessmentArgs struct {
 	// The OCID of the security assessment. In this case a security assessment can be another security assessment, a latest assessment or a baseline.
 	ComparisonSecurityAssessmentId pulumi.StringInput
 	// The OCID of the security assessment.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityAssessmentId pulumi.StringInput
 }
 
@@ -221,6 +236,9 @@ func (o CompareSecurityAssessmentOutput) ComparisonSecurityAssessmentId() pulumi
 }
 
 // The OCID of the security assessment.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CompareSecurityAssessmentOutput) SecurityAssessmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CompareSecurityAssessment) pulumi.StringOutput { return v.SecurityAssessmentId }).(pulumi.StringOutput)
 }

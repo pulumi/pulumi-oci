@@ -94,12 +94,16 @@ public class AutonomousDatabaseWallet extends com.pulumi.resources.CustomResourc
     /**
      * The type of wallet to generate.
      * 
+     * **Shared Exadata infrastructure usage:**
+     * 
      */
     @Export(name="generateType", type=String.class, parameters={})
     private Output</* @Nullable */ String> generateType;
 
     /**
      * @return The type of wallet to generate.
+     * 
+     * **Shared Exadata infrastructure usage:**
      * 
      */
     public Output<Optional<String>> generateType() {
@@ -108,12 +112,18 @@ public class AutonomousDatabaseWallet extends com.pulumi.resources.CustomResourc
     /**
      * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="password", type=String.class, parameters={})
     private Output<String> password;
 
     /**
      * @return The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> password() {

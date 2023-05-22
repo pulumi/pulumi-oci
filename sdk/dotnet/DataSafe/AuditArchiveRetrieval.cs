@@ -132,6 +132,10 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// The OCID of the target associated with the archive retrieval.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("targetId")]
         public Output<string> TargetId { get; private set; } = null!;
@@ -256,6 +260,10 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// The OCID of the target associated with the archive retrieval.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("targetId", required: true)]
         public Input<string> TargetId { get; set; } = null!;
@@ -360,6 +368,10 @@ namespace Pulumi.Oci.DataSafe
 
         /// <summary>
         /// The OCID of the target associated with the archive retrieval.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }

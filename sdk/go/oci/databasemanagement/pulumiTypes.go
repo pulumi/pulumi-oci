@@ -4316,6 +4316,9 @@ type ExternalDbSystemDiscoveryPatchOperation struct {
 	// (Updatable)
 	Selection string `pulumi:"selection"`
 	// (Updatable)
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Value *ExternalDbSystemDiscoveryPatchOperationValue `pulumi:"value"`
 }
 
@@ -4336,6 +4339,9 @@ type ExternalDbSystemDiscoveryPatchOperationArgs struct {
 	// (Updatable)
 	Selection pulumi.StringInput `pulumi:"selection"`
 	// (Updatable)
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Value ExternalDbSystemDiscoveryPatchOperationValuePtrInput `pulumi:"value"`
 }
 
@@ -4401,6 +4407,9 @@ func (o ExternalDbSystemDiscoveryPatchOperationOutput) Selection() pulumi.String
 }
 
 // (Updatable)
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ExternalDbSystemDiscoveryPatchOperationOutput) Value() ExternalDbSystemDiscoveryPatchOperationValuePtrOutput {
 	return o.ApplyT(func(v ExternalDbSystemDiscoveryPatchOperation) *ExternalDbSystemDiscoveryPatchOperationValue {
 		return v.Value
@@ -5876,6 +5885,9 @@ type ManagedDatabaseGroupManagedDatabase struct {
 	// The infrastructure used to deploy the Oracle Database.
 	DeploymentType *string `pulumi:"deploymentType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Id *string `pulumi:"id"`
 	// The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
 	Name *string `pulumi:"name"`
@@ -5906,6 +5918,9 @@ type ManagedDatabaseGroupManagedDatabaseArgs struct {
 	// The infrastructure used to deploy the Oracle Database.
 	DeploymentType pulumi.StringPtrInput `pulumi:"deploymentType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -5987,6 +6002,9 @@ func (o ManagedDatabaseGroupManagedDatabaseOutput) DeploymentType() pulumi.Strin
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ManagedDatabaseGroupManagedDatabaseOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagedDatabaseGroupManagedDatabase) *string { return v.Id }).(pulumi.StringPtrOutput)
 }

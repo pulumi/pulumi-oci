@@ -104,6 +104,8 @@ def get_ssl_cipher_suite(load_balancer_id: Optional[str] = None,
 
     :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
     :param str name: The name of the SSL cipher suite to retrieve.
+           
+           example: `example_cipher_suite`
     """
     __args__ = dict()
     __args__['loadBalancerId'] = load_balancer_id
@@ -141,5 +143,7 @@ def get_ssl_cipher_suite_output(load_balancer_id: Optional[pulumi.Input[str]] = 
 
     :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
     :param str name: The name of the SSL cipher suite to retrieve.
+           
+           example: `example_cipher_suite`
     """
     ...

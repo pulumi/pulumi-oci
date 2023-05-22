@@ -83,7 +83,11 @@ class RuleActionsAction(dict):
                * **ONS:** Send to an Oracle Notification Service topic.
                * **OSS:** Send to a stream from Oracle Streaming Service.
                * **FAAS:** Send to an Oracle Functions Service endpoint.
-        :param bool is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true`
+        :param bool is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param str function_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
@@ -124,7 +128,11 @@ class RuleActionsAction(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        (Updatable) Whether or not this rule is currently enabled.  Example: `true`
+        (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_enabled")
 

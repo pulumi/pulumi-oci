@@ -95,6 +95,8 @@ export interface GetUserAssessmentUsersArgs {
     targetId?: string;
     /**
      * A filter to return users whose last login time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
      */
     timeLastLoginGreaterThanOrEqualTo?: string;
     /**
@@ -103,10 +105,14 @@ export interface GetUserAssessmentUsersArgs {
     timeLastLoginLessThan?: string;
     /**
      * A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
      */
     timePasswordLastChangedGreaterThanOrEqualTo?: string;
     /**
      * A filter to return users whose last password change in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
      */
     timePasswordLastChangedLessThan?: string;
     /**
@@ -269,6 +275,8 @@ export interface GetUserAssessmentUsersOutputArgs {
     targetId?: pulumi.Input<string>;
     /**
      * A filter to return users whose last login time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
      */
     timeLastLoginGreaterThanOrEqualTo?: pulumi.Input<string>;
     /**
@@ -277,10 +285,14 @@ export interface GetUserAssessmentUsersOutputArgs {
     timeLastLoginLessThan?: pulumi.Input<string>;
     /**
      * A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
      */
     timePasswordLastChangedGreaterThanOrEqualTo?: pulumi.Input<string>;
     /**
      * A filter to return users whose last password change in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
      */
     timePasswordLastChangedLessThan?: pulumi.Input<string>;
     /**

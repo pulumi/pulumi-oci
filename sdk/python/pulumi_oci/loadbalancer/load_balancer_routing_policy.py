@@ -25,7 +25,11 @@ class LoadBalancerRoutingPolicyArgs:
         :param pulumi.Input[str] condition_language_version: (Updatable) The version of the language in which `condition` of `rules` are composed.
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
         :param pulumi.Input[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleArgs']]] rules: (Updatable) The list of routing rules.
-        :param pulumi.Input[str] name: (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
+        :param pulumi.Input[str] name: (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "condition_language_version", condition_language_version)
         pulumi.set(__self__, "load_balancer_id", load_balancer_id)
@@ -73,7 +77,11 @@ class LoadBalancerRoutingPolicyArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
+        (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "name")
 
@@ -94,7 +102,11 @@ class _LoadBalancerRoutingPolicyState:
         Input properties used for looking up and filtering LoadBalancerRoutingPolicy resources.
         :param pulumi.Input[str] condition_language_version: (Updatable) The version of the language in which `condition` of `rules` are composed.
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
-        :param pulumi.Input[str] name: (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
+        :param pulumi.Input[str] name: (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleArgs']]] rules: (Updatable) The list of routing rules.
         """
         if condition_language_version is not None:
@@ -136,7 +148,11 @@ class _LoadBalancerRoutingPolicyState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
+        (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "name")
 
@@ -213,7 +229,11 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] condition_language_version: (Updatable) The version of the language in which `condition` of `rules` are composed.
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
-        :param pulumi.Input[str] name: (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
+        :param pulumi.Input[str] name: (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LoadBalancerRoutingPolicyRuleArgs']]]] rules: (Updatable) The list of routing rules.
         """
         ...
@@ -318,7 +338,11 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] condition_language_version: (Updatable) The version of the language in which `condition` of `rules` are composed.
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
-        :param pulumi.Input[str] name: (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
+        :param pulumi.Input[str] name: (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LoadBalancerRoutingPolicyRuleArgs']]]] rules: (Updatable) The list of routing rules.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -352,7 +376,11 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
+        (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "name")
 

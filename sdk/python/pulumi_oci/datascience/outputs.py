@@ -823,6 +823,8 @@ class ModelCustomMetadataList(dict):
                * hyperParameters
                * testartifactresults
         :param str value: (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
+               
+               Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
         """
         if category is not None:
             pulumi.set(__self__, "category", category)
@@ -868,6 +870,8 @@ class ModelCustomMetadataList(dict):
     def value(self) -> Optional[str]:
         """
         (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
+
+        Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
         """
         return pulumi.get(self, "value")
 
@@ -890,6 +894,8 @@ class ModelDefinedMetadataList(dict):
                * hyperParameters
                * testartifactresults
         :param str value: (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
+               
+               Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
         """
         if category is not None:
             pulumi.set(__self__, "category", category)
@@ -935,6 +941,8 @@ class ModelDefinedMetadataList(dict):
     def value(self) -> Optional[str]:
         """
         (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
+
+        Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
         """
         return pulumi.get(self, "value")
 
@@ -2723,6 +2731,10 @@ class PipelineStepDetail(dict):
         """
         :param str step_name: (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
         :param str step_type: (Updatable) The type of step.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param Sequence[str] depends_ons: The list of step names this current step depends on for execution.
         :param str description: (Updatable) A short description of the step.
         :param bool is_artifact_uploaded: A flag to indicate whether the artifact has been uploaded for this step or not.
@@ -2758,6 +2770,10 @@ class PipelineStepDetail(dict):
     def step_type(self) -> str:
         """
         (Updatable) The type of step.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "step_type")
 

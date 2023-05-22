@@ -54,6 +54,9 @@ type BdsInstancePatchAction struct {
 	// Base-64 encoded password for the cluster admin user.
 	ClusterAdminPassword pulumi.StringOutput `pulumi:"clusterAdminPassword"`
 	// The version of the patch to be installed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Version pulumi.StringOutput `pulumi:"version"`
 }
 
@@ -107,6 +110,9 @@ type bdsInstancePatchActionState struct {
 	// Base-64 encoded password for the cluster admin user.
 	ClusterAdminPassword *string `pulumi:"clusterAdminPassword"`
 	// The version of the patch to be installed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Version *string `pulumi:"version"`
 }
 
@@ -116,6 +122,9 @@ type BdsInstancePatchActionState struct {
 	// Base-64 encoded password for the cluster admin user.
 	ClusterAdminPassword pulumi.StringPtrInput
 	// The version of the patch to be installed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Version pulumi.StringPtrInput
 }
 
@@ -129,6 +138,9 @@ type bdsInstancePatchActionArgs struct {
 	// Base-64 encoded password for the cluster admin user.
 	ClusterAdminPassword string `pulumi:"clusterAdminPassword"`
 	// The version of the patch to be installed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Version string `pulumi:"version"`
 }
 
@@ -139,6 +151,9 @@ type BdsInstancePatchActionArgs struct {
 	// Base-64 encoded password for the cluster admin user.
 	ClusterAdminPassword pulumi.StringInput
 	// The version of the patch to be installed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Version pulumi.StringInput
 }
 
@@ -240,6 +255,9 @@ func (o BdsInstancePatchActionOutput) ClusterAdminPassword() pulumi.StringOutput
 }
 
 // The version of the patch to be installed.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstancePatchActionOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstancePatchAction) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }

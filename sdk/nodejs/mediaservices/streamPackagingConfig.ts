@@ -105,6 +105,10 @@ export class StreamPackagingConfig extends pulumi.CustomResource {
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
      * The output format for the package.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly streamPackagingFormat!: pulumi.Output<string>;
     /**
@@ -215,6 +219,10 @@ export interface StreamPackagingConfigState {
     state?: pulumi.Input<string>;
     /**
      * The output format for the package.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     streamPackagingFormat?: pulumi.Input<string>;
     /**
@@ -261,6 +269,10 @@ export interface StreamPackagingConfigArgs {
     segmentTimeInSeconds: pulumi.Input<number>;
     /**
      * The output format for the package.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     streamPackagingFormat: pulumi.Input<string>;
 }

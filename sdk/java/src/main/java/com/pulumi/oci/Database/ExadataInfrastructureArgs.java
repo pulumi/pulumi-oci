@@ -41,12 +41,18 @@ public final class ExadataInfrastructureArgs extends com.pulumi.resources.Resour
     /**
      * The requested number of additional storage servers for the Exadata infrastructure.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="additionalStorageCount")
     private @Nullable Output<Integer> additionalStorageCount;
 
     /**
      * @return The requested number of additional storage servers for the Exadata infrastructure.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> additionalStorageCount() {
@@ -478,6 +484,9 @@ public final class ExadataInfrastructureArgs extends com.pulumi.resources.Resour
         /**
          * @param additionalStorageCount The requested number of additional storage servers for the Exadata infrastructure.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -488,6 +497,9 @@ public final class ExadataInfrastructureArgs extends com.pulumi.resources.Resour
 
         /**
          * @param additionalStorageCount The requested number of additional storage servers for the Exadata infrastructure.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

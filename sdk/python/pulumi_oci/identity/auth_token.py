@@ -20,6 +20,10 @@ class AuthTokenArgs:
         The set of arguments for constructing a AuthToken resource.
         :param pulumi.Input[str] description: (Updatable) The description you assign to the auth token during creation. Does not have to be unique, and it's changeable.
         :param pulumi.Input[str] user_id: The OCID of the user.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "user_id", user_id)
@@ -41,6 +45,10 @@ class AuthTokenArgs:
     def user_id(self) -> pulumi.Input[str]:
         """
         The OCID of the user.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "user_id")
 
@@ -68,6 +76,10 @@ class _AuthTokenState:
         :param pulumi.Input[str] time_expires: Date and time when this auth token will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] token: The auth token. The value is available only in the response for `CreateAuthToken`, and not for `ListAuthTokens` or `UpdateAuthToken`.
         :param pulumi.Input[str] user_id: The OCID of the user.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -161,6 +173,10 @@ class _AuthTokenState:
     def user_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the user.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "user_id")
 
@@ -214,6 +230,10 @@ class AuthToken(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] description: (Updatable) The description you assign to the auth token during creation. Does not have to be unique, and it's changeable.
         :param pulumi.Input[str] user_id: The OCID of the user.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -322,6 +342,10 @@ class AuthToken(pulumi.CustomResource):
         :param pulumi.Input[str] time_expires: Date and time when this auth token will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] token: The auth token. The value is available only in the response for `CreateAuthToken`, and not for `ListAuthTokens` or `UpdateAuthToken`.
         :param pulumi.Input[str] user_id: The OCID of the user.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -389,6 +413,10 @@ class AuthToken(pulumi.CustomResource):
     def user_id(self) -> pulumi.Output[str]:
         """
         The OCID of the user.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "user_id")
 

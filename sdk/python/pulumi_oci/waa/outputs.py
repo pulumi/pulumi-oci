@@ -51,6 +51,16 @@ class AppAccelerationPolicyResponseCachingPolicy(dict):
                  is_response_header_based_caching_enabled: Optional[bool] = None):
         """
         :param bool is_response_header_based_caching_enabled: (Updatable) When false, responses will not be cached by the backend based on response headers.
+               
+               When true, responses that contain one of the supported cache control headers will be cached according to the values specified in the cache control headers.
+               
+               The "X-Accel-Expires" header field sets caching time of a response in seconds. The zero value disables caching for a response. If the value starts with the @ prefix, it sets an absolute time in seconds since Epoch, up to which the response may be cached.
+               
+               If the header does not include the "X-Accel-Expires" field, parameters of caching may be set in the header fields "Expires" or "Cache-Control".
+               
+               If the header includes the "Set-Cookie" field, such a response will not be cached.
+               
+               If the header includes the "Vary" field with the special value "*", such a response will not be cached. If the header includes the "Vary" field with another value, such a response will be cached taking into account the corresponding request header fields.
         """
         if is_response_header_based_caching_enabled is not None:
             pulumi.set(__self__, "is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
@@ -60,6 +70,16 @@ class AppAccelerationPolicyResponseCachingPolicy(dict):
     def is_response_header_based_caching_enabled(self) -> Optional[bool]:
         """
         (Updatable) When false, responses will not be cached by the backend based on response headers.
+
+        When true, responses that contain one of the supported cache control headers will be cached according to the values specified in the cache control headers.
+
+        The "X-Accel-Expires" header field sets caching time of a response in seconds. The zero value disables caching for a response. If the value starts with the @ prefix, it sets an absolute time in seconds since Epoch, up to which the response may be cached.
+
+        If the header does not include the "X-Accel-Expires" field, parameters of caching may be set in the header fields "Expires" or "Cache-Control".
+
+        If the header includes the "Set-Cookie" field, such a response will not be cached.
+
+        If the header includes the "Vary" field with the special value "*", such a response will not be cached. If the header includes the "Vary" field with another value, such a response will be cached taking into account the corresponding request header fields.
         """
         return pulumi.get(self, "is_response_header_based_caching_enabled")
 
@@ -123,6 +143,8 @@ class AppAccelerationPolicyResponseCompressionPolicyGzipCompression(dict):
                  is_enabled: Optional[bool] = None):
         """
         :param bool is_enabled: (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
+               
+               When false, support for gzip compression is disabled and HTTP responses will not be compressed with gzip even if the client indicates support for gzip.
         """
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
@@ -132,6 +154,8 @@ class AppAccelerationPolicyResponseCompressionPolicyGzipCompression(dict):
     def is_enabled(self) -> Optional[bool]:
         """
         (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
+
+        When false, support for gzip compression is disabled and HTTP responses will not be compressed with gzip even if the client indicates support for gzip.
         """
         return pulumi.get(self, "is_enabled")
 

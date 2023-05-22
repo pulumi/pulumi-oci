@@ -173,12 +173,18 @@ public final class DetectAnomalyJobState extends com.pulumi.resources.ResourceAr
     /**
      * The value that customer can adjust to control the sensitivity of anomaly detection
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="sensitivity")
     private @Nullable Output<Double> sensitivity;
 
     /**
      * @return The value that customer can adjust to control the sensitivity of anomaly detection
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Double>> sensitivity() {
@@ -512,6 +518,9 @@ public final class DetectAnomalyJobState extends com.pulumi.resources.ResourceAr
         /**
          * @param sensitivity The value that customer can adjust to control the sensitivity of anomaly detection
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -522,6 +531,9 @@ public final class DetectAnomalyJobState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param sensitivity The value that customer can adjust to control the sensitivity of anomaly detection
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

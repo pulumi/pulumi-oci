@@ -213,7 +213,11 @@ export class MonitoredResource extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * Monitored Resource Type.
+     * Monitored Resource Type. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly type!: pulumi.Output<string>;
 
@@ -377,7 +381,11 @@ export interface MonitoredResourceState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * Monitored Resource Type.
+     * Monitored Resource Type. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     type?: pulumi.Input<string>;
 }
@@ -451,7 +459,11 @@ export interface MonitoredResourceArgs {
      */
     resourceTimeZone?: pulumi.Input<string>;
     /**
-     * Monitored Resource Type.
+     * Monitored Resource Type. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     type: pulumi.Input<string>;
 }

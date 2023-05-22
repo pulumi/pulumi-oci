@@ -16,12 +16,18 @@ public final class DrgRouteTableRouteRuleArgs extends com.pulumi.resources.Resou
     /**
      * (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
      * 
+     * Potential values:
+     * * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
+     * 
      */
     @Import(name="destination", required=true)
     private Output<String> destination;
 
     /**
      * @return (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+     * 
+     * Potential values:
+     * * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
      * 
      */
     public Output<String> destination() {
@@ -61,12 +67,18 @@ public final class DrgRouteTableRouteRuleArgs extends com.pulumi.resources.Resou
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="nextHopDrgAttachmentId", required=true)
     private Output<String> nextHopDrgAttachmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> nextHopDrgAttachmentId() {
@@ -103,6 +115,9 @@ public final class DrgRouteTableRouteRuleArgs extends com.pulumi.resources.Resou
         /**
          * @param destination (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
          * 
+         * Potential values:
+         * * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
+         * 
          * @return builder
          * 
          */
@@ -113,6 +128,9 @@ public final class DrgRouteTableRouteRuleArgs extends com.pulumi.resources.Resou
 
         /**
          * @param destination (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
+         * 
+         * Potential values:
+         * * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
          * 
          * @return builder
          * 
@@ -166,6 +184,9 @@ public final class DrgRouteTableRouteRuleArgs extends com.pulumi.resources.Resou
         /**
          * @param nextHopDrgAttachmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -176,6 +197,9 @@ public final class DrgRouteTableRouteRuleArgs extends com.pulumi.resources.Resou
 
         /**
          * @param nextHopDrgAttachmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

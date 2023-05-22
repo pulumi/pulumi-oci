@@ -117,12 +117,18 @@ public class OdaPrivateEndpointScanProxy extends com.pulumi.resources.CustomReso
     /**
      * Type indicating whether Scan listener is specified by its FQDN or list of IPs
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="scanListenerType", type=String.class, parameters={})
     private Output<String> scanListenerType;
 
     /**
      * @return Type indicating whether Scan listener is specified by its FQDN or list of IPs
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> scanListenerType() {

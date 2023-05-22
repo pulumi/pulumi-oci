@@ -111,12 +111,18 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The repository&#39;s supported artifact type.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="repositoryType")
     private @Nullable Output<String> repositoryType;
 
     /**
      * @return (Updatable) The repository&#39;s supported artifact type.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> repositoryType() {
@@ -314,6 +320,9 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param repositoryType (Updatable) The repository&#39;s supported artifact type.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -324,6 +333,9 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param repositoryType (Updatable) The repository&#39;s supported artifact type.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

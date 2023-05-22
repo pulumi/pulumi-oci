@@ -50,6 +50,10 @@ namespace Pulumi.Oci.Bastion.Inputs
 
         /// <summary>
         /// The private IP address of the target resource that the session connects to.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("targetResourcePrivateIpAddress")]
         public Input<string>? TargetResourcePrivateIpAddress { get; set; }

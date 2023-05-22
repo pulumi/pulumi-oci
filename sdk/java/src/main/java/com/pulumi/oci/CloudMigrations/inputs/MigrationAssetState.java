@@ -193,12 +193,18 @@ public final class MigrationAssetState extends com.pulumi.resources.ResourceArgs
     /**
      * Name of snapshot bucket
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="snapShotBucketName")
     private @Nullable Output<String> snapShotBucketName;
 
     /**
      * @return Name of snapshot bucket
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> snapShotBucketName() {
@@ -620,6 +626,9 @@ public final class MigrationAssetState extends com.pulumi.resources.ResourceArgs
         /**
          * @param snapShotBucketName Name of snapshot bucket
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -630,6 +639,9 @@ public final class MigrationAssetState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param snapShotBucketName Name of snapshot bucket
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

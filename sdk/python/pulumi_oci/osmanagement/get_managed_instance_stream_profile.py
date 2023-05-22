@@ -186,6 +186,10 @@ def get_managed_instance_stream_profile(compartment_id: Optional[str] = None,
     :param str module_name: The name of a module.  This parameter is required if a streamName is specified.
     :param str profile_name: The name of the profile of the containing module stream
     :param str profile_status: The status of the profile.
+           
+           A profile with the "INSTALLED" status indicates that the profile has been installed.
+           
+           A profile with the "AVAILABLE" status indicates that the profile is not installed, but can be.
     :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
     """
     __args__ = dict()
@@ -268,6 +272,10 @@ def get_managed_instance_stream_profile_output(compartment_id: Optional[pulumi.I
     :param str module_name: The name of a module.  This parameter is required if a streamName is specified.
     :param str profile_name: The name of the profile of the containing module stream
     :param str profile_status: The status of the profile.
+           
+           A profile with the "INSTALLED" status indicates that the profile has been installed.
+           
+           A profile with the "AVAILABLE" status indicates that the profile is not installed, but can be.
     :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
     """
     ...

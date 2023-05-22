@@ -29,6 +29,10 @@ class OdaInstanceArgs:
         The set of arguments for constructing a OdaInstance resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Identifier of the compartment.
         :param pulumi.Input[str] shape_name: Shape or size of the instance.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Description of the Digital Assistant instance.
         :param pulumi.Input[str] display_name: (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
@@ -71,6 +75,10 @@ class OdaInstanceArgs:
     def shape_name(self) -> pulumi.Input[str]:
         """
         Shape or size of the instance.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "shape_name")
 
@@ -207,6 +215,10 @@ class _OdaInstanceState:
         :param pulumi.Input[str] lifecycle_sub_state: The current sub-state of the Digital Assistant instance.
         :param pulumi.Input[Sequence[pulumi.Input['OdaInstanceRestrictedOperationArgs']]] restricted_operations: A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
         :param pulumi.Input[str] shape_name: Shape or size of the instance.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the Digital Assistant instance.
         :param pulumi.Input[str] state_message: A message that describes the current state in more detail. For example, actionable information about an instance that's in the `FAILED` state.
         :param pulumi.Input[str] time_created: When the Digital Assistant instance was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
@@ -455,6 +467,10 @@ class _OdaInstanceState:
     def shape_name(self) -> Optional[pulumi.Input[str]]:
         """
         Shape or size of the instance.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "shape_name")
 
@@ -585,6 +601,10 @@ class OdaInstance(pulumi.CustomResource):
         :param pulumi.Input[str] identity_domain: If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
         :param pulumi.Input[bool] is_role_based_access: Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
         :param pulumi.Input[str] shape_name: Shape or size of the instance.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the Digital Assistant instance.
         """
         ...
@@ -745,6 +765,10 @@ class OdaInstance(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_sub_state: The current sub-state of the Digital Assistant instance.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['OdaInstanceRestrictedOperationArgs']]]] restricted_operations: A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
         :param pulumi.Input[str] shape_name: Shape or size of the instance.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the Digital Assistant instance.
         :param pulumi.Input[str] state_message: A message that describes the current state in more detail. For example, actionable information about an instance that's in the `FAILED` state.
         :param pulumi.Input[str] time_created: When the Digital Assistant instance was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
@@ -912,6 +936,10 @@ class OdaInstance(pulumi.CustomResource):
     def shape_name(self) -> pulumi.Output[str]:
         """
         Shape or size of the instance.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "shape_name")
 

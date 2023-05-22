@@ -88,6 +88,10 @@ namespace Pulumi.Oci.Blockchain
 
         /// <summary>
         /// Peer role
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("role")]
         public Output<string> Role { get; private set; } = null!;
@@ -170,6 +174,10 @@ namespace Pulumi.Oci.Blockchain
 
         /// <summary>
         /// Peer role
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("role", required: true)]
         public Input<string> Role { get; set; } = null!;
@@ -220,6 +228,10 @@ namespace Pulumi.Oci.Blockchain
 
         /// <summary>
         /// Peer role
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("role")]
         public Input<string>? Role { get; set; }

@@ -135,6 +135,10 @@ namespace Pulumi.Oci.Mysql
 
         /// <summary>
         /// (Updatable) Number of days to retain this backup.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("retentionInDays")]
         public Output<int> RetentionInDays { get; private set; } = null!;
@@ -265,6 +269,10 @@ namespace Pulumi.Oci.Mysql
 
         /// <summary>
         /// (Updatable) Number of days to retain this backup.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("retentionInDays")]
         public Input<int>? RetentionInDays { get; set; }
@@ -375,6 +383,10 @@ namespace Pulumi.Oci.Mysql
 
         /// <summary>
         /// (Updatable) Number of days to retain this backup.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("retentionInDays")]
         public Input<int>? RetentionInDays { get; set; }

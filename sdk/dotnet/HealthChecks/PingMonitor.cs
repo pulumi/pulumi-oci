@@ -141,6 +141,10 @@ namespace Pulumi.Oci.HealthChecks
 
         /// <summary>
         /// (Updatable) A list of names of vantage points from which to execute the probe.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("vantagePointNames")]
         public Output<ImmutableArray<string>> VantagePointNames { get; private set; } = null!;
@@ -274,6 +278,10 @@ namespace Pulumi.Oci.HealthChecks
 
         /// <summary>
         /// (Updatable) A list of names of vantage points from which to execute the probe.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputList<string> VantagePointNames
         {
@@ -390,6 +398,10 @@ namespace Pulumi.Oci.HealthChecks
 
         /// <summary>
         /// (Updatable) A list of names of vantage points from which to execute the probe.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputList<string> VantagePointNames
         {

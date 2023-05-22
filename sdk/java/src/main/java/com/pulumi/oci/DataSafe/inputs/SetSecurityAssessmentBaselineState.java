@@ -34,12 +34,18 @@ public final class SetSecurityAssessmentBaselineState extends com.pulumi.resourc
     /**
      * The OCID of the security assessment.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="securityAssessmentId")
     private @Nullable Output<String> securityAssessmentId;
 
     /**
      * @return The OCID of the security assessment.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> securityAssessmentId() {
@@ -105,6 +111,9 @@ public final class SetSecurityAssessmentBaselineState extends com.pulumi.resourc
         /**
          * @param securityAssessmentId The OCID of the security assessment.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -115,6 +124,9 @@ public final class SetSecurityAssessmentBaselineState extends com.pulumi.resourc
 
         /**
          * @param securityAssessmentId The OCID of the security assessment.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -32,12 +32,18 @@ type ManagedList struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Managed list description.
+	//
+	// Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Managed list display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// provider of the feed
 	FeedProvider pulumi.StringOutput `pulumi:"feedProvider"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// If this list is editable or not
 	IsEditable pulumi.BoolOutput `pulumi:"isEditable"`
@@ -48,6 +54,9 @@ type ManagedList struct {
 	// type of the list
 	ListType pulumi.StringOutput `pulumi:"listType"`
 	// OCID of the Source ManagedList
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceManagedListId pulumi.StringOutput `pulumi:"sourceManagedListId"`
 	// The current state of the resource.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -99,12 +108,18 @@ type managedListState struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Managed list description.
+	//
+	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Managed list display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// provider of the feed
 	FeedProvider *string `pulumi:"feedProvider"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// If this list is editable or not
 	IsEditable *bool `pulumi:"isEditable"`
@@ -115,6 +130,9 @@ type managedListState struct {
 	// type of the list
 	ListType *string `pulumi:"listType"`
 	// OCID of the Source ManagedList
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceManagedListId *string `pulumi:"sourceManagedListId"`
 	// The current state of the resource.
 	State *string `pulumi:"state"`
@@ -132,12 +150,18 @@ type ManagedListState struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) Managed list description.
+	//
+	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) Managed list display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// provider of the feed
 	FeedProvider pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags pulumi.MapInput
 	// If this list is editable or not
 	IsEditable pulumi.BoolPtrInput
@@ -148,6 +172,9 @@ type ManagedListState struct {
 	// type of the list
 	ListType pulumi.StringPtrInput
 	// OCID of the Source ManagedList
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceManagedListId pulumi.StringPtrInput
 	// The current state of the resource.
 	State pulumi.StringPtrInput
@@ -169,16 +196,25 @@ type managedListArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Managed list description.
+	//
+	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Managed list display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) List of ManagedListItem
 	ListItems []string `pulumi:"listItems"`
 	// type of the list
 	ListType *string `pulumi:"listType"`
 	// OCID of the Source ManagedList
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceManagedListId *string `pulumi:"sourceManagedListId"`
 }
 
@@ -189,16 +225,25 @@ type ManagedListArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) Managed list description.
+	//
+	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) Managed list display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags pulumi.MapInput
 	// (Updatable) List of ManagedListItem
 	ListItems pulumi.StringArrayInput
 	// type of the list
 	ListType pulumi.StringPtrInput
 	// OCID of the Source ManagedList
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceManagedListId pulumi.StringPtrInput
 }
 
@@ -300,11 +345,15 @@ func (o ManagedListOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Managed list description.
+//
+// Avoid entering confidential information.
 func (o ManagedListOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedList) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
 // (Updatable) Managed list display name.
+//
+// Avoid entering confidential information.
 func (o ManagedListOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedList) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -315,6 +364,8 @@ func (o ManagedListOutput) FeedProvider() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+//
+// Avoid entering confidential information.
 func (o ManagedListOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *ManagedList) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
@@ -340,6 +391,9 @@ func (o ManagedListOutput) ListType() pulumi.StringOutput {
 }
 
 // OCID of the Source ManagedList
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ManagedListOutput) SourceManagedListId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedList) pulumi.StringOutput { return v.SourceManagedListId }).(pulumi.StringOutput)
 }

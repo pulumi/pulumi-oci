@@ -114,6 +114,9 @@ type OperatorControlAssignment struct {
 	// (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
 	TimeAssignmentFrom pulumi.StringOutput `pulumi:"timeAssignmentFrom"`
 	// (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeAssignmentTo pulumi.StringOutput `pulumi:"timeAssignmentTo"`
 	// Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
 	TimeOfAssignment pulumi.StringOutput `pulumi:"timeOfAssignment"`
@@ -218,6 +221,9 @@ type operatorControlAssignmentState struct {
 	// (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
 	TimeAssignmentFrom *string `pulumi:"timeAssignmentFrom"`
 	// (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeAssignmentTo *string `pulumi:"timeAssignmentTo"`
 	// Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
 	TimeOfAssignment *string `pulumi:"timeOfAssignment"`
@@ -273,6 +279,9 @@ type OperatorControlAssignmentState struct {
 	// (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
 	TimeAssignmentFrom pulumi.StringPtrInput
 	// (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeAssignmentTo pulumi.StringPtrInput
 	// Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
 	TimeOfAssignment pulumi.StringPtrInput
@@ -320,6 +329,9 @@ type operatorControlAssignmentArgs struct {
 	// (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
 	TimeAssignmentFrom *string `pulumi:"timeAssignmentFrom"`
 	// (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeAssignmentTo *string `pulumi:"timeAssignmentTo"`
 }
 
@@ -358,6 +370,9 @@ type OperatorControlAssignmentArgs struct {
 	// (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
 	TimeAssignmentFrom pulumi.StringPtrInput
 	// (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeAssignmentTo pulumi.StringPtrInput
 }
 
@@ -559,6 +574,9 @@ func (o OperatorControlAssignmentOutput) TimeAssignmentFrom() pulumi.StringOutpu
 }
 
 // (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o OperatorControlAssignmentOutput) TimeAssignmentTo() pulumi.StringOutput {
 	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringOutput { return v.TimeAssignmentTo }).(pulumi.StringOutput)
 }

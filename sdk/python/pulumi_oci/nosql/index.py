@@ -25,6 +25,10 @@ class IndexArgs:
         The set of arguments for constructing a Index resource.
         :param pulumi.Input[Sequence[pulumi.Input['IndexKeyArgs']]] keys: A set of keys for a secondary index.
         :param pulumi.Input[str] table_name_or_id: A table name within the compartment, or a table OCID.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
         :param pulumi.Input[bool] is_if_not_exists: If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
         :param pulumi.Input[str] name: Index name.
@@ -55,6 +59,10 @@ class IndexArgs:
     def table_name_or_id(self) -> pulumi.Input[str]:
         """
         A table name within the compartment, or a table OCID.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "table_name_or_id")
 
@@ -122,6 +130,10 @@ class _IndexState:
         :param pulumi.Input[str] table_id: the OCID of the table to which this index belongs.
         :param pulumi.Input[str] table_name: The name of the table to which this index belongs.
         :param pulumi.Input[str] table_name_or_id: A table name within the compartment, or a table OCID.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -243,6 +255,10 @@ class _IndexState:
     def table_name_or_id(self) -> Optional[pulumi.Input[str]]:
         """
         A table name within the compartment, or a table OCID.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "table_name_or_id")
 
@@ -299,6 +315,10 @@ class Index(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IndexKeyArgs']]]] keys: A set of keys for a secondary index.
         :param pulumi.Input[str] name: Index name.
         :param pulumi.Input[str] table_name_or_id: A table name within the compartment, or a table OCID.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -413,6 +433,10 @@ class Index(pulumi.CustomResource):
         :param pulumi.Input[str] table_id: the OCID of the table to which this index belongs.
         :param pulumi.Input[str] table_name: The name of the table to which this index belongs.
         :param pulumi.Input[str] table_name_or_id: A table name within the compartment, or a table OCID.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -498,6 +522,10 @@ class Index(pulumi.CustomResource):
     def table_name_or_id(self) -> pulumi.Output[str]:
         """
         A table name within the compartment, or a table OCID.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "table_name_or_id")
 

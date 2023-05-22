@@ -76,6 +76,9 @@ type ContainerImageSignature struct {
 	// The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
 	Signature pulumi.StringOutput `pulumi:"signature"`
 	// The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SigningAlgorithm pulumi.StringOutput `pulumi:"signingAlgorithm"`
 	// An RFC 3339 timestamp indicating when the image was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -148,6 +151,9 @@ type containerImageSignatureState struct {
 	// The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
 	Signature *string `pulumi:"signature"`
 	// The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SigningAlgorithm *string `pulumi:"signingAlgorithm"`
 	// An RFC 3339 timestamp indicating when the image was created.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -171,6 +177,9 @@ type ContainerImageSignatureState struct {
 	// The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
 	Signature pulumi.StringPtrInput
 	// The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SigningAlgorithm pulumi.StringPtrInput
 	// An RFC 3339 timestamp indicating when the image was created.
 	TimeCreated pulumi.StringPtrInput
@@ -194,6 +203,9 @@ type containerImageSignatureArgs struct {
 	// The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
 	Signature string `pulumi:"signature"`
 	// The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SigningAlgorithm string `pulumi:"signingAlgorithm"`
 }
 
@@ -212,6 +224,9 @@ type ContainerImageSignatureArgs struct {
 	// The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
 	Signature pulumi.StringInput
 	// The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SigningAlgorithm pulumi.StringInput
 }
 
@@ -343,6 +358,9 @@ func (o ContainerImageSignatureOutput) Signature() pulumi.StringOutput {
 }
 
 // The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ContainerImageSignatureOutput) SigningAlgorithm() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerImageSignature) pulumi.StringOutput { return v.SigningAlgorithm }).(pulumi.StringOutput)
 }

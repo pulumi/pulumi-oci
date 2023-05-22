@@ -24,12 +24,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * (Updatable) A list of bypass codes belongs to user
      * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="bypassCodes")
     private @Nullable Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs>> bypassCodes;
 
     /**
      * @return (Updatable) A list of bypass codes belongs to user
+     * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs>>> bypassCodes() {
@@ -39,12 +61,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * (Updatable) A list of devices enrolled by the user.
      * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="devices")
     private @Nullable Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs>> devices;
 
     /**
      * @return (Updatable) A list of devices enrolled by the user.
+     * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs>>> devices() {
@@ -54,12 +98,32 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * idcsAllowUpdatesInReadOnlyMode: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: integer
+     * * uniqueness: none
+     * 
      */
     @Import(name="loginAttempts")
     private @Nullable Output<Integer> loginAttempts;
 
     /**
      * @return (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * idcsAllowUpdatesInReadOnlyMode: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: integer
+     * * uniqueness: none
      * 
      */
     public Optional<Output<Integer>> loginAttempts() {
@@ -69,12 +133,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * (Updatable) This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
      * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: dateTime
+     * * uniqueness: none
+     * 
      */
     @Import(name="mfaEnabledOn")
     private @Nullable Output<String> mfaEnabledOn;
 
     /**
      * @return (Updatable) This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+     * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: dateTime
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> mfaEnabledOn() {
@@ -84,12 +170,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * (Updatable) User MFA Ignored Apps Identifiers
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="mfaIgnoredApps")
     private @Nullable Output<List<String>> mfaIgnoredApps;
 
     /**
      * @return (Updatable) User MFA Ignored Apps Identifiers
+     * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<String>>> mfaIgnoredApps() {
@@ -99,12 +209,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * (Updatable) User Opted for MFA
      * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="mfaStatus")
     private @Nullable Output<String> mfaStatus;
 
     /**
      * @return (Updatable) User Opted for MFA
+     * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> mfaStatus() {
@@ -114,12 +248,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * (Updatable) Preferred Authentication Factor Type
      * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="preferredAuthenticationFactor")
     private @Nullable Output<String> preferredAuthenticationFactor;
 
     /**
      * @return (Updatable) Preferred Authentication Factor Type
+     * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> preferredAuthenticationFactor() {
@@ -129,12 +287,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * (Updatable) Preferred Authentication method
      * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="preferredAuthenticationMethod")
     private @Nullable Output<String> preferredAuthenticationMethod;
 
     /**
      * @return (Updatable) Preferred Authentication method
+     * 
+     * **Added In:** 2009232244
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> preferredAuthenticationMethod() {
@@ -144,12 +326,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * (Updatable) User preferred device
      * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="preferredDevice")
     private @Nullable Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs> preferredDevice;
 
     /**
      * @return (Updatable) User preferred device
+     * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs>> preferredDevice() {
@@ -159,12 +365,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * (Updatable) Preferred Third party vendor name
      * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="preferredThirdPartyVendor")
     private @Nullable Output<String> preferredThirdPartyVendor;
 
     /**
      * @return (Updatable) Preferred Third party vendor name
+     * 
+     * **Added In:** 19.2.1
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> preferredThirdPartyVendor() {
@@ -174,12 +404,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     /**
      * (Updatable) A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted User Agents to authenticate users.  A User Agent is software application that a user uses to issue requests. For example, a User Agent could be a particular browser (possibly one of several executing on a desktop or laptop) or a particular mobile application (again, oneof several executing on a particular mobile device). A User Agent is trusted once the Multi-Factor Authentication has verified it in some way.
      * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
      */
     @Import(name="trustedUserAgents")
     private @Nullable Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgs>> trustedUserAgents;
 
     /**
      * @return (Updatable) A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted User Agents to authenticate users.  A User Agent is software application that a user uses to issue requests. For example, a User Agent could be a particular browser (possibly one of several executing on a desktop or laptop) or a particular mobile application (again, oneof several executing on a particular mobile device). A User Agent is trusted once the Multi-Factor Authentication has verified it in some way.
+     * 
+     * **Added In:** 18.3.6
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [value]
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
      * 
      */
     public Optional<Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgs>>> trustedUserAgents() {
@@ -223,6 +475,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         /**
          * @param bypassCodes (Updatable) A list of bypass codes belongs to user
          * 
+         * **Added In:** 18.3.6
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -234,6 +497,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         /**
          * @param bypassCodes (Updatable) A list of bypass codes belongs to user
          * 
+         * **Added In:** 18.3.6
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -244,6 +518,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         /**
          * @param bypassCodes (Updatable) A list of bypass codes belongs to user
          * 
+         * **Added In:** 18.3.6
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -253,6 +538,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
 
         /**
          * @param devices (Updatable) A list of devices enrolled by the user.
+         * 
+         * **Added In:** 18.3.6
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -265,6 +561,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         /**
          * @param devices (Updatable) A list of devices enrolled by the user.
          * 
+         * **Added In:** 18.3.6
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -275,6 +582,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         /**
          * @param devices (Updatable) A list of devices enrolled by the user.
          * 
+         * **Added In:** 18.3.6
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -284,6 +602,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
 
         /**
          * @param loginAttempts (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * idcsAllowUpdatesInReadOnlyMode: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: integer
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -296,6 +624,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         /**
          * @param loginAttempts (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
          * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * idcsAllowUpdatesInReadOnlyMode: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
+         * * type: integer
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -305,6 +643,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
 
         /**
          * @param mfaEnabledOn (Updatable) This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+         * 
+         * **Added In:** 18.3.6
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: dateTime
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -317,6 +666,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         /**
          * @param mfaEnabledOn (Updatable) This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
          * 
+         * **Added In:** 18.3.6
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: dateTime
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -326,6 +686,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
 
         /**
          * @param mfaIgnoredApps (Updatable) User MFA Ignored Apps Identifiers
+         * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -338,6 +710,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         /**
          * @param mfaIgnoredApps (Updatable) User MFA Ignored Apps Identifiers
          * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -348,6 +732,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         /**
          * @param mfaIgnoredApps (Updatable) User MFA Ignored Apps Identifiers
          * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -357,6 +753,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
 
         /**
          * @param mfaStatus (Updatable) User Opted for MFA
+         * 
+         * **Added In:** 18.3.6
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -369,6 +777,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         /**
          * @param mfaStatus (Updatable) User Opted for MFA
          * 
+         * **Added In:** 18.3.6
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -378,6 +798,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
 
         /**
          * @param preferredAuthenticationFactor (Updatable) Preferred Authentication Factor Type
+         * 
+         * **Added In:** 18.3.6
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -390,6 +822,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         /**
          * @param preferredAuthenticationFactor (Updatable) Preferred Authentication Factor Type
          * 
+         * **Added In:** 18.3.6
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -399,6 +843,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
 
         /**
          * @param preferredAuthenticationMethod (Updatable) Preferred Authentication method
+         * 
+         * **Added In:** 2009232244
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -411,6 +867,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         /**
          * @param preferredAuthenticationMethod (Updatable) Preferred Authentication method
          * 
+         * **Added In:** 2009232244
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -420,6 +888,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
 
         /**
          * @param preferredDevice (Updatable) User preferred device
+         * 
+         * **Added In:** 18.3.6
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -432,6 +912,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         /**
          * @param preferredDevice (Updatable) User preferred device
          * 
+         * **Added In:** 18.3.6
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -441,6 +933,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
 
         /**
          * @param preferredThirdPartyVendor (Updatable) Preferred Third party vendor name
+         * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -453,6 +957,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         /**
          * @param preferredThirdPartyVendor (Updatable) Preferred Third party vendor name
          * 
+         * **Added In:** 19.2.1
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -462,6 +978,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
 
         /**
          * @param trustedUserAgents (Updatable) A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted User Agents to authenticate users.  A User Agent is software application that a user uses to issue requests. For example, a User Agent could be a particular browser (possibly one of several executing on a desktop or laptop) or a particular mobile application (again, oneof several executing on a particular mobile device). A User Agent is trusted once the Multi-Factor Authentication has verified it in some way.
+         * 
+         * **Added In:** 18.3.6
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -474,6 +1001,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         /**
          * @param trustedUserAgents (Updatable) A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted User Agents to authenticate users.  A User Agent is software application that a user uses to issue requests. For example, a User Agent could be a particular browser (possibly one of several executing on a desktop or laptop) or a particular mobile application (again, oneof several executing on a particular mobile device). A User Agent is trusted once the Multi-Factor Authentication has verified it in some way.
          * 
+         * **Added In:** 18.3.6
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -483,6 +1021,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
 
         /**
          * @param trustedUserAgents (Updatable) A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted User Agents to authenticate users.  A User Agent is software application that a user uses to issue requests. For example, a User Agent could be a particular browser (possibly one of several executing on a desktop or laptop) or a particular mobile application (again, oneof several executing on a particular mobile device). A User Agent is trusted once the Multi-Factor Authentication has verified it in some way.
+         * 
+         * **Added In:** 18.3.6
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [value]
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
          * 
          * @return builder
          * 

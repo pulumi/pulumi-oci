@@ -48,6 +48,9 @@ type DetectAnomalyJob struct {
 	// The OCID of the project.
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// The value that customer can adjust to control the sensitivity of anomaly detection
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Sensitivity pulumi.Float64Output `pulumi:"sensitivity"`
 	// The current state of the batch document job.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -123,6 +126,9 @@ type detectAnomalyJobState struct {
 	// The OCID of the project.
 	ProjectId *string `pulumi:"projectId"`
 	// The value that customer can adjust to control the sensitivity of anomaly detection
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Sensitivity *float64 `pulumi:"sensitivity"`
 	// The current state of the batch document job.
 	State *string `pulumi:"state"`
@@ -158,6 +164,9 @@ type DetectAnomalyJobState struct {
 	// The OCID of the project.
 	ProjectId pulumi.StringPtrInput
 	// The value that customer can adjust to control the sensitivity of anomaly detection
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Sensitivity pulumi.Float64PtrInput
 	// The current state of the batch document job.
 	State pulumi.StringPtrInput
@@ -189,6 +198,9 @@ type detectAnomalyJobArgs struct {
 	// Detect anomaly job output details.
 	OutputDetails DetectAnomalyJobOutputDetails `pulumi:"outputDetails"`
 	// The value that customer can adjust to control the sensitivity of anomaly detection
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Sensitivity *float64 `pulumi:"sensitivity"`
 }
 
@@ -207,6 +219,9 @@ type DetectAnomalyJobArgs struct {
 	// Detect anomaly job output details.
 	OutputDetails DetectAnomalyJobOutputDetailsInput
 	// The value that customer can adjust to control the sensitivity of anomaly detection
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Sensitivity pulumi.Float64PtrInput
 }
 
@@ -348,6 +363,9 @@ func (o DetectAnomalyJobOutput) ProjectId() pulumi.StringOutput {
 }
 
 // The value that customer can adjust to control the sensitivity of anomaly detection
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DetectAnomalyJobOutput) Sensitivity() pulumi.Float64Output {
 	return o.ApplyT(func(v *DetectAnomalyJob) pulumi.Float64Output { return v.Sensitivity }).(pulumi.Float64Output)
 }

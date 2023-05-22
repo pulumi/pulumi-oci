@@ -36,6 +36,8 @@ public final class TagDefaultState extends com.pulumi.resources.ResourceArgs {
      * * If the `isRequired` flag is set to &#34;true&#34;, the value is set during resource creation.
      * * If the `isRequired` flag is set to &#34;false&#34;, the value you enter is set during resource creation.
      * 
+     * Example: `false`
+     * 
      */
     @Import(name="isRequired")
     private @Nullable Output<Boolean> isRequired;
@@ -44,6 +46,8 @@ public final class TagDefaultState extends com.pulumi.resources.ResourceArgs {
      * @return (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
      * * If the `isRequired` flag is set to &#34;true&#34;, the value is set during resource creation.
      * * If the `isRequired` flag is set to &#34;false&#34;, the value you enter is set during resource creation.
+     * 
+     * Example: `false`
      * 
      */
     public Optional<Output<Boolean>> isRequired() {
@@ -128,12 +132,18 @@ public final class TagDefaultState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
      * @return (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> value() {
@@ -197,6 +207,8 @@ public final class TagDefaultState extends com.pulumi.resources.ResourceArgs {
          * * If the `isRequired` flag is set to &#34;true&#34;, the value is set during resource creation.
          * * If the `isRequired` flag is set to &#34;false&#34;, the value you enter is set during resource creation.
          * 
+         * Example: `false`
+         * 
          * @return builder
          * 
          */
@@ -209,6 +221,8 @@ public final class TagDefaultState extends com.pulumi.resources.ResourceArgs {
          * @param isRequired (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
          * * If the `isRequired` flag is set to &#34;true&#34;, the value is set during resource creation.
          * * If the `isRequired` flag is set to &#34;false&#34;, the value you enter is set during resource creation.
+         * 
+         * Example: `false`
          * 
          * @return builder
          * 
@@ -325,6 +339,9 @@ public final class TagDefaultState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param value (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -335,6 +352,9 @@ public final class TagDefaultState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param value (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

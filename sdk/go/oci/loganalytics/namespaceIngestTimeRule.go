@@ -103,6 +103,9 @@ type NamespaceIngestTimeRule struct {
 	// A flag indicating whether or not the ingest time rule is enabled.
 	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
 	// The Logging Analytics namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// The current state of the ingest time rule.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -174,6 +177,9 @@ type namespaceIngestTimeRuleState struct {
 	// A flag indicating whether or not the ingest time rule is enabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// The Logging Analytics namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace *string `pulumi:"namespace"`
 	// The current state of the ingest time rule.
 	State *string `pulumi:"state"`
@@ -202,6 +208,9 @@ type NamespaceIngestTimeRuleState struct {
 	// A flag indicating whether or not the ingest time rule is enabled.
 	IsEnabled pulumi.BoolPtrInput
 	// The Logging Analytics namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace pulumi.StringPtrInput
 	// The current state of the ingest time rule.
 	State pulumi.StringPtrInput
@@ -231,6 +240,9 @@ type namespaceIngestTimeRuleArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The Logging Analytics namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace string `pulumi:"namespace"`
 }
 
@@ -251,6 +263,9 @@ type NamespaceIngestTimeRuleArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// The Logging Analytics namespace used for the request.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace pulumi.StringInput
 }
 
@@ -386,6 +401,9 @@ func (o NamespaceIngestTimeRuleOutput) IsEnabled() pulumi.BoolOutput {
 }
 
 // The Logging Analytics namespace used for the request.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o NamespaceIngestTimeRuleOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v *NamespaceIngestTimeRule) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
 }

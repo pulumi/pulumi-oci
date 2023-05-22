@@ -87,6 +87,9 @@ type Group struct {
 	// The detailed status of INACTIVE lifecycleState.
 	InactiveState pulumi.StringOutput `pulumi:"inactiveState"`
 	// The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The group's current state.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -137,6 +140,9 @@ type groupState struct {
 	// The detailed status of INACTIVE lifecycleState.
 	InactiveState *string `pulumi:"inactiveState"`
 	// The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 	// The group's current state.
 	State *string `pulumi:"state"`
@@ -156,6 +162,9 @@ type GroupState struct {
 	// The detailed status of INACTIVE lifecycleState.
 	InactiveState pulumi.StringPtrInput
 	// The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput
 	// The group's current state.
 	State pulumi.StringPtrInput
@@ -177,6 +186,9 @@ type groupArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 }
 
@@ -191,6 +203,9 @@ type GroupArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput
 }
 
@@ -307,6 +322,9 @@ func (o GroupOutput) InactiveState() pulumi.StringOutput {
 }
 
 // The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o GroupOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

@@ -39,7 +39,11 @@ class BudgetArgs:
         :param pulumi.Input[str] processing_period_type: (Updatable) The type of the budget processing period. Valid values are INVOICE and MONTH.
         :param pulumi.Input[str] target_compartment_id: This is DEPRECATED. Set the target compartment ID in targets instead.
         :param pulumi.Input[str] target_type: The type of target on which the budget is applied.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "amount", amount)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -202,7 +206,11 @@ class BudgetArgs:
     @pulumi.getter
     def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
+        The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "targets")
 
@@ -251,7 +259,11 @@ class _BudgetState:
         :param pulumi.Input[str] state: The current state of the budget.
         :param pulumi.Input[str] target_compartment_id: This is DEPRECATED. Set the target compartment ID in targets instead.
         :param pulumi.Input[str] target_type: The type of target on which the budget is applied.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The time that the budget was created.
         :param pulumi.Input[str] time_spend_computed: The time that the budget spend was last computed.
         :param pulumi.Input[str] time_updated: The time that the budget was updated.
@@ -485,7 +497,11 @@ class _BudgetState:
     @pulumi.getter
     def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
+        The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "targets")
 
@@ -611,7 +627,11 @@ class Budget(pulumi.CustomResource):
         :param pulumi.Input[str] reset_period: (Updatable) The reset period for the budget. Valid value is MONTHLY.
         :param pulumi.Input[str] target_compartment_id: This is DEPRECATED. Set the target compartment ID in targets instead.
         :param pulumi.Input[str] target_type: The type of target on which the budget is applied.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -774,7 +794,11 @@ class Budget(pulumi.CustomResource):
         :param pulumi.Input[str] state: The current state of the budget.
         :param pulumi.Input[str] target_compartment_id: This is DEPRECATED. Set the target compartment ID in targets instead.
         :param pulumi.Input[str] target_type: The type of target on which the budget is applied.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The time that the budget was created.
         :param pulumi.Input[str] time_spend_computed: The time that the budget spend was last computed.
         :param pulumi.Input[str] time_updated: The time that the budget was updated.
@@ -930,7 +954,11 @@ class Budget(pulumi.CustomResource):
     @pulumi.getter
     def targets(self) -> pulumi.Output[Sequence[str]]:
         """
-        The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
+        The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "targets")
 

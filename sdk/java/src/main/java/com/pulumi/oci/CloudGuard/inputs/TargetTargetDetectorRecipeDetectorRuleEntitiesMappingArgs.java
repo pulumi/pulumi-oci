@@ -18,12 +18,16 @@ public final class TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs ext
     /**
      * (Updatable) DetectorTemplate identifier.
      * 
+     * Avoid entering confidential information.
+     * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
      * @return (Updatable) DetectorTemplate identifier.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -89,6 +93,8 @@ public final class TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs ext
         /**
          * @param displayName (Updatable) DetectorTemplate identifier.
          * 
+         * Avoid entering confidential information.
+         * 
          * @return builder
          * 
          */
@@ -99,6 +105,8 @@ public final class TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs ext
 
         /**
          * @param displayName (Updatable) DetectorTemplate identifier.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 

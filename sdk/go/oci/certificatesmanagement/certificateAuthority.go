@@ -52,6 +52,9 @@ type CertificateAuthority struct {
 	// Additional information about the current CA lifecycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The algorithm used to sign public key certificates that the CA issues.
 	SigningAlgorithm pulumi.StringOutput `pulumi:"signingAlgorithm"`
@@ -128,6 +131,9 @@ type certificateAuthorityState struct {
 	// Additional information about the current CA lifecycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 	// The algorithm used to sign public key certificates that the CA issues.
 	SigningAlgorithm *string `pulumi:"signingAlgorithm"`
@@ -167,6 +173,9 @@ type CertificateAuthorityState struct {
 	// Additional information about the current CA lifecycle state.
 	LifecycleDetails pulumi.StringPtrInput
 	// A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput
 	// The algorithm used to sign public key certificates that the CA issues.
 	SigningAlgorithm pulumi.StringPtrInput
@@ -202,6 +211,9 @@ type certificateAuthorityArgs struct {
 	// The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 }
 
@@ -224,6 +236,9 @@ type CertificateAuthorityArgs struct {
 	// The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
 	KmsKeyId pulumi.StringInput
 	// A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput
 }
 
@@ -381,6 +396,9 @@ func (o CertificateAuthorityOutput) LifecycleDetails() pulumi.StringOutput {
 }
 
 // A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CertificateAuthorityOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *CertificateAuthority) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

@@ -76,6 +76,12 @@ export class ManagedDatabasesResetDatabaseParameter extends pulumi.CustomResourc
     public readonly parameters!: pulumi.Output<string[]>;
     /**
      * The clause used to specify when the parameter change takes effect.
+     *
+     * Use `MEMORY` to make the change in memory and ensure that it takes effect immediately. Use `SPFILE` to make the change in the server parameter file. The change takes effect when the database is next shut down and started up again. Use `BOTH` to make the change in memory and in the server parameter file. The change takes effect immediately and persists after the database is shut down and started up again.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly scope!: pulumi.Output<string>;
 
@@ -138,6 +144,12 @@ export interface ManagedDatabasesResetDatabaseParameterState {
     parameters?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The clause used to specify when the parameter change takes effect.
+     *
+     * Use `MEMORY` to make the change in memory and ensure that it takes effect immediately. Use `SPFILE` to make the change in the server parameter file. The change takes effect when the database is next shut down and started up again. Use `BOTH` to make the change in memory and in the server parameter file. The change takes effect immediately and persists after the database is shut down and started up again.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     scope?: pulumi.Input<string>;
 }
@@ -160,6 +172,12 @@ export interface ManagedDatabasesResetDatabaseParameterArgs {
     parameters: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The clause used to specify when the parameter change takes effect.
+     *
+     * Use `MEMORY` to make the change in memory and ensure that it takes effect immediately. Use `SPFILE` to make the change in the server parameter file. The change takes effect when the database is next shut down and started up again. Use `BOTH` to make the change in memory and in the server parameter file. The change takes effect immediately and persists after the database is shut down and started up again.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     scope: pulumi.Input<string>;
 }

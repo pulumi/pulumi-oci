@@ -71,12 +71,17 @@ type SecurityZone struct {
 	// (Updatable) The security zone's name
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// List of inherited compartments
 	InheritedByCompartments pulumi.StringArrayOutput `pulumi:"inheritedByCompartments"`
 	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityZoneRecipeId pulumi.StringOutput `pulumi:"securityZoneRecipeId"`
 	// The OCID of the target associated with the security zone
 	SecurityZoneTargetId pulumi.StringOutput `pulumi:"securityZoneTargetId"`
@@ -137,12 +142,17 @@ type securityZoneState struct {
 	// (Updatable) The security zone's name
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// List of inherited compartments
 	InheritedByCompartments []string `pulumi:"inheritedByCompartments"`
 	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityZoneRecipeId *string `pulumi:"securityZoneRecipeId"`
 	// The OCID of the target associated with the security zone
 	SecurityZoneTargetId *string `pulumi:"securityZoneTargetId"`
@@ -166,12 +176,17 @@ type SecurityZoneState struct {
 	// (Updatable) The security zone's name
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags pulumi.MapInput
 	// List of inherited compartments
 	InheritedByCompartments pulumi.StringArrayInput
 	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityZoneRecipeId pulumi.StringPtrInput
 	// The OCID of the target associated with the security zone
 	SecurityZoneTargetId pulumi.StringPtrInput
@@ -199,8 +214,13 @@ type securityZoneArgs struct {
 	// (Updatable) The security zone's name
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityZoneRecipeId string `pulumi:"securityZoneRecipeId"`
 }
 
@@ -215,8 +235,13 @@ type SecurityZoneArgs struct {
 	// (Updatable) The security zone's name
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// Avoid entering confidential information.
 	FreeformTags pulumi.MapInput
 	// (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityZoneRecipeId pulumi.StringInput
 }
 
@@ -328,6 +353,8 @@ func (o SecurityZoneOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+//
+// Avoid entering confidential information.
 func (o SecurityZoneOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *SecurityZone) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
@@ -343,6 +370,9 @@ func (o SecurityZoneOutput) LifecycleDetails() pulumi.StringOutput {
 }
 
 // (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o SecurityZoneOutput) SecurityZoneRecipeId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityZone) pulumi.StringOutput { return v.SecurityZoneRecipeId }).(pulumi.StringOutput)
 }

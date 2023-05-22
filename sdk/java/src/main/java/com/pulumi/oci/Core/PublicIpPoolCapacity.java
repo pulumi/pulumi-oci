@@ -74,12 +74,18 @@ public class PublicIpPoolCapacity extends com.pulumi.resources.CustomResource {
     /**
      * The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="cidrBlock", type=String.class, parameters={})
     private Output<String> cidrBlock;
 
     /**
      * @return The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> cidrBlock() {

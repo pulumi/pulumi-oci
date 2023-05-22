@@ -23,6 +23,14 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
 
         /// <summary>
         /// (Updatable) The list of HTTP methods allowed for this listener.
+        /// 
+        /// By default, you can specify only the standard HTTP methods defined in the [HTTP Method Registry](http://www.iana.org/assignments/http-methods/http-methods.xhtml). You can also see a list of supported standard HTTP methods in the Load Balancing service documentation at [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
+        /// 
+        /// Your backend application must be able to handle the methods specified in this list.
+        /// 
+        /// The list of HTTP methods is extensible. If you need to configure custom HTTP methods, contact [My Oracle Support](http://support.oracle.com/) to remove the restriction for your tenancy.
+        /// 
+        /// Example: ["GET", "PUT", "POST", "PROPFIND"]
         /// </summary>
         public InputList<string> AllowedMethods
         {
@@ -50,6 +58,8 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
 
         /// <summary>
         /// (Updatable) A brief description of the access control rule. Avoid entering confidential information.
+        /// 
+        /// example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -70,18 +80,54 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         /// (Updatable) A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
         /// *  value cannot contain `$`
         /// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+        /// 
+        /// Example: `example_prefix_value`
         /// </summary>
         [Input("prefix")]
         public Input<string>? Prefix { get; set; }
 
         /// <summary>
         /// (Updatable) An object that defines the redirect URI applied to the original request. The object property values compose the redirect URI.
+        /// 
+        /// **NOTE:** The Load Balancing service cannot automatically detect or avoid infinite redirects. Be sure to provide meaningful, complete, and correct field values. If any component field of this object has no value, the system retains the value from the incoming HTTP request URI.
+        /// 
+        /// For example, if you specify only the protocol field `https`, and the incoming request URI is `http://example.com:8080`, the resulting runtime redirect URI is `https://example.com:8080`. The system retains the host and port from the incoming URI and does not automatically change the port setting from `8080` to `443`.
+        /// 
+        /// Be sure to configure valid percent-encoding (URL encoding) when needed.
+        /// 
+        /// In addition to static string values, you can use the following tokens to construct the redirect URI. These tokens extract values from the incoming HTTP request URI.
+        /// *  {protocol} : The protocol from the incoming HTTP request URI.
+        /// *  {host}     : The domain name from the incoming HTTP request URI.
+        /// *  {port}     : The port from the incoming HTTP request URI.
+        /// *  {path}     : The path from the incoming HTTP request URI.
+        /// *  {query}    : The query string from the incoming HTTP request URI.
+        /// 
+        /// The tokens are case sensitive. For example, `{host}` is a valid token, but `{HOST}` is not.
+        /// 
+        /// You can retain the literal characters of a token when you specify values for the path and query properties of the redirect URI. Use a backslash (\\) as the escape character for the \\, {, and } characters. For example, if the incoming HTTP request URI is `/video`, the path property value:
+        /// 
+        /// `/example{path}123\{path\}`
+        /// 
+        /// appears in the constructed redirect URI as:
+        /// 
+        /// `/example/video123{path}`
         /// </summary>
         [Input("redirectUri")]
         public Input<Inputs.RuleSetItemRedirectUriGetArgs>? RedirectUri { get; set; }
 
         /// <summary>
         /// (Updatable) The HTTP status code to return when the incoming request is redirected.
+        /// 
+        /// The status line returned with the code is mapped from the standard HTTP specification. Valid response codes for redirection are:
+        /// *  301
+        /// *  302
+        /// *  303
+        /// *  307
+        /// *  308
+        /// 
+        /// The default value is `302` (Found).
+        /// 
+        /// Example: `301`
         /// </summary>
         [Input("responseCode")]
         public Input<int>? ResponseCode { get; set; }
@@ -96,6 +142,8 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         /// (Updatable) A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
         /// *  value cannot contain `$`
         /// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+        /// 
+        /// Example: `example_suffix_value`
         /// </summary>
         [Input("suffix")]
         public Input<string>? Suffix { get; set; }
@@ -104,6 +152,8 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         /// (Updatable) A header value that conforms to RFC 7230. With the following exceptions:
         /// *  value cannot contain `$`
         /// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
+        /// 
+        /// Example: `example_value`
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

@@ -171,12 +171,18 @@ public final class OperationsInsightsWarehouseState extends com.pulumi.resources
     /**
      * (Updatable) Storage allocated to OPSI Warehouse ADW.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="storageAllocatedInGbs")
     private @Nullable Output<Double> storageAllocatedInGbs;
 
     /**
      * @return (Updatable) Storage allocated to OPSI Warehouse ADW.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Double>> storageAllocatedInGbs() {
@@ -510,6 +516,9 @@ public final class OperationsInsightsWarehouseState extends com.pulumi.resources
         /**
          * @param storageAllocatedInGbs (Updatable) Storage allocated to OPSI Warehouse ADW.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -520,6 +529,9 @@ public final class OperationsInsightsWarehouseState extends com.pulumi.resources
 
         /**
          * @param storageAllocatedInGbs (Updatable) Storage allocated to OPSI Warehouse ADW.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

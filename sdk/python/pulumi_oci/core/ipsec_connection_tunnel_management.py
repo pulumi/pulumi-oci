@@ -31,6 +31,8 @@ class IpsecConnectionTunnelManagementArgs:
         :param pulumi.Input[str] routing: The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
         :param pulumi.Input[str] tunnel_id: The OCID of the IPSec connection's tunnel.
         :param pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]] bgp_session_infos: Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+               
+               If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs'] encryption_domain_config: Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
         :param pulumi.Input[str] ike_version: Internet Key Exchange protocol version.
@@ -93,6 +95,8 @@ class IpsecConnectionTunnelManagementArgs:
     def bgp_session_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]]]:
         """
         Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+
+        If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
         """
         return pulumi.get(self, "bgp_session_infos")
 
@@ -186,6 +190,8 @@ class _IpsecConnectionTunnelManagementState:
         """
         Input properties used for looking up and filtering IpsecConnectionTunnelManagement resources.
         :param pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]] bgp_session_infos: Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+               
+               If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the tunnel.
         :param pulumi.Input[str] cpe_ip: The IP address of Cpe headend.  Example: `129.146.17.50`
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -251,6 +257,8 @@ class _IpsecConnectionTunnelManagementState:
     def bgp_session_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]]]:
         """
         Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+
+        If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
         """
         return pulumi.get(self, "bgp_session_infos")
 
@@ -551,6 +559,8 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]]] bgp_session_infos: Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+               
+               If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']] encryption_domain_config: Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
         :param pulumi.Input[str] ike_version: Internet Key Exchange protocol version.
@@ -709,6 +719,8 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]]] bgp_session_infos: Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+               
+               If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the tunnel.
         :param pulumi.Input[str] cpe_ip: The IP address of Cpe headend.  Example: `129.146.17.50`
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -757,6 +769,8 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
     def bgp_session_infos(self) -> pulumi.Output[Sequence['outputs.IpsecConnectionTunnelManagementBgpSessionInfo']]:
         """
         Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+
+        If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
         """
         return pulumi.get(self, "bgp_session_infos")
 

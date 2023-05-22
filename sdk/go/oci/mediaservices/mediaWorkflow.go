@@ -98,6 +98,9 @@ type MediaWorkflow struct {
 	// The time when the MediaWorkflow was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// (Updatable) The version of the MediaWorkflowTaskDeclaration.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Version pulumi.StringOutput `pulumi:"version"`
 }
 
@@ -161,6 +164,9 @@ type mediaWorkflowState struct {
 	// The time when the MediaWorkflow was updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// (Updatable) The version of the MediaWorkflowTaskDeclaration.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Version *string `pulumi:"version"`
 }
 
@@ -190,6 +196,9 @@ type MediaWorkflowState struct {
 	// The time when the MediaWorkflow was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
 	// (Updatable) The version of the MediaWorkflowTaskDeclaration.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Version pulumi.StringPtrInput
 }
 
@@ -380,6 +389,9 @@ func (o MediaWorkflowOutput) TimeUpdated() pulumi.StringOutput {
 }
 
 // (Updatable) The version of the MediaWorkflowTaskDeclaration.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MediaWorkflowOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *MediaWorkflow) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }

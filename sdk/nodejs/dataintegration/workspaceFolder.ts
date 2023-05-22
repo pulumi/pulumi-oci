@@ -127,6 +127,10 @@ export class WorkspaceFolder extends pulumi.CustomResource {
     public readonly registryMetadata!: pulumi.Output<outputs.DataIntegration.WorkspaceFolderRegistryMetadata>;
     /**
      * The workspace ID.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly workspaceId!: pulumi.Output<string>;
 
@@ -249,6 +253,10 @@ export interface WorkspaceFolderState {
     registryMetadata?: pulumi.Input<inputs.DataIntegration.WorkspaceFolderRegistryMetadata>;
     /**
      * The workspace ID.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     workspaceId?: pulumi.Input<string>;
 }
@@ -292,6 +300,10 @@ export interface WorkspaceFolderArgs {
     registryMetadata: pulumi.Input<inputs.DataIntegration.WorkspaceFolderRegistryMetadata>;
     /**
      * The workspace ID.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     workspaceId: pulumi.Input<string>;
 }

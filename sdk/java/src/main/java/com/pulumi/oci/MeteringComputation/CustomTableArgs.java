@@ -47,12 +47,18 @@ public final class CustomTableArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The associated saved report OCID.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="savedReportId", required=true)
     private Output<String> savedReportId;
 
     /**
      * @return The associated saved report OCID.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> savedReportId() {
@@ -130,6 +136,9 @@ public final class CustomTableArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param savedReportId The associated saved report OCID.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -140,6 +149,9 @@ public final class CustomTableArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param savedReportId The associated saved report OCID.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

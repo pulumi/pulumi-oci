@@ -30,12 +30,16 @@ public final class GetSslCipherSuitePlainArgs extends com.pulumi.resources.Invok
     /**
      * The name of the SSL cipher suite to retrieve.
      * 
+     * example: `example_cipher_suite`
+     * 
      */
     @Import(name="name", required=true)
     private String name;
 
     /**
      * @return The name of the SSL cipher suite to retrieve.
+     * 
+     * example: `example_cipher_suite`
      * 
      */
     public String name() {
@@ -80,6 +84,8 @@ public final class GetSslCipherSuitePlainArgs extends com.pulumi.resources.Invok
 
         /**
          * @param name The name of the SSL cipher suite to retrieve.
+         * 
+         * example: `example_cipher_suite`
          * 
          * @return builder
          * 

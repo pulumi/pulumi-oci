@@ -166,12 +166,18 @@ public class EncryptedData extends com.pulumi.resources.CustomResource {
     /**
      * The plaintext data to encrypt.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="plaintext", type=String.class, parameters={})
     private Output<String> plaintext;
 
     /**
      * @return The plaintext data to encrypt.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> plaintext() {

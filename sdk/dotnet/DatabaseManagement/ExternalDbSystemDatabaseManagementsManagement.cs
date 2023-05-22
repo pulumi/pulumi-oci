@@ -40,6 +40,10 @@ namespace Pulumi.Oci.DatabaseManagement
     {
         /// <summary>
         /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("enableDatabaseManagement")]
         public Output<bool> EnableDatabaseManagement { get; private set; } = null!;
@@ -104,6 +108,10 @@ namespace Pulumi.Oci.DatabaseManagement
     {
         /// <summary>
         /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("enableDatabaseManagement", required: true)]
         public Input<bool> EnableDatabaseManagement { get; set; } = null!;
@@ -130,6 +138,10 @@ namespace Pulumi.Oci.DatabaseManagement
     {
         /// <summary>
         /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("enableDatabaseManagement")]
         public Input<bool>? EnableDatabaseManagement { get; set; }

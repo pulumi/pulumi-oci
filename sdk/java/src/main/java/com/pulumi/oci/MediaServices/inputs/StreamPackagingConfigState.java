@@ -142,12 +142,18 @@ public final class StreamPackagingConfigState extends com.pulumi.resources.Resou
     /**
      * The output format for the package.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="streamPackagingFormat")
     private @Nullable Output<String> streamPackagingFormat;
 
     /**
      * @return The output format for the package.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> streamPackagingFormat() {
@@ -405,6 +411,9 @@ public final class StreamPackagingConfigState extends com.pulumi.resources.Resou
         /**
          * @param streamPackagingFormat The output format for the package.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -415,6 +424,9 @@ public final class StreamPackagingConfigState extends com.pulumi.resources.Resou
 
         /**
          * @param streamPackagingFormat The output format for the package.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

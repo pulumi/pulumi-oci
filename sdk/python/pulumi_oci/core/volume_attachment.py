@@ -33,6 +33,10 @@ class VolumeAttachmentArgs:
         :param pulumi.Input[str] attachment_type: The type of volume. The only supported values are "iscsi" and "paravirtualized".
         :param pulumi.Input[str] instance_id: The OCID of the instance.
         :param pulumi.Input[str] volume_id: The OCID of the volume.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[str] device: The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -97,6 +101,10 @@ class VolumeAttachmentArgs:
     def volume_id(self) -> pulumi.Input[str]:
         """
         The OCID of the volume.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "volume_id")
 
@@ -264,6 +272,10 @@ class _VolumeAttachmentState:
         :param pulumi.Input[str] time_created: The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[bool] use_chap: Whether to use CHAP authentication for the volume attachment. Defaults to false.
         :param pulumi.Input[str] volume_id: The OCID of the volume.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if attachment_type is not None:
             pulumi.set(__self__, "attachment_type", attachment_type)
@@ -584,6 +596,10 @@ class _VolumeAttachmentState:
     def volume_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the volume.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "volume_id")
 
@@ -657,6 +673,10 @@ class VolumeAttachment(pulumi.CustomResource):
         :param pulumi.Input[bool] is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
         :param pulumi.Input[bool] use_chap: Whether to use CHAP authentication for the volume attachment. Defaults to false.
         :param pulumi.Input[str] volume_id: The OCID of the volume.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -828,6 +848,10 @@ class VolumeAttachment(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[bool] use_chap: Whether to use CHAP authentication for the volume attachment. Defaults to false.
         :param pulumi.Input[str] volume_id: The OCID of the volume.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1039,6 +1063,10 @@ class VolumeAttachment(pulumi.CustomResource):
     def volume_id(self) -> pulumi.Output[str]:
         """
         The OCID of the volume.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "volume_id")
 

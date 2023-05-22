@@ -289,12 +289,18 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
     /**
      * OCID for the parent software source, if there is one
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="parentId", type=String.class, parameters={})
     private Output<String> parentId;
 
     /**
      * @return OCID for the parent software source, if there is one
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> parentId() {

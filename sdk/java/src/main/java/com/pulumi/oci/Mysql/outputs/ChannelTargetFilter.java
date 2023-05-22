@@ -12,6 +12,8 @@ public final class ChannelTargetFilter {
     /**
      * @return (Updatable) The type of the filter rule.
      * 
+     * For details on each type, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html)
+     * 
      */
     private String type;
     /**
@@ -23,6 +25,8 @@ public final class ChannelTargetFilter {
     private ChannelTargetFilter() {}
     /**
      * @return (Updatable) The type of the filter rule.
+     * 
+     * For details on each type, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html)
      * 
      */
     public String type() {

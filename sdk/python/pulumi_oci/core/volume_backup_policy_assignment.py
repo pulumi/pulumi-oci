@@ -20,6 +20,10 @@ class VolumeBackupPolicyAssignmentArgs:
         The set of arguments for constructing a VolumeBackupPolicyAssignment resource.
         :param pulumi.Input[str] asset_id: The OCID of the volume to assign the policy to.
         :param pulumi.Input[str] policy_id: The OCID of the volume backup policy to assign to the volume.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "asset_id", asset_id)
         pulumi.set(__self__, "policy_id", policy_id)
@@ -41,6 +45,10 @@ class VolumeBackupPolicyAssignmentArgs:
     def policy_id(self) -> pulumi.Input[str]:
         """
         The OCID of the volume backup policy to assign to the volume.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "policy_id")
 
@@ -59,6 +67,10 @@ class _VolumeBackupPolicyAssignmentState:
         Input properties used for looking up and filtering VolumeBackupPolicyAssignment resources.
         :param pulumi.Input[str] asset_id: The OCID of the volume to assign the policy to.
         :param pulumi.Input[str] policy_id: The OCID of the volume backup policy to assign to the volume.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         if asset_id is not None:
@@ -85,6 +97,10 @@ class _VolumeBackupPolicyAssignmentState:
     def policy_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the volume backup policy to assign to the volume.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "policy_id")
 
@@ -143,6 +159,10 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] asset_id: The OCID of the volume to assign the policy to.
         :param pulumi.Input[str] policy_id: The OCID of the volume backup policy to assign to the volume.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -231,6 +251,10 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] asset_id: The OCID of the volume to assign the policy to.
         :param pulumi.Input[str] policy_id: The OCID of the volume backup policy to assign to the volume.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -255,6 +279,10 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
     def policy_id(self) -> pulumi.Output[str]:
         """
         The OCID of the volume backup policy to assign to the volume.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "policy_id")
 

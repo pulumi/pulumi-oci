@@ -73,6 +73,8 @@ export class HttpProbe extends pulumi.CustomResource {
     public readonly compartmentId!: pulumi.Output<string>;
     /**
      * A dictionary of HTTP request headers.
+     *
+     * *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
      */
     public readonly headers!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -113,6 +115,10 @@ export class HttpProbe extends pulumi.CustomResource {
     public readonly timeoutInSeconds!: pulumi.Output<number>;
     /**
      * A list of names of vantage points from which to execute the probe.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly vantagePointNames!: pulumi.Output<string[]>;
 
@@ -180,6 +186,8 @@ export interface HttpProbeState {
     compartmentId?: pulumi.Input<string>;
     /**
      * A dictionary of HTTP request headers.
+     *
+     * *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
      */
     headers?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -220,6 +228,10 @@ export interface HttpProbeState {
     timeoutInSeconds?: pulumi.Input<number>;
     /**
      * A list of names of vantage points from which to execute the probe.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vantagePointNames?: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -234,6 +246,8 @@ export interface HttpProbeArgs {
     compartmentId: pulumi.Input<string>;
     /**
      * A dictionary of HTTP request headers.
+     *
+     * *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
      */
     headers?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -262,6 +276,10 @@ export interface HttpProbeArgs {
     timeoutInSeconds?: pulumi.Input<number>;
     /**
      * A list of names of vantage points from which to execute the probe.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vantagePointNames?: pulumi.Input<pulumi.Input<string>[]>;
 }

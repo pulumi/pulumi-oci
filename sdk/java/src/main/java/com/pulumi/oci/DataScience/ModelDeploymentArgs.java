@@ -142,12 +142,18 @@ public final class ModelDeploymentArgs extends com.pulumi.resources.ResourceArgs
     /**
      * (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
      * @return (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> state() {
@@ -357,6 +363,9 @@ public final class ModelDeploymentArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param state (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -367,6 +376,9 @@ public final class ModelDeploymentArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param state (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -62,6 +62,10 @@ namespace Pulumi.Oci.BigDataService.Inputs
 
         /// <summary>
         /// (Updatable) The time zone of the execution schedule, in IANA time zone database name format
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("timezone")]
         public Input<string>? Timezone { get; set; }

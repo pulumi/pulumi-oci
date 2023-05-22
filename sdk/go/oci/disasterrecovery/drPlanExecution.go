@@ -92,6 +92,9 @@ type DrPlanExecution struct {
 	// The type of the plan execution.
 	PlanExecutionType pulumi.StringOutput `pulumi:"planExecutionType"`
 	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PlanId pulumi.StringOutput `pulumi:"planId"`
 	// The current state of the DR Plan Execution.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -169,6 +172,9 @@ type drPlanExecutionState struct {
 	// The type of the plan execution.
 	PlanExecutionType *string `pulumi:"planExecutionType"`
 	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PlanId *string `pulumi:"planId"`
 	// The current state of the DR Plan Execution.
 	State *string `pulumi:"state"`
@@ -212,6 +218,9 @@ type DrPlanExecutionState struct {
 	// The type of the plan execution.
 	PlanExecutionType pulumi.StringPtrInput
 	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PlanId pulumi.StringPtrInput
 	// The current state of the DR Plan Execution.
 	State pulumi.StringPtrInput
@@ -241,6 +250,9 @@ type drPlanExecutionArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PlanId string `pulumi:"planId"`
 }
 
@@ -255,6 +267,9 @@ type DrPlanExecutionArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PlanId pulumi.StringInput
 }
 
@@ -411,6 +426,9 @@ func (o DrPlanExecutionOutput) PlanExecutionType() pulumi.StringOutput {
 }
 
 // The OCID of the DR Plan.  Example: `ocid1.drplan.oc1.iad.exampleocid2`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DrPlanExecutionOutput) PlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringOutput { return v.PlanId }).(pulumi.StringOutput)
 }

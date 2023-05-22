@@ -65,6 +65,9 @@ type Backup struct {
 	// The size of the database in gigabytes at the time the backup was taken.
 	DatabaseSizeInGbs pulumi.Float64Output `pulumi:"databaseSizeInGbs"`
 	// The user-friendly name for the backup. The name does not have to be unique.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
@@ -134,6 +137,9 @@ type backupState struct {
 	// The size of the database in gigabytes at the time the backup was taken.
 	DatabaseSizeInGbs *float64 `pulumi:"databaseSizeInGbs"`
 	// The user-friendly name for the backup. The name does not have to be unique.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
@@ -169,6 +175,9 @@ type BackupState struct {
 	// The size of the database in gigabytes at the time the backup was taken.
 	DatabaseSizeInGbs pulumi.Float64PtrInput
 	// The user-friendly name for the backup. The name does not have to be unique.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisplayName pulumi.StringPtrInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrInput
@@ -200,6 +209,9 @@ type backupArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
 	DatabaseId string `pulumi:"databaseId"`
 	// The user-friendly name for the backup. The name does not have to be unique.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisplayName string `pulumi:"displayName"`
 }
 
@@ -208,6 +220,9 @@ type BackupArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
 	DatabaseId pulumi.StringInput
 	// The user-friendly name for the backup. The name does not have to be unique.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisplayName pulumi.StringInput
 }
 
@@ -324,6 +339,9 @@ func (o BackupOutput) DatabaseSizeInGbs() pulumi.Float64Output {
 }
 
 // The user-friendly name for the backup. The name does not have to be unique.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BackupOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }

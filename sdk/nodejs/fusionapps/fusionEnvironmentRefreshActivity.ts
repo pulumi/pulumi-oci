@@ -82,6 +82,10 @@ export class FusionEnvironmentRefreshActivity extends pulumi.CustomResource {
     public /*out*/ readonly serviceAvailability!: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly sourceFusionEnvironmentId!: pulumi.Output<string>;
     /**
@@ -189,6 +193,10 @@ export interface FusionEnvironmentRefreshActivityState {
     serviceAvailability?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     sourceFusionEnvironmentId?: pulumi.Input<string>;
     /**
@@ -227,6 +235,10 @@ export interface FusionEnvironmentRefreshActivityArgs {
     fusionEnvironmentId: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     sourceFusionEnvironmentId: pulumi.Input<string>;
 }

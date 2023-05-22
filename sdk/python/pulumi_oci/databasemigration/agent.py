@@ -31,7 +31,11 @@ class AgentArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] public_key: (Updatable) ODMS Agent public key.
         :param pulumi.Input[str] stream_id: (Updatable) The OCID of the Stream
-        :param pulumi.Input[str] version: (Updatable) ODMS Agent version
+        :param pulumi.Input[str] version: (Updatable) ODMS Agent version 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "agent_id", agent_id)
         if compartment_id is not None:
@@ -137,7 +141,11 @@ class AgentArgs:
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) ODMS Agent version
+        (Updatable) ODMS Agent version 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "version")
 
@@ -176,7 +184,11 @@ class _AgentState:
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the Agent was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time of the last Agent details update. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] version: (Updatable) ODMS Agent version
+        :param pulumi.Input[str] version: (Updatable) ODMS Agent version 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if agent_id is not None:
             pulumi.set(__self__, "agent_id", agent_id)
@@ -353,7 +365,11 @@ class _AgentState:
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) ODMS Agent version
+        (Updatable) ODMS Agent version 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "version")
 
@@ -398,7 +414,11 @@ class Agent(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] public_key: (Updatable) ODMS Agent public key.
         :param pulumi.Input[str] stream_id: (Updatable) The OCID of the Stream
-        :param pulumi.Input[str] version: (Updatable) ODMS Agent version
+        :param pulumi.Input[str] version: (Updatable) ODMS Agent version 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -508,7 +528,11 @@ class Agent(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the Agent was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time of the last Agent details update. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] version: (Updatable) ODMS Agent version
+        :param pulumi.Input[str] version: (Updatable) ODMS Agent version 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -629,7 +653,11 @@ class Agent(pulumi.CustomResource):
     @pulumi.getter
     def version(self) -> pulumi.Output[str]:
         """
-        (Updatable) ODMS Agent version
+        (Updatable) ODMS Agent version 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "version")
 

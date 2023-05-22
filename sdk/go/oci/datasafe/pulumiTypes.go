@@ -953,6 +953,10 @@ type LibraryMasingFormatFormatEntry struct {
 	// (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
 	RandomLists []string `pulumi:"randomLists"`
 	// (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
+	//
+	// In the case of ASCII characters, if a regular expression is not provided,  Deterministic Encryption can encrypt variable-length column values while  preserving their original format.
+	//
+	// If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
 	RegularExpression *string `pulumi:"regularExpression"`
 	// (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
 	ReplaceWith *string `pulumi:"replaceWith"`
@@ -1013,6 +1017,10 @@ type LibraryMasingFormatFormatEntryArgs struct {
 	// (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
 	RandomLists pulumi.StringArrayInput `pulumi:"randomLists"`
 	// (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
+	//
+	// In the case of ASCII characters, if a regular expression is not provided,  Deterministic Encryption can encrypt variable-length column values while  preserving their original format.
+	//
+	// If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
 	RegularExpression pulumi.StringPtrInput `pulumi:"regularExpression"`
 	// (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
 	ReplaceWith pulumi.StringPtrInput `pulumi:"replaceWith"`
@@ -1148,6 +1156,10 @@ func (o LibraryMasingFormatFormatEntryOutput) RandomLists() pulumi.StringArrayOu
 }
 
 // (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
+//
+// In the case of ASCII characters, if a regular expression is not provided,  Deterministic Encryption can encrypt variable-length column values while  preserving their original format.
+//
+// If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
 func (o LibraryMasingFormatFormatEntryOutput) RegularExpression() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LibraryMasingFormatFormatEntry) *string { return v.RegularExpression }).(pulumi.StringPtrOutput)
 }
@@ -1365,6 +1377,10 @@ type MaskingPoliciesMaskingColumnMaskingFormatFormatEntry struct {
 	// (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
 	RandomLists []string `pulumi:"randomLists"`
 	// (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
+	//
+	// In the case of ASCII characters, if a regular expression is not provided,  Deterministic Encryption can encrypt variable-length column values while  preserving their original format.
+	//
+	// If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
 	RegularExpression *string `pulumi:"regularExpression"`
 	// (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
 	ReplaceWith *string `pulumi:"replaceWith"`
@@ -1425,6 +1441,10 @@ type MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs struct {
 	// (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
 	RandomLists pulumi.StringArrayInput `pulumi:"randomLists"`
 	// (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
+	//
+	// In the case of ASCII characters, if a regular expression is not provided,  Deterministic Encryption can encrypt variable-length column values while  preserving their original format.
+	//
+	// If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
 	RegularExpression pulumi.StringPtrInput `pulumi:"regularExpression"`
 	// (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
 	ReplaceWith pulumi.StringPtrInput `pulumi:"replaceWith"`
@@ -1560,6 +1580,10 @@ func (o MaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput) RandomLists(
 }
 
 // (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
+//
+// In the case of ASCII characters, if a regular expression is not provided,  Deterministic Encryption can encrypt variable-length column values while  preserving their original format.
+//
+// If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
 func (o MaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput) RegularExpression() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MaskingPoliciesMaskingColumnMaskingFormatFormatEntry) *string { return v.RegularExpression }).(pulumi.StringPtrOutput)
 }
@@ -2142,6 +2166,9 @@ type ReportDefinitionSummary struct {
 	// (Updatable) Name of the report summary.
 	Name string `pulumi:"name"`
 	// (Updatable) Additional scim filters used to get the specific summary.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ScimFilter *string `pulumi:"scimFilter"`
 }
 
@@ -2168,6 +2195,9 @@ type ReportDefinitionSummaryArgs struct {
 	// (Updatable) Name of the report summary.
 	Name pulumi.StringInput `pulumi:"name"`
 	// (Updatable) Additional scim filters used to get the specific summary.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ScimFilter pulumi.StringPtrInput `pulumi:"scimFilter"`
 }
 
@@ -2248,6 +2278,9 @@ func (o ReportDefinitionSummaryOutput) Name() pulumi.StringOutput {
 }
 
 // (Updatable) Additional scim filters used to get the specific summary.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ReportDefinitionSummaryOutput) ScimFilter() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ReportDefinitionSummary) *string { return v.ScimFilter }).(pulumi.StringPtrOutput)
 }
@@ -4021,6 +4054,9 @@ type TargetDatabaseTlsConfig struct {
 	// (Updatable) The password to read the trust store and key store files, if they are password protected.
 	StorePassword *string `pulumi:"storePassword"`
 	// (Updatable) Base64 encoded string of trust store file content.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TrustStoreContent *string `pulumi:"trustStoreContent"`
 }
 
@@ -4045,6 +4081,9 @@ type TargetDatabaseTlsConfigArgs struct {
 	// (Updatable) The password to read the trust store and key store files, if they are password protected.
 	StorePassword pulumi.StringPtrInput `pulumi:"storePassword"`
 	// (Updatable) Base64 encoded string of trust store file content.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TrustStoreContent pulumi.StringPtrInput `pulumi:"trustStoreContent"`
 }
 
@@ -4146,6 +4185,9 @@ func (o TargetDatabaseTlsConfigOutput) StorePassword() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Base64 encoded string of trust store file content.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o TargetDatabaseTlsConfigOutput) TrustStoreContent() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabaseTlsConfig) *string { return v.TrustStoreContent }).(pulumi.StringPtrOutput)
 }
@@ -4215,6 +4257,9 @@ func (o TargetDatabaseTlsConfigPtrOutput) StorePassword() pulumi.StringPtrOutput
 }
 
 // (Updatable) Base64 encoded string of trust store file content.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o TargetDatabaseTlsConfigPtrOutput) TrustStoreContent() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TargetDatabaseTlsConfig) *string {
 		if v == nil {
@@ -4227,6 +4272,9 @@ func (o TargetDatabaseTlsConfigPtrOutput) TrustStoreContent() pulumi.StringPtrOu
 type UserAssessmentIgnoredTarget struct {
 	LifecycleState *string `pulumi:"lifecycleState"`
 	// The OCID of the target database on which the user assessment is to be run.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetId         *string `pulumi:"targetId"`
 	UserAssessmentId *string `pulumi:"userAssessmentId"`
 }
@@ -4245,6 +4293,9 @@ type UserAssessmentIgnoredTargetInput interface {
 type UserAssessmentIgnoredTargetArgs struct {
 	LifecycleState pulumi.StringPtrInput `pulumi:"lifecycleState"`
 	// The OCID of the target database on which the user assessment is to be run.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetId         pulumi.StringPtrInput `pulumi:"targetId"`
 	UserAssessmentId pulumi.StringPtrInput `pulumi:"userAssessmentId"`
 }
@@ -4305,6 +4356,9 @@ func (o UserAssessmentIgnoredTargetOutput) LifecycleState() pulumi.StringPtrOutp
 }
 
 // The OCID of the target database on which the user assessment is to be run.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o UserAssessmentIgnoredTargetOutput) TargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UserAssessmentIgnoredTarget) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }

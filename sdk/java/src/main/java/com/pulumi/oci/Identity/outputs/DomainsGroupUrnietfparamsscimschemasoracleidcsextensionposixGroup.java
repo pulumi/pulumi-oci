@@ -14,12 +14,30 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixG
     /**
      * @return (Updatable) Integer uniquely identifying a group in a POSIX administrative domain
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: integer
+     * * uniqueness: server
+     * 
      */
     private @Nullable Integer gidNumber;
 
     private DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup() {}
     /**
      * @return (Updatable) Integer uniquely identifying a group in a POSIX administrative domain
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: request
+     * * type: integer
+     * * uniqueness: server
      * 
      */
     public Optional<Integer> gidNumber() {

@@ -104,6 +104,10 @@ namespace Pulumi.Oci.DisasterRecovery
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("disassociateTrigger")]
         public Output<int?> DisassociateTrigger { get; private set; } = null!;
@@ -252,6 +256,10 @@ namespace Pulumi.Oci.DisasterRecovery
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("disassociateTrigger")]
         public Input<int>? DisassociateTrigger { get; set; }
@@ -326,6 +334,10 @@ namespace Pulumi.Oci.DisasterRecovery
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("disassociateTrigger")]
         public Input<int>? DisassociateTrigger { get; set; }

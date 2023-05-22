@@ -67,6 +67,9 @@ type KnowledgeBase struct {
 	// (Updatable) The name of the Knowledge Base.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The current lifecycle state of the Knowledge Base.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -117,6 +120,9 @@ type knowledgeBaseState struct {
 	// (Updatable) The name of the Knowledge Base.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The current lifecycle state of the Knowledge Base.
 	State *string `pulumi:"state"`
@@ -136,6 +142,9 @@ type KnowledgeBaseState struct {
 	// (Updatable) The name of the Knowledge Base.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapInput
 	// The current lifecycle state of the Knowledge Base.
 	State pulumi.StringPtrInput
@@ -159,6 +168,9 @@ type knowledgeBaseArgs struct {
 	// (Updatable) The name of the Knowledge Base.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 }
 
@@ -171,6 +183,9 @@ type KnowledgeBaseArgs struct {
 	// (Updatable) The name of the Knowledge Base.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapInput
 }
 
@@ -277,6 +292,9 @@ func (o KnowledgeBaseOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o KnowledgeBaseOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *KnowledgeBase) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }

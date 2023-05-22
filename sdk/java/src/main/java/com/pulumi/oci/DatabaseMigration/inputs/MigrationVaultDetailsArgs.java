@@ -46,12 +46,18 @@ public final class MigrationVaultDetailsArgs extends com.pulumi.resources.Resour
     /**
      * (Updatable) OCID of the vault
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="vaultId", required=true)
     private Output<String> vaultId;
 
     /**
      * @return (Updatable) OCID of the vault
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> vaultId() {
@@ -129,6 +135,9 @@ public final class MigrationVaultDetailsArgs extends com.pulumi.resources.Resour
         /**
          * @param vaultId (Updatable) OCID of the vault
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -139,6 +148,9 @@ public final class MigrationVaultDetailsArgs extends com.pulumi.resources.Resour
 
         /**
          * @param vaultId (Updatable) OCID of the vault
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

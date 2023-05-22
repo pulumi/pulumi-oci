@@ -74,6 +74,10 @@ export class MonitoredResourcesListMember extends pulumi.CustomResource {
     public readonly limitLevel!: pulumi.Output<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly monitoredResourceId!: pulumi.Output<string>;
 
@@ -127,6 +131,10 @@ export interface MonitoredResourcesListMemberState {
     limitLevel?: pulumi.Input<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     monitoredResourceId?: pulumi.Input<string>;
 }
@@ -145,6 +153,10 @@ export interface MonitoredResourcesListMemberArgs {
     limitLevel?: pulumi.Input<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     monitoredResourceId: pulumi.Input<string>;
 }

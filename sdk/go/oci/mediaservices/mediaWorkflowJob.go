@@ -102,6 +102,9 @@ type MediaWorkflowJob struct {
 	// Updated time of the job. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// Discriminate identification of a workflow by name versus a workflow by ID.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WorkflowIdentifierType pulumi.StringOutput `pulumi:"workflowIdentifierType"`
 }
 
@@ -177,6 +180,9 @@ type mediaWorkflowJobState struct {
 	// Updated time of the job. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Discriminate identification of a workflow by name versus a workflow by ID.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WorkflowIdentifierType *string `pulumi:"workflowIdentifierType"`
 }
 
@@ -218,6 +224,9 @@ type MediaWorkflowJobState struct {
 	// Updated time of the job. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
 	// Discriminate identification of a workflow by name versus a workflow by ID.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WorkflowIdentifierType pulumi.StringPtrInput
 }
 
@@ -243,6 +252,9 @@ type mediaWorkflowJobArgs struct {
 	// Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON. The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
 	Parameters *string `pulumi:"parameters"`
 	// Discriminate identification of a workflow by name versus a workflow by ID.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WorkflowIdentifierType string `pulumi:"workflowIdentifierType"`
 }
 
@@ -265,6 +277,9 @@ type MediaWorkflowJobArgs struct {
 	// Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON. The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
 	Parameters pulumi.StringPtrInput
 	// Discriminate identification of a workflow by name versus a workflow by ID.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WorkflowIdentifierType pulumi.StringInput
 }
 
@@ -446,6 +461,9 @@ func (o MediaWorkflowJobOutput) TimeUpdated() pulumi.StringOutput {
 }
 
 // Discriminate identification of a workflow by name versus a workflow by ID.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MediaWorkflowJobOutput) WorkflowIdentifierType() pulumi.StringOutput {
 	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringOutput { return v.WorkflowIdentifierType }).(pulumi.StringOutput)
 }

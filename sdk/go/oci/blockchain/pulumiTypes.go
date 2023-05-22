@@ -885,6 +885,9 @@ func (o BlockchainPlatformReplicasPtrOutput) ProxyCount() pulumi.IntPtrOutput {
 
 type OsnOcpuAllocationParam struct {
 	// (Updatable) Number of OCPU allocation
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OcpuAllocationNumber float64 `pulumi:"ocpuAllocationNumber"`
 }
 
@@ -901,6 +904,9 @@ type OsnOcpuAllocationParamInput interface {
 
 type OsnOcpuAllocationParamArgs struct {
 	// (Updatable) Number of OCPU allocation
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OcpuAllocationNumber pulumi.Float64Input `pulumi:"ocpuAllocationNumber"`
 }
 
@@ -982,6 +988,9 @@ func (o OsnOcpuAllocationParamOutput) ToOsnOcpuAllocationParamPtrOutputWithConte
 }
 
 // (Updatable) Number of OCPU allocation
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o OsnOcpuAllocationParamOutput) OcpuAllocationNumber() pulumi.Float64Output {
 	return o.ApplyT(func(v OsnOcpuAllocationParam) float64 { return v.OcpuAllocationNumber }).(pulumi.Float64Output)
 }
@@ -1011,6 +1020,9 @@ func (o OsnOcpuAllocationParamPtrOutput) Elem() OsnOcpuAllocationParamOutput {
 }
 
 // (Updatable) Number of OCPU allocation
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o OsnOcpuAllocationParamPtrOutput) OcpuAllocationNumber() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *OsnOcpuAllocationParam) *float64 {
 		if v == nil {

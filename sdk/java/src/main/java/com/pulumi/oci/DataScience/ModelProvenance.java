@@ -152,12 +152,18 @@ public class ModelProvenance extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained.&#34;
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="trainingScript", type=String.class, parameters={})
     private Output<String> trainingScript;
 
     /**
      * @return (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained.&#34;
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> trainingScript() {

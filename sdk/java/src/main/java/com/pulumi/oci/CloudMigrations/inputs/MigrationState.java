@@ -111,12 +111,18 @@ public final class MigrationState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Replication schedule identifier
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="replicationScheduleId")
     private @Nullable Output<String> replicationScheduleId;
 
     /**
      * @return (Updatable) Replication schedule identifier
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> replicationScheduleId() {
@@ -346,6 +352,9 @@ public final class MigrationState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param replicationScheduleId (Updatable) Replication schedule identifier
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -356,6 +365,9 @@ public final class MigrationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param replicationScheduleId (Updatable) Replication schedule identifier
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

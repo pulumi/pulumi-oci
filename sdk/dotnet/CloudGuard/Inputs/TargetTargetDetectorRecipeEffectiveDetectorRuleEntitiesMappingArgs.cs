@@ -14,6 +14,8 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     {
         /// <summary>
         /// (Updatable) DetectorTemplate identifier.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

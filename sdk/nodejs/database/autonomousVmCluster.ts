@@ -235,6 +235,10 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
     public readonly totalContainerDatabases!: pulumi.Output<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly vmClusterNetworkId!: pulumi.Output<string>;
 
@@ -494,6 +498,10 @@ export interface AutonomousVmClusterState {
     totalContainerDatabases?: pulumi.Input<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vmClusterNetworkId?: pulumi.Input<string>;
 }
@@ -576,6 +584,10 @@ export interface AutonomousVmClusterArgs {
     totalContainerDatabases?: pulumi.Input<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     vmClusterNetworkId: pulumi.Input<string>;
 }

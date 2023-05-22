@@ -66,6 +66,9 @@ type FusionEnvironmentRefreshActivity struct {
 	// Service availability / impact during refresh activity execution up down
 	ServiceAvailability pulumi.StringOutput `pulumi:"serviceAvailability"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceFusionEnvironmentId pulumi.StringOutput `pulumi:"sourceFusionEnvironmentId"`
 	// The current state of the refreshActivity.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -128,6 +131,9 @@ type fusionEnvironmentRefreshActivityState struct {
 	// Service availability / impact during refresh activity execution up down
 	ServiceAvailability *string `pulumi:"serviceAvailability"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceFusionEnvironmentId *string `pulumi:"sourceFusionEnvironmentId"`
 	// The current state of the refreshActivity.
 	State *string `pulumi:"state"`
@@ -156,6 +162,9 @@ type FusionEnvironmentRefreshActivityState struct {
 	// Service availability / impact during refresh activity execution up down
 	ServiceAvailability pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceFusionEnvironmentId pulumi.StringPtrInput
 	// The current state of the refreshActivity.
 	State pulumi.StringPtrInput
@@ -179,6 +188,9 @@ type fusionEnvironmentRefreshActivityArgs struct {
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceFusionEnvironmentId string `pulumi:"sourceFusionEnvironmentId"`
 }
 
@@ -187,6 +199,9 @@ type FusionEnvironmentRefreshActivityArgs struct {
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceFusionEnvironmentId pulumi.StringInput
 }
 
@@ -309,6 +324,9 @@ func (o FusionEnvironmentRefreshActivityOutput) ServiceAvailability() pulumi.Str
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o FusionEnvironmentRefreshActivityOutput) SourceFusionEnvironmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *FusionEnvironmentRefreshActivity) pulumi.StringOutput { return v.SourceFusionEnvironmentId }).(pulumi.StringOutput)
 }

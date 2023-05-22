@@ -163,6 +163,9 @@ func (o ProtectedDatabaseMetricArrayOutput) Index(i pulumi.IntInput) ProtectedDa
 
 type ProtectedDatabaseRecoveryServiceSubnet struct {
 	// (Updatable) The recovery service subnet OCID.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RecoveryServiceSubnetId string `pulumi:"recoveryServiceSubnetId"`
 	// The current state of the Protected Database.
 	State *string `pulumi:"state"`
@@ -181,6 +184,9 @@ type ProtectedDatabaseRecoveryServiceSubnetInput interface {
 
 type ProtectedDatabaseRecoveryServiceSubnetArgs struct {
 	// (Updatable) The recovery service subnet OCID.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RecoveryServiceSubnetId pulumi.StringInput `pulumi:"recoveryServiceSubnetId"`
 	// The current state of the Protected Database.
 	State pulumi.StringPtrInput `pulumi:"state"`
@@ -238,6 +244,9 @@ func (o ProtectedDatabaseRecoveryServiceSubnetOutput) ToProtectedDatabaseRecover
 }
 
 // (Updatable) The recovery service subnet OCID.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ProtectedDatabaseRecoveryServiceSubnetOutput) RecoveryServiceSubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v ProtectedDatabaseRecoveryServiceSubnet) string { return v.RecoveryServiceSubnetId }).(pulumi.StringOutput)
 }

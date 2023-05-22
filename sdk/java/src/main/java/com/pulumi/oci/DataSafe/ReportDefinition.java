@@ -387,12 +387,18 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Additional scim filters used to get the specific summary.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="scimFilter", type=String.class, parameters={})
     private Output<String> scimFilter;
 
     /**
      * @return (Updatable) Additional scim filters used to get the specific summary.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> scimFilter() {

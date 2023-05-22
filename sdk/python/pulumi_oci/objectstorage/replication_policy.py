@@ -26,6 +26,10 @@ class ReplicationPolicyArgs:
         :param pulumi.Input[str] destination_bucket_name: The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
         :param pulumi.Input[str] destination_region_name: The destination region to replicate to, for example "us-ashburn-1".
         :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] name: The name of the policy. Avoid entering confidential information.
         """
         pulumi.set(__self__, "bucket", bucket)
@@ -81,6 +85,10 @@ class ReplicationPolicyArgs:
     def namespace(self) -> pulumi.Input[str]:
         """
         The Object Storage namespace used for the request.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "namespace")
 
@@ -130,6 +138,10 @@ class _ReplicationPolicyState:
         :param pulumi.Input[str] destination_region_name: The destination region to replicate to, for example "us-ashburn-1".
         :param pulumi.Input[str] name: The name of the policy. Avoid entering confidential information.
         :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] status: The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
         :param pulumi.Input[str] status_message: A human-readable description of the status.
         :param pulumi.Input[str] time_created: The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
@@ -221,6 +233,10 @@ class _ReplicationPolicyState:
     def namespace(self) -> Optional[pulumi.Input[str]]:
         """
         The Object Storage namespace used for the request.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "namespace")
 
@@ -322,6 +338,10 @@ class ReplicationPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] destination_region_name: The destination region to replicate to, for example "us-ashburn-1".
         :param pulumi.Input[str] name: The name of the policy. Avoid entering confidential information.
         :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -438,6 +458,10 @@ class ReplicationPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] destination_region_name: The destination region to replicate to, for example "us-ashburn-1".
         :param pulumi.Input[str] name: The name of the policy. Avoid entering confidential information.
         :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] status: The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
         :param pulumi.Input[str] status_message: A human-readable description of the status.
         :param pulumi.Input[str] time_created: The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
@@ -501,6 +525,10 @@ class ReplicationPolicy(pulumi.CustomResource):
     def namespace(self) -> pulumi.Output[str]:
         """
         The Object Storage namespace used for the request.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "namespace")
 

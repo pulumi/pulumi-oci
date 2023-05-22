@@ -124,12 +124,18 @@ public class ConnectHarness extends com.pulumi.resources.CustomResource {
     /**
      * The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
     /**
      * @return The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> name() {

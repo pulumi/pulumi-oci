@@ -59,6 +59,9 @@ type AnnouncementSubscriptionsActionsChangeCompartment struct {
 	// The OCID of the announcement subscription.
 	AnnouncementSubscriptionId pulumi.StringOutput `pulumi:"announcementSubscriptionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment into which you want to move the announcement subscription.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 }
 
@@ -100,6 +103,9 @@ type announcementSubscriptionsActionsChangeCompartmentState struct {
 	// The OCID of the announcement subscription.
 	AnnouncementSubscriptionId *string `pulumi:"announcementSubscriptionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment into which you want to move the announcement subscription.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CompartmentId *string `pulumi:"compartmentId"`
 }
 
@@ -107,6 +113,9 @@ type AnnouncementSubscriptionsActionsChangeCompartmentState struct {
 	// The OCID of the announcement subscription.
 	AnnouncementSubscriptionId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment into which you want to move the announcement subscription.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CompartmentId pulumi.StringPtrInput
 }
 
@@ -118,6 +127,9 @@ type announcementSubscriptionsActionsChangeCompartmentArgs struct {
 	// The OCID of the announcement subscription.
 	AnnouncementSubscriptionId string `pulumi:"announcementSubscriptionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment into which you want to move the announcement subscription.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CompartmentId string `pulumi:"compartmentId"`
 }
 
@@ -126,6 +138,9 @@ type AnnouncementSubscriptionsActionsChangeCompartmentArgs struct {
 	// The OCID of the announcement subscription.
 	AnnouncementSubscriptionId pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment into which you want to move the announcement subscription.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	CompartmentId pulumi.StringInput
 }
 
@@ -224,6 +239,9 @@ func (o AnnouncementSubscriptionsActionsChangeCompartmentOutput) AnnouncementSub
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment into which you want to move the announcement subscription.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AnnouncementSubscriptionsActionsChangeCompartmentOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AnnouncementSubscriptionsActionsChangeCompartment) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }

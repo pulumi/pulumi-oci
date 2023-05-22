@@ -30,6 +30,10 @@ class PrivateApplicationArgs:
         :param pulumi.Input[str] display_name: (Updatable) The name of the private application.
         :param pulumi.Input['PrivateApplicationPackageDetailsArgs'] package_details: A base object for creating a private application package.
         :param pulumi.Input[str] short_description: (Updatable) A short description of the private application.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] logo_file_base64encoded: (Updatable) Base64-encoded logo to use as the private application icon. Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
@@ -89,6 +93,10 @@ class PrivateApplicationArgs:
     def short_description(self) -> pulumi.Input[str]:
         """
         (Updatable) A short description of the private application.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "short_description")
 
@@ -173,6 +181,10 @@ class _PrivateApplicationState:
         :param pulumi.Input['PrivateApplicationPackageDetailsArgs'] package_details: A base object for creating a private application package.
         :param pulumi.Input[str] package_type: The package's type.
         :param pulumi.Input[str] short_description: (Updatable) A short description of the private application.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The lifecycle state of the private application.
         :param pulumi.Input[str] time_created: The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
@@ -317,6 +329,10 @@ class _PrivateApplicationState:
     def short_description(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) A short description of the private application.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "short_description")
 
@@ -423,6 +439,10 @@ class PrivateApplication(pulumi.CustomResource):
         :param pulumi.Input[str] long_description: (Updatable) A long description of the private application.
         :param pulumi.Input[pulumi.InputType['PrivateApplicationPackageDetailsArgs']] package_details: A base object for creating a private application package.
         :param pulumi.Input[str] short_description: (Updatable) A short description of the private application.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -561,6 +581,10 @@ class PrivateApplication(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['PrivateApplicationPackageDetailsArgs']] package_details: A base object for creating a private application package.
         :param pulumi.Input[str] package_type: The package's type.
         :param pulumi.Input[str] short_description: (Updatable) A short description of the private application.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The lifecycle state of the private application.
         :param pulumi.Input[str] time_created: The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
@@ -661,6 +685,10 @@ class PrivateApplication(pulumi.CustomResource):
     def short_description(self) -> pulumi.Output[str]:
         """
         (Updatable) A short description of the private application.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "short_description")
 

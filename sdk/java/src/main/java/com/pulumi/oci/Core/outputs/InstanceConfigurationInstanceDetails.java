@@ -28,6 +28,8 @@ public final class InstanceConfigurationInstanceDetails {
     /**
      * @return Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
      * 
+     * See [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) for more information.
+     * 
      */
     private @Nullable InstanceConfigurationInstanceDetailsLaunchDetails launchDetails;
     /**
@@ -53,6 +55,8 @@ public final class InstanceConfigurationInstanceDetails {
     }
     /**
      * @return Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
+     * 
+     * See [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) for more information.
      * 
      */
     public Optional<InstanceConfigurationInstanceDetailsLaunchDetails> launchDetails() {

@@ -28,12 +28,20 @@ class DetectorRecipeArgs:
         The set of arguments for constructing a DetectorRecipe resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[str] display_name: (Updatable) Detector recipe display name.
+               
+               Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Description for DetectorRecipeDetectorRule.
         :param pulumi.Input[str] detector: detector for the rule
         :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleArgs']]] detector_rules: (Updatable) Detector Rules to override from source detector recipe
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+               
+               Avoid entering confidential information.
         :param pulumi.Input[str] source_detector_recipe_id: The id of the source detector recipe.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -67,6 +75,8 @@ class DetectorRecipeArgs:
     def display_name(self) -> pulumi.Input[str]:
         """
         (Updatable) Detector recipe display name.
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -127,6 +137,8 @@ class DetectorRecipeArgs:
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -139,6 +151,10 @@ class DetectorRecipeArgs:
     def source_detector_recipe_id(self) -> Optional[pulumi.Input[str]]:
         """
         The id of the source detector recipe.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source_detector_recipe_id")
 
@@ -173,10 +189,18 @@ class _DetectorRecipeState:
         :param pulumi.Input[str] detector: detector for the rule
         :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleArgs']]] detector_rules: (Updatable) Detector Rules to override from source detector recipe
         :param pulumi.Input[str] display_name: (Updatable) Detector recipe display name.
+               
+               Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleArgs']]] effective_detector_rules: List of effective detector rules for the detector type for recipe after applying defaults
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+               
+               Avoid entering confidential information.
         :param pulumi.Input[str] owner: Owner of detector recipe
         :param pulumi.Input[str] source_detector_recipe_id: The id of the source detector recipe.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the resource.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] target_ids: The recipe attached to targets
@@ -279,6 +303,8 @@ class _DetectorRecipeState:
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Detector recipe display name.
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -303,6 +329,8 @@ class _DetectorRecipeState:
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -327,6 +355,10 @@ class _DetectorRecipeState:
     def source_detector_recipe_id(self) -> Optional[pulumi.Input[str]]:
         """
         The id of the source detector recipe.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source_detector_recipe_id")
 
@@ -430,8 +462,16 @@ class DetectorRecipe(pulumi.CustomResource):
         :param pulumi.Input[str] detector: detector for the rule
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DetectorRecipeDetectorRuleArgs']]]] detector_rules: (Updatable) Detector Rules to override from source detector recipe
         :param pulumi.Input[str] display_name: (Updatable) Detector recipe display name.
+               
+               Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+               
+               Avoid entering confidential information.
         :param pulumi.Input[str] source_detector_recipe_id: The id of the source detector recipe.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -541,10 +581,18 @@ class DetectorRecipe(pulumi.CustomResource):
         :param pulumi.Input[str] detector: detector for the rule
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DetectorRecipeDetectorRuleArgs']]]] detector_rules: (Updatable) Detector Rules to override from source detector recipe
         :param pulumi.Input[str] display_name: (Updatable) Detector recipe display name.
+               
+               Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DetectorRecipeEffectiveDetectorRuleArgs']]]] effective_detector_rules: List of effective detector rules for the detector type for recipe after applying defaults
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+               
+               Avoid entering confidential information.
         :param pulumi.Input[str] owner: Owner of detector recipe
         :param pulumi.Input[str] source_detector_recipe_id: The id of the source detector recipe.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the resource.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] target_ids: The recipe attached to targets
@@ -617,6 +665,8 @@ class DetectorRecipe(pulumi.CustomResource):
     def display_name(self) -> pulumi.Output[str]:
         """
         (Updatable) Detector recipe display name.
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -633,6 +683,8 @@ class DetectorRecipe(pulumi.CustomResource):
     def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -649,6 +701,10 @@ class DetectorRecipe(pulumi.CustomResource):
     def source_detector_recipe_id(self) -> pulumi.Output[str]:
         """
         The id of the source detector recipe.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "source_detector_recipe_id")
 

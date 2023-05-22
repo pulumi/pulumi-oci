@@ -18,12 +18,18 @@ public final class RepositoryMirrorState extends com.pulumi.resources.ResourceAr
     /**
      * Unique repository identifier.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="repositoryId")
     private @Nullable Output<String> repositoryId;
 
     /**
      * @return Unique repository identifier.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> repositoryId() {
@@ -57,6 +63,9 @@ public final class RepositoryMirrorState extends com.pulumi.resources.ResourceAr
         /**
          * @param repositoryId Unique repository identifier.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -67,6 +76,9 @@ public final class RepositoryMirrorState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param repositoryId Unique repository identifier.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

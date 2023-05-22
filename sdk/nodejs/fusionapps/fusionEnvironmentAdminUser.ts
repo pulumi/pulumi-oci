@@ -89,6 +89,10 @@ export class FusionEnvironmentAdminUser extends pulumi.CustomResource {
     public readonly password!: pulumi.Output<string>;
     /**
      * The username for the administrator.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly username!: pulumi.Output<string>;
 
@@ -177,6 +181,10 @@ export interface FusionEnvironmentAdminUserState {
     password?: pulumi.Input<string>;
     /**
      * The username for the administrator.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     username?: pulumi.Input<string>;
 }
@@ -207,6 +215,10 @@ export interface FusionEnvironmentAdminUserArgs {
     password: pulumi.Input<string>;
     /**
      * The username for the administrator.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     username: pulumi.Input<string>;
 }

@@ -66,6 +66,9 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) Use this flag to enable/disable database management
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("enableManagement")]
         public Output<bool> EnableManagement { get; private set; } = null!;
@@ -170,6 +173,9 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) Use this flag to enable/disable database management
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("enableManagement", required: true)]
         public Input<bool> EnableManagement { get; set; } = null!;
@@ -236,6 +242,9 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) Use this flag to enable/disable database management
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("enableManagement")]
         public Input<bool>? EnableManagement { get; set; }

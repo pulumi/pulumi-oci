@@ -75,6 +75,10 @@ namespace Pulumi.Oci.DatabaseManagement
 
         /// <summary>
         /// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -181,6 +185,10 @@ namespace Pulumi.Oci.DatabaseManagement
 
         /// <summary>
         /// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -219,6 +227,10 @@ namespace Pulumi.Oci.DatabaseManagement
 
         /// <summary>
         /// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

@@ -68,6 +68,9 @@ type AgentPlugin struct {
 	// Plugin identifier, which can be renamed.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Unique plugin identifier path parameter.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PluginName pulumi.StringOutput `pulumi:"pluginName"`
 	// Plugin version.
 	PluginVersion pulumi.StringOutput `pulumi:"pluginVersion"`
@@ -129,6 +132,9 @@ type agentPluginState struct {
 	// Plugin identifier, which can be renamed.
 	Name *string `pulumi:"name"`
 	// Unique plugin identifier path parameter.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PluginName *string `pulumi:"pluginName"`
 	// Plugin version.
 	PluginVersion *string `pulumi:"pluginVersion"`
@@ -156,6 +162,9 @@ type AgentPluginState struct {
 	// Plugin identifier, which can be renamed.
 	Name pulumi.StringPtrInput
 	// Unique plugin identifier path parameter.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PluginName pulumi.StringPtrInput
 	// Plugin version.
 	PluginVersion pulumi.StringPtrInput
@@ -179,6 +188,9 @@ type agentPluginArgs struct {
 	// (Updatable) State to which the customer wants the plugin to move to.
 	DesiredState *string `pulumi:"desiredState"`
 	// Unique plugin identifier path parameter.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PluginName string `pulumi:"pluginName"`
 }
 
@@ -189,6 +201,9 @@ type AgentPluginArgs struct {
 	// (Updatable) State to which the customer wants the plugin to move to.
 	DesiredState pulumi.StringPtrInput
 	// Unique plugin identifier path parameter.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PluginName pulumi.StringInput
 }
 
@@ -310,6 +325,9 @@ func (o AgentPluginOutput) Name() pulumi.StringOutput {
 }
 
 // Unique plugin identifier path parameter.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AgentPluginOutput) PluginName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AgentPlugin) pulumi.StringOutput { return v.PluginName }).(pulumi.StringOutput)
 }

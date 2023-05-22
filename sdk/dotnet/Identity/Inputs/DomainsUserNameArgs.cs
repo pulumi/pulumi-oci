@@ -14,36 +14,99 @@ namespace Pulumi.Oci.Identity.Inputs
     {
         /// <summary>
         /// (Updatable) Last name
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Last Name
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("familyName", required: true)]
         public Input<string> FamilyName { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) Full name
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("formatted")]
         public Input<string>? Formatted { get; set; }
 
         /// <summary>
         /// (Updatable) First name
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: First Name
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("givenName")]
         public Input<string>? GivenName { get; set; }
 
         /// <summary>
         /// (Updatable) Prefix
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCsvAttributeName: Honorific Prefix
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("honorificPrefix")]
         public Input<string>? HonorificPrefix { get; set; }
 
         /// <summary>
         /// (Updatable) Suffix
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCsvAttributeName: Honorific Suffix
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("honorificSuffix")]
         public Input<string>? HonorificSuffix { get; set; }
 
         /// <summary>
         /// (Updatable) Middle name
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Middle Name
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("middleName")]
         public Input<string>? MiddleName { get; set; }

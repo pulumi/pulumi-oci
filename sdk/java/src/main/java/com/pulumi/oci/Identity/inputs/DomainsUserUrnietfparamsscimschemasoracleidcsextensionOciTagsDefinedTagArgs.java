@@ -16,12 +16,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
     /**
      * (Updatable) The value of of the User&#39;s api key.
      * 
+     * **Added In:** 2106240046
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
+     * 
      */
     @Import(name="key", required=true)
     private Output<String> key;
 
     /**
      * @return (Updatable) The value of of the User&#39;s api key.
+     * 
+     * **Added In:** 2106240046
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
+     * * uniqueness: none
      * 
      */
     public Output<String> key() {
@@ -31,12 +55,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
     /**
      * (Updatable) Oracle Cloud Infrastructure Tag namespace
      * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * required: true
+     * * mutability: readWrite
+     * * returned: default
+     * * idcsSearchable: true
+     * * uniqueness: none
+     * 
      */
     @Import(name="namespace", required=true)
     private Output<String> namespace;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tag namespace
+     * 
+     * **Added In:** 2011192329
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * type: string
+     * * required: true
+     * * mutability: readWrite
+     * * returned: default
+     * * idcsSearchable: true
+     * * uniqueness: none
      * 
      */
     public Output<String> namespace() {
@@ -46,12 +92,36 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
     /**
      * (Updatable) The value of a X509 certificate.
      * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
      * @return (Updatable) The value of a X509 certificate.
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: binary
+     * * uniqueness: none
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -87,6 +157,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
         /**
          * @param key (Updatable) The value of of the User&#39;s api key.
          * 
+         * **Added In:** 2106240046
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -98,6 +180,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
         /**
          * @param key (Updatable) The value of of the User&#39;s api key.
          * 
+         * **Added In:** 2106240046
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -107,6 +201,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
 
         /**
          * @param namespace (Updatable) Oracle Cloud Infrastructure Tag namespace
+         * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * idcsSearchable: true
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -119,6 +224,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
         /**
          * @param namespace (Updatable) Oracle Cloud Infrastructure Tag namespace
          * 
+         * **Added In:** 2011192329
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * type: string
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * idcsSearchable: true
+         * * uniqueness: none
+         * 
          * @return builder
          * 
          */
@@ -128,6 +244,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
 
         /**
          * @param value (Updatable) The value of a X509 certificate.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -139,6 +267,18 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
 
         /**
          * @param value (Updatable) The value of a X509 certificate.
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: binary
+         * * uniqueness: none
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

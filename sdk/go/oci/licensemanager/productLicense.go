@@ -108,6 +108,9 @@ type ProductLicense struct {
 	// The number of license units consumed. Updated after each allocation run.
 	TotalLicenseUnitsConsumed pulumi.Float64Output `pulumi:"totalLicenseUnitsConsumed"`
 	// The product license vendor name, for example: Microsoft, RHEL, and so on.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VendorName pulumi.StringOutput `pulumi:"vendorName"`
 }
 
@@ -191,6 +194,9 @@ type productLicenseState struct {
 	// The number of license units consumed. Updated after each allocation run.
 	TotalLicenseUnitsConsumed *float64 `pulumi:"totalLicenseUnitsConsumed"`
 	// The product license vendor name, for example: Microsoft, RHEL, and so on.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VendorName *string `pulumi:"vendorName"`
 }
 
@@ -234,6 +240,9 @@ type ProductLicenseState struct {
 	// The number of license units consumed. Updated after each allocation run.
 	TotalLicenseUnitsConsumed pulumi.Float64PtrInput
 	// The product license vendor name, for example: Microsoft, RHEL, and so on.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VendorName pulumi.StringPtrInput
 }
 
@@ -257,6 +266,9 @@ type productLicenseArgs struct {
 	// The product license unit.
 	LicenseUnit string `pulumi:"licenseUnit"`
 	// The product license vendor name, for example: Microsoft, RHEL, and so on.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VendorName *string `pulumi:"vendorName"`
 }
 
@@ -277,6 +289,9 @@ type ProductLicenseArgs struct {
 	// The product license unit.
 	LicenseUnit pulumi.StringInput
 	// The product license vendor name, for example: Microsoft, RHEL, and so on.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VendorName pulumi.StringPtrInput
 }
 
@@ -463,6 +478,9 @@ func (o ProductLicenseOutput) TotalLicenseUnitsConsumed() pulumi.Float64Output {
 }
 
 // The product license vendor name, for example: Microsoft, RHEL, and so on.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ProductLicenseOutput) VendorName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ProductLicense) pulumi.StringOutput { return v.VendorName }).(pulumi.StringOutput)
 }

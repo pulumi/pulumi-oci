@@ -655,6 +655,12 @@ type GetStacksStack struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a stack.
 	Id string `pulumi:"id"`
 	// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
+	//
+	// Allowable values:
+	// * CREATING
+	// * ACTIVE
+	// * DELETING
+	// * DELETED
 	State string `pulumi:"state"`
 	// The date and time at which the stack was created.
 	TimeCreated string                 `pulumi:"timeCreated"`
@@ -687,6 +693,12 @@ type GetStacksStackArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a stack.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
+	//
+	// Allowable values:
+	// * CREATING
+	// * ACTIVE
+	// * DELETING
+	// * DELETED
 	State pulumi.StringInput `pulumi:"state"`
 	// The date and time at which the stack was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
@@ -779,6 +791,12 @@ func (o GetStacksStackOutput) Id() pulumi.StringOutput {
 }
 
 // A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
+//
+// Allowable values:
+// * CREATING
+// * ACTIVE
+// * DELETING
+// * DELETED
 func (o GetStacksStackOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStacksStack) string { return v.State }).(pulumi.StringOutput)
 }

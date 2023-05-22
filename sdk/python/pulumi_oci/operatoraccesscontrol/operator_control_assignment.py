@@ -49,7 +49,11 @@ class OperatorControlAssignmentArgs:
         :param pulumi.Input[str] remote_syslog_server_ca_cert: (Updatable) The CA certificate of the remote syslog server. Identity of the remote syslog server will be asserted based on this certificate.
         :param pulumi.Input[int] remote_syslog_server_port: (Updatable) The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
         :param pulumi.Input[str] time_assignment_from: (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        :param pulumi.Input[str] time_assignment_to: (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        :param pulumi.Input[str] time_assignment_to: (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z' 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "is_enforced_always", is_enforced_always)
@@ -275,7 +279,11 @@ class OperatorControlAssignmentArgs:
     @pulumi.getter(name="timeAssignmentTo")
     def time_assignment_to(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z' 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_assignment_to")
 
@@ -337,7 +345,11 @@ class _OperatorControlAssignmentState:
         :param pulumi.Input[str] resource_type: Type of the target resource.
         :param pulumi.Input[str] state: The current lifcycle state of the OperatorControl.
         :param pulumi.Input[str] time_assignment_from: (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        :param pulumi.Input[str] time_assignment_to: (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        :param pulumi.Input[str] time_assignment_to: (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z' 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_of_assignment: Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
         :param pulumi.Input[str] time_of_deletion: Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
         :param pulumi.Input[str] unassigner_id: User id who released the operatorControl.
@@ -663,7 +675,11 @@ class _OperatorControlAssignmentState:
     @pulumi.getter(name="timeAssignmentTo")
     def time_assignment_to(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z' 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_assignment_to")
 
@@ -788,7 +804,11 @@ class OperatorControlAssignment(pulumi.CustomResource):
         :param pulumi.Input[str] resource_name_: Name of the target resource.
         :param pulumi.Input[str] resource_type: Type of the target resource.
         :param pulumi.Input[str] time_assignment_from: (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        :param pulumi.Input[str] time_assignment_to: (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        :param pulumi.Input[str] time_assignment_to: (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z' 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -981,7 +1001,11 @@ class OperatorControlAssignment(pulumi.CustomResource):
         :param pulumi.Input[str] resource_type: Type of the target resource.
         :param pulumi.Input[str] state: The current lifcycle state of the OperatorControl.
         :param pulumi.Input[str] time_assignment_from: (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        :param pulumi.Input[str] time_assignment_to: (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        :param pulumi.Input[str] time_assignment_to: (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z' 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_of_assignment: Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
         :param pulumi.Input[str] time_of_deletion: Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
         :param pulumi.Input[str] unassigner_id: User id who released the operatorControl.
@@ -1198,7 +1222,11 @@ class OperatorControlAssignment(pulumi.CustomResource):
     @pulumi.getter(name="timeAssignmentTo")
     def time_assignment_to(self) -> pulumi.Output[str]:
         """
-        (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
+        (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z' 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_assignment_to")
 

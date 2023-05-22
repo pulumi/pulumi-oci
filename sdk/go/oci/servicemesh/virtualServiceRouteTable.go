@@ -103,6 +103,9 @@ type VirtualServiceRouteTable struct {
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// The OCID of the service mesh in which this access policy is created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VirtualServiceId pulumi.StringOutput `pulumi:"virtualServiceId"`
 }
 
@@ -169,6 +172,9 @@ type virtualServiceRouteTableState struct {
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The OCID of the service mesh in which this access policy is created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VirtualServiceId *string `pulumi:"virtualServiceId"`
 }
 
@@ -198,6 +204,9 @@ type VirtualServiceRouteTableState struct {
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
 	// The OCID of the service mesh in which this access policy is created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VirtualServiceId pulumi.StringPtrInput
 }
 
@@ -221,6 +230,9 @@ type virtualServiceRouteTableArgs struct {
 	// (Updatable) The route rules for the virtual service.
 	RouteRules []VirtualServiceRouteTableRouteRule `pulumi:"routeRules"`
 	// The OCID of the service mesh in which this access policy is created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VirtualServiceId string `pulumi:"virtualServiceId"`
 }
 
@@ -241,6 +253,9 @@ type VirtualServiceRouteTableArgs struct {
 	// (Updatable) The route rules for the virtual service.
 	RouteRules VirtualServiceRouteTableRouteRuleArrayInput
 	// The OCID of the service mesh in which this access policy is created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VirtualServiceId pulumi.StringInput
 }
 
@@ -392,6 +407,9 @@ func (o VirtualServiceRouteTableOutput) TimeUpdated() pulumi.StringOutput {
 }
 
 // The OCID of the service mesh in which this access policy is created.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o VirtualServiceRouteTableOutput) VirtualServiceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VirtualServiceRouteTable) pulumi.StringOutput { return v.VirtualServiceId }).(pulumi.StringOutput)
 }

@@ -33,11 +33,37 @@ class LoadBalancerArgs:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `example_load_balancer`
         :param pulumi.Input[str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] ip_mode: IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
+               
+               If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+               
+               If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+               
+               Example: "ipMode":"IPV6"
         :param pulumi.Input[bool] is_private: Whether the load balancer has a VCN-local (private) IP address.
+               
+               If "true", the service assigns a private IP address to the load balancer.
+               
+               If "false", the service assigns a public IP address to the load balancer.
+               
+               A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+               
+               Example: `true`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
+               
+               During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+               
+               The benefits of using NSGs with the load balancer include:
+               *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+               *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+               
+               Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
         :param pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]] reserved_ips: An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         :param pulumi.Input['LoadBalancerShapeDetailsArgs'] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         """
@@ -101,6 +127,10 @@ class LoadBalancerArgs:
     def subnet_ids(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
         An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subnet_ids")
 
@@ -137,6 +167,12 @@ class LoadBalancerArgs:
     def ip_mode(self) -> Optional[pulumi.Input[str]]:
         """
         IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
+
+        If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+
+        If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+
+        Example: "ipMode":"IPV6"
         """
         return pulumi.get(self, "ip_mode")
 
@@ -149,6 +185,14 @@ class LoadBalancerArgs:
     def is_private(self) -> Optional[pulumi.Input[bool]]:
         """
         Whether the load balancer has a VCN-local (private) IP address.
+
+        If "true", the service assigns a private IP address to the load balancer.
+
+        If "false", the service assigns a public IP address to the load balancer.
+
+        A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+
+        Example: `true`
         """
         return pulumi.get(self, "is_private")
 
@@ -161,6 +205,14 @@ class LoadBalancerArgs:
     def network_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
+
+        During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+
+        The benefits of using NSGs with the load balancer include:
+        *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+        *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+
+        Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
         """
         return pulumi.get(self, "network_security_group_ids")
 
@@ -221,13 +273,39 @@ class _LoadBalancerState:
         :param pulumi.Input[Sequence[pulumi.Input['LoadBalancerIpAddressDetailArgs']]] ip_address_details: An array of IP addresses.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_addresses: An array of IP addresses. Deprecated: use ip_address_details instead
         :param pulumi.Input[str] ip_mode: IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
+               
+               If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+               
+               If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+               
+               Example: "ipMode":"IPV6"
         :param pulumi.Input[bool] is_private: Whether the load balancer has a VCN-local (private) IP address.
+               
+               If "true", the service assigns a private IP address to the load balancer.
+               
+               If "false", the service assigns a public IP address to the load balancer.
+               
+               A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+               
+               Example: `true`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
+               
+               During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+               
+               The benefits of using NSGs with the load balancer include:
+               *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+               *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+               
+               Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
         :param pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]] reserved_ips: An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         :param pulumi.Input[str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         :param pulumi.Input['LoadBalancerShapeDetailsArgs'] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         :param pulumi.Input[str] state: The current state of the load balancer.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -344,6 +422,12 @@ class _LoadBalancerState:
     def ip_mode(self) -> Optional[pulumi.Input[str]]:
         """
         IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
+
+        If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+
+        If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+
+        Example: "ipMode":"IPV6"
         """
         return pulumi.get(self, "ip_mode")
 
@@ -356,6 +440,14 @@ class _LoadBalancerState:
     def is_private(self) -> Optional[pulumi.Input[bool]]:
         """
         Whether the load balancer has a VCN-local (private) IP address.
+
+        If "true", the service assigns a private IP address to the load balancer.
+
+        If "false", the service assigns a public IP address to the load balancer.
+
+        A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+
+        Example: `true`
         """
         return pulumi.get(self, "is_private")
 
@@ -368,6 +460,14 @@ class _LoadBalancerState:
     def network_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
+
+        During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+
+        The benefits of using NSGs with the load balancer include:
+        *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+        *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+
+        Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
         """
         return pulumi.get(self, "network_security_group_ids")
 
@@ -428,6 +528,10 @@ class _LoadBalancerState:
     def subnet_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subnet_ids")
 
@@ -553,12 +657,38 @@ class LoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `example_load_balancer`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] ip_mode: IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
+               
+               If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+               
+               If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+               
+               Example: "ipMode":"IPV6"
         :param pulumi.Input[bool] is_private: Whether the load balancer has a VCN-local (private) IP address.
+               
+               If "true", the service assigns a private IP address to the load balancer.
+               
+               If "false", the service assigns a public IP address to the load balancer.
+               
+               A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+               
+               Example: `true`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
+               
+               During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+               
+               The benefits of using NSGs with the load balancer include:
+               *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+               *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+               
+               Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LoadBalancerReservedIpArgs']]]] reserved_ips: An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         :param pulumi.Input[str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         :param pulumi.Input[pulumi.InputType['LoadBalancerShapeDetailsArgs']] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -734,13 +864,39 @@ class LoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LoadBalancerIpAddressDetailArgs']]]] ip_address_details: An array of IP addresses.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_addresses: An array of IP addresses. Deprecated: use ip_address_details instead
         :param pulumi.Input[str] ip_mode: IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
+               
+               If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+               
+               If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+               
+               Example: "ipMode":"IPV6"
         :param pulumi.Input[bool] is_private: Whether the load balancer has a VCN-local (private) IP address.
+               
+               If "true", the service assigns a private IP address to the load balancer.
+               
+               If "false", the service assigns a public IP address to the load balancer.
+               
+               A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+               
+               Example: `true`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
+               
+               During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+               
+               The benefits of using NSGs with the load balancer include:
+               *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+               *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+               
+               Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LoadBalancerReservedIpArgs']]]] reserved_ips: An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         :param pulumi.Input[str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         :param pulumi.Input[pulumi.InputType['LoadBalancerShapeDetailsArgs']] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         :param pulumi.Input[str] state: The current state of the load balancer.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -819,6 +975,12 @@ class LoadBalancer(pulumi.CustomResource):
     def ip_mode(self) -> pulumi.Output[str]:
         """
         IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
+
+        If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+
+        If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+
+        Example: "ipMode":"IPV6"
         """
         return pulumi.get(self, "ip_mode")
 
@@ -827,6 +989,14 @@ class LoadBalancer(pulumi.CustomResource):
     def is_private(self) -> pulumi.Output[bool]:
         """
         Whether the load balancer has a VCN-local (private) IP address.
+
+        If "true", the service assigns a private IP address to the load balancer.
+
+        If "false", the service assigns a public IP address to the load balancer.
+
+        A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+
+        Example: `true`
         """
         return pulumi.get(self, "is_private")
 
@@ -835,6 +1005,14 @@ class LoadBalancer(pulumi.CustomResource):
     def network_security_group_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
         (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
+
+        During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+
+        The benefits of using NSGs with the load balancer include:
+        *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+        *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
+
+        Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
         """
         return pulumi.get(self, "network_security_group_ids")
 
@@ -875,6 +1053,10 @@ class LoadBalancer(pulumi.CustomResource):
     def subnet_ids(self) -> pulumi.Output[Sequence[str]]:
         """
         An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subnet_ids")
 

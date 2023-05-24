@@ -139,7 +139,7 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
      */
     private List<GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindow> maintenanceWindows;
     /**
-     * @return The amount of memory (in GBs) to be enabled per each CPU core.
+     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     private Integer memoryPerOracleComputeUnitInGbs;
@@ -379,7 +379,7 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
         return this.maintenanceWindows;
     }
     /**
-     * @return The amount of memory (in GBs) to be enabled per each CPU core.
+     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     public Integer memoryPerOracleComputeUnitInGbs() {

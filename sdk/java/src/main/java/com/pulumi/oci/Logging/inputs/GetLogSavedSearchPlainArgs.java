@@ -13,14 +13,14 @@ public final class GetLogSavedSearchPlainArgs extends com.pulumi.resources.Invok
     public static final GetLogSavedSearchPlainArgs Empty = new GetLogSavedSearchPlainArgs();
 
     /**
-     * OCID of the logSavedSearch
+     * OCID of the logSavedSearch.
      * 
      */
     @Import(name="logSavedSearchId", required=true)
     private String logSavedSearchId;
 
     /**
-     * @return OCID of the logSavedSearch
+     * @return OCID of the logSavedSearch.
      * 
      */
     public String logSavedSearchId() {
@@ -52,7 +52,7 @@ public final class GetLogSavedSearchPlainArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param logSavedSearchId OCID of the logSavedSearch
+         * @param logSavedSearchId OCID of the logSavedSearch.
          * 
          * @return builder
          * 

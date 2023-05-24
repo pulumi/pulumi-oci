@@ -117,10 +117,10 @@ public final class GetRecordsPlainArgs extends com.pulumi.resources.InvokeArgs {
      * The name or OCID of the target zone.
      * 
      * @deprecated
-     * The &#39;oci_dns_records&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
+     * The &#39;oci_dns_records&#39; resource has been deprecated. Please use &#39;oci_dns_rrsets&#39; instead.
      * 
      */
-    @Deprecated /* The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
+    @Deprecated /* The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrsets' instead. */
     @Import(name="zoneNameOrId", required=true)
     private String zoneNameOrId;
 
@@ -128,10 +128,10 @@ public final class GetRecordsPlainArgs extends com.pulumi.resources.InvokeArgs {
      * @return The name or OCID of the target zone.
      * 
      * @deprecated
-     * The &#39;oci_dns_records&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
+     * The &#39;oci_dns_records&#39; resource has been deprecated. Please use &#39;oci_dns_rrsets&#39; instead.
      * 
      */
-    @Deprecated /* The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
+    @Deprecated /* The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrsets' instead. */
     public String zoneNameOrId() {
         return this.zoneNameOrId;
     }
@@ -264,10 +264,10 @@ public final class GetRecordsPlainArgs extends com.pulumi.resources.InvokeArgs {
          * @return builder
          * 
          * @deprecated
-         * The &#39;oci_dns_records&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
+         * The &#39;oci_dns_records&#39; resource has been deprecated. Please use &#39;oci_dns_rrsets&#39; instead.
          * 
          */
-        @Deprecated /* The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
+        @Deprecated /* The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrsets' instead. */
         public Builder zoneNameOrId(String zoneNameOrId) {
             $.zoneNameOrId = zoneNameOrId;
             return this;

@@ -58,7 +58,7 @@ public final class GetDatabaseUpgradeHistoryEntryResult {
      */
     private String targetDbHomeId;
     /**
-     * @return A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+     * @return A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
      * 
      */
     private String targetDbVersion;
@@ -144,7 +144,7 @@ public final class GetDatabaseUpgradeHistoryEntryResult {
         return this.targetDbHomeId;
     }
     /**
-     * @return A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+     * @return A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
      * 
      */
     public String targetDbVersion() {

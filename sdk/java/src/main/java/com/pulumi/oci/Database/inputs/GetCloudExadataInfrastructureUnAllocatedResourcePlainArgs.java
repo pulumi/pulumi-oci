@@ -5,7 +5,10 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetCloudExadataInfrastructureUnAllocatedResourcePlainArgs extends com.pulumi.resources.InvokeArgs {
@@ -27,10 +30,26 @@ public final class GetCloudExadataInfrastructureUnAllocatedResourcePlainArgs ext
         return this.cloudExadataInfrastructureId;
     }
 
+    /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+     * 
+     */
+    @Import(name="dbServers")
+    private @Nullable List<String> dbServers;
+
+    /**
+     * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+     * 
+     */
+    public Optional<List<String>> dbServers() {
+        return Optional.ofNullable(this.dbServers);
+    }
+
     private GetCloudExadataInfrastructureUnAllocatedResourcePlainArgs() {}
 
     private GetCloudExadataInfrastructureUnAllocatedResourcePlainArgs(GetCloudExadataInfrastructureUnAllocatedResourcePlainArgs $) {
         this.cloudExadataInfrastructureId = $.cloudExadataInfrastructureId;
+        this.dbServers = $.dbServers;
     }
 
     public static Builder builder() {
@@ -60,6 +79,27 @@ public final class GetCloudExadataInfrastructureUnAllocatedResourcePlainArgs ext
         public Builder cloudExadataInfrastructureId(String cloudExadataInfrastructureId) {
             $.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
             return this;
+        }
+
+        /**
+         * @param dbServers The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbServers(@Nullable List<String> dbServers) {
+            $.dbServers = dbServers;
+            return this;
+        }
+
+        /**
+         * @param dbServers The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbServers(String... dbServers) {
+            return dbServers(List.of(dbServers));
         }
 
         public GetCloudExadataInfrastructureUnAllocatedResourcePlainArgs build() {

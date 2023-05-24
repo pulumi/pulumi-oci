@@ -226,7 +226,7 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly isReconnectCloneEnabled: boolean;
     /**
-     * Indicates whether the Autonomous Database is a refreshable clone.
+     * Indicates if the Autonomous Database is a refreshable clone.
      */
     readonly isRefreshableClone: boolean;
     /**
@@ -283,7 +283,7 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly maxCpuCoreCount: number;
     /**
-     * The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+     * The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     readonly memoryPerOracleComputeUnitInGbs: number;
     /**
@@ -304,7 +304,7 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly ocpuCount: number;
     /**
-     * The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+     * Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
      */
     readonly openMode: string;
     /**
@@ -316,7 +316,7 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly peerDbIds: string[];
     /**
-     * The Autonomous Database permission level. Restricted mode allows access only to admin users.
+     * The Autonomous Database permission level. Restricted mode allows access only by admin users.
      */
     readonly permissionLevel: string;
     /**
@@ -354,7 +354,7 @@ export interface GetAutonomousDatabaseResult {
     readonly role: string;
     readonly rotateKeyTrigger: boolean;
     /**
-     * list of scheduled operations
+     * The list of scheduled operations.
      */
     readonly scheduledOperations: outputs.Database.GetAutonomousDatabaseScheduledOperation[];
     readonly secretId: string;

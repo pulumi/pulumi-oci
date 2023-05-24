@@ -13,6 +13,9 @@ namespace Pulumi.Oci.Logging.Outputs
     [OutputType]
     public sealed class GetUnifiedAgentConfigurationServiceConfigurationSourceResult
     {
+        /// <summary>
+        /// Windows event log channels.
+        /// </summary>
         public readonly ImmutableArray<string> Channels;
         /// <summary>
         /// The name key to tag this grok pattern.
@@ -22,6 +25,9 @@ namespace Pulumi.Oci.Logging.Outputs
         /// source parser object.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult> Parsers;
+        /// <summary>
+        /// Absolute paths for log source files. Wildcard can be used.
+        /// </summary>
         public readonly ImmutableArray<string> Paths;
         /// <summary>
         /// Unified schema logging source type.

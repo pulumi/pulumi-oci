@@ -21,7 +21,7 @@ class GetSecurityRecipeResult:
     """
     A collection of values returned by getSecurityRecipe.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, owner=None, security_policies=None, security_recipe_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, owner=None, security_policies=None, security_recipe_id=None, state=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -55,9 +55,6 @@ class GetSecurityRecipeResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
-        if system_tags and not isinstance(system_tags, dict):
-            raise TypeError("Expected argument 'system_tags' to be a dict")
-        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -151,14 +148,6 @@ class GetSecurityRecipeResult:
         return pulumi.get(self, "state")
 
     @property
-    @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
-        return pulumi.get(self, "system_tags")
-
-    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -192,7 +181,6 @@ class AwaitableGetSecurityRecipeResult(GetSecurityRecipeResult):
             security_policies=self.security_policies,
             security_recipe_id=self.security_recipe_id,
             state=self.state,
-            system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated)
 
@@ -233,7 +221,6 @@ def get_security_recipe(security_recipe_id: Optional[str] = None,
         security_policies=__ret__.security_policies,
         security_recipe_id=__ret__.security_recipe_id,
         state=__ret__.state,
-        system_tags=__ret__.system_tags,
         time_created=__ret__.time_created,
         time_updated=__ret__.time_updated)
 

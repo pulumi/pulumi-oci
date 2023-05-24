@@ -88,7 +88,7 @@ export interface GetLogResult {
      */
     readonly logType: string;
     /**
-     * Log retention duration in 30-day increments (30, 60, 90 and so on).
+     * Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
      */
     readonly retentionDuration: number;
     /**

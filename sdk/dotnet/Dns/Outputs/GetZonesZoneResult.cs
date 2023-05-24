@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Dns.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
+        /// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetZonesZoneExternalDownstreamResult> ExternalDownstreams;
+        /// <summary>
         /// External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetZonesZoneExternalMasterResult> ExternalMasters;
@@ -75,6 +79,10 @@ namespace Pulumi.Oci.Dns.Outputs
         /// </summary>
         public readonly string ViewId;
         /// <summary>
+        /// The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetZonesZoneZoneTransferServerResult> ZoneTransferServers;
+        /// <summary>
         /// Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
         /// </summary>
         public readonly string ZoneType;
@@ -84,6 +92,8 @@ namespace Pulumi.Oci.Dns.Outputs
             string compartmentId,
 
             ImmutableDictionary<string, object> definedTags,
+
+            ImmutableArray<Outputs.GetZonesZoneExternalDownstreamResult> externalDownstreams,
 
             ImmutableArray<Outputs.GetZonesZoneExternalMasterResult> externalMasters,
 
@@ -111,10 +121,13 @@ namespace Pulumi.Oci.Dns.Outputs
 
             string viewId,
 
+            ImmutableArray<Outputs.GetZonesZoneZoneTransferServerResult> zoneTransferServers,
+
             string zoneType)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
+            ExternalDownstreams = externalDownstreams;
             ExternalMasters = externalMasters;
             FreeformTags = freeformTags;
             Id = id;
@@ -128,6 +141,7 @@ namespace Pulumi.Oci.Dns.Outputs
             TimeCreated = timeCreated;
             Version = version;
             ViewId = viewId;
+            ZoneTransferServers = zoneTransferServers;
             ZoneType = zoneType;
         }
     }

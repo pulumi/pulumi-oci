@@ -250,7 +250,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="dbName")
     def db_name(self) -> str:
         """
-        The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+        The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         """
         return pulumi.get(self, "db_name")
 

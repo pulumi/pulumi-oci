@@ -318,7 +318,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private Integer maxCpuCoreCount;
     /**
-     * @return The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+     * @return The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     private Integer memoryPerOracleComputeUnitInGbs;
@@ -344,7 +344,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private Double ocpuCount;
     /**
-     * @return The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+     * @return Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
      * 
      */
     private String openMode;
@@ -359,7 +359,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private List<String> peerDbIds;
     /**
-     * @return The Autonomous Database permission level. Restricted mode allows access only to admin users.
+     * @return The Autonomous Database permission level. Restricted mode allows access only by admin users.
      * 
      */
     private String permissionLevel;
@@ -406,7 +406,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     private String role;
     private Boolean rotateKeyTrigger;
     /**
-     * @return list of scheduled operations
+     * @return The list of scheduled operations.
      * 
      */
     private List<GetAutonomousDatabasesAutonomousDatabaseScheduledOperation> scheduledOperations;
@@ -972,7 +972,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.maxCpuCoreCount;
     }
     /**
-     * @return The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+     * @return The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     public Integer memoryPerOracleComputeUnitInGbs() {
@@ -1008,7 +1008,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.ocpuCount;
     }
     /**
-     * @return The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+     * @return Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
      * 
      */
     public String openMode() {
@@ -1029,7 +1029,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.peerDbIds;
     }
     /**
-     * @return The Autonomous Database permission level. Restricted mode allows access only to admin users.
+     * @return The Autonomous Database permission level. Restricted mode allows access only by admin users.
      * 
      */
     public String permissionLevel() {
@@ -1098,7 +1098,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.rotateKeyTrigger;
     }
     /**
-     * @return list of scheduled operations
+     * @return The list of scheduled operations.
      * 
      */
     public List<GetAutonomousDatabasesAutonomousDatabaseScheduledOperation> scheduledOperations() {

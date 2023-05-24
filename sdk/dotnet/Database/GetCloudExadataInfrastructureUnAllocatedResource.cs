@@ -32,6 +32,7 @@ namespace Pulumi.Oci.Database
         ///     var testCloudExadataInfrastructureUnAllocatedResource = Oci.Database.GetCloudExadataInfrastructureUnAllocatedResource.Invoke(new()
         ///     {
         ///         CloudExadataInfrastructureId = oci_database_cloud_exadata_infrastructure.Test_cloud_exadata_infrastructure.Id,
+        ///         DbServers = @var.Cloud_exadata_infrastructure_un_allocated_resource_db_servers,
         ///     });
         /// 
         /// });
@@ -63,6 +64,7 @@ namespace Pulumi.Oci.Database
         ///     var testCloudExadataInfrastructureUnAllocatedResource = Oci.Database.GetCloudExadataInfrastructureUnAllocatedResource.Invoke(new()
         ///     {
         ///         CloudExadataInfrastructureId = oci_database_cloud_exadata_infrastructure.Test_cloud_exadata_infrastructure.Id,
+        ///         DbServers = @var.Cloud_exadata_infrastructure_un_allocated_resource_db_servers,
         ///     });
         /// 
         /// });
@@ -83,6 +85,18 @@ namespace Pulumi.Oci.Database
         [Input("cloudExadataInfrastructureId", required: true)]
         public string CloudExadataInfrastructureId { get; set; } = null!;
 
+        [Input("dbServers")]
+        private List<string>? _dbServers;
+
+        /// <summary>
+        /// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+        /// </summary>
+        public List<string> DbServers
+        {
+            get => _dbServers ?? (_dbServers = new List<string>());
+            set => _dbServers = value;
+        }
+
         public GetCloudExadataInfrastructureUnAllocatedResourceArgs()
         {
         }
@@ -96,6 +110,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("cloudExadataInfrastructureId", required: true)]
         public Input<string> CloudExadataInfrastructureId { get; set; } = null!;
+
+        [Input("dbServers")]
+        private InputList<string>? _dbServers;
+
+        /// <summary>
+        /// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+        /// </summary>
+        public InputList<string> DbServers
+        {
+            get => _dbServers ?? (_dbServers = new InputList<string>());
+            set => _dbServers = value;
+        }
 
         public GetCloudExadataInfrastructureUnAllocatedResourceInvokeArgs()
         {
@@ -119,6 +145,7 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Exadata infrastructure.
         /// </summary>
         public readonly string CloudExadataInfrastructureId;
+        public readonly ImmutableArray<string> DbServers;
         /// <summary>
         /// Total unallocated exadata storage in the infrastructure in TBs.
         /// </summary>
@@ -148,6 +175,8 @@ namespace Pulumi.Oci.Database
 
             string cloudExadataInfrastructureId,
 
+            ImmutableArray<string> dbServers,
+
             double exadataStorageInTbs,
 
             string id,
@@ -161,6 +190,7 @@ namespace Pulumi.Oci.Database
             CloudAutonomousVmClusters = cloudAutonomousVmClusters;
             CloudExadataInfrastructureDisplayName = cloudExadataInfrastructureDisplayName;
             CloudExadataInfrastructureId = cloudExadataInfrastructureId;
+            DbServers = dbServers;
             ExadataStorageInTbs = exadataStorageInTbs;
             Id = id;
             LocalStorageInGbs = localStorageInGbs;

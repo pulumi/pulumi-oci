@@ -82,6 +82,10 @@ export class VmCluster extends pulumi.CustomResource {
     }
 
     /**
+     * The name of the availability domain that the VM cluster is located in.
+     */
+    public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public readonly compartmentId!: pulumi.Output<string>;
@@ -202,6 +206,7 @@ export class VmCluster extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VmClusterState | undefined;
+            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
             resourceInputs["cpusEnabled"] = state ? state.cpusEnabled : undefined;
@@ -273,6 +278,7 @@ export class VmCluster extends pulumi.CustomResource {
             resourceInputs["sshPublicKeys"] = args ? args.sshPublicKeys : undefined;
             resourceInputs["timeZone"] = args ? args.timeZone : undefined;
             resourceInputs["vmClusterNetworkId"] = args ? args.vmClusterNetworkId : undefined;
+            resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["cpusEnabled"] = undefined /*out*/;
             resourceInputs["lastPatchHistoryEntryId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -291,6 +297,10 @@ export class VmCluster extends pulumi.CustomResource {
  * Input properties used for looking up and filtering VmCluster resources.
  */
 export interface VmClusterState {
+    /**
+     * The name of the availability domain that the VM cluster is located in.
+     */
+    availabilityDomain?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */

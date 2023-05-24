@@ -518,7 +518,7 @@ public final class LoggingFunctions {
     /**
      * This data source provides details about a specific Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
      * 
-     * Retrieves a log saved search.
+     * Retrieves a LogSavedSearch.
      * 
      * ## Example Usage
      * ```java
@@ -557,7 +557,7 @@ public final class LoggingFunctions {
     /**
      * This data source provides details about a specific Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
      * 
-     * Retrieves a log saved search.
+     * Retrieves a LogSavedSearch.
      * 
      * ## Example Usage
      * ```java
@@ -596,7 +596,7 @@ public final class LoggingFunctions {
     /**
      * This data source provides details about a specific Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
      * 
-     * Retrieves a log saved search.
+     * Retrieves a LogSavedSearch.
      * 
      * ## Example Usage
      * ```java
@@ -635,7 +635,7 @@ public final class LoggingFunctions {
     /**
      * This data source provides details about a specific Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
      * 
-     * Retrieves a log saved search.
+     * Retrieves a LogSavedSearch.
      * 
      * ## Example Usage
      * ```java
@@ -674,7 +674,7 @@ public final class LoggingFunctions {
     /**
      * This data source provides the list of Log Saved Searches in Oracle Cloud Infrastructure Logging service.
      * 
-     * Lists Logging Saved Searches for this compartment.
+     * Lists LogSavedSearches for this compartment.
      * 
      * ## Example Usage
      * ```java
@@ -715,7 +715,7 @@ public final class LoggingFunctions {
     /**
      * This data source provides the list of Log Saved Searches in Oracle Cloud Infrastructure Logging service.
      * 
-     * Lists Logging Saved Searches for this compartment.
+     * Lists LogSavedSearches for this compartment.
      * 
      * ## Example Usage
      * ```java
@@ -756,7 +756,7 @@ public final class LoggingFunctions {
     /**
      * This data source provides the list of Log Saved Searches in Oracle Cloud Infrastructure Logging service.
      * 
-     * Lists Logging Saved Searches for this compartment.
+     * Lists LogSavedSearches for this compartment.
      * 
      * ## Example Usage
      * ```java
@@ -797,7 +797,7 @@ public final class LoggingFunctions {
     /**
      * This data source provides the list of Log Saved Searches in Oracle Cloud Infrastructure Logging service.
      * 
-     * Lists Logging Saved Searches for this compartment.
+     * Lists LogSavedSearches for this compartment.
      * 
      * ## Example Usage
      * ```java

@@ -9,8 +9,11 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Zone resource in Oracle Cloud Infrastructure DNS service.
  *
- * Creates a new zone in the specified compartment. Additionally, for Private DNS,
- * the `viewId` field is required when creating private zones.
+ * Creates a new zone in the specified compartment. For global zones, if the `Content-Type` header for the request
+ * is `text/dns`, the `compartmentId` query parameter is required. `text/dns` for the `Content-Type` header is
+ * not supported for private zones. Query parameter scope with a value of `PRIVATE` is required when creating a
+ * private zone. Private zones must have a zone type of `PRIMARY`. Creating a private zone at or under
+ * `oraclevcn.com` within the default protected view of a VCN-dedicated resolver is not permitted.
  *
  * ## Example Usage
  *
@@ -22,6 +25,11 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  *     zoneType: _var.zone_zone_type,
  *     definedTags: _var.zone_defined_tags,
+ *     externalDownstreams: [{
+ *         address: _var.zone_external_downstreams_address,
+ *         port: _var.zone_external_downstreams_port,
+ *         tsigKeyId: oci_dns_tsig_key.test_tsig_key.id,
+ *     }],
  *     externalMasters: [{
  *         address: _var.zone_external_masters_address,
  *         port: _var.zone_external_masters_port,
@@ -35,7 +43,7 @@ import * as utilities from "../utilities";
  *
  * ## Import
  *
- * Zones can be imported using their OCID, e.g.
+ * Zones can be imported using the `id`, e.g.
  *
  * ```sh
  *  $ pulumi import oci:Dns/zone:Zone test_zone "id"
@@ -76,9 +84,13 @@ export class Zone extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
-     * **Example:** `{"Operations.CostCenter": "42"}`
+     * **Example:** `{"Operations": {"CostCenter": "42"}}`
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    /**
+     * (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+     */
+    public readonly externalDownstreams!: pulumi.Output<outputs.Dns.ZoneExternalDownstream[]>;
     /**
      * (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
      */
@@ -131,6 +143,10 @@ export class Zone extends pulumi.CustomResource {
      */
     public readonly viewId!: pulumi.Output<string | undefined>;
     /**
+     * The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+     */
+    public /*out*/ readonly zoneTransferServers!: pulumi.Output<outputs.Dns.ZoneZoneTransferServer[]>;
+    /**
      * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
      *
      *
@@ -154,6 +170,7 @@ export class Zone extends pulumi.CustomResource {
             const state = argsOrState as ZoneState | undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
+            resourceInputs["externalDownstreams"] = state ? state.externalDownstreams : undefined;
             resourceInputs["externalMasters"] = state ? state.externalMasters : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isProtected"] = state ? state.isProtected : undefined;
@@ -166,6 +183,7 @@ export class Zone extends pulumi.CustomResource {
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["version"] = state ? state.version : undefined;
             resourceInputs["viewId"] = state ? state.viewId : undefined;
+            resourceInputs["zoneTransferServers"] = state ? state.zoneTransferServers : undefined;
             resourceInputs["zoneType"] = state ? state.zoneType : undefined;
         } else {
             const args = argsOrState as ZoneArgs | undefined;
@@ -177,6 +195,7 @@ export class Zone extends pulumi.CustomResource {
             }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
+            resourceInputs["externalDownstreams"] = args ? args.externalDownstreams : undefined;
             resourceInputs["externalMasters"] = args ? args.externalMasters : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
@@ -190,6 +209,7 @@ export class Zone extends pulumi.CustomResource {
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["version"] = undefined /*out*/;
+            resourceInputs["zoneTransferServers"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Zone.__pulumiType, name, resourceInputs, opts);
@@ -207,9 +227,13 @@ export interface ZoneState {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
-     * **Example:** `{"Operations.CostCenter": "42"}`
+     * **Example:** `{"Operations": {"CostCenter": "42"}}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+     */
+    externalDownstreams?: pulumi.Input<pulumi.Input<inputs.Dns.ZoneExternalDownstream>[]>;
     /**
      * (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
      */
@@ -262,6 +286,10 @@ export interface ZoneState {
      */
     viewId?: pulumi.Input<string>;
     /**
+     * The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+     */
+    zoneTransferServers?: pulumi.Input<pulumi.Input<inputs.Dns.ZoneZoneTransferServer>[]>;
+    /**
      * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
      *
      *
@@ -282,9 +310,13 @@ export interface ZoneArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
-     * **Example:** `{"Operations.CostCenter": "42"}`
+     * **Example:** `{"Operations": {"CostCenter": "42"}}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+     */
+    externalDownstreams?: pulumi.Input<pulumi.Input<inputs.Dns.ZoneExternalDownstream>[]>;
     /**
      * (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
      */

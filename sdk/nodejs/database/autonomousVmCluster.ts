@@ -184,7 +184,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly maintenanceWindows!: pulumi.Output<outputs.Database.AutonomousVmClusterMaintenanceWindow[]>;
     /**
-     * The amount of memory (in GBs) to be enabled per each CPU core.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     public readonly memoryPerOracleComputeUnitInGbs!: pulumi.Output<number>;
     /**
@@ -447,7 +447,7 @@ export interface AutonomousVmClusterState {
      */
     maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousVmClusterMaintenanceWindow>[]>;
     /**
-     * The amount of memory (in GBs) to be enabled per each CPU core.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     memoryPerOracleComputeUnitInGbs?: pulumi.Input<number>;
     /**
@@ -563,7 +563,7 @@ export interface AutonomousVmClusterArgs {
      */
     maintenanceWindowDetails?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousVmClusterMaintenanceWindowDetail>[]>;
     /**
-     * The amount of memory (in GBs) to be enabled per each CPU core.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     memoryPerOracleComputeUnitInGbs?: pulumi.Input<number>;
     /**

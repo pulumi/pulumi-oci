@@ -124,6 +124,8 @@ type ExadataInfrastructure struct {
 	AdditionalStorageCount pulumi.IntOutput `pulumi:"additionalStorageCount"`
 	// (Updatable) The CIDR block for the Exadata administration network.
 	AdminNetworkCidr pulumi.StringOutput `pulumi:"adminNetworkCidr"`
+	// The name of the availability domain that the Exadata infrastructure is located in.
+	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
 	// (Updatable) The IP address for the first control plane server.
 	CloudControlPlaneServer1 pulumi.StringOutput `pulumi:"cloudControlPlaneServer1"`
 	// (Updatable) The IP address for the second control plane server.
@@ -283,6 +285,8 @@ type exadataInfrastructureState struct {
 	AdditionalStorageCount *int `pulumi:"additionalStorageCount"`
 	// (Updatable) The CIDR block for the Exadata administration network.
 	AdminNetworkCidr *string `pulumi:"adminNetworkCidr"`
+	// The name of the availability domain that the Exadata infrastructure is located in.
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// (Updatable) The IP address for the first control plane server.
 	CloudControlPlaneServer1 *string `pulumi:"cloudControlPlaneServer1"`
 	// (Updatable) The IP address for the second control plane server.
@@ -378,6 +382,8 @@ type ExadataInfrastructureState struct {
 	AdditionalStorageCount pulumi.IntPtrInput
 	// (Updatable) The CIDR block for the Exadata administration network.
 	AdminNetworkCidr pulumi.StringPtrInput
+	// The name of the availability domain that the Exadata infrastructure is located in.
+	AvailabilityDomain pulumi.StringPtrInput
 	// (Updatable) The IP address for the first control plane server.
 	CloudControlPlaneServer1 pulumi.StringPtrInput
 	// (Updatable) The IP address for the second control plane server.
@@ -694,6 +700,11 @@ func (o ExadataInfrastructureOutput) AdditionalStorageCount() pulumi.IntOutput {
 // (Updatable) The CIDR block for the Exadata administration network.
 func (o ExadataInfrastructureOutput) AdminNetworkCidr() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.StringOutput { return v.AdminNetworkCidr }).(pulumi.StringOutput)
+}
+
+// The name of the availability domain that the Exadata infrastructure is located in.
+func (o ExadataInfrastructureOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
 // (Updatable) The IP address for the first control plane server.

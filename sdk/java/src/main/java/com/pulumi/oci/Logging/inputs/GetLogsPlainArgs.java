@@ -17,14 +17,14 @@ public final class GetLogsPlainArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetLogsPlainArgs Empty = new GetLogsPlainArgs();
 
     /**
-     * Resource name
+     * Resource name.
      * 
      */
     @Import(name="displayName")
     private @Nullable String displayName;
 
     /**
-     * @return Resource name
+     * @return Resource name.
      * 
      */
     public Optional<String> displayName() {
@@ -69,14 +69,14 @@ public final class GetLogsPlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * Log object resource.
+     * Log object resource, which is a field of LogSummary.Configuration.Source.
      * 
      */
     @Import(name="sourceResource")
     private @Nullable String sourceResource;
 
     /**
-     * @return Log object resource.
+     * @return Log object resource, which is a field of LogSummary.Configuration.Source.
      * 
      */
     public Optional<String> sourceResource() {
@@ -84,14 +84,14 @@ public final class GetLogsPlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * Service that created the log object.
+     * Service that created the log object, which is a field of LogSummary.Configuration.Source.
      * 
      */
     @Import(name="sourceService")
     private @Nullable String sourceService;
 
     /**
-     * @return Service that created the log object.
+     * @return Service that created the log object, which is a field of LogSummary.Configuration.Source.
      * 
      */
     public Optional<String> sourceService() {
@@ -144,7 +144,7 @@ public final class GetLogsPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param displayName Resource name
+         * @param displayName Resource name.
          * 
          * @return builder
          * 
@@ -186,7 +186,7 @@ public final class GetLogsPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param sourceResource Log object resource.
+         * @param sourceResource Log object resource, which is a field of LogSummary.Configuration.Source.
          * 
          * @return builder
          * 
@@ -197,7 +197,7 @@ public final class GetLogsPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param sourceService Service that created the log object.
+         * @param sourceService Service that created the log object, which is a field of LogSummary.Configuration.Source.
          * 
          * @return builder
          * 

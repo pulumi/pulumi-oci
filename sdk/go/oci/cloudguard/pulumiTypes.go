@@ -25259,8 +25259,6 @@ type GetSecurityPoliciesSecurityPolicyCollectionItem struct {
 	Services []string `pulumi:"services"`
 	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State string `pulumi:"state"`
-	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the security policy was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the security policy was last updated. An RFC3339 formatted datetime string.
@@ -25303,8 +25301,6 @@ type GetSecurityPoliciesSecurityPolicyCollectionItemArgs struct {
 	Services pulumi.StringArrayInput `pulumi:"services"`
 	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State pulumi.StringInput `pulumi:"state"`
-	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the security policy was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the security policy was last updated. An RFC3339 formatted datetime string.
@@ -25420,11 +25416,6 @@ func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) Services() pulumi
 // The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) string { return v.State }).(pulumi.StringOutput)
-}
-
-// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The time the security policy was created. An RFC3339 formatted datetime string.
@@ -25680,8 +25671,6 @@ type GetSecurityRecipesSecurityRecipeCollectionItem struct {
 	SecurityPolicies []string `pulumi:"securityPolicies"`
 	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State string `pulumi:"state"`
-	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the recipe was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the recipe was last updated. An RFC3339 formatted datetime string.
@@ -25720,8 +25709,6 @@ type GetSecurityRecipesSecurityRecipeCollectionItemArgs struct {
 	SecurityPolicies pulumi.StringArrayInput `pulumi:"securityPolicies"`
 	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State pulumi.StringInput `pulumi:"state"`
-	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the recipe was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the recipe was last updated. An RFC3339 formatted datetime string.
@@ -25827,11 +25814,6 @@ func (o GetSecurityRecipesSecurityRecipeCollectionItemOutput) SecurityPolicies()
 // The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 func (o GetSecurityRecipesSecurityRecipeCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityRecipesSecurityRecipeCollectionItem) string { return v.State }).(pulumi.StringOutput)
-}
-
-// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetSecurityRecipesSecurityRecipeCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSecurityRecipesSecurityRecipeCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The time the recipe was created. An RFC3339 formatted datetime string.
@@ -26089,8 +26071,6 @@ type GetSecurityZonesSecurityZoneCollectionItem struct {
 	SecurityZoneTargetId string `pulumi:"securityZoneTargetId"`
 	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State string `pulumi:"state"`
-	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the security zone was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the security zone was last updated. An RFC3339 formatted datetime string.
@@ -26131,8 +26111,6 @@ type GetSecurityZonesSecurityZoneCollectionItemArgs struct {
 	SecurityZoneTargetId pulumi.StringInput `pulumi:"securityZoneTargetId"`
 	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State pulumi.StringInput `pulumi:"state"`
-	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the security zone was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the security zone was last updated. An RFC3339 formatted datetime string.
@@ -26243,11 +26221,6 @@ func (o GetSecurityZonesSecurityZoneCollectionItemOutput) SecurityZoneTargetId()
 // The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 func (o GetSecurityZonesSecurityZoneCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityZonesSecurityZoneCollectionItem) string { return v.State }).(pulumi.StringOutput)
-}
-
-// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetSecurityZonesSecurityZoneCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSecurityZonesSecurityZoneCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The time the security zone was created. An RFC3339 formatted datetime string.

@@ -192,6 +192,8 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
     public /*out*/ readonly lastUpdateHistoryEntryId!: pulumi.Output<string>;
     /**
      * (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+     *
+     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      */
     public readonly licenseModel!: pulumi.Output<string>;
     /**
@@ -207,7 +209,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly maintenanceWindows!: pulumi.Output<outputs.Database.CloudAutonomousVmClusterMaintenanceWindow[]>;
     /**
-     * The amount of memory (in GBs) to be enabled per each CPU core.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     public readonly memoryPerOracleComputeUnitInGbs!: pulumi.Output<number>;
     /**
@@ -494,6 +496,8 @@ export interface CloudAutonomousVmClusterState {
     lastUpdateHistoryEntryId?: pulumi.Input<string>;
     /**
      * (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+     *
+     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      */
     licenseModel?: pulumi.Input<string>;
     /**
@@ -509,7 +513,7 @@ export interface CloudAutonomousVmClusterState {
      */
     maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Database.CloudAutonomousVmClusterMaintenanceWindow>[]>;
     /**
-     * The amount of memory (in GBs) to be enabled per each CPU core.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     memoryPerOracleComputeUnitInGbs?: pulumi.Input<number>;
     /**
@@ -630,6 +634,8 @@ export interface CloudAutonomousVmClusterArgs {
     isMtlsEnabledVmCluster?: pulumi.Input<boolean>;
     /**
      * (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+     *
+     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      */
     licenseModel?: pulumi.Input<string>;
     /**
@@ -637,7 +643,7 @@ export interface CloudAutonomousVmClusterArgs {
      */
     maintenanceWindowDetails?: pulumi.Input<inputs.Database.CloudAutonomousVmClusterMaintenanceWindowDetails>;
     /**
-     * The amount of memory (in GBs) to be enabled per each CPU core.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     memoryPerOracleComputeUnitInGbs?: pulumi.Input<number>;
     /**

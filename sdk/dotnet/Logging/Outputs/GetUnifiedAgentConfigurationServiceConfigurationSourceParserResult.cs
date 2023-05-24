@@ -13,15 +13,33 @@ namespace Pulumi.Oci.Logging.Outputs
     [OutputType]
     public sealed class GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult
     {
+        /// <summary>
+        /// csv delimiter.
+        /// </summary>
         public readonly string Delimiter;
+        /// <summary>
+        /// Regex pattern.
+        /// </summary>
         public readonly string Expression;
         /// <summary>
         /// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
         /// </summary>
         public readonly string FieldTimeKey;
+        /// <summary>
+        /// First line pattern format.
+        /// </summary>
         public readonly string FormatFirstline;
+        /// <summary>
+        /// Mutiline pattern format.
+        /// </summary>
         public readonly ImmutableArray<string> Formats;
+        /// <summary>
+        /// grok failure key.
+        /// </summary>
         public readonly string GrokFailureKey;
+        /// <summary>
+        /// grok name key.
+        /// </summary>
         public readonly string GrokNameKey;
         /// <summary>
         /// If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
@@ -32,15 +50,41 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly bool IsKeepTimeKey;
         /// <summary>
+        /// If you don't need stream/logtag fields, set this to false for CRI parser.
+        /// </summary>
+        public readonly bool IsMergeCriFields;
+        /// <summary>
         /// If true, an empty string field is replaced with nil.
         /// </summary>
         public readonly bool IsNullEmptyString;
+        /// <summary>
+        /// Support colonless ident or not.
+        /// </summary>
         public readonly bool IsSupportColonlessIdent;
+        /// <summary>
+        /// With priority or not.
+        /// </summary>
         public readonly bool IsWithPriority;
+        /// <summary>
+        /// csv keys.
+        /// </summary>
         public readonly ImmutableArray<string> Keys;
+        /// <summary>
+        /// Message format of syslog.
+        /// </summary>
         public readonly string MessageFormat;
+        /// <summary>
+        /// Specifies the field name to contain logs.
+        /// </summary>
         public readonly string MessageKey;
+        /// <summary>
+        /// Multiline start regexp pattern.
+        /// </summary>
         public readonly string MultiLineStartRegexp;
+        /// <summary>
+        /// Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserResult> NestedParsers;
         /// <summary>
         /// Specify the null value pattern.
         /// </summary>
@@ -49,17 +93,32 @@ namespace Pulumi.Oci.Logging.Outputs
         /// Type of fluent parser.
         /// </summary>
         public readonly string ParserType;
+        /// <summary>
+        /// grok pattern object.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternResult> Patterns;
+        /// <summary>
+        /// rfc5424 time format.
+        /// </summary>
         public readonly string Rfc5424timeFormat;
+        /// <summary>
+        /// Syslog parser type.
+        /// </summary>
         public readonly string SyslogParserType;
+        /// <summary>
+        /// Process time value using the specified format.
+        /// </summary>
         public readonly string TimeFormat;
+        /// <summary>
+        /// Time type of JSON parser.
+        /// </summary>
         public readonly string TimeType;
         /// <summary>
         /// Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
         /// </summary>
         public readonly int TimeoutInMilliseconds;
         /// <summary>
-        /// Specify types for converting a field into another type.
+        /// Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; @type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
         /// </summary>
         public readonly ImmutableDictionary<string, object> Types;
 
@@ -83,6 +142,8 @@ namespace Pulumi.Oci.Logging.Outputs
 
             bool isKeepTimeKey,
 
+            bool isMergeCriFields,
+
             bool isNullEmptyString,
 
             bool isSupportColonlessIdent,
@@ -96,6 +157,8 @@ namespace Pulumi.Oci.Logging.Outputs
             string messageKey,
 
             string multiLineStartRegexp,
+
+            ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserResult> nestedParsers,
 
             string nullValuePattern,
 
@@ -124,6 +187,7 @@ namespace Pulumi.Oci.Logging.Outputs
             GrokNameKey = grokNameKey;
             IsEstimateCurrentEvent = isEstimateCurrentEvent;
             IsKeepTimeKey = isKeepTimeKey;
+            IsMergeCriFields = isMergeCriFields;
             IsNullEmptyString = isNullEmptyString;
             IsSupportColonlessIdent = isSupportColonlessIdent;
             IsWithPriority = isWithPriority;
@@ -131,6 +195,7 @@ namespace Pulumi.Oci.Logging.Outputs
             MessageFormat = messageFormat;
             MessageKey = messageKey;
             MultiLineStartRegexp = multiLineStartRegexp;
+            NestedParsers = nestedParsers;
             NullValuePattern = nullValuePattern;
             ParserType = parserType;
             Patterns = patterns;

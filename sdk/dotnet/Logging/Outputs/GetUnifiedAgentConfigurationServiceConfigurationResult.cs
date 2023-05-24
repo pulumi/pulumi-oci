@@ -21,6 +21,9 @@ namespace Pulumi.Oci.Logging.Outputs
         /// Logging destination object.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationDestinationResult> Destinations;
+        /// <summary>
+        /// Logging source object.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceResult> Sources;
 
         [OutputConstructor]

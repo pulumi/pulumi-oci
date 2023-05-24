@@ -5,6 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { ActionCreateZoneFromZoneFileArgs, ActionCreateZoneFromZoneFileState } from "./actionCreateZoneFromZoneFile";
+export type ActionCreateZoneFromZoneFile = import("./actionCreateZoneFromZoneFile").ActionCreateZoneFromZoneFile;
+export const ActionCreateZoneFromZoneFile: typeof import("./actionCreateZoneFromZoneFile").ActionCreateZoneFromZoneFile = null as any;
+utilities.lazyLoad(exports, ["ActionCreateZoneFromZoneFile"], () => require("./actionCreateZoneFromZoneFile"));
+
 export { GetRecordsArgs, GetRecordsResult, GetRecordsOutputArgs } from "./getRecords";
 export const getRecords: typeof import("./getRecords").getRecords = null as any;
 export const getRecordsOutput: typeof import("./getRecords").getRecordsOutput = null as any;
@@ -34,6 +39,11 @@ export { GetRrsetArgs, GetRrsetResult, GetRrsetOutputArgs } from "./getRrset";
 export const getRrset: typeof import("./getRrset").getRrset = null as any;
 export const getRrsetOutput: typeof import("./getRrset").getRrsetOutput = null as any;
 utilities.lazyLoad(exports, ["getRrset","getRrsetOutput"], () => require("./getRrset"));
+
+export { GetRrsetsArgs, GetRrsetsResult, GetRrsetsOutputArgs } from "./getRrsets";
+export const getRrsets: typeof import("./getRrsets").getRrsets = null as any;
+export const getRrsetsOutput: typeof import("./getRrsets").getRrsetsOutput = null as any;
+utilities.lazyLoad(exports, ["getRrsets","getRrsetsOutput"], () => require("./getRrsets"));
 
 export { GetSteeringPoliciesArgs, GetSteeringPoliciesResult, GetSteeringPoliciesOutputArgs } from "./getSteeringPolicies";
 export const getSteeringPolicies: typeof import("./getSteeringPolicies").getSteeringPolicies = null as any;
@@ -130,6 +140,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:Dns/actionCreateZoneFromZoneFile:ActionCreateZoneFromZoneFile":
+                return new ActionCreateZoneFromZoneFile(name, <any>undefined, { urn })
             case "oci:Dns/record:Record":
                 return new Record(name, <any>undefined, { urn })
             case "oci:Dns/resolver:Resolver":
@@ -153,6 +165,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "Dns/actionCreateZoneFromZoneFile", _module)
 pulumi.runtime.registerResourceModule("oci", "Dns/record", _module)
 pulumi.runtime.registerResourceModule("oci", "Dns/resolver", _module)
 pulumi.runtime.registerResourceModule("oci", "Dns/resolverEndpoint", _module)

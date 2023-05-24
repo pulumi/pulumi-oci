@@ -2635,6 +2635,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Dns/actionCreateZoneFromZoneFile",
+  "fqn": "pulumi_oci.dns",
+  "classes": {
+   "oci:Dns/actionCreateZoneFromZoneFile:ActionCreateZoneFromZoneFile": "ActionCreateZoneFromZoneFile"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Dns/record",
   "fqn": "pulumi_oci.dns",
   "classes": {

@@ -123,7 +123,7 @@ def get_log_groups(compartment_id: Optional[str] = None,
 
 
     :param str compartment_id: Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
-    :param str display_name: Resource name
+    :param str display_name: Resource name.
     :param bool is_compartment_id_in_subtree: Specifies whether or not nested compartments should be traversed. Defaults to false.
     """
     __args__ = dict()
@@ -167,7 +167,7 @@ def get_log_groups_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
 
     :param str compartment_id: Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
-    :param str display_name: Resource name
+    :param str display_name: Resource name.
     :param bool is_compartment_id_in_subtree: Specifies whether or not nested compartments should be traversed. Defaults to false.
     """
     ...

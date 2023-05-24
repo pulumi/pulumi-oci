@@ -88,7 +88,7 @@ export interface GetDatabaseUpgradeHistoryEntryResult {
      */
     readonly targetDbHomeId: string;
     /**
-     * A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+     * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
      */
     readonly targetDbVersion: string;
     /**

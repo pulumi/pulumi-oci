@@ -38,7 +38,7 @@ public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollect
      */
     private String description;
     /**
-     * @return Resource name
+     * @return Resource name.
      * 
      */
     private String displayName;
@@ -110,7 +110,7 @@ public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollect
         return this.description;
     }
     /**
-     * @return Resource name
+     * @return Resource name.
      * 
      */
     public String displayName() {

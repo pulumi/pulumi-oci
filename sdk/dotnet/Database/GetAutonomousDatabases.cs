@@ -295,7 +295,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly bool? IsFreeTier;
         /// <summary>
-        /// Indicates whether the Autonomous Database is a refreshable clone.
+        /// Indicates if the Autonomous Database is a refreshable clone.
         /// </summary>
         public readonly bool? IsRefreshableClone;
         /// <summary>

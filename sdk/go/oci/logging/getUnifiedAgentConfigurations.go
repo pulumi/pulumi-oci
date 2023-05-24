@@ -57,7 +57,7 @@ func GetUnifiedAgentConfigurations(ctx *pulumi.Context, args *GetUnifiedAgentCon
 type GetUnifiedAgentConfigurationsArgs struct {
 	// Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Resource name
+	// Resource name.
 	DisplayName *string                               `pulumi:"displayName"`
 	Filters     []GetUnifiedAgentConfigurationsFilter `pulumi:"filters"`
 	// The OCID of a group or a dynamic group.
@@ -105,7 +105,7 @@ func GetUnifiedAgentConfigurationsOutput(ctx *pulumi.Context, args GetUnifiedAge
 type GetUnifiedAgentConfigurationsOutputArgs struct {
 	// Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Resource name
+	// Resource name.
 	DisplayName pulumi.StringPtrInput                         `pulumi:"displayName"`
 	Filters     GetUnifiedAgentConfigurationsFilterArrayInput `pulumi:"filters"`
 	// The OCID of a group or a dynamic group.

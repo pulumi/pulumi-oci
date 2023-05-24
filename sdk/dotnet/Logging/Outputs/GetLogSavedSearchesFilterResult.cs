@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Logging.Outputs
     public sealed class GetLogSavedSearchesFilterResult
     {
         /// <summary>
-        /// Resource name
+        /// Resource name.
         /// </summary>
         public readonly string Name;
         public readonly bool? Regex;

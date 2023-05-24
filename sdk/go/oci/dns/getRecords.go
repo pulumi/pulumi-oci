@@ -10,7 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Deprecated. Use Dns.Rrset instead.**
+// **Deprecated. Use Dns.getRrsets instead.**
 //
 // This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
 //
@@ -45,7 +45,7 @@ type GetRecordsArgs struct {
 	SortOrder *string `pulumi:"sortOrder"`
 	// The name or OCID of the target zone.
 	//
-	// Deprecated: The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrset' instead.
+	// Deprecated: The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrsets' instead.
 	ZoneNameOrId string `pulumi:"zoneNameOrId"`
 	// The version of the zone for which data is requested.
 	ZoneVersion *string `pulumi:"zoneVersion"`
@@ -68,7 +68,7 @@ type GetRecordsResult struct {
 	SortOrder *string `pulumi:"sortOrder"`
 	// The name or OCID of the target zone.
 	//
-	// Deprecated: The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrset' instead.
+	// Deprecated: The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrsets' instead.
 	ZoneNameOrId string  `pulumi:"zoneNameOrId"`
 	ZoneVersion  *string `pulumi:"zoneVersion"`
 }
@@ -103,7 +103,7 @@ type GetRecordsOutputArgs struct {
 	SortOrder pulumi.StringPtrInput `pulumi:"sortOrder"`
 	// The name or OCID of the target zone.
 	//
-	// Deprecated: The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrset' instead.
+	// Deprecated: The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrsets' instead.
 	ZoneNameOrId pulumi.StringInput `pulumi:"zoneNameOrId"`
 	// The version of the zone for which data is requested.
 	ZoneVersion pulumi.StringPtrInput `pulumi:"zoneVersion"`
@@ -170,7 +170,7 @@ func (o GetRecordsResultOutput) SortOrder() pulumi.StringPtrOutput {
 
 // The name or OCID of the target zone.
 //
-// Deprecated: The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrset' instead.
+// Deprecated: The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrsets' instead.
 func (o GetRecordsResultOutput) ZoneNameOrId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRecordsResult) string { return v.ZoneNameOrId }).(pulumi.StringOutput)
 }

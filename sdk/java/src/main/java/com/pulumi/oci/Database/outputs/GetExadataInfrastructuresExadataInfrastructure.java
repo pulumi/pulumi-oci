@@ -45,6 +45,11 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
      */
     private String adminNetworkCidr;
     /**
+     * @return The name of the availability domain that the Exadata infrastructure is located in.
+     * 
+     */
+    private String availabilityDomain;
+    /**
      * @return The IP address for the first control plane server.
      * 
      */
@@ -279,6 +284,13 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
      */
     public String adminNetworkCidr() {
         return this.adminNetworkCidr;
+    }
+    /**
+     * @return The name of the availability domain that the Exadata infrastructure is located in.
+     * 
+     */
+    public String availabilityDomain() {
+        return this.availabilityDomain;
     }
     /**
      * @return The IP address for the first control plane server.
@@ -572,6 +584,7 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
         private String additionalComputeSystemModel;
         private Integer additionalStorageCount;
         private String adminNetworkCidr;
+        private String availabilityDomain;
         private String cloudControlPlaneServer1;
         private String cloudControlPlaneServer2;
         private String compartmentId;
@@ -621,6 +634,7 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
     	      this.additionalComputeSystemModel = defaults.additionalComputeSystemModel;
     	      this.additionalStorageCount = defaults.additionalStorageCount;
     	      this.adminNetworkCidr = defaults.adminNetworkCidr;
+    	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.cloudControlPlaneServer1 = defaults.cloudControlPlaneServer1;
     	      this.cloudControlPlaneServer2 = defaults.cloudControlPlaneServer2;
     	      this.compartmentId = defaults.compartmentId;
@@ -691,6 +705,11 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
         @CustomType.Setter
         public Builder adminNetworkCidr(String adminNetworkCidr) {
             this.adminNetworkCidr = Objects.requireNonNull(adminNetworkCidr);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
         @CustomType.Setter
@@ -916,6 +935,7 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
             o.additionalComputeSystemModel = additionalComputeSystemModel;
             o.additionalStorageCount = additionalStorageCount;
             o.adminNetworkCidr = adminNetworkCidr;
+            o.availabilityDomain = availabilityDomain;
             o.cloudControlPlaneServer1 = cloudControlPlaneServer1;
             o.cloudControlPlaneServer2 = cloudControlPlaneServer2;
             o.compartmentId = compartmentId;

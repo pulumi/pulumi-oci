@@ -111,7 +111,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowResult> MaintenanceWindows;
         /// <summary>
-        /// The amount of memory (in GBs) to be enabled per each CPU core.
+        /// The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         /// </summary>
         public readonly int MemoryPerOracleComputeUnitInGbs;
         /// <summary>

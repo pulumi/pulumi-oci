@@ -22,7 +22,7 @@ class GetCloudExadataInfrastructureUnAllocatedResourceResult:
     """
     A collection of values returned by getCloudExadataInfrastructureUnAllocatedResource.
     """
-    def __init__(__self__, cloud_autonomous_vm_clusters=None, cloud_exadata_infrastructure_display_name=None, cloud_exadata_infrastructure_id=None, exadata_storage_in_tbs=None, id=None, local_storage_in_gbs=None, memory_in_gbs=None, ocpus=None):
+    def __init__(__self__, cloud_autonomous_vm_clusters=None, cloud_exadata_infrastructure_display_name=None, cloud_exadata_infrastructure_id=None, db_servers=None, exadata_storage_in_tbs=None, id=None, local_storage_in_gbs=None, memory_in_gbs=None, ocpus=None):
         if cloud_autonomous_vm_clusters and not isinstance(cloud_autonomous_vm_clusters, list):
             raise TypeError("Expected argument 'cloud_autonomous_vm_clusters' to be a list")
         pulumi.set(__self__, "cloud_autonomous_vm_clusters", cloud_autonomous_vm_clusters)
@@ -32,6 +32,9 @@ class GetCloudExadataInfrastructureUnAllocatedResourceResult:
         if cloud_exadata_infrastructure_id and not isinstance(cloud_exadata_infrastructure_id, str):
             raise TypeError("Expected argument 'cloud_exadata_infrastructure_id' to be a str")
         pulumi.set(__self__, "cloud_exadata_infrastructure_id", cloud_exadata_infrastructure_id)
+        if db_servers and not isinstance(db_servers, list):
+            raise TypeError("Expected argument 'db_servers' to be a list")
+        pulumi.set(__self__, "db_servers", db_servers)
         if exadata_storage_in_tbs and not isinstance(exadata_storage_in_tbs, float):
             raise TypeError("Expected argument 'exadata_storage_in_tbs' to be a float")
         pulumi.set(__self__, "exadata_storage_in_tbs", exadata_storage_in_tbs)
@@ -71,6 +74,11 @@ class GetCloudExadataInfrastructureUnAllocatedResourceResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Exadata infrastructure.
         """
         return pulumi.get(self, "cloud_exadata_infrastructure_id")
+
+    @property
+    @pulumi.getter(name="dbServers")
+    def db_servers(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "db_servers")
 
     @property
     @pulumi.getter(name="exadataStorageInTbs")
@@ -122,6 +130,7 @@ class AwaitableGetCloudExadataInfrastructureUnAllocatedResourceResult(GetCloudEx
             cloud_autonomous_vm_clusters=self.cloud_autonomous_vm_clusters,
             cloud_exadata_infrastructure_display_name=self.cloud_exadata_infrastructure_display_name,
             cloud_exadata_infrastructure_id=self.cloud_exadata_infrastructure_id,
+            db_servers=self.db_servers,
             exadata_storage_in_tbs=self.exadata_storage_in_tbs,
             id=self.id,
             local_storage_in_gbs=self.local_storage_in_gbs,
@@ -130,6 +139,7 @@ class AwaitableGetCloudExadataInfrastructureUnAllocatedResourceResult(GetCloudEx
 
 
 def get_cloud_exadata_infrastructure_un_allocated_resource(cloud_exadata_infrastructure_id: Optional[str] = None,
+                                                           db_servers: Optional[Sequence[str]] = None,
                                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudExadataInfrastructureUnAllocatedResourceResult:
     """
     This data source provides details about a specific Cloud Exadata Infrastructure Un Allocated Resource resource in Oracle Cloud Infrastructure Database service.
@@ -142,14 +152,17 @@ def get_cloud_exadata_infrastructure_un_allocated_resource(cloud_exadata_infrast
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_infrastructure_un_allocated_resource = oci.Database.get_cloud_exadata_infrastructure_un_allocated_resource(cloud_exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_cloud_exadata_infrastructure_un_allocated_resource = oci.Database.get_cloud_exadata_infrastructure_un_allocated_resource(cloud_exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        db_servers=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
     :param str cloud_exadata_infrastructure_id: The cloud Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param Sequence[str] db_servers: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
     """
     __args__ = dict()
     __args__['cloudExadataInfrastructureId'] = cloud_exadata_infrastructure_id
+    __args__['dbServers'] = db_servers
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Database/getCloudExadataInfrastructureUnAllocatedResource:getCloudExadataInfrastructureUnAllocatedResource', __args__, opts=opts, typ=GetCloudExadataInfrastructureUnAllocatedResourceResult).value
 
@@ -157,6 +170,7 @@ def get_cloud_exadata_infrastructure_un_allocated_resource(cloud_exadata_infrast
         cloud_autonomous_vm_clusters=__ret__.cloud_autonomous_vm_clusters,
         cloud_exadata_infrastructure_display_name=__ret__.cloud_exadata_infrastructure_display_name,
         cloud_exadata_infrastructure_id=__ret__.cloud_exadata_infrastructure_id,
+        db_servers=__ret__.db_servers,
         exadata_storage_in_tbs=__ret__.exadata_storage_in_tbs,
         id=__ret__.id,
         local_storage_in_gbs=__ret__.local_storage_in_gbs,
@@ -166,6 +180,7 @@ def get_cloud_exadata_infrastructure_un_allocated_resource(cloud_exadata_infrast
 
 @_utilities.lift_output_func(get_cloud_exadata_infrastructure_un_allocated_resource)
 def get_cloud_exadata_infrastructure_un_allocated_resource_output(cloud_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+                                                                  db_servers: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudExadataInfrastructureUnAllocatedResourceResult]:
     """
     This data source provides details about a specific Cloud Exadata Infrastructure Un Allocated Resource resource in Oracle Cloud Infrastructure Database service.
@@ -178,10 +193,12 @@ def get_cloud_exadata_infrastructure_un_allocated_resource_output(cloud_exadata_
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_infrastructure_un_allocated_resource = oci.Database.get_cloud_exadata_infrastructure_un_allocated_resource(cloud_exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+    test_cloud_exadata_infrastructure_un_allocated_resource = oci.Database.get_cloud_exadata_infrastructure_un_allocated_resource(cloud_exadata_infrastructure_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+        db_servers=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
     ```
 
 
     :param str cloud_exadata_infrastructure_id: The cloud Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param Sequence[str] db_servers: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
     """
     ...

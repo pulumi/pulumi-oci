@@ -72,6 +72,20 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Database/vmClusterRemoveVirtualMachine:VmClusterRemoveVirtualMachine")
 public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomResource {
     /**
+     * The name of the availability domain that the VM cluster is located in.
+     * 
+     */
+    @Export(name="availabilityDomain", type=String.class, parameters={})
+    private Output<String> availabilityDomain;
+
+    /**
+     * @return The name of the availability domain that the VM cluster is located in.
+     * 
+     */
+    public Output<String> availabilityDomain() {
+        return this.availabilityDomain;
+    }
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */

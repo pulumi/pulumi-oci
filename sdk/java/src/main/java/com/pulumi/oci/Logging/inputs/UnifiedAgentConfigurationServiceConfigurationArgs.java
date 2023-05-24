@@ -47,14 +47,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationArgs extends com
     }
 
     /**
-     * (Updatable)
+     * (Updatable) Logging source object.
      * 
      */
     @Import(name="sources", required=true)
     private Output<List<UnifiedAgentConfigurationServiceConfigurationSourceArgs>> sources;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) Logging source object.
      * 
      */
     public Output<List<UnifiedAgentConfigurationServiceConfigurationSourceArgs>> sources() {
@@ -130,7 +130,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationArgs extends com
         }
 
         /**
-         * @param sources (Updatable)
+         * @param sources (Updatable) Logging source object.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationArgs extends com
         }
 
         /**
-         * @param sources (Updatable)
+         * @param sources (Updatable) Logging source object.
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationArgs extends com
         }
 
         /**
-         * @param sources (Updatable)
+         * @param sources (Updatable) Logging source object.
          * 
          * @return builder
          * 

@@ -136,6 +136,10 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
      */
     public readonly adminNetworkCidr!: pulumi.Output<string>;
     /**
+     * The name of the availability domain that the Exadata infrastructure is located in.
+     */
+    public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    /**
      * (Updatable) The IP address for the first control plane server.
      */
     public readonly cloudControlPlaneServer1!: pulumi.Output<string>;
@@ -308,6 +312,7 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["additionalComputeSystemModel"] = state ? state.additionalComputeSystemModel : undefined;
             resourceInputs["additionalStorageCount"] = state ? state.additionalStorageCount : undefined;
             resourceInputs["adminNetworkCidr"] = state ? state.adminNetworkCidr : undefined;
+            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
             resourceInputs["cloudControlPlaneServer1"] = state ? state.cloudControlPlaneServer1 : undefined;
             resourceInputs["cloudControlPlaneServer2"] = state ? state.cloudControlPlaneServer2 : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
@@ -414,6 +419,7 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["activatedStorageCount"] = undefined /*out*/;
             resourceInputs["additionalComputeCount"] = undefined /*out*/;
             resourceInputs["additionalComputeSystemModel"] = undefined /*out*/;
+            resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["cpusEnabled"] = undefined /*out*/;
             resourceInputs["csiNumber"] = undefined /*out*/;
             resourceInputs["dataStorageSizeInTbs"] = undefined /*out*/;
@@ -467,6 +473,10 @@ export interface ExadataInfrastructureState {
      * (Updatable) The CIDR block for the Exadata administration network.
      */
     adminNetworkCidr?: pulumi.Input<string>;
+    /**
+     * The name of the availability domain that the Exadata infrastructure is located in.
+     */
+    availabilityDomain?: pulumi.Input<string>;
     /**
      * (Updatable) The IP address for the first control plane server.
      */

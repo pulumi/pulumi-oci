@@ -159,7 +159,7 @@ def get_unified_agent_configurations(compartment_id: Optional[str] = None,
 
 
     :param str compartment_id: Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
-    :param str display_name: Resource name
+    :param str display_name: Resource name.
     :param str group_id: The OCID of a group or a dynamic group.
     :param bool is_compartment_id_in_subtree: Specifies whether or not nested compartments should be traversed. Defaults to false.
     :param str log_id: Custom log OCID to list resources with the log as destination.
@@ -218,7 +218,7 @@ def get_unified_agent_configurations_output(compartment_id: Optional[pulumi.Inpu
 
 
     :param str compartment_id: Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
-    :param str display_name: Resource name
+    :param str display_name: Resource name.
     :param str group_id: The OCID of a group or a dynamic group.
     :param bool is_compartment_id_in_subtree: Specifies whether or not nested compartments should be traversed. Defaults to false.
     :param str log_id: Custom log OCID to list resources with the log as destination.

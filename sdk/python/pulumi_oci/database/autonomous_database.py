@@ -121,7 +121,9 @@ class AutonomousDatabaseArgs:
                * OLTP - indicates an Autonomous Transaction Processing database
                * DW - indicates an Autonomous Data Warehouse database
                * AJD - indicates an Autonomous JSON Database
-               * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
+               * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+               
+               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -156,15 +158,17 @@ class AutonomousDatabaseArgs:
                For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
                
                **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
-        :param pulumi.Input[str] open_mode: The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+        :param pulumi.Input[str] open_mode: Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
         :param pulumi.Input[str] operations_insights_status: (Updatable) Status of Operations Insights for this Autonomous Database. Values supported are `ENABLED` and `NOT_ENABLED`
-        :param pulumi.Input[str] permission_level: The Autonomous Database permission level. Restricted mode allows access only to admin users.
+        :param pulumi.Input[str] permission_level: The Autonomous Database permission level. Restricted mode allows access only by admin users.
         :param pulumi.Input[str] private_endpoint_ip: The private endpoint Ip address for the resource.
         :param pulumi.Input[str] private_endpoint_label: (Updatable) The private endpoint label for the resource.
         :param pulumi.Input[str] refreshable_mode: (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
         :param pulumi.Input[str] remote_disaster_recovery_type: Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param pulumi.Input[bool] rotate_key_trigger: (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `is_dedicated` is true.
-        :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]] scheduled_operations: (Updatable) list of scheduled operations
+        :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]] scheduled_operations: (Updatable) The list of scheduled operations.
+               
+               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[str] secret_id: (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
         :param pulumi.Input[int] secret_version_number: (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
         :param pulumi.Input[str] source: The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
@@ -194,7 +198,9 @@ class AutonomousDatabaseArgs:
                
                For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `["1.1.1.1","1.1.1.0/24","1.1.2.25"]`
                
-               For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
+               For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+               
+               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "db_name", db_name)
@@ -585,7 +591,9 @@ class AutonomousDatabaseArgs:
         * OLTP - indicates an Autonomous Transaction Processing database
         * DW - indicates an Autonomous Data Warehouse database
         * AJD - indicates an Autonomous JSON Database
-        * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
+        * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
         """
         return pulumi.get(self, "db_workload")
 
@@ -851,7 +859,7 @@ class AutonomousDatabaseArgs:
     @pulumi.getter(name="openMode")
     def open_mode(self) -> Optional[pulumi.Input[str]]:
         """
-        The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+        Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
         """
         return pulumi.get(self, "open_mode")
 
@@ -875,7 +883,7 @@ class AutonomousDatabaseArgs:
     @pulumi.getter(name="permissionLevel")
     def permission_level(self) -> Optional[pulumi.Input[str]]:
         """
-        The Autonomous Database permission level. Restricted mode allows access only to admin users.
+        The Autonomous Database permission level. Restricted mode allows access only by admin users.
         """
         return pulumi.get(self, "permission_level")
 
@@ -947,7 +955,9 @@ class AutonomousDatabaseArgs:
     @pulumi.getter(name="scheduledOperations")
     def scheduled_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]]:
         """
-        (Updatable) list of scheduled operations
+        (Updatable) The list of scheduled operations.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         """
         return pulumi.get(self, "scheduled_operations")
 
@@ -1120,7 +1130,9 @@ class AutonomousDatabaseArgs:
 
         For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `["1.1.1.1","1.1.1.0/24","1.1.2.25"]`
 
-        For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
+        For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
         """
         return pulumi.get(self, "whitelisted_ips")
 
@@ -1299,7 +1311,9 @@ class _AutonomousDatabaseState:
                * OLTP - indicates an Autonomous Transaction Processing database
                * DW - indicates an Autonomous Data Warehouse database
                * AJD - indicates an Autonomous JSON Database
-               * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
+               * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+               
+               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] disaster_recovery_region_type: The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
@@ -1337,7 +1351,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLocalStandbyDbArgs']]] local_standby_dbs: Autonomous Data Guard standby database details.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]] long_term_backup_schedules: Details for the long-term backup schedule.
         :param pulumi.Input[int] max_cpu_core_count: (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
-        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
         :param pulumi.Input[str] ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param pulumi.Input[str] next_long_term_backup_time_stamp: The date and time when the next long-term backup would be created.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -1351,10 +1365,10 @@ class _AutonomousDatabaseState:
                For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
                
                **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
-        :param pulumi.Input[str] open_mode: The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+        :param pulumi.Input[str] open_mode: Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
         :param pulumi.Input[str] operations_insights_status: (Updatable) Status of Operations Insights for this Autonomous Database. Values supported are `ENABLED` and `NOT_ENABLED`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] peer_db_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
-        :param pulumi.Input[str] permission_level: The Autonomous Database permission level. Restricted mode allows access only to admin users.
+        :param pulumi.Input[str] permission_level: The Autonomous Database permission level. Restricted mode allows access only by admin users.
         :param pulumi.Input[str] private_endpoint: The private endpoint for the resource.
         :param pulumi.Input[str] private_endpoint_ip: The private endpoint Ip address for the resource.
         :param pulumi.Input[str] private_endpoint_label: (Updatable) The private endpoint label for the resource.
@@ -1365,7 +1379,9 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[str] remote_disaster_recovery_type: Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param pulumi.Input[str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[bool] rotate_key_trigger: (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `is_dedicated` is true.
-        :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]] scheduled_operations: (Updatable) list of scheduled operations
+        :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]] scheduled_operations: (Updatable) The list of scheduled operations.
+               
+               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[str] secret_id: (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
         :param pulumi.Input[int] secret_version_number: (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
         :param pulumi.Input[str] service_console_url: The URL of the Service Console for the Autonomous Database.
@@ -1416,7 +1432,9 @@ class _AutonomousDatabaseState:
                
                For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `["1.1.1.1","1.1.1.0/24","1.1.2.25"]`
                
-               For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
+               For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+               
+               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
         """
         if actual_used_data_storage_size_in_tbs is not None:
             pulumi.set(__self__, "actual_used_data_storage_size_in_tbs", actual_used_data_storage_size_in_tbs)
@@ -2023,7 +2041,9 @@ class _AutonomousDatabaseState:
         * OLTP - indicates an Autonomous Transaction Processing database
         * DW - indicates an Autonomous Data Warehouse database
         * AJD - indicates an Autonomous JSON Database
-        * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
+        * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
         """
         return pulumi.get(self, "db_workload")
 
@@ -2424,7 +2444,7 @@ class _AutonomousDatabaseState:
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> Optional[pulumi.Input[int]]:
         """
-        The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+        The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -2493,7 +2513,7 @@ class _AutonomousDatabaseState:
     @pulumi.getter(name="openMode")
     def open_mode(self) -> Optional[pulumi.Input[str]]:
         """
-        The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+        Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
         """
         return pulumi.get(self, "open_mode")
 
@@ -2529,7 +2549,7 @@ class _AutonomousDatabaseState:
     @pulumi.getter(name="permissionLevel")
     def permission_level(self) -> Optional[pulumi.Input[str]]:
         """
-        The Autonomous Database permission level. Restricted mode allows access only to admin users.
+        The Autonomous Database permission level. Restricted mode allows access only by admin users.
         """
         return pulumi.get(self, "permission_level")
 
@@ -2661,7 +2681,9 @@ class _AutonomousDatabaseState:
     @pulumi.getter(name="scheduledOperations")
     def scheduled_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]]:
         """
-        (Updatable) list of scheduled operations
+        (Updatable) The list of scheduled operations.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         """
         return pulumi.get(self, "scheduled_operations")
 
@@ -3086,7 +3108,9 @@ class _AutonomousDatabaseState:
 
         For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `["1.1.1.1","1.1.1.0/24","1.1.2.25"]`
 
-        For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
+        For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
         """
         return pulumi.get(self, "whitelisted_ips")
 
@@ -3219,7 +3243,9 @@ class AutonomousDatabase(pulumi.CustomResource):
                * OLTP - indicates an Autonomous Transaction Processing database
                * DW - indicates an Autonomous Data Warehouse database
                * AJD - indicates an Autonomous JSON Database
-               * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
+               * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+               
+               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -3254,15 +3280,17 @@ class AutonomousDatabase(pulumi.CustomResource):
                For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
                
                **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
-        :param pulumi.Input[str] open_mode: The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+        :param pulumi.Input[str] open_mode: Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
         :param pulumi.Input[str] operations_insights_status: (Updatable) Status of Operations Insights for this Autonomous Database. Values supported are `ENABLED` and `NOT_ENABLED`
-        :param pulumi.Input[str] permission_level: The Autonomous Database permission level. Restricted mode allows access only to admin users.
+        :param pulumi.Input[str] permission_level: The Autonomous Database permission level. Restricted mode allows access only by admin users.
         :param pulumi.Input[str] private_endpoint_ip: The private endpoint Ip address for the resource.
         :param pulumi.Input[str] private_endpoint_label: (Updatable) The private endpoint label for the resource.
         :param pulumi.Input[str] refreshable_mode: (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
         :param pulumi.Input[str] remote_disaster_recovery_type: Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param pulumi.Input[bool] rotate_key_trigger: (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `is_dedicated` is true.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseScheduledOperationArgs']]]] scheduled_operations: (Updatable) list of scheduled operations
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseScheduledOperationArgs']]]] scheduled_operations: (Updatable) The list of scheduled operations.
+               
+               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[str] secret_id: (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
         :param pulumi.Input[int] secret_version_number: (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
         :param pulumi.Input[str] source: The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
@@ -3292,7 +3320,9 @@ class AutonomousDatabase(pulumi.CustomResource):
                
                For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `["1.1.1.1","1.1.1.0/24","1.1.2.25"]`
                
-               For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
+               For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+               
+               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
         """
         ...
     @overload
@@ -3704,7 +3734,9 @@ class AutonomousDatabase(pulumi.CustomResource):
                * OLTP - indicates an Autonomous Transaction Processing database
                * DW - indicates an Autonomous Data Warehouse database
                * AJD - indicates an Autonomous JSON Database
-               * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
+               * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+               
+               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] disaster_recovery_region_type: The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
@@ -3742,7 +3774,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseLocalStandbyDbArgs']]]] local_standby_dbs: Autonomous Data Guard standby database details.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseLongTermBackupScheduleArgs']]]] long_term_backup_schedules: Details for the long-term backup schedule.
         :param pulumi.Input[int] max_cpu_core_count: (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
-        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
         :param pulumi.Input[str] ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param pulumi.Input[str] next_long_term_backup_time_stamp: The date and time when the next long-term backup would be created.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -3756,10 +3788,10 @@ class AutonomousDatabase(pulumi.CustomResource):
                For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
                
                **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
-        :param pulumi.Input[str] open_mode: The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+        :param pulumi.Input[str] open_mode: Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
         :param pulumi.Input[str] operations_insights_status: (Updatable) Status of Operations Insights for this Autonomous Database. Values supported are `ENABLED` and `NOT_ENABLED`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] peer_db_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
-        :param pulumi.Input[str] permission_level: The Autonomous Database permission level. Restricted mode allows access only to admin users.
+        :param pulumi.Input[str] permission_level: The Autonomous Database permission level. Restricted mode allows access only by admin users.
         :param pulumi.Input[str] private_endpoint: The private endpoint for the resource.
         :param pulumi.Input[str] private_endpoint_ip: The private endpoint Ip address for the resource.
         :param pulumi.Input[str] private_endpoint_label: (Updatable) The private endpoint label for the resource.
@@ -3770,7 +3802,9 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] remote_disaster_recovery_type: Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param pulumi.Input[str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[bool] rotate_key_trigger: (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `is_dedicated` is true.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseScheduledOperationArgs']]]] scheduled_operations: (Updatable) list of scheduled operations
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseScheduledOperationArgs']]]] scheduled_operations: (Updatable) The list of scheduled operations.
+               
+               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[str] secret_id: (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
         :param pulumi.Input[int] secret_version_number: (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
         :param pulumi.Input[str] service_console_url: The URL of the Service Console for the Autonomous Database.
@@ -3821,7 +3855,9 @@ class AutonomousDatabase(pulumi.CustomResource):
                
                For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `["1.1.1.1","1.1.1.0/24","1.1.2.25"]`
                
-               For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
+               For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+               
+               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -4201,7 +4237,9 @@ class AutonomousDatabase(pulumi.CustomResource):
         * OLTP - indicates an Autonomous Transaction Processing database
         * DW - indicates an Autonomous Data Warehouse database
         * AJD - indicates an Autonomous JSON Database
-        * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
+        * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
         """
         return pulumi.get(self, "db_workload")
 
@@ -4470,7 +4508,7 @@ class AutonomousDatabase(pulumi.CustomResource):
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> pulumi.Output[int]:
         """
-        The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+        The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -4519,7 +4557,7 @@ class AutonomousDatabase(pulumi.CustomResource):
     @pulumi.getter(name="openMode")
     def open_mode(self) -> pulumi.Output[str]:
         """
-        The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+        Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
         """
         return pulumi.get(self, "open_mode")
 
@@ -4543,7 +4581,7 @@ class AutonomousDatabase(pulumi.CustomResource):
     @pulumi.getter(name="permissionLevel")
     def permission_level(self) -> pulumi.Output[str]:
         """
-        The Autonomous Database permission level. Restricted mode allows access only to admin users.
+        The Autonomous Database permission level. Restricted mode allows access only by admin users.
         """
         return pulumi.get(self, "permission_level")
 
@@ -4631,7 +4669,9 @@ class AutonomousDatabase(pulumi.CustomResource):
     @pulumi.getter(name="scheduledOperations")
     def scheduled_operations(self) -> pulumi.Output[Sequence['outputs.AutonomousDatabaseScheduledOperation']]:
         """
-        (Updatable) list of scheduled operations
+        (Updatable) The list of scheduled operations.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         """
         return pulumi.get(self, "scheduled_operations")
 
@@ -4920,7 +4960,9 @@ class AutonomousDatabase(pulumi.CustomResource):
 
         For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `["1.1.1.1","1.1.1.0/24","1.1.2.25"]`
 
-        For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
+        For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
         """
         return pulumi.get(self, "whitelisted_ips")
 

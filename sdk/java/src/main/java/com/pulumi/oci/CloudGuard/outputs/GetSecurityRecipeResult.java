@@ -64,11 +64,6 @@ public final class GetSecurityRecipeResult {
      */
     private String state;
     /**
-     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
-     * 
-     */
-    private Map<String,Object> systemTags;
-    /**
      * @return The time the recipe was created. An RFC3339 formatted datetime string.
      * 
      */
@@ -154,13 +149,6 @@ public final class GetSecurityRecipeResult {
         return this.state;
     }
     /**
-     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
-     * 
-     */
-    public Map<String,Object> systemTags() {
-        return this.systemTags;
-    }
-    /**
      * @return The time the recipe was created. An RFC3339 formatted datetime string.
      * 
      */
@@ -195,7 +183,6 @@ public final class GetSecurityRecipeResult {
         private List<String> securityPolicies;
         private String securityRecipeId;
         private String state;
-        private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -212,7 +199,6 @@ public final class GetSecurityRecipeResult {
     	      this.securityPolicies = defaults.securityPolicies;
     	      this.securityRecipeId = defaults.securityRecipeId;
     	      this.state = defaults.state;
-    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
@@ -276,11 +262,6 @@ public final class GetSecurityRecipeResult {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
-            return this;
-        }
-        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
@@ -303,7 +284,6 @@ public final class GetSecurityRecipeResult {
             o.securityPolicies = securityPolicies;
             o.securityRecipeId = securityRecipeId;
             o.state = state;
-            o.systemTags = systemTags;
             o.timeCreated = timeCreated;
             o.timeUpdated = timeUpdated;
             return o;

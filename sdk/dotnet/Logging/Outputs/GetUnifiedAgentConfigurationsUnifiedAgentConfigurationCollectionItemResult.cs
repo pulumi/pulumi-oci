@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Resource name
+        /// Resource name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>

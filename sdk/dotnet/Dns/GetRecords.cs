@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Dns
     public static class GetRecords
     {
         /// <summary>
-        /// **Deprecated. Use oci.Dns.Rrset instead.**
+        /// **Deprecated. Use oci.Dns.getRrsets instead.**
         /// 
         /// This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
         /// 
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Dns
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRecordsResult>("oci:Dns/getRecords:getRecords", args ?? new GetRecordsArgs(), options.WithDefaults());
 
         /// <summary>
-        /// **Deprecated. Use oci.Dns.Rrset instead.**
+        /// **Deprecated. Use oci.Dns.getRrsets instead.**
         /// 
         /// This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
         /// 

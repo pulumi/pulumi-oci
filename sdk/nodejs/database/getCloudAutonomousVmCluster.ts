@@ -101,6 +101,9 @@ export interface GetCloudAutonomousVmClusterResult {
      * The local node storage allocated in GBs.
      */
     readonly dbNodeStorageSizeInGbs: number;
+    /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+     */
     readonly dbServers: string[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -156,7 +159,7 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly maintenanceWindows: outputs.Database.GetCloudAutonomousVmClusterMaintenanceWindow[];
     /**
-     * The amount of memory (in GBs) enabled per each CPU core.
+     * The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     readonly memoryPerOracleComputeUnitInGbs: number;
     /**

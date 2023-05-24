@@ -9,8 +9,10 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Dns.ZoneArgs;
 import com.pulumi.oci.Dns.inputs.ZoneState;
+import com.pulumi.oci.Dns.outputs.ZoneExternalDownstream;
 import com.pulumi.oci.Dns.outputs.ZoneExternalMaster;
 import com.pulumi.oci.Dns.outputs.ZoneNameserver;
+import com.pulumi.oci.Dns.outputs.ZoneZoneTransferServer;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -24,8 +26,11 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Zone resource in Oracle Cloud Infrastructure DNS service.
  * 
- * Creates a new zone in the specified compartment. Additionally, for Private DNS,
- * the `viewId` field is required when creating private zones.
+ * Creates a new zone in the specified compartment. For global zones, if the `Content-Type` header for the request
+ * is `text/dns`, the `compartmentId` query parameter is required. `text/dns` for the `Content-Type` header is
+ * not supported for private zones. Query parameter scope with a value of `PRIVATE` is required when creating a
+ * private zone. Private zones must have a zone type of `PRIMARY`. Creating a private zone at or under
+ * `oraclevcn.com` within the default protected view of a VCN-dedicated resolver is not permitted.
  * 
  * ## Example Usage
  * ```java
@@ -36,6 +41,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Dns.Zone;
  * import com.pulumi.oci.Dns.ZoneArgs;
+ * import com.pulumi.oci.Dns.inputs.ZoneExternalDownstreamArgs;
  * import com.pulumi.oci.Dns.inputs.ZoneExternalMasterArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -54,6 +60,11 @@ import javax.annotation.Nullable;
  *             .compartmentId(var_.compartment_id())
  *             .zoneType(var_.zone_zone_type())
  *             .definedTags(var_.zone_defined_tags())
+ *             .externalDownstreams(ZoneExternalDownstreamArgs.builder()
+ *                 .address(var_.zone_external_downstreams_address())
+ *                 .port(var_.zone_external_downstreams_port())
+ *                 .tsigKeyId(oci_dns_tsig_key.test_tsig_key().id())
+ *                 .build())
  *             .externalMasters(ZoneExternalMasterArgs.builder()
  *                 .address(var_.zone_external_masters_address())
  *                 .port(var_.zone_external_masters_port())
@@ -70,7 +81,7 @@ import javax.annotation.Nullable;
  * 
  * ## Import
  * 
- * Zones can be imported using their OCID, e.g.
+ * Zones can be imported using the `id`, e.g.
  * 
  * ```sh
  *  $ pulumi import oci:Dns/zone:Zone test_zone &#34;id&#34;
@@ -96,7 +107,7 @@ public class Zone extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
-     * **Example:** `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
      * 
      */
     @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
@@ -105,11 +116,25 @@ public class Zone extends com.pulumi.resources.CustomResource {
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
-     * **Example:** `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
      * 
      */
     public Output<Map<String,Object>> definedTags() {
         return this.definedTags;
+    }
+    /**
+     * (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+     * 
+     */
+    @Export(name="externalDownstreams", type=List.class, parameters={ZoneExternalDownstream.class})
+    private Output<List<ZoneExternalDownstream>> externalDownstreams;
+
+    /**
+     * @return (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+     * 
+     */
+    public Output<List<ZoneExternalDownstream>> externalDownstreams() {
+        return this.externalDownstreams;
     }
     /**
      * (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
@@ -284,6 +309,20 @@ public class Zone extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<String>> viewId() {
         return Codegen.optional(this.viewId);
+    }
+    /**
+     * The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+     * 
+     */
+    @Export(name="zoneTransferServers", type=List.class, parameters={ZoneZoneTransferServer.class})
+    private Output<List<ZoneZoneTransferServer>> zoneTransferServers;
+
+    /**
+     * @return The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+     * 
+     */
+    public Output<List<ZoneZoneTransferServer>> zoneTransferServers() {
+        return this.zoneTransferServers;
     }
     /**
      * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.

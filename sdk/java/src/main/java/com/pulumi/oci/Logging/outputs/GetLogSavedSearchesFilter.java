@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetLogSavedSearchesFilter {
     /**
-     * @return Resource name
+     * @return Resource name.
      * 
      */
     private String name;
@@ -23,7 +23,7 @@ public final class GetLogSavedSearchesFilter {
 
     private GetLogSavedSearchesFilter() {}
     /**
-     * @return Resource name
+     * @return Resource name.
      * 
      */
     public String name() {

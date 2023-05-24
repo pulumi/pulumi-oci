@@ -57,14 +57,14 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
-     * The availability domain of the Autonomous Container Database.
+     * The availability domain of the Autonomous Container Database
      * 
      */
     @Import(name="availabilityDomain")
     private @Nullable Output<String> availabilityDomain;
 
     /**
-     * @return The availability domain of the Autonomous Container Database.
+     * @return The availability domain of the Autonomous Container Database
      * 
      */
     public Optional<Output<String>> availabilityDomain() {
@@ -72,14 +72,14 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
-     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
+     * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     @Import(name="availableCpus")
     private @Nullable Output<Double> availableCpus;
 
     /**
-     * @return Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
+     * @return Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     public Optional<Output<Double>> availableCpus() {
@@ -147,14 +147,14 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
-     * The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+     * The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      * 
      */
     @Import(name="dbName")
     private @Nullable Output<String> dbName;
 
     /**
-     * @return The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+     * @return The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      * 
      */
     public Optional<Output<String>> dbName() {
@@ -862,7 +862,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param availabilityDomain The availability domain of the Autonomous Container Database.
+         * @param availabilityDomain The availability domain of the Autonomous Container Database
          * 
          * @return builder
          * 
@@ -873,7 +873,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param availabilityDomain The availability domain of the Autonomous Container Database.
+         * @param availabilityDomain The availability domain of the Autonomous Container Database
          * 
          * @return builder
          * 
@@ -883,7 +883,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param availableCpus Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
+         * @param availableCpus Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
          * 
          * @return builder
          * 
@@ -894,7 +894,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param availableCpus Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
+         * @param availableCpus Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
          * 
          * @return builder
          * 
@@ -988,7 +988,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param dbName The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+         * @param dbName The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
          * 
          * @return builder
          * 
@@ -999,7 +999,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param dbName The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+         * @param dbName The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
          * 
          * @return builder
          * 

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser;
 import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -15,16 +16,40 @@ import java.util.Objects;
 
 @CustomType
 public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser {
+    /**
+     * @return csv delimiter.
+     * 
+     */
     private String delimiter;
+    /**
+     * @return Regex pattern.
+     * 
+     */
     private String expression;
     /**
      * @return Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
      * 
      */
     private String fieldTimeKey;
+    /**
+     * @return First line pattern format.
+     * 
+     */
     private String formatFirstline;
+    /**
+     * @return Mutiline pattern format.
+     * 
+     */
     private List<String> formats;
+    /**
+     * @return grok failure key.
+     * 
+     */
     private String grokFailureKey;
+    /**
+     * @return grok name key.
+     * 
+     */
     private String grokNameKey;
     /**
      * @return If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
@@ -37,16 +62,50 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
      */
     private Boolean isKeepTimeKey;
     /**
+     * @return If you don&#39;t need stream/logtag fields, set this to false for CRI parser.
+     * 
+     */
+    private Boolean isMergeCriFields;
+    /**
      * @return If true, an empty string field is replaced with nil.
      * 
      */
     private Boolean isNullEmptyString;
+    /**
+     * @return Support colonless ident or not.
+     * 
+     */
     private Boolean isSupportColonlessIdent;
+    /**
+     * @return With priority or not.
+     * 
+     */
     private Boolean isWithPriority;
+    /**
+     * @return csv keys.
+     * 
+     */
     private List<String> keys;
+    /**
+     * @return Message format of syslog.
+     * 
+     */
     private String messageFormat;
+    /**
+     * @return Specifies the field name to contain logs.
+     * 
+     */
     private String messageKey;
+    /**
+     * @return Multiline start regexp pattern.
+     * 
+     */
     private String multiLineStartRegexp;
+    /**
+     * @return Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+     * 
+     */
+    private List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser> nestedParsers;
     /**
      * @return Specify the null value pattern.
      * 
@@ -57,10 +116,30 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
      * 
      */
     private String parserType;
+    /**
+     * @return grok pattern object.
+     * 
+     */
     private List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns;
+    /**
+     * @return rfc5424 time format.
+     * 
+     */
     private String rfc5424timeFormat;
+    /**
+     * @return Syslog parser type.
+     * 
+     */
     private String syslogParserType;
+    /**
+     * @return Process time value using the specified format.
+     * 
+     */
     private String timeFormat;
+    /**
+     * @return Time type of JSON parser.
+     * 
+     */
     private String timeType;
     /**
      * @return Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
@@ -68,15 +147,23 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
      */
     private Integer timeoutInMilliseconds;
     /**
-     * @return Specify types for converting a field into another type.
+     * @return Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; @type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
      * 
      */
     private Map<String,Object> types;
 
     private GetUnifiedAgentConfigurationServiceConfigurationSourceParser() {}
+    /**
+     * @return csv delimiter.
+     * 
+     */
     public String delimiter() {
         return this.delimiter;
     }
+    /**
+     * @return Regex pattern.
+     * 
+     */
     public String expression() {
         return this.expression;
     }
@@ -87,15 +174,31 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
     public String fieldTimeKey() {
         return this.fieldTimeKey;
     }
+    /**
+     * @return First line pattern format.
+     * 
+     */
     public String formatFirstline() {
         return this.formatFirstline;
     }
+    /**
+     * @return Mutiline pattern format.
+     * 
+     */
     public List<String> formats() {
         return this.formats;
     }
+    /**
+     * @return grok failure key.
+     * 
+     */
     public String grokFailureKey() {
         return this.grokFailureKey;
     }
+    /**
+     * @return grok name key.
+     * 
+     */
     public String grokNameKey() {
         return this.grokNameKey;
     }
@@ -114,29 +217,67 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
         return this.isKeepTimeKey;
     }
     /**
+     * @return If you don&#39;t need stream/logtag fields, set this to false for CRI parser.
+     * 
+     */
+    public Boolean isMergeCriFields() {
+        return this.isMergeCriFields;
+    }
+    /**
      * @return If true, an empty string field is replaced with nil.
      * 
      */
     public Boolean isNullEmptyString() {
         return this.isNullEmptyString;
     }
+    /**
+     * @return Support colonless ident or not.
+     * 
+     */
     public Boolean isSupportColonlessIdent() {
         return this.isSupportColonlessIdent;
     }
+    /**
+     * @return With priority or not.
+     * 
+     */
     public Boolean isWithPriority() {
         return this.isWithPriority;
     }
+    /**
+     * @return csv keys.
+     * 
+     */
     public List<String> keys() {
         return this.keys;
     }
+    /**
+     * @return Message format of syslog.
+     * 
+     */
     public String messageFormat() {
         return this.messageFormat;
     }
+    /**
+     * @return Specifies the field name to contain logs.
+     * 
+     */
     public String messageKey() {
         return this.messageKey;
     }
+    /**
+     * @return Multiline start regexp pattern.
+     * 
+     */
     public String multiLineStartRegexp() {
         return this.multiLineStartRegexp;
+    }
+    /**
+     * @return Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+     * 
+     */
+    public List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser> nestedParsers() {
+        return this.nestedParsers;
     }
     /**
      * @return Specify the null value pattern.
@@ -152,18 +293,38 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
     public String parserType() {
         return this.parserType;
     }
+    /**
+     * @return grok pattern object.
+     * 
+     */
     public List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns() {
         return this.patterns;
     }
+    /**
+     * @return rfc5424 time format.
+     * 
+     */
     public String rfc5424timeFormat() {
         return this.rfc5424timeFormat;
     }
+    /**
+     * @return Syslog parser type.
+     * 
+     */
     public String syslogParserType() {
         return this.syslogParserType;
     }
+    /**
+     * @return Process time value using the specified format.
+     * 
+     */
     public String timeFormat() {
         return this.timeFormat;
     }
+    /**
+     * @return Time type of JSON parser.
+     * 
+     */
     public String timeType() {
         return this.timeType;
     }
@@ -175,7 +336,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
         return this.timeoutInMilliseconds;
     }
     /**
-     * @return Specify types for converting a field into another type.
+     * @return Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; @type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
      * 
      */
     public Map<String,Object> types() {
@@ -200,6 +361,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
         private String grokNameKey;
         private Boolean isEstimateCurrentEvent;
         private Boolean isKeepTimeKey;
+        private Boolean isMergeCriFields;
         private Boolean isNullEmptyString;
         private Boolean isSupportColonlessIdent;
         private Boolean isWithPriority;
@@ -207,6 +369,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
         private String messageFormat;
         private String messageKey;
         private String multiLineStartRegexp;
+        private List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser> nestedParsers;
         private String nullValuePattern;
         private String parserType;
         private List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern> patterns;
@@ -228,6 +391,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
     	      this.grokNameKey = defaults.grokNameKey;
     	      this.isEstimateCurrentEvent = defaults.isEstimateCurrentEvent;
     	      this.isKeepTimeKey = defaults.isKeepTimeKey;
+    	      this.isMergeCriFields = defaults.isMergeCriFields;
     	      this.isNullEmptyString = defaults.isNullEmptyString;
     	      this.isSupportColonlessIdent = defaults.isSupportColonlessIdent;
     	      this.isWithPriority = defaults.isWithPriority;
@@ -235,6 +399,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
     	      this.messageFormat = defaults.messageFormat;
     	      this.messageKey = defaults.messageKey;
     	      this.multiLineStartRegexp = defaults.multiLineStartRegexp;
+    	      this.nestedParsers = defaults.nestedParsers;
     	      this.nullValuePattern = defaults.nullValuePattern;
     	      this.parserType = defaults.parserType;
     	      this.patterns = defaults.patterns;
@@ -295,6 +460,11 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
             return this;
         }
         @CustomType.Setter
+        public Builder isMergeCriFields(Boolean isMergeCriFields) {
+            this.isMergeCriFields = Objects.requireNonNull(isMergeCriFields);
+            return this;
+        }
+        @CustomType.Setter
         public Builder isNullEmptyString(Boolean isNullEmptyString) {
             this.isNullEmptyString = Objects.requireNonNull(isNullEmptyString);
             return this;
@@ -331,6 +501,14 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
         public Builder multiLineStartRegexp(String multiLineStartRegexp) {
             this.multiLineStartRegexp = Objects.requireNonNull(multiLineStartRegexp);
             return this;
+        }
+        @CustomType.Setter
+        public Builder nestedParsers(List<GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser> nestedParsers) {
+            this.nestedParsers = Objects.requireNonNull(nestedParsers);
+            return this;
+        }
+        public Builder nestedParsers(GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser... nestedParsers) {
+            return nestedParsers(List.of(nestedParsers));
         }
         @CustomType.Setter
         public Builder nullValuePattern(String nullValuePattern) {
@@ -391,6 +569,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
             o.grokNameKey = grokNameKey;
             o.isEstimateCurrentEvent = isEstimateCurrentEvent;
             o.isKeepTimeKey = isKeepTimeKey;
+            o.isMergeCriFields = isMergeCriFields;
             o.isNullEmptyString = isNullEmptyString;
             o.isSupportColonlessIdent = isSupportColonlessIdent;
             o.isWithPriority = isWithPriority;
@@ -398,6 +577,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
             o.messageFormat = messageFormat;
             o.messageKey = messageKey;
             o.multiLineStartRegexp = multiLineStartRegexp;
+            o.nestedParsers = nestedParsers;
             o.nullValuePattern = nullValuePattern;
             o.parserType = parserType;
             o.patterns = patterns;

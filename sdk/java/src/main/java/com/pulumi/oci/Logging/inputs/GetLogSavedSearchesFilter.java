@@ -17,14 +17,14 @@ public final class GetLogSavedSearchesFilter extends com.pulumi.resources.Invoke
     public static final GetLogSavedSearchesFilter Empty = new GetLogSavedSearchesFilter();
 
     /**
-     * Resource name
+     * Resource name.
      * 
      */
     @Import(name="name", required=true)
     private String name;
 
     /**
-     * @return Resource name
+     * @return Resource name.
      * 
      */
     public String name() {
@@ -72,7 +72,7 @@ public final class GetLogSavedSearchesFilter extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param name Resource name
+         * @param name Resource name.
          * 
          * @return builder
          * 

@@ -40,14 +40,14 @@ public final class GetLogSavedSearchesArgs extends com.pulumi.resources.InvokeAr
     }
 
     /**
-     * OCID of the LogSavedSearch
+     * OCID of the LogSavedSearch.
      * 
      */
     @Import(name="logSavedSearchId")
     private @Nullable Output<String> logSavedSearchId;
 
     /**
-     * @return OCID of the LogSavedSearch
+     * @return OCID of the LogSavedSearch.
      * 
      */
     public Optional<Output<String>> logSavedSearchId() {
@@ -55,14 +55,14 @@ public final class GetLogSavedSearchesArgs extends com.pulumi.resources.InvokeAr
     }
 
     /**
-     * Resource name
+     * Resource name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return Resource name
+     * @return Resource name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -131,7 +131,7 @@ public final class GetLogSavedSearchesArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param logSavedSearchId OCID of the LogSavedSearch
+         * @param logSavedSearchId OCID of the LogSavedSearch.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class GetLogSavedSearchesArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param logSavedSearchId OCID of the LogSavedSearch
+         * @param logSavedSearchId OCID of the LogSavedSearch.
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class GetLogSavedSearchesArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param name Resource name
+         * @param name Resource name.
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class GetLogSavedSearchesArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param name Resource name
+         * @param name Resource name.
          * 
          * @return builder
          * 

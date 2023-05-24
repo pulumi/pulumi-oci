@@ -161,11 +161,11 @@ def get_logs(display_name: Optional[str] = None,
     ```
 
 
-    :param str display_name: Resource name
+    :param str display_name: Resource name.
     :param str log_group_id: OCID of a log group to work with.
     :param str log_type: The logType that the log object is for, whether custom or service.
-    :param str source_resource: Log object resource.
-    :param str source_service: Service that created the log object.
+    :param str source_resource: Log object resource, which is a field of LogSummary.Configuration.Source.
+    :param str source_service: Service that created the log object, which is a field of LogSummary.Configuration.Source.
     :param str state: Lifecycle state of the log object
     """
     __args__ = dict()
@@ -220,11 +220,11 @@ def get_logs_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
     ```
 
 
-    :param str display_name: Resource name
+    :param str display_name: Resource name.
     :param str log_group_id: OCID of a log group to work with.
     :param str log_type: The logType that the log object is for, whether custom or service.
-    :param str source_resource: Log object resource.
-    :param str source_service: Service that created the log object.
+    :param str source_resource: Log object resource, which is a field of LogSummary.Configuration.Source.
+    :param str source_service: Service that created the log object, which is a field of LogSummary.Configuration.Source.
     :param str state: Lifecycle state of the log object
     """
     ...

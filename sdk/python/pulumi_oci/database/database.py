@@ -36,7 +36,9 @@ class DatabaseArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] db_version: A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+        :param pulumi.Input[str] db_version: A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+               
+               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[bool] kms_key_migration: The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
         :param pulumi.Input[int] kms_key_rotation: The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
@@ -105,7 +107,9 @@ class DatabaseArgs:
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[pulumi.Input[str]]:
         """
-        A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+        A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         """
         return pulumi.get(self, "db_version")
 
@@ -227,7 +231,9 @@ class _DatabaseState:
         :param pulumi.Input[str] db_name: The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
         :param pulumi.Input[str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param pulumi.Input[str] db_unique_name: The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
-        :param pulumi.Input[str] db_version: A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+        :param pulumi.Input[str] db_version: A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+               
+               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[str] db_workload: **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
                
                The database workload type.
@@ -463,7 +469,9 @@ class _DatabaseState:
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[pulumi.Input[str]]:
         """
-        A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+        A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         """
         return pulumi.get(self, "db_version")
 
@@ -813,7 +821,9 @@ class Database(pulumi.CustomResource):
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         :param pulumi.Input[str] db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-        :param pulumi.Input[str] db_version: A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+        :param pulumi.Input[str] db_version: A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+               
+               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[bool] kms_key_migration: The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
         :param pulumi.Input[int] kms_key_rotation: The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
@@ -1030,7 +1040,9 @@ class Database(pulumi.CustomResource):
         :param pulumi.Input[str] db_name: The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
         :param pulumi.Input[str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param pulumi.Input[str] db_unique_name: The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
-        :param pulumi.Input[str] db_version: A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+        :param pulumi.Input[str] db_version: A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+               
+               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[str] db_workload: **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
                
                The database workload type.
@@ -1194,7 +1206,9 @@ class Database(pulumi.CustomResource):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> pulumi.Output[str]:
         """
-        A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+        A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         """
         return pulumi.get(self, "db_version")
 

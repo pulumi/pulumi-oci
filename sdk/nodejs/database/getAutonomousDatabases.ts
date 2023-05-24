@@ -146,7 +146,7 @@ export interface GetAutonomousDatabasesResult {
      */
     readonly isFreeTier?: boolean;
     /**
-     * Indicates whether the Autonomous Database is a refreshable clone.
+     * Indicates if the Autonomous Database is a refreshable clone.
      */
     readonly isRefreshableClone?: boolean;
     /**

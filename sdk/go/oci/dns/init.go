@@ -21,6 +21,8 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "oci:Dns/actionCreateZoneFromZoneFile:ActionCreateZoneFromZoneFile":
+		r = &ActionCreateZoneFromZoneFile{}
 	case "oci:Dns/record:Record":
 		r = &Record{}
 	case "oci:Dns/resolver:Resolver":
@@ -52,6 +54,11 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Dns/actionCreateZoneFromZoneFile",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Dns/record",

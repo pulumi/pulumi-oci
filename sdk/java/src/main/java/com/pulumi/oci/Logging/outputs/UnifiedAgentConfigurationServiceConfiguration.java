@@ -23,7 +23,7 @@ public final class UnifiedAgentConfigurationServiceConfiguration {
      */
     private UnifiedAgentConfigurationServiceConfigurationDestination destination;
     /**
-     * @return (Updatable)
+     * @return (Updatable) Logging source object.
      * 
      */
     private List<UnifiedAgentConfigurationServiceConfigurationSource> sources;
@@ -44,7 +44,7 @@ public final class UnifiedAgentConfigurationServiceConfiguration {
         return this.destination;
     }
     /**
-     * @return (Updatable)
+     * @return (Updatable) Logging source object.
      * 
      */
     public List<UnifiedAgentConfigurationServiceConfigurationSource> sources() {

@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
  *
- * Retrieves a log saved search.
+ * Retrieves a LogSavedSearch.
  *
  * ## Example Usage
  *
@@ -33,7 +33,7 @@ export function getLogSavedSearch(args: GetLogSavedSearchArgs, opts?: pulumi.Inv
  */
 export interface GetLogSavedSearchArgs {
     /**
-     * OCID of the logSavedSearch
+     * OCID of the logSavedSearch.
      */
     logSavedSearchId: string;
 }
@@ -87,7 +87,7 @@ export interface GetLogSavedSearchResult {
 /**
  * This data source provides details about a specific Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
  *
- * Retrieves a log saved search.
+ * Retrieves a LogSavedSearch.
  *
  * ## Example Usage
  *
@@ -109,7 +109,7 @@ export function getLogSavedSearchOutput(args: GetLogSavedSearchOutputArgs, opts?
  */
 export interface GetLogSavedSearchOutputArgs {
     /**
-     * OCID of the logSavedSearch
+     * OCID of the logSavedSearch.
      */
     logSavedSearchId: pulumi.Input<string>;
 }

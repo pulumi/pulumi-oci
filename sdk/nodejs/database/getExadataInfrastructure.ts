@@ -56,6 +56,10 @@ export interface GetExadataInfrastructureResult {
      */
     readonly adminNetworkCidr: string;
     /**
+     * The name of the availability domain that the Exadata infrastructure is located in.
+     */
+    readonly availabilityDomain: string;
+    /**
      * The IP address for the first control plane server.
      */
     readonly cloudControlPlaneServer1: string;

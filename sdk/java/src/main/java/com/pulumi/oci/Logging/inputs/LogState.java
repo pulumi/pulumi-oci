@@ -141,7 +141,7 @@ public final class LogState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+     * (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -151,7 +151,7 @@ public final class LogState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<Integer> retentionDuration;
 
     /**
-     * @return (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+     * @return (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -426,7 +426,7 @@ public final class LogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param retentionDuration (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+         * @param retentionDuration (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -440,7 +440,7 @@ public final class LogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param retentionDuration (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on).
+         * @param retentionDuration (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

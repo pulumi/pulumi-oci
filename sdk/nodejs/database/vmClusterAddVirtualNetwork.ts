@@ -64,6 +64,10 @@ export class VmClusterAddVirtualNetwork extends pulumi.CustomResource {
     }
 
     /**
+     * The name of the availability domain that the VM cluster is located in.
+     */
+    public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public /*out*/ readonly compartmentId!: pulumi.Output<string>;
@@ -186,6 +190,7 @@ export class VmClusterAddVirtualNetwork extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VmClusterAddVirtualNetworkState | undefined;
+            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["cpusEnabled"] = state ? state.cpusEnabled : undefined;
             resourceInputs["dataCollectionOptions"] = state ? state.dataCollectionOptions : undefined;
@@ -223,6 +228,7 @@ export class VmClusterAddVirtualNetwork extends pulumi.CustomResource {
             }
             resourceInputs["dbServers"] = args ? args.dbServers : undefined;
             resourceInputs["vmClusterId"] = args ? args.vmClusterId : undefined;
+            resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["cpusEnabled"] = undefined /*out*/;
             resourceInputs["dataCollectionOptions"] = undefined /*out*/;
@@ -258,6 +264,10 @@ export class VmClusterAddVirtualNetwork extends pulumi.CustomResource {
  * Input properties used for looking up and filtering VmClusterAddVirtualNetwork resources.
  */
 export interface VmClusterAddVirtualNetworkState {
+    /**
+     * The name of the availability domain that the VM cluster is located in.
+     */
+    availabilityDomain?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */

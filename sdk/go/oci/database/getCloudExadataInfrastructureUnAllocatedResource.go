@@ -30,6 +30,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetCloudExadataInfrastructureUnAllocatedResource(ctx, &database.GetCloudExadataInfrastructureUnAllocatedResourceArgs{
 //				CloudExadataInfrastructureId: oci_database_cloud_exadata_infrastructure.Test_cloud_exadata_infrastructure.Id,
+//				DbServers:                    _var.Cloud_exadata_infrastructure_un_allocated_resource_db_servers,
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -52,6 +53,8 @@ func GetCloudExadataInfrastructureUnAllocatedResource(ctx *pulumi.Context, args 
 type GetCloudExadataInfrastructureUnAllocatedResourceArgs struct {
 	// The cloud Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CloudExadataInfrastructureId string `pulumi:"cloudExadataInfrastructureId"`
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+	DbServers []string `pulumi:"dbServers"`
 }
 
 // A collection of values returned by getCloudExadataInfrastructureUnAllocatedResource.
@@ -61,7 +64,8 @@ type GetCloudExadataInfrastructureUnAllocatedResourceResult struct {
 	// The user-friendly name for the Cloud Exadata infrastructure. The name does not need to be unique.
 	CloudExadataInfrastructureDisplayName string `pulumi:"cloudExadataInfrastructureDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Exadata infrastructure.
-	CloudExadataInfrastructureId string `pulumi:"cloudExadataInfrastructureId"`
+	CloudExadataInfrastructureId string   `pulumi:"cloudExadataInfrastructureId"`
+	DbServers                    []string `pulumi:"dbServers"`
 	// Total unallocated exadata storage in the infrastructure in TBs.
 	ExadataStorageInTbs float64 `pulumi:"exadataStorageInTbs"`
 	// The provider-assigned unique ID for this managed resource.
@@ -91,6 +95,8 @@ func GetCloudExadataInfrastructureUnAllocatedResourceOutput(ctx *pulumi.Context,
 type GetCloudExadataInfrastructureUnAllocatedResourceOutputArgs struct {
 	// The cloud Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CloudExadataInfrastructureId pulumi.StringInput `pulumi:"cloudExadataInfrastructureId"`
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+	DbServers pulumi.StringArrayInput `pulumi:"dbServers"`
 }
 
 func (GetCloudExadataInfrastructureUnAllocatedResourceOutputArgs) ElementType() reflect.Type {
@@ -131,6 +137,10 @@ func (o GetCloudExadataInfrastructureUnAllocatedResourceResultOutput) CloudExada
 	return o.ApplyT(func(v GetCloudExadataInfrastructureUnAllocatedResourceResult) string {
 		return v.CloudExadataInfrastructureId
 	}).(pulumi.StringOutput)
+}
+
+func (o GetCloudExadataInfrastructureUnAllocatedResourceResultOutput) DbServers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureUnAllocatedResourceResult) []string { return v.DbServers }).(pulumi.StringArrayOutput)
 }
 
 // Total unallocated exadata storage in the infrastructure in TBs.

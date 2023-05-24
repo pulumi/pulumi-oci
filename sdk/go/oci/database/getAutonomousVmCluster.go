@@ -106,7 +106,7 @@ type LookupAutonomousVmClusterResult struct {
 	MaintenanceWindowDetails []GetAutonomousVmClusterMaintenanceWindowDetail `pulumi:"maintenanceWindowDetails"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows []GetAutonomousVmClusterMaintenanceWindow `pulumi:"maintenanceWindows"`
-	// The amount of memory (in GBs) to be enabled per each CPU core.
+	// The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	MemoryPerOracleComputeUnitInGbs int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
@@ -306,7 +306,7 @@ func (o LookupAutonomousVmClusterResultOutput) MaintenanceWindows() GetAutonomou
 	}).(GetAutonomousVmClusterMaintenanceWindowArrayOutput)
 }
 
-// The amount of memory (in GBs) to be enabled per each CPU core.
+// The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 func (o LookupAutonomousVmClusterResultOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAutonomousVmClusterResult) int { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntOutput)
 }

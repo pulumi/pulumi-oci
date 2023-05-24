@@ -347,7 +347,7 @@ class GetAutonomousVmClusterResult:
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> int:
         """
-        The amount of memory (in GBs) to be enabled per each CPU core.
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 

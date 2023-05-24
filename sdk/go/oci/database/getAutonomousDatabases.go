@@ -109,7 +109,7 @@ type GetAutonomousDatabasesResult struct {
 	IsDataGuardEnabled *bool `pulumi:"isDataGuardEnabled"`
 	// Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
 	IsFreeTier *bool `pulumi:"isFreeTier"`
-	// Indicates whether the Autonomous Database is a refreshable clone.
+	// Indicates if the Autonomous Database is a refreshable clone.
 	IsRefreshableClone *bool `pulumi:"isRefreshableClone"`
 	// The current state of the Autonomous Database.
 	State *string `pulumi:"state"`
@@ -232,7 +232,7 @@ func (o GetAutonomousDatabasesResultOutput) IsFreeTier() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesResult) *bool { return v.IsFreeTier }).(pulumi.BoolPtrOutput)
 }
 
-// Indicates whether the Autonomous Database is a refreshable clone.
+// Indicates if the Autonomous Database is a refreshable clone.
 func (o GetAutonomousDatabasesResultOutput) IsRefreshableClone() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesResult) *bool { return v.IsRefreshableClone }).(pulumi.BoolPtrOutput)
 }

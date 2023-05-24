@@ -166,7 +166,7 @@ def get_log_saved_search(log_saved_search_id: Optional[str] = None,
     """
     This data source provides details about a specific Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
 
-    Retrieves a log saved search.
+    Retrieves a LogSavedSearch.
 
     ## Example Usage
 
@@ -178,7 +178,7 @@ def get_log_saved_search(log_saved_search_id: Optional[str] = None,
     ```
 
 
-    :param str log_saved_search_id: OCID of the logSavedSearch
+    :param str log_saved_search_id: OCID of the logSavedSearch.
     """
     __args__ = dict()
     __args__['logSavedSearchId'] = log_saved_search_id
@@ -205,7 +205,7 @@ def get_log_saved_search_output(log_saved_search_id: Optional[pulumi.Input[str]]
     """
     This data source provides details about a specific Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
 
-    Retrieves a log saved search.
+    Retrieves a LogSavedSearch.
 
     ## Example Usage
 
@@ -217,6 +217,6 @@ def get_log_saved_search_output(log_saved_search_id: Optional[pulumi.Input[str]]
     ```
 
 
-    :param str log_saved_search_id: OCID of the logSavedSearch
+    :param str log_saved_search_id: OCID of the logSavedSearch.
     """
     ...

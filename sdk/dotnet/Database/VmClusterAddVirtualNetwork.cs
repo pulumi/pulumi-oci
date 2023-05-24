@@ -53,6 +53,12 @@ namespace Pulumi.Oci.Database
     public partial class VmClusterAddVirtualNetwork : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// The name of the availability domain that the VM cluster is located in.
+        /// </summary>
+        [Output("availabilityDomain")]
+        public Output<string> AvailabilityDomain { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         [Output("compartmentId")]
@@ -291,6 +297,12 @@ namespace Pulumi.Oci.Database
 
     public sealed class VmClusterAddVirtualNetworkState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The name of the availability domain that the VM cluster is located in.
+        /// </summary>
+        [Input("availabilityDomain")]
+        public Input<string>? AvailabilityDomain { get; set; }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>

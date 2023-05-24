@@ -62,7 +62,7 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     private String computeModel;
     /**
-     * @return The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+     * @return The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      * 
      */
     private String dbName;
@@ -283,7 +283,7 @@ public final class GetAutonomousContainerDatabaseResult {
         return this.computeModel;
     }
     /**
-     * @return The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+     * @return The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      * 
      */
     public String dbName() {

@@ -34,14 +34,14 @@ public final class GetUnifiedAgentConfigurationsArgs extends com.pulumi.resource
     }
 
     /**
-     * Resource name
+     * Resource name.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return Resource name
+     * @return Resource name.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -167,7 +167,7 @@ public final class GetUnifiedAgentConfigurationsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param displayName Resource name
+         * @param displayName Resource name.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class GetUnifiedAgentConfigurationsArgs extends com.pulumi.resource
         }
 
         /**
-         * @param displayName Resource name
+         * @param displayName Resource name.
          * 
          * @return builder
          * 

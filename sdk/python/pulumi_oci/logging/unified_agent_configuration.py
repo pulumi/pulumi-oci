@@ -396,6 +396,7 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
                         grok_name_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         is_estimate_current_event=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         is_keep_time_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        is_merge_cri_fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         is_null_empty_string=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         is_support_colonless_ident=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         is_with_priority=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
@@ -403,6 +404,11 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
                         message_format=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         message_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         multi_line_start_regexp=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        nested_parser=oci.logging.UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs(
+                            time_format=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                            field_time_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                            is_keep_time_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        ),
                         null_value_pattern=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         patterns=[oci.logging.UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs(
                             field_time_format=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
@@ -493,6 +499,7 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
                         grok_name_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         is_estimate_current_event=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         is_keep_time_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        is_merge_cri_fields=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         is_null_empty_string=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         is_support_colonless_ident=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         is_with_priority=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
@@ -500,6 +507,11 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
                         message_format=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         message_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         multi_line_start_regexp=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        nested_parser=oci.logging.UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs(
+                            time_format=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                            field_time_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                            is_keep_time_key=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                        ),
                         null_value_pattern=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                         patterns=[oci.logging.UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs(
                             field_time_format=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),

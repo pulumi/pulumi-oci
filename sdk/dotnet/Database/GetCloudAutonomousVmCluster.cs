@@ -164,6 +164,9 @@ namespace Pulumi.Oci.Database
         /// The local node storage allocated in GBs.
         /// </summary>
         public readonly int DbNodeStorageSizeInGbs;
+        /// <summary>
+        /// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+        /// </summary>
         public readonly ImmutableArray<string> DbServers;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -219,7 +222,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudAutonomousVmClusterMaintenanceWindowResult> MaintenanceWindows;
         /// <summary>
-        /// The amount of memory (in GBs) enabled per each CPU core.
+        /// The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         /// </summary>
         public readonly int MemoryPerOracleComputeUnitInGbs;
         /// <summary>

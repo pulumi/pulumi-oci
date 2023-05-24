@@ -211,6 +211,20 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
         return this.adminNetworkCidr;
     }
     /**
+     * The name of the availability domain that the Exadata infrastructure is located in.
+     * 
+     */
+    @Export(name="availabilityDomain", type=String.class, parameters={})
+    private Output<String> availabilityDomain;
+
+    /**
+     * @return The name of the availability domain that the Exadata infrastructure is located in.
+     * 
+     */
+    public Output<String> availabilityDomain() {
+        return this.availabilityDomain;
+    }
+    /**
      * (Updatable) The IP address for the first control plane server.
      * 
      */

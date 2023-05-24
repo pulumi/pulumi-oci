@@ -159,7 +159,7 @@ namespace Pulumi.Oci.Logging
         /// </summary>
         public readonly string LogType;
         /// <summary>
-        /// Log retention duration in 30-day increments (30, 60, 90 and so on).
+        /// Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
         /// </summary>
         public readonly int RetentionDuration;
         /// <summary>

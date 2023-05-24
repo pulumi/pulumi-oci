@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly Outputs.UnifiedAgentConfigurationServiceConfigurationDestination Destination;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Logging source object.
         /// </summary>
         public readonly ImmutableArray<Outputs.UnifiedAgentConfigurationServiceConfigurationSource> Sources;
 

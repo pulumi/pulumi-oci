@@ -46,7 +46,7 @@ export function getLogs(args: GetLogsArgs, opts?: pulumi.InvokeOptions): Promise
  */
 export interface GetLogsArgs {
     /**
-     * Resource name
+     * Resource name.
      */
     displayName?: string;
     filters?: inputs.Logging.GetLogsFilter[];
@@ -59,11 +59,11 @@ export interface GetLogsArgs {
      */
     logType?: string;
     /**
-     * Log object resource.
+     * Log object resource, which is a field of LogSummary.Configuration.Source.
      */
     sourceResource?: string;
     /**
-     * Service that created the log object.
+     * Service that created the log object, which is a field of LogSummary.Configuration.Source.
      */
     sourceService?: string;
     /**
@@ -134,7 +134,7 @@ export function getLogsOutput(args: GetLogsOutputArgs, opts?: pulumi.InvokeOptio
  */
 export interface GetLogsOutputArgs {
     /**
-     * Resource name
+     * Resource name.
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Logging.GetLogsFilterArgs>[]>;
@@ -147,11 +147,11 @@ export interface GetLogsOutputArgs {
      */
     logType?: pulumi.Input<string>;
     /**
-     * Log object resource.
+     * Log object resource, which is a field of LogSummary.Configuration.Source.
      */
     sourceResource?: pulumi.Input<string>;
     /**
-     * Service that created the log object.
+     * Service that created the log object, which is a field of LogSummary.Configuration.Source.
      */
     sourceService?: pulumi.Input<string>;
     /**

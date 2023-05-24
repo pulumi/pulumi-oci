@@ -12,8 +12,11 @@ namespace Pulumi.Oci.Dns
     /// <summary>
     /// This resource provides the Zone resource in Oracle Cloud Infrastructure DNS service.
     /// 
-    /// Creates a new zone in the specified compartment. Additionally, for Private DNS,
-    /// the `viewId` field is required when creating private zones.
+    /// Creates a new zone in the specified compartment. For global zones, if the `Content-Type` header for the request
+    /// is `text/dns`, the `compartmentId` query parameter is required. `text/dns` for the `Content-Type` header is
+    /// not supported for private zones. Query parameter scope with a value of `PRIVATE` is required when creating a
+    /// private zone. Private zones must have a zone type of `PRIMARY`. Creating a private zone at or under
+    /// `oraclevcn.com` within the default protected view of a VCN-dedicated resolver is not permitted.
     /// 
     /// ## Example Usage
     /// 
@@ -30,6 +33,15 @@ namespace Pulumi.Oci.Dns
     ///         CompartmentId = @var.Compartment_id,
     ///         ZoneType = @var.Zone_zone_type,
     ///         DefinedTags = @var.Zone_defined_tags,
+    ///         ExternalDownstreams = new[]
+    ///         {
+    ///             new Oci.Dns.Inputs.ZoneExternalDownstreamArgs
+    ///             {
+    ///                 Address = @var.Zone_external_downstreams_address,
+    ///                 Port = @var.Zone_external_downstreams_port,
+    ///                 TsigKeyId = oci_dns_tsig_key.Test_tsig_key.Id,
+    ///             },
+    ///         },
     ///         ExternalMasters = new[]
     ///         {
     ///             new Oci.Dns.Inputs.ZoneExternalMasterArgs
@@ -49,7 +61,7 @@ namespace Pulumi.Oci.Dns
     /// 
     /// ## Import
     /// 
-    /// Zones can be imported using their OCID, e.g.
+    /// Zones can be imported using the `id`, e.g.
     /// 
     /// ```sh
     ///  $ pulumi import oci:Dns/zone:Zone test_zone "id"
@@ -67,10 +79,16 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// 
-        /// **Example:** `{"Operations.CostCenter": "42"}`
+        /// **Example:** `{"Operations": {"CostCenter": "42"}}`
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+        /// </summary>
+        [Output("externalDownstreams")]
+        public Output<ImmutableArray<Outputs.ZoneExternalDownstream>> ExternalDownstreams { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
@@ -148,6 +166,12 @@ namespace Pulumi.Oci.Dns
         public Output<string?> ViewId { get; private set; } = null!;
 
         /// <summary>
+        /// The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+        /// </summary>
+        [Output("zoneTransferServers")]
+        public Output<ImmutableArray<Outputs.ZoneZoneTransferServer>> ZoneTransferServers { get; private set; } = null!;
+
+        /// <summary>
         /// The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
         /// 
         /// 
@@ -215,12 +239,24 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// 
-        /// **Example:** `{"Operations.CostCenter": "42"}`
+        /// **Example:** `{"Operations": {"CostCenter": "42"}}`
         /// </summary>
         public InputMap<object> DefinedTags
         {
             get => _definedTags ?? (_definedTags = new InputMap<object>());
             set => _definedTags = value;
+        }
+
+        [Input("externalDownstreams")]
+        private InputList<Inputs.ZoneExternalDownstreamArgs>? _externalDownstreams;
+
+        /// <summary>
+        /// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+        /// </summary>
+        public InputList<Inputs.ZoneExternalDownstreamArgs> ExternalDownstreams
+        {
+            get => _externalDownstreams ?? (_externalDownstreams = new InputList<Inputs.ZoneExternalDownstreamArgs>());
+            set => _externalDownstreams = value;
         }
 
         [Input("externalMasters")]
@@ -298,12 +334,24 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// 
-        /// **Example:** `{"Operations.CostCenter": "42"}`
+        /// **Example:** `{"Operations": {"CostCenter": "42"}}`
         /// </summary>
         public InputMap<object> DefinedTags
         {
             get => _definedTags ?? (_definedTags = new InputMap<object>());
             set => _definedTags = value;
+        }
+
+        [Input("externalDownstreams")]
+        private InputList<Inputs.ZoneExternalDownstreamGetArgs>? _externalDownstreams;
+
+        /// <summary>
+        /// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+        /// </summary>
+        public InputList<Inputs.ZoneExternalDownstreamGetArgs> ExternalDownstreams
+        {
+            get => _externalDownstreams ?? (_externalDownstreams = new InputList<Inputs.ZoneExternalDownstreamGetArgs>());
+            set => _externalDownstreams = value;
         }
 
         [Input("externalMasters")]
@@ -398,6 +446,18 @@ namespace Pulumi.Oci.Dns
         /// </summary>
         [Input("viewId")]
         public Input<string>? ViewId { get; set; }
+
+        [Input("zoneTransferServers")]
+        private InputList<Inputs.ZoneZoneTransferServerGetArgs>? _zoneTransferServers;
+
+        /// <summary>
+        /// The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+        /// </summary>
+        public InputList<Inputs.ZoneZoneTransferServerGetArgs> ZoneTransferServers
+        {
+            get => _zoneTransferServers ?? (_zoneTransferServers = new InputList<Inputs.ZoneZoneTransferServerGetArgs>());
+            set => _zoneTransferServers = value;
+        }
 
         /// <summary>
         /// The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 

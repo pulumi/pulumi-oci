@@ -4,8 +4,10 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Dns.outputs.GetZonesZoneExternalDownstream;
 import com.pulumi.oci.Dns.outputs.GetZonesZoneExternalMaster;
 import com.pulumi.oci.Dns.outputs.GetZonesZoneNameserver;
+import com.pulumi.oci.Dns.outputs.GetZonesZoneZoneTransferServer;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -26,6 +28,11 @@ public final class GetZonesZone {
      * 
      */
     private Map<String,Object> definedTags;
+    /**
+     * @return External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+     * 
+     */
+    private List<GetZonesZoneExternalDownstream> externalDownstreams;
     /**
      * @return External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
      * 
@@ -93,6 +100,11 @@ public final class GetZonesZone {
      */
     private String viewId;
     /**
+     * @return The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+     * 
+     */
+    private List<GetZonesZoneZoneTransferServer> zoneTransferServers;
+    /**
      * @return Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
      * 
      */
@@ -112,6 +124,13 @@ public final class GetZonesZone {
      */
     public Map<String,Object> definedTags() {
         return this.definedTags;
+    }
+    /**
+     * @return External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+     * 
+     */
+    public List<GetZonesZoneExternalDownstream> externalDownstreams() {
+        return this.externalDownstreams;
     }
     /**
      * @return External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
@@ -206,6 +225,13 @@ public final class GetZonesZone {
         return this.viewId;
     }
     /**
+     * @return The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+     * 
+     */
+    public List<GetZonesZoneZoneTransferServer> zoneTransferServers() {
+        return this.zoneTransferServers;
+    }
+    /**
      * @return Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
      * 
      */
@@ -224,6 +250,7 @@ public final class GetZonesZone {
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
+        private List<GetZonesZoneExternalDownstream> externalDownstreams;
         private List<GetZonesZoneExternalMaster> externalMasters;
         private Map<String,Object> freeformTags;
         private String id;
@@ -237,12 +264,14 @@ public final class GetZonesZone {
         private String timeCreated;
         private String version;
         private String viewId;
+        private List<GetZonesZoneZoneTransferServer> zoneTransferServers;
         private String zoneType;
         public Builder() {}
         public Builder(GetZonesZone defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
+    	      this.externalDownstreams = defaults.externalDownstreams;
     	      this.externalMasters = defaults.externalMasters;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
@@ -256,6 +285,7 @@ public final class GetZonesZone {
     	      this.timeCreated = defaults.timeCreated;
     	      this.version = defaults.version;
     	      this.viewId = defaults.viewId;
+    	      this.zoneTransferServers = defaults.zoneTransferServers;
     	      this.zoneType = defaults.zoneType;
         }
 
@@ -268,6 +298,14 @@ public final class GetZonesZone {
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
+        }
+        @CustomType.Setter
+        public Builder externalDownstreams(List<GetZonesZoneExternalDownstream> externalDownstreams) {
+            this.externalDownstreams = Objects.requireNonNull(externalDownstreams);
+            return this;
+        }
+        public Builder externalDownstreams(GetZonesZoneExternalDownstream... externalDownstreams) {
+            return externalDownstreams(List.of(externalDownstreams));
         }
         @CustomType.Setter
         public Builder externalMasters(List<GetZonesZoneExternalMaster> externalMasters) {
@@ -341,6 +379,14 @@ public final class GetZonesZone {
             return this;
         }
         @CustomType.Setter
+        public Builder zoneTransferServers(List<GetZonesZoneZoneTransferServer> zoneTransferServers) {
+            this.zoneTransferServers = Objects.requireNonNull(zoneTransferServers);
+            return this;
+        }
+        public Builder zoneTransferServers(GetZonesZoneZoneTransferServer... zoneTransferServers) {
+            return zoneTransferServers(List.of(zoneTransferServers));
+        }
+        @CustomType.Setter
         public Builder zoneType(String zoneType) {
             this.zoneType = Objects.requireNonNull(zoneType);
             return this;
@@ -349,6 +395,7 @@ public final class GetZonesZone {
             final var o = new GetZonesZone();
             o.compartmentId = compartmentId;
             o.definedTags = definedTags;
+            o.externalDownstreams = externalDownstreams;
             o.externalMasters = externalMasters;
             o.freeformTags = freeformTags;
             o.id = id;
@@ -362,6 +409,7 @@ public final class GetZonesZone {
             o.timeCreated = timeCreated;
             o.version = version;
             o.viewId = viewId;
+            o.zoneTransferServers = zoneTransferServers;
             o.zoneType = zoneType;
             return o;
         }

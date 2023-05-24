@@ -19,6 +19,7 @@ class ZoneArgs:
                  compartment_id: pulumi.Input[str],
                  zone_type: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]]] = None,
                  external_masters: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalMasterArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -34,7 +35,8 @@ class ZoneArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
                
-               **Example:** `{"Operations.CostCenter": "42"}`
+               **Example:** `{"Operations": {"CostCenter": "42"}}`
+        :param pulumi.Input[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]] external_downstreams: (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
         :param pulumi.Input[Sequence[pulumi.Input['ZoneExternalMasterArgs']]] external_masters: (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
                
@@ -48,6 +50,8 @@ class ZoneArgs:
         pulumi.set(__self__, "zone_type", zone_type)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if external_downstreams is not None:
+            pulumi.set(__self__, "external_downstreams", external_downstreams)
         if external_masters is not None:
             pulumi.set(__self__, "external_masters", external_masters)
         if freeform_tags is not None:
@@ -93,13 +97,25 @@ class ZoneArgs:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 
-        **Example:** `{"Operations.CostCenter": "42"}`
+        **Example:** `{"Operations": {"CostCenter": "42"}}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
     def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="externalDownstreams")
+    def external_downstreams(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]]]:
+        """
+        (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+        """
+        return pulumi.get(self, "external_downstreams")
+
+    @external_downstreams.setter
+    def external_downstreams(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]]]):
+        pulumi.set(self, "external_downstreams", value)
 
     @property
     @pulumi.getter(name="externalMasters")
@@ -170,6 +186,7 @@ class _ZoneState:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]]] = None,
                  external_masters: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalMasterArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_protected: Optional[pulumi.Input[bool]] = None,
@@ -182,13 +199,15 @@ class _ZoneState:
                  time_created: Optional[pulumi.Input[str]] = None,
                  version: Optional[pulumi.Input[str]] = None,
                  view_id: Optional[pulumi.Input[str]] = None,
+                 zone_transfer_servers: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneZoneTransferServerArgs']]]] = None,
                  zone_type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Zone resources.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
                
-               **Example:** `{"Operations.CostCenter": "42"}`
+               **Example:** `{"Operations": {"CostCenter": "42"}}`
+        :param pulumi.Input[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]] external_downstreams: (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
         :param pulumi.Input[Sequence[pulumi.Input['ZoneExternalMasterArgs']]] external_masters: (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
                
@@ -204,6 +223,7 @@ class _ZoneState:
         :param pulumi.Input[str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         :param pulumi.Input[str] version: Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
         :param pulumi.Input[str] view_id: The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
+        :param pulumi.Input[Sequence[pulumi.Input['ZoneZoneTransferServerArgs']]] zone_transfer_servers: The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
         :param pulumi.Input[str] zone_type: The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
                
                
@@ -214,6 +234,8 @@ class _ZoneState:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if external_downstreams is not None:
+            pulumi.set(__self__, "external_downstreams", external_downstreams)
         if external_masters is not None:
             pulumi.set(__self__, "external_masters", external_masters)
         if freeform_tags is not None:
@@ -238,6 +260,8 @@ class _ZoneState:
             pulumi.set(__self__, "version", version)
         if view_id is not None:
             pulumi.set(__self__, "view_id", view_id)
+        if zone_transfer_servers is not None:
+            pulumi.set(__self__, "zone_transfer_servers", zone_transfer_servers)
         if zone_type is not None:
             pulumi.set(__self__, "zone_type", zone_type)
 
@@ -259,13 +283,25 @@ class _ZoneState:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 
-        **Example:** `{"Operations.CostCenter": "42"}`
+        **Example:** `{"Operations": {"CostCenter": "42"}}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
     def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="externalDownstreams")
+    def external_downstreams(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]]]:
+        """
+        (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+        """
+        return pulumi.get(self, "external_downstreams")
+
+    @external_downstreams.setter
+    def external_downstreams(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]]]):
+        pulumi.set(self, "external_downstreams", value)
 
     @property
     @pulumi.getter(name="externalMasters")
@@ -415,6 +451,18 @@ class _ZoneState:
         pulumi.set(self, "view_id", value)
 
     @property
+    @pulumi.getter(name="zoneTransferServers")
+    def zone_transfer_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ZoneZoneTransferServerArgs']]]]:
+        """
+        The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+        """
+        return pulumi.get(self, "zone_transfer_servers")
+
+    @zone_transfer_servers.setter
+    def zone_transfer_servers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneZoneTransferServerArgs']]]]):
+        pulumi.set(self, "zone_transfer_servers", value)
+
+    @property
     @pulumi.getter(name="zoneType")
     def zone_type(self) -> Optional[pulumi.Input[str]]:
         """
@@ -438,6 +486,7 @@ class Zone(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneExternalDownstreamArgs']]]]] = None,
                  external_masters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneExternalMasterArgs']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -448,8 +497,11 @@ class Zone(pulumi.CustomResource):
         """
         This resource provides the Zone resource in Oracle Cloud Infrastructure DNS service.
 
-        Creates a new zone in the specified compartment. Additionally, for Private DNS,
-        the `viewId` field is required when creating private zones.
+        Creates a new zone in the specified compartment. For global zones, if the `Content-Type` header for the request
+        is `text/dns`, the `compartmentId` query parameter is required. `text/dns` for the `Content-Type` header is
+        not supported for private zones. Query parameter scope with a value of `PRIVATE` is required when creating a
+        private zone. Private zones must have a zone type of `PRIMARY`. Creating a private zone at or under
+        `oraclevcn.com` within the default protected view of a VCN-dedicated resolver is not permitted.
 
         ## Example Usage
 
@@ -461,6 +513,11 @@ class Zone(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             zone_type=var["zone_zone_type"],
             defined_tags=var["zone_defined_tags"],
+            external_downstreams=[oci.dns.ZoneExternalDownstreamArgs(
+                address=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                tsig_key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+            )],
             external_masters=[oci.dns.ZoneExternalMasterArgs(
                 address=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
@@ -473,7 +530,7 @@ class Zone(pulumi.CustomResource):
 
         ## Import
 
-        Zones can be imported using their OCID, e.g.
+        Zones can be imported using the `id`, e.g.
 
         ```sh
          $ pulumi import oci:Dns/zone:Zone test_zone "id"
@@ -484,7 +541,8 @@ class Zone(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
                
-               **Example:** `{"Operations.CostCenter": "42"}`
+               **Example:** `{"Operations": {"CostCenter": "42"}}`
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneExternalDownstreamArgs']]]] external_downstreams: (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneExternalMasterArgs']]]] external_masters: (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
                
@@ -508,8 +566,11 @@ class Zone(pulumi.CustomResource):
         """
         This resource provides the Zone resource in Oracle Cloud Infrastructure DNS service.
 
-        Creates a new zone in the specified compartment. Additionally, for Private DNS,
-        the `viewId` field is required when creating private zones.
+        Creates a new zone in the specified compartment. For global zones, if the `Content-Type` header for the request
+        is `text/dns`, the `compartmentId` query parameter is required. `text/dns` for the `Content-Type` header is
+        not supported for private zones. Query parameter scope with a value of `PRIVATE` is required when creating a
+        private zone. Private zones must have a zone type of `PRIMARY`. Creating a private zone at or under
+        `oraclevcn.com` within the default protected view of a VCN-dedicated resolver is not permitted.
 
         ## Example Usage
 
@@ -521,6 +582,11 @@ class Zone(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             zone_type=var["zone_zone_type"],
             defined_tags=var["zone_defined_tags"],
+            external_downstreams=[oci.dns.ZoneExternalDownstreamArgs(
+                address=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+                tsig_key_id=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+            )],
             external_masters=[oci.dns.ZoneExternalMasterArgs(
                 address=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
                 port=%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
@@ -533,7 +599,7 @@ class Zone(pulumi.CustomResource):
 
         ## Import
 
-        Zones can be imported using their OCID, e.g.
+        Zones can be imported using the `id`, e.g.
 
         ```sh
          $ pulumi import oci:Dns/zone:Zone test_zone "id"
@@ -556,6 +622,7 @@ class Zone(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneExternalDownstreamArgs']]]]] = None,
                  external_masters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneExternalMasterArgs']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -575,6 +642,7 @@ class Zone(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
+            __props__.__dict__["external_downstreams"] = external_downstreams
             __props__.__dict__["external_masters"] = external_masters
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["name"] = name
@@ -590,6 +658,7 @@ class Zone(pulumi.CustomResource):
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["version"] = None
+            __props__.__dict__["zone_transfer_servers"] = None
         super(Zone, __self__).__init__(
             'oci:Dns/zone:Zone',
             resource_name,
@@ -602,6 +671,7 @@ class Zone(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneExternalDownstreamArgs']]]]] = None,
             external_masters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneExternalMasterArgs']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_protected: Optional[pulumi.Input[bool]] = None,
@@ -614,6 +684,7 @@ class Zone(pulumi.CustomResource):
             time_created: Optional[pulumi.Input[str]] = None,
             version: Optional[pulumi.Input[str]] = None,
             view_id: Optional[pulumi.Input[str]] = None,
+            zone_transfer_servers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneZoneTransferServerArgs']]]]] = None,
             zone_type: Optional[pulumi.Input[str]] = None) -> 'Zone':
         """
         Get an existing Zone resource's state with the given name, id, and optional extra
@@ -625,7 +696,8 @@ class Zone(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
                
-               **Example:** `{"Operations.CostCenter": "42"}`
+               **Example:** `{"Operations": {"CostCenter": "42"}}`
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneExternalDownstreamArgs']]]] external_downstreams: (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneExternalMasterArgs']]]] external_masters: (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
                
@@ -641,6 +713,7 @@ class Zone(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         :param pulumi.Input[str] version: Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
         :param pulumi.Input[str] view_id: The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ZoneZoneTransferServerArgs']]]] zone_transfer_servers: The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
         :param pulumi.Input[str] zone_type: The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
                
                
@@ -653,6 +726,7 @@ class Zone(pulumi.CustomResource):
 
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
+        __props__.__dict__["external_downstreams"] = external_downstreams
         __props__.__dict__["external_masters"] = external_masters
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_protected"] = is_protected
@@ -665,6 +739,7 @@ class Zone(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["version"] = version
         __props__.__dict__["view_id"] = view_id
+        __props__.__dict__["zone_transfer_servers"] = zone_transfer_servers
         __props__.__dict__["zone_type"] = zone_type
         return Zone(resource_name, opts=opts, __props__=__props__)
 
@@ -682,9 +757,17 @@ class Zone(pulumi.CustomResource):
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 
-        **Example:** `{"Operations.CostCenter": "42"}`
+        **Example:** `{"Operations": {"CostCenter": "42"}}`
         """
         return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="externalDownstreams")
+    def external_downstreams(self) -> pulumi.Output[Sequence['outputs.ZoneExternalDownstream']]:
+        """
+        (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+        """
+        return pulumi.get(self, "external_downstreams")
 
     @property
     @pulumi.getter(name="externalMasters")
@@ -784,6 +867,14 @@ class Zone(pulumi.CustomResource):
         The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
         """
         return pulumi.get(self, "view_id")
+
+    @property
+    @pulumi.getter(name="zoneTransferServers")
+    def zone_transfer_servers(self) -> pulumi.Output[Sequence['outputs.ZoneZoneTransferServer']]:
+        """
+        The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
+        """
+        return pulumi.get(self, "zone_transfer_servers")
 
     @property
     @pulumi.getter(name="zoneType")

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Logging.Outputs
     public sealed class UnifiedAgentConfigurationServiceConfigurationSource
     {
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Windows event log channels.
         /// </summary>
         public readonly ImmutableArray<string> Channels;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly Outputs.UnifiedAgentConfigurationServiceConfigurationSourceParser? Parser;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Absolute paths for log source files. Wildcard can be used.
         /// </summary>
         public readonly ImmutableArray<string> Paths;
         /// <summary>

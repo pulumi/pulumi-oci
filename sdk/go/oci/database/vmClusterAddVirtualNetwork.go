@@ -60,6 +60,8 @@ import (
 type VmClusterAddVirtualNetwork struct {
 	pulumi.CustomResourceState
 
+	// The name of the availability domain that the VM cluster is located in.
+	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The number of enabled CPU cores.
@@ -153,6 +155,8 @@ func GetVmClusterAddVirtualNetwork(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering VmClusterAddVirtualNetwork resources.
 type vmClusterAddVirtualNetworkState struct {
+	// The name of the availability domain that the VM cluster is located in.
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The number of enabled CPU cores.
@@ -212,6 +216,8 @@ type vmClusterAddVirtualNetworkState struct {
 }
 
 type VmClusterAddVirtualNetworkState struct {
+	// The name of the availability domain that the VM cluster is located in.
+	AvailabilityDomain pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// The number of enabled CPU cores.
@@ -380,6 +386,11 @@ func (o VmClusterAddVirtualNetworkOutput) ToVmClusterAddVirtualNetworkOutput() V
 
 func (o VmClusterAddVirtualNetworkOutput) ToVmClusterAddVirtualNetworkOutputWithContext(ctx context.Context) VmClusterAddVirtualNetworkOutput {
 	return o
+}
+
+// The name of the availability domain that the VM cluster is located in.
+func (o VmClusterAddVirtualNetworkOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v *VmClusterAddVirtualNetwork) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

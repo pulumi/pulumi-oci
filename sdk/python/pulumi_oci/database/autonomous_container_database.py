@@ -55,7 +55,7 @@ class AutonomousContainerDatabaseArgs:
         :param pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs'] backup_config: (Updatable) Backup options for the Autonomous Container Database.
         :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The OCID of the Cloud Autonomous VM Cluster.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
-        :param pulumi.Input[str] db_name: The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+        :param pulumi.Input[str] db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         :param pulumi.Input[str] db_version: The base version for the Autonomous Container Database.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[int] fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
@@ -227,7 +227,7 @@ class AutonomousContainerDatabaseArgs:
     @pulumi.getter(name="dbName")
     def db_name(self) -> Optional[pulumi.Input[str]]:
         """
-        The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+        The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         """
         return pulumi.get(self, "db_name")
 
@@ -551,13 +551,13 @@ class _AutonomousContainerDatabaseState:
         Input properties used for looking up and filtering AutonomousContainerDatabase resources.
         :param pulumi.Input[str] autonomous_exadata_infrastructure_id: **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         :param pulumi.Input[str] autonomous_vm_cluster_id: The OCID of the Autonomous VM Cluster.
-        :param pulumi.Input[str] availability_domain: The availability domain of the Autonomous Container Database.
-        :param pulumi.Input[float] available_cpus: Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
+        :param pulumi.Input[str] availability_domain: The availability domain of the Autonomous Container Database
+        :param pulumi.Input[float] available_cpus: Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs'] backup_config: (Updatable) Backup options for the Autonomous Container Database.
         :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The OCID of the Cloud Autonomous VM Cluster.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
         :param pulumi.Input[str] compute_model: The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
-        :param pulumi.Input[str] db_name: The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+        :param pulumi.Input[str] db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         :param pulumi.Input[str] db_version: The base version for the Autonomous Container Database.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The display name for the Autonomous Container Database.
@@ -729,7 +729,7 @@ class _AutonomousContainerDatabaseState:
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
         """
-        The availability domain of the Autonomous Container Database.
+        The availability domain of the Autonomous Container Database
         """
         return pulumi.get(self, "availability_domain")
 
@@ -741,7 +741,7 @@ class _AutonomousContainerDatabaseState:
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> Optional[pulumi.Input[float]]:
         """
-        Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
+        Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "available_cpus")
 
@@ -801,7 +801,7 @@ class _AutonomousContainerDatabaseState:
     @pulumi.getter(name="dbName")
     def db_name(self) -> Optional[pulumi.Input[str]]:
         """
-        The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+        The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         """
         return pulumi.get(self, "db_name")
 
@@ -1343,7 +1343,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseBackupConfigArgs']] backup_config: (Updatable) Backup options for the Autonomous Container Database.
         :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The OCID of the Cloud Autonomous VM Cluster.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
-        :param pulumi.Input[str] db_name: The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+        :param pulumi.Input[str] db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         :param pulumi.Input[str] db_version: The base version for the Autonomous Container Database.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The display name for the Autonomous Container Database.
@@ -1564,13 +1564,13 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] autonomous_exadata_infrastructure_id: **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         :param pulumi.Input[str] autonomous_vm_cluster_id: The OCID of the Autonomous VM Cluster.
-        :param pulumi.Input[str] availability_domain: The availability domain of the Autonomous Container Database.
-        :param pulumi.Input[float] available_cpus: Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
+        :param pulumi.Input[str] availability_domain: The availability domain of the Autonomous Container Database
+        :param pulumi.Input[float] available_cpus: Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseBackupConfigArgs']] backup_config: (Updatable) Backup options for the Autonomous Container Database.
         :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The OCID of the Cloud Autonomous VM Cluster.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
         :param pulumi.Input[str] compute_model: The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
-        :param pulumi.Input[str] db_name: The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+        :param pulumi.Input[str] db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         :param pulumi.Input[str] db_version: The base version for the Autonomous Container Database.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The display name for the Autonomous Container Database.
@@ -1690,7 +1690,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[str]:
         """
-        The availability domain of the Autonomous Container Database.
+        The availability domain of the Autonomous Container Database
         """
         return pulumi.get(self, "availability_domain")
 
@@ -1698,7 +1698,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> pulumi.Output[float]:
         """
-        Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
+        Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "available_cpus")
 
@@ -1738,7 +1738,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
     @pulumi.getter(name="dbName")
     def db_name(self) -> pulumi.Output[str]:
         """
-        The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+        The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         """
         return pulumi.get(self, "db_name")
 

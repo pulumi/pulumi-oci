@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Logging.Inputs
         private InputList<Inputs.UnifiedAgentConfigurationServiceConfigurationSourceGetArgs>? _sources;
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) Logging source object.
         /// </summary>
         public InputList<Inputs.UnifiedAgentConfigurationServiceConfigurationSourceGetArgs> Sources
         {

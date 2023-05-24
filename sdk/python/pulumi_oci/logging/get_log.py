@@ -150,7 +150,7 @@ class GetLogResult:
     @pulumi.getter(name="retentionDuration")
     def retention_duration(self) -> int:
         """
-        Log retention duration in 30-day increments (30, 60, 90 and so on).
+        Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
         """
         return pulumi.get(self, "retention_duration")
 

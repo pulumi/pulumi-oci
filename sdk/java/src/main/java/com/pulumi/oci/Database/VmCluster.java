@@ -89,6 +89,20 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Database/vmCluster:VmCluster")
 public class VmCluster extends com.pulumi.resources.CustomResource {
     /**
+     * The name of the availability domain that the VM cluster is located in.
+     * 
+     */
+    @Export(name="availabilityDomain", type=String.class, parameters={})
+    private Output<String> availabilityDomain;
+
+    /**
+     * @return The name of the availability domain that the VM cluster is located in.
+     * 
+     */
+    public Output<String> availabilityDomain() {
+        return this.availabilityDomain;
+    }
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */

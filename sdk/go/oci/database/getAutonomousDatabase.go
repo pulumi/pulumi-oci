@@ -151,7 +151,7 @@ type LookupAutonomousDatabaseResult struct {
 	IsPreviewVersionWithServiceTermsAccepted bool `pulumi:"isPreviewVersionWithServiceTermsAccepted"`
 	// Indicates if the refreshable clone can be reconnected to its source database.
 	IsReconnectCloneEnabled bool `pulumi:"isReconnectCloneEnabled"`
-	// Indicates whether the Autonomous Database is a refreshable clone.
+	// Indicates if the Autonomous Database is a refreshable clone.
 	IsRefreshableClone bool `pulumi:"isRefreshableClone"`
 	// Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 	IsRemoteDataGuardEnabled bool `pulumi:"isRemoteDataGuardEnabled"`
@@ -180,7 +180,7 @@ type LookupAutonomousDatabaseResult struct {
 	LongTermBackupSchedules []GetAutonomousDatabaseLongTermBackupSchedule `pulumi:"longTermBackupSchedules"`
 	// The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
 	MaxCpuCoreCount int `pulumi:"maxCpuCoreCount"`
-	// The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+	// The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	MemoryPerOracleComputeUnitInGbs int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
 	NcharacterSet string `pulumi:"ncharacterSet"`
@@ -191,13 +191,13 @@ type LookupAutonomousDatabaseResult struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// The number of OCPU cores to be made available to the database.
 	OcpuCount float64 `pulumi:"ocpuCount"`
-	// The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+	// Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
 	OpenMode string `pulumi:"openMode"`
 	// Status of Operations Insights for this Autonomous Database.
 	OperationsInsightsStatus string `pulumi:"operationsInsightsStatus"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
 	PeerDbIds []string `pulumi:"peerDbIds"`
-	// The Autonomous Database permission level. Restricted mode allows access only to admin users.
+	// The Autonomous Database permission level. Restricted mode allows access only by admin users.
 	PermissionLevel string `pulumi:"permissionLevel"`
 	// The private endpoint for the resource.
 	PrivateEndpoint string `pulumi:"privateEndpoint"`
@@ -217,7 +217,7 @@ type LookupAutonomousDatabaseResult struct {
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	Role             string `pulumi:"role"`
 	RotateKeyTrigger bool   `pulumi:"rotateKeyTrigger"`
-	// list of scheduled operations
+	// The list of scheduled operations.
 	ScheduledOperations []GetAutonomousDatabaseScheduledOperation `pulumi:"scheduledOperations"`
 	SecretId            string                                    `pulumi:"secretId"`
 	SecretVersionNumber int                                       `pulumi:"secretVersionNumber"`
@@ -563,7 +563,7 @@ func (o LookupAutonomousDatabaseResultOutput) IsReconnectCloneEnabled() pulumi.B
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsReconnectCloneEnabled }).(pulumi.BoolOutput)
 }
 
-// Indicates whether the Autonomous Database is a refreshable clone.
+// Indicates if the Autonomous Database is a refreshable clone.
 func (o LookupAutonomousDatabaseResultOutput) IsRefreshableClone() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsRefreshableClone }).(pulumi.BoolOutput)
 }
@@ -641,7 +641,7 @@ func (o LookupAutonomousDatabaseResultOutput) MaxCpuCoreCount() pulumi.IntOutput
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.MaxCpuCoreCount }).(pulumi.IntOutput)
 }
 
-// The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
+// The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 func (o LookupAutonomousDatabaseResultOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntOutput)
 }
@@ -667,7 +667,7 @@ func (o LookupAutonomousDatabaseResultOutput) OcpuCount() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) float64 { return v.OcpuCount }).(pulumi.Float64Output)
 }
 
-// The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+// Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
 func (o LookupAutonomousDatabaseResultOutput) OpenMode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.OpenMode }).(pulumi.StringOutput)
 }
@@ -682,7 +682,7 @@ func (o LookupAutonomousDatabaseResultOutput) PeerDbIds() pulumi.StringArrayOutp
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []string { return v.PeerDbIds }).(pulumi.StringArrayOutput)
 }
 
-// The Autonomous Database permission level. Restricted mode allows access only to admin users.
+// The Autonomous Database permission level. Restricted mode allows access only by admin users.
 func (o LookupAutonomousDatabaseResultOutput) PermissionLevel() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.PermissionLevel }).(pulumi.StringOutput)
 }
@@ -737,7 +737,7 @@ func (o LookupAutonomousDatabaseResultOutput) RotateKeyTrigger() pulumi.BoolOutp
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.RotateKeyTrigger }).(pulumi.BoolOutput)
 }
 
-// list of scheduled operations
+// The list of scheduled operations.
 func (o LookupAutonomousDatabaseResultOutput) ScheduledOperations() GetAutonomousDatabaseScheduledOperationArrayOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []GetAutonomousDatabaseScheduledOperation {
 		return v.ScheduledOperations

@@ -427,14 +427,14 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
         return this.maintenanceWindows;
     }
     /**
-     * The amount of memory (in GBs) to be enabled per each CPU core.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     @Export(name="memoryPerOracleComputeUnitInGbs", type=Integer.class, parameters={})
     private Output<Integer> memoryPerOracleComputeUnitInGbs;
 
     /**
-     * @return The amount of memory (in GBs) to be enabled per each CPU core.
+     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     public Output<Integer> memoryPerOracleComputeUnitInGbs() {

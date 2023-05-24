@@ -155,10 +155,6 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
-        /// <summary>
         /// The time the security policy was created. An RFC3339 formatted datetime string.
         /// </summary>
         public readonly string TimeCreated;
@@ -195,8 +191,6 @@ namespace Pulumi.Oci.CloudGuard
 
             string state,
 
-            ImmutableDictionary<string, object> systemTags,
-
             string timeCreated,
 
             string timeUpdated)
@@ -214,7 +208,6 @@ namespace Pulumi.Oci.CloudGuard
             SecurityPolicyId = securityPolicyId;
             Services = services;
             State = state;
-            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
         }

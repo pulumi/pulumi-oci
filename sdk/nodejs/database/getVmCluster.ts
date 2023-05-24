@@ -45,6 +45,10 @@ export interface GetVmClusterArgs {
  */
 export interface GetVmClusterResult {
     /**
+     * The name of the availability domain that the VM cluster is located in.
+     */
+    readonly availabilityDomain: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     readonly compartmentId: string;

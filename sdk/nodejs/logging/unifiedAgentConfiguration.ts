@@ -42,6 +42,7 @@ import * as utilities from "../utilities";
  *                 grokNameKey: _var.unified_agent_configuration_service_configuration_sources_parser_grok_name_key,
  *                 isEstimateCurrentEvent: _var.unified_agent_configuration_service_configuration_sources_parser_is_estimate_current_event,
  *                 isKeepTimeKey: _var.unified_agent_configuration_service_configuration_sources_parser_is_keep_time_key,
+ *                 isMergeCriFields: _var.unified_agent_configuration_service_configuration_sources_parser_is_merge_cri_fields,
  *                 isNullEmptyString: _var.unified_agent_configuration_service_configuration_sources_parser_is_null_empty_string,
  *                 isSupportColonlessIdent: _var.unified_agent_configuration_service_configuration_sources_parser_is_support_colonless_ident,
  *                 isWithPriority: _var.unified_agent_configuration_service_configuration_sources_parser_is_with_priority,
@@ -49,6 +50,11 @@ import * as utilities from "../utilities";
  *                 messageFormat: _var.unified_agent_configuration_service_configuration_sources_parser_message_format,
  *                 messageKey: _var.unified_agent_configuration_service_configuration_sources_parser_message_key,
  *                 multiLineStartRegexp: _var.unified_agent_configuration_service_configuration_sources_parser_multi_line_start_regexp,
+ *                 nestedParser: {
+ *                     timeFormat: _var.unified_agent_configuration_service_configuration_sources_parser_nested_parser_time_format,
+ *                     fieldTimeKey: _var.unified_agent_configuration_service_configuration_sources_parser_nested_parser_field_time_key,
+ *                     isKeepTimeKey: _var.unified_agent_configuration_service_configuration_sources_parser_nested_parser_is_keep_time_key,
+ *                 },
  *                 nullValuePattern: _var.unified_agent_configuration_service_configuration_sources_parser_null_value_pattern,
  *                 patterns: [{
  *                     fieldTimeFormat: _var.unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_format,

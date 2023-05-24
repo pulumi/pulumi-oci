@@ -54,8 +54,8 @@ class GetRecordsResult:
         if zone_name_or_id and not isinstance(zone_name_or_id, str):
             raise TypeError("Expected argument 'zone_name_or_id' to be a str")
         if zone_name_or_id is not None:
-            warnings.warn("""The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
-            pulumi.log.warn("""zone_name_or_id is deprecated: The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
+            warnings.warn("""The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrsets' instead.""", DeprecationWarning)
+            pulumi.log.warn("""zone_name_or_id is deprecated: The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrsets' instead.""")
 
         pulumi.set(__self__, "zone_name_or_id", zone_name_or_id)
         if zone_version and not isinstance(zone_version, str):
@@ -163,7 +163,7 @@ def get_records(compartment_id: Optional[str] = None,
                 zone_version: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRecordsResult:
     """
-    **Deprecated. Use Dns.Rrset instead.**
+    **Deprecated. Use dns_get_rrsets instead.**
 
     This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
 
@@ -222,7 +222,7 @@ def get_records_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
                        zone_version: Optional[pulumi.Input[Optional[str]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRecordsResult]:
     """
-    **Deprecated. Use Dns.Rrset instead.**
+    **Deprecated. Use dns_get_rrsets instead.**
 
     This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
 

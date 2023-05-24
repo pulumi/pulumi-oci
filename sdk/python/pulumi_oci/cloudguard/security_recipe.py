@@ -136,7 +136,6 @@ class _SecurityRecipeState:
                  owner: Optional[pulumi.Input[str]] = None,
                  security_policies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
@@ -156,7 +155,6 @@ class _SecurityRecipeState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the recipe
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the recipe was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the recipe was last updated. An RFC3339 formatted datetime string.
         """
@@ -178,8 +176,6 @@ class _SecurityRecipeState:
             pulumi.set(__self__, "security_policies", security_policies)
         if state is not None:
             pulumi.set(__self__, "state", state)
-        if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -298,18 +294,6 @@ class _SecurityRecipeState:
     @state.setter
     def state(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "state", value)
-
-    @property
-    @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
-        return pulumi.get(self, "system_tags")
-
-    @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
-        pulumi.set(self, "system_tags", value)
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -478,7 +462,6 @@ class SecurityRecipe(pulumi.CustomResource):
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["owner"] = None
             __props__.__dict__["state"] = None
-            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
         super(SecurityRecipe, __self__).__init__(
@@ -500,7 +483,6 @@ class SecurityRecipe(pulumi.CustomResource):
             owner: Optional[pulumi.Input[str]] = None,
             security_policies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'SecurityRecipe':
         """
@@ -525,7 +507,6 @@ class SecurityRecipe(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the recipe
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the recipe was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the recipe was last updated. An RFC3339 formatted datetime string.
         """
@@ -542,7 +523,6 @@ class SecurityRecipe(pulumi.CustomResource):
         __props__.__dict__["owner"] = owner
         __props__.__dict__["security_policies"] = security_policies
         __props__.__dict__["state"] = state
-        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return SecurityRecipe(resource_name, opts=opts, __props__=__props__)
@@ -624,14 +604,6 @@ class SecurityRecipe(pulumi.CustomResource):
         The current state of the recipe
         """
         return pulumi.get(self, "state")
-
-    @property
-    @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
-        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

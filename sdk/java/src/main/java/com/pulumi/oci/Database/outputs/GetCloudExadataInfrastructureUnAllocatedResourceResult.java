@@ -10,6 +10,7 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCloudExadataInfrastructureUnAllocatedResourceResult {
@@ -28,6 +29,7 @@ public final class GetCloudExadataInfrastructureUnAllocatedResourceResult {
      * 
      */
     private String cloudExadataInfrastructureId;
+    private @Nullable List<String> dbServers;
     /**
      * @return Total unallocated exadata storage in the infrastructure in TBs.
      * 
@@ -75,6 +77,9 @@ public final class GetCloudExadataInfrastructureUnAllocatedResourceResult {
      */
     public String cloudExadataInfrastructureId() {
         return this.cloudExadataInfrastructureId;
+    }
+    public List<String> dbServers() {
+        return this.dbServers == null ? List.of() : this.dbServers;
     }
     /**
      * @return Total unallocated exadata storage in the infrastructure in TBs.
@@ -124,6 +129,7 @@ public final class GetCloudExadataInfrastructureUnAllocatedResourceResult {
         private List<GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmCluster> cloudAutonomousVmClusters;
         private String cloudExadataInfrastructureDisplayName;
         private String cloudExadataInfrastructureId;
+        private @Nullable List<String> dbServers;
         private Double exadataStorageInTbs;
         private String id;
         private Integer localStorageInGbs;
@@ -135,6 +141,7 @@ public final class GetCloudExadataInfrastructureUnAllocatedResourceResult {
     	      this.cloudAutonomousVmClusters = defaults.cloudAutonomousVmClusters;
     	      this.cloudExadataInfrastructureDisplayName = defaults.cloudExadataInfrastructureDisplayName;
     	      this.cloudExadataInfrastructureId = defaults.cloudExadataInfrastructureId;
+    	      this.dbServers = defaults.dbServers;
     	      this.exadataStorageInTbs = defaults.exadataStorageInTbs;
     	      this.id = defaults.id;
     	      this.localStorageInGbs = defaults.localStorageInGbs;
@@ -159,6 +166,14 @@ public final class GetCloudExadataInfrastructureUnAllocatedResourceResult {
         public Builder cloudExadataInfrastructureId(String cloudExadataInfrastructureId) {
             this.cloudExadataInfrastructureId = Objects.requireNonNull(cloudExadataInfrastructureId);
             return this;
+        }
+        @CustomType.Setter
+        public Builder dbServers(@Nullable List<String> dbServers) {
+            this.dbServers = dbServers;
+            return this;
+        }
+        public Builder dbServers(String... dbServers) {
+            return dbServers(List.of(dbServers));
         }
         @CustomType.Setter
         public Builder exadataStorageInTbs(Double exadataStorageInTbs) {
@@ -190,6 +205,7 @@ public final class GetCloudExadataInfrastructureUnAllocatedResourceResult {
             o.cloudAutonomousVmClusters = cloudAutonomousVmClusters;
             o.cloudExadataInfrastructureDisplayName = cloudExadataInfrastructureDisplayName;
             o.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
+            o.dbServers = dbServers;
             o.exadataStorageInTbs = exadataStorageInTbs;
             o.id = id;
             o.localStorageInGbs = localStorageInGbs;

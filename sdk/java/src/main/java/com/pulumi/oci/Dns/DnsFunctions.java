@@ -19,6 +19,8 @@ import com.pulumi.oci.Dns.inputs.GetResolversArgs;
 import com.pulumi.oci.Dns.inputs.GetResolversPlainArgs;
 import com.pulumi.oci.Dns.inputs.GetRrsetArgs;
 import com.pulumi.oci.Dns.inputs.GetRrsetPlainArgs;
+import com.pulumi.oci.Dns.inputs.GetRrsetsArgs;
+import com.pulumi.oci.Dns.inputs.GetRrsetsPlainArgs;
 import com.pulumi.oci.Dns.inputs.GetSteeringPoliciesArgs;
 import com.pulumi.oci.Dns.inputs.GetSteeringPoliciesPlainArgs;
 import com.pulumi.oci.Dns.inputs.GetSteeringPolicyArgs;
@@ -43,6 +45,7 @@ import com.pulumi.oci.Dns.outputs.GetResolverEndpointsResult;
 import com.pulumi.oci.Dns.outputs.GetResolverResult;
 import com.pulumi.oci.Dns.outputs.GetResolversResult;
 import com.pulumi.oci.Dns.outputs.GetRrsetResult;
+import com.pulumi.oci.Dns.outputs.GetRrsetsResult;
 import com.pulumi.oci.Dns.outputs.GetSteeringPoliciesResult;
 import com.pulumi.oci.Dns.outputs.GetSteeringPolicyAttachmentResult;
 import com.pulumi.oci.Dns.outputs.GetSteeringPolicyAttachmentsResult;
@@ -57,7 +60,7 @@ import java.util.concurrent.CompletableFuture;
 
 public final class DnsFunctions {
     /**
-     * **Deprecated. Use oci.Dns.Rrset instead.**
+     * **Deprecated. Use oci.Dns.getRrsets instead.**
      * 
      * This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
      * 
@@ -110,7 +113,7 @@ public final class DnsFunctions {
         return getRecords(args, InvokeOptions.Empty);
     }
     /**
-     * **Deprecated. Use oci.Dns.Rrset instead.**
+     * **Deprecated. Use oci.Dns.getRrsets instead.**
      * 
      * This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
      * 
@@ -163,7 +166,7 @@ public final class DnsFunctions {
         return getRecordsPlain(args, InvokeOptions.Empty);
     }
     /**
-     * **Deprecated. Use oci.Dns.Rrset instead.**
+     * **Deprecated. Use oci.Dns.getRrsets instead.**
      * 
      * This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
      * 
@@ -216,7 +219,7 @@ public final class DnsFunctions {
         return Deployment.getInstance().invoke("oci:Dns/getRecords:getRecords", TypeShape.of(GetRecordsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * **Deprecated. Use oci.Dns.Rrset instead.**
+     * **Deprecated. Use oci.Dns.getRrsets instead.**
      * 
      * This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
      * 
@@ -1167,6 +1170,194 @@ public final class DnsFunctions {
      */
     public static CompletableFuture<GetRrsetResult> getRrsetPlain(GetRrsetPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Dns/getRrset:getRrset", TypeShape.of(GetRrsetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of RRsets in Oracle Cloud Infrastructure DNS service.
+     * 
+     * Gets a list of all rrsets in the specified zone. You can optionally filter the results using the listed parameters.
+     * For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
+     * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
+     * parameter is required.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetRrsetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRrsets = DnsFunctions.getRrsets(GetRrsetsArgs.builder()
+     *             .zoneNameOrId(oci_dns_zone.test_zone().id())
+     *             .domain(var_.rrset_domain())
+     *             .domainContains(var_.rrset_domain())
+     *             .rtype(var_.rrset_rtype())
+     *             .scope(var_.rrset_scope())
+     *             .viewId(oci_dns_view.test_view().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRrsetsResult> getRrsets(GetRrsetsArgs args) {
+        return getRrsets(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of RRsets in Oracle Cloud Infrastructure DNS service.
+     * 
+     * Gets a list of all rrsets in the specified zone. You can optionally filter the results using the listed parameters.
+     * For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
+     * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
+     * parameter is required.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetRrsetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRrsets = DnsFunctions.getRrsets(GetRrsetsArgs.builder()
+     *             .zoneNameOrId(oci_dns_zone.test_zone().id())
+     *             .domain(var_.rrset_domain())
+     *             .domainContains(var_.rrset_domain())
+     *             .rtype(var_.rrset_rtype())
+     *             .scope(var_.rrset_scope())
+     *             .viewId(oci_dns_view.test_view().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRrsetsResult> getRrsetsPlain(GetRrsetsPlainArgs args) {
+        return getRrsetsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of RRsets in Oracle Cloud Infrastructure DNS service.
+     * 
+     * Gets a list of all rrsets in the specified zone. You can optionally filter the results using the listed parameters.
+     * For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
+     * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
+     * parameter is required.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetRrsetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRrsets = DnsFunctions.getRrsets(GetRrsetsArgs.builder()
+     *             .zoneNameOrId(oci_dns_zone.test_zone().id())
+     *             .domain(var_.rrset_domain())
+     *             .domainContains(var_.rrset_domain())
+     *             .rtype(var_.rrset_rtype())
+     *             .scope(var_.rrset_scope())
+     *             .viewId(oci_dns_view.test_view().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRrsetsResult> getRrsets(GetRrsetsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Dns/getRrsets:getRrsets", TypeShape.of(GetRrsetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of RRsets in Oracle Cloud Infrastructure DNS service.
+     * 
+     * Gets a list of all rrsets in the specified zone. You can optionally filter the results using the listed parameters.
+     * For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
+     * provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
+     * parameter is required.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetRrsetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRrsets = DnsFunctions.getRrsets(GetRrsetsArgs.builder()
+     *             .zoneNameOrId(oci_dns_zone.test_zone().id())
+     *             .domain(var_.rrset_domain())
+     *             .domainContains(var_.rrset_domain())
+     *             .rtype(var_.rrset_rtype())
+     *             .scope(var_.rrset_scope())
+     *             .viewId(oci_dns_view.test_view().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRrsetsResult> getRrsetsPlain(GetRrsetsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Dns/getRrsets:getRrsets", TypeShape.of(GetRrsetsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Steering Policies in Oracle Cloud Infrastructure DNS service.

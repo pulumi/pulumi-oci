@@ -50,7 +50,7 @@ export interface GetUnifiedAgentConfigurationsArgs {
      */
     compartmentId: string;
     /**
-     * Resource name
+     * Resource name.
      */
     displayName?: string;
     filters?: inputs.Logging.GetUnifiedAgentConfigurationsFilter[];
@@ -135,7 +135,7 @@ export interface GetUnifiedAgentConfigurationsOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * Resource name
+     * Resource name.
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Logging.GetUnifiedAgentConfigurationsFilterArgs>[]>;

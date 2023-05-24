@@ -22,6 +22,10 @@ public final class GetUnifiedAgentConfigurationServiceConfiguration {
      * 
      */
     private List<GetUnifiedAgentConfigurationServiceConfigurationDestination> destinations;
+    /**
+     * @return Logging source object.
+     * 
+     */
     private List<GetUnifiedAgentConfigurationServiceConfigurationSource> sources;
 
     private GetUnifiedAgentConfigurationServiceConfiguration() {}
@@ -39,6 +43,10 @@ public final class GetUnifiedAgentConfigurationServiceConfiguration {
     public List<GetUnifiedAgentConfigurationServiceConfigurationDestination> destinations() {
         return this.destinations;
     }
+    /**
+     * @return Logging source object.
+     * 
+     */
     public List<GetUnifiedAgentConfigurationServiceConfigurationSource> sources() {
         return this.sources;
     }

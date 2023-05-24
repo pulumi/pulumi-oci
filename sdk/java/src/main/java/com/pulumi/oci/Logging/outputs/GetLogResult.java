@@ -62,7 +62,7 @@ public final class GetLogResult {
      */
     private String logType;
     /**
-     * @return Log retention duration in 30-day increments (30, 60, 90 and so on).
+     * @return Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
      * 
      */
     private Integer retentionDuration;
@@ -155,7 +155,7 @@ public final class GetLogResult {
         return this.logType;
     }
     /**
-     * @return Log retention duration in 30-day increments (30, 60, 90 and so on).
+     * @return Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
      * 
      */
     public Integer retentionDuration() {

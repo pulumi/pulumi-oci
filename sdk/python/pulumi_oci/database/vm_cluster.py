@@ -337,6 +337,7 @@ class VmClusterArgs:
 @pulumi.input_type
 class _VmClusterState:
     def __init__(__self__, *,
+                 availability_domain: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
                  cpus_enabled: Optional[pulumi.Input[int]] = None,
@@ -367,6 +368,7 @@ class _VmClusterState:
                  vm_cluster_network_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering VmCluster resources.
+        :param pulumi.Input[str] availability_domain: The name of the availability domain that the VM cluster is located in.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[int] cpus_enabled: The number of enabled CPU cores.
         :param pulumi.Input['VmClusterDataCollectionOptionsArgs'] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
@@ -397,6 +399,8 @@ class _VmClusterState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        if availability_domain is not None:
+            pulumi.set(__self__, "availability_domain", availability_domain)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if cpu_core_count is not None:
@@ -453,6 +457,18 @@ class _VmClusterState:
             pulumi.set(__self__, "time_zone", time_zone)
         if vm_cluster_network_id is not None:
             pulumi.set(__self__, "vm_cluster_network_id", vm_cluster_network_id)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the availability domain that the VM cluster is located in.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @availability_domain.setter
+    def availability_domain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "availability_domain", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1013,6 +1029,7 @@ class VmCluster(pulumi.CustomResource):
             if vm_cluster_network_id is None and not opts.urn:
                 raise TypeError("Missing required property 'vm_cluster_network_id'")
             __props__.__dict__["vm_cluster_network_id"] = vm_cluster_network_id
+            __props__.__dict__["availability_domain"] = None
             __props__.__dict__["cpus_enabled"] = None
             __props__.__dict__["last_patch_history_entry_id"] = None
             __props__.__dict__["lifecycle_details"] = None
@@ -1031,6 +1048,7 @@ class VmCluster(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            availability_domain: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             cpu_core_count: Optional[pulumi.Input[int]] = None,
             cpus_enabled: Optional[pulumi.Input[int]] = None,
@@ -1066,6 +1084,7 @@ class VmCluster(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] availability_domain: The name of the availability domain that the VM cluster is located in.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[int] cpus_enabled: The number of enabled CPU cores.
         :param pulumi.Input[pulumi.InputType['VmClusterDataCollectionOptionsArgs']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
@@ -1100,6 +1119,7 @@ class VmCluster(pulumi.CustomResource):
 
         __props__ = _VmClusterState.__new__(_VmClusterState)
 
+        __props__.__dict__["availability_domain"] = availability_domain
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["cpu_core_count"] = cpu_core_count
         __props__.__dict__["cpus_enabled"] = cpus_enabled
@@ -1129,6 +1149,14 @@ class VmCluster(pulumi.CustomResource):
         __props__.__dict__["time_zone"] = time_zone
         __props__.__dict__["vm_cluster_network_id"] = vm_cluster_network_id
         return VmCluster(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> pulumi.Output[str]:
+        """
+        The name of the availability domain that the VM cluster is located in.
+        """
+        return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")

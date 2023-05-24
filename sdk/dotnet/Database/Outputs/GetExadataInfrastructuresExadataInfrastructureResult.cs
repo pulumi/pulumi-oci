@@ -35,6 +35,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string AdminNetworkCidr;
         /// <summary>
+        /// The name of the availability domain that the Exadata infrastructure is located in.
+        /// </summary>
+        public readonly string AvailabilityDomain;
+        /// <summary>
         /// The IP address for the first control plane server.
         /// </summary>
         public readonly string CloudControlPlaneServer1;
@@ -206,6 +210,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string adminNetworkCidr,
 
+            string availabilityDomain,
+
             string cloudControlPlaneServer1,
 
             string cloudControlPlaneServer2,
@@ -292,6 +298,7 @@ namespace Pulumi.Oci.Database.Outputs
             AdditionalComputeSystemModel = additionalComputeSystemModel;
             AdditionalStorageCount = additionalStorageCount;
             AdminNetworkCidr = adminNetworkCidr;
+            AvailabilityDomain = availabilityDomain;
             CloudControlPlaneServer1 = cloudControlPlaneServer1;
             CloudControlPlaneServer2 = cloudControlPlaneServer2;
             CompartmentId = compartmentId;

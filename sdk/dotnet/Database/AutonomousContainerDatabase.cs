@@ -38,13 +38,13 @@ namespace Pulumi.Oci.Database
         public Output<string> AutonomousVmClusterId { get; private set; } = null!;
 
         /// <summary>
-        /// The availability domain of the Autonomous Container Database.
+        /// The availability domain of the Autonomous Container Database
         /// </summary>
         [Output("availabilityDomain")]
         public Output<string> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
-        /// Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
+        /// Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         /// </summary>
         [Output("availableCpus")]
         public Output<double> AvailableCpus { get; private set; } = null!;
@@ -74,7 +74,7 @@ namespace Pulumi.Oci.Database
         public Output<string> ComputeModel { get; private set; } = null!;
 
         /// <summary>
-        /// The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+        /// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         /// </summary>
         [Output("dbName")]
         public Output<string> DbName { get; private set; } = null!;
@@ -393,7 +393,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+        /// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         /// </summary>
         [Input("dbName")]
         public Input<string>? DbName { get; set; }
@@ -570,13 +570,13 @@ namespace Pulumi.Oci.Database
         public Input<string>? AutonomousVmClusterId { get; set; }
 
         /// <summary>
-        /// The availability domain of the Autonomous Container Database.
+        /// The availability domain of the Autonomous Container Database
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
-        /// Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
+        /// Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         /// </summary>
         [Input("availableCpus")]
         public Input<double>? AvailableCpus { get; set; }
@@ -606,7 +606,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? ComputeModel { get; set; }
 
         /// <summary>
-        /// The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+        /// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         /// </summary>
         [Input("dbName")]
         public Input<string>? DbName { get; set; }

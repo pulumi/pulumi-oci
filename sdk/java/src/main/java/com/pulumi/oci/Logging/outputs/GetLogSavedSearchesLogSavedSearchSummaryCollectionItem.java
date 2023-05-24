@@ -37,7 +37,7 @@ public final class GetLogSavedSearchesLogSavedSearchSummaryCollectionItem {
      */
     private String id;
     /**
-     * @return Resource name
+     * @return Resource name.
      * 
      */
     private String name;
@@ -99,7 +99,7 @@ public final class GetLogSavedSearchesLogSavedSearchSummaryCollectionItem {
         return this.id;
     }
     /**
-     * @return Resource name
+     * @return Resource name.
      * 
      */
     public String name() {

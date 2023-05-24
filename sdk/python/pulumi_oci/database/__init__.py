@@ -124,6 +124,7 @@ from .get_db_systems_upgrade_history_entry import *
 from .get_db_versions import *
 from .get_exadata_infrastructure import *
 from .get_exadata_infrastructure_download_config_file import *
+from .get_exadata_infrastructure_un_allocated_resource import *
 from .get_exadata_infrastructures import *
 from .get_exadata_iorm_config import *
 from .get_external_container_database import *
